@@ -11,8 +11,29 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
         rel="stylesheet">
-    <!-- Styles -->
-    <link rel="stylesheet" href="assets/styles.css">
+    <!-- Dynamic Cache-Busting Script -->
+    <script>
+        /**
+         * Cache-Busting Implementation
+         * Generates a unique timestamp to force the browser to load the latest version of assets.
+         */
+        (function () {
+            const timestamp = new Date().getTime();
+
+            // Dynamically load CSS
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = `assets/styles.css?v=${timestamp}`;
+            document.head.appendChild(link);
+
+            // Dynamically load main.js as a module
+            // This ensures main.js and its imports are handled correctly by the browser
+            const script = document.createElement('script');
+            script.type = 'module';
+            script.src = `assets/main.js?v=${timestamp}`;
+            document.body.appendChild(script);
+        })();
+    </script>
 </head>
 
 <body>
@@ -25,9 +46,6 @@
             <!-- Las publicaciones se cargarán aquí -->
         </div>
     </main>
-
-    <!-- Main JS (Component Loader) -->
-    <script type="module" src="assets/main.js"></script>
 </body>
 
 </html>
