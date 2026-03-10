@@ -11,33 +11,31 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
         rel="stylesheet">
-    <!-- Dynamic Cache-Busting Script -->
+    <!-- Static Cache-Busting & Asset Preparation -->
     <script>
-        /**
-         * Cache-Busting Implementation
-         * Generates a unique timestamp to force the browser to load the latest version of assets.
-         */
-        (function () {
-            const timestamp = new Date().getTime();
-
-            // Dynamically load CSS
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = `assets/styles.css?v=${timestamp}`;
-            document.head.appendChild(link);
-
-            // Dynamically load main.js as a module
-            // This ensures main.js and its imports are handled correctly by the browser
-            const script = document.createElement('script');
-            script.type = 'module';
-            script.src = `assets/main.js?v=${timestamp}`;
-            document.body.appendChild(script);
-        })();
+        const timestamp = new Date().getTime();
+        document.write(`<link rel="stylesheet" href="assets/styles.css?v=${timestamp}">`);
     </script>
 </head>
 
 <body>
-    <header id="main-header"></header>
+    <!-- Static Header: Somos Sumapaz Design -->
+    <header id="main-header">
+        <nav class="navbar-custom">
+            <div class="container">
+                <a href="index.html">
+                    <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img">
+                </a>
+                <div class="search-container">
+                    <span class="search-label">Busca el producto que necesitas</span>
+                    <div class="search-bar">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" placeholder="Buscar...">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <main class="container">
         <!-- Hero Section -->
@@ -55,6 +53,14 @@
             <!-- Las publicaciones se cargarán aquí -->
         </div>
     </main>
+
+    <!-- Dynamic JS with Cache-Busting -->
+    <script>
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.src = `assets/main.js?v=${new Date().getTime()}`;
+        document.body.appendChild(script);
+    </script>
 </body>
 
 </html>

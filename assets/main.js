@@ -1,11 +1,9 @@
-import { createNavbar } from '../components/navbar.js';
 import { createFooter } from '../components/footer.js';
 import { createPostCard } from '../components/post-card.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Assets with versioning logic
-    const path = window.location.pathname;
-    let basePath = "./";
+    // Current Path for relative links
+    const basePath = "./";
 
     // Sample Posts Data
     const posts = [
@@ -35,10 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
-    // Inject Navbar & Footer
-    const header = document.querySelector("header") || document.body;
-    header.prepend(createNavbar(basePath));
-
     // Render Posts
     const postsContainer = document.getElementById("posts-container");
     if (postsContainer) {
@@ -47,7 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Wrap footer injection to ensure it doesn't conflict
     document.body.appendChild(createFooter());
 });
+
 
 
