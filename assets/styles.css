@@ -253,4 +253,18 @@ footer {
     position: absolute;
     left: 1rem;
     color: var(--text-muted);
-}
+
+    /* Page Banner */
+    .page-banner {
+        width: 100%;
+        height: 400px;
+        /* Sustancial height for the banner */
+        background-image: url('assets/fondo.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.2);
+    }
