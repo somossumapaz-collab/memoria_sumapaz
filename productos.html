@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos | Somos Sumapaz</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <!-- Static Cache-Busting -->
+    <script>
+        const timestamp = new Date().getTime();
+        document.write(`<link rel="stylesheet" href="assets/styles.css?v=${timestamp}">`);
+    </script>
+</head>
+
+<body>
+    <!-- Static Header -->
+    <header id="main-header">
+        <nav class="navbar-custom">
+            <div class="container">
+                <a href="index.html">
+                    <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img">
+                </a>
+                <div class="search-container">
+                    <span class="search-label">Busca el producto que necesitas</span>
+                    <div class="search-bar">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="main-search-input" placeholder="Buscar...">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" style="padding-top: 2rem;">
+        <h1 id="results-title" class="serif" style="color: #444F2F; margin-bottom: 2rem;">Resultados</h1>
+
+        <!-- Contenido de Productos Filtrados -->
+        <div id="filtered-products-container" class="product-grid">
+            <p style="text-align: center; grid-column: 1 / -1; color: var(--text-muted);">Cargando productos...</p>
+        </div>
+    </main>
+
+    <!-- App Logic -->
+    <script type="module" src="assets/productos.js"></script>
+</body>
+
+</html>
