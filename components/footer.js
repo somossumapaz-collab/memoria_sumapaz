@@ -3,10 +3,10 @@
  */
 export const createFooter = () => {
     const footer = document.createElement("footer");
+    footer.className = "main-footer";
     footer.innerHTML = `
         <div class="container">
-            <p class="serif">© 2026 Memoria Sumapaz</p>
-            <p>Historias, territorio y comunidad</p>
+            <p>Historias, territorio y comunidad - Somos Sumapaz</p>
         </div>
     `;
     return footer;

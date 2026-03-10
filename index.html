@@ -30,7 +30,8 @@
                     <span class="search-label">Busca el producto que necesitas</span>
                     <div class="search-bar">
                         <span class="search-icon">🔍</span>
-                        <input type="text" placeholder="Buscar...">
+                        <input type="text" id="home-search-input" placeholder="Buscar..." autocomplete="off">
+                        <div id="search-suggestions" class="suggestions-dropdown"></div>
                     </div>
                 </div>
             </div>
@@ -69,37 +70,37 @@
         <div class="container">
             <h2>Categorías</h2>
             <div class="categories-grid">
-                <div class="category-item">
+                <div class="category-item" data-id="1">
                     <div class="category-icon">
                         <img src="assets/hortalizas.png" alt="Agricultura">
                     </div>
                     <span class="category-label">Agricultura y Cultivos</span>
                 </div>
-                <div class="category-item">
+                <div class="category-item" data-id="2">
                     <div class="category-icon">
                         <img src="assets/lacteos.png" alt="Lácteos">
                     </div>
                     <span class="category-label">Lácteos y Derivados</span>
                 </div>
-                <div class="category-item">
+                <div class="category-item" data-id="3">
                     <div class="category-icon">
                         <img src="assets/carnicos.png" alt="Cárnicos">
                     </div>
                     <span class="category-label">Carnes y Proteínas</span>
                 </div>
-                <div class="category-item">
+                <div class="category-item" data-id="4">
                     <div class="category-icon">
                         <img src="assets/tecnicos.png" alt="Técnicos">
                     </div>
                     <span class="category-label">Servicios Técnicos y Mecánicos</span>
                 </div>
-                <div class="category-item">
+                <div class="category-item" data-id="5">
                     <div class="category-icon">
                         <img src="assets/logistica.png" alt="Logística">
                     </div>
                     <span class="category-label">Transporte y Logística Rural</span>
                 </div>
-                <div class="category-item">
+                <div class="category-item" data-id="6">
                     <div class="category-icon">
                         <img src="assets/servicios_comunitarios.png" alt="Comunitarios">
                     </div>
@@ -128,13 +129,8 @@
         </div>
     </main>
 
-    <!-- Dynamic JS with Cache-Busting -->
-    <script>
-        const script = document.createElement('script');
-        script.type = 'module';
-        script.src = `assets/main.js?v=${new Date().getTime()}`;
-        document.body.appendChild(script);
-    </script>
+    <!-- App Logic -->
+    <script type="module" src="assets/main.js"></script>
 </body>
 
 </html>

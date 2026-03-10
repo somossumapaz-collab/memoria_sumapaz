@@ -2,14 +2,27 @@ import { createFooter } from '../components/footer.js';
 
 document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
+    const categoryId = params.get('id_categoria');
     const categoria = params.get('categoria');
     const search = params.get('search');
 
     const resultsTitle = document.getElementById("results-title");
     const container = document.getElementById("filtered-products-container");
 
+    // Map IDs to Names for Title
+    const categoryNames = {
+        "1": "Agricultura y Cultivos",
+        "2": "Lácteos y Derivados",
+        "3": "Carnes y Proteínas",
+        "4": "Servicios Técnicos y Mecánicos",
+        "5": "Transporte y Logística Rural",
+        "6": "Servicios Comunitarios"
+    };
+
     // Update Title
-    if (categoria) {
+    if (categoryId && categoryNames[categoryId]) {
+        resultsTitle.textContent = `Categoría: ${categoryNames[categoryId]}`;
+    } else if (categoria) {
         resultsTitle.textContent = `Categoría: ${categoria}`;
     } else if (search) {
         resultsTitle.textContent = `Buscando: "${search}"`;
@@ -19,18 +32,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Handle Search Bar in results page
     const searchInput = document.getElementById("main-search-input");
-    if (searchInput) {
+    const suggestionsBox = document.getElementById("search-suggestions");
+
+    if (searchInput && suggestionsBox) {
         searchInput.addEventListener("keypress", (e) => {
             if (e.key === "Enter" && searchInput.value.trim() !== "") {
                 window.location.href = `productos.html?search=${encodeURIComponent(searchInput.value.trim())}`;
             }
         });
+
+        searchInput.addEventListener("input", () => {
+            const query = searchInput.value.trim();
+            if (query.length < 2) {
+                suggestionsBox.style.display = "none";
+                return;
+            }
+
+            fetch(`api/get_sugerencias.php?q=${encodeURIComponent(query)}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        suggestionsBox.innerHTML = data.map(s => `<div class="suggestion-item">${s}</div>`).join('');
+                        suggestionsBox.style.display = "block";
+
+                        document.querySelectorAll(".suggestion-item").forEach(item => {
+                            item.addEventListener("click", () => {
+                                searchInput.value = item.textContent;
+                                suggestionsBox.style.display = "none";
+                                window.location.href = `productos.html?search=${encodeURIComponent(item.textContent)}`;
+                            });
+                        });
+                    } else {
+                        suggestionsBox.style.display = "none";
+                    }
+                });
+        });
+
+        // Close suggestions on click outside
+        document.addEventListener("click", (e) => {
+            if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+                suggestionsBox.style.display = "none";
+            }
+        });
     }
 
+
     // Fetch Filtered Data
-    let apiUrl = "api/get_productos_filtrados.php";
-    if (categoria) apiUrl += `?categoria=${encodeURIComponent(categoria)}`;
-    else if (search) apiUrl += `?search=${encodeURIComponent(search)}`;
+    let apiUrl = "api/get_productos_filtrados.php?";
+    if (categoryId) apiUrl += `id_categoria=${categoryId}`;
+    else if (categoria) apiUrl += `categoria=${encodeURIComponent(categoria)}`;
+    else if (search) apiUrl += `search=${encodeURIComponent(search)}`;
 
     fetch(apiUrl)
         .then(response => response.json())

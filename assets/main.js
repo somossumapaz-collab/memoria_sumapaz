@@ -34,22 +34,71 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     // Category Navigation
-    document.querySelectorAll(".category-item").forEach(item => {
-        item.addEventListener("click", () => {
-            const categoryName = item.querySelector(".category-label").textContent.trim();
-            window.location.href = `productos.html?categoria=${encodeURIComponent(categoryName)}`;
+    function initNavigation() {
+        const categoryItems = document.querySelectorAll(".category-item");
+        categoryItems.forEach(item => {
+            item.addEventListener("click", () => {
+                const categoryId = item.getAttribute("data-id");
+                if (categoryId) {
+                    window.location.href = `productos.html?id_categoria=${categoryId}`;
+                } else {
+                    const label = item.querySelector(".category-label");
+                    if (label) {
+                        const categoryName = label.textContent.trim();
+                        window.location.href = `productos.html?categoria=${encodeURIComponent(categoryName)}`;
+                    }
+                }
+            });
         });
-    });
 
-    // Search Box Navigation
-    const searchInput = document.querySelector(".search-bar input");
-    if (searchInput) {
-        searchInput.addEventListener("keypress", (e) => {
-            if (e.key === "Enter" && searchInput.value.trim() !== "") {
-                window.location.href = `productos.html?search=${encodeURIComponent(searchInput.value.trim())}`;
-            }
-        });
+        // Search Box and Autocomplete
+        const searchInput = document.getElementById("home-search-input");
+        const suggestionsBox = document.getElementById("search-suggestions");
+
+        if (searchInput && suggestionsBox) {
+            searchInput.addEventListener("keypress", (e) => {
+                if (e.key === "Enter" && searchInput.value.trim() !== "") {
+                    window.location.href = `productos.html?search=${encodeURIComponent(searchInput.value.trim())}`;
+                }
+            });
+
+            searchInput.addEventListener("input", () => {
+                const query = searchInput.value.trim();
+                if (query.length < 2) {
+                    suggestionsBox.style.display = "none";
+                    return;
+                }
+
+                fetch(`api/get_sugerencias.php?q=${encodeURIComponent(query)}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.length > 0) {
+                            suggestionsBox.innerHTML = data.map(s => `<div class="suggestion-item">${s}</div>`).join('');
+                            suggestionsBox.style.display = "block";
+
+                            document.querySelectorAll(".suggestion-item").forEach(item => {
+                                item.addEventListener("click", () => {
+                                    searchInput.value = item.textContent;
+                                    suggestionsBox.style.display = "none";
+                                    window.location.href = `productos.html?search=${encodeURIComponent(item.textContent)}`;
+                                });
+                            });
+                        } else {
+                            suggestionsBox.style.display = "none";
+                        }
+                    });
+            });
+
+            // Close suggestions on click outside
+            document.addEventListener("click", (e) => {
+                if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+                    suggestionsBox.style.display = "none";
+                }
+            });
+        }
     }
+
+    initNavigation();
 
     // Render Posts
     const postsContainer = document.getElementById("posts-container");

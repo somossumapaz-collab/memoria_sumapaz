@@ -9,6 +9,7 @@ require_once 'db_config.php';
 header('Content-Type: application/json');
 
 $categoria = isset($_GET['categoria']) ? $_GET['categoria'] : null;
+$id_categoria = isset($_GET['id_categoria']) ? $_GET['id_categoria'] : null;
 $search = isset($_GET['search']) ? $_GET['search'] : null;
 
 try {
@@ -23,7 +24,10 @@ try {
 
     $params = [];
 
-    if ($categoria) {
+    if ($id_categoria) {
+        $sql .= " AND p.id_categoria = :id_categoria";
+        $params[':id_categoria'] = $id_categoria;
+    } elseif ($categoria) {
         $sql .= " AND c.categoria = :categoria";
         $params[':categoria'] = $categoria;
     }
