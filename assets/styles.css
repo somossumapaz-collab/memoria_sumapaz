@@ -21,10 +21,12 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--background);
+    background-color: #FBF4DE;
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
+    padding-top: 70px;
+    /* Offset for the fixed header */
 }
 
 h1,
@@ -201,13 +203,18 @@ footer {
     }
 }
 
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+}
+
 /* Custom Navbar for Somos Sumapaz */
 .navbar-custom {
     background-color: #444F2F;
     padding: 0.8rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -253,18 +260,69 @@ footer {
     position: absolute;
     left: 1rem;
     color: var(--text-muted);
+}
 
-    /* Page Banner */
-    .page-banner {
-        width: 100%;
-        height: 400px;
-        /* Sustancial height for the banner */
-        background-image: url('assets/fondo.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.2);
+/* Page Banner */
+.page-banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    /* Remove potential gap below images */
+}
+
+/* Directory Intro Section */
+.directory-intro {
+    padding: 4rem 0;
+    margin-bottom: 2rem;
+}
+
+.directory-intro .container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.directory-column {
+    flex: 1;
+}
+
+.directory-image {
+    flex: 1.2;
+}
+
+.directory-image img {
+    width: 100%;
+    display: block;
+}
+
+.directory-divider {
+    width: 1px;
+    height: 250px;
+    background-color: #444F2F;
+    opacity: 0.3;
+}
+
+.directory-content {
+    flex: 0.8;
+    color: #444F2F;
+}
+
+.directory-content p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .directory-intro .container {
+        flex-direction: column;
+        gap: 2rem;
     }
+
+    .directory-divider {
+        width: 100%;
+        height: 1px;
+    }
+}
