@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caracterización Productores Rurales - Memoria Sumapaz</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* CSS reset & variables omitted for brevity, reusing from styles.css */
+    </style>
+    <script>
+        const timestamp = new Date().getTime();
+        document.write(`<link rel="stylesheet" href="assets/styles.css?v=${timestamp}">`);
+    </script>
+    <style>
+        .prefilled-card {
+            background-color: #EFEBE4;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--primary-green);
+        }
+
+        .prefilled-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .info-value {
+            font-size: 1rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .section-box {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            color: var(--earth-brown);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            border-bottom: 2px solid var(--light-green);
+            padding-bottom: 0.5rem;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .checkbox-item,
+        .radio-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .checkbox-item input,
+        .radio-item input {
+            margin-top: 5px;
+        }
+
+        /* Checkbox lists inside grid */
+        .check-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .dynamic-list-container {
+            border: 1px solid #eee;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .dynamic-item {
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #ccc;
+            margin-bottom: 1rem;
+        }
+
+        .dynamic-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Static Header -->
+    <header id="main-header">
+        <nav class="navbar-custom">
+            <div class="container" style="display: flex; align-items: center;">
+                <a href="index.html"><img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img"></a>
+                <div class="search-container"
+                    style="margin-left: auto; display: flex; align-items: center; gap: 1.5rem;">
+                    <div id="header-auth-container" style="display: none; align-items: center; gap: 1rem;">
+                        <a href="inscripcion_productores" class="nav-link-btn" id="btn-register"
+                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Registrar
+                            Productor</a>
+                        <a href="productores_registrados" class="nav-link-btn" id="btn-dashboard"
+                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Dashboard</a>
+                        <button onclick="logout()" class="nav-link-btn" id="btn-logout"
+                            style="margin: 0; background-color: transparent; cursor: pointer; color: #FBF4DE; border: none;"
+                            title="Cerrar Sesión">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                style="width: 24px; height: 24px; transform: scaleX(-1);">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
+        <h1 class="serif form-title" style="text-align: left; margin-bottom: 0.5rem;">Ficha de Caracterización</h1>
+        <p class="form-subtitle" style="text-align: left;">Productores rurales y emprendimientos.</p>
+
+        <!-- Loading spinner -->
+        <div id="loading-spinner" style="text-align: center; padding: 3rem;">Cargando información...</div>
+
+        <div id="main-content" style="display: none;">
+            <!-- Pre-filled basic data -->
+            <div class="prefilled-card">
+                <h3 style="color: var(--primary-green); margin-bottom: 0.5rem;">Información Básica del Productor
+                    (Pre-cargada)</h3>
+                <p style="font-size: 0.9rem; color: #666;">Estos datos fueron recopilados durante la inscripción y no
+                    requieren llenarse de nuevo.</p>
+                <div class="prefilled-grid">
+                    <div>
+                        <div class="info-label">Nombre Completo</div>
+                        <div class="info-value" id="lbl-nombre">-</div>
+                    </div>
+                    <div>
+                        <div class="info-label">Documento</div>
+                        <div class="info-value"><span id="lbl-tipo-doc"></span> <span id="lbl-num-doc">-</span></div>
+                    </div>
+                    <div>
+                        <div class="info-label">Teléfono</div>
+                        <div class="info-value" id="lbl-telefono">-</div>
+                    </div>
+                    <div>
+                        <div class="info-label">Correo Electrónico</div>
+                        <div class="info-value" id="lbl-correo">-</div>
+                    </div>
+                    <div>
+                        <div class="info-label">Vereda / Corregimiento</div>
+                        <div class="info-value" id="lbl-vereda">-</div>
+                    </div>
+                    <div>
+                        <div class="info-label">Nombre del Predio</div>
+                        <div class="info-value" id="lbl-predio">-</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Form directly below -->
+            <form id="caracterizacion-form" class="custom-form">
+                <input type="hidden" id="fk_productor_id" name="fk_productor_id">
+
+                <!-- FECHA -->
+                <div class="section-box">
+                    <div class="form-group" style="max-width: 300px;">
+                        <label for="fecha_caracterizacion">Fecha de caracterización *</label>
+                        <input type="date" id="fecha_caracterizacion" name="fecha_caracterizacion" required>
+                    </div>
+                </div>
+
+                <!-- I. GENERAL -->
+                <div class="section-box">
+                    <h2 class="section-title">I. Información General (Complementaria)</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nombre de la unidad productiva / organización</label>
+                            <input type="text" name="nombre_unidad_productiva" placeholder="Ej. Asociación ABC">
+                        </div>
+                        <div class="form-group">
+                            <label>Coordenadas (Opcional)</label>
+                            <input type="text" name="coordenadas" placeholder="Latitud, Longitud">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- II. SOCIODEMOGRÁFICA -->
+                <div class="section-box">
+                    <h2 class="section-title">II. Información Sociodemográfica</h2>
+                    <div class="form-grid check-grid">
+                        <div class="form-group">
+                            <label>¿Hace parte de estos grupos poblacionales?</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item"><input type="checkbox" name="grupos_poblacionales[]"
+                                        value="Mujer cabeza de hogar"> Mujer cabeza de hogar</label>
+                                <label class="checkbox-item"><input type="checkbox" name="grupos_poblacionales[]"
+                                        value="LGBTIQ+"> LGBTIQ+</label>
+                                <label class="checkbox-item"><input type="checkbox" name="grupos_poblacionales[]"
+                                        value="Víctima del conflicto armado"> Víctima del conflicto armado</label>
+                                <label class="checkbox-item"><input type="checkbox" name="grupos_poblacionales[]"
+                                        value="Afrodescendiente"> Afrodescendiente</label>
+                                <label class="checkbox-item"><input type="checkbox" name="grupos_poblacionales[]"
+                                        value="Indígena"> Indígena</label>
+                                <label class="checkbox-item"><input type="checkbox" name="grupos_poblacionales[]"
+                                        value="Mujer < 25 o > 60"> Mujer < 25 o> 60</label>
+                                <label class="checkbox-item"><input type="checkbox" name="grupos_poblacionales[]"
+                                        value="Joven rural"> Joven rural</label>
+                                <label class="checkbox-item"><input type="checkbox" name="grupos_poblacionales[]"
+                                        value="Ninguna"> Ninguna</label>
+                                <label class="checkbox-item" style="align-items: center;">
+                                    <input type="checkbox" name="grupos_poblacionales[]" value="Otro"> Otro:
+                                    <input type="text" style="padding: 0.3rem; margin-left:0.5rem;"
+                                        name="grupos_poblacionales_otro" placeholder="Especificar">
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>¿Presenta algún tipo de discapacidad?</label>
+                            <div class="radio-group" style="margin-bottom: 1rem;">
+                                <label class="radio-item"><input type="radio" name="discapacidad" value="No" checked>
+                                    No</label>
+                                <label class="radio-item"><input type="radio" name="discapacidad" value="Sí"> Sí</label>
+                            </div>
+                            <label>Si respondió sí, ¿qué tipo?</label>
+                            <input type="text" name="discapacidad_tipo" placeholder="Especificar tipo">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- III. ORGANIZACIONAL -->
+                <div class="section-box">
+                    <h2 class="section-title">III. Información Organizacional</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Tipo de organización</label>
+                            <select name="tipo_organizacion">
+                                <option value="">Seleccione...</option>
+                                <option value="Productor individual">Productor individual</option>
+                                <option value="Gremio / Federación">Gremio / Federación</option>
+                                <option value="Asociación campesina">Asociación campesina</option>
+                                <option value="Sociedad por acciones simplificada">Sociedad por acciones simplificada
+                                </option>
+                                <option value="Fundación">Fundación</option>
+                                <option value="Organización">Organización</option>
+                                <option value="Ninguna">Ninguna</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                            <input type="text" name="tipo_organizacion_otro" placeholder="Si es otro, especifique"
+                                style="margin-top:0.5rem;">
+                        </div>
+                        <div class="form-group">
+                            <label>Extensión del predio (Fanegadas o Hectáreas)</label>
+                            <input type="text" name="extension_predio" placeholder="Ej. 2 Fanegadas">
+                        </div>
+                        <div class="form-group">
+                            <label>Tiempo de implementación (meses)</label>
+                            <input type="number" name="tiempo_implementacion" min="0" placeholder="Ej. 24">
+                        </div>
+                        <div class="form-group">
+                            <label>Tipo de tenencia del predio</label>
+                            <select name="tenencia_predio">
+                                <option value="">Seleccione...</option>
+                                <option value="Arrendamiento">Arrendamiento</option>
+                                <option value="Posesión">Posesión</option>
+                                <option value="Propio">Propio</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>¿Cuántas personas están vinculadas a su organización?</label>
+                            <select name="personas_vinculadas">
+                                <option value="">Seleccione...</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="Más de 3">Más de 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IV. CATEGORÍAS PRODUCTIVAS -->
+                <div class="section-box">
+                    <h2 class="section-title">IV. Categorías Productivas</h2>
+                    <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.95rem;">Marque las
+                        subcategorías que correspondan a su producción.</p>
+
+                    <div class="form-grid check-grid" style="gap:2rem;">
+                        <!-- Pecuaria -->
+                        <div class="form-group">
+                            <label style="color: var(--primary-green);">Producción pecuaria y derivados lácteos</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item"><input type="checkbox" name="cat_pecuaria[]"
+                                        value="Leche fresca"> Leche fresca</label>
+                                <label class="checkbox-item"><input type="checkbox" name="cat_pecuaria[]"
+                                        value="Quesos / yogurt / arequipe"> Quesos / yogurt / arequipe</label>
+                                <label class="checkbox-item"><input type="checkbox" name="cat_pecuaria[]"
+                                        value="Carnes"> Producción de Carnes (Res, cerdo, pollo, etc.)</label>
+                                <label class="checkbox-item"><input type="checkbox" name="cat_pecuaria[]"
+                                        value="Huevos"> Huevos</label>
+                                <label class="checkbox-item"><input type="checkbox" name="cat_pecuaria[]"
+                                        value="Miel/Apicola"> Miel / Apícola</label>
+                            </div>
+                        </div>
+
+                        <!-- Agrícola -->
+                        <div class="form-group">
+                            <label style="color: var(--primary-green);">Producción agrícola (Hortalizas, tubérculos,
+                                cereales)</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item"><input type="checkbox" name="cat_agricola[]"
+                                        value="Hortalizas"> Hortalizas (zanahoria, lechuga, cebolla, etc.)</label>
+                                <label class="checkbox-item"><input type="checkbox" name="cat_agricola[]"
+                                        value="Tubérculos"> Tubérculos y raíces (papa, arracacha, yuca, cubios)</label>
+                                <label class="checkbox-item"><input type="checkbox" name="cat_agricola[]"
+                                        value="Leguminosas/Cereales"> Leguminosas y cereales (arveja, frijol, maiz,
+                                    trigo)</label>
+                            </div>
+                        </div>
+
+                        <!-- Frutícola -->
+                        <div class="form-group">
+                            <label style="color: var(--primary-green);">Producción frutícola / Transformación</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item"><input type="checkbox" name="cat_fruticola[]"
+                                        value="Frutas"> Frutas (mora, fresa, durazno, tomate de arbol, etc.)</label>
+                                <label class="checkbox-item"><input type="checkbox" name="cat_fruticola[]"
+                                        value="Aromaticas"> Plantas aromáticas / medicinales</label>
+                                <label class="checkbox-item"><input type="checkbox" name="cat_fruticola[]"
+                                        value="Alimentos Artesanales"> Transformación: Panadería, conservas, salsas,
+                                    etc.</label>
+                            </div>
+                        </div>
+
+                        <!-- Otros -->
+                        <div class="form-group">
+                            <label style="color: var(--primary-green);">Artesanías y Servicios</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item"><input type="checkbox" name="cat_otros[]"
+                                        value="Artesanias"> Artesanías y Manufacturas Rurales</label>
+                                <label class="checkbox-item"><input type="checkbox" name="cat_otros[]"
+                                        value="Cultura/Deporte"> Expresiones artísticas, culturales o deportivas</label>
+                                <label class="checkbox-item"><input type="checkbox" name="cat_otros[]"
+                                        value="Gastronomia/Turismo"> Servicios gastronomicos, rurales y turismo</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- V. INFORMACIÓN DE PRODUCCIÓN (DYNAMIC) -->
+                <div class="section-box">
+                    <h2 class="section-title">V. Información de Producción</h2>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; color:#444;">5.1 Productos Ofertados</h3>
+                    <div id="productos-container" class="dynamic-list-container">
+                        <div class="dynamic-item">
+                            <div class="form-grid">
+                                <div class="form-group"><label>Nombre del producto</label><input type="text"
+                                        name="prod_nombre[]" placeholder="Ej. Queso Campesino"></div>
+                                <div class="form-group"><label>Volumen</label><input type="text" name="prod_volumen[]"
+                                        placeholder="Ej. 50 kg"></div>
+                                <div class="form-group"><label>Frecuencia</label><input type="text"
+                                        name="prod_frecuencia[]" placeholder="Ej. Semanal"></div>
+                                <div class="form-group"><label>Presentación</label><input type="text"
+                                        name="prod_presentacion[]" placeholder="Ej. Empacado al vacío"></div>
+                                <div class="form-group"><label>Precio por unidad ($)</label><input type="number"
+                                        name="prod_precio[]" placeholder="Ej. 12000"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn"
+                        style="background:var(--light-green); color:#333; margin-bottom: 2rem;"
+                        onclick="addProducto()">+ Añadir otro producto</button>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; color:#444;">Servicios Culturales / Deportivos
+                        (Solo si aplica)</h3>
+                    <div id="servicios-container" class="dynamic-list-container">
+                        <div class="dynamic-item">
+                            <div class="form-grid">
+                                <div class="form-group"><label>Nombre de la actividad</label><input type="text"
+                                        name="serv_nombre[]" placeholder="Ej. Taller de danza"></div>
+                                <div class="form-group"><label>Frecuencia</label><input type="text"
+                                        name="serv_frecuencia[]" placeholder="Ej. Mensual"></div>
+                                <div class="form-group"><label>Población objetivo</label><input type="text"
+                                        name="serv_poblacion[]" placeholder="Ej. Jóvenes"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn"
+                        style="background:var(--light-green); color:#333; margin-bottom: 2rem;"
+                        onclick="addServicio()">+ Añadir otra actividad</button>
+
+                    <div class="form-group" style="margin-top: 1rem;">
+                        <label>5.2 Destino principal de su producción o servicio</label>
+                        <select name="destino_produccion">
+                            <option value="">Seleccione...</option>
+                            <option value="Para el autoconsumo">Para el autoconsumo</option>
+                            <option value="Para autoconsumo y venta de excedentes">Para autoconsumo y venta de
+                                excedentes</option>
+                            <option value="Para venta total o comercialización completa">Para venta total o
+                                comercialización completa</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- VI. CARACTERIZACIÓN SISTEMA PRODUCTIVO -->
+                <div class="section-box">
+                    <h2 class="section-title">VI. Caracterización del Sistema Productivo</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Tipo de mano de obra</label>
+                            <select name="mano_obra">
+                                <option value="">Seleccione...</option>
+                                <option value="FAMILIAR">FAMILIAR</option>
+                                <option value="EXTERNA">EXTERNA</option>
+                                <option value="MIXTA (FAMILIA Y APOYO EXTERNO)">MIXTA (FAMILIA Y APOYO EXTERNO)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Proceso productivo mayoritario</label>
+                            <select name="proceso_productivo">
+                                <option value="">Seleccione...</option>
+                                <option value="MANUAL (HERRAMIENTAS BÁSICAS O MANUAL)">MANUAL (HERRAMIENTAS BÁSICAS O
+                                    MANUAL)</option>
+                                <option value="CON MAQUINARIA O EQUIPOS ESPECIALIZADOS">CON MAQUINARIA O EQUIPOS
+                                    ESPECIALIZADOS</option>
+                                <option value="NO APLICA">NO APLICA</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>¿Utiliza abonos orgánicos o prácticas agroecológicas?</label>
+                            <select name="abonos_organicos">
+                                <option value="SI">SÍ</option>
+                                <option selected value="NO">NO</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>¿Maneja algún tipo de sistema de producción diferenciado?</label>
+                            <input type="text" name="sistema_diferenciado" placeholder="Ej. Certificación Orgánica">
+                        </div>
+                        <div class="form-group" style="grid-column: 1 / -1;">
+                            <label>Si su actividad es cultural/deportiva ¿cuál es su valor agregado?</label>
+                            <textarea name="valor_agregado" rows="3"
+                                style="width:100%; padding:0.8rem; border:1px solid #ccc; border-radius:8px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VII & VIII Merged for brevity -->
+                <div class="section-box">
+                    <h2 class="section-title">VII. Comercialización y Dificultades</h2>
+                    <div class="form-grid check-grid">
+                        <!-- Ventas -->
+                        <div class="form-group">
+                            <label>Formas de venta o entrega (Marque las que apliquen)</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item"><input type="checkbox" name="ventas[]"
+                                        value="LOS VENDO EN MI VEREDA"> Venta en la vereda / local</label>
+                                <label class="checkbox-item"><input type="checkbox" name="ventas[]"
+                                        value="LO RECOGEN EN FINCA"> Recogen en finca</label>
+                                <label class="checkbox-item"><input type="checkbox" name="ventas[]"
+                                        value="MERCADOS FAMILIARES"> Mercados / Ferias locales</label>
+                                <label class="checkbox-item"><input type="checkbox" name="ventas[]"
+                                        value="INTERMEDIARIOS"> Intermediarios</label>
+                                <label class="checkbox-item"><input type="checkbox" name="ventas[]"
+                                        value="REDES SOCIALES"> Redes Sociales</label>
+                            </div>
+                        </div>
+
+                        <!-- Transporte -->
+                        <div class="form-group">
+                            <label>Transporte utilizado</label>
+                            <select name="transporte" style="margin-bottom:1rem;">
+                                <option value="">Seleccione...</option>
+                                <option value="PROPIO">PROPIO</option>
+                                <option value="ALQUILADO">ALQUILADO</option>
+                                <option value="SIN PAGO (COMUNAL)">COMUNAL / AMIGOS</option>
+                                <option value="NO TENGO">NO TENGO TRANSPORTE</option>
+                            </select>
+
+                            <label>Fijación de precio</label>
+                            <select name="fijacion_precio">
+                                <option value="">Seleccione...</option>
+                                <option value="EL COMPRADOR">EL COMPRADOR LO DEFINE</option>
+                                <option value="YO LO ESTABLEZCO">YO LO ESTABLEZCO</option>
+                                <option value="SE ACUERDA">SE ACUERDA (NEGOCIACIÓN)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-submit-container" style="text-align: center; margin-top: 3rem;">
+                    <button type="button" class="btn btn-submit"
+                        style="background-color: #757575; width: 45%; max-width: 250px; margin-right: 1rem;"
+                        onclick="window.location.href='productores_registrados.html'">Cancelar</button>
+                    <button type="submit" class="btn btn-submit" style="width: 45%; max-width: 250px;"
+                        id="submit-btn-main">Guardar Caracterización</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 class="serif modal-title" style="color:var(--primary-green)">¡Guardado!</h2>
+            <p class="modal-text">La caracterización ha sido guardada exitosamente.</p>
+            <button class="btn btn-submit" style="width: 100%; margin-top: 1.5rem;"
+                onclick="window.location.href='productores_registrados.html'">Volver al Dashboard</button>
+        </div>
+    </div>
+
+    <!-- App Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Auth check
+            try {
+                const authRes = await fetch('api/check_auth.php');
+                const authResult = await authRes.json();
+                if (!authRes.ok || !authResult.authenticated) {
+                    window.location.href = 'login.html'; // Require auth for caracterizacion
+                    return;
+                } else {
+                    document.getElementById('header-auth-container').style.display = 'flex';
+                }
+            } catch (error) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const prodId = urlParams.get('id');
+
+            if (!prodId) {
+                alert('ID del productor es requerido.');
+                window.location.href = 'productores_registrados.html';
+                return;
+            }
+
+            document.getElementById('fk_productor_id').value = prodId;
+
+            try {
+                const response = await fetch(`api/get_productor.php?id=${prodId}`);
+                const resData = await response.json();
+
+                if (response.ok && resData.success) {
+                    const data = resData.data;
+                    document.getElementById('lbl-nombre').textContent = data.nombre_completo || '-';
+                    document.getElementById('lbl-tipo-doc').textContent = data.tipo_documento || '';
+                    document.getElementById('lbl-num-doc').textContent = data.numero_documento || '-';
+                    document.getElementById('lbl-telefono').textContent = data.telefono || '-';
+                    document.getElementById('lbl-correo').textContent = data.correo_electronico || '-';
+                    document.getElementById('lbl-vereda').textContent = data.vereda || '-';
+                    document.getElementById('lbl-predio').textContent = data.nombre_predio || '-';
+                } else {
+                    alert('Productor no encontrado.');
+                    window.location.href = 'productores_registrados.html';
+                    return;
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                alert('Error al cargar la información.');
+            } finally {
+                document.getElementById('loading-spinner').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            }
+        });
+
+        function addProducto() {
+            const container = document.getElementById('productos-container');
+            const item = document.createElement('div');
+            item.className = 'dynamic-item';
+            item.innerHTML = `
+                <div class="form-grid">
+                    <div class="form-group"><label>Nombre del producto</label><input type="text" name="prod_nombre[]" placeholder="Ej. Queso Campesino"></div>
+                    <div class="form-group"><label>Volumen</label><input type="text" name="prod_volumen[]" placeholder="Ej. 50 kg"></div>
+                    <div class="form-group"><label>Frecuencia</label><input type="text" name="prod_frecuencia[]" placeholder="Ej. Semanal"></div>
+                    <div class="form-group"><label>Presentación</label><input type="text" name="prod_presentacion[]" placeholder="Ej. Empacado al vacío"></div>
+                    <div class="form-group"><label>Precio por unidad ($)</label><input type="number" name="prod_precio[]" placeholder="Ej. 12000"></div>
+                </div>
+            `;
+            container.appendChild(item);
+        }
+
+        function addServicio() {
+            const container = document.getElementById('servicios-container');
+            const item = document.createElement('div');
+            item.className = 'dynamic-item';
+            item.innerHTML = `
+                <div class="form-grid">
+                    <div class="form-group"><label>Nombre de la actividad</label><input type="text" name="serv_nombre[]" placeholder="Ej. Taller de danza"></div>
+                    <div class="form-group"><label>Frecuencia</label><input type="text" name="serv_frecuencia[]" placeholder="Ej. Mensual"></div>
+                    <div class="form-group"><label>Población objetivo</label><input type="text" name="serv_poblacion[]" placeholder="Ej. Jóvenes"></div>
+                </div>
+            `;
+            container.appendChild(item);
+        }
+
+        // Form submission (Mocking success for now as API is not defined)
+        document.getElementById('caracterizacion-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Just show success modal as requested for now.
+            document.getElementById('success-modal').style.display = 'flex';
+        });
+
+    </script>
+</body>
+
+</html>
