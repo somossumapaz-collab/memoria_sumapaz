@@ -123,6 +123,20 @@
         </div>
     </main>
 
+    <!-- Custom Success Modal -->
+    <div id="success-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <img src="assets/logo_somossumapaz.png" alt="Exito" style="width: 80px; height: auto;">
+            </div>
+            <h2 class="serif modal-title">¡Inscripción Exitosa!</h2>
+            <p class="modal-text">Gracias por realizar la encuesta de productores locales. Pronto nos pondremos en
+                contacto contigo.</p>
+            <button id="modal-close-btn" class="btn btn-submit"
+                style="width: 100%; margin-top: 1.5rem;">Aceptar</button>
+        </div>
+    </div>
+
     <!-- App Logic -->
     <script>
         document.getElementById('inscripcion-form').addEventListener('submit', async function (e) {
@@ -147,7 +161,8 @@
                 const result = await response.json();
 
                 if (response.ok && result.success) {
-                    alert('¡Gracias por inscribirte! Pronto nos pondremos en contacto contigo.');
+                    // Show custom modal instead of alert
+                    document.getElementById('success-modal').classList.add('active');
                     this.reset();
                 } else {
                     alert('Error: ' + (result.error || 'Ocurrió un problema al enviar la inscripción.'));
@@ -159,6 +174,11 @@
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalText;
             }
+        });
+
+        // Close Modal Logic
+        document.getElementById('modal-close-btn').addEventListener('click', function () {
+            document.getElementById('success-modal').classList.remove('active');
         });
     </script>
     <script type="module" src="assets/main.js"></script>
