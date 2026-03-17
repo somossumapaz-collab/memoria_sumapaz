@@ -137,6 +137,20 @@
         </div>
     </div>
 
+    <!-- Custom Error Modal -->
+    <div id="error-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon" style="background: rgba(211, 47, 47, 0.1);">
+                <img src="assets/logo_somossumapaz.png" alt="Error"
+                    style="width: 80px; height: auto; filter: grayscale(100%);">
+            </div>
+            <h2 class="serif modal-title" style="color: #D32F2F;">Aviso</h2>
+            <p id="error-modal-text" class="modal-text">Ocurrió un error inesperado al enviar la inscripción.</p>
+            <button id="error-close-btn" class="btn btn-submit"
+                style="width: 100%; margin-top: 1.5rem; background-color: #D32F2F;">Cerrar</button>
+        </div>
+    </div>
+
     <!-- App Logic -->
     <script>
         document.getElementById('inscripcion-form').addEventListener('submit', async function (e) {
@@ -165,11 +179,13 @@
                     document.getElementById('success-modal').classList.add('active');
                     this.reset();
                 } else {
-                    alert('Error: ' + (result.error || 'Ocurrió un problema al enviar la inscripción.'));
+                    document.getElementById('error-modal-text').textContent = result.error || 'Ocurrió un problema al enviar la inscripción.';
+                    document.getElementById('error-modal').classList.add('active');
                 }
             } catch (error) {
                 console.error('Error enviando formulario:', error);
-                alert('Ocurrió un error de red al intentar enviar el formulario. Por favor, intenta de nuevo más tarde.');
+                document.getElementById('error-modal-text').textContent = 'Ocurrió un error de red al intentar enviar el formulario. Por favor, intenta de nuevo más tarde.';
+                document.getElementById('error-modal').classList.add('active');
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalText;
@@ -179,6 +195,10 @@
         // Close Modal Logic
         document.getElementById('modal-close-btn').addEventListener('click', function () {
             document.getElementById('success-modal').classList.remove('active');
+        });
+
+        document.getElementById('error-close-btn').addEventListener('click', function () {
+            document.getElementById('error-modal').classList.remove('active');
         });
     </script>
     <script type="module" src="assets/main.js"></script>
