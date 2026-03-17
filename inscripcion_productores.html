@@ -22,19 +22,51 @@
     <!-- Static Header -->
     <header id="main-header">
         <nav class="navbar-custom">
-            <div class="container" style="display: flex; align-items: center; justify-content: flex-start;">
+            <div class="container" style="display: flex; align-items: center;">
+
                 <a href="index.html">
                     <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img">
                 </a>
+
+                <div class="search-container"
+                    style="margin-left: auto; display: flex; align-items: center; gap: 1.5rem;">
+
+                    <!-- Admin Options (Login / Dashboard / Inscripción) -->
+                    <div id="header-auth-container" style="display: none; align-items: center; gap: 1rem;">
+
+                        <a href="inscripcion_productores" class="nav-link-btn" id="btn-register"
+                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600; padding: 8px 14px; border-radius: 6px;">
+                            Registrar Productor
+                        </a>
+
+                        <a href="productores_registrados" class="nav-link-btn" id="btn-dashboard"
+                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600; padding: 8px 14px; border-radius: 6px;">
+                            Dashboard
+                        </a>
+
+                        <button onclick="logout()" class="nav-link-btn" id="btn-logout"
+                            style="margin: 0; background-color: transparent; cursor: pointer; color: #FBF4DE; border: none; padding: 8px; border-radius: 6px;"
+                            title="Cerrar Sesión">
+
+                            <svg fill="none" viewBox="0 0 24 24" stroke="#FBF4DE" stroke-width="2"
+                                style="width: 24px; height: 24px; transform: scaleX(-1);">
+
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                            </svg>
+
+                        </button>
+
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
 
     <main class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
         <div class="form-wrapper">
-            <h1 class="serif form-title">Formulario de Inscripción Productores Sumapaz</h1>
-            <p class="form-subtitle"> Por favor diligencia
-                los siguientes datos.</p>
+            <h1 class="serif form-title" id="page-title">Formulario de Inscripción Productores Sumapaz</h1>
+            <p class="form-subtitle" id="page-subtitle"> Por favor diligencia los siguientes datos.</p>
 
             <form id="inscripcion-form" class="custom-form">
                 <div class="form-grid">
@@ -116,8 +148,14 @@
                     </div>
                 </div>
 
-                <div class="form-submit-container">
-                    <button type="submit" class="btn btn-submit">Enviar Inscripción</button>
+                <div class="form-submit-container" id="create-actions">
+                    <button type="submit" class="btn btn-submit" id="submit-btn-main">Enviar Inscripción</button>
+                </div>
+
+                <div class="form-submit-container" id="edit-actions" style="display: none;">
+                    <button type="button" class="btn btn-submit" style="background-color: #757575;"
+                        onclick="window.location.href='productores_registrados.html'">Cancelar</button>
+                    <button type="submit" class="btn btn-submit" id="submit-btn-edit">Guardar Cambios</button>
                 </div>
             </form>
         </div>
@@ -129,9 +167,9 @@
             <div class="modal-icon">
                 <img src="assets/logo_somossumapaz.png" alt="Exito" style="width: 80px; height: auto;">
             </div>
-            <h2 class="serif modal-title">¡Inscripción Exitosa!</h2>
-            <p class="modal-text">Gracias por realizar la encuesta de productores locales. Pronto nos pondremos en
-                contacto contigo.</p>
+            <h2 class="serif modal-title" id="success-title">¡Inscripción Exitosa!</h2>
+            <p class="modal-text" id="success-message">Gracias por realizar la inscripción de productores locales.
+                Pronto nos pondremos en contacto contigo.</p>
             <button id="modal-close-btn" class="btn btn-submit"
                 style="width: 100%; margin-top: 1.5rem;">Aceptar</button>
         </div>
@@ -153,9 +191,70 @@
 
     <!-- App Logic -->
     <script>
+        let currentEditId = null;
+
+        document.addEventListener('DOMContentLoaded', async () => {
+
+            // --- AUTH CHECK: Do not strictly protect, just show header if logged in ---
+            try {
+                const authRes = await fetch('api/check_auth.php');
+                const authResult = await authRes.json();
+
+                if (authRes.ok && authResult.authenticated) {
+                    // Show admin header items since user is logged in
+                    document.getElementById('header-auth-container').style.display = 'flex';
+                }
+            } catch (error) {
+                console.error('Error checking auth:', error);
+            }
+            // ------------------------
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const editId = urlParams.get('edit');
+
+            if (editId) {
+                currentEditId = editId;
+
+                // Change UI for Edit Mode
+                document.getElementById('page-title').textContent = 'Editar Productor';
+                document.getElementById('page-subtitle').textContent = 'Actualiza la información del productor seleccionado.';
+                document.getElementById('create-actions').style.display = 'none';
+                const editActions = document.getElementById('edit-actions');
+                editActions.style.display = 'flex';
+                editActions.style.gap = '1rem';
+                editActions.style.justifyContent = 'center';
+
+                // Fetch existing data
+                try {
+                    const response = await fetch(`api/get_productor.php?id=${editId}`);
+                    const result = await response.json();
+
+                    if (response.ok && result.success) {
+                        const p = result.data;
+                        document.getElementById('nombre').value = p.nombre_completo;
+                        document.getElementById('tipo_documento').value = p.tipo_documento;
+                        document.getElementById('cedula').value = p.numero_documento;
+                        document.getElementById('fecha_nacimiento').value = p.fecha_nacimiento;
+                        document.getElementById('telefono').value = p.telefono;
+                        document.getElementById('correo').value = p.correo_electronico || '';
+                        document.getElementById('vereda').value = p.vereda;
+                        document.getElementById('nombre_predio').value = p.nombre_predio;
+                    } else {
+                        alert('Error cargando productor: ' + (result.error || 'Desconocido'));
+                        window.location.href = 'productores_registrados';
+                    }
+                } catch (error) {
+                    console.error('Error fetching producer:', error);
+                    alert('Error de red al intentar cargar la información.');
+                }
+            }
+        });
+
         document.getElementById('inscripcion-form').addEventListener('submit', async function (e) {
             e.preventDefault();
-            const submitBtn = this.querySelector('button[type="submit"]');
+
+            const submitBtnId = currentEditId ? 'submit-btn-edit' : 'submit-btn-main';
+            const submitBtn = document.getElementById(submitBtnId);
             const originalText = submitBtn.textContent;
             submitBtn.disabled = true;
             submitBtn.textContent = 'Enviando...';
@@ -163,9 +262,15 @@
             const formData = new FormData(this);
             const data = Object.fromEntries(formData.entries());
 
+            let apiUrl = 'api/submit_inscripcion.php';
+            if (currentEditId) {
+                apiUrl = 'api/update_productor.php';
+                data.id = currentEditId;
+            }
+
             try {
-                const response = await fetch('api/submit_inscripcion.php', {
-                    method: 'POST',
+                const response = await fetch(apiUrl, {
+                    method: 'POST', // OR PUT for REST fans, but PHP scripts above use POST internally typically, or we check for both. Actually update_productor handles POST.
                     headers: {
                         'Content-Type': 'application/json'
                     },
@@ -175,11 +280,14 @@
                 const result = await response.json();
 
                 if (response.ok && result.success) {
-                    // Show custom modal instead of alert
+                    if (currentEditId) {
+                        document.getElementById('success-title').textContent = '¡Actualización Exitosa!';
+                        document.getElementById('success-message').textContent = 'Los datos del productor han sido guardados correctamente.';
+                    }
+                    // Show custom modal
                     document.getElementById('success-modal').classList.add('active');
-                    this.reset();
                 } else {
-                    document.getElementById('error-modal-text').textContent = result.error || 'Ocurrió un problema al enviar la inscripción.';
+                    document.getElementById('error-modal-text').textContent = result.error || 'Ocurrió un problema al enviar la información.';
                     document.getElementById('error-modal').classList.add('active');
                 }
             } catch (error) {
@@ -195,6 +303,11 @@
         // Close Modal Logic
         document.getElementById('modal-close-btn').addEventListener('click', function () {
             document.getElementById('success-modal').classList.remove('active');
+            if (currentEditId) {
+                window.location.href = 'productores_registrados';
+            } else {
+                document.getElementById('inscripcion-form').reset();
+            }
         });
 
         document.getElementById('error-close-btn').addEventListener('click', function () {
