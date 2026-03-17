@@ -27,6 +27,17 @@ foreach ($required_fields as $field) {
 }
 
 try {
+    // Check if the numero_documento already exists
+    $check_stmt = $pdo->prepare("SELECT COUNT(*) FROM productores_sumapaz WHERE numero_documento = :numero_documento");
+    $check_stmt->execute([':numero_documento' => $input['cedula']]);
+    $exists = $check_stmt->fetchColumn();
+
+    if ($exists > 0) {
+        http_response_code(409); // Conflict
+        echo json_encode(['error' => 'Ya existe un productor registrado con este número de documento.']);
+        exit;
+    }
+
     $stmt = $pdo->prepare("
         INSERT INTO productores_sumapaz (
             nombre_completo,
