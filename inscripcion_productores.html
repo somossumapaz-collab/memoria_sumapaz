@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción | Somos Sumapaz</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <!-- Static Cache-Busting -->
+    <script>
+        const timestamp = new Date().getTime();
+        document.write(`<link rel="stylesheet" href="assets/styles.css?v=${timestamp}">`);
+    </script>
+</head>
+
+<body>
+    <!-- Static Header -->
+    <header id="main-header">
+        <nav class="navbar-custom">
+            <div class="container" style="display: flex; align-items: center; justify-content: flex-start;">
+                <a href="index.html">
+                    <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
+        <div class="form-wrapper">
+            <h1 class="serif form-title">Formulario de Inscripción Productores Sumapaz</h1>
+            <p class="form-subtitle"> Por favor diligencia
+                los siguientes datos.</p>
+
+            <form id="inscripcion-form" class="custom-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo *</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan Pérez">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo_documento">Tipo de Documento *</label>
+                        <select id="tipo_documento" name="tipo_documento" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                            <option value="NIT">NIT</option>
+                            <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cedula">Número de Documento *</label>
+                        <input type="text" id="cedula" name="cedula" required placeholder="Ej. 1234567890">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha_nacimiento">Fecha de Nacimiento *</label>
+                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono / Celular *</label>
+                        <input type="tel" id="telefono" name="telefono" required placeholder="Ej. 300 123 4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico (Opcional)</label>
+                        <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vereda">Vereda *</label>
+                        <select id="vereda" name="vereda" required>
+                            <option value="" disabled selected>Selecciona una vereda</option>
+                            <option value="SAN JOSE">SAN JOSE</option>
+                            <option value="NUEVA GRANADA">NUEVA GRANADA</option>
+                            <option value="CONCEPCION">CONCEPCION</option>
+                            <option value="TUNAL ALTO">TUNAL ALTO</option>
+                            <option value="LAGUNITAS">LAGUNITAS</option>
+                            <option value="TUNAL BAJO">TUNAL BAJO</option>
+                            <option value="LA UNION URBANO">LA UNION URBANO</option>
+                            <option value="CHORRERAS">CHORRERAS</option>
+                            <option value="SANTO DOMINGO">SANTO DOMINGO</option>
+                            <option value="LAS VEGAS">LAS VEGAS</option>
+                            <option value="SAN JUAN">SAN JUAN</option>
+                            <option value="CAPITOLIO">CAPITOLIO</option>
+                            <option value="EL TOLDO">EL TOLDO</option>
+                            <option value="LAS SOPAS">LAS SOPAS</option>
+                            <option value="LOS RIOS">LOS RIOS</option>
+                            <option value="SAN ANTONIO">SAN ANTONIO</option>
+                            <option value="LAS PALMAS">LAS PALMAS</option>
+                            <option value="LAS ANIMAS">LAS ANIMAS</option>
+                            <option value="LAS AURAS">LAS AURAS</option>
+                            <option value="NAZARETH URBANO">NAZARETH URBANO</option>
+                            <option value="TAQUECITOS">TAQUECITOS</option>
+                            <option value="PENALISA">PENALISA</option>
+                            <option value="LAGUNA VERDE">LAGUNA VERDE</option>
+                            <option value="RAIZAL">RAIZAL</option>
+                            <option value="SANTA ROSA">SANTA ROSA</option>
+                            <option value="BETANIA">BETANIA</option>
+                            <option value="EL ITSMO">EL ITSMO</option>
+                            <option value="EL TABACO">EL TABACO</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre_predio">Nombre del Predio *</label>
+                        <input type="text" id="nombre_predio" name="nombre_predio" required
+                            placeholder="Ej. Finca La Esperanza">
+                    </div>
+                </div>
+
+                <div class="form-submit-container">
+                    <button type="submit" class="btn btn-submit">Enviar Inscripción</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- App Logic -->
+    <script>
+        document.getElementById('inscripcion-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('api/submit_inscripcion.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    alert('¡Gracias por inscribirte! Pronto nos pondremos en contacto contigo.');
+                    this.reset();
+                } else {
+                    alert('Error: ' + (result.error || 'Ocurrió un problema al enviar la inscripción.'));
+                }
+            } catch (error) {
+                console.error('Error enviando formulario:', error);
+                alert('Ocurrió un error de red al intentar enviar el formulario. Por favor, intenta de nuevo más tarde.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        });
+    </script>
+    <script type="module" src="assets/main.js"></script>
+</body>
+
+</html>
