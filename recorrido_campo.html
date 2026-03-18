@@ -363,6 +363,29 @@
             margin-bottom: 20px;
         }
 
+        .evidence-box {
+            background: #f8f9fa;
+            border: 2px dashed var(--primary);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: left;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .evidence-item {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .evidence-label {
+            font-weight: 700;
+            color: var(--primary);
+            display: inline-block;
+            width: 100px;
+        }
+
         @media (max-width: 480px) {
             body {
                 padding: 10px;
@@ -452,6 +475,11 @@
                         </select>
                     </div>
                 </div>
+                <div id="reset_project_btn_container" style="margin-bottom: 20px; display: none;">
+                    <button type="button" class="btn-small btn-outline" onclick="resetProjectFilters()">
+                        🔄 Limpiar Selección de Proyecto
+                    </button>
+                </div>
                 <div class="input-group">
                     <label for="origen">Origen *</label>
                     <select id="origen" name="origen" required>
@@ -486,7 +514,8 @@
                 </div>
                 <div class="input-group">
                     <label for="placa">Placa del vehículo *</label>
-                    <input type="text" id="placa" name="placa" required placeholder="ABC123">
+                    <input type="text" id="placa" name="placa" required placeholder="ABC123"
+                        oninput="this.value = this.value.toUpperCase()">
                 </div>
             </div>
 
@@ -542,16 +571,27 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn-primary">
-                Finalizar y Exportar Datos
+            <button type="submit" class="btn-primary" id="submitBtn">
+                Finalizar y Guardar Registro
             </button>
         </form>
     </div>
 
     <div id="successOverlay" class="success-overlay">
         <div class="success-icon">✅</div>
-        <h2>¡Registro Completado!</h2>
-        <p>Los datos han sido preparados para descarga.</p>
+        <h2>Registro guardado exitosamente</h2>
+
+        <div class="evidence-box" id="evidenceBox">
+            <!-- Data injected via JS -->
+        </div>
+
+        <p
+            style="color: var(--text-light); font-size: 13px; margin: 15px 0; max-width: 400px; line-height: 1.4; text-align: center;">
+            <strong>¡IMPORTANTE PARA EVIDENCIA!</strong><br>
+            Cómo parte de la obligación que demanda el fondo de desarrollo de Sumapaz, tome un pantallazo al presente
+            registro positivo a las tal hora, persona, origen, placa.
+        </p>
+
         <button onclick="location.reload()" class="btn-primary"
             style="margin-top:20px; width:auto; padding: 12px 24px;">
             Hacer otro registro
@@ -729,24 +769,33 @@
         function toggleProjectLogic() {
             const proposito = document.getElementById('proposito').value;
             const container = document.getElementById('project_fields_container');
+            const resetBtn = document.getElementById('reset_project_btn_container');
             const selects = container.querySelectorAll('select');
 
             if (proposito === 'proyecto') {
                 container.classList.remove('section-disabled');
+                resetBtn.style.display = 'block';
                 selects.forEach(s => {
                     s.disabled = false;
                     s.required = true;
                 });
             } else {
                 container.classList.add('section-disabled');
+                resetBtn.style.display = 'none';
                 selects.forEach(s => {
                     s.disabled = true;
                     s.required = false;
                     s.value = '';
                 });
-                // Reset filtering state
-                initDropdowns();
+                resetProjectFilters();
             }
+        }
+
+        function resetProjectFilters() {
+            document.getElementById('proyecto').value = '';
+            document.getElementById('nombre_proyecto').value = '';
+            document.getElementById('meta').value = '';
+            initDropdowns();
         }
 
         const veredas = [
@@ -771,6 +820,7 @@
         }
 
         initDropdowns();
+        toggleProjectLogic();
 
         let selectedPath = [];
 
@@ -856,29 +906,52 @@
         document.getElementById('tripForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Guardando...';
+
             const formData = new FormData(this);
             const data = {};
             formData.forEach((value, key) => {
                 data[key] = value;
             });
 
-            // Create a filename based on date and official name
-            const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
-            const filename = `recorrido_${data.funcionario.replace(/\s+/g, '_')}_${timestamp}.json`;
+            // Add structured route data for backend
+            data['recorrido_data'] = selectedPath;
 
-            // Download as JSON file
-            const blob = new Blob([JSON.stringify(data, null, 4)], { type: 'application/json' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            window.URL.revokeObjectURL(url);
-            document.body.removeChild(a);
+            fetch('api/save_recorrido.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.success) {
+                        // Prepare evidence box
+                        const evidenceBox = document.getElementById('evidenceBox');
+                        evidenceBox.innerHTML = `
+                        <div class="evidence-item"><span class="evidence-label">Hora:</span> ${result.data.hora}</div>
+                        <div class="evidence-item"><span class="evidence-label">Persona:</span> ${result.data.funcionario}</div>
+                        <div class="evidence-item"><span class="evidence-label">Origen:</span> ${result.data.origen}</div>
+                        <div class="evidence-item"><span class="evidence-label">Placa:</span> ${result.data.placa}</div>
+                    `;
 
-            // Show success overlay
-            document.getElementById('successOverlay').classList.add('active');
+                        // Show success overlay
+                        document.getElementById('successOverlay').classList.add('active');
+                    } else {
+                        alert('Error: ' + result.error);
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Finalizar y Guardar Registro';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error en el servidor. Por favor intente de nuevo.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Finalizar y Guardar Registro';
+                });
         });
     </script>
 </body>
