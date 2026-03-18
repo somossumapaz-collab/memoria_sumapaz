@@ -495,10 +495,11 @@
                 </div>
                 <div class="input-group">
                     <label for="tipo_transporte">Tipo de transporte *</label>
-                    <select id="tipo_transporte" name="tipo_transporte" required>
+                    <select id="tipo_transporte" name="tipo_transporte" required onchange="updateVehicleTypes()">
                         <option value="">Seleccione tipo</option>
                         <option value="Vehículo Alcaldía">Vehículo Alcaldía</option>
                         <option value="Operador de transporte">Operador de transporte</option>
+                        <option value="Propio">Propio</option>
                         <option value="Otro">Otro</option>
                     </select>
                 </div>
@@ -507,7 +508,7 @@
                     <select id="tipo_vehiculo" name="tipo_vehiculo" required>
                         <option value="">Seleccione vehículo</option>
                         <option value="Camioneta">Camioneta</option>
-                        <option value="Moto">Moto</option>
+                        <option value="Bus">Bus</option>
                         <option value="Van">Van</option>
                         <option value="Otro">Otro</option>
                     </select>
@@ -558,18 +559,7 @@
                 </div>
             </div>
 
-            <!-- 5. DESTINO FINAL -->
-            <div class="form-section">
-                <div class="section-title">
-                    Destino Final
-                </div>
-                <div class="input-group">
-                    <label for="destino_final">Destino final *</label>
-                    <select id="destino_final" name="destino_final" required>
-                        <option value="">Seleccione un destino</option>
-                    </select>
-                </div>
-            </div>
+
 
             <button type="submit" class="btn-primary" id="submitBtn">
                 Finalizar y Guardar Registro
@@ -814,15 +804,36 @@
 
             // Populate Origen dropdown
             populateDropdown('origen', veredas, "Seleccione un origen");
-
-            // Populate Destino final dropdown
-            populateDropdown('destino_final', veredas, "Seleccione un destino");
         }
 
         initDropdowns();
         toggleProjectLogic();
 
         let selectedPath = [];
+
+        function updateVehicleTypes() {
+            const transportType = document.getElementById('tipo_transporte').value;
+            const vehicleSelect = document.getElementById('tipo_vehiculo');
+            const currentValue = vehicleSelect.value;
+
+            if (transportType === 'Propio') {
+                vehicleSelect.innerHTML = `
+                    <option value="Propio">Propio</option>
+                `;
+                vehicleSelect.value = 'Propio';
+            } else {
+                vehicleSelect.innerHTML = `
+                    <option value="">Seleccione vehículo</option>
+                    <option value="Camioneta">Camioneta</option>
+                    <option value="Bus">Bus</option>
+                    <option value="Van">Van</option>
+                    <option value="Otro">Otro</option>
+                `;
+                if (currentValue !== 'Propio') {
+                    vehicleSelect.value = currentValue;
+                }
+            }
+        }
 
         function initVeredaGrid() {
             const grid = document.getElementById('veredaGrid');
@@ -918,6 +929,16 @@
 
             // Add structured route data for backend
             data['recorrido_data'] = selectedPath;
+
+            // Automation: Use the last point from the route as destino_final
+            if (selectedPath.length > 0) {
+                data['destino_final'] = selectedPath[selectedPath.length - 1].name;
+            } else {
+                alert('Por favor, construya su recorrido didáctico seleccionando al menos un punto.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Finalizar y Guardar Registro';
+                return;
+            }
 
             fetch('api/save_recorrido.php', {
                 method: 'POST',
