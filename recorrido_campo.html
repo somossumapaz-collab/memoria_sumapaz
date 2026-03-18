@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Recorrido de Campo - Somos Sumapaz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2D5A27;
+            /* Forest Green */
+            --primary-light: #4A8C42;
+            --accent: #FFC107;
+            /* Amber */
+            --bg: #F8F9FA;
+            --card-bg: #FFFFFF;
+            --text: #212529;
+            --text-light: #6C757D;
+            --border: #DEE2E6;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .form-section {
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .form-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-light);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        /* Vereda Grid Styles */
+        .vereda-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+            max-height: 350px;
+            overflow-y: auto;
+            padding: 12px;
+            background: #f1f3f5;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+        }
+
+        .vereda-card {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 54px;
+            user-select: none;
+            color: var(--primary);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .vereda-card:hover {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .vereda-card:active {
+            transform: translateY(0);
+        }
+
+        .route-display-container {
+            background: #fff;
+            border: 2px solid var(--primary);
+            border-radius: var(--radius-md);
+            padding: 15px;
+            min-height: 80px;
+            margin-bottom: 12px;
+            position: relative;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .route-display {
+            font-size: 14px;
+            color: var(--text);
+            word-wrap: break-word;
+            line-height: 1.6;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            min-height: 48px;
+        }
+
+        .route-item {
+            display: inline-flex;
+            align-items: center;
+            background: #f1f3f5;
+            padding: 4px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid var(--border);
+            font-size: 13px;
+            user-select: none;
+        }
+
+        .route-item:hover {
+            background: #e9ecef;
+            border-color: var(--text-light);
+            transform: translateY(-1px);
+        }
+
+        .route-item.is-stop {
+            background: #e7f5ff;
+            border-color: #228be6;
+            color: #1864ab;
+            font-weight: 700;
+        }
+
+        .route-item.is-stop::before {
+            content: '📍';
+            margin-right: 4px;
+        }
+
+        .section-disabled {
+            opacity: 0.5;
+            pointer-events: none;
+            filter: grayscale(0.5);
+        }
+
+        .badge-info {
+            font-size: 11px;
+            background: #f1f3f5;
+            color: #495057;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            display: inline-block;
+            border: 1px solid var(--border);
+        }
+
+        .route-controls {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            width: auto;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .btn-outline {
+            background: white;
+            border: 1px solid var(--border);
+            color: var(--text-light);
+        }
+
+        .btn-outline:hover {
+            background: #f8f9fa;
+            border-color: var(--text);
+            color: var(--text);
+            transform: translateY(-1px);
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 16px;
+            font-family: inherit;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-md);
+            background-color: #fff;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(45, 90, 39, 0.1);
+        }
+
+        input:read-only {
+            background-color: #F1F3F5;
+            cursor: not-allowed;
+            border-color: #E9ECEF;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .instruction {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        .example-box {
+            background: #FFF9DB;
+            border-left: 4px solid var(--accent);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-top: 10px;
+            color: #664D03;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px rgba(45, 90, 39, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(45, 90, 39, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .success-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .success-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .success-icon {
+            font-size: 64px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 24px 16px;
+            }
+
+            header h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Transporte Sumapaz</h1>
+            <p>Registro operativo</p>
+        </header>
+
+        <form id="tripForm">
+            <!-- 1. INFORMACIÓN GENERAL -->
+            <div class="form-section">
+                <div class="section-title">
+                    Información General
+                </div>
+                <div class="input-group">
+                    <label for="fecha_hora">Fecha y Hora</label>
+                    <input type="text" id="fecha_hora" name="fecha_hora" readonly>
+                </div>
+                <div class="input-group">
+                    <label for="funcionario">Nombre completo del funcionario *</label>
+                    <input type="text" id="funcionario" name="funcionario" required placeholder="Ej. Juan Soto">
+                </div>
+                <div class="input-group">
+                    <label for="tipo_documento">Tipo de documento *</label>
+                    <select id="tipo_documento" name="tipo_documento" required>
+                        <option value="">Seleccione tipo</option>
+                        <option value="Cédula de ciudadanía">Cédula de ciudadanía</option>
+                        <option value="Cédula de extranjería">Cédula de extranjería</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="numero_documento">Número de documento *</label>
+                    <input type="text" id="numero_documento" name="numero_documento" required placeholder="1234567890">
+                </div>
+                <div class="input-group">
+                    <label for="telefono">Teléfono *</label>
+                    <input type="tel" id="telefono" name="telefono" required placeholder="3001234567">
+                </div>
+                <div class="input-group">
+                    <label for="email">Correo electrónico *</label>
+                    <input type="email" id="email" name="email" required placeholder="jsoto@example.com">
+                </div>
+                <div class="input-group">
+                    <label for="proposito">Propósito del viaje *</label>
+                    <select id="proposito" name="proposito" required onchange="toggleProjectLogic()">
+                        <option value="proyecto">Vinculado a un Proyecto</option>
+                        <option value="reunion">Reunión General Alcaldía</option>
+                        <option value="capacitacion">Capacitación</option>
+                        <option value="sede">Visita a la sede</option>
+                    </select>
+                </div>
+
+                <div id="project_fields_container">
+                    <div class="input-group">
+                        <label for="proyecto">Proyecto (Código) *</label>
+                        <select id="proyecto" name="proyecto" required onchange="handleFilterChange('proyecto')">
+                            <option value="">Seleccione un código</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="nombre_proyecto">Nombre Proyecto *</label>
+                        <select id="nombre_proyecto" name="nombre_proyecto" required
+                            onchange="handleFilterChange('nombre_proyecto')">
+                            <option value="">Seleccione un nombre</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="meta">Meta *</label>
+                        <select id="meta" name="meta" required onchange="handleFilterChange('meta')">
+                            <option value="">Seleccione una meta</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="origen">Origen *</label>
+                    <select id="origen" name="origen" required>
+                        <option value="">Seleccione un origen</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 2. INFORMACIÓN DEL TRANSPORTE -->
+            <div class="form-section">
+                <div class="section-title">
+                    Información del Transporte
+                </div>
+                <div class="input-group">
+                    <label for="tipo_transporte">Tipo de transporte *</label>
+                    <select id="tipo_transporte" name="tipo_transporte" required>
+                        <option value="">Seleccione tipo</option>
+                        <option value="Vehículo Alcaldía">Vehículo Alcaldía</option>
+                        <option value="Operador de transporte">Operador de transporte</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="tipo_vehiculo">Tipo de vehículo *</label>
+                    <select id="tipo_vehiculo" name="tipo_vehiculo" required>
+                        <option value="">Seleccione vehículo</option>
+                        <option value="Camioneta">Camioneta</option>
+                        <option value="Moto">Moto</option>
+                        <option value="Van">Van</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="placa">Placa del vehículo *</label>
+                    <input type="text" id="placa" name="placa" required placeholder="ABC123">
+                </div>
+            </div>
+
+            <!-- 3. ACTIVIDAD -->
+            <div class="form-section">
+                <div class="section-title">
+                    Actividad
+                </div>
+                <div class="input-group">
+                    <label for="actividad">Descripción de la actividad *</label>
+                    <textarea id="actividad" name="actividad" required placeholder="Detalle la actividad a realizar..."
+                        style="min-height: 100px;"></textarea>
+                </div>
+            </div>
+
+            <!-- 4. RECORRIDO (SECCIÓN PRINCIPAL) -->
+            <div class="form-section">
+                <div class="section-title">
+                    Recorrido Interactivos
+                </div>
+                <div class="input-group">
+                    <label>Construya su recorrido seleccionando las veredas en orden *</label>
+
+                    <div class="route-display-container">
+                        <div id="routeDisplay" class="route-display">Empiece seleccionando un punto...</div>
+                        <input type="hidden" id="recorrido" name="recorrido" required>
+                    </div>
+
+                    <div class="route-controls">
+                        <button type="button" class="btn-small btn-outline" onclick="undoLast()">↩️ Deshacer</button>
+                        <button type="button" class="btn-small btn-outline" onclick="clearRoute()">🗑️ Limpiar</button>
+                    </div>
+
+                    <p class="instruction" style="margin-top:15px; margin-bottom:10px;">Toque las tarjetas para agregar
+                        al recorrido:</p>
+
+                    <div class="vereda-grid" id="veredaGrid">
+                        <!-- Veredas will be injected here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. DESTINO FINAL -->
+            <div class="form-section">
+                <div class="section-title">
+                    Destino Final
+                </div>
+                <div class="input-group">
+                    <label for="destino_final">Destino final *</label>
+                    <select id="destino_final" name="destino_final" required>
+                        <option value="">Seleccione un destino</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-primary">
+                Finalizar y Exportar Datos
+            </button>
+        </form>
+    </div>
+
+    <div id="successOverlay" class="success-overlay">
+        <div class="success-icon">✅</div>
+        <h2>¡Registro Completado!</h2>
+        <p>Los datos han sido preparados para descarga.</p>
+        <button onclick="location.reload()" class="btn-primary"
+            style="margin-top:20px; width:auto; padding: 12px 24px;">
+            Hacer otro registro
+        </button>
+    </div>
+
+    <script>
+        // Loaded from excel: Codigo, Nombre, Meta
+        const rawProjectData = [
+            { "codigo": "2230", "nombre": "Por una mejor convivencia en Sumapaz", "meta": "Implementar 16 acciones formativas diferenciales para la promoción de la convivencia ciudadana" },
+            { "codigo": "2230", "nombre": "Por una mejor convivencia en Sumapaz", "meta": "Implementar 16 iniciativas de convivencia con participación de la ciudadanía" },
+
+            { "codigo": "2265", "nombre": "Fortaleciendo la Conectividad en Sumapaz", "meta": "Operativizar 17 Centros de Acceso Comunitario en zonas rurales y/o apartadas y/o urbanas, con énfasis en Servicios TIC´s generados." },
+
+            { "codigo": "2278", "nombre": "Mejoramiento de vivienda para la comunidad de Sumapaz", "meta": "Mejorar 200 viviendas de interés social rurales." },
+
+            { "codigo": "2288", "nombre": "Acciones para fortalecer las industrias culturales y creativas", "meta": "Financiar 20 proyectos del sector cultural y creativo." },
+
+            { "codigo": "2289", "nombre": "Movilidad para Sumapaz", "meta": "Intervenir 160 Kilómetros-carril de malla vial rural con acciones de construcción y/o conservación" },
+
+            { "codigo": "2290", "nombre": "Fortaleciendo la justicia en Sumapaz", "meta": "Implementar 16 acciones pedagógicas para la gestión de conflictividades y prevención de violencias" },
+            { "codigo": "2290", "nombre": "Fortaleciendo la justicia en Sumapaz", "meta": "Fortalecer 80 actores comunitarios con herramientas y capacidades para la implementación de un enfoque restaurativo para la justicia y la convivencia" },
+            { "codigo": "2290", "nombre": "Fortaleciendo la justicia en Sumapaz", "meta": "Beneficiar 100 ciudadanos con habilidades y capacidades para gestionar la convivencia constructivamente" },
+            { "codigo": "2290", "nombre": "Fortaleciendo la justicia en Sumapaz", "meta": "Fortalecer 8 programas de abordaje de conflictividad escolar para la convivencia con enfoque restaurativo" },
+
+            { "codigo": "2315", "nombre": "Somos Sumapaz: Emprendiendo de manera sostenible en el territorio", "meta": "Vincular 600 hogares y/o unidades productivas a procesos productivos y de comercialización en el sector rural." },
+            { "codigo": "2315", "nombre": "Somos Sumapaz: Emprendiendo de manera sostenible en el territorio", "meta": "Apoyar 120 Mipymes, emprendimientos y/o actores de la economía informal para el fortalecimiento del tejido empresarial local." },
+
+            { "codigo": "2319", "nombre": "Atención a víctimas en Sumapaz", "meta": "Realizar 4 procesos pedagógicos, artísticos, culturales, formativos o para el fortalecimiento de iniciativas ciudadanas para la apropiación social de la memoria, verdad, reparación integral a víctimas, paz y reconciliación." },
+            { "codigo": "2319", "nombre": "Atención a víctimas en Sumapaz", "meta": "Realizar 8 procesos de fortalecimiento de habilidades y capacidades de la población víctima del conflicto armado o excombatientes para promover su participación en los diferentes escenarios." },
+            { "codigo": "2319", "nombre": "Atención a víctimas en Sumapaz", "meta": "Realizar 4 acciones de construcción de paz que contribuyan al tejido social, la integración local, la sostenibilidad económica y/o desarrollo territorial para la reconciliación." },
+
+            { "codigo": "2324", "nombre": "Acciones para el cuidado de la salud y el bienestar de las y los Sumapaceños", "meta": "Beneficiar 600 personas con acciones para la promoción y atención de la salud mental" },
+            { "codigo": "2324", "nombre": "Acciones para el cuidado de la salud y el bienestar de las y los Sumapaceños", "meta": "Beneficiar 180 personas con discapacidad a través de Dispositivos de Asistencia Personal - Ayudas Técnicas (no incluidas en los Planes de Beneficios)" },
+            { "codigo": "2324", "nombre": "Acciones para el cuidado de la salud y el bienestar de las y los Sumapaceños", "meta": "Vincular 200 personas con discapacidad, cuidadores y cuidadoras, en actividades complementarias en salud" },
+            { "codigo": "2324", "nombre": "Acciones para el cuidado de la salud y el bienestar de las y los Sumapaceños", "meta": "Vincular 400 personas a las acciones y estrategias para promover la salud sexual y reproductiva consciente en los diferentes ciclos de vida" },
+            { "codigo": "2324", "nombre": "Acciones para el cuidado de la salud y el bienestar de las y los Sumapaceños", "meta": "Vincular 300 personas a las acciones desarrolladas desde los dispositivos de base comunitaria en respuesta al consumo de SPA" },
+            { "codigo": "2324", "nombre": "Acciones para el cuidado de la salud y el bienestar de las y los Sumapaceños", "meta": "Vincular 1000 personas en acciones complementarias en salud física, nutricional y oral, a través del Circuito del Cuidado" },
+
+            { "codigo": "2327", "nombre": "Fortalecimiento Institucional y sedes administrativas", "meta": "Construir 1 sede administrativa local" },
+            { "codigo": "2327", "nombre": "Fortalecimiento Institucional y sedes administrativas", "meta": "Realizar 4 estrategias de fortalecimiento institucional (una por vigencia)." },
+            { "codigo": "2327", "nombre": "Fortalecimiento Institucional y sedes administrativas", "meta": "Intervenir 1 sede administrativa local" },
+            { "codigo": "2327", "nombre": "Fortalecimiento Institucional y sedes administrativas", "meta": "Terminar 1 sede administrativa local" },
+
+            { "codigo": "2331", "nombre": "Construcción e Intervención de equipamientos culturales", "meta": "Intervenir 3 equipamientos culturales con acciones de construcción, adecuación y/o dotación" },
+
+            { "codigo": "2358", "nombre": "Mejores parques para Sumapaz", "meta": "Construir 4000 m2 de Parques de la red de proximidad (la construcción incluye su dotación)." },
+            { "codigo": "2358", "nombre": "Mejores parques para Sumapaz", "meta": "Intervenir 1 Parque de la red de proximidad con acciones de mejoramiento, mantenimiento y/o dotación" },
+
+            { "codigo": "2362", "nombre": "Legalización y titulación de predios en Sumapaz", "meta": "Gestionar la titulación o legalización de 150 predios." },
+
+            { "codigo": "2386", "nombre": "Bogotá también es rural", "meta": "Desarrollar 4 acciones orientadas a la ciudadanía, en el marco de la estrategia Bogotaneidad" },
+            { "codigo": "2386", "nombre": "Bogotá también es rural", "meta": "Fortalecer 4 unidades de innovación pública y social a nivel local" },
+
+            { "codigo": "2388", "nombre": "Recreación y Deporte para Sumapaz", "meta": "Beneficiar 1200 personas en actividades recreo-deportivas comunitarias." },
+            { "codigo": "2388", "nombre": "Recreación y Deporte para Sumapaz", "meta": "Beneficiar 1000 personas con la entrega de dotaciones deportivas." },
+            { "codigo": "2388", "nombre": "Recreación y Deporte para Sumapaz", "meta": "Capacitar 1000 personas en los campos deportivos o recreativos" },
+            { "codigo": "2388", "nombre": "Recreación y Deporte para Sumapaz", "meta": "Beneficiar 40 colectivos u organizaciones recreo deportivas inscritas en el banco que implementan iniciativas de carácter barrial con apoyos económicos" },
+
+            { "codigo": "2395", "nombre": "Fortalecimiento de capacidades y habilidades para el trabajo", "meta": "Realizar 4 acciones para fortalecer las capacidades y/o habilidades, técnicas y blandas de las personas de la localidad, con el fin de mejorar el acceso a oportunidades de empleo" },
+
+            { "codigo": "2398", "nombre": "Cuidado y protección para la población vulnerable de Sumapaz", "meta": "Beneficiar 305 personas mayores con transferencias monetarias" },
+            { "codigo": "2398", "nombre": "Cuidado y protección para la población vulnerable de Sumapaz", "meta": "Atender 800 personas con apoyos que contribuyan al ingreso mínimo garantizado." },
+
+            { "codigo": "2404", "nombre": "Atención a la primera infancia y la persona mayor en Sumapaz", "meta": "Dotar y/o acondicionar 3 unidades operativas orientadas a la atención de la primera infancia (Jardines Infantiles, Casas de Pensamiento Intercultural, Modalidad Espacios Rurales, Crecemos en la Ruralidad, Creciendo Juntos, Centros Amar, Centros Forjar)" },
+            { "codigo": "2404", "nombre": "Atención a la primera infancia y la persona mayor en Sumapaz", "meta": "Dotar y/o acondicionar 1 unidad operativa orientada a la prestación de servicios a la persona mayor" },
+
+            { "codigo": "2474", "nombre": "Por un mejor espacio público en Sumapaz", "meta": "Intervenir 13250 metros cuadrados de elementos del sistema de espacio público peatonal con acciones de construcción y/o conservación." },
+
+            { "codigo": "2486", "nombre": "Acciones para la promoción de la cultura, tradición y costumbres sumapaceñas", "meta": "Capacitar 600 personas en los campos artísticos, interculturales, culturales y/o patrimoniales." },
+            { "codigo": "2486", "nombre": "Acciones para la promoción de la cultura, tradición y costumbres sumapaceñas", "meta": "Otorgar 50 estímulos de apoyo al sector artístico y cultural." },
+            { "codigo": "2486", "nombre": "Acciones para la promoción de la cultura, tradición y costumbres sumapaceñas", "meta": "Realizar 12 eventos de promoción, circulación y apropiación de actividades artísticas, culturales y patrimoniales." },
+            { "codigo": "2486", "nombre": "Acciones para la promoción de la cultura, tradición y costumbres sumapaceñas", "meta": "Beneficiar 32 organizaciones artísticas, culturales y patrimoniales con elementos entregados." },
+
+            { "codigo": "2526", "nombre": "Por una vida libre de violencias para las mujeres de Sumapaz", "meta": "Vincular 1200 personas en acciones para la prevención del feminicidio y la violencia contra la mujer." },
+
+            { "codigo": "2541", "nombre": "Bienestar para las mujeres de Sumapaz", "meta": "Vincular 600 mujeres cuidadoras a estrategias de cuidado." },
+            { "codigo": "2541", "nombre": "Bienestar para las mujeres de Sumapaz", "meta": "Vincular 2800 mujeres para el ejercicio de derechos y el fortalecimiento de su autonomía económica" },
+            { "codigo": "2541", "nombre": "Bienestar para las mujeres de Sumapaz", "meta": "Vincular 600 personas en procesos para la prevención de violencias en el contexto familiar y/o violencia sexual" },
+
+            { "codigo": "2613", "nombre": "Manejo de emergencias y mitigación del riesgo de desastres", "meta": "Realizar 12 acciones efectivas para el fortalecimiento de las capacidades locales en torno a la gestión del riesgo" },
+            { "codigo": "2613", "nombre": "Manejo de emergencias y mitigación del riesgo de desastres", "meta": "Realizar 40 obras de mitigación y/u obras de mitigación existentes con mantenimiento" },
+
+            { "codigo": "2666", "nombre": "Sumapaz protege su fauna", "meta": "Atender 1000 animales en los programas de brigadas médicas, urgencias veterinarias y adopciones" },
+            { "codigo": "2666", "nombre": "Sumapaz protege su fauna", "meta": "Vincular 600 personas en acciones educativas en temas de protección y bienestar animal" },
+
+            { "codigo": "2671", "nombre": "Asistencia técnica agropecuaria y educación ambiental en la localidad de Sumapaz", "meta": "Implementar 4 procesos comunitarios de educación ambiental que promueven la conservación de la biodiversidad y el agua" },
+            { "codigo": "2671", "nombre": "Asistencia técnica agropecuaria y educación ambiental en la localidad de Sumapaz", "meta": "Capacitar 500 personas en separación en la fuente y reciclaje." },
+            { "codigo": "2671", "nombre": "Asistencia técnica agropecuaria y educación ambiental en la localidad de Sumapaz", "meta": "Apoyar 500 predios rurales con buenas prácticas agropecuarias y ambientales que fortalezcan la protección a coberturas vegetales y recurso hídrico" },
+            { "codigo": "2671", "nombre": "Asistencia técnica agropecuaria y educación ambiental en la localidad de Sumapaz", "meta": "Implementar 100 huertas rurales" },
+
+            { "codigo": "2682", "nombre": "Restauración ecológica urbana y/o rural", "meta": "Realizar acciones de conservación en 8 hectáreas de la Estructura Ecológica Principal" },
+            { "codigo": "2682", "nombre": "Restauración ecológica urbana y/o rural", "meta": "Lograr 16 hectáreas en proceso de restauración ecológica" },
+
+            { "codigo": "2689", "nombre": "Acueductos veredales, saneamiento básico y energías alternativas", "meta": "Fortalecer 8 acueductos veredales con asistencia, intervenir técnica u organizativa" },
+            { "codigo": "2689", "nombre": "Acueductos veredales, saneamiento básico y energías alternativas", "meta": "Realizar 160 acciones con energías alternativas para el área rural." },
+
+            { "codigo": "2696", "nombre": "Participación incidente en Sumapaz", "meta": "Capacitar 240 personas a través de procesos de formación para la participación de manera virtual y presencial." },
+            { "codigo": "2696", "nombre": "Participación incidente en Sumapaz", "meta": "Construir 4 sedes de salones comunales y/o casas de participación." },
+            { "codigo": "2696", "nombre": "Participación incidente en Sumapaz", "meta": "Dotar 20 organizaciones comunales" },
+            { "codigo": "2696", "nombre": "Participación incidente en Sumapaz", "meta": "Fortalecer 27 organizaciones comunales." },
+            { "codigo": "2696", "nombre": "Participación incidente en Sumapaz", "meta": "Fortalecer 40 organizaciones sociales e instancias de participación ciudadana." },
+            { "codigo": "2696", "nombre": "Participación incidente en Sumapaz", "meta": "Rehabilitar 4 salones comunales y/o casas de participación." },
+
+            { "codigo": "2703", "nombre": "Una mejor educación para Sumapaz", "meta": "Dotar 18 sedes educativas urbanas y rurales con recursos pedagógicos y/o tecnológicos" },
+            { "codigo": "2703", "nombre": "Una mejor educación para Sumapaz", "meta": "Implementar 8 proyectos para el desarrollo integral de la primera infancia y la relación escuela, familia y comunidad." },
+            { "codigo": "2703", "nombre": "Una mejor educación para Sumapaz", "meta": "Beneficiar 160 estudiantes en programas de educación posmedia (niveles técnico profesional, tecnólogo, profesional universitario y educación para el trabajo y desarrollo humano)." },
+            { "codigo": "2703", "nombre": "Una mejor educación para Sumapaz", "meta": "Beneficiar 160 estudiantes con apoyo de sostenimiento para la permanencia en la educación posmedia (niveles técnico profesional, tecnólogo, profesional universitario y educación para el trabajo y desarrollo humano)." }
+        ];
+        // Also add the special categories manually
+        const specialCategories = [
+            { "codigo": "PRENSA", "nombre": "Gestión de Prensa", "meta": "Cobertura periodística" },
+            { "codigo": "PRENSA", "nombre": "Gestión de Prensa", "meta": "Registro fotográfico/video" },
+            { "codigo": "OBRA", "nombre": "Seguimiento Obra", "meta": "Inspección de obra" },
+            { "codigo": "OBRA", "nombre": "Seguimiento Obra", "meta": "Entrega de materiales" },
+            { "codigo": "OTRO", "nombre": "Otras Actividades", "meta": "Actividad no especificada" },
+            { "codigo": "OTRO", "nombre": "Otras Actividades", "meta": "Coordinación Administrativa" }
+        ];
+
+        const projectData = [...rawProjectData, ...specialCategories];
+
+        function populateDropdown(id, items, placeholder) {
+            const select = document.getElementById(id);
+            const currentValue = select.value;
+            select.innerHTML = `<option value="">${placeholder}</option>`;
+
+            // Get unique sorted values
+            const uniqueItems = [...new Set(items)].sort();
+
+            uniqueItems.forEach(item => {
+                if (!item) return;
+                const opt = document.createElement('option');
+                opt.value = item;
+                opt.textContent = item;
+                if (item === currentValue) opt.selected = true;
+                select.appendChild(opt);
+            });
+        }
+
+        function handleFilterChange(triggerId) {
+            const codigoVal = document.getElementById('proyecto').value;
+            const nombreVal = document.getElementById('nombre_proyecto').value;
+            const metaVal = document.getElementById('meta').value;
+
+            // Filter data based on ALL current selections
+            let filtered = projectData;
+
+            if (codigoVal) filtered = filtered.filter(d => d.codigo === codigoVal);
+            if (nombreVal) filtered = filtered.filter(d => d.nombre === nombreVal);
+            if (metaVal) filtered = filtered.filter(d => d.meta === metaVal);
+
+            // Update OTHER dropdowns with possible options from filtered set
+            // But if filtered set is empty (shouldn't happen with proper logic), show all based on other fields?
+            // Actually, we want to update ONLY the ones that weren't the trigger, 
+            // OR update all to reflect what's still possible.
+
+            const possibleCodigos = filtered.map(d => d.codigo);
+            const possibleNombres = filtered.map(d => d.nombre);
+            const possibleMetas = filtered.map(d => d.meta);
+
+            // Re-populate all dropdowns but keep selections
+            populateDropdown('proyecto', possibleCodigos, "Seleccione un código");
+            populateDropdown('nombre_proyecto', possibleNombres, "Seleccione un nombre");
+            populateDropdown('meta', possibleMetas, "Seleccione una meta");
+
+            // If only one option remains and nothing is selected, auto-select it?
+            // For now, let's just let the user pick.
+
+            // SPECIAL CASE: If we just cleared everything, reset to full options
+            if (!codigoVal && !nombreVal && !metaVal) {
+                initDropdowns();
+            }
+        }
+
+        function toggleProjectLogic() {
+            const proposito = document.getElementById('proposito').value;
+            const container = document.getElementById('project_fields_container');
+            const selects = container.querySelectorAll('select');
+
+            if (proposito === 'proyecto') {
+                container.classList.remove('section-disabled');
+                selects.forEach(s => {
+                    s.disabled = false;
+                    s.required = true;
+                });
+            } else {
+                container.classList.add('section-disabled');
+                selects.forEach(s => {
+                    s.disabled = true;
+                    s.required = false;
+                    s.value = '';
+                });
+                // Reset filtering state
+                initDropdowns();
+            }
+        }
+
+        const veredas = [
+            "PORTAL TUNAL", "SAN JOSE", "NUEVA GRANADA", "CONCEPCION", "TUNAL ALTO",
+            "LAGUNITAS", "TUNAL BAJO", "LA UNION URBANO", "CHORRERAS", "SANTO DOMINGO",
+            "LAS VEGAS", "SAN JUAN", "CAPITOLIO", "EL TOLDO", "LAS SOPAS", "LOS RIOS",
+            "SAN ANTONIO", "LAS PALMAS", "LAS ANIMAS", "LAS AURAS", "NAZARETH URBANO",
+            "TAQUECITOS", "PENALISA", "LAGUNA VERDE", "RAIZAL", "SANTA ROSA",
+            "BETANIA", "EL ITSMO", "EL TABACO"
+        ];
+
+        function initDropdowns() {
+            populateDropdown('proyecto', projectData.map(d => d.codigo), "Seleccione un código");
+            populateDropdown('nombre_proyecto', projectData.map(d => d.nombre), "Seleccione un nombre");
+            populateDropdown('meta', projectData.map(d => d.meta), "Seleccione una meta");
+
+            // Populate Origen dropdown
+            populateDropdown('origen', veredas, "Seleccione un origen");
+
+            // Populate Destino final dropdown
+            populateDropdown('destino_final', veredas, "Seleccione un destino");
+        }
+
+        initDropdowns();
+
+        let selectedPath = [];
+
+        function initVeredaGrid() {
+            const grid = document.getElementById('veredaGrid');
+            veredas.forEach(vereda => {
+                const card = document.createElement('div');
+                card.className = 'vereda-card';
+                card.textContent = vereda;
+                card.onclick = () => addToRoute(vereda);
+                grid.appendChild(card);
+            });
+        }
+
+        function addToRoute(vereda) {
+            selectedPath.push({ name: vereda, isStop: false });
+            updateRouteUI();
+        }
+
+        function toggleStop(index) {
+            selectedPath[index].isStop = !selectedPath[index].isStop;
+            updateRouteUI();
+        }
+
+        function undoLast() {
+            selectedPath.pop();
+            updateRouteUI();
+        }
+
+        function clearRoute() {
+            selectedPath = [];
+            updateRouteUI();
+        }
+
+        function updateRouteUI() {
+            const display = document.getElementById('routeDisplay');
+            const hiddenInput = document.getElementById('recorrido');
+
+            if (selectedPath.length === 0) {
+                display.innerHTML = '<span style="color: #adb5bd;">Empiece seleccionando un punto...</span>';
+                hiddenInput.value = "";
+            } else {
+                display.innerHTML = '';
+                const pathStrings = [];
+
+                selectedPath.forEach((item, index) => {
+                    const el = document.createElement('div');
+                    el.className = 'route-item' + (item.isStop ? ' is-stop' : '');
+                    el.textContent = item.name;
+                    el.onclick = () => toggleStop(index);
+                    display.appendChild(el);
+
+                    if (index < selectedPath.length - 1) {
+                        const sep = document.createElement('span');
+                        sep.textContent = '›';
+                        sep.style.color = '#adb5bd';
+                        sep.style.margin = '0 4px';
+                        display.appendChild(sep);
+                    }
+
+                    pathStrings.push(item.isStop ? `[PARADA] ${item.name}` : item.name);
+                });
+
+                hiddenInput.value = pathStrings.join(' > ');
+            }
+        }
+
+        initVeredaGrid();
+
+        // Auto-populate date and time
+        function updateDateTime() {
+            const now = new Date();
+            const options = {
+                year: 'numeric', month: '2-digit', day: '2-digit',
+                hour: '2-digit', minute: '2-digit', second: '2-digit',
+                hour12: false
+            };
+            document.getElementById('fecha_hora').value = now.toLocaleString('es-CO', options);
+        }
+
+        updateDateTime();
+
+        document.getElementById('tripForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Create a filename based on date and official name
+            const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+            const filename = `recorrido_${data.funcionario.replace(/\s+/g, '_')}_${timestamp}.json`;
+
+            // Download as JSON file
+            const blob = new Blob([JSON.stringify(data, null, 4)], { type: 'application/json' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+
+            // Show success overlay
+            document.getElementById('successOverlay').classList.add('active');
+        });
+    </script>
+</body>
+
+</html>
