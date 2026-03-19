@@ -15,18 +15,23 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 try {
     $stmt = $pdo->query("
         SELECT 
-            id,
-            nombre_completo,
-            tipo_documento,
-            numero_documento,
-            fecha_nacimiento,
-            telefono,
-            correo_electronico,
-            vereda,
-            nombre_predio,
-            fecha_creacion
-        FROM productores_sumapaz
-        ORDER BY fecha_creacion DESC
+            p.id,
+            p.nombre_completo,
+            p.tipo_documento,
+            p.numero_documento,
+            p.fecha_nacimiento,
+            p.telefono,
+            p.correo_electronico,
+            p.vereda,
+            p.nombre_predio,
+            p.fecha_creacion,
+            CASE 
+                WHEN cp.productor_id IS NOT NULL THEN 1
+                ELSE 0
+            END AS tiene_caracterizacion
+        FROM productores_sumapaz p
+        LEFT JOIN caracterizacion_productor cp ON p.id = cp.productor_id
+        ORDER BY p.fecha_creacion DESC
     ");
 
     $productores = $stmt->fetchAll();

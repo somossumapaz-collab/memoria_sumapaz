@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Productor | Somos Sumapaz</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+        :root {
+            --primary-green: #444F2F;
+            --accent-gold: #FBF4DE;
+            --bg-sand: #EFEBE4;
+        }
+
+        body {
+            background-color: var(--bg-sand);
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .serif {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-green);
+        }
+
+        .btn-back {
+            text-decoration: none;
+            color: var(--primary-green);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--bg-sand);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-item {
+            margin-bottom: 0.75rem;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .info-value {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background-color: var(--bg-sand);
+            color: var(--primary-green);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .status-characterized {
+            background-color: #D1E7DD;
+            color: #0F5132;
+        }
+
+        .loading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="main-content">
+        <div class="loading-container" id="loading">
+            <h2 class="serif">Cargando detalles...</h2>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+
+            if (!id) {
+                document.getElementById('main-content').innerHTML = '<h2 class="serif">Error: ID no proporcionado</h2>';
+                return;
+            }
+
+            try {
+                const response = await fetch('api/get_productor_detalle.php?id=' + id);
+                const result = await response.json();
+
+                if (result.success) {
+                    renderDetail(result.data);
+                } else {
+                    document.getElementById('main-content').innerHTML = `<h2 class="serif">Error: ${result.error}</h2>`;
+                }
+            } catch (error) {
+                console.error('Error fetching detail:', error);
+                document.getElementById('main-content').innerHTML = '<h2 class="serif">Error de red al cargar detalles</h2>';
+            }
+        });
+
+        function renderDetail(data) {
+            const container = document.getElementById('main-content');
+            const info = data.info;
+
+            container.innerHTML = `
+                <div class="header-section">
+                    <a href="productores_registrados.html" class="btn-back">← Volver al Listado</a>
+                    <h1 class="serif" style="margin: 0;">Ficha Técnica: ${info.nombre_completo}</h1>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- General Info -->
+                    <div class="card full-width">
+                        <div class="card-title">👤 Información General</div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div class="info-item">
+                                <span class="info-label">Documento</span>
+                                <span class="info-value">${info.tipo_documento} ${info.numero_documento}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Fecha de Nacimiento</span>
+                                <span class="info-value">${info.fecha_nacimiento}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Teléfono</span>
+                                <span class="info-value">${info.telefono}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Correo</span>
+                                <span class="info-value">${info.correo_electronico || 'No registrado'}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Vereda</span>
+                                <span class="info-value">${info.vereda}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Predio</span>
+                                <span class="info-value">${info.nombre_predio}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Characterization Details -->
+                    <div class="card">
+                        <div class="card-title">📝 Estado de Caracterización</div>
+                        <div class="info-item">
+                            <span class="info-label">Estado</span>
+                            <span class="status-badge status-characterized">Caracterizado</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Fecha Registro</span>
+                            <span class="info-value">${info.fecha_registro || info.fecha_creacion}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Sexo</span>
+                            <span class="info-value">${info.sexo || '-'}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Orientación Sexual</span>
+                            <span class="info-value">${info.orientacion_sexual || '-'}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Escolaridad</span>
+                            <span class="info-value">${info.escolaridad || '-'}</span>
+                        </div>
+                    </div>
+
+                    <!-- Population Groups -->
+                    <div class="card">
+                        <div class="card-title">👥 Grupos Poblacionales</div>
+                        <div class="tag-container" id="grupos-container">
+                            ${renderTags(data.grupos)}
+                        </div>
+                    </div>
+
+                    <!-- Financing -->
+                    <div class="card">
+                        <div class="card-title">💰 Fuentes de Financiamiento</div>
+                        <div class="tag-container" id="financiamiento-container">
+                            ${renderTags(data.financiamiento)}
+                        </div>
+                    </div>
+
+                    <!-- Difficulties -->
+                    <div class="card">
+                        <div class="card-title">⚠️ Dificultades / Retos</div>
+                        <div class="tag-container" id="dificultades-container">
+                            ${renderTags(data.dificultades)}
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="card">
+                        <div class="card-title">📜 Certificaciones</div>
+                        <div class="tag-container" id="certificaciones-container">
+                            ${renderTags(data.certificaciones)}
+                        </div>
+                    </div>
+
+                    <!-- Disabilities -->
+                    <div class="card">
+                        <div class="card-title">♿ Discapacidades</div>
+                        <div class="tag-container" id="discapacidades-container">
+                            ${renderTags(data.discapacidades)}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderTags(items) {
+            if (!items || items.length === 0) return '<span style="color: #999; font-style: italic;">Ninguno registrado</span>';
+            return items.map(item => `<span class="tag">${item}</span>`).join('');
+        }
+    </script>
+</body>
+
+</html>
