@@ -34,6 +34,13 @@
             border-bottom: 5px solid var(--primary-green);
         }
 
+        .subtexto-vereda {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+
         .hero-overlay {
             position: absolute;
             top: 0;
@@ -63,11 +70,15 @@
         .glass-card {
             background: white;
             border-radius: 12px;
-            padding: 1.2rem 2.5rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 1rem 1.5rem;
+            box-shadow: none;
             border-left: 6px solid var(--primary-green);
+            border-top: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-bottom: 2px solid #ccc;
             display: inline-block;
             margin-top: 1rem;
+            min-width: 180px;
         }
 
         .glass-card h3 {
@@ -140,10 +151,23 @@
         <section class="hero-section">
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h1 class="hero-title" style="color: #FBF4DE;">Productores Campesinos</h1>
-                <div class="glass-card">
-                    <h3>Total Productores</h3>
-                    <p id="total-productores-count">0</p>
+                <h1 class="hero-title" style="color: #FBF4DE; margin-bottom: 0;">Productores Campesinos</h1>
+                <div
+                    style="display: flex; gap: 2.5rem; justify-content: center; align-items: stretch; margin-top: 0.5rem; width: 100%;">
+                    <div class="glass-card" style="margin-top: 0;">
+                        <h3>Total Productores</h3>
+                        <p id="total-productores-count">0</p>
+                    </div>
+                    <div class="glass-card" style="margin-top: 0;">
+                        <h3>TASA MEDIA DE INSCRITOS POR VEREDA</h3>
+                        <p id="average-producers-count">0</p>
+                    </div>
+                    <div class="glass-card" style="margin-top: 0;">
+                        <h3>Vereda Principal</h3>
+                        <p id="top-vereda-name"
+                            style="font-size: 1.2rem; line-height: 1.2; margin-top: 0.5rem; height: 2.8rem; display: flex; align-items: center; justify-content: center;">
+                            -</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -363,10 +387,46 @@
             const tbody = document.getElementById('productores-tbody');
             tbody.innerHTML = ''; // Clear loading/existing text
 
-            // Update total count card
+            // Update statistics cards
             const totalCountElement = document.getElementById('total-productores-count');
-            if (totalCountElement) {
-                totalCountElement.textContent = dataToDraw.length;
+            const avgCountElement = document.getElementById('average-producers-count');
+            const topVeredaElement = document.getElementById('top-vereda-name');
+
+            if (totalCountElement) totalCountElement.textContent = dataToDraw.length;
+
+            if (dataToDraw.length > 0) {
+                // Calculate unique veredas and counts
+                const veredaCounts = {};
+                dataToDraw.forEach(p => {
+                    if (p.vereda) {
+                        veredaCounts[p.vereda] = (veredaCounts[p.vereda] || 0) + 1;
+                    }
+                });
+
+                const veredas = Object.keys(veredaCounts);
+                const numVeredas = veredas.length;
+
+                // Average per vereda
+                if (avgCountElement) {
+                    const avg = numVeredas > 0 ? (dataToDraw.length / numVeredas).toFixed(1) : 0;
+                    avgCountElement.textContent = avg;
+                }
+
+                // Top vereda
+                if (topVeredaElement) {
+                    let topVereda = '-';
+                    let maxCount = 0;
+                    for (const v in veredaCounts) {
+                        if (veredaCounts[v] > maxCount) {
+                            maxCount = veredaCounts[v];
+                            topVereda = v;
+                        }
+                    }
+                    topVeredaElement.innerHTML = `${topVereda}<br><span style="font-size: 0.9rem; font-weight: 500; opacity: 0.8;">(${maxCount} productores)</span>`;
+                }
+            } else {
+                if (avgCountElement) avgCountElement.textContent = '0';
+                if (topVeredaElement) topVeredaElement.textContent = '-';
             }
 
             if (dataToDraw.length === 0) {
@@ -423,71 +483,71 @@
             });
         }
 
-        function empezarCaracterizacion(id, nombre) {
-            window.location.href = 'caracterizacion.html?id=' + id;
-        }
-
-        function verDetalle(id) {
-            window.location.href = 'detalle_productor.html?id=' + id;
-        }
-
-        function editarProductor(id) {
-            window.location.href = 'inscripcion_productores?edit=' + id;
-        }
-
-        function eliminarProductor(id, nombre) {
-            if (confirm('¿Seguro que deseas eliminar el registro de ' + nombre + '?')) {
-                alert('Productor eliminado exitosamente (modo demo).');
-            }
-        }
-
-        async function logout() {
-            try {
-                await fetch('api/logout.php');
-                window.location.href = 'login.html';
-            } catch (error) {
-                console.error('Logout error:', error);
-            }
-        }
-
-        function exportToExcel() {
-            // Get currently filtered data (or all if no filters)
-            const nombreVal = document.getElementById('filter-nombre').value.toLowerCase();
-            const veredaVal = document.getElementById('filter-vereda').value;
-            const fechaVal = document.getElementById('filter-fecha').value;
-
-            const dataToExport = allProducers.filter(p => {
-                let matchNombre = !nombreVal || p.nombre_completo.toLowerCase().includes(nombreVal);
-                let matchVereda = !veredaVal || p.vereda === veredaVal;
-                let matchFecha = !fechaVal || (p.fecha_creacion && p.fecha_creacion.startsWith(fechaVal));
-                return matchNombre && matchVereda && matchFecha;
-            });
-
-            if (dataToExport.length === 0) {
-                alert('No hay datos para exportar.');
-                return;
+            function empezarCaracterizacion(id, nombre) {
+                window.location.href = 'caracterizacion.html?id=' + id;
             }
 
-            // Prepare data for export (clean up or rename columns if needed)
-            const cleanData = dataToExport.map(p => ({
-                'Fecha Inscripción': p.fecha_creacion,
-                'Nombre Completo': p.nombre_completo,
-                'Tipo Documento': p.tipo_documento,
-                'Número Documento': p.numero_documento,
-                'Vereda': p.vereda,
-                'Teléfono': p.telefono,
-                'Correo Electrónico': p.correo_electronico || '-',
-                'Nombre Predio': p.nombre_predio,
-                'Fecha Nacimiento': p.fecha_nacimiento
-            }));
+            function verDetalle(id) {
+                window.location.href = 'detalle_productor.html?id=' + id;
+            }
 
-            const ws = XLSX.utils.json_to_sheet(cleanData);
-            const wb = XLSX.utils.book_new();
-            XLSX.utils.book_append_sheet(wb, ws, "Productores");
+            function editarProductor(id) {
+                window.location.href = 'inscripcion_productores?edit=' + id;
+            }
 
-            // Generate and download file
-            XLSX.writeFile(wb, `productores_sumapaz_${new Date().toISOString().split('T')[0]}.xlsx`);
-        }
+            function eliminarProductor(id, nombre) {
+                if (confirm('¿Seguro que deseas eliminar el registro de ' + nombre + '?')) {
+                    alert('Productor eliminado exitosamente (modo demo).');
+                }
+            }
+
+            async function logout() {
+                try {
+                    await fetch('api/logout.php');
+                    window.location.href = 'login.html';
+                } catch (error) {
+                    console.error('Logout error:', error);
+                }
+            }
+
+            function exportToExcel() {
+                // Get currently filtered data (or all if no filters)
+                const nombreVal = document.getElementById('filter-nombre').value.toLowerCase();
+                const veredaVal = document.getElementById('filter-vereda').value;
+                const fechaVal = document.getElementById('filter-fecha').value;
+
+                const dataToExport = allProducers.filter(p => {
+                    let matchNombre = !nombreVal || p.nombre_completo.toLowerCase().includes(nombreVal);
+                    let matchVereda = !veredaVal || p.vereda === veredaVal;
+                    let matchFecha = !fechaVal || (p.fecha_creacion && p.fecha_creacion.startsWith(fechaVal));
+                    return matchNombre && matchVereda && matchFecha;
+                });
+
+                if (dataToExport.length === 0) {
+                    alert('No hay datos para exportar.');
+                    return;
+                }
+
+                // Prepare data for export (clean up or rename columns if needed)
+                const cleanData = dataToExport.map(p => ({
+                    'Fecha Inscripción': p.fecha_creacion,
+                    'Nombre Completo': p.nombre_completo,
+                    'Tipo Documento': p.tipo_documento,
+                    'Número Documento': p.numero_documento,
+                    'Vereda': p.vereda,
+                    'Teléfono': p.telefono,
+                    'Correo Electrónico': p.correo_electronico || '-',
+                    'Nombre Predio': p.nombre_predio,
+                    'Fecha Nacimiento': p.fecha_nacimiento
+                }));
+
+                const ws = XLSX.utils.json_to_sheet(cleanData);
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, "Productores");
+
+                // Generate and download file
+                XLSX.writeFile(wb, `productores_sumapaz_${new Date().toISOString().split('T')[0]}.xlsx`);
+            }
     </script>
 </body>
 
