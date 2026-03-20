@@ -227,8 +227,7 @@
             <h2 class="serif modal-title" id="success-title">¡Inscripción Exitosa!</h2>
             <p class="modal-text" id="success-message">Tus datos y soportes han sido guardados correctamente en el
                 sistema.</p>
-            <button id="modal-close-btn" class="btn btn-submit" style="width: 100%; margin-top: 1.5rem;">Ir al
-                Dashboard</button>
+            <button id="modal-close-btn" class="btn btn-submit" style="width: 100%; margin-top: 1.5rem;">Cerrar</button>
         </div>
     </div>
 
@@ -294,6 +293,16 @@
                 if (response.ok && result.success) {
                     document.getElementById('success-modal').classList.add('active');
                     this.reset();
+                    // Ocultamos texto custom de archivos en los labels
+                    document.querySelectorAll('input[type="file"]').forEach(input => {
+                        const span = input.previousElementSibling.querySelector('span');
+                        if(span) {
+                            if(input.id === 'id_cedula') span.textContent = '📁 Seleccionar Cédula (Solo PDF)';
+                            if(input.id === 'id_rut') span.textContent = '📁 Seleccionar RUT (Solo PDF)';
+                            if(input.id === 'id_curso_manipulacion') span.textContent = '📁 Seleccionar Certificado (Solo PDF)';
+                            if(input.id === 'id_certificacion_bancaria') span.textContent = '📁 Seleccionar Certificación (Solo PDF)';
+                        }
+                    });
                 } else {
                     document.getElementById('error-modal-text').textContent = result.error || 'Ocurrió un problema al guardar la información.';
                     document.getElementById('error-modal').classList.add('active');
@@ -310,7 +319,7 @@
 
         document.getElementById('modal-close-btn').addEventListener('click', function () {
             document.getElementById('success-modal').classList.remove('active');
-            window.location.href = 'productores_registrados.html'; // Adjust as needed
+            // Eliminado redirección al dashboard
         });
 
         document.getElementById('error-close-btn').addEventListener('click', function () {
