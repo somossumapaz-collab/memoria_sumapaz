@@ -25,6 +25,7 @@ try {
             p.vereda,
             p.nombre_predio,
             p.fecha_creacion,
+            p.mypime,
             CASE 
                 WHEN cp.productor_id IS NOT NULL THEN 1
                 ELSE 0

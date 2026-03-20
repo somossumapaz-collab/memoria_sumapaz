@@ -22,7 +22,8 @@
             background-image: url('assets/fondo.jpg');
             background-size: cover;
             background-position: center;
-            height: 250px;
+            min-height: 280px;
+            padding: 4rem 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -55,7 +56,8 @@
             position: relative;
             z-index: 2;
             text-align: center;
-            max-width: 800px;
+            max-width: 1000px;
+            width: 100%;
             padding: 0 2rem;
         }
 
@@ -70,32 +72,50 @@
         .glass-card {
             background: white;
             border-radius: 12px;
-            padding: 1rem 1.5rem;
+            padding: 1.5rem 1rem;
             box-shadow: none;
             border-left: 6px solid var(--primary-green);
             border-top: 1px solid #ddd;
             border-right: 1px solid #ddd;
             border-bottom: 2px solid #ccc;
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
             margin-top: 1rem;
             min-width: 180px;
+            flex: 1;
         }
 
         .glass-card h3 {
             color: #666;
-            margin: 0;
+            margin: 0 0 1rem 0;
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 2.8em; /* Ensure all titles align regardless of 1 or 2 lines */
+            width: 100%;
         }
 
         .glass-card p {
             font-size: 2.2rem;
             font-weight: 700;
-            margin: 0.3rem 0 0 0;
+            margin: 0;
             color: var(--primary-green);
             font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            width: 100%;
+            line-height: 1.2;
         }
 
         /* Modal Styles */
@@ -267,14 +287,17 @@
                         <p id="total-productores-count">0</p>
                     </div>
                     <div class="glass-card" style="margin-top: 0;">
+                        <h3>Mypimes</h3>
+                        <p id="total-mypimes-count">0</p>
+                    </div>
+                    <div class="glass-card" style="margin-top: 0;">
                         <h3>TASA MEDIA DE INSCRITOS POR VEREDA</h3>
                         <p id="average-producers-count">0</p>
                     </div>
                     <div class="glass-card" style="margin-top: 0;">
                         <h3>Vereda Principal</h3>
-                        <p id="top-vereda-name"
-                            style="font-size: 1.2rem; line-height: 1.2; margin-top: 0.5rem; height: 2.8rem; display: flex; align-items: center; justify-content: center;">
-                            -</p>
+                        <!-- We let the new flexbox CSS handle the layout completely -->
+                        <p id="top-vereda-name" style="font-size: 1.4rem;">-</p>
                     </div>
                 </div>
             </div>
@@ -336,6 +359,16 @@
                     <label for="filter-caracterizado"
                         style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Caracterizado</label>
                     <select id="filter-caracterizado"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
+                        <option value="">Todos</option>
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div style="flex: 1; min-width: 150px;">
+                    <label for="filter-mypime"
+                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Mypime</label>
+                    <select id="filter-mypime"
                         style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
                         <option value="">Todos</option>
                         <option value="1">Sí</option>
@@ -489,8 +522,9 @@
             const filterVereda = document.getElementById('filter-vereda');
             const filterFecha = document.getElementById('filter-fecha');
             const filterCaracterizado = document.getElementById('filter-caracterizado');
+            const filterMypime = document.getElementById('filter-mypime');
             const btnReset = document.getElementById('btn-reset-filters');
-
+            
             // --- AUTH CHECK FIRST ---
             try {
                 const authRes = await fetch('api/check_auth.php');
@@ -535,12 +569,14 @@
             filterVereda.addEventListener('change', applyFilters);
             filterFecha.addEventListener('change', applyFilters);
             filterCaracterizado.addEventListener('change', applyFilters);
+            filterMypime.addEventListener('change', applyFilters);
 
             btnReset.addEventListener('click', () => {
                 filterNombre.value = '';
                 filterVereda.value = '';
                 filterFecha.value = '';
                 filterCaracterizado.value = '';
+                filterMypime.value = '';
                 renderTable(allProducers);
             });
         });
@@ -550,12 +586,14 @@
             const veredaVal = document.getElementById('filter-vereda').value;
             const fechaVal = document.getElementById('filter-fecha').value; // format: YYYY-MM-DD
             const caracterizadoVal = document.getElementById('filter-caracterizado').value;
+            const mypimeVal = document.getElementById('filter-mypime').value;
 
             const filteredData = allProducers.filter(p => {
                 let matchNombre = true;
                 let matchVereda = true;
                 let matchFecha = true;
                 let matchCaracterizado = true;
+                let matchMypime = true;
 
                 if (nombreVal) {
                     matchNombre = p.nombre_completo.toLowerCase().includes(nombreVal);
@@ -566,7 +604,6 @@
                 }
 
                 if (fechaVal && p.fecha_creacion) {
-                    // p.fecha_creacion format is likely 'YYYY-MM-DD HH:MM:SS'
                     matchFecha = p.fecha_creacion.startsWith(fechaVal);
                 }
 
@@ -574,7 +611,11 @@
                     matchCaracterizado = p.tiene_caracterizacion == caracterizadoVal;
                 }
 
-                return matchNombre && matchVereda && matchFecha && matchCaracterizado;
+                if (mypimeVal !== "") {
+                    matchMypime = p.mypime == mypimeVal;
+                }
+
+                return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime;
             });
 
             renderTable(filteredData);
@@ -588,8 +629,13 @@
             const totalCountElement = document.getElementById('total-productores-count');
             const avgCountElement = document.getElementById('average-producers-count');
             const topVeredaElement = document.getElementById('top-vereda-name');
+            const totalMypimesElement = document.getElementById('total-mypimes-count');
 
             if (totalCountElement) totalCountElement.textContent = dataToDraw.length;
+            
+            if (totalMypimesElement) {
+                totalMypimesElement.textContent = dataToDraw.filter(p => p.mypime == 1).length;
+            }
 
             if (dataToDraw.length > 0) {
                 // Calculate unique veredas and counts
@@ -619,7 +665,7 @@
                             topVereda = v;
                         }
                     }
-                    topVeredaElement.innerHTML = `${topVereda}<br><span style="font-size: 0.9rem; font-weight: 500; opacity: 0.8;">(${maxCount} productores)</span>`;
+                    topVeredaElement.innerHTML = `<span>${topVereda}</span><span style="font-size: 1rem; font-weight: 500; opacity: 0.8; margin-top: 0.4rem;">(${maxCount} productores)</span>`;
                 }
             } else {
                 if (avgCountElement) avgCountElement.textContent = '0';
@@ -768,12 +814,17 @@
                 const nombreVal = document.getElementById('filter-nombre').value.toLowerCase();
                 const veredaVal = document.getElementById('filter-vereda').value;
                 const fechaVal = document.getElementById('filter-fecha').value;
+                const caracterizadoVal = document.getElementById('filter-caracterizado').value;
+                const mypimeVal = document.getElementById('filter-mypime').value;
 
                 const dataToExport = allProducers.filter(p => {
                     let matchNombre = !nombreVal || p.nombre_completo.toLowerCase().includes(nombreVal);
                     let matchVereda = !veredaVal || p.vereda === veredaVal;
                     let matchFecha = !fechaVal || (p.fecha_creacion && p.fecha_creacion.startsWith(fechaVal));
-                    return matchNombre && matchVereda && matchFecha;
+                    let matchCaracterizado = caracterizadoVal === "" || p.tiene_caracterizacion == caracterizadoVal;
+                    let matchMypime = mypimeVal === "" || p.mypime == mypimeVal;
+
+                    return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime;
                 });
 
                 if (dataToExport.length === 0) {
@@ -781,25 +832,41 @@
                     return;
                 }
 
-                // Prepare data for export (clean up or rename columns if needed)
-                const cleanData = dataToExport.map(p => ({
-                    'Fecha Inscripción': p.fecha_creacion,
-                    'Nombre Completo': p.nombre_completo,
-                    'Tipo Documento': p.tipo_documento,
-                    'Número Documento': p.numero_documento,
-                    'Vereda': p.vereda,
-                    'Teléfono': p.telefono,
-                    'Correo Electrónico': p.correo_electronico || '-',
-                    'Nombre Predio': p.nombre_predio,
-                    'Fecha Nacimiento': p.fecha_nacimiento
-                }));
+                // Create a standard CSV flat file (archivo plano)
+                const headers = [
+                    'Fecha Inscripción', 'Nombre Completo', 'Tipo Documento', 'Número Documento', 
+                    'Vereda', 'Teléfono', 'Correo Electrónico', 'Nombre Predio', 'Fecha Nacimiento', 'Mypime'
+                ];
+                
+                // BOM (Byte Order Mark) forces Excel to read UTF-8 properly (accents)
+                let csvString = '\uFEFF' + headers.join(';') + '\r\n';
 
-                const ws = XLSX.utils.json_to_sheet(cleanData);
-                const wb = XLSX.utils.book_new();
-                XLSX.utils.book_append_sheet(wb, ws, "Productores");
+                dataToExport.forEach(p => {
+                    const row = [
+                        p.fecha_creacion || '-',
+                        `"${p.nombre_completo || '-'}"`,
+                        p.tipo_documento || '-',
+                        p.numero_documento || '-',
+                        `"${p.vereda || '-'}"`,
+                        p.telefono || '-',
+                        `"${p.correo_electronico || '-'}"`,
+                        `"${p.nombre_predio || '-'}"`,
+                        p.fecha_nacimiento || '-',
+                        p.mypime == 1 ? 'Sí' : 'No'
+                    ];
+                    csvString += row.join(';') + '\r\n';
+                });
 
-                // Generate and download file
-                XLSX.writeFile(wb, `productores_sumapaz_${new Date().toISOString().split('T')[0]}.xlsx`);
+                // Generate native download link
+                const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement("a");
+                link.setAttribute("href", url);
+                link.setAttribute("download", `productores_sumapaz_${new Date().toISOString().split('T')[0]}.csv`);
+                
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
             }
     </script>
 </body>
