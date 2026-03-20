@@ -99,7 +99,8 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            min-height: 2.8em; /* Ensure all titles align regardless of 1 or 2 lines */
+            min-height: 2.8em;
+            /* Ensure all titles align regardless of 1 or 2 lines */
             width: 100%;
         }
 
@@ -217,13 +218,25 @@
         }
 
         @keyframes producerFadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes producerSlideUp {
-            from { transform: translateY(30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     </style>
     <!-- Excel Export Library -->
@@ -249,6 +262,10 @@
                         <a href="inscripcion_productores" class="nav-link-btn" id="btn-register"
                             style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">
                             Registrar Productor
+                        </a>
+                        <a href="inscripcion_avituallamiento.html" class="nav-link-btn" id="btn-avituallamiento"
+                            style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">
+                            Registrar Avituallamiento
                         </a>
                         <a href="transporte_seguimiento" class="nav-link-btn" id="btn-tracking"
                             style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">
@@ -304,12 +321,14 @@
         </section>
 
         <!-- Filtros -->
-        <div style="background-color: #EFEBE4; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
+        <div
+            style="background-color: #EFEBE4; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
             <!-- Fila de Filtros -->
             <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end;">
                 <div style="flex: 1; min-width: 200px;">
                     <label for="filter-nombre"
-                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Nombre Completo</label>
+                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Nombre
+                        Completo</label>
                     <input type="text" id="filter-nombre" placeholder="Buscar por nombre..."
                         style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
                 </div>
@@ -351,7 +370,8 @@
                 </div>
                 <div style="flex: 1; min-width: 180px;">
                     <label for="filter-fecha"
-                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Fecha Inscripción</label>
+                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Fecha
+                        Inscripción</label>
                     <input type="date" id="filter-fecha"
                         style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
                 </div>
@@ -414,8 +434,10 @@
                     gap: 0.5rem;
                     border: none;
                 " onclick="exportToExcel()">
-                    <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
                     Descargar Excel
                 </button>
@@ -463,20 +485,26 @@
                 <div class="modal-header">
                     <h2 id="modal-producer-name">Nombre del Productor</h2>
                     <button class="btn-close-modal" onclick="hideProducerModal()">
-                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div style="margin-bottom: 2rem; display: flex; gap: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
+                    <div
+                        style="margin-bottom: 2rem; display: flex; gap: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
                         <div>
                             <span style="font-size: 0.8rem; color: #888; text-transform: uppercase;">Vereda</span>
-                            <p id="modal-vereda" style="font-size: 1.2rem; font-weight: 600; color: var(--primary-green); margin-top: 0.2rem;">-</p>
+                            <p id="modal-vereda"
+                                style="font-size: 1.2rem; font-weight: 600; color: var(--primary-green); margin-top: 0.2rem;">
+                                -</p>
                         </div>
                         <div>
                             <span style="font-size: 0.8rem; color: #888; text-transform: uppercase;">Predio</span>
-                            <p id="modal-predio" style="font-size: 1.2rem; font-weight: 600; color: var(--primary-green); margin-top: 0.2rem;">-</p>
+                            <p id="modal-predio"
+                                style="font-size: 1.2rem; font-weight: 600; color: var(--primary-green); margin-top: 0.2rem;">
+                                -</p>
                         </div>
                     </div>
 
@@ -524,7 +552,7 @@
             const filterCaracterizado = document.getElementById('filter-caracterizado');
             const filterMypime = document.getElementById('filter-mypime');
             const btnReset = document.getElementById('btn-reset-filters');
-            
+
             // --- AUTH CHECK FIRST ---
             try {
                 const authRes = await fetch('api/check_auth.php');
@@ -540,6 +568,7 @@
                         if (colEliminar) colEliminar.style.display = 'none';
                     }
                     document.getElementById('btn-register').style.display = 'inline-block';
+                    document.getElementById('btn-avituallamiento').style.display = 'inline-block';
                     document.getElementById('btn-logout').style.display = 'inline-block';
                 }
             } catch (error) {
@@ -632,7 +661,7 @@
             const totalMypimesElement = document.getElementById('total-mypimes-count');
 
             if (totalCountElement) totalCountElement.textContent = dataToDraw.length;
-            
+
             if (totalMypimesElement) {
                 totalMypimesElement.textContent = dataToDraw.filter(p => p.mypime == 1).length;
             }
@@ -728,146 +757,146 @@
             });
         }
 
-            function empezarCaracterizacion(id, nombre) {
-                window.location.href = 'caracterizacion.html?id=' + id;
-            }
+        function empezarCaracterizacion(id, nombre) {
+            window.location.href = 'caracterizacion.html?id=' + id;
+        }
 
-            async function verDetalle(id) {
-                const producerBase = allProducers.find(p => p.id == id);
-                if (!producerBase) return;
+        async function verDetalle(id) {
+            const producerBase = allProducers.find(p => p.id == id);
+            if (!producerBase) return;
 
-                const modal = document.getElementById('producer-detail-modal');
-                const nameDisplay = document.getElementById('modal-producer-name');
-                
-                // Set basic info fast
-                nameDisplay.textContent = producerBase.nombre_completo;
-                document.getElementById('modal-vereda').textContent = producerBase.vereda || '-';
-                document.getElementById('modal-predio').textContent = producerBase.nombre_predio || '-';
-                
-                // Show modal with loading state for extra info
-                modal.style.display = 'flex';
-                setModalLoading(true);
+            const modal = document.getElementById('producer-detail-modal');
+            const nameDisplay = document.getElementById('modal-producer-name');
 
-                try {
-                    const response = await fetch(`api/get_detalle_productor.php?id=${id}`);
-                    const result = await response.json();
+            // Set basic info fast
+            nameDisplay.textContent = producerBase.nombre_completo;
+            document.getElementById('modal-vereda').textContent = producerBase.vereda || '-';
+            document.getElementById('modal-predio').textContent = producerBase.nombre_predio || '-';
 
-                    if (response.ok && result.success) {
-                        const data = result.data;
-                        document.getElementById('modal-canales').textContent = data.canales || 'Ninguno';
-                        document.getElementById('modal-categorias').textContent = data.categorias || 'Ninguna';
-                        document.getElementById('modal-certificaciones').textContent = data.certificaciones || 'Ninguna';
-                        document.getElementById('modal-dificultades').textContent = data.dificultades || 'Ninguna';
-                        document.getElementById('modal-financiamiento').textContent = data.financiamiento || 'Ninguno';
-                        document.getElementById('modal-grupos').textContent = data.grupos || 'Ninguno';
-                    } else {
-                        console.error("Error API:", result.error);
-                    }
-                } catch (error) {
-                    console.error("Fetch error:", error);
-                } finally {
-                    setModalLoading(false);
+            // Show modal with loading state for extra info
+            modal.style.display = 'flex';
+            setModalLoading(true);
+
+            try {
+                const response = await fetch(`api/get_detalle_productor.php?id=${id}`);
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    const data = result.data;
+                    document.getElementById('modal-canales').textContent = data.canales || 'Ninguno';
+                    document.getElementById('modal-categorias').textContent = data.categorias || 'Ninguna';
+                    document.getElementById('modal-certificaciones').textContent = data.certificaciones || 'Ninguna';
+                    document.getElementById('modal-dificultades').textContent = data.dificultades || 'Ninguna';
+                    document.getElementById('modal-financiamiento').textContent = data.financiamiento || 'Ninguno';
+                    document.getElementById('modal-grupos').textContent = data.grupos || 'Ninguno';
+                } else {
+                    console.error("Error API:", result.error);
                 }
+            } catch (error) {
+                console.error("Fetch error:", error);
+            } finally {
+                setModalLoading(false);
+            }
+        }
+
+        function setModalLoading(isLoading) {
+            const fields = ['modal-canales', 'modal-categorias', 'modal-certificaciones', 'modal-dificultades', 'modal-financiamiento', 'modal-grupos'];
+            fields.forEach(f => {
+                const el = document.getElementById(f);
+                if (isLoading) el.style.opacity = '0.5';
+                else el.style.opacity = '1';
+            });
+        }
+
+        function hideProducerModal() {
+            document.getElementById('producer-detail-modal').style.display = 'none';
+        }
+
+        function closeModalOnOutsideClick(event) {
+            // Only close if the background overlay itself was clicked
+            if (event.target === event.currentTarget) {
+                hideProducerModal();
+            }
+        }
+
+        function editarProductor(id) {
+            window.location.href = 'inscripcion_productores?edit=' + id;
+        }
+
+        function eliminarProductor(id, nombre) {
+            if (confirm('¿Seguro que deseas eliminar el registro de ' + nombre + '?')) {
+                alert('Productor eliminado exitosamente (modo demo).');
+            }
+        }
+
+        async function logout() {
+            try {
+                await fetch('api/logout.php');
+                window.location.href = 'login.html';
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        }
+
+        function exportToExcel() {
+            // Get currently filtered data (or all if no filters)
+            const nombreVal = document.getElementById('filter-nombre').value.toLowerCase();
+            const veredaVal = document.getElementById('filter-vereda').value;
+            const fechaVal = document.getElementById('filter-fecha').value;
+            const caracterizadoVal = document.getElementById('filter-caracterizado').value;
+            const mypimeVal = document.getElementById('filter-mypime').value;
+
+            const dataToExport = allProducers.filter(p => {
+                let matchNombre = !nombreVal || p.nombre_completo.toLowerCase().includes(nombreVal);
+                let matchVereda = !veredaVal || p.vereda === veredaVal;
+                let matchFecha = !fechaVal || (p.fecha_creacion && p.fecha_creacion.startsWith(fechaVal));
+                let matchCaracterizado = caracterizadoVal === "" || p.tiene_caracterizacion == caracterizadoVal;
+                let matchMypime = mypimeVal === "" || p.mypime == mypimeVal;
+
+                return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime;
+            });
+
+            if (dataToExport.length === 0) {
+                alert('No hay datos para exportar.');
+                return;
             }
 
-            function setModalLoading(isLoading) {
-                const fields = ['modal-canales', 'modal-categorias', 'modal-certificaciones', 'modal-dificultades', 'modal-financiamiento', 'modal-grupos'];
-                fields.forEach(f => {
-                    const el = document.getElementById(f);
-                    if (isLoading) el.style.opacity = '0.5';
-                    else el.style.opacity = '1';
-                });
-            }
+            // Create a standard CSV flat file (archivo plano)
+            const headers = [
+                'Fecha Inscripción', 'Nombre Completo', 'Tipo Documento', 'Número Documento',
+                'Vereda', 'Teléfono', 'Correo Electrónico', 'Nombre Predio', 'Fecha Nacimiento', 'Mypime'
+            ];
 
-            function hideProducerModal() {
-                document.getElementById('producer-detail-modal').style.display = 'none';
-            }
+            // BOM (Byte Order Mark) forces Excel to read UTF-8 properly (accents)
+            let csvString = '\uFEFF' + headers.join(';') + '\r\n';
 
-            function closeModalOnOutsideClick(event) {
-                // Only close if the background overlay itself was clicked
-                if (event.target === event.currentTarget) {
-                    hideProducerModal();
-                }
-            }
-
-            function editarProductor(id) {
-                window.location.href = 'inscripcion_productores?edit=' + id;
-            }
-
-            function eliminarProductor(id, nombre) {
-                if (confirm('¿Seguro que deseas eliminar el registro de ' + nombre + '?')) {
-                    alert('Productor eliminado exitosamente (modo demo).');
-                }
-            }
-
-            async function logout() {
-                try {
-                    await fetch('api/logout.php');
-                    window.location.href = 'login.html';
-                } catch (error) {
-                    console.error('Logout error:', error);
-                }
-            }
-
-            function exportToExcel() {
-                // Get currently filtered data (or all if no filters)
-                const nombreVal = document.getElementById('filter-nombre').value.toLowerCase();
-                const veredaVal = document.getElementById('filter-vereda').value;
-                const fechaVal = document.getElementById('filter-fecha').value;
-                const caracterizadoVal = document.getElementById('filter-caracterizado').value;
-                const mypimeVal = document.getElementById('filter-mypime').value;
-
-                const dataToExport = allProducers.filter(p => {
-                    let matchNombre = !nombreVal || p.nombre_completo.toLowerCase().includes(nombreVal);
-                    let matchVereda = !veredaVal || p.vereda === veredaVal;
-                    let matchFecha = !fechaVal || (p.fecha_creacion && p.fecha_creacion.startsWith(fechaVal));
-                    let matchCaracterizado = caracterizadoVal === "" || p.tiene_caracterizacion == caracterizadoVal;
-                    let matchMypime = mypimeVal === "" || p.mypime == mypimeVal;
-
-                    return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime;
-                });
-
-                if (dataToExport.length === 0) {
-                    alert('No hay datos para exportar.');
-                    return;
-                }
-
-                // Create a standard CSV flat file (archivo plano)
-                const headers = [
-                    'Fecha Inscripción', 'Nombre Completo', 'Tipo Documento', 'Número Documento', 
-                    'Vereda', 'Teléfono', 'Correo Electrónico', 'Nombre Predio', 'Fecha Nacimiento', 'Mypime'
+            dataToExport.forEach(p => {
+                const row = [
+                    p.fecha_creacion || '-',
+                    `"${p.nombre_completo || '-'}"`,
+                    p.tipo_documento || '-',
+                    p.numero_documento || '-',
+                    `"${p.vereda || '-'}"`,
+                    p.telefono || '-',
+                    `"${p.correo_electronico || '-'}"`,
+                    `"${p.nombre_predio || '-'}"`,
+                    p.fecha_nacimiento || '-',
+                    p.mypime == 1 ? 'Sí' : 'No'
                 ];
-                
-                // BOM (Byte Order Mark) forces Excel to read UTF-8 properly (accents)
-                let csvString = '\uFEFF' + headers.join(';') + '\r\n';
+                csvString += row.join(';') + '\r\n';
+            });
 
-                dataToExport.forEach(p => {
-                    const row = [
-                        p.fecha_creacion || '-',
-                        `"${p.nombre_completo || '-'}"`,
-                        p.tipo_documento || '-',
-                        p.numero_documento || '-',
-                        `"${p.vereda || '-'}"`,
-                        p.telefono || '-',
-                        `"${p.correo_electronico || '-'}"`,
-                        `"${p.nombre_predio || '-'}"`,
-                        p.fecha_nacimiento || '-',
-                        p.mypime == 1 ? 'Sí' : 'No'
-                    ];
-                    csvString += row.join(';') + '\r\n';
-                });
+            // Generate native download link
+            const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.setAttribute("href", url);
+            link.setAttribute("download", `productores_sumapaz_${new Date().toISOString().split('T')[0]}.csv`);
 
-                // Generate native download link
-                const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
-                const url = URL.createObjectURL(blob);
-                const link = document.createElement("a");
-                link.setAttribute("href", url);
-                link.setAttribute("download", `productores_sumapaz_${new Date().toISOString().split('T')[0]}.csv`);
-                
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
     </script>
 </body>
 
