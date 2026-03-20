@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción Avituallamiento | Somos Sumapaz</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <!-- Static Cache-Busting -->
+    <script>
+        const timestamp = new Date().getTime();
+        document.write(`<link rel="stylesheet" href="assets/styles.css?v=${timestamp}">`);
+    </script>
+</head>
+
+<body>
+    <!-- Static Header -->
+    <header id="main-header">
+        <nav class="navbar-custom">
+            <div class="container" style="display: flex; align-items: center;">
+
+                <a href="index.html">
+                    <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img">
+                </a>
+
+                <div class="search-container"
+                    style="margin-left: auto; display: flex; align-items: center; gap: 1.5rem;">
+
+                    <!-- Admin Options -->
+                    <div id="header-auth-container" style="display: none; align-items: center; gap: 1rem;">
+                        <a href="productores_registrados.html" class="nav-link-btn" id="btn-dashboard"
+                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600; padding: 8px 14px; border-radius: 6px;">
+                            Dashboard
+                        </a>
+
+                        <button onclick="logout()" class="nav-link-btn" id="btn-logout"
+                            style="margin: 0; background-color: transparent; cursor: pointer; color: #FBF4DE; border: none; padding: 8px; border-radius: 6px;"
+                            title="Cerrar Sesión">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="#FBF4DE" stroke-width="2"
+                                style="width: 24px; height: 24px; transform: scaleX(-1);">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
+        <div class="form-wrapper">
+            <h1 class="serif form-title" id="page-title">Formulario de Inscripción Avituallamiento</h1>
+            <p class="form-subtitle" id="page-subtitle"> Por favor diligencia todos los datos obligatorios y adjunta tus
+                soportes.</p>
+
+            <form id="inscripcion-form" class="custom-form" enctype="multipart/form-data">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo *</label>
+                        <input type="text" id="nombre_completo" name="nombre_completo" required
+                            placeholder="Ej. Juan Pérez">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo_documento">Tipo de Documento *</label>
+                        <select id="tipo_documento" name="tipo_documento" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                            <option value="NIT">NIT</option>
+                            <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numero_documento">Número de Documento *</label>
+                        <input type="text" id="numero_documento" name="numero_documento" required
+                            placeholder="Ej. 1234567890">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha_nacimiento">Fecha de Nacimiento *</label>
+                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono / Celular *</label>
+                        <input type="tel" id="telefono" name="telefono" required placeholder="Ej. 300 123 4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo_electronico">Correo Electrónico (Opcional)</label>
+                        <input type="email" id="correo_electronico" name="correo_electronico"
+                            placeholder="ejemplo@correo.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vereda">Vereda *</label>
+                        <select id="vereda" name="vereda" required>
+                            <option value="" disabled selected>Selecciona una vereda</option>
+                            <option value="SAN JOSE">SAN JOSE</option>
+                            <option value="NUEVA GRANADA">NUEVA GRANADA</option>
+                            <option value="CONCEPCION">CONCEPCION</option>
+                            <option value="TUNAL ALTO">TUNAL ALTO</option>
+                            <option value="LAGUNITAS">LAGUNITAS</option>
+                            <option value="TUNAL BAJO">TUNAL BAJO</option>
+                            <option value="LA UNION URBANO">LA UNION URBANO</option>
+                            <option value="CHORRERAS">CHORRERAS</option>
+                            <option value="SANTO DOMINGO">SANTO DOMINGO</option>
+                            <option value="LAS VEGAS">LAS VEGAS</option>
+                            <option value="SAN JUAN">SAN JUAN</option>
+                            <option value="CAPITOLIO">CAPITOLIO</option>
+                            <option value="EL TOLDO">EL TOLDO</option>
+                            <option value="LAS SOPAS">LAS SOPAS</option>
+                            <option value="LOS RIOS">LOS RIOS</option>
+                            <option value="SAN ANTONIO">SAN ANTONIO</option>
+                            <option value="LAS PALMAS">LAS PALMAS</option>
+                            <option value="LAS ANIMAS">LAS ANIMAS</option>
+                            <option value="LAS AURAS">LAS AURAS</option>
+                            <option value="NAZARETH URBANO">NAZARETH URBANO</option>
+                            <option value="TAQUECITOS">TAQUECITOS</option>
+                            <option value="PENALISA">PENALISA</option>
+                            <option value="LAGUNA VERDE">LAGUNA VERDE</option>
+                            <option value="RAIZAL">RAIZAL</option>
+                            <option value="SANTA ROSA">SANTA ROSA</option>
+                            <option value="BETANIA">BETANIA</option>
+                            <option value="EL ITSMO">EL ITSMO</option>
+                            <option value="EL TABACO">EL TABACO</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre_predio">Nombre del Predio *</label>
+                        <input type="text" id="nombre_predio" name="nombre_predio" required
+                            placeholder="Ej. Finca La Esperanza">
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; margin-bottom: 2rem;">
+                    <h2 class="serif section-title"
+                        style="color: var(--earth-brown); border-bottom: 2px solid var(--light-green); padding-bottom: 0.5rem;">
+                        Soportes Obligatorios</h2>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">Para completar tu inscripción,
+                        debes subir los siguientes documentos (formato PDF):</p>
+
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <!-- RUT -->
+                        <div class="form-group"
+                            style="background: #fdfdfd; padding: 1.5rem; border: 1px solid #eaeaea; border-radius: 8px;">
+                            <label
+                                style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.8rem; display: block;">RUT
+                                *</label>
+                            <label for="id_rut"
+                                style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 1rem; background: #e8f5e9; color: var(--primary-green); font-weight: bold; border-radius: 8px; cursor: pointer; border: 1px solid #c8e6c9; text-align: center; transition: background 0.2s;">
+                                <span>📁 Seleccionar RUT (Solo PDF)</span>
+                            </label>
+                            <input type="file" id="id_rut" name="id_rut" accept=".pdf" required style="display: none;"
+                                onchange="this.previousElementSibling.querySelector('span').textContent = '✅ ' + (this.files[0] ? this.files[0].name : 'Seleccionar RUT (Solo PDF)')">
+                        </div>
+
+                        <!-- Curso Manipulación -->
+                        <div class="form-group"
+                            style="background: #fdfdfd; padding: 1.5rem; border: 1px solid #eaeaea; border-radius: 8px;">
+                            <label
+                                style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.8rem; display: block;">Curso
+                                de Manipulación de Alimentos *</label>
+                            <label for="id_curso_manipulacion"
+                                style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 1rem; background: #e8f5e9; color: var(--primary-green); font-weight: bold; border-radius: 8px; cursor: pointer; border: 1px solid #c8e6c9; text-align: center; transition: background 0.2s;">
+                                <span>📁 Seleccionar Certificado (Solo PDF)</span>
+                            </label>
+                            <input type="file" id="id_curso_manipulacion" name="id_curso_manipulacion" accept=".pdf"
+                                required style="display: none;"
+                                onchange="this.previousElementSibling.querySelector('span').textContent = '✅ ' + (this.files[0] ? this.files[0].name : 'Seleccionar Certificado (Solo PDF)')">
+                        </div>
+
+                        <!-- Certificación Bancaria -->
+                        <div class="form-group"
+                            style="background: #fdfdfd; padding: 1.5rem; border: 1px solid #eaeaea; border-radius: 8px;">
+                            <label
+                                style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.8rem; display: block;">Certificación
+                                Bancaria *</label>
+                            <label for="id_certificacion_bancaria"
+                                style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 1rem; background: #e8f5e9; color: var(--primary-green); font-weight: bold; border-radius: 8px; cursor: pointer; border: 1px solid #c8e6c9; text-align: center; transition: background 0.2s;">
+                                <span>📁 Seleccionar Certificación (Solo PDF)</span>
+                            </label>
+                            <input type="file" id="id_certificacion_bancaria" name="id_certificacion_bancaria"
+                                accept=".pdf" required style="display: none;"
+                                onchange="this.previousElementSibling.querySelector('span').textContent = '✅ ' + (this.files[0] ? this.files[0].name : 'Seleccionar Certificación (Solo PDF)')">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-submit-container" id="create-actions">
+                    <button type="submit" class="btn btn-submit" id="submit-btn-main"
+                        style="width: 100%; font-size: 1.1rem; padding: 1rem;">Guardar Inscripción y Soportes</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Custom Success Modal -->
+    <div id="success-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <img src="assets/logo_somossumapaz.png" alt="Exito" style="width: 80px; height: auto;">
+            </div>
+            <h2 class="serif modal-title" id="success-title">¡Inscripción Exitosa!</h2>
+            <p class="modal-text" id="success-message">Tus datos y soportes han sido guardados correctamente en el
+                sistema.</p>
+            <button id="modal-close-btn" class="btn btn-submit" style="width: 100%; margin-top: 1.5rem;">Ir al
+                Dashboard</button>
+        </div>
+    </div>
+
+    <!-- Custom Error Modal -->
+    <div id="error-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon" style="background: #444F2F;">
+                <img src="assets/logo_somossumapaz.png" alt="Error"
+                    style="width: 80px; height: auto; filter: grayscale(100%);">
+            </div>
+            <h2 class="serif modal-title" style="color: #D32F2F;">Aviso</h2>
+            <p id="error-modal-text" class="modal-text">Ocurrió un error inesperado al enviar la inscripción.</p>
+            <button id="error-close-btn" class="btn btn-submit"
+                style="width: 100%; margin-top: 1.5rem; background-color: #D32F2F;">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- App Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Check auth visibility
+            try {
+                const authRes = await fetch('api/check_auth.php');
+                const authResult = await authRes.json();
+                if (authRes.ok && authResult.authenticated) {
+                    document.getElementById('header-auth-container').style.display = 'flex';
+                }
+            } catch (error) {
+                console.error('Error checking auth:', error);
+            }
+        });
+
+        document.getElementById('inscripcion-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submit-btn-main');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Guardando y subiendo archivos...';
+
+            const formData = new FormData(this);
+
+            try {
+                const response = await fetch('api/submit_avituallamiento.php', {
+                    method: 'POST',
+                    body: formData // Sending FormData directly for file upload support
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    document.getElementById('success-modal').classList.add('active');
+                    this.reset();
+                } else {
+                    document.getElementById('error-modal-text').textContent = result.error || 'Ocurrió un problema al guardar la información.';
+                    document.getElementById('error-modal').classList.add('active');
+                }
+            } catch (error) {
+                console.error('Error enviando formulario:', error);
+                document.getElementById('error-modal-text').textContent = 'Ocurrió un error de red o de servidor al intentar enviar el formulario.';
+                document.getElementById('error-modal').classList.add('active');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        });
+
+        document.getElementById('modal-close-btn').addEventListener('click', function () {
+            document.getElementById('success-modal').classList.remove('active');
+            window.location.href = 'productores_registrados.html'; // Adjust as needed
+        });
+
+        document.getElementById('error-close-btn').addEventListener('click', function () {
+            document.getElementById('error-modal').classList.remove('active');
+        });
+    </script>
+    <script type="module" src="assets/main.js"></script>
+</body>
+
+</html>
