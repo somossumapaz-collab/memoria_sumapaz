@@ -150,6 +150,20 @@
                         debes subir los siguientes documentos (formato PDF):</p>
 
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <!-- Cédula -->
+                        <div class="form-group"
+                            style="background: #fdfdfd; padding: 1.5rem; border: 1px solid #eaeaea; border-radius: 8px;">
+                            <label
+                                style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.8rem; display: block;">Cédula de Ciudadanía
+                                *</label>
+                            <label for="id_cedula"
+                                style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 1rem; background: #e8f5e9; color: var(--primary-green); font-weight: bold; border-radius: 8px; cursor: pointer; border: 1px solid #c8e6c9; text-align: center; transition: background 0.2s;">
+                                <span>📁 Seleccionar Cédula (Solo PDF)</span>
+                            </label>
+                            <input type="file" id="id_cedula" name="id_cedula" accept=".pdf" style="display: none;"
+                                onchange="this.previousElementSibling.querySelector('span').textContent = '✅ ' + (this.files[0] ? this.files[0].name : 'Seleccionar Cédula (Solo PDF)')">
+                        </div>
+
                         <!-- RUT -->
                         <div class="form-group"
                             style="background: #fdfdfd; padding: 1.5rem; border: 1px solid #eaeaea; border-radius: 8px;">
@@ -160,7 +174,7 @@
                                 style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 1rem; background: #e8f5e9; color: var(--primary-green); font-weight: bold; border-radius: 8px; cursor: pointer; border: 1px solid #c8e6c9; text-align: center; transition: background 0.2s;">
                                 <span>📁 Seleccionar RUT (Solo PDF)</span>
                             </label>
-                            <input type="file" id="id_rut" name="id_rut" accept=".pdf" required style="display: none;"
+                            <input type="file" id="id_rut" name="id_rut" accept=".pdf" style="display: none;"
                                 onchange="this.previousElementSibling.querySelector('span').textContent = '✅ ' + (this.files[0] ? this.files[0].name : 'Seleccionar RUT (Solo PDF)')">
                         </div>
 
@@ -175,7 +189,7 @@
                                 <span>📁 Seleccionar Certificado (Solo PDF)</span>
                             </label>
                             <input type="file" id="id_curso_manipulacion" name="id_curso_manipulacion" accept=".pdf"
-                                required style="display: none;"
+                                style="display: none;"
                                 onchange="this.previousElementSibling.querySelector('span').textContent = '✅ ' + (this.files[0] ? this.files[0].name : 'Seleccionar Certificado (Solo PDF)')">
                         </div>
 
@@ -190,7 +204,7 @@
                                 <span>📁 Seleccionar Certificación (Solo PDF)</span>
                             </label>
                             <input type="file" id="id_certificacion_bancaria" name="id_certificacion_bancaria"
-                                accept=".pdf" required style="display: none;"
+                                accept=".pdf" style="display: none;"
                                 onchange="this.previousElementSibling.querySelector('span').textContent = '✅ ' + (this.files[0] ? this.files[0].name : 'Seleccionar Certificación (Solo PDF)')">
                         </div>
                     </div>
@@ -249,6 +263,18 @@
 
         document.getElementById('inscripcion-form').addEventListener('submit', async function (e) {
             e.preventDefault();
+
+            // Validate specifically for files
+            const cedulaFile = document.getElementById('id_cedula').files.length;
+            const rutFile = document.getElementById('id_rut').files.length;
+            const cursoFile = document.getElementById('id_curso_manipulacion').files.length;
+            const certFile = document.getElementById('id_certificacion_bancaria').files.length;
+
+            if (!cedulaFile || !rutFile || !cursoFile || !certFile) {
+                document.getElementById('error-modal-text').textContent = 'Debe anexar todos los soportes para guardar inscripción';
+                document.getElementById('error-modal').classList.add('active');
+                return;
+            }
 
             const submitBtn = document.getElementById('submit-btn-main');
             const originalText = submitBtn.textContent;

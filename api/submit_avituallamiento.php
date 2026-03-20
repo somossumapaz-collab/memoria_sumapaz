@@ -24,6 +24,13 @@ try {
         throw new Exception('Faltan campos obligatorios.');
     }
 
+    // Check if provider is already registered
+    $stmtCheck = $pdo->prepare("SELECT id FROM proveedores_avituallamiento WHERE numero_documento = :cedula");
+    $stmtCheck->execute(['cedula' => $cedula]);
+    if ($stmtCheck->fetchColumn()) {
+        throw new Exception('Este proveedor (con el documento ingresado) ya se encuentra inscrito en el sistema.');
+    }
+
     // Prepare Upload Directory
     $uploadDir = __DIR__ . '/../soportes_avituallamiento/';
     if (!is_dir($uploadDir)) {
@@ -33,6 +40,7 @@ try {
     }
 
     $fileFields = [
+        'id_cedula' => 'cedula',
         'id_rut' => 'rut',
         'id_curso_manipulacion' => 'curso_manipulacion',
         'id_certificacion_bancaria' => 'certificacion_bancaria'
@@ -67,11 +75,11 @@ try {
         INSERT INTO proveedores_avituallamiento (
             nombre_completo, tipo_documento, numero_documento, fecha_nacimiento, 
             telefono, correo_electronico, vereda, nombre_predio,
-            id_rut, id_curso_manipulacion, id_certificacion_bancaria
+            id_cedula, id_rut, id_curso_manipulacion, id_certificacion_bancaria
         ) VALUES (
             :nombre, :tipo_doc, :cedula, :fecha_nac,
             :telefono, :correo, :vereda, :predio,
-            :rut, :curso, :certificacion
+            :cedula_file, :rut, :curso, :certificacion
         )
     ");
 
@@ -84,6 +92,7 @@ try {
         'correo' => $correo,
         'vereda' => $vereda,
         'predio' => $predio,
+        'cedula_file' => $savedFiles['id_cedula'],
         'rut' => $savedFiles['id_rut'],
         'curso' => $savedFiles['id_curso_manipulacion'],
         'certificacion' => $savedFiles['id_certificacion_bancaria']
