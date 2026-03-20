@@ -536,7 +536,7 @@
                 <input type="date" id="f-fecha-fin">
             </div>
             <div class="filter-group">
-                <label for="f-funcionario">Subred / Funcionario</label>
+                <label for="f-funcionario">Contratista</label>
                 <select id="f-funcionario">
                     <option value="">Cargando...</option>
                 </select>
@@ -693,7 +693,7 @@
             const day = String(now.getDate()).padStart(2, '0');
             const firstDay = `${year}-${month}-01`;
             const today = `${year}-${month}-${day}`;
-            
+
             document.getElementById('f-fecha-ini').value = firstDay;
             document.getElementById('f-fecha-fin').value = today;
 
@@ -706,7 +706,7 @@
                 const year = now.getFullYear();
                 const month = String(now.getMonth() + 1).padStart(2, '0');
                 const day = String(now.getDate()).padStart(2, '0');
-                
+
                 document.getElementById('f-fecha-ini').value = `${year}-${month}-01`;
                 document.getElementById('f-fecha-fin').value = `${year}-${month}-${day}`;
                 document.getElementById('f-funcionario').value = '';
