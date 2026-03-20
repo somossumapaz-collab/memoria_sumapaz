@@ -3,7 +3,7 @@
  * Database Authentication script
  * Uses bcrypt password verification against `usuarios` table
  */
-session_start();
+/*session_start();*/
 require_once 'db_config.php';
 
 header('Content-Type: application/json');
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$inputJSON = file_get_contents('php://input');
+$inputJSON = '{"username":"admin","password":"admin2026*"}';
 $input = json_decode($inputJSON, TRUE);
 
 if (empty($input['username']) || empty($input['password'])) {
@@ -75,6 +75,6 @@ try {
 
 } catch (PDOException $e) {
     http_response_code(500);
-    echo json_encode(['error' => 'Error de base de datos de autenticación.']);
+    echo json_encode(['error' => 'Error de base de datos de autenticación: ' . $e->getMessage()]);
 }
 ?>

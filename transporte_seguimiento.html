@@ -377,7 +377,7 @@
                                 <th>Funcionario</th>
                                 <th>Origen</th>
                                 <th>Destino</th>
-                                <th style="text-align: center;">Acciones</th>
+                                <th id="col-acciones" style="text-align: center;">Acciones</th>
                             </tr>
                         </thead>
                         <tbody id="table-recientes">
@@ -418,6 +418,25 @@
         let veredasCoords = {};
 
         document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const authRes = await fetch('api/check_auth.php');
+                const authResult = await authRes.json();
+                
+                if (!authRes.ok || !authResult.authenticated) {
+                    window.location.href = 'login.html';
+                    return;
+                }
+                
+                window.isAdmin = authResult.is_admin;
+                if (!window.isAdmin) {
+                    const colAcciones = document.getElementById('col-acciones');
+                    if (colAcciones) colAcciones.style.display = 'none';
+                }
+            } catch (e) {
+                window.location.href = 'login.html';
+                return;
+            }
+
             initMap();
             await loadVeredas();
             loadStats();
@@ -514,9 +533,11 @@
                     <td style="font-weight: 600; color: var(--primary);">${trip.funcionario}</td>
                     <td>${trip.origen}</td>
                     <td>${trip.destino_final}</td>
+                    ${window.isAdmin ? `
                     <td style="text-align: center;">
                         <button class="btn-delete" onclick="deleteTrip(${trip.id}, '${trip.funcionario}')">Eliminar</button>
                     </td>
+                    ` : ''}
                 `;
                 tbody.appendChild(tr);
             });
