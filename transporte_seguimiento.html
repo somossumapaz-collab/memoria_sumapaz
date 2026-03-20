@@ -8,8 +8,10 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+
     <!-- Leaflet Map & Routing -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
@@ -44,9 +46,12 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .nav-top .links {
-            display: flex; gap: 15px;
+            display: flex;
+            gap: 15px;
         }
+
         .nav-top a {
             color: white;
             text-decoration: none;
@@ -56,8 +61,9 @@
             border-radius: 6px;
             transition: background 0.2s;
         }
+
         .nav-top a:hover {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .dashboard-container {
@@ -70,12 +76,14 @@
             text-align: center;
             margin-bottom: 2rem;
         }
+
         .dashboard-header h1 {
             font-family: 'Playfair Display', serif;
             color: var(--primary-green);
             font-size: 2.5rem;
             margin: 0 0 0.5rem 0;
         }
+
         .dashboard-header p {
             color: var(--text-muted);
             margin: 0;
@@ -84,33 +92,127 @@
         /* KPIs */
         .kpi-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 1.5rem;
             margin-bottom: 2rem;
         }
+
         .kpi-card {
-            background: var(--card-bg);
+            background: white;
             padding: 1.5rem;
             border-radius: 12px;
-            border-left: 5px solid var(--primary-green);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
         }
+
         .kpi-card h3 {
             margin: 0 0 0.5rem 0;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
+            font-weight: 600;
             text-transform: uppercase;
-            color: var(--text-muted);
-            letter-spacing: 0.05em;
+            color: #999;
+            letter-spacing: 0.1em;
         }
+
         .kpi-card p {
             margin: 0;
-            font-size: 2.2rem;
-            font-weight: 700;
+            font-size: 2.5rem;
+            font-weight: 800;
             color: var(--primary-green);
+            line-height: 1;
+        }
+
+        /* Modal Style */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            position: relative;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 1rem;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            color: var(--primary-green);
+            font-size: 1.5rem;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .close-modal:hover {
+            color: #333;
+        }
+
+        .occupancy-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .occupancy-item:last-child {
+            border-bottom: none;
+        }
+
+        .occupancy-label {
+            font-weight: 600;
+            color: #444;
+        }
+
+        .occupancy-value {
+            background: var(--light-green);
+            color: var(--primary-green);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        .kpi-card.clickable {
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .kpi-card.clickable:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent-green);
         }
 
         /* Filters */
@@ -118,17 +220,19 @@
             background: white;
             padding: 1.5rem;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             margin-bottom: 2rem;
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
             align-items: flex-end;
         }
+
         .filter-group {
             flex: 1;
             min-width: 180px;
         }
+
         .filter-group label {
             display: block;
             font-size: 0.85rem;
@@ -136,7 +240,9 @@
             color: var(--primary-green);
             margin-bottom: 0.5rem;
         }
-        .filter-group input, .filter-group select {
+
+        .filter-group input,
+        .filter-group select {
             width: 100%;
             padding: 0.75rem;
             border: 1px solid var(--border-color);
@@ -144,7 +250,9 @@
             font-family: 'Inter', sans-serif;
             box-sizing: border-box;
         }
-        .btn-filter, .btn-reset {
+
+        .btn-filter,
+        .btn-reset {
             background: var(--primary-green);
             color: white;
             border: none;
@@ -156,26 +264,34 @@
             font-family: 'Inter', sans-serif;
             transition: opacity 0.2s;
         }
+
         .btn-reset {
             background: #666;
         }
-        .btn-filter:hover, .btn-reset:hover { opacity: 0.9; }
+
+        .btn-filter:hover,
+        .btn-reset:hover {
+            opacity: 0.9;
+        }
 
         /* Main Layout 70/30 */
         .main-content {
             display: flex;
             gap: 2rem;
             align-items: stretch;
-            height: 750px; 
+            height: 750px;
         }
+
         .map-container {
-            flex: 7; /* 70% */
+            flex: 7;
+            /* 70% */
             background: white;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             overflow: hidden;
             position: relative;
         }
+
         #map {
             width: 100%;
             height: 100%;
@@ -183,15 +299,17 @@
 
         /* Sidebar */
         .sidebar {
-            flex: 3; /* 30% */
+            flex: 3;
+            /* 30% */
             background: white;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             display: flex;
             flex-direction: column;
             overflow: hidden;
             position: relative;
         }
+
         .sidebar-header {
             background: var(--primary-green);
             color: white;
@@ -199,13 +317,18 @@
             text-align: center;
             position: relative;
         }
-        .sidebar-header h2 { margin: 0; font-size: 1.4rem; font-family: 'Playfair Display', serif; }
-        
+
+        .sidebar-header h2 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-family: 'Playfair Display', serif;
+        }
+
         #btn-back-list {
             position: absolute;
             left: 15px;
             top: 22px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             border: none;
             color: white;
             padding: 5px 10px;
@@ -214,7 +337,10 @@
             font-size: 0.85rem;
             display: none;
         }
-        #btn-back-list:hover { background: rgba(255,255,255,0.4); }
+
+        #btn-back-list:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
 
         .sidebar-content {
             padding: 1.5rem;
@@ -228,6 +354,7 @@
             border-collapse: collapse;
             font-size: 0.85rem;
         }
+
         .trip-table th {
             text-align: left;
             padding: 10px 5px;
@@ -238,22 +365,30 @@
             background: white;
             z-index: 2;
         }
+
         .trip-table td {
             padding: 10px 5px;
             border-bottom: 1px solid var(--border-color);
             vertical-align: middle;
         }
-        .trip-table tr:hover { background: #f8f9fa; }
-        .btn-lupa {
-            background: var(--accent-green);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 5px 8px;
-            cursor: pointer;
-            font-size: 1rem;
+
+        .trip-table tr:hover {
+            background: #f8f9fa;
         }
-        .btn-lupa:hover { background: var(--primary-green); }
+
+        .btn-lupa {
+            background: transparent;
+            color: var(--primary-green);
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+
+        .btn-lupa:hover {
+            transform: scale(1.2);
+        }
 
         .btn-delete-trip {
             width: 100%;
@@ -268,7 +403,10 @@
             font-family: 'Inter', sans-serif;
             display: none;
         }
-        .btn-delete-trip:hover { background: #c82333; }
+
+        .btn-delete-trip:hover {
+            background: #c82333;
+        }
 
         /* Map Legend */
         .map-legend {
@@ -278,41 +416,72 @@
             background: white;
             padding: 10px 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             font-size: 0.85rem;
             font-weight: 500;
             border: 1px solid var(--border-color);
         }
+
         .legend-item {
             display: flex;
             align-items: center;
             gap: 8px;
             margin-bottom: 5px;
         }
-        .legend-item:last-child { margin-bottom: 0; }
+
+        .legend-item:last-child {
+            margin-bottom: 0;
+        }
+
         .dot {
-            width: 12px; height: 12px; border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
         }
 
         /* Loading Overlay */
         #loading-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255,255,255,0.9);
-            display: flex; justify-content: center; align-items: center;
-            z-index: 9999; font-size: 1.8rem; font-weight: 600; color: var(--primary-green);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-green);
         }
 
 
 
         @media (max-width: 1024px) {
-            .main-content { flex-direction: column; height: auto; }
-            .map-container { height: 500px; }
-            .sidebar { height: 500px; }
-            .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+            .main-content {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .map-container {
+                height: 500px;
+            }
+
+            .sidebar {
+                height: 500px;
+            }
+
+            .kpi-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
+
         @media (max-width: 600px) {
-            .kpi-grid { grid-template-columns: 1fr; }
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -321,12 +490,8 @@
     <div id="loading-overlay">Cargando datos del dashboard...</div>
 
     <div class="nav-top">
-        <div class="links">
-            <a href="index.html">← Inicio</a>
-            <a href="productores_registrados.html">Dashboard Producción</a>
-            <a href="inscripcion_avituallamiento.html">Avituallamiento</a>
-        </div>
-        <a href="recorrido_campo.html" style="background: rgba(255,255,255,0.2);">Planilla Campo 📝</a>
+
+        <a href="recorrido_campo.html" style="background: transparent;">Registrar Ruta</a>
     </div>
 
     <div class="dashboard-container">
@@ -344,6 +509,11 @@
             <div class="kpi-card">
                 <h3>Vehículos Usados</h3>
                 <p id="kpi-vehiculos">-</p>
+            </div>
+            <div class="kpi-card clickable" onclick="showOccupancyModal()">
+                <h3>Tasa Ocupación</h3>
+                <p id="kpi-ocupacion">-</p>
+                <small style="color: #999; font-size: 0.7rem;">Click para detalle</small>
             </div>
             <div class="kpi-card">
                 <h3>Vereda Más Visitada</h3>
@@ -392,20 +562,27 @@
             <!-- 70% Mapa -->
             <div class="map-container">
                 <div id="map"></div>
-                
+
                 <!-- Leyenda -->
                 <div class="map-legend">
                     <div class="legend-item">
-                        <div class="dot" style="background: #28a745; border: 2px solid white; box-shadow: 0 0 2px rgba(0,0,0,0.5);"></div> Origen
+                        <div class="dot"
+                            style="background: #28a745; border: 2px solid white; box-shadow: 0 0 2px rgba(0,0,0,0.5);">
+                        </div> Origen
                     </div>
                     <div class="legend-item">
-                        <div class="dot" style="background: #ffc107; border: 2px solid white; box-shadow: 0 0 2px rgba(0,0,0,0.5);"></div> Parada Intermedia
+                        <div class="dot"
+                            style="background: #ffc107; border: 2px solid white; box-shadow: 0 0 2px rgba(0,0,0,0.5);">
+                        </div> Parada Intermedia
                     </div>
                     <div class="legend-item">
-                        <div class="dot" style="background: #dc3545; border: 2px solid white; box-shadow: 0 0 2px rgba(0,0,0,0.5);"></div> Destino Final
+                        <div class="dot"
+                            style="background: #dc3545; border: 2px solid white; box-shadow: 0 0 2px rgba(0,0,0,0.5);">
+                        </div> Destino Final
                     </div>
                     <div class="legend-item" style="margin-top: 8px;">
-                        <div style="width: 25px; height: 3px; background: #2D5A27; margin-right: 5px;"></div> Ruta del Viaje
+                        <div style="width: 25px; height: 3px; background: #2D5A27; margin-right: 5px;"></div> Ruta del
+                        Viaje
                     </div>
                 </div>
             </div>
@@ -423,6 +600,22 @@
         </div>
     </div>
 
+    <!-- Modal Ocupación -->
+    <div id="modal-ocupacion" class="modal-overlay" onclick="closeOccupancyModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2>Tasa de Ocupación Detallada</h2>
+                <button class="close-modal" onclick="closeOccupancyModal()">✕</button>
+            </div>
+            <div id="modal-occupancy-body">
+                <!-- Se llena dinámicamente -->
+            </div>
+            <p style="margin-top:1.5rem; font-size: 0.85rem; color: #666; text-align: center;">
+                * Calculado según Viajes / Vehículos-Día únicos por categoría.
+            </p>
+        </div>
+    </div>
+
     <!-- Application Logic -->
     <script>
         let map;
@@ -433,6 +626,36 @@
         let selectedTripId = null; // Sidebar focus
         let drawnTripIds = new Set(); // Map multi-selection focus
         let isAdmin = false;
+
+        let occupancyData = {}; // Para el modal de desglose
+
+        function showOccupancyModal() {
+            const body = document.getElementById('modal-occupancy-body');
+            body.innerHTML = '';
+
+            const entries = Object.entries(occupancyData);
+            if (entries.length === 0) {
+                body.innerHTML = '<p style="text-align:center; color:#999; padding: 20px;">No hay datos suficientes para el desglose por tipo.</p>';
+            } else {
+                entries.sort((a, b) => b[1] - a[1]).forEach(([tipo, tasa]) => {
+                    const item = document.createElement('div');
+                    item.className = 'occupancy-item';
+                    item.innerHTML = `
+                        <span class="occupancy-label">${tipo}</span>
+                        <div style="display: flex; flex-direction: column; align-items: flex-end;">
+                            <span class="occupancy-value">${tasa}</span>
+                            <small style="font-size: 0.7rem; color: #999; margin-top: 4px;">Tasa de ocupación</small>
+                        </div>
+                    `;
+                    body.appendChild(item);
+                });
+            }
+            document.getElementById('modal-ocupacion').style.display = 'flex';
+        }
+
+        function closeOccupancyModal() {
+            document.getElementById('modal-ocupacion').style.display = 'none';
+        }
 
         // Route Colors Palette
         const ROUTE_COLORS = ['#e6194B', '#3cb44b', '#4363d8', '#f58231', '#911eb4', '#42d4f4', '#f032e6', '#000075', '#800000', '#9A6324', '#469990'];
@@ -462,13 +685,30 @@
             initMap();
             await fetchData();
             populateFilterOptions();
+
+            // Set Default Dates: Start of month and Today
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const firstDay = `${year}-${month}-01`;
+            const today = `${year}-${month}-${day}`;
+            
+            document.getElementById('f-fecha-ini').value = firstDay;
+            document.getElementById('f-fecha-fin').value = today;
+
             applyFilters();
 
             // Set up UI events
             document.getElementById('btn-apply-filters').addEventListener('click', applyFilters);
             document.getElementById('btn-reset').addEventListener('click', () => {
-                document.getElementById('f-fecha-ini').value = '';
-                document.getElementById('f-fecha-fin').value = '';
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = String(now.getMonth() + 1).padStart(2, '0');
+                const day = String(now.getDate()).padStart(2, '0');
+                
+                document.getElementById('f-fecha-ini').value = `${year}-${month}-01`;
+                document.getElementById('f-fecha-fin').value = `${year}-${month}-${day}`;
                 document.getElementById('f-funcionario').value = '';
                 document.getElementById('f-proyecto').value = '';
                 document.getElementById('f-vehiculo').value = '';
@@ -547,7 +787,7 @@
                 if (fFin && tripDate && tripDate > fFin) return false;
 
                 if (fFunc && t.funcionario !== fFunc) return false;
-                
+
                 if (fProj) {
                     const pName = t.proyecto_codigo ? `${t.proyecto_codigo} - ${t.proyecto_nombre}` : t.proyecto_nombre;
                     if (pName !== fProj) return false;
@@ -591,8 +831,6 @@
             filteredTrips.forEach(t => {
                 const fDate = t.fecha_hora ? t.fecha_hora.split(' ')[0] : '-';
                 const fName = t.funcionario ? t.funcionario.split(' ').slice(0, 2).join(' ') : '-';
-                
-                const btnMapColor = drawnTripIds.has(t.id) ? '#dc3545' : '#20c997';
                 const btnMapIcon = drawnTripIds.has(t.id) ? '❌' : '🗺️';
                 const btnMapTitle = drawnTripIds.has(t.id) ? 'Ocultar ruta' : 'Dibujar ruta en mapa';
 
@@ -600,9 +838,9 @@
                     <tr>
                         <td>${fDate}</td>
                         <td>${fName}</td>
-                        <td style="text-align: right; min-width: 90px;">
-                            <button class="btn-lupa" onclick="viewTripDetails(${t.id}, true)" title="Ver detalle">🔍</button>
-                            <button class="btn-lupa" style="background: ${btnMapColor};" onclick="drawTripOnMap(${t.id})" title="${btnMapTitle}">${btnMapIcon}</button>
+                        <td style="text-align:right; white-space: nowrap;">
+                            <button class="btn-lupa" onclick="viewTripDetails(${t.id}, true)" title="Ver Detalle">🔍</button>
+                            <button class="btn-lupa" onclick="drawTripOnMap(${t.id})" title="${btnMapTitle}">${btnMapIcon}</button>
                         </td>
                     </tr>
                 `;
@@ -623,26 +861,62 @@
             document.getElementById('kpi-viajes').textContent = filteredTrips.length;
 
             let vehiculosUsados = new Set();
-            let totalParadas = 0;
+            let paradasPorViajeroDia = {}; // Key: Placa_Fecha
+            let tripsPorTipoVehiculo = {}; // Key: tipo_vehiculo (count trips)
+            let viajerosPorTipoVehiculo = {}; // Key: tipo_vehiculo (Set of plaque_date)
             let veredasCount = {};
 
             filteredTrips.forEach(t => {
+                const tripDate = t.fecha_hora ? t.fecha_hora.split(' ')[0] : 'nodate';
                 t.vehiculos.forEach(v => {
-                    if (v.placa) vehiculosUsados.add(v.placa);
+                    if (v.placa) {
+                        const key = v.placa + '_' + tripDate;
+                        const tipo = v.tipo_vehiculo || 'Otro';
+                        vehiculosUsados.add(key);
+
+                        if (!paradasPorViajeroDia[key]) paradasPorViajeroDia[key] = 0;
+                        if (!tripsPorTipoVehiculo[tipo]) tripsPorTipoVehiculo[tipo] = 0;
+                        if (!viajerosPorTipoVehiculo[tipo]) viajerosPorTipoVehiculo[tipo] = new Set();
+
+                        tripsPorTipoVehiculo[tipo]++;
+                        viajerosPorTipoVehiculo[tipo].add(key);
+
+                        // Count intermediate stops
+                        t.recorridos.forEach(r => {
+                            if (r.es_parada == 1) paradasPorViajeroDia[key]++;
+                            if (r.vereda) veredasCount[r.vereda] = (veredasCount[r.vereda] || 0) + 1;
+                        });
+                    }
                 });
-                
-                t.recorridos.forEach(r => {
-                    if (r.es_parada == 1) totalParadas++;
-                    if (r.vereda) veredasCount[r.vereda] = (veredasCount[r.vereda] || 0) + 1;
-                });
-                
-                if(t.origen) veredasCount[t.origen] = (veredasCount[t.origen] || 0) + 1;
-                if(t.destino_final) veredasCount[t.destino_final] = (veredasCount[t.destino_final] || 0) + 1;
+
+                if (t.origen) veredasCount[t.origen] = (veredasCount[t.origen] || 0) + 1;
+                if (t.destino_final) veredasCount[t.destino_final] = (veredasCount[t.destino_final] || 0) + 1;
             });
 
             document.getElementById('kpi-vehiculos').textContent = vehiculosUsados.size;
 
-            let prom = filteredTrips.length > 0 ? (totalParadas / filteredTrips.length).toFixed(1) : 0;
+            let totalParadasAjustado = 0;
+            for (let key in paradasPorViajeroDia) {
+                // Cada "Viajero Día" suma sus paradas intermedias + 1 obligatoria (destino)
+                totalParadasAjustado += (paradasPorViajeroDia[key] + 1);
+            }
+
+            // Global Occupancy Rate
+            let tasaOcupacionGlobal = vehiculosUsados.size > 0 ? (filteredTrips.length / vehiculosUsados.size).toFixed(1) : 0;
+            const tarjetaOcupacion = document.getElementById('kpi-ocupacion').parentElement;
+            document.getElementById('kpi-ocupacion').textContent = tasaOcupacionGlobal;
+
+            // breakdown for Modal
+            occupancyData = {};
+            for (let tipo in tripsPorTipoVehiculo) {
+                const numTrips = tripsPorTipoVehiculo[tipo];
+                const numViajeros = viajerosPorTipoVehiculo[tipo].size;
+                const tasa = numViajeros > 0 ? (numTrips / numViajeros).toFixed(1) : 0;
+                occupancyData[tipo] = tasa;
+            }
+
+
+            let prom = vehiculosUsados.size > 0 ? (totalParadasAjustado / vehiculosUsados.size).toFixed(1) : 0;
             document.getElementById('kpi-paradas').textContent = prom;
 
             // Top Vereda (Excluding internal terminals like PORTAL TUNAL o BOGOTA)
@@ -657,7 +931,7 @@
                 }
             }
             document.getElementById('kpi-vereda').textContent = topVereda;
-            if(topVereda.length > 15) {
+            if (topVereda.length > 15) {
                 document.getElementById('kpi-vereda').style.fontSize = '1.2rem';
             } else {
                 document.getElementById('kpi-vereda').style.fontSize = '1.8rem';
@@ -697,9 +971,9 @@
                 const routeColor = ROUTE_COLORS[routeColorIndex % ROUTE_COLORS.length];
                 routeColorIndex++;
 
-                console.log("Draw Map Trip:", trip.id, { 
-                    origen: trip.origen, 
-                    destino: trip.destino_final, 
+                console.log("Draw Map Trip:", trip.id, {
+                    origen: trip.origen,
+                    destino: trip.destino_final,
                     recorridos: trip.recorridos,
                     raw_coords: { o_lat: trip.origen_lat, o_lon: trip.origen_lon, d_lat: trip.destino_lat, d_lon: trip.destino_lon }
                 });
@@ -719,18 +993,18 @@
                         console.warn(`[Trip ${trip.id}] Coordenadas nulas/vacías para ${label} '${vereda}'. No se dibujará este punto.`);
                         return null;
                     }
-                    
+
                     const cleanLat = String(latStr).replace(',', '.');
                     const cleanLon = String(lonStr).replace(',', '.');
 
                     const pLat = parseFloat(cleanLat);
                     const pLon = parseFloat(cleanLon);
-                    
+
                     if (isNaN(pLat) || isNaN(pLon)) {
                         console.warn(`[Trip ${trip.id}] Coordenadas numéricas inválidas para ${label} '${vereda}': original_lat='${rawLat}', original_lon='${rawLon}' -> parse_lat=${pLat}, parse_lon=${pLon}`);
                         return null;
                     }
-                    
+
                     // Al seleccionar un marcador en el mapa dibujado, se asume que abre el detalle de su viaje dueño
                     const marker = L.circleMarker([pLat, pLon], {
                         radius: 7,
@@ -739,7 +1013,7 @@
                         fillColor: color,
                         fillOpacity: 1
                     }).bindTooltip(`<b>${vereda}</b><br>${label} ${ordenText}`, { direction: 'top' });
-                    
+
                     marker.on('click', () => viewTripDetails(trip.id));
 
                     drawnLayers.push(marker);
@@ -754,7 +1028,7 @@
                 if (oPt) points.push(oPt);
 
                 // 2. Paradas ordenadas
-                trip.recorridos.sort((a,b) => a.orden - b.orden).forEach(r => {
+                trip.recorridos.sort((a, b) => a.orden - b.orden).forEach(r => {
                     if (!r.lat || !r.lon) {
                         console.warn(`[Trip ${trip.id}] Faltan coordenadas en tabla de recorridos para la parada '${r.vereda}' (Orden ${r.orden})`);
                     }
@@ -774,7 +1048,7 @@
                 if (points.length >= 2) {
                     // Cargar vía OSRM con el color dinámico recién seleccionado
                     const waypoints = points.map(p => L.Routing.waypoint(L.latLng(p[0], p[1]), p[2]));
-                    
+
                     const routeControl = L.Routing.control({
                         waypoints: waypoints,
                         lineOptions: {
@@ -791,7 +1065,7 @@
                         collapsible: true, // Permitir colapsarlo
                         language: 'es' // Instrucciones en español
                     }).addTo(map);
-                    
+
                     routeControl.on('routesfound', function (e) {
                         const rb = L.latLngBounds(e.routes[0].coordinates);
                         map.fitBounds(rb, { padding: [50, 50] });
@@ -835,7 +1109,7 @@
             document.getElementById('btn-back-list').style.display = 'inline-block';
 
             const sb = document.getElementById('sidebar-content');
-            
+
             let vehiculosHTML = '';
             if (trip.vehiculos && trip.vehiculos.length > 0) {
                 trip.vehiculos.forEach(v => {
@@ -888,7 +1162,12 @@
                     Eliminar este viaje
                 </button>
                 ` : ''}
+                <button onclick="showTripList()" class="btn-action" style="background-color: #6c757d; margin-top: 1.5rem; width: 100%;">
+                    ← Volver a la Lista
+                </button>
             `;
+
+            sb.innerHTML = detailsHTML;
         }
 
         async function requestDelete(id, name) {
@@ -904,12 +1183,14 @@
                 const result = await res.json();
                 if (result.success) {
                     alert('Viaje eliminado extosamente.');
-                    location.reload(); 
+                    location.reload();
                 } else {
                     alert('Error: ' + result.error);
                 }
             } catch (e) { alert('Error de red al intentar eliminar.'); }
         }
+
     </script>
 </body>
+
 </html>

@@ -24,12 +24,12 @@ try {
             p.vereda,
             p.nombre_predio,
 
-            GROUP_CONCAT(DISTINCT cv.nombre SEPARATOR ', ') AS canales,
-            GROUP_CONCAT(DISTINCT cat.nombre SEPARATOR ', ') AS categorias,
-            GROUP_CONCAT(DISTINCT cert.nombre SEPARATOR ', ') AS certificaciones,
-            GROUP_CONCAT(DISTINCT dif.nombre SEPARATOR ', ') AS dificultades,
-            GROUP_CONCAT(DISTINCT fin.nombre SEPARATOR ', ') AS financiamiento,
-            GROUP_CONCAT(DISTINCT grp.nombre SEPARATOR ', ') AS grupos
+            GROUP_CONCAT(DISTINCT cv.nombre SEPARATOR '|') AS canales,
+            GROUP_CONCAT(DISTINCT cat.nombre SEPARATOR '|') AS categorias,
+            GROUP_CONCAT(DISTINCT cert.nombre SEPARATOR '|') AS certificaciones,
+            GROUP_CONCAT(DISTINCT dif.nombre SEPARATOR '|') AS dificultades,
+            GROUP_CONCAT(DISTINCT fin.nombre SEPARATOR '|') AS financiamiento,
+            GROUP_CONCAT(DISTINCT grp.nombre SEPARATOR '|') AS grupos
 
         FROM productores_sumapaz p
 
@@ -60,6 +60,18 @@ try {
     $registro = $stmt->fetch();
 
     if ($registro) {
+        $stmt_disc = $pdo->prepare("SELECT tiene_discapacidad, tipo FROM discapacidad_productor WHERE productor_id = ?");
+        $stmt_disc->execute([$productor_id]);
+        $registro['discapacidad'] = $stmt_disc->fetch(PDO::FETCH_ASSOC);
+
+        $stmt_prod = $pdo->prepare("SELECT * FROM productor_productos WHERE productor_id = ?");
+        $stmt_prod->execute([$productor_id]);
+        $registro['productos'] = $stmt_prod->fetchAll(PDO::FETCH_ASSOC);
+
+        $stmt_srv = $pdo->prepare("SELECT * FROM productor_servicios WHERE productor_id = ?");
+        $stmt_srv->execute([$productor_id]);
+        $registro['servicios'] = $stmt_srv->fetchAll(PDO::FETCH_ASSOC);
+
         echo json_encode(['success' => true, 'data' => $registro]);
     } else {
         echo json_encode(['success' => false, 'error' => 'Productor no encontrado o sin información detallada']);

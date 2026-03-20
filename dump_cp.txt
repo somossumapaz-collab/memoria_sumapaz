@@ -1,0 +1,15 @@
+CREATE TABLE `caracterizacion_productor` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `productor_id` bigint(20) unsigned NOT NULL,
+  `fecha_caracterizacion` date DEFAULT NULL,
+  `coordenadas` text DEFAULT NULL,
+  `tipo_organizacion` varchar(255) DEFAULT NULL,
+  `extension_predio` varchar(100) DEFAULT NULL,
+  `tiempo_implementacion` varchar(100) DEFAULT NULL,
+  `tipo_tenencia` varchar(100) DEFAULT NULL,
+  `numero_personas` int(11) DEFAULT NULL,
+  `nombre_organizacion` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_productor_caracterizacion` (`productor_id`),
+  CONSTRAINT `fk_productor_caracterizacion` FOREIGN KEY (`productor_id`) REFERENCES `productores_sumapaz` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci

@@ -1,0 +1,15 @@
+CREATE TABLE `productores_sumapaz` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `nombre_completo` varchar(150) NOT NULL,
+  `tipo_documento` varchar(50) NOT NULL,
+  `numero_documento` varchar(50) NOT NULL,
+  `fecha_nacimiento` date NOT NULL,
+  `telefono` varchar(20) NOT NULL,
+  `correo_electronico` varchar(150) DEFAULT NULL,
+  `vereda` varchar(100) NOT NULL,
+  `nombre_predio` varchar(150) NOT NULL,
+  `fecha_creacion` timestamp NULL DEFAULT current_timestamp(),
+  `mypime` tinyint(1) DEFAULT 0,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `numero_documento` (`numero_documento`)
+) ENGINE=InnoDB AUTO_INCREMENT=229 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci

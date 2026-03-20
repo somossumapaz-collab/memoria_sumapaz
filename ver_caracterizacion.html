@@ -19,6 +19,17 @@
         document.write(`<link rel="stylesheet" href="assets/styles.css?v=${timestamp}">`);
     </script>
     <style>
+        @media print {
+            body { background: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            header, nav, .header-content { display: none !important; }
+            .form-submit-container, #btn-descargar-pdf { display: none !important; }
+            main, #main-content { margin: 0 !important; padding: 0 !important; max-width: 100% !important; width: 100% !important; }
+            .section-box { border: 1px solid #eee !important; box-shadow: none !important; padding: 1rem !important; margin-bottom: 1rem !important; page-break-inside: avoid; break-inside: avoid; }
+            .prefilled-card { border: none !important; border-left: 5px solid var(--primary-green) !important; margin-bottom: 1rem !important; }
+            @page { margin: 1.5cm; }
+        }
+    </style>
+    <style>
         .prefilled-card {
             background-color: #EFEBE4;
             padding: 1.5rem;
@@ -117,7 +128,7 @@
             gap: 1.5rem;
         }
 
-        .form-grid > .form-group {
+        .form-grid>.form-group {
             min-width: 0;
         }
 
@@ -148,6 +159,7 @@
             overflow-y: auto;
             background: #fff;
         }
+
         .custom-multi-select option {
             padding: 0.6rem;
             margin-bottom: 2px;
@@ -155,6 +167,7 @@
             cursor: pointer;
             transition: background-color 0.2s;
         }
+
         .custom-multi-select option:checked {
             background-color: var(--primary-green, #4CAF50);
             color: white;
@@ -193,11 +206,14 @@
 
     <main class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
         <div style="text-align: center; margin-bottom: 2rem;">
-            <h1 class="serif form-title" style="margin-bottom: 0.5rem; color: var(--earth-brown); display: inline-block; position: relative; padding-bottom: 5px;">
+            <h1 class="serif form-title"
+                style="margin-bottom: 0.5rem; color: var(--earth-brown); display: inline-block; position: relative; padding-bottom: 5px;">
                 Ficha de Caracterización
-                <span style="position: absolute; bottom: 0; left: 25%; width: 50%; height: 3px; background-color: var(--light-green); border-radius: 2px;"></span>
+                <span
+                    style="position: absolute; bottom: 0; left: 25%; width: 50%; height: 3px; background-color: var(--light-green); border-radius: 2px;"></span>
             </h1>
-            <p class="form-subtitle" style="color: #666; font-size: 1.1rem; margin-top: 0.5rem;">Productores rurales y emprendimientos.</p>
+            <p class="form-subtitle" style="color: #666; font-size: 1.1rem; margin-top: 0.5rem;">Productores rurales y
+                emprendimientos.</p>
         </div>
 
         <!-- Loading spinner -->
@@ -207,7 +223,7 @@
             <!-- Pre-filled basic data -->
             <div class="prefilled-card">
                 <h3 style="color: var(--primary-green); margin-bottom: 0.5rem;">Información Básica del Productor
-                    (Pre-cargada)</h3>
+                </h3>
                 <p style="font-size: 0.9rem; color: #666;">Estos datos fueron recopilados durante la inscripción y no
                     requieren llenarse de nuevo.</p>
                 <div class="prefilled-grid">
@@ -243,27 +259,33 @@
                 <input type="hidden" id="productor_id" name="productor_id">
 
                 <!-- FECHA -->
-                <div class="section-box" style="display: flex; justify-content: space-between; align-items: center; background: #fafafa;">
+                <div class="section-box"
+                    style="display: flex; justify-content: space-between; align-items: center; background: #fafafa;">
                     <div>
                         <h2 style="font-size: 1.1rem; color: #555; margin: 0;">Registro de Caracterización</h2>
-                        <p style="font-size: 0.85rem; color: #888; margin: 0; padding-top: 4px;">La hora de registro se guarda automáticamente.</p>
+                        <p style="font-size: 0.85rem; color: #888; margin: 0; padding-top: 4px;">La hora de registro se
+                            guarda automáticamente.</p>
                     </div>
-                    <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 0.8rem 1.2rem; text-align: center; min-width: 200px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-                        <div style="font-size: 0.8rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Fecha y Hora Actual</div>
-                        <div id="display_fecha" style="font-weight: 600; color: var(--primary-green); font-size: 1.1rem;">-</div>
+                    <div
+                        style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 0.8rem 1.2rem; text-align: center; min-width: 200px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                        <div
+                            style="font-size: 0.8rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">
+                            Fecha y Hora Actual</div>
+                        <div id="display_fecha"
+                            style="font-weight: 600; color: var(--primary-green); font-size: 1.1rem;">-</div>
                         <input type="hidden" id="fecha_caracterizacion" name="fecha_caracterizacion">
                     </div>
                 </div>
 
                 <script>
                     // Display and set current datetime for fecha_caracterizacion
-                    (function() {
+                    (function () {
                         const now = new Date();
                         // Format for backend (YYYY-MM-DD HH:MM:SS)
                         const pad = num => num.toString().padStart(2, '0');
-                        const dbFormat = `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+                        const dbFormat = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
                         document.getElementById('fecha_caracterizacion').value = dbFormat;
-                        
+
                         // Format nicely for UI
                         const options = { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
                         document.getElementById('display_fecha').textContent = now.toLocaleDateString('es-CO', options);
@@ -309,7 +331,7 @@
                                 <option value="No">No</option>
                                 <option value="Sí">Sí</option>
                             </select>
-                            
+
                             <div id="discapacidad_tipo_container" style="display: none; margin-top: 1rem;">
                                 <label>Si respondió sí, ¿qué tipo?</label>
                                 <input type="text" name="discapacidad_tipo" placeholder="Especificar tipo">
@@ -398,35 +420,48 @@
                         </div>
 
                         <div class="form-group">
-                            <label style="color: var(--primary-green);">Producción agrícola (Hortalizas, tubérculos y cereales)</label>
+                            <label style="color: var(--primary-green);">Producción agrícola (Hortalizas, tubérculos y
+                                cereales)</label>
                             <select name="categorias[]" multiple size="3" class="custom-multi-select">
-                                <option value="11">Hortalizas, zanahoria, lechuga, espinaca, acelga, brocoli, coliflor, remolacha, cebolla, ajo, repollo, rabano</option>
-                                <option value="12">Tubérculos y raíces : papa (nativa, pastusa, sabanera, etc), arracacha, yuca, cubios</option>
-                                <option value="13">Leguminosas y cereales : arveja, frijol, habas, lentejas, garbanzo, maiz, cebada, trigo, avena, centeno</option>
+                                <option value="11">Hortalizas, zanahoria, lechuga, espinaca, acelga, brocoli, coliflor,
+                                    remolacha, cebolla, ajo, repollo, rabano</option>
+                                <option value="12">Tubérculos y raíces : papa (nativa, pastusa, sabanera, etc),
+                                    arracacha, yuca, cubios</option>
+                                <option value="13">Leguminosas y cereales : arveja, frijol, habas, lentejas, garbanzo,
+                                    maiz, cebada, trigo, avena, centeno</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label style="color: var(--primary-green);">Producción frutícola y derivados en procesos artesanales y agroindustriales</label>
+                            <label style="color: var(--primary-green);">Producción frutícola y derivados en procesos
+                                artesanales y agroindustriales</label>
                             <select name="categorias[]" multiple size="2" class="custom-multi-select">
-                                <option value="14">Frutas : mora, fresa, uchuva, durazno, manzana, pera, lulo, curuba, tomate de arbol</option>
-                                <option value="15">Subproductos : mermeladas, pulpas, jugos, nectares, deshidratados</option>
+                                <option value="14">Frutas : mora, fresa, uchuva, durazno, manzana, pera, lulo, curuba,
+                                    tomate de arbol</option>
+                                <option value="15">Subproductos : mermeladas, pulpas, jugos, nectares, deshidratados
+                                </option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label style="color: var(--primary-green);">Plantas aromáticas / medicinales y productos naturales</label>
+                            <label style="color: var(--primary-green);">Plantas aromáticas / medicinales y productos
+                                naturales</label>
                             <select name="categorias[]" multiple size="2" class="custom-multi-select">
-                                <option value="16">Plantas : manzanilla, menta, hierbabuena, orégano, ruda, toronjil, caléndula, albahaca, entre otras</option>
-                                <option value="17">Productos : Infusiones, aceites, jabones, cremas, unguentos, aromaticas</option>
+                                <option value="16">Plantas : manzanilla, menta, hierbabuena, orégano, ruda, toronjil,
+                                    caléndula, albahaca, entre otras</option>
+                                <option value="17">Productos : Infusiones, aceites, jabones, cremas, unguentos,
+                                    aromaticas</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label style="color: var(--primary-green);">Transformación de alimentos artesanal y agroindustrial</label>
+                            <label style="color: var(--primary-green);">Transformación de alimentos artesanal y
+                                agroindustrial</label>
                             <select name="categorias[]" multiple size="3" class="custom-multi-select">
-                                <option value="18">Panadería y resposteria : panes, tortas, bizcochos y galletas</option>
-                                <option value="19">Harinas y derivados : arepa, avena procesada, mezclas artesanales</option>
+                                <option value="18">Panadería y resposteria : panes, tortas, bizcochos y galletas
+                                </option>
+                                <option value="19">Harinas y derivados : arepa, avena procesada, mezclas artesanales
+                                </option>
                                 <option value="20">Conservas / salsas, encurtidos u otros productos, empacados</option>
                             </select>
                         </div>
@@ -441,7 +476,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label style="color: var(--primary-green);">Expresiones artísticas o servicios culturales</label>
+                            <label style="color: var(--primary-green);">Expresiones artísticas o servicios
+                                culturales</label>
                             <select name="categorias[]" multiple size="2" class="custom-multi-select">
                                 <option value="24">Actividades culturales</option>
                                 <option value="25">Actividades deportivas</option>
@@ -449,12 +485,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label style="color: var(--primary-green);">Servicios rurales, gastronomicos y de economía local</label>
+                            <label style="color: var(--primary-green);">Servicios rurales, gastronomicos y de economía
+                                local</label>
                             <select name="categorias[]" multiple size="4" class="custom-multi-select">
                                 <option value="26">Restaurantes, panaderías y tiendas vederales</option>
-                                <option value="27">Preparación de alimentos, refrigerios, avituallamiento y servicios de catering</option>
+                                <option value="27">Preparación de alimentos, refrigerios, avituallamiento y servicios de
+                                    catering</option>
                                 <option value="28">Turismo rural, paseos ecológicos, guianza, hospedaje</option>
-                                <option value="29">Alquiler de maquinaria, transporte rural, servicios de apoyo a la produccción</option>
+                                <option value="29">Alquiler de maquinaria, transporte rural, servicios de apoyo a la
+                                    produccción</option>
                             </select>
                         </div>
                     </div>
@@ -564,9 +603,6 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn"
-                        style="background:var(--light-green); color:#333; margin-bottom: 2rem;"
-                        onclick="addProducto()">+ Añadir otro producto</button>
 
                     <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; color:#444;">Servicios Culturales / Deportivos
                         (Solo si aplica)</h3>
@@ -612,9 +648,6 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn"
-                        style="background:var(--light-green); color:#333; margin-bottom: 2rem;"
-                        onclick="addServicio()">+ Añadir otra actividad</button>
 
                     <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; color:#444;">5.3 Canales de Venta / Entrega</h3>
                     <div class="form-grid">
@@ -701,8 +734,10 @@
                             <select name="destino">
                                 <option value="">Seleccione...</option>
                                 <option value="Para el autoconsumo">Para el autoconsumo</option>
-                                <option value="Para autoconsumo y venta de excedentes">Para autoconsumo y venta de excedentes</option>
-                                <option value="Para venta total o comercialización completa">Para venta total o comercialización completa</option>
+                                <option value="Para autoconsumo y venta de excedentes">Para autoconsumo y venta de
+                                    excedentes</option>
+                                <option value="Para venta total o comercialización completa">Para venta total o
+                                    comercialización completa</option>
                                 <option value="Otro">Otro</option>
                             </select>
                         </div>
@@ -713,7 +748,8 @@
                                 <option value="">Seleccione...</option>
                                 <option value="PROPIO">PROPIO</option>
                                 <option value="ALQUILADO">ALQUILADO</option>
-                                <option value="DEPENDO DE TRANSPORTE COMUNAL, FAMILIAR O DE AMIGOS (SIN PAGO)">DEPENDO DE TRANSPORTE COMUNAL, FAMILIAR O DE AMIGOS (SIN PAGO)</option>
+                                <option value="DEPENDO DE TRANSPORTE COMUNAL, FAMILIAR O DE AMIGOS (SIN PAGO)">DEPENDO
+                                    DE TRANSPORTE COMUNAL, FAMILIAR O DE AMIGOS (SIN PAGO)</option>
                                 <option value="NO TENGO TRANSPORTE">NO TENGO TRANSPORTE</option>
                             </select>
                         </div>
@@ -722,9 +758,12 @@
                             <label>Forma de pago</label>
                             <select name="forma_pago">
                                 <option value="">Seleccione...</option>
-                                <option value="ANTES DE ENTREGARLOS / ANTES DE PRESENTARSE">ANTES DE ENTREGARLOS / ANTES DE PRESENTARSE</option>
-                                <option value="EN EL MOMENTO DE LA ENTREGA / PRESENTACIÓN">EN EL MOMENTO DE LA ENTREGA / PRESENTACIÓN</option>
-                                <option value="DESPUÉS DE LA ENTREGA / PRESENTACIÓN (A CRÉDITO O PLAZO)">DESPUÉS DE LA ENTREGA / PRESENTACIÓN (A CRÉDITO O PLAZO)</option>
+                                <option value="ANTES DE ENTREGARLOS / ANTES DE PRESENTARSE">ANTES DE ENTREGARLOS / ANTES
+                                    DE PRESENTARSE</option>
+                                <option value="EN EL MOMENTO DE LA ENTREGA / PRESENTACIÓN">EN EL MOMENTO DE LA ENTREGA /
+                                    PRESENTACIÓN</option>
+                                <option value="DESPUÉS DE LA ENTREGA / PRESENTACIÓN (A CRÉDITO O PLAZO)">DESPUÉS DE LA
+                                    ENTREGA / PRESENTACIÓN (A CRÉDITO O PLAZO)</option>
                             </select>
                         </div>
 
@@ -739,7 +778,8 @@
                         </div>
 
                         <div class="form-group" style="grid-column: 1 / -1;">
-                            <label>¿CUÁLES SON LAS PRINCIPALES DIFICULTADES O LIMITACIONES QUE ENFRENTA EN SU PROCESO PRODUCTIVO O CULTURAL/DEPORTIVO? (MARQUE TODAS LAS QUE APLIQUEN)</label>
+                            <label>¿CUÁLES SON LAS PRINCIPALES DIFICULTADES O LIMITACIONES QUE ENFRENTA EN SU PROCESO
+                                PRODUCTIVO O CULTURAL/DEPORTIVO? (MARQUE TODAS LAS QUE APLIQUEN)</label>
                             <select name="dificultades[]" multiple size="8" class="custom-multi-select">
                                 <option value="1">ALTOS COSTOS DE MATERIAS PRIMAS O INSUMOS</option>
                                 <option value="2">DESCONOCIMIENTO O LIMITACIONES EN LOS PROCESOS DE PRODUCCIÓN</option>
@@ -747,13 +787,15 @@
                                 <option value="4">ESCASO APOYO INSTITUCIONAL O ASISTENCIA TÉCNICA</option>
                                 <option value="5">INFRAESTRUCTURA INADECUADA</option>
                                 <option value="6">PROBLEMAS CLIMÁTICOS O DE PLAGAS</option>
-                                <option value="7">DIFICULTADES DE TRANSPORTE O ACCESO AL PREDIO / LUGARES DE FORMACIÓN/PRESENTACIÓN</option>
+                                <option value="7">DIFICULTADES DE TRANSPORTE O ACCESO AL PREDIO / LUGARES DE
+                                    FORMACIÓN/PRESENTACIÓN</option>
                                 <option value="8">SOLICITUD DE PERMISOS PARA ESPACIOS PÚBLICOS (SUGA)</option>
                             </select>
                         </div>
 
                         <div class="form-group" style="grid-column: 1 / -1;">
-                            <label>¿CUENTA CON ALGUNO DE LOS SIGUIENTES REGISTROS, PERMISOS O CERTIFICACIONES? (MARQUE TODAS LAS QUE APLIQUEN)</label>
+                            <label>¿CUENTA CON ALGUNO DE LOS SIGUIENTES REGISTROS, PERMISOS O CERTIFICACIONES? (MARQUE
+                                TODAS LAS QUE APLIQUEN)</label>
                             <select name="certificaciones[]" multiple size="9" class="custom-multi-select">
                                 <option value="1">REGISTRO INVIMA</option>
                                 <option value="2">REGISTRO ICA - PREDIO AGRÍCOLA</option>
@@ -768,12 +810,13 @@
                         </div>
 
                         <div class="form-group" style="grid-column: 1 / -1; max-width: 600px;">
-                            <label>¿SE ENCUENTRA EN PROCESO DE TRÁMITE O GESTIÓN DE ALGUNO DE LOS ANTERIORES PERMISOS O CERTIFICACIONES?</label>
+                            <label>¿SE ENCUENTRA EN PROCESO DE TRÁMITE O GESTIÓN DE ALGUNO DE LOS ANTERIORES PERMISOS O
+                                CERTIFICACIONES?</label>
                             <select name="en_tramite_bool" onchange="toggleEnTramite()">
                                 <option value="No">No</option>
                                 <option value="Sí">Sí</option>
                             </select>
-                            
+
                             <div id="en_tramite_container" style="display: none; margin-top: 1rem;">
                                 <label>Si respondió sí, ¿cuál o cuáles?</label>
                                 <input type="text" name="en_tramite" placeholder="Especifique cuál trámite">
@@ -817,10 +860,12 @@
 
                 <div class="form-submit-container" style="text-align: center; margin-top: 3rem;">
                     <button type="button" class="btn btn-submit"
-                        style="background-color: #757575; width: 45%; max-width: 250px; margin-right: 1rem;"
-                        onclick="window.location.href='productores_registrados.html'">Cancelar</button>
-                    <button type="submit" class="btn btn-submit" style="width: 45%; max-width: 250px;"
-                        id="submit-btn-main">Guardar Caracterización</button>
+                        style="background-color: #6c757d; width: 30%; max-width: 250px; margin-right: 1rem;"
+                        onclick="window.location.href='productores_registrados.html'">Volver</button>
+
+                    <button type="button" class="btn btn-submit"
+                        style="background-color: var(--primary-green); width: 30%; max-width: 250px; margin-right: 1rem;"
+                        onclick="descargarFichaGlobalPDF()" id="btn-descargar-pdf">⏬ Descargar PDF</button>
                 </div>
             </form>
         </div>
@@ -838,13 +883,15 @@
 
     <!-- App Logic -->
     <script>
+        let docExportReady = "Productor";
+
         document.addEventListener('DOMContentLoaded', async () => {
             // Auth check
             try {
                 const authRes = await fetch('api/check_auth.php');
                 const authResult = await authRes.json();
                 if (!authRes.ok || !authResult.authenticated) {
-                    window.location.href = 'login.html'; // Require auth for caracterizacion
+                    window.location.href = 'login.html';
                     return;
                 } else {
                     document.getElementById('header-auth-container').style.display = 'flex';
@@ -856,11 +903,6 @@
 
             const urlParams = new URLSearchParams(window.location.search);
             const prodId = urlParams.get('id');
-            
-            // Enmascarar la URL para seguridad / estética (ahora que ya leímos el ID)
-            if (window.history && window.history.replaceState) {
-                window.history.replaceState(null, '', '/ficha_caracterizacion');
-            }
 
             if (!prodId) {
                 alert('ID del productor es requerido.');
@@ -883,6 +925,18 @@
                     document.getElementById('lbl-correo').textContent = data.correo_electronico || '-';
                     document.getElementById('lbl-vereda').textContent = data.vereda || '-';
                     document.getElementById('lbl-predio').textContent = data.nombre_predio || '-';
+
+                    docExportReady = data.numero_documento || prodId;
+
+                    // Fetch Extended Ficha based on Document and Relational Detalle based on ID
+                    await Promise.all([
+                        loadExtendedFichaData(data.numero_documento),
+                        loadDetalleData(prodId)
+                    ]);
+
+                    // Build visual multiselects AFTER the data has checked the native options
+                    initCustomMultiSelects();
+
                 } else {
                     alert('Productor no encontrado.');
                     window.location.href = 'productores_registrados.html';
@@ -896,6 +950,182 @@
                 document.getElementById('main-content').style.display = 'block';
             }
         });
+
+        async function loadExtendedFichaData(doc) {
+            try {
+                const res = await fetch(`api/get_ficha_by_documento.php?doc=${encodeURIComponent(doc)}`);
+                const result = await res.json();
+                if (result.success && result.data && result.data.tiene_caracterizacion == 1) {
+                    const f = result.data;
+                    lockAndFillField('nombre_organizacion', f.nombre_organizacion);
+                    lockAndFillField('coordenadas', f.coordenadas);
+                    lockAndFillField('discapacidad', f.discapacidad);
+                    lockAndFillField('discapacidad_tipo', f.discapacidad_tipo);
+                    lockAndFillField('tipo_organizacion', f.tipo_organizacion);
+                    lockAndFillField('extension_predio', f.extension_predio);
+                    lockAndFillField('tiempo_implementacion', f.tiempo_implementacion);
+                    lockAndFillField('tipo_tenencia', f.tipo_tenencia);
+                    lockAndFillField('numero_personas', f.numero_personas);
+                    lockAndFillField('mano_obra', f.mano_obra);
+                    lockAndFillField('tipo_proceso', f.tipo_proceso);
+                    lockAndFillField('usa_abonos', f.usa_abonos);
+                    lockAndFillField('sistemas_asociados', f.sistemas_asociados);
+                    lockAndFillField('sistema_diferenciado', f.sistema_diferenciado);
+                    lockAndFillField('descripcion', f.descripcion);
+                    lockAndFillField('valor_agregado', f.valor_agregado);
+                    lockAndFillField('destino', f.destino);
+                    lockAndFillField('transporte', f.transporte);
+                    lockAndFillField('forma_pago', f.forma_pago);
+                    lockAndFillField('define_precio', f.define_precio);
+                    lockAndFillField('en_tramite_bool', f.en_tramite_bool);
+                    lockAndFillField('en_tramite', f.en_tramite);
+                    lockAndFillField('financiamiento', f.financiamiento);
+
+                    // Re-trigger visual updates based on fields
+                    if (f.discapacidad == 'Sí') toggleDiscapacidadTipo();
+                    if (f.sistema_diferenciado == '1') toggleDescripcionSistema('1');
+                    if (f.en_tramite_bool == 'Sí') toggleEnTramite();
+
+                }
+            } catch (e) {
+                console.error("Ficha fetching error", e);
+            }
+        }
+
+        async function loadDetalleData(id) {
+            try {
+                const res = await fetch(`api/get_detalle_productor.php?id=${id}`);
+                const result = await res.json();
+                if (result.success && result.data) {
+                    const d = result.data;
+
+                    if (d.discapacidad && d.discapacidad.tiene_discapacidad) {
+                        lockAndFillField('discapacidad', d.discapacidad.tiene_discapacidad);
+                        if (d.discapacidad.tiene_discapacidad === 'Sí') {
+                            toggleDiscapacidadTipo();
+                            lockAndFillField('discapacidad_tipo', d.discapacidad.tipo);
+                        }
+                    }
+
+                    lockMultiSelectByText('grupos_poblacionales[]', d.grupos);
+                    lockMultiSelectByText('categorias[]', d.categorias);
+                    lockMultiSelectByText('certificaciones[]', d.certificaciones);
+                    lockMultiSelectByText('canales[]', d.canales);
+                    lockMultiSelectByText('dificultades[]', d.dificultades);
+                    lockMultiSelectByText('financiamiento', d.financiamiento);
+
+                    // Populate Products
+                    if (d.productos && Array.isArray(d.productos) && d.productos.length > 0) {
+                        const tbody = document.getElementById('productos-container');
+                        if (tbody) tbody.innerHTML = ''; // Clear default
+                        d.productos.forEach(p => {
+                            if (typeof addProducto === 'function') addProducto();
+                            const newRow = tbody.lastElementChild;
+                            if (!newRow) return;
+                            const inputs = newRow.querySelectorAll('input, select');
+                            if (inputs.length >= 8) {
+                                inputs[0].value = p.nombre || '';
+                                inputs[1].value = p.volumen || '';
+                                inputs[2].value = p.unidad_volumen || '';
+                                inputs[3].value = p.frecuencia || '';
+                                inputs[4].value = p.presentacion || '';
+                                inputs[5].value = p.calidad || '';
+                                inputs[6].value = p.precio || '';
+                                inputs[7].value = p.unidad_precio || '';
+
+                                inputs.forEach(inp => {
+                                    inp.readOnly = true;
+                                    inp.style.backgroundColor = '#f4f4f4';
+                                    if (inp.tagName.toLowerCase() === 'select') inp.disabled = true;
+                                });
+                            }
+                            const delBtn = newRow.querySelector('button');
+                            if (delBtn) {
+                                delBtn.disabled = true;
+                                delBtn.style.opacity = '0.5';
+                                delBtn.style.pointerEvents = 'none';
+                            }
+                        });
+                    }
+
+                    // Populate Services
+                    if (d.servicios && Array.isArray(d.servicios) && d.servicios.length > 0) {
+                        const tbody = document.getElementById('servicios-container');
+                        if (tbody) tbody.innerHTML = '';
+                        d.servicios.forEach(s => {
+                            if (typeof addServicio === 'function') addServicio();
+                            const newRow = tbody.lastElementChild;
+                            if (!newRow) return;
+                            const inputs = newRow.querySelectorAll('input, select');
+                            if (inputs.length >= 6) {
+                                inputs[0].value = s.nombre_actividad || '';
+                                inputs[1].value = s.frecuencia || '';
+                                inputs[2].value = s.poblacion_objetivo || '';
+                                inputs[3].value = s.tipo_contrato || '';
+                                inputs[4].value = s.lugar || '';
+                                inputs[5].value = s.recursos || '';
+
+                                inputs.forEach(inp => {
+                                    inp.readOnly = true;
+                                    inp.style.backgroundColor = '#f4f4f4';
+                                    if (inp.tagName.toLowerCase() === 'select') inp.disabled = true;
+                                });
+                            }
+                            const delBtn = newRow.querySelector('button');
+                            if (delBtn) {
+                                delBtn.disabled = true;
+                                delBtn.style.opacity = '0.5';
+                                delBtn.style.pointerEvents = 'none';
+                            }
+                        });
+                    }
+                }
+            } catch (e) {
+                console.error("Detalle fetching error", e);
+            }
+        }
+
+        function lockMultiSelectByText(name, commasepTexts) {
+            if (!commasepTexts || commasepTexts === 'Ninguno' || commasepTexts === 'Ninguna') return;
+            let selects = document.querySelectorAll(`select[name="${name}"]`);
+            if (selects.length === 0) return;
+
+            const texts = commasepTexts.split('|').map(t => t.trim().toLowerCase());
+
+            selects.forEach(select => {
+                Array.from(select.options).forEach(opt => {
+                    if (texts.includes(opt.text.trim().toLowerCase())) {
+                        opt.selected = true;
+                    }
+                });
+
+                select.setAttribute('disabled', 'true');
+                select.style.backgroundColor = '#f4f4f4';
+            });
+        }
+
+        function lockAndFillField(name, value) {
+            if (value !== null && value !== undefined && value !== "") {
+                const el = document.querySelector(`[name="${name}"]`);
+                if (el) {
+                    el.value = value;
+                    if (el.tagName === 'SELECT') {
+                        el.setAttribute('disabled', 'true');
+                        // visually show it's disabled
+                        el.style.backgroundColor = '#f4f4f4';
+                        el.style.color = '#777';
+                    } else {
+                        el.setAttribute('readonly', 'true');
+                        el.style.backgroundColor = '#f4f4f4';
+                        el.style.color = '#777';
+                    }
+                }
+            }
+        }
+
+        function descargarFichaGlobalPDF() {
+            window.print();
+        }
 
         function addProducto() {
             const container = document.getElementById('productos-container');
@@ -1032,53 +1262,38 @@
         }
 
         // Form submission via API
-        document.getElementById('caracterizacion-form').addEventListener('submit', async function (e) {
-            e.preventDefault();
-            
-            const btn = document.getElementById('submit-btn-main');
-            const originalText = btn.textContent;
-            btn.textContent = 'Guardando...';
-            btn.disabled = true;
-
-            const formData = new FormData(this);
-
-            try {
-                const response = await fetch('api/submit_caracterizacion.php', {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                const result = await response.json();
-                
-                if (response.ok && result.success) {
-                    document.getElementById('success-modal').style.display = 'flex';
-                } else {
-                    alert('Error al guardar: ' + (result.error || 'Problema con el servidor.'));
-                }
-            } catch (error) {
-                console.error('Submit Ficha Error:', error);
-                alert('Error de red al intentar guardar. Revise su conexión.');
-            } finally {
-                btn.textContent = originalText;
-                btn.disabled = false;
-            }
-        });
-
+        // Form submission is removed, this page is Read-Only
+        
         // Convert standard multiple selects into custom dropdowns with checkboxes
-        document.addEventListener('DOMContentLoaded', () => {
+        function initCustomMultiSelects() {
             document.querySelectorAll('.custom-multi-select').forEach(select => {
+                // Remove older wrapper if re-init
+                if (select.parentElement && select.parentElement.classList.contains('multiselect-wrapper')) {
+                    return; // Already initialized
+                }
+
                 const wrapper = document.createElement('div');
+                wrapper.className = 'multiselect-wrapper';
                 wrapper.style.position = 'relative';
                 wrapper.style.width = '100%';
-                
+
+                if (select.hasAttribute('disabled')) {
+                    wrapper.style.opacity = '0.7';
+                    wrapper.style.pointerEvents = 'none';
+                    wrapper.style.backgroundColor = '#f4f4f4';
+                }
+
                 const trigger = document.createElement('div');
                 trigger.style.cssText = 'border: 1px solid #ccc; border-radius: 8px; padding: 0.8rem; background: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem;';
+                if (select.hasAttribute('disabled')) {
+                    trigger.style.backgroundColor = '#f4f4f4';
+                }
                 trigger.innerHTML = `<span class="multiselect-text">Seleccione opciones...</span> <span style="font-size:0.8em; color:#666;">▼</span>`;
-                
+
                 const dropdown = document.createElement('div');
                 dropdown.style.cssText = 'position: absolute; top: 100%; left: 0; right: 0; background: #fff; border: 1px solid #ccc; border-radius: 8px; max-height: 250px; overflow-y: auto; z-index: 1000; display: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 4px;';
                 dropdown.className = 'multiselect-dropdown-content';
-                
+
                 trigger.addEventListener('click', (e) => {
                     e.stopPropagation();
                     const isVisible = dropdown.style.display === 'block';
@@ -1109,8 +1324,8 @@
                     const item = document.createElement('div');
                     item.style.cssText = 'padding: 0.8rem 1rem; cursor: pointer; display: flex; align-items: center; border-bottom: 1px solid #eee; transition: all 0.2s; font-size: 0.95rem; user-select: none;';
                     item.innerHTML = `<span style="flex:1;">${option.text}</span>`;
-                    
-                    if(option.selected) {
+
+                    if (option.selected) {
                         item.style.backgroundColor = '#f0fdf4';
                         item.style.fontWeight = '600';
                         item.style.color = '#1b5e20';
@@ -1119,7 +1334,7 @@
                     item.addEventListener('click', (e) => {
                         e.stopPropagation();
                         option.selected = !option.selected;
-                        
+
                         if (option.selected) {
                             item.style.backgroundColor = '#f0fdf4';
                             item.style.fontWeight = '600';
@@ -1129,7 +1344,7 @@
                             item.style.fontWeight = 'normal';
                             item.style.color = 'inherit';
                         }
-                        
+
                         updateTriggerText();
                         select.dispatchEvent(new Event('change'));
                     });
@@ -1143,8 +1358,7 @@
 
                 updateTriggerText();
             });
-        });
-
+        }
     </script>
 </body>
 
