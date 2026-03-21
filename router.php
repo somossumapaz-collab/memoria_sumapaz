@@ -1,19 +1,30 @@
 <?php
-$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$path = ltrim($path, '/');
+// router.php - Enrutador para PHP Local Server simulando .htaccess
+$path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+$ext = pathinfo($path, PATHINFO_EXTENSION);
 
-// Check if the file exists when .html is appended
-if (!empty($path) && file_exists(__DIR__ . '/' . $path . '.html')) {
-    include __DIR__ . '/' . $path . '.html';
-    exit;
+header("X-Router-Debug-Path: " . $path);
+header("X-Router-Debug-Ext: " . $ext);
+
+if ($ext && file_exists($_SERVER["DOCUMENT_ROOT"] . $path)) {
+    return false;
 }
 
-// Fallback to exactly matching file request
-if (file_exists(__DIR__ . '/' . $path)) {
-    return false;    // serve the requested resource as-is.
+$htmlFile = $_SERVER["DOCUMENT_ROOT"] . rtrim($path, '/') . ".html";
+header("X-Router-Debug-HtmlFile: " . $htmlFile);
+
+if (file_exists($htmlFile)) {
+    header("X-Router-Debug-Match: YES");
+    include $htmlFile;
+    return true;
 } else {
-    // Optionally return 404 or redirect to index
-    http_response_code(404);
-    echo "404 Not Found";
+    header("X-Router-Debug-Match: NO");
 }
+
+if ($path === '/' || $path === '/index') {
+    include $_SERVER["DOCUMENT_ROOT"] . "/index.html";
+    return true;
+}
+
+return false;
 ?>

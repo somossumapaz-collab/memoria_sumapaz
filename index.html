@@ -39,15 +39,17 @@
                     </div>
                     <!-- Admin Options (Login / Dashboard / Inscripción) -->
                     <div id="header-auth-container" style="display: flex; align-items: center; gap: 1rem;">
-                        <a href="inscripcion_productores" class="nav-link-btn" id="btn-register"
+                        <a href="inscripcion_productores.html" class="nav-link-btn" id="btn-register"
                             style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Registrar
                             Productor</a>
-                        <a href="productores_registrados" class="nav-link-btn" id="btn-dashboard"
+                        <a href="productores_registrados.html" class="nav-link-btn" id="btn-dashboard"
                             style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Dashboard</a>
-                        <a href="transporte_seguimiento" class="nav-link-btn" id="btn-tracking"
+                        <a href="avituallamiento_registrados.html" class="nav-link-btn" id="btn-dashboard-avit"
+                            style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Dashboard Avit.</a>
+                        <a href="transporte_seguimiento.html" class="nav-link-btn" id="btn-tracking"
                             style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Seguimiento</a>
 
-                        <a href="login" class="nav-link-btn" title="Iniciar Sesión" id="btn-login"
+                        <a href="login.html" class="nav-link-btn" title="Iniciar Sesión" id="btn-login"
                             style="margin: 0; padding: 0.5rem; display: flex; align-items: center; justify-content: center; color: #FBF4DE;">
                             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                                 style="width: 24px; height: 24px;">
@@ -173,6 +175,7 @@
                 if (res.ok && result.authenticated) {
                     document.getElementById('btn-login').style.display = 'none';
                     document.getElementById('btn-dashboard').style.display = 'inline-block';
+                    document.getElementById('btn-dashboard-avit').style.display = 'inline-block';
                     document.getElementById('btn-register').style.display = 'inline-block';
                     document.getElementById('btn-tracking').style.display = 'inline-block';
                     document.getElementById('btn-logout').style.display = 'inline-block';

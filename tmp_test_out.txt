@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Administrador | Somos Sumapaz</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <!-- Static Cache-Busting -->
+    <script>
+        const timestamp = new Date().getTime();
+        document.write(`<link rel="stylesheet" href="assets/styles.css?v=${timestamp}">`);
+    </script>
+</head>
+
+<body>
+    <!-- Static Header -->
+    <header id="main-header">
+        <nav class="navbar-custom">
+            <div class="container" style="display: flex; align-items: center; justify-content: flex-start;">
+                <a href="index.html">
+                    <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" style="padding-top: 5rem; padding-bottom: 5rem; display: flex; justify-content: center;">
+        <div class="form-wrapper" style="max-width: 500px; width: 100%;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <!-- Login Icon SVG -->
+                <div
+                    style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background-color: rgba(68, 79, 47, 0.1); border-radius: 50%; color: var(--primary-green); margin-bottom: 1rem;">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                        style="width: 40px; height: 40px;">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                    </svg>
+                </div>
+                <h1 class="serif form-title" style="margin-bottom: 0.5rem;">Acceso Administrativo</h1>
+                <p class="form-subtitle">Ingresa tus credenciales para continuar.</p>
+            </div>
+
+            <form id="login-form" class="custom-form">
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" name="username" required placeholder="Ingresa tu usuario">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 2rem;">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required placeholder="••••••••">
+                </div>
+
+                <div id="error-message"
+                    style="color: #D32F2F; margin-bottom: 1rem; text-align: center; display: none; font-size: 0.9rem;">
+                </div>
+
+                <div class="form-submit-container">
+                    <button type="submit" class="btn btn-submit" style="width: 100%;">Iniciar Sesión</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- App Logic -->
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const errorDiv = document.getElementById('error-message');
+            const originalText = submitBtn.textContent;
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Verificando...';
+            errorDiv.style.display = 'none';
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('api/login.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    // Redirect to dashboard
+                    window.location.href = result.redirect || 'productores_registrados';
+                } else {
+                    errorDiv.textContent = result.error || 'Credenciales incorrectas.';
+                    errorDiv.style.display = 'block';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                errorDiv.textContent = 'Error de red. Intenta de nuevo.';
+                errorDiv.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        });
+    </script>
+</body>
+
+</html>

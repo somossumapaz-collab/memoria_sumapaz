@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productores Registrados | Somos Sumapaz</title>
+    <title>Proveedores de Avituallamiento | Somos Sumapaz</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,9 +16,6 @@
         const timestamp = new Date().getTime();
         document.write(`<link rel="stylesheet" href="assets/styles.css?v=${timestamp}">`);
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
-        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
         .hero-section {
             position: relative;
@@ -36,13 +33,6 @@
             margin: -3rem -2rem 3rem -2rem;
             /* Negate main padding */
             border-bottom: 5px solid var(--primary-green);
-        }
-
-        .subtexto-vereda {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 500;
-            opacity: 0.8;
         }
 
         .hero-overlay {
@@ -119,124 +109,23 @@
             line-height: 1.2;
         }
 
-        /* Modal Styles */
-        .producer-modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(5px);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            animation: producerFadeIn 0.3s ease-out forwards;
-        }
-
-        .producer-modal-content {
-            background: white;
-            width: 90%;
-            max-width: 850px;
-            max-height: 90vh;
-            border-radius: 20px;
-            overflow-y: auto;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            animation: producerSlideUp 0.4s ease-out;
-        }
-
-        .modal-header {
-            background: var(--primary-green);
-            color: #FBF4DE;
-            padding: 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .modal-header h2 {
-            margin: 0;
-            font-size: 1.8rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-        }
-
-        .btn-close-modal {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
+        .btn-link-doc {
+            background-color: var(--primary-green);
             color: white;
-            padding: 0.5rem;
-            border-radius: 50%;
+            border: none;
+            padding: 0.4rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
             cursor: pointer;
-            transition: background 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 0.3rem;
+            white-space: nowrap;
         }
 
-        .btn-close-modal:hover {
-            background: rgba(255, 255, 255, 0.4);
-        }
-
-        .modal-body {
-            padding: 2.5rem;
-        }
-
-        .detail-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .detail-item {
-            background: #F9F8F6;
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--primary-green);
-        }
-
-        .detail-item h4 {
-            margin: 0 0 0.5rem 0;
-            color: #444F2F;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .detail-item p {
-            margin: 0;
-            font-size: 1.1rem;
-            line-height: 1.5;
-            color: #333;
-            font-weight: 500;
-        }
-
-        @keyframes producerFadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes producerSlideUp {
-            from {
-                transform: translateY(30px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        .btn-link-doc:hover {
+            background-color: #3b4429;
+            color: white;
         }
     </style>
     <!-- Excel Export Library -->
@@ -267,9 +156,9 @@
                             style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">
                             Registrar Avituallamiento
                         </a>
-                        <a href="avituallamiento_registrados.html" class="nav-link-btn" id="btn-dashboard-avit"
+                        <a href="productores_registrados.html" class="nav-link-btn" id="btn-dashboard-prod"
                             style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">
-                            Dashboard Avit.
+                            Dashboard Prod.
                         </a>
                         <a href="transporte_seguimiento.html" class="nav-link-btn" id="btn-tracking"
                             style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">
@@ -296,28 +185,15 @@
     </header>
 
     <main style="padding: 3rem 2rem 5rem 2rem; width: 100%; max-width: 100%; box-sizing: border-box;">
-        <!-- New Hero Header -->
         <section class="hero-section">
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h1 class="hero-title" style="color: #FBF4DE; margin-bottom: 0;">Productores Campesinos</h1>
+                <h1 class="hero-title" style="color: #FBF4DE; margin-bottom: 0;">Proveedores de Avituallamiento</h1>
                 <div
                     style="display: flex; gap: 2.5rem; justify-content: center; align-items: stretch; margin-top: 0.5rem; width: 100%;">
                     <div class="glass-card" style="margin-top: 0;">
-                        <h3>Total Productores</h3>
+                        <h3>Total Proveedores</h3>
                         <p id="total-productores-count">0</p>
-                    </div>
-                    <div class="glass-card" style="margin-top: 0;">
-                        <h3>Caracterizados</h3>
-                        <p id="total-caracterizados-count">0</p>
-                    </div>
-                    <div class="glass-card" style="margin-top: 0;">
-                        <h3>Mypimes</h3>
-                        <p id="total-mypimes-count">0</p>
-                    </div>
-                    <div class="glass-card" style="margin-top: 0;">
-                        <h3>TASA MEDIA POR VEREDA</h3>
-                        <p id="average-producers-count">0</p>
                     </div>
                     <div class="glass-card" style="margin-top: 0;">
                         <h3>Vereda Principal</h3>
@@ -330,7 +206,6 @@
         <!-- Filtros -->
         <div
             style="background-color: #EFEBE4; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
-            <!-- Fila de Filtros -->
             <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end;">
                 <div style="flex: 1; min-width: 200px;">
                     <label for="filter-nombre"
@@ -382,65 +257,18 @@
                     <input type="date" id="filter-fecha"
                         style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
                 </div>
-                <div style="flex: 1; min-width: 150px;">
-                    <label for="filter-caracterizado"
-                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Caracterizado</label>
-                    <select id="filter-caracterizado"
-                        style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
-                        <option value="">Todos</option>
-                        <option value="1">Sí</option>
-                        <option value="0">No</option>
-                    </select>
-                </div>
-                <div style="flex: 1; min-width: 150px;">
-                    <label for="filter-mypime"
-                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Mypime</label>
-                    <select id="filter-mypime"
-                        style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
-                        <option value="">Todos</option>
-                        <option value="1">Sí</option>
-                        <option value="0">No</option>
-                    </select>
-                </div>
             </div>
 
-            <!-- Fila de Botones -->
+            <!-- Botones -->
             <div style="display: flex; gap: 1rem; justify-content: center;">
-                <button type="button" class="btn btn-submit" style="
-                    height: 50px;
-                    width: 220px;
-                    margin: 0;
-                    padding: 0;
-                    background-color: var(--primary-green);
-                    color: #FBF4DE;
-                    border-radius: 30px;
-                    font-weight: 600;
-                    font-family: 'Inter', sans-serif;
-                    font-size: 1rem;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: none;
-                " id="btn-reset-filters">
+                <button type="button" class="btn btn-submit"
+                    style="height: 50px; width: 220px; margin: 0; padding: 0; background-color: var(--primary-green); color: #FBF4DE; border-radius: 30px; font-weight: 600; font-family: 'Inter', sans-serif; font-size: 1rem; display: flex; align-items: center; justify-content: center; border: none;"
+                    id="btn-reset-filters">
                     Limpiar Filtros
                 </button>
-                <button type="button" class="btn" style="
-                    height: 50px;
-                    width: 220px;
-                    margin: 0;
-                    padding: 0;
-                    background-color: #444F2F;
-                    color: #FBF4DE;
-                    border-radius: 30px;
-                    font-weight: 600;
-                    font-family: 'Inter', sans-serif;
-                    font-size: 1rem;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 0.5rem;
-                    border: none;
-                " onclick="exportToExcel()">
+                <button type="button" class="btn"
+                    style="height: 50px; width: 220px; margin: 0; padding: 0; background-color: #444F2F; color: #FBF4DE; border-radius: 30px; font-weight: 600; font-family: 'Inter', sans-serif; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; border: none;"
+                    onclick="exportToExcel()">
                     <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                         stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -463,29 +291,17 @@
                         <th>Teléfono</th>
                         <th>Correo</th>
                         <th>Predio</th>
-                        <th style="text-align: center;">Editar</th>
-                        <th id="col-eliminar" style="text-align: center;">Eliminar</th>
-                        <th style="text-align: center;">Caracterizar</th>
-                        <th style="text-align: center;">Detalle</th>
+                        <th style="text-align: center;">Soportes</th>
                     </tr>
                 </thead>
                 <tbody id="productores-tbody">
                     <!-- Data will be loaded via JS -->
                     <tr>
-                        <td colspan="11" style="text-align: center; padding: 2rem;">Cargando productores...</td>
+                        <td colspan="9" style="text-align: center; padding: 2rem;">Cargando proveedores...</td>
                     </tr>
                 </tbody>
             </table>
         </div>
-
-        <!-- PowerBI Presentation -->
-        <div
-            style="margin-top: 3rem; width: 100%; display: flex; justify-content: center; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-            <iframe title="presentacion_20260209" width="100%" height="600"
-                src="https://app.powerbi.com/view?r=eyJrIjoiYjc1MDZmODYtYjEzNi00MTllLWI2ZDUtYjkyMWQ3YmM1ODA1IiwidCI6IjEyNDFkNmY3LTVhNDUtNDc0Zi04MjE1LTZkMDk5ZTI4N2FmZiJ9"
-                frameborder="0" allowFullScreen="true"></iframe>
-        </div>
-
 
     </main>
 
@@ -499,8 +315,6 @@
             const filterNombre = document.getElementById('filter-nombre');
             const filterVereda = document.getElementById('filter-vereda');
             const filterFecha = document.getElementById('filter-fecha');
-            const filterCaracterizado = document.getElementById('filter-caracterizado');
-            const filterMypime = document.getElementById('filter-mypime');
             const btnReset = document.getElementById('btn-reset-filters');
 
             // --- AUTH CHECK FIRST ---
@@ -513,13 +327,9 @@
                     return; // Stop rendering
                 } else {
                     window.isAdmin = authResult.is_admin;
-                    if (!window.isAdmin) {
-                        const colEliminar = document.getElementById('col-eliminar');
-                        if (colEliminar) colEliminar.style.display = 'none';
-                    }
                     document.getElementById('btn-register').style.display = 'inline-block';
                     document.getElementById('btn-avituallamiento').style.display = 'inline-block';
-                    document.getElementById('btn-dashboard-avit').style.display = 'inline-block';
+                    document.getElementById('btn-dashboard-prod').style.display = 'inline-block';
                     document.getElementById('btn-logout').style.display = 'inline-block';
                 }
             } catch (error) {
@@ -530,33 +340,29 @@
             // ------------------------
 
             try {
-                const response = await fetch('api/get_productores.php');
+                const response = await fetch('api/get_avituallamiento.php');
                 const result = await response.json();
 
                 if (response.ok && result.success) {
                     allProducers = result.data;
                     renderTable(allProducers);
                 } else {
-                    tbody.innerHTML = `<tr><td colspan="11" style="text-align: center; color: red;">Error: ${result.error || 'No se pudo cargar la información'}</td></tr>`;
+                    tbody.innerHTML = `<tr><td colspan="9" style="text-align: center; color: red;">Error: ${result.error || 'No se pudo cargar la información'}</td></tr>`;
                 }
             } catch (error) {
                 console.error('Error fetching data:', error);
-                tbody.innerHTML = `<tr><td colspan="11" style="text-align: center; color: red;">Error de red al intentar cargar la información.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="9" style="text-align: center; color: red;">Error de red al intentar cargar la información.</td></tr>`;
             }
 
             // Filter Event Listeners
             filterNombre.addEventListener('input', applyFilters);
             filterVereda.addEventListener('change', applyFilters);
             filterFecha.addEventListener('change', applyFilters);
-            filterCaracterizado.addEventListener('change', applyFilters);
-            filterMypime.addEventListener('change', applyFilters);
 
             btnReset.addEventListener('click', () => {
                 filterNombre.value = '';
                 filterVereda.value = '';
                 filterFecha.value = '';
-                filterCaracterizado.value = '';
-                filterMypime.value = '';
                 renderTable(allProducers);
             });
         });
@@ -565,15 +371,11 @@
             const nombreVal = document.getElementById('filter-nombre').value.toLowerCase();
             const veredaVal = document.getElementById('filter-vereda').value;
             const fechaVal = document.getElementById('filter-fecha').value; // format: YYYY-MM-DD
-            const caracterizadoVal = document.getElementById('filter-caracterizado').value;
-            const mypimeVal = document.getElementById('filter-mypime').value;
 
             const filteredData = allProducers.filter(p => {
                 let matchNombre = true;
                 let matchVereda = true;
                 let matchFecha = true;
-                let matchCaracterizado = true;
-                let matchMypime = true;
 
                 if (nombreVal) {
                     matchNombre = p.nombre_completo.toLowerCase().includes(nombreVal);
@@ -587,15 +389,7 @@
                     matchFecha = p.fecha_creacion.startsWith(fechaVal);
                 }
 
-                if (caracterizadoVal !== "") {
-                    matchCaracterizado = p.tiene_caracterizacion == caracterizadoVal;
-                }
-
-                if (mypimeVal !== "") {
-                    matchMypime = p.mypime == mypimeVal;
-                }
-
-                return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime;
+                return matchNombre && matchVereda && matchFecha;
             });
 
             renderTable(filteredData);
@@ -607,20 +401,9 @@
 
             // Update statistics cards
             const totalCountElement = document.getElementById('total-productores-count');
-            const avgCountElement = document.getElementById('average-producers-count');
             const topVeredaElement = document.getElementById('top-vereda-name');
-            const totalMypimesElement = document.getElementById('total-mypimes-count');
 
             if (totalCountElement) totalCountElement.textContent = dataToDraw.length;
-
-            const totalCaracterizadosElement = document.getElementById('total-caracterizados-count');
-            if (totalCaracterizadosElement) {
-                totalCaracterizadosElement.textContent = dataToDraw.filter(p => p.tiene_caracterizacion == 1).length;
-            }
-
-            if (totalMypimesElement) {
-                totalMypimesElement.textContent = dataToDraw.filter(p => p.mypime == 1).length;
-            }
 
             if (dataToDraw.length > 0) {
                 // Calculate unique veredas and counts
@@ -630,15 +413,6 @@
                         veredaCounts[p.vereda] = (veredaCounts[p.vereda] || 0) + 1;
                     }
                 });
-
-                const veredas = Object.keys(veredaCounts);
-                const numVeredas = veredas.length;
-
-                // Average per vereda
-                if (avgCountElement) {
-                    const avg = numVeredas > 0 ? (dataToDraw.length / numVeredas).toFixed(1) : 0;
-                    avgCountElement.textContent = avg;
-                }
 
                 // Top vereda
                 if (topVeredaElement) {
@@ -650,15 +424,14 @@
                             topVereda = v;
                         }
                     }
-                    topVeredaElement.innerHTML = `<span>${topVereda}</span><span style="font-size: 1rem; font-weight: 500; opacity: 0.8; margin-top: 0.4rem;">(${maxCount} productores)</span>`;
+                    topVeredaElement.innerHTML = `<span>${topVereda}</span><span style="font-size: 1rem; font-weight: 500; opacity: 0.8; margin-top: 0.4rem;">(${maxCount})</span>`;
                 }
             } else {
-                if (avgCountElement) avgCountElement.textContent = '0';
                 if (topVeredaElement) topVeredaElement.textContent = '-';
             }
 
             if (dataToDraw.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="11" style="text-align: center; padding: 2rem;">No se encontraron resultados.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; padding: 2rem;">No se encontraron resultados.</td></tr>';
                 return;
             }
 
@@ -679,59 +452,17 @@
                     <td>${productor.telefono}</td>
                     <td>${correo}</td>
                     <td>${productor.nombre_predio}</td>
-                    <td style="text-align: center; vertical-align: middle;">
-                        <button class="btn-icon btn-icon-edit" onclick="editarProductor(${productor.id})" title="Editar">
-                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
-                        </button>
-                    </td>
-                    ${window.isAdmin ? `
-                    <td style="text-align: center; vertical-align: middle;">
-                        <button class="btn-icon btn-icon-delete" onclick="eliminarProductor(${productor.id}, '${productor.nombre_completo}')" title="Eliminar">
-                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
-                        </button>
-                    </td>
-                    ` : ''}
-                    <td style="text-align: center; vertical-align: middle;">
-                        <button class="btn-icon btn-icon-char" 
-                            onclick="${productor.tiene_caracterizacion ? '' : `empezarCaracterizacion(${productor.id}, '${productor.nombre_completo}')`}"
-                            ${productor.tiene_caracterizacion ? 'disabled style="opacity:0.4; cursor:not-allowed;"' : ''}
-                            title="Caracterizar">
-                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
-                        </button>
-                    </td>
-                    <td style="text-align: center; vertical-align: middle;">
-                        ${productor.tiene_caracterizacion ? `
-                            <button type="button" class="btn-icon" onclick="event.stopPropagation(); verDetalle(${productor.id})" title="Ver Detalle" style="color: var(--primary-green);">
-                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                </svg>
-                            </button>
-                        ` : ''}
+                    <td style="text-align: center; vertical-align: middle; display: flex; flex-direction: column; align-items: center;">
+                        ${productor.id_cedula ? `<a href="soportes_avituallamiento/${productor.id_cedula}" target="_blank" class="btn-link-doc">Cédula</a>` : ''}
+                        ${productor.id_rut ? `<a href="soportes_avituallamiento/${productor.id_rut}" target="_blank" class="btn-link-doc">RUT</a>` : ''}
+                        ${productor.id_curso_manipulacion ? `<a href="soportes_avituallamiento/${productor.id_curso_manipulacion}" target="_blank" class="btn-link-doc">Curso Manipulación</a>` : ''}
+                        ${productor.id_certificacion_bancaria ? `<a href="soportes_avituallamiento/${productor.id_certificacion_bancaria}" target="_blank" class="btn-link-doc">Certificación Bancaria</a>` : ''}
                     </td>
                 `;
                 tbody.appendChild(tr);
             });
         }
 
-        function empezarCaracterizacion(id, nombre) {
-            window.location.href = 'caracterizacion.html?id=' + id;
-        }
-
-        let currentProducerFullDocs = ""; // For PDF export naming
-
-        function verDetalle(id) {
-            window.location.href = 'ver_caracterizacion.html?id=' + id;
-        }
-
-        function editarProductor(id) {
-            window.location.href = 'inscripcion_productores?edit=' + id;
-        }
-
-        function eliminarProductor(id, nombre) {
-            if (confirm('¿Seguro que deseas eliminar el registro de ' + nombre + '?')) {
-                alert('Productor eliminado exitosamente (modo demo).');
-            }
-        }
 
         async function logout() {
             try {
@@ -747,17 +478,12 @@
             const nombreVal = document.getElementById('filter-nombre').value.toLowerCase();
             const veredaVal = document.getElementById('filter-vereda').value;
             const fechaVal = document.getElementById('filter-fecha').value;
-            const caracterizadoVal = document.getElementById('filter-caracterizado').value;
-            const mypimeVal = document.getElementById('filter-mypime').value;
 
             const dataToExport = allProducers.filter(p => {
                 let matchNombre = !nombreVal || p.nombre_completo.toLowerCase().includes(nombreVal);
                 let matchVereda = !veredaVal || p.vereda === veredaVal;
                 let matchFecha = !fechaVal || (p.fecha_creacion && p.fecha_creacion.startsWith(fechaVal));
-                let matchCaracterizado = caracterizadoVal === "" || p.tiene_caracterizacion == caracterizadoVal;
-                let matchMypime = mypimeVal === "" || p.mypime == mypimeVal;
-
-                return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime;
+                return matchNombre && matchVereda && matchFecha;
             });
 
             if (dataToExport.length === 0) {
@@ -768,7 +494,7 @@
             // Create a standard CSV flat file (archivo plano)
             const headers = [
                 'Fecha Inscripción', 'Nombre Completo', 'Tipo Documento', 'Número Documento',
-                'Vereda', 'Teléfono', 'Correo Electrónico', 'Nombre Predio', 'Fecha Nacimiento', 'Mypime'
+                'Vereda', 'Teléfono', 'Correo Electrónico', 'Nombre Predio', 'Fecha Nacimiento'
             ];
 
             // BOM (Byte Order Mark) forces Excel to read UTF-8 properly (accents)
@@ -784,8 +510,7 @@
                     p.telefono || '-',
                     `"${p.correo_electronico || '-'}"`,
                     `"${p.nombre_predio || '-'}"`,
-                    p.fecha_nacimiento || '-',
-                    p.mypime == 1 ? 'Sí' : 'No'
+                    p.fecha_nacimiento || '-'
                 ];
                 csvString += row.join(';') + '\r\n';
             });
@@ -795,7 +520,7 @@
             const url = URL.createObjectURL(blob);
             const link = document.createElement("a");
             link.setAttribute("href", url);
-            link.setAttribute("download", `productores_sumapaz_${new Date().toISOString().split('T')[0]}.csv`);
+            link.setAttribute("download", `proveedores_avituallamiento_${new Date().toISOString().split('T')[0]}.csv`);
 
             document.body.appendChild(link);
             link.click();
