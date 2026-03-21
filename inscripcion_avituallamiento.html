@@ -154,7 +154,8 @@
                         <div class="form-group"
                             style="background: #fdfdfd; padding: 1.5rem; border: 1px solid #eaeaea; border-radius: 8px;">
                             <label
-                                style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.8rem; display: block;">Cédula de Ciudadanía
+                                style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.8rem; display: block;">Cédula
+                                de Ciudadanía
                                 *</label>
                             <label for="id_cedula"
                                 style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 1rem; background: #e8f5e9; color: var(--primary-green); font-weight: bold; border-radius: 8px; cursor: pointer; border: 1px solid #c8e6c9; text-align: center; transition: background 0.2s;">
@@ -169,6 +170,7 @@
                             style="background: #fdfdfd; padding: 1.5rem; border: 1px solid #eaeaea; border-radius: 8px;">
                             <label
                                 style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.8rem; display: block;">RUT
+                                (con actividad economica 1084)
                                 *</label>
                             <label for="id_rut"
                                 style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 1rem; background: #e8f5e9; color: var(--primary-green); font-weight: bold; border-radius: 8px; cursor: pointer; border: 1px solid #c8e6c9; text-align: center; transition: background 0.2s;">
@@ -296,11 +298,11 @@
                     // Ocultamos texto custom de archivos en los labels
                     document.querySelectorAll('input[type="file"]').forEach(input => {
                         const span = input.previousElementSibling.querySelector('span');
-                        if(span) {
-                            if(input.id === 'id_cedula') span.textContent = '📁 Seleccionar Cédula (Solo PDF)';
-                            if(input.id === 'id_rut') span.textContent = '📁 Seleccionar RUT (Solo PDF)';
-                            if(input.id === 'id_curso_manipulacion') span.textContent = '📁 Seleccionar Certificado (Solo PDF)';
-                            if(input.id === 'id_certificacion_bancaria') span.textContent = '📁 Seleccionar Certificación (Solo PDF)';
+                        if (span) {
+                            if (input.id === 'id_cedula') span.textContent = '📁 Seleccionar Cédula (Solo PDF)';
+                            if (input.id === 'id_rut') span.textContent = '📁 Seleccionar RUT (Solo PDF)';
+                            if (input.id === 'id_curso_manipulacion') span.textContent = '📁 Seleccionar Certificado (Solo PDF)';
+                            if (input.id === 'id_certificacion_bancaria') span.textContent = '📁 Seleccionar Certificación (Solo PDF)';
                         }
                     });
                 } else {
