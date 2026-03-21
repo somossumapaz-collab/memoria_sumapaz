@@ -302,16 +302,19 @@
                         <p id="total-productores-count">0</p>
                     </div>
                     <div class="glass-card" style="margin-top: 0;">
+                        <h3>Caracterizados</h3>
+                        <p id="total-caracterizados-count">0</p>
+                    </div>
+                    <div class="glass-card" style="margin-top: 0;">
                         <h3>Mypimes</h3>
                         <p id="total-mypimes-count">0</p>
                     </div>
                     <div class="glass-card" style="margin-top: 0;">
-                        <h3>TASA MEDIA DE INSCRITOS POR VEREDA</h3>
+                        <h3>TASA MEDIA POR VEREDA</h3>
                         <p id="average-producers-count">0</p>
                     </div>
                     <div class="glass-card" style="margin-top: 0;">
                         <h3>Vereda Principal</h3>
-                        <!-- We let the new flexbox CSS handle the layout completely -->
                         <p id="top-vereda-name" style="font-size: 1.4rem;">-</p>
                     </div>
                 </div>
@@ -602,6 +605,11 @@
             const totalMypimesElement = document.getElementById('total-mypimes-count');
 
             if (totalCountElement) totalCountElement.textContent = dataToDraw.length;
+
+            const totalCaracterizadosElement = document.getElementById('total-caracterizados-count');
+            if (totalCaracterizadosElement) {
+                totalCaracterizadosElement.textContent = dataToDraw.filter(p => p.tiene_caracterizacion == 1).length;
+            }
 
             if (totalMypimesElement) {
                 totalMypimesElement.textContent = dataToDraw.filter(p => p.mypime == 1).length;

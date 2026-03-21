@@ -14,66 +14,64 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+// 1. Ensure dynamic tables exist (DDL statements cause implicit commit in MySQL, must be outside transaction)
+$pdo->exec("
+    CREATE TABLE IF NOT EXISTS productor_productos (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        productor_id BIGINT UNSIGNED NOT NULL,
+        nombre VARCHAR(255),
+        volumen DECIMAL(10,2),
+        unidad_volumen VARCHAR(50),
+        frecuencia VARCHAR(50),
+        presentacion VARCHAR(100),
+        calidad VARCHAR(100),
+        precio DECIMAL(10,2),
+        unidad_precio VARCHAR(50),
+        FOREIGN KEY (productor_id) REFERENCES productores_sumapaz(id) ON DELETE CASCADE
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+");
+
+$pdo->exec("
+    CREATE TABLE IF NOT EXISTS productor_servicios (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        productor_id BIGINT UNSIGNED NOT NULL,
+        nombre_actividad VARCHAR(255),
+        frecuencia VARCHAR(50),
+        poblacion_objetivo VARCHAR(100),
+        tipo_contrato VARCHAR(100),
+        lugar VARCHAR(255),
+        recursos VARCHAR(255),
+        FOREIGN KEY (productor_id) REFERENCES productores_sumapaz(id) ON DELETE CASCADE
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+");
+
+// 2. Ensure missing fields are dynamically added to caracterizacion_productor
+$extra_columns = [
+    'mano_obra VARCHAR(255)', 'tipo_proceso VARCHAR(255)', 'usa_abonos VARCHAR(10)', 
+    'sistemas_asociados TEXT', 'sistema_diferenciado VARCHAR(255)', 'descripcion TEXT', 
+    'valor_agregado TEXT', 'destino VARCHAR(255)', 'transporte VARCHAR(255)', 
+    'forma_pago VARCHAR(255)', 'define_precio VARCHAR(255)', 'en_tramite_bool VARCHAR(10)', 
+    'en_tramite VARCHAR(255)'
+];
+foreach($extra_columns as $col) {
+    try {
+        $pdo->exec("ALTER TABLE caracterizacion_productor ADD COLUMN $col");
+    } catch (\PDOException $e) { /* Ignore Column already exists error */ }
+}
+
+// 3. Ensure discapacidad_productor exists
+$pdo->exec("
+    CREATE TABLE IF NOT EXISTS discapacidad_productor (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        productor_id BIGINT UNSIGNED NOT NULL,
+        tiene_discapacidad VARCHAR(50),
+        tipo VARCHAR(255),
+        FOREIGN KEY (productor_id) REFERENCES productores_sumapaz(id) ON DELETE CASCADE
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+");
+
 try {
     $pdo->beginTransaction();
-
-    // 1. Ensure dynamic tables exist to prevent crashing if the user never executed a schema migration
-    $pdo->exec("
-        CREATE TABLE IF NOT EXISTS productor_productos (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            productor_id BIGINT UNSIGNED NOT NULL,
-            nombre VARCHAR(255),
-            volumen DECIMAL(10,2),
-            unidad_volumen VARCHAR(50),
-            frecuencia VARCHAR(50),
-            presentacion VARCHAR(100),
-            calidad VARCHAR(100),
-            precio DECIMAL(10,2),
-            unidad_precio VARCHAR(50),
-            FOREIGN KEY (productor_id) REFERENCES productores_sumapaz(id) ON DELETE CASCADE
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-    ");
-
-    $pdo->exec("
-        CREATE TABLE IF NOT EXISTS productor_servicios (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            productor_id BIGINT UNSIGNED NOT NULL,
-            nombre_actividad VARCHAR(255),
-            frecuencia VARCHAR(50),
-            poblacion_objetivo VARCHAR(100),
-            tipo_contrato VARCHAR(100),
-            lugar VARCHAR(255),
-            recursos VARCHAR(255),
-            FOREIGN KEY (productor_id) REFERENCES productores_sumapaz(id) ON DELETE CASCADE
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-    ");
-
-    // 2. Ensure missing fields are dynamically added to caracterizacion_productor
-    $extra_columns = [
-        'mano_obra VARCHAR(255)', 'tipo_proceso VARCHAR(255)', 'usa_abonos VARCHAR(10)', 
-        'sistemas_asociados TEXT', 'sistema_diferenciado VARCHAR(255)', 'descripcion TEXT', 
-        'valor_agregado TEXT', 'destino VARCHAR(255)', 'transporte VARCHAR(255)', 
-        'forma_pago VARCHAR(255)', 'define_precio VARCHAR(255)', 'en_tramite_bool VARCHAR(10)', 
-        'en_tramite VARCHAR(255)'
-    ];
-    foreach($extra_columns as $col) {
-        try {
-            // Extact column name ignoring type
-            $colName = explode(' ', $col)[0];
-            $pdo->exec("ALTER TABLE caracterizacion_productor ADD COLUMN $col");
-        } catch (\PDOException $e) { /* Ignore Column already exists error */ }
-    }
-
-    // 3. Ensure discapacidad_productor exists
-    $pdo->exec("
-        CREATE TABLE IF NOT EXISTS discapacidad_productor (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            productor_id BIGINT UNSIGNED NOT NULL,
-            tiene_discapacidad VARCHAR(50),
-            tipo VARCHAR(255),
-            FOREIGN KEY (productor_id) REFERENCES productores_sumapaz(id) ON DELETE CASCADE
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-    ");
 
     // Extract POST Payload
     $productor_id = $_POST['productor_id'] ?? null;

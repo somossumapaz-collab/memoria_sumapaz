@@ -866,6 +866,9 @@
                     <button type="button" class="btn btn-submit"
                         style="background-color: var(--primary-green); width: 30%; max-width: 250px; margin-right: 1rem;"
                         onclick="descargarFichaGlobalPDF()" id="btn-descargar-pdf">⏬ Descargar PDF</button>
+
+                    <button type="submit" class="btn btn-submit"
+                        style="background-color: #f39c12; width: 30%; max-width: 250px;" id="btn-save-provisional">💾 Guardar Cambios (Provisional)</button>
                 </div>
             </form>
         </div>
@@ -1262,7 +1265,43 @@
         }
 
         // Form submission via API
-        // Form submission is removed, this page is Read-Only
+        document.getElementById('caracterizacion-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const btn = document.getElementById('btn-save-provisional');
+            const originalBtnText = btn.textContent;
+            
+            btn.disabled = true;
+            btn.textContent = 'Guardando...';
+
+            // Temporarily unlock disabled fields to capture their data
+            const disabledElements = form.querySelectorAll('input:disabled, select:disabled, textarea:disabled');
+            disabledElements.forEach(el => el.disabled = false);
+
+            const formData = new FormData(form);
+
+            // Re-lock fields
+            disabledElements.forEach(el => el.disabled = true);
+
+            try {
+                const res = await fetch('api/submit_caracterizacion.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await res.json();
+                if (res.ok && result.success) {
+                    document.getElementById('success-modal').style.display = 'flex';
+                } else {
+                    alert('Error al guardar: ' + (result.error || 'Ocurrió un error inesperado.'));
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('Error de conexión al servidor.');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = originalBtnText;
+            }
+        });
         
         // Convert standard multiple selects into custom dropdowns with checkboxes
         function initCustomMultiSelects() {

@@ -27,11 +27,12 @@ try {
             p.fecha_creacion,
             p.mypime,
             CASE 
-                WHEN cp.productor_id IS NOT NULL THEN 1
+                WHEN MAX(cp.id) IS NOT NULL THEN 1
                 ELSE 0
             END AS tiene_caracterizacion
         FROM productores_sumapaz p
         LEFT JOIN caracterizacion_productor cp ON p.id = cp.productor_id
+        GROUP BY p.id
         ORDER BY p.fecha_creacion DESC
     ");
 
