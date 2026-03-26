@@ -478,14 +478,109 @@
             </table>
         </div>
 
+        <!-- New Section: Categorías Productivas -->
+        <h2
+            style="font-family: 'Inter', sans-serif; color: #444F2F; margin-top: 4rem; margin-bottom: 2rem; text-align: center; font-size: 1.8rem; font-weight: 700;">
+            Productores por Categoría Productiva</h2>
+
+        <!-- Filters Box -->
+        <div style="background-color: #EFEBE4; padding: 2rem; border-radius: 12px; border: 1px solid #DCD8D1; margin-bottom: 2rem;">
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-end; margin-bottom: 2rem;">
+                <div style="flex: 1; min-width: 250px;">
+                    <label for="cat-filter-tipo"
+                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Categoría</label>
+                    <select id="cat-filter-tipo"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px; background: white;">
+                        <option value="">Seleccione un Tipo...</option>
+                    </select>
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                    <label for="cat-filter-nombre"
+                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Subcategoría</label>
+                    <select id="cat-filter-nombre"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px; background: white;">
+                        <option value="">Seleccione un Nombre...</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Fila de Botones (Estilo superior) -->
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <button type="button" class="btn btn-submit" style="
+                    height: 50px;
+                    width: 220px;
+                    margin: 0;
+                    padding: 0;
+                    background-color: var(--primary-green);
+                    color: #FBF4DE;
+                    border-radius: 30px;
+                    font-weight: 600;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 1rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: none;
+                " onclick="resetCatFilters()">
+                    Limpiar Filtro
+                </button>
+                <button type="button" class="btn" style="
+                    height: 50px;
+                    width: 220px;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #444F2F;
+                    color: #FBF4DE;
+                    border-radius: 30px;
+                    font-weight: 600;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 1rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+                    border: none;
+                " onclick="exportCatToExcel()">
+                    <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Descargar Excel
+                </button>
+            </div>
+        </div>
+
+        <!-- Table Responsive -->
+        <div class="table-responsive">
+            <table class="data-table" id="cat-productores-table">
+                <thead>
+                    <tr>
+                        <th>Nombre del Productor</th>
+                        <th>Subcategoría</th>
+                        <th>Tipo Documento</th>
+                        <th>Número Documento</th>
+                        <th>Vereda</th>
+                        <th>Teléfono</th>
+                        <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody id="cat-productores-tbody">
+                    <tr>
+                        <td colspan="7" style="text-align: center; padding: 4rem; color: #888;">Utilice los filtros
+                            superiores para consultar productores por actividad.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
         <!-- PowerBI Presentation -->
         <div
-            style="margin-top: 3rem; width: 100%; display: flex; justify-content: center; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            style="margin-top: 5rem; width: 100%; display: flex; justify-content: center; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
             <iframe title="presentacion_20260209" width="100%" height="600"
                 src="https://app.powerbi.com/view?r=eyJrIjoiYjc1MDZmODYtYjEzNi00MTllLWI2ZDUtYjkyMWQ3YmM1ODA1IiwidCI6IjEyNDFkNmY3LTVhNDUtNDc0Zi04MjE1LTZkMDk5ZTI4N2FmZiJ9"
                 frameborder="0" allowFullScreen="true"></iframe>
         </div>
-
 
     </main>
 
@@ -528,6 +623,127 @@
                 return;
             }
             // ------------------------
+
+            // --- CATEGORIES LOGIC ---
+            const catFilterTipo = document.getElementById('cat-filter-tipo');
+            const catFilterNombre = document.getElementById('cat-filter-nombre');
+            const catTbody = document.getElementById('cat-productores-tbody');
+            window.lastCatData = []; // For export functionality
+            let allCategories = [];
+
+            // Fetch all categories
+            try {
+                const catRes = await fetch('api/get_categorias_productivas.php');
+                const catData = await catRes.json();
+                if (catData.success) {
+                    allCategories = catData.data;
+                    populateCategoryFilters();
+                }
+            } catch (err) {
+                console.error("Error fetching categories:", err);
+            }
+
+            function populateCategoryFilters() {
+                const tipos = [...new Set(allCategories.map(c => c.tipo))].sort();
+
+                // Populate Tipo filter
+                tipos.forEach(tipo => {
+                    const opt = document.createElement('option');
+                    opt.value = tipo;
+                    opt.textContent = tipo;
+                    catFilterTipo.appendChild(opt);
+                });
+
+                // Populate Nombre filter (initially all)
+                allCategories.forEach(cat => {
+                    const opt = document.createElement('option');
+                    opt.value = cat.id;
+                    opt.textContent = cat.nombre;
+                    opt.dataset.tipo = cat.tipo;
+                    catFilterNombre.appendChild(opt);
+                });
+            }
+
+            // Mutual filtering logic
+            catFilterTipo.addEventListener('change', () => {
+                const selectedTipo = catFilterTipo.value;
+
+                // Filter Nombre options
+                Array.from(catFilterNombre.options).forEach(opt => {
+                    if (opt.value === "") return;
+                    if (!selectedTipo || opt.dataset.tipo === selectedTipo) {
+                        opt.style.display = 'block';
+                    } else {
+                        opt.style.display = 'none';
+                    }
+                });
+
+                // If currently selected nombre doesn't match new tipo, reset it
+                const selectedNombreOpt = catFilterNombre.options[catFilterNombre.selectedIndex];
+                if (selectedTipo && selectedNombreOpt.value !== "" && selectedNombreOpt.dataset.tipo !== selectedTipo) {
+                    catFilterNombre.value = "";
+                    catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 2rem; color: #666;">Seleccione una subcategoría para ver los productores asociados.</td></tr>';
+                }
+
+                if (catFilterNombre.value) {
+                    loadProducersByCategory(catFilterNombre.value);
+                }
+            });
+
+            catFilterNombre.addEventListener('change', () => {
+                const selectedId = catFilterNombre.value;
+                if (!selectedId) {
+                    catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 2rem; color: #666;">Seleccione una subcategoría para ver los productores asociados.</td></tr>';
+                    return;
+                }
+
+                const selectedOpt = catFilterNombre.options[catFilterNombre.selectedIndex];
+                const tipoOfSelected = selectedOpt.dataset.tipo;
+
+                // Set the Tipo filter accordingly
+                catFilterTipo.value = tipoOfSelected;
+
+                loadProducersByCategory(selectedId);
+            });
+
+            async function loadProducersByCategory(catId) {
+                catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 2rem;">Cargando productores...</td></tr>';
+                try {
+                    const res = await fetch(`api/get_productores_por_categoria.php?categoria_id=${catId}`);
+                    const result = await res.json();
+                    if (result.success) {
+                        window.lastCatData = result.data.map(p => ({ ...p, subcategoria: catFilterNombre.options[catFilterNombre.selectedIndex].text }));
+                        renderCategoryTable(window.lastCatData);
+                    } else {
+                        catTbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: red;">Error: ${result.error}</td></tr>`;
+                    }
+                } catch (err) {
+                    catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: red;">Error de conexión.</td></tr>';
+                }
+            }
+
+            function renderCategoryTable(data) {
+                catTbody.innerHTML = '';
+                if (data.length === 0) {
+                    catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 2rem; color: #666;">No hay productores registrados en esta categoría.</td></tr>';
+                    return;
+                }
+
+                data.forEach(p => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td><strong>${p.nombre_completo}</strong></td>
+                        <td style="font-size: 0.85rem; color: #666;">${p.subcategoria}</td>
+                        <td>${p.tipo_documento}</td>
+                        <td>${p.numero_documento}</td>
+                        <td>${p.vereda}</td>
+                        <td>${p.telefono}</td>
+                        <td>${p.correo_electronico || '-'}</td>
+                    `;
+                    catTbody.appendChild(tr);
+                });
+            }
+
 
             try {
                 const response = await fetch('api/get_productores.php');
@@ -800,6 +1016,60 @@
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+        }
+
+        function exportCatToExcel() {
+            if (!window.lastCatData || window.lastCatData.length === 0) {
+                alert('No hay datos seleccionados para exportar.');
+                return;
+            }
+
+            const headers = [
+                'Nombre del Productor', 'Subcategoría', 'Tipo Documento', 'Número Documento',
+                'Vereda', 'Celular', 'Correo'
+            ];
+
+            let csvString = '\uFEFF' + headers.join(';') + '\r\n';
+
+            window.lastCatData.forEach(p => {
+                const row = [
+                    `"${p.nombre_completo || '-'}"`,
+                    `"${p.subcategoria || '-'}"`,
+                    p.tipo_documento || '-',
+                    p.numero_documento || '-',
+                    `"${p.vereda || '-'}"`,
+                    p.telefono || '-',
+                    `"${p.correo_electronico || '-'}"`
+                ];
+                csvString += row.join(';') + '\r\n';
+            });
+
+            const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.setAttribute("href", url);
+            const subName = document.getElementById('cat-filter-nombre').options[document.getElementById('cat-filter-nombre').selectedIndex].text.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+            link.setAttribute("download", `productores_categoria_${subName}_${new Date().toISOString().split('T')[0]}.csv`);
+
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        function resetCatFilters() {
+            const catFilterTipo = document.getElementById('cat-filter-tipo');
+            const catFilterNombre = document.getElementById('cat-filter-nombre');
+            const catTbody = document.getElementById('cat-productores-tbody');
+            
+            if (catFilterTipo) catFilterTipo.value = "";
+            if (catFilterNombre) {
+                catFilterNombre.value = "";
+                // Reset all options display
+                Array.from(catFilterNombre.options).forEach(opt => opt.style.display = 'block');
+            }
+            if (catTbody) {
+                catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 4rem; color: #888;">Utilice los filtros superiores para consultar productores por actividad.</td></tr>';
+            }
+            window.lastCatData = [];
         }
     </script>
 </body>
