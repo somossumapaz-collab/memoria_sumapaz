@@ -3,6 +3,10 @@
 $path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 $ext = pathinfo($path, PATHINFO_EXTENSION);
 
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
 header("X-Router-Debug-Path: " . $path);
 header("X-Router-Debug-Ext: " . $ext);
 

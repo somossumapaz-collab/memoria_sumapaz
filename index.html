@@ -194,7 +194,9 @@
             }
         }
     </script>
-    <script type="module" src="assets/main.js"></script>
+    <script>
+        document.write(`<script type="module" src="assets/main.js?v=${timestamp}"><\/script>`);
+    </script>
 </body>
 
 </html>
