@@ -11,7 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
         rel="stylesheet">
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <!-- Leaflet Map & Routing -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
@@ -37,14 +38,17 @@
             color: var(--text-main);
         }
 
-        /* Nav Top */
-        .nav-top {
-            background-color: var(--primary-green);
-            color: white;
-            padding: 1rem 2rem;
+        /* Nav Top moved to all-fixed-top */
+        .nav-top .links {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            gap: 15px;
+        }
+        /* Header removed sticky from individual classes as it's now in wrapper */
+        .header-dashboard h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            font-family: 'Playfair Display', serif;
         }
 
         .nav-top .links {
@@ -67,7 +71,7 @@
         }
 
         .dashboard-container {
-            padding: 2rem;
+            padding: 0 2rem 2rem 2rem; /* El wrapper sticky maneja el margen superior */
             max-width: 1600px;
             margin: 0 auto;
         }
@@ -215,16 +219,76 @@
             border-color: var(--accent-green);
         }
 
-        /* Filters */
+        /* Top Fixed Section */
+        .all-fixed-top {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #f8f9fa; /* Fondo sólido */
+            width: 100%;
+            border-bottom: 2px solid #ddd;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-top {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .nav-top a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .nav-top a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+
+        .sticky-top-wrapper {
+            padding: 1rem 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .header-dashboard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .header-dashboard h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .kpi-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
         .filters-section {
             background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            margin-bottom: 2rem;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
             display: flex;
-            gap: 1rem;
             flex-wrap: wrap;
+            gap: 1rem;
             align-items: flex-end;
         }
 
@@ -274,40 +338,53 @@
             opacity: 0.9;
         }
 
-        /* Main Layout 70/30 */
-        .main-content {
-            display: flex;
-            gap: 2rem;
-            align-items: stretch;
-            height: 750px;
+        /* Main Layout - New Stacked Design */
+        .tables-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            min-height: 400px;
         }
 
-        .map-container {
-            flex: 7;
-            /* 70% */
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            position: relative;
-        }
-
-        #map {
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            flex: 3;
-            /* 30% */
+        .table-card {
             background: white;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             display: flex;
             flex-direction: column;
             overflow: hidden;
+        }
+
+        .table-header {
+            background: var(--primary-green);
+            color: white;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .table-header h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .table-content {
+            padding: 1rem;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+
+        .map-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
             position: relative;
+            height: 600px;
+            margin-bottom: 2rem;
         }
 
         .sidebar-header {
@@ -488,113 +565,137 @@
 
 <body>
     <div id="loading-overlay">Cargando datos del dashboard...</div>
+    <div class="all-fixed-top">
+        <!-- Barra Verde con Enlace -->
+        <div class="nav-top">
+            <div class="links">
+                <a href="recorrido_campo.html">Registrar Ruta</a>
+            </div>
+        </div>
 
-    <div class="nav-top">
+        <div class="sticky-top-wrapper">
+            <!-- Título Centrado -->
+            <div class="header-dashboard">
+                <div>
+                    <h1>Seguimiento de Transporte</h1>
+                    <p style="color: #666; margin-top: 0.2rem; font-size: 0.9rem;">Visualización de rutas, ocupación y logística en tiempo real.</p>
+                </div>
+            </div>
 
-        <a href="recorrido_campo.html" style="background: transparent;">Registrar Ruta</a>
+            <!-- KPIs -->
+            <div class="kpi-container">
+                <div class="kpi-card" style="padding: 0.8rem;">
+                    <div class="kpi-value" id="kpi-viajes" style="font-size: 1.8rem;">-</div>
+                    <div class="kpi-label" style="font-size: 0.7rem;">Viajes</div>
+                </div>
+                <div class="kpi-card" style="padding: 0.8rem;">
+                    <div class="kpi-value" id="kpi-vehiculos" style="font-size: 1.8rem;">-</div>
+                    <div class="kpi-label" style="font-size: 0.7rem;">Vehículos</div>
+                </div>
+                <div class="kpi-card clickable" onclick="showOccupancyModal()" style="padding: 0.8rem;">
+                    <div class="kpi-value" id="kpi-ocupacion" style="font-size: 1.8rem;">-</div>
+                    <div class="kpi-label" style="font-size: 0.7rem;">Ocupación</div>
+                </div>
+                <div class="kpi-card" style="padding: 0.8rem;">
+                    <div class="kpi-value" id="kpi-paradas" style="font-size: 1.8rem;">-</div>
+                    <div class="kpi-label" style="font-size: 0.7rem;">Prom. Paradas</div>
+                </div>
+                <div class="kpi-card" style="padding: 0.8rem;">
+                    <div class="kpi-value" id="kpi-vereda" style="font-size: 1.4rem;">-</div>
+                    <div class="kpi-label" style="font-size: 0.7rem;">Top Vereda</div>
+                </div>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filters-section" style="padding: 0.75rem;">
+                <div class="filter-group">
+                    <label style="font-size: 0.75rem;">Inicio</label>
+                    <input type="date" id="f-inicio" style="padding: 0.4rem;">
+                </div>
+                <div class="filter-group">
+                    <label style="font-size: 0.75rem;">Fin</label>
+                    <input type="date" id="f-fin" style="padding: 0.4rem;">
+                </div>
+                <div class="filter-group">
+                    <label style="font-size: 0.75rem;">Funcionario</label>
+                    <select id="f-funcionario" style="padding: 0.4rem;">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label style="font-size: 0.75rem;">Proyecto</label>
+                    <select id="f-proyecto" style="padding: 0.4rem;">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label style="font-size: 0.75rem;">Vereda/Destino</label>
+                    <input type="text" id="f-vereda" placeholder="Ej: Tunal..." style="padding: 0.4rem;">
+                </div>
+                <div class="filter-group">
+                    <label style="font-size: 0.75rem;">Vehículo</label>
+                    <select id="f-vehiculo" style="padding: 0.4rem;">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                <button class="btn-filter" id="btn-apply-filters" style="height: 35px; padding: 0 1rem; font-size: 0.85rem;">Filtrar</button>
+                <button class="btn-reset" id="btn-reset" style="height: 35px; padding: 0 1rem; font-size: 0.85rem;">Limpiar</button>
+                <button class="btn-action" id="btn-download" style="background-color: #2D5A27; color: white; border: none; padding: 0 1rem; border-radius: 8px; font-weight: 600; cursor: pointer; height: 35px; font-size: 0.85rem;">Descargar</button>
+            </div>
+        </div>
     </div>
 
-    <div class="dashboard-container">
-        <div class="dashboard-header">
-            <h1>Panel de Control de Transporte</h1>
-            <p>Visualización interactiva, seguimiento y análisis de los viajes registrados.</p>
-        </div>
+    <div class="dashboard-container" style="margin-top: 2rem;">
 
-        <!-- KPIs -->
-        <div class="kpi-grid">
-            <div class="kpi-card">
-                <h3>Total Viajes</h3>
-                <p id="kpi-viajes">-</p>
+        <div class="table-card" id="project-chart-card" style="margin-bottom: 2rem; min-height: 300px;">
+            <div class="table-header">
+                <h2>Tasa Mensual de Viajes por Proyecto</h2>
             </div>
-            <div class="kpi-card">
-                <h3>Vehículos Usados</h3>
-                <p id="kpi-vehiculos">-</p>
-            </div>
-            <div class="kpi-card clickable" onclick="showOccupancyModal()">
-                <h3>Tasa Ocupación</h3>
-                <p id="kpi-ocupacion">-</p>
-                <small style="color: #999; font-size: 0.7rem;">Click para detalle</small>
-            </div>
-            <div class="kpi-card">
-                <h3>Vereda Más Visitada</h3>
-                <p id="kpi-vereda" style="font-size: 1.8rem;">-</p>
-            </div>
-            <div class="kpi-card">
-                <h3>Prom. Paradas / Viaje</h3>
-                <p id="kpi-paradas">-</p>
+            <div class="table-content" style="max-height: none; height: 350px; padding: 1.5rem;">
+                <canvas id="projectChart"></canvas>
             </div>
         </div>
 
-        <!-- Filtros -->
-        <div class="filters-section">
-            <div class="filter-group">
-                <label for="f-fecha-ini">Fecha Inicio</label>
-                <input type="date" id="f-fecha-ini">
-            </div>
-            <div class="filter-group">
-                <label for="f-fecha-fin">Fecha Fin</label>
-                <input type="date" id="f-fecha-fin">
-            </div>
-            <div class="filter-group">
-                <label for="f-funcionario">Contratista</label>
-                <select id="f-funcionario">
-                    <option value="">Cargando...</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="f-proyecto">Proyecto</label>
-                <select id="f-proyecto">
-                    <option value="">Cargando...</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="f-vehiculo">Tipo Vehículo</label>
-                <select id="f-vehiculo">
-                    <option value="">Cargando...</option>
-                </select>
-            </div>
-            <button class="btn-filter" id="btn-apply-filters">Filtrar</button>
-            <button class="btn-reset" id="btn-reset">Limpiar</button>
-        </div>
-
-        <!-- Layout 70/30 -->
-        <div class="main-content">
-            <!-- 70% Mapa -->
-            <div class="map-container">
-                <div id="map"></div>
-
-                <!-- Leyenda -->
-                <div class="map-legend">
-                    <div class="legend-item">
-                        <div class="dot"
-                            style="background: #28a745; border: 2px solid white; box-shadow: 0 0 2px rgba(0,0,0,0.5);">
-                        </div> Origen
-                    </div>
-                    <div class="legend-item">
-                        <div class="dot"
-                            style="background: #ffc107; border: 2px solid white; box-shadow: 0 0 2px rgba(0,0,0,0.5);">
-                        </div> Parada Intermedia
-                    </div>
-                    <div class="legend-item">
-                        <div class="dot"
-                            style="background: #dc3545; border: 2px solid white; box-shadow: 0 0 2px rgba(0,0,0,0.5);">
-                        </div> Destino Final
-                    </div>
-                    <div class="legend-item" style="margin-top: 8px;">
-                        <div style="width: 25px; height: 3px; background: #2D5A27; margin-right: 5px;"></div> Ruta del
-                        Viaje
-                    </div>
-                </div>
-            </div>
-
-            <!-- 30% Sidebar -->
-            <div class="sidebar">
-                <div class="sidebar-header">
-                    <button id="btn-back-list" onclick="showTripList()">← Volver</button>
+        <!-- Tablas de Datos -->
+        <div class="tables-container">
+            <!-- Lista de Viajes -->
+            <div class="table-card">
+                <div class="table-header">
                     <h2>Lista de Viajes</h2>
                 </div>
-                <div class="sidebar-content" id="sidebar-content">
-                    <!-- Dynamic Table or Details go here -->
+                <div class="table-content" id="trips-list-container">
+                    <!-- Se llena dinámicamente -->
+                </div>
+            </div>
+
+            <!-- Viajeros Recurrentes -->
+            <div class="table-card">
+                <div class="table-header">
+                    <h2>Viajeros Recurrentes</h2>
+                </div>
+                <div class="table-content" id="recurring-travelers-container">
+                    <!-- Se llena dinámicamente -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Mapa de Ancho Completo -->
+        <div class="map-section">
+            <div id="map" style="width: 100%; height: 100%;"></div>
+            
+            <!-- Leyenda -->
+            <div class="map-legend">
+                <div class="legend-item">
+                    <div class="dot" style="background: #28a745; border: 2px solid white; box-shadow: 0 0 2px rgba(0,0,0,0.5);"></div> Origen
+                </div>
+                <div class="legend-item">
+                    <div class="dot" style="background: #ffc107; border: 2px solid white; box-shadow: 0 0 2px rgba(0,0,0,0.5);"></div> Parada Intermedia
+                </div>
+                <div class="legend-item">
+                    <div class="dot" style="background: #dc3545; border: 2px solid white; box-shadow: 0 0 2px rgba(0,0,0,0.5);"></div> Destino Final
+                </div>
+                <div class="legend-item" style="margin-top: 8px;">
+                    <div style="width: 25px; height: 3px; background: #2D5A27; margin-right: 5px;"></div> Ruta del Viaje
                 </div>
             </div>
         </div>
@@ -619,6 +720,9 @@
     <!-- Application Logic -->
     <script>
         let map;
+        if (typeof ChartDataLabels !== 'undefined') {
+            Chart.register(ChartDataLabels);
+        }
         let originalTrips = [];
         let filteredTrips = [];
         let drawnLayers = [];
@@ -694,8 +798,8 @@
             const firstDay = `${year}-${month}-01`;
             const today = `${year}-${month}-${day}`;
 
-            document.getElementById('f-fecha-ini').value = firstDay;
-            document.getElementById('f-fecha-fin').value = today;
+            document.getElementById('f-inicio').value = firstDay;
+            document.getElementById('f-fin').value = today;
 
             applyFilters();
 
@@ -707,14 +811,18 @@
                 const month = String(now.getMonth() + 1).padStart(2, '0');
                 const day = String(now.getDate()).padStart(2, '0');
 
-                document.getElementById('f-fecha-ini').value = `${year}-${month}-01`;
-                document.getElementById('f-fecha-fin').value = `${year}-${month}-${day}`;
+                document.getElementById('f-inicio').value = `${year}-${month}-01`;
+                document.getElementById('f-fin').value = `${year}-${month}-${day}`;
                 document.getElementById('f-funcionario').value = '';
                 document.getElementById('f-proyecto').value = '';
                 document.getElementById('f-vehiculo').value = '';
                 applyFilters();
             });
+
+            document.getElementById('btn-download').addEventListener('click', downloadReport);
         });
+
+        let chartInstance = null;
 
         function initMap() {
             map = L.map('map').setView([4.05, -74.3], 10);
@@ -774,8 +882,8 @@
         }
 
         function applyFilters() {
-            const fIni = document.getElementById('f-fecha-ini').value;
-            const fFin = document.getElementById('f-fecha-fin').value;
+            const fIni = document.getElementById('f-inicio').value;
+            const fFin = document.getElementById('f-fin').value;
             const fFunc = document.getElementById('f-funcionario').value;
             const fProj = document.getElementById('f-proyecto').value;
             const fVehic = document.getElementById('f-vehiculo').value;
@@ -801,28 +909,171 @@
                 return true;
             });
 
+            // Ordenar por fecha (más reciente primero)
+            filteredTrips.sort((a, b) => {
+                const dateA = new Date(a.fecha_hora || 0);
+                const dateB = new Date(b.fecha_hora || 0);
+                return dateB - dateA;
+            });
+
             calculateKPIs();
             renderTripList();
+            renderRecurringTravelers();
+            renderProjectChart();
             renderMap();
         }
 
-        function renderTripList() {
-            const sb = document.getElementById('sidebar-content');
-            document.querySelector('.sidebar-header h2').textContent = 'Lista de Viajes';
-            document.getElementById('btn-back-list').style.display = 'none';
+        function renderProjectChart() {
+            const ctx = document.getElementById('projectChart').getContext('2d');
+            
+            // Agrupar datos por proyecto
+            const projectData = {};
+            
+            filteredTrips.forEach(t => {
+                const pName = t.proyecto_codigo || t.proyecto_nombre || 'Sin Proyecto';
+                if (!projectData[pName]) {
+                    projectData[pName] = { trips: 0, vehicles: new Set() };
+                }
+                projectData[pName].trips++;
+                const tripDate = t.fecha_hora ? t.fecha_hora.split(' ')[0] : 'nodate';
+                t.vehiculos.forEach(v => {
+                    if (v.placa) {
+                        projectData[pName].vehicles.add(v.placa + '_' + tripDate);
+                    }
+                });
+            });
 
+            const labels = Object.keys(projectData);
+            const rates = labels.map(label => {
+                const info = projectData[label];
+                return info.vehicles.size > 0 ? (info.trips / info.vehicles.size).toFixed(2) : 0;
+            });
+
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+
+            chartInstance = new Chart(ctx, {
+                plugins: [ChartDataLabels],
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            type: 'line',
+                            label: 'Tendencia',
+                            data: rates,
+                            borderColor: 'rgba(45, 90, 39, 0.4)',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.3,
+                            pointRadius: 0,
+                            fill: false,
+                            order: 1
+                        },
+                        {
+                            type: 'bar',
+                            label: 'Tasa (Viajes / Vehículo)',
+                            data: rates,
+                            backgroundColor: 'rgba(45, 90, 39, 0.7)',
+                            borderColor: 'rgba(45, 90, 39, 1)',
+                            borderWidth: 1,
+                            borderRadius: 5,
+                            order: 2
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        datalabels: {
+                            anchor: 'end',
+                            align: 'top',
+                            color: '#2D5A27',
+                            font: { weight: 'bold' },
+                            formatter: (value) => value
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: { display: true, text: 'Tasa' },
+                            grace: '10%' // Espacio para las etiquetas superiores
+                        },
+                        x: {
+                            ticks: {
+                                autoSkip: false,
+                                maxRotation: 0,
+                                minRotation: 0
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function downloadReport() {
             if (filteredTrips.length === 0) {
-                sb.innerHTML = `<div class="empty-state">No se encontraron viajes con esos filtros.</div>`;
+                alert("No hay datos para descargar con los filtros actuales.");
                 return;
             }
 
-            let tableHTML = `
+            // Cabeceras según solicitud: fecha, contratista, hora de diligenciamiento, vehiculo, placas y ruta
+            let csvContent = "\uFEFF"; // BOM para Excel
+            csvContent += "Fecha;Contratista;Hora Diligenciamiento;Vehículo;Placas;Ruta\n";
+
+            filteredTrips.forEach(t => {
+                const fechaArr = (t.fecha_hora || "").split(" ");
+                const fecha = fechaArr[0] || "-";
+                const hora = fechaArr[1] || "-";
+                const contratista = t.funcionario || "-";
+                const ruta = `${t.origen} -> ${t.destino_final}`;
+                
+                // Si hay múltiples vehículos, los unimos
+                const vehiculos = t.vehiculos.map(v => v.tipo_vehiculo || "-").join(" | ");
+                const placas = t.vehiculos.map(v => v.placa || "-").join(" | ");
+
+                // Escapar picos y puntos y comas
+                const row = [
+                    fecha,
+                    contratista,
+                    hora,
+                    vehiculos,
+                    placas,
+                    ruta
+                ].map(val => `"${val.replace(/"/g, '""')}"`).join(";");
+                
+                csvContent += row + "\n";
+            });
+
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            const url = URL.createObjectURL(blob);
+            link.setAttribute("href", url);
+            link.setAttribute("download", `reporte_transporte_${new Date().toISOString().slice(0, 10)}.csv`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function renderTripList() {
+            const container = document.getElementById('trips-list-container');
+            
+            if (filteredTrips.length === 0) {
+                container.innerHTML = `<div style="text-align:center; padding: 20px; color: #999;">No hay viajes registrados con estos filtros.</div>`;
+                return;
+            }
+
+            let html = `
                 <table class="trip-table">
                     <thead>
                         <tr>
                             <th>Fecha</th>
-                            <th>Funcionario</th>
-                            <th></th>
+                            <th>Contratista</th>
+                            <th>Proyecto</th>
+                            <th style="text-align:right">Mapa</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -831,30 +1082,77 @@
             filteredTrips.forEach(t => {
                 const fDate = t.fecha_hora ? t.fecha_hora.split(' ')[0] : '-';
                 const fName = t.funcionario ? t.funcionario.split(' ').slice(0, 2).join(' ') : '-';
+                const pName = t.proyecto_codigo || t.proyecto_nombre || '-';
                 const btnMapIcon = drawnTripIds.has(t.id) ? '❌' : '🗺️';
-                const btnMapTitle = drawnTripIds.has(t.id) ? 'Ocultar ruta' : 'Dibujar ruta en mapa';
 
-                tableHTML += `
+                html += `
                     <tr>
-                        <td>${fDate}</td>
+                        <td title="${t.fecha_hora}">${fDate}</td>
                         <td>${fName}</td>
-                        <td style="text-align:right; white-space: nowrap;">
-                            <button class="btn-lupa" onclick="viewTripDetails(${t.id}, true)" title="Ver Detalle">🔍</button>
-                            <button class="btn-lupa" onclick="drawTripOnMap(${t.id})" title="${btnMapTitle}">${btnMapIcon}</button>
+                        <td title="${t.proyecto_nombre}">${pName}</td>
+                        <td style="text-align:right">
+                            <button class="btn-lupa" onclick="drawTripOnMap(${t.id})" title="Ver/Ocultar en Mapa">${btnMapIcon}</button>
+                            <button class="btn-lupa" onclick="viewTripDetails(${t.id})" title="Ver Detalle">🔍</button>
                         </td>
                     </tr>
                 `;
             });
 
-            tableHTML += `</tbody></table>`;
-            sb.innerHTML = tableHTML;
+            html += `</tbody></table>`;
+            container.innerHTML = html;
+        }
+
+        function renderRecurringTravelers() {
+            const container = document.getElementById('recurring-travelers-container');
+            
+            // Contar viajes por funcionario
+            const counts = {};
+            filteredTrips.forEach(t => {
+                if (t.funcionario) {
+                    counts[t.funcionario] = (counts[t.funcionario] || 0) + 1;
+                }
+            });
+
+            // Convertir a array y ordenar
+            const sorted = Object.entries(counts)
+                .map(([nombre, viajes]) => ({ nombre, viajes }))
+                .sort((a, b) => b.viajes - a.viajes);
+
+            if (sorted.length === 0) {
+                container.innerHTML = `<div style="text-align:center; padding: 20px; color: #999;">Sin datos.</div>`;
+                return;
+            }
+
+            let html = `
+                <table class="trip-table">
+                    <thead>
+                        <tr>
+                            <th>Pos.</th>
+                            <th>Nombre</th>
+                            <th style="text-align:center">Viajes Diferentes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            sorted.forEach((item, index) => {
+                html += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${item.nombre}</td>
+                        <td style="text-align:center; font-weight:700; color:var(--primary-green)">${item.viajes}</td>
+                    </tr>
+                `;
+            });
+
+            html += `</tbody></table>`;
+            container.innerHTML = html;
         }
 
         function showTripList() {
-            selectedTripId = null;
+            // Ya no es necesaria por el nuevo diseño pero la mantenemos vacía por compatibilidad si se llama
             drawnTripIds.clear();
-            renderTripList();
-            renderMap(); // Recargar mapa (lo vaciará)
+            applyFilters();
         }
 
         function calculateKPIs() {
@@ -1093,81 +1391,70 @@
             renderMap();
         }
 
-        function viewTripDetails(id, alsoDraw = true) {
-            selectedTripId = id;
-            if (alsoDraw && !drawnTripIds.has(id)) {
-                drawnTripIds.add(id);
-                renderTripList(); // Actualizar el botón del mapa también
-                renderMap();
-            }
-
-            // Populate Sidebar
+        function viewTripDetails(id) {
+            // Populate Modal (previously Sidebar)
             const trip = filteredTrips.find(t => t.id === id);
             if (!trip) return;
-
-            document.querySelector('.sidebar-header h2').textContent = 'Detalles del Viaje';
-            document.getElementById('btn-back-list').style.display = 'inline-block';
-
-            const sb = document.getElementById('sidebar-content');
 
             let vehiculosHTML = '';
             if (trip.vehiculos && trip.vehiculos.length > 0) {
                 trip.vehiculos.forEach(v => {
-                    vehiculosHTML += `<span class="badge">${v.tipo_vehiculo || 'Vehículo'} - ${v.placa || 'Sin placa'}</span>`;
+                    vehiculosHTML += `<span style="background:#e8f5e9; color:#2e7d32; padding:3px 8px; border-radius:12px; font-size:0.8rem; margin-right:5px;">${v.tipo_vehiculo || 'Vehículo'} - ${v.placa || 'Sin placa'}</span>`;
                 });
             } else {
-                vehiculosHTML = `<span class="detail-value" style="color: #999;">Ninguno asignado</span>`;
+                vehiculosHTML = `<span style="color: #999;">Ninguno asignado</span>`;
             }
 
             let pName = trip.proyecto_nombre || 'No registrado';
             if (trip.proyecto_codigo) pName = `${trip.proyecto_codigo} - ${pName}`;
 
-            sb.innerHTML = `
-                <div class="detail-item">
-                    <span class="detail-label">Ruta</span>
-                    <p class="detail-value" style="color: var(--primary-green); font-weight: 700;">
-                        ${trip.origen} ➔ ${trip.destino_final}
-                    </p>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Responsable / Funcionario</span>
-                    <p class="detail-value">${trip.funcionario || '-'}</p>
-                    <p class="detail-value" style="font-size: 0.9rem; color: #666; margin-top: 0.2rem;">
-                        Doc: ${trip.numero_documento || '-'} | Tel: ${trip.telefono || '-'}
-                    </p>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Fecha del viaje</span>
-                    <p class="detail-value">${trip.fecha_hora || '-'}</p>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Proyecto Responsable</span>
-                    <p class="detail-value">${pName}</p>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Propósito / Meta</span>
-                    <p class="detail-value">${trip.proposito || '-'} / ${trip.meta || '-'}</p>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Actividad a desarrollar</span>
-                    <p class="detail-value">${trip.actividad || '-'}</p>
-                </div>
-                <div class="detail-item" style="border-bottom: none;">
-                    <span class="detail-label">Vehículos y Operadores Asociados</span>
-                    <div>${vehiculosHTML}</div>
-                </div>
+            const detailsHTML = `
+                <div style="font-family: 'Inter', sans-serif; color: #333;">
+                    <div style="margin-bottom:1.5rem; padding-bottom:1rem; border-bottom:1px solid #eee;">
+                        <h3 style="margin:0 0 0.5rem 0; color:var(--primary-green); font-family:'Playfair Display', serif;">${trip.origen} ➔ ${trip.destino_final}</h3>
+                        <p style="margin:0; font-size:0.9rem; color:#666;">${trip.fecha_hora || '-'}</p>
+                    </div>
+                    
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+                        <div>
+                            <label style="font-weight:700; font-size:0.8rem; text-transform:uppercase; color:#999; display:block; margin-bottom:4px;">Contratista</label>
+                            <p style="margin:0; font-weight:500;">${trip.funcionario || '-'}</p>
+                        </div>
+                        <div>
+                            <label style="font-weight:700; font-size:0.8rem; text-transform:uppercase; color:#999; display:block; margin-bottom:4px;">Documento</label>
+                            <p style="margin:0;">${trip.numero_documento || '-'}</p>
+                        </div>
+                    </div>
 
-                ${isAdmin ? `
-                <button class="btn-delete-trip" style="display: block;" onclick="requestDelete(${trip.id}, '${trip.funcionario}')">
-                    Eliminar este viaje
-                </button>
-                ` : ''}
-                <button onclick="showTripList()" class="btn-action" style="background-color: #6c757d; margin-top: 1.5rem; width: 100%;">
-                    ← Volver a la Lista
-                </button>
+                    <div style="margin-bottom:1rem;">
+                        <label style="font-weight:700; font-size:0.8rem; text-transform:uppercase; color:#999; display:block; margin-bottom:4px;">Proyecto</label>
+                        <p style="margin:0;">${pName}</p>
+                    </div>
+
+                    <div style="margin-bottom:1rem;">
+                        <label style="font-weight:700; font-size:0.8rem; text-transform:uppercase; color:#999; display:block; margin-bottom:4px;">Propósito / Actividad</label>
+                        <p style="margin:0;">${trip.proposito || '-'} / ${trip.actividad || '-'}</p>
+                    </div>
+
+                    <div style="margin-bottom:1.5rem;">
+                        <label style="font-weight:700; font-size:0.8rem; text-transform:uppercase; color:#999; display:block; margin-bottom:4px;">Vehículos</label>
+                        <div style="margin-top:5px;">${vehiculosHTML}</div>
+                    </div>
+
+                    ${isAdmin ? `
+                    <button onclick="requestDelete(${trip.id}, '${trip.funcionario}')" style="width:100%; background:#dc3545; color:white; border:none; padding:10px; border-radius:8px; cursor:pointer; font-weight:600;">
+                        Eliminar este viaje
+                    </button>
+                    ` : ''}
+                </div>
             `;
 
-            sb.innerHTML = detailsHTML;
+            // Usamos un modal genérico para esto (reutilizando el overlay de ocupación si es necesario, o creando uno nuevo)
+            // Para rapidez, crearé un modal simple on-the-fly o usaré alert/sweetalert-style
+            const modalBody = document.getElementById('modal-occupancy-body');
+            document.querySelector('#modal-ocupacion .modal-header h2').textContent = 'Información del Viaje';
+            modalBody.innerHTML = detailsHTML;
+            document.getElementById('modal-ocupacion').style.display = 'flex';
         }
 
         async function requestDelete(id, name) {
