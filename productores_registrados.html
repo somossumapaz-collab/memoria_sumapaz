@@ -327,7 +327,21 @@
             </div>
         </section>
 
+        <!-- PowerBI Presentation -->
+        <h2
+            style="font-family: 'Inter', sans-serif; color: #444F2F; margin-top: 4rem; margin-bottom: 2rem; text-align: center; font-size: 1.8rem; font-weight: 700;">
+            Reporte Seguimiento a Iniciativas</h2>
+        <div
+            style="margin-top: 5rem; width: 100%; display: flex; justify-content: center; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <iframe title="presentacion_20260209" width="100%" height="600"
+                src=https://app.powerbi.com/view?r=eyJrIjoiYTYwNmY3ZGYtMThkOS00MGEyLWJhZDItOGE3MzI5NmUxZmI2IiwidCI6IjEyNDFkNmY3LTVhNDUtNDc0Zi04MjE1LTZkMDk5ZTI4N2FmZiJ9
+                frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+
         <!-- Filtros -->
+        <h2
+            style="font-family: 'Inter', sans-serif; color: #444F2F; margin-top: 4rem; margin-bottom: 2rem; text-align: center; font-size: 1.8rem; font-weight: 700;">
+            Información y Caracterizaciones</h2>
         <div
             style="background-color: #EFEBE4; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
             <!-- Fila de Filtros -->
@@ -575,13 +589,100 @@
             </table>
         </div>
 
-        <!-- PowerBI Presentation -->
+        <!-- New Section: Reporte de Productos -->
+        <h2
+            style="font-family: 'Inter', sans-serif; color: #444F2F; margin-top: 4rem; margin-bottom: 2rem; text-align: center; font-size: 1.8rem; font-weight: 700;">
+            Reporte de Productos</h2>
+
+        <!-- Filters Box -->
         <div
-            style="margin-top: 5rem; width: 100%; display: flex; justify-content: center; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-            <iframe title="presentacion_20260209" width="100%" height="600"
-                src=https://app.powerbi.com/view?r=eyJrIjoiYTYwNmY3ZGYtMThkOS00MGEyLWJhZDItOGE3MzI5NmUxZmI2IiwidCI6IjEyNDFkNmY3LTVhNDUtNDc0Zi04MjE1LTZkMDk5ZTI4N2FmZiJ9
-                frameborder="0" allowFullScreen="true"></iframe>
+            style="background-color: #EFEBE4; padding: 2rem; border-radius: 12px; border: 1px solid #DCD8D1; margin-bottom: 2rem;">
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-end; margin-bottom: 2rem;">
+                <div style="flex: 1; min-width: 250px;">
+                    <label for="prod-filter-categoria"
+                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Categoría</label>
+                    <select id="prod-filter-categoria"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px; background: white;">
+                        <option value="">Todas las Categorías</option>
+                    </select>
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                    <label for="prod-filter-nombre"
+                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Producto</label>
+                    <input type="text" id="prod-filter-nombre" placeholder="Buscar por nombre de producto..."
+                        style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px; background: white;">
+                </div>
+            </div>
+
+            <!-- Fila de Botones -->
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <button type="button" class="btn btn-submit" style="
+                    height: 50px;
+                    width: 220px;
+                    margin: 0;
+                    padding: 0;
+                    background-color: var(--primary-green);
+                    color: #FBF4DE;
+                    border-radius: 30px;
+                    font-weight: 600;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 1rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: none;
+                " onclick="resetProdFilters()">
+                    Limpiar Filtros
+                </button>
+                <button type="button" class="btn" style="
+                    height: 50px;
+                    width: 220px;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #444F2F;
+                    color: #FBF4DE;
+                    border-radius: 30px;
+                    font-weight: 600;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 1rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+                    border: none;
+                " onclick="exportProdToExcel()">
+                    <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Descargar Excel
+                </button>
+            </div>
         </div>
+
+        <!-- Table Responsive -->
+        <div class="table-responsive" style="margin-bottom: 5rem;">
+            <table class="data-table" id="productos-reporte-table">
+                <thead>
+                    <tr>
+                        <th>Productor</th>
+                        <th>Documento</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Frecuencia</th>
+                        <th>Categoría</th>
+                    </tr>
+                </thead>
+                <tbody id="productos-reporte-tbody">
+                    <tr>
+                        <td colspan="6" style="text-align: center; padding: 4rem; color: #888;">Utilice los filtros superiores para consultar el reporte de productos.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
 
     </main>
 
@@ -776,6 +877,88 @@
                 filterMypime.value = '';
                 renderTable(allProducers);
             });
+
+            // --- PRODUCTS REPORT LOGIC ---
+            const prodFilterCat = document.getElementById('prod-filter-categoria');
+            const prodFilterNombre = document.getElementById('prod-filter-nombre');
+            const prodTbody = document.getElementById('productos-reporte-tbody');
+            window.lastProdData = [];
+
+            async function loadProductFilters() {
+                try {
+                    const res = await fetch('api/get_productos_filtros.php');
+                    const result = await res.json();
+                    if (result.success) {
+                        // Populate categories
+                        result.data.categorias.forEach(cat => {
+                            const opt = document.createElement('option');
+                            opt.value = cat;
+                            opt.textContent = cat;
+                            prodFilterCat.appendChild(opt);
+                        });
+                    }
+                } catch (err) {
+                    console.error("Error fetching product filters:", err);
+                }
+            }
+
+            async function loadProductsReport() {
+                const cat = prodFilterCat.value;
+                const nombre = prodFilterNombre.value;
+
+                prodTbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 2rem;">Cargando productos...</td></tr>';
+
+                try {
+                    const params = new URLSearchParams();
+                    if (cat) params.append('categoria', cat);
+                    if (nombre) params.append('search', nombre);
+
+                    const res = await fetch(`api/get_productos_reporte.php?${params.toString()}`);
+                    const result = await res.json();
+
+                    if (result.success) {
+                        window.lastProdData = result.data;
+                        renderProductsReportTable(result.data);
+                    } else {
+                        prodTbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: red;">Error: ${result.error}</td></tr>`;
+                    }
+                } catch (err) {
+                    prodTbody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: red;">Error de conexión.</td></tr>';
+                }
+            }
+
+            function renderProductsReportTable(data) {
+                prodTbody.innerHTML = '';
+                if (data.length === 0) {
+                    prodTbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 2rem; color: #666;">No se encontraron productos con los filtros seleccionados.</td></tr>';
+                    return;
+                }
+
+                data.forEach(p => {
+                    const tr = document.createElement('tr');
+                    const precioStr = (p.precio && p.precio != 0) ? `$${p.precio} / ${p.unidad_precio || ''}` : '-';
+                    tr.innerHTML = `
+                        <td><strong>${p.productor_nombre}</strong></td>
+                        <td>${p.productor_documento}</td>
+                        <td>${p.producto_nombre}</td>
+                        <td>${precioStr}</td>
+                        <td>${p.frecuencia || '-'}</td>
+                        <td><span style="font-size: 0.85rem; background: #EFEBE4; padding: 2px 8px; border-radius: 12px; color: #444F2F;">${p.categoria || '-'}</span></td>
+                    `;
+                    prodTbody.appendChild(tr);
+                });
+            }
+
+            if (prodFilterCat) prodFilterCat.addEventListener('change', loadProductsReport);
+            if (prodFilterNombre) {
+                prodFilterNombre.addEventListener('input', () => {
+                    clearTimeout(window.prodSearchTimeout);
+                    window.prodSearchTimeout = setTimeout(loadProductsReport, 500);
+                });
+            }
+
+            loadProductFilters();
+            loadProductsReport();
         });
 
         function applyFilters() {
@@ -1071,6 +1254,57 @@
                 catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 4rem; color: #888;">Utilice los filtros superiores para consultar productores por actividad.</td></tr>';
             }
             window.lastCatData = [];
+        }
+
+        function resetProdFilters() {
+            if (document.getElementById('prod-filter-categoria')) {
+                document.getElementById('prod-filter-categoria').value = "";
+            }
+            if (document.getElementById('prod-filter-nombre')) {
+                document.getElementById('prod-filter-nombre').value = "";
+            }
+            loadProductsReport();
+        }
+
+        function exportProdToExcel() {
+            if (!window.lastProdData || window.lastProdData.length === 0) {
+                alert('No hay datos para exportar.');
+                return;
+            }
+
+            const headers = [
+                'Productor', 'Documento', 'Producto', 'Precio', 'Unidad Precio', 'Frecuencia', 'Categoría', 'Producto Normal', 'Volumen', 'Unidad Volumen', 'Presentación', 'Calidad'
+            ];
+
+            let csvString = '\uFEFF' + headers.join(';') + '\r\n';
+
+            window.lastProdData.forEach(p => {
+                const row = [
+                    `"${p.productor_nombre || '-'}"`,
+                    `"${p.productor_documento || '-'}"`,
+                    `"${p.producto_nombre || '-'}"`,
+                    p.precio || '-',
+                    `"${p.unidad_precio || '-'}"`,
+                    `"${p.frecuencia || '-'}"`,
+                    `"${p.categoria || '-'}"`,
+                    `"${p.producto_normal || '-'}"`,
+                    p.volumen || '-',
+                    `"${p.unidad_volumen || '-'}"`,
+                    `"${p.presentacion || '-'}"`,
+                    `"${p.calidad || '-'}"`
+                ];
+                csvString += row.join(';') + '\r\n';
+            });
+
+            const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.setAttribute("href", url);
+            link.setAttribute("download", `reporte_productos_${new Date().toISOString().split('T')[0]}.csv`);
+
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
     </script>
 </body>
