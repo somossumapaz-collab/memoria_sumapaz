@@ -937,12 +937,13 @@
                 data.forEach(p => {
                     const tr = document.createElement('tr');
                     const precioStr = (p.precio && p.precio != 0) ? `$${p.precio} / ${p.unidad_precio || ''}` : '-';
+                    const frecuenciaStr = (p.volumen ? `${p.volumen} ${p.unidad_volumen || ''} / ` : '') + (p.frecuencia || '-');
                     tr.innerHTML = `
                         <td><strong>${p.productor_nombre}</strong></td>
                         <td>${p.productor_documento}</td>
                         <td>${p.producto_nombre}</td>
                         <td>${precioStr}</td>
-                        <td>${p.frecuencia || '-'}</td>
+                        <td>${frecuenciaStr}</td>
                         <td><span style="font-size: 0.85rem; background: #EFEBE4; padding: 2px 8px; border-radius: 12px; color: #444F2F;">${p.categoria || '-'}</span></td>
                     `;
                     prodTbody.appendChild(tr);
