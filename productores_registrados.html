@@ -249,7 +249,7 @@
         <nav class="navbar-custom">
             <div class="container" style="display: flex; align-items: center;">
 
-                <a href="index.html">
+                <a href="productores_registrados.html">
                     <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img">
                 </a>
 
@@ -270,6 +270,10 @@
                         <a href="avituallamiento_registrados.html" class="nav-link-btn" id="btn-dashboard-avit"
                             style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">
                             Reporte Avituallamiento
+                        </a>
+                        <a href="/convocatorias" class="nav-link-btn" id="btn-convocatorias"
+                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">
+                            Convocatorias
                         </a>
                         <a href="transporte_seguimiento.html" class="nav-link-btn" id="btn-tracking"
                             style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">
@@ -706,7 +710,7 @@
                 const authResult = await authRes.json();
 
                 if (!authRes.ok || !authResult.authenticated) {
-                    window.location.href = 'login';
+                    window.location.href = 'login.html';
                     return; // Stop rendering
                 } else {
                     window.isAdmin = authResult.is_admin;
@@ -721,7 +725,7 @@
                 }
             } catch (error) {
                 console.error('Error checking auth:', error);
-                window.location.href = 'login';
+                window.location.href = 'login.html';
                 return;
             }
             // ------------------------
@@ -1125,7 +1129,7 @@
         }
 
         function editarProductor(id) {
-            window.location.href = 'inscripcion_productores?edit=' + id;
+            window.location.href = 'inscripcion_productores.html?edit=' + id;
         }
 
         function eliminarProductor(id, nombre) {

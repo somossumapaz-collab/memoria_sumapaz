@@ -1,34 +1,35 @@
 <?php
-// router.php - Enrutador para PHP Local Server simulando .htaccess
-$path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
-$ext = pathinfo($path, PATHINFO_EXTENSION);
+// router.php - Enrutador para PHP Local Server
+$uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+$path = rtrim($uri, '/');
 
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
+// Normalizar la ruta para Windows/Linux
+$base_dir = str_replace('\\', '/', __DIR__);
+$path = str_replace('\\', '/', $path);
 
-header("X-Router-Debug-Path: " . $path);
-header("X-Router-Debug-Ext: " . $ext);
+// Log para depuración (opcional, puedes borrarlo luego)
+// file_put_contents(__DIR__ . '/router_log.txt', "URI: $uri | Path: $path\n", FILE_APPEND);
 
-if ($ext && file_exists($_SERVER["DOCUMENT_ROOT"] . $path)) {
+// 1. Si es un archivo físico (imagen, css, etc.), dejar que PHP lo sirva
+if ($uri !== '/' && file_exists(__DIR__ . $uri) && !is_dir(__DIR__ . $uri)) {
     return false;
 }
 
-$htmlFile = $_SERVER["DOCUMENT_ROOT"] . rtrim($path, '/') . ".html";
-header("X-Router-Debug-HtmlFile: " . $htmlFile);
+// 2. Intentar encontrar el archivo .html para rutas limpias
+$target_html = (empty($path)) ? "/index.html" : $path . ".html";
+$full_path = __DIR__ . $target_html;
 
-if (file_exists($htmlFile)) {
-    header("X-Router-Debug-Match: YES");
-    include $htmlFile;
-    return true;
-} else {
-    header("X-Router-Debug-Match: NO");
-}
-
-if ($path === '/' || $path === '/index') {
-    include $_SERVER["DOCUMENT_ROOT"] . "/index.html";
+if (file_exists($full_path)) {
+    include $full_path;
     return true;
 }
 
+// 3. Fallback especial para index
+if ($path === "" || $path === "/index") {
+    include __DIR__ . "/index.html";
+    return true;
+}
+
+// 4. Si nada funciona, dejar que el servidor maneje el 404
 return false;
 ?>

@@ -323,7 +323,7 @@
                 const authResult = await authRes.json();
 
                 if (!authRes.ok || !authResult.authenticated) {
-                    window.location.href = 'login';
+                    window.location.href = 'login.html';
                     return; // Stop rendering
                 } else {
                     window.isAdmin = authResult.is_admin;
@@ -334,7 +334,7 @@
                 }
             } catch (error) {
                 console.error('Error checking auth:', error);
-                window.location.href = 'login';
+                window.location.href = 'login.html';
                 return;
             }
             // ------------------------

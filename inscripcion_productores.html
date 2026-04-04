@@ -174,7 +174,11 @@
             </div>
             <h2 class="serif modal-title" id="success-title">¡Inscripción Exitosa!</h2>
             <p class="modal-text" id="success-message">Gracias por realizar la inscripción de productores locales.
-                Pronto nos pondremos en contacto contigo.</p>
+                Pronto nos pondremos en contacto contigo.
+                <br><br>
+                <strong>¡Únete a nuestro grupo de WhatsApp!</strong><br>
+                Abre este enlace para unirte: <a href="https://chat.whatsapp.com/HJ0QlsHMr2I2Jc1wJszBAM?mode=gi_t" target="_blank" style="color: var(--primary-green); font-weight: 600; text-decoration: underline;">https://chat.whatsapp.com/HJ0QlsHMr2I2Jc1wJszBAM?mode=gi_t</a> e invita a otros a ingresar al grupo.
+            </p>
             <button id="modal-close-btn" class="btn btn-submit"
                 style="width: 100%; margin-top: 1.5rem;">Aceptar</button>
         </div>
@@ -246,7 +250,7 @@
                         document.getElementById('nombre_predio').value = p.nombre_predio;
                     } else {
                         alert('Error cargando productor: ' + (result.error || 'Desconocido'));
-                        window.location.href = 'productores_registrados';
+                        window.location.href = 'productores_registrados.html';
                     }
                 } catch (error) {
                     console.error('Error fetching producer:', error);
@@ -287,7 +291,12 @@
                 if (response.ok && result.success) {
                     if (currentEditId) {
                         document.getElementById('success-title').textContent = '¡Actualización Exitosa!';
-                        document.getElementById('success-message').textContent = 'Los datos del productor han sido guardados correctamente.';
+                        document.getElementById('success-message').innerHTML = `
+                            Los datos del productor han sido guardados correctamente.
+                            <br><br>
+                            <strong>¡Únete a nuestro grupo de WhatsApp!</strong><br>
+                            Abre este enlace para unirte: <a href="https://chat.whatsapp.com/HJ0QlsHMr2I2Jc1wJszBAM?mode=gi_t" target="_blank" style="color: var(--primary-green); font-weight: 600; text-decoration: underline;">https://chat.whatsapp.com/HJ0QlsHMr2I2Jc1wJszBAM?mode=gi_t</a> e invita a otros a ingresar al grupo.
+                        `;
                     }
                     // Show custom modal
                     document.getElementById('success-modal').classList.add('active');
@@ -309,7 +318,7 @@
         document.getElementById('modal-close-btn').addEventListener('click', function () {
             document.getElementById('success-modal').classList.remove('active');
             if (currentEditId) {
-                window.location.href = 'productores_registrados';
+                window.location.href = 'productores_registrados.html';
             } else {
                 document.getElementById('inscripcion-form').reset();
             }
