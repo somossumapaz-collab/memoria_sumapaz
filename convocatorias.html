@@ -190,6 +190,7 @@
                 <thead>
                     <tr>
                         <th>Nombre del Productor</th>
+                        <th>Vereda</th>
                         <th>Convocatoria</th>
                         <th>Fecha Convocatoria</th>
                         <th>Estado</th>
@@ -266,6 +267,7 @@
             tbody.innerHTML = data.map(item => `
                 <tr>
                     <td>${item.nombre_completo || 'N/A'}</td>
+                    <td>${item.vereda || 'N/A'}</td>
                     <td>Inmersion Panaca</td>
                     <td>${item.fecha_convocatoria || 'N/A'}</td>
                     <td>${item.estado || 'N/A'}</td>
