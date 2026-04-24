@@ -103,6 +103,25 @@ try {
     $en_tramite_bool = $_POST['en_tramite_bool'] ?? 'No';
     $en_tramite = $_POST['en_tramite'] ?? null;
 
+    // Update basic contact and DOB info if provided
+    $telefono_basico = $_POST['telefono'] ?? null;
+    $correo_basico = $_POST['correo_electronico'] ?? null;
+    $fecha_nac_basico = $_POST['fecha_nacimiento'] ?? null;
+
+    if ($telefono_basico !== null || $correo_basico !== null || $fecha_nac_basico !== null) {
+        $updates = [];
+        $params = [];
+        if ($telefono_basico !== null) { $updates[] = "telefono = ?"; $params[] = $telefono_basico; }
+        if ($correo_basico !== null) { $updates[] = "correo_electronico = ?"; $params[] = $correo_basico; }
+        if ($fecha_nac_basico !== null) { $updates[] = "fecha_nacimiento = ?"; $params[] = $fecha_nac_basico; }
+        
+        if (!empty($updates)) {
+            $params[] = $productor_id;
+            $pdo->prepare("UPDATE productores_sumapaz SET " . implode(", ", $updates) . " WHERE id = ?")
+                ->execute($params);
+        }
+    }
+
     // Ficha Caracterizacion base table
     $stmt = $pdo->prepare("SELECT id FROM caracterizacion_productor WHERE productor_id = ?");
     $stmt->execute([$productor_id]);

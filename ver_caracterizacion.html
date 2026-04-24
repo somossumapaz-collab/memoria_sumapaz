@@ -58,6 +58,22 @@
             font-weight: 500;
         }
 
+        .info-value-input {
+            width: 100%;
+            padding: 0.4rem;
+            border: 1px solid transparent;
+            background: transparent;
+            font-size: 1rem;
+            color: #333;
+            font-weight: 500;
+            font-family: inherit;
+        }
+        .info-value-input:not([readonly]) {
+            border-color: #ccc;
+            background: #fff;
+            border-radius: 4px;
+        }
+
         .section-box {
             background: #fff;
             border: 1px solid #ddd;
@@ -220,6 +236,8 @@
         <div id="loading-spinner" style="text-align: center; padding: 3rem;">Cargando información...</div>
 
         <div id="main-content" style="display: none;">
+            <form id="caracterizacion-form" class="custom-form">
+                <input type="hidden" id="productor_id" name="productor_id">
             <!-- Pre-filled basic data -->
             <div class="prefilled-card">
                 <h3 style="color: var(--primary-green); margin-bottom: 0.5rem;">Información Básica del Productor
@@ -237,11 +255,15 @@
                     </div>
                     <div>
                         <div class="info-label">Teléfono</div>
-                        <div class="info-value" id="lbl-telefono">-</div>
+                        <input type="text" name="telefono" id="inp-telefono" class="info-value-input" readonly value="-">
                     </div>
                     <div>
                         <div class="info-label">Correo Electrónico</div>
-                        <div class="info-value" id="lbl-correo">-</div>
+                        <input type="email" name="correo_electronico" id="inp-correo" class="info-value-input" readonly value="-">
+                    </div>
+                    <div>
+                        <div class="info-label">Fecha de Nacimiento</div>
+                        <input type="date" name="fecha_nacimiento" id="inp-fecha-nacimiento" class="info-value-input" readonly>
                     </div>
                     <div>
                         <div class="info-label">Vereda / Corregimiento</div>
@@ -255,8 +277,7 @@
             </div>
 
             <!-- Detailed Form directly below -->
-            <form id="caracterizacion-form" class="custom-form">
-                <input type="hidden" id="productor_id" name="productor_id">
+
 
                 <!-- FECHA -->
                 <div class="section-box"
@@ -889,6 +910,7 @@
     <!-- App Logic -->
     <script>
         let docExportReady = "Productor";
+        let isAdmin = false;
 
         document.addEventListener('DOMContentLoaded', async () => {
             // Auth check
@@ -900,6 +922,7 @@
                     return;
                 } else {
                     document.getElementById('header-auth-container').style.display = 'flex';
+                    isAdmin = authResult.is_admin === true;
                 }
             } catch (error) {
                 window.location.href = 'login.html';
@@ -926,10 +949,17 @@
                     document.getElementById('lbl-nombre').textContent = data.nombre_completo || '-';
                     document.getElementById('lbl-tipo-doc').textContent = data.tipo_documento || '';
                     document.getElementById('lbl-num-doc').textContent = data.numero_documento || '-';
-                    document.getElementById('lbl-telefono').textContent = data.telefono || '-';
-                    document.getElementById('lbl-correo').textContent = data.correo_electronico || '-';
+                    document.getElementById('inp-telefono').value = data.telefono || '';
+                    document.getElementById('inp-correo').value = data.correo_electronico || '';
+                    document.getElementById('inp-fecha-nacimiento').value = data.fecha_nacimiento || '';
                     document.getElementById('lbl-vereda').textContent = data.vereda || '-';
                     document.getElementById('lbl-predio').textContent = data.nombre_predio || '-';
+
+                    if (isAdmin) {
+                        document.getElementById('inp-telefono').removeAttribute('readonly');
+                        document.getElementById('inp-correo').removeAttribute('readonly');
+                        document.getElementById('inp-fecha-nacimiento').removeAttribute('readonly');
+                    }
 
                     docExportReady = data.numero_documento || prodId;
 
@@ -1039,13 +1069,15 @@
                                 inputs[7].value = p.unidad_precio || '';
 
                                 inputs.forEach(inp => {
-                                    inp.readOnly = true;
-                                    inp.style.backgroundColor = '#f4f4f4';
-                                    if (inp.tagName.toLowerCase() === 'select') inp.disabled = true;
+                                    if (!isAdmin) {
+                                        inp.readOnly = true;
+                                        inp.style.backgroundColor = '#f4f4f4';
+                                        if (inp.tagName.toLowerCase() === 'select') inp.disabled = true;
+                                    }
                                 });
                             }
                             const delBtn = newRow.querySelector('button');
-                            if (delBtn) {
+                            if (delBtn && !isAdmin) {
                                 delBtn.disabled = true;
                                 delBtn.style.opacity = '0.5';
                                 delBtn.style.pointerEvents = 'none';
@@ -1071,13 +1103,15 @@
                                 inputs[5].value = s.recursos || '';
 
                                 inputs.forEach(inp => {
-                                    inp.readOnly = true;
-                                    inp.style.backgroundColor = '#f4f4f4';
-                                    if (inp.tagName.toLowerCase() === 'select') inp.disabled = true;
+                                    if (!isAdmin) {
+                                        inp.readOnly = true;
+                                        inp.style.backgroundColor = '#f4f4f4';
+                                        if (inp.tagName.toLowerCase() === 'select') inp.disabled = true;
+                                    }
                                 });
                             }
                             const delBtn = newRow.querySelector('button');
-                            if (delBtn) {
+                            if (delBtn && !isAdmin) {
                                 delBtn.disabled = true;
                                 delBtn.style.opacity = '0.5';
                                 delBtn.style.pointerEvents = 'none';
@@ -1104,8 +1138,10 @@
                     }
                 });
 
-                select.setAttribute('disabled', 'true');
-                select.style.backgroundColor = '#f4f4f4';
+                if (!isAdmin) {
+                    select.setAttribute('disabled', 'true');
+                    select.style.backgroundColor = '#f4f4f4';
+                }
             });
         }
 
@@ -1114,14 +1150,16 @@
                 const el = document.querySelector(`[name="${name}"]`);
                 if (el) {
                     el.value = value;
-                    if (el.tagName === 'SELECT') {
-                        el.setAttribute('disabled', 'true');
-                        el.style.backgroundColor = '#f4f4f4';
-                        el.style.color = '#777';
-                    } else {
-                        el.setAttribute('readonly', 'true');
-                        el.style.backgroundColor = '#f4f4f4';
-                        el.style.color = '#777';
+                    if (!isAdmin) {
+                        if (el.tagName === 'SELECT') {
+                            el.setAttribute('disabled', 'true');
+                            el.style.backgroundColor = '#f4f4f4';
+                            el.style.color = '#777';
+                        } else {
+                            el.setAttribute('readonly', 'true');
+                            el.style.backgroundColor = '#f4f4f4';
+                            el.style.color = '#777';
+                        }
                     }
                 }
             }

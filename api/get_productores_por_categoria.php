@@ -13,27 +13,42 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 }
 
 $categoria_id = isset($_GET['categoria_id']) ? (int)$_GET['categoria_id'] : 0;
+$tipo = isset($_GET['tipo']) ? $_GET['tipo'] : '';
 
-if ($categoria_id <= 0) {
+if ($categoria_id <= 0 && empty($tipo)) {
     echo json_encode(['success' => true, 'data' => []]);
     exit;
 }
 
 try {
-    $stmt = $pdo->prepare("
+    $sql = "
         SELECT 
             p.nombre_completo,
             p.tipo_documento,
             p.numero_documento,
             p.telefono,
             p.correo_electronico,
-            p.vereda
+            p.vereda,
+            c.nombre AS subcategoria
         FROM productores_sumapaz p
         INNER JOIN productor_categoria pc ON p.id = pc.productor_id
-        WHERE pc.categoria_id = :categoria_id
-        ORDER BY p.nombre_completo ASC
-    ");
-    $stmt->execute(['categoria_id' => $categoria_id]);
+        INNER JOIN categorias_productivas c ON pc.categoria_id = c.id
+        WHERE 1=1
+    ";
+
+    $params = [];
+    if ($categoria_id > 0) {
+        $sql .= " AND pc.categoria_id = :categoria_id";
+        $params['categoria_id'] = $categoria_id;
+    } elseif (!empty($tipo)) {
+        $sql .= " AND c.tipo = :tipo";
+        $params['tipo'] = $tipo;
+    }
+
+    $sql .= " ORDER BY p.nombre_completo ASC";
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute($params);
     $productores = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode(['success' => true, 'data' => $productores]);
 } catch (\PDOException $e) {

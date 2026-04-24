@@ -26,6 +26,7 @@ try {
             p.nombre_predio,
             p.fecha_creacion,
             p.mypime,
+            p.efectividad_2025,
             CASE 
                 WHEN MAX(cp.id) IS NOT NULL THEN 1
                 ELSE 0

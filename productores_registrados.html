@@ -420,6 +420,16 @@
                         <option value="0">No</option>
                     </select>
                 </div>
+                <div style="flex: 1; min-width: 160px;">
+                    <label for="filter-efectividad"
+                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Efectividad 2025</label>
+                    <select id="filter-efectividad"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
+                        <option value="">Todos</option>
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
             </div>
 
             <!-- Fila de Botones -->
@@ -760,66 +770,86 @@
                     catFilterTipo.appendChild(opt);
                 });
 
-                // Populate Nombre filter (initially all)
+                populateSubcategories("");
+            }
+
+            function populateSubcategories(selectedTipo) {
+                catFilterNombre.innerHTML = '<option value="">Seleccione un Nombre...</option>';
                 allCategories.forEach(cat => {
-                    const opt = document.createElement('option');
-                    opt.value = cat.id;
-                    opt.textContent = cat.nombre;
-                    opt.dataset.tipo = cat.tipo;
-                    catFilterNombre.appendChild(opt);
+                    if (!selectedTipo || cat.tipo === selectedTipo) {
+                        const opt = document.createElement('option');
+                        opt.value = cat.id;
+                        opt.textContent = cat.nombre;
+                        opt.dataset.tipo = cat.tipo;
+                        catFilterNombre.appendChild(opt);
+                    }
                 });
             }
 
             // Mutual filtering logic
             catFilterTipo.addEventListener('change', () => {
                 const selectedTipo = catFilterTipo.value;
+                const prevSubcat = catFilterNombre.value;
 
-                // Filter Nombre options
-                Array.from(catFilterNombre.options).forEach(opt => {
-                    if (opt.value === "") return;
-                    if (!selectedTipo || opt.dataset.tipo === selectedTipo) {
-                        opt.style.display = 'block';
+                populateSubcategories(selectedTipo);
+
+                // Try to restore previous selection if it's still available
+                if (prevSubcat) {
+                    const exists = Array.from(catFilterNombre.options).some(o => o.value === prevSubcat);
+                    if (exists) {
+                        catFilterNombre.value = prevSubcat;
                     } else {
-                        opt.style.display = 'none';
+                        catFilterNombre.value = "";
+                        // Fallback to loading by Tipo if subcat doesn't exist
+                        if (selectedTipo) {
+                            loadProducersByCategory(null, selectedTipo);
+                        } else {
+                            catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 2rem; color: #666;">Seleccione una categoría o subcategoría para ver los productores asociados.</td></tr>';
+                        }
                     }
-                });
-
-                // If currently selected nombre doesn't match new tipo, reset it
-                const selectedNombreOpt = catFilterNombre.options[catFilterNombre.selectedIndex];
-                if (selectedTipo && selectedNombreOpt.value !== "" && selectedNombreOpt.dataset.tipo !== selectedTipo) {
-                    catFilterNombre.value = "";
-                    catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 2rem; color: #666;">Seleccione una subcategoría para ver los productores asociados.</td></tr>';
-                }
-
-                if (catFilterNombre.value) {
-                    loadProducersByCategory(catFilterNombre.value);
+                } else {
+                    if (selectedTipo) {
+                        loadProducersByCategory(null, selectedTipo);
+                    } else {
+                        catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 2rem; color: #666;">Seleccione una categoría o subcategoría para ver los productores asociados.</td></tr>';
+                    }
                 }
             });
 
             catFilterNombre.addEventListener('change', () => {
                 const selectedId = catFilterNombre.value;
-                if (!selectedId) {
-                    catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 2rem; color: #666;">Seleccione una subcategoría para ver los productores asociados.</td></tr>';
+                const selectedTipo = catFilterTipo.value;
+                
+                if (!selectedId && !selectedTipo) {
+                    catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 2rem; color: #666;">Seleccione una categoría o subcategoría para ver los productores asociados.</td></tr>';
                     return;
                 }
 
-                const selectedOpt = catFilterNombre.options[catFilterNombre.selectedIndex];
-                const tipoOfSelected = selectedOpt.dataset.tipo;
+                if (selectedId) {
+                    const selectedOpt = catFilterNombre.options[catFilterNombre.selectedIndex];
+                    const tipoOfSelected = selectedOpt.dataset.tipo;
 
-                // Set the Tipo filter accordingly
-                catFilterTipo.value = tipoOfSelected;
+                    // Set the Tipo filter accordingly
+                    catFilterTipo.value = tipoOfSelected;
 
-                loadProducersByCategory(selectedId);
+                    loadProducersByCategory(selectedId, null);
+                } else if (selectedTipo) {
+                    loadProducersByCategory(null, selectedTipo);
+                }
             });
 
-            async function loadProducersByCategory(catId) {
+            async function loadProducersByCategory(catId, tipo) {
                 catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 2rem;">Cargando productores...</td></tr>';
                 try {
-                    const res = await fetch(`api/get_productores_por_categoria.php?categoria_id=${catId}`);
+                    let url = 'api/get_productores_por_categoria.php?';
+                    if (catId) url += `categoria_id=${catId}`;
+                    else if (tipo) url += `tipo=${encodeURIComponent(tipo)}`;
+
+                    const res = await fetch(url);
                     const result = await res.json();
                     if (result.success) {
-                        window.lastCatData = result.data.map(p => ({ ...p, subcategoria: catFilterNombre.options[catFilterNombre.selectedIndex].text }));
-                        renderCategoryTable(window.lastCatData);
+                        window.lastCatData = result.data;
+                        window.renderCategoryTable(window.lastCatData);
                     } else {
                         catTbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: red;">Error: ${result.error}</td></tr>`;
                     }
@@ -828,14 +858,17 @@
                 }
             }
 
-            function renderCategoryTable(data) {
+            window.renderCategoryTable = function(data) {
+                const catTbody = document.getElementById('cat-productores-tbody');
                 catTbody.innerHTML = '';
-                if (data.length === 0) {
-                    catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 2rem; color: #666;">No hay productores registrados en esta categoría.</td></tr>';
+                const filteredData = data.filter(p => passesGlobalFilters(p.numero_documento, null));
+
+                if (filteredData.length === 0) {
+                    catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 2rem; color: #666;">No hay productores registrados con los filtros actuales.</td></tr>';
                     return;
                 }
 
-                data.forEach(p => {
+                filteredData.forEach(p => {
                     const tr = document.createElement('tr');
                     tr.innerHTML = `
                         <td><strong>${p.nombre_completo}</strong></td>
@@ -848,7 +881,7 @@
                     `;
                     catTbody.appendChild(tr);
                 });
-            }
+            };
 
 
             try {
@@ -872,6 +905,7 @@
             filterFecha.addEventListener('change', applyFilters);
             filterCaracterizado.addEventListener('change', applyFilters);
             filterMypime.addEventListener('change', applyFilters);
+            document.getElementById('filter-efectividad').addEventListener('change', applyFilters);
 
             btnReset.addEventListener('click', () => {
                 filterNombre.value = '';
@@ -879,6 +913,7 @@
                 filterFecha.value = '';
                 filterCaracterizado.value = '';
                 filterMypime.value = '';
+                document.getElementById('filter-efectividad').value = '';
                 renderTable(allProducers);
             });
 
@@ -922,7 +957,7 @@
 
                     if (result.success) {
                         window.lastProdData = result.data;
-                        renderProductsReportTable(result.data);
+                        window.renderProductsReportTable(result.data);
                     } else {
                         prodTbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: red;">Error: ${result.error}</td></tr>`;
                     }
@@ -931,14 +966,17 @@
                 }
             }
 
-            function renderProductsReportTable(data) {
+            window.renderProductsReportTable = function(data) {
+                const prodTbody = document.getElementById('productos-reporte-tbody');
                 prodTbody.innerHTML = '';
-                if (data.length === 0) {
+                const filteredData = data.filter(p => passesGlobalFilters(null, p.productor_documento));
+
+                if (filteredData.length === 0) {
                     prodTbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 2rem; color: #666;">No se encontraron productos con los filtros seleccionados.</td></tr>';
                     return;
                 }
 
-                data.forEach(p => {
+                filteredData.forEach(p => {
                     const tr = document.createElement('tr');
                     const precioStr = (p.precio && p.precio != 0) ? `$${p.precio} / ${p.unidad_precio || ''}` : '-';
                     const frecuenciaStr = (p.volumen ? `${p.volumen} ${p.unidad_volumen || ''} / ` : '') + (p.frecuencia || '-');
@@ -952,7 +990,7 @@
                     `;
                     prodTbody.appendChild(tr);
                 });
-            }
+            };
 
             if (prodFilterCat) prodFilterCat.addEventListener('change', loadProductsReport);
             if (prodFilterNombre) {
@@ -966,12 +1004,40 @@
             loadProductsReport();
         });
 
+        function passesGlobalFilters(numDoc, tipoNumDocStr = null) {
+            const nombreVal = document.getElementById('filter-nombre').value.toLowerCase();
+            const veredaVal = document.getElementById('filter-vereda').value;
+            const fechaVal = document.getElementById('filter-fecha').value;
+            const caracterizadoVal = document.getElementById('filter-caracterizado').value;
+            const mypimeVal = document.getElementById('filter-mypime').value;
+            const efectividadVal = document.getElementById('filter-efectividad').value;
+
+            let fullP = null;
+            if (numDoc) {
+                fullP = allProducers.find(p => p.numero_documento === numDoc);
+            } else if (tipoNumDocStr) {
+                fullP = allProducers.find(p => (p.tipo_documento + ' ' + p.numero_documento) === tipoNumDocStr);
+            }
+
+            if (!fullP) return true; 
+
+            let matchNombre = !nombreVal || fullP.nombre_completo.toLowerCase().includes(nombreVal);
+            let matchVereda = !veredaVal || fullP.vereda === veredaVal;
+            let matchFecha = !fechaVal || (fullP.fecha_creacion && fullP.fecha_creacion.startsWith(fechaVal));
+            let matchCaracterizado = caracterizadoVal === "" || fullP.tiene_caracterizacion == caracterizadoVal;
+            let matchMypime = mypimeVal === "" || fullP.mypime == mypimeVal;
+            let matchEfectividad = efectividadVal === "" || fullP.efectividad_2025 == efectividadVal;
+
+            return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime && matchEfectividad;
+        }
+
         function applyFilters() {
             const nombreVal = document.getElementById('filter-nombre').value.toLowerCase();
             const veredaVal = document.getElementById('filter-vereda').value;
             const fechaVal = document.getElementById('filter-fecha').value; // format: YYYY-MM-DD
             const caracterizadoVal = document.getElementById('filter-caracterizado').value;
             const mypimeVal = document.getElementById('filter-mypime').value;
+            const efectividadVal = document.getElementById('filter-efectividad').value;
 
             const filteredData = allProducers.filter(p => {
                 let matchNombre = true;
@@ -979,6 +1045,7 @@
                 let matchFecha = true;
                 let matchCaracterizado = true;
                 let matchMypime = true;
+                let matchEfectividad = true;
 
                 if (nombreVal) {
                     matchNombre = p.nombre_completo.toLowerCase().includes(nombreVal);
@@ -1000,10 +1067,21 @@
                     matchMypime = p.mypime == mypimeVal;
                 }
 
-                return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime;
+                if (efectividadVal !== "") {
+                    matchEfectividad = p.efectividad_2025 == efectividadVal;
+                }
+
+                return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime && matchEfectividad;
             });
 
             renderTable(filteredData);
+
+            if (window.renderCategoryTable && window.lastCatData) {
+                window.renderCategoryTable(window.lastCatData);
+            }
+            if (window.renderProductsReportTable && window.lastProdData) {
+                window.renderProductsReportTable(window.lastProdData);
+            }
         }
 
         function renderTable(dataToDraw) {
@@ -1154,6 +1232,7 @@
             const fechaVal = document.getElementById('filter-fecha').value;
             const caracterizadoVal = document.getElementById('filter-caracterizado').value;
             const mypimeVal = document.getElementById('filter-mypime').value;
+            const efectividadVal = document.getElementById('filter-efectividad').value;
 
             const dataToExport = allProducers.filter(p => {
                 let matchNombre = !nombreVal || p.nombre_completo.toLowerCase().includes(nombreVal);
@@ -1161,8 +1240,9 @@
                 let matchFecha = !fechaVal || (p.fecha_creacion && p.fecha_creacion.startsWith(fechaVal));
                 let matchCaracterizado = caracterizadoVal === "" || p.tiene_caracterizacion == caracterizadoVal;
                 let matchMypime = mypimeVal === "" || p.mypime == mypimeVal;
+                let matchEfectividad = efectividadVal === "" || p.efectividad_2025 == efectividadVal;
 
-                return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime;
+                return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime && matchEfectividad;
             });
 
             if (dataToExport.length === 0) {
@@ -1173,7 +1253,7 @@
             // Create a standard CSV flat file (archivo plano)
             const headers = [
                 'Fecha Inscripción', 'Nombre Completo', 'Tipo Documento', 'Número Documento',
-                'Vereda', 'Teléfono', 'Correo Electrónico', 'Nombre Predio', 'Fecha Nacimiento', 'Mypime'
+                'Vereda', 'Teléfono', 'Correo Electrónico', 'Nombre Predio', 'Fecha Nacimiento', 'Mypime', 'Efectividad 2025'
             ];
 
             // BOM (Byte Order Mark) forces Excel to read UTF-8 properly (accents)
@@ -1190,7 +1270,8 @@
                     `"${p.correo_electronico || '-'}"`,
                     `"${p.nombre_predio || '-'}"`,
                     p.fecha_nacimiento || '-',
-                    p.mypime == 1 ? 'Sí' : 'No'
+                    p.mypime == 1 ? 'Sí' : 'No',
+                    p.efectividad_2025 == 1 ? 'Sí' : 'No'
                 ];
                 csvString += row.join(';') + '\r\n';
             });
@@ -1220,7 +1301,14 @@
 
             let csvString = '\uFEFF' + headers.join(';') + '\r\n';
 
-            window.lastCatData.forEach(p => {
+            const dataToExport = window.lastCatData.filter(p => passesGlobalFilters(p.numero_documento, null));
+
+            if (dataToExport.length === 0) {
+                alert('No hay datos para exportar con los filtros actuales.');
+                return;
+            }
+
+            dataToExport.forEach(p => {
                 const row = [
                     `"${p.nombre_completo || '-'}"`,
                     `"${p.subcategoria || '-'}"`,
@@ -1252,8 +1340,10 @@
             if (catFilterTipo) catFilterTipo.value = "";
             if (catFilterNombre) {
                 catFilterNombre.value = "";
-                // Reset all options display
-                Array.from(catFilterNombre.options).forEach(opt => opt.style.display = 'block');
+                // We use our existing function to rebuild the subcategories from scratch
+                if (typeof populateSubcategories === 'function') {
+                    populateSubcategories("");
+                }
             }
             if (catTbody) {
                 catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 4rem; color: #888;">Utilice los filtros superiores para consultar productores por actividad.</td></tr>';
@@ -1283,7 +1373,14 @@
 
             let csvString = '\uFEFF' + headers.join(';') + '\r\n';
 
-            window.lastProdData.forEach(p => {
+            const dataToExport = window.lastProdData.filter(p => passesGlobalFilters(null, p.productor_documento));
+
+            if (dataToExport.length === 0) {
+                alert('No hay datos para exportar con los filtros actuales.');
+                return;
+            }
+
+            dataToExport.forEach(p => {
                 const row = [
                     `"${p.productor_nombre || '-'}"`,
                     `"${p.productor_documento || '-'}"`,
