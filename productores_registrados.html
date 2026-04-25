@@ -430,6 +430,16 @@
                         <option value="0">No</option>
                     </select>
                 </div>
+                <div style="flex: 1; min-width: 150px;">
+                    <label for="filter-panaca"
+                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Panaca</label>
+                    <select id="filter-panaca"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
+                        <option value="">Todos</option>
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
             </div>
 
             <!-- Fila de Botones -->
@@ -906,6 +916,7 @@
             filterCaracterizado.addEventListener('change', applyFilters);
             filterMypime.addEventListener('change', applyFilters);
             document.getElementById('filter-efectividad').addEventListener('change', applyFilters);
+            document.getElementById('filter-panaca').addEventListener('change', applyFilters);
 
             btnReset.addEventListener('click', () => {
                 filterNombre.value = '';
@@ -914,6 +925,7 @@
                 filterCaracterizado.value = '';
                 filterMypime.value = '';
                 document.getElementById('filter-efectividad').value = '';
+                document.getElementById('filter-panaca').value = '';
                 renderTable(allProducers);
             });
 
@@ -1011,6 +1023,7 @@
             const caracterizadoVal = document.getElementById('filter-caracterizado').value;
             const mypimeVal = document.getElementById('filter-mypime').value;
             const efectividadVal = document.getElementById('filter-efectividad').value;
+            const panacaVal = document.getElementById('filter-panaca').value;
 
             let fullP = null;
             if (numDoc) {
@@ -1027,8 +1040,9 @@
             let matchCaracterizado = caracterizadoVal === "" || fullP.tiene_caracterizacion == caracterizadoVal;
             let matchMypime = mypimeVal === "" || fullP.mypime == mypimeVal;
             let matchEfectividad = efectividadVal === "" || fullP.efectividad_2025 == efectividadVal;
+            let matchPanaca = panacaVal === "" || fullP.panaca == panacaVal;
 
-            return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime && matchEfectividad;
+            return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime && matchEfectividad && matchPanaca;
         }
 
         function applyFilters() {
@@ -1038,6 +1052,7 @@
             const caracterizadoVal = document.getElementById('filter-caracterizado').value;
             const mypimeVal = document.getElementById('filter-mypime').value;
             const efectividadVal = document.getElementById('filter-efectividad').value;
+            const panacaVal = document.getElementById('filter-panaca').value;
 
             const filteredData = allProducers.filter(p => {
                 let matchNombre = true;
@@ -1046,6 +1061,7 @@
                 let matchCaracterizado = true;
                 let matchMypime = true;
                 let matchEfectividad = true;
+                let matchPanaca = true;
 
                 if (nombreVal) {
                     matchNombre = p.nombre_completo.toLowerCase().includes(nombreVal);
@@ -1071,7 +1087,11 @@
                     matchEfectividad = p.efectividad_2025 == efectividadVal;
                 }
 
-                return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime && matchEfectividad;
+                if (panacaVal !== "") {
+                    matchPanaca = p.panaca == panacaVal;
+                }
+
+                return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime && matchEfectividad && matchPanaca;
             });
 
             renderTable(filteredData);
@@ -1233,6 +1253,7 @@
             const caracterizadoVal = document.getElementById('filter-caracterizado').value;
             const mypimeVal = document.getElementById('filter-mypime').value;
             const efectividadVal = document.getElementById('filter-efectividad').value;
+            const panacaVal = document.getElementById('filter-panaca').value;
 
             const dataToExport = allProducers.filter(p => {
                 let matchNombre = !nombreVal || p.nombre_completo.toLowerCase().includes(nombreVal);
@@ -1241,8 +1262,9 @@
                 let matchCaracterizado = caracterizadoVal === "" || p.tiene_caracterizacion == caracterizadoVal;
                 let matchMypime = mypimeVal === "" || p.mypime == mypimeVal;
                 let matchEfectividad = efectividadVal === "" || p.efectividad_2025 == efectividadVal;
+                let matchPanaca = panacaVal === "" || p.panaca == panacaVal;
 
-                return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime && matchEfectividad;
+                return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime && matchEfectividad && matchPanaca;
             });
 
             if (dataToExport.length === 0) {
@@ -1253,7 +1275,7 @@
             // Create a standard CSV flat file (archivo plano)
             const headers = [
                 'Fecha Inscripción', 'Nombre Completo', 'Tipo Documento', 'Número Documento',
-                'Vereda', 'Teléfono', 'Correo Electrónico', 'Nombre Predio', 'Fecha Nacimiento', 'Mypime', 'Efectividad 2025'
+                'Vereda', 'Teléfono', 'Correo Electrónico', 'Nombre Predio', 'Fecha Nacimiento', 'Mypime', 'Efectividad 2025', 'Panaca'
             ];
 
             // BOM (Byte Order Mark) forces Excel to read UTF-8 properly (accents)
@@ -1271,7 +1293,8 @@
                     `"${p.nombre_predio || '-'}"`,
                     p.fecha_nacimiento || '-',
                     p.mypime == 1 ? 'Sí' : 'No',
-                    p.efectividad_2025 == 1 ? 'Sí' : 'No'
+                    p.efectividad_2025 == 1 ? 'Sí' : 'No',
+                    p.panaca == 1 ? 'Sí' : 'No'
                 ];
                 csvString += row.join(';') + '\r\n';
             });
