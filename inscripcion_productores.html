@@ -256,12 +256,8 @@
                     console.error('Error fetching producer:', error);
                     alert('Error de red al intentar cargar la información.');
                 }
-            } else {
-                // Not in Edit Mode -> Registration is closed
-                document.getElementById('inscripcion-form').style.display = 'none';
-                document.getElementById('page-title').textContent = 'Inscripciones Cerradas';
-                document.getElementById('page-subtitle').innerHTML = '<span style="color:#D32F2F; font-size: 1.2rem; font-weight: bold;">El registro de productores ya se encuentra cerrado.</span>';
             }
+
         });
 
         document.getElementById('inscripcion-form').addEventListener('submit', async function (e) {
