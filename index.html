@@ -16,6 +16,7 @@
         const timestamp = new Date().getTime();
         document.write(`<link rel="stylesheet" href="assets/styles.css?v=${timestamp}">`);
     </script>
+    <link rel="stylesheet" href="assets/chat.css">
 </head>
 
 <body>
@@ -199,6 +200,34 @@
     <script>
         document.write(`<script type="module" src="assets/main.js?v=${timestamp}"><\/script>`);
     </script>
+
+    <!-- Chatbot Widget -->
+    <div id="chat-widget-container">
+        <button id="chat-toggle-btn" title="Chat con Somos Sumapaz">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width: 32px; height: 32px;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" />
+            </svg>
+        </button>
+
+        <div id="chat-window">
+            <div id="chat-header">
+                <span>Asistente Virtual</span>
+                <button id="chat-close-btn">&times;</button>
+            </div>
+            <div id="chat-messages">
+                <!-- Messages will appear here -->
+            </div>
+            <div id="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Escribe tu pregunta..." autocomplete="off">
+                <button id="chat-send-btn">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px; margin-left: 2px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="assets/chat.js"></script>
 </body>
 
 </html>
