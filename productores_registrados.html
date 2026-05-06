@@ -241,6 +241,8 @@
     </style>
     <!-- Excel Export Library -->
     <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 </head>
 
 <body>
@@ -394,6 +396,14 @@
                     </select>
                 </div>
                 <div style="flex: 1; min-width: 180px;">
+                    <label for="filter-cuenca"
+                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Cuenca</label>
+                    <select id="filter-cuenca"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
+                        <option value="">Todas</option>
+                    </select>
+                </div>
+                <div style="flex: 1; min-width: 180px;">
                     <label for="filter-fecha"
                         style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Fecha
                         Inscripción</label>
@@ -514,6 +524,22 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+
+        <!-- Charts Section -->
+        <div style="display: flex; gap: 2rem; margin-top: 3rem; margin-bottom: 3rem; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px; background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center;">
+                <h3 style="font-family: 'Inter', sans-serif; color: #444F2F; margin-bottom: 1rem;">Productores por Cuenca</h3>
+                <canvas id="cuencaChart" width="400" height="400" style="max-height: 300px;"></canvas>
+            </div>
+            <div style="flex: 1; min-width: 300px; max-width: 100%; background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; overflow: hidden;">
+                <h3 style="font-family: 'Inter', sans-serif; color: #444F2F; margin-bottom: 1rem;">Productores por Vereda</h3>
+                <div style="width: 100%; overflow-x: auto; padding-bottom: 1rem;">
+                    <div id="veredaChartContainer" style="min-width: 600px; height: 300px; position: relative;">
+                        <canvas id="veredaChart"></canvas>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- New Section: Categorías Productivas -->
@@ -712,6 +738,8 @@
 
     <script>
         let allProducers = [];
+        let cuencaChartInstance = null;
+        let veredaChartInstance = null;
 
         document.addEventListener('DOMContentLoaded', async () => {
             const tbody = document.getElementById('productores-tbody');
@@ -719,6 +747,7 @@
             // Wait for filters
             const filterNombre = document.getElementById('filter-nombre');
             const filterVereda = document.getElementById('filter-vereda');
+            const filterCuenca = document.getElementById('filter-cuenca');
             const filterFecha = document.getElementById('filter-fecha');
             const filterCaracterizado = document.getElementById('filter-caracterizado');
             const filterMypime = document.getElementById('filter-mypime');
@@ -900,6 +929,18 @@
 
                 if (response.ok && result.success) {
                     allProducers = result.data;
+                    
+                    // Populate Cuenca
+                    if (filterCuenca) {
+                        const cuencas = [...new Set(allProducers.map(p => p.cuenca).filter(Boolean))].sort();
+                        cuencas.forEach(c => {
+                            const opt = document.createElement('option');
+                            opt.value = c;
+                            opt.textContent = c;
+                            filterCuenca.appendChild(opt);
+                        });
+                    }
+
                     renderTable(allProducers);
                 } else {
                     tbody.innerHTML = `<tr><td colspan="11" style="text-align: center; color: red;">Error: ${result.error || 'No se pudo cargar la información'}</td></tr>`;
@@ -912,6 +953,7 @@
             // Filter Event Listeners
             filterNombre.addEventListener('input', applyFilters);
             filterVereda.addEventListener('change', applyFilters);
+            if (filterCuenca) filterCuenca.addEventListener('change', applyFilters);
             filterFecha.addEventListener('change', applyFilters);
             filterCaracterizado.addEventListener('change', applyFilters);
             filterMypime.addEventListener('change', applyFilters);
@@ -921,6 +963,7 @@
             btnReset.addEventListener('click', () => {
                 filterNombre.value = '';
                 filterVereda.value = '';
+                if (filterCuenca) filterCuenca.value = '';
                 filterFecha.value = '';
                 filterCaracterizado.value = '';
                 filterMypime.value = '';
@@ -1019,6 +1062,7 @@
         function passesGlobalFilters(numDoc, tipoNumDocStr = null) {
             const nombreVal = document.getElementById('filter-nombre').value.toLowerCase();
             const veredaVal = document.getElementById('filter-vereda').value;
+            const cuencaVal = document.getElementById('filter-cuenca') ? document.getElementById('filter-cuenca').value : '';
             const fechaVal = document.getElementById('filter-fecha').value;
             const caracterizadoVal = document.getElementById('filter-caracterizado').value;
             const mypimeVal = document.getElementById('filter-mypime').value;
@@ -1036,18 +1080,20 @@
 
             let matchNombre = !nombreVal || fullP.nombre_completo.toLowerCase().includes(nombreVal);
             let matchVereda = !veredaVal || fullP.vereda === veredaVal;
+            let matchCuenca = !cuencaVal || fullP.cuenca === cuencaVal;
             let matchFecha = !fechaVal || (fullP.fecha_creacion && fullP.fecha_creacion.startsWith(fechaVal));
             let matchCaracterizado = caracterizadoVal === "" || fullP.tiene_caracterizacion == caracterizadoVal;
             let matchMypime = mypimeVal === "" || fullP.mypime == mypimeVal;
             let matchEfectividad = efectividadVal === "" || fullP.efectividad_2025 == efectividadVal;
             let matchPanaca = panacaVal === "" || fullP.panaca == panacaVal;
 
-            return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime && matchEfectividad && matchPanaca;
+            return matchNombre && matchVereda && matchCuenca && matchFecha && matchCaracterizado && matchMypime && matchEfectividad && matchPanaca;
         }
 
         function applyFilters() {
             const nombreVal = document.getElementById('filter-nombre').value.toLowerCase();
             const veredaVal = document.getElementById('filter-vereda').value;
+            const cuencaVal = document.getElementById('filter-cuenca') ? document.getElementById('filter-cuenca').value : '';
             const fechaVal = document.getElementById('filter-fecha').value; // format: YYYY-MM-DD
             const caracterizadoVal = document.getElementById('filter-caracterizado').value;
             const mypimeVal = document.getElementById('filter-mypime').value;
@@ -1057,6 +1103,7 @@
             const filteredData = allProducers.filter(p => {
                 let matchNombre = true;
                 let matchVereda = true;
+                let matchCuenca = true;
                 let matchFecha = true;
                 let matchCaracterizado = true;
                 let matchMypime = true;
@@ -1069,6 +1116,10 @@
 
                 if (veredaVal) {
                     matchVereda = p.vereda === veredaVal;
+                }
+
+                if (cuencaVal) {
+                    matchCuenca = p.cuenca === cuencaVal;
                 }
 
                 if (fechaVal && p.fecha_creacion) {
@@ -1091,7 +1142,7 @@
                     matchPanaca = p.panaca == panacaVal;
                 }
 
-                return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime && matchEfectividad && matchPanaca;
+                return matchNombre && matchVereda && matchCuenca && matchFecha && matchCaracterizado && matchMypime && matchEfectividad && matchPanaca;
             });
 
             renderTable(filteredData);
@@ -1214,6 +1265,122 @@
                 `;
                 tbody.appendChild(tr);
             });
+            
+            updateCharts(dataToDraw);
+        }
+
+        function updateCharts(data) {
+            const cuencaCounts = {};
+            const veredaCounts = {};
+
+            data.forEach(p => {
+                const cuenca = p.cuenca || 'Sin Cuenca';
+                cuencaCounts[cuenca] = (cuencaCounts[cuenca] || 0) + 1;
+                
+                const vereda = p.vereda || 'Sin Vereda';
+                veredaCounts[vereda] = (veredaCounts[vereda] || 0) + 1;
+            });
+
+            // Update Cuenca Pie Chart
+            const cuencaCanvas = document.getElementById('cuencaChart');
+            if (cuencaCanvas) {
+                const cuencaCtx = cuencaCanvas.getContext('2d');
+                if (cuencaChartInstance) cuencaChartInstance.destroy();
+
+                const dataValues = Object.values(cuencaCounts);
+                const total = dataValues.reduce((acc, val) => acc + val, 0);
+
+                cuencaChartInstance = new Chart(cuencaCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: Object.keys(cuencaCounts),
+                        datasets: [{
+                            data: dataValues,
+                            backgroundColor: ['#444F2F', '#8E9A5E', '#C2C9A5', '#EFEBE4', '#F4A261', '#E76F51', '#2A9D8F', '#e9c46a', '#f4a261', '#e76f51']
+                        }]
+                    },
+                    plugins: [ChartDataLabels],
+                    options: { 
+                        responsive: true, 
+                        maintainAspectRatio: false,
+                        plugins: {
+                            datalabels: {
+                                formatter: (value, ctx) => {
+                                    if (total === 0) return '';
+                                    let percentage = (value * 100 / total).toFixed(1) + "%";
+                                    return value + '\n(' + percentage + ')';
+                                },
+                                textAlign: 'center',
+                                color: '#fff',
+                                textStrokeColor: 'rgba(0,0,0,0.6)',
+                                textStrokeWidth: 3,
+                                font: {
+                                    weight: 'bold',
+                                    size: 13
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Update Vereda Bar Chart
+            const veredaCanvas = document.getElementById('veredaChart');
+            if (veredaCanvas) {
+                const veredaCtx = veredaCanvas.getContext('2d');
+                if (veredaChartInstance) veredaChartInstance.destroy();
+
+                const sortedVeredas = Object.keys(veredaCounts).sort((a, b) => veredaCounts[b] - veredaCounts[a]);
+                const dataValues = sortedVeredas.map(v => veredaCounts[v]);
+                const total = dataValues.reduce((acc, val) => acc + val, 0);
+
+                const container = document.getElementById('veredaChartContainer');
+                if (container) {
+                    const newWidth = Math.max(600, sortedVeredas.length * 60);
+                    container.style.minWidth = newWidth + 'px';
+                }
+
+                veredaChartInstance = new Chart(veredaCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: sortedVeredas,
+                        datasets: [{
+                            label: 'Productores',
+                            data: dataValues,
+                            backgroundColor: '#444F2F'
+                        }]
+                    },
+                    plugins: [ChartDataLabels],
+                    options: { 
+                        responsive: true, 
+                        maintainAspectRatio: false, 
+                        scales: { 
+                            y: { beginAtZero: true, ticks: { stepSize: 1 } },
+                            x: { ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 } }
+                        },
+                        layout: {
+                            padding: { top: 25 }
+                        },
+                        plugins: {
+                            datalabels: {
+                                anchor: 'end',
+                                align: 'top',
+                                offset: 4,
+                                formatter: (value, ctx) => {
+                                    if (total === 0) return '';
+                                    let percentage = (value * 100 / total).toFixed(1) + "%";
+                                    return value + ' (' + percentage + ')';
+                                },
+                                color: '#444F2F',
+                                font: {
+                                    weight: 'bold',
+                                    size: 11
+                                }
+                            }
+                        }
+                    }
+                });
+            }
         }
 
         function empezarCaracterizacion(id, nombre) {

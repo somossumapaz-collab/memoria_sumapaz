@@ -28,6 +28,7 @@ try {
             p.mypime,
             p.efectividad_2025,
             p.panaca,
+            p.cuenca,
             CASE 
                 WHEN MAX(cp.id) IS NOT NULL THEN 1
                 ELSE 0
