@@ -22,6 +22,8 @@ try {
             pp.productor_id, 
             p.nombre_completo AS productor_nombre, 
             CONCAT(p.tipo_documento, ' ', p.numero_documento) AS productor_documento, 
+            p.vereda,
+            p.cuenca,
             pp.nombre AS producto_nombre, 
             pp.volumen, 
             pp.unidad_volumen, 

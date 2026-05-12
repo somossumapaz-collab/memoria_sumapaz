@@ -497,6 +497,28 @@
                     </svg>
                     Descargar Excel
                 </button>
+                <button type="button" class="btn" style="
+                    height: 50px;
+                    width: 280px;
+                    margin: 0;
+                    padding: 0 1rem;
+                    background-color: #e76f51;
+                    color: #FBF4DE;
+                    border-radius: 30px;
+                    font-weight: 600;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 0.9rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+                    border: none;
+                " onclick="downloadIncompleteReport()">
+                    <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    Descargar Incompletas
+                </button>
             </div>
         </div>
 
@@ -719,6 +741,8 @@
                     <tr>
                         <th>Productor</th>
                         <th>Documento</th>
+                        <th>Vereda</th>
+                        <th>Corregimiento</th>
                         <th>Producto</th>
                         <th>Precio</th>
                         <th>Frecuencia</th>
@@ -727,7 +751,7 @@
                 </thead>
                 <tbody id="productos-reporte-tbody">
                     <tr>
-                        <td colspan="6" style="text-align: center; padding: 4rem; color: #888;">Utilice los filtros superiores para consultar el reporte de productos.</td>
+                        <td colspan="8" style="text-align: center; padding: 4rem; color: #888;">Utilice los filtros superiores para consultar el reporte de productos.</td>
                     </tr>
                 </tbody>
             </table>
@@ -739,6 +763,7 @@
 
     <script>
         let allProducers = [];
+        let completenessReport = {};
         let cuencaChartInstance = null;
         let veredaChartInstance = null;
 
@@ -925,13 +950,20 @@
 
 
             try {
-                const response = await fetch('api/get_productores.php');
-                const result = await response.json();
+                const [prodRes, compRes] = await Promise.all([
+                    fetch('api/get_productores.php'),
+                    fetch('api/get_completeness_report.php')
+                ]);
+                
+                const prodResult = await prodRes.json();
+                const compResult = await compRes.json();
 
-                if (response.ok && result.success) {
-                    allProducers = result.data;
+                if (prodResult.success) {
+                    allProducers = prodResult.data;
+                    if (compResult.success) {
+                        completenessReport = compResult.data;
+                    }
                     
-                    // Populate Cuenca
                     if (filterCuenca) {
                         const cuencas = [...new Set(allProducers.map(p => p.cuenca).filter(Boolean))].sort();
                         cuencas.forEach(c => {
@@ -944,7 +976,7 @@
 
                     renderTable(allProducers);
                 } else {
-                    tbody.innerHTML = `<tr><td colspan="11" style="text-align: center; color: red;">Error: ${result.error || 'No se pudo cargar la información'}</td></tr>`;
+                    tbody.innerHTML = `<tr><td colspan="11" style="text-align: center; color: red;">Error: ${prodResult.error || 'No se pudo cargar la información'}</td></tr>`;
                 }
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -1001,7 +1033,7 @@
                 const cat = prodFilterCat.value;
                 const nombre = prodFilterNombre.value;
 
-                prodTbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 2rem;">Cargando productos...</td></tr>';
+                prodTbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 2rem;">Cargando productos...</td></tr>';
 
                 try {
                     const params = new URLSearchParams();
@@ -1015,10 +1047,10 @@
                         window.lastProdData = result.data;
                         window.renderProductsReportTable(result.data);
                     } else {
-                        prodTbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: red;">Error: ${result.error}</td></tr>`;
+                        prodTbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: red;">Error: ${result.error}</td></tr>`;
                     }
                 } catch (err) {
-                    prodTbody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: red;">Error de conexión.</td></tr>';
+                    prodTbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: red;">Error de conexión.</td></tr>';
                 }
             }
 
@@ -1028,7 +1060,7 @@
                 const filteredData = data.filter(p => passesGlobalFilters(null, p.productor_documento));
 
                 if (filteredData.length === 0) {
-                    prodTbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 2rem; color: #666;">No se encontraron productos con los filtros seleccionados.</td></tr>';
+                    prodTbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 2rem; color: #666;">No se encontraron productos con los filtros seleccionados.</td></tr>';
                     return;
                 }
 
@@ -1039,6 +1071,8 @@
                     tr.innerHTML = `
                         <td><strong>${p.productor_nombre}</strong></td>
                         <td>${p.productor_documento}</td>
+                        <td>${p.vereda || '-'}</td>
+                        <td>${p.cuenca || '-'}</td>
                         <td>${p.producto_nombre}</td>
                         <td>${precioStr}</td>
                         <td>${frecuenciaStr}</td>
@@ -1221,6 +1255,9 @@
                 const tr = document.createElement('tr');
                 const docStr = `${productor.tipo_documento} ${productor.numero_documento}`;
                 const correo = productor.correo_electronico ? productor.correo_electronico : '-';
+                
+                const compInfo = completenessReport[productor.numero_documento];
+                const isComplete = compInfo ? compInfo.is_complete : false;
 
                 // Show full date and time
                 const formattedDate = productor.fecha_creacion || '-';
@@ -1256,11 +1293,24 @@
                     </td>
                     <td style="text-align: center; vertical-align: middle;">
                         ${productor.tiene_caracterizacion ? `
-                            <button type="button" class="btn-icon" onclick="event.stopPropagation(); verDetalle(${productor.id})" title="Ver Detalle" style="color: var(--primary-green);">
-                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                </svg>
-                            </button>
+                            <div style="display:flex; justify-content:center; gap:0.5rem;">
+                                <button type="button" class="btn-icon" onclick="event.stopPropagation(); verDetalle(${productor.id})" title="Ver Detalle" style="color: var(--primary-green);">
+                                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg>
+                                </button>
+                                <button type="button" class="btn-icon" onclick="event.stopPropagation(); exportMissingFields(${productor.id}, '${productor.numero_documento}', this)" title="${isComplete ? 'Caracterización Completa' : 'Descargar campos faltantes'}" style="color: ${isComplete ? '#2A9D8F' : '#e76f51'};">
+                                    ${isComplete ? `
+                                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    ` : `
+                                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                        </svg>
+                                    `}
+                                </button>
+                            </div>
                         ` : ''}
                     </td>
                 `;
@@ -1559,7 +1609,7 @@
             }
 
             const headers = [
-                'Productor', 'Documento', 'Producto', 'Precio', 'Unidad Precio', 'Frecuencia', 'Categoría', 'Producto Normal', 'Volumen', 'Unidad Volumen', 'Presentación', 'Calidad'
+                'Productor', 'Documento', 'Vereda', 'Corregimiento', 'Producto', 'Precio', 'Unidad Precio', 'Frecuencia', 'Categoría', 'Producto Normal', 'Volumen', 'Unidad Volumen', 'Presentación', 'Calidad'
             ];
 
             let csvString = '\uFEFF' + headers.join(';') + '\r\n';
@@ -1575,6 +1625,8 @@
                 const row = [
                     `"${p.productor_nombre || '-'}"`,
                     `"${p.productor_documento || '-'}"`,
+                    `"${p.vereda || '-'}"`,
+                    `"${p.cuenca || '-'}"`,
                     `"${p.producto_nombre || '-'}"`,
                     p.precio || '-',
                     `"${p.unidad_precio || '-'}"`,
@@ -1598,6 +1650,126 @@
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+        }
+
+        function downloadIncompleteReport() {
+            if (!completenessReport || Object.keys(completenessReport).length === 0) {
+                alert('El reporte de completitud aún se está cargando o no se pudo obtener. Por favor espera un momento o recarga la página.');
+                return;
+            }
+
+            const incompleteList = [];
+            const filteredProducers = allProducers.filter(p => passesGlobalFilters(p.numero_documento));
+            
+            filteredProducers.forEach(p => {
+                if (p.tiene_caracterizacion == 1) {
+                    const info = completenessReport[p.numero_documento];
+                    // If is_complete is false, they go to the Excel
+                    if (!info || !info.is_complete) {
+                        incompleteList.push({
+                            "Nombre": p.nombre_completo,
+                            "Cédula": p.numero_documento,
+                            "Faltante": info ? info.missing.join(', ') : 'Pendiente por revisar'
+                        });
+                    }
+                }
+            });
+
+            if (incompleteList.length === 0) {
+                alert('No se encontraron caracterizaciones incompletas con los filtros actuales.');
+                return;
+            }
+            const ws = XLSX.utils.json_to_sheet(incompleteList);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "Incompletas");
+            XLSX.writeFile(wb, `caracterizaciones_incompletas_${new Date().toISOString().split('T')[0]}.xlsx`);
+        }
+
+        async function exportMissingFields(id, doc, btnElement) {
+            const info = completenessReport[doc];
+            if (info && info.is_complete) {
+                alert('La caracterización está completa.');
+                return;
+            }
+            
+            const productor = allProducers.find(p => p.numero_documento === doc);
+            const nombre = productor ? productor.nombre_completo : doc;
+            try {
+                const [fichaRes, detalleRes] = await Promise.all([
+                    fetch(`api/get_ficha_by_documento.php?doc=${encodeURIComponent(doc)}`),
+                    fetch(`api/get_detalle_productor.php?id=${id}`)
+                ]);
+                
+                const fichaResult = await fichaRes.json();
+                const detalleResult = await detalleRes.json();
+                
+                const missingFields = [];
+                const isEmpty = (val) => val === null || val === undefined || val === '' || val === 'Ninguno' || val === 'Ninguna' || val === 'Seleccione...';
+                
+                if (fichaResult.success && fichaResult.data) {
+                    const f = fichaResult.data;
+                    // Relaxed criteria
+                    if (isEmpty(f.tipo_organizacion)) missingFields.push({ "Sección": "III. Organizacional", "Campo Faltante": "Tipo de organización" });
+                    if (isEmpty(f.extension_predio)) missingFields.push({ "Sección": "III. Organizacional", "Campo Faltante": "Extensión del predio" });
+                    if (isEmpty(f.tiempo_implementacion)) missingFields.push({ "Sección": "III. Organizacional", "Campo Faltante": "Tiempo de implementación" });
+                    if (isEmpty(f.tipo_tenencia)) missingFields.push({ "Sección": "III. Organizacional", "Campo Faltante": "Tipo de tenencia del predio" });
+                    if (isEmpty(f.numero_personas)) missingFields.push({ "Sección": "III. Organizacional", "Campo Faltante": "Número de personas vinculadas" });
+                    
+                    if (isEmpty(f.mano_obra)) missingFields.push({ "Sección": "VI. Sistema Productivo", "Campo Faltante": "Tipo de mano de obra" });
+                    if (isEmpty(f.tipo_proceso)) missingFields.push({ "Sección": "VI. Sistema Productivo", "Campo Faltante": "Proceso productivo mayoritario" });
+                    
+                    if (f.sistema_diferenciado == "1" && isEmpty(f.descripcion)) {
+                        missingFields.push({ "Sección": "VI. Sistema Productivo", "Campo Faltante": "Descripción sistema diferenciado" });
+                    }
+                    
+                    if (isEmpty(f.destino)) missingFields.push({ "Sección": "VII. Comercialización", "Campo Faltante": "Destino principal" });
+                    if (isEmpty(f.transporte)) missingFields.push({ "Sección": "VII. Comercialización", "Campo Faltante": "Transporte utilizado" });
+                    if (isEmpty(f.forma_pago)) missingFields.push({ "Sección": "VII. Comercialización", "Campo Faltante": "Forma de pago" });
+                    if (isEmpty(f.define_precio)) missingFields.push({ "Sección": "VII. Comercialización", "Campo Faltante": "Fijación del precio" });
+                    
+                    if (f.en_tramite_bool === "Sí" && isEmpty(f.en_tramite)) {
+                        missingFields.push({ "Sección": "VII. Comercialización", "Campo Faltante": "Cual permiso en trámite" });
+                    }
+                } else {
+                    missingFields.push({ "Sección": "Ficha", "Campo Faltante": "Sin información base" });
+                }
+
+                if (detalleResult.success && detalleResult.data) {
+                    const d = detalleResult.data;
+                    if (isEmpty(d.categorias)) missingFields.push({ "Sección": "IV. Categorías", "Campo Faltante": "Categorías productivas" });
+                    if ((!d.productos || d.productos.length === 0) && (!d.servicios || d.servicios.length === 0)) {
+                        missingFields.push({ "Sección": "V. Producción", "Campo Faltante": "Productos o Servicios Ofertados" });
+                    }
+                } else {
+                    missingFields.push({ "Sección": "Detalle", "Campo Faltante": "Sin información detallada" });
+                }
+
+                if (missingFields.length === 0) {
+                    if (btnElement) {
+                        btnElement.style.color = '#2A9D8F'; // var(--primary-green) color
+                        btnElement.title = 'Caracterización Completa';
+                        btnElement.innerHTML = `
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                        `;
+                        btnElement.onclick = (e) => e.stopPropagation();
+                    } else {
+                        alert('El productor ' + nombre + ' tiene todos los campos de caracterización obligatorios diligenciados.');
+                    }
+                    return;
+                }
+
+                const ws = XLSX.utils.json_to_sheet(missingFields);
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, "Campos Faltantes");
+                const safeName = nombre.replace(/[^a-zA-Z0-9]/g, '_');
+                XLSX.writeFile(wb, `campos_faltantes_${safeName}.xlsx`);
+
+            } catch (error) {
+                console.error("Error al exportar campos faltantes:", error);
+                alert("Ocurrió un error al intentar exportar los campos faltantes.");
+            }
         }
     </script>
 
