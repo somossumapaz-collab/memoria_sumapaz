@@ -502,6 +502,29 @@
                     width: 280px;
                     margin: 0;
                     padding: 0 1rem;
+                    background-color: #2A9D8F;
+                    color: #FBF4DE;
+                    border-radius: 30px;
+                    font-weight: 600;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 0.9rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+                    border: none;
+                " onclick="downloadCoordinatesReport()">
+                    <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    Descargar con Coordenadas
+                </button>
+                <button type="button" class="btn" style="
+                    height: 50px;
+                    width: 280px;
+                    margin: 0;
+                    padding: 0 1rem;
                     background-color: #e76f51;
                     color: #FBF4DE;
                     border-radius: 30px;
@@ -1769,6 +1792,72 @@
             } catch (error) {
                 console.error("Error al exportar campos faltantes:", error);
                 alert("Ocurrió un error al intentar exportar los campos faltantes.");
+            }
+        }
+
+        async function downloadCoordinatesReport() {
+            try {
+                const res = await fetch('api/get_productores_coordenadas.php');
+                const result = await res.json();
+                
+                if (!result.success || !result.data) {
+                    alert('Error al cargar la información de productores con coordenadas: ' + (result.error || 'Error desconocido'));
+                    return;
+                }
+
+                const data = result.data;
+                if (data.length === 0) {
+                    alert('No hay productores con coordenadas registradas para descargar.');
+                    return;
+                }
+
+                // Format data for Excel
+                const formattedList = data.map(p => ({
+                    "Fecha Creación": p.fecha_creacion || '-',
+                    "Nombre Completo": p.nombre_completo || '-',
+                    "Tipo Documento": p.tipo_documento || '-',
+                    "Número Documento": p.numero_documento || '-',
+                    "Fecha Nacimiento": p.fecha_nacimiento || '-',
+                    "Teléfono": p.telefono || '-',
+                    "Correo Electrónico": p.correo_electronico || '-',
+                    "Vereda": p.vereda || '-',
+                    "Nombre Predio": p.nombre_predio || '-',
+                    "Cuenca": p.cuenca || '-',
+                    "Fecha Caracterización": p.fecha_caracterizacion || '-',
+                    "Coordenadas": p.coordenadas || '-',
+                    "Mypime": p.mypime == 1 ? 'Sí' : 'No',
+                    "Efectividad 2025": p.efectividad_2025 == 1 ? 'Sí' : 'No',
+                    "Panaca": p.panaca == 1 ? 'Sí' : 'No',
+                    "Tipo Organización": p.tipo_organizacion || '-',
+                    "Nombre Organización": p.nombre_organizacion || '-',
+                    "Extensión Predio (ha)": p.extension_predio || '-',
+                    "Tiempo Implementación (años)": p.tiempo_implementacion || '-',
+                    "Tipo Tenencia": p.tipo_tenencia || '-',
+                    "Personas Vinculadas": p.numero_personas || '-',
+                    "Mano de Obra": p.mano_obra || '-',
+                    "Proceso Productivo": p.tipo_proceso || '-',
+                    "Usa Abonos": p.usa_abonos == 1 ? 'Sí' : 'No',
+                    "Sistemas Asociados": p.sistemas_asociados == 1 ? 'Sí' : 'No',
+                    "Sistema Diferenciado": p.sistema_diferenciado == 1 ? 'Sí' : 'No',
+                    "Descripción Diferenciado": p.descripcion || '-',
+                    "Valor Agregado": p.valor_agregado || '-',
+                    "Destino Comercialización": p.destino || '-',
+                    "Transporte": p.transporte || '-',
+                    "Forma de Pago": p.forma_pago || '-',
+                    "Fijación Precio": p.define_precio || '-',
+                    "Permiso en Trámite": p.en_tramite_bool || '-',
+                    "Permiso Detalles": p.en_tramite || '-',
+                    "Categorías Inscritas": p.categorias || '-'
+                }));
+
+                const ws = XLSX.utils.json_to_sheet(formattedList);
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, "Productores Coordenadas");
+                XLSX.writeFile(wb, `productores_con_coordenadas_${new Date().toISOString().split('T')[0]}.xlsx`);
+
+            } catch (error) {
+                console.error("Error al exportar productores con coordenadas:", error);
+                alert("Ocurrió un error al intentar exportar los productores con coordenadas.");
             }
         }
     </script>
