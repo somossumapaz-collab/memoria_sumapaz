@@ -455,6 +455,16 @@
                         <option value="0">No</option>
                     </select>
                 </div>
+                <div style="flex: 1; min-width: 220px;">
+                    <label for="filter-beneficiario"
+                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Filtro Especial (Top 150)</label>
+                    <select id="filter-beneficiario"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
+                        <option value="">Todos</option>
+                        <option value="beneficiado">Beneficiados (Top 150 Puntaje)</option>
+                        <option value="ajustado">Beneficiados Ajustados (Top 150 Puntaje Ajustado)</option>
+                    </select>
+                </div>
 
                 <div style="flex: 1; min-width: 200px;">
                     <label for="filter-actividad"
@@ -918,6 +928,7 @@
             const filterFecha = document.getElementById('filter-fecha');
             const filterCaracterizado = document.getElementById('filter-caracterizado');
             const filterMypime = document.getElementById('filter-mypime');
+            const filterBeneficiario = document.getElementById('filter-beneficiario');
             const btnReset = document.getElementById('btn-reset-filters');
 
             // --- AUTH CHECK FIRST ---
@@ -1185,6 +1196,7 @@
             filterFecha.addEventListener('change', applyFilters);
             filterCaracterizado.addEventListener('change', applyFilters);
             filterMypime.addEventListener('change', applyFilters);
+            if (filterBeneficiario) filterBeneficiario.addEventListener('change', applyFilters);
             document.getElementById('filter-actividad').addEventListener('change', applyFilters);
 
             btnReset.addEventListener('click', () => {
@@ -1194,6 +1206,7 @@
                 filterFecha.value = '';
                 filterCaracterizado.value = '';
                 filterMypime.value = '';
+                if (filterBeneficiario) filterBeneficiario.value = '';
                 document.getElementById('filter-actividad').value = '';
                 renderTable(allProducers);
             });
@@ -1548,6 +1561,7 @@
             const caracterizadoVal = document.getElementById('filter-caracterizado').value;
             const mypimeVal = document.getElementById('filter-mypime').value;
             const actividadVal = document.getElementById('filter-actividad').value;
+            const beneficiarioVal = document.getElementById('filter-beneficiario') ? document.getElementById('filter-beneficiario').value : '';
 
             let fullP = null;
             if (numDoc) {
@@ -1575,8 +1589,15 @@
                 }
             }
 
+            let matchBeneficiario = true;
+            if (beneficiarioVal === 'beneficiado') {
+                matchBeneficiario = fullP.ranking !== null && fullP.ranking <= 150;
+            } else if (beneficiarioVal === 'ajustado') {
+                matchBeneficiario = fullP.ranking_ajustado !== null && fullP.ranking_ajustado <= 150;
+            }
+
             return matchNombre && matchVereda && matchCuenca && matchFecha && matchCaracterizado && 
-                   matchMypime && matchActividad;
+                   matchMypime && matchActividad && matchBeneficiario;
         }
 
         function applyFilters() {
@@ -1587,6 +1608,7 @@
             const caracterizadoVal = document.getElementById('filter-caracterizado').value;
             const mypimeVal = document.getElementById('filter-mypime').value;
             const actividadVal = document.getElementById('filter-actividad').value;
+            const beneficiarioVal = document.getElementById('filter-beneficiario') ? document.getElementById('filter-beneficiario').value : '';
 
             const filteredData = allProducers.filter(p => {
                 let matchNombre = true;
@@ -1596,6 +1618,7 @@
                 let matchCaracterizado = true;
                 let matchMypime = true;
                 let matchActividad = true;
+                let matchBeneficiario = true;
 
                 if (nombreVal) {
                     matchNombre = p.nombre_completo.toLowerCase().includes(nombreVal);
@@ -1630,8 +1653,14 @@
                     }
                 }
 
+                if (beneficiarioVal === 'beneficiado') {
+                    matchBeneficiario = p.ranking !== null && p.ranking <= 150;
+                } else if (beneficiarioVal === 'ajustado') {
+                    matchBeneficiario = p.ranking_ajustado !== null && p.ranking_ajustado <= 150;
+                }
+
                 return matchNombre && matchVereda && matchCuenca && matchFecha && matchCaracterizado && 
-                       matchMypime && matchActividad;
+                       matchMypime && matchActividad && matchBeneficiario;
             });
 
             renderTable(filteredData);
@@ -1770,8 +1799,15 @@
                 const puntajeStr = puntaje !== null ? `<strong>${puntaje}</strong>` : 'N/A';
                 const colorPuntaje = (puntaje !== null) ? (puntaje >= 60 ? '#2A9D8F' : '#e76f51') : '#999';
 
-                if (productor.ranking !== null && productor.ranking <= 150) {
-                    mainTr.classList.add('top-150-row');
+                const beneficiarioVal = document.getElementById('filter-beneficiario') ? document.getElementById('filter-beneficiario').value : '';
+                if (beneficiarioVal === 'ajustado') {
+                    if (productor.ranking_ajustado !== null && productor.ranking_ajustado <= 150) {
+                        mainTr.classList.add('top-150-row');
+                    }
+                } else {
+                    if (productor.ranking !== null && productor.ranking <= 150) {
+                        mainTr.classList.add('top-150-row');
+                    }
                 }
 
                 mainTr.innerHTML = `
