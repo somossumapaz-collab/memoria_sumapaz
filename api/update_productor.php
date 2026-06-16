@@ -66,6 +66,9 @@ try {
         ':id' => $input['id']
     ]);
 
+    require_once 'score_helper.php';
+    recalculate_and_save_score($pdo, $input['id']);
+
     echo json_encode(['success' => true, 'message' => 'Productor actualizado exitosamente.']);
 } catch (\PDOException $e) {
     http_response_code(500);

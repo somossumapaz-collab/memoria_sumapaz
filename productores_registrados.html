@@ -2,6 +2,9 @@
 <html lang="es">
 
 <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productores Registrados | Somos Sumapaz</title>
@@ -238,9 +241,25 @@
                 opacity: 1;
             }
         }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        th.sortable:hover {
+            background-color: rgba(68, 79, 47, 0.1) !important;
+        }
+        .top-150-row {
+            background-color: #E8F5E9 !important; /* Elegant light green */
+            border-left: 4px solid #2A9D8F;
+        }
+        .top-150-row:hover {
+            background-color: #C8E6C9 !important; /* Slightly darker light green on hover */
+        }
     </style>
     <!-- Excel Export Library -->
-    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <script src="assets/xlsx.full.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <link rel="stylesheet" href="assets/chat.css">
@@ -282,6 +301,10 @@
                             style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">
                             Seguimiento Transporte
                         </a>
+                        <a href="pmapc.html" class="nav-link-btn" id="btn-pmapc"
+                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">
+                            PMAPC
+                        </a>
 
                         <button onclick="logout()" class="nav-link-btn" id="btn-logout"
                             style="display: none; margin: 0; background-color: transparent; cursor: pointer; color: #FBF4DE; border: none;"
@@ -303,6 +326,7 @@
     </header>
 
     <main style="padding: 3rem 2rem 5rem 2rem; width: 100%; max-width: 100%; box-sizing: border-box;">
+
         <!-- New Hero Header -->
         <section class="hero-section">
             <div class="hero-overlay"></div>
@@ -431,24 +455,13 @@
                         <option value="0">No</option>
                     </select>
                 </div>
-                <div style="flex: 1; min-width: 160px;">
-                    <label for="filter-efectividad"
-                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Efectividad 2025</label>
-                    <select id="filter-efectividad"
+
+                <div style="flex: 1; min-width: 200px;">
+                    <label for="filter-actividad"
+                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Actividad Productiva</label>
+                    <select id="filter-actividad"
                         style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
-                        <option value="">Todos</option>
-                        <option value="1">Sí</option>
-                        <option value="0">No</option>
-                    </select>
-                </div>
-                <div style="flex: 1; min-width: 150px;">
-                    <label for="filter-panaca"
-                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Panaca</label>
-                    <select id="filter-panaca"
-                        style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
-                        <option value="">Todos</option>
-                        <option value="1">Sí</option>
-                        <option value="0">No</option>
+                        <option value="">Todas las Actividades</option>
                     </select>
                 </div>
             </div>
@@ -542,11 +555,80 @@
                     </svg>
                     Descargar Incompletas
                 </button>
+                <button type="button" class="btn" style="
+                    height: 50px;
+                    width: 280px;
+                    margin: 0;
+                    padding: 0 1rem;
+                    background-color: #8E9A5E;
+                    color: #FBF4DE;
+                    border-radius: 30px;
+                    font-weight: 600;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 0.9rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+                    border: none;
+                " onclick="downloadTemplateWithAnswers()">
+                    <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Descargar Formato y Opciones
+                </button>
+                <button type="button" class="btn" id="btn-download-scores" style="
+                    height: 50px;
+                    width: 320px;
+                    margin: 0;
+                    padding: 0 1rem;
+                    background-color: #9E782F;
+                    color: #FBF4DE;
+                    border-radius: 30px;
+                    font-weight: 600;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 0.9rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+                    border: none;
+                " onclick="downloadScoresWithJustifications()">
+                    <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z" />
+                    </svg>
+                    Descargar Puntajes y Justificaciones
+                </button>
             </div>
         </div>
 
         <div class="table-responsive">
             <table class="data-table" id="productores-table">
+                <thead>
+                    <tr>
+                        <th style="text-align: center; width: 90px;">Ranking</th>
+                        <th>Productor</th>
+                        <th>Vereda</th>
+                        <th style="text-align: center;">Estado Caracterización</th>
+                        <th class="sortable" style="text-align: center; width: 110px; cursor: pointer; user-select: none;" onclick="toggleSort('puntaje')">Puntaje<span id="sort-icon-puntaje">▼</span></th>
+                        <th class="sortable" style="text-align: center; width: 140px; cursor: pointer; user-select: none;" onclick="toggleSort('puntaje_ajustado')">Puntaje Ajustado<span id="sort-icon-puntaje-ajustado"></span></th>
+                        <th style="text-align: center; width: 120px;">Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="productores-tbody">
+                    <!-- Data will be loaded via JS -->
+                    <tr>
+                        <td colspan="7" style="text-align: center; padding: 2rem;">Cargando productores...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 style="font-family: 'Inter', sans-serif; color: #444F2F; margin-top: 3.5rem; margin-bottom: 1.5rem; text-align: left; font-size: 1.6rem; font-weight: 700;">
+            Listado General de Productores (Información de Registro)
+        </h2>
+        <div class="table-responsive" style="margin-bottom: 3rem;">
+            <table class="data-table" id="productores-original-table">
                 <thead>
                     <tr>
                         <th>Fecha Inscripción</th>
@@ -560,13 +642,14 @@
                         <th style="text-align: center;">Editar</th>
                         <th id="col-eliminar" style="text-align: center;">Eliminar</th>
                         <th style="text-align: center;">Caracterizar</th>
+                        <th style="text-align: center;">PMAPC</th>
                         <th style="text-align: center;">Detalle</th>
                     </tr>
                 </thead>
-                <tbody id="productores-tbody">
+                <tbody id="productores-original-tbody">
                     <!-- Data will be loaded via JS -->
                     <tr>
-                        <td colspan="11" style="text-align: center; padding: 2rem;">Cargando productores...</td>
+                        <td colspan="13" style="text-align: center; padding: 2rem;">Cargando productores...</td>
                     </tr>
                 </tbody>
             </table>
@@ -574,15 +657,11 @@
 
         <!-- Charts Section -->
         <div style="display: flex; gap: 2rem; margin-top: 3rem; margin-bottom: 3rem; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 300px; background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center;">
-                <h3 style="font-family: 'Inter', sans-serif; color: #444F2F; margin-bottom: 1rem;">Productores por Cuenca</h3>
-                <canvas id="cuencaChart" width="400" height="400" style="max-height: 300px;"></canvas>
-            </div>
-            <div style="flex: 1; min-width: 300px; max-width: 100%; background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; overflow: hidden;">
-                <h3 style="font-family: 'Inter', sans-serif; color: #444F2F; margin-bottom: 1rem;">Productores por Vereda</h3>
+            <div style="flex: 1; min-width: 300px; max-width: 100%; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; overflow: hidden;">
+                <h3 style="font-family: 'Inter', sans-serif; color: #444F2F; margin-bottom: 1.5rem; font-size: 1.3rem; font-weight: 700;">Comparativa de Distribución por Vereda</h3>
                 <div style="width: 100%; overflow-x: auto; padding-bottom: 1rem;">
-                    <div id="veredaChartContainer" style="min-width: 600px; height: 300px; position: relative;">
-                        <canvas id="veredaChart"></canvas>
+                    <div id="veredaComparisonChartContainer" style="min-width: 800px; height: 400px; position: relative;">
+                        <canvas id="veredaComparisonChart"></canvas>
                     </div>
                 </div>
             </div>
@@ -787,11 +866,50 @@
     <script>
         let allProducers = [];
         let completenessReport = {};
-        let cuencaChartInstance = null;
-        let veredaChartInstance = null;
+        let veredaComparisonChartInstance = null;
+        let registeredVeredaCounts = {};
+        let currentSortField = 'puntaje'; // 'puntaje' or 'puntaje_ajustado'
+        let currentSortOrder = 'desc'; // 'desc' or 'asc'
+
+        function toggleSort(field) {
+            if (currentSortField === field) {
+                currentSortOrder = currentSortOrder === 'desc' ? 'asc' : 'desc';
+            } else {
+                currentSortField = field;
+                currentSortOrder = 'desc';
+            }
+            updateSortIndicators();
+            applyFilters();
+        }
+
+        function updateSortIndicators() {
+            const puntajeIndicator = document.getElementById('sort-icon-puntaje');
+            const adjustedIndicator = document.getElementById('sort-icon-puntaje-ajustado');
+            if (puntajeIndicator && adjustedIndicator) {
+                if (currentSortField === 'puntaje') {
+                    puntajeIndicator.innerHTML = currentSortOrder === 'desc' ? ' ▼' : ' ▲';
+                    adjustedIndicator.innerHTML = '';
+                } else if (currentSortField === 'puntaje_ajustado') {
+                    adjustedIndicator.innerHTML = currentSortOrder === 'desc' ? ' ▼' : ' ▲';
+                    puntajeIndicator.innerHTML = '';
+                }
+            }
+        }
+
+        const normalizeVereda = (vereda) => {
+            if (!vereda) return '';
+            return vereda
+                .trim()
+                .toUpperCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .replace(/\s+/g, ' ');
+        };
+
 
         document.addEventListener('DOMContentLoaded', async () => {
             const tbody = document.getElementById('productores-tbody');
+            updateSortIndicators();
 
             // Wait for filters
             const filterNombre = document.getElementById('filter-nombre');
@@ -819,6 +937,7 @@
                     document.getElementById('btn-register').style.display = 'inline-block';
                     document.getElementById('btn-avituallamiento').style.display = 'inline-block';
                     document.getElementById('btn-dashboard-avit').style.display = 'inline-block';
+                    document.getElementById('btn-pmapc').style.display = 'inline-block';
                     document.getElementById('btn-logout').style.display = 'inline-block';
                 }
             } catch (error) {
@@ -842,6 +961,7 @@
                 if (catData.success) {
                     allCategories = catData.data;
                     populateCategoryFilters();
+                    populateMainActividadFilter();
                 }
             } catch (err) {
                 console.error("Error fetching categories:", err);
@@ -983,10 +1103,62 @@
 
                 if (prodResult.success) {
                     allProducers = prodResult.data;
+                    
+                    // Build vereda counts map globally
+                    registeredVeredaCounts = {};
+                    allProducers.forEach(p => {
+                        const vNorm = normalizeVereda(p.vereda);
+                        if (vNorm) {
+                            registeredVeredaCounts[vNorm] = (registeredVeredaCounts[vNorm] || 0) + 1;
+                        }
+                    });
+
                     if (compResult.success) {
                         completenessReport = compResult.data;
                     }
                     
+                    allProducers.forEach(p => {
+                        const compInfo = completenessReport[p.numero_documento];
+                        p.is_complete = compInfo ? compInfo.is_complete : false;
+                        p.missing_fields = compInfo ? compInfo.missing : [];
+                    });
+
+                    const characterizedAndScored = allProducers.filter(p => p.tiene_caracterizacion == 1 && p.puntaje !== null);
+                    characterizedAndScored.sort((a, b) => b.puntaje - a.puntaje);
+                    characterizedAndScored.forEach((p, idx) => {
+                        p.ranking = idx + 1;
+                    });
+
+                    // Calculate adjusted scores and ranking_ajustado globally
+                    allProducers.forEach(p => {
+                        const puntaje = (p.tiene_caracterizacion == 1 && p.puntaje !== null) ? parseFloat(p.puntaje) : null;
+                        if (puntaje !== null) {
+                            const vNorm = normalizeVereda(p.vereda);
+                            const countVereda = registeredVeredaCounts[vNorm] || 1;
+                            p.puntaje_ajustado = puntaje * (1 + 1 / countVereda);
+                        } else {
+                            p.puntaje_ajustado = null;
+                        }
+                    });
+
+                    const adjustedScored = allProducers.filter(p => p.puntaje_ajustado !== null);
+                    adjustedScored.sort((a, b) => b.puntaje_ajustado - a.puntaje_ajustado);
+                    adjustedScored.forEach((p, idx) => {
+                        p.ranking_ajustado = idx + 1;
+                    });
+                    
+                    allProducers.forEach(p => {
+                        if (p.tiene_caracterizacion == 1 && p.puntaje !== null) {
+                            const found = characterizedAndScored.find(c => c.id === p.id);
+                            p.ranking = found ? found.ranking : null;
+                            const foundAdj = adjustedScored.find(c => c.id === p.id);
+                            p.ranking_ajustado = foundAdj ? foundAdj.ranking_ajustado : null;
+                        } else {
+                            p.ranking = null;
+                            p.ranking_ajustado = null;
+                        }
+                    });
+
                     if (filterCuenca) {
                         const cuencas = [...new Set(allProducers.map(p => p.cuenca).filter(Boolean))].sort();
                         cuencas.forEach(c => {
@@ -999,11 +1171,11 @@
 
                     renderTable(allProducers);
                 } else {
-                    tbody.innerHTML = `<tr><td colspan="11" style="text-align: center; color: red;">Error: ${prodResult.error || 'No se pudo cargar la información'}</td></tr>`;
+                    tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: red;">Error: ${prodResult.error || 'No se pudo cargar la información'}</td></tr>`;
                 }
             } catch (error) {
                 console.error('Error fetching data:', error);
-                tbody.innerHTML = `<tr><td colspan="11" style="text-align: center; color: red;">Error de red al intentar cargar la información.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="13" style="text-align: center; color: red;">Error de red al intentar cargar la información.</td></tr>`;
             }
 
             // Filter Event Listeners
@@ -1013,8 +1185,7 @@
             filterFecha.addEventListener('change', applyFilters);
             filterCaracterizado.addEventListener('change', applyFilters);
             filterMypime.addEventListener('change', applyFilters);
-            document.getElementById('filter-efectividad').addEventListener('change', applyFilters);
-            document.getElementById('filter-panaca').addEventListener('change', applyFilters);
+            document.getElementById('filter-actividad').addEventListener('change', applyFilters);
 
             btnReset.addEventListener('click', () => {
                 filterNombre.value = '';
@@ -1023,8 +1194,7 @@
                 filterFecha.value = '';
                 filterCaracterizado.value = '';
                 filterMypime.value = '';
-                document.getElementById('filter-efectividad').value = '';
-                document.getElementById('filter-panaca').value = '';
+                document.getElementById('filter-actividad').value = '';
                 renderTable(allProducers);
             });
 
@@ -1117,6 +1287,259 @@
             loadProductsReport();
         });
 
+        function populateMainActividadFilter() {
+            const filterAct = document.getElementById('filter-actividad');
+            if (!filterAct) return;
+            filterAct.innerHTML = '<option value="">Todas las Actividades</option>';
+            
+            const uniqueCats = [];
+            const seen = new Set();
+            allCategories.forEach(cat => {
+                if (!seen.has(cat.id)) {
+                    seen.add(cat.id);
+                    uniqueCats.push(cat);
+                }
+            });
+            uniqueCats.sort((a, b) => {
+                const cmp = a.tipo.localeCompare(b.tipo);
+                if (cmp !== 0) return cmp;
+                return a.nombre.localeCompare(b.nombre);
+            });
+            
+            uniqueCats.forEach(cat => {
+                const opt = document.createElement('option');
+                opt.value = cat.id;
+                opt.textContent = `${cat.tipo} - ${cat.nombre}`;
+                filterAct.appendChild(opt);
+            });
+        }
+
+        async function toggleRow(id) {
+            const row = document.getElementById(`detail-row-${id}`);
+            const arrow = document.getElementById(`arrow-${id}`);
+            if (!row) return;
+            
+            const isVisible = row.style.display !== 'none';
+            if (isVisible) {
+                row.style.display = 'none';
+                if (arrow) arrow.style.transform = 'rotate(0deg)';
+            } else {
+                row.style.display = 'table-row';
+                if (arrow) arrow.style.transform = 'rotate(180deg)';
+                
+                const content = document.getElementById(`detail-content-${id}`);
+                if (content && (content.textContent.includes('Cargando') || content.dataset.loaded !== 'true')) {
+                    await loadRowDetails(id, content);
+                }
+            }
+        }
+
+        async function loadRowDetails(id, container) {
+            try {
+                const res = await fetch(`api/get_productor_detalle.php?id=${id}`);
+                const result = await res.json();
+                if (result.success) {
+                    const info = result.data.info;
+                    const scores = result.data.scores;
+                    
+                    const compInfo = completenessReport[info.numero_documento];
+                    info.is_complete = compInfo ? compInfo.is_complete : false;
+                    info.missing_fields = compInfo ? compInfo.missing : [];
+                    info.tiene_caracterizacion = (info.tiene_caracterizacion == 1);
+
+                    let breakdownHtml = '';
+                    if (scores && scores.tiene_caracterizacion) {
+                        let alertHtml = '';
+                        if (!info.is_complete) {
+                            alertHtml = `
+                            <div style="background: #fdf6e2; color: #856404; padding: 0.8rem 1.2rem; border-radius: 8px; border: 1px solid #f7ecb5; margin-bottom: 1.5rem; font-size: 0.85rem; line-height: 1.4; text-align: left;">
+                                ⚠️ <strong>Esta caracterización está incompleta.</strong> Faltan por diligenciar los siguientes campos obligatorios: <strong style="color: #c0392b;">${info.missing_fields.join(', ')}</strong>.
+                            </div>
+                            `;
+                        }
+                        const components = [
+                            {
+                                title: 'Componente 1: Enfoque Diferencial y Social',
+                                score: scores.puntaje_social,
+                                max: 20,
+                                keys: ['c1_discapacidad', 'c1_mujer_cabeza', 'c1_victima', 'c1_joven_adulto']
+                            },
+                            {
+                                title: 'Componente 2: Fortalecimiento Organizacional y Comunitario',
+                                score: scores.puntaje_organizacional,
+                                max: 15,
+                                keys: ['c2_organizacion', 'c2_comunitaria', 'c2_gestor']
+                            },
+                            {
+                                title: 'Componente 3: Capacidad Productiva y Maduración',
+                                score: scores.puntaje_productivo,
+                                max: 25,
+                                keys: ['c3_tiempo', 'c3_tenencia', 'c3_produccion', 'c3_diversificacion', 'c3_mano_obra']
+                            },
+                            {
+                                title: 'Componente 4: Comercialización y Sostenibilidad Económica',
+                                score: scores.puntaje_comercial,
+                                max: 15,
+                                keys: ['c4_canales', 'c4_frecuencia', 'c4_integracion']
+                            },
+                            {
+                                title: 'Componente 5: Sostenibilidad Ambiental y Cumplimiento Normativo',
+                                score: scores.puntaje_ambiental,
+                                max: 15,
+                                keys: ['c5_agroecologia', 'c5_conservacion', 'c5_requisitos']
+                            },
+                            {
+                                title: 'Componente 6: Impacto Territorial e Innovación',
+                                score: scores.puntaje_impacto,
+                                max: 10,
+                                keys: ['c6_vitrina', 'c6_sello']
+                            }
+                        ];
+
+                        breakdownHtml = alertHtml + `
+                        <div>
+                            <h5 style="margin: 0 0 1.25rem 0; color: #444F2F; font-size: 1.1rem; font-weight: 700; border-bottom: 2px solid #EFEBE4; padding-bottom: 0.5rem;">Desglose Detallado de Calificación por Criterio</h5>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                                <div style="background: #EFEBE4; padding: 1rem; border-radius: 8px; text-align: center; border-left: 4px solid #444F2F;">
+                                    <div style="font-size: 0.75rem; color: #666; font-weight: bold; text-transform: uppercase;">Social</div>
+                                    <div style="font-size: 1.4rem; font-weight: bold; color: #444F2F; margin-top: 4px;">${scores.puntaje_social} <span style="font-size: 0.9rem; color: #888; font-weight: normal;">/ 20</span></div>
+                                </div>
+                                <div style="background: #EFEBE4; padding: 1rem; border-radius: 8px; text-align: center; border-left: 4px solid #444F2F;">
+                                    <div style="font-size: 0.75rem; color: #666; font-weight: bold; text-transform: uppercase;">Organizac.</div>
+                                    <div style="font-size: 1.4rem; font-weight: bold; color: #444F2F; margin-top: 4px;">${scores.puntaje_organizacional} <span style="font-size: 0.9rem; color: #888; font-weight: normal;">/ 15</span></div>
+                                </div>
+                                <div style="background: #EFEBE4; padding: 1rem; border-radius: 8px; text-align: center; border-left: 4px solid #444F2F;">
+                                    <div style="font-size: 0.75rem; color: #666; font-weight: bold; text-transform: uppercase;">Productivo</div>
+                                    <div style="font-size: 1.4rem; font-weight: bold; color: #444F2F; margin-top: 4px;">${scores.puntaje_productivo} <span style="font-size: 0.9rem; color: #888; font-weight: normal;">/ 25</span></div>
+                                </div>
+                                <div style="background: #EFEBE4; padding: 1rem; border-radius: 8px; text-align: center; border-left: 4px solid #444F2F;">
+                                    <div style="font-size: 0.75rem; color: #666; font-weight: bold; text-transform: uppercase;">Comercial</div>
+                                    <div style="font-size: 1.4rem; font-weight: bold; color: #444F2F; margin-top: 4px;">${scores.puntaje_comercial} <span style="font-size: 0.9rem; color: #888; font-weight: normal;">/ 15</span></div>
+                                </div>
+                                <div style="background: #EFEBE4; padding: 1rem; border-radius: 8px; text-align: center; border-left: 4px solid #444F2F;">
+                                    <div style="font-size: 0.75rem; color: #666; font-weight: bold; text-transform: uppercase;">Ambiental</div>
+                                    <div style="font-size: 1.4rem; font-weight: bold; color: #444F2F; margin-top: 4px;">${scores.puntaje_ambiental} <span style="font-size: 0.9rem; color: #888; font-weight: normal;">/ 15</span></div>
+                                </div>
+                                <div style="background: #EFEBE4; padding: 1rem; border-radius: 8px; text-align: center; border-left: 4px solid #444F2F;">
+                                    <div style="font-size: 0.75rem; color: #666; font-weight: bold; text-transform: uppercase;">Impacto/Innov.</div>
+                                    <div style="font-size: 1.4rem; font-weight: bold; color: #444F2F; margin-top: 4px;">${scores.puntaje_impacto} <span style="font-size: 0.9rem; color: #888; font-weight: normal;">/ 10</span></div>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1.5rem;">
+                                ${components.map((comp, compIdx) => {
+                                    return `
+                                    <div style="background: #FAF8F5; border: 1px solid #E0DCD5; border-radius: 8px; padding: 1.2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #EFEBE4; padding-bottom: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                                            <div style="font-weight: 700; color: #444F2F; font-size: 0.95rem;">${comp.title}</div>
+                                            <div style="font-size: 1.05rem; font-weight: 800; color: #444F2F; background: #EFEBE4; padding: 4px 10px; border-radius: 6px;">
+                                                ${comp.score} <span style="font-size: 0.85rem; color: #666; font-weight: normal;">/ ${comp.max} pts</span>
+                                            </div>
+                                        </div>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0.75rem;">
+                                            ${comp.keys.map(key => {
+                                                const item = scores.breakdown[key];
+                                                if (!item) return '';
+                                                let icon = '';
+                                                let color = '#999';
+                                                let bg = '#f9f9f9';
+                                                let border = '1px solid #eee';
+                                                
+                                                if (item.status === 'Cumple') {
+                                                    icon = '✓';
+                                                    color = '#2A9D8F';
+                                                    bg = '#eef8f6';
+                                                    border = '1px solid #d2eae4';
+                                                } else if (item.status === 'No cumple') {
+                                                    icon = '✗';
+                                                    color = '#e76f51';
+                                                    bg = '#fdf5f3';
+                                                    border = '1px solid #fadcd5';
+                                                } else if (item.status === 'Información no disponible') {
+                                                    icon = '⚠';
+                                                    color = '#888';
+                                                    bg = '#f5f5f5';
+                                                    border = '1px solid #e0e0e0';
+                                                }
+                                                
+                                                return `
+                                                <div style="background: ${bg}; border: ${border}; padding: 0.75rem; border-radius: 6px; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                                    <span style="font-size: 1.1rem; font-weight: bold; color: ${color}; line-height: 1; margin-top: 2px;">${icon}</span>
+                                                    <div style="flex: 1;">
+                                                        <div style="font-size: 0.85rem; font-weight: 600; color: #333; line-height: 1.3;">${item.name}</div>
+                                                        ${item.detail ? `<div style="font-size: 0.75rem; color: #666; margin-top: 3px; font-style: italic;">${item.detail}</div>` : ''}
+                                                        <div style="font-size: 0.75rem; font-weight: bold; color: ${color}; margin-top: 6px; display: flex; justify-content: space-between;">
+                                                            <span>${item.status}</span>
+                                                            <span>${item.score} / ${item.max} pts</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                `;
+                                            }).join('')}
+                                        </div>
+                                    </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                        `;
+                    } else {
+                        breakdownHtml = `
+                        <div style="background: #fdf6e2; color: #856404; padding: 1.2rem; border-radius: 8px; border: 1px solid #f7ecb5; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <strong style="font-size: 1rem;">Caracterización Incompleta o No Iniciada</strong>
+                            <p style="margin: 0; font-size: 0.9rem; line-height: 1.4;">
+                                El cálculo de puntaje requiere que la ficha de caracterización esté **completa y válida** de acuerdo con los términos y condiciones de la convocatoria.
+                                <br><br>
+                                ${info.tiene_caracterizacion ? 
+                                  `Actualmente faltan por diligenciar los siguientes campos obligatorios: <br><strong style="color: #c0392b;">${info.missing_fields.join(', ')}</strong>` : 
+                                  'Aún no se ha registrado ninguna caracterización para este productor.'
+                                }
+                            </p>
+                        </div>
+                        `;
+                    }
+
+                    container.innerHTML = `
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem; text-align: left;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <h4 style="margin: 0; color: #444F2F; font-size: 1.15rem; font-weight: 700;">${info.nombre_completo}</h4>
+                                <p style="margin: 6px 0 0 0; font-size: 0.9rem; color: #666; line-height: 1.4;">
+                                    <strong>Documento:</strong> ${info.tipo_documento} ${info.numero_documento} &nbsp;|&nbsp; 
+                                    <strong>Predio:</strong> ${info.nombre_predio} &nbsp;|&nbsp; 
+                                    <strong>Teléfono:</strong> ${info.telefono} &nbsp;|&nbsp; 
+                                    <strong>Correo:</strong> ${info.correo_electronico || '-'}
+                                </p>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <button class="btn" style="padding: 0.5rem 1rem; height: auto; font-size: 0.85rem; background-color: var(--primary-green); color: white; border-radius: 8px; border: none; font-weight:600; cursor:pointer;" onclick="editarProductor(${info.id})">Editar Datos</button>
+                                
+                                ${info.tiene_caracterizacion ? 
+                                  `<button class="btn" style="padding: 0.5rem 1rem; height: auto; font-size: 0.85rem; background-color: #444F2F; color: white; border-radius: 8px; border: none; font-weight:600; cursor:pointer;" onclick="verDetalle(${info.id})">Ver Ficha Completa</button>` :
+                                  `<button class="btn" style="padding: 0.5rem 1rem; height: auto; font-size: 0.85rem; background-color: #e76f51; color: white; border-radius: 8px; border: none; font-weight:600; cursor:pointer;" onclick="empezarCaracterizacion(${info.id}, '${info.nombre_completo}')">Caracterizar</button>`
+                                }
+                                
+                                <button class="btn" style="padding: 0.5rem 1rem; height: auto; font-size: 0.85rem; background-color: #2A9D8F; color: white; border-radius: 8px; border: none; font-weight:600; cursor:pointer;" onclick="window.location.href='pmapc.html?id=${info.id}'">PMAPC</button>
+                                
+                                ${window.isAdmin ? 
+                                  `<button class="btn" style="padding: 0.5rem 1rem; height: auto; font-size: 0.85rem; background-color: #d9534f; color: white; border-radius: 8px; border: none; font-weight:600; cursor:pointer;" onclick="eliminarProductor(${info.id}, '${info.nombre_completo}')">Eliminar</button>` : ''
+                                }
+                            </div>
+                        </div>
+
+                        ${breakdownHtml}
+                    </div>
+                    `;
+                    container.dataset.loaded = 'true';
+                } else {
+                    container.innerHTML = `<span style="color: red;">Error: ${result.error}</span>`;
+                }
+            } catch (err) {
+                container.innerHTML = '<span style="color: red;">Error de red al cargar el detalle del productor.</span>';
+            }
+        }
+
         function passesGlobalFilters(numDoc, tipoNumDocStr = null) {
             const nombreVal = document.getElementById('filter-nombre').value.toLowerCase();
             const veredaVal = document.getElementById('filter-vereda').value;
@@ -1124,8 +1547,7 @@
             const fechaVal = document.getElementById('filter-fecha').value;
             const caracterizadoVal = document.getElementById('filter-caracterizado').value;
             const mypimeVal = document.getElementById('filter-mypime').value;
-            const efectividadVal = document.getElementById('filter-efectividad').value;
-            const panacaVal = document.getElementById('filter-panaca').value;
+            const actividadVal = document.getElementById('filter-actividad').value;
 
             let fullP = null;
             if (numDoc) {
@@ -1142,10 +1564,19 @@
             let matchFecha = !fechaVal || (fullP.fecha_creacion && fullP.fecha_creacion.startsWith(fechaVal));
             let matchCaracterizado = caracterizadoVal === "" || fullP.tiene_caracterizacion == caracterizadoVal;
             let matchMypime = mypimeVal === "" || fullP.mypime == mypimeVal;
-            let matchEfectividad = efectividadVal === "" || fullP.efectividad_2025 == efectividadVal;
-            let matchPanaca = panacaVal === "" || fullP.panaca == panacaVal;
 
-            return matchNombre && matchVereda && matchCuenca && matchFecha && matchCaracterizado && matchMypime && matchEfectividad && matchPanaca;
+            let matchActividad = true;
+            if (actividadVal) {
+                if (fullP.categorias_ids) {
+                    const catIds = fullP.categorias_ids.split(',');
+                    matchActividad = catIds.includes(actividadVal);
+                } else {
+                    matchActividad = false;
+                }
+            }
+
+            return matchNombre && matchVereda && matchCuenca && matchFecha && matchCaracterizado && 
+                   matchMypime && matchActividad;
         }
 
         function applyFilters() {
@@ -1155,8 +1586,7 @@
             const fechaVal = document.getElementById('filter-fecha').value; // format: YYYY-MM-DD
             const caracterizadoVal = document.getElementById('filter-caracterizado').value;
             const mypimeVal = document.getElementById('filter-mypime').value;
-            const efectividadVal = document.getElementById('filter-efectividad').value;
-            const panacaVal = document.getElementById('filter-panaca').value;
+            const actividadVal = document.getElementById('filter-actividad').value;
 
             const filteredData = allProducers.filter(p => {
                 let matchNombre = true;
@@ -1165,8 +1595,7 @@
                 let matchFecha = true;
                 let matchCaracterizado = true;
                 let matchMypime = true;
-                let matchEfectividad = true;
-                let matchPanaca = true;
+                let matchActividad = true;
 
                 if (nombreVal) {
                     matchNombre = p.nombre_completo.toLowerCase().includes(nombreVal);
@@ -1192,15 +1621,17 @@
                     matchMypime = p.mypime == mypimeVal;
                 }
 
-                if (efectividadVal !== "") {
-                    matchEfectividad = p.efectividad_2025 == efectividadVal;
+                if (actividadVal) {
+                    if (p.categorias_ids) {
+                        const catIds = p.categorias_ids.split(',');
+                        matchActividad = catIds.includes(actividadVal);
+                    } else {
+                        matchActividad = false;
+                    }
                 }
 
-                if (panacaVal !== "") {
-                    matchPanaca = p.panaca == panacaVal;
-                }
-
-                return matchNombre && matchVereda && matchCuenca && matchFecha && matchCaracterizado && matchMypime && matchEfectividad && matchPanaca;
+                return matchNombre && matchVereda && matchCuenca && matchFecha && matchCaracterizado && 
+                       matchMypime && matchActividad;
             });
 
             renderTable(filteredData);
@@ -1270,7 +1701,128 @@
             }
 
             if (dataToDraw.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="11" style="text-align: center; padding: 2rem;">No se encontraron resultados.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 2rem;">No se encontraron resultados.</td></tr>';
+                renderOriginalTable(dataToDraw);
+                return;
+            }
+
+            // Create a copy for ranking sort so we don't mutate the original order of the second table
+            const rankingSortedData = [...dataToDraw];
+            rankingSortedData.sort((a, b) => {
+                const getVal = (item, field) => {
+                    if (field === 'puntaje') {
+                        return item.tiene_caracterizacion == 1 && item.puntaje !== null ? parseFloat(item.puntaje) : -1;
+                    } else if (field === 'puntaje_ajustado') {
+                        const puntaje = item.tiene_caracterizacion == 1 && item.puntaje !== null ? parseFloat(item.puntaje) : null;
+                        if (puntaje === null) return -1;
+                        const vNorm = normalizeVereda(item.vereda);
+                        const countVereda = registeredVeredaCounts[vNorm] || 1;
+                        return puntaje * (1 + 1 / countVereda);
+                    }
+                    return -1;
+                };
+
+                const valA = getVal(a, currentSortField);
+                const valB = getVal(b, currentSortField);
+
+                // Always put N/A (value = -1) at the bottom
+                if (valA === -1 && valB === -1) return 0;
+                if (valA === -1) return 1;
+                if (valB === -1) return -1;
+
+                if (currentSortOrder === 'asc') {
+                    return valA - valB;
+                } else {
+                    return valB - valA;
+                }
+            });
+
+            rankingSortedData.forEach(productor => {
+                const mainTr = document.createElement('tr');
+                mainTr.className = 'main-row';
+                mainTr.style.cursor = 'pointer';
+                mainTr.onclick = () => toggleRow(productor.id);
+
+                const hasChar = (productor.tiene_caracterizacion == 1);
+                const puntaje = (hasChar && productor.puntaje !== null) ? parseInt(productor.puntaje) : null;
+                const vNorm = normalizeVereda(productor.vereda);
+                const countVereda = registeredVeredaCounts[vNorm] || 1;
+                const puntajeAjustado = puntaje !== null ? (puntaje * (1 + 1 / countVereda)) : null;
+                const puntajeAjustadoStr = puntajeAjustado !== null ? 
+                    (Number.isInteger(puntajeAjustado) ? puntajeAjustado : puntajeAjustado.toFixed(2)) : 
+                    'N/A';
+
+                let estadoHtml = '';
+                if (!hasChar) {
+                    estadoHtml = '<span class="badge" style="background:#e76f51; color:white; padding: 4px 8px; border-radius:12px; font-size:0.8rem; font-weight:500;">No Caracterizado</span>';
+                } else {
+                    estadoHtml = '<span class="badge" style="background:#2A9D8F; color:white; padding: 4px 8px; border-radius:12px; font-size:0.8rem; font-weight:500;">Caracterizado</span>';
+                }
+
+                let elegibleHtml = '-';
+                if (puntaje !== null) {
+                    elegibleHtml = (puntaje >= 60) ? 
+                        '<span style="color: #2A9D8F; font-weight: bold; background: #eef8f6; padding: 2px 8px; border-radius: 12px; font-size: 0.85rem;">Sí</span>' : 
+                        '<span style="color: #e76f51; font-weight: bold; background: #fdf2f0; padding: 2px 8px; border-radius: 12px; font-size: 0.85rem;">No</span>';
+                }
+
+                const rankingStr = productor.ranking ? `<strong>${productor.ranking}</strong>` : '-';
+                const puntajeStr = puntaje !== null ? `<strong>${puntaje}</strong>` : 'N/A';
+                const colorPuntaje = (puntaje !== null) ? (puntaje >= 60 ? '#2A9D8F' : '#e76f51') : '#999';
+
+                if (productor.ranking !== null && productor.ranking <= 150) {
+                    mainTr.classList.add('top-150-row');
+                }
+
+                mainTr.innerHTML = `
+                    <td style="text-align: center; font-size: 1.1rem; color: #444F2F;">${rankingStr}</td>
+                    <td>
+                        <div style="font-weight: 600; color: #444F2F;">${productor.nombre_completo}</div>
+                        <div style="font-size: 0.8rem; color: #666; margin-top: 2px;">${productor.tipo_documento} ${productor.numero_documento}</div>
+                    </td>
+                    <td>${productor.vereda}</td>
+                    <td style="text-align: center;">${estadoHtml}</td>
+                    <td style="text-align: center; font-size: 1.15rem; color: ${colorPuntaje}; font-weight: bold;">${puntajeStr}</td>
+                    <td style="text-align: center; font-size: 1.15rem; color: #444F2F; font-weight: bold;">${puntajeAjustadoStr}</td>
+                    <td style="text-align: center; vertical-align: middle;">
+                        <button class="btn-icon" style="background: transparent; border: none; color: #444F2F; cursor: pointer; padding: 0;" onclick="event.stopPropagation(); toggleRow(${productor.id})">
+                            <svg id="arrow-${productor.id}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px; transition: transform 0.2s;"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                        </button>
+                    </td>
+                `;
+
+                const detailTr = document.createElement('tr');
+                detailTr.id = `detail-row-${productor.id}`;
+                detailTr.className = 'detail-row';
+                detailTr.style.display = 'none';
+                detailTr.style.backgroundColor = '#fdfdfd';
+
+                detailTr.innerHTML = `
+                    <td colspan="7" style="padding: 1.5rem 2rem; border-top: none; border-bottom: 2px solid #e0dcd5;">
+                        <div id="detail-content-${productor.id}" style="padding: 0.2rem; width: 100%;">
+                            <div style="text-align: center; color: #666; font-size: 0.9rem; padding: 1rem;">
+                                <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid #ccc; border-top-color: #444F2F; border-radius: 50%; animation: spin 1s infinite linear; margin-right: 8px; vertical-align: middle;"></div>
+                                Cargando desglose detallado...
+                            </div>
+                        </div>
+                    </td>
+                `;
+
+                tbody.appendChild(mainTr);
+                tbody.appendChild(detailTr);
+            });
+
+            updateCharts(dataToDraw);
+            renderOriginalTable(dataToDraw);
+        }
+
+        function renderOriginalTable(dataToDraw) {
+            const tbody = document.getElementById('productores-original-tbody');
+            if (!tbody) return;
+            tbody.innerHTML = ''; // Clear loading/existing text
+
+            if (dataToDraw.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="13" style="text-align: center; padding: 2rem;">No se encontraron resultados.</td></tr>';
                 return;
             }
 
@@ -1315,6 +1867,15 @@
                         </button>
                     </td>
                     <td style="text-align: center; vertical-align: middle;">
+                        <button class="btn-icon" style="background-color: var(--primary-green); color: white;" 
+                            onclick="window.location.href = 'pmapc.html?id=${productor.id}'"
+                            title="Plan PMAPC">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </button>
+                    </td>
+                    <td style="text-align: center; vertical-align: middle;">
                         ${productor.tiene_caracterizacion ? `
                             <div style="display:flex; justify-content:center; gap:0.5rem;">
                                 <button type="button" class="btn-icon" onclick="event.stopPropagation(); verDetalle(${productor.id})" title="Ver Detalle" style="color: var(--primary-green);">
@@ -1339,98 +1900,95 @@
                 `;
                 tbody.appendChild(tr);
             });
-            
-            updateCharts(dataToDraw);
         }
 
         function updateCharts(data) {
-            const cuencaCounts = {};
-            const veredaCounts = {};
-
-            data.forEach(p => {
-                const cuenca = p.cuenca || 'Sin Cuenca';
-                cuencaCounts[cuenca] = (cuencaCounts[cuenca] || 0) + 1;
-                
-                const vereda = p.vereda || 'Sin Vereda';
-                veredaCounts[vereda] = (veredaCounts[vereda] || 0) + 1;
-            });
-
-            // Update Cuenca Pie Chart
-            const cuencaCanvas = document.getElementById('cuencaChart');
-            if (cuencaCanvas) {
-                const cuencaCtx = cuencaCanvas.getContext('2d');
-                if (cuencaChartInstance) cuencaChartInstance.destroy();
-
-                const dataValues = Object.values(cuencaCounts);
-                const total = dataValues.reduce((acc, val) => acc + val, 0);
-
-                cuencaChartInstance = new Chart(cuencaCtx, {
-                    type: 'pie',
-                    data: {
-                        labels: Object.keys(cuencaCounts),
-                        datasets: [{
-                            data: dataValues,
-                            backgroundColor: ['#444F2F', '#8E9A5E', '#C2C9A5', '#EFEBE4', '#F4A261', '#E76F51', '#2A9D8F', '#e9c46a', '#f4a261', '#e76f51']
-                        }]
-                    },
-                    plugins: [ChartDataLabels],
-                    options: { 
-                        responsive: true, 
-                        maintainAspectRatio: false,
-                        plugins: {
-                            datalabels: {
-                                formatter: (value, ctx) => {
-                                    if (total === 0) return '';
-                                    let percentage = (value * 100 / total).toFixed(1) + "%";
-                                    return value + '\n(' + percentage + ')';
-                                },
-                                textAlign: 'center',
-                                color: '#fff',
-                                textStrokeColor: 'rgba(0,0,0,0.6)',
-                                textStrokeWidth: 3,
-                                font: {
-                                    weight: 'bold',
-                                    size: 13
-                                }
-                            }
-                        }
-                    }
-                });
+            if (typeof Chart === 'undefined') {
+                console.warn("Chart.js is not loaded. Skipping chart rendering.");
+                return;
             }
 
-            // Update Vereda Bar Chart
-            const veredaCanvas = document.getElementById('veredaChart');
-            if (veredaCanvas) {
-                const veredaCtx = veredaCanvas.getContext('2d');
-                if (veredaChartInstance) veredaChartInstance.destroy();
+            // 1. Gather counts by vereda
+            const veredaTotalCounts = {};
+            const veredaNormalCounts = {};
+            const veredaAjustadoCounts = {};
 
-                const sortedVeredas = Object.keys(veredaCounts).sort((a, b) => veredaCounts[b] - veredaCounts[a]);
-                const dataValues = sortedVeredas.map(v => veredaCounts[v]);
-                const total = dataValues.reduce((acc, val) => acc + val, 0);
+            data.forEach(p => {
+                const vereda = p.vereda || 'Sin Vereda';
+                veredaTotalCounts[vereda] = (veredaTotalCounts[vereda] || 0) + 1;
 
-                const container = document.getElementById('veredaChartContainer');
+                if (p.ranking !== null && p.ranking <= 150) {
+                    veredaNormalCounts[vereda] = (veredaNormalCounts[vereda] || 0) + 1;
+                }
+
+                if (p.ranking_ajustado !== null && p.ranking_ajustado <= 150) {
+                    veredaAjustadoCounts[vereda] = (veredaAjustadoCounts[vereda] || 0) + 1;
+                }
+            });
+
+            // Get unique veredas, sorted by total participants descending
+            const sortedVeredas = Object.keys(veredaTotalCounts).sort((a, b) => veredaTotalCounts[b] - veredaTotalCounts[a]);
+
+            // Map dataset arrays
+            const totalData = sortedVeredas.map(v => veredaTotalCounts[v] || 0);
+            const normalData = sortedVeredas.map(v => veredaNormalCounts[v] || 0);
+            const adjustedData = sortedVeredas.map(v => veredaAjustadoCounts[v] || 0);
+
+            // Render/Update the single comparison chart
+            const canvas = document.getElementById('veredaComparisonChart');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                if (veredaComparisonChartInstance) veredaComparisonChartInstance.destroy();
+
+                const container = document.getElementById('veredaComparisonChartContainer');
                 if (container) {
-                    const newWidth = Math.max(600, sortedVeredas.length * 60);
+                    // Grouped chart has 3 bars per vereda. Allocate ~80px per vereda
+                    const newWidth = Math.max(800, sortedVeredas.length * 80);
                     container.style.minWidth = newWidth + 'px';
                 }
 
-                veredaChartInstance = new Chart(veredaCtx, {
+                veredaComparisonChartInstance = new Chart(ctx, {
                     type: 'bar',
                     data: {
                         labels: sortedVeredas,
-                        datasets: [{
-                            label: 'Productores',
-                            data: dataValues,
-                            backgroundColor: '#444F2F'
-                        }]
+                        datasets: [
+                            {
+                                label: 'Participantes Totales',
+                                data: totalData,
+                                backgroundColor: '#444F2F' // Brand olive green
+                            },
+                            {
+                                label: 'Seleccionados (Top 150) - Puntaje Normal',
+                                data: normalData,
+                                backgroundColor: '#E76F51' // Terracotta
+                            },
+                            {
+                                label: 'Seleccionados (Top 150) - Puntaje Ajustado',
+                                data: adjustedData,
+                                backgroundColor: '#2A9D8F' // Teal
+                            }
+                        ]
                     },
                     plugins: [ChartDataLabels],
-                    options: { 
-                        responsive: true, 
-                        maintainAspectRatio: false, 
-                        scales: { 
-                            y: { beginAtZero: true, ticks: { stepSize: 1 } },
-                            x: { ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 } }
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: { stepSize: 1 }
+                            },
+                            x: {
+                                ticks: {
+                                    autoSkip: false,
+                                    maxRotation: 45,
+                                    minRotation: 45,
+                                    font: {
+                                        size: 11,
+                                        weight: 'bold'
+                                    }
+                                }
+                            }
                         },
                         layout: {
                             padding: { top: 25 }
@@ -1439,16 +1997,14 @@
                             datalabels: {
                                 anchor: 'end',
                                 align: 'top',
-                                offset: 4,
-                                formatter: (value, ctx) => {
-                                    if (total === 0) return '';
-                                    let percentage = (value * 100 / total).toFixed(1) + "%";
-                                    return value + ' (' + percentage + ')';
+                                offset: 2,
+                                formatter: (value) => {
+                                    return value > 0 ? value : ''; // Hide zeroes to avoid clutter
                                 },
-                                color: '#444F2F',
+                                color: '#333',
                                 font: {
                                     weight: 'bold',
-                                    size: 11
+                                    size: 10
                                 }
                             }
                         }
@@ -1479,10 +2035,13 @@
 
         async function logout() {
             try {
+                localStorage.removeItem('authenticated');
+                localStorage.removeItem('is_admin');
                 await fetch('api/logout.php');
                 window.location.href = 'login.html';
             } catch (error) {
                 console.error('Logout error:', error);
+                window.location.href = 'login.html';
             }
         }
 
@@ -1490,22 +2049,32 @@
             // Get currently filtered data (or all if no filters)
             const nombreVal = document.getElementById('filter-nombre').value.toLowerCase();
             const veredaVal = document.getElementById('filter-vereda').value;
+            const cuencaVal = document.getElementById('filter-cuenca') ? document.getElementById('filter-cuenca').value : '';
             const fechaVal = document.getElementById('filter-fecha').value;
             const caracterizadoVal = document.getElementById('filter-caracterizado').value;
             const mypimeVal = document.getElementById('filter-mypime').value;
-            const efectividadVal = document.getElementById('filter-efectividad').value;
-            const panacaVal = document.getElementById('filter-panaca').value;
+            const actividadVal = document.getElementById('filter-actividad').value;
 
             const dataToExport = allProducers.filter(p => {
                 let matchNombre = !nombreVal || p.nombre_completo.toLowerCase().includes(nombreVal);
                 let matchVereda = !veredaVal || p.vereda === veredaVal;
+                let matchCuenca = !cuencaVal || p.cuenca === cuencaVal;
                 let matchFecha = !fechaVal || (p.fecha_creacion && p.fecha_creacion.startsWith(fechaVal));
                 let matchCaracterizado = caracterizadoVal === "" || p.tiene_caracterizacion == caracterizadoVal;
                 let matchMypime = mypimeVal === "" || p.mypime == mypimeVal;
-                let matchEfectividad = efectividadVal === "" || p.efectividad_2025 == efectividadVal;
-                let matchPanaca = panacaVal === "" || p.panaca == panacaVal;
 
-                return matchNombre && matchVereda && matchFecha && matchCaracterizado && matchMypime && matchEfectividad && matchPanaca;
+                let matchActividad = true;
+                if (actividadVal) {
+                    if (p.categorias_ids) {
+                        const catIds = p.categorias_ids.split(',');
+                        matchActividad = catIds.includes(actividadVal);
+                    } else {
+                        matchActividad = false;
+                    }
+                }
+
+                return matchNombre && matchVereda && matchCuenca && matchFecha && matchCaracterizado && 
+                       matchMypime && matchActividad;
             });
 
             if (dataToExport.length === 0) {
@@ -1513,22 +2082,46 @@
                 return;
             }
 
+            // Sort by ranking
+            dataToExport.sort((a, b) => {
+                if (a.ranking === null && b.ranking === null) return 0;
+                if (a.ranking === null) return 1;
+                if (b.ranking === null) return -1;
+                return a.ranking - b.ranking;
+            });
+
             // Create a standard CSV flat file (archivo plano)
             const headers = [
-                'Fecha Inscripción', 'Nombre Completo', 'Tipo Documento', 'Número Documento',
-                'Vereda', 'Teléfono', 'Correo Electrónico', 'Nombre Predio', 'Fecha Nacimiento', 'Mypime', 'Efectividad 2025', 'Panaca'
+                'Ranking', 'Puntaje Total', 'Puntaje Ajustado', 'Estado Caracterización', 'Fecha Inscripción', 
+                'Nombre Completo', 'Tipo Documento', 'Número Documento', 'Vereda', 'Cuenca', 'Teléfono', 
+                'Correo Electrónico', 'Nombre Predio', 'Fecha Nacimiento', 'Mypime', 'Efectividad 2025', 'Panaca'
             ];
 
             // BOM (Byte Order Mark) forces Excel to read UTF-8 properly (accents)
             let csvString = '\uFEFF' + headers.join(';') + '\r\n';
 
             dataToExport.forEach(p => {
+                const puntaje = (p.tiene_caracterizacion == 1 && p.puntaje !== null) ? p.puntaje : null;
+                const estado = !p.tiene_caracterizacion ? 'No Caracterizado' : 'Caracterizado';
+
+                const vNorm = normalizeVereda(p.vereda);
+                const countVereda = registeredVeredaCounts[vNorm] || 1;
+                const puntajeAjustado = puntaje !== null ? (puntaje * (1 + 1 / countVereda)) : null;
+                const puntajeAjustadoStr = puntajeAjustado !== null ? 
+                    (Number.isInteger(puntajeAjustado) ? puntajeAjustado : puntajeAjustado.toFixed(2)) : 
+                    'N/A';
+
                 const row = [
+                    p.ranking || '-',
+                    puntaje !== null ? puntaje : 'N/A',
+                    puntajeAjustadoStr,
+                    estado,
                     p.fecha_creacion || '-',
                     `"${p.nombre_completo || '-'}"`,
                     p.tipo_documento || '-',
                     p.numero_documento || '-',
                     `"${p.vereda || '-'}"`,
+                    `"${p.cuenca || '-'}"`,
                     p.telefono || '-',
                     `"${p.correo_electronico || '-'}"`,
                     `"${p.nombre_predio || '-'}"`,
@@ -1858,6 +2451,541 @@
             } catch (error) {
                 console.error("Error al exportar productores con coordenadas:", error);
                 alert("Ocurrió un error al intentar exportar los productores con coordenadas.");
+            }
+        }
+
+        function downloadTemplateWithAnswers() {
+            try {
+                if (typeof XLSX === 'undefined') {
+                    alert('La librería de Excel (XLSX) no ha cargado correctamente. Por favor verifica tu conexión a internet o recarga la página.');
+                    return;
+                }
+                // Sheet 1: Ficha Base
+                const baseForm = [
+                    // Section I
+                    {
+                        "Sección": "I. Información General (Complementaria)",
+                        "Pregunta / Campo": "Teléfono",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Especifique el número de teléfono del productor (ej. 3123456789)"
+                    },
+                    {
+                        "Sección": "I. Información General (Complementaria)",
+                        "Pregunta / Campo": "Correo electrónico",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Especifique el correo electrónico (ej. productor@email.com)"
+                    },
+                    {
+                        "Sección": "I. Información General (Complementaria)",
+                        "Pregunta / Campo": "Coordenadas GPS del Predio",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Coordenadas en formato Latitud, Longitud (ej. 4.2592, -74.2255)"
+                    },
+                    {
+                        "Sección": "I. Información General (Complementaria)",
+                        "Pregunta / Campo": "Fecha de Caracterización",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Fecha del diligenciamiento en formato AAAA-MM-DD (ej. 2026-06-14)"
+                    },
+                    // Section II
+                    {
+                        "Sección": "II. Información Sociodemográfica",
+                        "Pregunta / Campo": "¿Hace parte de estos grupos poblacionales?",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba los números de las opciones que apliquen separados por comas (ej. 1, 3):\n1: Mujer cabeza de hogar\n2: LGBTIQ+\n3: Víctima del conflicto armado\n4: Afrodescendiente\n5: Indígena\n6: Mujer < 25 o > 60\n7: Joven rural\n8: Ninguna"
+                    },
+                    {
+                        "Sección": "II. Información Sociodemográfica",
+                        "Pregunta / Campo": "¿Presenta algún tipo de discapacidad?",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba una de las siguientes opciones:\n- No\n- Sí"
+                    },
+                    {
+                        "Sección": "II. Información Sociodemográfica",
+                        "Pregunta / Campo": "Si respondió sí, ¿qué tipo?",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Especifique el tipo de discapacidad si la respuesta anterior fue 'Sí'"
+                    },
+                    // Section III
+                    {
+                        "Sección": "III. Información Organizacional",
+                        "Pregunta / Campo": "Tipo de organización",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba una de las siguientes opciones:\n- Productor individual\n- Gremio / Federación\n- Asociación campesina\n- Sociedad por acciones simplificada\n- Fundación\n- Organización\n- Ninguna"
+                    },
+                    {
+                        "Sección": "III. Información Organizacional",
+                        "Pregunta / Campo": "Nombre de la organización",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba el nombre de la organización a la que pertenece"
+                    },
+                    {
+                        "Sección": "III. Información Organizacional",
+                        "Pregunta / Campo": "Extensión del predio (Hectáreas)",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba la extensión del predio en hectáreas utilizando números decimales (ej. 3.5)"
+                    },
+                    {
+                        "Sección": "III. Información Organizacional",
+                        "Pregunta / Campo": "Tiempo de implementación (meses)",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba el tiempo de funcionamiento de la actividad en meses (ej. 48)"
+                    },
+                    {
+                        "Sección": "III. Información Organizacional",
+                        "Pregunta / Campo": "Tipo de tenencia del predio",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba una de las siguientes opciones:\n- Arrendamiento\n- Posesión\n- Propio"
+                    },
+                    {
+                        "Sección": "III. Información Organizacional",
+                        "Pregunta / Campo": "¿Cuántas personas están vinculadas a su organización?",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba el número entero de personas vinculadas (ej. 4)"
+                    },
+                    // Section IV
+                    {
+                        "Sección": "IV. Categorías Productivas",
+                        "Pregunta / Campo": "Subcategorías productivas en las que participa",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba los números de las subcategorías correspondientes separados por comas (ej. 1, 8, 11):\n\nPECUARIA/LÁCTEOS:\n1: Leche fresca\n2: Quesos/yogurt/arequipe\n3: Carne de res\n4: Carne de cerdo\n5: Carne de pollo\n6: Trucha\n7: Otras especies (cuy, conejo)\n8: Huevos\n9: Chorizos/embutidos\n10: Apicultura (miel, polen)\n\nAGRÍCOLA:\n11: Hortalizas (zanahoria, lechuga, cebolla, ajo, etc.)\n12: Tubérculos/raíces (papa, arracacha, yuca, cubios)\n13: Leguminosas/cereales (arveja, frijol, maíz, trigo, etc.)\n\nFRUTÍCOLA:\n14: Frutas (mora, fresa, durazno, tomate de árbol, etc.)\n15: Subproductos (mermeladas, pulpas, deshidratados)\n\nAROMÁTICAS/NATURALES:\n16: Plantas (manzanilla, menta, caléndula, etc.)\n17: Productos (infusiones, aceites, jabones, cremas)\n\nTRANSFORMACIÓN ARTESANAL:\n18: Panadería/repostería (panes, bizcochos, galletas)\n19: Harinas/derivados (arepas, avena, mezclas)\n20: Conservas/salsas/encurtidos\n\nARTESANÍAS/MANUFACTURAS:\n21: Tejidos, alpargatas, cestería, carpintería\n22: Artículos utilitarios o decorativos\n23: Forja y ornamentación metálica\n\nARTÍSTICO/CULTURAL:\n24: Actividades culturales\n25: Actividades deportivas\n\nSERVICIOS RURALES/GASTRONOMÍA:\n26: Restaurantes, panaderías y tiendas veredales\n27: Preparación de alimentos/catering\n28: Turismo rural, paseos, hospedaje\n29: Alquiler de maquinaria, transporte rural"
+                    },
+                    // Section V - Canales
+                    {
+                        "Sección": "V. Información de Producción - Canales de Venta / Entrega",
+                        "Pregunta / Campo": "¿Cómo vende o entrega sus productos/servicios?",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba los números correspondientes separados por comas (ej. 2, 4):\n1: Los vendo en mi vereda o zona rural\n2: Lo recogen directamente en la finca\n3: Los llevo a mercados o ferias campesinas\n4: Por pedido directo o conocidos o clientes\n5: A través de intermediarios o revendedores\n6: Participación en mesas del sector\n7: A entidades públicas (PAE, escuelas, hospitales)\n8: Difusión por redes sociales"
+                    },
+                    // Section VI
+                    {
+                        "Sección": "VI. Caracterización del Sistema Productivo",
+                        "Pregunta / Campo": "Tipo de mano de obra",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba una de las siguientes opciones:\n- FAMILIAR\n- EXTERNA\n- MIXTA (FAMILIA Y APOYO EXTERNO)"
+                    },
+                    {
+                        "Sección": "VI. Caracterización del Sistema Productivo",
+                        "Pregunta / Campo": "Proceso productivo mayoritario",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba una de las siguientes opciones:\n- MANUAL (HERRAMIENTAS BÁSICAS O MANUAL)\n- CON MAQUINARIA O EQUIPOS ESPECIALIZADOS\n- NO APLICA"
+                    },
+                    {
+                        "Sección": "VI. Caracterización del Sistema Productivo",
+                        "Pregunta / Campo": "¿Utiliza abonos orgánicos o prácticas agroecológicas?",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba una de las siguientes opciones:\n- SÍ\n- NO"
+                    },
+                    {
+                        "Sección": "VI. Caracterización del Sistema Productivo",
+                        "Pregunta / Campo": "¿Tiene sistemas productivos asociados o complementarios?",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba una de las siguientes opciones:\n- SÍ\n- NO"
+                    },
+                    {
+                        "Sección": "VI. Caracterización del Sistema Productivo",
+                        "Pregunta / Campo": "¿Maneja algún tipo de sistema de producción diferenciado?",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba una de las siguientes opciones:\n- SÍ\n- NO"
+                    },
+                    {
+                        "Sección": "VI. Caracterización del Sistema Productivo",
+                        "Pregunta / Campo": "Si respondió sí, ¿cuál?",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Especifique el sistema de producción diferenciado si la respuesta anterior fue 'SÍ'"
+                    },
+                    {
+                        "Sección": "VI. Caracterización del Sistema Productivo",
+                        "Pregunta / Campo": "Si su actividad es cultural/deportiva ¿cuál es su valor agregado?",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba una breve descripción del valor agregado de su actividad"
+                    },
+                    // Section VII
+                    {
+                        "Sección": "VII. Comercialización y Dificultades",
+                        "Pregunta / Campo": "Destino principal de la producción",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba una de las siguientes opciones:\n- Para el autoconsumo\n- Para autoconsumo y venta de excedentes\n- Para venta total o comercialización completa\n- Otro"
+                    },
+                    {
+                        "Sección": "VII. Comercialización y Dificultades",
+                        "Pregunta / Campo": "Transporte utilizado",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba una de las siguientes opciones:\n- PROPIO\n- ALQUILADO\n- DEPENDO DE TRANSPORTE COMUNAL, FAMILIAR O DE AMIGOS (SIN PAGO)\n- NO TENGO TRANSPORTE"
+                    },
+                    {
+                        "Sección": "VII. Comercialización y Dificultades",
+                        "Pregunta / Campo": "Forma de pago",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba una de las siguientes opciones:\n- ANTES DE ENTREGARLOS / ANTES DE PRESENTARSE\n- EN EL MOMENTO DE LA ENTREGA / PRESENTACIÓN\n- DESPUÉS DE LA ENTREGA / PRESENTACIÓN (A CRÉDITO O PLAZO)"
+                    },
+                    {
+                        "Sección": "VII. Comercialización y Dificultades",
+                        "Pregunta / Campo": "Fijación del precio",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba una de las siguientes opciones:\n- EL COMPRADOR\n- YO LO ESTABLEZCO DIRECTAMENTE\n- SE ACUERDA MEDIANTE NEGOCIACIÓN"
+                    },
+                    {
+                        "Sección": "VII. Comercialización y Dificultades",
+                        "Pregunta / Campo": "¿Cuáles son las principales dificultades o limitaciones? (Marque todas las que apliquen)",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba los números correspondientes separados por comas (ej. 1, 3, 6):\n1: ALTOS COSTOS DE MATERIAS PRIMAS O INSUMOS\n2: DESCONOCIMIENTO O LIMITACIONES EN LOS PROCESOS DE PRODUCCIÓN\n3: FALTA DE FINANCIACIÓN O ACCESO AL CRÉDITO\n4: ESCASO APOYO INSTITUCIONAL O ASISTENCIA TÉCNICA\n5: INFRAESTRUCTURA INADECUADA\n6: PROBLEMAS CLIMÁTICOS O DE PLAGAS\n7: DIFICULTADES DE TRANSPORTE O ACCESO AL PREDIO / LUGARES DE FORMACIÓN/PRESENTACIÓN\n8: SOLICITUD DE PERMISOS PARA ESPACIOS PÚBLICOS (SUGA)"
+                    },
+                    {
+                        "Sección": "VII. Comercialización y Dificultades",
+                        "Pregunta / Campo": "¿Cuenta con alguno de los siguientes registros, permisos o certificaciones? (Marque todas las que apliquen)",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba los números correspondientes separados por comas (ej. 6, 9):\n1: REGISTRO INVIMA\n2: REGISTRO ICA - PREDIO AGRÍCOLA\n3: REGISTRO ICA - PREDIO PECUARIO\n4: BUENAS PRÁCTICAS AGRÍCOLAS (BPA)\n5: BUENAS PRÁCTICAS BPP O BPM\n6: CERTIFICADO EN MANIPULACIÓN DE ALIMENTOS\n7: RECONOCIMIENTO O CERTIFICADO IDRD\n8: REGISTRO MIN CULTURA\n9: NINGUNO"
+                    },
+                    {
+                        "Sección": "VII. Comercialización y Dificultades",
+                        "Pregunta / Campo": "¿Se encuentra en proceso de trámite o gestión de alguno de los anteriores?",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba una de las siguientes opciones:\n- No\n- Sí"
+                    },
+                    {
+                        "Sección": "VII. Comercialización y Dificultades",
+                        "Pregunta / Campo": "Si respondió sí, ¿cuál o cuáles?",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Especifique cuál o cuáles permisos se encuentran en trámite si la respuesta anterior fue 'Sí'"
+                    },
+                    // Section VIII
+                    {
+                        "Sección": "VIII. Financiamiento",
+                        "Pregunta / Campo": "¿Ha tenido acceso a procesos de financiamiento?",
+                        "Respuesta (Diligenciar aquí)": "",
+                        "Instrucciones / Opciones de Respuesta": "Escriba el número de la opción si aplica (ej. 1):\n1: CRÉDITOS AGROPECUARIOS\n2: COOPERATIVAS\n3: LÍNEAS ESPECIALES DE CRÉDITO\n4: PROGRAMAS DE APOYO CAMPESINO\n5: CRÉDITOS BANCARIOS"
+                    }
+                ];
+
+                // Sheet 2: Productos Ofertados
+                const productsTemplate = [
+                    {
+                        "Nombre del Producto": "Ej. Papa Pastusa",
+                        "Volumen Producido (Número)": 150,
+                        "Unidad de Volumen": "Bultos",
+                        "Frecuencia de Producción": "Mensual",
+                        "Presentación": "Fresco / Natural",
+                        "Calidad": "Primera / Excelente",
+                        "Precio Unitario ($)": 80000,
+                        "Unidad de Medida del Precio": "Por Bulto"
+                    },
+                    {
+                        "Nombre del Producto": "",
+                        "Volumen Producido (Número)": "",
+                        "Unidad de Volumen": "",
+                        "Frecuencia de Producción": "",
+                        "Presentación": "",
+                        "Calidad": "",
+                        "Precio Unitario ($)": "",
+                        "Unidad de Medida del Precio": ""
+                    },
+                    {
+                        "Nombre del Producto": "",
+                        "Volumen Producido (Número)": "",
+                        "Unidad de Volumen": "",
+                        "Frecuencia de Producción": "",
+                        "Presentación": "",
+                        "Calidad": "",
+                        "Precio Unitario ($)": "",
+                        "Unidad de Medida del Precio": ""
+                    }
+                ];
+
+                // Add instruction text for inputs
+                const productsInstructions = [
+                    "INSTRUCCIONES:",
+                    "- Diligencie cada fila con un producto ofertado.",
+                    "- Unidad de Volumen válidas: Kilos, Litros, Libras, Toneladas, Unidades, Docenas, Atados, Canastillas, Bultos, Cajas, Pacas",
+                    "- Frecuencia válidas: Diarios, Semanal, Quincenal, Mensual, Bimestral, Trimestral, Semestral, Anual, Cosecha principal, Cosecha mitaca",
+                    "- Presentación válidas: Fresco / Natural, Procesado / Empacado, Envasado, Seco / Deshidratado, A granel, En bandeja, Bolsa plástica, Frasco de vidrio, Caja de cartón",
+                    "- Calidad válidas: Primera / Excelente, Segunda / Estándar, Tercera / Económica",
+                    "- Unidad de Medida del Precio válidas: Por Kilo, Por Litro, Por Libra, Por Tonelada, Por Unidad, Por Docena, Por Atado, Por Canastilla, Por Bulto, Por Caja, Por Paca"
+                ];
+
+                // Sheet 3: Servicios
+                const servicesTemplate = [
+                    {
+                        "Nombre de la Actividad / Servicio": "Ej. Paseo Ecológico Guiado",
+                        "Frecuencia de la Actividad": "Fin de semana",
+                        "Población Objetivo (Texto)": "Turistas y familias",
+                        "Tipo de Contrato / Venta (Texto)": "Venta directa de boleto",
+                        "Lugar de Prestación (Texto)": "Vereda Las Sopas, Finca El Mirador",
+                        "Recursos / Equipamiento Necesario": "Bastones de caminata, equipo de primeros auxilios"
+                    },
+                    {
+                        "Nombre de la Actividad / Servicio": "",
+                        "Frecuencia de la Actividad": "",
+                        "Población Objetivo (Texto)": "",
+                        "Tipo de Contrato / Venta (Texto)": "",
+                        "Lugar de Prestación (Texto)": "",
+                        "Recursos / Equipamiento Necesario": ""
+                    },
+                    {
+                        "Nombre de la Actividad / Servicio": "",
+                        "Frecuencia de la Actividad": "",
+                        "Población Objetivo (Texto)": "",
+                        "Tipo de Contrato / Venta (Texto)": "",
+                        "Lugar de Prestación (Texto)": "",
+                        "Recursos / Equipamiento Necesario": ""
+                    }
+                ];
+
+                const servicesInstructions = [
+                    "INSTRUCCIONES:",
+                    "- Diligencie cada fila con un servicio o actividad ofertada.",
+                    "- Frecuencia de la Actividad válidas: Diaria, Semanal, Mensual, Eventos esporádicos, Por temporada, Bajo demanda, Fin de semana, Feriados"
+                ];
+
+                // Create Sheets
+                const wsBase = XLSX.utils.json_to_sheet(baseForm);
+                const wsProducts = XLSX.utils.json_to_sheet(productsTemplate);
+                const wsServices = XLSX.utils.json_to_sheet(servicesTemplate);
+
+                // Add instructions to sheets as unformatted rows below the templates using explicit origins
+                const productsRange = XLSX.utils.decode_range(wsProducts['!ref']);
+                const nextRowP = productsRange.e.r + 1;
+                XLSX.utils.sheet_add_aoa(wsProducts, [[""]], { origin: "A" + (nextRowP + 1) });
+                XLSX.utils.sheet_add_aoa(wsProducts, productsInstructions.map(i => [i]), { origin: "A" + (nextRowP + 2) });
+                
+                const servicesRange = XLSX.utils.decode_range(wsServices['!ref']);
+                const nextRowS = servicesRange.e.r + 1;
+                XLSX.utils.sheet_add_aoa(wsServices, [[""]], { origin: "A" + (nextRowS + 1) });
+                XLSX.utils.sheet_add_aoa(wsServices, servicesInstructions.map(i => [i]), { origin: "A" + (nextRowS + 2) });
+
+                // Auto-adjust column widths for base form
+                wsBase['!cols'] = [
+                    { wch: 35 }, // Sección
+                    { wch: 45 }, // Pregunta / Campo
+                    { wch: 30 }, // Respuesta
+                    { wch: 65 }  // Instrucciones / Opciones
+                ];
+
+                // Enable wrapping for base form multi-line text
+                const baseRange = XLSX.utils.decode_range(wsBase['!ref']);
+                for (let R = baseRange.s.r; R <= baseRange.e.r; ++R) {
+                    const cellRefInst = XLSX.utils.encode_cell({ r: R, c: 3 }); // Column 3: Instrucciones
+                    if (wsBase[cellRefInst] && wsBase[cellRefInst].v && typeof wsBase[cellRefInst].v === 'string' && wsBase[cellRefInst].v.includes('\n')) {
+                        if (!wsBase[cellRefInst].s) wsBase[cellRefInst].s = {};
+                        wsBase[cellRefInst].s.alignment = { wrapText: true, vertical: 'top' };
+                    }
+                }
+
+                // Columns widths for Products and Services
+                wsProducts['!cols'] = [
+                    { wch: 25 }, // Nombre
+                    { wch: 28 }, // Volumen
+                    { wch: 20 }, // Unidad
+                    { wch: 22 }, // Frecuencia
+                    { wch: 22 }, // Presentación
+                    { wch: 20 }, // Calidad
+                    { wch: 20 }, // Precio
+                    { wch: 28 }  // Unidad Precio
+                ];
+
+                wsServices['!cols'] = [
+                    { wch: 30 }, // Nombre
+                    { wch: 25 }, // Frecuencia
+                    { wch: 30 }, // Población
+                    { wch: 30 }, // Tipo Contrato
+                    { wch: 35 }, // Lugar
+                    { wch: 45 }  // Recursos
+                ];
+
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, wsBase, "Ficha Base");
+                XLSX.utils.book_append_sheet(wb, wsProducts, "Productos Ofertados");
+                XLSX.utils.book_append_sheet(wb, wsServices, "Servicios y Actividades");
+                
+                XLSX.writeFile(wb, `formato_caracterizacion_diligenciable_${new Date().toISOString().split('T')[0]}.xlsx`);
+            } catch (error) {
+                console.error("Error al descargar la plantilla:", error);
+                alert("Error al descargar la plantilla de caracterización: " + error.message);
+            }
+        }
+
+        async function downloadScoresWithJustifications() {
+            const btn = document.getElementById('btn-download-scores');
+            let originalText = "";
+            if (btn) {
+                originalText = btn.innerHTML;
+                btn.innerHTML = `
+                    <svg style="width:20px; height:20px; animation: spin 1s linear infinite; display: inline-block; vertical-align: middle; margin-right: 8px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18" />
+                    </svg>
+                    Procesando...
+                `;
+                btn.disabled = true;
+            }
+
+            try {
+                const response = await fetch('api/get_productores_puntajes.php');
+                const result = await response.json();
+                
+                if (!result.success || !result.data) {
+                    alert('Error al descargar los puntajes: ' + (result.error || 'Error desconocido'));
+                    return;
+                }
+
+                const data = result.data;
+                if (data.length === 0) {
+                    alert('No hay productores caracterizados para descargar.');
+                    return;
+                }
+
+                // Group by vereda to compute ranking vereda
+                const veredaGroups = {};
+                data.forEach(p => {
+                    const v = (p.vereda || 'SIN VEREDA').trim().toUpperCase();
+                    if (!veredaGroups[v]) {
+                        veredaGroups[v] = [];
+                    }
+                    veredaGroups[v].push(p);
+                });
+
+                const rankingVeredaMap = {};
+                Object.keys(veredaGroups).forEach(vKey => {
+                    veredaGroups[vKey].sort((a, b) => b.puntaje - a.puntaje);
+                    veredaGroups[vKey].forEach((p, idx) => {
+                        rankingVeredaMap[p.id] = idx + 1;
+                    });
+                });
+
+                // Map data to flat excel rows
+                const rows = data.map((p, generalIdx) => {
+                    const veredaRank = rankingVeredaMap[p.id] || '-';
+                    const generalRank = generalIdx + 1;
+
+                    const puntaje = p.puntaje !== null ? parseFloat(p.puntaje) : null;
+                    const vNorm = normalizeVereda(p.vereda);
+                    const countVereda = registeredVeredaCounts[vNorm] || 1;
+                    const puntajeAjustado = puntaje !== null ? (puntaje * (1 + 1 / countVereda)) : null;
+                    const puntajeAjustadoVal = puntajeAjustado !== null ? 
+                        (Number.isInteger(puntajeAjustado) ? puntajeAjustado : parseFloat(puntajeAjustado.toFixed(2))) : 
+                        null;
+                    
+                    const row = {
+                        "Puesto General": generalRank,
+                        "Ranking Vereda": veredaRank,
+                        "Productor": p.nombre_completo || '-',
+                        "Vereda": p.vereda || '-',
+                        "Estado Caracterización": p.is_complete ? 'Completa' : 'Incompleta',
+                        "Puntaje Total": p.puntaje,
+                        "Puntaje Ajustado": puntajeAjustadoVal,
+                        "C1. Social (Total/20)": p.scores?.puntaje_social ?? 0,
+                        "C2. Organizacional (Total/15)": p.scores?.puntaje_organizacional ?? 0,
+                        "C3. Productivo (Total/25)": p.scores?.puntaje_productivo ?? 0,
+                        "C4. Comercial (Total/15)": p.scores?.puntaje_comercial ?? 0,
+                        "C5. Ambiental (Total/15)": p.scores?.puntaje_ambiental ?? 0,
+                        "C6. Impacto (Total/10)": p.scores?.puntaje_impacto ?? 0
+                    };
+
+                    const breakdown = p.scores?.breakdown || {};
+                    const getCritScore = (key) => breakdown[key] ? breakdown[key].score : 0;
+                    const getCritDetail = (key) => breakdown[key] ? breakdown[key].detail : 'No aplica';
+
+                    row["C1. Discapacidad (Puntos)"] = getCritScore("c1_discapacidad");
+                    row["C1. Discapacidad (Detalle)"] = getCritDetail("c1_discapacidad");
+
+                    row["C1. Mujer Cabeza Hogar (Puntos)"] = getCritScore("c1_mujer_cabeza");
+                    row["C1. Mujer Cabeza Hogar (Detalle)"] = getCritDetail("c1_mujer_cabeza");
+
+                    row["C1. Víctima Conflicto (Puntos)"] = getCritScore("c1_victima");
+                    row["C1. Víctima Conflicto (Detalle)"] = getCritDetail("c1_victima");
+
+                    row["C1. Joven/Adulto Mayor (Puntos)"] = getCritScore("c1_joven_adulto");
+                    row["C1. Joven/Adulto Mayor (Detalle)"] = getCritDetail("c1_joven_adulto");
+
+                    row["C2. Organización Productiva (Puntos)"] = getCritScore("c2_organizacion");
+                    row["C2. Organización Productiva (Detalle)"] = getCritDetail("c2_organizacion");
+
+                    row["C2. Articulación Comunitaria (Puntos)"] = getCritScore("c2_comunitaria");
+                    row["C2. Articulación Comunitaria (Detalle)"] = getCritDetail("c2_comunitaria");
+
+                    row["C2. Gestor Conocimiento (Puntos)"] = getCritScore("c2_gestor");
+                    row["C2. Gestor Conocimiento (Detalle)"] = getCritDetail("c2_gestor");
+
+                    row["C3. Tiempo Implementación (Puntos)"] = getCritScore("c3_tiempo");
+                    row["C3. Tiempo Implementación (Detalle)"] = getCritDetail("c3_tiempo");
+
+                    row["C3. Tenencia Predio (Puntos)"] = getCritScore("c3_tenencia");
+                    row["C3. Tenencia Predio (Detalle)"] = getCritDetail("c3_tenencia");
+
+                    row["C3. Producción Verificable (Puntos)"] = getCritScore("c3_produccion");
+                    row["C3. Producción Verificable (Detalle)"] = getCritDetail("c3_produccion");
+
+                    row["C3. Diversificación (Puntos)"] = getCritScore("c3_diversificacion");
+                    row["C3. Diversificación (Detalle)"] = getCritDetail("c3_diversificacion");
+
+                    row["C3. Mano de Obra (Puntos)"] = getCritScore("c3_mano_obra");
+                    row["C3. Mano de Obra (Detalle)"] = getCritDetail("c3_mano_obra");
+
+                    row["C4. Canales Comercialización (Puntos)"] = getCritScore("c4_canales");
+                    row["C4. Canales Comercialización (Detalle)"] = getCritDetail("c4_canales");
+
+                    row["C4. Frecuencia Venta (Puntos)"] = getCritScore("c4_frecuencia");
+                    row["C4. Frecuencia Venta (Detalle)"] = getCritDetail("c4_frecuencia");
+
+                    row["C4. Integración Red (Puntos)"] = getCritScore("c4_integracion");
+                    row["C4. Integración Red (Detalle)"] = getCritDetail("c4_integracion");
+
+                    row["C5. Prácticas Sostenibles (Puntos)"] = getCritScore("c5_agroecologia");
+                    row["C5. Prácticas Sostenibles (Detalle)"] = getCritDetail("c5_agroecologia");
+
+                    row["C5. Conservación Ambiental (Puntos)"] = getCritScore("c5_conservacion");
+                    row["C5. Conservación Ambiental (Detalle)"] = getCritDetail("c5_conservacion");
+
+                    row["C5. Requisitos Sanitarios (Puntos)"] = getCritScore("c5_requisitos");
+                    row["C5. Requisitos Sanitarios (Detalle)"] = getCritDetail("c5_requisitos");
+
+                    row["C6. Potencial Piloto/Vitrina (Puntos)"] = getCritScore("c6_vitrina");
+                    row["C6. Potencial Piloto/Vitrina (Detalle)"] = getCritDetail("c6_vitrina");
+
+                    row["C6. Sello Territorial (Puntos)"] = getCritScore("c6_sello");
+                    row["C6. Sello Territorial (Detalle)"] = getCritDetail("c6_sello");
+
+                    const summaryParts = [];
+                    Object.keys(breakdown).forEach(key => {
+                        const item = breakdown[key];
+                        summaryParts.push(`[${item.score}/${item.max} pts] ${item.name}: ${item.detail || item.status}`);
+                    });
+                    row["Resumen de Justificación"] = summaryParts.join('; ');
+
+                    return row;
+                });
+
+                const ws = XLSX.utils.json_to_sheet(rows);
+
+                // Auto-adjust column widths
+                const colWidths = [];
+                const firstRow = rows[0];
+                if (firstRow) {
+                    Object.keys(firstRow).forEach(key => {
+                        let maxLen = key.length;
+                        rows.forEach(r => {
+                            const val = r[key] ? String(r[key]) : '';
+                            if (val.length > maxLen) {
+                                maxLen = val.length;
+                            }
+                        });
+                        const cap = key === "Resumen de Justificación" ? 100 : 50;
+                        colWidths.push({ wch: Math.min(Math.max(maxLen + 2, 10), cap) });
+                    });
+                    ws['!cols'] = colWidths;
+                }
+
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, "Puntajes y Justificaciones");
+                XLSX.writeFile(wb, `reporte_puntajes_justificaciones_${new Date().toISOString().split('T')[0]}.xlsx`);
+
+            } catch (error) {
+                console.error("Error al exportar productores con puntajes:", error);
+                alert("Error al exportar los puntajes con justificación: " + error.message);
+            } finally {
+                if (btn) {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                }
             }
         }
     </script>

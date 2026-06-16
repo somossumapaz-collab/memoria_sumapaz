@@ -32,9 +32,18 @@ try {
             CASE 
                 WHEN MAX(cp.id) IS NOT NULL THEN 1
                 ELSE 0
-            END AS tiene_caracterizacion
+            END AS tiene_caracterizacion,
+            MAX(cp.puntaje_social) AS puntaje_social,
+            MAX(cp.puntaje_organizacional) AS puntaje_organizacional,
+            MAX(cp.puntaje_productivo) AS puntaje_productivo,
+            MAX(cp.puntaje_comercial) AS puntaje_comercial,
+            MAX(cp.puntaje_ambiental) AS puntaje_ambiental,
+            MAX(cp.puntaje_impacto) AS puntaje_impacto,
+            MAX(cp.puntaje) AS puntaje,
+            GROUP_CONCAT(DISTINCT cpcat.categoria_id) AS categorias_ids
         FROM productores_sumapaz p
         LEFT JOIN caracterizacion_productor cp ON p.id = cp.productor_id
+        LEFT JOIN productor_categoria cpcat ON p.id = cpcat.productor_id
         GROUP BY p.id
         ORDER BY p.fecha_creacion DESC
     ");

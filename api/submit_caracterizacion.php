@@ -240,6 +240,9 @@ try {
         }
     }
 
+    require_once 'score_helper.php';
+    recalculate_and_save_score($pdo, $productor_id);
+
     $pdo->commit();
     echo json_encode(['success' => true, 'message' => 'Ficha técnica actualizada y guardada correctamente.']);
 

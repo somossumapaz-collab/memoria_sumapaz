@@ -1,30 +1,8 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '0');
+$_POST['message'] = '¿Qué productores tienen más de 70 años de edad?';
+$userMessage = '¿Qué productores tienen más de 70 años de edad?';
 
-// Catch errors and return as JSON
-set_error_handler(function($errno, $errstr, $errfile, $errline) {
-    echo json_encode(['error' => "PHP Error [$errno]: $errstr in $errfile on line $errline"]);
-    exit;
-});
-set_exception_handler(function($e) {
-    echo json_encode(['error' => "PHP Exception: " . $e->getMessage()]);
-    exit;
-});
-
-header('Content-Type: application/json');
-
-// 1. Recibir el mensaje del frontend
-$data = json_decode(file_get_contents('php://input'), true);
-$userMessage = isset($data['message']) ? trim($data['message']) : '';
-
-if (empty($userMessage)) {
-    echo json_encode(['error' => 'Mensaje vacío.']);
-    exit;
-}
-
-// 2. Conectarse a la base de datos y obtener información resumida y consolidada de los productores
-require_once 'db_config.php';
+require 'api/db_config.php';
 
 try {
     $sql = "
@@ -49,7 +27,6 @@ try {
     $stmt = $pdo->query($sql);
     $productores = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // Formatear la lista de productores para el contexto de la IA de manera ultra compacta para ahorrar tokens
     $dbContext = "INFORMACIÓN EN TIEMPO REAL DE LA BASE DE DATOS DE PRODUCTORES:\n";
     $dbContext .= "Total Inscritos: " . count($productores) . "\n";
     $dbContext .= "Listado de Productores (Formato: Nombre | Vereda | Cuenca | Predio | Coordenadas | Edad en 2026 | Categorías | Productos):\n";
@@ -72,18 +49,13 @@ try {
     }
 
 } catch (\PDOException $e) {
-    // Si falla la base de datos, seguimos adelante pero sin el contexto enriquecido (o con error)
-    $dbContext = "Error al obtener datos en tiempo real de la base de datos: " . $e->getMessage();
+    $dbContext = "Error: " . $e->getMessage();
 }
 
-// Load environment variables
-require_once __DIR__ . '/env_loader.php';
-
-// 3. Configuración de OpenAI con la API Key de variables de entorno
+require_once 'api/env_loader.php';
 $apiKey = getenv('OPENAI_API_KEY');
 $url = 'https://api.openai.com/v1/chat/completions';
 
-// 4. System prompt dinámico con el contexto de la base de datos integrado
 $systemPrompt = "Eres el asistente virtual de 'Somos Sumapaz', una plataforma que conecta a productores campesinos locales de la Localidad de Sumapaz (Bogotá) con compradores y comerciantes. Tu tono es amable, respetuoso y muy útil.
 
 Solo debes responder preguntas relacionadas con el campo, la agricultura, los productores locales, convocatorias de la plataforma, el territorio de Sumapaz y estadísticas de la base de datos. Si te preguntan algo fuera de este contexto, amablemente indica que tu propósito es ayudar con la plataforma Somos Sumapaz.
@@ -102,11 +74,10 @@ $messages = [
     ['role' => 'user', 'content' => $userMessage]
 ];
 
-// Datos para la API de OpenAI
 $postData = [
     'model' => 'gpt-4o-mini',
     'messages' => $messages,
-    'temperature' => 0.3, // Reducir temperatura para mayor precisión en conteos y datos reales
+    'temperature' => 0.3,
     'max_tokens' => 300
 ];
 
@@ -116,7 +87,7 @@ $options = [
                      "Authorization: Bearer " . $apiKey . "\r\n",
         'method'  => 'POST',
         'content' => json_encode($postData),
-        'ignore_errors' => true // para leer la respuesta de error de OpenAI
+        'ignore_errors' => true
     ],
     'ssl' => [
         'verify_peer' => false,
@@ -127,19 +98,5 @@ $options = [
 $context  = stream_context_create($options);
 $response = file_get_contents($url, false, $context);
 
-if ($response === false) {
-    echo json_encode(['error' => 'Error en la conexión con la IA (file_get_contents falló).']);
-    exit;
-}
-
-$responseData = json_decode($response, true);
-
-if (isset($responseData['choices'][0]['message']['content'])) {
-    $botReply = $responseData['choices'][0]['message']['content'];
-    echo json_encode(['reply' => trim($botReply)]);
-} else {
-    // Si hay algún error en la respuesta de OpenAI
-    $errorMsg = isset($responseData['error']['message']) ? $responseData['error']['message'] : 'Respuesta inválida de la IA.';
-    echo json_encode(['error' => 'Error de OpenAI: ' . $errorMsg]);
-}
+echo $response;
 ?>

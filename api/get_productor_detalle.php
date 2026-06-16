@@ -73,12 +73,15 @@ try {
 
     // 6. Disabilities
     $stmt = $pdo->prepare("
-        SELECT discapacidad 
+        SELECT tipo 
         FROM discapacidad_productor 
         WHERE productor_id = ?
     ");
     $stmt->execute([$id]);
     $discapacidades = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+    require_once 'score_helper.php';
+    $scores = calculate_producer_scores($pdo, $id);
 
     echo json_encode([
         'success' => true,
@@ -88,7 +91,8 @@ try {
             'grupos' => $grupos,
             'dificultades' => $dificultades,
             'certificaciones' => $certificaciones,
-            'discapacidades' => $discapacidades
+            'discapacidades' => $discapacidades,
+            'scores' => $scores
         ]
     ]);
 
