@@ -1,0 +1,337 @@
+{
+    "actividades": [
+        "id (bigint(20) unsigned)",
+        "productor_id (bigint(20) unsigned)",
+        "nombre (text)",
+        "frecuencia (text)",
+        "poblacion_objetivo (text)",
+        "tipo_contrato (text)",
+        "lugar (text)",
+        "recursos (text)"
+    ],
+    "canales_venta": [
+        "id (bigint(20) unsigned)",
+        "nombre (text)"
+    ],
+    "caracterizacion_productor": [
+        "id (bigint(20) unsigned)",
+        "productor_id (bigint(20) unsigned)",
+        "fecha_caracterizacion (date)",
+        "coordenadas (text)",
+        "tipo_organizacion (varchar(255))",
+        "extension_predio (varchar(100))",
+        "tiempo_implementacion (varchar(100))",
+        "tipo_tenencia (varchar(100))",
+        "numero_personas (int(11))",
+        "nombre_organizacion (varchar(255))",
+        "mano_obra (varchar(255))",
+        "tipo_proceso (varchar(255))",
+        "usa_abonos (varchar(10))",
+        "sistemas_asociados (text)",
+        "sistema_diferenciado (varchar(255))",
+        "descripcion (text)",
+        "valor_agregado (text)",
+        "destino (varchar(255))",
+        "transporte (varchar(255))",
+        "forma_pago (varchar(255))",
+        "define_precio (varchar(255))",
+        "en_tramite_bool (varchar(10))",
+        "en_tramite (varchar(255))",
+        "puntaje_social (int(11))",
+        "puntaje_organizacional (int(11))",
+        "puntaje_productivo (int(11))",
+        "puntaje_comercial (int(11))",
+        "puntaje_ambiental (int(11))",
+        "puntaje_impacto (int(11))",
+        "puntaje (int(11))"
+    ],
+    "categorias_productivas": [
+        "id (bigint(20) unsigned)",
+        "tipo (varchar(100))",
+        "nombre (text)"
+    ],
+    "categorias_productos": [
+        "id (int(11))",
+        "categoria (varchar(255))"
+    ],
+    "certificaciones": [
+        "id (bigint(20) unsigned)",
+        "nombre (varchar(255))"
+    ],
+    "comercializacion": [
+        "id (bigint(20) unsigned)",
+        "productor_id (bigint(20) unsigned)",
+        "destino (text)",
+        "transporte (varchar(150))",
+        "forma_pago (varchar(150))",
+        "define_precio (varchar(150))"
+    ],
+    "dificultades": [
+        "id (bigint(20) unsigned)",
+        "nombre (text)"
+    ],
+    "discapacidad_productor": [
+        "id (bigint(20) unsigned)",
+        "productor_id (bigint(20) unsigned)",
+        "tiene_discapacidad (tinyint(1))",
+        "tipo (text)"
+    ],
+    "financiamiento": [
+        "id (bigint(20) unsigned)",
+        "nombre (text)"
+    ],
+    "grupos_poblacionales": [
+        "id (bigint(20) unsigned)",
+        "nombre (text)"
+    ],
+    "persona_datos_personales": [
+        "id (int(11))",
+        "nombre (varchar(150))",
+        "tipo_documento (varchar(50))",
+        "documento (varchar(50))",
+        "fecha_nacimiento (date)",
+        "departamento_nacimiento (varchar(100))",
+        "municipio_nacimiento (varchar(100))",
+        "telefono (varchar(20))",
+        "email (varchar(100))",
+        "vereda (varchar(100))",
+        "ruta_cedula (text)",
+        "ruta_foto (text)",
+        "fecha_creacion (timestamp)",
+        "descripcion (text)",
+        "habilidades (text)",
+        "pais_nacimiento (varchar(100))",
+        "departamento_residencia (varchar(100))",
+        "municipio_residencia (varchar(100))"
+    ],
+    "persona_educacion": [
+        "id (int(11))",
+        "persona_id (int(11))",
+        "titulo (varchar(150))",
+        "institucion (varchar(150))",
+        "nivel_educacion (varchar(100))",
+        "fecha_inicio (date)",
+        "fecha_fin (date)",
+        "ruta_soporte (varchar(255))",
+        "fecha_creacion (timestamp)",
+        "titulo_obtenido (varchar(255))"
+    ],
+    "persona_experiencia": [
+        "id (int(11))",
+        "persona_id (int(11))",
+        "cargo (varchar(150))",
+        "empresa (varchar(150))",
+        "fecha_inicio (date)",
+        "fecha_fin (date)",
+        "descripcion (text)",
+        "ruta_soporte (varchar(255))",
+        "fecha_creacion (timestamp)"
+    ],
+    "persona_referencia": [
+        "id (int(11))",
+        "persona_id (int(11))",
+        "nombre (varchar(150))",
+        "telefono (varchar(20))",
+        "relacion (varchar(100))",
+        "ocupacion (varchar(150))",
+        "fecha_creacion (timestamp)"
+    ],
+    "pmapc_registros": [
+        "id (int(11))",
+        "productor_id (bigint(20) unsigned)",
+        "data (longtext)",
+        "created_at (timestamp)",
+        "updated_at (timestamp)"
+    ],
+    "precios_calidad": [
+        "id (bigint(20) unsigned)",
+        "productor_id (bigint(20) unsigned)",
+        "tipo_calidad (varchar(100))",
+        "precio_actual (varchar(100))",
+        "precio_propuesto (varchar(100))"
+    ],
+    "productor_canal": [
+        "id (bigint(20) unsigned)",
+        "productor_id (bigint(20) unsigned)",
+        "canal_id (bigint(20) unsigned)"
+    ],
+    "productor_categoria": [
+        "id (bigint(20) unsigned)",
+        "productor_id (bigint(20) unsigned)",
+        "categoria_id (bigint(20) unsigned)"
+    ],
+    "productor_certificacion": [
+        "id (bigint(20) unsigned)",
+        "productor_id (bigint(20) unsigned)",
+        "certificacion_id (bigint(20) unsigned)",
+        "en_tramite (varchar(255))"
+    ],
+    "productor_dificultad": [
+        "id (bigint(20) unsigned)",
+        "productor_id (bigint(20) unsigned)",
+        "dificultad_id (bigint(20) unsigned)"
+    ],
+    "productor_financiamiento": [
+        "id (bigint(20) unsigned)",
+        "productor_id (bigint(20) unsigned)",
+        "financiamiento_id (bigint(20) unsigned)"
+    ],
+    "productor_grupo": [
+        "id (bigint(20) unsigned)",
+        "productor_id (bigint(20) unsigned)",
+        "grupo_id (bigint(20) unsigned)"
+    ],
+    "productor_productos": [
+        "id (int(11))",
+        "productor_id (bigint(20) unsigned)",
+        "nombre (varchar(255))",
+        "volumen (decimal(10,2))",
+        "unidad_volumen (varchar(50))",
+        "frecuencia (varchar(50))",
+        "presentacion (varchar(100))",
+        "calidad (varchar(100))",
+        "precio (decimal(10,2))",
+        "unidad_precio (varchar(50))",
+        "producto_normal (varchar(255))",
+        "categoria (varchar(255))"
+    ],
+    "productor_servicios": [
+        "id (int(11))",
+        "productor_id (bigint(20) unsigned)",
+        "nombre_actividad (varchar(255))",
+        "frecuencia (varchar(50))",
+        "poblacion_objetivo (varchar(100))",
+        "tipo_contrato (varchar(100))",
+        "lugar (varchar(255))",
+        "recursos (varchar(255))"
+    ],
+    "productores_panaca": [
+        "id (int(11))",
+        "nombre_completo (varchar(255))",
+        "numero_documento (varchar(20))",
+        "vereda (varchar(100))",
+        "genero (varchar(20))",
+        "fecha_nacimiento (date)",
+        "telefono (varchar(20))",
+        "telefono_contacto (varchar(20))",
+        "correo (varchar(150))",
+        "estado (varchar(50))",
+        "cr (text)",
+        "fecha_convocatoria (date)"
+    ],
+    "productores_sumapaz": [
+        "id (bigint(20) unsigned)",
+        "nombre_completo (varchar(150))",
+        "tipo_documento (varchar(50))",
+        "numero_documento (varchar(50))",
+        "fecha_nacimiento (date)",
+        "telefono (varchar(20))",
+        "correo_electronico (varchar(150))",
+        "vereda (varchar(100))",
+        "nombre_predio (varchar(150))",
+        "fecha_creacion (timestamp)",
+        "mypime (tinyint(1))",
+        "efectividad_2025 (tinyint(1))",
+        "panaca (tinyint(1))",
+        "cuenca (varchar(100))",
+        "ferias (tinyint(1))"
+    ],
+    "productos": [
+        "id (bigint(20) unsigned)",
+        "productor_id (bigint(20) unsigned)",
+        "nombre (text)",
+        "volumen (text)",
+        "unidad_volumen (varchar(20))",
+        "frecuencia (text)",
+        "presentacion (text)",
+        "calidad (text)",
+        "precio (text)",
+        "unidad_precio (varchar(20))",
+        "volumen_unidad (varchar(50))",
+        "precio_unidad (varchar(50))"
+    ],
+    "proveedores_avituallamiento": [
+        "id (int(11))",
+        "nombre_completo (varchar(255))",
+        "tipo_documento (varchar(100))",
+        "numero_documento (varchar(100))",
+        "fecha_nacimiento (date)",
+        "telefono (varchar(50))",
+        "correo_electronico (varchar(150))",
+        "vereda (varchar(150))",
+        "nombre_predio (varchar(255))",
+        "fecha_creacion (datetime)",
+        "id_rut (varchar(255))",
+        "id_curso_manipulacion (varchar(255))",
+        "id_certificacion_bancaria (varchar(255))",
+        "id_cedula (varchar(255))"
+    ],
+    "roles": [
+        "id (int(11))",
+        "nombre (varchar(50))",
+        "descripcion (varchar(255))"
+    ],
+    "sistema_productivo": [
+        "id (bigint(20) unsigned)",
+        "productor_id (bigint(20) unsigned)",
+        "mano_obra (varchar(100))",
+        "tipo_proceso (varchar(150))",
+        "usa_abonos (tinyint(1))",
+        "sistemas_asociados (tinyint(1))",
+        "sistema_diferenciado (tinyint(1))",
+        "descripcion (text)",
+        "valor_agregado (text)"
+    ],
+    "transporte_recorridos": [
+        "id (bigint(20) unsigned)",
+        "viaje_id (bigint(20) unsigned)",
+        "orden (int(11))",
+        "vereda (varchar(100))",
+        "es_parada (tinyint(1))",
+        "created_at (timestamp)"
+    ],
+    "transporte_vehiculos": [
+        "id (bigint(20) unsigned)",
+        "tipo_transporte (varchar(100))",
+        "tipo_vehiculo (varchar(50))",
+        "placa (varchar(20))",
+        "created_at (timestamp)"
+    ],
+    "transporte_viaje_vehiculo": [
+        "id (bigint(20) unsigned)",
+        "viaje_id (bigint(20) unsigned)",
+        "vehiculo_id (bigint(20) unsigned)"
+    ],
+    "transporte_viajes": [
+        "id (bigint(20) unsigned)",
+        "fecha_hora (timestamp)",
+        "funcionario (varchar(150))",
+        "tipo_documento (varchar(50))",
+        "numero_documento (varchar(50))",
+        "telefono (varchar(50))",
+        "email (varchar(150))",
+        "proposito (varchar(50))",
+        "proyecto_codigo (varchar(20))",
+        "proyecto_nombre (text)",
+        "meta (text)",
+        "origen (varchar(100))",
+        "destino_final (varchar(100))",
+        "actividad (text)",
+        "created_at (timestamp)"
+    ],
+    "usuarios": [
+        "id (int(11))",
+        "nombre (varchar(150))",
+        "email (varchar(150))",
+        "password (varchar(255))",
+        "rol_id (int(11))",
+        "activo (tinyint(1))",
+        "fecha_creacion (timestamp)"
+    ],
+    "veredas_coordenadas": [
+        "id (bigint(20) unsigned)",
+        "scanombre (varchar(100))",
+        "lat (double)",
+        "lon (double)"
+    ]
+}
