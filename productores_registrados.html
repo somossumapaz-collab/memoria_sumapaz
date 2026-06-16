@@ -677,6 +677,17 @@
             </div>
         </div>
 
+        <!-- Chart Section for Productive Categories -->
+        <div style="display: flex; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap;">
+            <!-- Category Distribution Chart Card -->
+            <div style="flex: 1; min-width: 300px; max-width: 100%; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; overflow: hidden;">
+                <h3 style="font-family: 'Inter', sans-serif; color: #444F2F; margin-bottom: 1.5rem; font-size: 1.3rem; font-weight: 700;">Distribución de Categorías Productivas</h3>
+                <div style="width: 100%; height: 400px; position: relative;">
+                    <canvas id="categoryDistributionChart"></canvas>
+                </div>
+            </div>
+        </div>
+
         <!-- New Section: Categorías Productivas -->
         <h2
             style="font-family: 'Inter', sans-serif; color: #444F2F; margin-top: 4rem; margin-bottom: 2rem; text-align: center; font-size: 1.8rem; font-weight: 700;">
@@ -877,6 +888,8 @@
         let allProducers = [];
         let completenessReport = {};
         let veredaComparisonChartInstance = null;
+        let categoryDistributionChartInstance = null;
+        let allCategories = [];
         let registeredVeredaCounts = {};
         let currentSortField = 'puntaje'; // 'puntaje' or 'puntaje_ajustado'
         let currentSortOrder = 'desc'; // 'desc' or 'asc'
@@ -963,7 +976,7 @@
             const catFilterNombre = document.getElementById('cat-filter-nombre');
             const catTbody = document.getElementById('cat-productores-tbody');
             window.lastCatData = []; // For export functionality
-            let allCategories = [];
+            allCategories = [];
 
             // Fetch all categories
             try {
@@ -973,6 +986,7 @@
                     allCategories = catData.data;
                     populateCategoryFilters();
                     populateMainActividadFilter();
+                    applyFilters();
                 }
             } catch (err) {
                 console.error("Error fetching categories:", err);
@@ -2042,6 +2056,70 @@
                                     weight: 'bold',
                                     size: 10
                                 }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // --- UPDATE CATEGORY DISTRIBUTION CHART ---
+            updateCategoryDistributionChart(data);
+        }
+
+        function updateCategoryDistributionChart(filteredProducers) {
+            const categoryCounts = {};
+            filteredProducers.forEach(p => {
+                if (p.categorias_ids) {
+                    const ids = p.categorias_ids.split(',');
+                    ids.forEach(id => {
+                        const catObj = allCategories.find(c => c.id == id);
+                        const name = catObj ? catObj.nombre : ('Categoría ' + id);
+                        categoryCounts[name] = (categoryCounts[name] || 0) + 1;
+                    });
+                }
+            });
+
+            const sortedCategories = Object.keys(categoryCounts).sort((a, b) => categoryCounts[b] - categoryCounts[a]);
+            const counts = sortedCategories.map(cat => categoryCounts[cat]);
+
+            const canvas = document.getElementById('categoryDistributionChart');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                if (categoryDistributionChartInstance) categoryDistributionChartInstance.destroy();
+
+                categoryDistributionChartInstance = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: sortedCategories,
+                        datasets: [{
+                            data: counts,
+                            backgroundColor: [
+                                '#2A9D8F', '#E76F51', '#444F2F', '#F4A261', '#E9C46A', '#3D5A80', '#98C1D9'
+                            ]
+                        }]
+                    },
+                    plugins: [ChartDataLabels],
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'right',
+                                labels: {
+                                    font: { size: 11, weight: 'bold' },
+                                    color: '#444F2F'
+                                }
+                            },
+                            datalabels: {
+                                formatter: (value, ctx) => {
+                                    let sum = 0;
+                                    let dataArr = ctx.chart.data.datasets[0].data;
+                                    dataArr.map(data => { sum += data; });
+                                    let percentage = (value*100 / (sum || 1)).toFixed(0) + "%";
+                                    return percentage !== "0%" ? percentage : '';
+                                },
+                                color: '#fff',
+                                font: { weight: 'bold', size: 11 }
                             }
                         }
                     }
