@@ -455,6 +455,16 @@
                         <option value="0">No</option>
                     </select>
                 </div>
+                <div style="flex: 1; min-width: 150px;">
+                    <label for="filter-panaca"
+                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Panaca</label>
+                    <select id="filter-panaca"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
+                        <option value="">Todos</option>
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
                 <div style="flex: 1; min-width: 220px;">
                     <label for="filter-beneficiario"
                         style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Filtro Especial (Top 150)</label>
@@ -620,8 +630,8 @@
                         <th>Productor</th>
                         <th>Vereda</th>
                         <th style="text-align: center;">Estado Caracterización</th>
-                        <th class="sortable" style="text-align: center; width: 110px; cursor: pointer; user-select: none;" onclick="toggleSort('puntaje')">Puntaje<span id="sort-icon-puntaje">▼</span></th>
-                        <th class="sortable" style="text-align: center; width: 140px; cursor: pointer; user-select: none;" onclick="toggleSort('puntaje_ajustado')">Puntaje Ajustado<span id="sort-icon-puntaje-ajustado"></span></th>
+                        <th class="sortable" style="text-align: center; width: 110px; cursor: pointer; user-select: none;" onclick="toggleSort('puntaje')">Puntaje<span id="sort-icon-puntaje"></span></th>
+                        <th class="sortable" style="text-align: center; width: 140px; cursor: pointer; user-select: none;" onclick="toggleSort('puntaje_ajustado')">Puntaje Ajustado<span id="sort-icon-puntaje-ajustado">▼</span></th>
                         <th style="text-align: center; width: 120px;">Acción</th>
                     </tr>
                 </thead>
@@ -891,7 +901,7 @@
         let categoryDistributionChartInstance = null;
         let allCategories = [];
         let registeredVeredaCounts = {};
-        let currentSortField = 'puntaje'; // 'puntaje' or 'puntaje_ajustado'
+        let currentSortField = 'puntaje_ajustado'; // 'puntaje' or 'puntaje_ajustado'
         let currentSortOrder = 'desc'; // 'desc' or 'asc'
 
         function toggleSort(field) {
@@ -941,6 +951,7 @@
             const filterFecha = document.getElementById('filter-fecha');
             const filterCaracterizado = document.getElementById('filter-caracterizado');
             const filterMypime = document.getElementById('filter-mypime');
+            const filterPanaca = document.getElementById('filter-panaca');
             const filterBeneficiario = document.getElementById('filter-beneficiario');
             const btnReset = document.getElementById('btn-reset-filters');
 
@@ -1210,6 +1221,7 @@
             filterFecha.addEventListener('change', applyFilters);
             filterCaracterizado.addEventListener('change', applyFilters);
             filterMypime.addEventListener('change', applyFilters);
+            filterPanaca.addEventListener('change', applyFilters);
             if (filterBeneficiario) filterBeneficiario.addEventListener('change', applyFilters);
             document.getElementById('filter-actividad').addEventListener('change', applyFilters);
 
@@ -1220,6 +1232,7 @@
                 filterFecha.value = '';
                 filterCaracterizado.value = '';
                 filterMypime.value = '';
+                filterPanaca.value = '';
                 if (filterBeneficiario) filterBeneficiario.value = '';
                 document.getElementById('filter-actividad').value = '';
                 renderTable(allProducers);
@@ -1574,6 +1587,7 @@
             const fechaVal = document.getElementById('filter-fecha').value;
             const caracterizadoVal = document.getElementById('filter-caracterizado').value;
             const mypimeVal = document.getElementById('filter-mypime').value;
+            const panacaVal = document.getElementById('filter-panaca').value;
             const actividadVal = document.getElementById('filter-actividad').value;
             const beneficiarioVal = document.getElementById('filter-beneficiario') ? document.getElementById('filter-beneficiario').value : '';
 
@@ -1592,6 +1606,7 @@
             let matchFecha = !fechaVal || (fullP.fecha_creacion && fullP.fecha_creacion.startsWith(fechaVal));
             let matchCaracterizado = caracterizadoVal === "" || fullP.tiene_caracterizacion == caracterizadoVal;
             let matchMypime = mypimeVal === "" || fullP.mypime == mypimeVal;
+            let matchPanaca = panacaVal === "" || fullP.panaca == panacaVal;
 
             let matchActividad = true;
             if (actividadVal) {
@@ -1611,7 +1626,7 @@
             }
 
             return matchNombre && matchVereda && matchCuenca && matchFecha && matchCaracterizado && 
-                   matchMypime && matchActividad && matchBeneficiario;
+                   matchMypime && matchPanaca && matchActividad && matchBeneficiario;
         }
 
         function applyFilters() {
@@ -1621,6 +1636,7 @@
             const fechaVal = document.getElementById('filter-fecha').value; // format: YYYY-MM-DD
             const caracterizadoVal = document.getElementById('filter-caracterizado').value;
             const mypimeVal = document.getElementById('filter-mypime').value;
+            const panacaVal = document.getElementById('filter-panaca').value;
             const actividadVal = document.getElementById('filter-actividad').value;
             const beneficiarioVal = document.getElementById('filter-beneficiario') ? document.getElementById('filter-beneficiario').value : '';
 
@@ -1631,6 +1647,7 @@
                 let matchFecha = true;
                 let matchCaracterizado = true;
                 let matchMypime = true;
+                let matchPanaca = true;
                 let matchActividad = true;
                 let matchBeneficiario = true;
 
@@ -1658,6 +1675,10 @@
                     matchMypime = p.mypime == mypimeVal;
                 }
 
+                if (panacaVal !== "") {
+                    matchPanaca = p.panaca == panacaVal;
+                }
+
                 if (actividadVal) {
                     if (p.categorias_ids) {
                         const catIds = p.categorias_ids.split(',');
@@ -1674,7 +1695,7 @@
                 }
 
                 return matchNombre && matchVereda && matchCuenca && matchFecha && matchCaracterizado && 
-                       matchMypime && matchActividad && matchBeneficiario;
+                       matchMypime && matchPanaca && matchActividad && matchBeneficiario;
             });
 
             renderTable(filteredData);
@@ -1809,7 +1830,8 @@
                         '<span style="color: #e76f51; font-weight: bold; background: #fdf2f0; padding: 2px 8px; border-radius: 12px; font-size: 0.85rem;">No</span>';
                 }
 
-                const rankingStr = productor.ranking ? `<strong>${productor.ranking}</strong>` : '-';
+                const rankingVal = currentSortField === 'puntaje_ajustado' ? productor.ranking_ajustado : productor.ranking;
+                const rankingStr = rankingVal ? `<strong>${rankingVal}</strong>` : '-';
                 const puntajeStr = puntaje !== null ? `<strong>${puntaje}</strong>` : 'N/A';
                 const colorPuntaje = (puntaje !== null) ? (puntaje >= 60 ? '#2A9D8F' : '#e76f51') : '#999';
 
@@ -2196,17 +2218,17 @@
                 return;
             }
 
-            // Sort by ranking
+            // Sort by ranking_ajustado
             dataToExport.sort((a, b) => {
-                if (a.ranking === null && b.ranking === null) return 0;
-                if (a.ranking === null) return 1;
-                if (b.ranking === null) return -1;
-                return a.ranking - b.ranking;
+                if (a.ranking_ajustado === null && b.ranking_ajustado === null) return 0;
+                if (a.ranking_ajustado === null) return 1;
+                if (b.ranking_ajustado === null) return -1;
+                return a.ranking_ajustado - b.ranking_ajustado;
             });
 
             // Create a standard CSV flat file (archivo plano)
             const headers = [
-                'Ranking', 'Puntaje Total', 'Puntaje Ajustado', 'Estado Caracterización', 'Fecha Inscripción', 
+                'Ranking Ajustado', 'Ranking Estándar', 'Puntaje Total', 'Puntaje Ajustado', 'Estado Caracterización', 'Fecha Inscripción', 
                 'Nombre Completo', 'Tipo Documento', 'Número Documento', 'Vereda', 'Cuenca', 'Teléfono', 
                 'Correo Electrónico', 'Nombre Predio', 'Fecha Nacimiento', 'Mypime', 'Efectividad 2025', 'Panaca'
             ];
@@ -2226,6 +2248,7 @@
                     'N/A';
 
                 const row = [
+                    p.ranking_ajustado || '-',
                     p.ranking || '-',
                     puntaje !== null ? puntaje : 'N/A',
                     puntajeAjustadoStr,
@@ -2965,6 +2988,35 @@
                     });
                 });
 
+                // Sort by standard score first to pre-calculate standard rank
+                data.sort((a, b) => {
+                    const scoreA = a.puntaje !== null ? parseFloat(a.puntaje) : -1;
+                    const scoreB = b.puntaje !== null ? parseFloat(b.puntaje) : -1;
+                    return scoreB - scoreA;
+                });
+                data.forEach((p, idx) => {
+                    p.ranking_estandar = p.puntaje !== null ? idx + 1 : '-';
+                });
+
+                // Calculate adjusted score and sort by it descending
+                data.forEach(p => {
+                    const puntaje = p.puntaje !== null ? parseFloat(p.puntaje) : null;
+                    if (puntaje !== null) {
+                        const vNorm = normalizeVereda(p.vereda);
+                        const countVereda = registeredVeredaCounts[vNorm] || 1;
+                        p.puntaje_ajustado = puntaje * (1 + 1 / countVereda);
+                    } else {
+                        p.puntaje_ajustado = null;
+                    }
+                });
+
+                data.sort((a, b) => {
+                    if (a.puntaje_ajustado === null && b.puntaje_ajustado === null) return 0;
+                    if (a.puntaje_ajustado === null) return 1;
+                    if (b.puntaje_ajustado === null) return -1;
+                    return b.puntaje_ajustado - a.puntaje_ajustado;
+                });
+
                 // Map data to flat excel rows
                 const rows = data.map((p, generalIdx) => {
                     const veredaRank = rankingVeredaMap[p.id] || '-';
@@ -2973,13 +3025,14 @@
                     const puntaje = p.puntaje !== null ? parseFloat(p.puntaje) : null;
                     const vNorm = normalizeVereda(p.vereda);
                     const countVereda = registeredVeredaCounts[vNorm] || 1;
-                    const puntajeAjustado = puntaje !== null ? (puntaje * (1 + 1 / countVereda)) : null;
+                    const puntajeAjustado = puntaje !== null ? (p.puntaje_ajustado) : null;
                     const puntajeAjustadoVal = puntajeAjustado !== null ? 
                         (Number.isInteger(puntajeAjustado) ? puntajeAjustado : parseFloat(puntajeAjustado.toFixed(2))) : 
                         null;
                     
                     const row = {
-                        "Puesto General": generalRank,
+                        "Puesto General (Ajustado)": generalRank,
+                        "Puesto General (Estándar)": p.ranking_estandar,
                         "Ranking Vereda": veredaRank,
                         "Productor": p.nombre_completo || '-',
                         "Vereda": p.vereda || '-',
