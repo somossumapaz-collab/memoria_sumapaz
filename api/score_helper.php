@@ -232,7 +232,7 @@ function calculate_producer_scores($pdo, $productor_id) {
     $stmt_cat_count = $pdo->prepare("SELECT COUNT(*) FROM productor_categoria WHERE productor_id = ?");
     $stmt_cat_count->execute([$productor_id]);
     $cat_count = $stmt_cat_count->fetchColumn();
-    $has_valor_agregado = !empty(trim($carac['valor_agregado'])) && $carac['valor_agregado'] !== 'Ninguno';
+    $has_valor_agregado = !empty(trim($carac['valor_agregado'] ?? '')) && $carac['valor_agregado'] !== 'Ninguno';
     $has_diversificacion = ($has_valor_agregado || $cat_count > 1);
     $prod_score += $has_diversificacion ? 5 : 0;
     $breakdown['c3_diversificacion'] = [
@@ -305,7 +305,7 @@ function calculate_producer_scores($pdo, $productor_id) {
 
     // Subcriterion 5.1: Prácticas agroecológicas (5 pts)
     $usa_abonos = $carac['usa_abonos'];
-    $has_agroecologica = ($usa_abonos == '1' || strtolower($usa_abonos) === 'sí' || strtolower($usa_abonos) === 'si');
+    $has_agroecologica = ($usa_abonos == '1' || strtolower($usa_abonos ?? '') === 'sí' || strtolower($usa_abonos ?? '') === 'si');
     $amb_score += $has_agroecologica ? 5 : 0;
     $breakdown['c5_agroecologia'] = [
         'name' => 'Implementación activa de prácticas agroecológicas o ambientalmente sostenibles',

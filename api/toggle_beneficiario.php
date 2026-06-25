@@ -1,15 +1,33 @@
 <?php
 /**
- * API to fetch registered producers from the database
+ * API to toggle producer's beneficiary status (exclude or set to eligible)
  */
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require_once 'db_config.php';
-ini_set('display_errors', '0');
 
 header('Content-Type: application/json');
 
-if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+if (empty($_SESSION['user_id'])) {
+    http_response_code(401);
+    echo json_encode(['error' => 'No autorizado']);
+    exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
-    echo json_encode(['error' => 'Method Not Allowed']);
+    echo json_encode(['error' => 'Método no permitido']);
+    exit;
+}
+
+$input = json_decode(file_get_contents('php://input'), true);
+$id = isset($input['id']) ? intval($input['id']) : 0;
+$status = isset($input['status']) ? intval($input['status']) : 0;
+
+if ($id <= 0 || !in_array($status, [0, 2])) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Datos inválidos']);
     exit;
 }
 
@@ -113,55 +131,16 @@ function recalculate_beneficiarios($pdo) {
 }
 
 try {
-    // Automatically recalculate beneficiaries dynamically
+    // 1. Update the target producer's eligibility status
+    $stmt = $pdo->prepare("UPDATE productores_sumapaz SET beneficiario_2026 = ? WHERE id = ?");
+    $stmt->execute([$status, $id]);
+
+    // 2. Recalculate beneficiaries lists
     recalculate_beneficiarios($pdo);
 
-    $stmt = $pdo->query("
-        SELECT 
-            p.id,
-            p.nombre_completo,
-            p.tipo_documento,
-            p.numero_documento,
-            p.fecha_nacimiento,
-            p.telefono,
-            p.correo_electronico,
-            p.vereda,
-            p.nombre_predio,
-            p.fecha_creacion,
-            p.mypime,
-            p.efectividad_2025,
-            p.panaca,
-            p.ferias,
-            p.beneficiario_2026,
-            p.cuenca,
-            CASE 
-                WHEN MAX(cp.id) IS NOT NULL THEN 1
-                ELSE 0
-            END AS tiene_caracterizacion,
-            MAX(cp.puntaje_social) AS puntaje_social,
-            MAX(cp.puntaje_organizacional) AS puntaje_organizacional,
-            MAX(cp.puntaje_productivo) AS puntaje_productivo,
-            MAX(cp.puntaje_comercial) AS puntaje_comercial,
-            MAX(cp.puntaje_ambiental) AS puntaje_ambiental,
-            MAX(cp.puntaje_impacto) AS puntaje_impacto,
-            MAX(cp.puntaje) AS puntaje,
-            GROUP_CONCAT(DISTINCT cpcat.categoria_id) AS categorias_ids,
-            GROUP_CONCAT(DISTINCT c.id) AS certificaciones_ids,
-            GROUP_CONCAT(DISTINCT c.nombre ORDER BY c.nombre SEPARATOR ', ') AS certificaciones_nombres
-        FROM productores_sumapaz p
-        LEFT JOIN caracterizacion_productor cp ON p.id = cp.productor_id
-        LEFT JOIN productor_categoria cpcat ON p.id = cpcat.productor_id
-        LEFT JOIN productor_certificacion pc ON p.id = pc.productor_id
-        LEFT JOIN certificaciones c ON pc.certificacion_id = c.id
-        GROUP BY p.id
-        ORDER BY p.fecha_creacion DESC
-    ");
-
-    $productores = $stmt->fetchAll();
-    echo json_encode(['success' => true, 'data' => $productores]);
-} catch (\PDOException $e) {
+    echo json_encode(['success' => true]);
+} catch (Exception $e) {
     http_response_code(500);
-    error_log("Database error in get_productores.php: " . $e->getMessage());
-    echo json_encode(['error' => 'Error al obtener los productores.']);
+    echo json_encode(['error' => 'Error al actualizar el estado: ' . $e->getMessage()]);
 }
 ?>

@@ -3,7 +3,10 @@
  * API to fetch all producers with their calculated scores and justifications in bulk.
  * Optimized to run in < 0.5s by using bulk pre-fetching instead of N+1 database queries.
  */
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+ini_set('display_errors', '0');
 require_once 'db_config.php';
 
 header('Content-Type: application/json');
@@ -17,7 +20,7 @@ if (empty($_SESSION['user_id'])) {
 
 try {
     // 1. Fetch all database tables in bulk
-    $stmt = $pdo->query("SELECT id, nombre_completo, vereda, fecha_nacimiento, panaca, ferias FROM productores_sumapaz");
+    $stmt = $pdo->query("SELECT id, nombre_completo, vereda, fecha_nacimiento, panaca, ferias, beneficiario_2026 FROM productores_sumapaz");
     $productores_raw = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $productores = [];
     foreach ($productores_raw as $p) {
@@ -261,7 +264,7 @@ try {
 
         $catCount = isset($categorias[$pid]) ? count($categorias[$pid]) : 0;
         $val_agregado = $carac['valor_agregado'];
-        $has_valor_agregado = !empty(trim($val_agregado)) && $val_agregado !== 'Ninguno';
+        $has_valor_agregado = !empty(trim($val_agregado ?? '')) && $val_agregado !== 'Ninguno';
         $has_diversificacion = ($has_valor_agregado || $catCount > 1);
         $prod_score += $has_diversificacion ? 5 : 0;
         $breakdown['c3_diversificacion'] = [
@@ -326,7 +329,7 @@ try {
 
         // Component 5: Ambiental (Max 15 pts)
         $usa_abonos = $carac['usa_abonos'];
-        $has_agroecologica = ($usa_abonos == '1' || strtolower($usa_abonos) === 'sí' || strtolower($usa_abonos) === 'si');
+        $has_agroecologica = ($usa_abonos == '1' || strtolower($usa_abonos ?? '') === 'sí' || strtolower($usa_abonos ?? '') === 'si');
         $amb_score = $has_agroecologica ? 5 : 0;
         $breakdown['c5_agroecologia'] = [
             'name' => 'Implementación activa de prácticas agroecológicas o ambientalmente sostenibles',
@@ -405,6 +408,7 @@ try {
             'vereda' => $p['vereda'],
             'puntaje' => $total_score,
             'is_complete' => $is_complete,
+            'beneficiario_2026' => intval($p['beneficiario_2026']),
             'scores' => [
                 'puntaje_social' => $social_score,
                 'puntaje_organizacional' => $org_score,
