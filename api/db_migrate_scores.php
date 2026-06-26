@@ -44,10 +44,11 @@ try {
     
     $successCount = 0;
     foreach ($productores as $pid) {
-        if (recalculate_and_save_score($pdo, $pid)) {
+        if (recalculate_and_save_score($pdo, $pid, false)) {
             $successCount++;
         }
     }
+    update_global_beneficiaries($pdo);
     
     echo "Recalculation finished. Successfully calculated and saved scores for $successCount producers.\n";
     echo "Migration completed successfully.\n";

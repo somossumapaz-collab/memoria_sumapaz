@@ -77,10 +77,10 @@ function recalculate_beneficiarios($pdo) {
         return ($b['puntaje_ajustado'] > $a['puntaje_ajustado']) ? 1 : -1;
     });
 
-    // Slice the top 150
-    $top_150 = array_slice($eligible, 0, 150);
-    $top_150_ids = array_map(function($p) { return intval($p['id']); }, $top_150);
-    $top_150_set = array_flip($top_150_ids);
+    // Slice the top 152
+    $top_152 = array_slice($eligible, 0, 152);
+    $top_152_ids = array_map(function($p) { return intval($p['id']); }, $top_152);
+    $top_152_set = array_flip($top_152_ids);
 
     // Identify updates
     $to_set_1 = [];
@@ -90,7 +90,7 @@ function recalculate_beneficiarios($pdo) {
         $id = intval($p['id']);
         $current_status = intval($p['beneficiario_2026']);
         
-        if (isset($top_150_set[$id])) {
+        if (isset($top_152_set[$id])) {
             if ($current_status !== 1) {
                 $to_set_1[] = $id;
             }
@@ -138,6 +138,7 @@ try {
                 WHEN MAX(cp.id) IS NOT NULL THEN 1
                 ELSE 0
             END AS tiene_caracterizacion,
+            MAX(cp.nombre_organizacion) AS nombre_organizacion,
             MAX(cp.puntaje_social) AS puntaje_social,
             MAX(cp.puntaje_organizacional) AS puntaje_organizacional,
             MAX(cp.puntaje_productivo) AS puntaje_productivo,

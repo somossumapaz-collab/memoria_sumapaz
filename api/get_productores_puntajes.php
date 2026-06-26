@@ -162,13 +162,13 @@ try {
         ];
 
         $is_victima = in_array(3, $group_list);
-        $social_score += $is_victima ? 5 : 0;
+        $social_score += 5; // ALWAYS 5 pts
         $breakdown['c1_victima'] = [
             'name' => 'El postulante es víctima reconocida del conflicto armado',
             'max' => 5,
-            'score' => $is_victima ? 5 : 0,
-            'status' => $is_victima ? 'Cumple' : 'No cumple',
-            'detail' => $is_victima ? 'Víctima del conflicto registrada' : 'No registra víctima del conflicto'
+            'score' => 5,
+            'status' => 'Cumple',
+            'detail' => $is_victima ? 'Víctima del conflicto registrada' : 'No registra víctima del conflicto (5 pts asignados)'
         ];
 
         $birth = $p['fecha_nacimiento'];

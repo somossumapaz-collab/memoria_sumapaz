@@ -66,6 +66,12 @@ try {
         ':id' => $input['id']
     ]);
 
+    // Also update organization name in characterization if provided
+    if (isset($input['nombre_organizacion'])) {
+        $stmt_org = $pdo->prepare("UPDATE caracterizacion_productor SET nombre_organizacion = ? WHERE productor_id = ?");
+        $stmt_org->execute([$input['nombre_organizacion'], $input['id']]);
+    }
+
     require_once 'score_helper.php';
     recalculate_and_save_score($pdo, $input['id']);
 

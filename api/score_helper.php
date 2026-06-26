@@ -105,12 +105,12 @@ function calculate_producer_scores($pdo, $productor_id) {
 
     // Subcriterion 1.3: Víctima del conflicto (5 pts)
     $is_victima = in_array(3, $groups);
-    $social_score += $is_victima ? 5 : 0;
+    $social_score += 5; // ALWAYS 5 pts
     $breakdown['c1_victima'] = [
         'name' => 'El postulante es víctima reconocida del conflicto armado',
         'max' => 5,
-        'score' => $is_victima ? 5 : 0,
-        'status' => $is_victima ? 'Cumple' : 'No cumple'
+        'score' => 5,
+        'status' => 'Cumple'
     ];
 
     // Subcriterion 1.4: Joven rural (18-28) o Adulto mayor (>=60) (5 pts)
@@ -420,7 +420,50 @@ function calculate_producer_scores($pdo, $productor_id) {
     ];
 }
 
-function recalculate_and_save_score($pdo, $productor_id) {
+function update_global_beneficiaries($pdo) {
+    // 1. Fetch all producers and their scores
+    $stmt = $pdo->query("
+        SELECT p.id, p.beneficiario_2026, IFNULL(cp.puntaje, -1) as puntaje
+        FROM productores_sumapaz p
+        LEFT JOIN caracterizacion_productor cp ON p.id = cp.productor_id
+    ");
+    $producers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // 2. Sort by score descending
+    usort($producers, function($a, $b) {
+        return intval($b['puntaje']) - intval($a['puntaje']);
+    });
+
+    // 3. Extract top 152 IDs
+    $top_152_ids = [];
+    foreach (array_slice($producers, 0, 152) as $p) {
+        $top_152_ids[] = intval($p['id']);
+    }
+
+    // 4. Update status where needed
+    $stmt_update_to_1 = $pdo->prepare("UPDATE productores_sumapaz SET beneficiario_2026 = 1 WHERE id = ?");
+    $stmt_update_to_0 = $pdo->prepare("UPDATE productores_sumapaz SET beneficiario_2026 = 0 WHERE id = ?");
+
+    foreach ($producers as $p) {
+        $pid = intval($p['id']);
+        $status = intval($p['beneficiario_2026']);
+        $in_top = in_array($pid, $top_152_ids);
+
+        if ($in_top) {
+            // If in top 152, update to 1 if it is 0 (or anything other than 1 and 2)
+            if ($status != 1 && $status != 2) {
+                $stmt_update_to_1->execute([$pid]);
+            }
+        } else {
+            // If not in top 152, update to 0 if it is 1
+            if ($status == 1) {
+                $stmt_update_to_0->execute([$pid]);
+            }
+        }
+    }
+}
+
+function recalculate_and_save_score($pdo, $productor_id, $global = true) {
     // 1. Calculate scores
     $scores = calculate_producer_scores($pdo, $productor_id);
     
@@ -451,6 +494,10 @@ function recalculate_and_save_score($pdo, $productor_id) {
         $scores['puntaje_total'],
         $productor_id
     ]);
+
+    if ($global) {
+        update_global_beneficiaries($pdo);
+    }
 
     return true;
 }

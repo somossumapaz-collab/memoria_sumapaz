@@ -467,12 +467,12 @@
                 </div>
                 <div style="flex: 1; min-width: 220px;">
                     <label for="filter-beneficiario"
-                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Filtro Especial (Top 150)</label>
+                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Filtro Especial (Top 152)</label>
                     <select id="filter-beneficiario"
                         style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
                         <option value="">Todos</option>
-                        <option value="beneficiado">Beneficiados (Top 150 Puntaje)</option>
-                        <option value="ajustado">Beneficiados Ajustados (Top 150 Puntaje Ajustado)</option>
+                        <option value="beneficiado">Beneficiados (Top 152 Puntaje)</option>
+                        <option value="ajustado">Beneficiados Ajustados (Top 152 Puntaje Ajustado)</option>
                     </select>
                 </div>
 
@@ -1789,9 +1789,9 @@
 
             let matchBeneficiario = true;
             if (beneficiarioVal === 'beneficiado') {
-                matchBeneficiario = fullP.ranking !== null && fullP.ranking <= 150;
+                matchBeneficiario = fullP.ranking !== null && fullP.ranking <= 152;
             } else if (beneficiarioVal === 'ajustado') {
-                matchBeneficiario = fullP.ranking_ajustado !== null && fullP.ranking_ajustado <= 150;
+                matchBeneficiario = fullP.ranking_ajustado !== null && fullP.ranking_ajustado <= 152;
             }
 
             return matchNombre && matchVereda && matchCuenca && matchFecha && matchCaracterizado && 
@@ -1866,9 +1866,9 @@
                 }
 
                 if (beneficiarioVal === 'beneficiado') {
-                    matchBeneficiario = p.ranking !== null && p.ranking <= 150;
+                    matchBeneficiario = p.ranking !== null && p.ranking <= 152;
                 } else if (beneficiarioVal === 'ajustado') {
-                    matchBeneficiario = p.ranking_ajustado !== null && p.ranking_ajustado <= 150;
+                    matchBeneficiario = p.ranking_ajustado !== null && p.ranking_ajustado <= 152;
                 }
 
                 return matchNombre && matchVereda && matchCuenca && matchFecha && matchCaracterizado && 
@@ -1978,10 +1978,10 @@
                 }
             });
 
-            // Filter to only display the 150 best of the adjusted score (marked with beneficiario_2026 == 1)
+            // Filter to only display the 152 best of the adjusted score (marked with beneficiario_2026 == 1)
             const activeBeneficiaries = rankingSortedData.filter(p => p.tiene_caracterizacion == 1 && p.beneficiario_2026 == 1);
 
-            activeBeneficiaries.forEach(productor => {
+            activeBeneficiaries.forEach((productor, index) => {
                 const mainTr = document.createElement('tr');
                 mainTr.className = 'main-row';
                 mainTr.style.cursor = 'pointer';
@@ -2003,8 +2003,8 @@
                     estadoHtml = '<span class="badge" style="background:#2A9D8F; color:white; padding: 4px 8px; border-radius:12px; font-size:0.8rem; font-weight:500;">Caracterizado</span>';
                 }
 
-                const rankingVal = currentSortField === 'puntaje_ajustado' ? productor.ranking_ajustado : productor.ranking;
-                const rankingStr = rankingVal ? `<strong>${rankingVal}</strong>` : '-';
+                const rankingVal = index + 1;
+                const rankingStr = `<strong>${rankingVal}</strong>`;
                 const puntajeStr = puntaje !== null ? `<strong>${puntaje}</strong>` : 'N/A';
                 const colorPuntaje = (puntaje !== null) ? (puntaje >= 60 ? '#2A9D8F' : '#e76f51') : '#999';
 
@@ -2120,7 +2120,7 @@
                                 <svg style="width: 12px; height: 12px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
-                                Sí (Top 150)
+                                Sí (Top 152)
                             </button>
                         `;
                     } else if (status === 2) {
@@ -2247,11 +2247,11 @@
                 const vereda = p.vereda || 'Sin Vereda';
                 veredaTotalCounts[vereda] = (veredaTotalCounts[vereda] || 0) + 1;
 
-                if (p.ranking !== null && p.ranking <= 150) {
+                if (p.ranking !== null && p.ranking <= 152) {
                     veredaNormalCounts[vereda] = (veredaNormalCounts[vereda] || 0) + 1;
                 }
 
-                if (p.ranking_ajustado !== null && p.ranking_ajustado <= 150) {
+                if (p.ranking_ajustado !== null && p.ranking_ajustado <= 152) {
                     veredaAjustadoCounts[vereda] = (veredaAjustadoCounts[vereda] || 0) + 1;
                 }
             });
@@ -2288,12 +2288,12 @@
                                 backgroundColor: '#444F2F' // Brand olive green
                             },
                             {
-                                label: 'Seleccionados (Top 150) - Puntaje Normal',
+                                label: 'Seleccionados (Top 152) - Puntaje Normal',
                                 data: normalData,
                                 backgroundColor: '#E76F51' // Terracotta
                             },
                             {
-                                label: 'Seleccionados (Top 150) - Puntaje Ajustado',
+                                label: 'Seleccionados (Top 152) - Puntaje Ajustado',
                                 data: adjustedData,
                                 backgroundColor: '#2A9D8F' // Teal
                             }
@@ -3231,7 +3231,7 @@
                     return passesGlobalFilters(null, null, fullP);
                 });
                 if (data.length === 0) {
-                    alert('No hay productores caracterizados en el Top 150 para descargar.');
+                    alert('No hay productores caracterizados en el Top 152 para descargar.');
                     return;
                 }
 
