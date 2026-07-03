@@ -721,13 +721,14 @@
                         <th id="col-eliminar" style="text-align: center;">Eliminar</th>
                         <th style="text-align: center;">Caracterizar</th>
                         <th style="text-align: center;">PMAPC</th>
+                        <th style="text-align: center;">Registrar Evento</th>
                         <th style="text-align: center;">Detalle</th>
                     </tr>
                 </thead>
                 <tbody id="productores-original-tbody">
                     <!-- Data will be loaded via JS -->
                     <tr>
-                        <td colspan="15" style="text-align: center; padding: 2rem;">Cargando productores...</td>
+                        <td colspan="16" style="text-align: center; padding: 2rem;">Cargando productores...</td>
                     </tr>
                 </tbody>
             </table>
@@ -752,6 +753,17 @@
                 <h3 style="font-family: 'Inter', sans-serif; color: #444F2F; margin-bottom: 1.5rem; font-size: 1.3rem; font-weight: 700;">Distribución de Categorías Productivas</h3>
                 <div style="width: 100%; height: 400px; position: relative;">
                     <canvas id="categoryDistributionChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart Section for Event Participations -->
+        <div style="display: flex; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px; max-width: 100%; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; overflow: hidden;">
+                <h3 style="font-family: 'Inter', sans-serif; color: #444F2F; margin-bottom: 0.5rem; font-size: 1.3rem; font-weight: 700;">Participación en Eventos y Circuitos de Comercialización</h3>
+                <p id="event-chart-subtitle" style="font-size: 0.9rem; color: #666; margin-bottom: 1.5rem;"></p>
+                <div style="width: 100%; height: 400px; position: relative;">
+                    <canvas id="eventParticipationChart"></canvas>
                 </div>
             </div>
         </div>
@@ -957,6 +969,7 @@
         let completenessReport = {};
         let veredaComparisonChartInstance = null;
         let categoryDistributionChartInstance = null;
+        let eventParticipationChartInstance = null;
         let allCategories = [];
         let registeredVeredaCounts = {};
         let currentSortField = 'puntaje_ajustado'; // 'puntaje' or 'puntaje_ajustado'
@@ -1776,6 +1789,8 @@
                                 
                                 <button class="btn" style="padding: 0.5rem 1rem; height: auto; font-size: 0.85rem; background-color: #2A9D8F; color: white; border-radius: 8px; border: none; font-weight:600; cursor:pointer;" onclick="window.location.href='pmapc.html?id=${info.id}'">PMAPC</button>
                                 
+                                <button class="btn" style="padding: 0.5rem 1rem; height: auto; font-size: 0.85rem; background-color: #f39c12; color: white; border-radius: 8px; border: none; font-weight:600; cursor:pointer;" onclick="abrirModalEvento(${info.id}, '${info.nombre_completo}')">Registrar Participación</button>
+                                
                                 ${window.isAdmin ? 
                                   `<button class="btn" style="padding: 0.5rem 1rem; height: auto; font-size: 0.85rem; background-color: #d9534f; color: white; border-radius: 8px; border: none; font-weight:600; cursor:pointer;" onclick="eliminarProductor(${info.id}, '${info.nombre_completo}')">Eliminar</button>` : ''
                                 }
@@ -2175,7 +2190,7 @@
             tbody.innerHTML = ''; // Clear loading/existing text
 
             if (dataToDraw.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="15" style="text-align: center; padding: 2rem;">No se encontraron resultados.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="16" style="text-align: center; padding: 2rem;">No se encontraron resultados.</td></tr>';
                 return;
             }
 
@@ -2300,6 +2315,15 @@
                             title="Plan PMAPC">
                             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </button>
+                    </td>
+                    <td style="text-align: center; vertical-align: middle;">
+                        <button class="btn-icon" style="background-color: #f39c12; color: white;" 
+                            onclick="abrirModalEvento(${productor.id}, '${productor.nombre_completo.replace(/'/g, "\\'")}')"
+                            title="Registrar Participación en Evento">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </button>
                     </td>
@@ -2442,6 +2466,9 @@
             
             // --- UPDATE CATEGORY DISTRIBUTION CHART ---
             updateCategoryDistributionChart(data);
+
+            // --- UPDATE EVENT PARTICIPATION CHART ---
+            updateEventParticipationChart();
         }
 
         function updateCategoryDistributionChart(filteredProducers) {
@@ -2505,6 +2532,100 @@
             }
         }
 
+        async function updateEventParticipationChart() {
+            try {
+                const response = await fetch('api/get_participacion_eventos.php');
+                const result = await response.json();
+                if (!result.success) {
+                    console.error("Error fetching event participations:", result.error);
+                    return;
+                }
+
+                const events = result.data || [];
+                const eventCounts = {};
+                events.forEach(ev => {
+                    const name = ev.nombre_evento || 'Sin nombre';
+                    eventCounts[name] = (eventCounts[name] || 0) + 1;
+                });
+
+                const sortedEvents = Object.keys(eventCounts).sort((a, b) => eventCounts[b] - eventCounts[a]);
+                const counts = sortedEvents.map(name => eventCounts[name]);
+
+                const totalEvents = sortedEvents.length;
+                const totalParticipations = events.length;
+
+                const subtitle = document.getElementById('event-chart-subtitle');
+                if (subtitle) {
+                    subtitle.textContent = `Total de Circuitos/Eventos: ${totalEvents} | Participaciones registradas: ${totalParticipations}`;
+                }
+
+                const canvas = document.getElementById('eventParticipationChart');
+                if (canvas) {
+                    const ctx = canvas.getContext('2d');
+                    if (eventParticipationChartInstance) eventParticipationChartInstance.destroy();
+
+                    eventParticipationChartInstance = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: sortedEvents,
+                            datasets: [{
+                                label: 'Participantes',
+                                data: counts,
+                                backgroundColor: '#f39c12',
+                                borderColor: '#e67e22',
+                                borderWidth: 1,
+                                borderRadius: 6,
+                                barThickness: 24
+                            }]
+                        },
+                        plugins: [ChartDataLabels],
+                        options: {
+                            indexAxis: 'y',
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    display: false
+                                },
+                                datalabels: {
+                                    anchor: 'end',
+                                    align: 'right',
+                                    color: '#444F2F',
+                                    font: {
+                                        weight: 'bold',
+                                        size: 11
+                                    },
+                                    formatter: (value) => {
+                                        return value + (value === 1 ? ' participante' : ' participantes');
+                                    }
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        stepSize: 1,
+                                        color: '#666',
+                                        font: { size: 10 }
+                                    },
+                                    grid: { color: '#eaeaea' }
+                                },
+                                y: {
+                                    ticks: {
+                                        color: '#444F2F',
+                                        font: { size: 11, weight: 'bold' }
+                                    },
+                                    grid: { display: false }
+                                }
+                            }
+                        }
+                    });
+                }
+            } catch (err) {
+                console.error("Error rendering event participation chart:", err);
+            }
+        }
+
         function empezarCaracterizacion(id, nombre) {
             window.location.href = 'caracterizacion.html?id=' + id;
         }
@@ -2522,6 +2643,76 @@
         function eliminarProductor(id, nombre) {
             if (confirm('¿Seguro que deseas eliminar el registro de ' + nombre + '?')) {
                 alert('Productor eliminado exitosamente (modo demo).');
+            }
+        }
+
+        function abrirModalEvento(id, nombre) {
+            document.getElementById('event-productor-id').value = id;
+            document.getElementById('event-productor-name').value = nombre;
+            
+            // Set default date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('event-fecha').value = today;
+            
+            document.getElementById('event-nombre').value = '';
+            document.getElementById('event-observaciones').value = '';
+            
+            document.getElementById('event-modal-overlay').style.display = 'flex';
+        }
+
+        function cerrarModalEvento() {
+            document.getElementById('event-modal-overlay').style.display = 'none';
+        }
+
+        async function guardarParticipacionEvento(event) {
+            event.preventDefault();
+            
+            const id_productor = parseInt(document.getElementById('event-productor-id').value);
+            const fecha_evento = document.getElementById('event-fecha').value;
+            const nombre_evento = document.getElementById('event-nombre').value;
+            const observaciones = document.getElementById('event-observaciones').value;
+            
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Guardando...';
+            
+            try {
+                const response = await fetch('api/add_participacion_evento.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        id_productor,
+                        fecha_evento,
+                        nombre_evento,
+                        observaciones
+                    })
+                });
+                
+                const result = await response.json();
+                if (result.success) {
+                    alert('Participación registrada con éxito. Se ha marcado al productor como participante de ferias y se recalcularon los puntajes.');
+                    cerrarModalEvento();
+                    
+                    // Reload the data globally so the table and detail panel show the updated score and ranking!
+                    await loadData();
+                    
+                    // Refresh details panel if it's currently open
+                    const detailsContainer = document.getElementById('producer-detail-card');
+                    if (detailsContainer && detailsContainer.style.display !== 'none') {
+                        loadDetail(id_productor);
+                    }
+                } else {
+                    alert('Error: ' + (result.error || 'No se pudo guardar la participación'));
+                }
+            } catch (error) {
+                console.error('Error al guardar participación de evento:', error);
+                alert('Error al conectar con el servidor.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
             }
         }
 
@@ -3547,6 +3738,51 @@
             }
         }
     </script>
+
+    <!-- Event Participation Modal -->
+    <div id="event-modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1100; justify-content: center; align-items: center; backdrop-filter: blur(4px); transition: all 0.3s ease;">
+        <div style="background: white; border-radius: 12px; width: 90%; max-width: 500px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); overflow: hidden; animation: modalFadeIn 0.3s ease-out;">
+            <div style="background: #444F2F; color: white; padding: 1.2rem 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="margin: 0; font-size: 1.2rem; font-weight: 700;" id="event-modal-title">Registrar Participación en Evento</h3>
+                <button onclick="cerrarModalEvento()" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; line-height: 1;">&times;</button>
+            </div>
+            <form id="event-modal-form" onsubmit="guardarParticipacionEvento(event)" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1.2rem; text-align: left;">
+                <input type="hidden" id="event-productor-id" name="id_productor">
+                
+                <div>
+                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #444F2F;">Productor</label>
+                    <input type="text" id="event-productor-name" readonly style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9; font-weight: bold; color: #555; box-sizing: border-box;">
+                </div>
+                
+                <div>
+                    <label for="event-fecha" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #444F2F;">Fecha del Evento *</label>
+                    <input type="date" id="event-fecha" required style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
+                </div>
+                
+                <div>
+                    <label for="event-nombre" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #444F2F;">Nombre del Evento / Circuito de Comercialización *</label>
+                    <input type="text" id="event-nombre" required placeholder="Ej. Feria Agroecológica Sumapaz 2026" style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
+                </div>
+                
+                <div>
+                    <label for="event-observaciones" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #444F2F;">Observaciones</label>
+                    <textarea id="event-observaciones" placeholder="Detalles de la participación..." rows="3" style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px; font-family: inherit; resize: vertical; box-sizing: border-box;"></textarea>
+                </div>
+                
+                <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 0.5rem;">
+                    <button type="button" onclick="cerrarModalEvento()" style="padding: 0.75rem 1.25rem; border: 1px solid #ccc; background: white; border-radius: 8px; font-weight: 600; cursor: pointer; color: #666;">Cancelar</button>
+                    <button type="submit" style="padding: 0.75rem 1.5rem; border: none; background: #f39c12; color: white; border-radius: 8px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Guardar y Registrar Feria</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <style>
+        @keyframes modalFadeIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
 
     <!-- Chatbot Widget -->
     <div id="chat-widget-container">
