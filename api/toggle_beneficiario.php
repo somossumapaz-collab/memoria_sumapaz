@@ -67,7 +67,19 @@ function recalculate_beneficiarios($pdo) {
 
     // 2. Fetch characterized producers to calculate scores
     $stmt = $pdo->query("
-        SELECT p.id, p.vereda, p.beneficiario_2026, cp.puntaje 
+        SELECT 
+            p.id, 
+            p.vereda, 
+            p.beneficiario_2026, 
+            cp.puntaje,
+            IFNULL(cp.puntaje_ambiental, 0) as puntaje_ambiental,
+            IFNULL(cp.puntaje_comercial, 0) as puntaje_comercial,
+            IFNULL(cp.puntaje_social, 0) as puntaje_social,
+            CAST(IFNULL(cp.tiempo_implementacion, 0) AS UNSIGNED) as tiempo_implementacion,
+            cp.tipo_organizacion,
+            (SELECT COUNT(*) FROM discapacidad_productor dp WHERE dp.productor_id = p.id AND dp.tiene_discapacidad = 'Sí') as tiene_discapacidad_cnt,
+            (SELECT COUNT(*) FROM productor_grupo pg WHERE pg.productor_id = p.id AND pg.grupo_id IN (1, 3, 6, 7)) as grupo_prioritario_cnt,
+            p.fecha_nacimiento
         FROM productores_sumapaz p
         JOIN caracterizacion_productor cp ON p.id = cp.productor_id
         WHERE cp.puntaje IS NOT NULL
@@ -79,6 +91,33 @@ function recalculate_beneficiarios($pdo) {
         $vNorm = normalizeVereda($p['vereda']);
         $count = isset($vereda_counts[$vNorm]) ? $vereda_counts[$vNorm] : 1;
         $p['puntaje_ajustado'] = floatval($p['puntaje']) * (1.0 + 1.0 / $count);
+
+        // Precompute tie-breaker values
+        $p['puntaje'] = floatval($p['puntaje']);
+        $p['puntaje_ambiental'] = intval($p['puntaje_ambiental']);
+        $p['puntaje_comercial'] = intval($p['puntaje_comercial']);
+        $p['puntaje_social'] = intval($p['puntaje_social']);
+        $p['tiempo_implementacion'] = intval($p['tiempo_implementacion']);
+        
+        $tipo_org = $p['tipo_organizacion'];
+        $p['tiene_organizacion'] = ($tipo_org && $tipo_org !== 'Ninguna' && $tipo_org !== 'Productor individual') ? 1 : 0;
+        
+        $is_priority = 0;
+        if (intval($p['tiene_discapacidad_cnt']) > 0 || intval($p['grupo_prioritario_cnt']) > 0) {
+            $is_priority = 1;
+        } else {
+            $birth = $p['fecha_nacimiento'];
+            if ($birth && $birth !== '1900-01-01') {
+                $birthYear = intval(substr($birth, 0, 4));
+                if ($birthYear > 0) {
+                    $age = 2026 - $birthYear;
+                    if (($age >= 18 && $age <= 28) || $age >= 60) {
+                        $is_priority = 1;
+                    }
+                }
+            }
+        }
+        $p['poblacion_prioritaria'] = $is_priority;
     }
     unset($p);
 
@@ -87,12 +126,39 @@ function recalculate_beneficiarios($pdo) {
         return intval($p['beneficiario_2026']) !== 2;
     });
 
-    // Sort eligible by puntaje_ajustado descending, then by id ascending (to be stable)
+    // Sort eligible by puntaje_ajustado descending, then by tie-breakers, then by id ascending (to be stable)
     usort($eligible, function($a, $b) {
-        if ($b['puntaje_ajustado'] == $a['puntaje_ajustado']) {
-            return $a['id'] - $b['id'];
+        if ($b['puntaje_ajustado'] != $a['puntaje_ajustado']) {
+            return ($b['puntaje_ajustado'] > $a['puntaje_ajustado']) ? 1 : -1;
         }
-        return ($b['puntaje_ajustado'] > $a['puntaje_ajustado']) ? 1 : -1;
+        
+        // --- CRITERIOS DE DESEMPATE ---
+        // 1. Sostenibilidad Ambiental (Componente 5)
+        if ($b['puntaje_ambiental'] !== $a['puntaje_ambiental']) {
+            return $b['puntaje_ambiental'] - $a['puntaje_ambiental'];
+        }
+        // 2. Comercialización (Componente 4)
+        if ($b['puntaje_comercial'] !== $a['puntaje_comercial']) {
+            return $b['puntaje_comercial'] - $a['puntaje_comercial'];
+        }
+        // 3. Enfoque Diferencial y Social (Componente 1)
+        if ($b['puntaje_social'] !== $a['puntaje_social']) {
+            return $b['puntaje_social'] - $a['puntaje_social'];
+        }
+        // 4. Población prioritaria
+        if ($b['poblacion_prioritaria'] !== $a['poblacion_prioritaria']) {
+            return $b['poblacion_prioritaria'] - $a['poblacion_prioritaria'];
+        }
+        // 5. Tiempo de implementación
+        if ($b['tiempo_implementacion'] !== $a['tiempo_implementacion']) {
+            return $b['tiempo_implementacion'] - $a['tiempo_implementacion'];
+        }
+        // 6. Estar en organización
+        if ($b['tiene_organizacion'] !== $a['tiene_organizacion']) {
+            return $b['tiene_organizacion'] - $a['tiene_organizacion'];
+        }
+        
+        return $a['id'] - $b['id'];
     });
 
     // Slice the top 152

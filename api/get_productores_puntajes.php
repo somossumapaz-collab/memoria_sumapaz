@@ -20,7 +20,7 @@ if (empty($_SESSION['user_id'])) {
 
 try {
     // 1. Fetch all database tables in bulk
-    $stmt = $pdo->query("SELECT id, nombre_completo, vereda, fecha_nacimiento, panaca, ferias, beneficiario_2026 FROM productores_sumapaz");
+    $stmt = $pdo->query("SELECT id, nombre_completo, vereda, telefono, fecha_nacimiento, panaca, ferias, beneficiario_2026 FROM productores_sumapaz");
     $productores_raw = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $productores = [];
     foreach ($productores_raw as $p) {
@@ -406,6 +406,7 @@ try {
             'id' => $pid,
             'nombre_completo' => $p['nombre_completo'],
             'vereda' => $p['vereda'],
+            'telefono' => $p['telefono'],
             'puntaje' => $total_score,
             'is_complete' => $is_complete,
             'beneficiario_2026' => intval($p['beneficiario_2026']),

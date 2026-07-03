@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somos Sumapaz | Infografía de Beneficiarios</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Static Cache-Busting Styles -->
+    <script>
+        const timestamp = new Date().getTime();
+        document.write(`<link rel="stylesheet" href="assets/styles.css?v=${timestamp}">`);
+    </script>
+    
+    <style>
+        body {
+            background-color: #FBF4DE;
+            color: #444F2F;
+        }
+
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Header */
+        .infografia-hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #444F2F 0%, #2E3820 100%);
+            border-radius: 16px;
+            color: #FBF4DE;
+            box-shadow: 0 10px 25px rgba(68, 79, 47, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .infografia-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(235, 185, 111, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .infografia-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .infografia-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* KPI Grid */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .kpi-card {
+            background: #FFFFFF;
+            padding: 1.8rem 1.5rem;
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(68, 79, 47, 0.05);
+            border-left: 5px solid #EBB96F;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(68, 79, 47, 0.1);
+        }
+
+        .kpi-icon-wrapper {
+            background: rgba(235, 185, 111, 0.15);
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #444F2F;
+            flex-shrink: 0;
+        }
+
+        .kpi-icon-wrapper svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .kpi-info h3 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #444F2F;
+            line-height: 1.1;
+            margin-bottom: 2px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .kpi-info p {
+            font-size: 0.85rem;
+            color: #666;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        /* Layout Grid for Charts */
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .chart-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 24px rgba(68, 79, 47, 0.06);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .chart-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .chart-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .chart-card h2 {
+            font-size: 1.4rem;
+            color: #444F2F;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(68, 79, 47, 0.08);
+            padding-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 700;
+        }
+
+        .chart-card h2 svg {
+            width: 22px;
+            height: 22px;
+            color: #E76F51;
+        }
+
+        .chart-container {
+            position: relative;
+            flex-grow: 1;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Leaderboard Table Styles */
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .leaderboard-table th {
+            padding: 1rem;
+            background-color: #F4F6F2;
+            color: #444F2F;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border-bottom: 2px solid rgba(68, 79, 47, 0.1);
+        }
+
+        .leaderboard-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #E0E0E0;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        .leaderboard-table tbody tr:hover {
+            background-color: rgba(68, 79, 47, 0.02);
+        }
+
+        .rank-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        .rank-gold {
+            background: #FFD700;
+            color: #5A4A00;
+        }
+
+        .rank-silver {
+            background: #C0C0C0;
+            color: #4A4A4A;
+        }
+
+        .rank-bronze {
+            background: #CD7F32;
+            color: #FFFFFF;
+        }
+
+        .rank-default {
+            background: #EFEBE4;
+            color: #444F2F;
+        }
+
+        /* Loader Overlay */
+        .loader-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: #FBF4DE;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(68, 79, 47, 0.1);
+            border-top: 4px solid #444F2F;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 900px) {
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loader Overlay -->
+    <div id="loader" class="loader-overlay">
+        <div class="spinner"></div>
+        <h3 class="serif" style="color: #444F2F;">Cargando Infografía de Beneficiarios...</h3>
+        <p style="color: #666; font-size: 0.9rem;">Analizando datos de la convocatoria</p>
+    </div>
+
+    <!-- Navigation Header -->
+    <header id="main-header">
+        <nav class="navbar-custom">
+            <div class="container" style="display: flex; align-items: center;">
+                <a href="index.html">
+                    <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img">
+                </a>
+                <div class="search-container" style="margin-left: auto; display: flex; align-items: center; gap: 1.5rem;">
+                    <div id="header-auth-container" style="display: flex; align-items: center; gap: 1rem;">
+                        <a href="index.html" class="nav-link-btn" style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Inicio</a>
+                        <a href="productores_registrados.html" class="nav-link-btn" id="btn-dashboard" style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Dashboard</a>
+                        <a href="avituallamiento_registrados.html" class="nav-link-btn" id="btn-dashboard-avit" style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Reporte Avituallamiento</a>
+                        <a href="transporte_seguimiento.html" class="nav-link-btn" id="btn-tracking" style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Seguimiento</a>
+                        <a href="pmapc.html" class="nav-link-btn" id="btn-pmapc" style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">PMAPC</a>
+                        <a href="convocatorias.html" class="nav-link-btn" id="btn-convocatorias" style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Convocatorias</a>
+                        <a href="infografia.html" class="nav-link-btn" id="btn-infografia" style="margin: 0; background-color: rgba(255, 255, 255, 0.15); color: #FBF4DE; border: 1px solid #FBF4DE; font-weight: 600;">Infografía</a>
+                        
+                        <a href="login.html" class="nav-link-btn" title="Iniciar Sesión" id="btn-login" style="margin: 0; padding: 0.5rem; display: flex; align-items: center; justify-content: center; color: #FBF4DE;">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                            </svg>
+                        </a>
+                        <button onclick="logout()" class="nav-link-btn" id="btn-logout" style="display: none; margin: 0; background-color: transparent; cursor: pointer; color: #FBF4DE; border: none;" title="Cerrar Sesión">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px; transform: scaleX(-1);">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard-container">
+        <!-- Hero Header -->
+        <div class="infografia-hero">
+            <h1 class="serif">Infografía de Beneficiarios</h1>
+            <p>Visualización interactiva y estadísticas detalladas del perfil, ubicación e indicadores clave de los productores seleccionados en la Localidad de Sumapaz para la Convocatoria 2026.</p>
+        </div>
+
+        <!-- KPI Grid -->
+        <div class="kpi-grid">
+            <!-- KPI 1 -->
+            <div class="kpi-card">
+                <div class="kpi-icon-wrapper">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </div>
+                <div class="kpi-info">
+                    <h3 id="stat-total">0</h3>
+                    <p>Beneficiarios Top</p>
+                </div>
+            </div>
+            <!-- KPI 2 -->
+            <div class="kpi-card">
+                <div class="kpi-icon-wrapper">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <div class="kpi-info">
+                    <h3 id="stat-veredas">0</h3>
+                    <p>Veredas Impactadas</p>
+                </div>
+            </div>
+            <!-- KPI 3 -->
+            <div class="kpi-card">
+                <div class="kpi-icon-wrapper">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <div class="kpi-info">
+                    <h3 id="stat-promedio">0</h3>
+                    <p>Puntaje Promedio</p>
+                </div>
+            </div>
+            <!-- KPI 4 -->
+            <div class="kpi-card">
+                <div class="kpi-icon-wrapper">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    </svg>
+                </div>
+                <div class="kpi-info">
+                    <h3 id="stat-cuencas">0</h3>
+                    <p>Cuencas del Páramo</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="chart-grid">
+            <!-- Chart 1: Veredas -->
+            <div class="chart-card">
+                <h2>
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                    Top 10 Veredas con más Beneficiarios
+                </h2>
+                <div class="chart-container">
+                    <canvas id="veredasChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 2: Cuencas -->
+            <div class="chart-card">
+                <h2>
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" /></svg>
+                    Distribución por Cuenca Hidrográfica
+                </h2>
+                <div class="chart-container">
+                    <canvas id="cuencasChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 3: Radar Componentes -->
+            <div class="chart-card">
+                <h2>
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.003 9.003 0 1020.945 13H11V3.055z" /><path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" /></svg>
+                    Puntaje Promedio por Componente (Normalizado)
+                </h2>
+                <div class="chart-container">
+                    <canvas id="radarChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 4: Fortalecimiento -->
+            <div class="chart-card">
+                <h2>
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z" /></svg>
+                    Indicadores de Perfil y Participación
+                </h2>
+                <div class="chart-container">
+                    <canvas id="perfilChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Leaderboard: Top 10 Productores -->
+            <div class="chart-card full-width">
+                <h2>
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                    Líderes de Convocatoria (Top 10 Productores Destacados)
+                </h2>
+                <div style="overflow-x: auto; width: 100%;">
+                    <table class="leaderboard-table">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center; width: 80px;">Puesto</th>
+                                <th>Nombre Completo</th>
+                                <th>Vereda</th>
+                                <th>Cuenca</th>
+                                <th>Contacto</th>
+                                <th style="text-align: center;">Puntaje Estándar</th>
+                                <th style="text-align: center;">Puntaje Ajustado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboard-body">
+                            <!-- Rows will load dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Red Agroalimentaria Territorial "Somos Sumapaz". Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- App Scripts -->
+    <script>
+        // Auth Check for Navigation
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const res = await fetch('api/check_auth.php');
+                const result = await res.json();
+                if (res.ok && result.authenticated) {
+                    document.getElementById('btn-login').style.display = 'none';
+                    document.getElementById('btn-dashboard').style.display = 'inline-block';
+                    document.getElementById('btn-dashboard-avit').style.display = 'inline-block';
+                    document.getElementById('btn-tracking').style.display = 'inline-block';
+                    document.getElementById('btn-pmapc').style.display = 'inline-block';
+                    document.getElementById('btn-logout').style.display = 'inline-block';
+                }
+            } catch (error) {
+                console.error('Error checking auth:', error);
+            }
+
+            // Load and analyze data
+            await initInfografia();
+        });
+
+        async function logout() {
+            try {
+                await fetch('api/logout.php');
+                window.location.reload();
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        }
+
+        // Helper to normalize vereda names
+        function normalizeVereda(vereda) {
+            if (!vereda) return '';
+            let normalized = vereda.trim().toUpperCase();
+            const unwanted = {
+                'Á':'A', 'É':'E', 'Í':'I', 'Ó':'O', 'Ú':'U', 'Ñ':'N', 'Ü':'U'
+            };
+            return normalized.split('').map(char => unwanted[char] || char).join('');
+        }
+
+        async function initInfografia() {
+            try {
+                const res = await fetch('api/get_productores.php');
+                const json = await res.json();
+
+                if (!json.success || !json.data) {
+                    document.getElementById('loader').innerHTML = `<h3 style="color: red;">Error al cargar datos.</h3>`;
+                    return;
+                }
+
+                const allProducers = json.data;
+
+                // 1. Calculate vereda counts for score adjustment
+                const veredaCountsGlobal = {};
+                allProducers.forEach(p => {
+                    const vNorm = normalizeVereda(p.vereda);
+                    if (vNorm) {
+                        veredaCountsGlobal[vNorm] = (veredaCountsGlobal[vNorm] || 0) + 1;
+                    }
+                });
+
+                // 2. Filter active beneficiaries (characterized and marked beneficiario_2026 == 1)
+                const beneficiaries = allProducers.filter(p => p.tiene_caracterizacion == 1 && p.beneficiario_2026 == 1);
+                
+                // Add adjusted score and tie-breakers to beneficiaries
+                beneficiaries.forEach(p => {
+                    const score = p.puntaje !== null ? parseFloat(p.puntaje) : 0;
+                    const vNorm = normalizeVereda(p.vereda);
+                    const count = veredaCountsGlobal[vNorm] || 1;
+                    p.puntaje_ajustado = score * (1 + 1 / count);
+
+                    // Precalculate numeric tie-breaker indicators
+                    p.puntaje = p.puntaje !== null ? parseFloat(p.puntaje) : null;
+                    p.puntaje_ambiental = p.puntaje_ambiental !== null ? parseInt(p.puntaje_ambiental) : 0;
+                    p.puntaje_comercial = p.puntaje_comercial !== null ? parseInt(p.puntaje_comercial) : 0;
+                    p.puntaje_social = p.puntaje_social !== null ? parseInt(p.puntaje_social) : 0;
+                    p.tiempo_implementacion = p.tiempo_implementacion !== null ? parseInt(p.tiempo_implementacion) : 0;
+                    
+                    const tipoOrg = p.tipo_organizacion;
+                    p.tiene_organizacion = (tipoOrg && tipoOrg !== 'Ninguna' && tipoOrg !== 'Productor individual') ? 1 : 0;
+                    
+                    let isPriority = 0;
+                    if (parseInt(p.tiene_discapacidad_cnt) > 0 || parseInt(p.grupo_prioritario_cnt) > 0) {
+                        isPriority = 1;
+                    } else {
+                        const birth = p.fecha_nacimiento;
+                        if (birth && birth !== '1900-01-01') {
+                            const birthYear = parseInt(birth.substring(0, 4));
+                            if (birthYear > 0) {
+                                const age = 2026 - birthYear;
+                                if ((age >= 18 && age <= 28) || age >= 60) {
+                                    isPriority = 1;
+                                }
+                            }
+                        }
+                    }
+                    p.poblacion_prioritaria = isPriority;
+                });
+
+                function compareProducersTieBreaker(a, b) {
+                    if (b.puntaje_ambiental !== a.puntaje_ambiental) {
+                        return b.puntaje_ambiental - a.puntaje_ambiental;
+                    }
+                    if (b.puntaje_comercial !== a.puntaje_comercial) {
+                        return b.puntaje_comercial - a.puntaje_comercial;
+                    }
+                    if (b.puntaje_social !== a.puntaje_social) {
+                        return b.puntaje_social - a.puntaje_social;
+                    }
+                    if (b.poblacion_prioritaria !== a.poblacion_prioritaria) {
+                        return b.poblacion_prioritaria - a.poblacion_prioritaria;
+                    }
+                    if (b.tiempo_implementacion !== a.tiempo_implementacion) {
+                        return b.tiempo_implementacion - a.tiempo_implementacion;
+                    }
+                    if (b.tiene_organizacion !== a.tiene_organizacion) {
+                        return b.tiene_organizacion - a.tiene_organizacion;
+                    }
+                    return a.id - b.id;
+                }
+
+                // Sort by adjusted score descending, then by tie-breakers
+                beneficiaries.sort((a, b) => {
+                    if (b.puntaje_ajustado !== a.puntaje_ajustado) {
+                        return b.puntaje_ajustado - a.puntaje_ajustado;
+                    }
+                    return compareProducersTieBreaker(a, b);
+                });
+
+                // Update KPIs
+                document.getElementById('stat-total').textContent = beneficiaries.length;
+                
+                const uniqueVeredas = new Set(beneficiaries.map(p => normalizeVereda(p.vereda)).filter(Boolean));
+                document.getElementById('stat-veredas').textContent = uniqueVeredas.size;
+
+                const uniqueCuencas = new Set(beneficiaries.map(p => p.cuenca).filter(Boolean));
+                document.getElementById('stat-cuencas').textContent = uniqueCuencas.size;
+
+                const avgScore = beneficiaries.reduce((acc, p) => acc + (parseFloat(p.puntaje) || 0), 0) / beneficiaries.length;
+                document.getElementById('stat-promedio').textContent = avgScore.toFixed(1) + " pts";
+
+                // Generate Charts
+                renderVeredasChart(beneficiaries);
+                renderCuencasChart(beneficiaries);
+                renderRadarChart(beneficiaries);
+                renderPerfilChart(beneficiaries);
+
+                // Populate Leaderboard
+                populateLeaderboard(beneficiaries);
+
+                // Hide Loader
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                setTimeout(() => loader.style.display = 'none', 500);
+
+            } catch (err) {
+                console.error("Error initializing infografía:", err);
+                document.getElementById('loader').innerHTML = `<h3 style="color: red; padding: 2rem;">Error de conexión al cargar la información.</h3>`;
+            }
+        }
+
+        // --- Chart Renders ---
+
+        function renderVeredasChart(data) {
+            const veredaCounts = {};
+            data.forEach(p => {
+                const v = p.vereda || 'Sin Vereda';
+                veredaCounts[v] = (veredaCounts[v] || 0) + 1;
+            });
+
+            const sortedVeredas = Object.keys(veredaCounts).sort((a, b) => veredaCounts[b] - veredaCounts[a]).slice(0, 10);
+            const counts = sortedVeredas.map(v => veredaCounts[v]);
+
+            new Chart(document.getElementById('veredasChart'), {
+                type: 'bar',
+                data: {
+                    labels: sortedVeredas,
+                    datasets: [{
+                        label: 'Número de Beneficiarios',
+                        data: counts,
+                        backgroundColor: '#444F2F',
+                        borderRadius: 6,
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: { beginAtZero: true, grid: { display: false } },
+                        y: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function renderCuencasChart(data) {
+            const cuencaCounts = {};
+            data.forEach(p => {
+                const c = p.cuenca || 'Sin Cuenca';
+                cuencaCounts[c] = (cuencaCounts[c] || 0) + 1;
+            });
+
+            const labels = Object.keys(cuencaCounts);
+            const counts = Object.values(cuencaCounts);
+
+            new Chart(document.getElementById('cuencasChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: counts,
+                        backgroundColor: ['#2A9D8F', '#E76F51', '#444F2F', '#EBB96F', '#6D4C41'],
+                        borderWidth: 2,
+                        borderColor: '#FFFFFF'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+        }
+
+        function renderRadarChart(data) {
+            // Compute averages for each component
+            let socialSum = 0, orgSum = 0, prodSum = 0, comSum = 0, ambSum = 0, impSum = 0;
+            data.forEach(p => {
+                socialSum += parseFloat(p.puntaje_social) || 0;
+                orgSum += parseFloat(p.puntaje_organizacional) || 0;
+                prodSum += parseFloat(p.puntaje_productivo) || 0;
+                comSum += parseFloat(p.puntaje_comercial) || 0;
+                ambSum += parseFloat(p.puntaje_ambiental) || 0;
+                impSum += parseFloat(p.puntaje_impacto) || 0;
+            });
+
+            const count = data.length;
+            const averages = [
+                (socialSum / count) / 20 * 100, // Normalized to 100%
+                (orgSum / count) / 15 * 100,
+                (prodSum / count) / 25 * 100,
+                (comSum / count) / 15 * 100,
+                (ambSum / count) / 15 * 100,
+                (impSum / count) / 10 * 100
+            ];
+
+            new Chart(document.getElementById('radarChart'), {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'Social (Máx 20)',
+                        'Organizacional (Máx 15)',
+                        'Productivo (Máx 25)',
+                        'Comercial (Máx 15)',
+                        'Ambiental (Máx 15)',
+                        'Impacto (Máx 10)'
+                    ],
+                    datasets: [{
+                        label: 'Desempeño Promedio (%)',
+                        data: averages.map(v => Math.round(v)),
+                        fill: true,
+                        backgroundColor: 'rgba(68, 79, 47, 0.2)',
+                        borderColor: '#444F2F',
+                        pointBackgroundColor: '#E76F51',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#E76F51',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { display: true },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderPerfilChart(data) {
+            // Count yes/no properties
+            let mypimes = 0, panaca = 0, ferias = 0;
+            data.forEach(p => {
+                if (parseInt(p.mypime) == 1) mypimes++;
+                if (parseInt(p.panaca) == 1) panaca++;
+                if (parseInt(p.ferias) == 1) ferias++;
+            });
+
+            const count = data.length;
+            const percentages = [
+                Math.round(mypimes / count * 100),
+                Math.round(panaca / count * 100),
+                Math.round(ferias / count * 100)
+            ];
+
+            new Chart(document.getElementById('perfilChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Mypimes Rurales', 'Capacitación PANACA', 'Participación en Ferias'],
+                    datasets: [{
+                        label: 'Porcentaje de Productores (%)',
+                        data: percentages,
+                        backgroundColor: '#2A9D8F',
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, max: 100, ticks: { callback: value => value + "%" } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function populateLeaderboard(data) {
+            const tbody = document.getElementById('leaderboard-body');
+            tbody.innerHTML = '';
+
+            const top10 = data.slice(0, 10);
+            top10.forEach((p, idx) => {
+                const tr = document.createElement('tr');
+                
+                let badgeClass = 'rank-default';
+                if (idx === 0) badgeClass = 'rank-gold';
+                else if (idx === 1) badgeClass = 'rank-silver';
+                else if (idx === 2) badgeClass = 'rank-bronze';
+
+                const puntajeAjustadoStr = p.puntaje_ajustado ? 
+                    (Number.isInteger(p.puntaje_ajustado) ? p.puntaje_ajustado : p.puntaje_ajustado.toFixed(2)) : 
+                    'N/A';
+
+                tr.innerHTML = `
+                    <td style="text-align: center;"><span class="rank-badge ${badgeClass}">${idx + 1}</span></td>
+                    <td><strong>${p.nombre_completo}</strong></td>
+                    <td>${p.vereda}</td>
+                    <td>${p.cuenca || '-'}</td>
+                    <td>${p.telefono || '-'}</td>
+                    <td style="text-align: center; font-weight: bold; color: #2A9D8F;">${p.puntaje}</td>
+                    <td style="text-align: center; font-weight: bold; color: #444F2F;">${puntajeAjustadoStr}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+    </script>
+</body>
+
+</html>

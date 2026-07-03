@@ -421,17 +421,88 @@ function calculate_producer_scores($pdo, $productor_id) {
 }
 
 function update_global_beneficiaries($pdo) {
-    // 1. Fetch all producers and their scores
+    // 1. Fetch all producers, their scores, and tie-breaker criteria
     $stmt = $pdo->query("
-        SELECT p.id, p.beneficiario_2026, IFNULL(cp.puntaje, -1) as puntaje
+        SELECT 
+            p.id, 
+            p.beneficiario_2026, 
+            IFNULL(cp.puntaje, -1) as puntaje,
+            IFNULL(cp.puntaje_ambiental, 0) as puntaje_ambiental,
+            IFNULL(cp.puntaje_comercial, 0) as puntaje_comercial,
+            IFNULL(cp.puntaje_social, 0) as puntaje_social,
+            CAST(IFNULL(cp.tiempo_implementacion, 0) AS UNSIGNED) as tiempo_implementacion,
+            cp.tipo_organizacion,
+            (SELECT COUNT(*) FROM discapacidad_productor dp WHERE dp.productor_id = p.id AND dp.tiene_discapacidad = 'Sí') as tiene_discapacidad_cnt,
+            (SELECT COUNT(*) FROM productor_grupo pg WHERE pg.productor_id = p.id AND pg.grupo_id IN (1, 3, 6, 7)) as grupo_prioritario_cnt,
+            p.fecha_nacimiento
         FROM productores_sumapaz p
         LEFT JOIN caracterizacion_productor cp ON p.id = cp.productor_id
     ");
     $producers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // 2. Sort by score descending
+    // Precompute tie-breaker values
+    foreach ($producers as &$p) {
+        $p['puntaje'] = intval($p['puntaje']);
+        $p['puntaje_ambiental'] = intval($p['puntaje_ambiental']);
+        $p['puntaje_comercial'] = intval($p['puntaje_comercial']);
+        $p['puntaje_social'] = intval($p['puntaje_social']);
+        $p['tiempo_implementacion'] = intval($p['tiempo_implementacion']);
+        
+        $tipo_org = $p['tipo_organizacion'];
+        $p['tiene_organizacion'] = ($tipo_org && $tipo_org !== 'Ninguna' && $tipo_org !== 'Productor individual') ? 1 : 0;
+        
+        $is_priority = 0;
+        if (intval($p['tiene_discapacidad_cnt']) > 0 || intval($p['grupo_prioritario_cnt']) > 0) {
+            $is_priority = 1;
+        } else {
+            $birth = $p['fecha_nacimiento'];
+            if ($birth && $birth !== '1900-01-01') {
+                $birthYear = intval(substr($birth, 0, 4));
+                if ($birthYear > 0) {
+                    $age = 2026 - $birthYear;
+                    if (($age >= 18 && $age <= 28) || $age >= 60) {
+                        $is_priority = 1;
+                    }
+                }
+            }
+        }
+        $p['poblacion_prioritaria'] = $is_priority;
+    }
+    unset($p);
+
+    // 2. Sort by score descending, then by tie-breakers
     usort($producers, function($a, $b) {
-        return intval($b['puntaje']) - intval($a['puntaje']);
+        if ($b['puntaje'] !== $a['puntaje']) {
+            return $b['puntaje'] - $a['puntaje'];
+        }
+        
+        // --- CRITERIOS DE DESEMPATE ---
+        // 1. Sostenibilidad Ambiental (Componente 5)
+        if ($b['puntaje_ambiental'] !== $a['puntaje_ambiental']) {
+            return $b['puntaje_ambiental'] - $a['puntaje_ambiental'];
+        }
+        // 2. Comercialización (Componente 4)
+        if ($b['puntaje_comercial'] !== $a['puntaje_comercial']) {
+            return $b['puntaje_comercial'] - $a['puntaje_comercial'];
+        }
+        // 3. Enfoque Diferencial y Social (Componente 1)
+        if ($b['puntaje_social'] !== $a['puntaje_social']) {
+            return $b['puntaje_social'] - $a['puntaje_social'];
+        }
+        // 4. Población prioritaria
+        if ($b['poblacion_prioritaria'] !== $a['poblacion_prioritaria']) {
+            return $b['poblacion_prioritaria'] - $a['poblacion_prioritaria'];
+        }
+        // 5. Tiempo de implementación
+        if ($b['tiempo_implementacion'] !== $a['tiempo_implementacion']) {
+            return $b['tiempo_implementacion'] - $a['tiempo_implementacion'];
+        }
+        // 6. Estar en organización
+        if ($b['tiene_organizacion'] !== $a['tiene_organizacion']) {
+            return $b['tiene_organizacion'] - $a['tiene_organizacion'];
+        }
+        
+        return $a['id'] - $b['id'];
     });
 
     // 3. Extract top 152 IDs
@@ -500,5 +571,196 @@ function recalculate_and_save_score($pdo, $productor_id, $global = true) {
     }
 
     return true;
+}
+
+function recalculate_all_producers_scores($pdo) {
+    // 1. Fetch all data in bulk to avoid N+1 queries
+    $stmt = $pdo->query("SELECT * FROM caracterizacion_productor");
+    $caracterizaciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if (empty($caracterizaciones)) return;
+
+    $stmt = $pdo->query("SELECT productor_id, COUNT(*) FROM discapacidad_productor WHERE tiene_discapacidad = 'Sí' GROUP BY productor_id");
+    $discapacidades = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+
+    $stmt = $pdo->query("SELECT productor_id, GROUP_CONCAT(grupo_id) as groups FROM productor_grupo GROUP BY productor_id");
+    $grupos = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+
+    $stmt = $pdo->query("SELECT id, fecha_nacimiento, panaca, ferias FROM productores_sumapaz");
+    $productores_info = $stmt->fetchAll(PDO::FETCH_UNIQUE|PDO::FETCH_ASSOC);
+
+    $stmt = $pdo->query("SELECT productor_id, COUNT(*) FROM productor_productos GROUP BY productor_id");
+    $productos_count = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+
+    $stmt = $pdo->query("SELECT productor_id, COUNT(*) FROM productor_servicios GROUP BY productor_id");
+    $servicios_count = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+
+    $stmt = $pdo->query("SELECT productor_id, COUNT(*) FROM productor_categoria GROUP BY productor_id");
+    $categorias_count = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+
+    $stmt = $pdo->query("SELECT productor_id, COUNT(*) FROM productor_canal GROUP BY productor_id");
+    $canales_count = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+
+    $stmt = $pdo->query("SELECT productor_id, COUNT(*) FROM productor_productos WHERE frecuencia IN ('Diarios', 'Semanal', 'Quincenal', 'Mensual') GROUP BY productor_id");
+    $frecuencia_count = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+
+    $stmt = $pdo->query("SELECT productor_id, COUNT(*) FROM productor_certificacion WHERE certificacion_id != 9 GROUP BY productor_id");
+    $certificaciones_count = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+
+    $max_months = 1;
+    foreach ($caracterizaciones as $carac) {
+        $tiempo = intval($carac['tiempo_implementacion']);
+        if ($tiempo > $max_months) {
+            $max_months = $tiempo;
+        }
+    }
+
+    $isEmpty = function($val) {
+        return $val === null || $val === '' || $val === 'Ninguno' || $val === 'Ninguna' || $val === 'Seleccione...';
+    };
+
+    try {
+        $social_cases = [];
+        $org_cases = [];
+        $prod_cases = [];
+        $com_cases = [];
+        $amb_cases = [];
+        $imp_cases = [];
+        $total_cases = [];
+        $pids = [];
+
+        foreach ($caracterizaciones as $carac) {
+            $pid = intval($carac['productor_id']);
+            $pids[] = $pid;
+            
+            // Component 1: Enfoque Diferencial y Social (Max 20 pts)
+            $has_discapacidad = isset($discapacidades[$pid]) && $discapacidades[$pid] > 0;
+            
+            $group_str = isset($grupos[$pid]) ? $grupos[$pid] : '';
+            $group_list = array_map('intval', explode(',', $group_str));
+            $is_cabeza_hogar = in_array(1, $group_list);
+            $is_victima = in_array(3, $group_list);
+
+            $prod_row = isset($productores_info[$pid]) ? $productores_info[$pid] : null;
+            $birth = $prod_row ? $prod_row['fecha_nacimiento'] : null;
+            $panaca = $prod_row ? intval($prod_row['panaca']) : 0;
+            $ferias = $prod_row ? intval($prod_row['ferias']) : 0;
+            $is_joven_or_adulto = false;
+            if ($birth && $birth !== '1900-01-01') {
+                $birthYear = intval(substr($birth, 0, 4));
+                if ($birthYear > 0) {
+                    $age = 2026 - $birthYear;
+                    if (($age >= 18 && $age <= 28) || $age >= 60) {
+                        $is_joven_or_adulto = true;
+                    }
+                }
+            }
+            if (in_array(7, $group_list) || in_array(6, $group_list)) {
+                $is_joven_or_adulto = true;
+            }
+
+            $social_score = ($has_discapacidad ? 5 : 0) + ($is_cabeza_hogar ? 5 : 0) + ($is_victima ? 5 : 0) + ($is_joven_or_adulto ? 5 : 0);
+
+            // Component 2: Fortalecimiento Organizacional y Comunitario (Max 15 pts)
+            $tipo_org = $carac['tipo_organizacion'];
+            $has_org = ($tipo_org && $tipo_org !== 'Ninguna' && $tipo_org !== 'Productor individual');
+            $is_panaca = ($panaca == 1);
+            $is_ferias = ($ferias == 1);
+            $org_score = ($has_org ? 5 : 0) + ($is_panaca ? 5 : 0) + ($is_ferias ? 5 : 0);
+
+            // Component 3: Capacidad Productiva y Maduración (Max 25 pts)
+            $tiempo = intval($carac['tiempo_implementacion']);
+            $has_tiempo = $tiempo >= 36;
+
+            $tenencia = $carac['tipo_tenencia'];
+            $has_tenencia = ($tenencia && $tenencia !== 'Seleccione...');
+
+            $prodCount = isset($productos_count[$pid]) ? $productos_count[$pid] : 0;
+            $servCount = isset($servicios_count[$pid]) ? $servicios_count[$pid] : 0;
+            $has_produccion = ($prodCount + $servCount > 0);
+
+            $has_valor_agregado = !empty(trim($carac['valor_agregado'] ?? '')) && $carac['valor_agregado'] !== 'Ninguno';
+            $catCount = isset($categorias_count[$pid]) ? $categorias_count[$pid] : 0;
+            $has_diversificacion = ($has_valor_agregado || $catCount > 1);
+
+            $mano_obra = $carac['mano_obra'];
+            $has_mano_obra = ($mano_obra && $mano_obra !== 'Seleccione...');
+
+            $prod_score = ($has_tiempo ? 5 : 0) + ($has_tenencia ? 5 : 0) + ($has_produccion ? 5 : 0) + ($has_diversificacion ? 5 : 0) + ($has_mano_obra ? 5 : 0);
+
+            // Component 4: Comercialización y Sostenibilidad Económica (Max 15 pts)
+            $has_canales = isset($canales_count[$pid]) && $canales_count[$pid] > 0;
+            $has_freq = isset($frecuencia_count[$pid]) && $frecuencia_count[$pid] > 0;
+            
+            $destino = $carac['destino'];
+            $has_integracion = ($destino === 'Para autoconsumo y venta de excedentes' || $destino === 'Para venta total o comercialización completa');
+
+            $com_score = ($has_canales ? 5 : 0) + ($has_freq ? 5 : 0) + ($has_integracion ? 5 : 0);
+
+            // Component 5: Sostenibilidad Ambiental y Cumplimiento Normativo (Max 15 pts)
+            $usa_abonos = $carac['usa_abonos'];
+            $has_agroecologica = ($usa_abonos == '1' || strtolower($usa_abonos ?? '') === 'sí' || strtolower($usa_abonos ?? '') === 'si');
+
+            $certCount = isset($certificaciones_count[$pid]) ? $certificaciones_count[$pid] : 0;
+            $has_en_tramite = $carac['en_tramite_bool'] === 'Sí';
+            $has_certificaciones = ($certCount > 0 || $has_en_tramite);
+
+            $abonos_val = ($carac['usa_abonos'] == 1);
+            $asoc_val = ($carac['sistemas_asociados'] == 1);
+            $dif_val = ($carac['sistema_diferenciado'] == 1);
+            
+            $count_yes = 0;
+            if ($abonos_val) $count_yes++;
+            if ($asoc_val) $count_yes++;
+            if ($dif_val) $count_yes++;
+            
+            $conservacion_score = 0;
+            if ($count_yes === 3) {
+                $conservacion_score = 5;
+            } elseif ($count_yes === 2) {
+                $conservacion_score = 3;
+            } elseif ($count_yes === 1) {
+                $conservacion_score = 1;
+            }
+
+            $amb_score = ($has_agroecologica ? 5 : 0) + ($has_certificaciones ? 5 : 0) + $conservacion_score;
+
+            // Component 6: Impacto Territorial e Innovación (Max 10 pts)
+            $tiempo = intval($carac['tiempo_implementacion']);
+            $vitrina_score_int = intval(round(($tiempo / $max_months) * 5));
+            $sello_score = ($ferias == 1) ? 5 : 0;
+            
+            $imp_score = $vitrina_score_int + $sello_score;
+
+            $total_score = $social_score + $org_score + $prod_score + $com_score + $amb_score + $imp_score;
+
+            $social_cases[] = "WHEN $pid THEN $social_score";
+            $org_cases[] = "WHEN $pid THEN $org_score";
+            $prod_cases[] = "WHEN $pid THEN $prod_score";
+            $com_cases[] = "WHEN $pid THEN $com_score";
+            $amb_cases[] = "WHEN $pid THEN $amb_score";
+            $imp_cases[] = "WHEN $pid THEN $imp_score";
+            $total_cases[] = "WHEN $pid THEN $total_score";
+        }
+
+        if (!empty($pids)) {
+            $in_clause = implode(',', $pids);
+            $sql = "UPDATE caracterizacion_productor SET 
+                puntaje_social = CASE productor_id " . implode(' ', $social_cases) . " END,
+                puntaje_organizacional = CASE productor_id " . implode(' ', $org_cases) . " END,
+                puntaje_productivo = CASE productor_id " . implode(' ', $prod_cases) . " END,
+                puntaje_comercial = CASE productor_id " . implode(' ', $com_cases) . " END,
+                puntaje_ambiental = CASE productor_id " . implode(' ', $amb_cases) . " END,
+                puntaje_impacto = CASE productor_id " . implode(' ', $imp_cases) . " END,
+                puntaje = CASE productor_id " . implode(' ', $total_cases) . " END
+                WHERE productor_id IN ($in_clause)";
+            
+            $pdo->exec($sql);
+        }
+    } catch (Exception $e) {
+        if ($pdo->inTransaction()) {
+            $pdo->rollBack();
+        }
+        error_log("Error in recalculate_all_producers_scores: " . $e->getMessage());
+    }
 }
 ?>
