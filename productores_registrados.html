@@ -755,6 +755,14 @@
                     <canvas id="categoryDistributionChart"></canvas>
                 </div>
             </div>
+
+            <!-- Product Frequency Chart Card -->
+            <div style="flex: 1; min-width: 300px; max-width: 100%; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; overflow: hidden;">
+                <h3 style="font-family: 'Inter', sans-serif; color: #444F2F; margin-bottom: 1.5rem; font-size: 1.3rem; font-weight: 700;">Top Productos por Categoría y Frecuencia</h3>
+                <div style="width: 100%; height: 400px; position: relative;">
+                    <canvas id="productFrequencyChart"></canvas>
+                </div>
+            </div>
         </div>
 
         <!-- Chart Section for Event Participations -->
@@ -970,6 +978,8 @@
         let veredaComparisonChartInstance = null;
         let categoryDistributionChartInstance = null;
         let eventParticipationChartInstance = null;
+        let productFrequencyChartInstance = null;
+        let allProductsRawData = [];
         let allCategories = [];
         let registeredVeredaCounts = {};
         let currentSortField = 'puntaje_ajustado'; // 'puntaje' or 'puntaje_ajustado'
@@ -979,13 +989,19 @@
             const tbody = document.getElementById('productores-tbody');
             if (!tbody) return;
             try {
-                const [prodRes, compRes] = await Promise.all([
+                const [prodRes, compRes, allProdRes] = await Promise.all([
                     fetch('api/get_productores.php'),
-                    fetch('api/get_completeness_report.php')
+                    fetch('api/get_completeness_report.php'),
+                    fetch('api/get_productos_reporte.php')
                 ]);
                 
                 const prodResult = await prodRes.json();
                 const compResult = await compRes.json();
+                const allProdResult = await allProdRes.json();
+
+                if (allProdResult.success) {
+                    allProductsRawData = allProdResult.data || [];
+                }
 
                 if (prodResult.success) {
                     allProducers = prodResult.data;
@@ -2467,6 +2483,9 @@
             // --- UPDATE CATEGORY DISTRIBUTION CHART ---
             updateCategoryDistributionChart(data);
 
+            // --- UPDATE PRODUCT FREQUENCY CHART ---
+            updateProductFrequencyChart(data);
+
             // --- UPDATE EVENT PARTICIPATION CHART ---
             updateEventParticipationChart();
         }
@@ -2624,6 +2643,95 @@
             } catch (err) {
                 console.error("Error rendering event participation chart:", err);
             }
+        }
+
+        function updateProductFrequencyChart(filteredProducers) {
+            const canvas = document.getElementById('productFrequencyChart');
+            if (!canvas) return;
+
+            const producerIds = new Set(filteredProducers.map(p => Number(p.id)));
+            const filteredProducts = allProductsRawData.filter(prod => producerIds.has(Number(prod.productor_id)));
+
+            const productStats = {};
+            
+            filteredProducts.forEach(prod => {
+                const producer = filteredProducers.find(p => Number(p.id) === Number(prod.productor_id));
+                const pName = (prod.producto_nombre || 'Desconocido').trim().toUpperCase();
+                const freq = (prod.frecuencia || 'No especificada').trim();
+
+                let cats = [];
+                if (producer && producer.categorias_ids) {
+                    producer.categorias_ids.split(',').forEach(id => {
+                        const catObj = allCategories.find(c => c.id == id);
+                        if (catObj) cats.push(catObj.nombre);
+                    });
+                }
+                if (cats.length === 0) cats.push('Sin Categoría');
+
+                cats.forEach(cat => {
+                    const label = `${cat} - ${pName}`;
+                    if (!productStats[label]) {
+                        productStats[label] = { total: 0, frequencies: {} };
+                    }
+                    productStats[label].total += 1;
+                    productStats[label].frequencies[freq] = (productStats[label].frequencies[freq] || 0) + 1;
+                });
+            });
+
+            // Get top 15 Product/Category combinations
+            const sortedProducts = Object.keys(productStats)
+                .sort((a, b) => productStats[b].total - productStats[a].total)
+                .slice(0, 15);
+
+            if (sortedProducts.length === 0) {
+                if (productFrequencyChartInstance) productFrequencyChartInstance.destroy();
+                return;
+            }
+
+            const allFrequencies = new Set();
+            sortedProducts.forEach(label => {
+                Object.keys(productStats[label].frequencies).forEach(f => allFrequencies.add(f));
+            });
+            const frequenciesArray = Array.from(allFrequencies);
+
+            const colors = ['#2A9D8F', '#E76F51', '#444F2F', '#F4A261', '#E9C46A', '#3D5A80', '#98C1D9', '#E07A5F', '#81B29A', '#F2CC8F'];
+            
+            const datasets = frequenciesArray.map((freq, index) => {
+                return {
+                    label: freq,
+                    data: sortedProducts.map(label => productStats[label].frequencies[freq] || 0),
+                    backgroundColor: colors[index % colors.length]
+                };
+            });
+
+            const ctx = canvas.getContext('2d');
+            if (productFrequencyChartInstance) productFrequencyChartInstance.destroy();
+
+            productFrequencyChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: sortedProducts,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { 
+                            stacked: true,
+                            ticks: { font: { size: 10 } }
+                        },
+                        y: { 
+                            stacked: true, 
+                            beginAtZero: true, 
+                            ticks: { stepSize: 1, font: { size: 11, weight: 'bold' } }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
         }
 
         function empezarCaracterizacion(id, nombre) {
@@ -3601,6 +3709,7 @@
                 const rows = data.map((p, generalIdx) => {
                     const veredaRank = rankingVeredaMap[p.id] || '-';
                     const generalRank = generalIdx + 1;
+                    const fullP = allProducers.find(ap => Number(ap.id) === Number(p.id));
 
                     const puntaje = p.puntaje !== null ? parseFloat(p.puntaje) : null;
                     const vNorm = normalizeVereda(p.vereda);
@@ -3616,6 +3725,7 @@
                         "Ranking Vereda": veredaRank,
                         "Productor": p.nombre_completo || '-',
                         "Vereda": p.vereda || '-',
+                        "Cuenca": fullP ? (fullP.cuenca || '-') : '-',
                         "Teléfono": p.telefono || '-',
                         "Estado Caracterización": p.is_complete ? 'Completa' : 'Incompleta',
                         "Puntaje Total": p.puntaje,
