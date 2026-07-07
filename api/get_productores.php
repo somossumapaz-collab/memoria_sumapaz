@@ -22,8 +22,8 @@ try {
     // Only recalculate once per session to avoid slamming Hostinger and causing timeouts
     if (empty($_SESSION['recalculated_scores']) || isset($_GET['force_recalculate'])) {
         require_once 'score_helper.php';
-        recalculate_all_producers_scores($pdo);
-        recalculate_beneficiarios($pdo);
+        // recalculate_all_producers_scores($pdo);
+        // recalculate_beneficiarios($pdo);
         $_SESSION['recalculated_scores'] = true;
     }
 

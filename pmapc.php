@@ -3811,15 +3811,13 @@
             row.querySelector('[name="f14_precio[]"]').value = precio > 0 ? precio : '';
         }
 
-        function calcIngresos(input) {
+                function calcIngresos(input) {
             const row = input.closest('tr');
             const cant = parseFloat(row.querySelector('[name="f15_cantidad[]"]').value) || 0;
             const precio = parseFloat(row.querySelector('[name="f15_precio[]"]').value) || 0;
             const ingresos = Math.round(cant * precio);
             row.querySelector('[name="f15_ingresos[]"]').value = ingresos > 0 ? ingresos : '';
-        }
-
-        function calcInv(i) {
+        }\n\n                function calcInv(i) {
             const valUnit = parseFloat(document.querySelector(`[name="f16_valunit_${i}"]`).value) || 0;
             const qty = parseFloat(document.querySelector(`[name="f16_cant_${i}"]`).value) || 0;
             const valTotal = Math.round(valUnit * qty);
