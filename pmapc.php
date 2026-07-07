@@ -712,7 +712,7 @@
                         <table class="table-input" id="tbl-f07">
                             <thead>
                                 <tr>
-                                    <th style="width: 15%;">Tipo de actor</th>
+                                    <th style="width: 15%;">Actor o aliado</th>
                                     <th style="width: 15%;">¿Qué aporta?</th>
                                     <th style="width: 15%;">¿Qué puede recibir?</th>
                                     <th style="width: 15%;">Posibilidad trabajo conjunto</th>
@@ -735,9 +735,10 @@
                         <table class="table-input" id="tbl-f08">
                             <thead>
                                 <tr>
-                                    <th style="width: 25%;">Método</th>
+                                    <th style="width: 20%;">Método</th>
                                     <th>¿A quién se aplicó?</th>
                                     <th>Resultados Obtenidos</th>
+                                    <th>Motivación de compra</th>
                                     <th>Soporte / Evidencia</th>
                                 </tr>
                             </thead>
@@ -746,36 +747,42 @@
                                     <td><strong>Degustación / muestra</strong></td>
                                     <td><input type="text" name="f08_quien_degus" placeholder="Ej. Clientes de feria"></td>
                                     <td><input type="text" name="f08_resultado_degus" placeholder="Ej. 90% les gustó la textura"></td>
+                                    <td><input type="text" name="f08_motivacion_degus" placeholder="Ej. Calidad del sabor y frescura"></td>
                                     <td><input type="text" name="f08_evidencia_degus" placeholder="Ej. Lista de firmas/fotos"></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Venta previa</strong></td>
                                     <td><input type="text" name="f08_quien_ventas" placeholder="Ej. Vecinos y conocidos"></td>
                                     <td><input type="text" name="f08_resultado_ventas" placeholder="Ej. Compra regular de 20 bultos"></td>
+                                    <td><input type="text" name="f08_motivacion_ventas" placeholder="Ej. Necesidad de abastecimiento local"></td>
                                     <td><input type="text" name="f08_evidencia_ventas" placeholder="Ej. Recibos de pago"></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Carta de intención</strong></td>
                                     <td><input type="text" name="f08_quien_cartas" placeholder="Ej. Restaurante de Bogotá"></td>
                                     <td><input type="text" name="f08_resultado_cartas" placeholder="Ej. Interés de compra de 30 kg/semana"></td>
+                                    <td><input type="text" name="f08_motivacion_cartas" placeholder="Ej. Búsqueda de productos limpios y origen de páramo"></td>
                                     <td><input type="text" name="f08_evidencia_cartas" placeholder="Ej. PDF de carta firmada"></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Encuesta</strong></td>
                                     <td><input type="text" name="f08_quien_encuesta" placeholder="Ej. Clientes potenciales"></td>
                                     <td><input type="text" name="f08_resultado_encuesta" placeholder="Ej. 80% compraría el producto"></td>
+                                    <td><input type="text" name="f08_motivacion_encuesta" placeholder="Ej. Relación precio-calidad y empaque ecológico"></td>
                                     <td><input type="text" name="f08_evidencia_encuesta" placeholder="Ej. Formularios físicos/digitales"></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Entrevista</strong></td>
                                     <td><input type="text" name="f08_quien_entrevista" placeholder="Ej. Comprador de supermercado"></td>
                                     <td><input type="text" name="f08_resultado_entrevista" placeholder="Ej. Sugirió empaque de 500g"></td>
+                                    <td><input type="text" name="f08_motivacion_entrevista" placeholder="Ej. Interés en productos con trazabilidad y valor social"></td>
                                     <td><input type="text" name="f08_evidencia_entrevista" placeholder="Ej. Audio o notas de reunión"></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Participación en feria</strong></td>
                                     <td><input type="text" name="f08_quien_feria" placeholder="Ej. Público general en Bogotá"></td>
                                     <td><input type="text" name="f08_resultado_feria" placeholder="Ej. Todo el stock vendido"></td>
+                                    <td><input type="text" name="f08_motivacion_feria" placeholder="Ej. Apoyo directo al campesinado y precio justo"></td>
                                     <td><input type="text" name="f08_evidencia_feria" placeholder="Ej. Fotos del stand"></td>
                                 </tr>
                                 <tr>
@@ -784,6 +791,7 @@
                                     </td>
                                     <td><input type="text" name="f08_quien_otro" placeholder="Ej. A quién aplicó"></td>
                                     <td><input type="text" name="f08_resultado_otro" placeholder="Ej. Resultado"></td>
+                                    <td><input type="text" name="f08_motivacion_otro" placeholder="Ej. Motivación"></td>
                                     <td><input type="text" name="f08_evidencia_otro" placeholder="Ej. Evidencia"></td>
                                 </tr>
                             </tbody>
@@ -812,6 +820,7 @@
                                     <th>Insumos Principales</th>
                                     <th>Almacenamiento/Uso</th>
                                     <th>Presentación / Empaque</th>
+                                    <th>Final diferencial</th>
                                     <th style="width: 50px;"></th>
                                 </tr>
                             </thead>
@@ -823,6 +832,7 @@
                                     <td><input type="text" name="f09_insumos[]" placeholder="Leche, cuajo, sal"></td>
                                     <td><input type="text" name="f09_almacenamiento[]" placeholder="Refrigerado 2-4°C"></td>
                                     <td><input type="text" name="f09_presentacion[]" placeholder="Bolsa vacío biodegradable"></td>
+                                    <td><input type="text" name="f09_diferencial[]" placeholder="Ej. Cultivo orgánico de páramo"></td>
                                     <td>
                                         <button type="button" class="row-action-btn" onclick="removeRow(this)">
                                             <svg style="width: 18px; height: 18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -844,19 +854,19 @@
                         <table class="table-input" id="tbl-f10">
                             <thead>
                                 <tr>
-                                    <th style="width: 10%;">Paso</th>
-                                    <th style="width: 45%;">Actividad del Proceso</th>
-                                    <th style="width: 20%;">Tiempo Estimado</th>
-                                    <th style="width: 20%;">Responsable</th>
+                                    <th>Bien / Servicio</th>
+                                    <th>Unidades a producir</th>
+                                    <th>Actividad del Proceso</th>
+                                    <th>Tiempo Estimado</th>
                                     <th style="width: 50px;"></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="dynamic-row-f10">
-                                    <td><input type="text" name="f10_paso[]" value="1" style="text-align: center;"></td>
+                                    <td><input type="text" name="f10_bien[]" placeholder="Ej. Queso Fresco"></td>
+                                    <td><input type="number" name="f10_unidades[]" placeholder="Ej. 100"></td>
                                     <td><input type="text" name="f10_actividad[]" placeholder="Ej. Ordeño y filtrado de leche"></td>
-                                    <td><input type="text" name="f10_tiempo[]" placeholder="Ej. 2 horas"></td>
-                                    <td><input type="text" name="f10_responsable[]" placeholder="Ej. María"></td>
+                                    <td><input type="text" name="f10_tiempo[]" placeholder="Ej. 1 hora"></td>
                                     <td>
                                         <button type="button" class="row-action-btn" onclick="removeRow(this)">
                                             <svg style="width: 18px; height: 18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -878,21 +888,40 @@
                         <table class="table-input" id="tbl-f11">
                             <thead>
                                 <tr>
-                                    <th style="width: 20%;">Insumo</th>
-                                    <th style="width: 15%;">Cantidad/Mes</th>
-                                    <th style="width: 15%;">Frecuencia</th>
-                                    <th style="width: 20%;">Proveedor o Fuente</th>
-                                    <th style="width: 30%;">Alternativa Sostenible</th>
+                                    <th>Insumo</th>
+                                    <th>Cantidad / unidad de medida</th>
+                                    <th>Frecuencia</th>
+                                    <th>Proveedor o fuente</th>
+                                    <th>Toxicidad Relativa</th>
+                                    <th>Impacto ambiental potencial</th>
+                                    <th>Medida de manejo (Ambiental)</th>
                                     <th style="width: 50px;"></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="dynamic-row-f11">
-                                    <td><input type="text" name="f11_insumo[]" placeholder="Ej. Abono / Semillas"></td>
-                                    <td><input type="text" name="f11_cantidad[]" placeholder="Ej. 10 bultos"></td>
-                                    <td><input type="text" name="f11_frecuencia[]" placeholder="Ej. Bimestral"></td>
-                                    <td><input type="text" name="f11_proveedor[]" placeholder="Ej. Almacén agropecuario"></td>
-                                    <td><input type="text" name="f11_sostenible[]" placeholder="Ej. Compostaje propio orgánico"></td>
+                                    <td><input type="text" name="f11_insumo[]" placeholder="Ej. Fertilizante químico"></td>
+                                    <td><input type="text" name="f11_cantidad[]" placeholder="Ej. 10 kg"></td>
+                                    <td>
+                                        <select name="f11_frecuencia[]">
+                                            <option value="Mensual">Mensual</option>
+                                            <option value="Trimestral">Trimestral</option>
+                                            <option value="Ocasional">Ocasional</option>
+                                            <option value="Permanente">Permanente</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" name="f11_proveedor[]" placeholder="Ej. Distribuidora local"></td>
+                                    <td>
+                                        <select name="f11_toxicidad[]">
+                                            <option value="Franja roja">Franja roja</option>
+                                            <option value="Franja amarilla">Franja amarilla</option>
+                                            <option value="Franja azul">Franja azul</option>
+                                            <option value="Franja verde">Franja verde</option>
+                                            <option value="N/A" selected>N/A</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" name="f11_impacto[]" placeholder="Ej. Contaminación del suelo"></td>
+                                    <td><input type="text" name="f11_manejo[]" placeholder="Ej. Dosificación estricta"></td>
                                     <td>
                                         <button type="button" class="row-action-btn" onclick="removeRow(this)">
                                             <svg style="width: 18px; height: 18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -912,20 +941,28 @@
                     <div class="format-title"><span>F12</span> Capacidad de Producción</div>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="f12_produccion_estimada">Producción mensual estimada (Unidades reales)</label>
+                            <label for="f12_produccion_estimada">Producción mensual real</label>
                             <input type="text" id="f12_produccion_estimada" name="f12_produccion_estimada" placeholder="Ej. 100 kg de queso al mes">
                         </div>
                         <div class="form-group">
-                            <label for="f12_produccion_maxima">Producción máxima posible (Con recursos actuales)</label>
+                            <label for="f12_produccion_maxima">Producción máxima posible</label>
                             <input type="text" id="f12_produccion_maxima" name="f12_produccion_maxima" placeholder="Ej. 150 kg de queso al mes">
                         </div>
                         <div class="form-group">
-                            <label for="f12_limitantes_prod">Limitantes productivos (Falta maquinaria, mano de obra)</label>
-                            <input type="text" id="f12_limitantes_prod" name="f12_limitantes_prod" placeholder="Ej. Capacidad del termo-sellador manual">
+                            <label for="f12_limitantes_prod">Limitantes productivos</label>
+                            <input type="text" id="f12_limitantes_prod" name="f12_limitantes_prod" placeholder="Ej. Falta de termo-selladora, mano de obra">
                         </div>
                         <div class="form-group">
-                            <label for="f12_limitantes_amb">Limitantes ambientales del territorio (Épocas de sequía, heladas)</label>
-                            <input type="text" id="f12_limitantes_amb" name="f12_limitantes_amb" placeholder="Ej. Caída de caudal de la fuente hídrica en enero">
+                            <label for="f12_limitantes_amb">Limitantes ambientales</label>
+                            <input type="text" id="f12_limitantes_amb" name="f12_limitantes_amb" placeholder="Ej. Épocas de sequía, heladas">
+                        </div>
+                        <div class="form-group">
+                            <label for="f12_capacidad_instalada">Capacidad Instalada</label>
+                            <input type="text" id="f12_capacidad_instalada" name="f12_capacidad_instalada" placeholder="Ej. Capacidad máxima teórica de la planta">
+                        </div>
+                        <div class="form-group">
+                            <label for="f12_capacidad_utilizada">Capacidad Utilizada</label>
+                            <input type="text" id="f12_capacidad_utilizada" name="f12_capacidad_utilizada" placeholder="Ej. Uso actual real de la capacidad (e.g. 60%)">
                         </div>
                     </div>
                 </div>
@@ -2246,6 +2283,109 @@
                         </table>
                     </div>
                 </div>
+
+                <!-- F22A Adaptación al Cambio Climático -->
+                <div class="format-block">
+                    <div class="format-title"><span>F22A</span> Adaptación al Cambio Climático</div>
+                    <div class="table-input-container">
+                        <table class="table-input" id="tbl-f22a">
+                            <thead>
+                                <tr>
+                                    <th style="width: 40%;">Aspecto</th>
+                                    <th>Respuesta</th>
+                                    <th style="width: 15%;">Nivel de riesgo</th>
+                                    <th>Acción de mejora propuesta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>¿En los últimos años ha tenido problemas por heladas, sequías, lluvias fuertes o granizadas? ¿Cuáles?</strong></td>
+                                    <td><input type="text" name="f22a_resp_0" placeholder="..."></td>
+                                    <td>
+                                        <select name="f22a_riesgo_0">
+                                            <option value="Bajo">Bajo</option>
+                                            <option value="Medio">Medio</option>
+                                            <option value="Alto">Alto</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" name="f22a_mejora_0" placeholder="..."></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>¿Qué cultivos, animales o actividades de la finca se han visto más afectados?</strong></td>
+                                    <td><input type="text" name="f22a_resp_1" placeholder="..."></td>
+                                    <td>
+                                        <select name="f22a_riesgo_1">
+                                            <option value="Bajo">Bajo</option>
+                                            <option value="Medio">Medio</option>
+                                            <option value="Alto">Alto</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" name="f22a_mejora_1" placeholder="..."></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>¿Qué hace para proteger su producción cuando ocurren estos eventos?</strong></td>
+                                    <td><input type="text" name="f22a_resp_2" placeholder="..."></td>
+                                    <td>
+                                        <select name="f22a_riesgo_2">
+                                            <option value="Bajo">Bajo</option>
+                                            <option value="Medio">Medio</option>
+                                            <option value="Alto">Alto</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" name="f22a_mejora_2" placeholder="..."></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>¿Ha cambiado la fecha de siembra, cosecha o el manejo de los animales por el clima?</strong></td>
+                                    <td><input type="text" name="f22a_resp_3" placeholder="..."></td>
+                                    <td>
+                                        <select name="f22a_riesgo_3">
+                                            <option value="Bajo">Bajo</option>
+                                            <option value="Medio">Medio</option>
+                                            <option value="Alto">Alto</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" name="f22a_mejora_3" placeholder="..."></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>¿Cuenta con alguna reserva de agua para épocas de verano o sequía (tanques, albercas, reservorios, agua lluvia)?</strong></td>
+                                    <td><input type="text" name="f22a_resp_4" placeholder="..."></td>
+                                    <td>
+                                        <select name="f22a_riesgo_4">
+                                            <option value="Bajo">Bajo</option>
+                                            <option value="Medio">Medio</option>
+                                            <option value="Alto">Alto</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" name="f22a_mejora_4" placeholder="..."></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>¿Qué considera que necesita para adaptarse mejor a estos cambios del clima?</strong></td>
+                                    <td><input type="text" name="f22a_resp_5" placeholder="..."></td>
+                                    <td>
+                                        <select name="f22a_riesgo_5">
+                                            <option value="Bajo">Bajo</option>
+                                            <option value="Medio">Medio</option>
+                                            <option value="Alto">Alto</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" name="f22a_mejora_5" placeholder="..."></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Conclusiones</strong></td>
+                                    <td><input type="text" name="f22a_resp_6" placeholder="..."></td>
+                                    <td>
+                                        <select name="f22a_riesgo_6">
+                                            <option value="Bajo">Bajo</option>
+                                            <option value="Medio">Medio</option>
+                                            <option value="Alto">Alto</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" name="f22a_mejora_6" placeholder="..."></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
 
             <!-- ================= STEP 8: RIESGOS ================= -->
@@ -2884,7 +3024,10 @@
                 if (data.f05.perfil_rest) addRowF05('Restaurantes / plazas', data.f05.perfil_rest, data.f05.ubicacion_rest, data.f05.necesidad_rest, data.f05.frecuencia_rest, data.f05.criterio_rest, '');
             } else {
                 addRowF05('Cliente directo');
+                addRowF05('Comprador local');
+                addRowF05('Comprador institucional');
                 addRowF05('Consumidor final');
+                addRowF05('Aliado comercial');
             }
 
             if (data.f06) {
@@ -2906,15 +3049,15 @@
                 if (data.f07.aporta_vecinos) addRowF07('Productores vecinos', data.f07.aporta_vecinos, data.f07.recibe_vecinos, '', '', data.f07.accion_vecinos);
                 if (data.f07.aporta_asoc) addRowF07('Asociación campesina', data.f07.aporta_asoc, data.f07.recibe_asoc, '', '', data.f07.accion_asoc);
                 if (data.f07.aporta_jac) addRowF07('Junta de Acción Comunal', data.f07.aporta_jac, data.f07.recibe_jac, '', '', data.f07.accion_jac);
-                if (data.f07.aporta_ferias) addRowF07('Ferias campesinas', data.f07.aporta_ferias, data.f07.recibe_ferias, '', '', data.f07.accion_ferias);
-                if (data.f07.aporta_inst) addRowF07('Instituciones (SENA, Alcaldía)', data.f07.aporta_inst, data.f07.recibe_inst, '', '', data.f07.accion_inst);
+                if (data.f07.aporta_ferias) addRowF07('Ferias o mercados campesinos', data.f07.aporta_ferias, data.f07.recibe_ferias, '', '', data.f07.accion_ferias);
+                if (data.f07.aporta_inst) addRowF07('Instituciones de apoyo', data.f07.aporta_inst, data.f07.recibe_inst, '', '', data.f07.accion_inst);
             } else {
                 addRowF07('Productores vecinos');
                 addRowF07('Asociación campesina');
                 addRowF07('Junta de Acción Comunal');
-                addRowF07('Ferias campesinas');
-                addRowF07('Instituciones (SENA, Alcaldía)');
                 addRowF07('Compradores locales');
+                addRowF07('Ferias o mercados campesinos');
+                addRowF07('Instituciones de apoyo');
                 addRowF07('Aliados logísticos o digitales');
                 addRowF07('Otros aliados');
             }
@@ -2922,31 +3065,38 @@
             if (data.f08) {
                 setInputByName('f08_quien_degus', data.f08.quien_degus);
                 setInputByName('f08_resultado_degus', data.f08.resultado_degus);
+                setInputByName('f08_motivacion_degus', data.f08.motivacion_degus);
                 setInputByName('f08_evidencia_degus', data.f08.evidencia_degus);
 
                 setInputByName('f08_quien_ventas', data.f08.quien_ventas);
                 setInputByName('f08_resultado_ventas', data.f08.resultado_ventas);
+                setInputByName('f08_motivacion_ventas', data.f08.motivacion_ventas);
                 setInputByName('f08_evidencia_ventas', data.f08.evidencia_ventas);
 
                 setInputByName('f08_quien_cartas', data.f08.quien_cartas);
                 setInputByName('f08_resultado_cartas', data.f08.resultado_cartas);
+                setInputByName('f08_motivacion_cartas', data.f08.motivacion_cartas);
                 setInputByName('f08_evidencia_cartas', data.f08.evidencia_cartas);
 
                 setInputByName('f08_quien_encuesta', data.f08.quien_encuesta);
                 setInputByName('f08_resultado_encuesta', data.f08.resultado_encuesta);
+                setInputByName('f08_motivacion_encuesta', data.f08.motivacion_encuesta);
                 setInputByName('f08_evidencia_encuesta', data.f08.evidencia_encuesta);
 
                 setInputByName('f08_quien_entrevista', data.f08.quien_entrevista);
                 setInputByName('f08_resultado_entrevista', data.f08.resultado_entrevista);
+                setInputByName('f08_motivacion_entrevista', data.f08.motivacion_entrevista);
                 setInputByName('f08_evidencia_entrevista', data.f08.evidencia_entrevista);
 
                 setInputByName('f08_quien_feria', data.f08.quien_feria);
                 setInputByName('f08_resultado_feria', data.f08.resultado_feria);
+                setInputByName('f08_motivacion_feria', data.f08.motivacion_feria);
                 setInputByName('f08_evidencia_feria', data.f08.evidencia_feria);
 
                 setInputByName('f08_metodo_otro', data.f08.metodo_otro);
                 setInputByName('f08_quien_otro', data.f08.quien_otro);
                 setInputByName('f08_resultado_otro', data.f08.resultado_otro);
+                setInputByName('f08_motivacion_otro', data.f08.motivacion_otro);
                 setInputByName('f08_evidencia_otro', data.f08.evidencia_otro);
             }
 
@@ -2955,7 +3105,7 @@
             tbl09.innerHTML = '';
             if (data.f09 && data.f09.length > 0) {
                 data.f09.forEach(item => {
-                    addRowF09(item.producto, item.descripcion, item.unidad, item.insumos, item.almacenamiento, item.presentacion);
+                    addRowF09(item.producto, item.descripcion, item.unidad, item.insumos, item.almacenamiento, item.presentacion, item.diferencial || '');
                 });
             } else {
                 addRowF09();
@@ -2964,8 +3114,8 @@
             const tbl10 = document.getElementById('tbl-f10').getElementsByTagName('tbody')[0];
             tbl10.innerHTML = '';
             if (data.f10 && data.f10.length > 0) {
-                data.f10.forEach((item, index) => {
-                    addRowF10(index + 1, item.actividad, item.tiempo, item.responsable);
+                data.f10.forEach((item) => {
+                    addRowF10(item.bien || '', item.unidades || '', item.actividad || '', item.tiempo || '');
                 });
             } else {
                 addRowF10();
@@ -2975,13 +3125,13 @@
             tbl11.innerHTML = '';
             if (data.f11 && Array.isArray(data.f11) && data.f11.length > 0) {
                 data.f11.forEach(item => {
-                    addRowF11(item.insumo, item.cantidad, item.frecuencia, item.proveedor, item.sostenible);
+                    addRowF11(item.insumo || '', item.cantidad || '', item.frecuencia || 'Mensual', item.proveedor || '', item.toxicidad || 'N/A', item.impacto || '', item.manejo || '');
                 });
             } else if (data.f11 && !Array.isArray(data.f11) && Object.keys(data.f11).length > 0) {
                 // Backwards compatibility for old saved F11 data
-                if (data.f11.cant_abono || data.f11.prov_abono) addRowF11('Abono / Semillas', data.f11.cant_abono, data.f11.frec_abono, data.f11.prov_abono, data.f11.sost_abono);
-                if (data.f11.cant_agua || data.f11.prov_agua) addRowF11('Agua de riego', data.f11.cant_agua, data.f11.frec_agua, data.f11.prov_agua, data.f11.sost_agua);
-                if (data.f11.cant_emp || data.f11.prov_emp) addRowF11('Empaques', data.f11.cant_emp, data.f11.frec_emp, data.f11.prov_emp, data.f11.sost_emp);
+                if (data.f11.cant_abono || data.f11.prov_abono) addRowF11('Abono / Semillas', data.f11.cant_abono, data.f11.frec_abono || 'Mensual', data.f11.prov_abono, 'N/A', '', data.f11.sost_abono || '');
+                if (data.f11.cant_agua || data.f11.prov_agua) addRowF11('Agua de riego', data.f11.cant_agua, data.f11.frec_agua || 'Mensual', data.f11.prov_agua, 'N/A', '', data.f11.sost_agua || '');
+                if (data.f11.cant_emp || data.f11.prov_emp) addRowF11('Empaques', data.f11.cant_emp, data.f11.frec_emp || 'Mensual', data.f11.prov_emp, 'N/A', '', data.f11.sost_emp || '');
             } else {
                 addRowF11();
             }
@@ -2991,6 +3141,8 @@
                 setVal('f12_produccion_maxima', data.f12.produccion_maxima);
                 setVal('f12_limitantes_prod', data.f12.limitantes_prod);
                 setVal('f12_limitantes_amb', data.f12.limitantes_amb);
+                setVal('f12_capacidad_instalada', data.f12.capacidad_instalada);
+                setVal('f12_capacidad_utilizada', data.f12.capacidad_utilizada);
             }
 
             // Module 4 (Límites)
@@ -3249,6 +3401,17 @@
                 }
             }
 
+            if (data.f22a) {
+                for (let i = 0; i <= 6; i++) {
+                    const row = data.f22a[i];
+                    if (row) {
+                        setInputByName(`f22a_resp_${i}`, row.resp);
+                        setInputByName(`f22a_riesgo_${i}`, row.riesgo);
+                        setInputByName(`f22a_mejora_${i}`, row.mejora);
+                    }
+                }
+            }
+
             // Module 8 (Riesgos)
             if (data.f23) {
                 setInputByName('f23_causa_clima', data.f23.causa_clima);
@@ -3351,12 +3514,30 @@
         }
 
         function clearDynamicRows() {
+            document.getElementById('tbl-f05').getElementsByTagName('tbody')[0].innerHTML = '';
+            document.getElementById('tbl-f07').getElementsByTagName('tbody')[0].innerHTML = '';
             document.getElementById('tbl-f09').getElementsByTagName('tbody')[0].innerHTML = '';
             document.getElementById('tbl-f10').getElementsByTagName('tbody')[0].innerHTML = '';
             document.getElementById('tbl-f14').getElementsByTagName('tbody')[0].innerHTML = '';
             document.getElementById('tbl-f16').getElementsByTagName('tbody')[0].innerHTML = '';
             document.getElementById('tbl-f23').getElementsByTagName('tbody')[0].innerHTML = '';
             document.getElementById('tbl-f24').getElementsByTagName('tbody')[0].innerHTML = '';
+
+            addRowF05('Cliente directo');
+            addRowF05('Comprador local');
+            addRowF05('Comprador institucional');
+            addRowF05('Consumidor final');
+            addRowF05('Aliado comercial');
+
+            addRowF07('Productores vecinos');
+            addRowF07('Asociación campesina');
+            addRowF07('Junta de Acción Comunal');
+            addRowF07('Compradores locales');
+            addRowF07('Ferias o mercados campesinos');
+            addRowF07('Instituciones de apoyo');
+            addRowF07('Aliados logísticos o digitales');
+            addRowF07('Otros aliados');
+
             addRowF09();
             addRowF10();
             addRowF14();
@@ -3484,7 +3665,7 @@
             updateFormCompletionProgress();
         }
 
-        function addRowF09(prod='', desc='', unit='', ins='', storage='', pres='') {
+        function addRowF09(prod='', desc='', unit='', ins='', storage='', pres='', dif='') {
             const tbody = document.getElementById('tbl-f09').getElementsByTagName('tbody')[0];
             const tr = document.createElement('tr');
             tr.className = "dynamic-row-f09";
@@ -3495,6 +3676,7 @@
                 <td><input type="text" name="f09_insumos[]" value="${ins}"></td>
                 <td><input type="text" name="f09_almacenamiento[]" value="${storage}"></td>
                 <td><input type="text" name="f09_presentacion[]" value="${pres}"></td>
+                <td><input type="text" name="f09_diferencial[]" value="${dif}"></td>
                 <td>
                     <button type="button" class="row-action-btn" onclick="removeRow(this)">
                         <svg style="width: 18px; height: 18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -3507,16 +3689,15 @@
             updateFormCompletionProgress();
         }
 
-        function addRowF10(step='', act='', time='', resp='') {
+        function addRowF10(bien='', unidades='', act='', time='') {
             const tbody = document.getElementById('tbl-f10').getElementsByTagName('tbody')[0];
             const tr = document.createElement('tr');
             tr.className = "dynamic-row-f10";
-            const index = step || (tbody.rows.length + 1);
             tr.innerHTML = `
-                <td><input type="text" name="f10_paso[]" value="${index}" style="text-align: center;"></td>
-                <td><input type="text" name="f10_actividad[]" value="${act}"></td>
+                <td><input type="text" name="f10_bien[]" value="${bien}" placeholder="Ej. Queso Fresco"></td>
+                <td><input type="number" name="f10_unidades[]" value="${unidades}" placeholder="Ej. 100"></td>
+                <td><input type="text" name="f10_actividad[]" value="${act}" placeholder="Ej. Ordeño y filtrado"></td>
                 <td><input type="text" name="f10_tiempo[]" value="${time}" placeholder="Ej. 1 hora"></td>
-                <td><input type="text" name="f10_responsable[]" value="${resp}"></td>
                 <td>
                     <button type="button" class="row-action-btn" onclick="removeRow(this)">
                         <svg style="width: 18px; height: 18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -3529,23 +3710,33 @@
             updateFormCompletionProgress();
         }
 
-        function reindexSteps() {
-            const rows = document.querySelectorAll('#tbl-f10 tbody tr');
-            rows.forEach((row, i) => {
-                row.querySelector('[name="f10_paso[]"]').value = i + 1;
-            });
-        }
-
-        function addRowF11(insumo='', cantidad='', frecuencia='', proveedor='', sostenible='') {
+        function addRowF11(insumo='', cantidad='', frecuencia='Mensual', proveedor='', toxicidad='N/A', impacto='', manejo='') {
             const tbody = document.getElementById('tbl-f11').getElementsByTagName('tbody')[0];
             const tr = document.createElement('tr');
             tr.className = "dynamic-row-f11";
             tr.innerHTML = `
-                <td><input type="text" name="f11_insumo[]" value="${insumo}" placeholder="Ej. Abono / Semillas"></td>
-                <td><input type="text" name="f11_cantidad[]" value="${cantidad}"></td>
-                <td><input type="text" name="f11_frecuencia[]" value="${frecuencia}"></td>
+                <td><input type="text" name="f11_insumo[]" value="${insumo}" placeholder="Ej. Fertilizante químico"></td>
+                <td><input type="text" name="f11_cantidad[]" value="${cantidad}" placeholder="Ej. 10 kg"></td>
+                <td>
+                    <select name="f11_frecuencia[]">
+                        <option value="Mensual" ${frecuencia === 'Mensual' ? 'selected' : ''}>Mensual</option>
+                        <option value="Trimestral" ${frecuencia === 'Trimestral' ? 'selected' : ''}>Trimestral</option>
+                        <option value="Ocasional" ${frecuencia === 'Ocasional' ? 'selected' : ''}>Ocasional</option>
+                        <option value="Permanente" ${frecuencia === 'Permanente' ? 'selected' : ''}>Permanente</option>
+                    </select>
+                </td>
                 <td><input type="text" name="f11_proveedor[]" value="${proveedor}"></td>
-                <td><input type="text" name="f11_sostenible[]" value="${sostenible}"></td>
+                <td>
+                    <select name="f11_toxicidad[]">
+                        <option value="Franja roja" ${toxicidad === 'Franja roja' ? 'selected' : ''}>Franja roja</option>
+                        <option value="Franja amarilla" ${toxicidad === 'Franja amarilla' ? 'selected' : ''}>Franja amarilla</option>
+                        <option value="Franja azul" ${toxicidad === 'Franja azul' ? 'selected' : ''}>Franja azul</option>
+                        <option value="Franja verde" ${toxicidad === 'Franja verde' ? 'selected' : ''}>Franja verde</option>
+                        <option value="N/A" ${toxicidad === 'N/A' ? 'selected' : ''}>N/A</option>
+                    </select>
+                </td>
+                <td><input type="text" name="f11_impacto[]" value="${impacto}"></td>
+                <td><input type="text" name="f11_manejo[]" value="${manejo}"></td>
                 <td>
                     <button type="button" class="row-action-btn" onclick="removeRow(this)">
                         <svg style="width: 18px; height: 18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -3772,6 +3963,18 @@
             return arr;
         }
 
+        function getTableDataF22A() {
+            const arr = [];
+            for (let i = 0; i <= 6; i++) {
+                arr.push({
+                    resp: document.querySelector(`[name="f22a_resp_${i}"]`)?.value || '',
+                    riesgo: document.querySelector(`[name="f22a_riesgo_${i}"]`)?.value || 'Bajo',
+                    mejora: document.querySelector(`[name="f22a_mejora_${i}"]`)?.value || ''
+                });
+            }
+            return arr;
+        }
+
         function calcTotalF19A() {
             let sum = 0;
             for (let i = 0; i <= 9; i++) {
@@ -3811,13 +4014,15 @@
             row.querySelector('[name="f14_precio[]"]').value = precio > 0 ? precio : '';
         }
 
-                function calcIngresos(input) {
+        function calcIngresos(input) {
             const row = input.closest('tr');
             const cant = parseFloat(row.querySelector('[name="f15_cantidad[]"]').value) || 0;
             const precio = parseFloat(row.querySelector('[name="f15_precio[]"]').value) || 0;
             const ingresos = Math.round(cant * precio);
             row.querySelector('[name="f15_ingresos[]"]').value = ingresos > 0 ? ingresos : '';
-        }\n\n                function calcInv(i) {
+        }
+
+        function calcInv(i) {
             const valUnit = parseFloat(document.querySelector(`[name="f16_valunit_${i}"]`).value) || 0;
             const qty = parseFloat(document.querySelector(`[name="f16_cant_${i}"]`).value) || 0;
             const valTotal = Math.round(valUnit * qty);
@@ -3950,31 +4155,38 @@
                     f08: {
                         quien_degus: formData.get('f08_quien_degus'),
                         resultado_degus: formData.get('f08_resultado_degus'),
+                        motivacion_degus: formData.get('f08_motivacion_degus'),
                         evidencia_degus: formData.get('f08_evidencia_degus'),
 
                         quien_ventas: formData.get('f08_quien_ventas'),
                         resultado_ventas: formData.get('f08_resultado_ventas'),
+                        motivacion_ventas: formData.get('f08_motivacion_ventas'),
                         evidencia_ventas: formData.get('f08_evidencia_ventas'),
 
                         quien_cartas: formData.get('f08_quien_cartas'),
                         resultado_cartas: formData.get('f08_resultado_cartas'),
+                        motivacion_cartas: formData.get('f08_motivacion_cartas'),
                         evidencia_cartas: formData.get('f08_evidencia_cartas'),
 
                         quien_encuesta: formData.get('f08_quien_encuesta'),
                         resultado_encuesta: formData.get('f08_resultado_encuesta'),
+                        motivacion_encuesta: formData.get('f08_motivacion_encuesta'),
                         evidencia_encuesta: formData.get('f08_evidencia_encuesta'),
 
                         quien_entrevista: formData.get('f08_quien_entrevista'),
                         resultado_entrevista: formData.get('f08_resultado_entrevista'),
+                        motivacion_entrevista: formData.get('f08_motivacion_entrevista'),
                         evidencia_entrevista: formData.get('f08_evidencia_entrevista'),
 
                         quien_feria: formData.get('f08_quien_feria'),
                         resultado_feria: formData.get('f08_resultado_feria'),
+                        motivacion_feria: formData.get('f08_motivacion_feria'),
                         evidencia_feria: formData.get('f08_evidencia_feria'),
 
                         metodo_otro: formData.get('f08_metodo_otro'),
                         quien_otro: formData.get('f08_quien_otro'),
                         resultado_otro: formData.get('f08_resultado_otro'),
+                        motivacion_otro: formData.get('f08_motivacion_otro'),
                         evidencia_otro: formData.get('f08_evidencia_otro')
                     },
                     f09: getTableDataF09(),
@@ -3984,7 +4196,9 @@
                         produccion_estimada: formData.get('f12_produccion_estimada'),
                         produccion_maxima: formData.get('f12_produccion_maxima'),
                         limitantes_prod: formData.get('f12_limitantes_prod'),
-                        limitantes_amb: formData.get('f12_limitantes_amb')
+                        limitantes_amb: formData.get('f12_limitantes_amb'),
+                        capacidad_instalada: formData.get('f12_capacidad_instalada'),
+                        capacidad_utilizada: formData.get('f12_capacidad_utilizada')
                     },
                     f12a: {
                         estado_agua: formData.get('f12a_estado_agua'),
@@ -4056,7 +4270,8 @@
                     f21_conclusion: document.getElementById('f21_conclusion').value,
                     f21: getTableDataF21(),
                     f22: getTableDataF22(),
-                                        f23: getTableDataF23(),
+                    f22a: getTableDataF22A(),
+                    f23: getTableDataF23(),
                     f24: getTableDataF24(),
                     f25: getTableDataF25(),
                     f26: getTableDataF26(),
@@ -4137,7 +4352,8 @@
                         unidad: row.querySelector('[name="f09_unidad[]"]').value,
                         insumos: row.querySelector('[name="f09_insumos[]"]').value,
                         almacenamiento: row.querySelector('[name="f09_almacenamiento[]"]').value,
-                        presentacion: row.querySelector('[name="f09_presentacion[]"]').value
+                        presentacion: row.querySelector('[name="f09_presentacion[]"]').value,
+                        diferencial: row.querySelector('[name="f09_diferencial[]"]').value
                     });
                 }
             });
@@ -4147,13 +4363,13 @@
         function getTableDataF10() {
             const data = [];
             document.querySelectorAll('.dynamic-row-f10').forEach(row => {
-                const actividad = row.querySelector('[name="f10_actividad[]"]').value.trim();
-                if (actividad) {
+                const bien = row.querySelector('[name="f10_bien[]"]').value.trim();
+                if (bien) {
                     data.push({
-                        paso: row.querySelector('[name="f10_paso[]"]').value,
-                        actividad: actividad,
-                        tiempo: row.querySelector('[name="f10_tiempo[]"]').value,
-                        responsable: row.querySelector('[name="f10_responsable[]"]').value
+                        bien: bien,
+                        unidades: row.querySelector('[name="f10_unidades[]"]').value,
+                        actividad: row.querySelector('[name="f10_actividad[]"]').value,
+                        tiempo: row.querySelector('[name="f10_tiempo[]"]').value
                     });
                 }
             });
@@ -4170,7 +4386,9 @@
                         cantidad: row.querySelector('[name="f11_cantidad[]"]').value,
                         frecuencia: row.querySelector('[name="f11_frecuencia[]"]').value,
                         proveedor: row.querySelector('[name="f11_proveedor[]"]').value,
-                        sostenible: row.querySelector('[name="f11_sostenible[]"]').value
+                        toxicidad: row.querySelector('[name="f11_toxicidad[]"]').value,
+                        impacto: row.querySelector('[name="f11_impacto[]"]').value,
+                        manejo: row.querySelector('[name="f11_manejo[]"]').value
                     });
                 }
             });
