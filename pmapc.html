@@ -372,6 +372,18 @@
 </head>
 
 <body>
+    <!-- Sync Banner -->
+    <div id="sync-banner" style="display: none; background: #FFF3E0; color: #E65100; padding: 12px 20px; text-align: center; font-weight: 600; font-size: 0.95rem; border-bottom: 2px solid #FFE0B2; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; font-family: 'Inter', sans-serif;">
+        <span id="sync-banner-text">Tienes registros guardados sin conexión pendientes de sincronizar.</span>
+        <button onclick="syncPendingRecords()" style="margin-left: 15px; background: #E65100; color: #fff; border: none; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 700; transition: background 0.2s;">Sincronizar ahora</button>
+    </div>
+
+    <!-- Offline Notification Toast -->
+    <div id="offline-toast" style="display: none; position: fixed; bottom: 20px; right: 20px; background: #323232; color: #fff; padding: 12px 24px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; font-family: 'Inter', sans-serif; font-size: 0.9rem; align-items: center; gap: 10px;">
+        <svg style="width: 20px; height: 20px; fill: #FFA726;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+        <span id="offline-toast-text">Modo sin conexión activo</span>
+    </div>
+
     <!-- Static Header -->
     <header id="main-header">
         <nav class="navbar-custom">
@@ -978,6 +990,21 @@
                 <!-- F12A Limites -->
                 <div class="format-block">
                     <div class="format-title"><span>F12A</span> Límites Ambientales y Ajustes en el Plan de Producción</div>
+                    
+                    <!-- Box of frequent problems in the territory -->
+                    <div class="info-alert-box" style="background-color: #F9FBE7; border-left: 5px solid #9E9D24; padding: 1.25rem; border-radius: 8px; margin-bottom: 1.5rem; font-family: 'Inter', sans-serif;">
+                        <h4 style="color: #558B2F; margin-top: 0; margin-bottom: 0.75rem; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                            <svg style="width: 20px; height: 20px; fill: #558B2F;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                            Problemas frecuentes del territorio que deben considerarse antes de diligenciar la matriz:
+                        </h4>
+                        <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.88rem; line-height: 1.5; color: #3E2723; display: flex; flex-direction: column; gap: 6px;">
+                            <li><strong>Heladas:</strong> pueden afectar la producción agrícola y pecuaria, ocasionando pérdidas en cultivos, afectaciones en pasturas y disminución de la disponibilidad de alimento para los animales.</li>
+                            <li><strong>Sequías o disminución del agua:</strong> pueden impactar la disponibilidad hídrica para riego, consumo animal, transformación y demás actividades productivas.</li>
+                            <li><strong>Erosión del suelo:</strong> se presenta con mayor frecuencia en zonas de pendiente, suelos descubiertos o con manejo inadecuado, reduciendo la fertilidad y aumentando la pérdida de suelo.</li>
+                            <li><strong>Acceso al predio:</strong> las condiciones de ingreso al predio influyen en la comercialización, el transporte de productos, el ingreso de insumos y los costos logísticos.</li>
+                        </ul>
+                    </div>
+
                     <div class="table-input-container">
                         <table class="table-input" id="tbl-f12a">
                             <thead>
@@ -1706,37 +1733,67 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Costos fijos</strong></td>
+                                    <td>
+                                        <strong>Costos fijos</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            Pagos obligatorios constantes que no cambian según la cantidad producida (ej. arriendos, servicios, salarios base).
+                                        </div>
+                                    </td>
                                     <td><input type="text" name="f17_desc_0" placeholder="..."></td>
                                     <td><input type="number" name="f17_val_0" placeholder="..."></td>
                                     <td><input type="text" name="f17_obs_0" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Costos variables</strong></td>
+                                    <td>
+                                        <strong>Costos variables</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            Gastos directos que aumentan o disminuyen según la cantidad de unidades que vayas a producir (ej. materias primas, insumos, jornales temporales).
+                                        </div>
+                                    </td>
                                     <td><input type="text" name="f17_desc_1" placeholder="..."></td>
                                     <td><input type="number" name="f17_val_1" placeholder="..."></td>
                                     <td><input type="text" name="f17_obs_1" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Costos logísticos</strong></td>
+                                    <td>
+                                        <strong>Costos logísticos</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            Gastos relacionados con el traslado, distribución de productos, transporte de insumos y costos de fletes o combustibles.
+                                        </div>
+                                    </td>
                                     <td><input type="text" name="f17_desc_2" placeholder="..."></td>
                                     <td><input type="number" name="f17_val_2" placeholder="..."></td>
                                     <td><input type="text" name="f17_obs_2" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Costos de empaque / etiqueta / QR</strong></td>
+                                    <td>
+                                        <strong>Costos de empaque / etiqueta / QR</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            Inversión en los envases, botellas, bolsas, impresión de etiquetas y códigos QR para la presentación del producto.
+                                        </div>
+                                    </td>
                                     <td><input type="text" name="f17_desc_3" placeholder="..."></td>
                                     <td><input type="number" name="f17_val_3" placeholder="..."></td>
                                     <td><input type="text" name="f17_obs_3" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Costos ambientales: compostaje, manejo de residuos, ahorro de agua</strong></td>
+                                    <td>
+                                        <strong>Costos ambientales</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            Gastos en prácticas sostenibles, como elaboración de abonos orgánicos (compostaje), manejo de residuos o tecnologías de ahorro de agua.
+                                        </div>
+                                    </td>
                                     <td><input type="text" name="f17_desc_4" placeholder="..."></td>
                                     <td><input type="number" name="f17_val_4" placeholder="..."></td>
                                     <td><input type="text" name="f17_obs_4" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Costos digitales: redes, internet, plataforma, diseño</strong></td>
+                                    <td>
+                                        <strong>Costos digitales</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            Gastos para comercialización y visibilidad virtual (ej. plan de datos, saldo de internet, publicidad en redes, diseño de marca).
+                                        </div>
+                                    </td>
                                     <td><input type="text" name="f17_desc_5" placeholder="..."></td>
                                     <td><input type="number" name="f17_val_5" placeholder="..."></td>
                                     <td><input type="text" name="f17_obs_5" placeholder="..."></td>
@@ -1934,74 +1991,172 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Reutilización del agua</strong></td>
+                                    <td>
+                                        <strong>Reutilización del agua</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            ¿Reutiliza el agua en alguna actividad de la finca? ¿Cuál?
+                                        </div>
+                                    </td>
                                     <td><input type="text" name="f19a_desc_0" placeholder="..."></td>
                                     <td><input type="text" name="f19a_cant_0" placeholder="..."></td>
                                     <td><input type="number" min="1" max="5" name="f19a_impacto_0" placeholder="1-5" oninput="calcTotalF19A()"></td>
                                     <td><input type="text" name="f19a_mejora_0" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Cercanía a fuentes hídricas</strong></td>
+                                    <td>
+                                        <strong>Cercanía a fuentes hídricas</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            ¿En el lugar hay quebradas, nacederos, humedales o lagunas?
+                                        </div>
+                                    </td>
                                     <td><input type="text" name="f19a_desc_1" placeholder="..."></td>
                                     <td><input type="text" name="f19a_cant_1" placeholder="..."></td>
                                     <td><input type="number" min="1" max="5" name="f19a_impacto_1" placeholder="1-5" oninput="calcTotalF19A()"></td>
                                     <td><input type="text" name="f19a_mejora_1" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Disponibilidad del recurso hídrico</strong></td>
+                                    <td>
+                                        <strong>Vegetación en fuentes</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            Si contestó Sí a la pregunta anterior, ¿las quebradas o nacederos tienen árboles o vegetación alrededor?
+                                        </div>
+                                    </td>
                                     <td><input type="text" name="f19a_desc_2" placeholder="..."></td>
                                     <td><input type="text" name="f19a_cant_2" placeholder="..."></td>
                                     <td><input type="number" min="1" max="5" name="f19a_impacto_2" placeholder="1-5" oninput="calcTotalF19A()"></td>
                                     <td><input type="text" name="f19a_mejora_2" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Uso en el proceso productivo</strong></td>
+                                    <td>
+                                        <strong>Disponibilidad del recurso hídrico</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            ¿Durante todo el año tiene suficiente agua para la producción?
+                                        </div>
+                                    </td>
                                     <td><input type="text" name="f19a_desc_3" placeholder="..."></td>
                                     <td><input type="text" name="f19a_cant_3" placeholder="..."></td>
                                     <td><input type="number" min="1" max="5" name="f19a_impacto_3" placeholder="1-5" oninput="calcTotalF19A()"></td>
                                     <td><input type="text" name="f19a_mejora_3" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Riesgo de contaminación</strong></td>
+                                    <td>
+                                        <strong>Acción regenerativa (Siembra)</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            ¿Ha sembrado árboles cerca de las fuentes de agua como acción regenerativa?
+                                        </div>
+                                    </td>
                                     <td><input type="text" name="f19a_desc_4" placeholder="..."></td>
                                     <td><input type="text" name="f19a_cant_4" placeholder="..."></td>
                                     <td><input type="number" min="1" max="5" name="f19a_impacto_4" placeholder="1-5" oninput="calcTotalF19A()"></td>
                                     <td><input type="text" name="f19a_mejora_4" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Consumo en el proceso productivo</strong></td>
+                                    <td>
+                                        <strong>Uso en el proceso productivo</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            ¿Para qué actividades utiliza el agua? (riego, animales, lavado, transformación, consumo humano).
+                                        </div>
+                                    </td>
                                     <td><input type="text" name="f19a_desc_5" placeholder="..."></td>
                                     <td><input type="text" name="f19a_cant_5" placeholder="..."></td>
                                     <td><input type="number" min="1" max="5" name="f19a_impacto_5" placeholder="1-5" oninput="calcTotalF19A()"></td>
                                     <td><input type="text" name="f19a_mejora_5" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Dependencia de fuentes externas</strong></td>
+                                    <td>
+                                        <strong>Riesgo de contaminación</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            ¿Hay actividades que puedan contaminar el agua?
+                                        </div>
+                                    </td>
                                     <td><input type="text" name="f19a_desc_6" placeholder="..."></td>
                                     <td><input type="text" name="f19a_cant_6" placeholder="..."></td>
                                     <td><input type="number" min="1" max="5" name="f19a_impacto_6" placeholder="1-5" oninput="calcTotalF19A()"></td>
                                     <td><input type="text" name="f19a_mejora_6" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Aprovechamiento de agua-lluvia (canecas, pocetas, albercas, tanques con geomembrana)</strong></td>
+                                    <td>
+                                        <strong>Consumo en el proceso productivo</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            ¿Considera que usa mucha, poca o suficiente agua para producir?
+                                        </div>
+                                    </td>
                                     <td><input type="text" name="f19a_desc_7" placeholder="..."></td>
                                     <td><input type="text" name="f19a_cant_7" placeholder="..."></td>
                                     <td><input type="number" min="1" max="5" name="f19a_impacto_7" placeholder="1-5" oninput="calcTotalF19A()"></td>
                                     <td><input type="text" name="f19a_mejora_7" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>¿El predio cuenta con bebederos? (para el ganado)</strong></td>
+                                    <td>
+                                        <strong>Dependencia de fuentes externas</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            ¿El agua que utiliza proviene del mismo predio o debe traerla de otro lugar?
+                                        </div>
+                                    </td>
                                     <td><input type="text" name="f19a_desc_8" placeholder="..."></td>
                                     <td><input type="text" name="f19a_cant_8" placeholder="..."></td>
                                     <td><input type="number" min="1" max="5" name="f19a_impacto_8" placeholder="1-5" oninput="calcTotalF19A()"></td>
                                     <td><input type="text" name="f19a_mejora_8" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>¿Se cuenta con equipos eficientes de riego?</strong></td>
+                                    <td>
+                                        <strong>Aprovechamiento de agua lluvia</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            ¿Recoge agua lluvia para usarla en el predio? ¿Cómo? (canecas, pocetas, albercas, tanques con geomembrana u otros sistemas).
+                                        </div>
+                                    </td>
                                     <td><input type="text" name="f19a_desc_9" placeholder="..."></td>
                                     <td><input type="text" name="f19a_cant_9" placeholder="..."></td>
                                     <td><input type="number" min="1" max="5" name="f19a_impacto_9" placeholder="1-5" oninput="calcTotalF19A()"></td>
                                     <td><input type="text" name="f19a_mejora_9" placeholder="..."></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>¿El predio cuenta con bebederos?</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            ¿Los animales cuentan con bebederos para evitar entrar directamente a las quebradas o nacederos?
+                                        </div>
+                                    </td>
+                                    <td><input type="text" name="f19a_desc_10" placeholder="..."></td>
+                                    <td><input type="text" name="f19a_cant_10" placeholder="..."></td>
+                                    <td><input type="number" min="1" max="5" name="f19a_impacto_10" placeholder="1-5" oninput="calcTotalF19A()"></td>
+                                    <td><input type="text" name="f19a_mejora_10" placeholder="..."></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>¿Se cuenta con equipos eficientes de riego?</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            ¿Utiliza algún sistema que ayude a ahorrar agua al regar?
+                                        </div>
+                                    </td>
+                                    <td><input type="text" name="f19a_desc_11" placeholder="..."></td>
+                                    <td><input type="text" name="f19a_cant_11" placeholder="..."></td>
+                                    <td><input type="number" min="1" max="5" name="f19a_impacto_11" placeholder="1-5" oninput="calcTotalF19A()"></td>
+                                    <td><input type="text" name="f19a_mejora_11" placeholder="..."></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Problemas por disminución de agua</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            ¿Ha tenido problemas porque el agua disminuye en verano?
+                                        </div>
+                                    </td>
+                                    <td><input type="text" name="f19a_desc_12" placeholder="..."></td>
+                                    <td><input type="text" name="f19a_cant_12" placeholder="..."></td>
+                                    <td><input type="number" min="1" max="5" name="f19a_impacto_12" placeholder="1-5" oninput="calcTotalF19A()"></td>
+                                    <td><input type="text" name="f19a_mejora_12" placeholder="..."></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Cuidado del agua de la finca</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            Se pueden evidenciar prácticas como cercas, siembra de árboles, protección de nacederos, uso eficiente y mantenimiento de mangueras.
+                                        </div>
+                                    </td>
+                                    <td><input type="text" name="f19a_desc_13" placeholder="..."></td>
+                                    <td><input type="text" name="f19a_cant_13" placeholder="..."></td>
+                                    <td><input type="number" min="1" max="5" name="f19a_impacto_13" placeholder="1-5" oninput="calcTotalF19A()"></td>
+                                    <td><input type="text" name="f19a_mejora_13" placeholder="..."></td>
                                 </tr>
                                 <tr>
                                     <td colspan="3" style="text-align: right;"><strong>Total</strong></td>
@@ -2034,18 +2189,28 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Residuos orgánicos de cosecha</strong></td>
+                                    <td>
+                                        <strong>Residuos orgánicos de cosecha</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            (Ejm: pasto, hojas, residuos de cocina, restos de cosecha cocina o material vegetal).
+                                        </div>
+                                    </td>
                                     <td><input type="number" name="f20_cant_0" placeholder="..." oninput="calcTotalF20()"></td>
                                     <td><input type="text" name="f20_manejo_0" placeholder="..."></td>
-                                    <td>Compostaje, lumbricultura, reincorporación al suelo</td>
+                                    <td>Compostaje, lombricultura, reincorporación al suelo.</td>
                                     <td><input type="text" name="f20_destino_0" placeholder="..."></td>
                                     <td><input type="text" name="f20_resp_0" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Residuos aprovechables (Plástico, vidrios, botellas, empaques, etc.)</strong></td>
+                                    <td>
+                                        <strong>Residuos aprovechables</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            Plástico, vidrios, botellas, empaques y materiales reciclables.
+                                        </div>
+                                    </td>
                                     <td><input type="number" name="f20_cant_1" placeholder="..." oninput="calcTotalF20()"></td>
                                     <td><input type="text" name="f20_manejo_1" placeholder="..."></td>
-                                    <td>Uso de empaques biodegradables, empaques retornables y reciclables</td>
+                                    <td>Uso de empaques biodegradables, empaques retornables y reciclables.</td>
                                     <td><input type="text" name="f20_destino_1" placeholder="..."></td>
                                     <td><input type="text" name="f20_resp_1" placeholder="..."></td>
                                 </tr>
@@ -2053,28 +2218,38 @@
                                     <td><strong>Residuos no aprovechables</strong></td>
                                     <td><input type="number" name="f20_cant_2" placeholder="..." oninput="calcTotalF20()"></td>
                                     <td><input type="text" name="f20_manejo_2" placeholder="..."></td>
-                                    <td>Separación y disposición responsable</td>
+                                    <td>Separación y disposición responsable.</td>
                                     <td><input type="text" name="f20_destino_2" placeholder="..."></td>
                                     <td><input type="text" name="f20_resp_2" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Subproductos con valor comercial</strong></td>
+                                    <td>
+                                        <strong>Subproductos con valor comercial</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            (materiales que pueden venderse o aprovecharse, como estiércol, leche de descarte, lana, madera u otros.)
+                                        </div>
+                                    </td>
                                     <td><input type="number" name="f20_cant_3" placeholder="..." oninput="calcTotalF20()"></td>
                                     <td><input type="text" name="f20_manejo_3" placeholder="..."></td>
-                                    <td>Transformación o venta asociativa</td>
+                                    <td>Transformación o venta asociativa.</td>
                                     <td><input type="text" name="f20_destino_3" placeholder="..."></td>
                                     <td><input type="text" name="f20_resp_3" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Residuo peligroso</strong></td>
+                                    <td>
+                                        <strong>Residuo peligroso</strong>
+                                        <div style="font-size: 0.78rem; color: #555; font-weight: normal; margin-top: 4px; line-height: 1.3;">
+                                            (envases de agroquímicos, aceites usados, pilas, medicamentos veterinarios vencidos y otros residuos peligrosos.)
+                                        </div>
+                                    </td>
                                     <td><input type="number" name="f20_cant_4" placeholder="..." oninput="calcTotalF20()"></td>
                                     <td><input type="text" name="f20_manejo_4" placeholder="..."></td>
-                                    <td>Residuos peligrosos (aceites, envases contaminados, sustancias químicas, agroquímicos, fertilizantes, plaguicidas, entre otros.)</td>
+                                    <td>Separación, almacenamiento temporal seguro y entrega a gestores o puntos autorizados.</td>
                                     <td><input type="text" name="f20_destino_4" placeholder="..."></td>
                                     <td><input type="text" name="f20_resp_4" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Total, de cantidad estimada</strong></td>
+                                    <td><strong>Total de cantidad estimada</strong></td>
                                     <td><input type="number" id="f20_total_cant" readonly placeholder="Calculado"></td>
                                     <td colspan="4"></td>
                                 </tr>
@@ -2370,20 +2545,12 @@
                                     </td>
                                     <td><input type="text" name="f22a_mejora_5" placeholder="..."></td>
                                 </tr>
-                                <tr>
-                                    <td><strong>Conclusiones</strong></td>
-                                    <td><input type="text" name="f22a_resp_6" placeholder="..."></td>
-                                    <td>
-                                        <select name="f22a_riesgo_6">
-                                            <option value="Bajo">Bajo</option>
-                                            <option value="Medio">Medio</option>
-                                            <option value="Alto">Alto</option>
-                                        </select>
-                                    </td>
-                                    <td><input type="text" name="f22a_mejora_6" placeholder="..."></td>
-                                </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <label for="f22a_conclusion">Conclusiones</label>
+                        <textarea id="f22a_conclusion" name="f22a_conclusion" rows="2" placeholder="..."></textarea>
                     </div>
                 </div>
             </div>
@@ -2414,10 +2581,22 @@
                             </thead>
                             <tbody>
                                 <tr class="dynamic-row-f23">
-                                    <td><input type="text" name="f23_tipo[]" placeholder="..."></td>
-                                    <td><input type="text" name="f23_riesgo[]" placeholder="..."></td>
+                                    <td>
+                                        <select name="f23_tipo[]" onchange="handleF23TypeChange(this)" style="width: 100%;">
+                                            <option value="Comercial (Baja demanda)">Comercial (Baja demanda)</option>
+                                            <option value="Productivo (Baja producción)">Productivo (Baja producción)</option>
+                                            <option value="Ambiental (Afectación de fuentes hídricas)">Ambiental (Afectación de fuentes hídricas)</option>
+                                            <option value="Ambiental (Deterioro del suelo)">Ambiental (Deterioro del suelo)</option>
+                                            <option value="Climático (Heladas, lluvias intensas o sequías)">Climático (Heladas, lluvias intensas o sequías)</option>
+                                            <option value="Logístico (Pérdida de frescura o retraso en entregas)">Logístico (Pérdida de frescura o retraso en entregas)</option>
+                                            <option value="Digital (Falta de actualización del QR, redes o base de datos)">Digital (Falta de actualización del QR, redes o base de datos)</option>
+                                            <option value="Organizativo (Falta de cooperación entre productores)">Organizativo (Falta de cooperación entre productores)</option>
+                                            <option value="Financiero (Aumento de costos)">Financiero (Aumento de costos)</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" name="f23_riesgo[]" placeholder="Ej. Baja demanda"></td>
                                     <td><input type="text" name="f23_causa[]" placeholder="..."></td>
-                                    <td><input type="text" name="f23_cons[]" placeholder="..."></td>
+                                    <td><input type="text" name="f23_consecuencia[]" placeholder="..."></td>
                                     <td>
                                         <select name="f23_nivel[]">
                                             <option value="Alto">Alto</option>
@@ -2425,8 +2604,8 @@
                                             <option value="Bajo">Bajo</option>
                                         </select>
                                     </td>
-                                    <td><input type="text" name="f23_prev[]" placeholder="..."></td>
-                                    <td><input type="text" name="f23_resp[]" placeholder="..."></td>
+                                    <td><input type="text" name="f23_prevencion[]" placeholder="..."></td>
+                                    <td><input type="text" name="f23_respuesta[]" placeholder="..."></td>
                                     <td>
                                         <button type="button" class="row-action-btn" onclick="removeRow(this)">
                                             <svg style="width: 18px; height: 18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -2535,7 +2714,7 @@
                             <tbody>
                                 <tr>
                                     <td><strong>Ventas</strong></td>
-                                    <td><input type="text" name="f25_ind_0" placeholder="..."></td>
+                                    <td><input type="text" name="f25_ind_0" value="Ingresos mensuales / unidades vendidas"></td>
                                     <td><input type="text" name="f25_meta_0" placeholder="..."></td>
                                     <td><input type="text" name="f25_frec_0" placeholder="..."></td>
                                     <td><input type="text" name="f25_resp_0" placeholder="..."></td>
@@ -2543,7 +2722,7 @@
                                 </tr>
                                 <tr>
                                     <td><strong>Producción</strong></td>
-                                    <td><input type="text" name="f25_ind_1" placeholder="..."></td>
+                                    <td><input type="text" name="f25_ind_1" value="Cantidad producida vs capacidad recomendada"></td>
                                     <td><input type="text" name="f25_meta_1" placeholder="..."></td>
                                     <td><input type="text" name="f25_frec_1" placeholder="..."></td>
                                     <td><input type="text" name="f25_resp_1" placeholder="..."></td>
@@ -2551,7 +2730,7 @@
                                 </tr>
                                 <tr>
                                     <td><strong>Financiera</strong></td>
-                                    <td><input type="text" name="f25_ind_2" placeholder="..."></td>
+                                    <td><input type="text" name="f25_ind_2" value="Balance mensual y margen"></td>
                                     <td><input type="text" name="f25_meta_2" placeholder="..."></td>
                                     <td><input type="text" name="f25_frec_2" placeholder="..."></td>
                                     <td><input type="text" name="f25_resp_2" placeholder="..."></td>
@@ -2559,7 +2738,7 @@
                                 </tr>
                                 <tr>
                                     <td><strong>Cliente</strong></td>
-                                    <td><input type="text" name="f25_ind_3" placeholder="..."></td>
+                                    <td><input type="text" name="f25_ind_3" value="Número de clientes recurrentes o recompra"></td>
                                     <td><input type="text" name="f25_meta_3" placeholder="..."></td>
                                     <td><input type="text" name="f25_frec_3" placeholder="..."></td>
                                     <td><input type="text" name="f25_resp_3" placeholder="..."></td>
@@ -2567,7 +2746,7 @@
                                 </tr>
                                 <tr>
                                     <td><strong>Digital</strong></td>
-                                    <td><input type="text" name="f25_ind_4" placeholder="..."></td>
+                                    <td><input type="text" name="f25_ind_4" value="Productos con QR / consultas / actualizaciones"></td>
                                     <td><input type="text" name="f25_meta_4" placeholder="..."></td>
                                     <td><input type="text" name="f25_frec_4" placeholder="..."></td>
                                     <td><input type="text" name="f25_resp_4" placeholder="..."></td>
@@ -2575,7 +2754,7 @@
                                 </tr>
                                 <tr>
                                     <td><strong>Logística</strong></td>
-                                    <td><input type="text" name="f25_ind_5" placeholder="..."></td>
+                                    <td><input type="text" name="f25_ind_5" value="Entregas puntuales y productos frescos"></td>
                                     <td><input type="text" name="f25_meta_5" placeholder="..."></td>
                                     <td><input type="text" name="f25_frec_5" placeholder="..."></td>
                                     <td><input type="text" name="f25_resp_5" placeholder="..."></td>
@@ -2583,7 +2762,7 @@
                                 </tr>
                                 <tr>
                                     <td><strong>Ambiental</strong></td>
-                                    <td><input type="text" name="f25_ind_6" placeholder="..."></td>
+                                    <td><input type="text" name="f25_ind_6" value="Reducción de consumo de agua o mejor manejo de residuos"></td>
                                     <td><input type="text" name="f25_meta_6" placeholder="..."></td>
                                     <td><input type="text" name="f25_frec_6" placeholder="..."></td>
                                     <td><input type="text" name="f25_resp_6" placeholder="..."></td>
@@ -2591,7 +2770,7 @@
                                 </tr>
                                 <tr>
                                     <td><strong>Regenerativa</strong></td>
-                                    <td><input type="text" name="f25_ind_7" placeholder="..."></td>
+                                    <td><input type="text" name="f25_ind_7" value="Compost producido, suelo mejorado, fuentes protegidas"></td>
                                     <td><input type="text" name="f25_meta_7" placeholder="..."></td>
                                     <td><input type="text" name="f25_frec_7" placeholder="..."></td>
                                     <td><input type="text" name="f25_resp_7" placeholder="..."></td>
@@ -2599,7 +2778,7 @@
                                 </tr>
                                 <tr>
                                     <td><strong>Cooperación</strong></td>
-                                    <td><input type="text" name="f25_ind_8" placeholder="..."></td>
+                                    <td><input type="text" name="f25_ind_8" value="Alianzas activas o ventas asociativas"></td>
                                     <td><input type="text" name="f25_meta_8" placeholder="..."></td>
                                     <td><input type="text" name="f25_frec_8" placeholder="..."></td>
                                     <td><input type="text" name="f25_resp_8" placeholder="..."></td>
@@ -2748,6 +2927,7 @@
 
     <!-- App Logic -->
     <script>
+        const API_BASE = window.location.protocol === 'file:' ? 'https://productorescampesinos.com/' : '';
         let currentStep = 1;
         const totalSteps = 8;
         let allProducers = [];
@@ -2756,7 +2936,7 @@
         document.addEventListener('DOMContentLoaded', async () => {
             // Check Auth Status on Load
             try {
-                const res = await fetch('api/check_auth.php');
+                const res = await fetch(API_BASE + 'api/check_auth.php');
                 const result = await res.json();
                 if (res.ok && result.authenticated) {
                     document.getElementById('header-auth-container').style.display = 'flex';
@@ -2897,18 +3077,27 @@
 
         async function loadProducers() {
             try {
-                const res = await fetch('api/get_productores.php');
+                const res = await fetch(API_BASE + 'api/get_productores.php');
                 const result = await res.json();
                 
                 if (result.success) {
                     allProducers = result.data;
+                    localStorage.setItem('cached_productores', JSON.stringify(allProducers));
                     document.getElementById('select-producer-input').placeholder = "Escriba el nombre o documento para buscar...";
                 } else {
-                    document.getElementById('select-producer-input').placeholder = "Error al cargar productores";
+                    throw new Error(result.error || "Error del servidor");
                 }
             } catch (err) {
                 console.error("Error loading producers:", err);
-                document.getElementById('select-producer-input').placeholder = "Error de red";
+                // Fallback to cache
+                const cached = localStorage.getItem('cached_productores');
+                if (cached) {
+                    allProducers = JSON.parse(cached);
+                    document.getElementById('select-producer-input').placeholder = "Cargado de caché (Sin conexión)...";
+                    showOfflineNotice("Lista de productores cargada desde la memoria local.");
+                } else {
+                    document.getElementById('select-producer-input').placeholder = "Error de red - Sin caché";
+                }
             }
         }
 
@@ -2936,11 +3125,13 @@
 
         async function loadSavedPmapc(id) {
             try {
-                const res = await fetch(`api/get_pmapc.php?id=${id}`);
+                const res = await fetch(API_BASE + `api/get_pmapc.php?id=${id}`);
                 const result = await res.json();
                 
                 if (result.success && result.exists) {
                     populateForm(result.data);
+                    // Cache the loaded data
+                    localStorage.setItem(`pmapc_data_${id}`, JSON.stringify(result.data));
                 } else {
                     // Reset form to defaults
                     document.getElementById('pmapc-form').reset();
@@ -2960,6 +3151,18 @@
                 updateFormCompletionProgress();
             } catch (err) {
                 console.error("Error loading PMAPC data:", err);
+                // Fallback to cache
+                const cachedData = localStorage.getItem(`pmapc_data_${id}`);
+                if (cachedData) {
+                    populateForm(JSON.parse(cachedData));
+                    updateFormCompletionProgress();
+                    showOfflineNotice("Datos del PMAPC cargados desde la memoria local.");
+                } else {
+                    // Reset form to defaults
+                    document.getElementById('pmapc-form').reset();
+                    document.getElementById('productor_id').value = id;
+                    clearDynamicRows();
+                }
             }
         }
 
@@ -3347,7 +3550,7 @@
 
             if (data.f19a_conclusion) setVal('f19a_conclusion', data.f19a_conclusion);
             if (data.f19a) {
-                for (let i = 0; i <= 9; i++) {
+                for (let i = 0; i <= 13; i++) {
                     const row = data.f19a[i];
                     if (row) {
                         setInputByName(`f19a_desc_${i}`, row.desc);
@@ -3401,8 +3604,9 @@
                 }
             }
 
+            if (data.f22a_conclusion) setVal('f22a_conclusion', data.f22a_conclusion);
             if (data.f22a) {
-                for (let i = 0; i <= 6; i++) {
+                for (let i = 0; i <= 5; i++) {
                     const row = data.f22a[i];
                     if (row) {
                         setInputByName(`f22a_resp_${i}`, row.resp);
@@ -3434,6 +3638,32 @@
                 });
             } else {
                 addRowF24();
+            }
+
+            if (data.f25) {
+                for (let i = 0; i <= 8; i++) {
+                    const row = data.f25[i];
+                    if (row) {
+                        if (row.ind) setInputByName(`f25_ind_${i}`, row.ind);
+                        setInputByName(`f25_meta_${i}`, row.meta);
+                        setInputByName(`f25_frec_${i}`, row.frec);
+                        setInputByName(`f25_resp_${i}`, row.resp);
+                        setInputByName(`f25_evi_${i}`, row.evi);
+                    }
+                }
+            }
+
+            if (data.f26) {
+                for (let i = 0; i <= 8; i++) {
+                    const row = data.f26[i];
+                    if (row) {
+                        setInputByName(`f26_prod_${i}`, row.prod);
+                        setInputByName(`f26_com_${i}`, row.com);
+                        setInputByName(`f26_fin_${i}`, row.fin);
+                        setInputByName(`f26_amb_${i}`, row.amb);
+                        setInputByName(`f26_aju_${i}`, row.aju);
+                    }
+                }
             }
 
             if (data.f26_coherencia) setVal('f26_coherencia', data.f26_coherencia);
@@ -3524,10 +3754,11 @@
             document.getElementById('tbl-f24').getElementsByTagName('tbody')[0].innerHTML = '';
 
             addRowF05('Cliente directo');
+            addRowF05('Consumidor final');
             addRowF05('Comprador local');
             addRowF05('Comprador institucional');
-            addRowF05('Consumidor final');
-            addRowF05('Aliado comercial');
+            addRowF05('Restaurantes / tiendas / plazas');
+            addRowF05('Otro');
 
             addRowF07('Productores vecinos');
             addRowF07('Asociación campesina');
@@ -3622,8 +3853,34 @@
             const tbody = document.getElementById('tbl-f05').getElementsByTagName('tbody')[0];
             const tr = document.createElement('tr');
             tr.className = "dynamic-row-f05";
+            
+            const options = [
+                "Cliente directo",
+                "Consumidor final",
+                "Comprador local",
+                "Comprador institucional",
+                "Restaurantes / tiendas / plazas",
+                "Otro"
+            ];
+            
+            let optionsHtml = '';
+            let matched = false;
+            options.forEach(opt => {
+                const isSel = (actor === opt) ? 'selected' : '';
+                if (isSel) matched = true;
+                optionsHtml += `<option value="${opt}" ${isSel}>${opt}</option>`;
+            });
+            
+            if (actor && !matched) {
+                optionsHtml += `<option value="${actor}" selected>${actor}</option>`;
+            }
+
             tr.innerHTML = `
-                <td><input type="text" name="f05_actor[]" value="${actor}" placeholder="Ej. Cliente directo"></td>
+                <td>
+                    <select name="f05_actor[]" style="width: 100%;">
+                        ${optionsHtml}
+                    </select>
+                </td>
                 <td><input type="text" name="f05_perfil[]" value="${perfil}" placeholder="Ej. Familias"></td>
                 <td><input type="text" name="f05_ubicacion[]" value="${ubicacion}" placeholder="Ej. Bogotá"></td>
                 <td><input type="text" name="f05_necesidad[]" value="${necesidad}" placeholder="Ej. Salud"></td>
@@ -3824,23 +4081,42 @@
 
         
 
-        function addRowF23(tipo='Biológico', riesgo='', causa='', consecuencia='', nivel='Medio', prev='', resp='') {
+        function addRowF23(tipo='Comercial (Baja demanda)', riesgo='', causa='', consecuencia='', nivel='Medio', prev='', resp='') {
             const tbody = document.getElementById('tbl-f23').getElementsByTagName('tbody')[0];
             const tr = document.createElement('tr');
             tr.className = "dynamic-row-f23";
+            
+            const options = [
+                "Comercial (Baja demanda)",
+                "Productivo (Baja producción)",
+                "Ambiental (Afectación de fuentes hídricas)",
+                "Ambiental (Deterioro del suelo)",
+                "Climático (Heladas, lluvias intensas o sequías)",
+                "Logístico (Pérdida de frescura o retraso en entregas)",
+                "Digital (Falta de actualización del QR, redes o base de datos)",
+                "Organizativo (Falta de cooperación entre productores)",
+                "Financiero (Aumento de costos)"
+            ];
+            
+            let optionsHtml = '';
+            let matched = false;
+            options.forEach(opt => {
+                const isSel = (tipo === opt) ? 'selected' : '';
+                if (isSel) matched = true;
+                optionsHtml += `<option value="${opt}" ${isSel}>${opt}</option>`;
+            });
+            
+            if (tipo && !matched) {
+                optionsHtml += `<option value="${tipo}" selected>${tipo}</option>`;
+            }
+
             tr.innerHTML = `
                 <td>
-                    <select name="f23_tipo[]">
-                        <option value="Biológico" ${tipo === 'Biológico' ? 'selected' : ''}>Biológico</option>
-                        <option value="Físico" ${tipo === 'Físico' ? 'selected' : ''}>Físico</option>
-                        <option value="Químico" ${tipo === 'Químico' ? 'selected' : ''}>Químico</option>
-                        <option value="Psicosocial" ${tipo === 'Psicosocial' ? 'selected' : ''}>Psicosocial</option>
-                        <option value="Biomecánico" ${tipo === 'Biomecánico' ? 'selected' : ''}>Biomecánico</option>
-                        <option value="Condiciones de seguridad" ${tipo === 'Condiciones de seguridad' ? 'selected' : ''}>Condiciones de seguridad</option>
-                        <option value="Fenómenos naturales" ${tipo === 'Fenómenos naturales' ? 'selected' : ''}>Fenómenos naturales</option>
+                    <select name="f23_tipo[]" onchange="handleF23TypeChange(this)" style="width: 100%;">
+                        ${optionsHtml}
                     </select>
                 </td>
-                <td><input type="text" name="f23_riesgo[]" value="${riesgo}" placeholder="Ej. Lluvias fuertes"></td>
+                <td><input type="text" name="f23_riesgo[]" value="${riesgo}" placeholder="Ej. Baja demanda"></td>
                 <td><input type="text" name="f23_causa[]" value="${causa}" placeholder="..."></td>
                 <td><input type="text" name="f23_consecuencia[]" value="${consecuencia}" placeholder="..."></td>
                 <td>
@@ -3862,6 +4138,18 @@
             `;
             tbody.appendChild(tr);
             updateFormCompletionProgress();
+        }
+
+        function handleF23TypeChange(selectEl) {
+            const tr = selectEl.closest('tr');
+            const riesgoInput = tr.querySelector('[name="f23_riesgo[]"]');
+            if (riesgoInput && !riesgoInput.value) {
+                const val = selectEl.value;
+                const match = val.match(/\(([^)]+)\)/);
+                if (match && match[1]) {
+                    riesgoInput.value = match[1];
+                }
+            }
         }
 
         function addRowF24(act='', comp='Digital', resp='', time='', res='') {
@@ -3911,7 +4199,7 @@
 
         function getTableDataF19A() {
             const arr = [];
-            for (let i = 0; i <= 9; i++) {
+            for (let i = 0; i <= 13; i++) {
                 arr.push({
                     desc: document.querySelector(`[name="f19a_desc_${i}"]`)?.value || '',
                     cant: document.querySelector(`[name="f19a_cant_${i}"]`)?.value || '',
@@ -3965,7 +4253,7 @@
 
         function getTableDataF22A() {
             const arr = [];
-            for (let i = 0; i <= 6; i++) {
+            for (let i = 0; i <= 5; i++) {
                 arr.push({
                     resp: document.querySelector(`[name="f22a_resp_${i}"]`)?.value || '',
                     riesgo: document.querySelector(`[name="f22a_riesgo_${i}"]`)?.value || 'Bajo',
@@ -3977,7 +4265,7 @@
 
         function calcTotalF19A() {
             let sum = 0;
-            for (let i = 0; i <= 9; i++) {
+            for (let i = 0; i <= 13; i++) {
                 const val = parseFloat(document.querySelector(`[name="f19a_impacto_${i}"]`)?.value) || 0;
                 sum += val;
             }
@@ -4082,7 +4370,7 @@
                     nombre_organizacion: document.getElementById('f01_nombre_organizacion').value
                 };
 
-                const updateRes = await fetch('api/update_productor.php', {
+                const updateRes = await fetch(API_BASE + 'api/update_productor.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(editPayload)
@@ -4268,8 +4556,8 @@
                     f20_conclusion: document.getElementById('f20_conclusion').value,
                     f20: getTableDataF20(),
                     f21_conclusion: document.getElementById('f21_conclusion').value,
-                    f21: getTableDataF21(),
                     f22: getTableDataF22(),
+                    f22a_conclusion: document.getElementById('f22a_conclusion').value,
                     f22a: getTableDataF22A(),
                     f23: getTableDataF23(),
                     f24: getTableDataF24(),
@@ -4280,7 +4568,10 @@
             };
 
             try {
-                const res = await fetch('api/submit_pmapc.php', {
+                // Save locally first to always have a cache
+                localStorage.setItem(`pmapc_data_${productorId}`, JSON.stringify(payload.data));
+
+                const res = await fetch(API_BASE + 'api/submit_pmapc.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
@@ -4288,18 +4579,24 @@
                 
                 const result = await res.json();
                 if (res.ok && result.success) {
+                    removePendingSync(productorId);
+                    
+                    // Restore standard success modal text
+                    document.getElementById('success-title').textContent = "¡Guardado Exitoso!";
+                    document.getElementById('success-message').textContent = "El Plan de Manejo Ambiental, Productivo y Comercial (PMAPC) ha sido guardado correctamente en la base de datos.";
                     document.getElementById('success-modal').classList.add('active');
                 } else {
-                    document.getElementById('error-modal-text').textContent = result.error || 'Ocurrió un error al guardar.';
-                    document.getElementById('error-modal').classList.add('active');
+                    addPendingSync(productorId, payload);
+                    showOfflineSuccessModal(result.error || 'Ocurrió un error al guardar en el servidor.');
                 }
             } catch (err) {
                 console.error("Submit error:", err);
-                document.getElementById('error-modal-text').textContent = 'Error de red al intentar guardar los datos.';
-                document.getElementById('error-modal').classList.add('active');
+                addPendingSync(productorId, payload);
+                showOfflineSuccessModal('Error de red. Guardado localmente en el dispositivo de forma segura.');
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalText;
+                updateSyncBanner();
             }
         }
 
@@ -4625,12 +4922,133 @@
 
         async function logout() {
             try {
-                await fetch('api/logout.php');
+                await fetch(API_BASE + 'api/logout.php');
                 window.location.reload();
             } catch (error) {
                 console.error('Logout error:', error);
             }
         }
+
+        // Offline storage & sync helpers
+        function getPendingSyncs() {
+            const raw = localStorage.getItem('pending_sync_pmapc');
+            return raw ? JSON.parse(raw) : [];
+        }
+
+        function addPendingSync(productorId, payload) {
+            let list = getPendingSyncs();
+            if (!list.includes(productorId)) {
+                list.push(productorId);
+                localStorage.setItem('pending_sync_pmapc', JSON.stringify(list));
+            }
+            localStorage.setItem(`pmapc_offline_payload_${productorId}`, JSON.stringify(payload));
+        }
+
+        function removePendingSync(productorId) {
+            let list = getPendingSyncs();
+            list = list.filter(id => id != productorId);
+            localStorage.setItem('pending_sync_pmapc', JSON.stringify(list));
+            localStorage.removeItem(`pmapc_offline_payload_${productorId}`);
+        }
+
+        function updateSyncBanner() {
+            const list = getPendingSyncs();
+            const banner = document.getElementById('sync-banner');
+            const bannerText = document.getElementById('sync-banner-text');
+            if (banner && bannerText) {
+                if (list.length > 0) {
+                    banner.style.display = 'block';
+                    bannerText.textContent = `Tienes ${list.length} registro(s) guardados sin conexión pendientes de sincronizar.`;
+                } else {
+                    banner.style.display = 'none';
+                }
+            }
+        }
+
+        function showOfflineSuccessModal(message) {
+            document.getElementById('success-title').textContent = "¡Guardado Localmente!";
+            document.getElementById('success-message').textContent = message || "El PMAPC ha sido guardado de forma segura en este dispositivo (sin conexión). Se sincronizará automáticamente con el servidor cuando haya acceso a Internet.";
+            document.getElementById('success-modal').classList.add('active');
+        }
+
+        function showOfflineNotice(msg) {
+            const toast = document.getElementById('offline-toast');
+            const toastText = document.getElementById('offline-toast-text');
+            if (toast && toastText) {
+                toastText.textContent = msg;
+                toast.style.display = 'flex';
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                }, 4000);
+            }
+        }
+
+        async function syncPendingRecords() {
+            const list = getPendingSyncs();
+            if (list.length === 0) return;
+
+            const syncBtn = document.querySelector('#sync-banner button');
+            const originalText = syncBtn ? syncBtn.textContent : "Sincronizar ahora";
+            if (syncBtn) {
+                syncBtn.disabled = true;
+                syncBtn.textContent = "Sincronizando...";
+            }
+
+            let successCount = 0;
+            let failCount = 0;
+
+            for (const productorId of list) {
+                const rawPayload = localStorage.getItem(`pmapc_offline_payload_${productorId}`);
+                if (!rawPayload) {
+                    removePendingSync(productorId);
+                    continue;
+                }
+
+                try {
+                    const payload = JSON.parse(rawPayload);
+                    const res = await fetch(API_BASE + 'api/submit_pmapc.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await res.json();
+                    if (res.ok && result.success) {
+                        removePendingSync(productorId);
+                        successCount++;
+                    } else {
+                        failCount++;
+                    }
+                } catch (err) {
+                    console.error("Failed to sync productor " + productorId, err);
+                    failCount++;
+                }
+            }
+
+            if (syncBtn) {
+                syncBtn.disabled = false;
+                syncBtn.textContent = originalText;
+            }
+            updateSyncBanner();
+
+            if (successCount > 0) {
+                alert(`Sincronización finalizada: se subieron ${successCount} registros exitosamente.${failCount > 0 ? ` Fallaron ${failCount} registros.` : ''}`);
+            } else if (failCount > 0) {
+                alert(`No se pudieron sincronizar algunos registros. Por favor verifica tu conexión a Internet.`);
+            }
+        }
+
+        // Auto sync listeners
+        window.addEventListener('online', () => {
+            syncPendingRecords();
+        });
+
+        // Initialize banner on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateSyncBanner();
+            if (navigator.onLine) {
+                setTimeout(syncPendingRecords, 1500);
+            }
+        });
     </script>
 </body>
 
