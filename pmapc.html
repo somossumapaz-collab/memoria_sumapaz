@@ -356,16 +356,46 @@
             background: #1B5E20;
         }
 
-        /* Responsive adjustments */
+        /* Responsive adjustments & Desktop-like Mobile spacing */
         @media (max-width: 768px) {
+            .container {
+                max-width: 100% !important;
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+            .form-section-card {
+                padding: 1rem 0.75rem !important;
+                margin-bottom: 1.25rem !important;
+            }
             .stepper-container {
-                padding: 1rem;
+                padding: 0.75rem !important;
+                margin-bottom: 1.5rem !important;
             }
             .step-label {
                 display: none; /* Hide labels on mobile to fit dots */
             }
-            .form-section-card {
-                padding: 1.5rem;
+            .form-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+                gap: 0.75rem !important;
+            }
+            .table-input-container {
+                overflow-x: auto !important;
+                margin-bottom: 1rem !important;
+                -webkit-overflow-scrolling: touch;
+            }
+            .table-input {
+                min-width: 850px !important;
+                width: 100% !important;
+            }
+            h1 {
+                font-size: 1.6rem !important;
+            }
+            p {
+                font-size: 0.95rem !important;
+            }
+            .format-title {
+                font-size: 1.05rem !important;
+                padding: 0.6rem 0.8rem !important;
             }
         }
     </style>
@@ -388,10 +418,15 @@
     <header id="main-header">
         <nav class="navbar-custom">
             <div class="container" style="display: flex; align-items: center;">
-                <a href="index.html">
+                <a href="index.html" onclick="handleLogoClick(event)">
                     <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img">
                 </a>
-                <div class="search-container" style="margin-left: auto; display: flex; align-items: center; gap: 1.5rem;">
+                <div class="search-container" style="margin-left: auto; display: flex; align-items: center; gap: 1rem;">
+                    <button onclick="openBackupModal()" class="nav-link-btn" id="btn-backup-header"
+                        style="margin: 0; background-color: #8D6E63; color: #FFF; border: none; font-weight: 600; padding: 8px 14px; border-radius: 6px; display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                        <svg style="width: 18px; height: 18px; fill: #FFF;" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+                        Respaldo
+                    </button>
                     <!-- Admin Options (Login / Dashboard / Inscripción) -->
                     <div id="header-auth-container" style="display: none; align-items: center; gap: 1rem;">
                         <a href="inscripcion_productores.html" class="nav-link-btn" id="btn-register"
@@ -609,28 +644,28 @@
                     <div class="format-title"><span>F03</span> Propuesta de Valor</div>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="f03_problema">¿Qué problema del comprador resuelve?</label>
-                            <input type="text" id="f03_problema" name="f03_problema" placeholder="Ej. Dificultad para conseguir alimentos limpios de origen directo">
+                            <label for="f03_problema">¿Por qué las personas compran su producto?</label>
+                            <input type="text" id="f03_problema" name="f03_problema" placeholder="Ej. Por ser un producto orgánico, libre de químicos y de origen directo">
                         </div>
                         <div class="form-group">
-                            <label for="f03_solucion">¿Qué solución ofrece?</label>
-                            <input type="text" id="f03_solucion" name="f03_solucion" placeholder="Ej. Papa nativa orgánica entregada sin intermediarios">
+                            <label for="f03_solucion">¿Qué beneficio recibe quien compra su producto? (Ejm. Es fresco, producido sin exceso de químicos, buena calidad, dura más, entre otros)</label>
+                            <input type="text" id="f03_solucion" name="f03_solucion" placeholder="Ej. Producto más fresco, de mejor calidad y con mayor durabilidad">
                         </div>
                         <div class="form-group">
-                            <label for="f03_diferencial">¿Qué lo hace diferente de otros?</label>
-                            <input type="text" id="f03_diferencial" name="f03_diferencial" placeholder="Ej. Cultivado con abono orgánico del páramo y agua pura de nacimiento">
+                            <label for="f03_diferencial">¿Qué lo hace diferente frente a otros productos o soluciones?</label>
+                            <input type="text" id="f03_diferencial" name="f03_diferencial" placeholder="Ej. Cultivado con abono orgánico local y agua pura de nacimiento">
                         </div>
                         <div class="form-group">
                             <label for="f03_valor_ambiental">¿Qué valor ambiental aporta?</label>
-                            <input type="text" id="f03_valor_ambiental" name="f03_valor_ambiental" placeholder="Ej. No expansión de la frontera agrícola, uso de abono verde">
+                            <input type="text" id="f03_valor_ambiental" name="f03_valor_ambiental" placeholder="¿Cómo ayuda su forma de producir a cuidar el agua, el suelo o el ambiente?">
                         </div>
                         <div class="form-group">
-                            <label for="f03_valor_social">¿Qué valor social/comunitario aporta?</label>
-                            <input type="text" id="f03_valor_social" name="f03_valor_social" placeholder="Ej. Generación de trabajo familiar y asociatividad vecinal">
+                            <label for="f03_valor_social">¿Qué valor social o comunitario aporta?</label>
+                            <input type="text" id="f03_valor_social" name="f03_valor_social" placeholder="¿Cómo beneficia su producción a su familia o a la comunidad?">
                         </div>
                         <div class="form-group">
-                            <label for="f03_demostracion">¿Cómo demuestra ese diferencial?</label>
-                            <input type="text" id="f03_demostracion" name="f03_demostracion" placeholder="Ej. Registro de visitas del SINA o sello verde en trámite">
+                            <label for="f03_demostracion">¿Cómo se puede demostrar ese diferencial? (Ejm. Certificaciones si existen, buenas prácticas, fotografías, recomendaciones de clientes, producción limpia, visitas al predio, entre otros)</label>
+                            <input type="text" id="f03_demostracion" name="f03_demostracion" placeholder="¿Cómo puede demostrar la calidad o el cuidado con que produce?">
                         </div>
                     </div>
                 </div>
@@ -674,12 +709,12 @@
                             <thead>
                                 <tr>
                                     <th style="width: 15%;">Tipo de Actor</th>
-                                    <th>Perfil / Características</th>
+                                    <th>Perfil / características<br><small style="font-weight: normal; font-size: 0.78rem; color: #666; display: block; margin-top: 4px; line-height: 1.25;">¿Quién compra? ¿Qué busca cuando compra? ¿Qué cantidad compra?</small></th>
                                     <th>Ubicación</th>
-                                    <th>Necesidad</th>
-                                    <th>Frecuencia</th>
-                                    <th>Criterio de Compra</th>
-                                    <th>Canal de compra</th>
+                                    <th>Necesidad que atiende<br><small style="font-weight: normal; font-size: 0.78rem; color: #666; display: block; margin-top: 4px; line-height: 1.25;">¿Qué es lo que más valora ese comprador?</small></th>
+                                    <th>Frecuencia de compra</th>
+                                    <th>Criterio de compra</th>
+                                    <th>Canal de contacto</th>
                                     <th style="width: 50px;"></th>
                                 </tr>
                             </thead>
@@ -695,24 +730,32 @@
                     <div class="format-title"><span>F06</span> Problema del Mercado</div>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="f06_necesidad">¿Qué necesidad del mercado identificó?</label>
-                            <input type="text" id="f06_necesidad" name="f06_necesidad" placeholder="Ej. Escasez de productos frescos cultivados sin pesticidas químicos">
+                            <label for="f06_necesidad">¿Qué buscan los compradores cuando adquieren su producto? (Ejm. calidad, frescura, precio, producción limpia, cercanía, producción local, entre otras).</label>
+                            <input type="text" id="f06_necesidad" name="f06_necesidad" placeholder="Ej. Frescura, producción limpia y origen directo">
                         </div>
                         <div class="form-group">
-                            <label for="f06_como_sabe">¿Cómo sabe que existe la necesidad?</label>
-                            <input type="text" id="f06_como_sabe" name="f06_como_sabe" placeholder="Ej. Por solicitudes recurrentes de clientes en mercados campesinos">
+                            <label for="f06_como_sabe">¿Cómo sabe que los compradores buscan eso?</label>
+                            <input type="text" id="f06_como_sabe" name="f06_como_sabe" placeholder="Ej. Por comentarios directos de los clientes y porque lo preguntan en las ferias">
                         </div>
                         <div class="form-group">
-                            <label for="f06_a_quien_afecta">¿A quién afecta principalmente?</label>
-                            <input type="text" id="f06_a_quien_afecta" name="f06_a_quien_afecta" placeholder="Ej. Consumidores con intolerancias alimentarias o de salud">
+                            <label for="f06_a_quien_afecta">¿Quiénes compran o podrían comprar este producto?</label>
+                            <input type="text" id="f06_a_quien_afecta" name="f06_a_quien_afecta" placeholder="Ej. Familias del sector, restaurantes locales e intermediarios conscientes">
                         </div>
                         <div class="form-group">
-                            <label for="f06_evidencia">¿Qué evidencia concreta tiene?</label>
-                            <input type="text" id="f06_evidencia" name="f06_evidencia" placeholder="Ej. Ventas agotadas rápidamente en las últimas tres ferias locales">
+                            <label for="f06_evidencia">¿Qué evidencia tiene? (Ejm. cliente frecuente, pedidos, participación en mercados, conversaciones, encargos, redes, entre otros).</label>
+                            <input type="text" id="f06_evidencia" name="f06_evidencia" placeholder="Ej. Pedidos semanales fijos y aumento de clientes en redes sociales">
                         </div>
                         <div class="form-group" style="grid-column: 1 / -1;">
-                            <label for="f06_oportunidad_organicos">¿Qué oportunidad representa para productos orgánicos, limpios o de origen rural de Sumapaz?</label>
-                            <textarea id="f06_oportunidad_organicos" name="f06_oportunidad_organicos" rows="2" placeholder="Explique por qué el páramo y el origen limpio de sus cultivos representan una ventaja competitiva."></textarea>
+                            <label for="f06_oportunidad_organicos">¿Qué ventajas tiene su producto por ser producido en Sumapaz o mediante prácticas sostenibles?</label>
+                            <textarea id="f06_oportunidad_organicos" name="f06_oportunidad_organicos" rows="2" placeholder="Ej. El valor del agua del páramo, la pureza de la zona y la producción limpia"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="f06_cambio">¿Ha cambiado lo que buscan sus compradores en los últimos años?</label>
+                            <input type="text" id="f06_cambio" name="f06_cambio" placeholder="Ej. Sí, ahora se interesan más por la salud y buscan productos sin agroquímicos">
+                        </div>
+                        <div class="form-group">
+                            <label for="f06_dificultad">¿Qué dificultades encuentra para vender su producto? (Ejm. precio, transporte, competencia, cantidad, calidad, empaque).</label>
+                            <input type="text" id="f06_dificultad" name="f06_dificultad" placeholder="Ej. Alto costo del transporte y dificultad para conseguir empaques biodegradables">
                         </div>
                     </div>
                 </div>
@@ -953,12 +996,16 @@
                     <div class="format-title"><span>F12</span> Capacidad de Producción</div>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="f12_produccion_estimada">Producción mensual real</label>
-                            <input type="text" id="f12_produccion_estimada" name="f12_produccion_estimada" placeholder="Ej. 100 kg de queso al mes">
+                            <label for="f12_produccion_estimada">Producción mensual real (Si es por cosecha o ciclo productivo, especifique).</label>
+                            <input type="text" id="f12_produccion_estimada" name="f12_produccion_estimada" placeholder="¿Cuánto produce normalmente?">
                         </div>
                         <div class="form-group">
-                            <label for="f12_produccion_maxima">Producción máxima posible</label>
-                            <input type="text" id="f12_produccion_maxima" name="f12_produccion_maxima" placeholder="Ej. 150 kg de queso al mes">
+                            <label for="f12_produccion_maxima">¿Cuánto podría producir con los recursos que tiene actualmente?</label>
+                            <input type="text" id="f12_produccion_maxima" name="f12_produccion_maxima" placeholder="Producción máxima posible">
+                        </div>
+                        <div class="form-group">
+                            <label for="f12_area">Área destinada a la producción</label>
+                            <input type="text" id="f12_area" name="f12_area" placeholder="m² o número de animales, según corresponda">
                         </div>
                         <div class="form-group">
                             <label for="f12_limitantes_prod">Limitantes productivos</label>
@@ -975,6 +1022,18 @@
                         <div class="form-group">
                             <label for="f12_capacidad_utilizada">Capacidad Utilizada</label>
                             <input type="text" id="f12_capacidad_utilizada" name="f12_capacidad_utilizada" placeholder="Ej. Uso actual real de la capacidad (e.g. 60%)">
+                        </div>
+                        <div class="form-group">
+                            <label for="f12_misma_cantidad">¿Produce la misma cantidad durante todo el año? Si no, explique por qué.</label>
+                            <input type="text" id="f12_misma_cantidad" name="f12_misma_cantidad" placeholder="Ej. No, en época de sequía disminuye un 40%">
+                        </div>
+                        <div class="form-group">
+                            <label for="f12_alcanza_demanda">¿La producción actual alcanza para atender la demanda de sus compradores?</label>
+                            <input type="text" id="f12_alcanza_demanda" name="f12_alcanza_demanda" placeholder="Ej. No, se pierden ventas por falta de cantidad constante">
+                        </div>
+                        <div class="form-group" style="grid-column: 1 / -1;">
+                            <label for="f12_necesidad_sostenible">¿Qué necesita para aumentar la producción de manera sostenible?</label>
+                            <textarea id="f12_necesidad_sostenible" name="f12_necesidad_sostenible" rows="2" placeholder="Ej. Adquirir maquinaria de empaque y establecer un sistema de riego silvopastoril"></textarea>
                         </div>
                     </div>
                 </div>
@@ -1712,6 +1771,15 @@
                                     <td><input type="number" name="f16_total_7" placeholder="Calculado" readonly></td>
                                     <td><input type="text" name="f16_req_7" placeholder="..."></td>
                                     <td><input type="text" name="f16_fuente_7" placeholder="..."></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Registros y Permisos</strong></td>
+                                    <td><input type="text" name="f16_desc_8" placeholder="..."></td>
+                                    <td><input type="number" step="0.01" name="f16_valunit_8" placeholder="..." oninput="calcInv(8)"></td>
+                                    <td><input type="number" name="f16_cant_8" placeholder="..." oninput="calcInv(8)"></td>
+                                    <td><input type="number" name="f16_total_8" placeholder="Calculado" readonly></td>
+                                    <td><input type="text" name="f16_req_8" placeholder="..."></td>
+                                    <td><input type="text" name="f16_fuente_8" placeholder="..."></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -3239,6 +3307,8 @@
                 setVal('f06_a_quien_afecta', data.f06.a_quien_afecta);
                 setVal('f06_evidencia', data.f06.evidencia);
                 setVal('f06_oportunidad_organicos', data.f06.oportunidad_organicos);
+                setVal('f06_cambio', data.f06.cambio || '');
+                setVal('f06_dificultad', data.f06.dificultad || '');
             }
 
             const tbl07 = document.getElementById('tbl-f07').getElementsByTagName('tbody')[0];
@@ -3342,10 +3412,14 @@
             if (data.f12) {
                 setVal('f12_produccion_estimada', data.f12.produccion_estimada);
                 setVal('f12_produccion_maxima', data.f12.produccion_maxima);
+                setVal('f12_area', data.f12.area || '');
                 setVal('f12_limitantes_prod', data.f12.limitantes_prod);
                 setVal('f12_limitantes_amb', data.f12.limitantes_amb);
                 setVal('f12_capacidad_instalada', data.f12.capacidad_instalada);
                 setVal('f12_capacidad_utilizada', data.f12.capacidad_utilizada);
+                setVal('f12_misma_cantidad', data.f12.misma_cantidad || '');
+                setVal('f12_alcanza_demanda', data.f12.alcanza_demanda || '');
+                setVal('f12_necesidad_sostenible', data.f12.necesidad_sostenible || '');
             }
 
             // Module 4 (Límites)
@@ -3498,7 +3572,7 @@
 
                         // Module 6 (Finanzas)
             if (data.f16) {
-                for (let i = 0; i <= 7; i++) {
+                for (let i = 0; i <= 8; i++) {
                     const row = data.f16[i];
                     if (row) {
                         setInputByName(`f16_desc_${i}`, row.desc);
@@ -3749,7 +3823,6 @@
             document.getElementById('tbl-f09').getElementsByTagName('tbody')[0].innerHTML = '';
             document.getElementById('tbl-f10').getElementsByTagName('tbody')[0].innerHTML = '';
             document.getElementById('tbl-f14').getElementsByTagName('tbody')[0].innerHTML = '';
-            document.getElementById('tbl-f16').getElementsByTagName('tbody')[0].innerHTML = '';
             document.getElementById('tbl-f23').getElementsByTagName('tbody')[0].innerHTML = '';
             document.getElementById('tbl-f24').getElementsByTagName('tbody')[0].innerHTML = '';
 
@@ -3772,7 +3845,6 @@
             addRowF09();
             addRowF10();
             addRowF14();
-            addRowF16();
             addRowF23();
             addRowF24();
         }
@@ -3854,7 +3926,8 @@
             const tr = document.createElement('tr');
             tr.className = "dynamic-row-f05";
             
-            const options = [
+            // Actor options
+            const actorOpts = [
                 "Cliente directo",
                 "Consumidor final",
                 "Comprador local",
@@ -3862,31 +3935,114 @@
                 "Restaurantes / tiendas / plazas",
                 "Otro"
             ];
-            
-            let optionsHtml = '';
-            let matched = false;
-            options.forEach(opt => {
+            let actorHtml = '';
+            let actorMatched = false;
+            actorOpts.forEach(opt => {
                 const isSel = (actor === opt) ? 'selected' : '';
-                if (isSel) matched = true;
-                optionsHtml += `<option value="${opt}" ${isSel}>${opt}</option>`;
+                if (isSel) actorMatched = true;
+                actorHtml += `<option value="${opt}" ${isSel}>${opt}</option>`;
             });
-            
-            if (actor && !matched) {
-                optionsHtml += `<option value="${actor}" selected>${actor}</option>`;
+            if (actor && !actorMatched) {
+                actorHtml += `<option value="${actor}" selected>${actor}</option>`;
+            }
+
+            // Frecuencia options
+            const frecOpts = [
+                "",
+                "Diario",
+                "Semanal",
+                "Quincenal",
+                "Mensual",
+                "Ocasional",
+                "En cosecha"
+            ];
+            let frecHtml = '';
+            let frecMatched = false;
+            frecOpts.forEach(opt => {
+                const isSel = (frecuencia.toLowerCase() === opt.toLowerCase() || frecuencia === opt) ? 'selected' : '';
+                if (isSel) frecMatched = true;
+                const label = opt === "" ? "Seleccione..." : opt;
+                frecHtml += `<option value="${opt}" ${isSel}>${label}</option>`;
+            });
+            if (frecuencia && !frecMatched) {
+                frecHtml += `<option value="${frecuencia}" selected>${frecuencia}</option>`;
+            }
+
+            // Criterio options
+            const critOpts = [
+                "",
+                "Precio",
+                "Calidad",
+                "Tamaño",
+                "Presentación",
+                "Producción limpia",
+                "Confianza",
+                "Cercanía",
+                "Disponibilidad",
+                "Certificación",
+                "Otro"
+            ];
+            let critHtml = '';
+            let critMatched = false;
+            critOpts.forEach(opt => {
+                const isSel = (criterio.toLowerCase() === opt.toLowerCase() || criterio === opt) ? 'selected' : '';
+                if (isSel) critMatched = true;
+                const label = opt === "" ? "Seleccione..." : opt;
+                critHtml += `<option value="${opt}" ${isSel}>${label}</option>`;
+            });
+            if (criterio && !critMatched) {
+                critHtml += `<option value="${criterio}" selected>${criterio}</option>`;
+            }
+
+            // Canal options
+            const canalOpts = [
+                "",
+                "En finca",
+                "Mercado campesino",
+                "Plaza de mercado",
+                "Asociación",
+                "Teléfono",
+                "WhatsApp",
+                "Redes sociales",
+                "Web",
+                "Otro"
+            ];
+            let canalHtml = '';
+            let canalMatched = false;
+            canalOpts.forEach(opt => {
+                const isSel = (canal.toLowerCase() === opt.toLowerCase() || canal === opt) ? 'selected' : '';
+                if (isSel) canalMatched = true;
+                const label = opt === "" ? "Seleccione..." : opt;
+                canalHtml += `<option value="${opt}" ${isSel}>${label}</option>`;
+            });
+            if (canal && !canalMatched) {
+                canalHtml += `<option value="${canal}" selected>${canal}</option>`;
             }
 
             tr.innerHTML = `
                 <td>
                     <select name="f05_actor[]" style="width: 100%;">
-                        ${optionsHtml}
+                        ${actorHtml}
                     </select>
                 </td>
-                <td><input type="text" name="f05_perfil[]" value="${perfil}" placeholder="Ej. Familias"></td>
+                <td><input type="text" name="f05_perfil[]" value="${perfil}" placeholder="Ej. Familias, buscan papa nativa, 5 kg"></td>
                 <td><input type="text" name="f05_ubicacion[]" value="${ubicacion}" placeholder="Ej. Bogotá"></td>
-                <td><input type="text" name="f05_necesidad[]" value="${necesidad}" placeholder="Ej. Salud"></td>
-                <td><input type="text" name="f05_frecuencia[]" value="${frecuencia}" placeholder="Ej. Semanal"></td>
-                <td><input type="text" name="f05_criterio[]" value="${criterio}" placeholder="Ej. Precio"></td>
-                <td><input type="text" name="f05_canal[]" value="${canal}" placeholder="Ej. WhatsApp"></td>
+                <td><input type="text" name="f05_necesidad[]" value="${necesidad}" placeholder="Ej. Alimentación sana, valora origen limpio"></td>
+                <td>
+                    <select name="f05_frecuencia[]" style="width: 100%;">
+                        ${frecHtml}
+                    </select>
+                </td>
+                <td>
+                    <select name="f05_criterio[]" style="width: 100%;">
+                        ${critHtml}
+                    </select>
+                </td>
+                <td>
+                    <select name="f05_canal[]" style="width: 100%;">
+                        ${canalHtml}
+                    </select>
+                </td>
                 <td>
                     <button type="button" class="row-action-btn" onclick="removeRow(this)">
                         <svg style="width: 18px; height: 18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -4437,7 +4593,9 @@
                         como_sabe: formData.get('f06_como_sabe'),
                         a_quien_afecta: formData.get('f06_a_quien_afecta'),
                         evidencia: formData.get('f06_evidencia'),
-                        oportunidad_organicos: formData.get('f06_oportunidad_organicos')
+                        oportunidad_organicos: formData.get('f06_oportunidad_organicos'),
+                        cambio: formData.get('f06_cambio'),
+                        dificultad: formData.get('f06_dificultad')
                     },
                     f07: getTableDataF07(),
                     f08: {
@@ -4483,10 +4641,14 @@
                     f12: {
                         produccion_estimada: formData.get('f12_produccion_estimada'),
                         produccion_maxima: formData.get('f12_produccion_maxima'),
+                        area: formData.get('f12_area'),
                         limitantes_prod: formData.get('f12_limitantes_prod'),
                         limitantes_amb: formData.get('f12_limitantes_amb'),
                         capacidad_instalada: formData.get('f12_capacidad_instalada'),
-                        capacidad_utilizada: formData.get('f12_capacidad_utilizada')
+                        capacidad_utilizada: formData.get('f12_capacidad_utilizada'),
+                        misma_cantidad: formData.get('f12_misma_cantidad'),
+                        alcanza_demanda: formData.get('f12_alcanza_demanda'),
+                        necesidad_sostenible: formData.get('f12_necesidad_sostenible')
                     },
                     f12a: {
                         estado_agua: formData.get('f12a_estado_agua'),
@@ -4538,16 +4700,7 @@
                     f15b: getTableDataF15B(),
                     f15c: getTableDataF15C(),
                     f16: getTableDataF16(),
-                    f17: {
-                        desc_fijos: formData.get('f17_desc_fijos'),
-                        val_fijos: formData.get('f17_val_fijos'),
-                        desc_variables: formData.get('f17_desc_variables'),
-                        val_variables: formData.get('f17_val_variables'),
-                        desc_amb: formData.get('f17_desc_amb'),
-                        val_amb: formData.get('f17_val_amb'),
-                        desc_log: formData.get('f17_desc_log'),
-                        val_log: formData.get('f17_val_log')
-                    },
+                    f17: getTableDataF17(),
                     f18: getTableDataF18(),
                                         f19_conclusion: document.getElementById('f19_conclusion').value,
                     f19: getTableDataF19(),
@@ -4827,21 +4980,30 @@
         }
 
         function getTableDataF16() {
-            const data = [];
-            document.querySelectorAll('.dynamic-row-f16').forEach(row => {
-                const desc = row.querySelector('[name="f16_descripcion[]"]').value.trim();
-                if (desc) {
-                    data.push({
-                        tipo: row.querySelector('[name="f16_tipo[]"]').value,
-                        descripcion: desc,
-                        val_unit: row.querySelector('[name="f16_val_unit[]"]').value,
-                        cantidad: row.querySelector('[name="f16_cantidad[]"]').value,
-                        val_total: row.querySelector('[name="f16_val_total[]"]').value,
-                        fuente: row.querySelector('[name="f16_fuente[]"]').value
-                    });
-                }
-            });
-            return data;
+            const arr = [];
+            for (let i = 0; i <= 8; i++) {
+                arr.push({
+                    desc: document.querySelector(`[name="f16_desc_${i}"]`)?.value || '',
+                    valunit: document.querySelector(`[name="f16_valunit_${i}"]`)?.value || '',
+                    cant: document.querySelector(`[name="f16_cant_${i}"]`)?.value || '',
+                    total: document.querySelector(`[name="f16_total_${i}"]`)?.value || '',
+                    req: document.querySelector(`[name="f16_req_${i}"]`)?.value || '',
+                    fuente: document.querySelector(`[name="f16_fuente_${i}"]`)?.value || ''
+                });
+            }
+            return arr;
+        }
+
+        function getTableDataF17() {
+            const arr = [];
+            for (let i = 0; i <= 5; i++) {
+                arr.push({
+                    desc: document.querySelector(`[name="f17_desc_${i}"]`)?.value || '',
+                    val: document.querySelector(`[name="f17_val_${i}"]`)?.value || '',
+                    obs: document.querySelector(`[name="f17_obs_${i}"]`)?.value || ''
+                });
+            }
+            return arr;
         }
 
         function getTableDataF18() {
@@ -5034,6 +5196,109 @@
                 alert(`Sincronización finalizada: se subieron ${successCount} registros exitosamente.${failCount > 0 ? ` Fallaron ${failCount} registros.` : ''}`);
             } else if (failCount > 0) {
                 alert(`No se pudieron sincronizar algunos registros. Por favor verifica tu conexión a Internet.`);
+            }
+        }
+
+        // Backup and Restore Helpers
+        function openBackupModal() {
+            document.getElementById('backup-modal').style.display = 'flex';
+        }
+
+        function closeBackupModal() {
+            document.getElementById('backup-modal').style.display = 'none';
+        }
+
+        function getBackupPayload() {
+            const backup = {
+                timestamp: new Date().toISOString(),
+                source: "SomosSumapaz_PMAPC_Backup",
+                localStorageData: {}
+            };
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key === 'cached_productores' || 
+                    key === 'pending_sync_pmapc' || 
+                    key.startsWith('pmapc_data_') || 
+                    key.startsWith('pmapc_offline_payload_')) {
+                    backup.localStorageData[key] = localStorage.getItem(key);
+                }
+            }
+            return JSON.stringify(backup, null, 2);
+        }
+
+        function exportBackupFile() {
+            const payload = getBackupPayload();
+            if (window.AndroidInterface && typeof window.AndroidInterface.saveBackupFile === 'function') {
+                window.AndroidInterface.saveBackupFile(payload);
+            } else {
+                const blob = new Blob([payload], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `respaldo_pmapc_${new Date().toISOString().slice(0,10)}.json`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+        }
+
+        function shareBackupText() {
+            const payload = getBackupPayload();
+            if (window.AndroidInterface && typeof window.AndroidInterface.shareBackupText === 'function') {
+                window.AndroidInterface.shareBackupText(payload);
+            } else {
+                copyBackupToClipboard();
+            }
+        }
+
+        function copyBackupToClipboard() {
+            const payload = getBackupPayload();
+            navigator.clipboard.writeText(payload).then(() => {
+                alert("Copia de seguridad copiada al portapapeles en formato JSON.");
+            }).catch(err => {
+                alert("Error al copiar al portapapeles: " + err);
+            });
+        }
+
+        function handleRestoreFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            if (!confirm("¿Estás seguro de que deseas restaurar esta copia de seguridad? Esto reemplazará todos tus datos guardados localmente.")) {
+                event.target.value = '';
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const backup = JSON.parse(e.target.result);
+                    if (backup.source !== "SomosSumapaz_PMAPC_Backup" || !backup.localStorageData) {
+                        alert("El archivo seleccionado no es una copia de seguridad válida de PMAPC.");
+                        return;
+                    }
+
+                    const data = backup.localStorageData;
+                    Object.keys(data).forEach(key => {
+                        localStorage.setItem(key, data[key]);
+                    });
+
+                    alert("¡Copia de seguridad restaurada con éxito! La página se recargará ahora.");
+                    window.location.reload();
+                } catch(err) {
+                    alert("Error al leer el archivo de respaldo: " + err.message);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function handleLogoClick(event) {
+            event.preventDefault();
+            if (window.location.protocol === 'file:') {
+                window.location.reload();
+            } else {
+                window.location.href = 'index.html';
             }
         }
 
