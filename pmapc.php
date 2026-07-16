@@ -398,6 +398,19 @@
                 padding: 0.6rem 0.8rem !important;
             }
         }
+        /* IA processing styles */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .ia-spinner {
+            border: 3px solid #0D47A1;
+            border-top: 3px solid transparent;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+        }
     </style>
 </head>
 
@@ -469,6 +482,38 @@
             <input type="text" id="select-producer-input" placeholder="Cargando productores..." class="producer-select" autocomplete="off" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; background-color: #FAFAFA; box-sizing: border-box;">
             <input type="hidden" id="select-producer" name="select-producer">
             <div id="select-producer-results" style="display: none; position: absolute; left: 1.5rem; right: 1.5rem; background: white; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); max-height: 220px; overflow-y: auto; z-index: 1000; margin-top: 4px; box-sizing: border-box;"></div>
+        </div>
+
+        <!-- Interview Transcript Upload (IA) -->
+        <div id="transcript-upload-box" class="producer-selector-card" style="display: none; border-left: 5px solid #2196F3; margin-top: 1.5rem; margin-bottom: 1.5rem;">
+            <label style="font-weight: 600; color: #1E88E5; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+                <svg style="width: 24px; height: 24px; fill: #1E88E5;" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                Autocompletar PMAPC con IA (Transcripción de Entrevista)
+            </label>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 0.25rem; margin-bottom: 1rem;">
+                Sube un archivo de texto (.txt) con la transcripción de la entrevista realizada al productor. La IA analizará el texto y rellenará automáticamente todos los campos correspondientes del PMAPC.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                    <input type="file" id="transcript-file-input" accept=".txt" style="display: none;">
+                    <button type="button" onclick="document.getElementById('transcript-file-input').click()" class="btn" style="background-color: #2196F3; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif;">
+                        <svg style="width: 18px; height: 18px; fill: white;" viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z"/></svg>
+                        Seleccionar Archivo .txt
+                    </button>
+                    <span id="selected-file-name" style="font-size: 0.9rem; color: #555; font-style: italic;">Ningún archivo seleccionado</span>
+                </div>
+                
+                <!-- Progress status / progress spinner -->
+                <div id="ia-processing-status" style="display: none; align-items: center; gap: 10px; background-color: #E3F2FD; color: #0D47A1; padding: 12px; border-radius: 6px; font-weight: 600; font-size: 0.9rem;">
+                    <div class="ia-spinner"></div>
+                    <span id="ia-processing-text">Procesando archivo con la IA... Esto puede tomar entre 15 y 30 segundos. Por favor no cierres la página.</span>
+                </div>
+                
+                <!-- Action button -->
+                <button type="button" id="btn-process-transcript" class="btn" disabled style="background-color: #4CAF50; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; cursor: not-allowed; font-weight: 600; width: fit-content; opacity: 0.5; font-family: 'Inter', sans-serif;">
+                    Iniciar Autocompletado con IA
+                </button>
+            </div>
         </div>
 
         <!-- Global Form Progress Bar -->
@@ -3103,6 +3148,17 @@
                 btnChange.addEventListener('click', () => {
                     document.getElementById('producer-selector-box').style.display = 'block';
                     document.getElementById('producer-info-box').style.display = 'none';
+                    document.getElementById('transcript-upload-box').style.display = 'none';
+                    
+                    // Reset transcript file input and labels
+                    document.getElementById('transcript-file-input').value = '';
+                    document.getElementById('selected-file-name').textContent = 'Ningún archivo seleccionado';
+                    const processBtn = document.getElementById('btn-process-transcript');
+                    processBtn.disabled = true;
+                    processBtn.style.opacity = '0.5';
+                    processBtn.style.cursor = 'not-allowed';
+                    document.getElementById('ia-processing-status').style.display = 'none';
+
                     const progressCard = document.getElementById('form-progress-card');
                     if (progressCard) {
                         progressCard.style.display = 'none';
@@ -3131,6 +3187,92 @@
                     el.addEventListener('change', updateFormCompletionProgress);
                 }
             });
+
+            // Transcript file upload listeners
+            const transcriptFileInput = document.getElementById('transcript-file-input');
+            const btnProcessTranscript = document.getElementById('btn-process-transcript');
+            const selectedFileName = document.getElementById('selected-file-name');
+            const iaProcessingStatus = document.getElementById('ia-processing-status');
+            const iaProcessingText = document.getElementById('ia-processing-text');
+            
+            let loadedTranscriptText = "";
+
+            if (transcriptFileInput) {
+                transcriptFileInput.addEventListener('change', (e) => {
+                    const file = e.target.files[0];
+                    if (file) {
+                        selectedFileName.textContent = file.name;
+                        
+                        const reader = new FileReader();
+                        reader.onload = (evt) => {
+                            loadedTranscriptText = evt.target.result;
+                            
+                            // Enable action button
+                            btnProcessTranscript.disabled = false;
+                            btnProcessTranscript.style.opacity = '1';
+                            btnProcessTranscript.style.cursor = 'pointer';
+                        };
+                        reader.readAsText(file);
+                    } else {
+                        selectedFileName.textContent = 'Ningún archivo seleccionado';
+                        btnProcessTranscript.disabled = true;
+                        btnProcessTranscript.style.opacity = '0.5';
+                        btnProcessTranscript.style.cursor = 'not-allowed';
+                        loadedTranscriptText = "";
+                    }
+                });
+            }
+
+            if (btnProcessTranscript) {
+                btnProcessTranscript.addEventListener('click', async () => {
+                    if (!loadedTranscriptText || !selectedProducerId) return;
+
+                    // Disable buttons and show processing status
+                    btnProcessTranscript.disabled = true;
+                    btnProcessTranscript.style.opacity = '0.5';
+                    btnProcessTranscript.style.cursor = 'not-allowed';
+                    transcriptFileInput.disabled = true;
+                    iaProcessingStatus.style.display = 'flex';
+                    iaProcessingText.textContent = "La IA está analizando la entrevista. Por favor espera (esto puede tardar de 15 a 30 segundos)...";
+
+                    try {
+                        const response = await fetch(API_BASE + 'api/analyze_transcript.php', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                transcript: loadedTranscriptText
+                            })
+                        });
+
+                        if (!response.ok) {
+                            throw new Error('Error al conectar con el servidor.');
+                        }
+
+                        const result = await response.json();
+                        if (result.success && result.data) {
+                            // Populate form with extracted data
+                            populateForm(result.data);
+                            
+                            // Show success message
+                            alert("¡Autocompletado con éxito! Todos los campos posibles han sido rellenados a partir de la entrevista. Revisa las 8 pestañas y haz clic en 'Guardar Plan de Manejo' al final para guardar los cambios.");
+                        } else {
+                            throw new Error(result.error || 'Ocurrió un error inesperado al analizar la entrevista.');
+                        }
+                    } catch (error) {
+                        console.error('IA processing error:', error);
+                        alert('Error al procesar la entrevista con la IA: ' + error.message);
+                    } finally {
+                        // Re-enable and reset status
+                        btnProcessTranscript.disabled = false;
+                        btnProcessTranscript.style.opacity = '1';
+                        btnProcessTranscript.style.cursor = 'pointer';
+                        transcriptFileInput.disabled = false;
+                        iaProcessingStatus.style.display = 'none';
+                    }
+                });
+            }
 
             // Close Modal Logic
             document.getElementById('modal-close-btn').addEventListener('click', function () {
@@ -3185,6 +3327,7 @@
             }
 
             document.getElementById('producer-info-box').style.display = 'block';
+            document.getElementById('transcript-upload-box').style.display = 'block';
             const progressCard = document.getElementById('form-progress-card');
             if (progressCard) {
                 progressCard.style.display = 'block';

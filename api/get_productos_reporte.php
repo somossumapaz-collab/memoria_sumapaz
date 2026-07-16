@@ -33,9 +33,12 @@ try {
             pp.precio, 
             pp.unidad_precio, 
             pp.producto_normal, 
-            pp.categoria 
+            pp.categoria,
+            GROUP_CONCAT(DISTINCT CONCAT(cp.tipo, ' - ', cp.nombre) SEPARATOR ', ') AS productor_categorias
         FROM productor_productos pp
         INNER JOIN productores_sumapaz p ON pp.productor_id = p.id
+        LEFT JOIN productor_categoria pcat ON p.id = pcat.productor_id
+        LEFT JOIN categorias_productivas cp ON pcat.categoria_id = cp.id
         WHERE 1=1
     ";
 
@@ -52,7 +55,7 @@ try {
         $params['search2'] = '%' . $search . '%';
     }
 
-    $sql .= " ORDER BY p.nombre_completo ASC";
+    $sql .= " GROUP BY pp.id ORDER BY p.nombre_completo ASC";
 
     $stmt = $pdo->prepare($sql);
     $stmt->execute($params);

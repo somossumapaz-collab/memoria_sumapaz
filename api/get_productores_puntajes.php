@@ -410,6 +410,11 @@ try {
             'puntaje' => $total_score,
             'is_complete' => $is_complete,
             'beneficiario_2026' => intval($p['beneficiario_2026']),
+            'tipo_organizacion' => $carac['tipo_organizacion'] ?? '',
+            'mano_obra' => $carac['mano_obra'] ?? '',
+            'destino' => $carac['destino'] ?? '',
+            'es_cultural' => (isset($categorias[$pid]) && in_array(24, $categorias[$pid])) ? 'Sí' : 'No',
+            'ferias' => (isset($p['ferias']) && intval($p['ferias']) == 1) ? 'Sí' : 'No',
             'scores' => [
                 'puntaje_social' => $social_score,
                 'puntaje_organizacional' => $org_score,

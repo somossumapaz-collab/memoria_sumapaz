@@ -14,8 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 
 $categoria_id = isset($_GET['categoria_id']) ? (int)$_GET['categoria_id'] : 0;
 $tipo = isset($_GET['tipo']) ? $_GET['tipo'] : '';
+$categoria_ids = isset($_GET['categoria_ids']) ? $_GET['categoria_ids'] : '';
+$tipos = isset($_GET['tipos']) ? $_GET['tipos'] : '';
 
-if ($categoria_id <= 0 && empty($tipo)) {
+if ($categoria_id <= 0 && empty($tipo) && empty($categoria_ids) && empty($tipos)) {
     echo json_encode(['success' => true, 'data' => []]);
     exit;
 }
@@ -37,12 +39,22 @@ try {
     ";
 
     $params = [];
-    if ($categoria_id > 0) {
-        $sql .= " AND pc.categoria_id = :categoria_id";
-        $params['categoria_id'] = $categoria_id;
+    if (!empty($categoria_ids)) {
+        $id_arr = array_map('intval', explode(',', $categoria_ids));
+        $placeholders = implode(',', array_fill(0, count($id_arr), '?'));
+        $sql .= " AND pc.categoria_id IN ($placeholders)";
+        $params = array_merge($params, $id_arr);
+    } elseif ($categoria_id > 0) {
+        $sql .= " AND pc.categoria_id = ?";
+        $params[] = $categoria_id;
+    } elseif (!empty($tipos)) {
+        $tipo_arr = explode(',', $tipos);
+        $placeholders = implode(',', array_fill(0, count($tipo_arr), '?'));
+        $sql .= " AND c.tipo IN ($placeholders)";
+        $params = array_merge($params, $tipo_arr);
     } elseif (!empty($tipo)) {
-        $sql .= " AND c.tipo = :tipo";
-        $params['tipo'] = $tipo;
+        $sql .= " AND c.tipo = ?";
+        $params[] = $tipo;
     }
 
     $sql .= " ORDER BY p.nombre_completo ASC";
