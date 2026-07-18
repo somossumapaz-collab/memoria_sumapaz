@@ -2367,7 +2367,10 @@
                     <td style="text-align: center; font-size: 1.1rem; color: #444F2F;">${rankingStr}</td>
                     <td>
                         <div style="font-weight: 600; color: #444F2F;">${productor.nombre_completo}</div>
-                        <div style="font-size: 0.8rem; color: #666; margin-top: 2px;">${productor.tipo_documento} ${productor.numero_documento}</div>
+                        <div style="font-size: 0.8rem; color: #666; margin-top: 2px; display: flex; align-items: center; gap: 6px;">
+                            ${productor.tipo_documento} ${productor.numero_documento}
+                            ${productor.cedula_pdf ? `<a href="${productor.cedula_pdf}" target="_blank" title="Ver Cédula PDF" style="display: inline-flex; align-items: center; color: #D32F2F;"><svg style="width: 14px; height: 14px; fill: currentColor;" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V8H10c.83 0 1.5.67 1.5 1.5zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V8h2.5c.83 0 1.5.67 1.5 1.5v2zm4-3H19v1h1.5v1.5H19v2h-1.5V8h3v1.5zM9 9.5H8v1h1v-1zm5.5 1.5v-2h-1v2h1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z"/></svg></a>` : ''}
+                        </div>
                     </td>
                     <td>${productor.vereda}</td>
                     <td>${productor.telefono || '-'}</td>
@@ -2524,7 +2527,10 @@
                 tr.innerHTML = `
                     <td><strong>${formattedDate}</strong></td>
                     <td>${productor.nombre_completo}</td>
-                    <td>${docStr}</td>
+                    <td>
+                        ${docStr}
+                        ${productor.cedula_pdf ? `<a href="${productor.cedula_pdf}" target="_blank" title="Ver Cédula PDF" style="margin-left: 6px; display: inline-flex; align-items: center; vertical-align: middle; color: #D32F2F;"><svg style="width: 15px; height: 15px; fill: currentColor;" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V8H10c.83 0 1.5.67 1.5 1.5zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V8h2.5c.83 0 1.5.67 1.5 1.5v2zm4-3H19v1h1.5v1.5H19v2h-1.5V8h3v1.5zM9 9.5H8v1h1v-1zm5.5 1.5v-2h-1v2h1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z"/></svg></a>` : ''}
+                    </td>
                     <td>${productor.fecha_nacimiento}</td>
                     <td>${productor.vereda}</td>
                     <td>${productor.telefono}</td>

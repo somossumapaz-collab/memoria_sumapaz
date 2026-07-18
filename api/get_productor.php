@@ -32,7 +32,8 @@ try {
             correo_electronico,
             vereda,
             nombre_predio,
-            fecha_creacion
+            fecha_creacion,
+            cedula_pdf
         FROM productores_sumapaz
         WHERE id = :id
     ");

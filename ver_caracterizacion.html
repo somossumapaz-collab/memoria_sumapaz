@@ -256,7 +256,12 @@
                     </div>
                     <div>
                         <div class="info-label">Documento</div>
-                        <div class="info-value"><span id="lbl-tipo-doc"></span> <span id="lbl-num-doc">-</span></div>
+                        <div class="info-value">
+                            <span id="lbl-tipo-doc"></span> <span id="lbl-num-doc">-</span>
+                            <a id="link-cedula-pdf" href="#" target="_blank" title="Ver Cédula PDF" style="display: none; align-items: center; gap: 4px; color: #D32F2F; font-size: 0.9rem; margin-top: 4px; text-decoration: none; font-weight: bold;">
+                                <svg style="width: 16px; height: 16px; fill: currentColor; vertical-align: middle;" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V8H10c.83 0 1.5.67 1.5 1.5zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V8h2.5c.83 0 1.5.67 1.5 1.5v2zm4-3H19v1h1.5v1.5H19v2h-1.5V8h3v1.5zM9 9.5H8v1h1v-1zm5.5 1.5v-2h-1v2h1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z"/></svg> Ver Cédula PDF
+                            </a>
+                        </div>
                     </div>
                     <div>
                         <div class="info-label">Teléfono</div>
@@ -954,6 +959,11 @@
                     document.getElementById('lbl-nombre').textContent = data.nombre_completo || '-';
                     document.getElementById('lbl-tipo-doc').textContent = data.tipo_documento || '';
                     document.getElementById('lbl-num-doc').textContent = data.numero_documento || '-';
+                    if (data.cedula_pdf) {
+                        const linkPdf = document.getElementById('link-cedula-pdf');
+                        linkPdf.href = data.cedula_pdf;
+                        linkPdf.style.display = 'inline-flex';
+                    }
                     document.getElementById('inp-telefono').value = data.telefono || '';
                     document.getElementById('inp-correo').value = data.correo_electronico || '';
                     document.getElementById('inp-fecha-nacimiento').value = data.fecha_nacimiento || '';

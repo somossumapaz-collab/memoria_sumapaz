@@ -45,6 +45,7 @@ try {
             p.ferias,
             p.beneficiario_2026,
             p.cuenca,
+            p.cedula_pdf,
             CASE 
                 WHEN MAX(cp.id) IS NOT NULL THEN 1
                 ELSE 0
