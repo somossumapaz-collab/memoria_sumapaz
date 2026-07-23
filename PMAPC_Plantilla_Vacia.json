@@ -1,0 +1,473 @@
+{
+  "titulo": "Plan de Manejo Ambiental, Productivo y Comercial (PMAPC) - Plantilla Vacía",
+  "unidad_productiva": "",
+  "productora": "",
+  "vereda": "",
+  "preguntas_respuestas": [
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F01",
+      "pregunta": "Nombre de la organización o unidad productiva",
+      "campo": "f01_nombre_organizacion",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F01",
+      "pregunta": "Tipo de Actividad (agricola / pecuaria / artesanal / agroindustrial / servicios / otra)",
+      "campo": "f01_tipo_actividad",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F01",
+      "pregunta": "Ubicación específica (Vereda, sector, predio)",
+      "campo": "f01_ubicacion",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F01",
+      "pregunta": "Coordenadas",
+      "campo": "f01_coordenadas",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F01",
+      "pregunta": "Producto o servicio principal",
+      "campo": "f01_producto_principal",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F01",
+      "pregunta": "Estado Actual (idea / produccion_inicial / negocio_marcha / asociacion / otro)",
+      "campo": "f01_estado_actual",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F01",
+      "pregunta": "Descripción general del negocio",
+      "campo": "f01_descripcion_general",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F02",
+      "pregunta": "Misión (¿Para qué existe el negocio hoy?)",
+      "campo": "f02_mision",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F02",
+      "pregunta": "Visión (¿Cómo se ve en el futuro?)",
+      "campo": "f02_vision",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F02",
+      "pregunta": "Valores Institucionales",
+      "campo": "f02_valores",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F03",
+      "pregunta": "¿Por qué las personas compran su producto?",
+      "campo": "f03_problema",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F03",
+      "pregunta": "¿Qué beneficio recibe quien compra su producto?",
+      "campo": "f03_solucion",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F03",
+      "pregunta": "¿Qué lo hace diferente frente a otros productos?",
+      "campo": "f03_diferencial",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F03",
+      "pregunta": "¿Qué valor ambiental aporta?",
+      "campo": "f03_valor_ambiental",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F03",
+      "pregunta": "¿Qué valor social o comunitario aporta?",
+      "campo": "f03_valor_social",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F03",
+      "pregunta": "¿Cómo se puede demostrar ese diferencial?",
+      "campo": "f03_demostracion",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F04",
+      "pregunta": "Fortalezas",
+      "campo": "f04_fortalezas",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F04",
+      "pregunta": "Oportunidades",
+      "campo": "f04_oportunidades",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F04",
+      "pregunta": "Debilidades",
+      "campo": "f04_debilidades",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 1: Estratégico",
+      "formato": "F04",
+      "pregunta": "Amenazas",
+      "campo": "f04_amenazas",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 2: Mercado",
+      "formato": "F06",
+      "pregunta": "¿Qué buscan los compradores cuando adquieren su producto?",
+      "campo": "f06_necesidad",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 2: Mercado",
+      "formato": "F06",
+      "pregunta": "¿Cómo sabe que los compradores buscan eso?",
+      "campo": "f06_como_sabe",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 2: Mercado",
+      "formato": "F06",
+      "pregunta": "¿Quiénes compran o podrían comprar este producto?",
+      "campo": "f06_a_quien_afecta",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 2: Mercado",
+      "formato": "F06",
+      "pregunta": "¿Qué evidencia tiene?",
+      "campo": "f06_evidencia",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 2: Mercado",
+      "formato": "F06",
+      "pregunta": "¿Qué ventajas tiene su producto por ser producido en Sumapaz?",
+      "campo": "f06_oportunidad_organicos",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 2: Mercado",
+      "formato": "F06",
+      "pregunta": "¿Ha cambiado lo que buscan sus compradores en los últimos años?",
+      "campo": "f06_cambio",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 2: Mercado",
+      "formato": "F06",
+      "pregunta": "¿Qué dificultades encuentra para vender su producto?",
+      "campo": "f06_dificultad",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 3: Producción",
+      "formato": "F12",
+      "pregunta": "Producción estimada mensual",
+      "campo": "f12_produccion_estimada",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 3: Producción",
+      "formato": "F12",
+      "pregunta": "Capacidad máxima de producción",
+      "campo": "f12_produccion_maxima",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 3: Producción",
+      "formato": "F12",
+      "pregunta": "Área destinada a la producción",
+      "campo": "f12_area",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 3: Producción",
+      "formato": "F12",
+      "pregunta": "Limitantes técnico-productivos",
+      "campo": "f12_limitantes_prod",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Módulo 3: Producción",
+      "formato": "F12",
+      "pregunta": "Limitantes ambientales",
+      "campo": "f12_limitantes_amb",
+      "respuesta": ""
+    },
+    {
+      "modulo": "Notas / PDF",
+      "formato": "Notas",
+      "pregunta": "Comentarios, Observaciones e Información Pendiente de Verificar",
+      "campo": "pdf_comentarios",
+      "respuesta": ""
+    }
+  ],
+  "f01": {
+    "nombre_organizacion": "",
+    "tipo_actividad": "",
+    "ubicacion": "",
+    "coordenadas": "",
+    "producto_principal": "",
+    "estado_actual": "",
+    "descripcion_general": ""
+  },
+  "f02": {
+    "mision": "",
+    "vision": "",
+    "valores": ""
+  },
+  "f03": {
+    "problema": "",
+    "solucion": "",
+    "diferencial": "",
+    "valor_ambiental": "",
+    "valor_social": "",
+    "demostracion": ""
+  },
+  "f04": {
+    "fortalezas": "",
+    "oportunidades": "",
+    "debilidades": "",
+    "amenazas": ""
+  },
+  "f05": [
+    {
+      "actor": "",
+      "perfil": "",
+      "ubicacion": "",
+      "necesidad": "",
+      "frecuencia": "",
+      "criterio": "",
+      "canal": ""
+    }
+  ],
+  "f06": {
+    "necesidad": "",
+    "como_sabe": "",
+    "a_quien_afecta": "",
+    "evidencia": "",
+    "oportunidad_organicos": "",
+    "cambio": "",
+    "dificultad": ""
+  },
+  "f07": [
+    {
+      "actor": "",
+      "aporta": "",
+      "recibe": "",
+      "trabajo": "",
+      "ambiental": "",
+      "accion": ""
+    }
+  ],
+  "f08": {
+    "quien_degus": "",
+    "resultado_degus": "",
+    "motivacion_degus": "",
+    "evidencia_degus": "",
+    "quien_ventas": "",
+    "resultado_ventas": "",
+    "motivacion_ventas": "",
+    "evidencia_ventas": "",
+    "quien_cartas": "",
+    "resultado_cartas": "",
+    "motivacion_cartas": "",
+    "evidencia_cartas": "",
+    "quien_encuesta": "",
+    "resultado_encuesta": "",
+    "motivacion_encuesta": "",
+    "evidencia_encuesta": "",
+    "quien_entrevista": "",
+    "resultado_entrevista": "",
+    "motivacion_entrevista": "",
+    "evidencia_entrevista": "",
+    "quien_feria": "",
+    "resultado_feria": "",
+    "motivacion_feria": "",
+    "evidencia_feria": "",
+    "metodo_otro": "",
+    "quien_otro": "",
+    "resultado_otro": "",
+    "motivacion_otro": "",
+    "evidencia_otro": ""
+  },
+  "f09": [
+    {
+      "producto": "",
+      "descripcion": "",
+      "unidad": "",
+      "insumos": "",
+      "almacenamiento": "",
+      "presentacion": "",
+      "diferencial": ""
+    }
+  ],
+  "f10": [
+    {
+      "bien": "",
+      "unidades": "",
+      "actividad": "",
+      "tiempo": ""
+    }
+  ],
+  "f11": [
+    {
+      "insumo": "",
+      "cantidad": "",
+      "frecuencia": "",
+      "proveedor": "",
+      "toxicidad": "",
+      "impacto": "",
+      "manejo": ""
+    }
+  ],
+  "f12": {
+    "produccion_estimada": "",
+    "produccion_maxima": "",
+    "area": "",
+    "limitantes_prod": "",
+    "limitantes_amb": "",
+    "capacidad_instalada": "",
+    "capacidad_utilizada": "",
+    "misma_cantidad": "",
+    "alcanza_demanda": "",
+    "necesidad_sostenible": ""
+  },
+  "f12a": {
+    "estado_agua": "",
+    "limite_agua": "",
+    "efecto_agua": "",
+    "accion_agua": "",
+    "estado_fuentes": "",
+    "limite_fuentes": "",
+    "efecto_fuentes": "",
+    "accion_fuentes": "",
+    "estado_suelo": "",
+    "limite_suelo": "",
+    "efecto_suelo": "",
+    "accion_suelo": "",
+    "estado_pendiente": "",
+    "limite_pendiente": "",
+    "efecto_pendiente": "",
+    "accion_pendiente": "",
+    "estado_clima": "",
+    "limite_clima": "",
+    "efecto_clima": "",
+    "accion_clima": "",
+    "estado_bio": "",
+    "limite_bio": "",
+    "efecto_bio": "",
+    "accion_bio": "",
+    "estado_insumos": "",
+    "limite_insumos": "",
+    "efecto_insumos": "",
+    "accion_insumos": "",
+    "estado_residuos": "",
+    "limite_residuos": "",
+    "efecto_residuos": "",
+    "accion_residuos": ""
+  },
+  "f14": [
+    {
+      "producto": "",
+      "costo": "",
+      "margen": "",
+      "pmin": "",
+      "pmercado": "",
+      "logistica": "",
+      "precio": "",
+      "justificacion": ""
+    }
+  ],
+  "f15": [
+    {
+      "producto": "",
+      "cantidad": "",
+      "precio": "",
+      "ingresos": "",
+      "pago": "",
+      "cliente": ""
+    }
+  ],
+  "f15b": [
+    {
+      "prod": "",
+      "canal": "",
+      "tiempo": "",
+      "transporte": "",
+      "condicion": "",
+      "capacidad": "",
+      "costo": "",
+      "resp": ""
+    }
+  ],
+  "f16": [
+    {
+      "desc": "",
+      "valunit": "",
+      "cant": "",
+      "total": "",
+      "req": "",
+      "fuente": ""
+    }
+  ],
+  "f17": [
+    {
+      "desc": "",
+      "val": "",
+      "obs": ""
+    }
+  ],
+  "f20": [
+    {
+      "cant": "",
+      "manejo": "",
+      "destino": "",
+      "resp": ""
+    }
+  ],
+  "f24": [
+    {
+      "actividad": "",
+      "componente": "",
+      "responsable": "",
+      "tiempo": "",
+      "resultado": ""
+    }
+  ],
+  "pdf_comentarios": ""
+}

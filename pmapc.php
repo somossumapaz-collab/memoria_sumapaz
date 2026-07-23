@@ -484,21 +484,25 @@
             <div id="select-producer-results" style="display: none; position: absolute; left: 1.5rem; right: 1.5rem; background: white; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); max-height: 220px; overflow-y: auto; z-index: 1000; margin-top: 4px; box-sizing: border-box;"></div>
         </div>
 
-        <!-- Interview Transcript Upload (IA) -->
+        <!-- Transcripción e IA Auto-fill / Cargue de Archivo -->
         <div id="transcript-upload-box" class="producer-selector-card" style="display: none; border-left: 5px solid #2196F3; margin-top: 1.5rem; margin-bottom: 1.5rem;">
             <label style="font-weight: 600; color: #1E88E5; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
                 <svg style="width: 24px; height: 24px; fill: #1E88E5;" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-                Autocompletar PMAPC con IA (Transcripción de Entrevista)
+                Cargue y Autocompletado del PMAPC
             </label>
             <p style="font-size: 0.85rem; color: #666; margin-top: 0.25rem; margin-bottom: 1rem;">
-                Sube un archivo de texto (.txt) con la transcripción de la entrevista realizada al productor. La IA analizará el texto y rellenará automáticamente todos los campos correspondientes del PMAPC.
+                Carga una transcripción, documento PDF o archivo JSON con datos del PMAPC para autocompletar la información.
             </p>
             <div style="display: flex; flex-direction: column; gap: 1rem;">
                 <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-                    <input type="file" id="transcript-file-input" accept=".txt" style="display: none;">
+                    <input type="file" id="transcript-file-input" accept=".json,.pdf,.txt" style="display: none;">
                     <button type="button" onclick="document.getElementById('transcript-file-input').click()" class="btn" style="background-color: #2196F3; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif;">
                         <svg style="width: 18px; height: 18px; fill: white;" viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z"/></svg>
-                        Seleccionar Archivo .txt
+                        Seleccionar Archivo (.JSON, .PDF, .TXT)
+                    </button>
+                    <button type="button" onclick="downloadPmapcPdf()" class="btn" style="background-color: #D32F2F; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif;">
+                        <svg style="width: 18px; height: 18px; fill: white;" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                        Descargar PMAPC Completo en PDF
                     </button>
                     <span id="selected-file-name" style="font-size: 0.9rem; color: #555; font-style: italic;">Ningún archivo seleccionado</span>
                 </div>
@@ -506,26 +510,17 @@
                 <!-- Progress status / progress spinner -->
                 <div id="ia-processing-status" style="display: none; align-items: center; gap: 10px; background-color: #E3F2FD; color: #0D47A1; padding: 12px; border-radius: 6px; font-weight: 600; font-size: 0.9rem;">
                     <div class="ia-spinner"></div>
-                    <span id="ia-processing-text">Procesando archivo con la IA... Esto puede tomar entre 15 y 30 segundos. Por favor no cierres la página.</span>
+                    <span id="ia-processing-text">Procesando archivo... Por favor no cierres la página.</span>
                 </div>
                 
                 <!-- Action button -->
                 <button type="button" id="btn-process-transcript" class="btn" disabled style="background-color: #4CAF50; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; cursor: not-allowed; font-weight: 600; width: fit-content; opacity: 0.5; font-family: 'Inter', sans-serif;">
-                    Iniciar Autocompletado con IA
+                    Cargar y Autocompletar PMAPC
                 </button>
             </div>
         </div>
 
-        <!-- Global Form Progress Bar -->
-        <div id="form-progress-card" style="background: #fff; padding: 1.25rem 1.5rem; border-radius: 8px; box-shadow: var(--shadow); margin-top: 1.5rem; margin-bottom: 1.5rem; border: 1px solid #E5E7EB; display: none;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                <span style="font-weight: 600; color: var(--earth-brown); font-size: 0.95rem; font-family: 'Inter', sans-serif;">Progreso de Diligenciamiento del PMAPC</span>
-                <span id="form-progress-text" style="font-weight: 700; color: var(--primary-green); font-size: 1.1rem; font-family: 'Inter', sans-serif;">0% completado</span>
-            </div>
-            <div style="width: 100%; height: 10px; background-color: #E0E0E0; border-radius: 5px; overflow: hidden;">
-                <div id="form-progress-bar" style="width: 0%; height: 100%; background-color: var(--primary-green); transition: width 0.4s ease; border-radius: 5px;"></div>
-            </div>
-        </div>
+
 
         <!-- Pre-filled info card (locks when loaded from URL or selected) -->
         <div id="producer-info-box" class="prefilled-card" style="display: none; background-color: #F4F1EA; border: 1px solid #D1C7BD; border-left: 5px solid var(--primary-green);">
@@ -625,15 +620,7 @@
                         </div>
                         <div class="form-group">
                             <label for="f01_tipo_actividad">Tipo de Actividad</label>
-                            <select id="f01_tipo_actividad" name="f01_tipo_actividad">
-                                <option value="">Seleccione...</option>
-                                <option value="agricola">Agrícola</option>
-                                <option value="pecuaria">Pecuaria</option>
-                                <option value="artesanal">Artesanal</option>
-                                <option value="agroindustrial">Agroindustrial</option>
-                                <option value="servicios">Servicios</option>
-                                <option value="otra">Otra</option>
-                            </select>
+                            <input type="text" id="f01_tipo_actividad" name="f01_tipo_actividad" placeholder="Escribe el tipo de actividad (ej. Agrícola, Pecuaria, Artesanal...)">
                         </div>
                         <div class="form-group">
                             <label for="f01_ubicacion">Ubicación específica (Vereda, sector, predio)</label>
@@ -649,14 +636,7 @@
                         </div>
                         <div class="form-group">
                             <label for="f01_estado_actual">Estado Actual</label>
-                            <select id="f01_estado_actual" name="f01_estado_actual">
-                                <option value="">Seleccione...</option>
-                                <option value="idea">Idea de negocio</option>
-                                <option value="produccion_inicial">Producción inicial</option>
-                                <option value="negocio_marcha">Negocio en marcha</option>
-                                <option value="asociacion">Asociación formalizada</option>
-                                <option value="otro">Otro</option>
-                            </select>
+                            <input type="text" id="f01_estado_actual" name="f01_estado_actual" placeholder="Escribe el estado actual (ej. Negocio en marcha, Producción inicial...)">
                         </div>
                         <div class="form-group" style="grid-column: 1 / -1;">
                             <label for="f01_descripcion_general">Descripción general del negocio</label>
@@ -3002,6 +2982,17 @@
                 </div>
             </div>
 
+            <!-- Observaciones y Comentarios Extraídos (Siempre Visible al final del formulario) -->
+            <div class="format-block" style="margin-top: 2rem; background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: var(--shadow); border: 1px solid #CBD5E1;">
+                <div class="format-title" style="background: #eef8f6; color: #2A9D8F; border-left: 4px solid #2A9D8F; padding: 10px 15px; font-weight: 700; border-radius: 4px;">
+                    <span>DOC</span> Observaciones y Comentarios Extraídos del Documento / PDF
+                </div>
+                <div class="form-group" style="margin-top: 1rem;">
+                    <label for="pdf_comentarios" style="font-weight: 600; color: #333; font-size: 1rem;">Comentarios / Notas Relevantes del PDF o Evaluación:</label>
+                    <textarea id="pdf_comentarios" name="pdf_comentarios" rows="5" placeholder="Aquí aparecerán las observaciones extraídas del PDF cargado o comentarios adicionales del evaluador..." style="width: 100%; padding: 0.85rem; border: 1px solid #CBD5E1; border-radius: 8px; font-size: 1rem;"></textarea>
+                </div>
+            </div>
+
             <!-- Navigation Buttons -->
             <div class="nav-buttons-container">
                 <button type="button" class="btn-nav btn-prev" id="btn-prev" onclick="changeStep(-1)" style="display: none;">
@@ -3884,6 +3875,7 @@
             }
 
             if (data.f26_coherencia) setVal('f26_coherencia', data.f26_coherencia);
+            if (data.pdf_comentarios || data.comentarios) setVal('pdf_comentarios', data.pdf_comentarios || data.comentarios);
             updateFormCompletionProgress();
         }
 
@@ -4859,7 +4851,8 @@
                     f24: getTableDataF24(),
                     f25: getTableDataF25(),
                     f26: getTableDataF26(),
-                    f26_coherencia: document.getElementById('f26_coherencia').value
+                    f26_coherencia: document.getElementById('f26_coherencia').value,
+                    pdf_comentarios: document.getElementById('pdf_comentarios') ? document.getElementById('pdf_comentarios').value : ''
                 }
             };
 
@@ -5254,6 +5247,36 @@
             list = list.filter(id => id != productorId);
             localStorage.setItem('pending_sync_pmapc', JSON.stringify(list));
             localStorage.removeItem(`pmapc_offline_payload_${productorId}`);
+        }
+
+        function downloadPmapcPdf() {
+            const producerId = document.getElementById('productor_id') ? document.getElementById('productor_id').value : (selectedProducerId || '');
+            if (producerId) {
+                const pdfUrl = API_BASE + 'api/download_pmapc_pdf.php?id=' + producerId;
+                window.open(pdfUrl, '_blank');
+            } else {
+                const form = document.createElement('form');
+                form.method = 'POST';
+                form.action = API_BASE + 'api/download_pmapc_pdf.php';
+                form.target = '_blank';
+                
+                const formEl = document.getElementById('pmapc-form');
+                const formData = formEl ? new FormData(formEl) : null;
+                const dataObj = {};
+                if (formData) {
+                    formData.forEach((value, key) => { dataObj[key] = value; });
+                }
+                
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'data';
+                input.value = JSON.stringify(dataObj);
+                form.appendChild(input);
+                
+                document.body.appendChild(form);
+                form.submit();
+                form.remove();
+            }
         }
 
         function updateSyncBanner() {

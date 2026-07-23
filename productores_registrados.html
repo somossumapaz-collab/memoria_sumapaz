@@ -346,6 +346,10 @@
                         <h3>Caracterizados</h3>
                         <p id="total-caracterizados-count">0</p>
                     </div>
+                    <div class="glass-card" style="margin-top: 0; cursor: pointer; transition: transform 0.2s;" onclick="filterByPmapcOnly()" title="Haz clic para filtrar los productores con PMAPC realizado">
+                        <h3>PMAPC Realizados</h3>
+                        <p id="total-pmapc-count">0</p>
+                    </div>
                     <div class="glass-card" style="margin-top: 0;">
                         <h3>Mypimes</h3>
                         <p id="total-mypimes-count">0</p>
@@ -443,6 +447,16 @@
                     <label for="filter-caracterizado"
                         style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">Caracterizado</label>
                     <select id="filter-caracterizado"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
+                        <option value="">Todos</option>
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div style="flex: 1; min-width: 150px;">
+                    <label for="filter-pmapc"
+                        style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #444F2F;">PMAPC Realizado</label>
+                    <select id="filter-pmapc"
                         style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
                         <option value="">Todos</option>
                         <option value="1">Sí</option>
@@ -1501,6 +1515,7 @@
             const filterCuenca = document.getElementById('filter-cuenca');
             const filterFecha = document.getElementById('filter-fecha');
             const filterCaracterizado = document.getElementById('filter-caracterizado');
+            const filterPmapc = document.getElementById('filter-pmapc');
             const filterMypime = document.getElementById('filter-mypime');
             const filterPanaca = document.getElementById('filter-panaca');
             const filterFerias = document.getElementById('filter-ferias');
@@ -1678,6 +1693,7 @@
             if (filterCuenca) filterCuenca.addEventListener('change', applyFilters);
             filterFecha.addEventListener('change', applyFilters);
             filterCaracterizado.addEventListener('change', applyFilters);
+            if (filterPmapc) filterPmapc.addEventListener('change', applyFilters);
             filterMypime.addEventListener('change', applyFilters);
             filterPanaca.addEventListener('change', applyFilters);
             if (filterFerias) filterFerias.addEventListener('change', applyFilters);
@@ -1690,6 +1706,7 @@
                 if (filterCuenca) filterCuenca.value = '';
                 filterFecha.value = '';
                 filterCaracterizado.value = '';
+                if (filterPmapc) filterPmapc.value = '';
                 filterMypime.value = '';
                 filterPanaca.value = '';
                 if (filterFerias) filterFerias.value = '';
@@ -2142,12 +2159,22 @@
                    matchMypime && matchPanaca && matchFerias && matchCertificados && matchActividad && matchBeneficiario;
         }
 
+        function filterByPmapcOnly() {
+            const el = document.getElementById('filter-pmapc');
+            if (el) {
+                el.value = '1';
+                applyFilters();
+                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
         function applyFilters() {
             const nombreVal = document.getElementById('filter-nombre').value.toLowerCase();
             const veredaVal = document.getElementById('filter-vereda').value;
             const cuencaVal = document.getElementById('filter-cuenca') ? document.getElementById('filter-cuenca').value : '';
             const fechaVal = document.getElementById('filter-fecha').value; // format: YYYY-MM-DD
             const caracterizadoVal = document.getElementById('filter-caracterizado').value;
+            const pmapcVal = document.getElementById('filter-pmapc') ? document.getElementById('filter-pmapc').value : '';
             const mypimeVal = document.getElementById('filter-mypime').value;
             const panacaVal = document.getElementById('filter-panaca').value;
             const feriasVal = document.getElementById('filter-ferias').value;
@@ -2161,6 +2188,7 @@
                 let matchCuenca = true;
                 let matchFecha = true;
                 let matchCaracterizado = true;
+                let matchPmapc = true;
                 let matchMypime = true;
                 let matchPanaca = true;
                 let matchFerias = true;
@@ -2186,6 +2214,10 @@
 
                 if (caracterizadoVal !== "") {
                     matchCaracterizado = p.tiene_caracterizacion == caracterizadoVal;
+                }
+
+                if (pmapcVal !== "") {
+                    matchPmapc = p.tiene_pmapc == pmapcVal;
                 }
 
                 if (mypimeVal !== "") {
@@ -2221,7 +2253,7 @@
                     matchBeneficiario = p.ranking_ajustado !== null && p.ranking_ajustado <= 152;
                 }
 
-                return matchNombre && matchVereda && matchCuenca && matchFecha && matchCaracterizado && 
+                return matchNombre && matchVereda && matchCuenca && matchFecha && matchCaracterizado && matchPmapc && 
                        matchMypime && matchPanaca && matchFerias && matchCertificados && matchActividad && matchBeneficiario;
             });
 
@@ -2250,6 +2282,11 @@
             const totalCaracterizadosElement = document.getElementById('total-caracterizados-count');
             if (totalCaracterizadosElement) {
                 totalCaracterizadosElement.textContent = dataToDraw.filter(p => p.tiene_caracterizacion == 1).length;
+            }
+
+            const totalPmapcElement = document.getElementById('total-pmapc-count');
+            if (totalPmapcElement) {
+                totalPmapcElement.textContent = dataToDraw.filter(p => p.tiene_pmapc == 1).length;
             }
 
             if (totalMypimesElement) {

@@ -50,6 +50,10 @@ try {
                 WHEN MAX(cp.id) IS NOT NULL THEN 1
                 ELSE 0
             END AS tiene_caracterizacion,
+            CASE 
+                WHEN MAX(pm.id) IS NOT NULL AND MAX(LENGTH(pm.data)) > 2 THEN 1
+                ELSE 0
+            END AS tiene_pmapc,
             MAX(cp.nombre_organizacion) AS nombre_organizacion,
             MAX(cp.puntaje_social) AS puntaje_social,
             MAX(cp.puntaje_organizacional) AS puntaje_organizacional,
@@ -67,6 +71,7 @@ try {
             GROUP_CONCAT(DISTINCT c.nombre ORDER BY c.nombre SEPARATOR ', ') AS certificaciones_nombres
         FROM productores_sumapaz p
         LEFT JOIN caracterizacion_productor cp ON p.id = cp.productor_id
+        LEFT JOIN pmapc_registros pm ON p.id = pm.productor_id
         LEFT JOIN productor_categoria cpcat ON p.id = cpcat.productor_id
         LEFT JOIN productor_certificacion pc ON p.id = pc.productor_id
         LEFT JOIN certificaciones c ON pc.certificacion_id = c.id

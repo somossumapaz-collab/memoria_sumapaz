@@ -1,0 +1,211 @@
+{
+  "titulo": "Plan de Manejo Ambiental, Productivo y Comercial (PMAPC)",
+  "unidad_productiva": "Artesanías G&G",
+  "productora": "Demi Johana Gutiérrez",
+  "vereda": "Vereda El Raizal",
+  "preguntas_respuestas": [
+    {
+      "modulo": "Estratégico",
+      "formato": "F01",
+      "pregunta": "Nombre de la organización o unidad productiva",
+      "campo": "f01_nombre_organizacion",
+      "respuesta": "Johana Gutiérrez."
+    },
+    {
+      "modulo": "Estratégico",
+      "formato": "F01",
+      "pregunta": "Tipo de Actividad",
+      "campo": "f01_tipo_actividad",
+      "respuesta": "artesanal"
+    },
+    {
+      "modulo": "Estratégico",
+      "formato": "F01",
+      "pregunta": "Ubicación específica (Vereda, sector, predio)",
+      "campo": "f01_ubicacion",
+      "respuesta": "Vereda El Raizal, localidad de Sumapaz. El trabajo se realiza en"
+    },
+    {
+      "modulo": "Estratégico",
+      "formato": "F01",
+      "pregunta": "Producto o servicio principal",
+      "campo": "f01_producto_principal",
+      "respuesta": "Llaveros, collares, aretes y manillas elaborados principalmente con"
+    },
+    {
+      "modulo": "Estratégico",
+      "formato": "F01",
+      "pregunta": "Estado Actual",
+      "campo": "f01_estado_actual",
+      "respuesta": "negocio_marcha"
+    },
+    {
+      "modulo": "Estratégico",
+      "formato": "F01",
+      "pregunta": "Descripción general del negocio",
+      "campo": "f01_descripcion_general",
+      "respuesta": "Productora: Demi Johana Gutiérrez · Vereda El Raizal · Sumapaz"
+    },
+    {
+      "modulo": "Estratégico",
+      "formato": "F02",
+      "pregunta": "Misión (¿Para qué existe el negocio hoy?)",
+      "campo": "f02_mision",
+      "respuesta": "Diseñar y elaborar en familia artesanías de bisutería personalizadas,"
+    },
+    {
+      "modulo": "Estratégico",
+      "formato": "F02",
+      "pregunta": "Visión (¿Cómo se ve en el futuro?)",
+      "campo": "f02_vision",
+      "respuesta": "En un plazo de tres a cinco años, consolidarse como una unidad"
+    },
+    {
+      "modulo": "Estratégico",
+      "formato": "F02",
+      "pregunta": "Valores Institucionales",
+      "campo": "f02_valores",
+      "respuesta": "Unión, respeto y responsabilidad."
+    },
+    {
+      "modulo": "Estratégico",
+      "formato": "F03",
+      "pregunta": "¿Qué beneficio recibe quien compra su producto?",
+      "campo": "f03_solucion",
+      "respuesta": "Obtiene un accesorio o recordatorio ajustado a su gusto, producido"
+    },
+    {
+      "modulo": "Estratégico",
+      "formato": "F03",
+      "pregunta": "¿Qué lo hace diferente frente a otros productos?",
+      "campo": "f03_diferencial",
+      "respuesta": "El trabajo familiar, la personalización, el cuidado en los acabados, el"
+    },
+    {
+      "modulo": "Estratégico",
+      "formato": "F03",
+      "pregunta": "¿Qué valor ambiental aporta?",
+      "campo": "f03_valor_ambiental",
+      "respuesta": "Actualmente procura medir los materiales para reducir desperdicios."
+    },
+    {
+      "modulo": "Estratégico",
+      "formato": "F03",
+      "pregunta": "¿Qué valor social o comunitario aporta?",
+      "campo": "f03_valor_social",
+      "respuesta": "Fortalece el trabajo de cinco integrantes de una familia, transmite"
+    },
+    {
+      "modulo": "Estratégico",
+      "formato": "F04",
+      "pregunta": "Fortalezas",
+      "campo": "f04_fortalezas",
+      "respuesta": "• Trabajo colaborativo de cinco integrantes de una familia. • Productos personalizados y elaborados manualmente. • Buena calidad, cuidado en los acabados y garantía de reparación. • Precios accesibles para la comunidad. • Distribución de tareas según pedidos y capacidades. • Canal y estados de WhatsApp para promocionar los productos. • Experiencia impartiendo talleres y apoyando otros emprendimientos."
+    },
+    {
+      "modulo": "Estratégico",
+      "formato": "F04",
+      "pregunta": "Oportunidades",
+      "campo": "f04_oportunidades",
+      "respuesta": "• Producir recordatorios para el Día del Campesino, feria agroindustrial y eventos locales. • Participar en más ferias dentro y fuera de la localidad. • Construir alianzas con organizadores de eventos y entidades públicas. • Acceder a materiales, telares y capital de trabajo. • Incorporar materiales reciclados y desarrollar una línea sostenible. • Fortalecer talleres de bisutería y evaluar la venta de telares artesanales."
+    },
+    {
+      "modulo": "Estratégico",
+      "formato": "F04",
+      "pregunta": "Debilidades",
+      "campo": "f04_debilidades",
+      "respuesta": "• Materiales costosos y de difícil acceso en cantidad. • Producción pequeña y dependiente de pedidos ocasionales. • Ventas mensuales inestables, entre aproximadamente $5.000 y $150.000. • No cuenta con un espacio propio y adecuado de trabajo. • Mano de obra no siempre recuperada completamente en el precio. • Empaque básico y sin identidad gráfica estandarizada. • No tiene alianzas comerciales claramente formalizadas ni registro detallado de costos."
+    },
+    {
+      "modulo": "Estratégico",
+      "formato": "F04",
+      "pregunta": "Amenazas",
+      "campo": "f04_amenazas",
+      "respuesta": "• Aumento del precio y dificultad de abastecimiento de mostacillas, hilos y accesorios. • Sensibilidad del mercado local frente a precios más altos. • Escasez de ferias o espacios de comercialización. • Lluvias intensas que dificultan el desplazamiento entre viviendas y eventos. • Riesgos de fatiga visual y lesiones por agujas o posturas prolongadas. • Dependencia del transporte propio o institucional para asistir a ferias. PMAPC Nivel 3 - Demi Johana Gutiérrez - Artesanías GG"
+    }
+  ],
+  "f01": {
+    "nombre_organizacion": "Johana Gutiérrez.",
+    "descripcion_general": "Productora: Demi Johana Gutiérrez · Vereda El Raizal · Sumapaz",
+    "ubicacion": "Vereda El Raizal, localidad de Sumapaz. El trabajo se realiza en",
+    "tipo_actividad": "artesanal",
+    "estado_actual": "negocio_marcha",
+    "producto_principal": "Llaveros, collares, aretes y manillas elaborados principalmente con"
+  },
+  "f02": {
+    "mision": "Diseñar y elaborar en familia artesanías de bisutería personalizadas,",
+    "vision": "En un plazo de tres a cinco años, consolidarse como una unidad",
+    "valores": "Unión, respeto y responsabilidad."
+  },
+  "f03": {
+    "valor_ambiental": "Actualmente procura medir los materiales para reducir desperdicios.",
+    "solucion": "Obtiene un accesorio o recordatorio ajustado a su gusto, producido",
+    "diferencial": "El trabajo familiar, la personalización, el cuidado en los acabados, el",
+    "valor_social": "Fortalece el trabajo de cinco integrantes de una familia, transmite"
+  },
+  "f04": {
+    "fortalezas": "• Trabajo colaborativo de cinco integrantes de una familia. • Productos personalizados y elaborados manualmente. • Buena calidad, cuidado en los acabados y garantía de reparación. • Precios accesibles para la comunidad. • Distribución de tareas según pedidos y capacidades. • Canal y estados de WhatsApp para promocionar los productos. • Experiencia impartiendo talleres y apoyando otros emprendimientos.",
+    "oportunidades": "• Producir recordatorios para el Día del Campesino, feria agroindustrial y eventos locales. • Participar en más ferias dentro y fuera de la localidad. • Construir alianzas con organizadores de eventos y entidades públicas. • Acceder a materiales, telares y capital de trabajo. • Incorporar materiales reciclados y desarrollar una línea sostenible. • Fortalecer talleres de bisutería y evaluar la venta de telares artesanales.",
+    "debilidades": "• Materiales costosos y de difícil acceso en cantidad. • Producción pequeña y dependiente de pedidos ocasionales. • Ventas mensuales inestables, entre aproximadamente $5.000 y $150.000. • No cuenta con un espacio propio y adecuado de trabajo. • Mano de obra no siempre recuperada completamente en el precio. • Empaque básico y sin identidad gráfica estandarizada. • No tiene alianzas comerciales claramente formalizadas ni registro detallado de costos.",
+    "amenazas": "• Aumento del precio y dificultad de abastecimiento de mostacillas, hilos y accesorios. • Sensibilidad del mercado local frente a precios más altos. • Escasez de ferias o espacios de comercialización. • Lluvias intensas que dificultan el desplazamiento entre viviendas y eventos. • Riesgos de fatiga visual y lesiones por agujas o posturas prolongadas. • Dependencia del transporte propio o institucional para asistir a ferias. PMAPC Nivel 3 - Demi Johana Gutiérrez - Artesanías GG"
+  },
+  "f05": [],
+  "f06": {},
+  "f07": [],
+  "f08": {},
+  "f09": [
+    {
+      "producto": "Producto / servicio",
+      "descripcion": "Descripción técnica",
+      "unidad": "Unidad",
+      "insumos": "Mostacillas, hilo nylon, aguja y herrajes",
+      "almacenamiento": "Lugar seco",
+      "presentacion": "Bolsa transparente",
+      "diferencial": "Trabajo artesanal Sumapaz"
+    }
+  ],
+  "f10": [],
+  "f11": [
+    {
+      "insumo": "Mostacillas",
+      "cantidad": "350 a 400 unidades",
+      "frecuencia": "Según pedidos",
+      "proveedor": "Local / Bogotá",
+      "toxicidad": "N/A",
+      "impacto": "Residuos plásticos",
+      "manejo": "Clasificar y almacenar en recipientes cerrados"
+    }
+  ],
+  "f12": {},
+  "f12a": {},
+  "f12b": {},
+  "f14": [],
+  "f15": [],
+  "f16": [
+    {
+      "desc": "Telares para elaboración de collares y manillas",
+      "valunit": "30000",
+      "cant": "2",
+      "total": "60000",
+      "req": "Si",
+      "fuente": "Recursos propios / Apoyo"
+    }
+  ],
+  "f17": [
+    {
+      "desc": "Materias primas (mostacillas, hilo, nylon, herrajes)",
+      "val": "50000",
+      "obs": "Varía según volumen de pedidos"
+    }
+  ],
+  "f20": [
+    {
+      "cant": "Baja",
+      "manejo": "Separar por tamaño y color; reutilizar en muestras",
+      "destino": "Reutilización interna / Reciclaje",
+      "resp": "Productora y grupo familiar"
+    }
+  ],
+  "pdf_comentarios": "--- INFORMACIÓN PENDIENTE DE VERIFICAR ---\nINFORMACIÓN PENDIENTE DE VERIFICAR \n• \nEscritura oficial del nombre Artesanías GG y datos de contacto de la unidad. \n• \nDirección exacta, coordenadas y condiciones del espacio donde se realiza la producción. \n• \nNombres, edades y funciones de las cinco integrantes, además de confirmar que la participación de las menores sea \nvoluntaria, segura, supervisada y compatible con su educación. \n• \nForma jurídica, RUT, registros, permisos o vinculación asociativa, si existen. \n• \nProveedores, precios y frecuencia de compra de mostacillas, hilos, nylon, agujas, herrajes y empaques. \n• \nTiempo real de elaboración de los collares, debido a información contradictoria en la entrevista. \n• \nCantidades de insumos para aretes y manillas y características de cada presentación. \n• \nCantidad exacta vendida por producto, precios por tamaño y registro de ingresos mensuales. \n• \nCosto completo por producto, incluyendo mano de obra, empaque, energía, transporte y desperdicio. \n• \nCantidad y costo de telares requeridos por el grupo. \n• \nCostos de transporte, combustible, datos móviles y uso del espacio doméstico. \n• \nCantidad de residuos generados y ruta local disponible para reciclaje o manejo seguro de agujas. \n• \nNúmero y calendario de ferias potenciales, requisitos de participación y posibles alianzas con organizadores.\n\n--- CONCLUSIÓN GENERAL ---\nCONCLUSIÓN GENERAL \nArtesanías GG es una unidad productiva familiar con aproximadamente dos años de experiencia, orientada a la elaboración \nde bisutería personalizada y productos representativos del territorio. Sus principales fortalezas son la unión del grupo, la \ncalidad de los acabados, la adaptación a los diseños solicitados, la garantía ofrecida al cliente y la capacidad de transmitir el \nconocimiento mediante talleres. La principal limitación es la falta de capital de trabajo para adquirir materiales en cantidad, \nacompañada por ventas irregulares, ausencia de un espacio propio y una valoración incompleta de la mano de obra. La \nprioridad de fortalecimiento es consolidar un inventario básico de insumos y adquirir telares, junto con un sistema sencillo \nde costos, producción y ventas. En el componente comercial se recomienda fortalecer la participación en ferias y construir \nalianzas con organizadores de eventos para producir recordatorios institucionales. En el componente ambiental existe una \noportunidad clara para separar y aprovechar retazos, reducir empaques plásticos y desarrollar una línea de artesanías con \nmateriales reciclados.\n\n--- RECOMENDACIONES DE FORTALECIMIENTO ---\nRECOMENDACIONES DE FORTALECIMIENTO \n• \nDefinir un catálogo básico con fotografías, tamaños, tiempos de entrega y precios por producto. \n• \nCrear un registro mensual de pedidos, producción, materiales, horas de trabajo, ventas y utilidad. \n• \nCalcular el costo unitario incluyendo la totalidad de la mano de obra y el transporte. \n• \nCotizar el número de telares requerido y organizar un inventario mínimo de mostacillas, hilos, nylon, agujas y herrajes. \n• \nAdecuar un espacio con buena iluminación, postura cómoda, almacenamiento cerrado y pausas visuales periódicas. \n• \nFormalizar acercamientos con organizadores del Día del Campesino, la feria agroindustrial y otras actividades locales. \n• \nMejorar el empaque e incorporar una etiqueta con nombre, contacto, cuidados y garantía. \n• \nImplementar separación de retazos, mostacillas y empaques, y desarrollar un piloto de productos con material reciclado. \n• \nGarantizar que las actividades realizadas por menores sean educativas, apropiadas para su edad, voluntarias, supervisadas y \nsin interferir con su escolaridad. \nFuente de información: entrevista transcrita a Demi Johana Gutiérrez.",
+  "comentarios": "--- INFORMACIÓN PENDIENTE DE VERIFICAR ---\nINFORMACIÓN PENDIENTE DE VERIFICAR \n• \nEscritura oficial del nombre Artesanías GG y datos de contacto de la unidad. \n• \nDirección exacta, coordenadas y condiciones del espacio donde se realiza la producción. \n• \nNombres, edades y funciones de las cinco integrantes, además de confirmar que la participación de las menores sea \nvoluntaria, segura, supervisada y compatible con su educación. \n• \nForma jurídica, RUT, registros, permisos o vinculación asociativa, si existen. \n• \nProveedores, precios y frecuencia de compra de mostacillas, hilos, nylon, agujas, herrajes y empaques. \n• \nTiempo real de elaboración de los collares, debido a información contradictoria en la entrevista. \n• \nCantidades de insumos para aretes y manillas y características de cada presentación. \n• \nCantidad exacta vendida por producto, precios por tamaño y registro de ingresos mensuales. \n• \nCosto completo por producto, incluyendo mano de obra, empaque, energía, transporte y desperdicio. \n• \nCantidad y costo de telares requeridos por el grupo. \n• \nCostos de transporte, combustible, datos móviles y uso del espacio doméstico. \n• \nCantidad de residuos generados y ruta local disponible para reciclaje o manejo seguro de agujas. \n• \nNúmero y calendario de ferias potenciales, requisitos de participación y posibles alianzas con organizadores.\n\n--- CONCLUSIÓN GENERAL ---\nCONCLUSIÓN GENERAL \nArtesanías GG es una unidad productiva familiar con aproximadamente dos años de experiencia, orientada a la elaboración \nde bisutería personalizada y productos representativos del territorio. Sus principales fortalezas son la unión del grupo, la \ncalidad de los acabados, la adaptación a los diseños solicitados, la garantía ofrecida al cliente y la capacidad de transmitir el \nconocimiento mediante talleres. La principal limitación es la falta de capital de trabajo para adquirir materiales en cantidad, \nacompañada por ventas irregulares, ausencia de un espacio propio y una valoración incompleta de la mano de obra. La \nprioridad de fortalecimiento es consolidar un inventario básico de insumos y adquirir telares, junto con un sistema sencillo \nde costos, producción y ventas. En el componente comercial se recomienda fortalecer la participación en ferias y construir \nalianzas con organizadores de eventos para producir recordatorios institucionales. En el componente ambiental existe una \noportunidad clara para separar y aprovechar retazos, reducir empaques plásticos y desarrollar una línea de artesanías con \nmateriales reciclados.\n\n--- RECOMENDACIONES DE FORTALECIMIENTO ---\nRECOMENDACIONES DE FORTALECIMIENTO \n• \nDefinir un catálogo básico con fotografías, tamaños, tiempos de entrega y precios por producto. \n• \nCrear un registro mensual de pedidos, producción, materiales, horas de trabajo, ventas y utilidad. \n• \nCalcular el costo unitario incluyendo la totalidad de la mano de obra y el transporte. \n• \nCotizar el número de telares requerido y organizar un inventario mínimo de mostacillas, hilos, nylon, agujas y herrajes. \n• \nAdecuar un espacio con buena iluminación, postura cómoda, almacenamiento cerrado y pausas visuales periódicas. \n• \nFormalizar acercamientos con organizadores del Día del Campesino, la feria agroindustrial y otras actividades locales. \n• \nMejorar el empaque e incorporar una etiqueta con nombre, contacto, cuidados y garantía. \n• \nImplementar separación de retazos, mostacillas y empaques, y desarrollar un piloto de productos con material reciclado. \n• \nGarantizar que las actividades realizadas por menores sean educativas, apropiadas para su edad, voluntarias, supervisadas y \nsin interferir con su escolaridad. \nFuente de información: entrevista transcrita a Demi Johana Gutiérrez."
+}
