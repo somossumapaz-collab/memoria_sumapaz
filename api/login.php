@@ -47,25 +47,31 @@ try {
     }
 
     if ($auth_success) {
-        // Assume rol_id 1 is ADMIN, any other is just standard user
-        $rol_nombre = (isset($user['rol_id']) && $user['rol_id'] == 1) ? 'ADMIN' : 'USUARIO';
+        $user_rol_id = isset($user['rol_id']) ? (int)$user['rol_id'] : 0;
+        // Assume rol_id 1 is ADMIN, any other is standard user
+        $rol_nombre = ($user_rol_id === 1) ? 'ADMIN' : 'USUARIO';
         
         // Authentication successful
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['nombre'];
         $_SESSION['user_email'] = $user['email'];
         $_SESSION['rol'] = $rol_nombre;
+        $_SESSION['rol_id'] = $user_rol_id;
         
         // For backwards compatibility with older scripts checking is_admin
         if ($rol_nombre === 'ADMIN') {
             $_SESSION['is_admin'] = true;
         }
 
+        // Role 6 is specifically Ambientales (Tablero Ambiental ONLY)
+        $redirect_target = ($user_rol_id === 6) ? 'tablero_ambiental.html' : 'productores_registrados.html';
+
         echo json_encode([
             'success' => true, 
             'message' => 'Login exitoso', 
-            'redirect' => 'productores_registrados.html',
-            'rol' => $rol_nombre
+            'redirect' => $redirect_target,
+            'rol' => $rol_nombre,
+            'rol_id' => $user_rol_id
         ]);
     } else {
         // Authentication failed

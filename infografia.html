@@ -461,17 +461,33 @@
 
     <!-- App Scripts -->
     <script>
-        // Auth Check for Navigation
         document.addEventListener('DOMContentLoaded', async () => {
             try {
-                const res = await fetch('api/check_auth.php');
-                const result = await res.json();
-                if (res.ok && result.authenticated) {
+                let userAuth = null;
+                const cached = sessionStorage.getItem('somos_user_auth');
+                if (cached) userAuth = JSON.parse(cached);
+                
+                if (!userAuth) {
+                    const res = await fetch('api/check_auth.php');
+                    if (res.ok) {
+                        userAuth = await res.json();
+                        if (userAuth && userAuth.authenticated) {
+                            sessionStorage.setItem('somos_user_auth', JSON.stringify(userAuth));
+                        }
+                    }
+                }
+
+                if (userAuth && userAuth.authenticated) {
+                    if (userAuth.rol_id === 6) {
+                        window.location.href = 'tablero_ambiental.html';
+                        return;
+                    }
                     document.getElementById('btn-login').style.display = 'none';
                     document.getElementById('btn-dashboard').style.display = 'inline-block';
                     document.getElementById('btn-dashboard-avit').style.display = 'inline-block';
                     document.getElementById('btn-tracking').style.display = 'inline-block';
                     document.getElementById('btn-pmapc').style.display = 'inline-block';
+                    if (document.getElementById('btn-tablero-ambiental')) document.getElementById('btn-tablero-ambiental').style.display = 'inline-block';
                     document.getElementById('btn-logout').style.display = 'inline-block';
                 }
             } catch (error) {

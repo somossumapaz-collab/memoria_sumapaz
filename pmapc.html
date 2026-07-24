@@ -3043,6 +3043,10 @@
                 const res = await fetch(API_BASE + 'api/check_auth.php');
                 const result = await res.json();
                 if (res.ok && result.authenticated) {
+                    if (result.rol_id === 6) {
+                        window.location.href = 'tablero_ambiental.html';
+                        return;
+                    }
                     document.getElementById('header-auth-container').style.display = 'flex';
                 }
             } catch (error) {

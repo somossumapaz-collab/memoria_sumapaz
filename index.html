@@ -54,6 +54,8 @@
                             style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Seguimiento</a>
                         <a href="pmapc.html" class="nav-link-btn" id="btn-pmapc"
                             style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">PMAPC</a>
+                        <a href="tablero_ambiental.html" class="nav-link-btn" id="btn-tablero-ambiental"
+                            style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Tablero Ambiental</a>
 
                         <a href="/convocatorias" class="nav-link-btn" id="btn-convocatorias"
                             style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Convocatorias</a>
@@ -184,11 +186,21 @@
                 const result = await res.json();
                 if (res.ok && result.authenticated) {
                     document.getElementById('btn-login').style.display = 'none';
-                    document.getElementById('btn-dashboard').style.display = 'inline-block';
-                    document.getElementById('btn-dashboard-avit').style.display = 'inline-block';
-                    document.getElementById('btn-register').style.display = 'inline-block';
-                    document.getElementById('btn-tracking').style.display = 'inline-block';
-                    document.getElementById('btn-pmapc').style.display = 'inline-block';
+                    if (result.rol_id === 6) {
+                        document.getElementById('btn-dashboard').style.display = 'none';
+                        document.getElementById('btn-dashboard-avit').style.display = 'none';
+                        document.getElementById('btn-register').style.display = 'none';
+                        document.getElementById('btn-tracking').style.display = 'none';
+                        document.getElementById('btn-pmapc').style.display = 'none';
+                        document.getElementById('btn-tablero-ambiental').style.display = 'inline-block';
+                    } else {
+                        document.getElementById('btn-dashboard').style.display = 'inline-block';
+                        document.getElementById('btn-dashboard-avit').style.display = 'inline-block';
+                        document.getElementById('btn-register').style.display = 'inline-block';
+                        document.getElementById('btn-tracking').style.display = 'inline-block';
+                        document.getElementById('btn-pmapc').style.display = 'inline-block';
+                        document.getElementById('btn-tablero-ambiental').style.display = 'inline-block';
+                    }
                     document.getElementById('btn-logout').style.display = 'inline-block';
                 }
             } catch (error) {

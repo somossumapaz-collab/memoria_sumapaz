@@ -785,6 +785,10 @@
                     window.location.href = 'login.html';
                     return;
                 }
+                if (json.rol_id === 6) {
+                    window.location.href = 'tablero_ambiental.html';
+                    return;
+                }
                 isAdmin = json.is_admin;
             } catch (e) {
                 window.location.href = 'login.html';

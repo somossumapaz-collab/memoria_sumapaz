@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero Ambiental | Somos Sumapaz</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Static Cache-Busting -->
+    <script>
+        const timestamp = new Date().getTime();
+        document.write(`<link rel="stylesheet" href="assets/styles.css?v=${timestamp}">`);
+    </script>
+    <!-- HTML2PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- XLSX Library for Excel Export -->
+    <script src="assets/xlsx.full.min.js"></script>
+
+    <style>
+        body {
+            background-color: #F7FAFC;
+        }
+
+        /* Wide Container Layout */
+        .wide-container {
+            max-width: 1600px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+        }
+
+        /* Full Width Banner */
+        .hero-banner-full {
+            position: relative;
+            background-image: url('assets/fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 220px;
+            padding: 3.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 2.5rem;
+            border-bottom: 5px solid var(--primary-green);
+            width: 100%;
+            border-radius: 0 0 16px 16px;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(44, 75, 40, 0.88) 0%, rgba(15, 30, 15, 0.7) 100%);
+            z-index: 1;
+            border-radius: 0 0 16px 16px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hero-title {
+            font-size: 2.7rem;
+            margin-bottom: 0.6rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        /* KPI Cards */
+        .kpi-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .kpi-card {
+            background: white;
+            border-radius: 14px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            border-left: 6px solid #2A9D8F;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .kpi-card.agr { border-left-color: #2A9D8F; }
+        .kpi-card.pec { border-left-color: #e76f51; }
+        .kpi-card.tot { border-left-color: #444F2F; }
+
+        .kpi-title {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #718096;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.05em;
+        }
+
+        .kpi-value {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1A202C;
+            line-height: 1;
+        }
+
+        /* Navigation Sub-Tabs */
+        .tab-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #E2E8F0;
+            padding-bottom: 0.8rem;
+        }
+
+        .tab-btn {
+            background: #EDF2F7;
+            border: none;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #4A5568;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .tab-btn.active {
+            background: #444F2F;
+            color: #FBF4DE;
+            box-shadow: 0 6px 15px rgba(68, 79, 47, 0.3);
+        }
+
+        /* Data Tables */
+        .table-responsive {
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            overflow-x: auto;
+            margin-bottom: 3.5rem;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .data-table th {
+            background: #EDF2F7;
+            color: #2D3748;
+            font-weight: 700;
+            padding: 1.2rem 1.5rem;
+            border-bottom: 2px solid #CBD5E0;
+            text-align: left;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .data-table td {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid #E2E8F0;
+            color: #2D3748;
+            vertical-align: middle;
+        }
+
+        .data-table tbody tr:hover {
+            background: #F7FAFC;
+        }
+
+        .btn-acta {
+            background-color: #2A9D8F;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 3px 8px rgba(42, 157, 143, 0.3);
+        }
+
+        .btn-acta:hover {
+            background-color: #218377;
+            transform: scale(1.02);
+        }
+
+        .btn-borrar {
+            background-color: #E53E3E;
+            color: white;
+            border: none;
+            padding: 0.6rem 1rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: background-color 0.2s ease;
+            box-shadow: 0 3px 8px rgba(229, 62, 62, 0.25);
+            margin-left: 0.5rem;
+        }
+
+        .btn-borrar:hover {
+            background-color: #C53030;
+        }
+
+        /* Modal styling */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 950px;
+            width: 100%;
+            max-height: 92vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+        }
+
+        .modal-header {
+            background: #444F2F;
+            color: #FBF4DE;
+            padding: 1.4rem 2rem;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .modal-body {
+            padding: 2.5rem;
+        }
+
+        /* Printable Acta Formatting */
+        .acta-paper {
+            border: 2px solid #CBD5E0;
+            border-radius: 12px;
+            padding: 3rem;
+            background: #FFF;
+            color: #2D3748;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .acta-header-block {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px double #444F2F;
+            padding-bottom: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .acta-header-title {
+            text-align: left;
+            width: 100%;
+        }
+
+        .acta-header-title h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #444F2F;
+            margin: 0 0 0.3rem 0;
+        }
+
+        .acta-header-title p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #718096;
+            font-weight: 600;
+        }
+
+        .acta-section-title {
+            background: #F7FAFC;
+            color: #2D3748;
+            padding: 0.6rem 1rem;
+            font-weight: 800;
+            font-size: 1rem;
+            border-left: 5px solid #444F2F;
+            margin: 1.8rem 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .info-field {
+            margin-bottom: 0.7rem;
+            font-size: 0.95rem;
+        }
+
+        .info-field strong {
+            color: #4A5568;
+        }
+
+        /* Signatures block */
+        .signatures-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.8rem;
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 2px solid #E2E8F0;
+        }
+
+        .signature-box {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            min-height: 140px;
+        }
+
+        .signature-render-area {
+            width: 100%;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .signature-render-area svg {
+            max-height: 85px;
+            width: auto;
+            max-width: 100%;
+        }
+
+        .signature-render-area img {
+            max-height: 85px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .signature-line {
+            width: 100%;
+            border-top: 2px dashed #A0AEC0;
+            margin-bottom: 0.5rem;
+        }
+
+        .signature-role {
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: #2D3748;
+        }
+
+        .signature-name {
+            font-size: 0.82rem;
+            color: #718096;
+            font-weight: 500;
+        }
+
+        .btn-download-pdf {
+            background-color: #e76f51;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(231, 111, 81, 0.35);
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-download-pdf:hover {
+            background-color: #d65a3c;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main Header -->
+    <header id="main-header">
+        <nav class="navbar-custom">
+            <div class="wide-container" style="display: flex; align-items: center;">
+                <a href="index.html">
+                    <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img">
+                </a>
+                <div class="search-container" style="margin-left: auto; display: flex; align-items: center; gap: 1rem;">
+                    <div id="header-auth-container" style="display: flex; align-items: center; gap: 1.2rem;">
+                        <a href="productores_registrados.html" class="nav-link-btn" id="btn-dashboard"
+                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Dashboard</a>
+                        <a href="tablero_ambiental.html" class="nav-link-btn" id="btn-tablero-ambiental"
+                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 700; border-bottom: 2px solid #2A9D8F;">Tablero Ambiental</a>
+                        <a href="avituallamiento_registrados.html" class="nav-link-btn" id="btn-dashboard-avit"
+                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Dashboard Avit.</a>
+                        <a href="transporte_seguimiento.html" class="nav-link-btn" id="btn-tracking"
+                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Seguimiento</a>
+                        <a href="pmapc.html" class="nav-link-btn" id="btn-pmapc"
+                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">PMAPC</a>
+                        <a href="infografia.html" class="nav-link-btn" id="btn-infografia"
+                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Infografía</a>
+                        <button onclick="logout()" class="nav-link-btn" id="btn-logout"
+                            style="margin: 0; background-color: transparent; cursor: pointer; color: #FBF4DE; border: none;" title="Cerrar Sesión">
+                            Cerrar Sesión
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Full Width Hero Banner -->
+    <div class="hero-banner-full">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Tablero de Control Ambiental</h1>
+            <p style="font-size: 1.25rem; opacity: 0.95; max-width: 900px; margin: 0 auto; font-weight: 500;">
+                Consolidado integral de visitas técnicas agrícolas y pecuarias de la Localidad 20 de Sumapaz.
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="wide-container">
+        <!-- KPI Summary Cards -->
+        <div class="kpi-container">
+            <div class="kpi-card tot">
+                <div class="kpi-title">Total Visitas Realizadas</div>
+                <div class="kpi-value" id="kpi-total">0</div>
+            </div>
+            <div class="kpi-card agr">
+                <div class="kpi-title">Visitas Agrícolas</div>
+                <div class="kpi-value" id="kpi-agricolas">0</div>
+            </div>
+            <div class="kpi-card pec">
+                <div class="kpi-title">Visitas Pecuarias</div>
+                <div class="kpi-value" id="kpi-pecuarias">0</div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="switchTab('agricolas')" id="tab-btn-agricolas">
+                Visitas Agrícolas (<span id="count-agr">0</span>)
+            </button>
+            <button class="tab-btn" onclick="switchTab('pecuarias')" id="tab-btn-pecuarias">
+                Visitas Pecuarias (<span id="count-pec">0</span>)
+            </button>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div style="display: flex; gap: 1rem; margin-bottom: 2rem; align-items: center;">
+            <input type="text" id="ambiental-search" placeholder="Buscar por nombre del productor, cédula, vereda o finca..." 
+                style="flex: 1; padding: 1rem 1.5rem; border-radius: 30px; border: 1.5px solid #CBD5E0; font-size: 1rem; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.03);"
+                onkeyup="filterTables()">
+            <button onclick="loadAmbientalData()" style="padding: 1rem 2rem; background: #444F2F; color: white; border: none; border-radius: 30px; font-weight: 700; font-size: 0.95rem; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 12px rgba(68, 79, 47, 0.25);">
+                Actualizar Datos
+            </button>
+            <button onclick="exportAmbientalToExcel()" style="padding: 1rem 2rem; background: #2A9D8F; color: white; border: none; border-radius: 30px; font-weight: 700; font-size: 0.95rem; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 12px rgba(42, 157, 143, 0.3);">
+                Descargar Excel General
+            </button>
+        </div>
+
+        <!-- Tabla Visitas Agrícolas -->
+        <div id="view-agricolas" class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width: 140px;">ID Registro</th>
+                        <th style="width: 110px;">Fecha</th>
+                        <th>Productor / Usuario</th>
+                        <th style="width: 130px;">Cédula</th>
+                        <th>Ubicación (Vereda / Finca)</th>
+                        <th>Cultivos / Intervención</th>
+                        <th>Profesional Responsable</th>
+                        <th style="text-align: center; width: 260px;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-agricolas">
+                    <tr><td colspan="8" style="text-align: center; padding: 3rem; font-size: 1.1rem; color: #718096;">Cargando visitas agrícolas...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla Visitas Pecuarias -->
+        <div id="view-pecuarias" class="table-responsive" style="display: none;">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width: 140px;">ID Registro</th>
+                        <th style="width: 110px;">Fecha</th>
+                        <th>Productor / Usuario</th>
+                        <th style="width: 130px;">Cédula</th>
+                        <th>Ubicación (Vereda / Finca)</th>
+                        <th>Especies / Diagnóstico</th>
+                        <th>Profesional Responsable</th>
+                        <th style="text-align: center; width: 260px;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-pecuarias">
+                    <tr><td colspan="8" style="text-align: center; padding: 3rem; font-size: 1.1rem; color: #718096;">Cargando visitas pecuarias...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Analytical Charts Section (Positioned Below Tables) -->
+        <div class="charts-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
+            <!-- Chart 1: Veredas Visitadas -->
+            <div style="background: white; border-radius: 14px; padding: 2rem; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); border-top: 5px solid #2A9D8F;">
+                <h3 style="margin-top: 0; margin-bottom: 1.5rem; color: #2D3748; font-size: 1.2rem; font-weight: 800; display: flex; align-items: center; justify-content: space-between;">
+                    Veredas Visitadas
+                    <span style="font-size: 0.8rem; font-weight: 700; color: #4A5568; background: #EDF2F7; padding: 0.4rem 0.9rem; border-radius: 20px;">Cobertura Territorial</span>
+                </h3>
+                <div style="position: relative; height: 320px; width: 100%;">
+                    <canvas id="chart-veredas"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 2: Cantidad de Visitas por Profesional -->
+            <div style="background: white; border-radius: 14px; padding: 2rem; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); border-top: 5px solid #444F2F;">
+                <h3 style="margin-top: 0; margin-bottom: 1.5rem; color: #2D3748; font-size: 1.2rem; font-weight: 800; display: flex; align-items: center; justify-content: space-between;">
+                    Cantidad de Visitas por Profesional
+                    <span style="font-size: 0.8rem; font-weight: 700; color: #4A5568; background: #EDF2F7; padding: 0.4rem 0.9rem; border-radius: 20px;">Rendimiento Técnico</span>
+                </h3>
+                <div style="position: relative; height: 320px; width: 100%;">
+                    <canvas id="chart-profesionales"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Acta Visita -->
+    <div class="modal-overlay" id="acta-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 style="margin: 0; font-size: 1.3rem;">
+                    Acta Oficial de Visita Técnica Ambiental
+                </h2>
+                <button onclick="closeActaModal()" style="background: transparent; border: none; color: white; font-size: 1.8rem; cursor: pointer; line-height: 1;">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <button class="btn-borrar" style="padding: 0.7rem 1.4rem; font-size: 0.95rem;" onclick="deleteCurrentVisitaFromModal()">
+                        Borrar esta Acta
+                    </button>
+                    <button class="btn-download-pdf" onclick="downloadActaPDF()">
+                        Descargar Acta (PDF)
+                    </button>
+                </div>
+
+                <!-- Printable Container -->
+                <div id="acta-printable-container" class="acta-paper">
+                    <!-- Dynamic Content built in JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Pop-up Modal for Delete Confirmation -->
+    <div class="modal-overlay" id="confirm-delete-modal">
+        <div class="modal-content" style="max-width: 520px; border-radius: 16px; overflow: hidden; text-align: center;">
+            <div class="modal-header" style="background: #E53E3E; padding: 1.2rem 1.5rem; justify-content: space-between;">
+                <h3 style="margin: 0; color: white; font-size: 1.2rem; font-weight: 700;">Confirmar Eliminación</h3>
+                <button onclick="closeConfirmDeleteModal()" style="background: transparent; border: none; color: white; font-size: 1.6rem; cursor: pointer;">&times;</button>
+            </div>
+            <div class="modal-body" style="padding: 2rem 1.8rem;">
+                <p style="font-size: 1.05rem; color: #2D3748; margin-bottom: 0.8rem; font-weight: 600;">
+                    ¿Está seguro de que desea eliminar permanentemente esta acta de visita?
+                </p>
+                <div id="delete-target-info" style="font-size: 0.95rem; color: #718096; background: #FFF5F5; padding: 1rem; border-radius: 10px; border: 1px solid #FEB2B2; margin-bottom: 1.8rem; text-align: left;"></div>
+                
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <button type="button" onclick="closeConfirmDeleteModal()" 
+                        style="padding: 0.75rem 1.8rem; background: #EDF2F7; color: #4A5568; border: none; border-radius: 25px; font-weight: 700; cursor: pointer; font-size: 0.95rem; transition: background 0.2s;">
+                        Cancelar
+                    </button>
+                    <button type="button" id="btn-confirm-delete-action" onclick="executeDeleteVisita()"
+                        style="padding: 0.75rem 2rem; background: #E53E3E; color: white; border: none; border-radius: 25px; font-weight: 700; cursor: pointer; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(229, 62, 62, 0.35); transition: background 0.2s;">
+                        Sí, Borrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Toast / Notification Modal -->
+    <div class="modal-overlay" id="notification-modal">
+        <div class="modal-content" style="max-width: 440px; border-radius: 16px; text-align: center; padding: 2rem;">
+            <h3 id="notif-title" style="margin-top: 0; color: #2D3748; font-size: 1.25rem;">Notificación</h3>
+            <p id="notif-message" style="font-size: 1rem; color: #4A5568; margin-bottom: 1.5rem;"></p>
+            <button type="button" onclick="closeNotificationModal()" 
+                style="padding: 0.7rem 2rem; background: #444F2F; color: white; border: none; border-radius: 25px; font-weight: 700; cursor: pointer;">
+                Aceptar
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let visitasAgr = [];
+        let visitasPec = [];
+        let currentVisita = null;
+        let currentTipo = null;
+        let pendingDeleteData = null;
+
+        let chartVeredasInstance = null;
+        let chartProfInstance = null;
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await checkAuthAndSetupNav();
+            await loadAmbientalData();
+        });
+
+        async function checkAuthAndSetupNav() {
+            try {
+                let userAuth = null;
+                const cached = sessionStorage.getItem('somos_user_auth');
+                if (cached) userAuth = JSON.parse(cached);
+
+                if (!userAuth) {
+                    const authRes = await fetch('api/check_auth.php');
+                    if (authRes.ok) {
+                        userAuth = await authRes.json();
+                        if (userAuth && userAuth.authenticated) {
+                            sessionStorage.setItem('somos_user_auth', JSON.stringify(userAuth));
+                        }
+                    }
+                }
+
+                if (!userAuth || !userAuth.authenticated) {
+                    window.location.href = 'login.html';
+                    return;
+                }
+
+                if (userAuth.rol_id === 6) {
+                    // Hide non-permitted links for role 6 (Ambiental ONLY)
+                    const btnDash = document.getElementById('btn-dashboard');
+                    const btnAvit = document.getElementById('btn-dashboard-avit');
+                    const btnTrack = document.getElementById('btn-tracking');
+                    const btnPmapc = document.getElementById('btn-pmapc');
+                    const btnInfo = document.getElementById('btn-infografia');
+                    if (btnDash) btnDash.style.display = 'none';
+                    if (btnAvit) btnAvit.style.display = 'none';
+                    if (btnTrack) btnTrack.style.display = 'none';
+                    if (btnPmapc) btnPmapc.style.display = 'none';
+                    if (btnInfo) btnInfo.style.display = 'none';
+                }
+            } catch (err) {
+                console.error("Auth check error:", err);
+                window.location.href = 'login.html';
+            }
+        }
+
+        async function logout() {
+            try {
+                sessionStorage.removeItem('somos_user_auth');
+                await fetch('api/logout.php');
+                window.location.href = 'login.html';
+            } catch (error) {
+                window.location.href = 'login.html';
+            }
+        }
+
+        async function loadAmbientalData() {
+            try {
+                const [resAgr, resPec] = await Promise.all([
+                    fetch('api/get_visitas_agricolas.php'),
+                    fetch('api/get_visitas_pecuarias.php')
+                ]);
+
+                const dataAgr = await resAgr.json();
+                const dataPec = await resPec.json();
+
+                visitasAgr = (dataAgr.success && Array.isArray(dataAgr.data)) ? dataAgr.data : [];
+                visitasPec = (dataPec.success && Array.isArray(dataPec.data)) ? dataPec.data : [];
+
+                document.getElementById('kpi-agricolas').innerText = visitasAgr.length;
+                document.getElementById('kpi-pecuarias').innerText = visitasPec.length;
+                document.getElementById('kpi-total').innerText = visitasAgr.length + visitasPec.length;
+
+                document.getElementById('count-agr').innerText = visitasAgr.length;
+                document.getElementById('count-pec').innerText = visitasPec.length;
+
+                renderTables();
+                renderCharts();
+            } catch (err) {
+                console.error("Error al cargar visitas ambientales:", err);
+            }
+        }
+
+        function renderCharts() {
+            // Apply Global Chart.js Typography and Color Theme
+            Chart.defaults.font.family = "'Inter', sans-serif";
+            Chart.defaults.font.size = 12;
+            Chart.defaults.color = "#4A5568";
+
+            const allVisitas = [...visitasAgr, ...visitasPec];
+
+            // 1. Veredas Visitadas Aggregation
+            const veredasMap = {};
+            allVisitas.forEach(v => {
+                const vereda = (v.vereda && v.vereda.trim()) ? v.vereda.trim() : 'Sin Vereda';
+                veredasMap[vereda] = (veredasMap[vereda] || 0) + 1;
+            });
+
+            const veredasLabels = Object.keys(veredasMap);
+            const veredasCounts = Object.values(veredasMap);
+
+            const ctxVeredas = document.getElementById('chart-veredas').getContext('2d');
+            if (chartVeredasInstance) chartVeredasInstance.destroy();
+
+            chartVeredasInstance = new Chart(ctxVeredas, {
+                type: 'bar',
+                data: {
+                    labels: veredasLabels,
+                    datasets: [{
+                        label: 'Número de Visitas',
+                        data: veredasCounts,
+                        backgroundColor: [
+                            '#2A9D8F',
+                            '#444F2F',
+                            '#E76F51',
+                            '#F4A261',
+                            '#264653'
+                        ],
+                        borderColor: [
+                            '#2A9D8F',
+                            '#444F2F',
+                            '#E76F51',
+                            '#F4A261',
+                            '#264653'
+                        ],
+                        borderWidth: 1.5,
+                        borderRadius: 8,
+                        hoverBackgroundColor: '#218377'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#2D3748',
+                            titleFont: { family: "'Inter', sans-serif", weight: '700', size: 13 },
+                            bodyFont: { family: "'Inter', sans-serif", size: 12 },
+                            padding: 12,
+                            cornerRadius: 8
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { family: "'Inter', sans-serif", weight: '600' }, color: '#4A5568' }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(226, 232, 240, 0.7)' },
+                            ticks: { stepSize: 1, precision: 0, font: { family: "'Inter', sans-serif", weight: '600' }, color: '#4A5568' }
+                        }
+                    }
+                }
+            });
+
+            // 2. Visitas por Profesional Aggregation
+            const profMap = {};
+            allVisitas.forEach(v => {
+                const prof = (v.profesional && v.profesional.trim()) ? v.profesional.trim() : 'No Asignado';
+                profMap[prof] = (profMap[prof] || 0) + 1;
+            });
+
+            const profLabels = Object.keys(profMap);
+            const profCounts = Object.values(profMap);
+
+            const ctxProf = document.getElementById('chart-profesionales').getContext('2d');
+            if (chartProfInstance) chartProfInstance.destroy();
+
+            chartProfInstance = new Chart(ctxProf, {
+                type: 'bar',
+                data: {
+                    labels: profLabels,
+                    datasets: [{
+                        label: 'Visitas Atendidas',
+                        data: profCounts,
+                        backgroundColor: '#444F2F',
+                        borderColor: '#2D3748',
+                        borderWidth: 1.5,
+                        borderRadius: 8,
+                        hoverBackgroundColor: '#2F3821'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y', // Horizontal Bar Chart for Professionals
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#2D3748',
+                            titleFont: { family: "'Inter', sans-serif", weight: '700', size: 13 },
+                            bodyFont: { family: "'Inter', sans-serif", size: 12 },
+                            padding: 12,
+                            cornerRadius: 8
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(226, 232, 240, 0.7)' },
+                            ticks: { stepSize: 1, precision: 0, font: { family: "'Inter', sans-serif", weight: '600' }, color: '#4A5568' }
+                        },
+                        y: {
+                            grid: { display: false },
+                            ticks: { font: { family: "'Inter', sans-serif", weight: '600' }, color: '#4A5568' }
+                        }
+                    }
+                }
+            });
+        }
+
+        function switchTab(type) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(`view-agricolas`).style.display = 'none';
+            document.getElementById(`view-pecuarias`).style.display = 'none';
+
+            if (type === 'agricolas') {
+                document.getElementById('tab-btn-agricolas').classList.add('active');
+                document.getElementById('view-agricolas').style.display = 'block';
+            } else {
+                document.getElementById('tab-btn-pecuarias').classList.add('active');
+                document.getElementById('view-pecuarias').style.display = 'block';
+            }
+        }
+
+        function renderTables() {
+            renderAgrTable(visitasAgr);
+            renderPecTable(visitasPec);
+        }
+
+        function renderAgrTable(list) {
+            const tbody = document.getElementById('tbody-agricolas');
+            if (!list || list.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; padding: 3rem; color: #718096;">No se encontraron visitas agrícolas registradas.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = list.map(v => {
+                const regNum = v.numero_registro || `VAGR-${v.id}`;
+                const cultivos = (v.cultivos && v.cultivos.length > 0) 
+                    ? v.cultivos.map(c => c.especie || c.tipo || 'Cultivo').join(', ') 
+                    : (v.objetivo_visita ? v.objetivo_visita.substring(0, 50) + '...' : 'Agrícola');
+                return `
+                    <tr>
+                        <td><strong style="color:#2A9D8F; font-size: 1rem;">${regNum}</strong></td>
+                        <td>${v.fecha || 'N/A'}</td>
+                        <td><strong style="font-size: 1rem; color: #2D3748;">${v.nombre || 'N/A'}</strong></td>
+                        <td>${v.cedula_usuario || 'N/A'}</td>
+                        <td><strong>${v.vereda || 'N/A'}</strong><br><small style="color:#718096; font-size: 0.85rem;">Finca: ${v.finca || 'N/A'}</small></td>
+                        <td>${cultivos}</td>
+                        <td>${v.profesional || 'N/A'}</td>
+                        <td style="text-align: center;">
+                            <button class="btn-acta" onclick="openActaModal('agricola', ${v.id})">
+                                Ver acta visita
+                            </button>
+                            <button class="btn-borrar" onclick="promptDeleteVisita('agricola', ${v.id}, '${v.nombre || regNum}', '${regNum}')">
+                                Borrar
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function renderPecTable(list) {
+            const tbody = document.getElementById('tbody-pecuarias');
+            if (!list || list.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; padding: 3rem; color: #718096;">No se encontraron visitas pecuarias registradas.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = list.map(v => {
+                const regNum = `VPEC-${v.id}`;
+                const especies = (v.especies && v.especies.length > 0) ? v.especies.join(', ') : (v.diagnostico ? v.diagnostico.substring(0, 50) + '...' : 'Pecuaria');
+                return `
+                    <tr>
+                        <td><strong style="color:#e76f51; font-size: 1rem;">${regNum}</strong></td>
+                        <td>${v.fecha || 'N/A'}</td>
+                        <td><strong style="font-size: 1rem; color: #2D3748;">${v.usuario || 'N/A'}</strong></td>
+                        <td>${v.cedula_usuario || 'N/A'}</td>
+                        <td><strong>${v.vereda || 'N/A'}</strong><br><small style="color:#718096; font-size: 0.85rem;">Finca: ${v.finca || 'N/A'}</small></td>
+                        <td>${especies}</td>
+                        <td>${v.profesional || 'N/A'}</td>
+                        <td style="text-align: center;">
+                            <button class="btn-acta" onclick="openActaModal('pecuaria', ${v.id})">
+                                Ver acta visita
+                            </button>
+                            <button class="btn-borrar" onclick="promptDeleteVisita('pecuaria', ${v.id}, '${v.usuario || regNum}', '${regNum}')">
+                                Borrar
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function filterTables() {
+            const q = document.getElementById('ambiental-search').value.toLowerCase();
+            const filteredAgr = visitasAgr.filter(v => 
+                (v.nombre && v.nombre.toLowerCase().includes(q)) ||
+                (v.cedula_usuario && v.cedula_usuario.includes(q)) ||
+                (v.vereda && v.vereda.toLowerCase().includes(q)) ||
+                (v.finca && v.finca.toLowerCase().includes(q))
+            );
+            const filteredPec = visitasPec.filter(v => 
+                (v.usuario && v.usuario.toLowerCase().includes(q)) ||
+                (v.cedula_usuario && v.cedula_usuario.includes(q)) ||
+                (v.vereda && v.vereda.toLowerCase().includes(q)) ||
+                (v.finca && v.finca.toLowerCase().includes(q))
+            );
+            renderAgrTable(filteredAgr);
+            renderPecTable(filteredPec);
+        }
+
+        // Custom Modal Confirmation Logic for Delete
+        function promptDeleteVisita(tipo, id, nombre, regNum) {
+            pendingDeleteData = { tipo, id, nombre, regNum };
+            document.getElementById('delete-target-info').innerHTML = `
+                <strong>Productor / Usuario:</strong> ${nombre}<br>
+                <strong>Registro:</strong> ${regNum || 'ID ' + id}<br>
+                <strong>Tipo:</strong> Visita ${tipo === 'agricola' ? 'Agrícola' : 'Pecuaria'}
+            `;
+            document.getElementById('confirm-delete-modal').classList.add('active');
+        }
+
+        function closeConfirmDeleteModal() {
+            document.getElementById('confirm-delete-modal').classList.remove('active');
+            pendingDeleteData = null;
+        }
+
+        async function executeDeleteVisita() {
+            if (!pendingDeleteData) return;
+
+            const { tipo, id } = pendingDeleteData;
+            closeConfirmDeleteModal();
+
+            try {
+                const res = await fetch('api/delete_visita.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ tipo, id })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showCustomNotification('El acta de visita fue eliminada correctamente.', 'Éxito');
+                    if (document.getElementById('acta-modal').classList.contains('active')) {
+                        closeActaModal();
+                    }
+                    loadAmbientalData();
+                } else {
+                    showCustomNotification('Error al eliminar: ' + (data.error || 'Ocurrió un error desconocido'), 'Error');
+                }
+            } catch (err) {
+                showCustomNotification('Error de conexión al eliminar: ' + err.message, 'Error');
+            }
+        }
+
+        function deleteCurrentVisitaFromModal() {
+            if (currentTipo && currentVisita) {
+                const nombre = currentTipo === 'agricola' ? currentVisita.nombre : currentVisita.usuario;
+                const regNum = currentTipo === 'agricola' ? (currentVisita.numero_registro || `VAGR-${currentVisita.id}`) : `VPEC-${currentVisita.id}`;
+                promptDeleteVisita(currentTipo, currentVisita.id, nombre, regNum);
+            }
+        }
+
+        function showCustomNotification(msg, title = 'Notificación') {
+            document.getElementById('notif-title').innerText = title;
+            document.getElementById('notif-message').innerText = msg;
+            document.getElementById('notification-modal').classList.add('active');
+        }
+
+        function closeNotificationModal() {
+            document.getElementById('notification-modal').classList.remove('active');
+        }
+
+        function openActaModal(tipo, id) {
+            currentTipo = tipo;
+            if (tipo === 'agricola') {
+                currentVisita = visitasAgr.find(x => x.id == id);
+            } else {
+                currentVisita = visitasPec.find(x => x.id == id);
+            }
+
+            if (!currentVisita) return;
+
+            renderActaContent();
+            document.getElementById('acta-modal').classList.add('active');
+        }
+
+        function closeActaModal() {
+            document.getElementById('acta-modal').classList.remove('active');
+        }
+
+        function buildSignatureElement(sigData, signerName, signerRole) {
+            if (!sigData || sigData === 'null' || sigData === 'undefined' || sigData.trim() === '') {
+                return generateFallbackSVG(signerName, signerRole);
+            }
+
+            sigData = sigData.trim();
+
+            if (sigData.startsWith('<svg')) {
+                return sigData;
+            }
+
+            if (sigData.startsWith('data:image')) {
+                return `<img src="${sigData}" alt="Firma ${signerRole}" style="max-height:85px; width:auto; max-width:240px;">`;
+            }
+
+            if (sigData.length > 20) {
+                if (sigData.startsWith('PHN2Zy') || sigData.startsWith('PD94bWw')) {
+                    return `<img src="data:image/svg+xml;base64,${sigData}" alt="Firma ${signerRole}" style="max-height:85px; width:auto;">`;
+                }
+                return `<img src="data:image/png;base64,${sigData}" alt="Firma ${signerRole}" style="max-height:85px; width:auto;">`;
+            }
+
+            return generateFallbackSVG(signerName, signerRole);
+        }
+
+        function generateFallbackSVG(name, role) {
+            const displayName = name || role || 'Firma Registrada';
+            return `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="280" height="80">
+                    <path d="M 20 50 Q 60 10 100 50 T 150 25 T 200 65 T 260 20" stroke="#2B6CB0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M 40 65 Q 140 80 240 60" stroke="#2B6CB0" stroke-width="1.5" fill="none"/>
+                    <text x="140" y="75" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#718096" text-anchor="middle">${displayName}</text>
+                </svg>
+            `;
+        }
+
+        function renderActaContent() {
+            const v = currentVisita;
+            const isAgr = currentTipo === 'agricola';
+            const container = document.getElementById('acta-printable-container');
+
+            const nombreProd = isAgr ? v.nombre : v.usuario;
+            const numReg = isAgr ? (v.numero_registro || `VAGR-${v.id}`) : `VPEC-${v.id}`;
+            const tipoLabel = isAgr ? 'VISITA TÉCNICA AGROECOLÓGICA' : 'VISITA TÉCNICA VETERINARIA Y PECUARIA';
+
+            const profSigHTML = buildSignatureElement(v.firma_profesional, v.profesional, 'Profesional');
+            const operSigHTML = buildSignatureElement(v.firma_operario, 'C.C. ' + (v.cedula_operario || ''), 'Técnico Operario');
+            const userSigHTML = buildSignatureElement(v.firma_usuario, nombreProd, 'Productor');
+
+            let detallesEspecificosHTML = '';
+
+            if (isAgr) {
+                const motivos = (v.motivos && v.motivos.length > 0) ? v.motivos.join(', ') : 'Asistencia Técnica Agrícola';
+                const huertas = (v.tiposHuerta && v.tiposHuerta.length > 0) ? v.tiposHuerta.join(', ') : 'Huerta Tradicional';
+                
+                let cultivosRows = '';
+                if (v.cultivos && v.cultivos.length > 0) {
+                    cultivosRows = v.cultivos.map(c => `
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #E2E8F0;"><strong>${c.especie || c.tipo || 'N/A'}</strong></td>
+                            <td style="padding: 8px; border-bottom: 1px solid #E2E8F0;">${c.categoria || 'N/A'}</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #E2E8F0;">${c.area_m2 || 0} m²</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #E2E8F0;">${c.produccion_kg || 0} kg</td>
+                        </tr>
+                    `).join('');
+                } else {
+                    cultivosRows = `<tr><td colspan="4" style="text-align:center; padding: 12px;">No se especificaron cultivos detallados</td></tr>`;
+                }
+
+                detallesEspecificosHTML = `
+                    <div class="acta-section-title">2. Diagnóstico y Caracterización Agrícola</div>
+                    <div class="grid-2">
+                        <div class="info-field"><strong>Motivos de Visita:</strong> ${motivos}</div>
+                        <div class="info-field"><strong>Tipo de Huerta / Predio:</strong> ${huertas}</div>
+                        <div class="info-field"><strong>Muestra de Suelo Tomada:</strong> ${v.muestra_suelo ? 'SÍ (' + (v.numero_muestra||'N/A') + ')' : 'NO'}</div>
+                        <div class="info-field"><strong>Área Intervenida:</strong> ${v.area_intervenir ? v.area_intervenir + ' ha/m²' : 'N/A'}</div>
+                    </div>
+                    <div class="info-field" style="margin-top: 0.8rem;">
+                        <strong>Objetivo de la Visita:</strong>
+                        <p style="margin: 0.4rem 0; background: #F7FAFC; padding: 0.9rem; border-radius: 8px; font-size: 0.9rem; border: 1px solid #E2E8F0;">${v.objetivo_visita || 'N/A'}</p>
+                    </div>
+
+                    <div style="margin-top: 1.2rem;">
+                        <strong>Especies / Cultivos Evaluados:</strong>
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 0.6rem; font-size: 0.9rem; border: 1px solid #E2E8F0; border-radius: 6px;">
+                            <thead>
+                                <tr style="background: #EDF2F7; text-align: left;">
+                                    <th style="padding: 10px;">Especie</th>
+                                    <th style="padding: 10px;">Categoría</th>
+                                    <th style="padding: 10px;">Área (m²)</th>
+                                    <th style="padding: 10px;">Producción Est. (kg)</th>
+                                </tr>
+                            </thead>
+                            <tbody>${cultivosRows}</tbody>
+                        </table>
+                    </div>
+                `;
+            } else {
+                const especies = (v.especies && v.especies.length > 0) ? v.especies.join(', ') : 'Hato Pecuario General';
+                detallesEspecificosHTML = `
+                    <div class="acta-section-title">2. Diagnóstico Veterinario y Pecuario</div>
+                    <div class="grid-2">
+                        <div class="info-field"><strong>Especies Atendidas:</strong> ${especies}</div>
+                        <div class="info-field"><strong>Tipo de Visita:</strong> ${v.primera_vez ? 'Primera Vez' : 'Seguimiento'}</div>
+                    </div>
+                    <div class="info-field" style="margin-top: 0.8rem;">
+                        <strong>Diagnóstico Sanitario:</strong>
+                        <p style="margin: 0.4rem 0; background: #F7FAFC; padding: 0.9rem; border-radius: 8px; font-size: 0.9rem; border: 1px solid #E2E8F0;">${v.diagnostico || 'N/A'}</p>
+                    </div>
+                    <div class="info-field" style="margin-top: 0.8rem;">
+                        <strong>Procedimiento Ejecutado:</strong>
+                        <p style="margin: 0.4rem 0; background: #F7FAFC; padding: 0.9rem; border-radius: 8px; font-size: 0.9rem; border: 1px solid #E2E8F0;">${v.procedimiento || 'N/A'}</p>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = `
+                <!-- Institutional Header Without Image Logo -->
+                <div class="acta-header-block">
+                    <div class="acta-header-title">
+                        <h3>ALCALDÍA LOCAL DE SUMAPAZ</h3>
+                        <p>GESTIÓN AMBIENTAL Y DESARROLLO RURAL — SOMOS SUMAPAZ</p>
+                        <p style="color: #2A9D8F; font-size: 1.05rem; margin-top: 0.4rem;"><strong>ACTA DE ${tipoLabel}</strong></p>
+                        <p style="font-size: 0.85rem; color: #718096; font-weight: 700; margin-top: 0.2rem;">No. Registro: ${numReg}</p>
+                    </div>
+                </div>
+
+                <!-- Section 1: General Info -->
+                <div class="acta-section-title">1. Información General del Predio y Productor</div>
+                <div class="grid-3">
+                    <div class="info-field"><strong>Fecha:</strong> ${v.fecha || 'N/A'}</div>
+                    <div class="info-field"><strong>Horario:</strong> ${v.hora_inicio || ''} - ${v.hora_fin || ''}</div>
+                    <div class="info-field"><strong>Productor/a:</strong> ${nombreProd || 'N/A'}</div>
+                    <div class="info-field"><strong>Cédula:</strong> ${v.cedula_usuario || 'N/A'}</div>
+                    <div class="info-field"><strong>Teléfono:</strong> ${v.telefono || 'N/A'}</div>
+                    <div class="info-field"><strong>Finca:</strong> ${v.finca || 'N/A'}</div>
+                    <div class="info-field"><strong>Vereda:</strong> ${v.vereda || 'N/A'}</div>
+                    <div class="info-field"><strong>Corregimiento:</strong> ${v.corregimiento || 'N/A'}</div>
+                    <div class="info-field"><strong>Cuenca:</strong> ${v.cuenca || 'N/A'}</div>
+                </div>
+                ${v.latitud ? `
+                <div class="info-field" style="margin-top: 0.5rem; font-size: 0.85rem; color: #4A5568;">
+                    <strong>Coordenadas GPS:</strong> Latitud ${v.latitud}, Longitud ${v.longitud} ${v.altitud ? '| Altitud: ' + v.altitud + ' m.s.n.m.' : ''}
+                </div>
+                ` : ''}
+
+                <!-- Section 2: Specific Technical Details -->
+                ${detallesEspecificosHTML}
+
+                <!-- Section 3: Recommendations & Commitments -->
+                <div class="acta-section-title">3. Recomendaciones y Corresponsabilidad Ambiental</div>
+                <div class="info-field">
+                    <strong>Recomendaciones Técnicas Sugeridas:</strong>
+                    <p style="margin: 0.4rem 0; background: #F7FAFC; padding: 0.9rem; border-radius: 8px; font-size: 0.9rem; border: 1px solid #E2E8F0;">${v.recomendaciones || 'N/A'}</p>
+                </div>
+                <div class="grid-2" style="margin-top: 0.8rem;">
+                    <div class="info-field"><strong>Acuerdos de Corresponsabilidad:</strong> ${v.acepta_corresponsabilidad ? 'Aceptado por el Productor' : 'Pendiente'}</div>
+                    <div class="info-field"><strong>Próxima Visita Programada:</strong> ${v.proxima_visita || 'Por definir'}</div>
+                </div>
+
+                <!-- Section 4: Signatures -->
+                <div class="acta-section-title">4. Firmas de Conformidad y Asistencia</div>
+                <div class="signatures-grid">
+                    <div class="signature-box">
+                        <div class="signature-render-area">${profSigHTML}</div>
+                        <div class="signature-line"></div>
+                        <div class="signature-role">PROFESIONAL RESPONSABLE</div>
+                        <div class="signature-name">${v.profesional || 'Profesional Técnico'}</div>
+                        <div class="signature-name">${v.tarjeta_profesional ? 'T.P. ' + v.tarjeta_profesional : ''}</div>
+                    </div>
+                    <div class="signature-box">
+                        <div class="signature-render-area">${operSigHTML}</div>
+                        <div class="signature-line"></div>
+                        <div class="signature-role">TÉCNICO / OPERARIO</div>
+                        <div class="signature-name">C.C. ${v.cedula_operario || '1023456789'}</div>
+                    </div>
+                    <div class="signature-box">
+                        <div class="signature-render-area">${userSigHTML}</div>
+                        <div class="signature-line"></div>
+                        <div class="signature-role">PRODUCTOR / USUARIO</div>
+                        <div class="signature-name">${nombreProd}</div>
+                        <div class="signature-name">C.C. ${v.cedula_usuario || 'N/A'}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function downloadActaPDF() {
+            const element = document.getElementById('acta-printable-container');
+            const numReg = currentVisita ? (currentVisita.numero_registro || `VISITA-${currentVisita.id}`) : 'ACTA';
+            const opt = {
+                margin:       [0.4, 0.4, 0.4, 0.4],
+                filename:     `Acta_Visita_${numReg}.pdf`,
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+
+        function exportAmbientalToExcel() {
+            if (typeof XLSX === 'undefined') {
+                showCustomNotification('La librería de exportación a Excel no está disponible.', 'Error');
+                return;
+            }
+
+            const masterData = [];
+
+            // Map Agrícola records
+            visitasAgr.forEach(v => {
+                const cultivosStr = (v.cultivos && v.cultivos.length > 0)
+                    ? v.cultivos.map(c => `${c.especie || c.tipo || 'Cultivo'} (${c.area_m2 || 0}m², ${c.produccion_kg || 0}kg)`).join('; ')
+                    : 'N/A';
+                
+                masterData.push({
+                    'Tipo de Visita': 'Agrícola',
+                    'No. Registro': v.numero_registro || `VAGR-${v.id}`,
+                    'Fecha': v.fecha || '',
+                    'Productor / Usuario': v.nombre || '',
+                    'Cédula Usuario': v.cedula_usuario || '',
+                    'Teléfono': v.telefono || '',
+                    'Vereda': v.vereda || '',
+                    'Corregimiento': v.corregimiento || '',
+                    'Finca': v.finca || '',
+                    'Cuenca': v.cuenca || '',
+                    'Hora Inicio': v.hora_inicio || '',
+                    'Hora Fin': v.hora_fin || '',
+                    'Latitud': v.latitud || '',
+                    'Longitud': v.longitud || '',
+                    'Altitud': v.altitud || '',
+                    'Objetivo / Diagnóstico': v.objetivo_visita || '',
+                    'Procedimiento / Especies': cultivosStr,
+                    'Recomendaciones': v.recomendaciones || '',
+                    'Muestra de Suelo': v.muestra_suelo ? 'SÍ' : 'NO',
+                    'No. Muestra': v.numero_muestra || '',
+                    'Área Intervenida': v.area_intervenir || '',
+                    'Acuerdo Corresponsabilidad': v.acepta_corresponsabilidad ? 'Aceptado' : 'Pendiente',
+                    'Próxima Visita': v.proxima_visita || '',
+                    'Profesional Responsable': v.profesional || '',
+                    'Tarjeta Profesional': v.tarjeta_profesional || '',
+                    'Cédula Operario': v.cedula_operario || ''
+                });
+            });
+
+            // Map Pecuaria records
+            visitasPec.forEach(v => {
+                const especiesStr = (v.especies && v.especies.length > 0) ? v.especies.join('; ') : 'N/A';
+                masterData.push({
+                    'Tipo de Visita': 'Pecuaria',
+                    'No. Registro': `VPEC-${v.id}`,
+                    'Fecha': v.fecha || '',
+                    'Productor / Usuario': v.usuario || '',
+                    'Cédula Usuario': v.cedula_usuario || '',
+                    'Teléfono': v.telefono || '',
+                    'Vereda': v.vereda || '',
+                    'Corregimiento': v.corregimiento || '',
+                    'Finca': v.finca || '',
+                    'Cuenca': v.cuenca || '',
+                    'Hora Inicio': v.hora_inicio || '',
+                    'Hora Fin': v.hora_fin || '',
+                    'Latitud': v.latitud || '',
+                    'Longitud': v.longitud || '',
+                    'Altitud': v.altitud || '',
+                    'Objetivo / Diagnóstico': v.diagnostico || '',
+                    'Procedimiento / Especies': v.procedimiento || especiesStr,
+                    'Recomendaciones': v.recomendaciones || '',
+                    'Muestra de Suelo': 'N/A',
+                    'No. Muestra': 'N/A',
+                    'Área Intervenida': 'N/A',
+                    'Acuerdo Corresponsabilidad': v.acepta_corresponsabilidad ? 'Aceptado' : 'Pendiente',
+                    'Próxima Visita': v.proxima_visita || '',
+                    'Profesional Responsable': v.profesional || '',
+                    'Tarjeta Profesional': v.tarjeta_profesional || '',
+                    'Cédula Operario': v.cedula_operario || ''
+                });
+            });
+
+            if (masterData.length === 0) {
+                showCustomNotification('No hay registros de visitas para exportar a Excel.', 'Información');
+                return;
+            }
+
+            const wb = XLSX.utils.book_new();
+
+            // 1. Consolidado General
+            const wsMaster = XLSX.utils.json_to_sheet(masterData);
+            XLSX.utils.book_append_sheet(wb, wsMaster, 'Consolidado General');
+
+            // 2. Visitas Agrícolas
+            const agrData = masterData.filter(d => d['Tipo de Visita'] === 'Agrícola');
+            if (agrData.length > 0) {
+                const wsAgr = XLSX.utils.json_to_sheet(agrData);
+                XLSX.utils.book_append_sheet(wb, wsAgr, 'Visitas Agrícolas');
+            }
+
+            // 3. Visitas Pecuarias
+            const pecData = masterData.filter(d => d['Tipo de Visita'] === 'Pecuaria');
+            if (pecData.length > 0) {
+                const wsPec = XLSX.utils.json_to_sheet(pecData);
+                XLSX.utils.book_append_sheet(wb, wsPec, 'Visitas Pecuarias');
+            }
+
+            const todayStr = new Date().toISOString().split('T')[0];
+            XLSX.writeFile(wb, `Reporte_General_Ambiental_${todayStr}.xlsx`);
+        }
+    </script>
+</body>
+</html>

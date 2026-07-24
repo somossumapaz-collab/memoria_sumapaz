@@ -309,6 +309,10 @@
                             style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">
                             PMAPC
                         </a>
+                        <a href="tablero_ambiental.html" class="nav-link-btn" id="btn-tablero-ambiental"
+                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">
+                            Tablero Ambiental
+                        </a>
 
                         <button onclick="logout()" class="nav-link-btn" id="btn-logout"
                             style="display: none; margin: 0; background-color: transparent; cursor: pointer; color: #FBF4DE; border: none;"
@@ -1531,6 +1535,10 @@
                     window.location.href = 'login.html';
                     return; // Stop rendering
                 } else {
+                    if (authResult.rol_id === 6) {
+                        window.location.href = 'tablero_ambiental.html';
+                        return;
+                    }
                     window.isAdmin = authResult.is_admin;
                     if (!window.isAdmin) {
                         const colEliminar = document.getElementById('col-eliminar');

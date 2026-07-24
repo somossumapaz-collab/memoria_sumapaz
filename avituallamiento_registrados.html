@@ -333,6 +333,10 @@
                     window.location.href = 'login.html';
                     return; // Stop rendering
                 } else {
+                    if (authResult.rol_id === 6) {
+                        window.location.href = 'tablero_ambiental.html';
+                        return;
+                    }
                     window.isAdmin = authResult.is_admin;
                     document.getElementById('btn-register').style.display = 'inline-block';
                     document.getElementById('btn-avituallamiento').style.display = 'inline-block';

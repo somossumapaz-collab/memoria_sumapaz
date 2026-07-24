@@ -13,7 +13,8 @@ if (isset($_SESSION['user_id'])) {
         'authenticated' => true, 
         'username' => $_SESSION['username'], 
         'is_admin' => $is_admin,
-        'rol' => $_SESSION['rol'] ?? 'USUARIO'
+        'rol' => $_SESSION['rol'] ?? 'USUARIO',
+        'rol_id' => isset($_SESSION['rol_id']) ? (int)$_SESSION['rol_id'] : null
     ]);
 } else {
     http_response_code(401);
