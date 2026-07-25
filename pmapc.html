@@ -3191,6 +3191,7 @@
             const iaProcessingText = document.getElementById('ia-processing-text');
             
             let loadedTranscriptText = "";
+            let lastLoadedPreguntasRespuestas = null;
 
             if (transcriptFileInput) {
                 transcriptFileInput.addEventListener('change', (e) => {
@@ -3220,7 +3221,73 @@
 
             if (btnProcessTranscript) {
                 btnProcessTranscript.addEventListener('click', async () => {
-                    if (!loadedTranscriptText || !selectedProducerId) return;
+                    if (!loadedTranscriptText) {
+                        alert("Por favor selecciona un archivo primero.");
+                        return;
+                    }
+
+                    const selectedFile = transcriptFileInput.files ? transcriptFileInput.files[0] : null;
+                    const isJsonFile = (selectedFile && selectedFile.name.toLowerCase().endsWith('.json')) || loadedTranscriptText.trim().startsWith('{');
+
+                    if (isJsonFile) {
+                        try {
+                            const parsed = JSON.parse(loadedTranscriptText);
+                            const pmapcData = parsed.data || parsed;
+
+                            if (pmapcData.preguntas_respuestas) {
+                                lastLoadedPreguntasRespuestas = pmapcData.preguntas_respuestas;
+                            }
+
+                            // Match/determine producer
+                            let targetPid = parsed.productor_id || pmapcData.productor_id || selectedProducerId;
+                            
+                            if (!targetPid && typeof allProducers !== 'undefined' && allProducers && allProducers.length > 0) {
+                                const pName = (parsed.productora || pmapcData.productora || '').toLowerCase().trim();
+                                const orgName = (parsed.nombre_organizacion || pmapcData.nombre_organizacion || pmapcData.f01?.nombre_organizacion || '').toLowerCase().trim();
+                                
+                                const match = allProducers.find(p => {
+                                    const pNombre = (p.nombre_completo || '').toLowerCase().trim();
+                                    const pOrg = (p.nombre_organizacion || '').toLowerCase().trim();
+                                    return (pName && (pNombre.includes(pName) || pName.includes(pNombre))) || (orgName && pOrg && (pOrg.includes(orgName) || orgName.includes(pOrg)));
+                                });
+                                if (match) {
+                                    targetPid = match.id;
+                                }
+                            }
+
+                            if (targetPid) {
+                                selectedProducerId = targetPid;
+                                const pInput = document.getElementById('productor_id');
+                                if (pInput) pInput.value = targetPid;
+                                
+                                const prod = allProducers.find(p => p.id == targetPid);
+                                if (prod) {
+                                    const searchInput = document.getElementById('select-producer-input');
+                                    if (searchInput) searchInput.value = prod.nombre_completo;
+                                    showProducerDetails(prod);
+                                }
+                            }
+
+                            // Populate form
+                            populateForm(pmapcData);
+
+                            // Auto save immediately to DB (Overwriting existing record if present)
+                            if (selectedProducerId) {
+                                await submitForm();
+                            } else {
+                                alert("¡Formulario autocompletado! Selecciona un Productor en el buscador para guardar directamente en la base de datos.");
+                            }
+                        } catch (err) {
+                            console.error("JSON parse error:", err);
+                            alert("Error al leer el archivo JSON: " + err.message);
+                        }
+                        return;
+                    }
+
+                    if (!selectedProducerId) {
+                        alert("Por favor selecciona un productor antes de procesar el archivo con IA.");
+                        return;
+                    }
 
                     // Disable buttons and show processing status
                     btnProcessTranscript.disabled = true;
@@ -3373,16 +3440,41 @@
         }
 
         function populateForm(data) {
+            if (!data) return;
+
             // Helper to set field value if it exists in JSON
             const setVal = (id, val) => {
                 const el = document.getElementById(id);
-                if (el && val !== undefined) el.value = val;
+                if (el && val !== undefined && val !== null) el.value = val;
             };
 
             const setInputByName = (name, val) => {
                 const el = document.querySelector(`[name="${name}"]`);
-                if (el && val !== undefined) el.value = val;
+                if (el && val !== undefined && val !== null) el.value = val;
             };
+
+            // 1. Process preguntas_respuestas array if present (e.g. PMAPC_Plantilla_Exhaustiva.json format)
+            if (data.preguntas_respuestas && Array.isArray(data.preguntas_respuestas)) {
+                data.preguntas_respuestas.forEach(item => {
+                    if (!item.campo || item.respuesta === undefined || item.respuesta === null) return;
+                    const val = item.respuesta;
+                    setVal(item.campo, val);
+                    setInputByName(item.campo, val);
+                    if (item.campo === 'pdf_comentarios' || item.campo === 'comentarios') {
+                        setVal('pdf_comentarios', val);
+                    }
+                });
+            }
+
+            // Top-level / Metadata fields
+            if (data.nombre_organizacion) setVal('f01_nombre_organizacion', data.nombre_organizacion);
+            if (data.productora) {
+                const lblNombre = document.getElementById('lbl-nombre');
+                if (lblNombre && (!lblNombre.textContent || lblNombre.textContent === '-')) {
+                    lblNombre.textContent = data.productora;
+                }
+            }
+            if (data.vereda) setVal('edit-vereda', data.vereda);
 
             // Module 1 (Estratégico)
             if (data.f01) {
@@ -4636,6 +4728,7 @@
                 alert("Por favor selecciona un productor antes de guardar.");
                 return;
             }
+            const productorId = selectedProducerId;
 
             const submitBtn = document.getElementById('btn-next');
             const originalText = submitBtn.textContent;
@@ -4859,6 +4952,10 @@
                     pdf_comentarios: document.getElementById('pdf_comentarios') ? document.getElementById('pdf_comentarios').value : ''
                 }
             };
+
+            if (typeof lastLoadedPreguntasRespuestas !== 'undefined' && lastLoadedPreguntasRespuestas) {
+                payload.data.preguntas_respuestas = lastLoadedPreguntasRespuestas;
+            }
 
             try {
                 // Save locally first to always have a cache
