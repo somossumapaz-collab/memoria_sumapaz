@@ -3219,6 +3219,62 @@
                 });
             }
 
+        function parseJsonSafely(str) {
+            if (!str || typeof str !== 'string') throw new Error("El archivo seleccionado está vacío.");
+            
+            let clean = str.trim();
+
+            // Strip Markdown code block wrapping if present (e.g. ```json ... ```)
+            if (clean.startsWith('```')) {
+                clean = clean.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '').trim();
+            }
+
+            // 1. Direct standard parse
+            try {
+                return JSON.parse(clean);
+            } catch (e1) {
+                console.warn("Direct JSON.parse failed, attempting automatic structural fixes...", e1.message);
+                
+                let fixed = clean;
+
+                // A. Fix missing commas between array objects: } \n { -> }, {
+                fixed = fixed.replace(/}\s*[\r\n]+\s*{/g, '},{');
+                fixed = fixed.replace(/}\s+{/g, '},{');
+
+                // B. Fix missing commas between JSON properties: "value" \n "key": -> "value", \n "key":
+                fixed = fixed.replace(/("[\s\S]*?")\s*([\r\n]+\s*"[a-zA-Z0-9_]+"\s*:)/g, '$1,$2');
+
+                // C. Fix trailing commas before } or ]
+                fixed = fixed.replace(/,\s*([}\]])/g, '$1');
+
+                try {
+                    return JSON.parse(fixed);
+                } catch (e2) {}
+
+                // D. Fix unescaped newlines/tabs inside double-quoted strings
+                fixed = fixed.replace(/"([^"\\]*(\\.[^"\\]*)*)"/gs, (match) => {
+                    return match
+                        .replace(/\r?\n/g, "\\n")
+                        .replace(/\t/g, "\\t");
+                });
+
+                try {
+                    return JSON.parse(fixed);
+                } catch (e3) {}
+
+                // E. Fix smart/curly quotes
+                fixed = fixed.replace(/[“”]/g, '"').replace(/[‘’]/g, "'");
+                fixed = fixed.replace(/,\s*([}\]])/g, '$1').replace(/}\s*[\r\n]+\s*{/g, '},{');
+
+                try {
+                    return JSON.parse(fixed);
+                } catch (e4) {}
+
+                // F. Fallback error message
+                throw new Error("El archivo JSON contiene un error de sintaxis (" + e1.message + "). Revisa comillas o comas faltantes.");
+            }
+        }
+
             if (btnProcessTranscript) {
                 btnProcessTranscript.addEventListener('click', async () => {
                     if (!loadedTranscriptText) {
@@ -3227,45 +3283,53 @@
                     }
 
                     const selectedFile = transcriptFileInput.files ? transcriptFileInput.files[0] : null;
-                    const isJsonFile = (selectedFile && selectedFile.name.toLowerCase().endsWith('.json')) || loadedTranscriptText.trim().startsWith('{');
+                    const isJsonFile = (selectedFile && selectedFile.name.toLowerCase().endsWith('.json')) || loadedTranscriptText.trim().startsWith('{') || loadedTranscriptText.trim().startsWith('```');
 
                     if (isJsonFile) {
                         try {
-                            const parsed = JSON.parse(loadedTranscriptText);
+                            const parsed = parseJsonSafely(loadedTranscriptText);
                             const pmapcData = parsed.data || parsed;
 
                             if (pmapcData.preguntas_respuestas) {
                                 lastLoadedPreguntasRespuestas = pmapcData.preguntas_respuestas;
                             }
 
-                            // Match/determine producer
-                            let targetPid = parsed.productor_id || pmapcData.productor_id || selectedProducerId;
-                            
-                            if (!targetPid && typeof allProducers !== 'undefined' && allProducers && allProducers.length > 0) {
+                            // Match/determine valid producer from database
+                            const findProducer = (id) => (id && typeof allProducers !== 'undefined' && allProducers) ? allProducers.find(p => p.id == id) : null;
+
+                            let validProd = findProducer(parsed.productor_id || pmapcData.productor_id);
+
+                            if (!validProd && typeof allProducers !== 'undefined' && allProducers && allProducers.length > 0) {
                                 const pName = (parsed.productora || pmapcData.productora || '').toLowerCase().trim();
                                 const orgName = (parsed.nombre_organizacion || pmapcData.nombre_organizacion || pmapcData.f01?.nombre_organizacion || '').toLowerCase().trim();
                                 
-                                const match = allProducers.find(p => {
-                                    const pNombre = (p.nombre_completo || '').toLowerCase().trim();
-                                    const pOrg = (p.nombre_organizacion || '').toLowerCase().trim();
-                                    return (pName && (pNombre.includes(pName) || pName.includes(pNombre))) || (orgName && pOrg && (pOrg.includes(orgName) || orgName.includes(pOrg)));
-                                });
-                                if (match) {
-                                    targetPid = match.id;
+                                if (pName || orgName) {
+                                    validProd = allProducers.find(p => {
+                                        const pNombre = (p.nombre_completo || '').toLowerCase().trim();
+                                        const pOrg = (p.nombre_organizacion || '').toLowerCase().trim();
+                                        return (pName && (pNombre.includes(pName) || pName.includes(pNombre))) || 
+                                               (orgName && pOrg && (pOrg.includes(orgName) || orgName.includes(pOrg)));
+                                    });
                                 }
                             }
 
-                            if (targetPid) {
-                                selectedProducerId = targetPid;
+                            // If not matched by JSON content, check if user already selected a valid producer in the UI
+                            if (!validProd && selectedProducerId) {
+                                validProd = findProducer(selectedProducerId);
+                            }
+
+                            if (validProd) {
+                                selectedProducerId = validProd.id;
                                 const pInput = document.getElementById('productor_id');
-                                if (pInput) pInput.value = targetPid;
+                                if (pInput) pInput.value = validProd.id;
                                 
-                                const prod = allProducers.find(p => p.id == targetPid);
-                                if (prod) {
-                                    const searchInput = document.getElementById('select-producer-input');
-                                    if (searchInput) searchInput.value = prod.nombre_completo;
-                                    showProducerDetails(prod);
-                                }
+                                const searchInput = document.getElementById('select-producer-input');
+                                if (searchInput) searchInput.value = validProd.nombre_completo;
+                                showProducerDetails(validProd);
+                            } else {
+                                selectedProducerId = null;
+                                const pInput = document.getElementById('productor_id');
+                                if (pInput) pInput.value = '';
                             }
 
                             // Populate form
@@ -3275,7 +3339,7 @@
                             if (selectedProducerId) {
                                 await submitForm();
                             } else {
-                                alert("¡Formulario autocompletado! Selecciona un Productor en el buscador para guardar directamente en la base de datos.");
+                                alert("¡Formulario autocompletado con éxito! Por favor selecciona un Productor en el buscador superior para guardar directamente en la base de datos.");
                             }
                         } catch (err) {
                             console.error("JSON parse error:", err);
@@ -4735,12 +4799,18 @@
             submitBtn.disabled = true;
             submitBtn.textContent = "Guardando...";
 
-            const prod = allProducers.find(p => p.id == selectedProducerId);
+            let prod = (typeof allProducers !== 'undefined' && allProducers) ? allProducers.find(p => p.id == selectedProducerId) : null;
             if (!prod) {
-                alert("Error: No se encontró la información del productor seleccionado.");
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalText;
-                return;
+                const nameEl = document.getElementById('lbl-nombre');
+                const docEl = document.getElementById('lbl-documento');
+                const docText = docEl ? docEl.textContent : '';
+                
+                prod = {
+                    id: selectedProducerId,
+                    nombre_completo: (nameEl && nameEl.textContent && nameEl.textContent !== '-') ? nameEl.textContent : 'Productor',
+                    tipo_documento: docText.split(' ')[0] || 'CC',
+                    numero_documento: docText.split(' ')[1] || ''
+                };
             }
 
             try {

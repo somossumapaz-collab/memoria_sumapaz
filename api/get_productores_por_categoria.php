@@ -31,7 +31,23 @@ try {
             p.telefono,
             p.correo_electronico,
             p.vereda,
-            c.nombre AS subcategoria
+            c.nombre AS subcategoria,
+            COALESCE(
+                (SELECT GROUP_CONCAT(DISTINCT COALESCE(NULLIF(pp.producto_normal, ''), pp.nombre) ORDER BY COALESCE(NULLIF(pp.producto_normal, ''), pp.nombre) SEPARATOR ', ') 
+                 FROM productor_productos pp 
+                 WHERE pp.productor_id = p.id AND (pp.producto_normal != '' OR pp.nombre != '')),
+                (SELECT pmapc.f01_producto_principal 
+                 FROM pmapc_estrategico pmapc 
+                 WHERE pmapc.productor_id = p.id AND pmapc.f01_producto_principal != '' AND pmapc.f01_producto_principal != 'NaN' LIMIT 1),
+                '-'
+            ) AS productos,
+            CASE 
+                WHEN (SELECT COUNT(*) 
+                      FROM productor_grupo pg 
+                      LEFT JOIN grupos_poblacionales g ON pg.grupo_id = g.id 
+                      WHERE pg.productor_id = p.id AND (pg.grupo_id = 3 OR g.nombre LIKE '%V%ctima%')) > 0 THEN 'Sí' 
+                ELSE 'No' 
+            END AS victima_conflicto
         FROM productores_sumapaz p
         INNER JOIN productor_categoria pc ON p.id = pc.productor_id
         INNER JOIN categorias_productivas c ON pc.categoria_id = c.id

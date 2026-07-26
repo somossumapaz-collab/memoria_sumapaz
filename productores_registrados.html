@@ -939,6 +939,8 @@
                     <tr>
                         <th>Nombre del Productor</th>
                         <th>Subcategoría</th>
+                        <th>Productos Generados</th>
+                        <th>Víctima Conflicto</th>
                         <th>Tipo Documento</th>
                         <th>Número Documento</th>
                         <th>Vereda</th>
@@ -948,7 +950,7 @@
                 </thead>
                 <tbody id="cat-productores-tbody">
                     <tr>
-                        <td colspan="7" style="text-align: center; padding: 4rem; color: #888;">Utilice los filtros
+                        <td colspan="9" style="text-align: center; padding: 4rem; color: #888;">Utilice los filtros
                             superiores para consultar productores por actividad.</td>
                     </tr>
                 </tbody>
@@ -1636,7 +1638,7 @@
 
                 if (selectedTipos.length === 0 && selectedNombres.length === 0) {
                     if (catTbody) {
-                        catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 4rem; color: #888;">Utilice los filtros superiores para consultar productores por actividad.</td></tr>';
+                        catTbody.innerHTML = '<tr><td colspan="9" style="text-align: center; padding: 4rem; color: #888;">Utilice los filtros superiores para consultar productores por actividad.</td></tr>';
                     }
                     window.lastCatData = [];
                     return;
@@ -1650,7 +1652,7 @@
                 }
 
                 if (catTbody) {
-                    catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 2rem;">Cargando productores...</td></tr>';
+                    catTbody.innerHTML = '<tr><td colspan="9" style="text-align: center; padding: 2rem;">Cargando productores...</td></tr>';
                 }
 
                 try {
@@ -1660,10 +1662,10 @@
                         window.lastCatData = result.data;
                         window.renderCategoryTable(window.lastCatData);
                     } else {
-                        if (catTbody) catTbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: red;">Error: ${result.error}</td></tr>`;
+                        if (catTbody) catTbody.innerHTML = `<tr><td colspan="9" style="text-align: center; color: red;">Error: ${result.error}</td></tr>`;
                     }
                 } catch (err) {
-                    if (catTbody) catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: red;">Error de conexión.</td></tr>';
+                    if (catTbody) catTbody.innerHTML = '<tr><td colspan="9" style="text-align: center; color: red;">Error de conexión.</td></tr>';
                 }
             };
 
@@ -1673,15 +1675,21 @@
                 const filteredData = data.filter(p => passesGlobalFilters(p.numero_documento, null));
 
                 if (filteredData.length === 0) {
-                    catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 2rem; color: #666;">No hay productores registrados con los filtros actuales.</td></tr>';
+                    catTbody.innerHTML = '<tr><td colspan="9" style="text-align: center; padding: 2rem; color: #666;">No hay productores registrados con los filtros actuales.</td></tr>';
                     return;
                 }
 
                 filteredData.forEach(p => {
+                    const victimaBadge = p.victima_conflicto === 'Sí' 
+                        ? `<span style="background-color: #E8F5E9; color: #2E7D32; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; display: inline-block;">Sí</span>` 
+                        : `<span style="background-color: #F5F5F5; color: #757575; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; display: inline-block;">No</span>`;
+
                     const tr = document.createElement('tr');
                     tr.innerHTML = `
                         <td><strong>${p.nombre_completo}</strong></td>
                         <td style="font-size: 0.85rem; color: #666;">${p.subcategoria}</td>
+                        <td style="font-size: 0.85rem; color: #333; max-width: 250px;">${p.productos || '-'}</td>
+                        <td style="text-align: center;">${victimaBadge}</td>
                         <td>${p.tipo_documento}</td>
                         <td>${p.numero_documento}</td>
                         <td>${p.vereda}</td>
@@ -3220,8 +3228,8 @@
             }
 
             const headers = [
-                'Nombre del Productor', 'Subcategoría', 'Tipo Documento', 'Número Documento',
-                'Vereda', 'Celular', 'Correo'
+                'Nombre del Productor', 'Subcategoría', 'Productos Generados', 'Víctima Conflicto Armado',
+                'Tipo Documento', 'Número Documento', 'Vereda', 'Celular', 'Correo'
             ];
 
             let csvString = '\uFEFF' + headers.join(';') + '\r\n';
@@ -3235,13 +3243,15 @@
 
             dataToExport.forEach(p => {
                 const row = [
-                    `"${p.nombre_completo || '-'}"`,
-                    `"${p.subcategoria || '-'}"`,
+                    `"${(p.nombre_completo || '-').replace(/"/g, '""')}"`,
+                    `"${(p.subcategoria || '-').replace(/"/g, '""')}"`,
+                    `"${(p.productos || '-').replace(/"/g, '""')}"`,
+                    `"${(p.victima_conflicto || 'No').replace(/"/g, '""')}"`,
                     p.tipo_documento || '-',
                     p.numero_documento || '-',
-                    `"${p.vereda || '-'}"`,
+                    `"${(p.vereda || '-').replace(/"/g, '""')}"`,
                     p.telefono || '-',
-                    `"${p.correo_electronico || '-'}"`
+                    `"${(p.correo_electronico || '-').replace(/"/g, '""')}"`
                 ];
                 csvString += row.join(';') + '\r\n';
             });
@@ -3276,7 +3286,7 @@
 
             const catTbody = document.getElementById('cat-productores-tbody');
             if (catTbody) {
-                catTbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 4rem; color: #888;">Utilice los filtros superiores para consultar productores por actividad.</td></tr>';
+                catTbody.innerHTML = '<tr><td colspan="9" style="text-align: center; padding: 4rem; color: #888;">Utilice los filtros superiores para consultar productores por actividad.</td></tr>';
             }
             window.lastCatData = [];
         }
