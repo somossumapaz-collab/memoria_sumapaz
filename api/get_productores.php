@@ -69,13 +69,15 @@ try {
             (SELECT COUNT(*) FROM productor_grupo pg WHERE pg.productor_id = p.id AND pg.grupo_id IN (1, 3, 6, 7)) AS grupo_prioritario_cnt,
             GROUP_CONCAT(DISTINCT cpcat.categoria_id) AS categorias_ids,
             GROUP_CONCAT(DISTINCT c.id) AS certificaciones_ids,
-            GROUP_CONCAT(DISTINCT c.nombre ORDER BY c.nombre SEPARATOR ', ') AS certificaciones_nombres
+            GROUP_CONCAT(DISTINCT c.nombre ORDER BY c.nombre SEPARATOR ', ') AS certificaciones_nombres,
+            GROUP_CONCAT(DISTINCT pe.nombre_evento ORDER BY pe.fecha_evento DESC SEPARATOR ', ') AS circuitos_comercializacion
         FROM productores_sumapaz p
         LEFT JOIN caracterizacion_productor cp ON p.id = cp.productor_id
         LEFT JOIN pmapc_registros pm ON p.id = pm.productor_id
         LEFT JOIN productor_categoria cpcat ON p.id = cpcat.productor_id
         LEFT JOIN productor_certificacion pc ON p.id = pc.productor_id
         LEFT JOIN certificaciones c ON pc.certificacion_id = c.id
+        LEFT JOIN participacion_eventos pe ON p.id = pe.id_productor
         GROUP BY p.id
         ORDER BY p.fecha_creacion DESC
     ");

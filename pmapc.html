@@ -3063,15 +3063,31 @@
 
             if (idParam) {
                 selectedProducerId = idParam;
-                document.getElementById('select-producer').value = idParam;
-                document.getElementById('productor_id').value = idParam;
-                document.getElementById('producer-selector-box').style.display = 'none';
+                const pInput = document.getElementById('productor_id');
+                if (pInput) pInput.value = idParam;
+                const selInput = document.getElementById('select-producer');
+                if (selInput) selInput.value = idParam;
                 
-                // Show prefilled card
-                const prod = allProducers.find(p => p.id == idParam);
+                let prod = (typeof allProducers !== 'undefined' && allProducers) ? allProducers.find(p => p.id == idParam) : null;
+                
+                if (!prod) {
+                    try {
+                        const res = await fetch(API_BASE + `api/get_productor.php?id=${idParam}`);
+                        const result = await res.json();
+                        if (result.success && result.data) {
+                            prod = result.data;
+                        }
+                    } catch (e) {
+                        console.error("Error fetching producer details by ID:", e);
+                    }
+                }
+                
                 if (prod) {
-                    document.getElementById('select-producer-input').value = prod.nombre_completo;
+                    const searchInput = document.getElementById('select-producer-input');
+                    if (searchInput) searchInput.value = prod.nombre_completo;
                     showProducerDetails(prod);
+                    const selectorBox = document.getElementById('producer-selector-box');
+                    if (selectorBox) selectorBox.style.display = 'none';
                 }
                 
                 // Fetch saved PMAPC

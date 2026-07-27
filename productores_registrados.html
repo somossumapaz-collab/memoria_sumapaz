@@ -738,6 +738,7 @@
                         <th>Correo</th>
                         <th>Predio</th>
                         <th>Certificados</th>
+                        <th>Circuitos de Comercialización</th>
                         <th>Beneficiario</th>
                         <th style="text-align: center;">Editar</th>
                         <th id="col-eliminar" style="text-align: center;">Eliminar</th>
@@ -750,7 +751,7 @@
                 <tbody id="productores-original-tbody">
                     <!-- Data will be loaded via JS -->
                     <tr>
-                        <td colspan="16" style="text-align: center; padding: 2rem;">Cargando productores...</td>
+                        <td colspan="17" style="text-align: center; padding: 2rem;">Cargando productores...</td>
                     </tr>
                 </tbody>
             </table>
@@ -2493,7 +2494,7 @@
             tbody.innerHTML = ''; // Clear loading/existing text
 
             if (dataToDraw.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="16" style="text-align: center; padding: 2rem;">No se encontraron resultados.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="17" style="text-align: center; padding: 2rem;">No se encontraron resultados.</td></tr>';
                 return;
             }
 
@@ -2512,6 +2513,13 @@
                 if (productor.certificaciones_nombres) {
                     certsHtml = productor.certificaciones_nombres.split(', ').map(c => 
                         `<span style="display: inline-block; font-size: 0.75rem; background: #eef8f6; color: #2A9D8F; padding: 2px 6px; border-radius: 4px; margin-right: 4px; margin-bottom: 4px; font-weight: 500; border: 1px solid #ccece6;">${c}</span>`
+                    ).join('');
+                }
+
+                let circuitosHtml = '-';
+                if (productor.circuitos_comercializacion) {
+                    circuitosHtml = productor.circuitos_comercializacion.split(', ').map(circ => 
+                        `<span style="display: inline-block; font-size: 0.75rem; background: #fff8e7; color: #d35400; padding: 2px 6px; border-radius: 4px; margin-right: 4px; margin-bottom: 4px; font-weight: 500; border: 1px solid #f9e79f;">${circ}</span>`
                     ).join('');
                 }
 
@@ -2594,6 +2602,7 @@
                     <td>${correo}</td>
                     <td>${productor.nombre_predio}</td>
                     <td><div style="max-width: 250px; display: flex; flex-wrap: wrap;">${certsHtml}</div></td>
+                    <td><div style="max-width: 250px; display: flex; flex-wrap: wrap;">${circuitosHtml}</div></td>
                     <td style="text-align: center; vertical-align: middle;">${beneficiarioHtml}</td>
                     <td style="text-align: center; vertical-align: middle;">
                         <button class="btn-icon btn-icon-edit" onclick="editarProductor(${productor.id})" title="Editar">
@@ -3173,7 +3182,7 @@
             const headers = [
                 'Ranking Ajustado', 'Ranking Estándar', 'Puntaje Total', 'Puntaje Ajustado', 'Estado Caracterización', 'Fecha Inscripción', 
                 'Nombre Completo', 'Tipo Documento', 'Número Documento', 'Vereda', 'Cuenca', 'Teléfono', 
-                'Correo Electrónico', 'Nombre Predio', 'Fecha Nacimiento', 'Mypime', 'Efectividad 2025', 'Panaca'
+                'Correo Electrónico', 'Nombre Predio', 'Fecha Nacimiento', 'Circuitos de Comercialización', 'Mypime', 'Efectividad 2025', 'Panaca'
             ];
 
             // BOM (Byte Order Mark) forces Excel to read UTF-8 properly (accents)
@@ -3206,6 +3215,7 @@
                     `"${p.correo_electronico || '-'}"`,
                     `"${p.nombre_predio || '-'}"`,
                     p.fecha_nacimiento || '-',
+                    `"${(p.circuitos_comercializacion || '-').replace(/"/g, '""')}"`,
                     p.mypime == 1 ? 'Sí' : 'No',
                     p.efectividad_2025 == 1 ? 'Sí' : 'No',
                     p.panaca == 1 ? 'Sí' : 'No'
