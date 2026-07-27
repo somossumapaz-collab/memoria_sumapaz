@@ -3540,6 +3540,12 @@
             }
             if (data.vereda) setVal('edit-vereda', data.vereda);
 
+            // Comments and Observations
+            const comText = data.pdf_comentarios || data.comentarios || data.observaciones || (data.f26 ? data.f26.pdf_comentarios : null);
+            if (comText && comText !== 'NaN') {
+                setVal('pdf_comentarios', comText);
+            }
+
             // Module 1 (Estratégico)
             if (data.f01) {
                 setVal('f01_nombre_organizacion', data.f01.nombre_organizacion);

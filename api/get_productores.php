@@ -44,6 +44,7 @@ try {
             p.panaca,
             p.ferias,
             p.beneficiario_2026,
+            p.nivel_priorizacion,
             p.cuenca,
             p.cedula_pdf,
             CASE 

@@ -41,6 +41,18 @@ try {
 
     if ($pmapc) {
         $data = json_decode($pmapc['data'], true);
+        if (!is_array($data)) $data = [];
+
+        // Also fetch from pmapc_comentarios table if present
+        $stmtCom = $pdo->prepare("SELECT comentarios_texto FROM pmapc_comentarios WHERE productor_id = ? ORDER BY id DESC LIMIT 1");
+        $stmtCom->execute([$productor_id]);
+        $comRecord = $stmtCom->fetch();
+        if ($comRecord && !empty($comRecord['comentarios_texto']) && $comRecord['comentarios_texto'] !== 'NaN') {
+            if (empty($data['pdf_comentarios'])) {
+                $data['pdf_comentarios'] = $comRecord['comentarios_texto'];
+            }
+        }
+
         echo json_encode([
             'success' => true,
             'exists' => true,
