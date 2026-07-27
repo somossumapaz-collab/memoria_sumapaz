@@ -70,8 +70,13 @@ try {
             updated_at = CURRENT_TIMESTAMP
     ");
 
-    $nombreOrg = nan_val($dataArr['f01']['nombre_organizacion'] ?? ($dataArr['f01_nombre_organizacion'] ?? ''));
-    $estadoAct = nan_val($dataArr['f01']['estado_actual'] ?? ($dataArr['f01_estado_actual'] ?? ''));
+    $f01 = $dataArr['PMAPC_F01'] ?? ($dataArr['f01'] ?? []);
+    $f02 = $dataArr['PMAPC_F02'] ?? ($dataArr['f02'] ?? []);
+    $f03 = $dataArr['PMAPC_F03'] ?? ($dataArr['f03'] ?? []);
+    $f04 = $dataArr['PMAPC_F04'] ?? ($dataArr['f04'] ?? []);
+
+    $nombreOrg = nan_val($f01['nombre_unidad_productiva'] ?? ($f01['nombre_organizacion'] ?? ($dataArr['f01_nombre_organizacion'] ?? '')));
+    $estadoAct = nan_val($f01['estado_actual'] ?? ($dataArr['f01_estado_actual'] ?? ''));
 
     $stmtMaster->execute([$productor_id, $nombreOrg, $estadoAct, $pmapc_data_json]);
 
@@ -79,12 +84,6 @@ try {
     $stmtRegId = $pdo->prepare("SELECT id FROM pmapc_registros WHERE productor_id = ?");
     $stmtRegId->execute([$productor_id]);
     $registro_id = $stmtRegId->fetchColumn();
-
-    // B. Table pmapc_estrategico (F01, F02, F03, F04)
-    $f01 = $dataArr['f01'] ?? [];
-    $f02 = $dataArr['f02'] ?? [];
-    $f03 = $dataArr['f03'] ?? [];
-    $f04 = $dataArr['f04'] ?? [];
 
     $stmtEst = $pdo->prepare("
         INSERT INTO pmapc_estrategico (

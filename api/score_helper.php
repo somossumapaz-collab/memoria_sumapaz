@@ -512,6 +512,9 @@ function update_global_beneficiaries($pdo) {
     }
 
     // 4. Update status where needed
+    // Beneficiary status is manually locked to the user's explicit 150 list.
+    // Do not overwrite beneficiario_2026 automatically based on scores.
+    /*
     $stmt_update_to_1 = $pdo->prepare("UPDATE productores_sumapaz SET beneficiario_2026 = 1 WHERE id = ?");
     $stmt_update_to_0 = $pdo->prepare("UPDATE productores_sumapaz SET beneficiario_2026 = 0 WHERE id = ?");
 
@@ -521,17 +524,16 @@ function update_global_beneficiaries($pdo) {
         $in_top = in_array($pid, $top_152_ids);
 
         if ($in_top) {
-            // If in top 152, update to 1 if it is 0 (or anything other than 1 and 2)
             if ($status != 1 && $status != 2) {
                 $stmt_update_to_1->execute([$pid]);
             }
         } else {
-            // If not in top 152, update to 0 if it is 1
             if ($status == 1) {
                 $stmt_update_to_0->execute([$pid]);
             }
         }
     }
+    */
 }
 
 function recalculate_and_save_score($pdo, $productor_id, $global = true) {
@@ -918,7 +920,9 @@ function recalculate_beneficiarios($pdo) {
         }
     }
 
-    // Perform database updates
+    // Beneficiary status is manually locked to the user's explicit 150 list.
+    // Do not overwrite beneficiario_2026 automatically based on scores.
+    /*
     if (!empty($to_set_1)) {
         $in = implode(',', $to_set_1);
         $pdo->query("UPDATE productores_sumapaz SET beneficiario_2026 = 1 WHERE id IN ($in)");
@@ -927,5 +931,6 @@ function recalculate_beneficiarios($pdo) {
         $in = implode(',', $to_set_0);
         $pdo->query("UPDATE productores_sumapaz SET beneficiario_2026 = 0 WHERE id IN ($in)");
     }
+    */
 }
 ?>

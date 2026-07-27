@@ -1,7 +1,8 @@
 <?php
 /**
  * API Endpoint: Export/Download Complete PMAPC as PDF / Printable Document
- * Supports GET ?id=X (from DB) and POST with live form JSON.
+ * Fully compatible with the new schema format (PMAPC_F01 .. PMAPC_F26) from formato_Cargue.json
+ * as well as legacy f01..f26 formats.
  */
 
 require_once __DIR__ . '/db_config.php';
@@ -15,7 +16,7 @@ $producer = [
     'nombre_organizacion' => ''
 ];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     $rawInput = file_get_contents('php://input');
     $postInput = json_decode($rawInput, true) ?: $_POST;
     if (!empty($postInput['data'])) {
@@ -29,7 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if ($productor_id) {
-    // Fetch Producer Info from DB
     try {
         $stmtProd = $pdo->prepare("SELECT * FROM productores_sumapaz WHERE id = ?");
         $stmtProd->execute([$productor_id]);
@@ -49,10 +49,98 @@ if ($productor_id) {
     } catch (Exception $e) {}
 }
 
-// Helper to safely display value or 'NaN'
-function val($v, $default = 'NaN') {
+function val($v, $default = 'Pendiente de verificar') {
     if ($v === null || $v === '' || (is_string($v) && trim($v) === '')) return $default;
-    return htmlspecialchars(is_array($v) ? json_encode($v, JSON_UNESCAPED_UNICODE) : (string)$v);
+    if (is_array($v)) return htmlspecialchars(json_encode($v, JSON_UNESCAPED_UNICODE));
+    return htmlspecialchars((string)$v);
+}
+
+// Helper to retrieve format data supporting both PMAPC_FXX and fXX keys
+function getFormatData($data, $code) {
+    $codeUpper = strtoupper($code);
+    $codeLower = strtolower($code);
+
+    if (isset($data["PMAPC_$codeUpper"])) return $data["PMAPC_$codeUpper"];
+    if (isset($data["pmapc_$codeLower"])) return $data["pmapc_$codeLower"];
+    if (isset($data[$codeUpper])) return $data[$codeUpper];
+    if (isset($data[$codeLower])) return $data[$codeLower];
+
+    return null;
+}
+
+// Helper to extract rows list from a format object (e.g. perfiles_cliente_multiples_filas)
+function extractRowsFromFormat($formatData) {
+    if (empty($formatData)) return [];
+    if (is_array($formatData)) {
+        // If it's already an array list of rows
+        if (isset($formatData[0]) && is_array($formatData[0])) {
+            return $formatData;
+        }
+        // Search inside keys for *_multiples_filas or array properties
+        foreach ($formatData as $k => $v) {
+            if (is_array($v) && isset($v[0]) && is_array($v[0])) {
+                return $v;
+            }
+        }
+    }
+    return [];
+}
+
+// Helper to render format block
+function renderFormatBlock($formatCode, $formatTitle, $rawFormatData, $labelMap = []) {
+    if (empty($rawFormatData)) return;
+
+    echo '<div class="format-block">';
+    echo '<h2 class="format-header">FORMATO PMAPC-' . htmlspecialchars($formatCode) . ' - ' . htmlspecialchars($formatTitle) . '</h2>';
+
+    $rows = extractRowsFromFormat($rawFormatData);
+    $obs = is_array($rawFormatData) ? ($rawFormatData['observaciones_o_comentarios'] ?? null) : null;
+
+    if (!empty($rows)) {
+        // Multi-column table rendering
+        echo '<table><thead><tr>';
+        $keys = array_keys($rows[0]);
+        foreach ($keys as $k) {
+            $h = $labelMap[$k] ?? ucwords(str_replace('_', ' ', $k));
+            echo '<th>' . htmlspecialchars($h) . '</th>';
+        }
+        echo '</tr></thead><tbody>';
+        foreach ($rows as $r) {
+            if (!is_array($r)) continue;
+            echo '<tr>';
+            foreach ($keys as $k) {
+                echo '<td>' . val($r[$k] ?? '') . '</td>';
+            }
+            echo '</tr>';
+        }
+        echo '</tbody></table>';
+    } elseif (is_array($rawFormatData)) {
+        // Key-Value table rendering (2 columns)
+        echo '<table><thead><tr><th style="width: 35%;">Campo / Pregunta</th><th>Información Registrada</th></tr></thead><tbody>';
+        foreach ($rawFormatData as $k => $v) {
+            if ($k === 'observaciones_o_comentarios' || is_int($k)) continue;
+            
+            // If v is a nested object/array, render sub-fields
+            if (is_array($v) && !isset($v[0])) {
+                foreach ($v as $subK => $subV) {
+                    $h = $labelMap[$subK] ?? ucwords(str_replace('_', ' ', $subK));
+                    echo '<tr><td style="font-weight: 600; background-color: #F8FAFC;">' . htmlspecialchars($h) . '</td><td>' . val($subV) . '</td></tr>';
+                }
+            } else {
+                $h = $labelMap[$k] ?? ucwords(str_replace('_', ' ', $k));
+                echo '<tr><td style="font-weight: 600; background-color: #F8FAFC;">' . htmlspecialchars($h) . '</td><td>' . val($v) . '</td></tr>';
+            }
+        }
+        echo '</tbody></table>';
+    } elseif (is_string($rawFormatData) && trim($rawFormatData) !== '') {
+        echo '<div class="text-content-box">' . nl2br(htmlspecialchars($rawFormatData)) . '</div>';
+    }
+
+    if ($obs) {
+        echo '<div style="margin-top: 6px; font-style: italic; font-size: 10px; color: #555;"><strong>Observaciones del formato:</strong> ' . val($obs) . '</div>';
+    }
+
+    echo '</div>';
 }
 ?>
 <!DOCTYPE html>
@@ -66,109 +154,107 @@ function val($v, $default = 'NaN') {
             margin: 15mm;
         }
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            color: #1A1A1A;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222222;
             line-height: 1.5;
-            font-size: 12px;
-            background: #fff;
+            font-size: 11px;
+            background: #FFFFFF;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
         }
-        .header-bg {
-            background-color: #2E7D32;
+        .no-print-bar {
+            background: #2D372E;
             color: #FFFFFF;
-            padding: 20px;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: -10px -10px 15px -10px;
+        }
+        .btn-print {
+            background: #8E9A5E;
+            color: white;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .doc-title-box {
+            border: 2px solid #444F2F;
+            background-color: #F4F1EA;
+            padding: 16px 20px;
             border-radius: 6px;
             margin-bottom: 20px;
         }
-        .header-bg h1 {
-            margin: 0 0 5px 0;
-            font-size: 20px;
-        }
-        .header-bg p {
-            margin: 0;
-            font-size: 13px;
-            opacity: 0.9;
-        }
-        .card {
-            border: 1px solid #E0E0E0;
-            border-radius: 6px;
-            padding: 15px;
-            margin-bottom: 15px;
-            page-break-inside: avoid;
-        }
-        .card-title {
-            font-size: 14px;
-            font-weight: bold;
-            color: #2E7D32;
-            border-bottom: 2px solid #81C784;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
-        }
-        .grid-2 {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .grid-item {
-            flex: 1 1 45%;
-            margin-bottom: 8px;
-        }
-        .label {
-            font-weight: bold;
-            color: #555;
-            display: block;
-            font-size: 11px;
+        .doc-title-box h1 {
+            color: #444F2F;
+            margin: 0 0 6px 0;
+            font-size: 16px;
+            font-weight: 700;
             text-transform: uppercase;
         }
-        .value {
+        .doc-title-box p {
+            margin: 3px 0;
+            font-size: 11.5px;
+            color: #333333;
+        }
+        .format-block {
+            margin-bottom: 22px;
+            page-break-inside: avoid;
+        }
+        .format-header {
             font-size: 12px;
-            color: #000;
-            word-wrap: break-word;
+            font-weight: 700;
+            color: #444F2F;
+            background-color: #EFEBE4;
+            padding: 8px 12px;
+            border-left: 5px solid #444F2F;
+            margin: 0 0 8px 0;
+            text-transform: uppercase;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 8px;
-            font-size: 11px;
+            font-size: 10.5px;
+            margin-top: 4px;
         }
         table th {
-            background: #F1F8E9;
-            color: #2E7D32;
+            background-color: #444F2F;
+            color: #FFFFFF;
             text-align: left;
-            padding: 6px;
-            border: 1px solid #C8E6C9;
+            padding: 7px 10px;
+            border: 1px solid #333C23;
+            font-weight: 700;
+            font-size: 10.5px;
         }
         table td {
-            padding: 6px;
-            border: 1px solid #E0E0E0;
+            padding: 6px 10px;
+            border: 1px solid #D0D0D0;
             word-wrap: break-word;
+            vertical-align: top;
+        }
+        table tbody tr:nth-child(even) {
+            background-color: #F9F8F6;
+        }
+        .text-content-box {
+            background-color: #F9F8F6;
+            border: 1px solid #E0E0E0;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-size: 11px;
+            line-height: 1.5;
         }
         .comments-box {
             background-color: #FFFDE7;
-            border: 1px solid #FFF59D;
-            padding: 12px;
+            border: 1px solid #FFE082;
+            color: #5D4037;
+            padding: 12px 16px;
             border-radius: 6px;
-            margin-top: 15px;
+            font-size: 11px;
             white-space: pre-wrap;
-        }
-        .no-print-bar {
-            background: #333;
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: -20px -20px 20px -20px;
-        }
-        .btn-print {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
+            line-height: 1.5;
         }
         @media print {
             .no-print-bar { display: none; }
@@ -179,184 +265,111 @@ function val($v, $default = 'NaN') {
 <body>
 
 <div class="no-print-bar">
-    <span>Documento Oficial PMAPC - Somos Sumapaz</span>
+    <span>Documento Oficial PMAPC — Somos Sumapaz</span>
     <button class="btn-print" onclick="window.print()">Guardar como PDF / Imprimir</button>
 </div>
 
-<div class="header-bg">
-    <h1>Plan de Manejo Ambiental, Productivo y Comercial (PMAPC)</h1>
-    <p>Unidad Productiva: <strong><?php echo val($producer['nombre_organizacion'] ?? ($data['f01']['nombre_organizacion'] ?? ($data['f01_nombre_organizacion'] ?? 'Unidad Productiva'))); ?></strong></p>
-    <p>Productor(a): <?php echo val($producer['nombre_completo']); ?> | Vereda: <?php echo val($producer['vereda']); ?></p>
+<div class="doc-title-box">
+    <h1>PLAN DE MANEJO AMBIENTAL, PRODUCTIVO Y COMERCIAL (PMAPC)</h1>
+    <p><strong>Unidad Productiva / Organización:</strong> <?php echo val($data['nombre_organizacion'] ?? ($producer['nombre_organizacion'] ?? ($data['PMAPC_F01']['nombre_unidad_productiva'] ?? ($data['f01']['nombre_organizacion'] ?? 'Unidad Productiva')))); ?></p>
+    <p><strong>Productor(a):</strong> <?php echo val($producer['nombre_completo']); ?> &nbsp;|&nbsp; <strong>Vereda:</strong> <?php echo val($producer['vereda']); ?> &nbsp;|&nbsp; <strong>Cédula:</strong> <?php echo val($producer['numero_documento'] ?? 'No registrado'); ?></p>
+    <p><strong>Fecha de elaboración:</strong> <?php echo val($data['fecha_cargue'] ?? date('d/m/Y')); ?></p>
 </div>
 
-<!-- MÓDULO 1 -->
-<div class="card">
-    <div class="card-title">Módulo 1: Identificación y Direccionamiento Estratégico</div>
-    <div class="grid-2">
-        <div class="grid-item">
-            <span class="label">Nombre de la Organización</span>
-            <span class="value"><?php echo val($data['f01']['nombre_organizacion'] ?? ($data['f01_nombre_organizacion'] ?? '')); ?></span>
-        </div>
-        <div class="grid-item">
-            <span class="label">Tipo de Actividad</span>
-            <span class="value"><?php echo val($data['f01']['tipo_actividad'] ?? ($data['f01_tipo_actividad'] ?? '')); ?></span>
-        </div>
-        <div class="grid-item">
-            <span class="label">Ubicación Específica</span>
-            <span class="value"><?php echo val($data['f01']['ubicacion'] ?? ($data['f01_ubicacion'] ?? '')); ?></span>
-        </div>
-        <div class="grid-item">
-            <span class="label">Coordenadas</span>
-            <span class="value"><?php echo val($data['f01']['coordenadas'] ?? ($data['f01_coordenadas'] ?? '')); ?></span>
-        </div>
-        <div class="grid-item">
-            <span class="label">Producto Principal</span>
-            <span class="value"><?php echo val($data['f01']['producto_principal'] ?? ($data['f01_producto_principal'] ?? '')); ?></span>
-        </div>
-        <div class="grid-item">
-            <span class="label">Estado Actual</span>
-            <span class="value"><?php echo val($data['f01']['estado_actual'] ?? ($data['f01_estado_actual'] ?? '')); ?></span>
-        </div>
-    </div>
-    
-    <div style="margin-top: 10px;">
-        <span class="label">Misión</span>
-        <div class="value"><?php echo val($data['f02']['mision'] ?? ($data['f02_mision'] ?? '')); ?></div>
-    </div>
-    <div style="margin-top: 8px;">
-        <span class="label">Visión</span>
-        <div class="value"><?php echo val($data['f02']['vision'] ?? ($data['f02_vision'] ?? '')); ?></div>
-    </div>
-    <div style="margin-top: 8px;">
-        <span class="label">Valores</span>
-        <div class="value"><?php echo val($data['f02']['valores'] ?? ($data['f02_valores'] ?? '')); ?></div>
-    </div>
-</div>
+<!-- Render Formats F01 to F26 -->
+<?php
+$formatsList = [
+    'F01' => 'IDENTIDAD DE LA UNIDAD PRODUCTIVA',
+    'F02' => 'DIRECCIONAMIENTO ESTRATÉGICO',
+    'F03' => 'PROPUESTA DE VALOR PRODUCTIVA, COMERCIAL Y AMBIENTAL',
+    'F04' => 'ANÁLISIS FODA SISTÉMICO',
+    'F05' => 'PERFIL DE CLIENTES, CONSUMIDORES Y COMPRADORES',
+    'F06' => 'PROBLEMA DEL MERCADO Y NECESIDADES',
+    'F07' => 'ANÁLISIS DE COOPERACIÓN TERRITORIAL Y ALIANZAS PRODUCTIVAS',
+    'F08' => 'VALIDACIÓN DE MERCADO Y ACEPTACIÓN DEL SERVICIO',
+    'F09' => 'FICHA TÉCNICA DEL PRODUCTO O SERVICIO',
+    'F10' => 'PROCESO DE PRESTACIÓN DEL SERVICIO / PRODUCCIÓN',
+    'F11' => 'INSUMOS Y MATERIAS PRIMAS NECESARIAS',
+    'F12' => 'CAPACIDAD PRODUCTIVA E INFRAESTRUCTURA',
+    'F12A' => 'LÍMITES AMBIENTALES Y CAPACIDAD PRODUCTIVA',
+    'F12B' => 'IDENTIFICACIÓN DE RIESGOS DE SEGURIDAD Y SALUD EN EL TRABAJO (SG-SST)',
+    'F12C' => 'PLAN BÁSICO DE ACCIONES SG-SST',
+    'F13' => 'CANALES DE VENTA Y COSTOS FIJOS',
+    'F14' => 'ESTRATEGIA DE PRECIOS Y MARGEN DE COMERCIALIZACIÓN',
+    'F15' => 'PROYECCIÓN DE VENTAS E INGRESOS',
+    'F15A' => 'ESTRATEGIA DE FIDELIZACIÓN DE CLIENTES',
+    'F15B' => 'ESTRATEGIA DE LOGÍSTICA DE ÚLTIMA MILLA',
+    'F15C' => 'TRAZABILIDAD DIGITAL VÍA QR',
+    'F16' => 'INVERSIÓN INICIAL Y REQUERIDA',
+    'F17' => 'ESTRUCTURA DE COSTOS Y GASTOS OPERATIVOS',
+    'F18' => 'PROYECCIÓN DE FLUJO DE CAJA E INDICADORES',
+    'F19' => 'INDICADORES DE HUELLA HÍDRICA Y DE CARBONO / SEGUIMIENTO',
+    'F20' => 'ECONOMÍA CIRCULAR Y RESIDUOS',
+    'F21' => 'EVALUACIÓN Y MATRIZ DE MADUREZ AMBIENTAL Y REGENERATIVA',
+    'F22' => 'PLAN DE MANEJO, MITIGACIÓN Y MEJORA AMBIENTAL',
+    'F22A' => 'ADAPTACIÓN AL CAMBIO CLIMÁTICO',
+    'F23' => 'MATRIZ DE RIESGOS INTEGRALES',
+    'F24' => 'PLAN DE ACCIÓN Y COMPROMISOS SELLO SOMOS SUMAPAZ',
+    'F25' => 'INDICADORES INTEGRALES Y ANEXOS',
+    'F26' => 'MATRIZ DE COHERENCIA SISTÉMICA Y EVALUACIÓN TÉCNICA'
+];
 
-<!-- FODA -->
-<div class="card">
-    <div class="card-title">FODA Sistémico (Formatos F04)</div>
-    <div class="grid-2">
-        <div class="grid-item">
-            <span class="label">Fortalezas</span>
-            <div class="value"><?php echo val($data['f04']['fortalezas'] ?? ($data['f04_fortalezas'] ?? '')); ?></div>
-        </div>
-        <div class="grid-item">
-            <span class="label">Oportunidades</span>
-            <div class="value"><?php echo val($data['f04']['oportunidades'] ?? ($data['f04_oportunidades'] ?? '')); ?></div>
-        </div>
-        <div class="grid-item">
-            <span class="label">Debilidades</span>
-            <div class="value"><?php echo val($data['f04']['debilidades'] ?? ($data['f04_debilidades'] ?? '')); ?></div>
-        </div>
-        <div class="grid-item">
-            <span class="label">Amenazas</span>
-            <div class="value"><?php echo val($data['f04']['amenazas'] ?? ($data['f04_amenazas'] ?? '')); ?></div>
-        </div>
-    </div>
-</div>
+$labelMaps = [
+    'nombre_unidad_productiva' => 'Nombre de la Unidad Productiva',
+    'persona_entrevistada' => 'Persona entrevistada',
+    'tipo_actividad' => 'Tipo de actividad',
+    'ubicacion_especifica' => 'Ubicación específica',
+    'producto_servicio_principal' => 'Producto / servicio principal',
+    'estado_actual' => 'Estado actual',
+    'personas_vinculadas' => 'Personas vinculadas',
+    'coordenadas' => 'Coordenadas geográficas',
+    'descripcion_general' => 'Descripción general',
+    'mision' => 'Misión',
+    'vision' => 'Visión',
+    'valores' => 'Valores institucionales',
+    'por_que_adquieren_el_servicio' => '¿Por qué adquieren el servicio/producto?',
+    'beneficio_cliente' => 'Beneficio para el cliente / solución',
+    'diferencial' => 'Diferencial competitivo',
+    'valor_ambiental' => 'Valor agregado ambiental',
+    'valor_social_comunitario' => 'Valor social o comunitario',
+    'evidencia' => 'Evidencias registradas',
+    'que_buscan_los_compradores' => '¿Qué buscan los compradores?',
+    'como_se_conoce_la_necesidad' => '¿Cómo se conoce esa necesidad?',
+    'quienes_compran_o_podrian_comprar' => '¿Quiénes compran o podrían comprar?',
+    'ventaja_territorial' => 'Ventaja territorial Sumapaz / orgánicos',
+    'cambios_demanda' => 'Cambios recientes en la demanda',
+    'dificultades' => 'Dificultades principales de venta',
+    'produccion_mensual_real' => 'Producción mensual real',
+    'produccion_normal' => 'Producción normal de referencia',
+    'capacidad_mensual_teorica' => 'Capacidad mensual teórica',
+    'produccion_maxima_posible' => 'Producción máxima posible',
+    'area_numero_habitaciones' => 'Área / N° de habitaciones / lote',
+    'limitantes_productivos' => 'Limitantes técnico-productivos',
+    'limitantes_ambientales' => 'Limitantes ambientales',
+    'capacidad_instalada' => 'Capacidad instalada',
+    'capacidad_utilizada' => 'Capacidad utilizada actual',
+    'produce_mismo_todo_ano' => '¿Produce lo mismo todo el año?',
+    'alcanza_para_demanda' => '¿Alcanza para la demanda?',
+    'necesidades_aumentar_sosteniblemente' => 'Necesidades para aumentar sosteniblemente'
+];
 
-<!-- PRODUCTOS F09 -->
-<?php if (!empty($data['f09']) && is_array($data['f09'])): ?>
-<div class="card">
-    <div class="card-title">Módulo 3: Ficha Técnica de Productos (F09)</div>
-    <table>
-        <thead>
-            <tr>
-                <th>Producto</th>
-                <th>Descripción</th>
-                <th>Unidad</th>
-                <th>Insumos</th>
-                <th>Presentación</th>
-                <th>Diferencial</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($data['f09'] as $p): ?>
-            <tr>
-                <td><?php echo val($p['producto'] ?? ''); ?></td>
-                <td><?php echo val($p['descripcion'] ?? ''); ?></td>
-                <td><?php echo val($p['unidad'] ?? ''); ?></td>
-                <td><?php echo val($p['insumos'] ?? ''); ?></td>
-                <td><?php echo val($p['presentacion'] ?? ''); ?></td>
-                <td><?php echo val($p['diferencial'] ?? ''); ?></td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-</div>
-<?php endif; ?>
+foreach ($formatsList as $fCode => $fTitle) {
+    $fData = getFormatData($data, $fCode);
+    if ($fData !== null) {
+        renderFormatBlock($fCode, $fTitle, $fData, $labelMaps);
+    }
+}
+?>
 
-<!-- INSUMOS F11 -->
-<?php if (!empty($data['f11']) && is_array($data['f11'])): ?>
-<div class="card">
-    <div class="card-title">Insumos Requeridos (F11)</div>
-    <table>
-        <thead>
-            <tr>
-                <th>Insumo</th>
-                <th>Cantidad</th>
-                <th>Frecuencia</th>
-                <th>Proveedor</th>
-                <th>Toxicidad</th>
-                <th>Manejo Sostenible</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($data['f11'] as $ins): ?>
-            <tr>
-                <td><?php echo val($ins['insumo'] ?? ''); ?></td>
-                <td><?php echo val($ins['cantidad'] ?? ''); ?></td>
-                <td><?php echo val($ins['frecuencia'] ?? ''); ?></td>
-                <td><?php echo val($ins['proveedor'] ?? ''); ?></td>
-                <td><?php echo val($ins['toxicidad'] ?? ''); ?></td>
-                <td><?php echo val($ins['manejo'] ?? ''); ?></td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-</div>
-<?php endif; ?>
-
-<!-- INVERSIONES F16 -->
-<?php if (!empty($data['f16']) && is_array($data['f16'])): ?>
-<div class="card">
-    <div class="card-title">Módulo 6: Inversión Inicial Requerida (F16)</div>
-    <table>
-        <thead>
-            <tr>
-                <th>Descripción</th>
-                <th>Valor Unitario</th>
-                <th>Cantidad</th>
-                <th>Total</th>
-                <th>Fuente</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($data['f16'] as $inv): ?>
-            <tr>
-                <td><?php echo val($inv['desc'] ?? ($inv['descripcion'] ?? '')); ?></td>
-                <td><?php echo val($inv['valunit'] ?? ''); ?></td>
-                <td><?php echo val($inv['cant'] ?? ''); ?></td>
-                <td><?php echo val($inv['total'] ?? ''); ?></td>
-                <td><?php echo val($inv['fuente'] ?? ''); ?></td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-</div>
-<?php endif; ?>
-
-<!-- COMENTARIOS Y OBSERVACIONES DEL PDF -->
-<div class="card">
-    <div class="card-title">Comentarios, Observaciones e Información Pendiente de Verificar</div>
+<!-- COMENTARIOS Y OBSERVACIONES DE VERIFICACIÓN -->
+<div class="format-block">
+    <h2 class="format-header">COMENTARIOS, OBSERVACIONES E INFORMACIÓN PENDIENTE DE VERIFICAR</h2>
     <div class="comments-box">
-        <?php echo val($data['pdf_comentarios'] ?? ($data['comentarios'] ?? 'Sin comentarios registrados.')); ?>
+        <?php echo val($data['pdf_comentarios'] ?? ($data['comentarios'] ?? 'Sin observaciones adicionales.')); ?>
     </div>
 </div>
 
 <script>
-    // Trigger browser print to download as PDF immediately
     window.onload = function() {
         setTimeout(function() {
             window.print();
