@@ -1,8 +1,8 @@
 <?php
 /**
  * API Endpoint: Export/Download Complete PMAPC as PDF / Printable Document
- * Styled and formatted to render all formats F01 to F26 matching exact column specifications
- * (including 3-column F08, multi-column F12A/B/C, and F13..F26 tables & single-register notes).
+ * Styled and formatted to render 100% of all data from formats F01 to F26 matching exact column specifications
+ * (including full F08 5-columns, multi-column F12A/B/C, F13..F26 tables, and Dict/String callouts).
  */
 
 require_once __DIR__ . '/db_config.php';
@@ -53,7 +53,20 @@ if ($productor_id) {
 function val($v, $default = 'Pendiente de verificar') {
     if ($v === null || $v === '' || (is_string($v) && trim($v) === '')) return $default;
     if (is_bool($v)) return $v ? 'Sí' : 'No';
-    if (is_array($v)) return htmlspecialchars(json_encode($v, JSON_UNESCAPED_UNICODE));
+    if (is_array($v)) {
+        if (empty($v)) return $default;
+        // If it's a key-value associative dict, format nicely
+        if (!isset($v[0])) {
+            $parts = [];
+            foreach ($v as $k => $val_item) {
+                if (!empty($val_item)) {
+                    $parts[] = '<strong>' . htmlspecialchars(ucwords(str_replace('_', ' ', $k))) . ':</strong> ' . htmlspecialchars((string)$val_item);
+                }
+            }
+            return !empty($parts) ? implode('<br>', $parts) : $default;
+        }
+        return htmlspecialchars(json_encode($v, JSON_UNESCAPED_UNICODE));
+    }
     return htmlspecialchars((string)$v);
 }
 
@@ -95,98 +108,59 @@ function renderFormatBlock($formatCode, $formatTitle, $rawFormatData, $labelMap 
     echo '<div class="format-block">';
     echo '<h2 class="format-header">FORMATO PMAPC-' . htmlspecialchars($formatCode) . ' - ' . htmlspecialchars($formatTitle) . '</h2>';
 
-    // Special rendering for F08: 3-column table (Método | A quién | Resultado)
-    if (strtoupper($formatCode) === 'F08') {
-        $rowLists = extractAllRowListsFromFormat($rawFormatData);
-        $f08Rows = reset($rowLists) ?: [];
+    $rowLists = extractAllRowListsFromFormat($rawFormatData);
 
-        if (!empty($f08Rows)) {
+    if (!empty($rowLists)) {
+        foreach ($rowLists as $listKey => $rows) {
+            if ($listKey !== 'datos') {
+                $listTitle = ucwords(str_replace(['_multiples_filas', '_'], ['', ' '], $listKey));
+                echo '<h3 style="font-size: 11px; color: #444F2F; margin: 8px 0 4px 0;">' . htmlspecialchars($listTitle) . '</h3>';
+            }
             echo '<table><thead><tr>';
-            echo '<th style="width: 25%;">Método</th>';
-            echo '<th style="width: 35%;">A quién</th>';
-            echo '<th>Resultado</th>';
+            $keys = array_keys($rows[0]);
+            foreach ($keys as $k) {
+                $h = $labelMap[$k] ?? ucwords(str_replace('_', ' ', $k));
+                echo '<th>' . htmlspecialchars($h) . '</th>';
+            }
             echo '</tr></thead><tbody>';
-            foreach ($f08Rows as $r) {
+            foreach ($rows as $r) {
                 if (!is_array($r)) continue;
-                $metodo = $r['metodo'] ?? ($r['canal'] ?? '');
-                $aQuien = $r['a_quien'] ?? ($r['quien'] ?? '');
-                $resultado = $r['resultado'] ?? ($r['observaciones'] ?? '');
                 echo '<tr>';
-                echo '<td style="font-weight: 600;">' . val($metodo) . '</td>';
-                echo '<td>' . val($aQuien) . '</td>';
-                echo '<td>' . val($resultado) . '</td>';
+                foreach ($keys as $k) {
+                    echo '<td>' . val($r[$k] ?? '') . '</td>';
+                }
                 echo '</tr>';
             }
             echo '</tbody></table>';
-        } elseif (is_array($rawFormatData)) {
-            // Render key-value or sub-fields
-            echo '<table><thead><tr><th style="width: 25%;">Método</th><th style="width: 35%;">A quién</th><th>Resultado</th></tr></thead><tbody>';
-            foreach ($rawFormatData as $k => $v) {
-                if ($k === 'observaciones_o_comentarios' || is_int($k)) continue;
-                if (is_array($v)) {
-                    $m = $v['metodo'] ?? ucwords(str_replace('_', ' ', $k));
-                    $q = $v['a_quien'] ?? ($v['quien'] ?? '');
-                    $res = $v['resultado'] ?? '';
-                    echo '<tr><td style="font-weight: 600;">' . val($m) . '</td><td>' . val($q) . '</td><td>' . val($res) . '</td></tr>';
-                }
-            }
-            echo '</tbody></table>';
         }
-    } else {
-        $rowLists = extractAllRowListsFromFormat($rawFormatData);
-
-        if (!empty($rowLists)) {
-            foreach ($rowLists as $listKey => $rows) {
-                if ($listKey !== 'datos') {
-                    $listTitle = ucwords(str_replace(['_multiples_filas', '_'], ['', ' '], $listKey));
-                    echo '<h3 style="font-size: 11px; color: #444F2F; margin: 8px 0 4px 0;">' . htmlspecialchars($listTitle) . '</h3>';
+    } elseif (is_array($rawFormatData)) {
+        // Key-Value table rendering (2 columns)
+        echo '<table><thead><tr><th style="width: 35%;">Campo / Pregunta</th><th>Información Registrada</th></tr></thead><tbody>';
+        foreach ($rawFormatData as $k => $v) {
+            if ($k === 'observaciones_o_comentarios' || str_contains($k, '_registro_unico') || is_int($k)) continue;
+            
+            if (is_array($v) && !isset($v[0])) {
+                foreach ($v as $subK => $subV) {
+                    $h = $labelMap[$subK] ?? ucwords(str_replace('_', ' ', $subK));
+                    echo '<tr><td style="font-weight: 600; background-color: #F8FAFC;">' . htmlspecialchars($h) . '</td><td>' . val($subV) . '</td></tr>';
                 }
-                echo '<table><thead><tr>';
-                $keys = array_keys($rows[0]);
-                foreach ($keys as $k) {
-                    $h = $labelMap[$k] ?? ucwords(str_replace('_', ' ', $k));
-                    echo '<th>' . htmlspecialchars($h) . '</th>';
-                }
-                echo '</tr></thead><tbody>';
-                foreach ($rows as $r) {
-                    if (!is_array($r)) continue;
-                    echo '<tr>';
-                    foreach ($keys as $k) {
-                        echo '<td>' . val($r[$k] ?? '') . '</td>';
-                    }
-                    echo '</tr>';
-                }
-                echo '</tbody></table>';
+            } else {
+                $h = $labelMap[$k] ?? ucwords(str_replace('_', ' ', $k));
+                echo '<tr><td style="font-weight: 600; background-color: #F8FAFC;">' . htmlspecialchars($h) . '</td><td>' . val($v) . '</td></tr>';
             }
-        } elseif (is_array($rawFormatData)) {
-            // Key-Value table rendering (2 columns)
-            echo '<table><thead><tr><th style="width: 35%;">Campo / Pregunta</th><th>Información Registrada</th></tr></thead><tbody>';
-            foreach ($rawFormatData as $k => $v) {
-                if ($k === 'observaciones_o_comentarios' || str_contains($k, '_registro_unico') || is_int($k)) continue;
-                
-                if (is_array($v) && !isset($v[0])) {
-                    foreach ($v as $subK => $subV) {
-                        $h = $labelMap[$subK] ?? ucwords(str_replace('_', ' ', $subK));
-                        echo '<tr><td style="font-weight: 600; background-color: #F8FAFC;">' . htmlspecialchars($h) . '</td><td>' . val($subV) . '</td></tr>';
-                    }
-                } else {
-                    $h = $labelMap[$k] ?? ucwords(str_replace('_', ' ', $k));
-                    echo '<tr><td style="font-weight: 600; background-color: #F8FAFC;">' . htmlspecialchars($h) . '</td><td>' . val($v) . '</td></tr>';
-                }
-            }
-            echo '</tbody></table>';
-        } elseif (is_string($rawFormatData) && trim($rawFormatData) !== '') {
-            echo '<div class="text-content-box">' . nl2br(htmlspecialchars($rawFormatData)) . '</div>';
         }
+        echo '</tbody></table>';
+    } elseif (is_string($rawFormatData) && trim($rawFormatData) !== '') {
+        echo '<div class="text-content-box">' . nl2br(htmlspecialchars($rawFormatData)) . '</div>';
     }
 
-    // Render any single-register note (e.g. recomendacion_costeo_registro_unico)
+    // Render any single-register note (e.g. recomendacion_costeo_registro_unico, conclusion_registro_unico)
     if (is_array($rawFormatData)) {
         foreach ($rawFormatData as $k => $v) {
             if (str_contains($k, '_registro_unico') && !empty($v)) {
                 $noteTitle = ucwords(str_replace(['_registro_unico', '_'], ['', ' '], $k));
-                echo '<div class="single-register-box" style="margin-top: 8px; background-color: #F4F1EA; border-left: 4px solid #8E9A5E; padding: 8px 12px; border-radius: 4px;">';
-                echo '<strong style="color: #444F2F;">' . htmlspecialchars($noteTitle) . ':</strong> ' . nl2br(val($v));
+                echo '<div class="single-register-box" style="margin-top: 8px; background-color: #F4F1EA; border-left: 4px solid #8E9A5E; padding: 8px 12px; border-radius: 4px; font-size: 11px;">';
+                echo '<strong style="color: #444F2F; font-size: 11.5px;">' . htmlspecialchars($noteTitle) . ':</strong><br>' . val($v);
                 echo '</div>';
             }
         }
@@ -372,6 +346,11 @@ $formatsList = [
 ];
 
 $labelMaps = [
+    'metodo' => 'Método / Canal',
+    'a_quien' => 'A quién',
+    'resultado' => 'Resultado Obtenido',
+    'motivacion' => 'Motivación de Compra',
+    'evidencia' => 'Evidencia Registrada',
     'nombre_unidad_productiva' => 'Nombre de la Unidad Productiva',
     'persona_entrevistada' => 'Persona entrevistada',
     'tipo_actividad' => 'Tipo de actividad',
@@ -389,7 +368,6 @@ $labelMaps = [
     'diferencial' => 'Diferencial competitivo',
     'valor_ambiental' => 'Valor agregado ambiental',
     'valor_social_comunitario' => 'Valor social o comunitario',
-    'evidencia' => 'Evidencias registradas',
     'que_buscan_los_compradores' => '¿Qué buscan los compradores?',
     'como_se_conoce_la_necesidad' => '¿Cómo se conoce esa necesidad?',
     'quienes_compran_o_podrian_comprar' => '¿Quiénes compran o podrían comprar?',
@@ -409,7 +387,6 @@ $labelMaps = [
     'alcanza_para_demanda' => '¿Alcanza para la demanda?',
     'necesidades_aumentar_sosteniblemente' => 'Necesidades para aumentar sosteniblemente',
     'condicion' => 'Condición Ambiental',
-    'estado_actual' => 'Estado Actual',
     'limite_restriccion' => 'Límite / Restricción',
     'afectacion' => 'Afectación',
     'efecto' => 'Efecto / Riesgo',
