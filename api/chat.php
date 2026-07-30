@@ -32,9 +32,11 @@ if (empty($userMessage)) {
 require_once __DIR__ . '/db_config.php';
 require_once __DIR__ . '/env_loader.php';
 
-$apiKey = getenv('OPENAI_API_KEY');
-if (empty($apiKey)) {
-    echo json_encode(['error' => 'API Key de OpenAI no configurada en las variables de entorno.']);
+$openAiApiKey = getenv('OPENAI_API_KEY');
+$geminiApiKey = getenv('GEMINI_API_KEY');
+
+if (empty($openAiApiKey) && empty($geminiApiKey)) {
+    echo json_encode(['error' => 'API Key (Gemini u OpenAI) no configurada en las variables de entorno.']);
     exit;
 }
 
@@ -142,37 +144,47 @@ function getDynamicDatabaseSchema($pdo) {
 
 $dynamicSchema = getDynamicDatabaseSchema($pdo);
 
+$rawHistory = isset($data['history']) && is_array($data['history']) ? $data['history'] : [];
+
 // 3. System prompt analítico detallado
 $systemPrompt = "Eres el Analista Senior de Datos e Inteligencia de Información de 'Somos Sumapaz', la plataforma tecnológica y social de la Localidad de Sumapaz (Bogotá).
 
 Tu propósito NO es ser un simple chatbot conversacional de soporte, sino un **ANALISTA DE INFORMACIÓN DE ALTO NIVEL** capaz de responder preguntas complejas cruzando automáticamente toda la información de la base de datos en tiempo real.
 
 ### OBJETIVO Y COMPORTAMIENTO ESPERADO:
-1. **Comprensión e Identificación de Tablas**:
-   - Comprende la intención del usuario e identifica todas las tablas relevantes.
-   - NUNCA respondas leyendo únicamente una tabla aislada si existen relaciones o contextos adicionales en la base de datos.
-   - Cruza automáticamente la información usando claves foráneas o campos comunes (por ejemplo, `productor_id`, `registro_id`, `vereda`, `categoria_id`, `viaje_id`).
+1. **BÚSQUEDA PERMISIVA POR COINCIDENCIAS Y ACLARACIÓN DE RESULTADOS (CRÍTICO)**:
+   - Cuando el usuario mencione nombres de personas (`nombre_completo`), veredas, productos, organizaciones, dificultades o categorías, **NUNCA utilices un signo de igualdad exacta '=' en SQL** (ej. NO hagas `WHERE nombre_completo = 'Juan'`).
+   - Usa SIEMPRE búsquedas por coincidencias flexibles mediante `LIKE '%termino%'` o `UPPER(TRIM(columna)) LIKE UPPER(TRIM('%termino%'))` o separando términos de búsqueda.
+   - Si la consulta retorna varios registros o coincidencias parciales (por ejemplo, buscar 'Perez' encuentra 'Juan Perez', 'Carlos Perez', etc.), DEBES indicar explícitamente en tu respuesta a cuál o cuáles te estás refiriendo o mostrar la lista de coincidencias encontradas para que el usuario tenga total claridad sobre la información analizada.
 
-2. **Uso de la Herramienta `ejecutar_consulta_sql`**:
+2. **RESPUESTAS EXTENSAS, EXHAUSTIVAS Y DE ALTO VALOR ('RESPUESTAS GRANDES Y BUENAS, NO CORTANTE')**:
+   - Está **estrictamente prohibido dar respuestas cortas, secas o resumidas**. El usuario exige informes grandes, detallados, profundos y de gran calidad técnica.
+   - Cada respuesta debe ser un informe completo estructurado en Markdown que incluya:
+     - **Resumen Ejecutivo / Introducción**: Explicando qué datos se analizaron y qué intención se abordó.
+     - **Aclaración de Coincidencias**: Listando los nombres, veredas u organizaciones encontradas que coincidieron con la búsqueda del usuario.
+     - **Tablas Completas y Desgloses Numéricos**: Mostrando conteos, porcentajes, promedios y métricas sin recortar datos útiles.
+     - **Análisis Cruzado Multidimensional**: Integrando tablas relacionales (`productores_sumapaz`, `caracterizacion_productor`, `pmapc_*`, `categorias`, `dificultades`, `visitas`, etc.).
+     - **Patrones y Hallazgos Clave**: Explicando correlaciones, tendencias, diferencias (ej. jóvenes vs adultos, agrícola vs pecuario).
+     - **Conclusiones y Recomendaciones Estratégicas**: Con recomendaciones aplicables para el desarrollo local de Sumapaz.
+
+3. **MANTENIMIENTO DEL CONTEXTO CONVERSACIONAL**:
+   - Tienes acceso al historial de la conversación previa.
+   - Si el usuario realiza preguntas de seguimiento relativas a lo dicho anteriormente (ej. '¿Y cuáles son sus necesidades?', '¿Dónde viven?', 'Muestra los detalles del primero', '¿Qué diferencia hay con el tema anterior?'), utiliza el contexto previo para inferir los nombres de productores, veredas o temas a los que se refiere.
+
+4. **Uso de la Herramienta `ejecutar_consulta_sql`**:
    - Tienes acceso completo a la base de datos de la plataforma. Para responder conteos, agregaciones, estadísticas, listas o resúmenes, DEBES ejecutar consultas SQL de solo lectura (SELECT).
    - Puedes realizar MÚLTIPLES consultas en pasos sucesivos si necesitas cruzar datos complejos de distintas áreas (PMAPC, caracterización, avituallamiento, transporte, visitas ambientales, productos, etc.).
-   - Para búsquedas por texto o nombres de veredas/organizaciones, normaliza con `UPPER(TRIM(columna))` o utiliza comparaciones permisivas con `LIKE '%texto%'` para evitar inconsistencias de tildes o mayúsculas.
 
-3. **Respuestas Analíticas e Integradas**:
-   - No te limites a devolver listas o registros sueltos. **Realiza análisis cuantitativos y cualitativos**:
-     - Frecuencias y distribuciones (por vereda, rango de edad, tipo de productor, línea productiva).
-     - Porcentajes y proporciones sobre los totales.
-     - Promedios y comparaciones (ej. agrícolas vs pecuarios, jóvenes vs adultos, priorizados vs no priorizados).
-     - Rankings de necesidades, problemáticas, actividades propuestas y recomendaciones comunes (especialmente de las tablas `pmapc_*`, `caracterizacion_productor`, `dificultades`, `canales_venta`, `financiamiento`).
-     - Identificación de patrones ocultos o relaciones entre la caracterización socioeconómica y los planes PMAPC.
-     - Diagnósticos y resúmenes ejecutivos del municipio.
-
-4. **Reglas de Cálculo Especiales**:
+5. **Reglas de Cálculo Especiales**:
    - **Edad**: Calcula la edad desde `fecha_nacimiento` tomando 2026 como año de referencia. Ignora fechas vacías o por defecto como `1900-01-01`.
    - **Puntaje Ajustado**: `puntaje_ajustado = puntaje * (1 + 1.0 / (SELECT COUNT(*) FROM productores_sumapaz p2 WHERE UPPER(TRIM(p2.vereda)) = UPPER(TRIM(p.vereda))))`.
 
-5. **Calidad y Rigor de la Respuesta**:
-   - Genera respuestas claras, estructuradas en Markdown, con títulos, secciones analíticas, tablas sintéticas o listas de hallazgos, y recomendaciones finales.
+6. **AUTOCORRECCIÓN DE CONSULTAS Y NOMBRES EXACTOS DE TABLA**:
+   - Revisa SIEMPRE el ESQUEMA DINÁMICO provisto abajo antes de escribir SQL. Usa los nombres exactos de tablas (ej. `productores_sumapaz`, `caracterizacion_productor`, `pmapc_registros`, `pmapc_comentarios`).
+   - Si una consulta falla con un error de sintaxis o tabla inexistente, NO muestres el error técnico al usuario. Ejecuta inmediatamente un siguiente paso de herramienta corrigiendo la consulta SQL hasta obtener los resultados reales.
+
+7. **Calidad y Rigor de la Respuesta**:
+   - Genera respuestas claras, extensas, impecablemente estructuradas en Markdown, con títulos, tablas desglosadas y recomendaciones estratégicas.
    - Basate estrictamente en los datos devueltos por la base de datos. NUNCA inventes o alucines datos.
    - Si no existen datos suficientes para responder una pregunta, indícalo con total claridad y transparencia.
 
@@ -180,11 +192,31 @@ Tu propósito NO es ser un simple chatbot conversacional de soporte, sino un **A
 $dynamicSchema
 ";
 
-// Inicializar el historial de mensajes
+// Inicializar e integrar el historial conversacional
 $messages = [
-    ['role' => 'system', 'content' => $systemPrompt],
-    ['role' => 'user', 'content' => $userMessage]
+    ['role' => 'system', 'content' => $systemPrompt]
 ];
+
+foreach ($rawHistory as $hItem) {
+    if (isset($hItem['role'], $hItem['content']) && is_string($hItem['content'])) {
+        $r = strtolower(trim($hItem['role']));
+        $c = trim($hItem['content']);
+        if (($r === 'user' || $r === 'assistant') && !empty($c)) {
+            $messages[] = [
+                'role' => $r,
+                'content' => $c
+            ];
+        }
+    }
+}
+
+$lastIdx = count($messages) - 1;
+if ($messages[$lastIdx]['role'] !== 'user' || $messages[$lastIdx]['content'] !== $userMessage) {
+    $messages[] = [
+        'role' => 'user',
+        'content' => $userMessage
+    ];
+}
 
 // Definición de la herramienta de SQL
 $tools = [
@@ -249,56 +281,170 @@ function runSecureQuery($pdo, $query) {
     $stmt->execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
-    // Limitar máximo 100 filas devueltas a la IA por consulta
-    if (count($rows) > 100) {
-        $rows = array_slice($rows, 0, 100);
+    // Limitar máximo 30 filas devueltas a la IA por consulta y truncar textos extensos para optimizar TPM
+    if (count($rows) > 30) {
+        $rows = array_slice($rows, 0, 30);
+    }
+    foreach ($rows as &$row) {
+        if (is_array($row)) {
+            foreach ($row as $k => &$v) {
+                if (is_string($v) && strlen($v) > 250) {
+                    $v = (function_exists('mb_substr') ? mb_substr($v, 0, 250) : substr($v, 0, 250)) . '... [truncado]';
+                }
+            }
+        }
     }
     
     return json_encode($rows, JSON_UNESCAPED_UNICODE);
 }
 
 /**
- * Función para llamar a la API de OpenAI
+ * Función unificada para llamar a Gemini u OpenAI con fallback automático
  */
-function callOpenAI($messages, $tools, $apiKey, $url) {
+function callAIProvider($messages, $tools) {
+    $provider = strtolower(getenv('AI_PROVIDER') ?: 'gemini');
+    $geminiApiKey = getenv('GEMINI_API_KEY');
+    $openAiApiKey = getenv('OPENAI_API_KEY');
+
+    // Si está configurado Gemini o hay clave de Gemini
+    if (($provider === 'gemini' || !empty($geminiApiKey)) && !empty($geminiApiKey)) {
+        try {
+            return callGeminiAPI($messages, $tools, $geminiApiKey);
+        } catch (Exception $e) {
+            // Si Gemini falla o supera la cuota (429), hacer fallback automático a OpenAI
+            if (!empty($openAiApiKey)) {
+                return callOpenAIAPI($messages, $tools, $openAiApiKey);
+            }
+            throw $e;
+        }
+    }
+
+    if (!empty($openAiApiKey)) {
+        return callOpenAIAPI($messages, $tools, $openAiApiKey);
+    }
+
+    throw new Exception("No hay API Key válida configurada para Gemini ni para OpenAI.");
+}
+
+/**
+ * Ejecutor HTTP JSON seguro compatible con cualquier hosting (cURL con fallback a stream)
+ */
+function execHttpJsonPost($url, $postData, $apiKey) {
+    $payload = json_encode($postData, JSON_UNESCAPED_UNICODE);
+    
+    if (function_exists('curl_init')) {
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Content-Type: application/json',
+            'Authorization: Bearer ' . $apiKey
+        ]);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
+        $response = curl_exec($ch);
+        $err = curl_error($ch);
+        curl_close($ch);
+
+        if ($response === false) {
+            throw new Exception("Error cURL de red: " . $err);
+        }
+        return json_decode($response, true);
+    } else {
+        $options = [
+            'http' => [
+                'header'  => "Content-Type: application/json\r\n" .
+                             "Authorization: Bearer " . $apiKey . "\r\n",
+                'method'  => 'POST',
+                'content' => $payload,
+                'ignore_errors' => true
+            ],
+            'ssl' => [
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+            ],
+        ];
+        $context  = stream_context_create($options);
+        $response = @file_get_contents($url, false, $context);
+        if ($response === false) {
+            throw new Exception("Error HTTP de red en el servidor.");
+        }
+        return json_decode($response, true);
+    }
+}
+
+function callGeminiAPI($messages, $tools, $apiKey) {
+    $url = 'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions';
     $postData = [
-        'model' => 'gpt-4o-mini',
+        'model' => 'gemini-2.0-flash',
         'messages' => $messages,
         'temperature' => 0.1,
-        'max_tokens' => 2500
+        'max_tokens' => 3800
     ];
     if (!empty($tools)) {
         $postData['tools'] = $tools;
         $postData['tool_choice'] = 'auto';
     }
-    
-    $options = [
-        'http' => [
-            'header'  => "Content-Type: application/json\r\n" .
-                         "Authorization: Bearer " . $apiKey . "\r\n",
-            'method'  => 'POST',
-            'content' => json_encode($postData),
-            'ignore_errors' => true
-        ],
-        'ssl' => [
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-        ],
-    ];
-    
-    $context  = stream_context_create($options);
-    $response = file_get_contents($url, false, $context);
-    
-    if ($response === false) {
-        throw new Exception("Error al conectar con el servicio de IA de OpenAI.");
+
+    $responseData = execHttpJsonPost($url, $postData, $apiKey);
+    $errorObj = $responseData['error'] ?? (isset($responseData[0]['error']) ? $responseData[0]['error'] : null);
+    if ($errorObj) {
+        $code = isset($errorObj['code']) ? $errorObj['code'] : '';
+        $msg = isset($errorObj['message']) ? $errorObj['message'] : 'Error desconocido';
+        throw new Exception("Gemini Error [$code]: $msg");
     }
-    
-    $responseData = json_decode($response, true);
+
+    return $responseData;
+}
+
+function callOpenAIAPI($messages, $tools, $apiKey) {
+    $url = 'https://api.openai.com/v1/chat/completions';
+    $postData = [
+        'model' => 'gpt-4o-mini',
+        'messages' => $messages,
+        'temperature' => 0.1,
+        'max_tokens' => 3800
+    ];
+    if (!empty($tools)) {
+        $postData['tools'] = $tools;
+        $postData['tool_choice'] = 'auto';
+    }
+
+    $responseData = execHttpJsonPost($url, $postData, $apiKey);
     if (isset($responseData['error'])) {
         throw new Exception("OpenAI Error: " . $responseData['error']['message']);
     }
-    
+
     return $responseData;
+}
+
+/**
+ * Poda inteligente del historial de mensajes para evitar desbordar límites TPM (Tokens Per Minute)
+ */
+function pruneMessagesContext($messages) {
+    if (count($messages) <= 8) {
+        return $messages;
+    }
+    $system = $messages[0];
+    $user = $messages[1];
+
+    $tail = array_slice($messages, -6);
+    
+    // Quitar cualquier mensaje 'tool' huérfano al inicio del corte
+    while (!empty($tail) && isset($tail[0]['role']) && $tail[0]['role'] === 'tool') {
+        array_shift($tail);
+    }
+
+    $pruned = [$system, $user];
+    foreach ($tail as $msg) {
+        if ($msg !== $system && $msg !== $user) {
+            $pruned[] = $msg;
+        }
+    }
+    return $pruned;
 }
 
 // Bucle principal de ejecución de Chat Completions con Function Calling
@@ -310,7 +456,8 @@ $botReply = '';
 while ($loopCount < $maxLoops && !$finished) {
     $loopCount++;
     
-    $responseData = callOpenAI($messages, $tools, $apiKey, $url);
+    $prunedMessages = pruneMessagesContext($messages);
+    $responseData = callAIProvider($prunedMessages, $tools);
     
     if (!isset($responseData['choices'][0]['message'])) {
         throw new Exception("Respuesta inválida de la API de OpenAI.");
