@@ -566,7 +566,7 @@
             <div style="flex: 1; min-width: 250px;">
                 <input type="text" id="search-input" placeholder="Buscar por nombre, vereda o cédula..." onkeyup="applyFilters()" style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
             </div>
-            <div style="display: flex; gap: 1rem; align-items: center;">
+            <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
                 <select id="filter-level-select" onchange="onLevelSelectChange(this.value)" style="padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
                     <option value="all">Filtro Nivel: Todos</option>
                     <option value="1">Nivel 1 (Cúspide)</option>
@@ -579,6 +579,12 @@
                     <option value="yes">Con PMAPC Realizado</option>
                     <option value="no">Sin PMAPC</option>
                 </select>
+                <button id="btn-export-csv" onclick="exportFilteredDataToCSV()" style="padding: 0.75rem 1.2rem; background-color: #444F2F; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#333C23'" onmouseout="this.style.backgroundColor='#444F2F'">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Descargar Tabla (CSV)
+                </button>
                 <span id="counter-showing-txt" style="font-size: 0.9rem; font-weight: 600; color: #444F2F;">Mostrando 150 de 150 beneficiarios</span>
             </div>
         </div>
@@ -1007,6 +1013,50 @@
 
         function closeModal() {
             document.getElementById('producer-modal').style.display = 'none';
+        }
+
+        function exportFilteredDataToCSV() {
+            const list = getFilteredData();
+            if (!list || list.length === 0) {
+                alert("No hay beneficiarios en la tabla para exportar.");
+                return;
+            }
+
+            const headers = ["Nivel de Priorización", "Nombre Completo", "Número de Documento", "Vereda", "Nombre de Predio", "Teléfono", "Estado PMAPC"];
+            
+            let csvRows = [];
+            csvRows.push(headers.join(";"));
+
+            list.forEach(p => {
+                const lvl = "Nivel " + parseInt(p.nivel_priorizacion || 4);
+                const name = `"${(p.nombre_completo || '').replace(/"/g, '""')}"`;
+                const doc = `"${(p.numero_documento || '').replace(/"/g, '""')}"`;
+                const vereda = `"${(p.vereda || '').replace(/"/g, '""')}"`;
+                const predio = `"${(p.nombre_predio || '').replace(/"/g, '""')}"`;
+                const tel = `"${(p.telefono || '').replace(/"/g, '""')}"`;
+                const pmapc = parseInt(p.tiene_pmapc || 0) === 1 ? "Realizado" : "Pendiente";
+
+                csvRows.push([lvl, name, doc, vereda, predio, tel, pmapc].join(";"));
+            });
+
+            const csvContent = "\uFEFF" + csvRows.join("\n");
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            
+            const link = document.createElement("a");
+            link.setAttribute("href", url);
+            
+            let filename = "beneficiarios_priorizados";
+            if (selectedLevel !== null) filename += `_nivel_${selectedLevel}`;
+            const pmapcVal = document.getElementById('filter-pmapc-select').value;
+            if (pmapcVal === 'yes') filename += `_con_pmapc`;
+            if (pmapcVal === 'no') filename += `_sin_pmapc`;
+            filename += `.csv`;
+            
+            link.setAttribute("download", filename);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
 
         function escapeHtml(str) {
