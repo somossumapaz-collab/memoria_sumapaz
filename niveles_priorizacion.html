@@ -382,26 +382,46 @@
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h1 class="hero-title" style="color: #FBF4DE; margin-bottom: 0;">Niveles de Priorización de Beneficiarios</h1>
-                <div style="display: flex; gap: 2.5rem; justify-content: center; align-items: stretch; margin-top: 0.5rem; width: 100%;">
+                <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: stretch; margin-top: 0.5rem; width: 100%; flex-wrap: wrap;">
                     <div class="glass-card" style="margin-top: 0;" onclick="filterByLevel(null)">
                         <h3>Total Beneficiarios</h3>
                         <p id="total-beneficiarios-count">150</p>
+                        <div style="font-size: 0.78rem; margin-top: 4px; font-weight: 600;">
+                            <span style="color: #2A9D8F;">✅ <span id="hero-total-done">77</span> Hechos</span> | 
+                            <span style="color: #C0392B;">⏳ <span id="hero-total-pending">73</span> Faltan</span>
+                        </div>
                     </div>
                     <div class="glass-card" style="margin-top: 0;" onclick="filterByLevel(1)">
                         <h3>Nivel 1 (Cúspide)</h3>
                         <p id="cnt-lvl-1" style="color: #9E782F;">22</p>
+                        <div style="font-size: 0.78rem; margin-top: 4px; font-weight: 600; color: #555;">
+                            <span style="color: #2A9D8F;">✅ <span id="cnt-done-lvl-1">16</span></span> | 
+                            <span style="color: #C0392B;">⏳ <span id="cnt-pending-lvl-1">6</span></span>
+                        </div>
                     </div>
                     <div class="glass-card" style="margin-top: 0;" onclick="filterByLevel(2)">
                         <h3>Nivel 2 (Prioridad 2)</h3>
                         <p id="cnt-lvl-2" style="color: #8E9A5E;">60</p>
+                        <div style="font-size: 0.78rem; margin-top: 4px; font-weight: 600; color: #555;">
+                            <span style="color: #2A9D8F;">✅ <span id="cnt-done-lvl-2">30</span></span> | 
+                            <span style="color: #C0392B;">⏳ <span id="cnt-pending-lvl-2">30</span></span>
+                        </div>
                     </div>
                     <div class="glass-card" style="margin-top: 0;" onclick="filterByLevel(3)">
                         <h3>Nivel 3 (Prioridad 3)</h3>
                         <p id="cnt-lvl-3" style="color: #2A9D8F;">46</p>
+                        <div style="font-size: 0.78rem; margin-top: 4px; font-weight: 600; color: #555;">
+                            <span style="color: #2A9D8F;">✅ <span id="cnt-done-lvl-3">22</span></span> | 
+                            <span style="color: #C0392B;">⏳ <span id="cnt-pending-lvl-3">24</span></span>
+                        </div>
                     </div>
                     <div class="glass-card" style="margin-top: 0;" onclick="filterByLevel(4)">
                         <h3>Nivel 4 (Base)</h3>
                         <p id="cnt-lvl-4" style="color: #444F2F;">22</p>
+                        <div style="font-size: 0.78rem; margin-top: 4px; font-weight: 600; color: #555;">
+                            <span style="color: #2A9D8F;">✅ <span id="cnt-done-lvl-4">9</span></span> | 
+                            <span style="color: #C0392B;">⏳ <span id="cnt-pending-lvl-4">13</span></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -409,7 +429,7 @@
 
         <!-- Pyramid Visual Section -->
         <h2 style="font-family: 'Inter', sans-serif; color: #444F2F; margin-top: 3.5rem; margin-bottom: 1.5rem; text-align: center; font-size: 1.8rem; font-weight: 700;">
-            Pirámide Jerárquica de Beneficiarios
+            Pirámide Jerárquica de Beneficiarios (Estado de PMAPC)
         </h2>
 
         <div style="background-color: #EFEBE4; padding: 2rem; border-radius: 12px; margin-bottom: 2.5rem;">
@@ -426,6 +446,14 @@
                         <div>
                             <div class="tier-title-text">Nivel 1 — Cúspide (Máxima Prioridad)</div>
                             <div class="tier-sub-text">Productores ancla y organizaciones priorizadas</div>
+                            <div style="display: flex; gap: 8px; margin-top: 6px; font-size: 0.82rem;">
+                                <span style="background: rgba(255,255,255,0.22); padding: 3px 10px; border-radius: 12px; font-weight: 600;">
+                                    ✅ PMAPC Hechos: <strong id="tier-pmapc-done-1">16</strong>
+                                </span>
+                                <span style="background: rgba(0,0,0,0.25); padding: 3px 10px; border-radius: 12px; font-weight: 600;">
+                                    ⏳ Faltan: <strong id="tier-pmapc-pending-1">6</strong>
+                                </span>
+                            </div>
                         </div>
                     </div>
                     <div class="tier-right">
@@ -441,6 +469,14 @@
                         <div>
                             <div class="tier-title-text">Nivel 2 — Prioridad Media-Alta</div>
                             <div class="tier-sub-text">Unidades productivas consolidadas</div>
+                            <div style="display: flex; gap: 8px; margin-top: 6px; font-size: 0.82rem;">
+                                <span style="background: rgba(255,255,255,0.22); padding: 3px 10px; border-radius: 12px; font-weight: 600;">
+                                    ✅ PMAPC Hechos: <strong id="tier-pmapc-done-2">30</strong>
+                                </span>
+                                <span style="background: rgba(0,0,0,0.25); padding: 3px 10px; border-radius: 12px; font-weight: 600;">
+                                    ⏳ Faltan: <strong id="tier-pmapc-pending-2">30</strong>
+                                </span>
+                            </div>
                         </div>
                     </div>
                     <div class="tier-right">
@@ -456,6 +492,14 @@
                         <div>
                             <div class="tier-title-text">Nivel 3 — Prioridad Media</div>
                             <div class="tier-sub-text">Productores en desarrollo territorial</div>
+                            <div style="display: flex; gap: 8px; margin-top: 6px; font-size: 0.82rem;">
+                                <span style="background: rgba(255,255,255,0.22); padding: 3px 10px; border-radius: 12px; font-weight: 600;">
+                                    ✅ PMAPC Hechos: <strong id="tier-pmapc-done-3">22</strong>
+                                </span>
+                                <span style="background: rgba(0,0,0,0.25); padding: 3px 10px; border-radius: 12px; font-weight: 600;">
+                                    ⏳ Faltan: <strong id="tier-pmapc-pending-3">24</strong>
+                                </span>
+                            </div>
                         </div>
                     </div>
                     <div class="tier-right">
@@ -471,6 +515,14 @@
                         <div>
                             <div class="tier-title-text">Nivel 4 — Base (Prioridad Estándar)</div>
                             <div class="tier-sub-text">Productores base de la zona rural</div>
+                            <div style="display: flex; gap: 8px; margin-top: 6px; font-size: 0.82rem;">
+                                <span style="background: rgba(255,255,255,0.22); padding: 3px 10px; border-radius: 12px; font-weight: 600;">
+                                    ✅ PMAPC Hechos: <strong id="tier-pmapc-done-4">9</strong>
+                                </span>
+                                <span style="background: rgba(0,0,0,0.25); padding: 3px 10px; border-radius: 12px; font-weight: 600;">
+                                    ⏳ Faltan: <strong id="tier-pmapc-pending-4">13</strong>
+                                </span>
+                            </div>
                         </div>
                     </div>
                     <div class="tier-right">
@@ -645,22 +697,47 @@
 
         function updateCounts() {
             const counts = { 1: 0, 2: 0, 3: 0, 4: 0 };
+            const pmapcDone = { 1: 0, 2: 0, 3: 0, 4: 0 };
+            const pmapcPending = { 1: 0, 2: 0, 3: 0, 4: 0 };
+            let totalDone = 0;
+            let totalPending = 0;
+
             allBeneficiaries.forEach(p => {
                 const lvl = parseInt(p.nivel_priorizacion || 4);
-                if (counts[lvl] !== undefined) counts[lvl]++;
+                const hasPmapc = parseInt(p.tiene_pmapc || 0) === 1;
+
+                if (counts[lvl] !== undefined) {
+                    counts[lvl]++;
+                    if (hasPmapc) {
+                        pmapcDone[lvl]++;
+                        totalDone++;
+                    } else {
+                        pmapcPending[lvl]++;
+                        totalPending++;
+                    }
+                }
             });
 
             const total = allBeneficiaries.length || 1;
 
             document.getElementById('total-beneficiarios-count').textContent = allBeneficiaries.length;
+            if (document.getElementById('hero-total-done')) document.getElementById('hero-total-done').textContent = totalDone;
+            if (document.getElementById('hero-total-pending')) document.getElementById('hero-total-pending').textContent = totalPending;
 
             for (let l = 1; l <= 4; l++) {
                 const cnt = counts[l];
                 const pct = ((cnt / total) * 100).toFixed(1) + '%';
+                const done = pmapcDone[l];
+                const pending = pmapcPending[l];
 
                 if (document.getElementById(`cnt-lvl-${l}`)) document.getElementById(`cnt-lvl-${l}`).textContent = cnt;
+                if (document.getElementById(`cnt-done-lvl-${l}`)) document.getElementById(`cnt-done-lvl-${l}`).textContent = done;
+                if (document.getElementById(`cnt-pending-lvl-${l}`)) document.getElementById(`cnt-pending-lvl-${l}`).textContent = pending;
+
                 if (document.getElementById(`tier-count-${l}`)) document.getElementById(`tier-count-${l}`).textContent = cnt;
                 if (document.getElementById(`tier-pct-${l}`)) document.getElementById(`tier-pct-${l}`).textContent = pct;
+                if (document.getElementById(`tier-pmapc-done-${l}`)) document.getElementById(`tier-pmapc-done-${l}`).textContent = done;
+                if (document.getElementById(`tier-pmapc-pending-${l}`)) document.getElementById(`tier-pmapc-pending-${l}`).textContent = pending;
             }
         }
 
