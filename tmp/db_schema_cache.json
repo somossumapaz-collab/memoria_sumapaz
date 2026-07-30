@@ -1,0 +1,197 @@
+### ESQUEMA COMPLETO Y DINÁMICO DE LA BASE DE DATOS (u949171480_somos_sumapaz):
+Nota: El esquema se detecta automáticamente en tiempo real. No requiere mantenimiento manual.
+
+- Tabla: `actividades`
+  Columnas: `id` (bigint) [PK], `productor_id` (bigint) [FK -> productores_sumapaz.id], `nombre` (text), `frecuencia` (text), `poblacion_objetivo` (text), `tipo_contrato` (text), `lugar` (text), `recursos` (text)
+
+- Tabla: `ambiental_cultivos_visita`
+  Columnas: `id` (int) [PK], `visita_id` (int) [FK -> ambiental_visitas_agricolas.id], `categoria` (varchar), `tipo` (varchar), `especie` (varchar), `area_m2` (double), `produccion_kg` (double), `observaciones` (text)
+
+- Tabla: `ambiental_materiales_entregados`
+  Columnas: `id` (int) [PK], `visita_id` (int) [FK -> ambiental_visitas_agricolas.id], `material` (varchar), `cantidad` (double), `unidad` (varchar)
+
+- Tabla: `ambiental_motivos_visita_agricola`
+  Columnas: `id` (int) [PK], `visita_id` (int) [FK -> ambiental_visitas_agricolas.id], `motivo` (varchar)
+
+- Tabla: `ambiental_persona`
+  Columnas: `id` (int) [PK], `documento` (varchar), `nombre` (varchar), `telefono` (varchar), `finca` (varchar), `vereda` (varchar), `corregimiento` (varchar), `cuenca` (varchar), `tipo_persona` (varchar), `tarjeta_profesional` (varchar), `created_at` (timestamp), `updated_at` (timestamp)
+
+- Tabla: `ambiental_tipo_huerta`
+  Columnas: `id` (int) [PK], `visita_id` (int) [FK -> ambiental_visitas_agricolas.id], `tipo_huerta` (varchar)
+
+- Tabla: `ambiental_visitas_agricolas`
+  Columnas: `id` (int) [PK], `fecha` (varchar), `nombre` (varchar), `finca` (varchar), `vereda` (varchar), `corregimiento` (varchar), `cuenca` (varchar), `telefono` (varchar), `hora_inicio` (varchar), `hora_fin` (varchar), `numero_registro` (varchar), `objetivo_visita` (text), `recomendaciones` (text), `muestra_suelo` (tinyint), `numero_muestra` (varchar), `latitud` (double), `longitud` (double), `altitud` (double), `observaciones_geo` (text), `area_intervenir` (double), `acepta_corresponsabilidad` (tinyint), `proxima_visita` (varchar), `profesional` (varchar), `tarjeta_profesional` (varchar), `cedula_operario` (varchar), `cedula_usuario` (varchar), `firma_profesional` (longtext), `firma_operario` (longtext), `firma_usuario` (longtext), `created_at` (timestamp)
+
+- Tabla: `ambiental_visitas_pecuarias`
+  Columnas: `id` (int) [PK], `fecha` (varchar), `corregimiento` (varchar), `vereda` (varchar), `finca` (varchar), `cuenca` (varchar), `hora_inicio` (varchar), `hora_fin` (varchar), `latitud` (double), `longitud` (double), `usuario` (varchar), `primera_vez` (tinyint), `seguimiento` (tinyint), `fecha_visita_anterior` (varchar), `diagnostico` (text), `procedimiento` (text), `recomendaciones` (text), `acepta_corresponsabilidad` (tinyint), `proxima_visita` (varchar), `profesional` (varchar), `tarjeta_profesional` (varchar), `cedula_operario` (varchar), `cedula_usuario` (varchar), `firma_profesional` (longtext), `firma_operario` (longtext), `firma_usuario` (longtext), `created_at` (timestamp)
+
+- Tabla: `ambiental_visita_pecuaria_especies`
+  Columnas: `id` (int) [PK], `visita_id` (int) [FK -> ambiental_visitas_pecuarias.id], `especie` (varchar)
+
+- Tabla: `canales_venta`
+  Columnas: `id` (bigint) [PK], `nombre` (text)
+
+- Tabla: `caracterizacion_productor`
+  Columnas: `id` (bigint) [PK], `productor_id` (bigint) [FK -> productores_sumapaz.id], `fecha_caracterizacion` (date), `coordenadas` (text), `tipo_organizacion` (varchar), `extension_predio` (varchar), `tiempo_implementacion` (varchar), `tipo_tenencia` (varchar), `numero_personas` (int), `nombre_organizacion` (varchar), `mano_obra` (varchar), `tipo_proceso` (varchar), `usa_abonos` (varchar), `sistemas_asociados` (text), `sistema_diferenciado` (varchar), `descripcion` (text), `valor_agregado` (text), `destino` (varchar), `transporte` (varchar), `forma_pago` (varchar), `define_precio` (varchar), `en_tramite_bool` (varchar), `en_tramite` (varchar), `puntaje_social` (int), `puntaje_organizacional` (int), `puntaje_productivo` (int), `puntaje_comercial` (int), `puntaje_ambiental` (int), `puntaje_impacto` (int), `puntaje` (int)
+
+- Tabla: `categorias_productivas`
+  Columnas: `id` (bigint) [PK], `tipo` (varchar), `nombre` (text)
+
+- Tabla: `categorias_productos`
+  Columnas: `id` (int) [PK], `categoria` (varchar)
+
+- Tabla: `certificaciones`
+  Columnas: `id` (bigint) [PK], `nombre` (varchar)
+
+- Tabla: `comercializacion`
+  Columnas: `id` (bigint) [PK], `productor_id` (bigint) [FK -> productores_sumapaz.id], `destino` (text), `transporte` (varchar), `forma_pago` (varchar), `define_precio` (varchar)
+
+- Tabla: `dificultades`
+  Columnas: `id` (bigint) [PK], `nombre` (text)
+
+- Tabla: `discapacidad_productor`
+  Columnas: `id` (bigint) [PK], `productor_id` (bigint) [FK -> productores_sumapaz.id], `tiene_discapacidad` (tinyint), `tipo` (text)
+
+- Tabla: `financiamiento`
+  Columnas: `id` (bigint) [PK], `nombre` (text)
+
+- Tabla: `grupos_poblacionales`
+  Columnas: `id` (bigint) [PK], `nombre` (text)
+
+- Tabla: `participacion_eventos`
+  Columnas: `id_evento` (int) [PK], `id_productor` (int), `fecha_evento` (date), `nombre_evento` (varchar), `observaciones` (text), `fecha_creacion` (timestamp)
+
+- Tabla: `persona_datos_personales`
+  Columnas: `id` (int) [PK], `nombre` (varchar), `tipo_documento` (varchar), `documento` (varchar), `fecha_nacimiento` (date), `departamento_nacimiento` (varchar), `municipio_nacimiento` (varchar), `telefono` (varchar), `email` (varchar), `vereda` (varchar), `ruta_cedula` (text), `ruta_foto` (text), `fecha_creacion` (timestamp), `descripcion` (text), `habilidades` (text), `pais_nacimiento` (varchar), `departamento_residencia` (varchar), `municipio_residencia` (varchar)
+
+- Tabla: `persona_educacion`
+  Columnas: `id` (int) [PK], `persona_id` (int) [FK -> persona_datos_personales.id], `titulo` (varchar), `institucion` (varchar), `nivel_educacion` (varchar), `fecha_inicio` (date), `fecha_fin` (date), `ruta_soporte` (varchar), `fecha_creacion` (timestamp), `titulo_obtenido` (varchar)
+
+- Tabla: `persona_experiencia`
+  Columnas: `id` (int) [PK], `persona_id` (int) [FK -> persona_datos_personales.id], `cargo` (varchar), `empresa` (varchar), `fecha_inicio` (date), `fecha_fin` (date), `descripcion` (text), `ruta_soporte` (varchar), `fecha_creacion` (timestamp)
+
+- Tabla: `persona_referencia`
+  Columnas: `id` (int) [PK], `persona_id` (int) [FK -> persona_datos_personales.id], `nombre` (varchar), `telefono` (varchar), `relacion` (varchar), `ocupacion` (varchar), `fecha_creacion` (timestamp)
+
+- Tabla: `pmapc_aliados`
+  Columnas: `id` (int) [PK], `registro_id` (int) [FK -> pmapc_registros.id], `productor_id` (bigint), `actor` (varchar), `aporta` (text), `recibe` (text), `trabajo` (text), `ambiental` (text), `accion` (text), `created_at` (timestamp)
+
+- Tabla: `pmapc_clientes`
+  Columnas: `id` (int) [PK], `registro_id` (int) [FK -> pmapc_registros.id], `productor_id` (bigint), `actor` (varchar), `perfil` (text), `ubicacion` (text), `necesidad` (text), `frecuencia` (varchar), `criterio` (text), `canal` (varchar), `created_at` (timestamp)
+
+- Tabla: `pmapc_comentarios`
+  Columnas: `id` (int) [PK], `registro_id` (int) [FK -> pmapc_registros.id], `productor_id` (bigint), `origen_archivo` (varchar), `comentarios_texto` (longtext), `informacion_pendiente` (longtext), `conclusion_general` (longtext), `recomendaciones` (longtext), `created_at` (timestamp), `updated_at` (timestamp)
+
+- Tabla: `pmapc_costos_fijos`
+  Columnas: `id` (int) [PK], `registro_id` (int) [FK -> pmapc_registros.id], `productor_id` (bigint), `descripcion` (varchar), `val` (varchar), `obs` (text), `created_at` (timestamp)
+
+- Tabla: `pmapc_costos_precios`
+  Columnas: `id` (int) [PK], `registro_id` (int) [FK -> pmapc_registros.id], `productor_id` (bigint), `producto` (varchar), `costo` (varchar), `margen` (varchar), `pmin` (varchar), `pmercado` (varchar), `logistica` (varchar), `precio` (varchar), `justificacion` (text), `created_at` (timestamp)
+
+- Tabla: `pmapc_economia_circular`
+  Columnas: `id` (int) [PK], `registro_id` (int) [FK -> pmapc_registros.id], `productor_id` (bigint), `cant` (varchar), `manejo` (text), `destino` (text), `resp` (varchar), `created_at` (timestamp)
+
+- Tabla: `pmapc_equipos_bienes`
+  Columnas: `id` (int) [PK], `registro_id` (int) [FK -> pmapc_registros.id], `productor_id` (bigint), `bien` (varchar), `unidades` (varchar), `actividad` (text), `tiempo` (varchar), `created_at` (timestamp)
+
+- Tabla: `pmapc_estrategico`
+  Columnas: `id` (int) [PK], `registro_id` (int) [FK -> pmapc_registros.id], `productor_id` (bigint), `f01_nombre_organizacion` (varchar), `f01_tipo_actividad` (varchar), `f01_ubicacion` (text), `f01_coordenadas` (varchar), `f01_producto_principal` (text), `f01_estado_actual` (varchar), `f01_descripcion_general` (text), `f02_mision` (text), `f02_vision` (text), `f02_valores` (text), `f03_problema` (text), `f03_solucion` (text), `f03_diferencial` (text), `f03_valor_ambiental` (text), `f03_valor_social` (text), `f03_demostracion` (text), `f04_fortalezas` (text), `f04_oportunidades` (text), `f04_debilidades` (text), `f04_amenazas` (text), `created_at` (timestamp), `updated_at` (timestamp)
+
+- Tabla: `pmapc_insumos`
+  Columnas: `id` (int) [PK], `registro_id` (int) [FK -> pmapc_registros.id], `productor_id` (bigint), `insumo` (varchar), `cantidad` (varchar), `frecuencia` (varchar), `proveedor` (varchar), `toxicidad` (varchar), `impacto` (text), `manejo` (text), `created_at` (timestamp)
+
+- Tabla: `pmapc_inversiones`
+  Columnas: `id` (int) [PK], `registro_id` (int) [FK -> pmapc_registros.id], `productor_id` (bigint), `descripcion` (varchar), `valunit` (varchar), `cant` (varchar), `total` (varchar), `req` (varchar), `fuente` (varchar), `created_at` (timestamp)
+
+- Tabla: `pmapc_plan_trabajo`
+  Columnas: `id` (int) [PK], `registro_id` (int) [FK -> pmapc_registros.id], `productor_id` (bigint), `actividad` (text), `componente` (varchar), `responsable` (varchar), `tiempo` (varchar), `resultado` (text), `created_at` (timestamp)
+
+- Tabla: `pmapc_productos`
+  Columnas: `id` (int) [PK], `registro_id` (int) [FK -> pmapc_registros.id], `productor_id` (bigint), `producto` (varchar), `descripcion` (text), `unidad` (varchar), `insumos` (text), `almacenamiento` (text), `presentacion` (text), `diferencial` (text), `created_at` (timestamp)
+
+- Tabla: `pmapc_registros`
+  Columnas: `id` (int) [PK], `productor_id` (bigint) [FK -> productores_sumapaz.id], `data` (longtext), `created_at` (timestamp), `updated_at` (timestamp), `nombre_organizacion` (varchar), `estado_actual` (varchar)
+
+- Tabla: `pmapc_ventas`
+  Columnas: `id` (int) [PK], `registro_id` (int) [FK -> pmapc_registros.id], `productor_id` (bigint), `producto` (varchar), `cantidad` (varchar), `precio` (varchar), `ingresos` (varchar), `pago` (varchar), `cliente` (varchar), `created_at` (timestamp)
+
+- Tabla: `precios_calidad`
+  Columnas: `id` (bigint) [PK], `productor_id` (bigint) [FK -> productores_sumapaz.id], `tipo_calidad` (varchar), `precio_actual` (varchar), `precio_propuesto` (varchar)
+
+- Tabla: `productores_panaca`
+  Columnas: `id` (int) [PK], `nombre_completo` (varchar), `numero_documento` (varchar), `vereda` (varchar), `genero` (varchar), `fecha_nacimiento` (date), `telefono` (varchar), `telefono_contacto` (varchar), `correo` (varchar), `estado` (varchar), `cr` (text), `fecha_convocatoria` (date)
+
+- Tabla: `productores_sumapaz`
+  Columnas: `id` (bigint) [PK], `nombre_completo` (varchar), `tipo_documento` (varchar), `numero_documento` (varchar), `fecha_nacimiento` (date), `telefono` (varchar), `correo_electronico` (varchar), `vereda` (varchar), `nombre_predio` (varchar), `fecha_creacion` (timestamp), `mypime` (tinyint), `efectividad_2025` (tinyint), `panaca` (tinyint), `cuenca` (varchar), `ferias` (tinyint), `beneficiario_2026` (tinyint), `cedula_pdf` (varchar), `nivel_priorizacion` (tinyint)
+
+- Tabla: `productor_canal`
+  Columnas: `id` (bigint) [PK], `productor_id` (bigint) [FK -> productores_sumapaz.id], `canal_id` (bigint) [FK -> canales_venta.id]
+
+- Tabla: `productor_categoria`
+  Columnas: `id` (bigint) [PK], `productor_id` (bigint) [FK -> productores_sumapaz.id], `categoria_id` (bigint) [FK -> categorias_productivas.id]
+
+- Tabla: `productor_certificacion`
+  Columnas: `id` (bigint) [PK], `productor_id` (bigint) [FK -> productores_sumapaz.id], `certificacion_id` (bigint) [FK -> certificaciones.id], `en_tramite` (varchar)
+
+- Tabla: `productor_dificultad`
+  Columnas: `id` (bigint) [PK], `productor_id` (bigint) [FK -> productores_sumapaz.id], `dificultad_id` (bigint) [FK -> dificultades.id]
+
+- Tabla: `productor_financiamiento`
+  Columnas: `id` (bigint) [PK], `productor_id` (bigint) [FK -> productores_sumapaz.id], `financiamiento_id` (bigint) [FK -> financiamiento.id]
+
+- Tabla: `productor_grupo`
+  Columnas: `id` (bigint) [PK], `productor_id` (bigint) [FK -> productores_sumapaz.id], `grupo_id` (bigint) [FK -> grupos_poblacionales.id]
+
+- Tabla: `productor_productos`
+  Columnas: `id` (int) [PK], `productor_id` (bigint) [FK -> productores_sumapaz.id], `nombre` (varchar), `volumen` (decimal), `unidad_volumen` (varchar), `frecuencia` (varchar), `presentacion` (varchar), `calidad` (varchar), `precio` (decimal), `unidad_precio` (varchar), `producto_normal` (varchar), `categoria` (varchar)
+
+- Tabla: `productor_servicios`
+  Columnas: `id` (int) [PK], `productor_id` (bigint) [FK -> productores_sumapaz.id], `nombre_actividad` (varchar), `frecuencia` (varchar), `poblacion_objetivo` (varchar), `tipo_contrato` (varchar), `lugar` (varchar), `recursos` (varchar)
+
+- Tabla: `productos`
+  Columnas: `id` (bigint) [PK], `productor_id` (bigint) [FK -> productores_sumapaz.id], `nombre` (text), `volumen` (text), `unidad_volumen` (varchar), `frecuencia` (text), `presentacion` (text), `calidad` (text), `precio` (text), `unidad_precio` (varchar), `volumen_unidad` (varchar), `precio_unidad` (varchar)
+
+- Tabla: `proveedores_avituallamiento`
+  Columnas: `id` (int) [PK], `nombre_completo` (varchar), `tipo_documento` (varchar), `numero_documento` (varchar), `fecha_nacimiento` (date), `telefono` (varchar), `correo_electronico` (varchar), `vereda` (varchar), `nombre_predio` (varchar), `fecha_creacion` (datetime), `id_rut` (varchar), `id_curso_manipulacion` (varchar), `id_certificacion_bancaria` (varchar), `id_cedula` (varchar)
+
+- Tabla: `roles`
+  Columnas: `id` (int) [PK], `nombre` (varchar), `descripcion` (varchar)
+
+- Tabla: `sistema_productivo`
+  Columnas: `id` (bigint) [PK], `productor_id` (bigint) [FK -> productores_sumapaz.id], `mano_obra` (varchar), `tipo_proceso` (varchar), `usa_abonos` (tinyint), `sistemas_asociados` (tinyint), `sistema_diferenciado` (tinyint), `descripcion` (text), `valor_agregado` (text)
+
+- Tabla: `transporte_recorridos`
+  Columnas: `id` (bigint) [PK], `viaje_id` (bigint) [FK -> transporte_viajes.id], `orden` (int), `vereda` (varchar), `es_parada` (tinyint), `created_at` (timestamp)
+
+- Tabla: `transporte_sumapaz_lideres`
+  Columnas: `usuario` (varchar) [PK], `nombre` (varchar), `hash_contrasena` (varchar), `debe_cambiar_contrasena` (tinyint), `nivel` (int)
+
+- Tabla: `transporte_sumapaz_participantes`
+  Columnas: `numero_documento` (varchar) [PK], `tipo_documento` (varchar), `nombre` (varchar), `telefono` (varchar), `correo` (varchar), `numero_proyecto` (varchar)
+
+- Tabla: `transporte_sumapaz_registros_asistencia`
+  Columnas: `id` (int) [PK], `id_viaje` (varchar) [FK -> transporte_sumapaz_viajes.id], `cedula_pasajero` (varchar) [FK -> transporte_sumapaz_participantes.numero_documento], `nombre_conductor` (varchar), `placa_vehiculo` (varchar), `tipo_vehiculo` (varchar), `hora_inicio` (varchar), `estado` (varchar), `hora_inicio_dispositivo` (varchar), `coordenadas_inicio` (varchar), `hora_fin_dispositivo` (varchar), `coordenadas_fin` (varchar)
+
+- Tabla: `transporte_sumapaz_viajes`
+  Columnas: `id` (varchar) [PK], `fecha_viaje` (date), `ruta` (varchar), `estado` (varchar), `programado_por` (varchar) [FK -> transporte_sumapaz_lideres.usuario]
+
+- Tabla: `transporte_sumapaz_viajes_ocasionales`
+  Columnas: `id` (varchar) [PK], `nombre_pasajero` (varchar), `fecha_viaje` (date), `origen` (varchar), `destino` (varchar)
+
+- Tabla: `transporte_sumapaz_viajes_pasajeros`
+  Columnas: `id_viaje` (varchar) [PK] [FK -> transporte_sumapaz_viajes.id], `numero_documento_participante` (varchar) [PK] [FK -> transporte_sumapaz_participantes.numero_documento]
+
+- Tabla: `transporte_vehiculos`
+  Columnas: `id` (bigint) [PK], `tipo_transporte` (varchar), `tipo_vehiculo` (varchar), `placa` (varchar), `created_at` (timestamp)
+
+- Tabla: `transporte_viajes`
+  Columnas: `id` (bigint) [PK], `fecha_hora` (timestamp), `funcionario` (varchar), `tipo_documento` (varchar), `numero_documento` (varchar), `telefono` (varchar), `email` (varchar), `proposito` (varchar), `proyecto_codigo` (varchar), `proyecto_nombre` (text), `meta` (text), `origen` (varchar), `destino_final` (varchar), `actividad` (text), `created_at` (timestamp)
+
+- Tabla: `transporte_viaje_vehiculo`
+  Columnas: `id` (bigint) [PK], `viaje_id` (bigint) [FK -> transporte_viajes.id], `vehiculo_id` (bigint) [FK -> transporte_vehiculos.id]
+
+- Tabla: `usuarios`
+  Columnas: `id` (int) [PK], `nombre` (varchar), `email` (varchar), `password` (varchar), `rol_id` (int) [FK -> roles.id], `activo` (tinyint), `fecha_creacion` (timestamp)
+
+- Tabla: `veredas_coordenadas`
+  Columnas: `id` (bigint) [PK], `scanombre` (varchar), `lat` (double), `lon` (double)

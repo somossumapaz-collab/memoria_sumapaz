@@ -1,65 +1,64 @@
 <?php
 require_once __DIR__ . '/../api/db_config.php';
 
-$json_path = 'C:\Users\sotoc\Downloads\JSON Daniela Rojas.json';
+$json_path = 'C:\Users\sotoc\Downloads\JSON Celmira Molina.json';
 if (!file_exists($json_path)) {
     die("Error: File not found at {$json_path}\n");
 }
 
 echo "Using JSON path: {$json_path}\n";
 $raw = file_get_contents($json_path);
-$raw = preg_replace('/\[cite:\s*\d+\]/', '', $raw);
 $data = json_decode($raw, true);
 
 if (json_last_error() !== JSON_ERROR_NONE) {
     die("Fatal JSON syntax error: " . json_last_error_msg() . "\n");
 }
 
-echo "=== INSPECTING DANIELA ROJAS SUÁREZ / SANDRA SUÁREZ JSON ===\n";
+echo "=== INSPECTING CELMIRA MOLINA REY JSON ===\n";
 echo "Keys count: " . count($data) . "\n";
 echo "Persona entrevistada: " . ($data['PMAPC_F01']['persona_entrevistada'] ?? $data['f01']['persona_entrevistada'] ?? 'N/A') . "\n";
 echo "Unidad productiva: " . ($data['PMAPC_F01']['nombre_unidad_productiva'] ?? $data['f01']['nombre_unidad_productiva'] ?? 'N/A') . "\n";
 
 // Search producer in database
-$stmt = $pdo->query("SELECT id, nombre_completo, vereda, numero_documento FROM productores_sumapaz WHERE nombre_completo LIKE '%Daniela%' OR nombre_completo LIKE '%Rojas%' OR nombre_completo LIKE '%Suárez%' OR nombre_completo LIKE '%Suarez%' OR nombre_completo LIKE '%Sandra%'");
+$stmt = $pdo->query("SELECT id, nombre_completo, vereda, numero_documento FROM productores_sumapaz WHERE nombre_completo LIKE '%Celmira%' OR nombre_completo LIKE '%Molina%' OR nombre_completo LIKE '%Rey%'");
 $producers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo "\nFound candidate producers in DB:\n";
 print_r($producers);
 
-$daniela_id = null;
+$celmira_id = null;
 foreach ($producers as $p) {
     $name = strtolower($p['nombre_completo']);
-    if (strpos($name, 'daniela') !== false && strpos($name, 'rojas') !== false) {
-        $daniela_id = $p['id'];
+    if (strpos($name, 'celmira') !== false) {
+        $celmira_id = $p['id'];
         break;
     }
 }
 
-if (!$daniela_id && !empty($producers)) {
+if (!$celmira_id && !empty($producers)) {
     foreach ($producers as $p) {
-        if (strpos(strtolower($p['nombre_completo']), 'daniela') !== false) {
-            $daniela_id = $p['id'];
+        if (strpos(strtolower($p['nombre_completo']), 'molina') !== false) {
+            $celmira_id = $p['id'];
             break;
         }
     }
 }
 
-echo "Targeting Producer ID: " . ($daniela_id ? $daniela_id : "NOT FOUND") . "\n";
+echo "Targeting Producer ID: " . ($celmira_id ? $celmira_id : "NOT FOUND") . "\n";
 
-if (!$daniela_id) {
-    echo "Creating producer record for Daniela Rojas Suárez...\n";
+if (!$celmira_id) {
+    echo "Creating producer record for Celmira Molina Rey...\n";
     $stmtInsProd = $pdo->prepare("INSERT INTO productores_sumapaz (nombre_completo, vereda, tipo_productor) VALUES (?, ?, ?)");
-    $stmtInsProd->execute(['Daniela Rojas Suárez', 'Santa Rosa', 'Individual']);
-    $daniela_id = $pdo->lastInsertId();
-    echo "Created producer with ID: {$daniela_id}\n";
+    $stmtInsProd->execute(['Celmira Molina Rey', 'Santana', 'Individual']);
+    $celmira_id = $pdo->lastInsertId();
+    echo "Created producer with ID: {$celmira_id}\n";
 }
 
 // Master table insert/update
 $jsonData = json_encode($data, JSON_UNESCAPED_UNICODE);
 
 $f01 = $data['PMAPC_F01'] ?? ($data['f01'] ?? []);
-$nombreOrg = $f01['nombre_unidad_productiva'] ?? ($f01['nombre_organizacion'] ?? 'Restaurante y Tienda Sandra Suárez');
+$nombreOrg = $f01['nombre_unidad_productiva'] ?? ($f01['nombre_organizacion'] ?? 'Pollos Campesinos La Cumbre');
 $estadoAct = $f01['estado_actual'] ?? '';
 
 $stmtMaster = $pdo->prepare("
@@ -71,17 +70,17 @@ $stmtMaster = $pdo->prepare("
         data = VALUES(data),
         updated_at = CURRENT_TIMESTAMP
 ");
-$stmtMaster->execute([$daniela_id, $nombreOrg, $estadoAct, $jsonData]);
+$stmtMaster->execute([$celmira_id, $nombreOrg, $estadoAct, $jsonData]);
 
 // Fetch registro_id
 $stmtRegId = $pdo->prepare("SELECT id FROM pmapc_registros WHERE productor_id = ?");
-$stmtRegId->execute([$daniela_id]);
+$stmtRegId->execute([$celmira_id]);
 $registro_id = $stmtRegId->fetchColumn();
 
-echo "Saved to pmapc_registros table successfully (registro_id = {$registro_id}, productor_id = {$daniela_id})!\n";
+echo "Saved to pmapc_registros table successfully (registro_id = {$registro_id}, productor_id = {$celmira_id})!\n";
 
 // Populate relational tables via API submit script logic
-function nan_val_dr($val) {
+function nan_val_c($val) {
     if ($val === null || $val === '' || (is_string($val) && trim($val) === '')) {
         return 'NaN';
     }
@@ -103,27 +102,27 @@ $stmtEst = $pdo->prepare("
     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 ");
 $stmtEst->execute([
-    $registro_id, $daniela_id,
-    nan_val_dr($f01['nombre_unidad_productiva'] ?? ''),
-    nan_val_dr($f01['tipo_actividad'] ?? ''),
-    nan_val_dr($f01['ubicacion_especifica'] ?? ''),
-    nan_val_dr($f01['coordenadas'] ?? ''),
-    nan_val_dr($f01['producto_servicio_principal'] ?? ''),
-    nan_val_dr($f01['estado_actual'] ?? ''),
-    nan_val_dr($f01['descripcion_general'] ?? ''),
-    nan_val_dr($f02['mision'] ?? ''),
-    nan_val_dr($f02['vision'] ?? ''),
-    nan_val_dr($f02['valores'] ?? ''),
-    nan_val_dr($f03['por_que_adquieren_el_servicio'] ?? ''),
-    nan_val_dr($f03['beneficio_cliente'] ?? ''),
-    nan_val_dr($f03['diferencial'] ?? ''),
-    nan_val_dr($f03['valor_ambiental'] ?? ''),
-    nan_val_dr($f03['valor_social_comunitario'] ?? ''),
-    nan_val_dr($f03['evidencia'] ?? ''),
-    nan_val_dr($f04['fortalezas'] ?? ''),
-    nan_val_dr($f04['oportunidades'] ?? ''),
-    nan_val_dr($f04['debilidades'] ?? ''),
-    nan_val_dr($f04['amenazas'] ?? '')
+    $registro_id, $celmira_id,
+    nan_val_c($f01['nombre_unidad_productiva'] ?? ''),
+    nan_val_c($f01['tipo_actividad'] ?? ''),
+    nan_val_c($f01['ubicacion_especifica'] ?? ''),
+    nan_val_c($f01['coordenadas'] ?? ''),
+    nan_val_c($f01['producto_servicio_principal'] ?? ''),
+    nan_val_c($f01['estado_actual'] ?? ''),
+    nan_val_c($f01['descripcion_general'] ?? ''),
+    nan_val_c($f02['mision'] ?? ''),
+    nan_val_c($f02['vision'] ?? ''),
+    nan_val_c($f02['valores'] ?? ''),
+    nan_val_c($f03['por_que_adquieren_el_servicio'] ?? ''),
+    nan_val_c($f03['beneficio_cliente'] ?? ''),
+    nan_val_c($f03['diferencial'] ?? ''),
+    nan_val_c($f03['valor_ambiental'] ?? ''),
+    nan_val_c($f03['valor_social_comunitario'] ?? ''),
+    nan_val_c($f03['evidencia'] ?? ''),
+    nan_val_c($f04['fortalezas'] ?? ''),
+    nan_val_c($f04['oportunidades'] ?? ''),
+    nan_val_c($f04['debilidades'] ?? ''),
+    nan_val_c($f04['amenazas'] ?? '')
 ]);
 
 // Dedicated Comments
@@ -134,12 +133,12 @@ $stmtCom = $pdo->prepare("
 ");
 $stmtCom->execute([
     $registro_id,
-    $daniela_id,
-    'C:\Users\sotoc\Downloads\JSON Daniela Rojas.json',
-    nan_val_dr($f01['observaciones_o_comentarios'] ?? $f03['observaciones_o_comentarios'] ?? ''),
-    nan_val_dr($f03['observaciones_o_comentarios'] ?? ''),
+    $celmira_id,
+    'C:\Users\sotoc\Downloads\JSON Celmira Molina.json',
+    nan_val_c($f01['observaciones_o_comentarios'] ?? $f03['observaciones_o_comentarios'] ?? ''),
+    nan_val_c($f03['observaciones_o_comentarios'] ?? ''),
     'NaN',
     'NaN'
 ]);
 
-echo "SUCCESS! Relational tables populated for Daniela Rojas Suárez (Producer ID: {$daniela_id}, Registro ID: {$registro_id}).\n";
+echo "SUCCESS! Relational tables populated for Celmira Molina Rey (Producer ID: {$celmira_id}, Registro ID: {$registro_id}).\n";
