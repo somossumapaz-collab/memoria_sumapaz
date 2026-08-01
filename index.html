@@ -18,8 +18,8 @@
     <script>
         const timestamp = new Date().getTime();
         document.write(`<link rel="stylesheet" href="assets/styles.css?v=${timestamp}">`);
+        document.write(`<link rel="stylesheet" href="assets/chat.css?v=${timestamp}">`);
     </script>
-    <link rel="stylesheet" href="assets/chat.css">
 </head>
 
 <body>
@@ -247,7 +247,9 @@
             </div>
         </div>
     </div>
-    <script src="assets/chat.js"></script>
+    <script>
+        document.write(`<script src="assets/chat.js?v=${timestamp}"><\/script>`);
+    </script>
 </body>
 
 </html>
