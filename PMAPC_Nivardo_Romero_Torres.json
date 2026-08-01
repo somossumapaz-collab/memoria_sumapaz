@@ -1,0 +1,2075 @@
+{
+    "PMAPC_F01": {
+        "nombre_unidad_productiva": "Finca Monserrat. La unidad no cuenta con un nombre comercial independiente; puede proyectarse como Lácteos Monserrat, sujeto a decisión y registro del productor.",
+        "persona_entrevistada": "Libardo Romero Torres. Las variaciones del nombre escuchadas en la entrevista y en el nombre del archivo deben verificarse con documento de identidad.",
+        "tipo_actividad": "Pecuaria y agroindustrial artesanal: ganadería lechera, ordeño manual y transformación de leche en queso campesino, ricota y mantequilla.",
+        "ubicacion_especifica": "Finca Monserrat, vía San Juan, sector relacionado con Chorreras, Vegas, Lagunitas y Tunal Alto. El productor indica que el predio se encuentra pasando el río hacia Tunal y cerca de la vía. Ubicación administrativa exacta pendiente.",
+        "producto_servicio_principal": "Leche producida en la finca, queso campesino, ricota, mantequilla y suero utilizado para alimentar cerdos.",
+        "estado_actual": "Negocio familiar en marcha, con producción y transformación diaria y venta semanal de todo el queso a un comprador habitual.",
+        "personas_vinculadas": "Libardo Romero Torres y su esposa. No se reportan trabajadores permanentes adicionales.",
+        "coordenadas": "Pendientes de tomar o verificar.",
+        "descripcion_general": "Unidad familiar con larga experiencia campesina. El productor manifiesta haber aprendido desde niño y busca mejorar el espacio de transformación, la refrigeración y los equipos para aumentar la calidad, reducir esfuerzo y avanzar hacia venta directa y formalización sanitaria.",
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F02": {
+        "mision": "Producir diariamente queso campesino y derivados lácteos de buena calidad, utilizando leche propia, trabajo familiar, experiencia tradicional y aprovechamiento integral de los subproductos, para sostener a la familia y abastecer el mercado regional.",
+        "vision": "Consolidar en los próximos años una unidad láctea organizada, con cuarto adecuado de transformación, equipos higiénicos, refrigeración, registro sanitario y venta directa en mercados como Fusagasugá, disminuyendo la dependencia del intermediario.",
+        "valores": [
+            "Calidad",
+            "cumplimiento",
+            "experiencia campesina",
+            "trabajo familiar",
+            "responsabilidad",
+            "higiene",
+            "perseverancia",
+            "aprovechamiento de recursos",
+            "compromiso con la producción rural"
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F03": {
+        "por_que_adquieren_el_servicio": "Porque el queso se elabora diariamente con leche propia, tiene aceptación sostenida y el comprador recibe toda la producción sin reportar inconvenientes de calidad.",
+        "beneficio_cliente": "Acceso semanal a queso fresco de origen campesino, elaborado en la finca y disponible en cantidad constante mientras se mantenga la producción de leche.",
+        "diferencial": "Control directo de la leche desde el ordeño, amplia experiencia, producción diaria, proceso artesanal y aprovechamiento del suero para ricota y alimentación porcina.",
+        "valor_ambiental": "El estiércol permanece como materia orgánica en los potreros y el suero no se vierte, sino que se utiliza en la alimentación de los cerdos. Existen nacimientos de agua en el predio, aunque para el queso se usa agua del acueducto.",
+        "valor_social_comunitario": "Genera el sustento del productor y su esposa, mantiene un oficio campesino tradicional y puede adquirir leche a vecinos en una fase posterior, creando un canal local de transformación.",
+        "evidencia": "Producción diaria de 8 a 9 libras, comprador semanal que recoge todo el queso, pago de contado y experiencia previa de comercialización hacia Fusagasugá durante aproximadamente diez años.",
+        "observaciones_o_comentarios": "¿Cómo demostrar el diferencial?: Mediante registros de ordeño y producción, fichas por lote, fotografías, análisis de leche y agua, testimonios del comprador, buenas prácticas, trazabilidad, visitas al predio y trámite sanitario cuando sea viable."
+    },
+    "PMAPC_F04": {
+        "fortalezas": [
+            "Experiencia desde la infancia en ordeño y elaboración de queso.",
+            "Ocho vacas actualmente en ordeño.",
+            "Aproximadamente 40 litros de leche diarios.",
+            "Producción diaria de 8 a 9 libras de queso.",
+            "Materia prima propia y control del proceso.",
+            "Comprador estable que recoge toda la producción.",
+            "Pago de contado.",
+            "Aprovechamiento del suero y del estiércol.",
+            "Acceso vehicular cercano."
+        ],
+        "oportunidades": [
+            "Crear marca asociada a Finca Monserrat.",
+            "Recuperar venta directa en Fusagasugá.",
+            "Gestionar permiso o registro sanitario.",
+            "Adecuar un cuarto exclusivo para transformación.",
+            "Comprar leche a vecinos cuando exista capacidad.",
+            "Incorporar equipos de acero inoxidable.",
+            "Estandarizar ricota y mantequilla.",
+            "Implementar empaque, etiqueta y trazabilidad."
+        ],
+        "debilidades": [
+            "Proceso totalmente manual.",
+            "Prensado con piedras.",
+            "Nevera pequeña y capacidad limitada.",
+            "Uso de estufa de leña.",
+            "No se reporta cuarto higiénicamente adecuado.",
+            "Dependencia de un solo comprador.",
+            "No hay costos detallados ni registros.",
+            "Sin nombre comercial ni permiso sanitario.",
+            "Ordeño a la intemperie."
+        ],
+        "amenazas": [
+            "Sequía y heladas que reducen pasturas y leche.",
+            "Variación en el precio del queso.",
+            "Pérdida del comprador principal.",
+            "Riesgos sanitarios por proceso artesanal.",
+            "Accidentes con animales, fuego o agua caliente.",
+            "Humo y consumo de leña.",
+            "Disminución de agua o calidad del acueducto.",
+            "Exigencias sanitarias para transportar y vender fuera del territorio."
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F05": {
+        "perfiles_cliente_multiples_filas": [
+            {
+                "tipo_actor": "Cliente directo",
+                "perfil_que_busca": "Comprador habitual que adquiere todo el queso disponible.",
+                "ubicacion": "Región cercana a la finca.",
+                "necesidad": "Queso campesino fresco en cantidad variable.",
+                "frecuencia": "Semanal, cada martes o cada ocho días.",
+                "criterio_compra": "Calidad, continuidad, confianza, precio y disponibilidad.",
+                "canal": "Recogida en finca."
+            },
+            {
+                "tipo_actor": "Consumidor final",
+                "perfil_que_busca": "Familias que consumen queso campesino.",
+                "ubicacion": "Sumapaz, Fusagasugá y posibles mercados urbanos.",
+                "necesidad": "Alimento fresco de origen rural.",
+                "frecuencia": "Semanal u ocasional.",
+                "criterio_compra": "Sabor, frescura, higiene y procedencia.",
+                "canal": "Compra directa o por intermediario."
+            },
+            {
+                "tipo_actor": "Comprador local",
+                "perfil_que_busca": "Intermediario regional con vehículo.",
+                "ubicacion": "Zona rural cercana.",
+                "necesidad": "Acopiar la producción semanal.",
+                "frecuencia": "Semanal.",
+                "criterio_compra": "Volumen, precio y cumplimiento.",
+                "canal": "Visita al predio."
+            },
+            {
+                "tipo_actor": "Comprador institucional",
+                "perfil_que_busca": "No existe actualmente; potencial después de formalización.",
+                "ubicacion": "Fusagasugá o Bogotá.",
+                "necesidad": "Producto trazable, empacado y con requisitos sanitarios.",
+                "frecuencia": "Potencial.",
+                "criterio_compra": "Registro sanitario, calidad, volumen y factura.",
+                "canal": "Acuerdo formal."
+            },
+            {
+                "tipo_actor": "Tiendas\/ restaurantes\/plazas",
+                "perfil_que_busca": "Canales potenciales de venta directa.",
+                "ubicacion": "Fusagasugá y municipios cercanos.",
+                "necesidad": "Queso campesino fresco y uniforme.",
+                "frecuencia": "Semanal.",
+                "criterio_compra": "Presentación, vida útil, precio y entrega.",
+                "canal": "Ruta comercial."
+            },
+            {
+                "tipo_actor": "Productores vecinos",
+                "perfil_que_busca": "Ganaderos que podrían vender leche.",
+                "ubicacion": "Sector rural cercano.",
+                "necesidad": "Canal estable para leche excedente.",
+                "frecuencia": "Potencialmente diaria.",
+                "criterio_compra": "Precio, pago y continuidad.",
+                "canal": "Acuerdo directo."
+            },
+            {
+                "tipo_actor": "Otro",
+                "perfil_que_busca": "Clientes anteriores atendidos mediante el hijo del productor.",
+                "ubicacion": "Fusagasugá.",
+                "necesidad": "Queso campesino directo del productor.",
+                "frecuencia": "Histórica\/potencial.",
+                "criterio_compra": "Calidad, confianza y entrega.",
+                "canal": "Envío y venta directa."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F06": {
+        "que_buscan_los_compradores": "Queso campesino fresco, uniforme, de buen sabor, disponible cada semana y a precio competitivo.",
+        "como_se_conoce_la_necesidad": "El comprador actual recibe toda la producción sin objeciones y el productor afirma que podría vender cantidades mayores.",
+        "quienes_compran_o_podrian_comprar": "El comprador habitual, consumidores locales, tiendas, plazas, restaurantes y clientes de Fusagasugá.",
+        "evidencia": "Venta semanal, pago de contado, comprador recurrente y experiencia previa de aproximadamente diez años enviando queso a Fusagasugá.",
+        "ventaja_territorial": "Leche propia, tradición campesina, producción diaria, cercanía con los recursos de la finca y posibilidad de mostrar prácticas de aprovechamiento.",
+        "cambios_demanda": "La demanda actual depende del comprador local. El productor quiere recuperar canales directos para obtener mayor valor y evitar que la ganancia quede en el intermediario.",
+        "dificultades": "Dependencia de un solo comprador, falta de transporte comercial propio, ausencia de registro sanitario, equipos limitados, falta de empaque estandarizado y desconocimiento de costos completos.",
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F07": {
+        "alianzas_cooperacion_multiples_filas": [
+            {
+                "actor_aliado": "Productores vecinos",
+                "tipo": "Ganaderos lecheros.",
+                "que_aporta": "Leche adicional, experiencia y compras conjuntas.",
+                "que_recibe": "Canal de venta y transformación.",
+                "trabajo_conjunto": "Acuerdos de calidad, precio y entrega.",
+                "aporte_ambiental": "Buenas prácticas de ordeño y manejo de agua.",
+                "accion": "Identificar interesados y validar calidad."
+            },
+            {
+                "actor_aliado": "Asociación campesina",
+                "tipo": "Organización rural.",
+                "que_aporta": "Representación, formación y comercialización.",
+                "que_recibe": "Oferta láctea y participación del productor.",
+                "trabajo_conjunto": "Marca colectiva, mercados y compras.",
+                "aporte_ambiental": "Protocolos ambientales comunes.",
+                "accion": "Explorar vinculación."
+            },
+            {
+                "actor_aliado": "Junta de Acción Comunal",
+                "tipo": "Organización territorial.",
+                "que_aporta": "Convocatoria y gestión.",
+                "que_recibe": "Fortalecimiento económico local.",
+                "trabajo_conjunto": "Capacitación y protección de fuentes.",
+                "aporte_ambiental": "Cuidado comunitario del agua.",
+                "accion": "Presentar proyecto."
+            },
+            {
+                "actor_aliado": "Comprador actual",
+                "tipo": "Aliado comercial.",
+                "que_aporta": "Compra total, pago y transporte.",
+                "que_recibe": "Queso constante y de calidad.",
+                "trabajo_conjunto": "Acuerdo de precio, volumen y retroalimentación.",
+                "aporte_ambiental": "Recogida consolidada.",
+                "accion": "Registrar ventas y negociar ajustes."
+            },
+            {
+                "actor_aliado": "Mercados de Fusagasugá",
+                "tipo": "Canal comercial.",
+                "que_aporta": "Venta directa y mejor margen.",
+                "que_recibe": "Producto fresco y territorial.",
+                "trabajo_conjunto": "Ruta semanal y pedidos previos.",
+                "aporte_ambiental": "Optimización de transporte.",
+                "accion": "Validar clientes y requisitos."
+            },
+            {
+                "actor_aliado": "Instituciones de apoyo",
+                "tipo": "Alcaldía, salud, SENA y asistencia técnica.",
+                "que_aporta": "Diagnóstico, formación, equipos y gestión sanitaria.",
+                "que_recibe": "Unidad fortalecida y evidencia de resultados.",
+                "trabajo_conjunto": "BPM, INVIMA, costos y diseño del área.",
+                "aporte_ambiental": "Manejo de residuos, agua y energía.",
+                "accion": "Solicitar visita técnica integral."
+            },
+            {
+                "actor_aliado": "Aliados logísticos",
+                "tipo": "Transportadores o familiares.",
+                "que_aporta": "Traslado refrigerado o protegido.",
+                "que_recibe": "Pago por ruta.",
+                "trabajo_conjunto": "Entrega a Fusagasugá.",
+                "aporte_ambiental": "Rutas consolidadas.",
+                "accion": "Cotizar transporte."
+            },
+            {
+                "actor_aliado": "Otros aliados",
+                "tipo": "Veterinario, laboratorio y proveedores.",
+                "que_aporta": "Sanidad animal, análisis y equipos.",
+                "que_recibe": "Compras y servicios.",
+                "trabajo_conjunto": "Control de leche, agua y utensils.",
+                "aporte_ambiental": "Uso responsable de insumos.",
+                "accion": "Crear directorio."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F08": {
+        "validaciones_mercado_multiples_filas": [
+            {
+                "metodo": "Encuesta",
+                "a_quien": "No se informó.",
+                "resultado": "Pendiente.",
+                "motivacion": "Pendiente.",
+                "evidencia": "No disponible."
+            },
+            {
+                "metodo": "Entrevista",
+                "a_quien": "Comprador actual y consumidores conocidos.",
+                "resultado": "El comprador acepta toda la producción y paga de contado.",
+                "motivacion": "Calidad, continuidad y confianza.",
+                "evidencia": "Relato del productor."
+            },
+            {
+                "metodo": "Degustación\/muestra",
+                "a_quien": "Familia y clientes históricos.",
+                "resultado": "El producto es consumido en el hogar y mantiene aceptación.",
+                "motivacion": "Sabor y calidad artesanal.",
+                "evidencia": "Testimonios pendientes."
+            },
+            {
+                "metodo": "Venta previa",
+                "a_quien": "Comprador regional y clientes de Fusagasugá.",
+                "resultado": "Comercialización sostenida; actualmente se vende cada semana.",
+                "motivacion": "Disponibilidad y origen campesino.",
+                "evidencia": "Registros pendientes."
+            },
+            {
+                "metodo": "Carta de intención",
+                "a_quien": "No existe.",
+                "resultado": "Pendiente.",
+                "motivacion": "Volumen, calidad y formalización.",
+                "evidencia": "No disponible."
+            },
+            {
+                "metodo": "Participación en feria",
+                "a_quien": "No se informó.",
+                "resultado": "Pendiente.",
+                "motivacion": "Identidad territorial.",
+                "evidencia": "No disponible."
+            },
+            {
+                "metodo": "Otro",
+                "a_quien": "Venta histórica por medio del hijo.",
+                "resultado": "El canal dejó de operar cuando el hijo se trasladó a Bogotá.",
+                "motivacion": "Venta directa y mejor margen.",
+                "evidencia": "Relato del productor."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F09": {
+        "fichas_tecnicas_multiples_filas": [
+            {
+                "servicio": "Leche cruda",
+                "descripcion_tecnica": "Leche bovina producida por ocho vacas y obtenida mediante ordeño manual.",
+                "unidad": "Litro.",
+                "insumos_principales": "Leche fresca de la finca.",
+                "condiciones_especiales": "Filtrar y transformar inmediatamente; conservar en frío si se almacena.",
+                "presentacion": "Olla o recipiente; material pendiente de verificar.",
+                "diferencial": "Materia prima propia y producción diaria."
+            },
+            {
+                "servicio": "Queso campesino",
+                "descripcion_tecnica": "Derivado artesanal prensado, elaborado diariamente con leche, cuajo, sal y agua caliente.",
+                "unidad": "Libra.",
+                "insumos_principales": "Leche, cuajo, sal y agua potable.",
+                "condiciones_especiales": "Refrigeración en nevera pequeña; vida útil pendiente.",
+                "presentacion": "Libra o bloque; empaque pendiente.",
+                "diferencial": "Experiencia tradicional, frescura y aceptación semanal."
+            },
+            {
+                "servicio": "Ricota",
+                "descripcion_tecnica": "Derivado obtenido a partir del suero resultante de la elaboración del queso.",
+                "unidad": "Libra \/ unidad; pendiente.",
+                "insumos_principales": "Suero y proceso térmico.",
+                "condiciones_especiales": "Refrigeración.",
+                "presentacion": "Presentación no definida.",
+                "diferencial": "Aprovechamiento del subproducto."
+            },
+            {
+                "servicio": "Mantequilla",
+                "descripcion_tecnica": "Producto artesanal obtenido de la leche o de sus fracciones grasas.",
+                "unidad": "Libra \/ unidad; pendiente.",
+                "insumos_principales": "Leche o crema.",
+                "condiciones_especiales": "Refrigeración.",
+                "presentacion": "Presentación pendiente.",
+                "diferencial": "Diversificación con materia prima propia."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F10": {
+        "proceso_prestacion_servicio_multiples_filas": [
+            {
+                "servicio": "Producción de leche",
+                "unidad": "8 vacas en ordeño.",
+                "actividad_proceso": "1. Revisar animales, pasturas, agua, sal y condiciones sanitarias.",
+                "tiempo_estimado": "Diario."
+            },
+            {
+                "servicio": "Producción de leche",
+                "unidad": "Aproximadamente 40 L\/día.",
+                "actividad_proceso": "2. Preparar utensilios, lavar manos y realizar ordeño manual.",
+                "tiempo_estimado": "Aproximadamente 1 hora."
+            },
+            {
+                "servicio": "Filtrado",
+                "unidad": "Leche del ordeño.",
+                "actividad_proceso": "3. Pasar la leche por coladera y tela limpia hacia la olla de elaboración.",
+                "tiempo_estimado": "Inmediato."
+            },
+            {
+                "servicio": "Cuajado",
+                "unidad": "Lote diario.",
+                "actividad_proceso": "4. Agregar cuajo y dejar actuar cerca de 20 minutos.",
+                "tiempo_estimado": "20 minutos, pendiente de estandarizar."
+            },
+            {
+                "servicio": "Corte y desuerado",
+                "unidad": "Cuajada.",
+                "actividad_proceso": "5. Cortar la cuajada y retirar el suero.",
+                "tiempo_estimado": "Por lote."
+            },
+            {
+                "servicio": "Salado y calentamiento",
+                "unidad": "Cuajada desuerada.",
+                "actividad_proceso": "6. Agregar sal y agua caliente según la práctica del productor.",
+                "tiempo_estimado": "Por lote."
+            },
+            {
+                "servicio": "Prensado",
+                "unidad": "8 a 9 lb de queso\/día.",
+                "actividad_proceso": "7. Llevar a la gavera y prensar manualmente con piedras.",
+                "tiempo_estimado": "Tiempo pendiente."
+            },
+            {
+                "servicio": "Refrigeración",
+                "unidad": "Producción diaria.",
+                "actividad_proceso": "8. Retirar, revisar y conservar en la nevera.",
+                "tiempo_estimado": "Hasta entrega semanal."
+            },
+            {
+                "servicio": "Comercialización y subproductos",
+                "unidad": "Queso, ricota, mantequilla y suero.",
+                "actividad_proceso": "9. Pesar, entregar al comprador y destinar el suero a los cerdos.",
+                "tiempo_estimado": "Semanal\/diario."
+            }
+        ],
+        "observaciones_o_comentarios": "Ficha técnica pendiente: documentar cantidades exactas de leche, cuajo, sal y agua; temperatura; tiempos; rendimiento; tamaño de la gavera; presión; peso final; refrigeración; vida útil; empaque; rotulado; limpieza; trazabilidad; periodo de retiro por medicamentos; y condiciones sanitarias del ordeño y del espacio. La ricota y la mantequilla requieren fichas independientes."
+    },
+    "PMAPC_F11": {
+        "insumos_multiples_filas": [
+            {
+                "insumo": "Leche propia",
+                "cantidad_unidad": "40 L\/día reportados.",
+                "frecuencia": "Diaria.",
+                "proveedor_fuente": "Ocho vacas de la finca.",
+                "toxicidad": "N\/A",
+                "impacto_potencial": "Uso de agua, suelo y generación de estiércol.",
+                "manejo_ambiental": "Manejo de pasturas, sanidad y registros.",
+                "observaciones": "Producción real por vaca pendiente."
+            },
+            {
+                "insumo": "Pasturas y forrajes",
+                "cantidad_unidad": "Área pendiente.",
+                "frecuencia": "Permanente.",
+                "proveedor_fuente": "Finca Monserrat.",
+                "toxicidad": "N\/A",
+                "impacto_potencial": "Sobrepastoreo y afectación por sequía.",
+                "manejo_ambiental": "Rotación, cobertura y reserva de alimento.",
+                "observaciones": "Heladas y verano reducen producción."
+            },
+            {
+                "insumo": "Agua de acueducto",
+                "cantidad_unidad": "Cantidad pendiente.",
+                "frecuencia": "Diaria.",
+                "proveedor_fuente": "Acueducto veredal.",
+                "toxicidad": "N\/A",
+                "impacto_potencial": "Consumo y aguas de lavado.",
+                "manejo_ambiental": "Medir, usar eficientemente y proteger drenajes.",
+                "observaciones": "Se hierve para el proceso."
+            },
+            {
+                "insumo": "Agua de nacimientos",
+                "cantidad_unidad": "Uso pecuario y predial.",
+                "frecuencia": "Permanente.",
+                "proveedor_fuente": "Fuentes de la finca.",
+                "toxicidad": "N\/A",
+                "impacto_potencial": "Riesgo de contaminación por ganado.",
+                "manejo_ambiental": "Proteger rondas y verificar calidad.",
+                "observaciones": "No se reporta uso directo en queso."
+            },
+            {
+                "insumo": "Cuajo",
+                "cantidad_unidad": "Pote grande dura 2,5 a 3 meses, según productor.",
+                "frecuencia": "Por lote.",
+                "proveedor_fuente": "Proveedor por verificar.",
+                "toxicidad": "Según ficha",
+                "impacto_potencial": "Envases y dosificación inadecuada.",
+                "manejo_ambiental": "Dosificar, rotular y disponer envases.",
+                "observaciones": "Tipo y marca pendientes."
+            },
+            {
+                "insumo": "Sal",
+                "cantidad_unidad": "Menos de media libra por lote reportada.",
+                "frecuencia": "Diaria.",
+                "proveedor_fuente": "Comercio local.",
+                "toxicidad": "N\/A",
+                "impacto_potencial": "Empaques y exceso de sal.",
+                "manejo_ambiental": "Estandarizar cantidad y reutilizar o reciclar empaque.",
+                "observaciones": "Cantidad exacta pendiente."
+            },
+            {
+                "insumo": "Leña",
+                "cantidad_unidad": "Cantidad pendiente.",
+                "frecuencia": "Diaria.",
+                "proveedor_fuente": "Fuente pendiente.",
+                "toxicidad": "N\/A",
+                "impacto_potencial": "Humo, emisiones, presión sobre vegetación y riesgo de incendio.",
+                "manejo_ambiental": "Origen legal, estufa eficiente y transición a energía más limpia.",
+                "observaciones": "Productor prioriza una estufa."
+            },
+            {
+                "insumo": "Energía eléctrica",
+                "cantidad_unidad": "Consumo de nevera.",
+                "frecuencia": "Permanente.",
+                "proveedor_fuente": "Red eléctrica.",
+                "toxicidad": "N\/A",
+                "impacto_potencial": "Consumo y riesgo por equipo antiguo.",
+                "manejo_ambiental": "Equipo eficiente, mantenimiento y medición.",
+                "observaciones": "Nevera pequeña."
+            },
+            {
+                "insumo": "Empaque",
+                "cantidad_unidad": "No se describió.",
+                "frecuencia": "Semanal.",
+                "proveedor_fuente": "Proveedor pendiente.",
+                "toxicidad": "N\/A",
+                "impacto_potencial": "Residuos y contaminación.",
+                "manejo_ambiental": "Usar material apto, mínimo y reciclable.",
+                "observaciones": "Debe definirse con formalización."
+            },
+            {
+                "insumo": "Medicamentos veterinarios",
+                "cantidad_unidad": "Según plan sanitario.",
+                "frecuencia": "Ocasional.",
+                "proveedor_fuente": "Veterinario \/ almacén.",
+                "toxicidad": "Según producto",
+                "impacto_potencial": "Residuos y presencia en leche.",
+                "manejo_ambiental": "Registrar tratamientos, retiro y posconsumo.",
+                "observaciones": "No informado en detalle."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F12": {
+        "produccion_mensual_real": "Referencia derivada: aproximadamente 1.200 litros de leche al mes si se mantienen 40 litros diarios durante 30 días. Debe validarse con registros.",
+        "produccion_normal": "Entre 8 y 9 libras de queso por día, equivalentes a aproximadamente 240 a 270 libras mensuales si se produce diariamente.",
+        "capacidad_mensual_teorica": "La capacidad actual corresponde a la leche de ocho vacas y al proceso manual. El productor no definió una cifra adicional segura.",
+        "produccion_maxima_posible": "Pendiente. El productor considera comprar leche a vecinos, pero no se debe proyectar sin evaluar equipos, frío, mano de obra, agua, mercado y requisitos sanitarios.",
+        "area_numero_habitaciones": "Finca Monserrat; área total, potreros y metros del espacio de transformación pendientes.",
+        "limitantes_productivos": "Prensado manual, gavera limitada, nevera pequeña, estufa de leña, ordeño a la intemperie, falta de cuarto adecuado, registros y equipos higiénicos.",
+        "limitantes_ambientales": "Sequía, heladas, disminución de pasturas, consumo de leña, manejo de aguas de lavado y presión sobre agua y suelo si aumenta el hato.",
+        "capacidad_instalada": "Ocho vacas en ordeño, utensilios artesanales, gavera manual, estufa de leña y nevera pequeña.",
+        "capacidad_utilizada": "Aproximadamente 40 litros diarios transformados en 8 a 9 libras de queso, más ricota, mantequilla y suero para cerdos.",
+        "produce_mismo_todo_ano": false,
+        "alcanza_para_demanda": true,
+        "necesidades_aumentar_sosteniblemente": "Adecuación sanitaria, gavera y prensa apropiadas, estufa más eficiente, refrigeración, registros, mejoramiento de pasturas, análisis de capacidad y mercado directo.",
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F12A": {
+        "limites_ambientales_multiples_filas": [
+            {
+                "condicion": "Agua disponible",
+                "estado_actual": "Agua del acueducto veredal para elaborar queso y nacimientos en la finca.",
+                "limite_restriccion": "Cantidad, continuidad y calidad no verificadas.",
+                "afectacion": "Afecta higiene, proceso y consumo animal.",
+                "efecto": "Riesgo sanitario y productivo.",
+                "incidencia": "Alta",
+                "accion_mejora": "Analizar agua, medir consumo y proteger captaciones."
+            },
+            {
+                "condicion": "Fuentes hídricas cercanas",
+                "estado_actual": "Existen nacimientos en el predio.",
+                "limite_restriccion": "Aislamiento y distancia a animales pendientes.",
+                "afectacion": "La contaminación afectaría ganado y ecosistema.",
+                "efecto": "Pérdida de calidad y conflicto ambiental.",
+                "incidencia": "Alta",
+                "accion_mejora": "Delimitar rondas y evitar vertimientos."
+            },
+            {
+                "condicion": "Suelo",
+                "estado_actual": "Pasturas sostienen ocho vacas en ordeño.",
+                "limite_restriccion": "Carga animal y fertilidad no calculadas.",
+                "afectacion": "Una expansión sin evaluación reduce alimento.",
+                "efecto": "Baja leche y degradación.",
+                "incidencia": "Alta",
+                "accion_mejora": "Análisis de suelo, rotación y plan forrajero."
+            },
+            {
+                "condicion": "Pendiente \/ topografía",
+                "estado_actual": "La vivienda se encuentra cerca de la vía; topografía del predio no fue descrita.",
+                "limite_restriccion": "Pendientes y accesos internos pendientes.",
+                "afectacion": "Puede afectar ordeño, transporte y erosión.",
+                "efecto": "Riesgo logístico y laboral.",
+                "incidencia": "Media",
+                "accion_mejora": "Levantamiento predial y rutas seguras."
+            },
+            {
+                "condicion": "Clima",
+                "estado_actual": "Verano, sequía y heladas afectan las pasturas.",
+                "limite_restriccion": "Alta variabilidad climática.",
+                "afectacion": "Disminuye leche y disponibilidad de forraje.",
+                "efecto": "Menor producción e ingreso.",
+                "incidencia": "Muy alta",
+                "accion_mejora": "Reserva de forraje, agua y manejo rotacional."
+            },
+            {
+                "condicion": "Biodiversidad",
+                "estado_actual": "Predio con nacimientos y entorno rural.",
+                "limite_restriccion": "Expansión productiva debe respetar áreas sensibles.",
+                "afectacion": "Puede aumentar presión sobre vegetación y agua.",
+                "efecto": "Impacto territorial.",
+                "incidencia": "Alta",
+                "accion_mejora": "Identificar áreas protegidas y conservar cobertura."
+            },
+            {
+                "condicion": "Uso de insumos",
+                "estado_actual": "Cuajo, sal, leña, agua, energía y medicamentos.",
+                "limite_restriccion": "Sin registros completos.",
+                "afectacion": "Aumenta costos, humo y residuos.",
+                "efecto": "Impacto sanitario y ambiental.",
+                "incidencia": "Media-alta",
+                "accion_mejora": "Dosificar, registrar y sustituir tecnologías ineficientes."
+            },
+            {
+                "condicion": "Manejo de residuos",
+                "estado_actual": "Suero para cerdos y estiércol en potreros; aguas y envases no descritos.",
+                "limite_restriccion": "Sin plan documentado.",
+                "afectacion": "Puede contaminar agua y generar olores.",
+                "efecto": "Riesgo ambiental y sanitario.",
+                "incidencia": "Alta",
+                "accion_mejora": "Plan de suero, estiércol, aguas, cenizas y envases."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F12B": {
+        "riesgos_sst_multiples_filas": [
+            {
+                "tipo": "Biológico",
+                "peligro": "Contacto con leche cruda, estiércol, animales y microorganismos.",
+                "aplica": true,
+                "nivel_riesgo": "Alta",
+                "controles_actuales": "Guantes y experiencia.",
+                "accion": "Higiene de ordeño, ropa exclusiva, lavado y control sanitario."
+            },
+            {
+                "tipo": "Mecánico\/animal",
+                "peligro": "Patadas, golpes, cornadas o atrapamiento.",
+                "aplica": true,
+                "nivel_riesgo": "Alta",
+                "controles_actuales": "Manejo cotidiano.",
+                "accion": "Punto de ordeño seguro, sujeción y apoyo en maniobras."
+            },
+            {
+                "tipo": "Físico",
+                "peligro": "Lluvia, frío, sol y viento durante ordeño.",
+                "aplica": true,
+                "nivel_riesgo": "Alta",
+                "controles_actuales": "Botas, overol, chamarro y plástico o caucho.",
+                "accion": "Refugio de ordeño, ropa adecuada y pausas."
+            },
+            {
+                "tipo": "Térmico",
+                "peligro": "Agua caliente, estufa de leña y recipientes.",
+                "aplica": true,
+                "nivel_riesgo": "Alta",
+                "controles_actuales": "Experiencia.",
+                "accion": "Guantes térmicos, superficies estables y barrera de seguridad."
+            },
+            {
+                "tipo": "Químico",
+                "peligro": "Humo, ceniza, limpiadores y medicamentos.",
+                "aplica": true,
+                "nivel_riesgo": "Media",
+                "controles_actuales": "No se detalló.",
+                "accion": "Ventilación, rotulado, EPP y almacenamiento."
+            },
+            {
+                "tipo": "Biomecánico",
+                "peligro": "Ordeño manual, levantamiento de ollas, queso y piedras.",
+                "aplica": true,
+                "nivel_riesgo": "Alta",
+                "controles_actuales": "Trabajo en pareja.",
+                "accion": "Prensa adecuada, carros, cargas menores y ergonomía."
+            },
+            {
+                "tipo": "Locativo",
+                "peligro": "Pisos húmedos, barro, terreno y obstáculos.",
+                "aplica": true,
+                "nivel_riesgo": "Media-alta",
+                "controles_actuales": "Botas.",
+                "accion": "Drenaje, orden, superficies antideslizantes e iluminación."
+            },
+            {
+                "tipo": "Cortopunzante",
+                "peligro": "Herramientas o elementos de corte del queso.",
+                "aplica": true,
+                "nivel_riesgo": "Media",
+                "controles_actuales": "No informado.",
+                "accion": "Utensilios seguros y almacenamiento."
+            },
+            {
+                "tipo": "Eléctrico",
+                "peligro": "Nevera y futuras máquinas en ambiente húmedo.",
+                "aplica": true,
+                "nivel_riesgo": "Permanente",
+                "controles_actuales": "No informado.",
+                "accion": "Revisión eléctrica, puesta a tierra y conexiones protegidas."
+            },
+            {
+                "tipo": "Tránsito",
+                "peligro": "Salida de producto o visitas del comprador.",
+                "aplica": true,
+                "nivel_riesgo": "Semanal",
+                "controles_actuales": "El comprador asume transporte.",
+                "accion": "Zona segura de carga y registro de entrega."
+            }
+        ],
+        "observaciones_o_comentarios": "Los riesgos se identifican con base en el trabajo real descrito y deben verificarse mediante visita. El ordeño se realiza a la intemperie y la transformación utiliza agua caliente, estufa de leña, recipientes y prensado manual. También existe contacto con animales, cargas, humo, clima, superficies húmedas y desplazamientos rurales."
+    },
+    "PMAPC_F12C": {
+        "plan_acciones_sst_multiples_filas": [
+            {
+                "accion_preventiva": "Usar botas, guantes, overol, ropa impermeable y protección térmica.",
+                "riesgo": "Biológico, físico, térmico y locativo.",
+                "responsable": "Libardo y esposa.",
+                "frecuencia": "Cada jornada.",
+                "evidencia": "Checklist y fotografías."
+            },
+            {
+                "accion_preventiva": "Adecuar punto cubierto y seguro para ordeño.",
+                "riesgo": "Clima y golpes de animales.",
+                "responsable": "Productor\/apoyo técnico.",
+                "frecuencia": "Antes de ampliar.",
+                "evidencia": "Inspección y fotos."
+            },
+            {
+                "accion_preventiva": "Sustituir piedras por prensa estable y gavera apropiada.",
+                "riesgo": "Biomecánico y mecánico.",
+                "responsable": "Productor\/proveedor.",
+                "frecuencia": "Inversión prioritaria.",
+                "evidencia": "Factura y verificación."
+            },
+            {
+                "accion_preventiva": "Organizar estufa, agua caliente y recipientes en zona ventilada.",
+                "riesgo": "Quemaduras, humo e incendio.",
+                "responsable": "Libardo y esposa.",
+                "frecuencia": "Diaria.",
+                "evidencia": "Checklist."
+            },
+            {
+                "accion_preventiva": "Revisar nevera, conexiones y futura maquinaria.",
+                "riesgo": "Eléctrico.",
+                "responsable": "Técnico.",
+                "frecuencia": "Semestral.",
+                "evidencia": "Mantenimiento."
+            },
+            {
+                "accion_preventiva": "Mantener botiquín, números de emergencia y registro de incidentes.",
+                "riesgo": "Emergencias.",
+                "responsable": "Familia.",
+                "frecuencia": "Revisión mensual.",
+                "evidencia": "Bitácora."
+            },
+            {
+                "accion_preventiva": "Capacitarse en BPM, manejo animal, ergonomía y seguridad con fuego.",
+                "riesgo": "Sanitario y SST.",
+                "responsable": "Familia\/institución.",
+                "frecuencia": "Anual.",
+                "evidencia": "Certificados."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F13": {
+        "canales_venta_multiples_filas": [
+            {
+                "canal": "Ferias campesinas",
+                "activo": false,
+                "descripcion": "Queso, ricota y mantequilla después de cumplir requisitos.",
+                "responsable": "Libardo\/aliado.",
+                "frecuencia": "Según convocatoria."
+            },
+            {
+                "canal": "Venta directa",
+                "activo": true,
+                "descripcion": "Venta total del queso semanal.",
+                "responsable": "Libardo.",
+                "frecuencia": "Semanal."
+            },
+            {
+                "canal": "Redes sociales",
+                "activo": false,
+                "descripcion": "Podría utilizar WhatsApp y catálogo básico.",
+                "responsable": "Libardo\/familiar.",
+                "frecuencia": "Por implementar."
+            },
+            {
+                "canal": "WhatsApp\/llamadas",
+                "activo": true,
+                "descripcion": "Coordinación con comprador y futuros clientes.",
+                "responsable": "Libardo.",
+                "frecuencia": "Semanal."
+            },
+            {
+                "canal": "Tiendas\/restaurantes\/plazas",
+                "activo": false,
+                "descripcion": "Fusagasugá y mercados cercanos.",
+                "responsable": "Libardo \/ aliado logístico.",
+                "frecuencia": "Semanal."
+            },
+            {
+                "canal": "Compras institucionales",
+                "activo": false,
+                "descripcion": "Sujetas a formalización, volumen y factura.",
+                "responsable": "Pendiente.",
+                "frecuencia": "Por explorar."
+            },
+            {
+                "canal": "Comercialización asociativa",
+                "activo": false,
+                "descripcion": "Posible con productores de leche vecinos.",
+                "responsable": "Productor\/organización.",
+                "frecuencia": "Por gestionar."
+            },
+            {
+                "canal": "Otro",
+                "activo": true,
+                "descripcion": "Comprador intermediario regional que recoge en vehículo.",
+                "responsable": "Comprador\/Libardo.",
+                "frecuencia": "Cada martes o cada ocho días."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F14": {
+        "estrategia_precios_multiples_filas": [
+            {
+                "servicio": "Queso campesino",
+                "costo_unitario": null,
+                "margen": null,
+                "precio_minimo": null,
+                "referencia": "$8.000 por libra.",
+                "logistica_plataforma": "El comprador recoge; empaque y frío por costear.",
+                "precio_final": 8000,
+                "justificacion": "Acuerdo vigente con comprador; no se ha actualizado durante un periodo prolongado."
+            },
+            {
+                "servicio": "Ricota",
+                "costo_unitario": null,
+                "margen": null,
+                "precio_minimo": null,
+                "referencia": "No se informó precio.",
+                "logistica_plataforma": "Refrigeración y empaque.",
+                "precio_final": null,
+                "justificacion": "Se obtiene del suero; falta definir volumen y mercado."
+            },
+            {
+                "servicio": "Mantequilla",
+                "costo_unitario": null,
+                "margen": null,
+                "precio_minimo": null,
+                "referencia": "No se informó precio.",
+                "logistica_plataforma": "Refrigeración y empaque.",
+                "precio_final": null,
+                "justificacion": "Producción artesanal sin datos de venta."
+            },
+            {
+                "servicio": "Leche comprada \/ transformación futura",
+                "costo_unitario": null,
+                "margen": null,
+                "precio_minimo": null,
+                "referencia": "No aplica actualmente.",
+                "logistica_plataforma": "Recepción, análisis y frío.",
+                "precio_final": null,
+                "justificacion": "Solo debe implementarse con capacidad técnica, sanitaria y comercial."
+            }
+        ],
+        "recomendacion_costeo_registro_unico": "El productor estima un costo de $4.000 a $5.000 por libra, pero no existe un costeo completo. Deben incluirse alimentación, pasturas, sanidad, ordeño, cuajo, sal, agua, leña, energía, mano de obra, depreciación, empaque, refrigeración y pérdidas. También se requiere revisar el precio de $8.000, que lleva tiempo sin incremento.",
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F15": {
+        "proyeccion_ventas_multiples_filas": [
+            {
+                "concepto_servicio": "Leche producida",
+                "cantidad_mensual": "Referencia: 1.200 L\/mes si se mantienen 40 L\/día.",
+                "precio": null,
+                "ingreso_mensual": null,
+                "forma_pago": "No aplica.",
+                "canal": "Finca Monserrat."
+            },
+            {
+                "concepto_servicio": "Queso campesino",
+                "cantidad_mensual": "240 a 270 lb\/mes como escenario derivado de 8 a9 lb\/día.",
+                "precio": 8000,
+                "ingreso_mensual": null,
+                "forma_pago": "Contado al pesar y entregar.",
+                "canal": "Comprador semanal."
+            },
+            {
+                "concepto_servicio": "Ricota",
+                "cantidad_mensual": "Cantidad no informada.",
+                "precio": null,
+                "ingreso_mensual": null,
+                "forma_pago": "Pendiente.",
+                "canal": "Autoconsumo o venta pendiente."
+            },
+            {
+                "concepto_servicio": "Mantequilla",
+                "cantidad_mensual": "Cantidad no informada.",
+                "precio": null,
+                "ingreso_mensual": null,
+                "forma_pago": "Pendiente.",
+                "canal": "Autoconsumo o venta pendiente."
+            },
+            {
+                "concepto_servicio": "Suero",
+                "cantidad_mensual": "Subproducto diario.",
+                "precio": null,
+                "ingreso_mensual": null,
+                "forma_pago": "No aplica.",
+                "canal": "Uso interno."
+            }
+        ],
+        "inconsistencia_verificar_registro_unico": "La proyección es orientativa y se deriva de la producción diaria reportada. Debe validarse con registros durante al menos ocho semanas, diferenciando días sin ordeño, autoconsumo, pérdidas, peso de cada lote, ricota, mantequilla y variaciones estacionales. El ingreso calculado es bruto y no representa utilidad.",
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F15A": {
+        "estrategia_fidelizacion_multiples_filas": [
+            {
+                "cliente": "Comprador actual",
+                "estrategia": "Cumplir cantidad y calidad, registrar entregas y negociar revisión de precio.",
+                "medio": "Llamada, WhatsApp y visita.",
+                "frecuencia": "Semanal.",
+                "responsable": "Libardo."
+            },
+            {
+                "cliente": "Consumidor final",
+                "estrategia": "Ofrecer producto con fecha, peso, origen y recomendaciones.",
+                "medio": "Venta directa, WhatsApp y voz a voz.",
+                "frecuencia": "Según producción.",
+                "responsable": "Libardo y esposa."
+            },
+            {
+                "cliente": "Tiendas o plazas de Fusagasugá",
+                "estrategia": "Presentar muestra, portafolio, requisitos y ruta de entrega.",
+                "medio": "Visita, llamada y WhatsApp.",
+                "frecuencia": "Mensual\/semanal.",
+                "responsable": "Libardo\/aliado."
+            },
+            {
+                "cliente": "Comprador institucional",
+                "estrategia": "Preparar documentación sanitaria, trazabilidad y capacidad.",
+                "medio": "Reuniones y correo.",
+                "frecuencia": "Según proceso.",
+                "responsable": "Productor\/ asesor."
+            },
+            {
+                "cliente": "Productores de leche vecinos",
+                "estrategia": "Acordar calidad, precio, horario y análisis.",
+                "medio": "Visita y llamada.",
+                "frecuencia": "Diaria si se implementa.",
+                "responsable": "Libardo."
+            },
+            {
+                "cliente": "Aliado comercial",
+                "estrategia": "Definir responsabilidades, transporte, pago y clientes.",
+                "medio": "Acuerdo escrito.",
+                "frecuencia": "Según ruta.",
+                "responsable": "Productor\/ aliado."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F15B": {
+        "logistica_ultima_milla_multiples_filas": [
+            {
+                "servicio_insumo": "Queso actual",
+                "canal": "Recogida en finca.",
+                "tiempo": "Cada ocho días, según práctica actual; vida útil debe verificarse.",
+                "transporte_operacion": "Vehículo del comprador.",
+                "condicion_calidad": "Refrigeración, protección y registro de fecha.",
+                "capacidad": "Toda la producción semanal.",
+                "costo": "Asumido por comprador.",
+                "responsable": "Libardo\/comprador."
+            },
+            {
+                "servicio_insumo": "Venta directa local",
+                "canal": "Entrega o recogida.",
+                "tiempo": "Mismo día acordado.",
+                "transporte_operacion": "Cliente o transporte local.",
+                "condicion_calidad": "Empaque apto y cadena de frío.",
+                "capacidad": "Pequeña escala.",
+                "costo": "Pendiente.",
+                "responsable": "Libardo."
+            },
+            {
+                "servicio_insumo": "Fusagasugá",
+                "canal": "Ruta semanal futura.",
+                "tiempo": "Tiempo por medir.",
+                "transporte_operacion": "Vehículo propio o aliado.",
+                "condicion_calidad": "Nevera portátil o transporte protegido.",
+                "capacidad": "Pendiente.",
+                "costo": "Por cotizar.",
+                "responsable": "Libardo \/ aliado."
+            },
+            {
+                "servicio_insumo": "Ricota y mantequilla",
+                "canal": "Venta directa futura.",
+                "tiempo": "Corta, por alta perecibilidad.",
+                "transporte_operacion": "Transporte refrigerado.",
+                "condicion_calidad": "Frío constante y empaque.",
+                "capacidad": "Pendiente.",
+                "costo": "Pendiente.",
+                "responsable": "Libardo."
+            },
+            {
+                "servicio_insumo": "Leche de vecinos",
+                "canal": "Recepción futura en finca.",
+                "tiempo": "Inmediata después del ordeño.",
+                "transporte_operacion": "Proveedor o recogida.",
+                "condicion_calidad": "Temperatura, filtrado, análisis y cantinas limpias.",
+                "capacidad": "No validada.",
+                "costo": "Pendiente.",
+                "responsable": "Libardo\/proveedor."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F15C": {
+        "trazabilidad_qr_multiples_filas": [
+            {
+                "elemento": "Identificación animal",
+                "informacion": "Número, raza, edad, lactancia, tratamientos y producción.",
+                "responsable": "Libardo\/veterinario.",
+                "medio": "Cuaderno o ficha.",
+                "frecuencia": "Mensual\/evento.",
+                "evidencia": "Registro."
+            },
+            {
+                "elemento": "Producción de leche",
+                "informacion": "Litros totales y por vaca.",
+                "responsable": "Libardo.",
+                "medio": "Planilla.",
+                "frecuencia": "Diaria.",
+                "evidencia": "Registro."
+            },
+            {
+                "elemento": "Lote de queso",
+                "informacion": "Fecha, litros, cuajo, sal, peso, rendimiento y observaciones.",
+                "responsable": "Libardo\/esposa.",
+                "medio": "Bitácora.",
+                "frecuencia": "Cada lote.",
+                "evidencia": "Ficha."
+            },
+            {
+                "elemento": "Sanidad",
+                "informacion": "Medicamentos, periodos de retiro y control de mastitis.",
+                "responsable": "Veterinario \/ productor.",
+                "medio": "Bitácora.",
+                "frecuencia": "Cada evento.",
+                "evidencia": "Fórmula y registro."
+            },
+            {
+                "elemento": "Refrigeración",
+                "informacion": "Temperatura de nevera y tiempo de almacenamiento.",
+                "responsable": "Familia.",
+                "medio": "Termómetro y planilla.",
+                "frecuencia": "Dos veces al día.",
+                "evidencia": "Registro."
+            },
+            {
+                "elemento": "Venta",
+                "informacion": "Peso, precio, cliente, fecha y pago.",
+                "responsable": "Libardo.",
+                "medio": "Libro de ventas.",
+                "frecuencia": "Semanal.",
+                "evidencia": "Recibo o firma."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F16": {
+        "inversion_requerida_multiples_filas": [
+            {
+                "tipo": "Diagnóstico sanitario y diseño",
+                "descripcion": "Visita para evaluar flujo, superficies, agua, ventilación, frío y ruta sanitaria.",
+                "valor_unitario": null,
+                "cantidad": "1 proceso.",
+                "total": null,
+                "requisito": "Debe preceder la compra de equipos.",
+                "fuente": "Alcaldía \/ salud \/ técnico."
+            },
+            {
+                "tipo": "Gavera de buena calidad",
+                "descripcion": "Molde o sistema de prensado, preferiblemente en material apto para alimentos.",
+                "valor_unitario": null,
+                "cantidad": "1 o más según capacidad.",
+                "total": null,
+                "requisito": "Acero inoxidable o material sanitario, dimensiones definidas.",
+                "fuente": "Impulso\/proveedor."
+            },
+            {
+                "tipo": "Prensa para queso",
+                "descripcion": "Sustituir piedras por presión estable y segura.",
+                "valor_unitario": null,
+                "cantidad": "1.",
+                "total": null,
+                "requisito": "Fácil limpieza, estabilidad y capacidad.",
+                "fuente": "Impulso\/recursos."
+            },
+            {
+                "tipo": "Nevera o congelador",
+                "descripcion": "Equipo de mayor capacidad para queso y derivados.",
+                "valor_unitario": null,
+                "cantidad": "1.",
+                "total": null,
+                "requisito": "Eficiencia, termostato, garantía y fácil limpieza.",
+                "fuente": "Impulso."
+            },
+            {
+                "tipo": "Estufa o sistema de calentamiento",
+                "descripcion": "Alternativa a la estufa de leña o equipo más eficiente.",
+                "valor_unitario": null,
+                "cantidad": "1.",
+                "total": null,
+                "requisito": "Seguridad, ventilación, energía disponible y menor humo.",
+                "fuente": "Impulso."
+            },
+            {
+                "tipo": "Mesa y utensilios inoxidables",
+                "descripcion": "Mesa, ollas, filtros, cucharones y recipientes aptos.",
+                "valor_unitario": null,
+                "cantidad": "Kit.",
+                "total": null,
+                "requisito": "Material sanitario y fácil limpieza.",
+                "fuente": "Fase complementaria."
+            },
+            {
+                "tipo": "Termómetro y báscula",
+                "descripcion": "Control de temperatura, peso y rendimiento.",
+                "valor_unitario": null,
+                "cantidad": "1 de cada uno.",
+                "total": null,
+                "requisito": "Calibración y uso alimentario.",
+                "fuente": "Recursos\/apoyo."
+            },
+            {
+                "tipo": "Adecuación del cuarto",
+                "descripcion": "Pisos, paredes, lavamanos, drenaje, iluminación y separación.",
+                "valor_unitario": null,
+                "cantidad": "1 área.",
+                "total": null,
+                "requisito": "Cumplir concepto sanitario y proteger agua.",
+                "fuente": "Gestión por fases."
+            },
+            {
+                "tipo": "Asistencia y formalización",
+                "descripcion": "BPM, costos, etiqueta, permiso o registro sanitario.",
+                "valor_unitario": null,
+                "cantidad": "1 proceso.",
+                "total": null,
+                "requisito": "Basado en diagnóstico y categoría del producto.",
+                "fuente": "Instituciones."
+            }
+        ],
+        "observaciones_o_comentarios": "Prioridades expresadas por el productor: 1) una gavera de buena calidad para prensar el queso; 2) una nevera o congelador adecuado; y 3) una estufa que permita mejorar el calentamiento y disminuir la dependencia de la leña. El productor considera necesarias las tres. Técnicamente se recomienda complementar con prensa, mesa y utensilios sanitarios y adecuación del cuarto."
+    },
+    "PMAPC_F17": {
+        "costos_multiples_filas": [
+            {
+                "tipo": "Alimentación y pasturas",
+                "descripcion": "Manejo de forrajes, sales y suplementos.",
+                "valor_mensual_ciclo": null,
+                "observaciones": "Incluir costo de tierra y mantenimiento."
+            },
+            {
+                "tipo": "Sanidad bovina",
+                "descripcion": "Vacunas, medicamentos, desparasitación y atención.",
+                "valor_mensual_ciclo": null,
+                "observaciones": "Registrar periodos de retiro."
+            },
+            {
+                "tipo": "Transformación",
+                "descripcion": "Cuajo, sal, agua, leña o energía y limpieza.",
+                "valor_mensual_ciclo": null,
+                "observaciones": "Calcular por lote."
+            },
+            {
+                "tipo": "Empaque y rotulado",
+                "descripcion": "Bolsas, etiquetas o recipientes.",
+                "valor_mensual_ciclo": null,
+                "observaciones": "No se describió empaque actual."
+            },
+            {
+                "tipo": "Refrigeración",
+                "descripcion": "Energía, mantenimiento y depreciación.",
+                "valor_mensual_ciclo": null,
+                "observaciones": "Separar consumo del hogar."
+            },
+            {
+                "tipo": "Mano de obra",
+                "descripcion": "Trabajo diario de Libardo y su esposa.",
+                "valor_mensual_ciclo": null,
+                "observaciones": "Valorar horas de ordeño y elaboración."
+            },
+            {
+                "tipo": "Mantenimiento",
+                "descripcion": "Utensilios, nevera, gavera, estufa y área.",
+                "valor_mensual_ciclo": null,
+                "observaciones": "Crear reserva."
+            },
+            {
+                "tipo": "Comercial\/logística",
+                "descripcion": "Venta, comunicación y futura ruta a Fusagasugá.",
+                "valor_mensual_ciclo": null,
+                "observaciones": "Actualmente transporte asumido por comprador."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F18": {
+        "flujo_caja_mensual_12_filas_meses": [
+            {
+                "mes": "Mes 1",
+                "ingresos": null,
+                "gastos_operativos": null,
+                "gastos_comerciales": null,
+                "gastos_ambientales": null,
+                "balance": null,
+                "observaciones": "Inventario de insumos y animales. Registrar ventas actuales. Comunicaciones. Diagnóstico de agua y residuos. Crear línea base. Pendiente."
+            },
+            {
+                "mes": "Mes 2",
+                "ingresos": null,
+                "gastos_operativos": null,
+                "gastos_comerciales": null,
+                "gastos_ambientales": null,
+                "balance": null,
+                "observaciones": "Ventas semanales registradas. Cotizaciones de equipos. Visitas técnicas. Diseño de manejo de suero, aguas y leña. Pendiente. Definir prioridades."
+            },
+            {
+                "mes": "Mes 3",
+                "ingresos": null,
+                "gastos_operativos": null,
+                "gastos_comerciales": null,
+                "gastos_ambientales": null,
+                "balance": null,
+                "observaciones": "Según producción. Compra de gavera o prensa. Transporte de equipo. Materiales sanitarios. Pendiente. Estandarizar prensado."
+            },
+            {
+                "mes": "Mes 4",
+                "ingresos": null,
+                "gastos_operativos": null,
+                "gastos_comerciales": null,
+                "gastos_ambientales": null,
+                "balance": null,
+                "observaciones": "Según producción. Nevera o congelador. Instalación. Eficiencia energética. Pendiente. Control de temperatura."
+            },
+            {
+                "mes": "Mes 5",
+                "ingresos": null,
+                "gastos_operativos": null,
+                "gastos_comerciales": null,
+                "gastos_ambientales": null,
+                "balance": null,
+                "observaciones": "Según producción. Estufa o mejora térmica. Instalación. Reducción de humo y leña. Pendiente. Revisar seguridad."
+            },
+            {
+                "mes": "Mes 6",
+                "ingresos": null,
+                "gastos_operativos": null,
+                "gastos_comerciales": null,
+                "gastos_ambientales": null,
+                "balance": null,
+                "observaciones": "Ventas y productos derivados. Operación y mantenimiento. Empaque. Seguimiento de aguas. Pendiente. Calcular costo real."
+            },
+            {
+                "mes": "Mes 7",
+                "ingresos": null,
+                "gastos_operativos": null,
+                "gastos_comerciales": null,
+                "gastos_ambientales": null,
+                "balance": null,
+                "observaciones": "Según producción. Operación mensual. Prueba de cliente directo. Manejo de residuos. Pendiente. Revisar margen."
+            },
+            {
+                "mes": "Mes 8",
+                "ingresos": null,
+                "gastos_operativos": null,
+                "gastos_comerciales": null,
+                "gastos_ambientales": null,
+                "balance": null,
+                "observaciones": "Según producción. Operación mensual. Ruta piloto a Fusagasugá. Transporte consolidado. Pendiente. Validar demanda."
+            },
+            {
+                "mes": "Mes 9",
+                "ingresos": null,
+                "gastos_operativos": null,
+                "gastos_comerciales": null,
+                "gastos_ambientales": null,
+                "balance": null,
+                "observaciones": "Según producción. Operación mensual. Formalización \/ etiqueta. Seguimiento. Ajustar proceso. Pendiente."
+            },
+            {
+                "mes": "Mes 10",
+                "ingresos": null,
+                "gastos_operativos": null,
+                "gastos_comerciales": null,
+                "gastos_ambientales": null,
+                "balance": null,
+                "observaciones": "Según producción. Operación y sanidad. Canales. Plan de sequía. Pendiente. Preparar reservas."
+            },
+            {
+                "mes": "Mes 11",
+                "ingresos": null,
+                "gastos_operativos": null,
+                "gastos_comerciales": null,
+                "gastos_ambientales": null,
+                "balance": null,
+                "observaciones": "Según producción. Operación y mantenimiento. Negociación de precio. Seguimiento. Pendiente. Evaluar comprador."
+            },
+            {
+                "mes": "Mes 12",
+                "ingresos": null,
+                "gastos_operativos": null,
+                "gastos_comerciales": null,
+                "gastos_ambientales": null,
+                "balance": null,
+                "observaciones": "Según producción. Evaluación anual. Evaluación comercial. Evaluación ambiental. Pendiente. Decidir expansión o compra de leche."
+            }
+        ],
+        "registro_minimo_requerido_registro_unico": "Condición para ampliar: demostrar durante varios meses rendimiento estable, inocuidad, frío adecuado, margen positivo, disponibilidad de pasto y agua, capacidad del espacio y clientes confirmados. La compra de leche a vecinos solo debe comenzar con análisis de calidad, registro de proveedores, capacidad de refrigeración y acuerdo comercial.",
+        "observaciones_o_comentarios": "El costo de $4.000 a $5.000 por libra es una estimación del productor y debe revisarse. Se recomienda una hoja simple que registre diariamente litros, libras producidas, cuajo, sal, leña, energía, mano de obra, sanidad, alimentación, pérdidas y ventas, separando gastos familiares de los de la unidad."
+    },
+    "PMAPC_F19": {
+        "indicadores_huella_multiples_filas": [
+            {
+                "variable": "Fuente de agua",
+                "estado": "Acueducto para el queso y nacimientos en la finca.",
+                "cantidad": "Calidad y caudal pendientes.",
+                "impacto_1_a_5": 5,
+                "accion": "Analizar, proteger y registrar consumo."
+            },
+            {
+                "variable": "Uso de agua",
+                "estado": "Ordeño, transformación y limpieza.",
+                "cantidad": "No medido.",
+                "impacto_1_a_5": 5,
+                "accion": "Medir y mejorar lavado."
+            },
+            {
+                "variable": "Pasturas",
+                "estado": "Sostienen ocho vacas; afectadas por verano y heladas.",
+                "cantidad": "Área pendiente.",
+                "impacto_1_a_5": 5,
+                "accion": "Plan forrajero y rotación."
+            },
+            {
+                "variable": "Energía",
+                "estado": "Nevera pequeña y estufa de leña.",
+                "cantidad": "Consumo pendiente.",
+                "impacto_1_a_5": 4,
+                "accion": "Equipo eficiente y alternativa a leña."
+            },
+            {
+                "variable": "Transporte",
+                "estado": "Comprador recoge semanalmente.",
+                "cantidad": "Costo actual asumido por comprador.",
+                "impacto_1_a_5": 2,
+                "accion": "Evaluar ruta directa sin viajes innecesarios."
+            },
+            {
+                "variable": "Suero",
+                "estado": "Alimentación de cerdos.",
+                "cantidad": "Cantidad pendiente.",
+                "impacto_1_a_5": 4,
+                "accion": "Registrar y manejar higiénicamente."
+            },
+            {
+                "variable": "Estiércol",
+                "estado": "Materia orgánica en potreros.",
+                "cantidad": "Cantidad pendiente.",
+                "impacto_1_a_5": 4,
+                "accion": "Evitar acumulaciones y proteger agua."
+            },
+            {
+                "variable": "Clima",
+                "estado": "Sequía y heladas reducen pasto y leche.",
+                "cantidad": "Sin registro.",
+                "impacto_1_a_5": 5,
+                "accion": "Reservas de alimento y agua."
+            }
+        ],
+        "seguimiento_huella_multiples_filas": [
+            {
+                "indicador": "Inventario bovino",
+                "que_se_mide": "Número, raza, lactancia y sanidad.",
+                "dato_inicial": "8 vacas en ordeño; total pendiente.",
+                "meta": "100% identificado.",
+                "frecuencia": "Mensual.",
+                "responsable": "Libardo.",
+                "evidencia": "Ficha."
+            },
+            {
+                "indicador": "Leche",
+                "que_se_mide": "Litros por vaca y total.",
+                "dato_inicial": "40 L\/día reportados.",
+                "meta": "Registro diario.",
+                "frecuencia": "Diaria.",
+                "responsable": "Libardo.",
+                "evidencia": "Planilla."
+            },
+            {
+                "indicador": "Queso",
+                "que_se_mide": "Libras por lote y mes.",
+                "dato_inicial": "8 a 9 lb\/día.",
+                "meta": "100% registrado.",
+                "frecuencia": "Diaria \/ mensual.",
+                "responsable": "Libardo \/ esposa.",
+                "evidencia": "Bitácora."
+            },
+            {
+                "indicador": "Rendimiento",
+                "que_se_mide": "Litros por libra.",
+                "dato_inicial": "Aproximadamente 4,4 a 5 L\/lb.",
+                "meta": "Dato validado por lote.",
+                "frecuencia": "Cada lote.",
+                "responsable": "Familia.",
+                "evidencia": "Registro."
+            },
+            {
+                "indicador": "Costos y margen",
+                "que_se_mide": "Costo e ingreso por libra.",
+                "dato_inicial": "Estimación de $4.000-$5.000 de costo y $8.000 de venta.",
+                "meta": "Costo completo mensual.",
+                "frecuencia": "Mensual.",
+                "responsable": "Libardo \/ asesor.",
+                "evidencia": "Hoja."
+            },
+            {
+                "indicador": "Temperatura",
+                "que_se_mide": "Refrigeración y proceso.",
+                "dato_inicial": "No registrada.",
+                "meta": "Control por lote y diario.",
+                "frecuencia": "Diaria.",
+                "responsable": "Familia.",
+                "evidencia": "Planilla."
+            },
+            {
+                "indicador": "Sanidad",
+                "que_se_mide": "Tratamientos y periodos de retiro.",
+                "dato_inicial": "Sin bitácora reportada.",
+                "meta": "100% documentado.",
+                "frecuencia": "Cada evento.",
+                "responsable": "Veterinario \/ Libardo.",
+                "evidencia": "Registro."
+            },
+            {
+                "indicador": "Ventas",
+                "que_se_mide": "Peso, precio y cliente.",
+                "dato_inicial": "Un comprador semanal.",
+                "meta": "100% registrado y precio revisado.",
+                "frecuencia": "Semanal.",
+                "responsable": "Libardo.",
+                "evidencia": "Libro."
+            },
+            {
+                "indicador": "Ambiente",
+                "que_se_mide": "Agua, leña, suero, estiércol y aguas.",
+                "dato_inicial": "Manejo parcial.",
+                "meta": "Rutas documentadas.",
+                "frecuencia": "Mensual.",
+                "responsable": "Familia.",
+                "evidencia": "Bitácora."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F20": {
+        "economia_circular_residuos_multiples_filas": [
+            {
+                "residuo_recurso": "Suero",
+                "cantidad": "Pendiente.",
+                "manejo_actual": "Se utiliza para alimentar cerdos y para obtener ricota.",
+                "accion_circular": "Almacenar higiénicamente, registrar y evitar excedentes.",
+                "destino": "Elaboración de queso.",
+                "responsable": "Libardo\/esposa."
+            },
+            {
+                "residuo_recurso": "Estiércol",
+                "cantidad": "Pendiente.",
+                "manejo_actual": "Permanece como materia orgánica en potreros.",
+                "accion_circular": "Evitar acumulaciones cerca de agua y aprovechar controladamente.",
+                "destino": "Ordeño y bovinos.",
+                "responsable": "Libardo."
+            },
+            {
+                "residuo_recurso": "Aguas de lavado",
+                "cantidad": "Pendiente.",
+                "manejo_actual": "No informado.",
+                "accion_circular": "Retirar sólidos, reducir consumo y conducir lejos de fuentes.",
+                "destino": "Utensilios y espacio.",
+                "responsable": "Familia."
+            },
+            {
+                "residuo_recurso": "Ceniza y humo",
+                "cantidad": "Pendiente.",
+                "manejo_actual": "No informado.",
+                "accion_circular": "Estufa eficiente, ventilación y uso controlado de ceniza.",
+                "destino": "Estufa de leña.",
+                "responsable": "Libardo."
+            },
+            {
+                "residuo_recurso": "Envases de cuajo y limpieza",
+                "cantidad": "Pendiente.",
+                "manejo_actual": "No informado.",
+                "accion_circular": "Separar, enjuagar cuando corresponda y entregar a ruta adecuada.",
+                "destino": "Insumos.",
+                "responsable": "Familia."
+            },
+            {
+                "residuo_recurso": "Empaques",
+                "cantidad": "Pendiente.",
+                "manejo_actual": "No descrito.",
+                "accion_circular": "Material apto y reciclable; minimizar.",
+                "destino": "Venta de queso.",
+                "responsable": "Libardo."
+            },
+            {
+                "residuo_recurso": "Residuos veterinarios",
+                "cantidad": "Pendiente.",
+                "manejo_actual": "No informado.",
+                "accion_circular": "Separar agujas y envases y usar posconsumo.",
+                "destino": "Tratamientos bovinos.",
+                "responsable": "Veterinario\/productor."
+            }
+        ],
+        "conclusion_registro_unico": null,
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F21": {
+        "evaluacion_ambiental_regenerativa_multiples_filas": [
+            {
+                "factor": "Protección del agua",
+                "indicador": "Calidad, uso y aislamiento.",
+                "descripcion": null,
+                "estado": "Acueducto y nacimientos; sin análisis.",
+                "calificacion_1_a_5": 3,
+                "accion": "Analizar y proteger fuentes.",
+                "evidencia": "Resultados y fotos."
+            },
+            {
+                "factor": "Suelo y pastos",
+                "indicador": "Cobertura, carga y rotación.",
+                "descripcion": null,
+                "estado": "Sostiene ocho vacas; afectación climática.",
+                "calificacion_1_a_5": 3,
+                "accion": "Plan forrajero y registros.",
+                "evidencia": "Calendario."
+            },
+            {
+                "factor": "Biodiversidad",
+                "indicador": "Conservación de áreas naturales.",
+                "descripcion": null,
+                "estado": "No descrita en detalle.",
+                "calificacion_1_a_5": 3,
+                "accion": "Identificar y mantener áreas sensibles.",
+                "evidencia": "Mapa."
+            },
+            {
+                "factor": "Bienestar animal",
+                "indicador": "Agua, alimento, ordeño y sanidad.",
+                "descripcion": null,
+                "estado": "Manejo tradicional.",
+                "calificacion_1_a_5": 3,
+                "accion": "Refugio de ordeño y plan sanitario.",
+                "evidencia": "Checklist."
+            },
+            {
+                "factor": "Higiene de transformación",
+                "indicador": "Superficies, utensilios y flujo.",
+                "descripcion": null,
+                "estado": "Proceso manual y nevera pequeña.",
+                "calificacion_1_a_5": 2,
+                "accion": "Cuarto y equipos sanitarios.",
+                "evidencia": "Visita."
+            },
+            {
+                "factor": "Circularidad",
+                "indicador": "Suero y estiércol aprovechados.",
+                "descripcion": null,
+                "estado": "Aprovechamiento alto, sin registros.",
+                "calificacion_1_a_5": 4,
+                "accion": "Cuantificar y controlar.",
+                "evidencia": "Bitácora."
+            },
+            {
+                "factor": "Energía",
+                "indicador": "Leña y electricidad.",
+                "descripcion": null,
+                "estado": "Estufa de leña y nevera.",
+                "calificacion_1_a_5": 2,
+                "accion": "Equipo eficiente y reducción de humo.",
+                "evidencia": "Consumos."
+            },
+            {
+                "factor": "Comercialización",
+                "indicador": "Clientes y canales.",
+                "descripcion": null,
+                "estado": "Un comprador; canal directo histórico.",
+                "calificacion_1_a_5": 2,
+                "accion": "Diversificar después de formalizar.",
+                "evidencia": "Ventas."
+            },
+            {
+                "factor": "Finanzas y formalización",
+                "indicador": "Costos, marca y permisos.",
+                "descripcion": null,
+                "estado": "Sin registros completos ni permiso.",
+                "calificacion_1_a_5": 1,
+                "accion": "Costeo y ruta sanitaria.",
+                "evidencia": "Documentos."
+            }
+        ],
+        "resultado_preliminar_registro_unico": null,
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F22": {
+        "plan_manejo_mitigacion_multiples_filas": [
+            {
+                "impacto": "Agua",
+                "accion": "Análisis, medición y aislamiento.",
+                "prioridad": null,
+                "plazo": "6 meses.",
+                "responsable": "Libardo\/técnico.",
+                "recursos": null,
+                "indicador": "Calidad y consumo.",
+                "evidencia": "Resultados y fotos.."
+            },
+            {
+                "impacto": "Suelo",
+                "accion": "Rotación y distribución controlada.",
+                "prioridad": null,
+                "plazo": "12 meses.",
+                "responsable": "Libardo.",
+                "recursos": null,
+                "indicador": "Cobertura y carga.",
+                "evidencia": "Calendario."
+            },
+            {
+                "impacto": "Pasturas",
+                "accion": "Plan forrajero y reserva.",
+                "prioridad": null,
+                "plazo": "12 meses.",
+                "responsable": "Libardo\/técnico.",
+                "recursos": null,
+                "indicador": "Días de alimento disponible.",
+                "evidencia": "Bitácora."
+            },
+            {
+                "impacto": "Residuos",
+                "accion": "Plan de aguas, ceniza, envases y empaques.",
+                "prioridad": null,
+                "plazo": "6 meses.",
+                "responsable": "Familia.",
+                "recursos": null,
+                "indicador": "% gestionado.",
+                "evidencia": "Registro."
+            },
+            {
+                "impacto": "Energía",
+                "accion": "Estufa eficiente y refrigeración eficiente.",
+                "prioridad": null,
+                "plazo": "12 meses.",
+                "responsable": "Libardo.",
+                "recursos": null,
+                "indicador": "Leña y kWh.",
+                "evidencia": "Recibos."
+            },
+            {
+                "impacto": "Bienestar animal",
+                "accion": "Adecuar punto de ordeño.",
+                "prioridad": null,
+                "plazo": "12 meses.",
+                "responsable": "Familia \/ técnico.",
+                "recursos": null,
+                "indicador": "Checklist cumplido.",
+                "evidencia": "Fotos."
+            },
+            {
+                "impacto": "Transformación",
+                "accion": "BPM, fichas, equipos y frío.",
+                "prioridad": null,
+                "plazo": "12 meses.",
+                "responsable": "Libardo\/ asesor.",
+                "recursos": null,
+                "indicador": "Lotes trazables.",
+                "evidencia": "Registros."
+            },
+            {
+                "impacto": "Mercado",
+                "accion": "Venta directa gradual y negociación.",
+                "prioridad": null,
+                "plazo": "12 meses.",
+                "responsable": "Libardo.",
+                "recursos": null,
+                "indicador": "Margen y número de clientes.",
+                "evidencia": "Ventas."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F22A": {
+        "adaptacion_cambio_climatico_multiples_filas": [
+            {
+                "aspecto": "Sequía \/ verano",
+                "situacion": "Seca las pasturas y reduce leche.",
+                "riesgo": "Menor producción e ingreso.",
+                "accion_propuesta": "Reserva de agua y forraje."
+            },
+            {
+                "aspecto": "Heladas",
+                "situacion": "Afectan el pasto.",
+                "riesgo": "Disminución de alimento.",
+                "accion_propuesta": "Monitoreo, rotación y reservas."
+            },
+            {
+                "aspecto": "Lluvia",
+                "situacion": "El ordeño se realiza a la intemperie.",
+                "riesgo": "Exposición laboral y contaminación.",
+                "accion_propuesta": "Punto cubierto y drenaje."
+            },
+            {
+                "aspecto": "Cambio de precio",
+                "situacion": "El precio lleva tiempo sin aumento.",
+                "riesgo": "Margen insuficiente.",
+                "accion_propuesta": "Costeo y negociación."
+            },
+            {
+                "aspecto": "Pérdida del comprador",
+                "situacion": "Existe un solo cliente.",
+                "riesgo": "Interrupción de ingresos.",
+                "accion_propuesta": "Diversificar canales."
+            },
+            {
+                "aspecto": "Falla de refrigeración",
+                "situacion": "Nevera pequeña.",
+                "riesgo": "Pérdida de producto.",
+                "accion_propuesta": "Equipo adecuado y plan de contingencia."
+            },
+            {
+                "aspecto": "Formalización",
+                "situacion": "Sin permiso sanitario reportado.",
+                "riesgo": "Limitación para transportar y vender.",
+                "accion_propuesta": "Ruta gradual con autoridad sanitaria."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F23": {
+        "matriz_riesgos_integrales_multiples_filas": [
+            {
+                "tipo": "Climático",
+                "riesgo": "Reducción de leche.",
+                "causa": "Sequía, verano y heladas.",
+                "consecuencia": "Menos queso e ingreso.",
+                "nivel": "Muy alto",
+                "prevencion": "Reserva de agua, forraje y rotación.",
+                "respuesta": "Ajustar carga y suplementar."
+            },
+            {
+                "tipo": "Sanitario animal",
+                "riesgo": "Mastitis o residuos en leche.",
+                "causa": "Manejo o tratamientos sin control.",
+                "consecuencia": "Pérdida de lote y riesgo al consumidor.",
+                "nivel": "Muy alto",
+                "prevencion": "Plan veterinario y retiro.",
+                "respuesta": "Separar leche y atender."
+            },
+            {
+                "tipo": "Inocuidad",
+                "riesgo": "Contaminación del queso.",
+                "causa": "Superficies, agua, temperatura o manipulación.",
+                "consecuencia": "Enfermedad y pérdida de mercado.",
+                "nivel": "Muy alto",
+                "prevencion": "BPM, equipos y frío.",
+                "respuesta": "Retirar lote y corregir."
+            },
+            {
+                "tipo": "Laboral",
+                "riesgo": "Golpe, patada o caída.",
+                "causa": "Animales y ordeño a la intemperie.",
+                "consecuencia": "Lesión.",
+                "nivel": "Alto",
+                "prevencion": "Sujeción, refugio y EPP.",
+                "respuesta": "Primeros auxilios."
+            },
+            {
+                "tipo": "Térmico\/ incendio",
+                "riesgo": "Quemadura o fuego.",
+                "causa": "Agua caliente y estufa de leña.",
+                "consecuencia": "Lesión o daño.",
+                "nivel": "Alto",
+                "prevencion": "Zona segura, guantes y extintor.",
+                "respuesta": "Suspender y atender."
+            },
+            {
+                "tipo": "Financiero",
+                "riesgo": "Vender por debajo del costo.",
+                "causa": "Costeo incompleto y precio estancado.",
+                "consecuencia": "Descapitalización.",
+                "nivel": "Muy alto",
+                "prevencion": "Registro y negociación.",
+                "respuesta": "Ajustar canal o precio."
+            },
+            {
+                "tipo": "Comercial",
+                "riesgo": "Dependencia de un comprador.",
+                "causa": "Canal único.",
+                "consecuencia": "Pérdida de ventas.",
+                "nivel": "Alto",
+                "prevencion": "Diversificar gradualmente.",
+                "respuesta": "Activar clientes directos."
+            },
+            {
+                "tipo": "Ambiental",
+                "riesgo": "Contaminación de agua.",
+                "causa": "Aguas de lavado, estiércol o suero excedente.",
+                "consecuencia": "Afectación del predio.",
+                "nivel": "Alto",
+                "prevencion": "Plan de manejo y barreras.",
+                "respuesta": "Contener y corregir."
+            },
+            {
+                "tipo": "Energético",
+                "riesgo": "Falla de nevera.",
+                "causa": "Equipo limitado o corte.",
+                "consecuencia": "Deterioro del queso.",
+                "nivel": "Alto",
+                "prevencion": "Mantenimiento y termómetro.",
+                "respuesta": "Trasladar producto."
+            },
+            {
+                "tipo": "Estratégico",
+                "riesgo": "Expandir sin capacidad.",
+                "causa": "Compra de leche sin equipos ni mercado.",
+                "consecuencia": "Pérdidas y riesgo sanitario.",
+                "nivel": "Alto",
+                "prevencion": "Piloto y estudio.",
+                "respuesta": "Detener expansión."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F24": {
+        "plan_accion_multiples_filas": [
+            {
+                "actividad": "Verificar nombre, ubicación, área, inventario y coordenadas.",
+                "componente": "Estratégico",
+                "responsable": "Libardo\/asesor.",
+                "tiempo": "Inmediato",
+                "recursos": "Documentos y visita.",
+                "resultado": "Línea base completa.",
+                "evidencia": "Ficha."
+            },
+            {
+                "actividad": "Diagnosticar ordeño y cuarto de transformación.",
+                "componente": "Productivo \/ sanitario",
+                "responsable": "Técnico\/salud.",
+                "tiempo": "Inmediato",
+                "recursos": "Visita y checklist.",
+                "resultado": "Plan de adecuación.",
+                "evidencia": "Informe."
+            },
+            {
+                "actividad": "Cotizar gavera, prensa, nevera y estufa.",
+                "componente": "Financiero",
+                "responsable": "Libardo\/asesor.",
+                "tiempo": "Inmediato",
+                "recursos": "Proveedores.",
+                "resultado": "Presupuesto comparado.",
+                "evidencia": "Cotizaciones."
+            },
+            {
+                "actividad": "Adquirir gavera y prensa seguras.",
+                "componente": "Productivo\/SST",
+                "responsable": "Productor\/apoyo.",
+                "tiempo": "Corto",
+                "recursos": "Equipo.",
+                "resultado": "Prensado uniforme y menor esfuerzo.",
+                "evidencia": "Factura y fotos."
+            },
+            {
+                "actividad": "Mejorar refrigeración y control de temperatura.",
+                "componente": "Sanitario",
+                "responsable": "Libardo.",
+                "tiempo": "Corto",
+                "recursos": "Nevera, termómetro y registro.",
+                "resultado": "Producto conservado.",
+                "evidencia": "Planilla."
+            },
+            {
+                "actividad": "Adecuar sistema de calentamiento.",
+                "componente": "Productivo\/ ambiental",
+                "responsable": "Libardo\/técnico.",
+                "tiempo": "Corto",
+                "recursos": "Estufa y ventilación.",
+                "resultado": "Menor humo y riesgo.",
+                "evidencia": "Fotos."
+            },
+            {
+                "actividad": "Implementar registros de leche, queso, costos y ventas.",
+                "componente": "Financiero\/ trazabilidad",
+                "responsable": "Libardo\/esposa.",
+                "tiempo": "Inmediato y continuo",
+                "recursos": "Cuaderno o archivo.",
+                "resultado": "Datos confiables.",
+                "evidencia": "Planillas."
+            },
+            {
+                "actividad": "Capacitar en BPM y ruta sanitaria.",
+                "componente": "Legal\/sanitario",
+                "responsable": "Productor\/asesor.",
+                "tiempo": "3-12 meses",
+                "recursos": "Asistencia y adecuación.",
+                "resultado": "Avance hacia permiso o registro.",
+                "evidencia": "Actas."
+            },
+            {
+                "actividad": "Explorar venta directa en Fusagasugá.",
+                "componente": "Comercial",
+                "responsable": "Libardo\/aliado.",
+                "tiempo": "6-12 meses",
+                "recursos": "Clientes, ruta y empaque.",
+                "resultado": "Mejor margen sin comprometer calidad.",
+                "evidencia": "Pedidos."
+            },
+            {
+                "actividad": "Implementar plan ambiental y climático.",
+                "componente": "Ambiental",
+                "responsable": "Libardo\/técnico.",
+                "tiempo": "6 meses",
+                "recursos": "Formatos y mejoras.",
+                "resultado": "Agua y residuos controlados.",
+                "evidencia": "Bitácora."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F25": {
+        "indicadores_integrales_multiples_filas": [
+            {
+                "dimension": "Identificación",
+                "indicador": "Datos, predio y coordenadas confirmados.",
+                "meta": "100%.",
+                "frecuencia": "Una vez \/ anual.",
+                "responsable": "Libardo \/ asesor.",
+                "evidencia": "Ficha."
+            },
+            {
+                "dimension": "Producción",
+                "indicador": "Litros y libras por lote.",
+                "meta": "100% registrados.",
+                "frecuencia": "Diaria.",
+                "responsable": "Libardo \/ esposa.",
+                "evidencia": "Planilla."
+            },
+            {
+                "dimension": "Rendimiento",
+                "indicador": "Litros por libra.",
+                "meta": "Dato real por lote.",
+                "frecuencia": "Cada lote.",
+                "responsable": "Familia.",
+                "evidencia": "Registro."
+            },
+            {
+                "dimension": "Calidad",
+                "indicador": "Temperatura, higiene y peso.",
+                "meta": "Checklist completo.",
+                "frecuencia": "Diaria \/ lote.",
+                "responsable": "Familia.",
+                "evidencia": "Formato."
+            },
+            {
+                "dimension": "Sanidad animal",
+                "indicador": "Tratamientos y retiro.",
+                "meta": "100% documentado.",
+                "frecuencia": "Cada evento.",
+                "responsable": "Libardo\/veterinario.",
+                "evidencia": "Bitácora."
+            },
+            {
+                "dimension": "Finanzas",
+                "indicador": "Costo, ingreso y margen.",
+                "meta": "Cálculo mensual.",
+                "frecuencia": "Mensual.",
+                "responsable": "Libardo\/ asesor.",
+                "evidencia": "Hoja."
+            },
+            {
+                "dimension": "Ventas",
+                "indicador": "Cliente, libras, precio y pago.",
+                "meta": "100% registrado.",
+                "frecuencia": "Semanal.",
+                "responsable": "Libardo.",
+                "evidencia": "Libro."
+            },
+            {
+                "dimension": "Ambiente",
+                "indicador": "Agua, leña, suero, estiércol y residuos.",
+                "meta": "Ruta definida.",
+                "frecuencia": "Mensual.",
+                "responsable": "Familia.",
+                "evidencia": "Bitácora."
+            },
+            {
+                "dimension": "SST",
+                "indicador": "EPP, incidentes y condiciones.",
+                "meta": "Checklist y cero incidentes graves.",
+                "frecuencia": "Mensual\/evento.",
+                "responsable": "Familia.",
+                "evidencia": "Registro."
+            },
+            {
+                "dimension": "Formalización",
+                "indicador": "Avances en BPM, marca y permiso.",
+                "meta": "Plan de ruta aprobado.",
+                "frecuencia": "Trimestral.",
+                "responsable": "Libardo\/asesor.",
+                "evidencia": "Actas."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    },
+    "PMAPC_F26": {
+        "matriz_coherencia_sistemica_multiples_filas": [
+            {
+                "decision": "Comprar gavera y prensa",
+                "efecto_productivo": "Uniforma el queso y reduce esfuerzo.",
+                "efecto_comercial": "Mejora presentación.",
+                "efecto_financiero": "Inversión inicial.",
+                "efecto_ambiental": "Sin impacto relevante si es durable.",
+                "ajuste_necesario": "Dimensionar y limpiar."
+            },
+            {
+                "decision": "Comprar nevera o congelador",
+                "efecto_productivo": "Mejora conservación.",
+                "efecto_comercial": "Permite nuevos canales.",
+                "efecto_financiero": "Inversión y energía.",
+                "efecto_ambiental": "Consumo eléctrico.",
+                "ajuste_necesario": "Equipo eficiente y termómetro."
+            },
+            {
+                "decision": "Cambiar o mejorar estufa",
+                "efecto_productivo": "Acelera y controla calentamiento.",
+                "efecto_comercial": "Mejora consistencia.",
+                "efecto_financiero": "Costo de equipo y combustible.",
+                "efecto_ambiental": "Puede reducir leña y humo.",
+                "ajuste_necesario": "Evaluar energía disponible."
+            },
+            {
+                "decision": "Adecuar cuarto",
+                "efecto_productivo": "Reduce contaminación.",
+                "efecto_comercial": "Facilita formalización.",
+                "efecto_financiero": "Inversión por fases.",
+                "efecto_ambiental": "Requiere manejo de aguas.",
+                "ajuste_necesario": "Diseño sanitario."
+            },
+            {
+                "decision": "Comprar leche a vecinos",
+                "efecto_productivo": "Aumenta volumen.",
+                "efecto_comercial": "Permite atender más clientes.",
+                "efecto_financiero": "Aumenta capital y riesgo.",
+                "efecto_ambiental": "Mayor agua, energía y suero.",
+                "ajuste_necesario": "Análisis, frío y mercado previo."
+            },
+            {
+                "decision": "Vender directamente",
+                "efecto_productivo": "Exige empaque y continuidad.",
+                "efecto_comercial": "Mejora margen.",
+                "efecto_financiero": "Añade logística.",
+                "efecto_ambiental": "Aumenta transporte.",
+                "ajuste_necesario": "Ruta consolidada."
+            },
+            {
+                "decision": "Tramitar permiso sanitario",
+                "efecto_productivo": "Obliga a estandarizar.",
+                "efecto_comercial": "Abre mercados.",
+                "efecto_financiero": "Costos de adecuación y trámite.",
+                "efecto_ambiental": "Mejora manejo ambiental.",
+                "ajuste_necesario": "Diagnóstico realista."
+            },
+            {
+                "decision": "Aprovechar suero",
+                "efecto_productivo": "Genera ricota y alimento.",
+                "efecto_comercial": "Puede diversificar.",
+                "efecto_financiero": "Reduce desperdicio.",
+                "efecto_ambiental": "Evita vertimientos.",
+                "ajuste_necesario": "Control sanitario."
+            },
+            {
+                "decision": "Registrar costos",
+                "efecto_productivo": "Optimiza insumos.",
+                "efecto_comercial": "Permite negociar.",
+                "efecto_financiero": "Protege rentabilidad.",
+                "efecto_ambiental": "Reduce pérdidas.",
+                "ajuste_necesario": "Disciplina diaria."
+            },
+            {
+                "decision": "Plan climático",
+                "efecto_productivo": "Mantiene leche en temporadas críticas.",
+                "efecto_comercial": "Favorece cumplimiento.",
+                "efecto_financiero": "Requiere reserva.",
+                "efecto_ambiental": "Protege suelo y agua.",
+                "ajuste_necesario": "Rotación y forraje."
+            }
+        ],
+        "observaciones_o_comentarios": null
+    }
+}

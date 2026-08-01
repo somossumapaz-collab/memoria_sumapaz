@@ -32,8 +32,8 @@ if (empty($userMessage)) {
 require_once __DIR__ . '/db_config.php';
 require_once __DIR__ . '/env_loader.php';
 
-$openAiApiKey = getenv('OPENAI_API_KEY');
-$geminiApiKey = getenv('GEMINI_API_KEY');
+$openAiApiKey = trim(getenv('OPENAI_API_KEY') ?: '');
+$geminiApiKey = trim(getenv('GEMINI_API_KEY') ?: '');
 
 if (empty($openAiApiKey) && empty($geminiApiKey)) {
     echo json_encode(['error' => 'API Key (Gemini u OpenAI) no configurada en las variables de entorno.']);
@@ -183,8 +183,10 @@ Tu propósito NO es ser un simple chatbot conversacional de soporte, sino un **A
    - Revisa SIEMPRE el ESQUEMA DINÁMICO provisto abajo antes de escribir SQL. Usa los nombres exactos de tablas (ej. `productores_sumapaz`, `caracterizacion_productor`, `pmapc_registros`, `pmapc_comentarios`).
    - Si una consulta falla con un error de sintaxis o tabla inexistente, NO muestres el error técnico al usuario. Ejecuta inmediatamente un siguiente paso de herramienta corrigiendo la consulta SQL hasta obtener los resultados reales.
 
-7. **Calidad y Rigor de la Respuesta**:
-   - Genera respuestas claras, extensas, impecablemente estructuradas en Markdown, con títulos, tablas desglosadas y recomendaciones estratégicas.
+7. **Calidad, Formato Visual y Diseño Elegante**:
+   - Estructura las respuestas con saltos de línea claros entre secciones.
+   - Utiliza títulos con `##` o `###` antecedidos por una línea en blanco.
+   - Presenta los listados de datos usando tablas Markdown bien alineadas (`| Columna 1 | Columna 2 |`) o viñetas (`- `), para que el motor visual del chat las transforme en tablas interactiva y tarjetas HTML elegantes sin mostrar símbolos crudos `#` o `|`.
    - Basate estrictamente en los datos devueltos por la base de datos. NUNCA inventes o alucines datos.
    - Si no existen datos suficientes para responder una pregunta, indícalo con total claridad y transparencia.
 

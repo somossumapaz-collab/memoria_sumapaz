@@ -20,6 +20,7 @@ if (file_exists(__DIR__ . '/../.env')) {
             if (preg_match('/^["\'](.*)["\']$/', $value, $matches)) {
                 $value = $matches[1];
             }
+            $value = trim($value, " \t\n\r\0\x0B\"'");
             
             putenv("{$name}={$value}");
             $_ENV[$name] = $value;

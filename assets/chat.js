@@ -106,79 +106,109 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * Parser robusto de Markdown a HTML (Tablas, Títulos, Negrilla, Listas, Saltos de línea)
+     * Parser robusto de Markdown a HTML (Tablas, Títulos, Negrilla, Listas, Párrafos)
      */
     function parseMarkdown(text) {
         if (!text) return '';
 
-        let html = text
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;");
+        let str = text;
 
-        // 1. Detección y renderizado de tablas (| col1 | col2 |)
-        const lines = html.split('\n');
-        let inTable = false;
-        let tableHtml = '';
-        let processedLines = [];
+        // Normalizar saltos de línea
+        str = str.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
 
-        for (let i = 0; i < lines.length; i++) {
-            let line = lines[i].trim();
-            if (line.startsWith('|') && line.endsWith('|')) {
-                // Ignorar línea separadora (|---|---|)
+        // Garantizar saltos de línea antes de encabezados (#, ##, ###) cuando vienen pegados en el texto
+        str = str.replace(/([^\n])\s*(#{1,4}\s+)/g, '$1\n\n$2');
+
+        // 1. Detección y renderizado de tablas Markdown (| col1 | col2 |)
+        const tableRegex = /((?:\|[^\n]+\|\n?)+)/g;
+        str = str.replace(tableRegex, (match) => {
+            const lines = match.trim().split('\n').filter(l => l.trim());
+            if (lines.length < 2) return match;
+
+            let htmlTable = '<div class="chat-table-wrapper"><table class="chat-table">';
+            let isHeader = true;
+
+            for (let i = 0; i < lines.length; i++) {
+                let line = lines[i].trim();
+
+                // Omitir línea separadora |---|---|
                 if (/^\|[\s\-:|]+\|$/.test(line)) {
                     continue;
                 }
+
                 const cells = line.split('|').slice(1, -1).map(c => c.trim());
-                if (!inTable) {
-                    inTable = true;
-                    tableHtml = '<div class="chat-table-wrapper"><table class="chat-table"><thead><tr>';
-                    cells.forEach(c => tableHtml += `<th>${c}</th>`);
-                    tableHtml += '</tr></thead><tbody>';
+
+                if (isHeader) {
+                    htmlTable += '<thead><tr>';
+                    cells.forEach(c => htmlTable += `<th>${parseInlineMarkdown(c)}</th>`);
+                    htmlTable += '</tr></thead><tbody>';
+                    isHeader = false;
                 } else {
-                    tableHtml += '<tr>';
-                    cells.forEach(c => tableHtml += `<td>${c}</td>`);
-                    tableHtml += '</tr>';
+                    htmlTable += '<tr>';
+                    cells.forEach(c => htmlTable += `<td>${parseInlineMarkdown(c)}</td>`);
+                    htmlTable += '</tr>';
                 }
-            } else {
-                if (inTable) {
-                    inTable = false;
-                    tableHtml += '</tbody></table></div>';
-                    processedLines.push(tableHtml);
-                    tableHtml = '';
-                }
-                processedLines.push(line);
             }
-        }
-        if (inTable) {
-            tableHtml += '</tbody></table></div>';
-            processedLines.push(tableHtml);
-        }
+            if (!isHeader) {
+                htmlTable += '</tbody>';
+            }
+            htmlTable += '</table></div>';
+            return '\n\n' + htmlTable + '\n\n';
+        });
 
-        html = processedLines.join('\n');
+        // 2. Encabezados (#, ##, ###, ####)
+        str = str.replace(/^#### (.*$)/gim, '<h4 class="chat-h4">$1</h4>');
+        str = str.replace(/^### (.*$)/gim, '<h3 class="chat-h3">$1</h3>');
+        str = str.replace(/^## (.*$)/gim, '<h2 class="chat-h2">$1</h2>');
+        str = str.replace(/^# (.*$)/gim, '<h2 class="chat-h2">$1</h2>');
 
-        // 2. Encabezados (###, ####)
-        html = html.replace(/^#### (.*$)/gim, '<h4 class="chat-h4">$1</h4>');
-        html = html.replace(/^### (.*$)/gim, '<h3 class="chat-h3">$1</h3>');
-        html = html.replace(/^## (.*$)/gim, '<h2 class="chat-h2">$1</h2>');
+        // 3. Reglas horizontales (--- o ***)
+        str = str.replace(/^[\-\*]{3,}$/gim, '<hr class="chat-hr">');
 
-        // 3. Negrilla y Cursiva (**texto**, *texto*)
-        html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-        html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+        // 4. Listas ordenadas y no ordenadas
+        str = str.replace(/(?:^\s*[\-\*]\s+.*(?:\n|$))+/gm, (match) => {
+            const items = match.trim().split('\n').map(item => {
+                const cleanItem = item.replace(/^\s*[\-\*]\s+/, '');
+                return `<li class="chat-li">${parseInlineMarkdown(cleanItem)}</li>`;
+            }).join('');
+            return `<ul class="chat-ul">${items}</ul>`;
+        });
 
-        // 4. Listas con viñetas (- elemento, * elemento)
-        html = html.replace(/^\s*[\-\*]\s+(.*$)/gim, '<li class="chat-li">$1</li>');
+        str = str.replace(/(?:^\s*\d+\.\s+.*(?:\n|$))+/gm, (match) => {
+            const items = match.trim().split('\n').map(item => {
+                const cleanItem = item.replace(/^\s*\d+\.\s+/, '');
+                return `<li class="chat-li">${parseInlineMarkdown(cleanItem)}</li>`;
+            }).join('');
+            return `<ol class="chat-ol">${items}</ol>`;
+        });
 
-        // 5. Saltos de línea y formateo de párrafos
-        html = html.replace(/\n\n/g, '<br><br>');
-        html = html.replace(/\n/g, '<br>');
+        // 5. Formatos en línea en el resto del texto
+        str = parseInlineMarkdown(str);
 
-        // Limpiar saltos sobrantes dentro de elementos HTML renderizados
-        html = html.replace(/<div class="chat-table-wrapper"><br>/g, '<div class="chat-table-wrapper">');
-        html = html.replace(/<\/table><\/div><br>/g, '</table></div>');
-        html = html.replace(/<\/h([234])><br>/g, '</h$1>');
+        // 6. Formateo de párrafos (convertir bloques de texto en <p>)
+        const blocks = str.split(/\n{2,}/);
+        const formattedBlocks = blocks.map(block => {
+            block = block.trim();
+            if (!block) return '';
+            if (/^<(div|table|h[1-6]|ul|ol|hr|blockquote)/i.test(block)) {
+                return block;
+            }
+            return `<p class="chat-p">${block.replace(/\n/g, '<br>')}</p>`;
+        });
 
-        return html;
+        return formattedBlocks.join('');
+    }
+
+    function parseInlineMarkdown(text) {
+        if (!text) return '';
+        let str = text;
+        // Negrilla (**texto**)
+        str = str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        // Cursiva (*texto*)
+        str = str.replace(/\*(.*?)\*/g, '<em>$1</em>');
+        // Código en línea (`código`)
+        str = str.replace(/`(.*?)`/g, '<code class="chat-code">$1</code>');
+        return str;
     }
 
     function showTypingIndicator() {
