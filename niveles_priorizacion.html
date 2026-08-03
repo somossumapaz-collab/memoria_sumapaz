@@ -25,6 +25,10 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 
+    <!-- Leaflet Map Library -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
     <style>
         .hero-section {
             position: relative;
@@ -533,6 +537,42 @@
             </div>
         </div>
 
+        <!-- Georeferencing Map Section -->
+        <section style="background-color: #EFEBE4; padding: 2rem; border-radius: 12px; margin-bottom: 3rem; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+                <div>
+                    <h2 style="font-family: 'Inter', sans-serif; color: #444F2F; margin: 0 0 0.4rem 0; font-size: 1.6rem; font-weight: 700;">
+                        🗺️ Mapa de Georreferenciación de Beneficiarios (<span id="map-level-subtitle">Todos los Niveles</span>)
+                    </h2>
+                    <p style="margin: 0; color: #666; font-size: 0.95rem; font-weight: 500;">
+                        Ubicación territorial en vivo de predios y unidades productivas georreferenciadas en la Localidad de Sumapaz.
+                    </p>
+                </div>
+                
+                <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                    <div style="display: flex; gap: 10px; align-items: center; background: white; padding: 8px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+                        <span style="display: inline-flex; align-items: center; gap: 4px;"><span style="width: 12px; height: 12px; border-radius: 50%; background: #9E782F; display: inline-block;"></span> Nivel 1</span>
+                        <span style="display: inline-flex; align-items: center; gap: 4px;"><span style="width: 12px; height: 12px; border-radius: 50%; background: #8E9A5E; display: inline-block;"></span> Nivel 2</span>
+                        <span style="display: inline-flex; align-items: center; gap: 4px;"><span style="width: 12px; height: 12px; border-radius: 50%; background: #2A9D8F; display: inline-block;"></span> Nivel 3</span>
+                        <span style="display: inline-flex; align-items: center; gap: 4px;"><span style="width: 12px; height: 12px; border-radius: 50%; background: #444F2F; display: inline-block;"></span> Nivel 4</span>
+                    </div>
+                    
+                    <button id="btn-toggle-tiles" onclick="toggleMapTiles()" style="padding: 8px 18px; background-color: #444F2F; color: white; border: none; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; transition: all 0.2s;">
+                        🛰️ Vista Satelital
+                    </button>
+                </div>
+            </div>
+
+            <!-- Map Container -->
+            <div id="map-beneficiarios" style="height: 520px; width: 100%; border-radius: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 2px solid #D5CEC2; position: relative; z-index: 1;"></div>
+            
+            <!-- Map Legend / Stats Footer -->
+            <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem; font-size: 0.88rem; font-weight: 600; color: #444F2F;">
+                <span id="map-stats-txt">📍 Cargando ubicaciones georreferenciadas en el mapa...</span>
+                <span style="color: #666; font-weight: 400; font-style: italic;">Sumapaz, Bogotá D.C. — Coordenadas de caracterización y diagnóstico</span>
+            </div>
+        </section>
+
         <!-- Charts Grid for Selected Level -->
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
             <!-- Veredas Chart -->
@@ -667,6 +707,20 @@
         let chartVeredasInstance = null;
         let chartCatsInstance = null;
 
+        // Leaflet Map variables
+        let mapInstance = null;
+        let markersLayer = null;
+        let isSatellite = false;
+        let streetLayer = null;
+        let satelliteLayer = null;
+
+        const levelColors = {
+            1: '#9E782F', // Gold
+            2: '#8E9A5E', // Olive
+            3: '#2A9D8F', // Teal
+            4: '#444F2F'  // Dark Green
+        };
+
         const categoryNamesMap = {
             1: "Leche fresca", 2: "Quesos / yogurt", 3: "Carne de res", 4: "Carne de cerdo",
             5: "Carne de pollo", 6: "Trucha", 7: "Especies menores", 8: "Huevos",
@@ -685,19 +739,167 @@
 
         async function loadBeneficiaries() {
             try {
-                const res = await fetch('api/get_productores.php');
-                const json = await res.json();
+                // Fetch producers and coordinates concurrently
+                const [resProds, resCoords] = await Promise.all([
+                    fetch('api/get_productores.php').then(r => r.json()),
+                    fetch('api/get_productores_coordenadas.php').then(r => r.json())
+                ]);
 
-                if (json.success && Array.isArray(json.data)) {
+                const coordsMap = {};
+                if (resCoords.success && Array.isArray(resCoords.data)) {
+                    resCoords.data.forEach(c => {
+                        if (c.id && c.coordenadas) {
+                            coordsMap[parseInt(c.id)] = c.coordenadas;
+                        }
+                    });
+                }
+
+                if (resProds.success && Array.isArray(resProds.data)) {
                     // Filter only beneficiaries (beneficiario_2026 == 1)
-                    allBeneficiaries = json.data.filter(p => parseInt(p.beneficiario_2026 || 0) === 1);
+                    allBeneficiaries = resProds.data
+                        .filter(p => parseInt(p.beneficiario_2026 || 0) === 1)
+                        .map(p => ({
+                            ...p,
+                            coordenadas: coordsMap[parseInt(p.id)] || p.coordenadas || null
+                        }));
                     
                     updateCounts();
                     renderCharts();
                     renderTable();
+                    initMap();
+                    updateMapMarkers();
                 }
             } catch (err) {
                 console.error("Error loading data:", err);
+            }
+        }
+
+        function parseCoords(coordStr) {
+            if (!coordStr || typeof coordStr !== 'string') return null;
+            const str = coordStr.trim();
+            if (!str || str.toLowerCase() === 'nan' || str.toLowerCase().includes('pendiente')) return null;
+
+            const m = str.match(/([+-]?\d+[\.,]\d+)\s*[\,;\s]\s*([+-]?\d+[\.,]\d+)/);
+            if (m) {
+                const lat = parseFloat(m[1].replace(',', '.'));
+                const lon = parseFloat(m[2].replace(',', '.'));
+                if (lat >= -90 && lat <= 90 && lon >= -180 && lon <= 180) {
+                    return [lat, lon];
+                }
+            }
+            return null;
+        }
+
+        function initMap() {
+            if (mapInstance) return;
+            const mapContainer = document.getElementById('map-beneficiarios');
+            if (!mapContainer) return;
+
+            // Center of Sumapaz, Bogotá D.C.
+            mapInstance = L.map('map-beneficiarios', {
+                center: [4.08, -74.22],
+                zoom: 11,
+                zoomControl: true
+            });
+
+            streetLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; OpenStreetMap'
+            });
+
+            satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                maxZoom: 18,
+                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+            });
+
+            streetLayer.addTo(mapInstance);
+            markersLayer = L.featureGroup().addTo(mapInstance);
+        }
+
+        function toggleMapTiles() {
+            if (!mapInstance) return;
+            const btn = document.getElementById('btn-toggle-tiles');
+            if (isSatellite) {
+                mapInstance.removeLayer(satelliteLayer);
+                streetLayer.addTo(mapInstance);
+                isSatellite = false;
+                if (btn) btn.innerHTML = '🛰️ Vista Satelital';
+            } else {
+                mapInstance.removeLayer(streetLayer);
+                satelliteLayer.addTo(mapInstance);
+                isSatellite = true;
+                if (btn) btn.innerHTML = '🗺️ Mapa Estándar';
+            }
+        }
+
+        function updateMapMarkers() {
+            if (!mapInstance || !markersLayer) return;
+
+            markersLayer.clearLayers();
+
+            const filteredData = getFilteredData();
+            let mappedCount = 0;
+            const bounds = L.latLngBounds();
+
+            filteredData.forEach(p => {
+                const coords = parseCoords(p.coordenadas);
+                if (coords) {
+                    mappedCount++;
+                    const lvl = parseInt(p.nivel_priorizacion || 4);
+                    const color = levelColors[lvl] || '#444F2F';
+                    const hasPmapc = parseInt(p.tiene_pmapc || 0) === 1;
+
+                    const marker = L.circleMarker(coords, {
+                        radius: 8,
+                        fillColor: color,
+                        color: '#FFFFFF',
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 0.85
+                    });
+
+                    bounds.extend(coords);
+
+                    const pmapcBadge = hasPmapc
+                        ? `<span style="background:#2A9D8F; color:white; padding:2px 8px; border-radius:10px; font-size:0.75rem; font-weight:600;">PMAPC Realizado</span>`
+                        : `<span style="background:#CCCCCC; color:#555; padding:2px 8px; border-radius:10px; font-size:0.75rem; font-weight:600;">PMAPC Pendiente</span>`;
+
+                    const pdfBtnHtml = hasPmapc
+                        ? `<a href="api/download_pmapc_pdf.php?id=${p.id}" target="_blank" style="display:inline-block; margin-top:8px; padding:6px 12px; background-color:#2A9D8F; color:white; border-radius:14px; text-decoration:none; font-size:0.8rem; font-weight:600;">📄 Ver PMAPC (PDF)</a>`
+                        : ``;
+
+                    const popupContent = `
+                        <div style="font-family: 'Inter', sans-serif; min-width: 220px; padding: 4px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                                <span style="background:${color}; color:white; padding:2px 8px; border-radius:10px; font-size:0.75rem; font-weight:700;">Nivel ${lvl}</span>
+                                ${pmapcBadge}
+                            </div>
+                            <h4 style="margin:0 0 4px 0; color:#444F2F; font-size:1.05rem; font-weight:700;">${escapeHtml(p.nombre_completo)}</h4>
+                            <div style="font-size:0.85rem; color:#555; margin-bottom:4px;"><strong>Vereda:</strong> ${escapeHtml(p.vereda || 'No registrada')}</div>
+                            <div style="font-size:0.85rem; color:#555; margin-bottom:6px;"><strong>Predio:</strong> ${escapeHtml(p.nombre_predio || 'No especificado')}</div>
+                            <div style="display:flex; gap:6px; align-items:center; margin-top:8px;">
+                                ${pdfBtnHtml}
+                                <button onclick="openModal(${p.id})" style="margin-top:8px; padding:6px 12px; background-color:#444F2F; color:white; border:none; border-radius:14px; cursor:pointer; font-size:0.8rem; font-weight:600;">Ver Ficha</button>
+                            </div>
+                        </div>
+                    `;
+
+                    marker.bindPopup(popupContent);
+                    markersLayer.addLayer(marker);
+                }
+            });
+
+            // Update footer status text
+            const statsTxt = document.getElementById('map-stats-txt');
+            if (statsTxt) {
+                statsTxt.innerHTML = `📍 <strong>${mappedCount}</strong> de <strong>${filteredData.length}</strong> beneficiarios georreferenciados en este nivel`;
+            }
+
+            // Fit map to visible bounds if markers exist
+            if (mappedCount > 0 && bounds.isValid()) {
+                mapInstance.fitBounds(bounds, { padding: [40, 40], maxZoom: 14 });
+            } else {
+                mapInstance.setView([4.08, -74.22], 11);
             }
         }
 
@@ -777,9 +979,11 @@
             document.getElementById('vereda-chart-lbl').textContent = titleText;
             document.getElementById('cat-chart-lbl').textContent = titleText;
             document.getElementById('table-level-subtitle').textContent = titleText;
+            if (document.getElementById('map-level-subtitle')) document.getElementById('map-level-subtitle').textContent = titleText;
 
             renderCharts();
             renderTable();
+            updateMapMarkers();
         }
 
         function onLevelSelectChange(val) {
@@ -973,6 +1177,7 @@
 
         function applyFilters() {
             renderTable();
+            updateMapMarkers();
         }
 
         function openModal(id) {

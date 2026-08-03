@@ -1,0 +1,2214 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "No tiene nombre definido. Se recomienda construir un nombre y una identidad visual únicamente después de validarlos con el productor.",
+    "persona_entrevistada": "Elias Mican Micán. La escritura exacta, identificación y datos de contacto están pendientes de confirmar.",
+    "tipo_actividad": "Agrícola y agroalimentaria: producción agroecológica de mora, uchuva, quinua, amaranto, papa nativa, cubios, hortalizas y plantas medicinales; con proyección de panadería y transformación artesanal.",
+    "ubicacion_especifica": "Localidad de Sumapaz, Bogotá D.C. Vereda, sector, nombre del predio, ruta de acceso y coordenadas no fueron informados.",
+    "producto_servicio_principal": "Mora en establecimiento y pequeñas cantidades de productos agrícolas para venta y autoconsumo. Se mencionan uchuva, quinua, amaranto, papa nativa, cubios, lechuga, cilantro y plantas medicinales; inventario actual por producto pendiente.",
+    "estado_actual": "Unidad productiva en marcha a baja escala y proceso de reactivación. Existe estructura de invernadero, pero requiere plástico y adecuaciones. La panadería está pausada por falta de recursos.",
+    "personas_vinculadas": "El productor y sus dos hijas. También se mencionan familiares que compran o comercializan parte de los productos. Funciones, jornadas y remuneración pendientes.",
+    "coordenadas": "Pendientes de tomar o confirmar.",
+    "descripcion_general": "La unidad busca producir alimentos limpios, conservar semillas ancestrales, transformar productos y generar sustento familiar. El productor desea ampliar mercados, formalizar presentación y etiquetas, mejorar el manejo agroambiental y convertir el emprendimiento en una fuente de empleo y enseñanza para otras personas.",
+    "observaciones_o_comentarios": "Área disponible: Aproximadamente una fanegada y media, según el productor. Área exacta en hectáreas o metros cuadrados y distribución por cultivo pendientes. Transformación proyectada: Reactivar panadería con granos y harinas; deshidratar y empacar plantas; explorar aceites o cremas de plantas medicinales. Estas líneas no se reportaron como operación comercial vigente. Trayectoria: El productor refiere entre dieciséis y veinte años de experiencia, iniciada después de trabajos y aprendizajes con entidades y la Universidad Nacional. Infraestructura disponible: Estructura metálica de invernadero sin plástico, parte de una instalación para panadería o transformación, dos tanques pequeños para agua lluvia -estado y capacidad por verificar-, una compostera pequeña y un energizador de cerca eléctrica averiado."
+  },
+  "PMAPC_F02": {
+    "mision": "Producir alimentos limpios y de origen campesino, conservar semillas y saberes ancestrales, aprovechar responsablemente la tierra y ofrecer productos frescos o transformados que aporten al sustento familiar y a la alimentación de la comunidad.",
+    "vision": "En tres años, consolidar una unidad productiva agroecológica más grande, organizada y reconocida, con invernadero funcional, agua almacenada, cultivos protegidos, área limpia de transformación, marca propia y canales comerciales fuera de la localidad; capaz de vincular a sus hijas, generar empleo y ofrecer talleres.",
+    "valores": [
+      "Amor por el campo",
+      "responsabilidad",
+      "puntualidad",
+      "perseverancia",
+      "trabajo limpio",
+      "compromiso familiar",
+      "cuidado ambiental",
+      "respeto por los saberes ancestrales",
+      "calidad",
+      "servicio"
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Porque conocen al productor, reconocen su manejo limpio y buscan productos campesinos frescos, de buen sabor y con menor uso de pesticidas.",
+    "beneficio_cliente": "Acceso a mora, hortalizas, tubérculos y granos de origen local, lavados y empacados cuando corresponde, producidos con prácticas que el productor describe como limpias u orgánicas.",
+    "diferencial": "Experiencia en semillas ancestrales, producción sin herbicidas reportados, controles a base de plantas, diversidad productiva, vínculo directo con el productor y proyección de transformación con identidad territorial.",
+    "valor_ambiental": "Aprovechamiento de residuos orgánicos mediante compostaje, recolección de agua lluvia, interés en cercas vivas y corredores de plantas nativas, reducción del consumo de agua potable y uso potencial de energía solar.",
+    "valor_social_comunitario": "Sostiene a la familia, busca involucrar a sus hijas, pretende generar empleo y compartir conocimientos mediante talleres sobre producción limpia y transformación.",
+    "evidencia": "Visitas al predio, registros de manejo, fotografías, trazabilidad por lote, testimonios de clientes, análisis de suelo, evidencia de compostaje, etiquetado y participación en ferias. Actualmente estos soportes son parciales o pendientes.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Experiencia de aproximadamente dieciséis a veinte años en agricultura y transformación.",
+      "Conocimiento de mora, quinua, amaranto, papa nativa, cubios, hortalizas y plantas medicinales.",
+      "Interés sostenido en producción limpia y controles preparados con plantas.",
+      "Terreno disponible de aproximadamente una fanegada y media.",
+      "Estructura metálica de invernadero aún aprovechable.",
+      "Experiencia y capacitación previa en panadería y manipulación de alimentos.",
+      "Participación de sus dos hijas y apoyo familiar en comercialización.",
+      "Clientes que conocen al productor y valoran la calidad y el origen.",
+      "Experiencia en ferias, puerta a puerta y pedidos a tiendas.",
+      "Compostaje de residuos orgánicos y reutilización en la huerta.",
+      "Recolección actual de agua lluvia, aunque insuficiente.",
+      "Visión de enseñar, generar empleo y conservar saberes ancestrales."
+    ],
+    "oportunidades": [
+      "Reactivar el invernadero para proteger cultivos de lluvia, viento y frío.",
+      "Instalar captación, almacenamiento y riego por goteo para enfrentar el verano.",
+      "Realizar análisis de suelo y planificación agroambiental del predio.",
+      "Acceder a ferias y canales comerciales fuera de la localidad.",
+      "Crear marca, logo, etiquetas y presentaciones diferenciadas.",
+      "Reactivar panadería y desarrollar productos con quinua, amaranto o papa nativa.",
+      "Deshidratar y empacar plantas medicinales con acompañamiento técnico.",
+      "Establecer corredores de plantas nativas como cortinas de viento y protección ambiental.",
+      "Ampliar compostaje y reducir compra de fertilizantes.",
+      "Articularse con productores, tiendas, plazas, restaurantes e instituciones.",
+      "Capacitar a las hijas y a otras personas en producción limpia y transformación.",
+      "Usar energía solar para reducir consumo eléctrico en futuras instalaciones."
+    ],
+    "debilidades": [
+      "No existe nombre comercial, logo, etiqueta ni formalización reportada.",
+      "Vereda, predio, coordenadas y datos básicos no quedaron registrados.",
+      "Producción actual baja y varios cultivos descritos como potenciales o históricos.",
+      "Invernadero sin plástico y áreas de transformación sin adecuación completa.",
+      "Falta de agua almacenada suficiente para época seca.",
+      "Energizador de cerca eléctrica averiado y cerramiento insuficiente.",
+      "Falta de malla, alambre, madera o tutores y cortinas de protección.",
+      "No se aportaron registros de costos, ventas, cosechas, inventarios o clientes.",
+      "Las cifras de rendimiento y costos presentan unidades o alcances ambiguos.",
+      "Dependencia de familiares e intermediarios que compran a menor precio.",
+      "Pérdidas y devoluciones por mercado local pequeño y ventas no programadas.",
+      "Falta de asesoría en suelos, distribución del predio, transformación y comercialización."
+    ],
+    "amenazas": [
+      "Verano y escasez de agua para riego.",
+      "Invierno, lluvia intensa y viento que afectan mora, quinua y hortalizas.",
+      "Caídas y accidentes por áreas quebradas o pendientes.",
+      "Pérdida de producto por baja demanda, devoluciones o ventas a precio reducido.",
+      "Aumento del costo de fertilizantes, semillas, plástico, madera y transporte.",
+      "Deterioro de infraestructura por falta de mantenimiento.",
+      "Ingreso de gallinas, perros u otros animales a los cultivos.",
+      "Falta de continuidad del relevo generacional o de tiempo familiar.",
+      "Riesgos de inocuidad al transformar alimentos sin área adecuada.",
+      "Rechazo comercial por falta de etiqueta, registro o presentación.",
+      "Dependencia de eventos esporádicos y de compradores familiares.",
+      "Posible sobreinversión en muchas líneas sin priorización ni mercado validado."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Cliente directo",
+        "perfil_que_busca": "Familias y personas que conocen al productor.",
+        "ubicacion": "Sumapaz",
+        "necesidad": "Productos campesinos frescos y limpios.",
+        "frecuencia": "Ocasional/según cosecha.",
+        "criterio_compra": "Calidad, confianza, sabor y origen.",
+        "canal": "Puerta a puerta y pedido."
+      },
+      {
+        "tipo_actor": "Tiendas locales",
+        "perfil_que_busca": "Pequeños comercios que reciben productos por encargo.",
+        "ubicacion": "Áreas pobladas de la localidad.",
+        "necesidad": "Abastecimiento de hortalizas, tubérculos y frutas.",
+        "frecuencia": "Según disponibilidad.",
+        "criterio_compra": "Precio, presentación y continuidad.",
+        "canal": "Pedido directo."
+      },
+      {
+        "tipo_actor": "Hermano/familiar comerciante",
+        "perfil_que_busca": "Compra o recibe productos para vender en plaza o ferias.",
+        "ubicacion": "Localidad y Bogotá.",
+        "necesidad": "Volumen para reventa.",
+        "frecuencia": "Cada 15-20 días o según evento.",
+        "criterio_compra": "Precio de reventa y disponibilidad.",
+        "canal": "Entrega directa, costal o bolsa."
+      },
+      {
+        "tipo_actor": "Ferias campesinas",
+        "perfil_que_busca": "Compradores que asisten a eventos en Betania, Nazareth u otros lugares.",
+        "ubicacion": "Sumapaz y Bogotá.",
+        "necesidad": "Producto local con historia.",
+        "frecuencia": "Eventual.",
+        "criterio_compra": "Calidad, empaque, precio y relato territorial.",
+        "canal": "Feria/mercado campesino."
+      },
+      {
+        "tipo_actor": "Consumidor final",
+        "perfil_que_busca": "Familias que consumen mora, papa, cubios, hortalizas y granos.",
+        "ubicacion": "Territorio y mercados potenciales.",
+        "necesidad": "Alimentos frescos, diversos y de origen conocido.",
+        "frecuencia": "Según cosecha",
+        "criterio_compra": "Frescura, producción limpia y sabor.",
+        "canal": "Directo o mediante familiar."
+      },
+      {
+        "tipo_actor": "Comprador potencial de transformados",
+        "perfil_que_busca": "Personas interesadas en panes con granos, productos deshidratados o medicinales.",
+        "ubicacion": "Sumapaz/Bogotá.",
+        "necesidad": "Valor agregado y productos diferenciados.",
+        "frecuencia": "Pendiente de validar.",
+        "criterio_compra": "Inocuidad, etiqueta, composición y presentación.",
+        "canal": "Ferias, tienda, pedido o redes."
+      },
+      {
+        "tipo_actor": "Instituciones/restaurantes potenciales",
+        "perfil_que_busca": "Canales con requisitos de volumen y formalidad.",
+        "ubicacion": "Bogotá y municipios cercanos.",
+        "necesidad": "Oferta programada y trazable.",
+        "frecuencia": "Pendiente.",
+        "criterio_compra": "Calidad, continuidad, factura, empaque y cumplimiento.",
+        "canal": "Acuerdo comercial."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Productos frescos, limpios, de buen sabor y con confianza en quien los produce; también presentación, cumplimiento y precio adecuado.",
+    "como_se_conoce_la_necesidad": "Ha vendido puerta a puerta, por pedidos, a tiendas, familiares y en ferias. Señala que los clientes lo reconocen por trabajar limpio.",
+    "quienes_compran_o_podrian_comprar": "Familias, tiendas, familiares comerciantes, visitantes de ferias, plazas, restaurantes y consumidores de productos con semillas ancestrales.",
+    "evidencia": "Ventas previas, compras de su hermano y excuñado, apoyo de una hija en ferias, pedidos y experiencia histórica. Registros pendientes.",
+    "ventaja_territorial": "Origen campesino, diversidad, semillas ancestrales, contacto directo y prácticas limpias reportadas.",
+    "cambios_demanda": "El productor identifica necesidad de valor agregado, etiqueta, marca y canales externos para evitar pérdidas y mejorar precio.",
+    "dificultades": "Población local pequeña, eventos esporádicos, devoluciones, productos que se quedan, venta a intermediarios a menor precio, falta de etiqueta, marca, transporte programado y producción continua.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Hijas del productor",
+        "tipo": "Familia/relevo.",
+        "que_aporta": "Trabajo, ventas y continuidad generacional",
+        "que_recibe": "Aprendizaje e ingreso.",
+        "trabajo_conjunto": "Asignar funciones por cultivo y comercialización.",
+        "aporte_ambiental": "Adopción de prácticas limpias.",
+        "accion": "Definir responsabilidades y registro."
+      },
+      {
+        "actor_aliado": "Hermano y excuñado",
+        "tipo": "Aliados comerciales.",
+        "que_aporta": "Acceso a plaza, ferias y Bogotá.",
+        "que_recibe": "Producto y margen de reventa",
+        "trabajo_conjunto": "Programar compras y cantidades.",
+        "aporte_ambiental": "Consolidar transporte y reducir pérdidas.",
+        "accion": "Acordar precios, volúmenes y devoluciones."
+      },
+      {
+        "actor_aliado": "Productores vecinos",
+        "tipo": "Red productiva.",
+        "que_aporta": "Intercambio de semillas, saberes e insumos.",
+        "que_recibe": "Cooperación y compras conjuntas",
+        "trabajo_conjunto": "Calendario de cosechas y mercados.",
+        "aporte_ambiental": "Corredores vivos y protección de agua.",
+        "accion": "Identificar productores interesados."
+      },
+      {
+        "actor_aliado": "Junta de Acción Comunal",
+        "tipo": "Organización territorial",
+        "que_aporta": "Difusión y gestión comunitaria.",
+        "que_recibe": "Fortalecimiento local",
+        "trabajo_conjunto": "Agua, ferias y formación.",
+        "aporte_ambiental": "Cuidado de fuentes y paisaje.",
+        "accion": "Presentar plan de necesidades."
+      },
+      {
+        "actor_aliado": "Alcaldía Local",
+        "tipo": "Institución de apoyo.",
+        "que_aporta": "Ferias, asistencia, articulación e insumos.",
+        "que_recibe": "Unidad fortalecida y seguimiento.",
+        "trabajo_conjunto": "Priorización de inversión y mercados.",
+        "aporte_ambiental": "Producción compatible con el territorio.",
+        "accion": "Solicitar visita técnica integral."
+      },
+      {
+        "actor_aliado": "SENA/universidad / agrónomo",
+        "tipo": "Asistencia técnica.",
+        "que_aporta": "Suelo, cultivos, transformación y costos",
+        "que_recibe": "Caso demostrativo y seguimiento.",
+        "trabajo_conjunto": "Planificar predio y capacitar.",
+        "aporte_ambiental": "Uso eficiente de agua y abonos.",
+        "accion": "Análisis de suelo y plan de siembra."
+      },
+      {
+        "actor_aliado": "Mercados campesinos/tiendas",
+        "tipo": "Canal comercial.",
+        "que_aporta": "Demanda y visibilidad.",
+        "que_recibe": "Oferta de productos locales",
+        "trabajo_conjunto": "Programar cosechas y entregas.",
+        "aporte_ambiental": "Circuitos cortos y menos pérdida.",
+        "accion": "Crear calendario y ficha comercial."
+      },
+      {
+        "actor_aliado": "Viveros/aliados ambientales",
+        "tipo": "Proveedor y apoyo técnico.",
+        "que_aporta": "Plantas nativas y diseño de barreras.",
+        "que_recibe": "Compra o intercambio.",
+        "trabajo_conjunto": "Cortinas rompevientos y corredores.",
+        "aporte_ambiental": "Biodiversidad y protección del suelo.",
+        "accion": "Definir especies y cantidades."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Venta previa",
+        "a_quien": "Familias, tiendas y compradores conocidos.",
+        "resultado": "Se han realizado ventas en distintas épocas.",
+        "motivacion": "Calidad, origen y producción limpia.",
+        "evidencia": "Relato del productor, soportes pendientes."
+      },
+      {
+        "metodo": "Puerta a puerta",
+        "a_quien": "Consumidores de áreas pobladas.",
+        "resultado": "Permite vender pequeñas cantidades.",
+        "motivacion": "Cercanía y confianza.",
+        "evidencia": "Registro pendiente."
+      },
+      {
+        "metodo": "Pedidos a tiendas",
+        "a_quien": "Comercios locales.",
+        "resultado": "Compra según disponibilidad.",
+        "motivacion": "Producto fresco y entrega",
+        "evidencia": "Pedidos pendientes de documentar."
+      },
+      {
+        "metodo": "Ferias locales",
+        "a_quien": "Visitantes de eventos en Betania, Nazareth y otros lugares",
+        "resultado": "Ventas variables, algunos productos se devuelven.",
+        "motivacion": "Producto campesino y variedad.",
+        "evidencia": "Histórico y fotos pendientes."
+      },
+      {
+        "metodo": "Compra por familiares",
+        "a_quien": "Hermano y excuñado comerciantes.",
+        "resultado": "Facilita salida, pero con menor precio para permitir reventa.",
+        "motivacion": "Volumen y oportunidad.",
+        "evidencia": "Acuerdos y precios pendientes."
+      },
+      {
+        "metodo": "Producción histórica de quinua",
+        "a_quien": "Organización y clientes anteriores.",
+        "resultado": "Llegó a producir cerca de una tonelada, pero perdió producto por falta de salida.",
+        "motivacion": "Grano ancestral y transformación.",
+        "evidencia": "Cantidad exacta y causa de pérdida pendientes."
+      },
+      {
+        "metodo": "Transformados y medicinales",
+        "a_quien": "Mercado potencial",
+        "resultado": "No validado comercialmente en la entrevista.",
+        "motivacion": "Valor agregado y saber ancestral.",
+        "evidencia": "Requiere prototipo, prueba y requisitos."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Mora",
+        "descripcion_tecnica": "Fruta cultivada en aproximadamente 800 plantas en establecimiento, con manejo de guadaña, plateo, poda y fertilización.",
+        "unidad": "Libra",
+        "insumos_principales": "Plantas, compostaje, fertilizante, agua, tutores y mano de obra.",
+        "condiciones_especiales": "Cosechar y vender fresca, manejo poscosecha pendiente.",
+        "presentacion": "Lavada y empacada en bolsa, según práctica general reportada.",
+        "diferencial": "Producción limpia y origen conocido"
+      },
+      {
+        "servicio": "Quinua/amaranto",
+        "descripcion_tecnica": "Granos ancestrales producidos para consumo o futura transformación.",
+        "unidad": "Kilogramo/libra, pendiente.",
+        "insumos_principales": "Semilla, abono, suelo, agua y cobertura en invierno.",
+        "condiciones_especiales": "Secado y almacenamiento seco; protocolo pendiente.",
+        "presentacion": "Grano o producto transformado futuro.",
+        "diferencial": "Rescate de semillas ancestrales."
+      },
+      {
+        "servicio": "Papa nativa",
+        "descripcion_tecnica": "Tubérculo de variedades nativas en ciclos aproximados de tres meses.",
+        "unidad": "Bulto/kilogramo",
+        "insumos_principales": "Semilla, abono, mano de obra y agua",
+        "condiciones_especiales": "Lugar seco y ventilado, pendiente",
+        "presentacion": "Costal o bolsa",
+        "diferencial": "Variedad nativa y producción campesina."
+      },
+      {
+        "servicio": "Cubios",
+        "descripcion_tecnica": "Tubérculo andino de ciclo variable entre tres y cuatro meses y medio.",
+        "unidad": "Bulto/kilogramo",
+        "insumos_principales": "Semilla, abono y mano de obra",
+        "condiciones_especiales": "Lugar seco, pendiente",
+        "presentacion": "Costal o bolsa",
+        "diferencial": "Producto tradicional y ancestral"
+      },
+      {
+        "servicio": "Lechuga y cilantro",
+        "descripcion_tecnica": "Hortalizas de ciclo corto, proyectadas para invernadero",
+        "unidad": "Unidad/manojo",
+        "insumos_principales": "Semilla, abono, agua, plástico y riego.",
+        "condiciones_especiales": "Venta fresca y rápida.",
+        "presentacion": "Lavada y empacada, presentación pendiente.",
+        "diferencial": "Producción orgánica reportada."
+      },
+      {
+        "servicio": "Plantas medicinales",
+        "descripcion_tecnica": "Plantas como ruda o romero para venta fresca o futura deshidratación y transformación.",
+        "unidad": "Manojo/peso/frasco, pendiente",
+        "insumos_principales": "Plantas, área limpia, secado, empaque y equipo de extracción",
+        "condiciones_especiales": "Seco, protegido y rotulado.",
+        "presentacion": "Fresco, deshidratado, aceite o crema potencial.",
+        "diferencial": "Saber ancestral; línea aún no formalizada"
+      },
+      {
+        "servicio": "Panadería con granos",
+        "descripcion_tecnica": "Panes u otros productos elaborados con harinas y granos. Línea proyectada, no activa",
+        "unidad": "Unidad/paquete",
+        "insumos_principales": "Harina, azúcar, quinua, amaranto, equipo, energía y área higiénica",
+        "condiciones_especiales": "Según producto; vida útil pendiente.",
+        "presentacion": "Empaque y etiqueta pendientes.",
+        "diferencial": "Valor agregado a cultivos propios"
+      }
+    ],
+    "observaciones_o_comentarios": "Nota: Los productos transformados se registran como proyección expresada por el productor. Antes de comercializarlos deben definirse receta, rendimiento, higiene, empaque, vida útil, etiqueta, costos y requisitos aplicables."
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Mora",
+        "unidad": "800 plantas reportadas.",
+        "actividad_proceso": "1. Preparar terreno y establecer plantas. 2. Guadear y platear sin herbicida. 3. Aplicar compostaje y fertilizante. 4. Tutorar, podar y proteger. 5. Cosechar, seleccionar, lavar, empacar y vender.",
+        "tiempo_estimado": "Inicio de cosecha aproximado: 8 meses, recolección cada 8 días."
+      },
+      {
+        "servicio": "Quinua/amaranto",
+        "unidad": "Siembras escalonadas; cantidades variables.",
+        "actividad_proceso": "1. Preparar suelo. 2. Sembrar en época favorable. 3. Fertilizar una o dos veces. 4. Proteger del invierno. 5. Cosechar, secar, limpiar y almacenar o transformar.",
+        "tiempo_estimado": "5-6 meses"
+      },
+      {
+        "servicio": "Papa nativa",
+        "unidad": "Una carga de semilla referida.",
+        "actividad_proceso": "1. Preparar suelo. 2. Sembrar. 3. Fertilizar en siembra. 4. Realizar reabono. 5. Cosechar, clasificar y empacar.",
+        "tiempo_estimado": "Aproximadamente 3 meses."
+      },
+      {
+        "servicio": "Cubios",
+        "unidad": "Una carga o un bulto de siembra, pendiente.",
+        "actividad_proceso": "1. Preparar y sembrar. 2. Aplicar una fertilización. 3. Manejar maleza y agua. 4. Cosechar, seleccionar y empacar.",
+        "tiempo_estimado": "3 meses en zona templada; 4-4,5 meses en clima frío."
+      },
+      {
+        "servicio": "Lechuga",
+        "unidad": "Hasta 800 plantas como referencia.",
+        "actividad_proceso": "1. Preparar área de invernadero. 2. Sembrar o trasplantar. 3. Fertilizar una vez. 4. Regar y controlar con prácticas limpias. 5. Cosechar, lavar y empacar.",
+        "tiempo_estimado": "35-45 días"
+      },
+      {
+        "servicio": "Cilantro",
+        "unidad": "Cantidad pendiente.",
+        "actividad_proceso": "1. Sembrar escalonado dentro de invernadero. 2. Fertilizar. 3. Regar. 4. Cosechar, lavar, armar manojos y empacar.",
+        "tiempo_estimado": "35-45 días"
+      },
+      {
+        "servicio": "Plantas medicinales",
+        "unidad": "Cantidad pendiente.",
+        "actividad_proceso": "1. Cultivar o recolectar de forma controlada. 2. Seleccionar y limpiar. 3. Vender fresca o deshidratar en área limpia. 4. Empacar y rotular. 5. Transformar solo con asistencia y proceso definido.",
+        "tiempo_estimado": "Según especie y producto."
+      },
+      {
+        "servicio": "Panadería proyectada",
+        "unidad": "Lotes pendientes.",
+        "actividad_proceso": "1. Definir receta. 2. Pesaje y mezcla. 3. Amasado y fermentación. 4. Horneado. 5. Enfriado, empaque, rotulado y venta.",
+        "tiempo_estimado": "Pendiente de estandarizar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Mano de obra mora",
+        "cantidad_unidad": "Un jornal por aplicación referido.",
+        "frecuencia": "Cada manejo",
+        "proveedor_fuente": "Local/familiar",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Riesgos biomecánicos",
+        "manejo_ambiental": "Herramientas adecuadas y EPP",
+        "observaciones": "Jornal reportado: $80.000."
+      },
+      {
+        "insumo": "Fertilizante y compost para mora",
+        "cantidad_unidad": "Una carga/aplicación para 800 plantas.",
+        "frecuencia": "Cada 3-4 meses; luego cada 2 meses en mayor producción.",
+        "proveedor_fuente": "Compra y producción propia.",
+        "toxicidad": "Pendiente según producto.",
+        "impacto_potencial": "Uso excesivo, empaque y escorrentía",
+        "manejo_ambiental": "Análisis de suelo, dosis, incorporación y registro",
+        "observaciones": "Costo de fertilización reportado entre $350.000 y $380.000, más un jornal de $80.000"
+      },
+      {
+        "insumo": "Abono quinua",
+        "cantidad_unidad": "Cantidad por siembra pendiente",
+        "frecuencia": "Una fertilización; opcionalmente dos",
+        "proveedor_fuente": "Compra/compost",
+        "toxicidad": "Pendiente.",
+        "impacto_potencial": "Nutrientes y empaques.",
+        "manejo_ambiental": "Plan según análisis de suelo",
+        "observaciones": "Se mencionan 200.000-250.000, pero el número de plantas asociado es ambiguo"
+      },
+      {
+        "insumo": "Abono papa nativa",
+        "cantidad_unidad": "Cantidad no clara",
+        "frecuencia": "Siembra y reabono",
+        "proveedor_fuente": "Compra/orgánico",
+        "toxicidad": "Pendiente.",
+        "impacto_potencial": "Escorrentía y costo.",
+        "manejo_ambiental": "Dosificar y registrar",
+        "observaciones": "Costo referido de $300.000 y luego una cifra de $600.000, pendiente de conciliar"
+      },
+      {
+        "insumo": "Abono cubios",
+        "cantidad_unidad": "Un bulto referido",
+        "frecuencia": "Una vez por ciclo",
+        "proveedor_fuente": "Compra",
+        "toxicidad": "Pendiente.",
+        "impacto_potencial": "Escorrentía y empaque.",
+        "manejo_ambiental": "Incorporar y evitar aplicación cerca de agua",
+        "observaciones": "Costo aproximado: $200.000"
+      },
+      {
+        "insumo": "Abono hortalizas",
+        "cantidad_unidad": "Cantidad para 800 plantas",
+        "frecuencia": "Una vez por ciclo",
+        "proveedor_fuente": "Compra/compost.",
+        "toxicidad": "Pendiente.",
+        "impacto_potencial": "Nutrientes y desperdicio.",
+        "manejo_ambiental": "Aplicar según suelo y cultivo.",
+        "observaciones": "Costo aproximado $150.000-$200.000."
+      },
+      {
+        "insumo": "Agua",
+        "cantidad_unidad": "Volumen no medido.",
+        "frecuencia": "Permanente/riego.",
+        "proveedor_fuente": "Acueducto El Raizal, agua lluvia y curso estacional",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Consumo de agua potable y escasez",
+        "manejo_ambiental": "Captación de lluvia, almacenamiento y goteo",
+        "observaciones": "Dos tanques pequeños reportados, capacidad insuficiente"
+      },
+      {
+        "insumo": "Plástico de invernadero",
+        "cantidad_unidad": "Rollo de 80-100 m de largo por 6 m de ancho, aproximado",
+        "frecuencia": "Inversión inicial/reposición.",
+        "proveedor_fuente": "Proveedor pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuo plástico al final de vida útil.",
+        "manejo_ambiental": "Elegir material durable y gestionar retiro",
+        "observaciones": "Cantidad pendiente de medición de estructura"
+      },
+      {
+        "insumo": "Malla metálica",
+        "cantidad_unidad": "10-15 rollos reportados",
+        "frecuencia": "Inversión",
+        "proveedor_fuente": "Proveedor pendiente",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Impacto visual/material.",
+        "manejo_ambiental": "Instalar sin afectar vegetación o fauna",
+        "observaciones": "Medidas de rollo pendientes."
+      },
+      {
+        "insumo": "Polisombra",
+        "cantidad_unidad": "2-3 rollos reportados.",
+        "frecuencia": "Inversión/reposición",
+        "proveedor_fuente": "Proveedor pendiente",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuo plástico",
+        "manejo_ambiental": "Usar solo donde sea necesario y combinar con barreras vivas",
+        "observaciones": "Calibre y dimensiones pendientes"
+      },
+      {
+        "insumo": "Manguera de goteo/motobomba",
+        "cantidad_unidad": "Un rollo y equipo por dimensionar.",
+        "frecuencia": "Inversión y uso periódico.",
+        "proveedor_fuente": "Proveedor pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Energía y residuos",
+        "manejo_ambiental": "Diseño eficiente, filtros y mantenimiento",
+        "observaciones": "Caudal, longitud y potencia pendientes"
+      },
+      {
+        "insumo": "Empaques y etiquetas",
+        "cantidad_unidad": "Cantidad según cosecha.",
+        "frecuencia": "Cada venta",
+        "proveedor_fuente": "Proveedor pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos de bolsas y adhesivos.",
+        "manejo_ambiental": "Reducir material, usar presentaciones apropiadas y separar residuos",
+        "observaciones": "Actualmente entrega lavado y embolsado; algunas cargas en costal."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "Baja y variable. Parte de la mora está en establecimiento y se espera que el cultivo grande inicie producción en aproximadamente cinco o seis meses. Cantidades actuales por producto no quedaron definidas.",
+    "produccion_normal": "Mora esperada: 300-400 lb/semana en 1er año, hasta 600 lb/semana después. Quinua: casi 1 ton histórica. Papa nativa: 16 bultos o 1 ton/3 meses por carga de semilla. Cubios: 30-40 bultos/3-4,5 meses por carga de siembra. Lechuga: 800 plantas/ciclo de 35-45 días.",
+    "capacidad_mensual_teorica": "No calculada.",
+    "produccion_maxima_posible": "Mora: hasta 600 libras semanales después de dos a dos años y medio para 800 plantas. Papa nativa: aprox. 16 bultos o 1 ton/3 meses. Cubios: 30-40 bultos/3-4,5 meses. Lechuga: 800 plantas/ciclo de 35-45 días.",
+    "area_numero_habitaciones": "Aproximadamente una fanegada y media para toda la unidad. Distribución entre mora, granos, tubérculos, hortalizas, invernadero, vivienda y transformación pendiente.",
+    "limitantes_productivos": "Falta de plástico, malla, tutores, agua almacenada, riego, análisis de suelo, asistencia técnica, área de transformación y capital de trabajo.",
+    "limitantes_ambientales": "Verano, escasez de agua, invierno, lluvia, viento, pendiente y posible erosión. El curso estacional se seca en verano.",
+    "capacidad_instalada": "Estructura de invernadero, terreno, conocimientos y parte de instalaciones. Estado y dimensiones pendientes.",
+    "capacidad_utilizada": "Parcial y baja, por falta de recursos e infraestructura.",
+    "produce_mismo_todo_ano": false,
+    "alcanza_para_demanda": false,
+    "necesidades_aumentar_sosteniblemente": "Priorizar agua y riego, proteger cultivos, planificar el terreno, mejorar registros, escalonar siembras, validar mercado y adecuar transformación antes de ampliar simultáneamente todas las líneas.",
+    "observaciones_o_comentarios": "Produce igual todo el año?: No. La producción depende del ciclo de cada cultivo, la época de siembra, el invierno, el verano y la disponibilidad de mercados. ¿Alcanza para la demanda?: No hay demanda estable ni registros suficientes. En ocasiones hay producto sin vender y en otras la producción es baja."
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua disponible",
+        "estado_actual": "Acueducto El Raizal, lluvia en dos tanques pequeños y curso estacional",
+        "limite_restriccion": "Insuficiente en verano; almacenamiento limitado.",
+        "afectacion": "Reduce riego y continuidad de hortalizas y mora.",
+        "efecto": "Estrés hídrico y menor producción.",
+        "incidencia": "Alto.",
+        "accion_mejora": "Canales, tanques, reservorio revestido y goteo."
+      },
+      {
+        "condicion": "Fuentes hídricas",
+        "estado_actual": "Curso de agua nace en otro predio, atraviesa la finca y se seca en verano.",
+        "limite_restriccion": "No es propio y es estacional.",
+        "afectacion": "No puede asumirse como fuente permanente.",
+        "efecto": "Insuficiencia de agua.",
+        "incidencia": "Medio-alto.",
+        "accion_mejora": "Verificar uso, protección y calidad; no intervenir sin evaluación"
+      },
+      {
+        "condicion": "Suelo",
+        "estado_actual": "No se reporta análisis.",
+        "limite_restriccion": "Fertilización se basa en experiencia",
+        "afectacion": "Puede generar baja eficiencia o gasto innecesario.",
+        "efecto": "Baja eficiencia o gasto innecesario.",
+        "incidencia": "Alto.",
+        "accion_mejora": "Análisis de suelo y plan por cultivo."
+      },
+      {
+        "condicion": "Pendiente/topografía",
+        "estado_actual": "Partes quebradas.",
+        "limite_restriccion": "Riesgo de caída, erosión y manejo difícil.",
+        "afectacion": "Aumenta mano de obra y riesgo.",
+        "efecto": "Riesgo de accidentes y erosión.",
+        "incidencia": "Medio.",
+        "accion_mejora": "Siembra en contorno, drenajes, cobertura y senderos"
+      },
+      {
+        "condicion": "Clima invierno",
+        "estado_actual": "Lluvia y viento afectan cultivos sensibles.",
+        "limite_restriccion": "Falta de cubierta y cortinas.",
+        "afectacion": "Daño físico, enfermedades y pérdida.",
+        "efecto": "Daño físico, enfermedades y pérdida.",
+        "incidencia": "Alto",
+        "accion_mejora": "Invernadero, polisombra técnica y barreras vivas."
+      },
+      {
+        "condicion": "Clima verano",
+        "estado_actual": "Escasez de agua",
+        "limite_restriccion": "Poca reserva",
+        "afectacion": "Estrés hídrico y menor producción.",
+        "efecto": "Estrés hídrico y menor producción.",
+        "incidencia": "Alto.",
+        "accion_mejora": "Almacenamiento, goteo y calendario de siembra."
+      },
+      {
+        "condicion": "Biodiversidad",
+        "estado_actual": "Interés en plantas nativas y producción limpia",
+        "limite_restriccion": "No existe diseño de corredores.",
+        "afectacion": "Oportunidad de protección y control de viento.",
+        "efecto": "Desaprovechamiento de barreras naturales.",
+        "incidencia": "Medio.",
+        "accion_mejora": "Establecer especies nativas apropiadas."
+      },
+      {
+        "condicion": "Uso de insumos",
+        "estado_actual": "Evita herbicidas y usa controles de plantas.",
+        "limite_restriccion": "Fertilizantes comprados sin datos técnicos.",
+        "afectacion": "Riesgo de dosificación inadecuada",
+        "efecto": "Dosificación inadecuada.",
+        "incidencia": "Medio.",
+        "accion_mejora": "Registros, fichas y asistencia."
+      },
+      {
+        "condicion": "Manejo de residuos",
+        "estado_actual": "Compostera pequeña",
+        "limite_restriccion": "Capacidad insuficiente.",
+        "afectacion": "No aprovecha todo el material orgánico.",
+        "efecto": "Desperdicio de materia orgánica.",
+        "incidencia": "Medio.",
+        "accion_mejora": "Ampliar compostaje y controlar proceso."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Biológico",
+        "peligro": "Contacto con suelo, materia orgánica, hongos o bacterias.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Manejo por experiencia.",
+        "accion": "Guantes, lavado de manos, agua segura y manejo de heridas."
+      },
+      {
+        "tipo": "Biológico",
+        "peligro": "Picaduras o mordeduras.",
+        "aplica": true,
+        "nivel_riesgo": "Baja-media.",
+        "controles_actuales": "No informado.",
+        "accion": "Botas, guantes y revisión del área."
+      },
+      {
+        "tipo": "Físico",
+        "peligro": "Frío, lluvia, viento y radiación solar.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Ropa de campo no descrita.",
+        "accion": "Protección térmica, impermeable, sombrero y pausas."
+      },
+      {
+        "tipo": "Químico",
+        "peligro": "Fertilizantes o preparados de control.",
+        "aplica": true,
+        "nivel_riesgo": "Ocasional.",
+        "controles_actuales": "Prefiere controles de plantas",
+        "accion": "Identificar productos, dosis, guantes y almacenamiento."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Carga de bultos, abonos, cosechas y agua.",
+        "aplica": true,
+        "nivel_riesgo": "Media-alta.",
+        "controles_actuales": "No informado.",
+        "accion": "Técnica de levantamiento, ayudas y límites de peso."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Posturas inclinadas, plateo, poda y cosecha",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Experiencia",
+        "accion": "Herramientas ergonómicas, rotación y pausas."
+      },
+      {
+        "tipo": "Seguridad",
+        "peligro": "Caídas en terreno quebrado o húmedo.",
+        "aplica": true,
+        "nivel_riesgo": "Media-alta",
+        "controles_actuales": "Procura trabajar atravesado y no en línea recta de pendiente.",
+        "accion": "Senderos, drenajes, botas antideslizantes y señalización."
+      },
+      {
+        "tipo": "Seguridad",
+        "peligro": "Cortes con herramientas",
+        "aplica": true,
+        "nivel_riesgo": "Media.",
+        "controles_actuales": "No informado.",
+        "accion": "Mantenimiento, guantes y guardas"
+      },
+      {
+        "tipo": "Eléctrico",
+        "peligro": "Energizador de cerca, motobomba y futura energía solar.",
+        "aplica": true,
+        "nivel_riesgo": "Ocasional.",
+        "controles_actuales": "Equipo averiado; controles no descritos.",
+        "accion": "Instalación técnica, protecciones y bloqueo."
+      },
+      {
+        "tipo": "Transformación",
+        "peligro": "Quemaduras, cortes, polvo de harina y contaminación.",
+        "aplica": true,
+        "nivel_riesgo": "Cuando se reactive",
+        "controles_actuales": "Capacitación previa en manipulación.",
+        "accion": "Área separada, EPP, ventilación y procedimientos"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Usar botas antideslizantes, guantes, ropa impermeable, sombrero y protección solar.",
+        "riesgo": "Caídas, clima, cortes y contacto biológico.",
+        "responsable": "Productor y familiares.",
+        "frecuencia": "Diario según tarea.",
+        "evidencia": "Lista de verificación/fotografía."
+      },
+      {
+        "accion_preventiva": "Adecuar senderos, drenajes y accesos en zonas quebradas.",
+        "riesgo": "Caídas y sobreesfuerzo.",
+        "responsable": "Productor con apoyo técnico.",
+        "frecuencia": "Inicial y mantenimiento mensual.",
+        "evidencia": "Registro de mantenimiento."
+      },
+      {
+        "accion_preventiva": "Revisar guadaña, herramientas, energizador, motobomba y conexiones antes de usar.",
+        "riesgo": "Mecánico y eléctrico.",
+        "responsable": "Responsable designado.",
+        "frecuencia": "Antes de cada uso.",
+        "evidencia": "Bitácora"
+      },
+      {
+        "accion_preventiva": "Definir almacenamiento y dosificación de fertilizantes y preparados.",
+        "riesgo": "Químico y ambiental.",
+        "responsable": "Productor.",
+        "frecuencia": "Cada compra/aplicación.",
+        "evidencia": "Ficha y registro."
+      },
+      {
+        "accion_preventiva": "Aplicar técnicas seguras para levantar bultos y usar ayudas.",
+        "riesgo": "Biomecánico.",
+        "responsable": "Todo el equipo.",
+        "frecuencia": "Permanente.",
+        "evidencia": "Capacitación breve."
+      },
+      {
+        "accion_preventiva": "Mantener botiquín, números de emergencia y comunicación.",
+        "riesgo": "Emergencias.",
+        "responsable": "Familia.",
+        "frecuencia": "Revisión mensual.",
+        "evidencia": "Inventario."
+      },
+      {
+        "accion_preventiva": "Separar el área de alimentos de insumos agrícolas y residuos.",
+        "riesgo": "Inocuidad y exposición.",
+        "responsable": "Productor.",
+        "frecuencia": "Antes de reactivar transformación.",
+        "evidencia": "Inspección y fotografías."
+      },
+      {
+        "accion_preventiva": "Registrar incidentes, accidentes y condiciones inseguras.",
+        "riesgo": "Seguimiento.",
+        "responsable": "Productor.",
+        "frecuencia": "Cuando ocurra y revisión mensual.",
+        "evidencia": "Formato de incidentes."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "Puerta a puerta y compradores conocidos.",
+        "responsable": "Productor e hijas.",
+        "frecuencia": "Según cosecha."
+      },
+      {
+        "canal": "Pedidos/llamadas",
+        "activo": true,
+        "descripcion": "Pedidos de tiendas y familiares.",
+        "responsable": "Productor.",
+        "frecuencia": "Variable."
+      },
+      {
+        "canal": "Ferias campesinas",
+        "activo": true,
+        "descripcion": "Eventos en Betania, Nazareth y otros.",
+        "responsable": "Hija y productor.",
+        "frecuencia": "Cuando hay evento."
+      },
+      {
+        "canal": "Plaza/intermediario",
+        "activo": true,
+        "descripcion": "Hermano y excuñado comercializan en plaza o Bogotá",
+        "responsable": "Familiar comprador.",
+        "frecuencia": "Cada 15-20 días / variable."
+      },
+      {
+        "canal": "Redes sociales",
+        "activo": false,
+        "descripcion": "No se informó uso comercial sistemático. Potencial WhatsApp o redes.",
+        "responsable": "Pendiente.",
+        "frecuencia": "Pendiente."
+      },
+      {
+        "canal": "Tiendas",
+        "activo": true,
+        "descripcion": "Tiendas locales.",
+        "responsable": "Productor.",
+        "frecuencia": "Variable."
+      },
+      {
+        "canal": "Restaurantes/compras institucionales",
+        "activo": false,
+        "descripcion": "Canal potencial.",
+        "responsable": "Pendiente.",
+        "frecuencia": "Pendiente."
+      },
+      {
+        "canal": "Comercialización asociativa",
+        "activo": false,
+        "descripcion": "La organización continúa, pero el productor trabaja de forma independiente.",
+        "responsable": "Pendiente.",
+        "frecuencia": "Ocasional."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Mora",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "$3.000-$4.000 por libra en la localidad.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": 3000,
+        "justificacion": "Definir costo por libra con rendimiento real y pérdidas."
+      },
+      {
+        "servicio": "Lechuga",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "$2.500-$3.000 por unidad.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": 3000,
+        "justificacion": "Validar supervivencia, empaque, transporte y merma. Rango final reportado: $2.500-$3.000 por unidad de 200-250 g."
+      },
+      {
+        "servicio": "Quinua/amaranto",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No informado.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": null,
+        "justificacion": "Calcular por kilogramo y por producto transformado."
+      },
+      {
+        "servicio": "Papa nativa",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No informado.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": null,
+        "justificacion": "Registrar semilla, abono, jornal, rendimiento y precio por bulto."
+      },
+      {
+        "servicio": "Cubios",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No informado.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": null,
+        "justificacion": "Registrar costo, peso del bulto y precio."
+      },
+      {
+        "servicio": "Transformados",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Pendiente de mercado.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": null,
+        "justificacion": "Estandarizar receta, rendimiento, empaque, energía y mano de obra."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Ventas actuales mixtas",
+        "cantidad_mensual": "No quedó determinada.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Familiares, ferias, tiendas y puerta a puerta."
+      },
+      {
+        "concepto_servicio": "Mora actual",
+        "cantidad_mensual": "Pocas cantidades; cultivo grande aún no inicia",
+        "precio": 3000,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Mercado local y futuros canales."
+      },
+      {
+        "concepto_servicio": "Mora potencial",
+        "cantidad_mensual": "300-400 lb/semana para 800 plantas una vez establecidas, según productor.",
+        "precio": 3000,
+        "ingreso_mensual": 4800000,
+        "forma_pago": "Pendiente.",
+        "canal": "Debe validarse mercado."
+      },
+      {
+        "concepto_servicio": "Lechuga potencial",
+        "cantidad_mensual": "Hasta 800 unidades por ciclo, pendiente de supervivencia.",
+        "precio": 3000,
+        "ingreso_mensual": 2400000,
+        "forma_pago": "Pendiente.",
+        "canal": "Mercado por validar."
+      },
+      {
+        "concepto_servicio": "Otros cultivos",
+        "cantidad_mensual": "Pendiente.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Según cosecha y ferias."
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": "Nota: Las proyecciones aritméticas muestran el potencial de las cifras expresadas, pero no constituyen una proyección aprobada. Deben ajustarse a producción real, merma, autoconsumo, demanda, frecuencia, precio efectivo y costos completos. Ventas actuales mixtas: Se mencionaron 200, 250 o 300 cada 15-20 días, sin unidad monetaria clara. Mora potencial: $900.000-$1.200.000 semanales teóricos, antes de costos y solo si se cosecha y vende todo. Lechuga potencial: $2.000.000-$2.400.000 brutos teóricos por ciclo, si se vende el 100%."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Cliente directo",
+        "estrategia": "Cumplir pedidos, informar cosechas y mantener calidad limpia.",
+        "medio": "Llamada, mensaje y visita.",
+        "frecuencia": "Cada cosecha.",
+        "responsable": "Productor."
+      },
+      {
+        "cliente": "Tiendas",
+        "estrategia": "Confirmar cantidad, presentación y fecha antes de cosechar.",
+        "medio": "Teléfono/WhatsApp.",
+        "frecuencia": "Semanal o según producto.",
+        "responsable": "Productor."
+      },
+      {
+        "cliente": "Familiares comerciantes",
+        "estrategia": "Acordar precio, volumen, devolución y forma de pago.",
+        "medio": "Llamada y registro.",
+        "frecuencia": "Cada entrega.",
+        "responsable": "Productor."
+      },
+      {
+        "cliente": "Cliente de feria",
+        "estrategia": "Usar etiqueta, historia del producto y datos de contacto.",
+        "medio": "Feria, volante o QR futuro.",
+        "frecuencia": "Cada evento.",
+        "responsable": "Hija y productor."
+      },
+      {
+        "cliente": "Comprador de transformados",
+        "estrategia": "Ofrecer muestra, ingredientes, conservación y trazabilidad.",
+        "medio": "Feria/pedido.",
+        "frecuencia": "Cuando la línea esté validada.",
+        "responsable": "Responsable de transformación."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Mora y hortalizas",
+        "canal": "Feria, tienda o directo.",
+        "tiempo": "Mismo día o máximo por definir.",
+        "transporte_operacion": "Familiar/transporte por coordinar.",
+        "condicion_calidad": "Cosecha reciente, selección, sombra, envase ventilado y evitar aplastamiento.",
+        "capacidad": "Pendiente.",
+        "costo": "Pendiente.",
+        "responsable": "Productor/hija."
+      },
+      {
+        "servicio_insumo": "Papa y cubios",
+        "canal": "Plaza, familiar o feria.",
+        "tiempo": "Según almacenamiento.",
+        "transporte_operacion": "Vehículo de familiar o apoyo.",
+        "condicion_calidad": "Limpios, secos, clasificados y en costal adecuado.",
+        "capacidad": "Pendiente",
+        "costo": "Pendiente",
+        "responsable": "Productor."
+      },
+      {
+        "servicio_insumo": "Quinua/amaranto",
+        "canal": "Pedido o transformación.",
+        "tiempo": "Después de secado y limpieza.",
+        "transporte_operacion": "Pendiente.",
+        "condicion_calidad": "Humedad controlada y empaque seco",
+        "capacidad": "Pendiente",
+        "costo": "Pendiente.",
+        "responsable": "Productor."
+      },
+      {
+        "servicio_insumo": "Transformados",
+        "canal": "Feria o pedido.",
+        "tiempo": "Según vida útil validada.",
+        "transporte_operacion": "Pendiente.",
+        "condicion_calidad": "Empaque, rotulado e higiene.",
+        "capacidad": "Pendiente.",
+        "costo": "Pendiente.",
+        "responsable": "Responsable designado."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Identificación de lote",
+        "informacion": "Producto, parcela, fecha de siembra y cosecha.",
+        "responsable": "Productor.",
+        "medio": "Cuaderno o formato.",
+        "frecuencia": "Por lote/cosecha",
+        "evidencia": "Cuaderno o formato."
+      },
+      {
+        "elemento": "Manejo productivo",
+        "informacion": "Fertilización, control, riego, labores y responsable.",
+        "responsable": "Productor/hijas.",
+        "medio": "Bitácora",
+        "frecuencia": "Diaria/semanal",
+        "evidencia": "Bitácora"
+      },
+      {
+        "elemento": "Origen",
+        "informacion": "Localidad, vereda, predio y contacto.",
+        "responsable": "Productor.",
+        "medio": "Ficha del predio.",
+        "frecuencia": "Permanente",
+        "evidencia": "Ficha del predio."
+      },
+      {
+        "elemento": "Presentación",
+        "informacion": "Nombre, producto, peso, fecha, conservación y contacto.",
+        "responsable": "Productor.",
+        "medio": "Etiqueta piloto.",
+        "frecuencia": "Por empaque",
+        "evidencia": "Etiqueta piloto."
+      },
+      {
+        "elemento": "QR",
+        "informacion": "Historia, prácticas, fotos, disponibilidad y contacto.",
+        "responsable": "Apoyo técnico.",
+        "medio": "Prueba de enlace.",
+        "frecuencia": "Gradual",
+        "evidencia": "Prueba de enlace."
+      },
+      {
+        "elemento": "Transformados",
+        "informacion": "Ingredientes, lote, elaboración, vida útil y advertencias.",
+        "responsable": "Responsable.",
+        "medio": "Registro por lote.",
+        "frecuencia": "Por lote elaborado",
+        "evidencia": "Registro por lote."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Captación y almacenamiento de agua lluvia.",
+        "descripcion": "Asegurar riego en verano.",
+        "valor_unitario": null,
+        "cantidad": "Canales, 2-3 tanques o reservorio con geomembrana/plástico",
+        "total": null,
+        "requisito": "Medir demanda, área de cubierta, calidad y ubicación.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Plástico para invernadero",
+        "descripcion": "Proteger hortalizas y cultivos de invierno",
+        "valor_unitario": null,
+        "cantidad": "Rollo aproximado de 80-100 m x 6 m",
+        "total": null,
+        "requisito": "Medir estructura y revisar estado.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Riego por goteo y motobomba.",
+        "descripcion": "Reducir trabajo y usar agua eficientemente.",
+        "valor_unitario": null,
+        "cantidad": "Un rollo de manguera y equipo por dimensionar.",
+        "total": null,
+        "requisito": "Diseño hidráulico y energía disponible.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Cerramiento y protección",
+        "descripcion": "Evitar ingreso de animales y soportar mora.",
+        "valor_unitario": null,
+        "cantidad": "10-15 rollos de malla, alambre, energizador y tutores/madera",
+        "total": null,
+        "requisito": "Medir perímetro y priorizar áreas",
+        "fuente": "Cotizar"
+      },
+      {
+        "tipo": "Polisombra/cortinas",
+        "descripcion": "Reducir viento y lluvia lateral.",
+        "valor_unitario": null,
+        "cantidad": "2-3 rollos",
+        "total": null,
+        "requisito": "Evaluar combinación con barreras vivas",
+        "fuente": "Cotizar"
+      },
+      {
+        "tipo": "Análisis de suelo y asistencia agroambiental integral.",
+        "descripcion": "Planificar fertilización y uso del área.",
+        "valor_unitario": null,
+        "cantidad": "Una evaluación",
+        "total": null,
+        "requisito": "Muestreo por zonas",
+        "fuente": "Cotizar/gestionar"
+      },
+      {
+        "tipo": "Marca, etiqueta y comercialización.",
+        "descripcion": "Vender directo y mejorar reconocimiento.",
+        "valor_unitario": null,
+        "cantidad": "Diseño, empaque piloto y material comercial",
+        "total": null,
+        "requisito": "Definir productos, nombre y requisitos.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Área limpia de transformación.",
+        "descripcion": "Reactivar panadería, deshidratado y empaque.",
+        "valor_unitario": null,
+        "cantidad": "Adecuación por diseñar.",
+        "total": null,
+        "requisito": "Definir línea prioritaria y requisitos.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Compostera ampliada",
+        "descripcion": "Aprovechar residuos y reducir abono comprado",
+        "valor_unitario": null,
+        "cantidad": "Capacidad pendiente.",
+        "total": null,
+        "requisito": "Diseño, ubicación y manejo.",
+        "fuente": "Cotizar"
+      },
+      {
+        "tipo": "Equipo para extracción de plantas medicinales.",
+        "descripcion": "Explorar aceites.",
+        "valor_unitario": null,
+        "cantidad": "Alambique o equipo por definir.",
+        "total": null,
+        "requisito": "Asistencia técnica, producto, mercado y requisitos",
+        "fuente": "Cotizar solo después de validar"
+      },
+      {
+        "tipo": "Sistema solar.",
+        "descripcion": "Reducir consumo eléctrico.",
+        "valor_unitario": null,
+        "cantidad": "Potencia pendiente.",
+        "total": null,
+        "requisito": "Definir cargas reales y retorno.",
+        "fuente": "Cotizar"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Mora: fertilizante/compost",
+        "descripcion": "Una aplicación para 800 plantas.",
+        "valor_mensual_ciclo": 380000,
+        "observaciones": "Producto, peso y proporción pendientes. Rango reportado: entre $350.000 y $380.000."
+      },
+      {
+        "tipo": "Mora: jornal",
+        "descripcion": "Un día por aplicación / labor referida.",
+        "valor_mensual_ciclo": 80000,
+        "observaciones": "Número de jornales de guadaña, plateo, poda y cosecha pendiente."
+      },
+      {
+        "tipo": "Mora: establecimiento antes de cosecha",
+        "descripcion": "Hasta 7-8 meses.",
+        "valor_mensual_ciclo": 1000000,
+        "observaciones": "Cifra referida para fertilización y mano de obra no incluye todos los costos. Rango reportado: $800.000-$1.000.000 aproximados."
+      },
+      {
+        "tipo": "Quinua: fertilización",
+        "descripcion": "Una fertilización; población asociada confusa.",
+        "valor_mensual_ciclo": 250000,
+        "observaciones": "Confirmar si corresponde a 400-600 o 2.000 plantas. Rango reportado: $200.000-$250.000 aproximadamente."
+      },
+      {
+        "tipo": "Papa nativa: fertilización",
+        "descripcion": "Siembra y reabono.",
+        "valor_mensual_ciclo": 600000,
+        "observaciones": "Datos contradictorios, verificar. Reportado: $300.000 y otra referencia de $600.000."
+      },
+      {
+        "tipo": "Cubios: abono",
+        "descripcion": "Un bulto/ciclo.",
+        "valor_mensual_ciclo": 200000,
+        "observaciones": "Semilla, mano de obra y transporte no incluidos."
+      },
+      {
+        "tipo": "Hortalizas: fertilización",
+        "descripcion": "Un ciclo de 800 plantas.",
+        "valor_mensual_ciclo": 200000,
+        "observaciones": "No incluye semillas, sustrato, agua, empaque ni mano de obra. Rango reportado: $150.000-$200.000."
+      },
+      {
+        "tipo": "Infraestructura y equipos",
+        "descripcion": "Inversión.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Malla, plástico, tutores, riego, tanque, energizador, compostera y transformación pendientes de cotizar."
+      },
+      {
+        "tipo": "Comercialización",
+        "descripcion": "Cada venta.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Transporte, bolsas, costales, devoluciones y comisión de intermediario pendientes."
+      },
+      {
+        "tipo": "Costo familiar",
+        "descripcion": "Permanente.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Mano de obra del productor y sus hijas debe valorarse."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "1",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Operación actual: Monto no determinado. La referencia 200-300 cada 15-20 días carece de unidad monetaria clara. Mora en establecimiento: Probablemente negativo durante establecimiento. Mora potencial (400 lb/semana): $1.200.000 brutos/semana teóricos. Lechuga potencial (800 unidades): $2.000.000-$2.400.000 brutos por ciclo. Transformación: Negativo durante inversión."
+      },
+      {
+        "mes": "2",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "3",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "4",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "5",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "6",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "7",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "8",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "9",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "10",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "11",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "12",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "Lectura financiera: La unidad no cuenta con información suficiente para determinar utilidad. Debe separar inversiones, costos por cultivo, autoconsumo, producto perdido, ventas a intermediarios, ventas directas y mano de obra familiar. Las cifras potenciales de producción son muy superiores al ingreso actual descrito y requieren validación agronómica y comercial."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Agua potable usada en riego",
+        "estado": "No medida.",
+        "cantidad": "No medida.",
+        "impacto_1_a_5": null,
+        "accion": "Lectura o estimación por tanque y jornada."
+      },
+      {
+        "variable": "Agua lluvia captada",
+        "estado": "Dos tanques pequeños, volumen desconocido.",
+        "cantidad": "Dos tanques pequeños, volumen desconocido.",
+        "impacto_1_a_5": null,
+        "accion": "Registrar capacidad y llenados."
+      },
+      {
+        "variable": "Demanda de riego por cultivo",
+        "estado": "No calculada.",
+        "cantidad": "No calculada.",
+        "impacto_1_a_5": null,
+        "accion": "Litros por cama, parcela o planta."
+      },
+      {
+        "variable": "Pérdidas/fugas",
+        "estado": "No evaluadas.",
+        "cantidad": "No evaluadas.",
+        "impacto_1_a_5": null,
+        "accion": "Inspección de canales, tanque y goteo."
+      },
+      {
+        "variable": "Electricidad",
+        "estado": "No se aportó consumo.",
+        "cantidad": "No se aportó consumo.",
+        "impacto_1_a_5": null,
+        "accion": "Factura y kWh."
+      },
+      {
+        "variable": "Combustible/transporte",
+        "estado": "No medido.",
+        "cantidad": "No medido.",
+        "impacto_1_a_5": null,
+        "accion": "Kilómetros y combustible por entrega."
+      },
+      {
+        "variable": "Fertilizantes comprados",
+        "estado": "Costos parciales, peso no definido",
+        "cantidad": "Costos parciales, peso no definido",
+        "impacto_1_a_5": null,
+        "accion": "Kilogramos por cultivo y ciclo."
+      },
+      {
+        "variable": "Residuos orgánicos compostados",
+        "estado": "Se compostan en caja pequeña; cantidad no medida.",
+        "cantidad": "Cantidad no medida.",
+        "impacto_1_a_5": null,
+        "accion": "Kilogramos por semana."
+      },
+      {
+        "variable": "Empaques",
+        "estado": "Bolsas y costales sin registro.",
+        "cantidad": "Bolsas y costales sin registro.",
+        "impacto_1_a_5": null,
+        "accion": "Unidades por venta."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "Agua potable usada en riego",
+        "que_se_mide": "Litros o m3",
+        "dato_inicial": "No medida.",
+        "meta": "Reducir uso de acueducto mediante lluvia y goteo.",
+        "frecuencia": "Diaria/semanal",
+        "responsable": "Productor",
+        "evidencia": "Lectura o registro"
+      },
+      {
+        "indicador": "Agua lluvia captada",
+        "que_se_mide": "Litros o m3",
+        "dato_inicial": "Dos tanques pequeños, volumen desconocido.",
+        "meta": "Instalar almacenamiento dimensionado.",
+        "frecuencia": "Semanal/lluvia",
+        "responsable": "Productor",
+        "evidencia": "Registro de llenados"
+      },
+      {
+        "indicador": "Demanda de riego por cultivo",
+        "que_se_mide": "Litros/planta/día o litros/m2",
+        "dato_inicial": "No calculada.",
+        "meta": "Definir por cultivo y época.",
+        "frecuencia": "Por riego",
+        "responsable": "Productor",
+        "evidencia": "Planilla de riego"
+      },
+      {
+        "indicador": "Pérdidas/fugas",
+        "que_se_mide": "Número de fugas/inspecciones",
+        "dato_inicial": "No evaluadas.",
+        "meta": "Corregir fugas.",
+        "frecuencia": "Mensual",
+        "responsable": "Productor",
+        "evidencia": "Informe de mantenimiento"
+      },
+      {
+        "indicador": "Electricidad",
+        "que_se_mide": "kWh/mes",
+        "dato_inicial": "No se aportó consumo.",
+        "meta": "Establecer línea base antes de solar.",
+        "frecuencia": "Mensual",
+        "responsable": "Productor",
+        "evidencia": "Factura"
+      },
+      {
+        "indicador": "Combustible/transporte",
+        "que_se_mide": "Litros o galones/km",
+        "dato_inicial": "No medido.",
+        "meta": "Consolidar rutas y pedidos.",
+        "frecuencia": "Por entrega",
+        "responsable": "Productor/familiar",
+        "evidencia": "Bitácora de viaje"
+      },
+      {
+        "indicador": "Fertilizantes comprados",
+        "que_se_mide": "kg por cultivo y ciclo",
+        "dato_inicial": "Costos parciales, peso no definido",
+        "meta": "Optimizar con análisis de suelo y compost.",
+        "frecuencia": "Por ciclo",
+        "responsable": "Productor",
+        "evidencia": "Facturas/registro de aplicación"
+      },
+      {
+        "indicador": "Residuos orgánicos compostados",
+        "que_se_mide": "kg por semana",
+        "dato_inicial": "Se compostan en caja pequeña; cantidad no medida.",
+        "meta": "Ampliar capacidad y aprovechar mayor porcentaje.",
+        "frecuencia": "Semanal",
+        "responsable": "Productor",
+        "evidencia": "Registro de compostaje"
+      },
+      {
+        "indicador": "Empaques",
+        "que_se_mide": "Unidades por venta",
+        "dato_inicial": "Bolsas y costales sin registro.",
+        "meta": "Reducir y seleccionar alternativas apropiadas.",
+        "frecuencia": "Cada venta",
+        "responsable": "Productor",
+        "evidencia": "Registro de empaques"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Residuos de cultivo",
+        "cantidad": "No medida",
+        "manejo_actual": "Se llevan a compostera pequeña.",
+        "accion_circular": "Diseñar compostera mayor y registrar temperatura/tiempo.",
+        "destino": "Compost para huerta e invernadero.",
+        "responsable": "Productor"
+      },
+      {
+        "residuo_recurso": "Productos no vendidos",
+        "cantidad": "No medida",
+        "manejo_actual": "Pueden devolverse o perderse",
+        "accion_circular": "Pedidos anticipados y plan de aprovechamiento.",
+        "destino": "Transformar, donar, autoconsumir o programar cosecha.",
+        "responsable": "Productor"
+      },
+      {
+        "residuo_recurso": "Quinua y amaranto",
+        "cantidad": "No medida",
+        "manejo_actual": "Venta o transformación futura.",
+        "accion_circular": "Validar mercado antes de producir volumen.",
+        "destino": "Harinas, panes u otros productos estandarizados.",
+        "responsable": "Productor"
+      },
+      {
+        "residuo_recurso": "Plantas medicinales",
+        "cantidad": "No medida",
+        "manejo_actual": "Venta fresca o futura transformación.",
+        "accion_circular": "Priorizar una línea, asesoría y trazabilidad.",
+        "destino": "Deshidratados, aceites o cremas.",
+        "responsable": "Productor"
+      },
+      {
+        "residuo_recurso": "Agua lluvia",
+        "cantidad": "Limitada",
+        "manejo_actual": "Captación pequeña.",
+        "accion_circular": "Canales, filtro, tapa y almacenamiento.",
+        "destino": "Riego de cultivos.",
+        "responsable": "Productor"
+      },
+      {
+        "residuo_recurso": "Bolsas y costales",
+        "cantidad": "No medida",
+        "manejo_actual": "Se usan para entrega.",
+        "accion_circular": "Definir empaque por producto.",
+        "destino": "Reutilizar costales cuando sea seguro y reducir bolsa",
+        "responsable": "Productor"
+      },
+      {
+        "residuo_recurso": "Barreras vivas",
+        "cantidad": "No establecida",
+        "manejo_actual": "No establecidas como sistema",
+        "accion_circular": "Diseño con plantas nativas.",
+        "destino": "Cortinas de viento, biodiversidad y paisaje.",
+        "responsable": "Productor"
+      }
+    ],
+    "conclusion_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "Agua",
+        "indicador": "Aumentar reserva y eficiencia.",
+        "descripcion": "Captación de lluvia limitada y dependencia del acueducto.",
+        "estado": "Medio-bajo",
+        "calificacion_1_a_5": null,
+        "accion": "Aumentar reserva y eficiencia.",
+        "evidencia": "Registros de agua"
+      },
+      {
+        "factor": "Suelo",
+        "indicador": "Análisis de suelo, cobertura y dosis",
+        "descripcion": "Producción limpia reportada, pero sin análisis ni plan de fertilización.",
+        "estado": "Medio",
+        "calificacion_1_a_5": null,
+        "accion": "Análisis de suelo, cobertura y dosis",
+        "evidencia": "Informe de suelo"
+      },
+      {
+        "factor": "Biodiversidad",
+        "indicador": "Corredores y registro de variedades.",
+        "descripcion": "Interés en plantas nativas y semillas ancestrales.",
+        "estado": "Medio-alto como potencial",
+        "calificacion_1_a_5": null,
+        "accion": "Corredores y registro de variedades.",
+        "evidencia": "Mapa de biodiversidad"
+      },
+      {
+        "factor": "Residuos",
+        "indicador": "Ampliar y controlar el proceso.",
+        "descripcion": "Compostaje existente pero pequeño.",
+        "estado": "Medio",
+        "calificacion_1_a_5": null,
+        "accion": "Ampliar y controlar el proceso.",
+        "evidencia": "Registro de compost"
+      },
+      {
+        "factor": "Clima",
+        "indicador": "Invernadero, agua, barreras y calendario.",
+        "descripcion": "Alta exposición a verano, lluvia y viento.",
+        "estado": "Bajo en resiliencia actual",
+        "calificacion_1_a_5": null,
+        "accion": "Invernadero, agua, barreras y calendario.",
+        "evidencia": "Plan de contingencia"
+      },
+      {
+        "factor": "Energía",
+        "indicador": "Medir consumo y priorizar eficiencia.",
+        "descripcion": "Interés en solar, no hay línea base.",
+        "estado": "Inicial",
+        "calificacion_1_a_5": null,
+        "accion": "Medir consumo y priorizar eficiencia.",
+        "evidencia": "Factura de energía"
+      },
+      {
+        "factor": "Producción limpia",
+        "indicador": "Documentar insumos y resultados.",
+        "descripcion": "Evita herbicidas y usa controles de plantas, según relato.",
+        "estado": "Medio-alto",
+        "calificacion_1_a_5": null,
+        "accion": "Documentar insumos y resultados.",
+        "evidencia": "Bitácora de insumos"
+      },
+      {
+        "factor": "Comunidad y saberes",
+        "indicador": "Talleres y relevo con hijas.",
+        "descripcion": "Desea enseñar y conservar prácticas ancestrales.",
+        "estado": "Alto como intención",
+        "calificacion_1_a_5": null,
+        "accion": "Talleres y relevo con hijas.",
+        "evidencia": "Registro de talleres"
+      },
+      {
+        "factor": "Comercialización responsable",
+        "indicador": "Marca, pedidos, empaque y registros.",
+        "descripcion": "Mercado limitado, pérdidas y poca trazabilidad.",
+        "estado": "Bajo-medio",
+        "calificacion_1_a_5": null,
+        "accion": "Marca, pedidos, empaque y registros.",
+        "evidencia": "Formatos de venta"
+      }
+    ],
+    "resultado_preliminar_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "Agua",
+        "accion": "Captar lluvia, almacenar, filtrar y usar goteo.",
+        "prioridad": "Alta",
+        "plazo": "0-6 meses.",
+        "responsable": "Productor/apoyo técnico.",
+        "recursos": "Canales, tanques, filtros, manguera de goteo",
+        "indicador": "Litros almacenados y % riego con lluvia.",
+        "evidencia": "Registro de agua"
+      },
+      {
+        "impacto": "Suelo",
+        "accion": "Muestreo, plan de nutrientes y cobertura.",
+        "prioridad": "Alta",
+        "plazo": "0-4 meses.",
+        "responsable": "Agrónomo/productor.",
+        "recursos": "Análisis de laboratorio, abonos",
+        "indicador": "Análisis realizado y dosis registradas.",
+        "evidencia": "Informe de suelo"
+      },
+      {
+        "impacto": "Invierno y viento",
+        "accion": "Reponer plástico, diseñar drenajes y barreras vivas",
+        "prioridad": "Alta",
+        "plazo": "0-8 meses.",
+        "responsable": "Productor.",
+        "recursos": "Plástico, plantas nativas, herramientas",
+        "indicador": "Área protegida y pérdidas.",
+        "evidencia": "Fotografías"
+      },
+      {
+        "impacto": "Residuos",
+        "accion": "Ampliar compostaje y separar materiales.",
+        "prioridad": "Media",
+        "plazo": "0-6 meses.",
+        "responsable": "Familia.",
+        "recursos": "Estructura compostera, herramientas",
+        "indicador": "Kg compostados",
+        "evidencia": "Registro de compost"
+      },
+      {
+        "impacto": "Empaques",
+        "accion": "Definir empaque mínimo y disposición.",
+        "prioridad": "Media",
+        "plazo": "3-8 meses.",
+        "responsable": "Responsable comercial.",
+        "recursos": "Empaques ecológicos/rotulados",
+        "indicador": "Unidades de empaque por kg.",
+        "evidencia": "Muestras de empaque"
+      },
+      {
+        "impacto": "Energía",
+        "accion": "Medir kWh y evaluar sistema.",
+        "prioridad": "Baja",
+        "plazo": "6-12 meses.",
+        "responsable": "Productor/técnico.",
+        "recursos": "Medidor/facturas",
+        "indicador": "kWh y estudio realizado",
+        "evidencia": "Estudio de energía"
+      },
+      {
+        "impacto": "Transformación",
+        "accion": "Adecuar área limpia y flujo separado.",
+        "prioridad": "Media",
+        "plazo": "6-12 meses.",
+        "responsable": "Productor/asesor.",
+        "recursos": "Materiales de construcción, equipos sanitarios",
+        "indicador": "Inspección y protocolo.",
+        "evidencia": "Acta de inspección"
+      },
+      {
+        "impacto": "Biodiversidad",
+        "accion": "Plantar especies nativas apropiadas.",
+        "prioridad": "Media",
+        "plazo": "6-18 meses.",
+        "responsable": "Familia/vivero.",
+        "recursos": "Plántulas nativas",
+        "indicador": "Número de plantas sobrevivientes",
+        "evidencia": "Conteo de plantas"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": null,
+        "situacion": "Verano / sequía",
+        "riesgo": "Poca reserva de agua.",
+        "accion_propuesta": "Tanques, reservorio, goteo y calendario de siembra. Respuesta/contingencia: Priorizar cultivos, reducir área y proteger humedad. Indicador: Días de autonomía."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Lluvia intensa",
+        "riesgo": "Cultivos sin cubierta suficiente.",
+        "accion_propuesta": "Invernadero, drenajes y cosecha oportuna. Respuesta/contingencia: Retirar agua, controlar daños y registrar pérdidas. Indicador: Área protegida."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Viento",
+        "riesgo": "Daño físico en mora y hortalizas.",
+        "accion_propuesta": "Cortinas vivas, tutores y protección lateral. Respuesta/contingencia: Reparar estructuras y podar material dañado. Indicador: Número de daños por evento."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Frío/variabilidad",
+        "riesgo": "Ciclos y crecimiento variables.",
+        "accion_propuesta": "Siembras escalonadas y selección de cultivos. Respuesta/contingencia: Ajustar calendario y ventas. Indicador: Días de retraso por cultivo."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Erosión",
+        "riesgo": "Pendiente y lluvia.",
+        "accion_propuesta": "Cobertura, siembra en contorno y drenaje. Respuesta/contingencia: Estabilizar zonas afectadas. Indicador: Área con suelo descubierto."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Pérdida de mercado por sobreoferta",
+        "riesgo": "Cosechas concentradas.",
+        "accion_propuesta": "Pedidos, escalonamiento y transformación validada. Respuesta/contingencia: Promoción, donación o aprovechamiento. Indicador: % producto no vendido."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Ambiental/productivo",
+        "riesgo": "Escasez de agua",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto",
+        "prevencion": "Dos tanques pequeños.",
+        "respuesta": "Reserva, goteo y plan de sequía."
+      },
+      {
+        "tipo": "Climático",
+        "riesgo": "Daño por lluvia y viento",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto",
+        "prevencion": "Estructura sin plástico.",
+        "respuesta": "Cubierta, barreras y drenajes."
+      },
+      {
+        "tipo": "SST",
+        "riesgo": "Caída en pendiente",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto",
+        "prevencion": "Trabajo atravesado en pendiente.",
+        "respuesta": "Senderos, botas y señalización."
+      },
+      {
+        "tipo": "Productivo",
+        "riesgo": "Ingreso de animales",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio-alto",
+        "prevencion": "Cerramiento insuficiente",
+        "respuesta": "Malla, cerca y mantenimiento."
+      },
+      {
+        "tipo": "Productivo/ambiental",
+        "riesgo": "Fertilización inadecuada",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio-alto",
+        "prevencion": "Experiencia.",
+        "respuesta": "Análisis de suelo y registro."
+      },
+      {
+        "tipo": "Comercial",
+        "riesgo": "No vender cosecha",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto",
+        "prevencion": "Ferias y familiares",
+        "respuesta": "Pedidos, mercados externos y escalonamiento"
+      },
+      {
+        "tipo": "Comercial",
+        "riesgo": "Dependencia de intermediario",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio",
+        "prevencion": "Venta a hermano/excuñado.",
+        "respuesta": "Marca, venta directa y negociación"
+      },
+      {
+        "tipo": "Sanitario",
+        "riesgo": "Falta de inocuidad en transformados",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto",
+        "prevencion": "Capacitación previa; área incompleta.",
+        "respuesta": "Adecuación y procedimientos antes de vender."
+      },
+      {
+        "tipo": "Financiero",
+        "riesgo": "Inversión dispersa",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto",
+        "prevencion": "Muchas necesidades simultáneas",
+        "respuesta": "Priorizar agua, protección y mercado."
+      },
+      {
+        "tipo": "Digital/organizativo",
+        "riesgo": "Pérdida de datos/clientes",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio",
+        "prevencion": "No hay base reportada..",
+        "respuesta": "Registro físico y copia digital."
+      },
+      {
+        "tipo": "SST/productivo",
+        "riesgo": "Equipo eléctrico defectuoso",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto",
+        "prevencion": "Energizador averiado.",
+        "respuesta": "Reemplazar, instalar y mantener técnicamente."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "Confirmar datos de unidad, ubicación, área y cultivos vigentes.",
+        "componente": "Inmediato",
+        "responsable": "Productor/equipo PMAPC",
+        "tiempo": "30 días.",
+        "recursos": "Visita y entrevista",
+        "resultado": "Línea base confiable.",
+        "evidencia": "Ficha de caracterización"
+      },
+      {
+        "actividad": "Realizar análisis de suelo y diseño de uso del predio.",
+        "componente": "Mes 1",
+        "responsable": "Agrónomo/productor",
+        "tiempo": "3 meses.",
+        "recursos": "Muestreo y asistencia.",
+        "resultado": "Plan de fertilización y distribución",
+        "evidencia": "Informe agronómico"
+      },
+      {
+        "actividad": "Diseñar captación, almacenamiento y riego.",
+        "componente": "Mes 1",
+        "responsable": "Técnico/productor.",
+        "tiempo": "4 meses.",
+        "recursos": "Canales, tanques, filtros, goteo.",
+        "resultado": "Mayor autonomía de agua",
+        "evidencia": "Diseño hidráulico"
+      },
+      {
+        "actividad": "Medir y reponer cubierta del invernadero",
+        "componente": "Mes 1",
+        "responsable": "Productor/proveedor.",
+        "tiempo": "4 meses.",
+        "recursos": "Plástico y accesorios",
+        "resultado": "Área protegida operativa.",
+        "evidencia": "Fotografía de invernadero"
+      },
+      {
+        "actividad": "Priorizar cerramiento y tutorado de cultivos",
+        "componente": "Mes 1",
+        "responsable": "Productor.",
+        "tiempo": "6 meses.",
+        "recursos": "Malla, alambre, energizador y tutores",
+        "resultado": "Menor daño por animales.",
+        "evidencia": "Inspección de cerca"
+      },
+      {
+        "actividad": "Implementar registros por cultivo.",
+        "componente": "Inmediato",
+        "responsable": "Productor e hijas.",
+        "tiempo": "Permanente",
+        "recursos": "Cuaderno/hoja digital.",
+        "resultado": "Costos y rendimientos conocidos.",
+        "evidencia": "Bitácoras diligenciadas"
+      },
+      {
+        "actividad": "Validar mercados y calendario de cosechas",
+        "componente": "Mes 2",
+        "responsable": "Responsable comercial.",
+        "tiempo": "6 meses.",
+        "recursos": "Base de clientes y ferias",
+        "resultado": "Menos devoluciones y pérdida.",
+        "evidencia": "Calendario comercial"
+      },
+      {
+        "actividad": "Definir nombre, marca y etiqueta piloto.",
+        "componente": "Mes 3",
+        "responsable": "Productor/apoyo de diseño.",
+        "tiempo": "8 meses.",
+        "recursos": "Diseño e impresión piloto.",
+        "resultado": "Mayor reconocimiento.",
+        "evidencia": "Etiquetas impresas"
+      },
+      {
+        "actividad": "Adecuar una sola línea de transformación priorizada",
+        "componente": "Mes 6",
+        "responsable": "Productor/asesor.",
+        "tiempo": "12 meses.",
+        "recursos": "Área, equipos y protocolo",
+        "resultado": "Producto transformado validado",
+        "evidencia": "Certificación/Registro"
+      },
+      {
+        "actividad": "Ampliar compostaje y establecer barreras vivas.",
+        "componente": "Mes 3",
+        "responsable": "Familia/apoyo ambiental.",
+        "tiempo": "12 meses.",
+        "recursos": "Materiales y plantas.",
+        "resultado": "Mejor manejo de residuos y clima.",
+        "evidencia": "Compostera y cortinas vivas"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "Productiva",
+        "indicador": "Plantas activas y área por cultivo",
+        "meta": "Inventario completo.",
+        "frecuencia": "Mensual.",
+        "responsable": "Productor",
+        "evidencia": "Inventario"
+      },
+      {
+        "dimension": "Productiva",
+        "indicador": "Rendimiento real de mora (lb/planta/semana).",
+        "meta": "Medir sin asumir cifra potencial..",
+        "frecuencia": "Semanal en cosecha",
+        "responsable": "Productor",
+        "evidencia": "Bitácora de cosecha"
+      },
+      {
+        "dimension": "Productiva",
+        "indicador": "Supervivencia de hortalizas",
+        "meta": "Registrar % por ciclo",
+        "frecuencia": "Cada ciclo.",
+        "responsable": "Productor",
+        "evidencia": "Registro por ciclo"
+      },
+      {
+        "dimension": "Comercial",
+        "indicador": "Ventas por producto y canal.",
+        "meta": "100% de ventas registradas.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Productor e hijas",
+        "evidencia": "Cuaderno de ventas"
+      },
+      {
+        "dimension": "Comercial",
+        "indicador": "Producto devuelto o perdido.",
+        "meta": "Reducir progresivamente.",
+        "frecuencia": "Cada evento.",
+        "responsable": "Productor e hijas",
+        "evidencia": "Registro de mermas"
+      },
+      {
+        "dimension": "Financiera",
+        "indicador": "Costo por unidad/libra/bulto",
+        "meta": "Calcular productos priorizados.",
+        "frecuencia": "Cada ciclo.",
+        "responsable": "Productor",
+        "evidencia": "Ficha de costos"
+      },
+      {
+        "dimension": "Financiera",
+        "indicador": "Margen por canal",
+        "meta": "Comparar directo e intermediario.",
+        "frecuencia": "Mensual",
+        "responsable": "Productor",
+        "evidencia": "Informe financiero"
+      },
+      {
+        "dimension": "Ambiental",
+        "indicador": "Litros de agua lluvia captada.",
+        "meta": "Línea base y aumento.",
+        "frecuencia": "Mensual/lluvia.",
+        "responsable": "Productor",
+        "evidencia": "Registro de lluvia"
+      },
+      {
+        "dimension": "Ambiental",
+        "indicador": "Kg de residuos compostados.",
+        "meta": "Registrar y aumentar.",
+        "frecuencia": "Mensual",
+        "responsable": "Productor",
+        "evidencia": "Bitácora de compost"
+      },
+      {
+        "dimension": "Ambiental",
+        "indicador": "Área con barreras vivas/cobertura",
+        "meta": "Establecer y mantener.",
+        "frecuencia": "Trimestral.",
+        "responsable": "Productor",
+        "evidencia": "Mapa/fotos"
+      },
+      {
+        "dimension": "SST",
+        "indicador": "Incidentes y accidentes.",
+        "meta": "Registro y cero accidentes graves.",
+        "frecuencia": "Mensual.",
+        "responsable": "Productor",
+        "evidencia": "Bitácora de SST"
+      },
+      {
+        "dimension": "Organizativa",
+        "indicador": "Participación de hijas y roles definidos.",
+        "meta": "Funciones y seguimiento.",
+        "frecuencia": "Mensual.",
+        "responsable": "Familia",
+        "evidencia": "Actas familiares"
+      },
+      {
+        "dimension": "Transformación",
+        "indicador": "Lotes con ficha y trazabilidad.",
+        "meta": "100% al iniciar",
+        "frecuencia": "Cada lote",
+        "responsable": "Productor",
+        "evidencia": "Fichas de lote"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Captar agua y usar goteo",
+        "efecto_productivo": "Sostiene cultivos en verano.",
+        "efecto_comercial": "Mejora continuidad de oferta",
+        "efecto_financiero": "Inversión inicial y ahorro potencial",
+        "efecto_ambiental": "Reduce uso de agua potable",
+        "ajuste_necesario": "Dimensionar demanda, calidad y mantenimiento"
+      },
+      {
+        "decision": "Reponer invernadero",
+        "efecto_productivo": "Protege hortalizas y ciclos.",
+        "efecto_comercial": "Permite programación.",
+        "efecto_financiero": "Costo de plástico y mayor ingreso potencial",
+        "efecto_ambiental": "Genera residuo al final de vida",
+        "ajuste_necesario": "Medir estructura y plan de reposición"
+      },
+      {
+        "decision": "Cerrar y tutorar",
+        "efecto_productivo": "Reduce daño y mejora manejo.",
+        "efecto_comercial": "Mejora calidad.",
+        "efecto_financiero": "Evita pérdidas, requiere inversión",
+        "efecto_ambiental": "Evitar afectación de fauna y vegetación.",
+        "ajuste_necesario": "Priorizar perímetro y usar barreras vivas"
+      },
+      {
+        "decision": "Análisis de suelo",
+        "efecto_productivo": "Optimiza fertilización",
+        "efecto_comercial": "Aumenta consistencia",
+        "efecto_financiero": "Reduce gasto innecesario",
+        "efecto_ambiental": "Disminuye riesgo de contaminación",
+        "ajuste_necesario": "Aplicar recomendaciones y registrar."
+      },
+      {
+        "decision": "Escalonar siembras",
+        "efecto_productivo": "Distribuye cosechas",
+        "efecto_comercial": "Mejora oferta continua.",
+        "efecto_financiero": "Suaviza flujo de caja",
+        "efecto_ambiental": "Evita desperdicio",
+        "ajuste_necesario": "Vincular a pedidos y clima"
+      },
+      {
+        "decision": "Crear marca y etiqueta",
+        "efecto_productivo": "No cambia cultivo, exige estandarización",
+        "efecto_comercial": "Mejora reconocimiento y venta directa",
+        "efecto_financiero": "Agrega costo y valor.",
+        "efecto_ambiental": "Evitar afirmaciones no demostradas",
+        "ajuste_necesario": "Trazabilidad y requisitos verificados"
+      },
+      {
+        "decision": "Reactivar panadería",
+        "efecto_productivo": "Da valor a granos.",
+        "efecto_comercial": "Abre nueva línea.",
+        "efecto_financiero": "Alta inversión y costos",
+        "efecto_ambiental": "Consumo de energía y empaques.",
+        "ajuste_necesario": "Priorizar un producto y validar mercado."
+      },
+      {
+        "decision": "Transformar medicinales",
+        "efecto_productivo": "Aprovecha plantas",
+        "efecto_comercial": "Producto diferenciado",
+        "efecto_financiero": "Puede agregar valor",
+        "efecto_ambiental": "Requiere manejo responsable",
+        "ajuste_necesario": "Asistencia, seguridad y requisitos antes de vender."
+      },
+      {
+        "decision": "Ampliar compostaje",
+        "efecto_productivo": "Genera abono",
+        "efecto_comercial": "Fortalece relato ambiental",
+        "efecto_financiero": "Puede reducir costos",
+        "efecto_ambiental": "Aprovecha residuos",
+        "ajuste_necesario": "Controlar proceso y calidad"
+      },
+      {
+        "decision": "Sistema solar",
+        "efecto_productivo": "Apoya equipos futuros",
+        "efecto_comercial": "Puede mejorar imagen.",
+        "efecto_financiero": "Inversión alta; retorno por estudiar",
+        "efecto_ambiental": "Reduce electricidad convencional",
+        "ajuste_necesario": "Medir consumo antes de dimensionar"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}
