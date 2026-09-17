@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar APK | Concursos Sumapaz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FBF4DE;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 1rem;
+        }
+        .card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #2E7D32;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        .btn-download {
+            display: inline-block;
+            background-color: #2E7D32;
+            color: #fff;
+            padding: 0.85rem 1.75rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+        .btn-download:hover {
+            background-color: #1b5e20;
+        }
+        .qr-container {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #f9f9f9;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+        .qr-container img {
+            width: 180px;
+            height: 180px;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Concursos Sumapaz APK</h1>
+        <p>Haz clic abajo para descargar la aplicación Android (v-debug)</p>
+        <a href="app-debug.apk" class="btn-download" download>Descargar app-debug.apk</a>
+        <div class="qr-container">
+            <p style="margin-bottom: 0.75rem; font-size: 0.85rem; color: #666;">O escanea este código QR con tu celular:</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://somosumapaz.com/app/app-debug.apk" alt="Código QR de Descarga APK">
+        </div>
+    </div>
+</body>
+</html>
