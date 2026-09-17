@@ -931,6 +931,10 @@
                     window.location.href = 'login.html';
                     return;
                 } else {
+                    if (authResult.user_id === 12 || authResult.rol_id === 12 || authResult.is_concursos_only) {
+                        window.location.href = 'concursos_sumapaz.html';
+                        return;
+                    }
                     document.getElementById('header-auth-container').style.display = 'flex';
                     isAdmin = authResult.is_admin === true;
                 }

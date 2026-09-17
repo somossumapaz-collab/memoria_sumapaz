@@ -88,10 +88,12 @@
                 if (response.ok && result.success) {
                     sessionStorage.setItem('somos_user_auth', JSON.stringify({
                         authenticated: true,
+                        user_id: result.user_id || null,
                         username: data.username,
                         rol: result.rol || 'USUARIO',
                         rol_id: result.rol_id || null,
-                        is_admin: result.rol === 'ADMIN'
+                        is_admin: result.rol === 'ADMIN',
+                        is_concursos_only: result.is_concursos_only || false
                     }));
                     window.location.href = result.redirect || 'productores_registrados.html';
                 } else {

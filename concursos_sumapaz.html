@@ -812,8 +812,19 @@
                     window.location.href = 'login.html';
                     return;
                 }
+                const userId = parseInt(result.user_id);
                 const rolId = parseInt(result.rol_id);
-                if (!result.is_admin && rolId !== 12 && rolId !== 1) {
+                const isConcursosOnly = (userId === 12 || rolId === 12 || result.is_concursos_only === true);
+
+                if (isConcursosOnly) {
+                    // Hide header links pointing to other modules for user 12
+                    document.querySelectorAll('a[href]').forEach(link => {
+                        const href = link.getAttribute('href') || '';
+                        if (href && !href.includes('concursos_sumapaz.html') && !href.includes('logout') && !href.startsWith('#') && !href.startsWith('javascript:')) {
+                            link.style.display = 'none';
+                        }
+                    });
+                } else if (!result.is_admin && rolId !== 12 && rolId !== 1) {
                     alert('Acceso restringido: Esta pestaña sólo está disponible para usuarios autorizados.');
                     window.location.href = 'index.html';
                     return;

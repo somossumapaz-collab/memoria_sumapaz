@@ -3048,6 +3048,10 @@
                 const res = await fetch(API_BASE + 'api/check_auth.php');
                 const result = await res.json();
                 if (res.ok && result.authenticated) {
+                    if (result.user_id === 12 || result.rol_id === 12 || result.is_concursos_only) {
+                        window.location.href = 'concursos_sumapaz.html';
+                        return;
+                    }
                     if (result.rol_id === 6) {
                         window.location.href = 'tablero_ambiental.html';
                         return;

@@ -785,6 +785,10 @@
                     window.location.href = 'login.html';
                     return;
                 }
+                if (json.user_id === 12 || json.rol_id === 12 || json.is_concursos_only) {
+                    window.location.href = 'concursos_sumapaz.html';
+                    return;
+                }
                 if (json.rol_id === 6) {
                     window.location.href = 'tablero_ambiental.html';
                     return;

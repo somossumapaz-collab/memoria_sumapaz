@@ -47,12 +47,13 @@ try {
     }
 
     if ($auth_success) {
+        $user_id = (int)$user['id'];
         $user_rol_id = isset($user['rol_id']) ? (int)$user['rol_id'] : 0;
         // Assume rol_id 1 is ADMIN, any other is standard user
         $rol_nombre = ($user_rol_id === 1) ? 'ADMIN' : 'USUARIO';
         
         // Authentication successful
-        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['user_id'] = $user_id;
         $_SESSION['username'] = $user['nombre'];
         $_SESSION['user_email'] = $user['email'];
         $_SESSION['rol'] = $rol_nombre;
@@ -63,15 +64,25 @@ try {
             $_SESSION['is_admin'] = true;
         }
 
+        $is_concursos_only = ($user_id === 12 || $user_rol_id === 12);
+
         // Role 6 is specifically Ambientales (Tablero Ambiental ONLY)
-        $redirect_target = ($user_rol_id === 6) ? 'tablero_ambiental.html' : 'productores_registrados.html';
+        // User ID 12 or Role ID 12 is specifically Concursos Sumapaz ONLY
+        $redirect_target = 'productores_registrados.html';
+        if ($is_concursos_only) {
+            $redirect_target = 'concursos_sumapaz.html';
+        } else if ($user_rol_id === 6) {
+            $redirect_target = 'tablero_ambiental.html';
+        }
 
         echo json_encode([
             'success' => true, 
             'message' => 'Login exitoso', 
             'redirect' => $redirect_target,
+            'user_id' => $user_id,
             'rol' => $rol_nombre,
-            'rol_id' => $user_rol_id
+            'rol_id' => $user_rol_id,
+            'is_concursos_only' => $is_concursos_only
         ]);
     } else {
         // Authentication failed

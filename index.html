@@ -201,6 +201,10 @@
                 const res = await fetch('api/check_auth.php');
                 const result = await res.json();
                 if (res.ok && result.authenticated) {
+                    if (result.user_id === 12 || result.rol_id === 12 || result.is_concursos_only) {
+                        window.location.href = 'concursos_sumapaz.html';
+                        return;
+                    }
                     document.getElementById('btn-login').style.display = 'none';
                     if (result.rol_id === 6) {
                         document.getElementById('btn-dashboard').style.display = 'none';

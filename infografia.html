@@ -478,6 +478,10 @@
                 }
 
                 if (userAuth && userAuth.authenticated) {
+                    if (userAuth.user_id === 12 || userAuth.rol_id === 12 || userAuth.is_concursos_only) {
+                        window.location.href = 'concursos_sumapaz.html';
+                        return;
+                    }
                     if (userAuth.rol_id === 6) {
                         window.location.href = 'tablero_ambiental.html';
                         return;

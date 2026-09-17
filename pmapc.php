@@ -3043,6 +3043,10 @@
                 const res = await fetch(API_BASE + 'api/check_auth.php');
                 const result = await res.json();
                 if (res.ok && result.authenticated) {
+                    if (result.user_id === 12 || result.rol_id === 12 || result.is_concursos_only) {
+                        window.location.href = 'concursos_sumapaz.html';
+                        return;
+                    }
                     document.getElementById('header-auth-container').style.display = 'flex';
                 }
             } catch (error) {
