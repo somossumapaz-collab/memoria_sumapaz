@@ -1,0 +1,2080 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "El emprendimiento no tiene nombre oficial. El productor desea denominarlo \"Arándanos Tomás Emilio\", en honor a su hijo.",
+    "persona_entrevistada": "Yeison Efrén Sánchez Pastor.",
+    "tipo_actividad": "Agrícola: cultivo, cosecha, selección, empaque y comercialización de arándanos.",
+    "ubicacion_especifica": "Vereda Lagunitas, localidad de Sumapaz, Bogotá D.C. Nombre del predio y sector pendientes de verificar.",
+    "producto_servicio_principal": "Arándanos frescos empacados en bandejas de una libra y media libra.",
+    "estado_actual": "Negocio en producción inicial, con aproximadamente veinte plantas y ventas directas de pequeña escala.",
+    "personas_vinculadas": "Yeison Efrén Sánchez Pastor, su esposa y un cuñado que le ayuda.",
+    "coordenadas": "Pendientes de tomar o confirmar.",
+    "descripcion_general": "La iniciativa nació después de que el productor observara videos sobre el cultivo. Empezó con cinco plantas regaladas en Guasca, comprobó que daban fruto y amplió gradualmente el cultivo. Actualmente vende a amistades, familiares y conocidos y busca establecer una unidad tecnificada, con más plantas, riego, protección climática y un mercado fijo.",
+    "observaciones_o_comentarios": "Corral protegido con acceso a luz solar, alrededor de veinte plantas, canecas de 50 a 200 litros para recolectar agua lluvia, canales de evacuación, bodega cercana, herramientas manuales y empaques transparentes ventilados. Infraestructura exacta pendiente de visita."
+  },
+  "PMAPC_F02": {
+    "mision": "Cultivar y ofrecer arándanos frescos de buena calidad mediante trabajo familiar, manejo cuidadoso del cultivo y uso responsable del agua lluvia, atendiendo a clientes locales y regionales.",
+    "vision": "Consolidar Arándanos Tomás Emilio como un cultivo tecnificado con invernadero o vivero, entre 150 y 200 plantas, riego organizado, herramientas adecuadas, marca propia y un punto o mercado fijo de comercialización directa.",
+    "valores": [
+      "Trabajo familiar",
+      "perseverancia",
+      "calidad",
+      "atención al cliente",
+      "responsabilidad",
+      "cuidado del agua",
+      "producción natural",
+      "cumplimiento",
+      "aprendizaje",
+      "respeto por el territorio"
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Porque el arándano es escaso en la localidad, tiene buena demanda y el fruto producido presenta buen tamaño y calidad.",
+    "beneficio_cliente": "Acceso a fruta fresca cultivada en Sumapaz, disponible en presentaciones de una libra o media libra y adquirida directamente al productor.",
+    "diferencial": "Cultivo en condiciones de páramo, manejo descrito como natural, uso de abonos orgánicos y comercialización directa.",
+    "valor_ambiental": "Uso principal de agua lluvia recolectada, sin utilización habitual de la quebrada ni del acueducto, y reutilización de lonas de insumos.",
+    "valor_social_comunitario": "Genera ingresos familiares, amplía la oferta local de una fruta escasa y puede articularse con otros productos familiares como el queso.",
+    "evidencia": "Los compradores preguntan cuándo habrá nueva disponibilidad; existen ventas a amigos, familiares de Cabrera y conocidos de la Alcaldía.",
+    "observaciones_o_comentarios": "¿Cómo demostrar el diferencial?: Mediante registros de siembra, fertilización, cosecha y ventas; fotografías del cultivo; identificación del origen; testimonios de compradores; control del agua lluvia y etiquetas sencillas en los empaques."
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Experiencia inicial de 1,5 a 2 años.",
+      "Crecimiento de 5 a unas 20 plantas.",
+      "Fruto de buen tamaño y calidad.",
+      "Producto escaso y con demanda local.",
+      "Trabajo familiar.",
+      "Uso de agua lluvia.",
+      "Canales para evacuar excedentes.",
+      "Fertilización mensual con abonos orgánicos.",
+      "Venta directa por WhatsApp.",
+      "Precios diferenciados por cantidad."
+    ],
+    "oportunidades": [
+      "Construir invernadero o vivero tecnificado.",
+      "Ampliar a 150-200 plantas.",
+      "Instalar riego por manguera o goteo.",
+      "Crear marca y etiqueta.",
+      "Vincular plazas, mercados y distribuidores.",
+      "Comercializar combos con queso.",
+      "Mejorar empaque y trazabilidad.",
+      "Incorporar cerca eléctrica solar.",
+      "Participar en ferias campesinas."
+    ],
+    "debilidades": [
+      "Solo unas 20 plantas.",
+      "Producción mensual reducida.",
+      "Terreno alquilado.",
+      "No cuenta con invernadero.",
+      "Riego no tecnificado.",
+      "No tiene marca ni etiqueta.",
+      "Herramientas y EPP insuficientes.",
+      "Dependencia de empaques comprados en Bogotá.",
+      "Registros productivos y financieros no informados.",
+      "Comercialización informal y ocasional."
+    ],
+    "amenazas": [
+      "Verano o sequía prolongada.",
+      "Clima fuerte del páramo.",
+      "Ingreso de ganado al cultivo.",
+      "Daño de plantas por falta de protección.",
+      "Cortadas, hincadas y malas posturas.",
+      "Variación de la producción.",
+      "Pérdidas por fruta madura o mal empacada.",
+      "Aumento de costos de plantas e insumos.",
+      "Riesgo ambiental por quemar bolsas plásticas."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Cliente directo",
+        "perfil_que_busca": "Amistades y conocidos que compran bandejas de arándanos.",
+        "ubicacion": "Lagunitas y otras zonas de Sumapaz.",
+        "necesidad": "Fruta fresca y disponible localmente.",
+        "frecuencia": "Ocasional, según cosecha.",
+        "criterio_compra": "Calidad, tamaño, frescura, precio y confianza.",
+        "canal": "WhatsApp, recogida o entrega directa."
+      },
+      {
+        "tipo_actor": "Familiares",
+        "perfil_que_busca": "Familiares que adquieren el producto.",
+        "ubicacion": "Cabrera.",
+        "necesidad": "Arándano fresco de origen conocido.",
+        "frecuencia": "Según disponibilidad.",
+        "criterio_compra": "Calidad, cercanía y confianza.",
+        "canal": "Contacto directo y WhatsApp."
+      },
+      {
+        "tipo_actor": "Conocidos institucionales",
+        "perfil_que_busca": "Personas conocidas en la Alcaldía.",
+        "ubicacion": "Sumapaz / Bogotá rural.",
+        "necesidad": "Producto local y natural.",
+        "frecuencia": "Ocasional.",
+        "criterio_compra": "Origen, calidad y disponibilidad.",
+        "canal": "WhatsApp y contacto personal."
+      },
+      {
+        "tipo_actor": "Consumidor final",
+        "perfil_que_busca": "Personas interesadas en arándanos para consumo directo.",
+        "ubicacion": "Sumapaz y Cabrera.",
+        "necesidad": "Fruta fresca en presentación pequeña.",
+        "frecuencia": "Mensual u ocasional.",
+        "criterio_compra": "Frescura, apariencia, tamaño y precio.",
+        "canal": "Venta directa."
+      },
+      {
+        "tipo_actor": "Distribuidor/ mayorista potencial",
+        "perfil_que_busca": "Comprador de volúmenes mayores.",
+        "ubicacion": "Plazas o comercios regionales.",
+        "necesidad": "Abastecimiento constante.",
+        "frecuencia": "Potencial mensual.",
+        "criterio_compra": "Precio, cantidad, calidad, empaque y continuidad.",
+        "canal": "Acuerdo comercial por gestionar."
+      },
+      {
+        "tipo_actor": "Ferias/mercados campesinos",
+        "perfil_que_busca": "Visitantes y consumidores de productos rurales.",
+        "ubicacion": "Sumapaz, Fusagasugá, Cabrera o Bogotá.",
+        "necesidad": "Producto de origen territorial.",
+        "frecuencia": "Según convocatoria.",
+        "criterio_compra": "Origen, presentación y calidad.",
+        "canal": "Venta presencial."
+      },
+      {
+        "tipo_actor": "Otro",
+        "perfil_que_busca": "Clientes de combos con queso producido por la familia.",
+        "ubicacion": "Local y regional.",
+        "necesidad": "Compra conjunta de productos campesinos.",
+        "frecuencia": "Ocasional.",
+        "criterio_compra": "Valor del paquete, calidad y confianza.",
+        "canal": "WhatsApp y voz a voz."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Arándanos frescos, de buen tamaño y calidad, disponibles en una zona donde el producto es escaso.",
+    "como_se_conoce_la_necesidad": "Los clientes vuelven a preguntar cuándo habrá más arándanos disponibles.",
+    "quienes_compran_o_podrian_comprar": "Amigos, familiares, conocidos, consumidores locales, plazas de mercado, distribuidores, restaurantes y ferias campesinas.",
+    "evidencia": "Ventas directas, consultas reiteradas por disponibilidad y producción que se vende a contactos cercanos.",
+    "ventaja_territorial": "Origen en condiciones de páramo, manejo descrito como natural y uso de agua lluvia.",
+    "cambios_demanda": "No se aportó información histórica suficiente; actualmente la demanda supera la pequeña disponibilidad.",
+    "dificultades": "Baja escala, cosecha irregular, falta de marca, ausencia de mercado fijo, producción limitada, empaque comprado en Bogotá y falta de tecnificación.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Productores vecinos",
+        "tipo": "Agricultores y familias rurales.",
+        "que_aporta": "Experiencia, compras conjuntas, mano de obra y referencias.",
+        "que_recibe": "Intercambio de conocimientos y reducción de costos.",
+        "trabajo_conjunto": "Compra de plantas, insumos, empaques y transporte.",
+        "aporte_ambiental": "Uso coordinado de recursos y manejo de residuos.",
+        "accion": "Crear red local de apoyo."
+      },
+      {
+        "actor_aliado": "Asociación campesina",
+        "tipo": "Organización productiva.",
+        "que_aporta": "Ferias, comercialización y formación.",
+        "que_recibe": "Producto y participación.",
+        "trabajo_conjunto": "Venta asociativa y gestión de apoyos.",
+        "aporte_ambiental": "Buenas prácticas y protección del territorio.",
+        "accion": "Identificar asociación disponible."
+      },
+      {
+        "actor_aliado": "Junta de Acción Comunal",
+        "tipo": "Organización comunitaria.",
+        "que_aporta": "Convocatoria, información y gestión.",
+        "que_recibe": "Oferta productiva para la comunidad.",
+        "trabajo_conjunto": "Difusión, ferias y seguridad del predio.",
+        "aporte_ambiental": "Campañas de cuidado ambiental.",
+        "accion": "Presentar el emprendimiento."
+      },
+      {
+        "actor_aliado": "Compradores locales",
+        "tipo": "Amigos, familiares y conocidos.",
+        "que_aporta": "Demanda, recomendaciones y retroalimentación.",
+        "que_recibe": "Arándanos frescos.",
+        "trabajo_conjunto": "Pedidos anticipados y difusión.",
+        "aporte_ambiental": "Menor transporte al vender cerca.",
+        "accion": "Crear lista de clientes."
+      },
+      {
+        "actor_aliado": "Ferias o mercados",
+        "tipo": "Espacios comerciales.",
+        "que_aporta": "Nuevos clientes y visibilidad.",
+        "que_recibe": "Producto local.",
+        "trabajo_conjunto": "Participación con marca y empaque.",
+        "aporte_ambiental": "Promoción de producción responsable.",
+        "accion": "Explorar convocatorias."
+      },
+      {
+        "actor_aliado": "Instituciones de apoyo",
+        "tipo": "Alcaldía, asistencia técnica y formación.",
+        "que_aporta": "Diseño, infraestructura, capacitación y seguimiento.",
+        "que_recibe": "Unidad fortalecida.",
+        "trabajo_conjunto": "Riego, manejo de insumos y registros.",
+        "aporte_ambiental": "Uso eficiente de agua y residuos.",
+        "accion": "Solicitar visita técnica."
+      },
+      {
+        "actor_aliado": "Aliados logísticos o digitales",
+        "tipo": "Transportadores, familiares y gestores.",
+        "que_aporta": "Entrega, promoción y contacto con clientes.",
+        "que_recibe": "Pago o acuerdo por servicio.",
+        "trabajo_conjunto": "Rutas y pedidos agrupados.",
+        "aporte_ambiental": "Reducción de viajes.",
+        "accion": "Definir costos y responsables."
+      },
+      {
+        "actor_aliado": "Otros aliados",
+        "tipo": "Viveros, proveedores, agrónomo y electricista rural.",
+        "que_aporta": "Plantas, herramientas, asesoría y cerca eléctrica.",
+        "que_recibe": "Compras y contratación.",
+        "trabajo_conjunto": "Plan de tecnificación.",
+        "aporte_ambiental": "Selección de insumos y sistema solar.",
+        "accion": "Crear directorio de proveedores."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Encuesta",
+        "a_quien": "No se informó.",
+        "resultado": "Pendiente.",
+        "motivacion": "Pendiente.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Entrevista / conversación",
+        "a_quien": "Amigos, familiares y conocidos.",
+        "resultado": "Preguntan por nueva disponibilidad.",
+        "motivacion": "Calidad, tamaño y escasez local.",
+        "evidencia": "Relato del productor."
+      },
+      {
+        "metodo": "Degustación / muestra",
+        "a_quien": "No se informó formalmente.",
+        "resultado": "La recompra y las consultas sugieren aceptación.",
+        "motivacion": "Sabor y frescura.",
+        "evidencia": "Soportes pendientes."
+      },
+      {
+        "metodo": "Venta previa",
+        "a_quien": "Clientes directos en Sumapaz y Cabrera.",
+        "resultado": "Se venden aproximadamente diez bandejas al mes.",
+        "motivacion": "Producto fresco y confianza.",
+        "evidencia": "Histórico de ventas por implementar."
+      },
+      {
+        "metodo": "Carta de intención",
+        "a_quien": "No se informó.",
+        "resultado": "Pendiente.",
+        "motivacion": "Continuidad y volumen.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Participación en feria",
+        "a_quien": "No se informó.",
+        "resultado": "Pendiente.",
+        "motivacion": "Origen territorial.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Otro",
+        "a_quien": "Promoción mediante fotografías por WhatsApp.",
+        "resultado": "Los contactos consultan y compran cuando hay cosecha.",
+        "motivacion": "Disponibilidad y atención directa.",
+        "evidencia": "Capturas y registro por implementar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Arándano fresco - 1 libra",
+        "descripcion_tecnica": "Fruto cosechado manualmente, seleccionado y empacado para venta directa o por volumen.",
+        "unidad": "Bandeja de 1 libra.",
+        "insumos_principales": "Arándanos frescos y recipiente plástico transparente ventilado.",
+        "condiciones_especiales": "Mantener protegido del sol, golpes, humedad excesiva y contaminación; condiciones exactas pendientes.",
+        "presentacion": "Recipiente plástico transparente con orificios.",
+        "diferencial": "Fruta de buen tamaño cultivada en Lagunitas."
+      },
+      {
+        "servicio": "Arándano fresco - media libra",
+        "descripcion_tecnica": "Presentación pequeña para consumidor final.",
+        "unidad": "Bandeja de media libra.",
+        "insumos_principales": "Arándanos frescos y recipiente ventilado.",
+        "condiciones_especiales": "Iguales condiciones de protección y manipulación.",
+        "presentacion": "Recipiente plástico transparente con orificios.",
+        "diferencial": "Presentación accesible y lista para consumo."
+      },
+      {
+        "servicio": "Arándano al por mayor",
+        "descripcion_tecnica": "Bandejas de una libra comercializadas a distribuidor o comprador de mayor cantidad.",
+        "unidad": "Bandeja / lote.",
+        "insumos_principales": "Fruto fresco seleccionado.",
+        "condiciones_especiales": "Requiere continuidad, clasificación y entrega oportuna.",
+        "presentacion": "Bandejas ventiladas agrupadas.",
+        "diferencial": "Precio diferenciado por volumen."
+      },
+      {
+        "servicio": "Combo de arándanos y queso",
+        "descripcion_tecnica": "Oferta ocasional junto con queso producido por la familia.",
+        "unidad": "Combo.",
+        "insumos_principales": "Arándanos y queso; composición y empaque pendientes.",
+        "condiciones_especiales": "Mantener cada producto según sus necesidades.",
+        "presentacion": "Paquete combinado por definir.",
+        "diferencial": "Integra productos campesinos familiares."
+      }
+    ],
+    "observaciones_o_comentarios": "Fichas técnicas pendientes: confirmar variedad, edad de las plantas, manejo agronómico, fecha y criterio de cosecha, clasificación por tamaño y calidad, peso neto, condiciones de conservación, vida útil, limpieza del empaque, transporte, trazabilidad, características del combo y requisitos de etiquetado."
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Plantas de arándano",
+        "unidad": "Actualmente unas 20.",
+        "actividad_proceso": "1. Adquirir plantas en bolsa de vivero y verificar su estado.",
+        "tiempo_estimado": "Según ampliación."
+      },
+      {
+        "servicio": "Cultivo",
+        "unidad": "Plantas por lote.",
+        "actividad_proceso": "2. Preparar el espacio protegido con luz solar y sembrar las plantas.",
+        "tiempo_estimado": "Siembra inicial; detalle pendiente."
+      },
+      {
+        "servicio": "Mantenimiento",
+        "unidad": "20 plantas actuales.",
+        "actividad_proceso": "3. Regar con agua lluvia, desyerbar, limpiar y revisar el estado del cultivo.",
+        "tiempo_estimado": "Periódico/según necesidad."
+      },
+      {
+        "servicio": "Fertilización",
+        "unidad": "Todas las plantas.",
+        "actividad_proceso": "4. Aplicar abonos orgánicos mensualmente y registrar los insumos.",
+        "tiempo_estimado": "Mensual."
+      },
+      {
+        "servicio": "Poda y protección",
+        "unidad": "Según planta.",
+        "actividad_proceso": "5. Podar con herramientas adecuadas y proteger el cultivo del ganado y del clima.",
+        "tiempo_estimado": "Periódico."
+      },
+      {
+        "servicio": "Cosecha",
+        "unidad": "Fruto graneado y picos de producción.",
+        "actividad_proceso": "6. Recolectar manualmente cuando el fruto esté listo.",
+        "tiempo_estimado": "Continua; picos cada dos meses según entrevista."
+      },
+      {
+        "servicio": "Selección y empaque",
+        "unidad": "Aproximadamente 10 bandejas mensuales.",
+        "actividad_proceso": "7. Revisar calidad, pesar y empacar en recipientes ventilados.",
+        "tiempo_estimado": "Cada cosecha."
+      },
+      {
+        "servicio": "Comercialización",
+        "unidad": "Bandejas de 1 libra o media libra.",
+        "actividad_proceso": "8. Tomar fotografías, ofrecer por WhatsApp y coordinar recogida o entrega.",
+        "tiempo_estimado": "Según disponibilidad."
+      },
+      {
+        "servicio": "Registros y residuos",
+        "unidad": "Cada jornada y cosecha.",
+        "actividad_proceso": "9. Registrar insumos, agua, producción, ventas y manejo de bolsas y lonas.",
+        "tiempo_estimado": "Mensual/cada evento."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Plantas de arándano",
+        "cantidad_unidad": "Meta total: 150-200 plantas; compra pendiente.",
+        "frecuencia": "Según plan de expansión.",
+        "proveedor_fuente": "Vivero por definir.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Transporte, bolsas de vivero y presión sobre recursos.",
+        "manejo_ambiental": "Comprar plantas sanas, registrar origen y reutilizar o entregar bolsas.",
+        "observaciones": "Prioridad de inversión."
+      },
+      {
+        "insumo": "Abonos orgánicos",
+        "cantidad_unidad": "Cantidad pendiente.",
+        "frecuencia": "Mensual.",
+        "proveedor_fuente": "Proveedor o producción propia; pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Exceso de nutrientes o contaminación si se aplica mal.",
+        "manejo_ambiental": "Dosificar, almacenar seco y registrar.",
+        "observaciones": "Uso actual reportado."
+      },
+      {
+        "insumo": "Abonos químicos",
+        "cantidad_unidad": "Cantidad y producto pendientes.",
+        "frecuencia": "Según plan técnico.",
+        "proveedor_fuente": "Proveedor agropecuario.",
+        "toxicidad": "Según producto",
+        "impacto_potencial": "Riesgo para suelo, agua y salud.",
+        "manejo_ambiental": "Solo con asesoría, EPP y disposición adecuada.",
+        "observaciones": "Necesidad mencionada para expansión."
+      },
+      {
+        "insumo": "Agua lluvia",
+        "cantidad_unidad": "Canecas de 50 a 200 litros; volumen total pendiente.",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Recolección en la finca.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Contaminación del agua almacenada o escasez.",
+        "manejo_ambiental": "Tapar, limpiar recipientes y registrar disponibilidad.",
+        "observaciones": "Fuente principal de riego."
+      },
+      {
+        "insumo": "Tanque, mangueras y goteo",
+        "cantidad_unidad": "Capacidad y longitud pendientes.",
+        "frecuencia": "Inversión inicial y mantenimiento.",
+        "proveedor_fuente": "Proveedor por cotizar.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Material plástico y fugas.",
+        "manejo_ambiental": "Diseño eficiente, mantenimiento y reparación.",
+        "observaciones": "Necesidad prioritaria."
+      },
+      {
+        "insumo": "Tijeras, carretilla y herramientas",
+        "cantidad_unidad": "Unidades por definir.",
+        "frecuencia": "Uso permanente.",
+        "proveedor_fuente": "Proveedor agrícola.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Desgaste y riesgo de lesión.",
+        "manejo_ambiental": "Mantenimiento y uso seguro.",
+        "observaciones": "Necesidad prioritaria."
+      },
+      {
+        "insumo": "Empaques transparentes",
+        "cantidad_unidad": "Según producción.",
+        "frecuencia": "Mensual/cosecha.",
+        "proveedor_fuente": "Bogotá.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos plásticos.",
+        "manejo_ambiental": "Comprar según demanda, separar y evaluar alternativas.",
+        "observaciones": "Deben tener orificios."
+      },
+      {
+        "insumo": "Material de invernadero",
+        "cantidad_unidad": "Polisombra, plástico, madera, tubos y estibas.",
+        "frecuencia": "Inversión inicial y reposición.",
+        "proveedor_fuente": "Proveedor por definir.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos de plástico, madera y alteración del sitio.",
+        "manejo_ambiental": "Diseño desmontable, mantenimiento y disposición adecuada.",
+        "observaciones": "Terreno arrendado."
+      },
+      {
+        "insumo": "Cerca eléctrica solar",
+        "cantidad_unidad": "Panel, energizador, postes, aisladores y alambre; pendiente.",
+        "frecuencia": "Inversión inicial.",
+        "proveedor_fuente": "Proveedor especializado.",
+        "toxicidad": "Riesgo eléctrico",
+        "impacto_potencial": "Materiales y seguridad de personas y animales.",
+        "manejo_ambiental": "Instalación técnica, señalización y mantenimiento.",
+        "observaciones": "Protección frente al ganado."
+      },
+      {
+        "insumo": "EPP",
+        "cantidad_unidad": "Overol, guantes, calzado y protección adicional.",
+        "frecuencia": "Uso permanente.",
+        "proveedor_fuente": "Comercio local o regional.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos al finalizar vida útil.",
+        "manejo_ambiental": "Comprar durables, mantener y reemplazar.",
+        "observaciones": "Necesidad de seguridad."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "Aproximadamente 10 bandejas de una libra al mes con cerca de veinte plantas.",
+    "produccion_normal": "Fruto graneado de manera continua y picos de producción cada dos meses; también se menciona una buena cantidad de bandejas aproximadamente cada tres meses. La periodicidad debe verificarse.",
+    "capacidad_mensual_teorica": "La capacidad actual está limitada por el número de plantas y la falta de tecnificación; no se dio una cifra adicional.",
+    "produccion_maxima_posible": "Meta de 100 a 150 bandejas mensuales al alcanzar entre 150 y 200 plantas y tecnificar el cultivo.",
+    "area_numero_habitaciones": "No se informó el área. Actualmente hay cerca de veinte plantas en un corral protegido.",
+    "limitantes_productivos": "Pocas plantas, ausencia de invernadero, riego no tecnificado, herramientas limitadas, empaques sin marca y falta de mercado fijo.",
+    "limitantes_ambientales": "Verano o sequía prolongada, clima fuerte del páramo, disponibilidad de agua y posible ingreso de ganado.",
+    "capacidad_instalada": "Corral, veinte plantas, canecas de agua lluvia, canales, bodega y herramientas manuales.",
+    "capacidad_utilizada": "Producción aproximada de diez bandejas mensuales; porcentaje de uso no calculado.",
+    "produce_mismo_todo_ano": false,
+    "alcanza_para_demanda": false,
+    "necesidades_aumentar_sosteniblemente": "Invernadero o vivero, más plantas, tanque y riego por goteo, insumos, herramientas, empaques, cerca eléctrica solar, registros y un mercado fijo.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua disponible",
+        "estado_actual": "Agua lluvia almacenada en canecas de 50 a 200 litros.",
+        "limite_restriccion": "En verano prolongado resulta insuficiente.",
+        "afectacion": "Obliga a transportar agua desde la casa.",
+        "efecto": "Mayor trabajo y riesgo de estrés hídrico.",
+        "incidencia": "Muy alta",
+        "accion_mejora": "Ampliar almacenamiento y riego eficiente."
+      },
+      {
+        "condicion": "Fuentes hídricas cercanas",
+        "estado_actual": "No usa quebrada ni acueducto, salvo acueducto en veranos extremos según la entrevista.",
+        "limite_restriccion": "Disponibilidad y autorización no caracterizadas.",
+        "afectacion": "Limita la contingencia de riego.",
+        "efecto": "Posible pérdida de plantas.",
+        "incidencia": "Alta",
+        "accion_mejora": "Definir plan de contingencia sin afectar fuentes."
+      },
+      {
+        "condicion": "Suelo/sustrato",
+        "estado_actual": "Descrito como tierra productiva; sin análisis reportado.",
+        "limite_restriccion": "Condiciones técnicas pendientes.",
+        "afectacion": "Puede limitar desarrollo, nutrición y rendimiento.",
+        "efecto": "Variación de la producción.",
+        "incidencia": "Alta",
+        "accion_mejora": "Realizar diagnóstico antes de ampliar."
+      },
+      {
+        "condicion": "Pendiente / topografía",
+        "estado_actual": "No informada.",
+        "limite_restriccion": "Puede influir en drenaje, acceso y erosión.",
+        "afectacion": "Afecta infraestructura y manejo.",
+        "efecto": "Riesgo por verificar.",
+        "incidencia": "Media",
+        "accion_mejora": "Levantar diagnóstico del sitio."
+      },
+      {
+        "condicion": "Clima",
+        "estado_actual": "Invierno frecuente, clima fuerte y verano desafiante.",
+        "limite_restriccion": "Temperatura y sequía.",
+        "afectacion": "Requiere protección sin encapsular demasiado.",
+        "efecto": "Daño o menor producción.",
+        "incidencia": "Muy alta",
+        "accion_mejora": "Invernadero simple y monitoreo."
+      },
+      {
+        "condicion": "Biodiversidad",
+        "estado_actual": "No se informó afectación directa.",
+        "limite_restriccion": "La ampliación debe respetar el entorno de páramo.",
+        "afectacion": "Una intervención mal ubicada puede generar presión.",
+        "efecto": "Impacto potencial.",
+        "incidencia": "Alta",
+        "accion_mejora": "Definir área y diseño con acompañamiento."
+      },
+      {
+        "condicion": "Uso de insumos",
+        "estado_actual": "Abonos orgánicos y posible uso de químicos.",
+        "limite_restriccion": "Dosis y productos no definidos.",
+        "afectacion": "Puede afectar suelo, agua y salud.",
+        "efecto": "Riesgo ambiental y productivo.",
+        "incidencia": "Alta",
+        "accion_mejora": "Plan técnico, registros y EPP."
+      },
+      {
+        "condicion": "Manejo de residuos",
+        "estado_actual": "Lonas se reutilizan o entregan; bolsas de vivero se queman para encender leña.",
+        "limite_restriccion": "La quema de plástico genera contaminación.",
+        "afectacion": "Afecta aire y salud.",
+        "efecto": "Emisiones y residuos peligrosos.",
+        "incidencia": "Muy alta",
+        "accion_mejora": "Suspender quema y entregar a reciclaje o recolección."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Agacharse para desyerbar y limpiar.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "No se informó control específico.",
+        "accion": "Pausas, herramientas de mango adecuado y técnica postural."
+      },
+      {
+        "tipo": "Mecánico",
+        "peligro": "Hincadas y cortadas con ramas o espinas.",
+        "aplica": true,
+        "nivel_riesgo": "Media-alta",
+        "controles_actuales": "Cuidado manual.",
+        "accion": "Guantes, overol y tijeras de vivero."
+      },
+      {
+        "tipo": "Mecánico",
+        "peligro": "Uso de tijeras y herramientas.",
+        "aplica": true,
+        "nivel_riesgo": "Según mantenimiento",
+        "controles_actuales": "Herramientas actuales no caracterizadas.",
+        "accion": "Herramienta adecuada, mantenimiento y capacitación."
+      },
+      {
+        "tipo": "Físico",
+        "peligro": "Frío, lluvia y radiación solar.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "No informado.",
+        "accion": "Ropa adecuada, pausas y protección."
+      },
+      {
+        "tipo": "Locativo",
+        "peligro": "Terreno, barro, obstáculos y canales.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Canales de evacuación.",
+        "accion": "Orden, señalización y calzado apropiado."
+      },
+      {
+        "tipo": "Químico",
+        "peligro": "Abonos e insumos agrícolas.",
+        "aplica": true,
+        "nivel_riesgo": "Mensual/según producto",
+        "controles_actuales": "Uso de orgánicos; químicos futuros.",
+        "accion": "EPP, rotulado y dosis técnica."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Transporte de agua, canecas, plantas y materiales.",
+        "aplica": true,
+        "nivel_riesgo": "Ocasional",
+        "controles_actuales": "Transporte manual.",
+        "accion": "Carretilla, límites de carga y apoyo."
+      },
+      {
+        "tipo": "Eléctrico",
+        "peligro": "Futura cerca eléctrica solar.",
+        "aplica": true,
+        "nivel_riesgo": "Permanente tras instalación",
+        "controles_actuales": "No instalada.",
+        "accion": "Instalación técnica, señalización y desconexión segura."
+      },
+      {
+        "tipo": "Condiciones de seguridad",
+        "peligro": "Construcción del invernadero.",
+        "aplica": true,
+        "nivel_riesgo": "Etapa de obra",
+        "controles_actuales": "No aplica actualmente.",
+        "accion": "Herramientas seguras, EPP y apoyo técnico."
+      },
+      {
+        "tipo": "Biológico",
+        "peligro": "Picaduras o contacto con fauna y materia orgánica.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No informado.",
+        "accion": "Revisión del área, guantes y botiquín."
+      }
+    ],
+    "observaciones_o_comentarios": "Los riesgos se identifican con base en la entrevista y requieren validación mediante visita. El productor menciona malas posturas al desyerbar y limpiar, además de hincadas o cortadas con ramas y espinas. También deben revisarse herramientas, cargas, terreno irregular, exposición al clima, aplicación de insumos, instalación de cerca eléctrica y manipulación de materiales de invernadero."
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Usar overol, guantes de trabajo, calzado adecuado y protección para clima.",
+        "riesgo": "Cortes, hincadas, frío y humedad.",
+        "responsable": "Yeison/colaboradores.",
+        "frecuencia": "Cada jornada.",
+        "evidencia": "Checklist y fotografias."
+      },
+      {
+        "accion_preventiva": "Utilizar tijeras especiales de vivero y revisar su estado.",
+        "riesgo": "Cortes y esfuerzo.",
+        "responsable": "Yeison.",
+        "frecuencia": "Antes de uso.",
+        "evidencia": "Registro."
+      },
+      {
+        "accion_preventiva": "Organizar herramientas, mangueras, canecas y canales.",
+        "riesgo": "Caídas y golpes.",
+        "responsable": "Familia.",
+        "frecuencia": "Diaria / semanal.",
+        "evidencia": "Checklist."
+      },
+      {
+        "accion_preventiva": "Capacitar en posturas, levantamiento de cargas y uso de insumos.",
+        "riesgo": "Biomecánico y químico.",
+        "responsable": "Yeison/técnico.",
+        "frecuencia": "Semestral/antes de aplicar.",
+        "evidencia": "Asistencia."
+      },
+      {
+        "accion_preventiva": "Instalar la cerca eléctrica solar con técnico y señalización.",
+        "riesgo": "Eléctrico y contacto de personas o animales.",
+        "responsable": "Proveedor/Yeison.",
+        "frecuencia": "Instalación y mantenimiento.",
+        "evidencia": "Acta y fotos."
+      },
+      {
+        "accion_preventiva": "Contar con botiquín y ruta de atención.",
+        "riesgo": "Emergencias.",
+        "responsable": "Familia.",
+        "frecuencia": "Revisión mensual.",
+        "evidencia": "Inventario."
+      },
+      {
+        "accion_preventiva": "Registrar incidentes y suspender labores en condiciones inseguras.",
+        "riesgo": "Seguimiento SG-SST.",
+        "responsable": "Yeison.",
+        "frecuencia": "Cada evento.",
+        "evidencia": "Bitácora."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Ferias campesinas",
+        "activo": false,
+        "descripcion": "Arándanos frescos y combos con queso.",
+        "responsable": "Yeison/familia.",
+        "frecuencia": "Según convocatoria."
+      },
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "Amigos, familiares y conocidos.",
+        "responsable": "Yeison.",
+        "frecuencia": "Según cosecha."
+      },
+      {
+        "canal": "Redes sociales",
+        "activo": false,
+        "descripcion": "Fotografías compartidas por WhatsApp; no se reportan otras redes.",
+        "responsable": "Yeison.",
+        "frecuencia": "Cuando hay producto."
+      },
+      {
+        "canal": "WhatsApp/llamadas",
+        "activo": true,
+        "descripcion": "Promoción, pedidos y coordinación de entrega.",
+        "responsable": "Yeison.",
+        "frecuencia": "Según disponibilidad."
+      },
+      {
+        "canal": "Tiendas/restaurantes / plazas",
+        "activo": false,
+        "descripcion": "Meta de contar con mercado o plaza fija.",
+        "responsable": "Yeison/aliado.",
+        "frecuencia": "Por gestionar."
+      },
+      {
+        "canal": "Compras institucionales",
+        "activo": false,
+        "descripcion": "Pendiente. No se reportan contratos.",
+        "responsable": "Pendiente.",
+        "frecuencia": "Por explorar."
+      },
+      {
+        "canal": "Comercialización asociativa",
+        "activo": false,
+        "descripcion": "Posible articulación con productos familiares y campesinos.",
+        "responsable": "Yeison / asociación.",
+        "frecuencia": "Por gestionar."
+      },
+      {
+        "canal": "Otro",
+        "activo": true,
+        "descripcion": "Recogida en la finca, entrega directa y combos con queso.",
+        "responsable": "Yeison/familia.",
+        "frecuencia": "Ocasional."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Bandeja de 1 libra al por mayor",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "$20.000.",
+        "logistica_plataforma": "Empaque y entrega por costear.",
+        "precio_final": 20000,
+        "justificacion": "Precio reportado para distribuidores o mayor cantidad."
+      },
+      {
+        "servicio": "Bandeja de 1 libra al detal",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "$25.000-$30.000.",
+        "logistica_plataforma": "Empaque y entrega por costear.",
+        "precio_final": null,
+        "justificacion": "Precio según cliente y cantidad."
+      },
+      {
+        "servicio": "Bandeja de media libra",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "$15.000.",
+        "logistica_plataforma": "Empaque y entrega por costear.",
+        "precio_final": 15000,
+        "justificacion": "Presentación para venta al detal."
+      },
+      {
+        "servicio": "Combo con queso",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No se informó precio.",
+        "logistica_plataforma": "Empaque y coordinación con producción familiar.",
+        "precio_final": null,
+        "justificacion": "Estrategia ocasional de fidelización."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": "El productor maneja precios razonables según la cantidad. Para confirmar la rentabilidad debe calcular plantas, abonos, agua, herramientas, mano de obra, empaques, transporte, pérdidas, infraestructura, mantenimiento y comercialización por cada bandeja."
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Arándano de 1 libra al detal",
+        "cantidad_mensual": "Parte de aproximadamente 10 bandejas mensuales; desglose pendiente.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Amigos, familiares y conocidos."
+      },
+      {
+        "concepto_servicio": "Arándano de 1 libra al por mayor",
+        "cantidad_mensual": "Cantidad pendiente.",
+        "precio": 20000,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Distribuidor potencial o compra por volumen."
+      },
+      {
+        "concepto_servicio": "Arándano de media libra",
+        "cantidad_mensual": "Cantidad pendiente.",
+        "precio": 15000,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Consumidor final."
+      },
+      {
+        "concepto_servicio": "Ventas mensuales totales",
+        "cantidad_mensual": "Aproximadamente 10 bandejas de una libra equivalentes; verificar mezcla de presentaciones.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Venta directa y WhatsApp."
+      },
+      {
+        "concepto_servicio": "Meta tecnificada",
+        "cantidad_mensual": "100-150 bandejas mensuales.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Por definir.",
+        "canal": "Mercado fijo, plaza, distribuidores y venta directa."
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": "La producción reportada de diez bandejas mensuales y los ingresos de $400.000 a $500.000 requieren conciliación con el número de bandejas de una libra, media libra, precios y posibles ventas acumuladas. La proyección a 100-150 bandejas debe validarse con rendimientos reales, área, infraestructura y demanda."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Amigos y conocidos",
+        "estrategia": "Avisar disponibilidad, mantener calidad y atención.",
+        "medio": "WhatsApp y contacto directo.",
+        "frecuencia": "Cada cosecha.",
+        "responsable": "Yeison."
+      },
+      {
+        "cliente": "Familiares de Cabrera",
+        "estrategia": "Coordinar pedido y entrega agrupada.",
+        "medio": "WhatsApp/llamada.",
+        "frecuencia": "Según cosecha.",
+        "responsable": "Yeison/familia."
+      },
+      {
+        "cliente": "Cliente de volumen",
+        "estrategia": "Ofrecer precio de $20.000 por libra sujeto a cantidad.",
+        "medio": "Llamada, visita o WhatsApp.",
+        "frecuencia": "Cuando exista volumen.",
+        "responsable": "Yeison."
+      },
+      {
+        "cliente": "Consumidor final",
+        "estrategia": "Ofrecer presentaciones de una y media libra y explicar origen.",
+        "medio": "WhatsApp, etiqueta y venta directa.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Yeison."
+      },
+      {
+        "cliente": "Cliente de combo",
+        "estrategia": "Armar paquetes con queso cuando haya disponibilidad.",
+        "medio": "WhatsApp y voz a voz.",
+        "frecuencia": "Ocasional.",
+        "responsable": "Familia."
+      },
+      {
+        "cliente": "Aliado comercial",
+        "estrategia": "Acordar volumen, precio, entrega y retroalimentación.",
+        "medio": "Reunión y registro.",
+        "frecuencia": "Mensual/por ciclo.",
+        "responsable": "Yeison."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Arándano en finca",
+        "canal": "Recogida directa.",
+        "tiempo": "Día acordado.",
+        "transporte_operacion": "Cliente o entrega manual.",
+        "condicion_calidad": "Bandeja ventilada, fruta seleccionada y protegida.",
+        "capacidad": "Según cosecha.",
+        "costo": "Pendiente.",
+        "responsable": "Yeison."
+      },
+      {
+        "servicio_insumo": "Arándano a Cabrera",
+        "canal": "Entrega a familiares o clientes.",
+        "tiempo": "Según ruta y acuerdo.",
+        "transporte_operacion": "Medio pendiente.",
+        "condicion_calidad": "Evitar golpes, calor y humedad excesiva.",
+        "capacidad": "Pendiente.",
+        "costo": "Pendiente.",
+        "responsable": "Yeison/familia."
+      },
+      {
+        "servicio_insumo": "Venta local",
+        "canal": "Entrega directa.",
+        "tiempo": "Mismo día.",
+        "transporte_operacion": "A pie, vehículo o medio por verificar.",
+        "condicion_calidad": "Producto empacado y limpio.",
+        "capacidad": "Pequeña escala.",
+        "costo": "Pendiente.",
+        "responsable": "Yeison."
+      },
+      {
+        "servicio_insumo": "Venta mayorista futura",
+        "canal": "Distribuidor o plaza.",
+        "tiempo": "Según programación.",
+        "transporte_operacion": "Vehículo o transportador.",
+        "condicion_calidad": "Cantidad, clasificación y empaque uniformes.",
+        "capacidad": "100-150 bandejas meta.",
+        "costo": "Pendiente.",
+        "responsable": "Yeison/aliado."
+      },
+      {
+        "servicio_insumo": "Combo con queso",
+        "canal": "Entrega conjunta.",
+        "tiempo": "Según disponibilidad.",
+        "transporte_operacion": "Medio pendiente.",
+        "condicion_calidad": "Separar productos y conservar cada uno adecuadamente.",
+        "capacidad": "Pequeña escala.",
+        "costo": "Pendiente.",
+        "responsable": "Familia."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Identificación de lote",
+        "informacion": "Fecha de cosecha, número de bandejas y destino.",
+        "responsable": "Yeison.",
+        "medio": "Cuaderno o archivo.",
+        "frecuencia": "Cada cosecha.",
+        "evidencia": "Registro."
+      },
+      {
+        "elemento": "Ficha técnica",
+        "informacion": "Presentación, peso, manejo, conservación y precio.",
+        "responsable": "Yeison/asesor.",
+        "medio": "Documento físico o digital.",
+        "frecuencia": "Cuando cambie.",
+        "evidencia": "Ficha."
+      },
+      {
+        "elemento": "Origen",
+        "informacion": "Vereda Lagunitas y productor Yeison Efrén Sánchez Pastor.",
+        "responsable": "Yeison.",
+        "medio": "Etiqueta o mensaje.",
+        "frecuencia": "Cada venta.",
+        "evidencia": "Empaque."
+      },
+      {
+        "elemento": "Prácticas sostenibles",
+        "informacion": "Uso de agua lluvia, abonos orgánicos y manejo de residuos.",
+        "responsable": "Familia.",
+        "medio": "Ficha o WhatsApp.",
+        "frecuencia": "Trimestral.",
+        "evidencia": "Fotos y bitácora."
+      },
+      {
+        "elemento": "Lote/cosecha",
+        "informacion": "Plantas, fecha, cantidad y observaciones de calidad.",
+        "responsable": "Yeison.",
+        "medio": "Bitácora.",
+        "frecuencia": "Cada cosecha.",
+        "evidencia": "Registro."
+      },
+      {
+        "elemento": "Contacto comercial",
+        "informacion": "WhatsApp, disponibilidad, precios y punto de recogida.",
+        "responsable": "Yeison.",
+        "medio": "Etiqueta y perfil digital.",
+        "frecuencia": "Permanente.",
+        "evidencia": "Perfil."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Invernadero/vivero simple",
+        "descripcion": "Estructura con polisombra, plástico, madera, tubos, paredes de protección y estibas.",
+        "valor_unitario": null,
+        "cantidad": "1.",
+        "total": null,
+        "requisito": "Diseño adecuado al clima, ventilación, drenaje y autorización del propietario.",
+        "fuente": "Bolsa de impulsos/recursos propios."
+      },
+      {
+        "tipo": "Plantas de arándano",
+        "descripcion": "Ampliación desde 20 hasta una meta de 150-200 plantas.",
+        "valor_unitario": null,
+        "cantidad": "130-180 adicionales, sujeto a diagnóstico.",
+        "total": null,
+        "requisito": "Plantas sanas, origen registrado y capacidad del terreno.",
+        "fuente": "Bolsa de impulsos / gestión."
+      },
+      {
+        "tipo": "Tanque de almacenamiento",
+        "descripcion": "Tanque para fortalecer reserva de agua lluvia.",
+        "valor_unitario": null,
+        "cantidad": "1 o más.",
+        "total": null,
+        "requisito": "Capacidad, tapa, base segura y limpieza.",
+        "fuente": "Bolsa de impulsos."
+      },
+      {
+        "tipo": "Sistema de riego",
+        "descripcion": "Manguera, conexiones y goteo.",
+        "valor_unitario": null,
+        "cantidad": "Según diseño.",
+        "total": null,
+        "requisito": "Distribución eficiente y control de fugas.",
+        "fuente": "Bolsa de impulsos."
+      },
+      {
+        "tipo": "Herramientas",
+        "descripcion": "Tijeras de vivero, carretilla y herramientas de mantenimiento.",
+        "valor_unitario": null,
+        "cantidad": "Kit.",
+        "total": null,
+        "requisito": "Ergonomía, seguridad y mantenimiento.",
+        "fuente": "Bolsa de impulsos."
+      },
+      {
+        "tipo": "Abonos e insumos",
+        "descripcion": "Orgánicos y productos adicionales definidos técnicamente.",
+        "valor_unitario": null,
+        "cantidad": "Según plan.",
+        "total": null,
+        "requisito": "Dosis, almacenamiento, EPP y protección del agua.",
+        "fuente": "Bolsa de impulsos/product"
+      },
+      {
+        "tipo": "Empaques y etiquetas",
+        "descripcion": "Bandejas transparentes ventiladas, etiqueta y marca.",
+        "valor_unitario": null,
+        "cantidad": "Según producción.",
+        "total": null,
+        "requisito": "Material apto, peso neto y reducción de residuos.",
+        "fuente": "Bolsa de impulsos."
+      },
+      {
+        "tipo": "Cerca eléctrica solar",
+        "descripcion": "Panel integrado, energizador, postes, aisladores y alambre.",
+        "valor_unitario": null,
+        "cantidad": "1 sistema.",
+        "total": null,
+        "requisito": "Instalación técnica, señalización y seguridad.",
+        "fuente": "Bolsa de impulsos / gestión."
+      },
+      {
+        "tipo": "EPP y asistencia técnica",
+        "descripcion": "Overol, guantes, calzado, capacitación y acompañamiento agronómico.",
+        "valor_unitario": null,
+        "cantidad": "Kit y proceso.",
+        "total": null,
+        "requisito": "Tallas, calidad, registros y seguimiento.",
+        "fuente": "Instituciones / recursos propios."
+      }
+    ],
+    "observaciones_o_comentarios": "Prioridades expresadas por el productor: 1) construir un invernadero o vivero tecnificado con polisombra, plásticos, madera, tubos y estibas; 2) adquirir más plantas para alcanzar una escala de 150 a 200; y 3) incorporar abonos, herramientas, empaques, tanque, riego por manguera o goteo y una cerca eléctrica solar para proteger el cultivo del ganado."
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Mantenimiento e insumos",
+        "descripcion": "Abonos, limpieza, herramientas menores y cuidado del cultivo.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "$200.000-$300.000 mensuales. Valor global reportado; desagregar."
+      },
+      {
+        "tipo": "Agua",
+        "descripcion": "Agua lluvia recolectada; acueducto solo en verano extremo.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Sin recibo asignado al cultivo. Registrar volumen y costo de contingencia."
+      },
+      {
+        "tipo": "Energía",
+        "descripcion": "No se utiliza energía eléctrica actualmente para el cultivo.",
+        "valor_mensual_ciclo": 0,
+        "observaciones": "$0 reportado. Cambiará si se instalan equipos; la cerca sería solar."
+      },
+      {
+        "tipo": "Gas",
+        "descripcion": "No se utiliza.",
+        "valor_mensual_ciclo": 0,
+        "observaciones": "No aplica."
+      },
+      {
+        "tipo": "Empaques",
+        "descripcion": "Bandejas transparentes con orificios compradas en Bogotá.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Incluidos o no en mantenimiento; pendiente. Calcular por bandeja."
+      },
+      {
+        "tipo": "Transporte",
+        "descripcion": "Compra de empaques, plantas, insumos y entregas.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Pendiente. Registrar por ruta."
+      },
+      {
+        "tipo": "Mano de obra",
+        "descripcion": "Trabajo del productor, esposa y cuñado.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "No valorizado. Incluir para calcular rentabilidad."
+      },
+      {
+        "tipo": "Infraestructura y seguridad",
+        "descripcion": "Invernadero, riego, cerca, mantenimiento y EPP.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Pendiente. Cotizar inversión y reposición."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "Mes 1",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Crear línea base."
+      },
+      {
+        "mes": "Mes 2",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Medir producción."
+      },
+      {
+        "mes": "Mes 3",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Consolidar datos."
+      },
+      {
+        "mes": "Mes 4",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Definir diseño."
+      },
+      {
+        "mes": "Mes 5",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Ampliación gradual."
+      },
+      {
+        "mes": "Mes 6",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Evaluar rendimiento."
+      },
+      {
+        "mes": "Mes 7",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Preparar reserva."
+      },
+      {
+        "mes": "Mes 8",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Seguridad."
+      },
+      {
+        "mes": "Mes 9",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Marca."
+      },
+      {
+        "mes": "Mes 10",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Control de ingreso."
+      },
+      {
+        "mes": "Mes 11",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Diversificar."
+      },
+      {
+        "mes": "Mes 12",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Decidir siguiente fase."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "Los costos de $200.000 a $300.000 mensuales no están desagregados. La utilidad reportada de aproximadamente $200.000 debe verificarse incorporando empaques, transporte, mano de obra, pérdidas, herramientas, mantenimiento, infraestructura y otros gastos.\nEl flujo de caja debe registrar por cosecha el número de bandejas de una libra y media libra, precio, forma de pago, costos y pérdidas. La ampliación a 150-200 plantas debe ejecutarse gradualmente y condicionarse a la infraestructura, el agua, la capacidad del sitio y la demanda comprobada."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Agua",
+        "estado": "Recolección de lluvia.",
+        "cantidad": "Canecas de 50-200 L; volumen total pendiente.",
+        "impacto_1_a_5": 5,
+        "accion": "Ampliar almacenamiento y medir."
+      },
+      {
+        "variable": "Energía",
+        "estado": "No se usa en el cultivo.",
+        "cantidad": "$0 reportado.",
+        "impacto_1_a_5": 1,
+        "accion": "Mantener soluciones eficientes; solar para cerca."
+      },
+      {
+        "variable": "Transporte",
+        "estado": "Insumos, empaques y entregas.",
+        "cantidad": "Frecuencia y distancia pendientes.",
+        "impacto_1_a_5": 3,
+        "accion": "Agrupar compras y rutas."
+      },
+      {
+        "variable": "Empaques",
+        "estado": "Plástico transparente ventilado.",
+        "cantidad": "Cantidad pendiente.",
+        "impacto_1_a_5": 4,
+        "accion": "Reducir, separar y evaluar opciones."
+      },
+      {
+        "variable": "Residuos",
+        "estado": "Lonas reutilizadas; bolsas de vivero quemadas.",
+        "cantidad": "Cantidad pendiente.",
+        "impacto_1_a_5": 5,
+        "accion": "Suspender quema y gestionar adecuadamente."
+      },
+      {
+        "variable": "Insumos",
+        "estado": "Abonos orgánicos y químicos potenciales.",
+        "cantidad": "Cantidad pendiente.",
+        "impacto_1_a_5": 4,
+        "accion": "Plan técnico y registros."
+      },
+      {
+        "variable": "Clima",
+        "estado": "Verano prolongado es el mayor desafío.",
+        "cantidad": "Sin medición.",
+        "impacto_1_a_5": 5,
+        "accion": "Reserva de agua e invernadero."
+      },
+      {
+        "variable": "Infraestructura",
+        "estado": "Corral sin invernadero tecnificado.",
+        "cantidad": "Área pendiente.",
+        "impacto_1_a_5": 5,
+        "accion": "Diseño y construcción gradual."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "Número de plantas",
+        "que_se_mide": "Plantas vivas y productivas.",
+        "dato_inicial": "Aproximadamente 20.",
+        "meta": "150-200 solo si la capacidad lo permite.",
+        "frecuencia": "Mensual.",
+        "responsable": "Yeison.",
+        "evidencia": "Inventario."
+      },
+      {
+        "indicador": "Producción",
+        "que_se_mide": "Bandejas y libras cosechadas.",
+        "dato_inicial": "Aproximadamente 10 bandejas/mes.",
+        "meta": "Registro del 100% y crecimiento gradual.",
+        "frecuencia": "Cada cosecha.",
+        "responsable": "Yeison.",
+        "evidencia": "Planilla."
+      },
+      {
+        "indicador": "Rendimiento",
+        "que_se_mide": "Bandejas por planta.",
+        "dato_inicial": "Desconocido.",
+        "meta": "Calcular por ciclo.",
+        "frecuencia": "Mensual/cosecha.",
+        "responsable": "Yeison.",
+        "evidencia": "Registro."
+      },
+      {
+        "indicador": "Ventas",
+        "que_se_mide": "Cantidad, precio e ingreso.",
+        "dato_inicial": "$400.000-$500.000 mensuales reportados.",
+        "meta": "100% registradas.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Yeison.",
+        "evidencia": "Libro."
+      },
+      {
+        "indicador": "Costos y margen",
+        "que_se_mide": "Costo por bandeja y utilidad.",
+        "dato_inicial": "$200.000-$300.000 en costos y $200.000 libres.",
+        "meta": "Conciliar mensualmente.",
+        "frecuencia": "Mensual.",
+        "responsable": "Yeison / asesor.",
+        "evidencia": "Hoja."
+      },
+      {
+        "indicador": "Agua",
+        "que_se_mide": "Litros almacenados y usados.",
+        "dato_inicial": "Canecas de 50-200 L.",
+        "meta": "Línea base y contingencia.",
+        "frecuencia": "Semanal.",
+        "responsable": "Familia.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "indicador": "Fertilización",
+        "que_se_mide": "Producto, dosis y fecha.",
+        "dato_inicial": "Mensual con orgánicos.",
+        "meta": "100% documentada.",
+        "frecuencia": "Cada aplicación.",
+        "responsable": "Yeison.",
+        "evidencia": "Registro."
+      },
+      {
+        "indicador": "Clientes",
+        "que_se_mide": "Consultas, pedidos y recompra.",
+        "dato_inicial": "Contactos informales.",
+        "meta": "Base activa.",
+        "frecuencia": "Mensual.",
+        "responsable": "Yeison.",
+        "evidencia": "Listado."
+      },
+      {
+        "indicador": "Residuos",
+        "que_se_mide": "Bolsas, lonas y empaques.",
+        "dato_inicial": "No medidos.",
+        "meta": "Cero quema y separación.",
+        "frecuencia": "Mensual.",
+        "responsable": "Familia.",
+        "evidencia": "Bitácora."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Bolsas plásticas de vivero",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Se usan para encender el fogón de leña.",
+        "accion_circular": "Suspender la quema; limpiar y entregar a reciclaje o recolección.",
+        "destino": "Compra de plantas.",
+        "responsable": "Yeison/familia."
+      },
+      {
+        "residuo_recurso": "Lonas de insumos",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Se reutilizan en la finca o se entregan al camión.",
+        "accion_circular": "Priorizar reutilización segura y entrega separada.",
+        "destino": "Abonos y materiales.",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Empaques dañados",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Separar y reducir pérdidas.",
+        "destino": "Venta de arándanos.",
+        "responsable": "Yeison."
+      },
+      {
+        "residuo_recurso": "Residuos vegetales",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Aprovechamiento orgánico controlado.",
+        "destino": "Poda, desyerbe y fruta no apta.",
+        "responsable": "Familia.."
+      },
+      {
+        "residuo_recurso": "Envases de insumos",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Separar y aplicar posconsumo según producto.",
+        "destino": "Abonos y posibles químicos.",
+        "responsable": "Yeison/proveedor."
+      },
+      {
+        "residuo_recurso": "Agua de lavado",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Retirar sólidos y evitar vertimientos contaminantes.",
+        "destino": "Canecas, herramientas y empaques.",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Material de invernadero",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No aplica aún.",
+        "accion_circular": "Plan de mantenimiento, reutilización y disposición.",
+        "destino": "Plástico, polisombra y tubería futura.",
+        "responsable": "Yeison / proveedor."
+      }
+    ],
+    "conclusion_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "Identidad",
+        "indicador": "Nombre, marca y etiqueta.",
+        "descripcion": null,
+        "estado": "Nombre proyectado; sin etiqueta.",
+        "calificacion_1_a_5": 2,
+        "accion": "Formalizar Arándanos Tomás Emilio.",
+        "evidencia": "Diseño."
+      },
+      {
+        "factor": "Cultivo",
+        "indicador": "Número y estado de plantas.",
+        "descripcion": null,
+        "estado": "Unas 20 plantas.",
+        "calificacion_1_a_5": 3,
+        "accion": "Inventario y expansión gradual.",
+        "evidencia": "Fichas."
+      },
+      {
+        "factor": "Producción",
+        "indicador": "Bandejas por mes.",
+        "descripcion": null,
+        "estado": "Unas 10.",
+        "calificacion_1_a_5": 2,
+        "accion": "Registros y mejora técnica.",
+        "evidencia": "Planillas."
+      },
+      {
+        "factor": "Infraestructura",
+        "indicador": "Invernadero y protección.",
+        "descripcion": null,
+        "estado": "Corral protegido, sin vivero tecnificado.",
+        "calificacion_1_a_5": 2,
+        "accion": "Diseñar y construir.",
+        "evidencia": "Fotos."
+      },
+      {
+        "factor": "Agua",
+        "indicador": "Almacenamiento y distribución.",
+        "descripcion": null,
+        "estado": "Canecas y riego manual.",
+        "calificacion_1_a_5": 2,
+        "accion": "Tanque y goteo.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "factor": "Comercialización",
+        "indicador": "Clientes y mercado fijo.",
+        "descripcion": null,
+        "estado": "Venta directa informal.",
+        "calificacion_1_a_5": 2,
+        "accion": "Base de clientes y alianzas.",
+        "evidencia": "Ventas."
+      },
+      {
+        "factor": "Finanzas",
+        "indicador": "Costos y margen.",
+        "descripcion": null,
+        "estado": "Cifras globales.",
+        "calificacion_1_a_5": 2,
+        "accion": "Costeo por bandeja.",
+        "evidencia": "Hoja."
+      },
+      {
+        "factor": "Seguridad",
+        "indicador": "EPP, herramientas y postura.",
+        "descripcion": null,
+        "estado": "Insuficiente.",
+        "calificacion_1_a_5": 2,
+        "accion": "Dotación y capacitación.",
+        "evidencia": "Checklist."
+      },
+      {
+        "factor": "Ambiente",
+        "indicador": "Agua y residuos.",
+        "descripcion": null,
+        "estado": "Buen uso de lluvia; quema de bolsas.",
+        "calificacion_1_a_5": 2,
+        "accion": "Cero quema y gestión integral.",
+        "evidencia": "Bitácora."
+      }
+    ],
+    "resultado_preliminar_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "Invernadero",
+        "accion": "Diseñar, cotizar y construir.",
+        "prioridad": null,
+        "plazo": "6-12 meses.",
+        "responsable": "Yeison/técnico.",
+        "recursos": null,
+        "indicador": "% de avance.",
+        "evidencia": "Fotos y facturas."
+      },
+      {
+        "impacto": "Plantas",
+        "accion": "Comprar por fases y registrar supervivencia.",
+        "prioridad": null,
+        "plazo": "12-24 meses.",
+        "responsable": "Yeison.",
+        "recursos": null,
+        "indicador": "Número de plantas productivas.",
+        "evidencia": "Inventario."
+      },
+      {
+        "impacto": "Agua",
+        "accion": "Instalar tanque, manguera y goteo.",
+        "prioridad": null,
+        "plazo": "6-12 meses.",
+        "responsable": "Yeison/técnico.",
+        "recursos": null,
+        "indicador": "Litros y funcionamiento.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "impacto": "Herramientas y EPP",
+        "accion": "Comprar tijeras, carretilla, overol, guantes y calzado.",
+        "prioridad": null,
+        "plazo": "3-6 meses.",
+        "responsable": "Yeison.",
+        "recursos": null,
+        "indicador": "Kit completo.",
+        "evidencia": "Inventario."
+      },
+      {
+        "impacto": "Producción",
+        "accion": "Registrar por planta y cosecha.",
+        "prioridad": null,
+        "plazo": "Inmediato.",
+        "responsable": "Yeison.",
+        "recursos": null,
+        "indicador": "% de cosechas registradas.",
+        "evidencia": "Planillas."
+      },
+      {
+        "impacto": "Mercado",
+        "accion": "Base de datos, marca, etiqueta y alianzas.",
+        "prioridad": null,
+        "plazo": "6-12 meses.",
+        "responsable": "Yeison.",
+        "recursos": null,
+        "indicador": "Número de clientes.",
+        "evidencia": "Ventas."
+      },
+      {
+        "impacto": "Finanzas",
+        "accion": "Libro de caja y costeo.",
+        "prioridad": null,
+        "plazo": "3 meses.",
+        "responsable": "Yeison/asesor.",
+        "recursos": null,
+        "indicador": "Margen mensual.",
+        "evidencia": "Hoja."
+      },
+      {
+        "impacto": "Residuos",
+        "accion": "Crear rutas de recolección y reutilización segura.",
+        "prioridad": null,
+        "plazo": "Inmediato/3 meses.",
+        "responsable": "Familia.",
+        "recursos": null,
+        "indicador": "% gestionado.",
+        "evidencia": "Bitácora."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": "Invierno",
+        "situacion": "No afecta de manera importante; el tanque permanece lleno.",
+        "riesgo": "Exceso de agua o humedad si fallan canales.",
+        "accion_propuesta": "Mantener canales y monitorear."
+      },
+      {
+        "aspecto": "Verano / sequía",
+        "situacion": "Es el principal desafío.",
+        "riesgo": "Falta de agua y transporte manual.",
+        "accion_propuesta": "Tanque adicional, goteo y plan de contingencia."
+      },
+      {
+        "aspecto": "Clima de páramo",
+        "situacion": "Requiere protección sin encapsular demasiado.",
+        "riesgo": "Daño o menor producción.",
+        "accion_propuesta": "Invernadero simple y ventilado."
+      },
+      {
+        "aspecto": "Ingreso de ganado",
+        "situacion": "Puede afectar el cultivo.",
+        "riesgo": "Pisoteo y daño de plantas.",
+        "accion_propuesta": "Cerca eléctrica solar segura."
+      },
+      {
+        "aspecto": "Agua lluvia",
+        "situacion": "Fuente principal.",
+        "riesgo": "Contaminación o almacenamiento insuficiente.",
+        "accion_propuesta": "Tapas, limpieza y medición."
+      },
+      {
+        "aspecto": "Vías y abastecimiento",
+        "situacion": "Empaques e insumos provienen de Bogotá u otros lugares.",
+        "riesgo": "Retrasos y costos.",
+        "accion_propuesta": "Compras agrupadas."
+      },
+      {
+        "aspecto": "Mercado",
+        "situacion": "No existe plaza fija.",
+        "riesgo": "Ventas irregulares.",
+        "accion_propuesta": "Alianzas y pedidos anticipados."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Climático",
+        "riesgo": "Sequía prolongada.",
+        "causa": "Verano y baja lluvia.",
+        "consecuencia": "Estrés y pérdida de producción.",
+        "nivel": "Muy alto",
+        "prevencion": "Reserva, goteo y monitoreo.",
+        "respuesta": "Transportar agua y priorizar plantas"
+      },
+      {
+        "tipo": "Climático",
+        "riesgo": "Daño por temperatura o clima fuerte.",
+        "causa": "Condiciones de páramo.",
+        "consecuencia": "Menor calidad o pérdida.",
+        "nivel": "Alto",
+        "prevencion": "Invernadero ventilado.",
+        "respuesta": "Proteger y revisar."
+      },
+      {
+        "tipo": "Productivo",
+        "riesgo": "Baja supervivencia al ampliar.",
+        "causa": "Compra o manejo inadecuado.",
+        "consecuencia": "Pérdida de inversión.",
+        "nivel": "Alto",
+        "prevencion": "Expansión gradual y asistencia.",
+        "respuesta": "Reponer con análisis."
+      },
+      {
+        "tipo": "Animal",
+        "riesgo": "Ingreso de ganado.",
+        "causa": "Falta de cerca.",
+        "consecuencia": "Pisoteo y daño.",
+        "nivel": "Muy alto",
+        "prevencion": "Cerca eléctrica solar.",
+        "respuesta": "Retirar ganado y reparar."
+      },
+      {
+        "tipo": "Laboral",
+        "riesgo": "Cortes, hincadas y postura.",
+        "causa": "Ramas, espinas y trabajo manual.",
+        "consecuencia": "Lesión y dolor.",
+        "nivel": "Alto",
+        "prevencion": "EPP y herramientas.",
+        "respuesta": "Primeros auxilios."
+      },
+      {
+        "tipo": "Químico",
+        "riesgo": "Exposición o sobredosificación.",
+        "causa": "Uso futuro de insumos.",
+        "consecuencia": "Daño a salud, suelo o agua.",
+        "nivel": "Alto",
+        "prevencion": "Plan técnico, EPP y registros.",
+        "respuesta": "Suspender y atender."
+      },
+      {
+        "tipo": "Financiero",
+        "riesgo": "Invertir sin validar capacidad.",
+        "causa": "Escalamiento rápido.",
+        "consecuencia": "Descapitalización.",
+        "nivel": "Alto",
+        "prevencion": "Fases, cotizaciones y flujo de caja.",
+        "respuesta": "Ajustar plan."
+      },
+      {
+        "tipo": "Comercial",
+        "riesgo": "Producción sin comprador fijo.",
+        "causa": "Expansión sin acuerdos.",
+        "consecuencia": "Pérdida de fruta.",
+        "nivel": "Alto",
+        "prevencion": "Preventa y alianzas.",
+        "respuesta": "Promoción o venta rápida."
+      },
+      {
+        "tipo": "Ambiental",
+        "riesgo": "Quema de plásticos.",
+        "causa": "Manejo actual de bolsas.",
+        "consecuencia": "Contaminación del aire y salud.",
+        "nivel": "Muy alto",
+        "prevencion": "Cero quema y ruta de residuos.",
+        "respuesta": "Apagar, contener y entregar."
+      },
+      {
+        "tipo": "Logístico",
+        "riesgo": "Daño del fruto.",
+        "causa": "Golpes, calor o empaque inadecuado.",
+        "consecuencia": "Pérdidas y reclamos.",
+        "nivel": "Alto",
+        "prevencion": "Selección, ventilación y transporte cuidadoso.",
+        "respuesta": "Retirar producto afectado."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "Verificar predio, área, arriendo y autorización.",
+        "componente": "Estratégico / legal",
+        "responsable": "Yeison/propietario / asesor.",
+        "tiempo": "Inmediato",
+        "recursos": "Documentos y visita.",
+        "resultado": "Base para inversión.",
+        "evidencia": "Acta."
+      },
+      {
+        "actividad": "Inventariar plantas y registrar producción.",
+        "componente": "Productivo",
+        "responsable": "Yeison.",
+        "tiempo": "Inmediato",
+        "recursos": "Formatos y báscula.",
+        "resultado": "Datos confiables.",
+        "evidencia": "Planillas."
+      },
+      {
+        "actividad": "Caracterizar sitio y diseñar invernadero.",
+        "componente": "Productivo / ambiental",
+        "responsable": "Técnico/Yeison.",
+        "tiempo": "1-3 meses",
+        "recursos": "Visita y cotizaciones.",
+        "resultado": "Diseño viable.",
+        "evidencia": "Informe."
+      },
+      {
+        "actividad": "Construir invernadero por fases.",
+        "componente": "Infraestructura",
+        "responsable": "Yeison / proveedor.",
+        "tiempo": "6-12 meses",
+        "recursos": "Polisombra, plástico, madera, tubos y estibas.",
+        "resultado": "Cultivo protegido.",
+        "evidencia": "Fotos."
+      },
+      {
+        "actividad": "Instalar tanque y riego.",
+        "componente": "Productivo/ ambiental",
+        "responsable": "Yeison/técnico.",
+        "tiempo": "6-12 meses",
+        "recursos": "Tanque, manguera y goteo.",
+        "resultado": "Uso eficiente de agua.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "actividad": "Adquirir plantas gradualmente.",
+        "componente": "Productivo / financiero",
+        "responsable": "Yeison.",
+        "tiempo": "12-24 meses",
+        "recursos": "Capital y vivero.",
+        "resultado": "Mayor escala sin exceder capacidad.",
+        "evidencia": "Inventario."
+      },
+      {
+        "actividad": "Incorporar herramientas, EPP y cerca.",
+        "componente": "SST/productivo",
+        "responsable": "Yeison / proveedor.",
+        "tiempo": "3-6 meses",
+        "recursos": "Kit y sistema solar.",
+        "resultado": "Trabajo seguro y cultivo protegido.",
+        "evidencia": "Facturas."
+      },
+      {
+        "actividad": "Crear marca, etiqueta y base de clientes.",
+        "componente": "Comercial/digital",
+        "responsable": "Yeison / apoyo.",
+        "tiempo": "3-6 meses",
+        "recursos": "Diseño, WhatsApp y registros.",
+        "resultado": "Mayor confianza.",
+        "evidencia": "Material."
+      },
+      {
+        "actividad": "Llevar libro de costos y flujo de caja.",
+        "componente": "Financiero",
+        "responsable": "Yeison/asesor.",
+        "tiempo": "3 meses",
+        "recursos": "Libro de caja.",
+        "resultado": "Rentabilidad conocida.",
+        "evidencia": "Hoja."
+      },
+      {
+        "actividad": "Eliminar la quema y gestionar residuos.",
+        "componente": "Ambiental",
+        "responsable": "Familia.",
+        "tiempo": "Inmediato",
+        "recursos": "Recipientes y ruta.",
+        "resultado": "Cero quema.",
+        "evidencia": "Bitácora."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "Identificación",
+        "indicador": "Predio, área y permiso verificados.",
+        "meta": "100%.",
+        "frecuencia": "Una vez / actualización.",
+        "responsable": "Yeison.",
+        "evidencia": "Ficha."
+      },
+      {
+        "dimension": "Plantas",
+        "indicador": "Número vivo y productivo.",
+        "meta": "Inventario completo.",
+        "frecuencia": "Mensual.",
+        "responsable": "Yeison.",
+        "evidencia": "Registro."
+      },
+      {
+        "dimension": "Producción",
+        "indicador": "Bandejas y libras.",
+        "meta": "100% de cosechas registradas.",
+        "frecuencia": "Cada cosecha.",
+        "responsable": "Yeison.",
+        "evidencia": "Planilla."
+      },
+      {
+        "dimension": "Rendimiento",
+        "indicador": "Bandejas por planta.",
+        "meta": "Dato calculado.",
+        "frecuencia": "Mensual/ciclo.",
+        "responsable": "Yeison.",
+        "evidencia": "Hoja."
+      },
+      {
+        "dimension": "Agua",
+        "indicador": "Litros almacenados y usados.",
+        "meta": "Linea base y contingencia.",
+        "frecuencia": "Semanal.",
+        "responsable": "Familia.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "dimension": "Insumos",
+        "indicador": "Producto, dosis y fecha.",
+        "meta": "100% registrados.",
+        "frecuencia": "Cada aplicación.",
+        "responsable": "Yeison.",
+        "evidencia": "Registro."
+      },
+      {
+        "dimension": "Finanzas",
+        "indicador": "Costo y margen por bandeja.",
+        "meta": "Valor real calculado.",
+        "frecuencia": "Mensual.",
+        "responsable": "Yeison / asesor.",
+        "evidencia": "Hoja."
+      },
+      {
+        "dimension": "Clientes",
+        "indicador": "Número, recompra y canal.",
+        "meta": "Base actualizada.",
+        "frecuencia": "Mensual.",
+        "responsable": "Yeison.",
+        "evidencia": "Listado."
+      },
+      {
+        "dimension": "Seguridad",
+        "indicador": "Uso de EPP e incidentes.",
+        "meta": "100% uso y cero incidentes graves.",
+        "frecuencia": "Cada jornada / mensual.",
+        "responsable": "Yeison.",
+        "evidencia": "Checklist."
+      },
+      {
+        "dimension": "Ambiente",
+        "indicador": "Agua y residuos gestionados.",
+        "meta": "Cero quema de plástico.",
+        "frecuencia": "Mensual.",
+        "responsable": "Familia.",
+        "evidencia": "Bitácora."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Construir invernadero",
+        "efecto_productivo": "Protege y estabiliza manejo.",
+        "efecto_comercial": "Puede mejorar continuidad.",
+        "efecto_financiero": "Inversión alta..",
+        "efecto_ambiental": "Uso de plástico y materiales.",
+        "ajuste_necesario": "Diseño técnico y mantenimiento."
+      },
+      {
+        "decision": "Comprar 130-180 plantas",
+        "efecto_productivo": "Aumenta capacidad potencial.",
+        "efecto_comercial": "Permite atender demanda.",
+        "efecto_financiero": "Alta inversión y costos.",
+        "efecto_ambiental": "Mayor agua, insumos y residuos.",
+        "ajuste_necesario": "Ampliar por fases."
+      },
+      {
+        "decision": "Instalar riego por goteo",
+        "efecto_productivo": "Mejora distribución de agua.",
+        "efecto_comercial": "Favorece continuidad.",
+        "efecto_financiero": "Inversión y mantenimiento.",
+        "efecto_ambiental": "Reduce desperdicio.",
+        "ajuste_necesario": "Medir y reparar fugas."
+      },
+      {
+        "decision": "Usar abonos químicos",
+        "efecto_productivo": "Puede apoyar producción si se define técnicamente.",
+        "efecto_comercial": "Puede mejorar volumen.",
+        "efecto_financiero": "Aumenta costo.",
+        "efecto_ambiental": "Riesgo para suelo y agua.",
+        "ajuste_necesario": "Solo con plan y registros."
+      },
+      {
+        "decision": "Instalar cerca solar",
+        "efecto_productivo": "Protege plantas.",
+        "efecto_comercial": "Reduce pérdidas.",
+        "efecto_financiero": "Inversión moderada.",
+        "efecto_ambiental": "Uso de energía renovable; materiales.",
+        "ajuste_necesario": "Instalación segura."
+      },
+      {
+        "decision": "Crear marca y etiqueta",
+        "efecto_productivo": "No cambia el cultivo.",
+        "efecto_comercial": "Mejora presentación y confianza.",
+        "efecto_financiero": "Costo bajo-moderado.",
+        "efecto_ambiental": "Aumenta uso de etiquetas.",
+        "ajuste_necesario": "Diseño simple y reciclable."
+      },
+      {
+        "decision": "Vender al por mayor",
+        "efecto_productivo": "Exige volumen uniforme.",
+        "efecto_comercial": "Abre mercado.",
+        "efecto_financiero": "Menor precio por unidad.",
+        "efecto_ambiental": "Más empaque y transporte.",
+        "ajuste_necesario": "Costeo y acuerdos."
+      },
+      {
+        "decision": "Combinar con queso",
+        "efecto_productivo": "Coordina dos productos.",
+        "efecto_comercial": "Diferencia la oferta.",
+        "efecto_financiero": "Puede elevar ticket.",
+        "efecto_ambiental": "Más empaque y logística.",
+        "ajuste_necesario": "Definir conservación."
+      },
+      {
+        "decision": "Registrar producción y costos",
+        "efecto_productivo": "Permite decidir mejor.",
+        "efecto_comercial": "Mejora cumplimiento.",
+        "efecto_financiero": "Protege rentabilidad.",
+        "efecto_ambiental": "Optimiza insumos y agua.",
+        "ajuste_necesario": "Disciplina continua."
+      },
+      {
+        "decision": "Suspender quema de bolsas",
+        "efecto_productivo": "No afecta producción.",
+        "efecto_comercial": "Refuerza imagen responsable.",
+        "efecto_financiero": "Costo mínimo de gestión.",
+        "efecto_ambiental": "Reduce contaminación.",
+        "ajuste_necesario": "Ruta de reciclaje o recolección."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}

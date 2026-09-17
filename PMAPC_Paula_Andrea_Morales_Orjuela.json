@@ -1,0 +1,2072 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "No tiene nombre comercial formal. Para este documento se identifica provisionalmente como \"Comidas rápidas de Paula Andrea Morales\".",
+    "persona_entrevistada": "Paula Andrea Morales Soruela. Documento informado: 1.023.037.702. Datos de contacto pendientes de verificar.",
+    "tipo_actividad": "Preparación y comercialización de comidas rápidas y alimentos preparados, con servicio por eventos, pedidos y domicilios.",
+    "ubicacion_especifica": "Vereda Nueva Granada, localidad de Sumapaz, Bogotá D.C. Atiende también pedidos de La Concepción y San José. Dirección, predio y coordenadas pendientes.",
+    "producto_servicio_principal": "Hamburguesas, salchipapas, perros calientes, choripapas, mazorcas, Dorilocos y domicilios de pedidos.",
+    "estado_actual": "Negocio en marcha de manera intermitente: trabaja principalmente cada ocho días, en actividades comunitarias o cuando recibe pedidos.",
+    "personas_vinculadas": "Paula Andrea Morales y su esposo. No se reportaron empleados adicionales.",
+    "coordenadas": "Pendientes de tomar o verificar.",
+    "descripcion_general": "Emprendimiento familiar creado a partir de las ferias ganaderas de Nueva Granada. Se abastece en Bogotá cada una o dos semanas y compra algunos insumos, como queso y papa, dentro de la localidad. Busca crecer hasta contar con un local propio o un carrito móvil que pueda usar en eventos.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F02": {
+    "mision": "Preparar y ofrecer comidas rápidas de buen sabor y calidad a las comunidades de Nueva Granada, La Concepción y San José, con atención cercana, higiene y cumplimiento en eventos, pedidos y domicilios.",
+    "vision": "Consolidar un negocio familiar con local propio o carrito de comidas rápidas, mejores equipos, inventario suficiente, mayor capacidad para eventos y servicio de domicilio más estable.",
+    "valores": [
+      "Responsabilidad",
+      "trabajo familiar",
+      "servicio",
+      "calidad",
+      "perseverancia",
+      "higiene",
+      "honestidad",
+      "compromiso con la comunidad"
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Porque conocen a la productora, valoran el sabor de sus preparaciones y la recomiendan a otras personas.",
+    "beneficio_cliente": "Recibe comida preparada por pedido, con variedad y posibilidad de domicilio cuando hay transporte disponible.",
+    "diferencial": "La experiencia de siete años, la atención directa, la recomendación entre clientes y el uso de algunos insumos locales como queso y papa.",
+    "valor_ambiental": "Los residuos orgánicos se destinan a los animales y los residuos desechables se entregan a la volqueta de recolección cada ocho días.",
+    "valor_social_comunitario": "Ofrece alimentación durante ferias, eventos y reuniones de las veredas, genera ingreso familiar y compra parte de sus insumos dentro de la localidad.",
+    "evidencia": "Recompra, recomendaciones de clientes, pedidos repetidos y ventas en actividades comunitarias.",
+    "observaciones_o_comentarios": "¿Cómo demostrar el diferencial?: Con registros de pedidos, recomendaciones, fotografías, fichas de producto, control de proveedores, certificado de manipulación, evidencias de limpieza y manejo de residuos."
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Siete años de experiencia.",
+      "Variedad de productos.",
+      "Trabajo conjunto con el esposo.",
+      "Recomendación y recompra de clientes.",
+      "Cobertura de tres veredas.",
+      "Certificado de manipulación de alimentos.",
+      "Compra local de queso y papa.",
+      "Aprovechamiento de residuos orgánicos para animales."
+    ],
+    "oportunidades": [
+      "Adquirir carrito de comidas rápidas.",
+      "Contar con local propio.",
+      "Comprar picadora, microondas y mesas.",
+      "Organizar pedidos por WhatsApp.",
+      "Participar en más ferias y eventos.",
+      "Mejorar transporte para domicilios.",
+      "Crear marca y menú con precios.",
+      "Implementar registros de ventas y costos."
+    ],
+    "debilidades": [
+      "No tiene nombre comercial formal.",
+      "No lleva registros de ventas ni ingresos.",
+      "Producción dependiente de eventos.",
+      "Falta de transporte para domicilios.",
+      "Abastecimiento distante desde Bogotá.",
+      "No se informaron equipos, área ni capacidad.",
+      "No se conocen costos por receta.",
+      "Inventario limitado y compras según pedido."
+    ],
+    "amenazas": [
+      "Aumento de precios de insumos y transporte.",
+      "Dificultades de acceso desde Bogotá.",
+      "Baja asistencia a eventos.",
+      "Pérdida de cadena de frío.",
+      "Contaminación cruzada o quemaduras.",
+      "Cortes de energía o problemas con el agua.",
+      "Competencia local.",
+      "Desperdicio por comprar sin registros."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Cliente directo",
+        "perfil_que_busca": "Familias y vecinos que solicitan comidas rápidas.",
+        "ubicacion": "Nueva Granada.",
+        "necesidad": "Sabor, precio, atención y disponibilidad.",
+        "frecuencia": "Cada ocho días o por pedido.",
+        "criterio_compra": "Sabor, precio, atención y disponibilidad.",
+        "canal": "Venta directa / domicilio."
+      },
+      {
+        "tipo_actor": "Consumidor final",
+        "perfil_que_busca": "Personas asistentes a ferias, eventos y reuniones.",
+        "ubicacion": "Nueva Granada, La Concepción y San José.",
+        "necesidad": "Rapidez, variedad y comida caliente.",
+        "frecuencia": "Ocasional/según evento.",
+        "criterio_compra": "Rapidez, variedad y comida caliente.",
+        "canal": "Puesto temporal o carrito futuro."
+      },
+      {
+        "tipo_actor": "Comprador local",
+        "perfil_que_busca": "Personas que encargan varios productos para familia o grupo.",
+        "ubicacion": "Tres veredas.",
+        "necesidad": "Cantidad, cumplimiento y presentación.",
+        "frecuencia": "Según pedido.",
+        "criterio_compra": "Cantidad, cumplimiento y presentación.",
+        "canal": "Llamada/contacto personal."
+      },
+      {
+        "tipo_actor": "Comprador institucional",
+        "perfil_que_busca": "No identificado.",
+        "ubicacion": "Pendiente.",
+        "necesidad": "Requisitos sanitarios, volumen y facturación.",
+        "frecuencia": "No aplica actualmente.",
+        "criterio_compra": "Requisitos sanitarios, volumen y facturación.",
+        "canal": "Por explorar."
+      },
+      {
+        "tipo_actor": "Eventos/ferias",
+        "perfil_que_busca": "Organizadores y asistentes de actividades comunitarias.",
+        "ubicacion": "Localidad de Sumapaz.",
+        "necesidad": "Capacidad, movilidad y variedad.",
+        "frecuencia": "Cuando se programan.",
+        "criterio_compra": "Capacidad, movilidad y variedad.",
+        "canal": "Puesto móvil."
+      },
+      {
+        "tipo_actor": "Cliente de domicilio",
+        "perfil_que_busca": "Personas ubicadas a distancia que solicitan entrega.",
+        "ubicacion": "Veredas cercanas.",
+        "necesidad": "Oportunidad, temperatura y costo.",
+        "frecuencia": "Ocasional.",
+        "criterio_compra": "Oportunidad, temperatura y costo.",
+        "canal": "Domicilio."
+      },
+      {
+        "tipo_actor": "Cliente potencial",
+        "perfil_que_busca": "Visitantes y personas de otras veredas.",
+        "ubicacion": "Sumapaz.",
+        "necesidad": "Marca, menú, higiene y movilidad.",
+        "frecuencia": "Futuro.",
+        "criterio_compra": "Marca, menú, higiene y movilidad.",
+        "canal": "Carrito / redes."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Comida rápida de buen sabor, preparada al momento, a precio razonable y disponible en eventos o por encargo.",
+    "como_se_conoce_la_necesidad": "Los clientes vuelven, la recomiendan y continúan haciendo pedidos.",
+    "quienes_compran_o_podrian_comprar": "Habitantes de Nueva Granada, La Concepción y San José, asistentes a ferias y clientes de domicilio.",
+    "evidencia": "Ventas anteriores, pedidos repetidos, recomendaciones y participación en ferias ganaderas.",
+    "ventaja_territorial": "Cercanía a las comunidades, uso de queso y papa comprados en la localidad y atención en eventos rurales.",
+    "cambios_demanda": "El negocio pasó de trabajar cada dos meses en ferias a recibir pedidos y trabajar aproximadamente cada ocho días.",
+    "dificultades": "Transporte desde Bogotá, falta de vehículo para domicilios, dependencia de eventos y ausencia de un punto fijo o carrito.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Productores vecinos",
+        "tipo": "Proveedores locales",
+        "que_aporta": "Queso, papa y otros insumos.",
+        "que_recibe": "Compra estable y promoción.",
+        "trabajo_conjunto": "Pedidos programados.",
+        "aporte_ambiental": "Menor distancia de transporte.",
+        "accion": "Crear lista de proveedores locales."
+      },
+      {
+        "actor_aliado": "Asociación campesina",
+        "tipo": "Organización rural",
+        "que_aporta": "Acceso a ferias y compras colectivas.",
+        "que_recibe": "Oferta de comida en actividades.",
+        "trabajo_conjunto": "Participación en eventos.",
+        "aporte_ambiental": "Promoción de circuitos cortos.",
+        "accion": "Consultar convocatorias."
+      },
+      {
+        "actor_aliado": "Junta de Acción Comunal",
+        "tipo": "Organización comunitaria",
+        "que_aporta": "Información sobre eventos y espacios.",
+        "que_recibe": "Servicio de alimentación.",
+        "trabajo_conjunto": "Programación anticipada.",
+        "aporte_ambiental": "Gestión de residuos en eventos.",
+        "accion": "Establecer contacto."
+      },
+      {
+        "actor_aliado": "Compradores locales",
+        "tipo": "Clientes",
+        "que_aporta": "Demanda, pago y recomendaciones.",
+        "que_recibe": "Variedad y atención.",
+        "trabajo_conjunto": "Reservas y pedidos grupales.",
+        "aporte_ambiental": "Reducir viajes fallidos.",
+        "accion": "Crear base de clientes."
+      },
+      {
+        "actor_aliado": "Ferias o mercados campesinos",
+        "tipo": "Espacios comerciales",
+        "que_aporta": "Flujo de clientes.",
+        "que_recibe": "Oferta local.",
+        "trabajo_conjunto": "Puesto móvil con carrito.",
+        "aporte_ambiental": "Separación de residuos.",
+        "accion": "Preparar portafolio."
+      },
+      {
+        "actor_aliado": "Instituciones de apoyo",
+        "tipo": "Alcaldía, salud y formación",
+        "que_aporta": "Equipos, capacitación y asistencia.",
+        "que_recibe": "Unidad fortalecida.",
+        "trabajo_conjunto": "Carrito, BPM, costos y marca.",
+        "aporte_ambiental": "Manejo eficiente de agua y residuos.",
+        "accion": "Solicitar acompañamiento."
+      },
+      {
+        "actor_aliado": "Aliados logísticos o digitales",
+        "tipo": "Transportadores y redes",
+        "que_aporta": "Abastecimiento y domicilios.",
+        "que_recibe": "Pago por servicio.",
+        "trabajo_conjunto": "Rutas consolidadas y pedidos por WhatsApp.",
+        "aporte_ambiental": "Menos viajes individuales.",
+        "accion": "Definir tarifas y contactos."
+      },
+      {
+        "actor_aliado": "Otros aliados",
+        "tipo": "Proveedores de Bogotá y Fusagasugá",
+        "que_aporta": "Insumos y equipos.",
+        "que_recibe": "Compras programadas.",
+        "trabajo_conjunto": "Entregas quincenales y facturas.",
+        "aporte_ambiental": "Mejor planificación del transporte.",
+        "accion": "Comparar precios y calidad."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Encuesta",
+        "a_quien": "No se informó.",
+        "resultado": "Pendiente.",
+        "motivacion": "Pendiente.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Entrevista",
+        "a_quien": "Conversaciones con clientes conocidos.",
+        "resultado": "Los clientes expresan que los productos son buenos y recomiendan el negocio.",
+        "motivacion": "Sabor, atención y confianza.",
+        "evidencia": "Relato de la productora."
+      },
+      {
+        "metodo": "Degustación / muestra",
+        "a_quien": "No se informó una actividad formal.",
+        "resultado": "Pendiente.",
+        "motivacion": "Sabor.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Venta previa",
+        "a_quien": "Comunidad de tres veredas y asistentes a ferias.",
+        "resultado": "Siete años de ventas intermitentes y pedidos repetidos.",
+        "motivacion": "Variedad, cercanía y disponibilidad.",
+        "evidencia": "Experiencia previa; registros pendientes."
+      },
+      {
+        "metodo": "Carta de intención",
+        "a_quien": "No existe.",
+        "resultado": "Pendiente.",
+        "motivacion": "Continuidad y precio.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Participación en feria",
+        "a_quien": "Ferias ganaderas de Nueva Granada.",
+        "resultado": "Permitieron iniciar y sostener el emprendimiento.",
+        "motivacion": "Concentración de clientes.",
+        "evidencia": "Relato de la productora."
+      },
+      {
+        "metodo": "Otro",
+        "a_quien": "Recomendación entre clientes.",
+        "resultado": "Nuevos pedidos por referencia de terceros.",
+        "motivacion": "Confianza y calidad percibida.",
+        "evidencia": "Testimonios pendientes."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Hamburguesa",
+        "descripcion_tecnica": "Preparación con pan, carne, queso, vegetales, salsas y complementos por definir.",
+        "unidad": "Unidad.",
+        "insumos_principales": "Pan, proteína, queso, vegetales, salsas y empaque.",
+        "condiciones_especiales": "Ingredientes refrigerados y separados; consumo inmediato.",
+        "presentacion": "En plato o empaque para llevar.",
+        "diferencial": "Preparada por pedido y con insumos locales cuando es posible."
+      },
+      {
+        "servicio": "Salchipapa/choripapa",
+        "descripcion_tecnica": "Preparación frita de papa con salchicha o chorizo y salsas.",
+        "unidad": "Porción.",
+        "insumos_principales": "Papa, embutido, aceite, salsas y empaque.",
+        "condiciones_especiales": "Mantener insumos fríos; servir caliente.",
+        "presentacion": "Porción individual.",
+        "diferencial": "Producto de alta aceptación en eventos."
+      },
+      {
+        "servicio": "Perro caliente / mazorca",
+        "descripcion_tecnica": "Preparaciones calientes con pan o mazorca y complementos.",
+        "unidad": "Unidad/porción.",
+        "insumos_principales": "Pan, salchicha, queso, mazorca, salsas y otros.",
+        "condiciones_especiales": "Control de temperatura y consumo inmediato.",
+        "presentacion": "Unidad o porción.",
+        "diferencial": "Variedad para diferentes preferencias."
+      },
+      {
+        "servicio": "Dorilocos",
+        "descripcion_tecnica": "Preparación servida sobre paquete de Doritos con ingredientes y salsas por definir.",
+        "unidad": "Porción.",
+        "insumos_principales": "Doritos, queso, salsas, vegetales y complementos.",
+        "condiciones_especiales": "Mantener ingredientes refrigerados; armar al momento.",
+        "presentacion": "En empaque individual.",
+        "diferencial": "Producto incorporado para ampliar el menú."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Planeación",
+        "unidad": "Pedido/evento.",
+        "actividad_proceso": "1. Confirmar número de clientes, menú, lugar y hora.",
+        "tiempo_estimado": "Antes de comprar."
+      },
+      {
+        "servicio": "Abastecimiento",
+        "unidad": "Insumos.",
+        "actividad_proceso": "2. Comprar en Bogotá cada una o dos semanas y adquirir queso y papa en la localidad.",
+        "tiempo_estimado": "Semanal/quincenal."
+      },
+      {
+        "servicio": "Recepción",
+        "unidad": "Lote.",
+        "actividad_proceso": "3. Verificar cantidades, fechas, empaque y temperatura.",
+        "tiempo_estimado": "Cada compra."
+      },
+      {
+        "servicio": "Preparación previa",
+        "unidad": "Ingredientes.",
+        "actividad_proceso": "4. Lavar, desinfectar, porcionar y almacenar.",
+        "tiempo_estimado": "Antes de la venta."
+      },
+      {
+        "servicio": "Cocción",
+        "unidad": "Productos.",
+        "actividad_proceso": "5. Freír, asar o calentar según la preparación.",
+        "tiempo_estimado": "Durante el servicio."
+      },
+      {
+        "servicio": "Armado",
+        "unidad": "Unidad/porción.",
+        "actividad_proceso": "6. Ensamblar hamburguesas, perros, mazorcas o Dorilocos.",
+        "tiempo_estimado": "Al momento."
+      },
+      {
+        "servicio": "Empaque y entrega",
+        "unidad": "Pedido.",
+        "actividad_proceso": "7. Empacar, cobrar y entregar en puesto o domicilio.",
+        "tiempo_estimado": "Inmediato."
+      },
+      {
+        "servicio": "Cierre",
+        "unidad": "Jornada.",
+        "actividad_proceso": "8. Registrar ventas, sobrantes y necesidades de compra.",
+        "tiempo_estimado": "Al finalizar."
+      },
+      {
+        "servicio": "Limpieza y residuos",
+        "unidad": "Jornada.",
+        "actividad_proceso": "9. Limpiar equipos, separar orgánicos para animales y sacar desechables a la recolección.",
+        "tiempo_estimado": "Después de cada jornada."
+      }
+    ],
+    "observaciones_o_comentarios": "Fichas técnicas pendientes: definir ingredientes exactos, gramajes, tiempos, temperaturas, rendimiento, alérgenos, costo por porción, presentación, empaque, vida útil, condiciones de transporte y precios de cada producto. También debe verificarse el proceso de limpieza, desinfección y conservación de insumos."
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Proteínas y embutidos",
+        "cantidad_unidad": "Según pedido; sin cantidades registradas.",
+        "frecuencia": "Semanal / quincenal.",
+        "proveedor_fuente": "Bogotá; proveedor por verificar.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Cadena de frío y empaques.",
+        "manejo_ambiental": "Compra programada, refrigeración y PEPS.",
+        "observaciones": "Incluye carne, salchicha y chorizo."
+      },
+      {
+        "insumo": "Pan y Doritos",
+        "cantidad_unidad": "Según demanda.",
+        "frecuencia": "Semanal/ quincenal.",
+        "proveedor_fuente": "Bogotá / comercio.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Empaques y vencimientos.",
+        "manejo_ambiental": "Comprar según rotación y separar empaques.",
+        "observaciones": "Cantidades pendientes."
+      },
+      {
+        "insumo": "Papa, queso y mazorca",
+        "cantidad_unidad": "Según pedido.",
+        "frecuencia": "Semanal.",
+        "proveedor_fuente": "Localidad de Sumapaz y otros proveedores.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos orgánicos y transporte.",
+        "manejo_ambiental": "Priorizar proveedores cercanos y controlar merma.",
+        "observaciones": "Queso y papa se compran localmente."
+      },
+      {
+        "insumo": "Vegetales y salsas",
+        "cantidad_unidad": "Según menú.",
+        "frecuencia": "Semanal.",
+        "proveedor_fuente": "Proveedor poг verificar.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Merma, envases y agua de lavado.",
+        "manejo_ambiental": "Porcionar, refrigerar y separar residuos.",
+        "observaciones": "Sin cantidades registradas."
+      },
+      {
+        "insumo": "Aceite",
+        "cantidad_unidad": "Cantidad pendiente.",
+        "frecuencia": "Según jornadas.",
+        "proveedor_fuente": "Comercio.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Contaminación si se vierte.",
+        "manejo_ambiental": "Almacenar usado en recipiente y entregar a gestor autorizado.",
+        "observaciones": "Ruta actual no informada."
+      },
+      {
+        "insumo": "Agua",
+        "cantidad_unidad": "Consumo pendiente.",
+        "frecuencia": "Cada jornada.",
+        "proveedor_fuente": "Quebrada.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Riesgo sanitario y presión sobre la fuente.",
+        "manejo_ambiental": "Analizar potabilidad, tratar si aplica y ahorrar.",
+        "observaciones": "Uso directo reportado; requiere verificación."
+      },
+      {
+        "insumo": "Energía",
+        "cantidad_unidad": "Consumo pendiente.",
+        "frecuencia": "Cada jornada.",
+        "proveedor_fuente": "Punto del caserío.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Consumo y riesgo eléctrico.",
+        "manejo_ambiental": "Revisar conexión y usar equipos eficientes.",
+        "observaciones": "Condición legal y técnica pendiente."
+      },
+      {
+        "insumo": "Empaques y desechables",
+        "cantidad_unidad": "Según ventas.",
+        "frecuencia": "Cada jornada.",
+        "proveedor_fuente": "Comercio.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos sólidos.",
+        "manejo_ambiental": "Reducir, separar y disponer con la volqueta.",
+        "observaciones": "Recolección cada ocho días."
+      },
+      {
+        "insumo": "Productos de limpieza y EPP",
+        "cantidad_unidad": "Según uso.",
+        "frecuencia": "Cada jornada.",
+        "proveedor_fuente": "Comercio.",
+        "toxicidad": "Según producto",
+        "impacto_potencial": "Vertimientos y exposición.",
+        "manejo_ambiental": "Dosificar, rotular y usar guantes, delantal y calzado.",
+        "observaciones": "Tiene certificado de manipulación."
+      },
+      {
+        "insumo": "Transporte",
+        "cantidad_unidad": "Viajes y domicilios.",
+        "frecuencia": "Semanal / quincenal/por pedido.",
+        "proveedor_fuente": "Terceros o apoyo familiar.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Emisiones, costos y retrasos.",
+        "manejo_ambiental": "Consolidar compras y rutas.",
+        "observaciones": "Principal dificultad reportada."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "No se informó una cantidad mensual; las ventas dependen de eventos y pedidos.",
+    "produccion_normal": "No cuantificado. Trabaja aproximadamente cada ocho días o cuando hay una actividad o pedido.",
+    "capacidad_mensual_teorica": "Pendiente de medir según equipos, espacio, tiempo y apoyo del esposo.",
+    "produccion_maxima_posible": "Pendiente de establecer mediante prueba de capacidad por hora y por evento.",
+    "area_numero_habitaciones": "No informada. Debe medirse el espacio de preparación y atención.",
+    "limitantes_productivos": "Falta de carrito, equipos, mesas, inventario, transporte y registros.",
+    "limitantes_ambientales": "Calidad del agua de quebrada, residuos, consumo de energía, transporte y desechables.",
+    "capacidad_instalada": "Utensilios y equipos actuales no inventariados; trabajo de dos personas.",
+    "capacidad_utilizada": "Intermitente, principalmente en eventos y pedidos.",
+    "produce_mismo_todo_ano": false,
+    "alcanza_para_demanda": false,
+    "necesidades_aumentar_sosteniblemente": "Carrito o local, picadora, microondas, mesas, inventario, transporte, agua segura, registros y estandarización.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua disponible",
+        "estado_actual": "Proviene de una quebrada.",
+        "limite_restriccion": "Calidad y tratamiento no verificados.",
+        "afectacion": "Puede afectar inocuidad y limpieza.",
+        "efecto": "Riesgo sanitario.",
+        "incidencia": "Alto",
+        "accion_mejora": "Analizar agua, tratar y almacenar de forma segura."
+      },
+      {
+        "condicion": "Fuentes hídricas cercanas",
+        "estado_actual": "Quebrada utilizada por la unidad.",
+        "limite_restriccion": "Protección y captación pendientes.",
+        "afectacion": "Riesgo de contaminación por vertimientos.",
+        "efecto": "Impacto ambiental y sanitario.",
+        "incidencia": "Alto",
+        "accion_mejora": "Evitar vertimientos, proteger captación y medir consumo."
+      },
+      {
+        "condicion": "Suelo/espacio",
+        "estado_actual": "Lugar de preparación no descrito.",
+        "limite_restriccion": "Área, piso y drenajes pendientes.",
+        "afectacion": "Puede limitar higiene y montaje.",
+        "efecto": "Menor capacidad y riesgo locativo.",
+        "incidencia": "Medio-alto",
+        "accion_mejora": "Visita y adecuación de superficies lavables."
+      },
+      {
+        "condicion": "Acceso/topografía",
+        "estado_actual": "Abastecimiento desde Bogotá y domicilios lejanos.",
+        "limite_restriccion": "Transporte limitado.",
+        "afectacion": "Genera retrasos y costos.",
+        "efecto": "Pérdida de ventas.",
+        "incidencia": "Alto",
+        "accion_mejora": "Consolidar rutas y aliados."
+      },
+      {
+        "condicion": "Clima",
+        "estado_actual": "No reportó limitación directa.",
+        "limite_restriccion": "Eventos al aire libre pueden depender del clima.",
+        "afectacion": "Puede reducir asistencia y afectar temperatura.",
+        "efecto": "Ventas variables.",
+        "incidencia": "Medio",
+        "accion_mejora": "Carrito con cubierta y plan de contingencia."
+      },
+      {
+        "condicion": "Biodiversidad",
+        "estado_actual": "No se describió impacto directo.",
+        "limite_restriccion": "Uso de quebrada y residuos.",
+        "afectacion": "Manejo inadecuado puede afectar entorno.",
+        "efecto": "Impacto potencial.",
+        "incidencia": "Medio",
+        "accion_mejora": "Buenas prácticas y compras responsables."
+      },
+      {
+        "condicion": "Uso de insumos",
+        "estado_actual": "Productos perecederos, aceite, empaques y energía.",
+        "limite_restriccion": "Sin registros de cantidades.",
+        "afectacion": "Puede aumentar costos y merma.",
+        "efecto": "Desperdicio y residuos.",
+        "incidencia": "Medio-alto",
+        "accion_mejora": "Inventario, porciones y control de compras."
+      },
+      {
+        "condicion": "Manejo de residuos",
+        "estado_actual": "Orgánicos a animales; desechables a volqueta.",
+        "limite_restriccion": "No se informó manejo de aceite ni soportes.",
+        "afectacion": "Puede generar riesgos si se mezcla o almacena mal.",
+        "efecto": "Olores, contaminación y sanciones.",
+        "incidencia": "Alto",
+        "accion_mejora": "Separar, registrar y validar rutas."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Biológico",
+        "peligro": "Bacterias y contaminación cruzada.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Certificado de manipulación de alimentos.",
+        "accion": "BPM, lavado de manos, frío y separación crudo/cocido."
+      },
+      {
+        "tipo": "Físico",
+        "peligro": "Calor, vapor y superficies calientes.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "No informado.",
+        "accion": "Guantes térmicos, delantal y ventilación."
+      },
+      {
+        "tipo": "Químico",
+        "peligro": "Productos de limpieza y aceite degradado.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No informado.",
+        "accion": "Rotular, dosificar y controlar cambio de aceite."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Posturas prolongadas y movimientos repetitivos.",
+        "aplica": true,
+        "nivel_riesgo": "Alta en eventos",
+        "controles_actuales": "Trabajo compartido con esposo.",
+        "accion": "Alturas adecuadas y pausas."
+      },
+      {
+        "tipo": "Mecánico",
+        "peligro": "Cortes con cuchillos o picadora futura.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No informado.",
+        "accion": "Cuchillos seguros, protector y capacitación."
+      },
+      {
+        "tipo": "Locativo",
+        "peligro": "Caídas por grasa, agua o cables.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No informado.",
+        "accion": "Orden, pisos secos y cables protegidos."
+      },
+      {
+        "tipo": "Eléctrico",
+        "peligro": "Conexión desde punto del caserío y equipos.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No informado.",
+        "accion": "Revisión técnica y protecciones."
+      },
+      {
+        "tipo": "Tránsito",
+        "peligro": "Compras en Bogotá y domicilios.",
+        "aplica": true,
+        "nivel_riesgo": "Semanal/quincenal",
+        "controles_actuales": "Transporte no estable.",
+        "accion": "Rutas seguras, carga protegida y aliado confiable."
+      },
+      {
+        "tipo": "Público",
+        "peligro": "Atención en ferias y espacios concurridos.",
+        "aplica": true,
+        "nivel_riesgo": "Ocasional",
+        "controles_actuales": "Experiencia previa.",
+        "accion": "Delimitar zona caliente y controlar filas."
+      },
+      {
+        "tipo": "Incendio",
+        "peligro": "Aceite, gas o equipos de cocción.",
+        "aplica": true,
+        "nivel_riesgo": "Según jornada",
+        "controles_actuales": "No informado.",
+        "accion": "Extintor, revisión de conexiones y plan de emergencia."
+      }
+    ],
+    "observaciones_o_comentarios": "Los riesgos se identifican con base en la entrevista y deben validarse en visita al lugar de preparación y en los puntos de venta. Se priorizan manipulación de alimentos, aceite y superficies calientes, cortes, electricidad, transporte, agua de quebrada, posturas prolongadas y manejo de residuos."
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Usar guantes, delantal, calzado cerrado y protección térmica.",
+        "riesgo": "Biológico, mecánico y físico.",
+        "responsable": "Paula / esposo.",
+        "frecuencia": "Cada jornada.",
+        "evidencia": "Checklist y fotos."
+      },
+      {
+        "accion_preventiva": "Controlar temperaturas y separar alimentos crudos y listos.",
+        "riesgo": "Biológico.",
+        "responsable": "Paula.",
+        "frecuencia": "Cada jornada.",
+        "evidencia": "Planilla."
+      },
+      {
+        "accion_preventiva": "Revisar cuchillos, microondas, picadora y conexiones.",
+        "riesgo": "Mecánico y eléctrico.",
+        "responsable": "Esposo /técnico.",
+        "frecuencia": "Antes de uso.",
+        "evidencia": "Lista de chequeo."
+      },
+      {
+        "accion_preventiva": "Mantener el puesto ordenado y seco.",
+        "riesgo": "Locativo.",
+        "responsable": "Ambos.",
+        "frecuencia": "Permanente.",
+        "evidencia": "Registro."
+      },
+      {
+        "accion_preventiva": "Disponer de extintor y botiquín.",
+        "riesgo": "Incendio y emergencias.",
+        "responsable": "Paula.",
+        "frecuencia": "Revisión mensual.",
+        "evidencia": "Soportes."
+      },
+      {
+        "accion_preventiva": "Aplicar seguridad vial y protección de alimentos en domicilios.",
+        "riesgo": "Tránsito e inocuidad.",
+        "responsable": "Responsable de transporte.",
+        "frecuencia": "Cada entrega.",
+        "evidencia": "Registro de ruta."
+      },
+      {
+        "accion_preventiva": "Registrar incidentes y condiciones inseguras.",
+        "riesgo": "Seguimiento SG-SST.",
+        "responsable": "Paula.",
+        "frecuencia": "Cuando ocurra / mensual.",
+        "evidencia": "Bitácora."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Ferias campesinas",
+        "activo": true,
+        "descripcion": "Ferias ganaderas y actividades de la vereda.",
+        "responsable": "Paula y esposo.",
+        "frecuencia": "Según programación."
+      },
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "Puesto temporal o preparación por pedido.",
+        "responsable": "Paula.",
+        "frecuencia": "Cada ocho días / según pedido."
+      },
+      {
+        "canal": "Redes sociales",
+        "activo": false,
+        "descripcion": "Pendiente de implementar.",
+        "responsable": "Paula / esposo.",
+        "frecuencia": "Pendiente."
+      },
+      {
+        "canal": "WhatsApp/llamadas",
+        "activo": true,
+        "descripcion": "Pedidos y domicilios.",
+        "responsable": "Paula.",
+        "frecuencia": "Según pedido."
+      },
+      {
+        "canal": "Tiendas/restaurantes/plazas",
+        "activo": false,
+        "descripcion": "No reportado.",
+        "responsable": "Pendiente.",
+        "frecuencia": "No aplica."
+      },
+      {
+        "canal": "Compras institucionales",
+        "activo": false,
+        "descripcion": "No reportadas.",
+        "responsable": "Pendiente.",
+        "frecuencia": "Por explorar."
+      },
+      {
+        "canal": "Comercialización asociativa",
+        "activo": false,
+        "descripcion": "Posible mediante ferias o juntas.",
+        "responsable": "Paula / aliados.",
+        "frecuencia": "Por gestionar."
+      },
+      {
+        "canal": "Otro",
+        "activo": true,
+        "descripcion": "Domicilios a Nueva Granada, La Concepción y San José.",
+        "responsable": "Paula / esposo / aliado.",
+        "frecuencia": "Ocasional."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Hamburguesa",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Pendiente.",
+        "logistica_plataforma": "Domicilio por costear.",
+        "precio_final": null,
+        "justificacion": "Se fija aproximadamente según facturas y compras."
+      },
+      {
+        "servicio": "Salchipapa / choripapa",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Pendiente.",
+        "logistica_plataforma": "Pendiente.",
+        "precio_final": null,
+        "justificacion": "Costeo por porción no informado."
+      },
+      {
+        "servicio": "Perro caliente / mazorca",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Pendiente.",
+        "logistica_plataforma": "Pendiente.",
+        "precio_final": null,
+        "justificacion": "Debe incluir queso, papa, salsas, energía y empaque."
+      },
+      {
+        "servicio": "Dorilocos",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Pendiente.",
+        "logistica_plataforma": "Pendiente.",
+        "precio_final": null,
+        "justificacion": "Debe definirse receta, gramaje y costo."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": "La productora fija los precios tomando como referencia las facturas y el costo aproximado de los productos, pero no lleva registros ni costeo por receta. Antes de ampliar la operación se deben calcular materia prima, empaque, transporte, energía, agua, mano de obra, merma y margen."
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Hamburguesas",
+        "cantidad_mensual": "No cuantificada.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "No informada.",
+        "canal": "Eventos y pedidos."
+      },
+      {
+        "concepto_servicio": "Salchipapas y choripapas",
+        "cantidad_mensual": "No cuantificada.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "No informada.",
+        "canal": "Venta directa."
+      },
+      {
+        "concepto_servicio": "Perros, mazorcas y Dorilocos",
+        "cantidad_mensual": "No cuantificada.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "No informada.",
+        "canal": "Eventos/pedidos."
+      },
+      {
+        "concepto_servicio": "Domicilios",
+        "cantidad_mensual": "No cuantificados.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "No informada.",
+        "canal": "Tres veredas."
+      },
+      {
+        "concepto_servicio": "Total",
+        "cantidad_mensual": "Pendiente de consolidar.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Eventos, pedidos y domicilios."
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": "No es posible calcular una proyección mensual con la información disponible. Se requiere registrar durante al menos ocho semanas las unidades vendidas por producto, eventos, pedidos, domicilios, precios, medios de pago, compras, desperdicios y días sin venta."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Cliente directo",
+        "estrategia": "Atención amable y sabor constante.",
+        "medio": "Presencial.",
+        "frecuencia": "Cada compra.",
+        "responsable": "Paula."
+      },
+      {
+        "cliente": "Cliente recurrente",
+        "estrategia": "Registrar preferencias y avisar fechas de venta..",
+        "medio": "WhatsApp/llamada.",
+        "frecuencia": "Semanal o antes de eventos.",
+        "responsable": "Paula."
+      },
+      {
+        "cliente": "Comprador local",
+        "estrategia": "Confirmar cantidades y horario.",
+        "medio": "Llamada/mensaje.",
+        "frecuencia": "Según pedido.",
+        "responsable": "Paula / esposo."
+      },
+      {
+        "cliente": "Cliente de domicilio",
+        "estrategia": "Confirmar ubicación, tarifa y tiempo.",
+        "medio": "WhatsApp/teléfono.",
+        "frecuencia": "Cada pedido.",
+        "responsable": "Responsable de entrega."
+      },
+      {
+        "cliente": "Organizador de evento",
+        "estrategia": "Cotización y menú anticipado.",
+        "medio": "Llamada/visita.",
+        "frecuencia": "Ocasional.",
+        "responsable": "Paula."
+      },
+      {
+        "cliente": "Nuevo cliente",
+        "estrategia": "Promoción por recomendación y catálogo.",
+        "medio": "WhatsApp/redes futuras.",
+        "frecuencia": "Mensual.",
+        "responsable": "Paula / esposo."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Comidas en evento",
+        "canal": "Puesto temporal/ carrito futuro.",
+        "tiempo": "Inmediato.",
+        "transporte_operacion": "Traslado de equipos por definir.",
+        "condicion_calidad": "Servir caliente y proteger ingredientes.",
+        "capacidad": "Pendiente.",
+        "costo": "Pendiente.",
+        "responsable": "Paula y esposo."
+      },
+      {
+        "servicio_insumo": "Pedido para recoger",
+        "canal": "Entrega directa.",
+        "tiempo": "Hora acordada.",
+        "transporte_operacion": "Cliente recoge.",
+        "condicion_calidad": "Empaque limpio y entrega caliente.",
+        "capacidad": "Pendiente.",
+        "costo": "Incluido / por definir.",
+        "responsable": "Paula."
+      },
+      {
+        "servicio_insumo": "Domicilio cercano",
+        "canal": "Entrega en vereda.",
+        "tiempo": "Según distancia.",
+        "transporte_operacion": "Medio de transporte disponible.",
+        "condicion_calidad": "Empaque cerrado y tiempo corto.",
+        "capacidad": "Pendiente.",
+        "costo": "Tarifa pendiente.",
+        "responsable": "Esposo / aliado."
+      },
+      {
+        "servicio_insumo": "Domicilio lejano",
+        "canal": "La Concepción o San José.",
+        "tiempo": "Según ruta.",
+        "transporte_operacion": "Transporte no garantizado.",
+        "condicion_calidad": "Contenedor térmico.",
+        "capacidad": "Limitada.",
+        "costo": "Pendiente.",
+        "responsable": "Aliado logístico."
+      },
+      {
+        "servicio_insumo": "Abastecimiento",
+        "canal": "Bogotá / localidad.",
+        "tiempo": "Semanal o quincenal.",
+        "transporte_operacion": "Transporte de terceros.",
+        "condicion_calidad": "Cadena de frío y facturas.",
+        "capacidad": "Pendiente.",
+        "costo": "Flete pendiente.",
+        "responsable": "Paula / proveedor."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Origen de insumos",
+        "informacion": "Proveedor, ciudad, fecha y factura.",
+        "responsable": "Paula.",
+        "medio": "Cuaderno o archivo.",
+        "frecuencia": "Cada compra.",
+        "evidencia": "Facturas."
+      },
+      {
+        "elemento": "Ficha técnica",
+        "informacion": "Ingredientes, gramaje, proceso, alérgenos y precio.",
+        "responsable": "Paula / apoyo técnico.",
+        "medio": "Ficha física o digital.",
+        "frecuencia": "Cada producto.",
+        "evidencia": "Fichas."
+      },
+      {
+        "elemento": "Cadena de frío",
+        "informacion": "Temperatura de recepción y almacenamiento.",
+        "responsable": "Paula.",
+        "medio": "Planilla.",
+        "frecuencia": "Cada jornada.",
+        "evidencia": "Registros."
+      },
+      {
+        "elemento": "Lote/fecha",
+        "informacion": "Fecha de preparación y responsables.",
+        "responsable": "Paula.",
+        "medio": "Etiqueta o planilla.",
+        "frecuencia": "Cada evento.",
+        "evidencia": "Registro."
+      },
+      {
+        "elemento": "Prácticas sostenibles",
+        "informacion": "Uso de insumos locales y manejo de residuos.",
+        "responsable": "Paula / esposo.",
+        "medio": "Fotos y bitácora.",
+        "frecuencia": "Mensual.",
+        "evidencia": "Evidencias."
+      },
+      {
+        "elemento": "Contacto comercial",
+        "informacion": "Nombre, WhatsApp, menú y zona de entrega.",
+        "responsable": "Paula.",
+        "medio": "Tarjeta o QR futuro.",
+        "frecuencia": "Cuando cambie.",
+        "evidencia": "Material comercial."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Maquinaria y equipo",
+        "descripcion": "Carrito de comidas rápidas.",
+        "valor_unitario": null,
+        "cantidad": "1.",
+        "total": null,
+        "requisito": "Material lavable, cubierta, distribución segura y movilidad.",
+        "fuente": "Apoyo/ahorro/financiación"
+      },
+      {
+        "tipo": "Maquinaria y equipo",
+        "descripcion": "Picadora de alimentos.",
+        "valor_unitario": null,
+        "cantidad": "1.",
+        "total": null,
+        "requisito": "Protecciones, fácil limpieza y capacidad adecuada.",
+        "fuente": "Por definir."
+      },
+      {
+        "tipo": "Maquinaria y equipo",
+        "descripcion": "Microondas.",
+        "valor_unitario": null,
+        "cantidad": "1.",
+        "total": null,
+        "requisito": "Instalación eléctrica segura y uso para alimentos.",
+        "fuente": "Por definir."
+      },
+      {
+        "tipo": "Muebles y enseres",
+        "descripcion": "Mesas de trabajo o atención.",
+        "valor_unitario": null,
+        "cantidad": "Cantidad pendiente.",
+        "total": null,
+        "requisito": "Superficies lavables y circulación.",
+        "fuente": "Por definir."
+      },
+      {
+        "tipo": "Capital de trabajo",
+        "descripcion": "Materia prima e inventario inicial.",
+        "valor_unitario": null,
+        "cantidad": "Según rotación.",
+        "total": null,
+        "requisito": "No sobrecomprar perecederos; aplicar PEPS.",
+        "fuente": "Apoyo/recursos propios."
+      },
+      {
+        "tipo": "Seguridad e inocuidad",
+        "descripcion": "Termómetro, extintor, botiquin, EPP y recipientes.",
+        "valor_unitario": null,
+        "cantidad": "Kit.",
+        "total": null,
+        "requisito": "Cumplimiento sanitario y mantenimiento.",
+        "fuente": "Por definir."
+      },
+      {
+        "tipo": "Transporte",
+        "descripcion": "Alianza o solución para abastecimiento y domicilios.",
+        "valor_unitario": null,
+        "cantidad": "1 servicio.",
+        "total": null,
+        "requisito": "Costos, seguridad vial y conservación.",
+        "fuente": "Fase complementaria."
+      },
+      {
+        "tipo": "Comercial y marca",
+        "descripcion": "Nombre, menú, WhatsApp, registro de ventas y material.",
+        "valor_unitario": null,
+        "cantidad": "Paquete.",
+        "total": null,
+        "requisito": "Datos actualizados y protección de información.",
+        "fuente": "Por definir."
+      },
+      {
+        "tipo": "Adecuación",
+        "descripcion": "Punto fijo o local futuro.",
+        "valor_unitario": null,
+        "cantidad": "1.",
+        "total": null,
+        "requisito": "Agua segura, energía, ventilación y permisos.",
+        "fuente": "Fase futura."
+      }
+    ],
+    "observaciones_o_comentarios": "Prioridades expresadas por la productora: 1) carrito de comidas rápidas para montar un puesto y movilizarse a actividades; 2) equipos y mobiliario, especialmente picadora, microondas y mesas; 3) materia prima o capital de trabajo para contar con inventario. El local propio y la solución de transporte deben evaluarse como fases posteriores."
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Variable",
+        "descripcion": "Proteínas, embutidos, pan y Doritos.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Compras principalmente en Bogotá."
+      },
+      {
+        "tipo": "Variable",
+        "descripcion": "Papa, queso, mazorca, vegetales y salsas.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Parte se adquiere en la localidad."
+      },
+      {
+        "tipo": "Variable",
+        "descripcion": "Aceite y productos de limpieza.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Calcular por jornada."
+      },
+      {
+        "tipo": "Variable",
+        "descripcion": "Empaques y desechables.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Registrar por pedido."
+      },
+      {
+        "tipo": "Fijo/ variable",
+        "descripcion": "Agua de quebrada y tratamiento.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Debe incluir análisis o tratamiento."
+      },
+      {
+        "tipo": "Fijo/variable",
+        "descripcion": "Energía del caserío.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Verificar acuerdo y consumo."
+      },
+      {
+        "tipo": "Logístico",
+        "descripcion": "Transporte desde Bogotá y domicilios.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Dificultad principal."
+      },
+      {
+        "tipo": "Mano de obra / equipo",
+        "descripcion": "Trabajo de Paula y esposo, mantenimiento y depreciación.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Debe valorarse."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "Agosto 2026",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Separar eventos, pedidos y domicilios."
+      },
+      {
+        "mes": "Septiembre 2026",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Separar eventos, pedidos y domicilios."
+      },
+      {
+        "mes": "Octubre 2026",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Separar eventos, pedidos y domicilios."
+      },
+      {
+        "mes": "Noviembre 2026",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Separar eventos, pedidos y domicilios."
+      },
+      {
+        "mes": "Diciembre 2026",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Separar eventos, pedidos y domicilios."
+      },
+      {
+        "mes": "Enero 2027",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Separar eventos, pedidos y domicilios."
+      },
+      {
+        "mes": "Febrero 2027",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Separar eventos, pedidos y domicilios."
+      },
+      {
+        "mes": "Marzo 2027",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Separar eventos, pedidos y domicilios."
+      },
+      {
+        "mes": "Abril 2027",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Separar eventos, pedidos y domicilios."
+      },
+      {
+        "mes": "Mayo 2027",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Separar eventos, pedidos y domicilios."
+      },
+      {
+        "mes": "Junio 2027",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Separar eventos, pedidos y domicilios."
+      },
+      {
+        "mes": "Julio 2027",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Separar eventos, pedidos y domicilios."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "No se informó el valor de los costos mensuales, las ventas, el margen ni la utilidad. Se requiere registro de compras por proveedor, costeo por receta, transporte, empaques, energía, agua, mano de obra, mantenimiento, pérdidas y retiros familiares.\nEl flujo de caja debe registrar por separado cada evento, jornada regular y domicilio; incluir compras en Bogotá, insumos locales, transporte, empaques, energía, agua, equipos, pérdidas y retiros familiares. Sin estos datos no se puede confirmar rentabilidad ni capacidad de inversión."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Agua",
+        "estado": "Quebrada y limpieza.",
+        "cantidad": "No medido.",
+        "impacto_1_a_5": 5,
+        "accion": "Analizar, tratar y medir."
+      },
+      {
+        "variable": "Energía",
+        "estado": "Punto del caserío.",
+        "cantidad": "No medido.",
+        "impacto_1_a_5": 5,
+        "accion": "Revisar instalación y registrar."
+      },
+      {
+        "variable": "Transporte Bogotá",
+        "estado": "Compra de insumos.",
+        "cantidad": "Cada una o dos semanas.",
+        "impacto_1_a_5": 4,
+        "accion": "Consolidar pedidos."
+      },
+      {
+        "variable": "Transporte local",
+        "estado": "Domicilios y eventos.",
+        "cantidad": "Variable.",
+        "impacto_1_a_5": 4,
+        "accion": "Aliado y rutas."
+      },
+      {
+        "variable": "Aceite usado",
+        "estado": "Fritura.",
+        "cantidad": "No medido.",
+        "impacto_1_a_5": 5,
+        "accion": "Acopiar y entregar a gestor."
+      },
+      {
+        "variable": "Orgánicos",
+        "estado": "Preparación y sobrantes.",
+        "cantidad": "No medidos.",
+        "impacto_1_a_5": 3,
+        "accion": "Separar y validar entrega a animales."
+      },
+      {
+        "variable": "Desechables",
+        "estado": "Empaque y servicio.",
+        "cantidad": "No medidos.",
+        "impacto_1_a_5": 4,
+        "accion": "Reducir y separar."
+      },
+      {
+        "variable": "Insumos locales",
+        "estado": "Queso y papa.",
+        "cantidad": "Cantidad pendiente.",
+        "impacto_1_a_5": 3,
+        "accion": "Fortalecer compras cercanas."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "onsumo de agua",
+        "que_se_mide": "Litros por jornada o pedido.",
+        "dato_inicial": "Pendiente.",
+        "meta": "Establecer línea base y evitar desperdicio.",
+        "frecuencia": "Cada jornada / mensual.",
+        "responsable": "Paula.",
+        "evidencia": "Registro."
+      },
+      {
+        "indicador": "alidad de agua",
+        "que_se_mide": "Resultado de análisis o tratamiento.",
+        "dato_inicial": "No verificada.",
+        "meta": "Agua segura para alimentos.",
+        "frecuencia": "Semestral / según criterio.",
+        "responsable": "Paula / apoyo técnico.",
+        "evidencia": "Resultado."
+      },
+      {
+        "indicador": "Consumo eléctrico",
+        "que_se_mide": "kWh o gasto por jornada.",
+        "dato_inicial": "Pendiente.",
+        "meta": "Medir y controlar.",
+        "frecuencia": "Mensual.",
+        "responsable": "Paula / esposo.",
+        "evidencia": "Recibo/registro."
+      },
+      {
+        "indicador": "ajes de abastecimiento",
+        "que_se_mide": "Número y valor comprado por viaje.",
+        "dato_inicial": "Cada 1-2 semanas.",
+        "meta": "Reducir viajes urgentes.",
+        "frecuencia": "Mensual.",
+        "responsable": "Paula.",
+        "evidencia": "Facturas."
+      },
+      {
+        "indicador": "ceite recuperado",
+        "que_se_mide": "Litros gestionados.",
+        "dato_inicial": "Pendiente.",
+        "meta": "100% gestionado.",
+        "frecuencia": "Mensual.",
+        "responsable": "Paula.",
+        "evidencia": "Acta."
+      },
+      {
+        "indicador": "esiduos orgánicos",
+        "que_se_mide": "kg separados.",
+        "dato_inicial": "Pendiente.",
+        "meta": "Reducir y gestionar de forma segura.",
+        "frecuencia": "Cada jornada.",
+        "responsable": "Ambos.",
+        "evidencia": "Registro."
+      },
+      {
+        "indicador": "esechables",
+        "que_se_mide": "Unidades o kg.",
+        "dato_inicial": "Pendiente.",
+        "meta": "Reducir desde línea base.",
+        "frecuencia": "Mensual.",
+        "responsable": "Paula.",
+        "evidencia": "Compras/pesaje."
+      },
+      {
+        "indicador": "erma de alimentos",
+        "que_se_mide": "Valor o peso descartado.",
+        "dato_inicial": "Pendiente.",
+        "meta": "Reducir con inventario.",
+        "frecuencia": "Cada jornada.",
+        "responsable": "Paula.",
+        "evidencia": "Formato."
+      },
+      {
+        "indicador": "ompra local",
+        "que_se_mide": "Porcentaje de insumos locales.",
+        "dato_inicial": "Queso y papa.",
+        "meta": "Aumentar cuando sea viable.",
+        "frecuencia": "Trimestral.",
+        "responsable": "Paula.",
+        "evidencia": "Facturas."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Residuos orgánicos",
+        "cantidad": "No medida.",
+        "manejo_actual": "Se destinan a animales.",
+        "accion_circular": "Separar, conservar y validar ruta.",
+        "destino": "Animales.",
+        "responsable": "Paula."
+      },
+      {
+        "residuo_recurso": "Desechables",
+        "cantidad": "No medida.",
+        "manejo_actual": "Se sacan a la volqueta cada ocho días.",
+        "accion_circular": "Separar reciclables y reducir.",
+        "destino": "Volqueta.",
+        "responsable": "Paula."
+      },
+      {
+        "residuo_recurso": "Aceite usado",
+        "cantidad": "No medida.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Recipiente rotulado y gestor.",
+        "destino": "Gestor.",
+        "responsable": "Paula."
+      },
+      {
+        "residuo_recurso": "Cartón y plástico",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Separar y entregar a reciclaje.",
+        "destino": "Reciclaje.",
+        "responsable": "Paula."
+      },
+      {
+        "residuo_recurso": "Aguas de lavado",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Retirar sólidos y usar drenaje adecuado.",
+        "destino": "Drenaje adecuado.",
+        "responsable": "Paula."
+      },
+      {
+        "residuo_recurso": "Emisiones de transporte",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No medido.",
+        "accion_circular": "Rutas consolidadas.",
+        "destino": "N/A",
+        "responsable": "Paula."
+      },
+      {
+        "residuo_recurso": "Equipos dañados",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No aplica actualmente.",
+        "accion_circular": "Mantenimiento y gestor autorizado.",
+        "destino": "Gestor autorizado.",
+        "responsable": "Paula."
+      }
+    ],
+    "conclusion_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "gua segura",
+        "indicador": "Análisis y tratamiento.",
+        "descripcion": null,
+        "estado": "No verificada.",
+        "calificacion_1_a_5": 1,
+        "accion": "Analizar y documentar.",
+        "evidencia": "Resultado."
+      },
+      {
+        "factor": "Higiene",
+        "indicador": "Certificado y prácticas.",
+        "descripcion": null,
+        "estado": "Certificado reportado; registros no informados.",
+        "calificacion_1_a_5": 3,
+        "accion": "Checklist y BPM.",
+        "evidencia": "Planillas."
+      },
+      {
+        "factor": "Residuos orgánicos",
+        "indicador": "Separación y destino.",
+        "descripcion": null,
+        "estado": "Se entregan a animales.",
+        "calificacion_1_a_5": 3,
+        "accion": "Validar ruta y medir.",
+        "evidencia": "Registro."
+      },
+      {
+        "factor": "Desechables",
+        "indicador": "Cantidad y separación.",
+        "descripcion": null,
+        "estado": "Volqueta cada 8 días.",
+        "calificacion_1_a_5": 2,
+        "accion": "Reducir y reciclar.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "factor": "Compra local",
+        "indicador": "Proporción de insumos locales.",
+        "descripcion": null,
+        "estado": "Queso y papa.",
+        "calificacion_1_a_5": 3,
+        "accion": "Fortalecer proveedores.",
+        "evidencia": "Facturas."
+      },
+      {
+        "factor": "Energía",
+        "indicador": "Consumo y seguridad.",
+        "descripcion": null,
+        "estado": "No medido.",
+        "calificacion_1_a_5": 2,
+        "accion": "Revisar conexión.",
+        "evidencia": "Soporte técnico."
+      },
+      {
+        "factor": "ransporte",
+        "indicador": "Viajes y domicilios atendidos.",
+        "descripcion": null,
+        "estado": "Limitado.",
+        "calificacion_1_a_5": 2,
+        "accion": "Aliado logístico.",
+        "evidencia": "Registro."
+      },
+      {
+        "factor": "Comercialización",
+        "indicador": "Canales y frecuencia.",
+        "descripcion": null,
+        "estado": "Eventos y pedidos.",
+        "calificacion_1_a_5": 3,
+        "accion": "Carrito, marca y WhatsApp.",
+        "evidencia": "Ventas."
+      },
+      {
+        "factor": "inanzas",
+        "indicador": "Costos y margen.",
+        "descripcion": null,
+        "estado": "No registrados.",
+        "calificacion_1_a_5": 1,
+        "accion": "Costeo y caja.",
+        "evidencia": "Hoja."
+      }
+    ],
+    "resultado_preliminar_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "a",
+        "accion": "Análisis, tratamiento y ahorro.",
+        "prioridad": null,
+        "plazo": "0-3 meses.",
+        "responsable": "Paula / apoyo.",
+        "recursos": null,
+        "indicador": "Resultado conforme.",
+        "evidencia": "Informe."
+      },
+      {
+        "impacto": "rito",
+        "accion": "Cotizar y adquirir equipo adecuado.",
+        "prioridad": null,
+        "plazo": "1-6 meses.",
+        "responsable": "Paula.",
+        "recursos": null,
+        "indicador": "Carrito instalado.",
+        "evidencia": "Factura/fotos."
+      },
+      {
+        "impacto": "ipos",
+        "accion": "Cotizar según demanda.",
+        "prioridad": null,
+        "plazo": "1-6 meses.",
+        "responsable": "Paula / esposo.",
+        "recursos": null,
+        "indicador": "Equipos usados.",
+        "evidencia": "Facturas."
+      },
+      {
+        "impacto": "entario",
+        "accion": "Kárdex y stock mínimo.",
+        "prioridad": null,
+        "plazo": "0-2 meses.",
+        "responsable": "Paula.",
+        "recursos": null,
+        "indicador": "Faltantes por mes.",
+        "evidencia": "Registro."
+      },
+      {
+        "impacto": "cuidad",
+        "accion": "BPM, temperaturas y limpieza.",
+        "prioridad": null,
+        "plazo": "Inmediato.",
+        "responsable": "Paula.",
+        "recursos": null,
+        "indicador": "100% jornadas registradas.",
+        "evidencia": "Planillas."
+      },
+      {
+        "impacto": "sporte",
+        "accion": "Definir aliado y tarifa.",
+        "prioridad": null,
+        "plazo": "0-3 meses.",
+        "responsable": "Paula / esposo.",
+        "recursos": null,
+        "indicador": "Pedidos atendidos.",
+        "evidencia": "Registro."
+      },
+      {
+        "impacto": "siduos",
+        "accion": "Separar, medir y gestionar aceite.",
+        "prioridad": null,
+        "plazo": "0-3 meses.",
+        "responsable": "Ambos.",
+        "recursos": null,
+        "indicador": "100% con destino.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "impacto": "anzas",
+        "accion": "Caja diaria y costeo.",
+        "prioridad": null,
+        "plazo": "Inmediato.",
+        "responsable": "Paula.",
+        "recursos": null,
+        "indicador": "Margen calculado.",
+        "evidencia": "Hoja."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": "Lluvias y vías",
+        "situacion": "El abastecimiento depende de Bogotá.",
+        "riesgo": "Retrasos y faltantes.",
+        "accion_propuesta": "Stock mínimo y proveedor alterno."
+      },
+      {
+        "aspecto": "Eventos al aire libre",
+        "situacion": "La venta aumenta en actividades.",
+        "riesgo": "Cancelación por clima.",
+        "accion_propuesta": "Carrito cubierto y pedidos previos."
+      },
+      {
+        "aspecto": "Cortes de energía",
+        "situacion": "Conexión desde caserío.",
+        "riesgo": "Pérdida de frío o equipos.",
+        "accion_propuesta": "Plan de contingencia y revisión."
+      },
+      {
+        "aspecto": "Agua de quebrada",
+        "situacion": "Fuente principal.",
+        "riesgo": "Contaminación o disminución.",
+        "accion_propuesta": "Análisis, almacenamiento y ahorro."
+      },
+      {
+        "aspecto": "Variación de demanda",
+        "situacion": "Depende de eventos.",
+        "riesgo": "Sobrecompra o baja venta.",
+        "accion_propuesta": "Preventa y compras ajustadas."
+      },
+      {
+        "aspecto": "Aumento de insumos",
+        "situacion": "Compras externas.",
+        "riesgo": "Menor margen.",
+        "accion_propuesta": "Costeo y menú adaptable."
+      },
+      {
+        "aspecto": "Respuesta general",
+        "situacion": "No existe plan documentado.",
+        "riesgo": "Reacción improvisada.",
+        "accion_propuesta": "Plan básico de continuidad."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Productivo",
+        "riesgo": "Falta de insumos.",
+        "causa": "Transporte y compras no planificadas.",
+        "consecuencia": "No atender pedidos.",
+        "nivel": "Alto",
+        "prevencion": "Inventario y proveedores.",
+        "respuesta": "Ajustar menú."
+      },
+      {
+        "tipo": "Comercial",
+        "riesgo": "Baja demanda.",
+        "causa": "Pocos eventos.",
+        "consecuencia": "Menores ingresos.",
+        "nivel": "Alto",
+        "prevencion": "Pedidos regulares y promoción.",
+        "respuesta": "Reducir compra."
+      },
+      {
+        "tipo": "Sanitario",
+        "riesgo": "Contaminación de alimentos.",
+        "causa": "Agua o cadena de frío.",
+        "consecuencia": "Enfermedad y pérdida de confianza.",
+        "nivel": "Muy alto",
+        "prevencion": "BPM, análisis y temperaturas.",
+        "respuesta": "Retirar producto."
+      },
+      {
+        "tipo": "Seguridad",
+        "riesgo": "Quemadura o incendio.",
+        "causa": "Aceite, gas o equipos.",
+        "consecuencia": "Lesión y daño.",
+        "nivel": "Alto",
+        "prevencion": "EPP, extintor y mantenimiento.",
+        "respuesta": "Primeros auxilios / emergencia."
+      },
+      {
+        "tipo": "inanciero",
+        "riesgo": "Vender sin ganancia.",
+        "causa": "Costos no registrados.",
+        "consecuencia": "Descapitalización.",
+        "nivel": "Alto",
+        "prevencion": "Costeo por receta.",
+        "respuesta": "Ajustar precios."
+      },
+      {
+        "tipo": "Logístico",
+        "riesgo": "No realizar domicilio.",
+        "causa": "Falta de transporte.",
+        "consecuencia": "Pérdida de cliente.",
+        "nivel": "Alto",
+        "prevencion": "Aliado y tarifa.",
+        "respuesta": "Reprogramar o punto de recogida."
+      },
+      {
+        "tipo": "mbiental",
+        "riesgo": "Manejo inadecuado de aceite o aguas.",
+        "causa": "Falta de ruta.",
+        "consecuencia": "Contaminación.",
+        "nivel": "Alto",
+        "prevencion": "Gestor y drenaje.",
+        "respuesta": "Contener y reportar."
+      },
+      {
+        "tipo": "Cléctrico",
+        "riesgo": "Falla de conexión.",
+        "causa": "Instalación no verificada.",
+        "consecuencia": "Daño de equipos o incendio.",
+        "nivel": "Alto",
+        "prevencion": "Revisión técnica.",
+        "respuesta": "Desconectar."
+      },
+      {
+        "tipo": "Estratégico",
+        "riesgo": "Invertir sin demanda.",
+        "causa": "Sin registros de ventas.",
+        "consecuencia": "Equipo subutilizado.",
+        "nivel": "Medio-alto",
+        "prevencion": "Piloto y análisis.",
+        "respuesta": "Aplazar expansión."
+      },
+      {
+        "tipo": "Digital/ razabilidad",
+        "riesgo": "No demostrar ventas o calidad.",
+        "causa": "Falta de registros.",
+        "consecuencia": "Menor acceso a apoyos.",
+        "nivel": "Medio",
+        "prevencion": "Formatos sencillos.",
+        "respuesta": "Reconstruir con facturas."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "datos, ubicación y condiciones del",
+        "componente": "Organizativa / legal",
+        "responsable": "Paula / apoyo.",
+        "tiempo": "0-2 meses.",
+        "recursos": "Documentos y visita.",
+        "resultado": "Ficha completa.",
+        "evidencia": "Carpeta."
+      },
+      {
+        "actividad": "tar ventas, compras e inventario.",
+        "componente": "Financiera",
+        "responsable": "Paula.",
+        "tiempo": "Inmediato.",
+        "recursos": "Cuaderno o archivo.",
+        "resultado": "Datos confiables.",
+        "evidencia": "Registros."
+      },
+      {
+        "actividad": "car recetas y precios.",
+        "componente": "Productiva/ comercial",
+        "responsable": "Paula / apoyo.",
+        "tiempo": "0-3 meses.",
+        "recursos": "Báscula y fichas.",
+        "resultado": "Costos por producto.",
+        "evidencia": "Fichas."
+      },
+      {
+        "actividad": "asegurar el agua.",
+        "componente": "Sanitaria/ambiental",
+        "responsable": "Paula/técnico.",
+        "tiempo": "0-3 meses.",
+        "recursos": "Muestra y tratamiento.",
+        "resultado": "Agua segura.",
+        "evidencia": "Resultado."
+      },
+      {
+        "actividad": "rito de comidas rápidas.",
+        "componente": "Inversión",
+        "responsable": "Paula.",
+        "tiempo": "0-2 meses.",
+        "recursos": "Cotizaciones.",
+        "resultado": "Opción viable.",
+        "evidencia": "Comparativo."
+      },
+      {
+        "actividad": "cadora, microondas y mesas.",
+        "componente": "Inversión / SST",
+        "responsable": "Paula / esposo.",
+        "tiempo": "1-3 meses.",
+        "recursos": "Cotizaciones.",
+        "resultado": "Plan de compra.",
+        "evidencia": "Cotizaciones."
+      },
+      {
+        "actividad": "k mínimo de materia prima.",
+        "componente": "Productiva/logística",
+        "responsable": "Paula.",
+        "tiempo": "0-1 mes.",
+        "recursos": "Kárdex.",
+        "resultado": "Menos faltantes.",
+        "evidencia": "Inventario."
+      },
+      {
+        "actividad": "ado de transporte.",
+        "componente": "Logística",
+        "responsable": "Paula/esposo.",
+        "tiempo": "0-3 meses.",
+        "recursos": "Contactos y tarifas.",
+        "resultado": "Más domicilios.",
+        "evidencia": "Acuerdo."
+      },
+      {
+        "actividad": "manejo de residuos y aceite.",
+        "componente": "Ambiental",
+        "responsable": "Ambos.",
+        "tiempo": "0-3 meses.",
+        "recursos": "Recipientes y gestor.",
+        "resultado": "Rutas verificadas.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "actividad": "bre, menú y WhatsApp comercial.",
+        "componente": "Comercialdigital/",
+        "responsable": "Paula.",
+        "tiempo": "3-6 meses.",
+        "recursos": "Diseño y teléfono.",
+        "resultado": "Mayor visibilidad.",
+        "evidencia": "Material."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "Juctiva",
+        "indicador": "Pedidos atendidos / recibidos.",
+        "meta": "Establecer línea base y aumentar cumplimiento.",
+        "frecuencia": "Semanal.",
+        "responsable": "Paula.",
+        "evidencia": "Registro."
+      },
+      {
+        "dimension": "Juctiva",
+        "indicador": "Faltantes de materia prima.",
+        "meta": "Reducir desde línea base.",
+        "frecuencia": "Mensual.",
+        "responsable": "Paula.",
+        "evidencia": "Kardex."
+      },
+      {
+        "dimension": "mercial",
+        "indicador": "Ventas por producto y evento.",
+        "meta": "Registrar 100%.",
+        "frecuencia": "Cada jornada.",
+        "responsable": "Paula.",
+        "evidencia": "Caja."
+      },
+      {
+        "dimension": "mercial",
+        "indicador": "Clientes recurrentes.",
+        "meta": "Crear base de clientes.",
+        "frecuencia": "Mensual.",
+        "responsable": "Paula.",
+        "evidencia": "Listado."
+      },
+      {
+        "dimension": "nciera",
+        "indicador": "Margen por receta.",
+        "meta": "Calcular todo el menú.",
+        "frecuencia": "Trimestral.",
+        "responsable": "Paula / apoyo.",
+        "evidencia": "Costeo."
+      },
+      {
+        "dimension": "taria",
+        "indicador": "Registros de temperatura y limpieza.",
+        "meta": "100% de jornadas.",
+        "frecuencia": "Cada jornada.",
+        "responsable": "Paula.",
+        "evidencia": "Planillas."
+      },
+      {
+        "dimension": "SST",
+        "indicador": "Incidentes por cortes, quemaduras o electricidad.",
+        "meta": "Cero graves.",
+        "frecuencia": "Mensual.",
+        "responsable": "Ambos.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "dimension": "iental",
+        "indicador": "Aceite usado gestionado.",
+        "meta": "100%.",
+        "frecuencia": "Mensual.",
+        "responsable": "Paula.",
+        "evidencia": "Acta."
+      },
+      {
+        "dimension": "iental",
+        "indicador": "Residuos separados.",
+        "meta": "100% con destino definido.",
+        "frecuencia": "Cada jornada.",
+        "responsable": "Ambos.",
+        "evidencia": "Registro."
+      },
+      {
+        "dimension": "stica",
+        "indicador": "Domicilios atendidos.",
+        "meta": "Aumentar según capacidad.",
+        "frecuencia": "Mensual.",
+        "responsable": "Esposo / aliado.",
+        "evidencia": "Registro."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Comprar carrito",
+        "efecto_productivo": "Mejora montaje y movilidad.",
+        "efecto_comercial": "Permite más eventos.",
+        "efecto_financiero": "Inversión inicial.",
+        "efecto_ambiental": "Puede reducir montajes improvisados.",
+        "ajuste_necesario": "Definir tamaño, agua, energía y seguridad."
+      },
+      {
+        "decision": "Comprar picadora",
+        "efecto_productivo": "Aumenta velocidad.",
+        "efecto_comercial": "Reduce tiempos.",
+        "efecto_financiero": "Costo y mantenimiento.",
+        "efecto_ambiental": "Puede reducir merma si se usa bien.",
+        "ajuste_necesario": "Capacitación y protección."
+      },
+      {
+        "decision": "Comprar microondas",
+        "efecto_productivo": "Facilita calentamiento.",
+        "efecto_comercial": "Mejora rapidez.",
+        "efecto_financiero": "Consumo eléctrico.",
+        "efecto_ambiental": "Mayor energía.",
+        "ajuste_necesario": "Instalación segura."
+      },
+      {
+        "decision": "Comprar mesas",
+        "efecto_productivo": "Mejora organización.",
+        "efecto_comercial": "Mejor atención.",
+        "efecto_financiero": "Inversión y transporte.",
+        "efecto_ambiental": "Más superficie de limpieza.",
+        "ajuste_necesario": "Material lavable."
+      },
+      {
+        "decision": "Aumentar inventario",
+        "efecto_productivo": "Evita faltantes.",
+        "efecto_comercial": "Permite pedidos mayores.",
+        "efecto_financiero": "Inmoviliza capital.",
+        "efecto_ambiental": "Puede aumentar desperdicio.",
+        "ajuste_necesario": "PEPS y stock calculado."
+      },
+      {
+        "decision": "Crear local propio",
+        "efecto_productivo": "Aumenta continuidad.",
+        "efecto_comercial": "Punto fijo.",
+        "efecto_financiero": "Alta inversión.",
+        "efecto_ambiental": "Más consumo y residuos.",
+        "ajuste_necesario": "Estudio de viabilidad."
+      },
+      {
+        "decision": "Definir transporte",
+        "efecto_productivo": "Mejora compras y domicilios.",
+        "efecto_comercial": "Amplía cobertura.",
+        "efecto_financiero": "Costo logístico.",
+        "efecto_ambiental": "Emisiones.",
+        "ajuste_necesario": "Rutas agrupadas."
+      },
+      {
+        "decision": "Usar WhatsApp",
+        "efecto_productivo": "Ordena pedidos.",
+        "efecto_comercial": "Fideliza.",
+        "efecto_financiero": "Costo bajo.",
+        "efecto_ambiental": "Reduce viajes fallidos.",
+        "ajuste_necesario": "Actualizar disponibilidad."
+      },
+      {
+        "decision": "Formalizar residuos",
+        "efecto_productivo": "Mejora higiene.",
+        "efecto_comercial": "Fortalece confianza.",
+        "efecto_financiero": "Costo bajo o gestor.",
+        "efecto_ambiental": "Reduce contaminación.",
+        "ajuste_necesario": "Rutas y soportes."
+      },
+      {
+        "decision": "Participar en más eventos",
+        "efecto_productivo": "Exige capacidad.",
+        "efecto_comercial": "Aumenta ventas.",
+        "efecto_financiero": "Requiere capital de trabajo.",
+        "efecto_ambiental": "Más empaques y transporte.",
+        "ajuste_necesario": "Preventa y límites de producción."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}

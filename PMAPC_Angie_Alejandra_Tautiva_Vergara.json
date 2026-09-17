@@ -1,0 +1,1909 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "No se reportó un nombre comercial. Se identifica provisionalmente como unidad porcícola familiar de Angie Alejandra Tautiva Vergara.",
+    "persona_entrevistada": "Angie Alejandra Tautiva Vergara.",
+    "tipo_actividad": "Pecuaria: cría de cerdos criollos o \"laceros\" y venta de lechones vivos para levante.",
+    "ubicacion_especifica": "Localidad de Sumapaz, vereda Lagunitas. Nombre del predio, sector y coordenadas: pendientes de verificar.",
+    "producto_servicio_principal": "Lechones vivos para levante, entregados aproximadamente a los 40 días de nacidos. No se realiza sacrificio ni venta de carne por libras.",
+    "estado_actual": "Negocio en marcha, con ventas previas y producción familiar, pero con infraestructura insuficiente y sin tecnificación completa.",
+    "personas_vinculadas": "La productora, su mamá y su hermano.",
+    "coordenadas": "Pendientes de verificar.",
+    "descripcion_general": "Unidad productiva familiar en funcionamiento y proceso de tecnificación centrada en la producción y venta de lechones criollos para levante.",
+    "observaciones_o_comentarios": "Motivación: Búsqueda de autonomía económica mediante la crianza y comercialización de cerdos. Inventario actual: Cinco cerdos: tres cerdas de cría criollas, llamadas Chata, Fela y Mona, y dos cerdos de levante. Recursos aprovechados: Suero de leche, sobrantes de cocina y cosechas o residuos de papa, como cachirre y riche, utilizados para complementar la alimentación. Mercado: Vecinos y campesinos de Lagunitas, además de compradores de Cabrera, Pasca, Usme y Nazaret. Proyección: Unidad tecnificada, con cocheras divididas, parideras, camas térmicas, agua permanente, iluminación solar, reproductor propio y mayor estabilidad económica."
+  },
+  "PMAPC_F02": {
+    "mision": "Criar y comercializar lechones criollos sanos y adaptados a las condiciones de Sumapaz, aprovechando responsablemente recursos de la finca y generando autonomía económica para la familia.",
+    "vision": "Consolidar una unidad porcícola tecnificada, con parideras individuales, suministro estable de agua, iluminación para la atención de partos, pie de cría fortalecido, registros productivos y comerciales y una producción anual sostenible.",
+    "valores": [
+      "Responsabilidad",
+      "cuidado de los animales",
+      "trabajo familiar",
+      "aprovechamiento de recursos",
+      "honestidad comercial",
+      "compromiso",
+      "prevención",
+      "respeto por el territorio"
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Porque buscan lechones criollos adaptados a la zona para criarlos, engordarlos y, en algunos casos, destinarlos al consumo de fin de año.",
+    "beneficio_cliente": "Recibe un lechón vivo a los 40 días, desparasitado, con aplicación de hierro, ombligo curado con yodo y acostumbrado a consumir alimento sólido, caldo con papa y suero.",
+    "diferencial": "Animales criollos o laceros, experiencia familiar, aprovechamiento de recursos de la finca y entrega en una etapa en la que el lechón ya consume alimento sólido.",
+    "valor_ambiental": "Aprovechamiento del suero, sobrantes de comida y residuos de papa; uso de la porcinaza como abono en potreros.",
+    "valor_social_comunitario": "Genera una alternativa de autonomía económica familiar y ofrece pie de levante a campesinos de varias zonas rurales.",
+    "evidencia": "Registros por camada, fotografías, control sanitario, evidencia de vacunación y desparasitación, trazabilidad de ventas y recomendaciones de compradores. Actualmente estos soportes deben organizarse.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Trabajo familiar con participación de la madre y el hermano.",
+      "Tres cerdas criollas de cría y experiencia práctica.",
+      "Mercado en Lagunitas y compradores externos.",
+      "Uso de WhatsApp, Facebook y voz a voz.",
+      "Aprovechamiento de suero, papa y residuos de cocina.",
+      "Lechones entregados con manejo sanitario básico.",
+      "Precio ajustado al mercado local.",
+      "Porcinaza utilizada en potreros."
+    ],
+    "oportunidades": [
+      "Construir parideras individuales y cocheras tecnificadas.",
+      "Instalar panel solar e iluminación.",
+      "Adquirir reproductor propio y fortalecer pie de cría.",
+      "Instalar tanque y tubería de reserva.",
+      "Reducir mortalidad por aplastamiento, frío y humedad.",
+      "Ampliar ventas hacia Cabrera, Pasca, Usme y Nazaret.",
+      "Mejorar registros y contenido digital.",
+      "Crear acuerdos con transportadores y compradores."
+    ],
+    "debilidades": [
+      "No existen parideras ni divisiones adecuadas.",
+      "Pérdida reciente de siete lechones.",
+      "No hay energía eléctrica en las cocheras.",
+      "Agua transportada por manguera y canecas. Falta tanque de reserva.",
+      "Dependencia de reproductor externo y pago en \"maquila\".",
+      "Costos e ingresos contradictorios.",
+      "Producción anual y capacidad no plenamente verificadas.",
+      "Riesgo de mordedura de cerdas recién paridas."
+    ],
+    "amenazas": [
+      "Frío y humedad que causan afecciones respiratorias.",
+      "Escasez de agua y posibles abortos en verano.",
+      "Aplastamiento o pérdida de lechones.",
+      "Agresividad de las cerdas.",
+      "Aumento del precio del concentrado.",
+      "Enfermedades y fallas sanitarias.",
+      "Variación del precio del mercado.",
+      "Dificultades de transporte.",
+      "Contaminación si la porcinaza se aplica sin manejo técnico."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Vecino/campesino",
+        "perfil_que_busca": "Productor que compra lechones para criarlos o engordarlos.",
+        "ubicacion": "Lagunitas.",
+        "necesidad": "Pie de levante adaptado a la zona.",
+        "frecuencia": "Según disponibilidad/estacional.",
+        "criterio_compra": "Sanidad, raza criolla, precio y edad.",
+        "canal": "Finca, voz a voz, WhatsApp."
+      },
+      {
+        "tipo_actor": "Comprador regional",
+        "perfil_que_busca": "Campesinos de Cabrera, Pasca, Usme y Nazaret.",
+        "ubicacion": "Región vecina.",
+        "necesidad": "Lechones para levante y engorde.",
+        "frecuencia": "Ocasional/por camada.",
+        "criterio_compra": "Disponibilidad, precio, transporte y confianza.",
+        "canal": "Facebook, WhatsApp, referencia."
+      },
+      {
+        "tipo_actor": "Comprador de temporada",
+        "perfil_que_busca": "Personas que engordan animales para diciembre.",
+        "ubicacion": "Local y regional.",
+        "necesidad": "Comprar con anticipación para engorde.",
+        "frecuencia": "Mayor demanda en temporada.",
+        "criterio_compra": "Edad, capacidad de adaptación y precio.",
+        "canal": "Voz a voz / redes."
+      },
+      {
+        "tipo_actor": "Productor recurrente",
+        "perfil_que_busca": "Comprador que conoce la unidad y repite compra.",
+        "ubicacion": "Por verificar.",
+        "necesidad": "Continuidad y animales sanos.",
+        "frecuencia": "Por camada.",
+        "criterio_compra": "Manejo sanitario y cumplimiento.",
+        "canal": "Contacto directo."
+      },
+      {
+        "tipo_actor": "Intermediario/transportador",
+        "perfil_que_busca": "No reportado como comprador, pero puede apoyar entrega.",
+        "ubicacion": "Carretera principal.",
+        "necesidad": "Facilitar flete.",
+        "frecuencia": "Ocasional.",
+        "criterio_compra": "Costo y disponibilidad.",
+        "canal": "Llamada/coordinación."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Lechones criollos sanos, adaptados a la zona, desparasitados, con manejo inicial y listos para consumir alimento sólido.",
+    "como_se_conoce_la_necesidad": "Existen ventas previas a vecinos y compradores de varios municipios y localidades; los clientes conocen el producto por voz a voz y redes.",
+    "quienes_compran_o_podrian_comprar": "Vecinos, campesinos, productores de engorde y compradores de temporada de Lagunitas, Cabrera, Pasca, Usme y Nazaret.",
+    "evidencia": "Ventas previas, consultas y publicaciones en WhatsApp y Facebook. No se suministró histórico escrito de ventas.",
+    "ventaja_territorial": "Los cerdos criollos están adaptados a las condiciones de la zona y se alimentan parcialmente con recursos disponibles en la finca.",
+    "cambios_demanda": "Se menciona mayor interés por cerdos criollos para engorde y sacrificio en diciembre. No se aportaron series de ventas por año.",
+    "dificultades": "Infraestructura, mortalidad, disponibilidad de agua, transporte, costos de concentrado, dependencia de reproductor externo y falta de registros.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Mamá y hermano",
+        "tipo": "Familiar",
+        "que_aporta": "Trabajo, vigilancia y atención de partos.",
+        "que_recibe": "Ingreso y fortalecimiento familiar.",
+        "trabajo_conjunto": "Distribución de tareas y registros.",
+        "aporte_ambiental": "Aprovechamiento ordenado de residuos.",
+        "accion": "Definir turnos y responsabilidades."
+      },
+      {
+        "actor_aliado": "Vecino con reproductor",
+        "tipo": "Productivo",
+        "que_aporta": "Servicio de monta",
+        "que_recibe": "Un lechón de maquila, según relato.",
+        "trabajo_conjunto": "Acuerdo temporal mientras se adquiere reproductor.",
+        "aporte_ambiental": "Evitar traslados innecesarios si se planifica.",
+        "accion": "Registrar montas y costo real"
+      },
+      {
+        "actor_aliado": "Compradores locales",
+        "tipo": "Comercial",
+        "que_aporta": "Demanda y referencias.",
+        "que_recibe": "Lechones sanos y accesibles.",
+        "trabajo_conjunto": "Pedidos anticipados.",
+        "aporte_ambiental": "Reduce sobreproducción.",
+        "accion": "Crear lista de clientes."
+      },
+      {
+        "actor_aliado": "Camioneros/vecinos con vehículo",
+        "tipo": "Logístico",
+        "que_aporta": "Flete desde la finca o carretera.",
+        "que_recibe": "Pago por transporte.",
+        "trabajo_conjunto": "Rutas programadas.",
+        "aporte_ambiental": "Consolidar viajes.",
+        "accion": "Cotizar por zona."
+      },
+      {
+        "actor_aliado": "Veterinario/asistencia técnica",
+        "tipo": "Técnico",
+        "que_aporta": "Plan reproductivo, sanitario y de bioseguridad.",
+        "que_recibe": "Información y seguimiento.",
+        "trabajo_conjunto": "Visitas por ciclo",
+        "aporte_ambiental": "Manejo adecuado de porcinaza.",
+        "accion": "Solicitar diagnóstico."
+      },
+      {
+        "actor_aliado": "Alcaldía/programa PMAPC",
+        "tipo": "Institucional",
+        "que_aporta": "Asistencia y posible impulso.",
+        "que_recibe": "Seguimiento del plan.",
+        "trabajo_conjunto": "Priorización de inversiones.",
+        "aporte_ambiental": "Buenas prácticas ambientales",
+        "accion": "Visita y cotizaciones."
+      },
+      {
+        "actor_aliado": "Otros porcicultores",
+        "tipo": "Productivo/asociativo",
+        "que_aporta": "Intercambio de experiencia, genética y mercado.",
+        "que_recibe": "Red comercial y técnica.",
+        "trabajo_conjunto": "Compras conjuntas y calendario reproductivo.",
+        "aporte_ambiental": "Gestión conjunta de residuos.",
+        "accion": "Identificar aliados.."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Venta previa",
+        "a_quien": "Vecinos y campesinos.",
+        "resultado": "Comercialización aproximada de 20 lechones al año, según relato.",
+        "motivacion": "Levante, engorde y venta de fin de año.",
+        "evidencia": "Relato de la productora; soportes pendientes."
+      },
+      {
+        "metodo": "Redes sociales",
+        "a_quien": "Contactos de WhatsApp y Facebook.",
+        "resultado": "Consultas y difusión de fotografías y descripciones.",
+        "motivacion": "Disponibilidad y confianza.",
+        "evidencia": "Estados y publicaciones, por recopilar."
+      },
+      {
+        "metodo": "Voz a voz",
+        "a_quien": "Comunidad de Lagunitas.",
+        "resultado": "Reconocimiento de la crianza de cerdos criollos.",
+        "motivacion": "Cercanía y adaptación.",
+        "evidencia": "Recomendaciones informales."
+      },
+      {
+        "metodo": "Precio de mercado",
+        "a_quien": "Compradores locales.",
+        "resultado": "Rango consultado entre $250.000 y $320.000 por lechón.",
+        "motivacion": "Precio accesible y venta rápida.",
+        "evidencia": "Comparaciones verbales."
+      },
+      {
+        "metodo": "Venta regional",
+        "a_quien": "Compradores de Cabrera, Pasca, Usme y Nazaret.",
+        "resultado": "Mercado más allá de la vereda.",
+        "motivacion": "Disponibilidad de lechones criollos.",
+        "evidencia": "Registro de clientes pendiente."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Lechón criollo vivo para levante",
+        "descripcion_tecnica": "Animal entregado aproximadamente a los 40 días, desparasitado, con aplicación de hierro, ombligo curado con yodo y habituado a alimento sólido.",
+        "unidad": "Animal vivo",
+        "insumos_principales": "Leche materna, concentrado, suero, papa, agua, vitaminas, purgas y manejo sanitario.",
+        "condiciones_especiales": "Debe estar activo, hidratado, sin signos clínicos y transportarse con bienestar.",
+        "presentacion": "El cliente lo recoge en finca o se coordina flete.",
+        "diferencial": "Raza criolla o lacera adaptada a la zona."
+      },
+      {
+        "servicio": "Cerda de cría",
+        "descripcion_tecnica": "Hembra criolla destinada a reproducción. La gestación se reporta como 3 meses, 3 semanas y 3 días.",
+        "unidad": "Animal/ciclo reproductivo.",
+        "insumos_principales": "Concentrado, agua, suplementos, vacunas, purgas y alojamiento.",
+        "condiciones_especiales": "Requiere paridera individual, agua continua y manejo seguro.",
+        "presentacion": "No se reporta venta actual.",
+        "diferencial": "Pie de cría familiar."
+      },
+      {
+        "servicio": "Cerdo de levante",
+        "descripcion_tecnica": "Animal en fase posterior al destete, destinado a continuar crecimiento.",
+        "unidad": "Animal vivo.",
+        "insumos_principales": "Alimento, agua y manejo sanitario.",
+        "condiciones_especiales": "Corral seguro y alimentación progresiva.",
+        "presentacion": "Venta o permanencia, por verificar.",
+        "diferencial": "Adaptación local."
+      }
+    ],
+    "observaciones_o_comentarios": "La entrevista no reporta peso de entrega, sexo, raza específica, identificación individual, registros sanitarios, mortalidad por camada ni condiciones exactas de transporte. Estos datos deben completarse antes de estandarizar la ficha técnica."
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Selección de reproductoras",
+        "unidad": "Permanente.",
+        "actividad_proceso": "Mantener cerdas criollas de cría.",
+        "tiempo_estimado": "Permanente."
+      },
+      {
+        "servicio": "Monta",
+        "unidad": "Según celo.",
+        "actividad_proceso": "Utilizar reproductor de vecino y pagar un lechón de maquila.",
+        "tiempo_estimado": "Según celo."
+      },
+      {
+        "servicio": "Gestación",
+        "unidad": "3 meses, 3 semanas y 3 días.",
+        "actividad_proceso": "Alimentar, hidratar y vigilar la cerda",
+        "tiempo_estimado": "3 meses, 3 semanas y 3 días."
+      },
+      {
+        "servicio": "Preparación del parto",
+        "unidad": "Días previos.",
+        "actividad_proceso": "Acondicionar cochera y atender de noche si es necesario.",
+        "tiempo_estimado": "Días previos."
+      },
+      {
+        "servicio": "Parto",
+        "unidad": "Frecuentemente de noche, según relato.",
+        "actividad_proceso": "Supervisar nacimiento y evitar aplastamiento.",
+        "tiempo_estimado": "Frecuentemente de noche, según relato."
+      },
+      {
+        "servicio": "Manejo neonatal",
+        "unidad": "Primeros días.",
+        "actividad_proceso": "Curar ombligo con yodo y aplicar hierro.",
+        "tiempo_estimado": "Primeros días."
+      },
+      {
+        "servicio": "Lactancia y transición",
+        "unidad": "Hasta 40 días.",
+        "actividad_proceso": "Permitir lactancia e introducir caldo con papa, suero y alimento sólido.",
+        "tiempo_estimado": "Hasta 40 días."
+      },
+      {
+        "servicio": "Desparasitación y preparación",
+        "unidad": "Antes de entrega.",
+        "actividad_proceso": "Desparasitar y verificar consumo de alimento.",
+        "tiempo_estimado": "Antes de entrega."
+      },
+      {
+        "servicio": "Venta y entrega",
+        "unidad": "Alrededor de 40 días.",
+        "actividad_proceso": "Publicar, acordar precio y entregar en finca o por flete.",
+        "tiempo_estimado": "Alrededor de 40 días."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Concentrado de alta calidad",
+        "cantidad_unidad": "Bulto: $170.000 reportados. Hasta 4 bultos/mes por cerda lactante o gestante.",
+        "frecuencia": "Mensual.",
+        "proveedor_fuente": "Proveedor pendiente",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Empaques y transporte.",
+        "manejo_ambiental": "Almacenar seco y mecliclar costales.",
+        "observaciones": "Cifra alta; verificar consumo real."
+      },
+      {
+        "insumo": "Suero de leche",
+        "cantidad_unidad": "Cantidad no informada.",
+        "frecuencia": "Frecuente.",
+        "proveedor_fuente": "Producción de la finca",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Carga orgánica si se vierte",
+        "manejo_ambiental": "Usar fresco y controlar sobrantes",
+        "observaciones": "Aprovechamiento actual"
+      },
+      {
+        "insumo": "Papa: cachirre/riche",
+        "cantidad_unidad": "Cantidad no informada",
+        "frecuencia": "Según cosecha",
+        "proveedor_fuente": "Finca",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Fermentación o contaminación si se almacena mal.",
+        "manejo_ambiental": "Selección y suministro controlado.",
+        "observaciones": "Complemento alimentario."
+      },
+      {
+        "insumo": "Sobrantes de cocina",
+        "cantidad_unidad": "Cantidad no informada",
+        "frecuencia": "Diaria",
+        "proveedor_fuente": "Hogar.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Riesgo sanitario si están descompuestos.",
+        "manejo_ambiental": "Selección y preparación segura.",
+        "observaciones": "Aprovechamiento actual"
+      },
+      {
+        "insumo": "Agua",
+        "cantidad_unidad": "Desde nacedero a 300 m por manguera a canecas",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Fuente natural",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Presión sobre la fuente y contaminación.",
+        "manejo_ambiental": "Protección, tanque y tubería",
+        "observaciones": "No se paga acueducto"
+      },
+      {
+        "insumo": "Vacunas, hierro, vitaminas, purgas y yodo",
+        "cantidad_unidad": "Cantidades no informadas",
+        "frecuencia": "Por ciclo",
+        "proveedor_fuente": "Proveedor pendiente",
+        "toxicidad": "Según producto",
+        "impacto_potencial": "Envases y medicamentos vencidos",
+        "manejo_ambiental": "Dosificar y entregar envases.",
+        "observaciones": "Plan veterinario pendiente."
+      },
+      {
+        "insumo": "Material de cama",
+        "cantidad_unidad": "No informado.",
+        "frecuencia": "Por parto/ciclo.",
+        "proveedor_fuente": "Pendiente",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Porcinaza y humedad.",
+        "manejo_ambiental": "Retiro y compostaje técnico",
+        "observaciones": "Se requieren camas térmicas"
+      },
+      {
+        "insumo": "Iluminación",
+        "cantidad_unidad": "Linternas y celulares actualmente.",
+        "frecuencia": "Partos nocturnos.",
+        "proveedor_fuente": "Propios",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Pilas y consumo.",
+        "manejo_ambiental": "Panel solar y manejo de baterías.",
+        "observaciones": "No hay red eléctrica."
+      },
+      {
+        "insumo": "Mangueras/tubería",
+        "cantidad_unidad": "Aproximadamente 300 m de conducción actual; extensión pendiente.",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Por cotizar",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Fugas y material plástico.",
+        "manejo_ambiental": "Inspección y reparación.",
+        "observaciones": "Prioridad."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "Aproximadamente 20 lechones vendidos al año (promedio ~1,67/mes).",
+    "produccion_normal": "Promedio reportado de 2 partos al año por cerda. Camadas de 6, 8, 11 y hasta 14 lechones.",
+    "capacidad_mensual_teorica": "No calculada.",
+    "produccion_maxima_posible": "Más de 40 o 45 lechones al año con mejoras de infraestructura y fortalecimiento del pie de cría.",
+    "area_numero_habitaciones": "No puede determinarse sin medidas de cocheras, densidad, número de corrales, drenajes y disponibilidad de agua.",
+    "limitantes_productivos": "Infraestructura de maternidad, agua, energía, seguridad en partos y material genético. Ausencia de parideras y divisiones adecuadas. Pérdida reciente de siete lechones.",
+    "limitantes_ambientales": "Escasez de agua en verano, frío y humedad en invierno.",
+    "capacidad_instalada": "Cinco cerdos: tres cerdas de cría y dos animales de levante.",
+    "capacidad_utilizada": "Parcial, limitada por la falta de infraestructura.",
+    "produce_mismo_todo_ano": false,
+    "alcanza_para_demanda": true,
+    "necesidades_aumentar_sosteniblemente": "Construir parideras individuales, cocheras divididas, camas térmicas, tanque de reserva, tubería permanente, iluminación solar y reproductor propio.",
+    "observaciones_o_comentarios": "Inconsistencia a verificar: La entrevista afirma que ya existen tres cerdas de cría, pero luego señala que el aumento se lograría \"sumando una tercera cerda\". Debe confirmarse cuántas hembras reproductoras están activas."
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua",
+        "estado_actual": "Nacedero ubicado a unos 300 m; conducción por manguera a canecas.",
+        "limite_restriccion": "Sin tanque ni reserva suficiente.",
+        "afectacion": "Riesgo de desabastecimiento y abortos en verano.",
+        "efecto": "Riesgo de desabastecimiento y abortos en verano.",
+        "incidencia": "Alta.",
+        "accion_mejora": "Tanque, tubería y monitoreo de fuente."
+      },
+      {
+        "condicion": "Energía",
+        "estado_actual": "No hay electricidad en cocheras.",
+        "limite_restriccion": "Atención nocturna con linterna y celular.",
+        "afectacion": "Dificulta partos y vigilancia.",
+        "efecto": "Dificulta partos y vigilancia.",
+        "incidencia": "Alta.",
+        "accion_mejora": "Panel solar e iluminación segura."
+      },
+      {
+        "condicion": "Clima de invierno",
+        "estado_actual": "Frío y humedad.",
+        "limite_restriccion": "Cocheras sin camas térmicas ni divisiones.",
+        "afectacion": "Afecciones respiratorias, fiebre y mortalidad.",
+        "efecto": "Afecciones respiratorias, fiebre y mortalidad.",
+        "incidencia": "Alta.",
+        "accion_mejora": "Aislamiento, drenaje y cama seca."
+      },
+      {
+        "condicion": "Clima de verano",
+        "estado_actual": "Escasez de agua.",
+        "limite_restriccion": "Capacidad de almacenamiento insuficiente.",
+        "afectacion": "Deshidratación y posible aborto.",
+        "efecto": "Deshidratación y posible aborto.",
+        "incidencia": "Alta.",
+        "accion_mejora": "Reserva permanente y control."
+      },
+      {
+        "condicion": "Suelo / potreros",
+        "estado_actual": "Reciben porcinaza como abono.",
+        "limite_restriccion": "Dosis y tratamiento no informados.",
+        "afectacion": "Puede fertilizar o contaminar.",
+        "efecto": "Puede fertilizar o contaminar.",
+        "incidencia": "Media-alta.",
+        "accion_mejora": "Plan de aplicación y compostaje."
+      },
+      {
+        "condicion": "Residuos orgánicos",
+        "estado_actual": "Porcinaza y sobrantes de alimento.",
+        "limite_restriccion": "Sin cuantificación.",
+        "afectacion": "Olores, vectores y nutrientes.",
+        "efecto": "Olores, vectores y nutrientes.",
+        "incidencia": "Media-alta.",
+        "accion_mejora": "Separar, tratar y registrar."
+      },
+      {
+        "condicion": "Transporte",
+        "estado_actual": "Cliente recoge o se coordina flete.",
+        "limite_restriccion": "Disponibilidad de vehículo.",
+        "afectacion": "Afecta bienestar y venta.",
+        "efecto": "Afecta bienestar y venta.",
+        "incidencia": "Media.",
+        "accion_mejora": "Ruta y condiciones de transporte."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Biológico",
+        "peligro": "Contactos con porcinaza, fluidos de parto, animales y medicamentos.",
+        "aplica": true,
+        "nivel_riesgo": "Alto.",
+        "controles_actuales": "No reportado.",
+        "accion": "EPP, lavado y protocolo sanitario."
+      },
+      {
+        "tipo": "Biológico",
+        "peligro": "Mordedura/golpe: Agresividad de cerdas recién paridas.",
+        "aplica": true,
+        "nivel_riesgo": "Alto.",
+        "controles_actuales": "Experiencia familiar.",
+        "accion": "Barrera, manejo seguro y ruta de escape."
+      },
+      {
+        "tipo": "Seguridad",
+        "peligro": "Aplastamiento humano/animal: Espacios sin divisiones y cerdas que se cruzan.",
+        "aplica": true,
+        "nivel_riesgo": "Alto.",
+        "controles_actuales": "Vigilancia manual.",
+        "accion": "Parideras y separaciones."
+      },
+      {
+        "tipo": "Locativo",
+        "peligro": "Pisos húmedos, lodo, mangueras y canecas",
+        "aplica": true,
+        "nivel_riesgo": "Medio-alto.",
+        "controles_actuales": "No informado..",
+        "accion": "Drenaje, orden y piso antideslizante."
+      },
+      {
+        "tipo": "Ergonómico",
+        "peligro": "Carga de alimento, agua y animales.",
+        "aplica": true,
+        "nivel_riesgo": "Medio-alto.",
+        "controles_actuales": "Trabajo familiar.",
+        "accion": "Carretilla, técnica y reparto de cargas."
+      },
+      {
+        "tipo": "Mecánico",
+        "peligro": "Cortes/pinchazos: Aplicación de hierro, vacunas y manipulación de herramientas.",
+        "aplica": true,
+        "nivel_riesgo": "Medio.",
+        "controles_actuales": "No informado.",
+        "accion": "Contenedor y capacitación."
+      },
+      {
+        "tipo": "Físico",
+        "peligro": "Iluminación insuficiente: Atención de partos entre medianoche y 1:00 a. m. con celulares.",
+        "aplica": true,
+        "nivel_riesgo": "Alto.",
+        "controles_actuales": "Linterna.",
+        "accion": "Iluminación solar fija."
+      },
+      {
+        "tipo": "Biológico",
+        "peligro": "Zoonosis: Enfermedades transmisibles.",
+        "aplica": true,
+        "nivel_riesgo": "Alto.",
+        "controles_actuales": "No informado..",
+        "accion": "Asistencia veterinaria y bioseguridad."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Construir parideras con barreras de protección.",
+        "riesgo": "Mordedura y aplastamiento.",
+        "responsable": "Familia/técnica.",
+        "frecuencia": "Antes del próximo parto.",
+        "evidencia": "Fotografía y revisión."
+      },
+      {
+        "accion_preventiva": "Instalar iluminación solar segura.",
+        "riesgo": "Baja visibilidad y caídas.",
+        "responsable": "Productora/técnico.",
+        "frecuencia": "0-3 meses.",
+        "evidencia": "Sistema instalado."
+      },
+      {
+        "accion_preventiva": "Usar botas, guantes, ropa de trabajo y protección ocular cuando aplique.",
+        "riesgo": "Biológico/pinchazos.",
+        "responsable": "Familia.",
+        "frecuencia": "Cada labor.",
+        "evidencia": "Dotación."
+      },
+      {
+        "accion_preventiva": "Definir ingreso seguro y ruta de escape de la cochera.",
+        "riesgo": "Agresión de cerdas.",
+        "responsable": "Productora.",
+        "frecuencia": "Cada parto.",
+        "evidencia": "Procedimiento."
+      },
+      {
+        "accion_preventiva": "Mantener piso seco, drenado y libre de obstáculos.",
+        "riesgo": "Caídas.",
+        "responsable": "Familia",
+        "frecuencia": "Diaria.",
+        "evidencia": "Lista de chequeo."
+      },
+      {
+        "accion_preventiva": "Disponer guardián para agujas y frascos.",
+        "riesgo": "Pinchazos y residuos.",
+        "responsable": "Productora",
+        "frecuencia": "Permanente.",
+        "evidencia": "Contenedor."
+      },
+      {
+        "accion_preventiva": "Capacitación veterinaria en partos y manejo neonatal.",
+        "riesgo": "Biológico/animal.",
+        "responsable": "Veterinario.",
+        "frecuencia": "Semestral/por ciclo.",
+        "evidencia": "Certificado/registro."
+      },
+      {
+        "accion_preventiva": "Botiquín y números de emergencia.",
+        "riesgo": "Emergencias.",
+        "responsable": "Familia",
+        "frecuencia": "Revisión trimestral",
+        "evidencia": "Botiquín completo."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Venta directa en finca",
+        "activo": true,
+        "descripcion": "La mayoría de clientes recoge los lechones directamente.",
+        "responsable": "Productora.",
+        "frecuencia": "Por camada."
+      },
+      {
+        "canal": "WhatsApp",
+        "activo": true,
+        "descripcion": "Estados con fotografías y descripciones.",
+        "responsable": "Productora/familia.",
+        "frecuencia": "Cuando hay disponibilidad."
+      },
+      {
+        "canal": "Facebook",
+        "activo": true,
+        "descripcion": "Publicaciones para ampliar alcance.",
+        "responsable": "Productora/familia.",
+        "frecuencia": "Por camada."
+      },
+      {
+        "canal": "Voz a voz",
+        "activo": true,
+        "descripcion": "Reconocimiento entre vecinos y campesinos.",
+        "responsable": "Clientes.",
+        "frecuencia": "Permanente."
+      },
+      {
+        "canal": "Flete coordinado",
+        "activo": true,
+        "descripcion": "Camioneros o vecinos con vehículo.",
+        "responsable": "Productora/cliente.",
+        "frecuencia": "Ocasional."
+      },
+      {
+        "canal": "Feria/mercado campesino",
+        "activo": false,
+        "descripcion": "Canal por explorar.",
+        "responsable": "Pendiente.",
+        "frecuencia": "Potencial."
+      },
+      {
+        "canal": "Asociación",
+        "activo": false,
+        "descripcion": "Puede apoyar genética, compra de insumos y comercialización.",
+        "responsable": "Productora/aliados.",
+        "frecuencia": "Por evaluar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Lechón vivo de 40 días",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "$250.000 a $320.000 por lechón.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": 300000,
+        "justificacion": "Se busca vender rápido para evitar concentrado adicional y retraso del ciclo. Valor habitual referido: alrededor de $300.000."
+      },
+      {
+        "servicio": "Cerdo de levante",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Pendiente.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": null,
+        "justificacion": "Definir edad, peso y costo."
+      },
+      {
+        "servicio": "Servicio de monta/maquila",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Pendiente de valorar en pesos.",
+        "logistica_plataforma": "Pago en especie.",
+        "precio_final": null,
+        "justificacion": "Un lechón entregado al vecino, según relato. Comparar con costo de reproductor propio."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": "El rango de mercado no reemplaza el cálculo del costo. El precio mínimo debe incluir alimentación, sanidad, mano de obra, monta, agua, mortalidad, infraestructura, transporte y costos administrativos."
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Producción actual total",
+        "cantidad_mensual": "Aproximadamente 20 lechones/año.",
+        "precio": 300000,
+        "ingreso_mensual": 500000,
+        "forma_pago": "Contado",
+        "canal": "Venta directa y redes."
+      },
+      {
+        "concepto_servicio": "Cifra indicada \"por cerda\"",
+        "cantidad_mensual": "Aproximadamente 20 lechones/año por cerda, según otra parte del relato.",
+        "precio": 300000,
+        "ingreso_mensual": 500000,
+        "forma_pago": "Contado",
+        "canal": "Venta directa."
+      },
+      {
+        "concepto_servicio": "Escenario fortalecido",
+        "cantidad_mensual": "Más de 40 o 45 lechones/año.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Contado",
+        "canal": "Mercado local y regional."
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": "La proyección no debe utilizarse para tomar decisiones de inversión hasta confirmar cuántas cerdas están activas, cuántos lechones nacen, sobreviven y se venden por cada camada y cuál es el costo real por animal.",
+    "observaciones_o_comentarios": "Producción actual total: $6.000.000/año si las 20 unidades corresponden al total de la unidad. Cifra indicada por cerda: $6.000.000/año por cerda. Contradice la cifra de 20 lechones totales; verificar. Escenario fortalecido: No calculable sin confirmar volumen y costo. Depende de parideras, agua, energía y pie de cría."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Vecino/campesino",
+        "estrategia": "Entregar animales sanos, cumplir edad y avisar disponibilidad.",
+        "medio": "WhatsApp y llamada.",
+        "frecuencia": "Por camada.",
+        "responsable": "Productora."
+      },
+      {
+        "cliente": "Comprador regional",
+        "estrategia": "Enviar fotos reales, ubicación, precio y fecha de entrega.",
+        "medio": "WhatsApp/Facebook.",
+        "frecuencia": "Por camada",
+        "responsable": "Productora/hermano."
+      },
+      {
+        "cliente": "Cliente recurrente",
+        "estrategia": "Registrar preferencia y reservar con anticipo si corresponde.",
+        "medio": "Lista de clientes.",
+        "frecuencia": "Permanente.",
+        "responsable": "Productora."
+      },
+      {
+        "cliente": "Comprador de temporada",
+        "estrategia": "Programar camadas según demanda de fin de año.",
+        "medio": "Calendario y publicaciones.",
+        "frecuencia": "Anual/estacional.",
+        "responsable": "Familia."
+      },
+      {
+        "cliente": "Transportador aliado",
+        "estrategia": "Coordinar rutas, bienestar y tiempos.",
+        "medio": "Llamada/acuerdo.",
+        "frecuencia": "Cuando aplique.",
+        "responsable": "Productora."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Entrega en finca",
+        "canal": "Cliente recoge.",
+        "tiempo": "Fecha acordada.",
+        "transporte_operacion": "Vehículo del cliente.",
+        "condicion_calidad": "Lechón sano y transporte ventilado.",
+        "capacidad": "Según compra.",
+        "costo": "A cargo del cliente, por verificar.",
+        "responsable": "Productora/cliente."
+      },
+      {
+        "servicio_insumo": "Entrega con flete",
+        "canal": "Finca-destino.",
+        "tiempo": "Programado.",
+        "transporte_operacion": "Camionero o vecino con vehículo.",
+        "condicion_calidad": "Bienestar, protección climática y espacio.",
+        "capacidad": "Según vehículo.",
+        "costo": "Pendiente.",
+        "responsable": "Productora/transportador."
+      },
+      {
+        "servicio_insumo": "Salida a carretera",
+        "canal": "Desde cocheras a ruta principal",
+        "tiempo": "Pendiente.",
+        "transporte_operacion": "Medio no especificado.",
+        "condicion_calidad": "Evitar estrés y lesiones.",
+        "capacidad": "Pendiente.",
+        "costo": "Pendiente.",
+        "responsable": "Familia"
+      },
+      {
+        "servicio_insumo": "Mercado regional",
+        "canal": "Lagunitas-Cabrera/Pasca/Usme/Nazaret",
+        "tiempo": "Según destino.",
+        "transporte_operacion": "Flete coordinado.",
+        "condicion_calidad": "Cumplir requisitos de movilización.",
+        "capacidad": "Pendiente.",
+        "costo": "Cotizar.",
+        "responsable": "Productora/cliente."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Cerda madre",
+        "informacion": "Identificación, edad, condición y partos.",
+        "responsable": "Productora.",
+        "medio": "Ficha por animal.",
+        "frecuencia": "Por ciclo",
+        "evidencia": "Ficha por animal."
+      },
+      {
+        "elemento": "Monta",
+        "informacion": "Fecha, reproductor, propietario y costo.",
+        "responsable": "Productora.",
+        "medio": "Calendario.",
+        "frecuencia": "Por evento",
+        "evidencia": "Calendario."
+      },
+      {
+        "elemento": "Parto",
+        "informacion": "Fecha, nacidos vivos, muertos y causas.",
+        "responsable": "Familia.",
+        "medio": "Registro de parto.",
+        "frecuencia": "Por parto",
+        "evidencia": "Registro de parto."
+      },
+      {
+        "elemento": "Lechón",
+        "informacion": "Sexo, peso, hierro, ombligo, desparasitación y salida.",
+        "responsable": "Productora.",
+        "medio": "Ficha/marca temporal.",
+        "frecuencia": "Por lechón/camada",
+        "evidencia": "Ficha/marca temporal."
+      },
+      {
+        "elemento": "Alimentación",
+        "informacion": "Cantidad, lote, costo y fecha.",
+        "responsable": "Familia.",
+        "medio": "Factura/planilla.",
+        "frecuencia": "Diaria/mensual",
+        "evidencia": "Factura/planilla."
+      },
+      {
+        "elemento": "Venta",
+        "informacion": "Cliente, destino, animal, precio y pago.",
+        "responsable": "Productora.",
+        "medio": "Recibo/registro.",
+        "frecuencia": "Por venta",
+        "evidencia": "Recibo/registro."
+      },
+      {
+        "elemento": "Mortalidad",
+        "informacion": "Fecha, edad y causa probable.",
+        "responsable": "Productora/veterinario.",
+        "medio": "Registro sanitario..",
+        "frecuencia": "Por evento",
+        "evidencia": "Registro sanitario.."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Cocheras tecnificadas con divisiones.",
+        "descripcion": "Separar animales y mejorar manejo.",
+        "valor_unitario": null,
+        "cantidad": "Según diseño y número de cerdas.",
+        "total": null,
+        "requisito": "Medición y diseño técnico.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Parideras individuales con protección antiaplastamiento.",
+        "descripcion": "Reducir mortalidad y riesgos.",
+        "valor_unitario": null,
+        "cantidad": "Una por cerda activa.",
+        "total": null,
+        "requisito": "Confirmar número de reproductoras",
+        "fuente": "Cotizar"
+      },
+      {
+        "tipo": "Camas térmicas/manejo de temperatura",
+        "descripcion": "Proteger lechones del frío y humedad.",
+        "valor_unitario": null,
+        "cantidad": "Según parideras.",
+        "total": null,
+        "requisito": "Evaluación técnica y de seguridad.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Tanque de reserva y tubería permanente.",
+        "descripcion": "Garantizar agua continua.",
+        "valor_unitario": null,
+        "cantidad": "Capacidad por definir.",
+        "total": null,
+        "requisito": "Medir consumo y caudal.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Panel solar e iluminación.",
+        "descripcion": "Atender partos nocturnos.",
+        "valor_unitario": null,
+        "cantidad": "Sistema para cocheras.",
+        "total": null,
+        "requisito": "Estudio de carga y ubicación.",
+        "fuente": "Cotizar"
+      },
+      {
+        "tipo": "Cerdo reproductor propio.",
+        "descripcion": "Evitar pago de maquila y fortalecer genética",
+        "valor_unitario": null,
+        "cantidad": "Una unidad, sujeto a viabilidad.",
+        "total": null,
+        "requisito": "Plan reproductivo y bioseguridad.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Nuevas cerdas criollas de cría.",
+        "descripcion": "Aumentar capacidad.",
+        "valor_unitario": null,
+        "cantidad": "Cantidad por definir.",
+        "total": null,
+        "requisito": "Infraestructura y mercado primero.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Báscula, registros y elementos sanitarios.",
+        "descripcion": "Controlar producción y salud.",
+        "valor_unitario": null,
+        "cantidad": "Un kit.",
+        "total": null,
+        "requisito": "Capacitación.",
+        "fuente": "Cotizar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Concentrado",
+        "descripcion": "Según consumo. Una cerda lactante o gestante consumiría hasta 4 bultos/mes.",
+        "valor_mensual_ciclo": 170000,
+        "observaciones": "$170.000 por bulto."
+      },
+      {
+        "tipo": "Alimentación concentrada por cerda",
+        "descripcion": "Mensual.",
+        "valor_mensual_ciclo": 680000,
+        "observaciones": "$680.000/mes si consume 4 bultos. Cálculo aritmético del valor reportado; verificar consumo."
+      },
+      {
+        "tipo": "Vacunas, vitaminas y purgas",
+        "descripcion": "Por ciclo/mes. No se discriminan cantidades ni productos.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Incluidas dentro de una cifra global."
+      },
+      {
+        "tipo": "Costo total reportado por cerda",
+        "descripcion": "Mensual. Requiere aclarar si es por cerda, por toda la unidad o solo en lactancia/gestación.",
+        "valor_mensual_ciclo": 1000000,
+        "observaciones": "$1.000.000 mensuales."
+      },
+      {
+        "tipo": "Servicio de monta",
+        "descripcion": "Por monta/parto, por verificar.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Un lechón de maquila al vecino. Valorar en pesos."
+      },
+      {
+        "tipo": "Suero, papa y sobrantes",
+        "descripcion": "Según disponibilidad.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Sin costo monetario reportado. Deben valorarse y manejarse sanitariamente."
+      },
+      {
+        "tipo": "Agua",
+        "descripcion": "Permanente.",
+        "valor_mensual_ciclo": 0,
+        "observaciones": "$0 en recibo. Tiene costos de manguera, canecas, mantenimiento y captación."
+      },
+      {
+        "tipo": "Energía",
+        "descripcion": "Actual. Linternas y celulares; panel solar pendiente.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "No hay servicio en cocheras."
+      },
+      {
+        "tipo": "Mano de obra",
+        "descripcion": "Diaria.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Trabajo familiar no remunerado o no valorizado. Debe incorporarse al costo real."
+      },
+      {
+        "tipo": "Transporte",
+        "descripcion": "Por venta.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Pendiente. Flete coordinado cuando el cliente no recoge."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "1",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Escenario de 20 lechones/año: $6.000.000 a $300.000 cada uno. Confirmar si corresponde al total de la unidad o a cada cerda. Costo reportado por una cerda: $1.000.000/mes ($12.000.000/año si la cifra es literal). Evidencia inconsistencia. Unidad con tres cerdas: Costos potencialmente altos si se aplica $1.000.000 por cada cerda. Escenario de 40-45 lechones: Debe modelarse por camada y por cerda."
+      },
+      {
+        "mes": "2",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "3",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "4",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "5",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "6",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "7",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "8",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "9",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "10",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "11",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "12",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "Lectura financiera: Con las cifras actuales no puede afirmarse que la unidad sea rentable. Es indispensable verificar si el costo de $1.000.000 corresponde realmente a una cerda por mes, a un periodo específico o al conjunto de animales. Control propuesto: Registrar cada venta. Registrar alimento, sanidad, monta, transporte y mortalidad. Ingreso menos costo real por camada y anual."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Agua del nacedero",
+        "estado": "No cuantificada; recorrido aproximado de 300 m.",
+        "cantidad": "No cuantificada",
+        "impacto_1_a_5": null,
+        "accion": "Litros/día y nivel del tanque."
+      },
+      {
+        "variable": "Agua por cerda/lechón",
+        "estado": "No medida.",
+        "cantidad": "No medida",
+        "impacto_1_a_5": null,
+        "accion": "Lecturas o aforo semanal."
+      },
+      {
+        "variable": "Energía",
+        "estado": "No hay electricidad en cocheras.",
+        "cantidad": "No hay electricidad",
+        "impacto_1_a_5": null,
+        "accion": "Consumo futuro del sistema solar."
+      },
+      {
+        "variable": "Concentrado",
+        "estado": "Hasta 4 bultos/mes por cerda, por verificar.",
+        "cantidad": "Hasta 4 bultos/mes por cerda",
+        "impacto_1_a_5": null,
+        "accion": "Bultos por etapa y camada."
+      },
+      {
+        "variable": "Transporte",
+        "estado": "Fletes ocasionales.",
+        "cantidad": "Fletes ocasionales",
+        "impacto_1_a_5": null,
+        "accion": "Viajes, distancia y tipo de vehículo."
+      },
+      {
+        "variable": "Porcinaza",
+        "estado": "No cuantificada.",
+        "cantidad": "No cuantificada",
+        "impacto_1_a_5": null,
+        "accion": "Kg o volumen por semana y área de aplicación."
+      },
+      {
+        "variable": "Residuos de medicamentos",
+        "estado": "No cuantificados.",
+        "cantidad": "No cuantificados",
+        "impacto_1_a_5": null,
+        "accion": "Frascos, agujas y envases por ciclo."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "Agua del nacedero",
+        "que_se_mide": "Litros/día y nivel del tanque.",
+        "dato_inicial": "No cuantificada; recorrido aproximado de 300 m.",
+        "meta": "Crear línea base y evitar fugas.",
+        "frecuencia": "Diaria/semanal",
+        "responsable": "Familia",
+        "evidencia": "Planilla de control de agua"
+      },
+      {
+        "indicador": "Agua por cerda/lechón",
+        "que_se_mide": "Lecturas o aforo semanal.",
+        "dato_inicial": "No medida.",
+        "meta": "Garantizar suministro continuo,",
+        "frecuencia": "Semanal",
+        "responsable": "Familia",
+        "evidencia": "Registro de consumo de agua"
+      },
+      {
+        "indicador": "Energía",
+        "que_se_mide": "Consumo futuro del sistema solar.",
+        "dato_inicial": "No hay electricidad en cocheras.",
+        "meta": "Dimensionar carga mínima.",
+        "frecuencia": "Mensual",
+        "responsable": "Productora",
+        "evidencia": "Registro de energía solar"
+      },
+      {
+        "indicador": "Concentrado",
+        "que_se_mide": "Bultos por etapa y camada.",
+        "dato_inicial": "Hasta 4 bultos/mes por cerda, por verificar.",
+        "meta": "Reducir desperdicio sin afectar nutrición.",
+        "frecuencia": "Por camada",
+        "responsable": "Familia",
+        "evidencia": "Planilla de concentrado"
+      },
+      {
+        "indicador": "Transporte",
+        "que_se_mide": "Viajes, distancia y tipo de vehículo.",
+        "dato_inicial": "Fletes ocasionales.",
+        "meta": "Consolidar rutas.",
+        "frecuencia": "Por flete",
+        "responsable": "Productora",
+        "evidencia": "Registro de fletes"
+      },
+      {
+        "indicador": "Porcinaza",
+        "que_se_mide": "Kg o volumen por semana y área de aplicación.",
+        "dato_inicial": "No cuantificada.",
+        "meta": "Manejo técnico y sin escorrentía.",
+        "frecuencia": "Semanal",
+        "responsable": "Familia",
+        "evidencia": "Registro de porcinaza"
+      },
+      {
+        "indicador": "Residuos de medicamentos",
+        "que_se_mide": "Frascos, agujas y envases por ciclo.",
+        "dato_inicial": "No cuantificados.",
+        "meta": "Entrega segura.",
+        "frecuencia": "Por ciclo",
+        "responsable": "Productora",
+        "evidencia": "Registro de residuos veterinarios"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Suero de leche",
+        "cantidad": "No informada",
+        "manejo_actual": "Se utiliza en alimentación.",
+        "accion_circular": "Usar fresco y medir cantidad.",
+        "destino": "Alimentación de cerdos.",
+        "responsable": "Familia"
+      },
+      {
+        "residuo_recurso": "Cachirre y riche de papa",
+        "cantidad": "No informada",
+        "manejo_actual": "Se aprovechan como alimento.",
+        "accion_circular": "Selección y orientación técnica.",
+        "destino": "Alimentación de cerdos.",
+        "responsable": "Familia"
+      },
+      {
+        "residuo_recurso": "Sobrantes de cocina",
+        "cantidad": "No informada",
+        "manejo_actual": "Se suministran a los cerdos",
+        "accion_circular": "Separar y preparar de forma segura.",
+        "destino": "Alimentación de cerdos.",
+        "responsable": "Familia"
+      },
+      {
+        "residuo_recurso": "Porcinaza",
+        "cantidad": "No cuantificada",
+        "manejo_actual": "Se distribuye en potreros.",
+        "accion_circular": "Compostar o aplicar con dosis y distancia de fuentes.",
+        "destino": "Fertilización y mejora de pastos.",
+        "responsable": "Familia"
+      },
+      {
+        "residuo_recurso": "Costales de concentrado",
+        "cantidad": "No informada",
+        "manejo_actual": "No se reporta manejo.",
+        "accion_circular": "Almacenar limpios y entregar.",
+        "destino": "Reutilización o reciclaje.",
+        "responsable": "Familia"
+      },
+      {
+        "residuo_recurso": "Envases y agujas",
+        "cantidad": "No informada",
+        "manejo_actual": "No reportados.",
+        "accion_circular": "Guardián y devolución.",
+        "destino": "Gestión posconsumo.",
+        "responsable": "Productora"
+      }
+    ],
+    "conclusion_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "Agua",
+        "indicador": "Medir, proteger y almacenar.",
+        "descripcion": "Fuente natural y conducción por manguera; sin reserva.",
+        "estado": "Medio-bajo.",
+        "calificacion_1_a_5": null,
+        "accion": "Medir, proteger y almacenar.",
+        "evidencia": "Tanque instalado"
+      },
+      {
+        "factor": "Suelo",
+        "indicador": "Plan de dosis y prevención de escorrentía.",
+        "descripcion": "Aplicación de porcinaza en potreros.",
+        "estado": "Medio.",
+        "calificacion_1_a_5": null,
+        "accion": "Plan de dosis y prevención de escorrentía.",
+        "evidencia": "Plan de aplicación"
+      },
+      {
+        "factor": "Residuos orgánicos",
+        "indicador": "Tratamiento y registro.",
+        "descripcion": "Aprovechamiento de alimentos y porcinaza.",
+        "estado": "Medio.",
+        "calificacion_1_a_5": null,
+        "accion": "Tratamiento y registro.",
+        "evidencia": "Registro de residuos"
+      },
+      {
+        "factor": "Energía",
+        "indicador": "Sistema solar seguro.",
+        "descripcion": "Ausencia de electricidad en cocheras.",
+        "estado": "Bajo.",
+        "calificacion_1_a_5": null,
+        "accion": "Sistema solar seguro.",
+        "evidencia": "Panel solar"
+      },
+      {
+        "factor": "Clima",
+        "indicador": "Infraestructura adaptada.",
+        "descripcion": "Alta vulnerabilidad a frío, humedad y verano.",
+        "estado": "Bajo.",
+        "calificacion_1_a_5": null,
+        "accion": "Infraestructura adaptada.",
+        "evidencia": "Cocheras adecuadas"
+      },
+      {
+        "factor": "Bienestar animal",
+        "indicador": "Parideras y manejo.",
+        "descripcion": "Pérdidas por aplastamiento y falta de divisiones.",
+        "estado": "Bajo.",
+        "calificacion_1_a_5": null,
+        "accion": "Parideras y manejo.",
+        "evidencia": "Parideras operativas"
+      },
+      {
+        "factor": "Transporte",
+        "indicador": "Protocolo de movilización.",
+        "descripcion": "Flete variable y recolección en finca.",
+        "estado": "Medio.",
+        "calificacion_1_a_5": null,
+        "accion": "Protocolo de movilización.",
+        "evidencia": "Registro de fletes"
+      },
+      {
+        "factor": "Gestión ambiental",
+        "indicador": "Plan de seguimiento.",
+        "descripcion": "No hay indicadores ni soportes.",
+        "estado": "Bajo.",
+        "calificacion_1_a_5": null,
+        "accion": "Plan de seguimiento.",
+        "evidencia": "Indicadores ambientales"
+      }
+    ],
+    "resultado_preliminar_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "Captación de agua: Riesgo de escasez y fugas.",
+        "accion": "Tanque, tubería, inspección y protección del nacedero.",
+        "prioridad": "Alta",
+        "plazo": "0-6 meses.",
+        "responsable": "Familia / técnico.",
+        "recursos": "Tanque, tubería, herramientas",
+        "indicador": "Litros almacenados/fugas.",
+        "evidencia": "Inspección de tanque y tubería"
+      },
+      {
+        "impacto": "Porcinaza: Nutrientes, olores y patógenos.",
+        "accion": "Compostaje o plan de aplicación en potreros.",
+        "prioridad": "Alta",
+        "plazo": "0-3 meses.",
+        "responsable": "Familia/ambiental.",
+        "recursos": "Área de compostaje, herramientas",
+        "indicador": "Volumen y área aplicada.",
+        "evidencia": "Registro de compostaje/aplicación"
+      },
+      {
+        "impacto": "Aguas de lavado: Escorrentía y contaminación.",
+        "accion": "Drenaje y manejo controlado.",
+        "prioridad": "Alta",
+        "plazo": "0-6 meses.",
+        "responsable": "Familia",
+        "recursos": "Tubería, caja de sedimento",
+        "indicador": "Punto de disposición.",
+        "evidencia": "Sistema de drenaje"
+      },
+      {
+        "impacto": "Residuos veterinarios: Envases y cortopunzantes.",
+        "accion": "Separación, guardián y entrega.",
+        "prioridad": "Alta",
+        "plazo": "Inmediato.",
+        "responsable": "Productora.",
+        "recursos": "Guardián de agujas, caja",
+        "indicador": "Unidades gestionadas..",
+        "evidencia": "Guardián de cortopunzantes"
+      },
+      {
+        "impacto": "Alimento sobrante: Olores y vectores.",
+        "accion": "Suministro medido y retiro diario.",
+        "prioridad": "Media",
+        "plazo": "Permanente.",
+        "responsable": "Familia",
+        "recursos": "Recipientes limpios",
+        "indicador": "Sobrante/día.",
+        "evidencia": "Control de comederos"
+      },
+      {
+        "impacto": "Clima: Frío, humedad y calor.",
+        "accion": "Parideras, camas secas, ventilación y sombra.",
+        "prioridad": "Alta",
+        "plazo": "0-6 meses.",
+        "responsable": "Familia/técnico.",
+        "recursos": "Materiales para cocheras",
+        "indicador": "Mortalidad y enfermedad.",
+        "evidencia": "Inspección de cocheras"
+      },
+      {
+        "impacto": "Transporte: Emisiones y estrés animal.",
+        "accion": "Rutas consolidadas y vehículo adecuado..",
+        "prioridad": "Media",
+        "plazo": "0-12 meses",
+        "responsable": "Productora/transportador.",
+        "recursos": "Vehículo acondicionado",
+        "indicador": "Viajes/incidentes.",
+        "evidencia": "Registro de transporte"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": null,
+        "situacion": "Invierno: frío y humedad",
+        "riesgo": "Lechones recién nacidos con afecciones respiratorias y fiebre.",
+        "accion_propuesta": "Camas térmicas, paridera seca y drenaje. Contingencia: Refuerzo de abrigo y atención veterinaria. Indicador: Temperatura, humedad y mortalidad."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Verano: escasez de agua",
+        "riesgo": "Cerdas gestantes con riesgo de deshidratación y aborto.",
+        "accion_propuesta": "Tanque de reserva y monitoreo. Contingencia: Racionamiento técnico y abastecimiento alterno. Indicador: Días de reserva/abortos."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Lluvias intensas",
+        "riesgo": "Acceso y pisos húmedos.",
+        "accion_propuesta": "Cubiertas, canales y drenaje. Contingencia: Traslado a zona seca. Indicador: Días con encharcamiento."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Variación de temperatura",
+        "riesgo": "Estrés animal.",
+        "accion_propuesta": "Ventilación y aislamiento regulables. Contingencia: Ajustar cama y agua. Indicador: Signos clínicos."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Eventos sobre la fuente",
+        "riesgo": "Reducción o contaminación del nacedero.",
+        "accion_propuesta": "Protección y mantenimiento. Contingencia: Fuente alterna temporal. Indicador: Caudal/calidad."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Productivo/bienestar",
+        "riesgo": "Aplastamiento de lechones",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "Vigilancia manual.",
+        "respuesta": "Parideras con protección."
+      },
+      {
+        "tipo": "SST/animal",
+        "riesgo": "Mordedura de cerda",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "Experiencia.",
+        "respuesta": "Barrera y protocolo."
+      },
+      {
+        "tipo": "Climático/sanitario",
+        "riesgo": "Mortalidad por frío y humedad",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "Manejo básico.",
+        "respuesta": "Cama térmica y drenaje."
+      },
+      {
+        "tipo": "Climático/productivo",
+        "riesgo": "Abortos por falta de agua",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto",
+        "prevencion": "Canecas",
+        "respuesta": "Tanque de reserva"
+      },
+      {
+        "tipo": "Sanitario",
+        "riesgo": "Enfermedad/zoonosis",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "Manejo sanitario básico.",
+        "respuesta": "Plan veterinario y bioseguridad."
+      },
+      {
+        "tipo": "Financiero",
+        "riesgo": "Costo del concentrado",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "Complementos de finca.",
+        "respuesta": "Registro nutricional y compras."
+      },
+      {
+        "tipo": "Gestión",
+        "riesgo": "Cifras financieras inconsistentes",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "Memoria",
+        "respuesta": "Contabilidad por camada."
+      },
+      {
+        "tipo": "Operativo/SST",
+        "riesgo": "Falta de iluminación",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto",
+        "prevencion": "Linternas.",
+        "respuesta": "Panel solar."
+      },
+      {
+        "tipo": "Ambiental",
+        "riesgo": "Contaminación por porcinaza",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "Aplicación directa.",
+        "respuesta": "Tratamiento y dosis."
+      },
+      {
+        "tipo": "Reproductivo / financiero",
+        "riesgo": "Dependencia de reproductor externo",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio-alto.",
+        "prevencion": "Pago en maquila.",
+        "respuesta": "Evaluar reproductor propio."
+      },
+      {
+        "tipo": "Logístico/bienestar",
+        "riesgo": "Transporte inadecuado",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio-alto.",
+        "prevencion": "Flete ocasional.",
+        "respuesta": "Protocolo y aliado."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "Confirmar inventario reproductivo, predio y datos básicos.",
+        "componente": "Inmediato.",
+        "responsable": "Productora/PMAPC",
+        "tiempo": "30 días.",
+        "recursos": "Visita y entrevista",
+        "resultado": "Línea base verificada.",
+        "evidencia": "Ficha de caracterización"
+      },
+      {
+        "actividad": "Implementar registro por cerda y camada.",
+        "componente": "Próximo ciclo.",
+        "responsable": "Productora/familia.",
+        "tiempo": "Permanente.",
+        "recursos": "Cuaderno o formato.",
+        "resultado": "Producción y mortalidad medibles.",
+        "evidencia": "Cuaderno de registros"
+      },
+      {
+        "actividad": "Solicitar valoración veterinaria",
+        "componente": "Inmediato.",
+        "responsable": "Productora/institución.",
+        "tiempo": "60 días.",
+        "recursos": "Gestión.",
+        "resultado": "Plan sanitario y reproductivo.",
+        "evidencia": "Informe veterinario"
+      },
+      {
+        "actividad": "Medir y diseñar parideras y divisiones.",
+        "componente": "Mes 1.",
+        "responsable": "Técnico/familia.",
+        "tiempo": "3 meses.",
+        "recursos": "Medidas y cotizaciones.",
+        "resultado": "Infraestructura segura",
+        "evidencia": "Diseño y cotización"
+      },
+      {
+        "actividad": "Instalar tanque y tubería de agua.",
+        "componente": "Mes 1.",
+        "responsable": "Familia/técnico.",
+        "tiempo": "6 meses.",
+        "recursos": "Tanque, manguera, accesorios.",
+        "resultado": "Reserva permanente.",
+        "evidencia": "Tanque instalado"
+      },
+      {
+        "actividad": "Instalar iluminación solar.",
+        "componente": "Mes 2.",
+        "responsable": "Técnico.",
+        "tiempo": "6 meses.",
+        "recursos": "Panel, batería y luminarias.",
+        "resultado": "Atención nocturna segura.",
+        "evidencia": "Panel e iluminación funcional"
+      },
+      {
+        "actividad": "Evaluar reproductor propio.",
+        "componente": "Mes 2.",
+        "responsable": "Veterinario/productora,",
+        "tiempo": "6 meses.",
+        "recursos": "Análisis económico y sanitario.",
+        "resultado": "Decisión de pie de cría.",
+        "evidencia": "Estudio de viabilidad"
+      },
+      {
+        "actividad": "Conciliar costos e ingresos.",
+        "componente": "Inmediato.",
+        "responsable": "Productora/ asesor.",
+        "tiempo": "3 meses.",
+        "recursos": "Facturas y registros.",
+        "resultado": "Costo real por lechón.",
+        "evidencia": "Análisis de costos"
+      },
+      {
+        "actividad": "Formalizar base de clientes y rutas.",
+        "componente": "Mes 1.",
+        "responsable": "Productora.",
+        "tiempo": "6 meses.",
+        "recursos": "WhatsApp, Facebook y lista.",
+        "resultado": "Ventas programadas.",
+        "evidencia": "Lista de clientes"
+      },
+      {
+        "actividad": "Diseñar manejo de porcinaza.",
+        "componente": "Mes 1.",
+        "responsable": "Ambiental/familia.",
+        "tiempo": "4 meses.",
+        "recursos": "Área y herramientas.",
+        "resultado": "Aplicación segura.",
+        "evidencia": "Plan de manejo de porcinaza"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "Reproductiva",
+        "indicador": "Cerdas activas.",
+        "meta": "Confirmar 100%.",
+        "frecuencia": "Mensual.",
+        "responsable": "Productora",
+        "evidencia": "Ficha de inventario"
+      },
+      {
+        "dimension": "Reproductiva",
+        "indicador": "Partos por cerda/año.",
+        "meta": "Registrar cada parto.",
+        "frecuencia": "Anual/por evento.",
+        "responsable": "Productora",
+        "evidencia": "Registro de partos"
+      },
+      {
+        "dimension": "Productiva",
+        "indicador": "Nacidos vivos por camada.",
+        "meta": "Línea base por cerda.",
+        "frecuencia": "Por parto.",
+        "responsable": "Familia",
+        "evidencia": "Registro por camada"
+      },
+      {
+        "dimension": "Productiva",
+        "indicador": "Mortalidad pre-destete.",
+        "meta": "Reducir con parideras y manejo.",
+        "frecuencia": "Por camada.",
+        "responsable": "Familia",
+        "evidencia": "Registro de mortalidad"
+      },
+      {
+        "dimension": "Comercial",
+        "indicador": "Lechones vendidos/año.",
+        "meta": "Crecimiento sustentado.",
+        "frecuencia": "Mensual/anual",
+        "responsable": "Productora",
+        "evidencia": "Planilla de ventas"
+      },
+      {
+        "dimension": "Comercial",
+        "indicador": "Precio promedio.",
+        "meta": "Registrar 100 % de ventas.",
+        "frecuencia": "Por venta.",
+        "responsable": "Productora",
+        "evidencia": "Recibos de venta"
+      },
+      {
+        "dimension": "Financiera",
+        "indicador": "Costo por lechón.",
+        "meta": "Calcular por camada.",
+        "frecuencia": "Por ciclo.",
+        "responsable": "Productora",
+        "evidencia": "Análisis de costos"
+      },
+      {
+        "dimension": "Financiera",
+        "indicador": "Margen por camada.",
+        "meta": "Determinar antes de ampliar.",
+        "frecuencia": "Por camada.",
+        "responsable": "Productora",
+        "evidencia": "Informe financiero"
+      },
+      {
+        "dimension": "Sanitaria",
+        "indicador": "Tratamientos y vacunas",
+        "meta": "Registro completo.",
+        "frecuencia": "Por animal.",
+        "responsable": "Productora",
+        "evidencia": "Planilla sanitaria"
+      },
+      {
+        "dimension": "Ambiental",
+        "indicador": "Agua consumida/reserva.",
+        "meta": "Línea base y días de autonomía.",
+        "frecuencia": "Semanal.",
+        "responsable": "Familia",
+        "evidencia": "Registro de agua"
+      },
+      {
+        "dimension": "Ambiental",
+        "indicador": "Porcinaza gestionada.",
+        "meta": "100% con destino registrado.",
+        "frecuencia": "Mensual.",
+        "responsable": "Familia",
+        "evidencia": "Planilla de porcinaza"
+      },
+      {
+        "dimension": "SST",
+        "indicador": "Incidentes por mordedura / caída.",
+        "meta": "Registrar y prevenir.",
+        "frecuencia": "Mensual.",
+        "responsable": "Productora",
+        "evidencia": "Bitácora de SST"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Construir parideras",
+        "efecto_productivo": "Reduce aplastamiento y mejora supervivencia",
+        "efecto_comercial": "Mayor disponibilidad.",
+        "efecto_financiero": "Inversión con ahorro por menor mortalidad",
+        "efecto_ambiental": "Más facilidad de limpieza",
+        "ajuste_necesario": "Diseño y drenaje adecuados."
+      },
+      {
+        "decision": "Instalar tanque y tubería",
+        "efecto_productivo": "Garantiza hidratación.",
+        "efecto_comercial": "Continuidad de oferta.",
+        "efecto_financiero": "Reduce pérdidas y trabajo manual.",
+        "efecto_ambiental": "Debe proteger fuente y evitar fugas",
+        "ajuste_necesario": "Medir consumo y caudal."
+      },
+      {
+        "decision": "Panel solar",
+        "efecto_productivo": "Permite atender partos de noche.",
+        "efecto_comercial": "Mejora cumplimiento.",
+        "efecto_financiero": "Inversión y mantenimiento.",
+        "efecto_ambiental": "Energía renovable y baterías a gestionar.",
+        "ajuste_necesario": "Dimensionamiento técnico."
+      },
+      {
+        "decision": "Adquirir reproductor",
+        "efecto_productivo": "Controla calendario y genética.",
+        "efecto_comercial": "Mayor continuidad.",
+        "efecto_financiero": "Evita maquila, pero agrega costos.",
+        "efecto_ambiental": "Más animal, agua y alimento.",
+        "ajuste_necesario": "Viabilidad sanitaria y económica."
+      },
+      {
+        "decision": "Aumentar cerdas",
+        "efecto_productivo": "Amplía producción.",
+        "efecto_comercial": "Mayor oferta",
+        "efecto_financiero": "Aumenta capital y riesgo.",
+        "efecto_ambiental": "Más residuos y consumo de agua.",
+        "ajuste_necesario": "Infraestructura y mercado primero."
+      },
+      {
+        "decision": "Aprovechar residuos alimentarios",
+        "efecto_productivo": "Reduce compra parcial de alimento.",
+        "efecto_comercial": "Sostiene precio.",
+        "efecto_financiero": "Ahorro potencial.",
+        "efecto_ambiental": "Disminuye desperdicio.",
+        "ajuste_necesario": "Dieta segura y balanceada."
+      },
+      {
+        "decision": "Registrar costos y camadas",
+        "efecto_productivo": "Mejora decisiones.",
+        "efecto_comercial": "Permite precio sostenible.",
+        "efecto_financiero": "Determina rentabilidad real.",
+        "efecto_ambiental": "Evita sobreproducción y desperdicio",
+        "ajuste_necesario": "Registro constante."
+      },
+      {
+        "decision": "Mejorar redes y clientes",
+        "efecto_productivo": "Programa ventas.",
+        "efecto_comercial": "Amplía mercado.",
+        "efecto_financiero": "Reduce permanencia y alimento extra",
+        "efecto_ambiental": "Menos traslados fallidos",
+        "ajuste_necesario": "Información real y actualizada."
+      },
+      {
+        "decision": "Manejo técnico de porcinaza",
+        "efecto_productivo": "Mejora higiene.",
+        "efecto_comercial": "Refuerza confianza",
+        "efecto_financiero": "Puede reducir compra de fertilizante",
+        "efecto_ambiental": "Evita contaminación.",
+        "ajuste_necesario": "Dosis, compostaje y distancia a agua"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}

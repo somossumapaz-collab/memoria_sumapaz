@@ -1,0 +1,2071 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "No se informó nombre comercial. Para este documento se identifica como Unidad Productiva Pecuaria de Josué Torres Riveros - Finca La Esperanza.",
+    "persona_entrevistada": "Josué Torres Riveros.",
+    "tipo_actividad": "Pecuaria: compra, levante y comercialización de cerdos. El productor también mencionó ovinos de lana y pollo campesino, sin información suficiente para caracterizarlos.",
+    "ubicacion_especifica": "Vereda referida en la entrevista como Razal/Raizal, sector El Carmen, Finca La Esperanza, localidad de Sumapaz, Bogotá D.C.",
+    "producto_servicio_principal": "Cerdos de levante o engorde y carne de cerdo comercializada por cortes, según el relato. El alcance legal y sanitario del beneficio y desposte está pendiente de verificar.",
+    "estado_actual": "Negocio en marcha, de pequeña escala, con aproximadamente siete cerdos. La infraestructura porcina se encuentra deteriorada y, según el productor, fue construida de manera inadecuada.",
+    "personas_vinculadas": "Josué Torres Riveros y su esposa.",
+    "coordenadas": "Pendientes de tomar o verificar.",
+    "descripcion_general": "Unidad familiar creada a partir de un apoyo institucional. El productor compra cerdos levantados, los maneja en la finca y comercializa el producto principalmente con clientes de Bogotá y compradores que en ocasiones recogen en la vereda. La prioridad expresada es mejorar completamente el sitio donde se alojan los animales.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F02": {
+    "mision": "Criar y comercializar cerdos para consumo humano, generando recursos para el sostenimiento familiar mediante un manejo responsable de los animaleslos, residuos y las condiciones de trabajo.",
+    "vision": "Contar con una porqueriza segura, higiénica y funcional, con pisos, desagües, cubierta y divisiones adecuadas, que permita mejorar el bienestar animal, la sanidad y la calidad del producto.",
+    "valores": [
+      "Responsabilidad",
+      "trabajo familiar",
+      "perseverancia",
+      "cuidado de los animales",
+      "higiene",
+      "honestidad",
+      "servicio al cliente y aprovechamiento de los residuos orgánicos."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Porque el productor cuenta con clientela que vuelve a comprar cuando considera que el producto es bueno y porque ofrece carne y cerdos mediante acuerdos directos.",
+    "beneficio_cliente": "Acceso a producto de origen rural, entregado directamente o recogido en la vereda, con posibilidad de negociar cantidad y precio.",
+    "diferencial": "Atención directa, clientela construida por recomendación, manejo familiar y aprovechamiento del estiércol en los potreros.",
+    "valor_ambiental": "El estiércol se recoge y se utiliza como abono en los pastos. El productor manifiesta usar poca agua en la limpieza.",
+    "valor_social_comunitario": "Genera recursos para la familia, fortalece una actividad rural y permite la participación conjunta del productor y su esposa.",
+    "evidencia": "Clientes que repiten la compra, pedidos y ventas en Bogotá; precios por libra mencionados para costilla y pierna. No se aportaron soportes.",
+    "observaciones_o_comentarios": "¿Cómo demostrar el diferencial?: Con registros de animales, alimentación, sanidad, origen, fechas, pesos, clientes, fotografías de la infraestructura, trazabilidad del producto y evidencia del manejo de estiércol."
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Aproximadamente cuatro o cinco años de experiencia.",
+      "Trabajo conjunto con la esposa.",
+      "Siete cerdos reportados actualmente.",
+      "Clientela en Bogotá y compradores recurrentes.",
+      "Venta directa y posibilidad de recogida en finca.",
+      "Uso de botas, guantes, tapabocas, gorra y ropa de trabajo.",
+      "Recolección del estiércol para abonar potreros.",
+      "Experiencia práctica en manejo animal."
+    ],
+    "oportunidades": [
+      "Reconstruir la porqueriza con diseño técnico.",
+      "Instalar pisos, drenajes, cubierta y divisiones adecuadas.",
+      "Mejorar bioseguridad y bienestar animal.",
+      "Implementar registros productivos y financieros.",
+      "Fortalecer asistencia veterinaria continua.",
+      "Formalizar la comercialización y trazabilidad.",
+      "Articularse con productores y compradores de Bogotá.",
+      "Caracterizar y organizar ovinos y pollo campesino."
+    ],
+    "debilidades": [
+      "Porqueriza en mal estado y con riesgo de caída.",
+      "Techo, piso y desagües construidos de forma deficiente.",
+      "No se llevan registros de costos, ventas ni inventarios.",
+      "No se informó plan sanitario ni proveedor de animales.",
+      "Transporte no definido.",
+      "Producción y ventas variables, sin cifras consolidadas.",
+      "No se identificaron tres prioridades completas.",
+      "Mezcla de actividades propias y una finca administrada."
+    ],
+    "amenazas": [
+      "Enfermedades porcinas y zoonosis.",
+      "Contaminación de suelo o agua por escorrentía de estiércol.",
+      "Lluvias y deterioro adicional de la infraestructura.",
+      "Caídas, golpes, mordeduras y exposición a residuos.",
+      "Aumento del costo de alimento y materiales.",
+      "Pérdida de clientes por calidad o incumplimiento.",
+      "Restricciones sanitarias para sacrificio y venta de carne.",
+      "Dependencia de apoyo externo para adecuaciones."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Cliente directo",
+        "perfil_que_busca": "Personas que compran cerdo o carne directamente al productor.",
+        "ubicacion": "Bogotá y Sumapaz.",
+        "necesidad": "Proteína para consumo humano.",
+        "frecuencia": "Ocasional/según disponibilidad.",
+        "criterio_compra": "Calidad, precio, confianza y presentación.",
+        "canal": "Contacto directo y acuerdo verbal."
+      },
+      {
+        "tipo_actor": "Consumidor final",
+        "perfil_que_busca": "Familias que consumen costilla, pierna u otros cortes.",
+        "ubicacion": "Bogotá u otros lugares por confirmar.",
+        "necesidad": "Alimento para el hogar.",
+        "frecuencia": "Ocasional.",
+        "criterio_compra": "Sabor, frescura, precio y confianza.",
+        "canal": "Compra al cliente o comprador directo."
+      },
+      {
+        "tipo_actor": "Comprador local",
+        "perfil_que_busca": "Personas que pueden recoger el producto en la vereda.",
+        "ubicacion": "Sector El Carmen / Sumapaz.",
+        "necesidad": "Compra cercana sin intermediación extensa.",
+        "frecuencia": "Según negociación.",
+        "criterio_compra": "Disponibilidad y precio.",
+        "canal": "Recogida en finca o vereda."
+      },
+      {
+        "tipo_actor": "Comprador institucional",
+        "perfil_que_busca": "No identificado.",
+        "ubicacion": "Pendiente.",
+        "necesidad": "Producto formalizado, trazable y continuo.",
+        "frecuencia": "Potencial.",
+        "criterio_compra": "Permisos, calidad, volumen y facturación..",
+        "canal": "Por gestionar."
+      },
+      {
+        "tipo_actor": "Restaurantes / tiendas / plazas",
+        "perfil_que_busca": "No se informaron compradores específicos.",
+        "ubicacion": "Bogotá / región.",
+        "necesidad": "Cortes de carne con continuidad.",
+        "frecuencia": "Potencial.",
+        "criterio_compra": "Precio, calidad, inocuidad y entrega.",
+        "canal": "Por explorar."
+      },
+      {
+        "tipo_actor": "Clientes de animales en pie",
+        "perfil_que_busca": "Compradores de cerdos vivos, si esta modalidad se utiliza.",
+        "ubicacion": "Pendiente.",
+        "necesidad": "Animales con peso y estado sanitario conocidos.",
+        "frecuencia": "Por ciclo.",
+        "criterio_compra": "Peso, sanidad y precio.",
+        "canal": "Negociación directa; modalidad por confirmar."
+      },
+      {
+        "tipo_actor": "Otro",
+        "perfil_que_busca": "Clientes construidos por recomendación y recompra.",
+        "ubicacion": "Bogotá y entorno rural.",
+        "necesidad": "Producto confiable.",
+        "frecuencia": "Según pedidos.",
+        "criterio_compra": "Experiencia previa y calidad percibida.",
+        "canal": "Voz a voz y llamadas; datos pendientes."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Producto de buena calidad, buen sabor, precio negociable y cumplimiento.",
+    "como_se_conoce_la_necesidad": "El productor afirma que cuando el producto es bueno el cliente vuelve y realiza nuevos pedidos.",
+    "quienes_compran_o_podrian_comprar": "Clientes de Bogotá, compradores que recogen en la vereda, familias y potencialmente tiendas o restaurantes.",
+    "evidencia": "Clientela recurrente y pedidos; no se aportaron registros, facturas ni cartas de intención.",
+    "ventaja_territorial": "Origen rural, relación directa con el productor y posibilidad de aprovechar el estiércol en la finca.",
+    "cambios_demanda": "No se informó.",
+    "dificultades": "Precios diferentes entre Sumapaz y Bogotá, transporte no definido, ausencia de registros, infraestructura deteriorada y posibles requisitos sanitarios para la carne.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Productores vecinos",
+        "tipo": "Pecuarios rurales",
+        "que_aporta": "Experiencia, proveedores y apoyo en manejo.",
+        "que_recibe": "Intercambio de conocimientos y compras conjuntas.",
+        "trabajo_conjunto": "Compra de alimento, materiales o transporte.",
+        "aporte_ambiental": "Manejo compartido de residuos y agua.",
+        "accion": "Crear red local de porcicultores."
+      },
+      {
+        "actor_aliado": "Asociación campesina",
+        "tipo": "Organización productiva",
+        "que_aporta": "Gestión, capacitación y comercialización.",
+        "que_recibe": "Oferta pecuaria y participación del productor.",
+        "trabajo_conjunto": "Compras, ventas y asistencia asociativa.",
+        "aporte_ambiental": "Promover buenas prácticas.",
+        "accion": "Identificar asociación disponible."
+      },
+      {
+        "actor_aliado": "Junta de Acción Comunal",
+        "tipo": "Organización comunitaria",
+        "que_aporta": "Convocatoria y gestión territorial.",
+        "que_recibe": "Fortalecimiento económico local.",
+        "trabajo_conjunto": "Socialización de necesidades y proyectos.",
+        "aporte_ambiental": "Protección de quebradas y manejo de residuos.",
+        "accion": "Presentar la necesidad de infraestructura."
+      },
+      {
+        "actor_aliado": "Compradores locales",
+        "tipo": "Clientes/ comercializadores",
+        "que_aporta": "Demanda, pago y retroalimentación.",
+        "que_recibe": "Producto disponible y negociación directa.",
+        "trabajo_conjunto": "Pedidos programados y precios claros.",
+        "aporte_ambiental": "Rutas agrupadas.",
+        "accion": "Crear listado de clientes."
+      },
+      {
+        "actor_aliado": "Ferias o mercados campesinos",
+        "tipo": "Canal comercial",
+        "que_aporta": "Visibilidad y nuevos compradores.",
+        "que_recibe": "Producto local, sujeto a requisitos.",
+        "trabajo_conjunto": "Participación futura.",
+        "aporte_ambiental": "Promoción de origen rural.",
+        "accion": "Verificar condiciones sanitarias."
+      },
+      {
+        "actor_aliado": "Instituciones de apoyo",
+        "tipo": "Alcaldía, asistencia técnica, sanidad y formación",
+        "que_aporta": "Visita, diseño, veterinario, capacitación y posible impulso.",
+        "que_recibe": "Unidad mejorada y evidencias.",
+        "trabajo_conjunto": "Infraestructura, sanidad, costos y bienestar.",
+        "aporte_ambiental": "Prevención de contaminación.",
+        "accion": "Solicitar diagnóstico técnico presencial."
+      },
+      {
+        "actor_aliado": "Aliados logísticos o digitales",
+        "tipo": "Transportadores y apoyo de comunicación",
+        "que_aporta": "Traslado y contacto con clientes.",
+        "que_recibe": "Pago por servicio.",
+        "trabajo_conjunto": "Entregas y pedidos.",
+        "aporte_ambiental": "Optimización de rutas.",
+        "accion": "Definir transporte y WhatsApp."
+      },
+      {
+        "actor_aliado": "Otros aliados",
+        "tipo": "Veterinarios y proveedores",
+        "que_aporta": "Plan sanitario, medicamentos, animales y alimento.",
+        "que_recibe": "Compras y relación continua.",
+        "trabajo_conjunto": "Asistencia y compras programadas.",
+        "aporte_ambiental": "Uso responsable de insumos.",
+        "accion": "Crear directorio y calendario sanitario."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Encuesta",
+        "a_quien": "No se informó.",
+        "resultado": "Pendiente.",
+        "motivacion": "Pendiente.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Entrevista",
+        "a_quien": "Conversaciones directas con clientes.",
+        "resultado": "El productor interpreta la recompra como señal de aceptación.",
+        "motivacion": "Calidad, sabor, precio y confianza.",
+        "evidencia": "Relato del productor."
+      },
+      {
+        "metodo": "Degustación/muestra",
+        "a_quien": "No se informó.",
+        "resultado": "Pendiente.",
+        "motivacion": "Pendiente.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Venta previa",
+        "a_quien": "Clientes de Bogotá y compradores directos.",
+        "resultado": "Existe clientela y pedidos.",
+        "motivacion": "Producto bueno y precio acordado.",
+        "evidencia": "Registros pendientes."
+      },
+      {
+        "metodo": "Carta de intención",
+        "a_quien": "No existe información.",
+        "resultado": "Pendiente.",
+        "motivacion": "Volumen y continuidad.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Participación en feria",
+        "a_quien": "No se informó.",
+        "resultado": "Pendiente.",
+        "motivacion": "Origen local.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Otro",
+        "a_quien": "Recogida del producto por algunos compradores.",
+        "resultado": "Facilita la venta cuando el cliente llega a la vereda.",
+        "motivacion": "Disponibilidad y trato directo.",
+        "evidencia": "Relato; frecuencia pendiente."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Cerdo de levante o engorde",
+        "descripcion_tecnica": "Animal comprado en etapa levantada y manejado hasta el peso de venta.",
+        "unidad": "Animal/kg/arroba; modalidad por confirmar.",
+        "insumos_principales": "Cerdo, alimento, agua, medicamentos y alojamiento.",
+        "condiciones_especiales": "Porqueriza segura, limpia, ventilada y con agua.",
+        "presentacion": "Venta en pie; por confirmar.",
+        "diferencial": "Manejo familiar y clientela directa."
+      },
+      {
+        "servicio": "Costilla de cerdo",
+        "descripcion_tecnica": "Corte cárnico mencionado por el productor.",
+        "unidad": "Libra.",
+        "insumos_principales": "Carne de cerdo; proceso de beneficio no descrito.",
+        "condiciones_especiales": "Refrigeración o congelación continua.",
+        "presentacion": "Bolsa plástica.",
+        "diferencial": "Precio referido entre $9.500 y $11.000 por libra."
+      },
+      {
+        "servicio": "Pierna de cerdo",
+        "descripcion_tecnica": "Corte cárnico mencionado en la entrevista.",
+        "unidad": "Libra.",
+        "insumos_principales": "Carne de cerdo; origen del sacrificio pendiente.",
+        "condiciones_especiales": "Cadena de frío.",
+        "presentacion": "Bolsa plástica.",
+        "diferencial": "Precio referido entre $10.500 y $11.000 por libra."
+      },
+      {
+        "servicio": "Ovinos de lana / pollo campesino",
+        "descripcion_tecnica": "Actividades mencionadas al inicio, sin caracterización productiva o comercial.",
+        "unidad": "Animal/unidad; pendiente.",
+        "insumos_principales": "Insumos y manejo no informados.",
+        "condiciones_especiales": "Pendiente.",
+        "presentacion": "Pendiente.",
+        "diferencial": "Deben diligenciarse en visita si hacen parte del alcance."
+      }
+    ],
+    "observaciones_o_comentarios": "Ficha técnica pendiente: confirmar modalidad de venta de los cerdos, peso de ingreso y salida, raza o cruce, edad, alimentación, plan sanitario, mortalidad, tiempos de retiro, lugar autorizado de sacrificio, cadena de frío, tipo de corte, vida útil, empaque, transporte y trazabilidad. También debe definirse si ovinos, pollos y queso hacen parte del mismo PMAPC."
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Cerdo de levante / engorde",
+        "unidad": "Lote actual de 7 cerdos.",
+        "actividad_proceso": "1. Seleccionar y comprar cerdos levantados con origen y estado sanitario verificables.",
+        "tiempo_estimado": "Por ciclo."
+      },
+      {
+        "servicio": "Cerdo de levante / engorde",
+        "unidad": "Lote.",
+        "actividad_proceso": "2. Recibir, identificar, observar y adaptar los animales.",
+        "tiempo_estimado": "Primeros días."
+      },
+      {
+        "servicio": "Cerdo de levante / engorde",
+        "unidad": "Animales.",
+        "actividad_proceso": "3. Suministrar alimento y agua y revisar comportamiento y salud.",
+        "tiempo_estimado": "Diario."
+      },
+      {
+        "servicio": "Cerdo de levante / engorde",
+        "unidad": "Porqueriza.",
+        "actividad_proceso": "4. Recoger estiércol con pala, almacenarlo temporalmente y limpiar con uso controlado de agua.",
+        "tiempo_estimado": "Diario / según necesidad."
+      },
+      {
+        "servicio": "Cerdo de levante / engorde",
+        "unidad": "Animales.",
+        "actividad_proceso": "5. Aplicar manejo sanitario y registrar tratamientos y tiempos de retiro.",
+        "tiempo_estimado": "Según calendario."
+      },
+      {
+        "servicio": "Cerdo de levante / engorde",
+        "unidad": "Animales.",
+        "actividad_proceso": "6. Verificar crecimiento y peso; actualmente no se reporta báscula ni registro.",
+        "tiempo_estimado": "Quincenal/mensual."
+      },
+      {
+        "servicio": "Comercialización",
+        "unidad": "Animal o producto.",
+        "actividad_proceso": "7. Negociar precio y confirmar modalidad de venta.",
+        "tiempo_estimado": "Por pedido o ciclo."
+      },
+      {
+        "servicio": "Carne de cerdo",
+        "unidad": "Cortes.",
+        "actividad_proceso": "8. Si se vende carne, realizar beneficio, desposte y enfriamiento únicamente mediante condiciones autorizadas.",
+        "tiempo_estimado": "Según venta."
+      },
+      {
+        "servicio": "Entrega",
+        "unidad": "Pedido.",
+        "actividad_proceso": "9. Empacar, conservar en frío y entregar o coordinar recogida.",
+        "tiempo_estimado": "Según acuerdo."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Cerdos levantados",
+        "cantidad_unidad": "7 animales actuales; compras futuras pendientes.",
+        "frecuencia": "Por ciclo.",
+        "proveedor_fuente": "Proveedor no informado.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Riesgo sanitario y aumento de residuos.",
+        "manejo_ambiental": "Verificar origen, cuarentena y capacidad.",
+        "observaciones": "No cuenta con cerda de cría."
+      },
+      {
+        "insumo": "Alimento para cerdos",
+        "cantidad_unidad": "Cantidad y tipo no informados.",
+        "frecuencia": "Diaria.",
+        "proveedor_fuente": "Proveedor pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Empaques, desperdicio y costos.",
+        "manejo_ambiental": "Dosificar, almacenar seco y registrar.",
+        "observaciones": "Principal costo probable; sin dato."
+      },
+      {
+        "insumo": "Agua",
+        "cantidad_unidad": "Consumo no medido.",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Quebrada grande cercana.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Presión sobre la fuente y escorrentía.",
+        "manejo_ambiental": "Medir, proteger captación y usar bebederos eficientes.",
+        "observaciones": "El productor afirma usar poca agua para limpieza."
+      },
+      {
+        "insumo": "Medicamentos / desparasitantes",
+        "cantidad_unidad": "Según necesidad.",
+        "frecuencia": "Ocasional.",
+        "proveedor_fuente": "Veterinario o almacén; pendiente.",
+        "toxicidad": "Según producto",
+        "impacto_potencial": "Envases, residuos y tiempos de retiro.",
+        "manejo_ambiental": "Aplicación técnica y ruta posconsumo.",
+        "observaciones": "No se describió plan sanitario."
+      },
+      {
+        "insumo": "Pala y recipientes",
+        "cantidad_unidad": "Pala y canecas.",
+        "frecuencia": "Uso diario.",
+        "proveedor_fuente": "Disponibles; estado pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Contacto con estiércol.",
+        "manejo_ambiental": "Limpieza, desinfección y uso de EPP.",
+        "observaciones": "Se usan para recoger abono."
+      },
+      {
+        "insumo": "Materiales de infraestructura",
+        "cantidad_unidad": "Techo, estructura, piso, divisiones, drenajes y tuberías.",
+        "frecuencia": "Inversión inicial.",
+        "proveedor_fuente": "Por cotizar.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos de obra y modificación de escorrentía.",
+        "manejo_ambiental": "Diseño técnico y disposición de sobrantes.",
+        "observaciones": "Necesidad principal."
+      },
+      {
+        "insumo": "Elementos de protección",
+        "cantidad_unidad": "Botas, guantes, tapabocas, gorra y ropa o chamarra.",
+        "frecuencia": "Uso diario / reposición.",
+        "proveedor_fuente": "Comercio local.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos de EPP.",
+        "manejo_ambiental": "Uso correcto, lavado y reposición.",
+        "observaciones": "El productor reporta utilizarlos."
+      },
+      {
+        "insumo": "Bolsas plásticas",
+        "cantidad_unidad": "Según venta.",
+        "frecuencia": "Ocasional.",
+        "proveedor_fuente": "Comercio.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos plásticos y contacto con alimento.",
+        "manejo_ambiental": "Usar material apto y reducir residuos.",
+        "observaciones": "Empaque reportado."
+      },
+      {
+        "insumo": "Energía",
+        "cantidad_unidad": "No informada.",
+        "frecuencia": "Según uso.",
+        "proveedor_fuente": "Red o sistema pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Consumo y riesgo eléctrico.",
+        "manejo_ambiental": "Verificar instalaciones.",
+        "observaciones": "No se suministró información."
+      },
+      {
+        "insumo": "Transporte",
+        "cantidad_unidad": "No informado.",
+        "frecuencia": "Según compra o venta.",
+        "proveedor_fuente": "Propio o tercero; pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Emisiones y ruptura de cadena de frío.",
+        "manejo_ambiental": "Rutas, contenedores y comprobantes.",
+        "observaciones": "Respuesta no quedó registrada."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "No se informó número de animales vendidos, peso, duración de los ciclos ni cantidad mensual de carne.",
+    "produccion_normal": "El productor reporta siete cerdos actuales. No cuenta con cerda de cría y compra animales levantados.",
+    "capacidad_mensual_teorica": "Depende del estado de la porqueriza, capacidad de alojamiento, alimento, sanidad y capital. No es posible estimarlo con la información disponible.",
+    "produccion_maxima_posible": "Pendiente de visita técnica y cálculo de capacidad por área, densidad, drenajes, ventilación y manejo de residuos.",
+    "area_numero_habitaciones": "Porqueriza en Finca La Esperanza; medidas no suministradas.",
+    "limitantes_productivos": "Infraestructura deteriorada, piso y cubierta deficientes, ausencia de drenajes, falta de registros, costos desconocidos y asistencia veterinaria no continua.",
+    "limitantes_ambientales": "Agua proveniente de quebrada, escorrentía de limpieza hacia pastos, manejo de estiércol sin medición y riesgo de lluvias o erosión.",
+    "capacidad_instalada": "Porqueriza existente, actualmente en condiciones inadecuadas; capacidad técnica pendiente.",
+    "capacidad_utilizada": "Siete cerdos reportados.",
+    "produce_mismo_todo_ano": false,
+    "alcanza_para_demanda": false,
+    "necesidades_aumentar_sosteniblemente": "Reconstrucción técnica de la porqueriza, drenajes y manejo de estiércol, agua segura, plan sanitario, registros, alimentación y mercado formal.",
+    "observaciones_o_comentarios": "¿Produce la misma cantidad todo el año?: No se informó. La actividad depende de compra de animales, duración del ciclo, alimento, sanidad y demanda.\n¿La producción actual alcanza para atender pedidos?: La entrevista no dejó una respuesta clara."
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua disponible",
+        "estado_actual": "Proviene de una quebrada grande cercana.",
+        "limite_restriccion": "Consumo, calidad y captación no medidos.",
+        "afectacion": "Pueden limitar higiene y bebida o generar riesgo sanitario.",
+        "efecto": "Enfermedad y presión sobre la fuente.",
+        "incidencia": "Alta",
+        "accion_mejora": "Analizar agua, medir consumo y usar bebederos eficientes."
+      },
+      {
+        "condicion": "Fuentes hídricas cercanas",
+        "estado_actual": "Quebrada ubicada en la finca o en su entorno.",
+        "limite_restriccion": "Distancia y protección pendientes.",
+        "afectacion": "La escorrentía con estiércol podría llegar a la fuente.",
+        "efecto": "Contaminación hídrica.",
+        "incidencia": "Muy alta",
+        "accion_mejora": "Separar drenajes, franjas de protección y almacenamiento de estiércol."
+      },
+      {
+        "condicion": "Suelo",
+        "estado_actual": "El estiércol y agua residual se aplican o escurren hacia pastos.",
+        "limite_restriccion": "Dosis y capacidad de absorción no evaluadas.",
+        "afectacion": "Exceso de nutrientes, olores o compactación.",
+        "efecto": "Afectación de pasturas y suelo.",
+        "incidencia": "Alta",
+        "accion_mejora": "Compostar o estabilizar y aplicar en dosis controlada."
+      },
+      {
+        "condicion": "Pendiente / topografía",
+        "estado_actual": "No descrita; se menciona una quebrada que erosiona o se lleva parte de la finca.",
+        "limite_restriccion": "Riesgo de erosión por verificar.",
+        "afectacion": "Puede arrastrar suelo, residuos y agua.",
+        "efecto": "Pérdida de terreno.",
+        "incidencia": "Alta",
+        "accion_mejora": "Visita, manejo de escorrentía y obras permitidas."
+      },
+      {
+        "condicion": "Clima",
+        "estado_actual": "La cubierta y el piso se encuentran mal construidos; la lluvia puede agravar la situación.",
+        "limite_restriccion": "Protección insuficiente.",
+        "afectacion": "Humedad y frío afectan bienestar y limpieza.",
+        "efecto": "Enfermedad y deterioro.",
+        "incidencia": "Alta",
+        "accion_mejora": "Cubierta resistente, ventilación y piso seco."
+      },
+      {
+        "condicion": "Biodiversidad",
+        "estado_actual": "Entorno rural con potreros y quebrada.",
+        "limite_restriccion": "Interacción de residuos y animales con ecosistema.",
+        "afectacion": "Puede atraer vectores o afectar fauna.",
+        "efecto": "Impacto local.",
+        "incidencia": "Media-alta",
+        "accion_mejora": "Malla, limpieza y control no tóxico."
+      },
+      {
+        "condicion": "Uso de insumos",
+        "estado_actual": "Alimento, medicamentos, bolsas y materiales.",
+        "limite_restriccion": "Cantidades y fichas no registradas.",
+        "afectacion": "Aumenta costos y residuos.",
+        "efecto": "Riesgo sanitario y financiero.",
+        "incidencia": "Alta",
+        "accion_mejora": "Inventario, dosificación y almacenamiento."
+      },
+      {
+        "condicion": "Manejo de residuos",
+        "estado_actual": "Estiércol recogido en canecas y usado en potreros; basura y otros residuos no detallados.",
+        "limite_restriccion": "No existe plan documentado.",
+        "afectacion": "Puede contaminar agua y suelo.",
+        "efecto": "Olores, vectores y pérdida de calidad.",
+        "incidencia": "Muy alta",
+        "accion_mejora": "Plan de estiércol, aguas, envases, mortalidad y empaques."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Biológico",
+        "peligro": "Bacterias, virus, parásitos y zoonosis porcinas.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Botas, guantes, tapabocas y ropa de trabajo.",
+        "accion": "Plan sanitario, lavado de manos, desinfección y vacunación."
+      },
+      {
+        "tipo": "Biológico",
+        "peligro": "Contacto con estiércol y aguas de limpieza.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Pala, canecas y EPP.",
+        "accion": "Zona de almacenamiento, limpieza de herramientas y barreras."
+      },
+      {
+        "tipo": "Mecánico/animal",
+        "peligro": "Mordeduras, golpes o aplastamiento por cerdos.",
+        "aplica": true,
+        "nivel_riesgo": "Media-alta",
+        "controles_actuales": "Experiencia y ropa de trabajo.",
+        "accion": "Divisiones seguras, manejo tranquilo y apoyo."
+      },
+      {
+        "tipo": "Físico",
+        "peligro": "Frío, lluvia, humedad y exposición solar.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Gorra y chamarra.",
+        "accion": "Cubierta adecuada, ropa impermeable y pausas."
+      },
+      {
+        "tipo": "Químico",
+        "peligro": "Medicamentos, desinfectantes y productos de limpieza.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No se detalló.",
+        "accion": "Guantes, gafas, rotulado y dosificación."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Carga de alimento, canecas, animales o material de obra.",
+        "aplica": true,
+        "nivel_riesgo": "Media-alta",
+        "controles_actuales": "No informado.",
+        "accion": "Técnica de carga, ayudas y trabajo entre dos."
+      },
+      {
+        "tipo": "Locativo",
+        "peligro": "Piso defectuoso, humedad, falta de desagües y estructura deteriorada.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Botas.",
+        "accion": "Reconstrucción, drenajes y orden."
+      },
+      {
+        "tipo": "Mecánico",
+        "peligro": "Uso de pala, herramientas y materiales de reparación.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No informado.",
+        "accion": "Revisión de herramientas y EPP."
+      },
+      {
+        "tipo": "Eléctrico",
+        "peligro": "Conexiones o equipos en ambiente húmedo.",
+        "aplica": true,
+        "nivel_riesgo": "Baja-media",
+        "controles_actuales": "No informado.",
+        "accion": "Revisión técnica y protecciones."
+      },
+      {
+        "tipo": "Tránsito",
+        "peligro": "Traslado de animales, carne, alimento y materiales.",
+        "aplica": true,
+        "nivel_riesgo": "Según actividad",
+        "controles_actuales": "No se informó transporte.",
+        "accion": "Vehículo apto, carga segura y cadena de frío."
+      }
+    ],
+    "observaciones_o_comentarios": "La identificación de riesgos debe verificarse presencialmente. La infraestructura fue descrita como inestable y sin drenajes adecuados, por lo que deben revisarse estructura, pisos, cubierta, manejo de animales, herramientas, estiércol, agua, productos veterinarios, transporte y condiciones de sacrificio o manipulación de carne."
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Usar botas, guantes, tapabocas, gorra y ropa exclusiva.",
+        "riesgo": "Biológico, físico y mecánico.",
+        "responsable": "Josué y esposa.",
+        "frecuencia": "Cada jornada.",
+        "evidencia": "Checklist y fotografías."
+      },
+      {
+        "accion_preventiva": "Reconstruir pisos, cubierta, divisiones y drenajes.",
+        "riesgo": "Locativo, animal y sanitario.",
+        "responsable": "Productor/técnico/apoyo.",
+        "frecuencia": "Inversión inicial y mantenimiento.",
+        "evidencia": "Informe, factura y fotos."
+      },
+      {
+        "accion_preventiva": "Limpiar y desinfectar herramientas, canecas y áreas.",
+        "riesgo": "Biológico y químico.",
+        "responsable": "Familia.",
+        "frecuencia": "Diaria / semanal.",
+        "evidencia": "Planilla."
+      },
+      {
+        "accion_preventiva": "Implementar plan veterinario y registro de tratamientos.",
+        "riesgo": "Enfermedad animal y zoonosis.",
+        "responsable": "Veterinario/productor.",
+        "frecuencia": "Según calendario.",
+        "evidencia": "Bitácora y fórmulas."
+      },
+      {
+        "accion_preventiva": "Organizar alimento, medicamentos y residuos en zonas separadas.",
+        "riesgo": "Plagas, químicos y contaminación.",
+        "responsable": "Josué.",
+        "frecuencia": "Permanente.",
+        "evidencia": "Inspección."
+      },
+      {
+        "accion_preventiva": "Disponer botiquín y registrar incidentes.",
+        "riesgo": "Emergencias y seguimiento.",
+        "responsable": "Familia.",
+        "frecuencia": "Revisión mensual/evento.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "accion_preventiva": "Aplicar medidas de seguridad vial y cadena de frío.",
+        "riesgo": "Tránsito e inocuidad.",
+        "responsable": "Productor/transportador.",
+        "frecuencia": "Cada traslado.",
+        "evidencia": "Registro de entrega."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Ferias campesinas",
+        "activo": false,
+        "descripcion": "Venta futura de producto formalizado.",
+        "responsable": "Josué.",
+        "frecuencia": "Según convocatoria."
+      },
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "Negociación con clientes y entrega directa.",
+        "responsable": "Josué.",
+        "frecuencia": "Según ciclo o pedido."
+      },
+      {
+        "canal": "Redes sociales",
+        "activo": false,
+        "descripcion": "Pendiente de implementar.",
+        "responsable": "Josué / esposa.",
+        "frecuencia": "Por definir."
+      },
+      {
+        "canal": "WhatsApp/llamadas",
+        "activo": true,
+        "descripcion": "Contacto con clientela y pedidos.",
+        "responsable": "Josué.",
+        "frecuencia": "Según pedido."
+      },
+      {
+        "canal": "Tiendas/restaurantes/plazas",
+        "activo": false,
+        "descripcion": "Clientes en Bogotá; establecimientos no identificados.",
+        "responsable": "Josué.",
+        "frecuencia": "Según acuerdo."
+      },
+      {
+        "canal": "Compras institucionales",
+        "activo": false,
+        "descripcion": "No se informó.",
+        "responsable": "Pendiente.",
+        "frecuencia": "Por explorar."
+      },
+      {
+        "canal": "Comercialización asociativa",
+        "activo": false,
+        "descripcion": "Posible articulación con productores.",
+        "responsable": "Josué / asociación.",
+        "frecuencia": "Por gestionar."
+      },
+      {
+        "canal": "Otro",
+        "activo": true,
+        "descripcion": "Algunos clientes recogen el producto en la vereda.",
+        "responsable": "Josué / comprador.",
+        "frecuencia": "Según negociación."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Cerdo en pie",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No informado.",
+        "logistica_plataforma": "Transporte pendiente.",
+        "precio_final": null,
+        "justificacion": "Debe definirse según peso, alimento, sanidad y tiempo."
+      },
+      {
+        "servicio": "Costilla de cerdo",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "$9.500 a $11.000 por libra, según relato.",
+        "logistica_plataforma": "Cadena de frío y transporte pendientes.",
+        "precio_final": null,
+        "justificacion": "Precio negociado; modalidad y mercado por verificar."
+      },
+      {
+        "servicio": "Pierna de cerdo",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "$10.500 a $11.000 por libra, según relato.",
+        "logistica_plataforma": "Cadena de frío y transporte pendientes.",
+        "precio_final": null,
+        "justificacion": "Depende del corte y lugar de venta."
+      },
+      {
+        "servicio": "Otros cortes/productos",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No informado.",
+        "logistica_plataforma": "Pendiente.",
+        "precio_final": null,
+        "justificacion": "Se requiere lista completa de productos y precios."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": "Los precios mencionados corresponden a referencias verbales de venta en Bogotá para costilla y pierna. No se conocen costos de compra del animal, alimento, medicamentos, sacrificio, desposte, empaque, refrigeración, transporte ni mano de obra. Por tanto, no es posible determinar el margen."
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Cerdos en pie",
+        "cantidad_mensual": "No informada..",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Negociada; por confirmar.",
+        "canal": "Clientes directos."
+      },
+      {
+        "concepto_servicio": "Costilla",
+        "cantidad_mensual": "Libras vendidas no informadas.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Clientes en Bogotá."
+      },
+      {
+        "concepto_servicio": "Pierna",
+        "cantidad_mensual": "Libras vendidas no informadas.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Clientes en Bogotá."
+      },
+      {
+        "concepto_servicio": "Ovinos/pollo campesino",
+        "cantidad_mensual": "Producción y ventas no informadas.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Pendiente."
+      },
+      {
+        "concepto_servicio": "Proyección total",
+        "cantidad_mensual": "No se puede establecer con la entrevista.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "N/A",
+        "canal": "Requiere registros de al menos un ciclo."
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": "La proyección de ventas permanece pendiente. Se deben registrar durante un ciclo completo el número de animales comprados y vendidos, peso, mortalidad, libras por corte, autoconsumo, clientes, precios, forma de pago, costos y pérdidas. La actividad de ovinos y pollos requiere un levantamiento adicional."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Cliente directo",
+        "estrategia": "Cumplir acuerdos, ofrecer producto de calidad y confirmar disponibilidad.",
+        "medio": "Llamada, WhatsApp o visita.",
+        "frecuencia": "Según ciclo / pedido.",
+        "responsable": "Josué."
+      },
+      {
+        "cliente": "Comprador local",
+        "estrategia": "Coordinar recogida, peso, precio y fecha.",
+        "medio": "Llamada y acuerdo personal.",
+        "frecuencia": "Según venta.",
+        "responsable": "Josué."
+      },
+      {
+        "cliente": "Comprador institucional",
+        "estrategia": "Cumplir formalización, sanidad, volumen y trazabilidad.",
+        "medio": "Reuniones y documentos.",
+        "frecuencia": "Por gestionar.",
+        "responsable": "Productor/ aliado."
+      },
+      {
+        "cliente": "Consumidor final",
+        "estrategia": "Empaque seguro, información del producto y atención a comentarios.",
+        "medio": "Contacto directo.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Josué / esposa."
+      },
+      {
+        "cliente": "Aliado comercial",
+        "estrategia": "Mantener condiciones claras de precio, entrega y pago.",
+        "medio": "Llamada y registro.",
+        "frecuencia": "Cada negociación.",
+        "responsable": "Josué."
+      },
+      {
+        "cliente": "Cliente recurrente",
+        "estrategia": "Registrar compras y avisar disponibilidad del siguiente ciclo.",
+        "medio": "Base de datos sencilla.",
+        "frecuencia": "Mensual/por ciclo.",
+        "responsable": "Josué/esposa."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Cerdo en pie",
+        "canal": "Entrega en finca o punto acordado.",
+        "tiempo": "Según acuerdo.",
+        "transporte_operacion": "Vehículo apto; pendiente.",
+        "condicion_calidad": "Bienestar, documentación y manejo seguro.",
+        "capacidad": "Pendiente.",
+        "costo": "Pendiente.",
+        "responsable": "Josué / comprador."
+      },
+      {
+        "servicio_insumo": "Carne de cerdo",
+        "canal": "Entrega directa a cliente.",
+        "tiempo": "Mismo día o según cadena de frío.",
+        "transporte_operacion": "Vehículo y contenedor térmico.",
+        "condicion_calidad": "Refrigeración o congelación continua.",
+        "capacidad": "Pendiente.",
+        "costo": "Pendiente.",
+        "responsable": "Josué / aliado autorizado."
+      },
+      {
+        "servicio_insumo": "Recogida en vereda",
+        "canal": "Cliente recoge.",
+        "tiempo": "Hora acordada.",
+        "transporte_operacion": "Vehículo del comprador.",
+        "condicion_calidad": "Producto protegido y documentación.",
+        "capacidad": "Según pedido.",
+        "costo": "A cargo del comprador; verificar.",
+        "responsable": "Josué / comprador."
+      },
+      {
+        "servicio_insumo": "Entrega en Bogotá",
+        "canal": "Venta directa.",
+        "tiempo": "Ruta programada.",
+        "transporte_operacion": "Transporte no definido.",
+        "condicion_calidad": "Cadena de frío y empaque apto.",
+        "capacidad": "Pendiente.",
+        "costo": "Pendiente.",
+        "responsable": "Josué / transportador."
+      },
+      {
+        "servicio_insumo": "Ovinos/pollos",
+        "canal": "Pendiente de caracterización.",
+        "tiempo": "Pendiente.",
+        "transporte_operacion": "Pendiente.",
+        "condicion_calidad": "Según especie y producto.",
+        "capacidad": "Pendiente.",
+        "costo": "Pendiente.",
+        "responsable": "Pendiente."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Origen del animal",
+        "informacion": "Proveedor, fecha de compra, edad, peso, raza o cruce.",
+        "responsable": "Josué.",
+        "medio": "Ficha física o digital.",
+        "frecuencia": "Cada compra.",
+        "evidencia": "Factura o registro."
+      },
+      {
+        "elemento": "Identificación",
+        "informacion": "Número o marca interna de cada cerdo.",
+        "responsable": "Josué.",
+        "medio": "Cuaderno/etiqueta.",
+        "frecuencia": "Permanente.",
+        "evidencia": "Inventario."
+      },
+      {
+        "elemento": "Sanidad",
+        "informacion": "Vacunas, tratamientos, desparasitación y retiro.",
+        "responsable": "Josué / veterinario.",
+        "medio": "Bitácora.",
+        "frecuencia": "Cada evento.",
+        "evidencia": "Fórmula y registro."
+      },
+      {
+        "elemento": "Alimentación",
+        "informacion": "Tipo, cantidad, proveedor y costo.",
+        "responsable": "Josué / esposa.",
+        "medio": "Cuaderno.",
+        "frecuencia": "Diaria / semanal.",
+        "evidencia": "Facturas."
+      },
+      {
+        "elemento": "Venta o lote",
+        "informacion": "Fecha, peso, comprador, modalidad y precio.",
+        "responsable": "Josué.",
+        "medio": "Registro de venta.",
+        "frecuencia": "Cada venta.",
+        "evidencia": "Recibo."
+      },
+      {
+        "elemento": "Contacto comercial",
+        "informacion": "Teléfono o WhatsApp y ubicación.",
+        "responsable": "Josué.",
+        "medio": "Ficha o mensaje.",
+        "frecuencia": "Cuando cambie.",
+        "evidencia": "Base de clientes."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Diagnóstico técnico",
+        "descripcion": "Medición, capacidad, diseño de porqueriza, drenajes y manejo de estiércol.",
+        "valor_unitario": null,
+        "cantidad": "1.",
+        "total": null,
+        "requisito": "Previo a compra de materiales.",
+        "fuente": "Alcaldía/profesional."
+      },
+      {
+        "tipo": "Reconstrucción de cubierta",
+        "descripcion": "Techo y estructura resistentes a lluvia y viento.",
+        "valor_unitario": null,
+        "cantidad": "Según diseño.",
+        "total": null,
+        "requisito": "Ventilación, estabilidad y evacuación de agua.",
+        "fuente": "Impulso/recursos."
+      },
+      {
+        "tipo": "Piso y drenajes",
+        "descripcion": "Piso lavable, pendiente técnica, canales y separación de sólidos.",
+        "valor_unitario": null,
+        "cantidad": "Según área.",
+        "total": null,
+        "requisito": "Evitar escorrentía a quebrada y pastos.",
+        "fuente": "Impulso."
+      },
+      {
+        "tipo": "Divisiones y cerramientos",
+        "descripcion": "Corrales seguros para separar animales.",
+        "valor_unitario": null,
+        "cantidad": "Según capacidad.",
+        "total": null,
+        "requisito": "Bienestar, limpieza y manejo seguro.",
+        "fuente": "Impulso."
+      },
+      {
+        "tipo": "Sistema de agua",
+        "descripcion": "Bebederos, tubería, válvulas y posible almacenamiento.",
+        "valor_unitario": null,
+        "cantidad": "Según lote.",
+        "total": null,
+        "requisito": "Ahorro y calidad del agua.",
+        "fuente": "Gestión."
+      },
+      {
+        "tipo": "Manejo de estiércol",
+        "descripcion": "Canecas, área cubierta, compostaje o sistema técnico.",
+        "valor_unitario": null,
+        "cantidad": "1 sistema.",
+        "total": null,
+        "requisito": "Sin vertimiento directo.",
+        "fuente": "Gestión."
+      },
+      {
+        "tipo": "Elementos de protección",
+        "descripcion": "Botas, guantes, tapabocas, delantal, gafas y botiquín.",
+        "valor_unitario": null,
+        "cantidad": "2 kits.",
+        "total": null,
+        "requisito": "Uso según actividad.",
+        "fuente": "Recursos / apoyo."
+      },
+      {
+        "tipo": "Báscula o servicio de pesaje",
+        "descripcion": "Control de crecimiento y venta.",
+        "valor_unitario": null,
+        "cantidad": "1 o servicio.",
+        "total": null,
+        "requisito": "Capacidad y calibración.",
+        "fuente": "Fase posterior."
+      },
+      {
+        "tipo": "Asistencia veterinaria y registros",
+        "descripcion": "Plan sanitario, visitas, formatos y capacitación.",
+        "valor_unitario": null,
+        "cantidad": "Proceso.",
+        "total": null,
+        "requisito": "Bienestar, retiro y trazabilidad.",
+        "fuente": "Instituciones/productor."
+      }
+    ],
+    "observaciones_o_comentarios": "Prioridad expresada por el productor: mejorar completamente el sitio donde están los cerdos, debido al deterioro de la cubierta, el piso y la ausencia de desagües. Las otras prioridades no fueron enumeradas con claridad; técnicamente deben integrarse manejo de agua y estiércol, bioseguridad y asistencia veterinaria."
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Compra de cerdos",
+        "descripcion": "Animales levantados para el ciclo.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Registrar por animal, peso y proveedor."
+      },
+      {
+        "tipo": "Alimentación",
+        "descripcion": "Concentrado u otros alimentos no detallados.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Registrar cantidad diaria y desperdicio."
+      },
+      {
+        "tipo": "Sanidad",
+        "descripcion": "Medicamentos, desparasitación y veterinario.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Separar prevención y tratamiento."
+      },
+      {
+        "tipo": "Agua y energía",
+        "descripcion": "Consumo de porqueriza y equipos.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Medir separado del hogar o finca."
+      },
+      {
+        "tipo": "Transporte",
+        "descripcion": "Compra de animales, alimento, venta y materiales.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "No se definió medio."
+      },
+      {
+        "tipo": "Sacrificio/desposte",
+        "descripcion": "Si la venta se realiza por cortes.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Solo mediante canal autorizado."
+      },
+      {
+        "tipo": "Empaque y refrigeración",
+        "descripcion": "Bolsas, frío y conservación.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Material apto y control de temperatura."
+      },
+      {
+        "tipo": "Mano de obra y mantenimiento",
+        "descripcion": "Trabajo de Josué y esposa, reparación y limpieza.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Valorar trabajo familiar y reserva de mantenimiento."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "Mes 1",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Línea base y medidas."
+      },
+      {
+        "mes": "Mes 2",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Definir presupuesto."
+      },
+      {
+        "mes": "Mes 3",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Primera fase."
+      },
+      {
+        "mes": "Mes 4",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Adecuación."
+      },
+      {
+        "mes": "Mes 5",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Verificar funcionamiento."
+      },
+      {
+        "mes": "Mes 6",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registros activos."
+      },
+      {
+        "mes": "Mes 7",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Calcular costo."
+      },
+      {
+        "mes": "Mes 8",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Revisar peso."
+      },
+      {
+        "mes": "Mes 9",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Evaluar ciclo."
+      },
+      {
+        "mes": "Mes 10",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Ajustar precio."
+      },
+      {
+        "mes": "Mes 11",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Plan siguiente lote."
+      },
+      {
+        "mes": "Mes 12",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Decidir ampliación."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "El productor no aportó cifras de gastos, ingresos, costos por animal, peso, alimento, transporte o venta. Se recomienda separar las cuentas de la unidad, registrar cada compra y venta y calcular el costo total por cerdo y por libra antes de negociar precios.\nCondición para ampliar la unidad: contar primero con una porqueriza segura y dimensionada, agua suficiente y protegida, manejo técnico de estiércol, plan sanitario, registros de peso y costos, clientes definidos y cumplimiento de las condiciones legales para la modalidad de venta."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Agua",
+        "estado": "Quebrada grande; consumo no medido.",
+        "cantidad": "Pendiente.",
+        "impacto_1_a_5": 5,
+        "accion": "Analizar, proteger y medir."
+      },
+      {
+        "variable": "Energía",
+        "estado": "No se informó.",
+        "cantidad": "Pendiente.",
+        "impacto_1_a_5": 2,
+        "accion": "Verificar instalación y consumo."
+      },
+      {
+        "variable": "Alimento",
+        "estado": "Tipo y cantidad no informados.",
+        "cantidad": "Pendiente.",
+        "impacto_1_a_5": 5,
+        "accion": "Registrar y reducir desperdicio."
+      },
+      {
+        "variable": "Transporte",
+        "estado": "No definido.",
+        "cantidad": "Pendiente.",
+        "impacto_1_a_5": 4,
+        "accion": "Definir ruta, vehículo y costo."
+      },
+      {
+        "variable": "Estiércol",
+        "estado": "Se recoge y aplica en potreros.",
+        "cantidad": "Cantidad no medida.",
+        "impacto_1_a_5": 5,
+        "accion": "Estabilizar, dosificar y registrar."
+      },
+      {
+        "variable": "Aguas de limpieza",
+        "estado": "Se usa poca agua y se riega hacia el pasto.",
+        "cantidad": "Sin medición.",
+        "impacto_1_a_5": 5,
+        "accion": "Separar sólidos y evitar descarga directa."
+      },
+      {
+        "variable": "Empaques",
+        "estado": "Bolsas plásticas.",
+        "cantidad": "Cantidad pendiente.",
+        "impacto_1_a_5": 3,
+        "accion": "Usar material apto y reducir."
+      },
+      {
+        "variable": "Clima/infraestructura",
+        "estado": "Techo y piso deficientes.",
+        "cantidad": "Estado crítico reportado.",
+        "impacto_1_a_5": 5,
+        "accion": "Reconstrucción técnica."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "Infraestructura",
+        "que_se_mide": "Avance de cubierta, piso, drenajes y divisiones.",
+        "dato_inicial": "Deteriorada.",
+        "meta": "100% funcional antes de ampliar.",
+        "frecuencia": "Semanal durante obra.",
+        "responsable": "Josué / técnico.",
+        "evidencia": "Checklist y fotos."
+      },
+      {
+        "indicador": "Inventario porcino",
+        "que_se_mide": "Número, origen, edad y peso.",
+        "dato_inicial": "7 cerdos.",
+        "meta": "100% identificado.",
+        "frecuencia": "Mensual/ingreso.",
+        "responsable": "Josué.",
+        "evidencia": "Ficha."
+      },
+      {
+        "indicador": "Peso",
+        "que_se_mide": "Ganancia de peso por animal.",
+        "dato_inicial": "Sin registro.",
+        "meta": "Pesaje periódico.",
+        "frecuencia": "Quincenal/mensual.",
+        "responsable": "Josué.",
+        "evidencia": "Planilla."
+      },
+      {
+        "indicador": "Mortalidad/Enfermedad",
+        "que_se_mide": "Casos, causa y tratamiento.",
+        "dato_inicial": "No informado.",
+        "meta": "100% registrado.",
+        "frecuencia": "Cada evento.",
+        "responsable": "Josué / veterinario.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "indicador": "Alimento",
+        "que_se_mide": "Cantidad, costo y desperdicio.",
+        "dato_inicial": "Desconocido.",
+        "meta": "100% registrado.",
+        "frecuencia": "Diaria / semanal.",
+        "responsable": "Familia.",
+        "evidencia": "Facturas y registro."
+      },
+      {
+        "indicador": "Ventas",
+        "que_se_mide": "Animal, peso, corte, precio y cliente.",
+        "dato_inicial": "Sin registro.",
+        "meta": "100% registrado.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Josué.",
+        "evidencia": "Libro de ventas."
+      },
+      {
+        "indicador": "Costos y margen",
+        "que_se_mide": "Costo por animal y producto.",
+        "dato_inicial": "No calculado.",
+        "meta": "Cálculo por ciclo.",
+        "frecuencia": "Mensual/ciclo.",
+        "responsable": "Josué / asesor.",
+        "evidencia": "Hoja de costos."
+      },
+      {
+        "indicador": "Agua y estiércol",
+        "que_se_mide": "Consumo, recolección y destino.",
+        "dato_inicial": "No medido.",
+        "meta": "Ruta documentada.",
+        "frecuencia": "Semanal.",
+        "responsable": "Familia.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "indicador": "Clientes",
+        "que_se_mide": "Número, ubicación y recompra.",
+        "dato_inicial": "Clientela no documentada.",
+        "meta": "Base actualizada.",
+        "frecuencia": "Mensual.",
+        "responsable": "Josué / esposa.",
+        "evidencia": "Listado."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Estiércol porcino",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Se recoge con pala en canecas y se usa en potreros.",
+        "accion_circular": "Compostar o estabilizar y aplicar con dosis.",
+        "destino": "Potreros",
+        "responsable": "Josué / esposa."
+      },
+      {
+        "residuo_recurso": "Aguas de limpieza",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Escurren o se distribuyen hacia el pasto.",
+        "accion_circular": "Drenaje controlado y separación de sólidos.",
+        "destino": "Pasto",
+        "responsable": "Josué."
+      },
+      {
+        "residuo_recurso": "Envases veterinarios",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Separar y entregar a posconsumo.",
+        "destino": "Posconsumo",
+        "responsable": "Josué / veterinario."
+      },
+      {
+        "residuo_recurso": "Agujas/cortopunzantes",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Contenedor rigido.",
+        "destino": "Disposición segura",
+        "responsable": "Veterinario / productor."
+      },
+      {
+        "residuo_recurso": "Bolsas plásticas",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Reducir, separar y reciclar cuando sea posible.",
+        "destino": "Reciclaje / disposición",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Residuos de obra",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Aún no generados.",
+        "accion_circular": "Separar, reutilizar y disponer legalmente.",
+        "destino": "Disposición legal",
+        "responsable": "Contratista/productor."
+      },
+      {
+        "residuo_recurso": "Mortalidad animal",
+        "cantidad": "No informada.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Protocolo veterinario de disposición.",
+        "destino": "Manejo veterinario",
+        "responsable": "Josué / veterinario."
+      }
+    ],
+    "conclusion_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "Infraestructura",
+        "indicador": "Seguridad, drenaje y limpieza.",
+        "descripcion": null,
+        "estado": "Deficiente.",
+        "calificacion_1_a_5": 1,
+        "accion": "Reconstruir con diseño técnico.",
+        "evidencia": "Informe y fotos."
+      },
+      {
+        "factor": "Bienestar animal",
+        "indicador": "Espacio, piso, agua y refugio.",
+        "descripcion": null,
+        "estado": "Comprometido por infraestructura.",
+        "calificacion_1_a_5": 2,
+        "accion": "Adecuar corrales y monitorear.",
+        "evidencia": "Checklist."
+      },
+      {
+        "factor": "Bioseguridad",
+        "indicador": "EPP, limpieza, ingreso y sanidad.",
+        "descripcion": null,
+        "estado": "EPP básico; protocolo no documentado.",
+        "calificacion_1_a_5": 2,
+        "accion": "Plan de bioseguridad.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "factor": "Agua",
+        "indicador": "Calidad, consumo y protección.",
+        "descripcion": null,
+        "estado": "Quebrada sin análisis.",
+        "calificacion_1_a_5": 2,
+        "accion": "Análisis y sistema eficiente.",
+        "evidencia": "Resultado."
+      },
+      {
+        "factor": "Suelo/estiércol",
+        "indicador": "Cantidad y dosis aplicadas.",
+        "descripcion": null,
+        "estado": "Aprovechamiento sin medición.",
+        "calificacion_1_a_5": 3,
+        "accion": "Estabilizar y registrar.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "factor": "Trazabilidad",
+        "indicador": "Origen, peso, sanidad y venta.",
+        "descripcion": null,
+        "estado": "No registrada.",
+        "calificacion_1_a_5": 1,
+        "accion": "Ficha por animal y lote.",
+        "evidencia": "Registros."
+      },
+      {
+        "factor": "Comercialización",
+        "indicador": "Clientes, precios y modalidad.",
+        "descripcion": null,
+        "estado": "Clientela existente, sin soportes.",
+        "calificacion_1_a_5": 3,
+        "accion": "Base de clientes y acuerdos.",
+        "evidencia": "Libro."
+      },
+      {
+        "factor": "Finanzas",
+        "indicador": "Costos e ingresos.",
+        "descripcion": null,
+        "estado": "Desconocidos.",
+        "calificacion_1_a_5": 1,
+        "accion": "Costeo por ciclo.",
+        "evidencia": "Hoja."
+      },
+      {
+        "factor": "Seguridad laboral",
+        "indicador": "EPP y condiciones locativas.",
+        "descripcion": null,
+        "estado": "EPP reportado; infraestructura riesgosa.",
+        "calificacion_1_a_5": 2,
+        "accion": "Obra, botiquín y protocolos.",
+        "evidencia": "Checklist."
+      }
+    ],
+    "resultado_preliminar_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "Agua",
+        "accion": "Análisis, bebederos y drenajes.",
+        "prioridad": null,
+        "plazo": "6-12 meses.",
+        "responsable": "Josué / técnico.",
+        "recursos": null,
+        "indicador": "Litros y punto protegido.",
+        "evidencia": "Registro y fotos."
+      },
+      {
+        "impacto": "Suelo",
+        "accion": "Estabilización y dosis.",
+        "prioridad": null,
+        "plazo": "6 meses.",
+        "responsable": "Josué.",
+        "recursos": null,
+        "indicador": "Cantidad y área aplicada.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "impacto": "Infraestructura",
+        "accion": "Reconstrucción técnica.",
+        "prioridad": null,
+        "plazo": "3-6 meses.",
+        "responsable": "Productor/apoyo.",
+        "recursos": null,
+        "indicador": "% de obra y checklist.",
+        "evidencia": "Fotos."
+      },
+      {
+        "impacto": "Residuos",
+        "accion": "Separación de orgánicos, peligrosos y plásticos.",
+        "prioridad": null,
+        "plazo": "6 meses.",
+        "responsable": "Familia.",
+        "recursos": null,
+        "indicador": "% gestionado.",
+        "evidencia": "Registro."
+      },
+      {
+        "impacto": "Sanidad",
+        "accion": "Calendario veterinario.",
+        "prioridad": null,
+        "plazo": "Continuo.",
+        "responsable": "Veterinario / Josué.",
+        "recursos": null,
+        "indicador": "Cumplimiento y casos.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "impacto": "Bienestar animal",
+        "accion": "Divisiones, piso, agua y refugio.",
+        "prioridad": null,
+        "plazo": "Antes de ampliar.",
+        "responsable": "Josué/técnico.",
+        "recursos": null,
+        "indicador": "Cumplimiento de lista.",
+        "evidencia": "Checklist."
+      },
+      {
+        "impacto": "Mercado",
+        "accion": "Base de clientes y costeo.",
+        "prioridad": null,
+        "plazo": "6-12 meses.",
+        "responsable": "Josué.",
+        "recursos": null,
+        "indicador": "Pedidos y margen.",
+        "evidencia": "Ventas."
+      },
+      {
+        "impacto": "Red de Operación",
+        "accion": "Gestionar visitas y alianzas.",
+        "prioridad": null,
+        "plazo": "12 meses.",
+        "responsable": "Josué / instituciones.",
+        "recursos": null,
+        "indicador": "Número de apoyos.",
+        "evidencia": "Actas."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": "Lluvias",
+        "situacion": "La cubierta y los drenajes son deficientes.",
+        "riesgo": "Humedad, deterioro y escorrentía.",
+        "accion_propuesta": "Reconstruir techo, piso y canales."
+      },
+      {
+        "aspecto": "Erosión/quebrada",
+        "situacion": "Se menciona una quebrada grande que afecta parte de la finca.",
+        "riesgo": "Pérdida de suelo y arrastre de residuos.",
+        "accion_propuesta": "Visita y manejo permitido de la ronda.."
+      },
+      {
+        "aspecto": "Sequía",
+        "situacion": "No se aportó información específica.",
+        "riesgo": "Posible reducción de agua.",
+        "accion_propuesta": "Medir caudal y considerar almacenamiento."
+      },
+      {
+        "aspecto": "Frío",
+        "situacion": "No se describió manejo térmico.",
+        "riesgo": "Estrés animal.",
+        "accion_propuesta": "Refugio seco y ventilación controlada."
+      },
+      {
+        "aspecto": "Enfermedades",
+        "situacion": "Solicita veterinarios constantes.",
+        "riesgo": "Mortalidad o baja productividad.",
+        "accion_propuesta": "Plan sanitario y alerta temprana."
+      },
+      {
+        "aspecto": "Mercado",
+        "situacion": "Precio cambia entre la zona y Bogotá.",
+        "riesgo": "Ingreso inestable.",
+        "accion_propuesta": "Costeo, acuerdos y diversificación."
+      },
+      {
+        "aspecto": "Infraestructura",
+        "situacion": "Construcción anterior quedó mal ejecutada.",
+        "riesgo": "Accidente y deterioro.",
+        "accion_propuesta": "Diseño, supervisión y garantía."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Sanitario",
+        "riesgo": "Brote de enfermedad porcina.",
+        "causa": "Bioseguridad o plan sanitario insuficiente.",
+        "consecuencia": "Mortalidad y pérdida.",
+        "nivel": "Muy alto",
+        "prevencion": "Veterinario, aislamiento y registros.",
+        "respuesta": "Aislar y atender."
+      },
+      {
+        "tipo": "Locativo",
+        "riesgo": "Colapso o falla de porqueriza.",
+        "causa": "Techo, piso y estructura deficientes.",
+        "consecuencia": "Lesión y pérdida animal.",
+        "nivel": "Muy alto",
+        "prevencion": "Reconstrucción y revisión.",
+        "respuesta": "Evacuar y reparar."
+      },
+      {
+        "tipo": "Ambiental",
+        "riesgo": "Contaminación de quebrada o suelo.",
+        "causa": "Escorrentía de estiércol y lavado.",
+        "consecuencia": "Daño ambiental y conflicto.",
+        "nivel": "Muy alto",
+        "prevencion": "Drenajes, separación y dosis.",
+        "respuesta": "Contener y corregir."
+      },
+      {
+        "tipo": "Financiero",
+        "riesgo": "Venta por debajo del costo.",
+        "causa": "No hay registros.",
+        "consecuencia": "Descapitalización.",
+        "nivel": "Muy alto",
+        "prevencion": "Costeo por animal y corte.",
+        "respuesta": "Renegociar y ajustar."
+      },
+      {
+        "tipo": "Comercial",
+        "riesgo": "Pérdida de clientes.",
+        "causa": "Calidad, precio o incumplimiento.",
+        "consecuencia": "Menores ingresos.",
+        "nivel": "Alto",
+        "prevencion": "Calidad, comunicación y trazabilidad.",
+        "respuesta": "Revisar causa."
+      },
+      {
+        "tipo": "Legal/sanitario",
+        "riesgo": "Venta de carne sin requisitos.",
+        "causa": "Sacrificio o transporte no verificado.",
+        "consecuencia": "Sanción y riesgo al consumidor.",
+        "nivel": "Muy alto",
+        "prevencion": "Canal autorizado y cadena de frío.",
+        "respuesta": "Suspender modalidad no conforme"
+      },
+      {
+        "tipo": "Laboral",
+        "riesgo": "Mordedura, caída o contacto con residuos.",
+        "causa": "Manejo animal y piso defectuoso.",
+        "consecuencia": "Lesión o enfermedad.",
+        "nivel": "Alto",
+        "prevencion": "EPP, divisiones y piso seguro.",
+        "respuesta": "Primeros auxilios."
+      },
+      {
+        "tipo": "Logístico",
+        "riesgo": "Daño del producto en transporte.",
+        "causa": "Falta de vehículo o frío.",
+        "consecuencia": "Pérdida y reclamo.",
+        "nivel": "Alto",
+        "prevencion": "Transporte apto y contenedor.",
+        "respuesta": "Retirar producto afectado."
+      },
+      {
+        "tipo": "Productivo",
+        "riesgo": "Bajo crecimiento.",
+        "causa": "Alimentación, enfermedad o estrés.",
+        "consecuencia": "Mayor costo por ciclo.",
+        "nivel": "Alto",
+        "prevencion": "Pesaje y plan nutricional.",
+        "respuesta": "Diagnosticar."
+      },
+      {
+        "tipo": "Estratégico",
+        "riesgo": "Ampliar sin capacidad.",
+        "causa": "Falta de diseño y mercado.",
+        "consecuencia": "Sobrecarga ambiental y financiera.",
+        "nivel": "Alto",
+        "prevencion": "Validar antes de crecer.",
+        "respuesta": "Reducir lote."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "Verificar datos, coordenadas, tenencia y especies.",
+        "componente": "Estratégico",
+        "responsable": "Josué / asesor.",
+        "tiempo": "Inmediato",
+        "recursos": "Documentos y visita.",
+        "resultado": "Línea base completa.",
+        "evidencia": "Ficha."
+      },
+      {
+        "actividad": "Evaluar porqueriza, quebrada, pendientes y entorno.",
+        "componente": "Productivo / ambiental",
+        "responsable": "Técnico/productor.",
+        "tiempo": "Inmediato",
+        "recursos": "Levantamiento.",
+        "resultado": "Diseño realista.",
+        "evidencia": "Informe."
+      },
+      {
+        "actividad": "Cotizar cubierta, piso, drenajes y divisiones.",
+        "componente": "Financiero",
+        "responsable": "Josué / asesor.",
+        "tiempo": "Inmediato",
+        "recursos": "Proveedores.",
+        "resultado": "Presupuesto.",
+        "evidencia": "Cotizaciones."
+      },
+      {
+        "actividad": "Reconstruir la porqueriza.",
+        "componente": "Productivo/SST",
+        "responsable": "Contratista/productor.",
+        "tiempo": "Corto",
+        "recursos": "Materiales y mano de obra.",
+        "resultado": "Alojamiento seguro.",
+        "evidencia": "Acta y fotos."
+      },
+      {
+        "actividad": "Instalar manejo de agua y estiércol.",
+        "componente": "Ambiental",
+        "responsable": "Técnico/familia.",
+        "tiempo": "Corto",
+        "recursos": "Bebederos, canales y recipientes.",
+        "resultado": "Menor desperdicio y contaminación.",
+        "evidencia": "Checklist."
+      },
+      {
+        "actividad": "Diseñar plan sanitario y bioseguridad.",
+        "componente": "Sanitario",
+        "responsable": "Veterinario / Josué.",
+        "tiempo": "Antes de nuevo lote",
+        "recursos": "Asistencia y formatos.",
+        "resultado": "Riesgo controlado.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "actividad": "Implementar identificación, pesaje y registros.",
+        "componente": "Productivo/financiero",
+        "responsable": "Josué / esposa.",
+        "tiempo": "Inmediato y continuo",
+        "recursos": "Cuaderno y báscula o servicio.",
+        "resultado": "Datos confiables.",
+        "evidencia": "Planillas."
+      },
+      {
+        "actividad": "Calcular costos y definir precios.",
+        "componente": "Financiero/comercial",
+        "responsable": "Josué / asesor.",
+        "tiempo": "Durante un ciclo",
+        "recursos": "Registros.",
+        "resultado": "Margen conocido.",
+        "evidencia": "Hoja."
+      },
+      {
+        "actividad": "Verificar sacrificio, empaque y transporte.",
+        "componente": "Legal/comercial",
+        "responsable": "Josué / autoridad / aliado.",
+        "tiempo": "Antes de vender carne",
+        "recursos": "Requisitos y cadena de frío.",
+        "resultado": "Venta segura.",
+        "evidencia": "Soportes."
+      },
+      {
+        "actividad": "Gestionar asistencia veterinaria y alianzas.",
+        "componente": "Organizativo",
+        "responsable": "Josué / instituciones.",
+        "tiempo": "Continuo",
+        "recursos": "Solicitudes y reuniones.",
+        "resultado": "Acompañamiento periódico.",
+        "evidencia": "Actas."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "Identificación",
+        "indicador": "Datos, predio, especies y coordenadas confirmados.",
+        "meta": "100% verificado.",
+        "frecuencia": "Una vez / anual.",
+        "responsable": "Josué / asesor.",
+        "evidencia": "Ficha."
+      },
+      {
+        "dimension": "Infraestructura",
+        "indicador": "Cubierta, piso, drenajes y divisiones funcionales.",
+        "meta": "100% antes de ampliar.",
+        "frecuencia": "Semanal durante obra.",
+        "responsable": "Productor/técnico.",
+        "evidencia": "Checklist."
+      },
+      {
+        "dimension": "Inventario",
+        "indicador": "Animales identificados y pesados.",
+        "meta": "100% del lote.",
+        "frecuencia": "Mensual.",
+        "responsable": "Josué.",
+        "evidencia": "Registro."
+      },
+      {
+        "dimension": "Sanidad",
+        "indicador": "Tratamientos, mortalidad y retiro.",
+        "meta": "100% documentado.",
+        "frecuencia": "Cada evento.",
+        "responsable": "Veterinario/Josué.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "dimension": "Alimento",
+        "indicador": "Cantidad y costo.",
+        "meta": "100% registrado.",
+        "frecuencia": "Diaria / semanal.",
+        "responsable": "Familia.",
+        "evidencia": "Facturas."
+      },
+      {
+        "dimension": "Ventas",
+        "indicador": "Peso, producto, precio y comprador.",
+        "meta": "100% registrado.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Josué.",
+        "evidencia": "Libro."
+      },
+      {
+        "dimension": "Finanzas",
+        "indicador": "Costo y margen por ciclo.",
+        "meta": "Cálculo completo.",
+        "frecuencia": "Mensual/ciclo.",
+        "responsable": "Josué / asesor.",
+        "evidencia": "Hoja."
+      },
+      {
+        "dimension": "Agua",
+        "indicador": "Consumo y calidad.",
+        "meta": "Línea base y control.",
+        "frecuencia": "Mensual/anual.",
+        "responsable": "Josué.",
+        "evidencia": "Planilla y análisis."
+      },
+      {
+        "dimension": "Residuos",
+        "indicador": "Estiércol, aguas y peligrosos gestionados.",
+        "meta": "Ruta para 100%.",
+        "frecuencia": "Semanal/evento.",
+        "responsable": "Familia.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "dimension": "Clientes",
+        "indicador": "Número y recompra.",
+        "meta": "Base de clientes activa.",
+        "frecuencia": "Mensual.",
+        "responsable": "Josué / esposa.",
+        "evidencia": "Listado."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Reconstruir la porqueriza",
+        "efecto_productivo": "Mejora sanidad y bienestar.",
+        "efecto_comercial": "Favorece calidad y confianza.",
+        "efecto_financiero": "Inversión inicial alta.",
+        "efecto_ambiental": "Permite controlar agua y estiércol.",
+        "ajuste_necesario": "Diseño y supervisión."
+      },
+      {
+        "decision": "Mantener siete cerdos mientras se adecúa",
+        "efecto_productivo": "Evita sobrecarga.",
+        "efecto_comercial": "Limita volumen temporal.",
+        "efecto_financiero": "Reduce riesgo.",
+        "efecto_ambiental": "Menor presión ambiental.",
+        "ajuste_necesario": "Validar capacidad."
+      },
+      {
+        "decision": "Comprar animales levantados",
+        "efecto_productivo": "Acorta parte del ciclo.",
+        "efecto_comercial": "Permite programar ventas.",
+        "efecto_financiero": "Requiere capital y control de origen.",
+        "efecto_ambiental": "Aumenta residuos según lote.",
+        "ajuste_necesario": "Proveedor y cuarentena."
+      },
+      {
+        "decision": "Vender por cortes",
+        "efecto_productivo": "Añade transformación.",
+        "efecto_comercial": "Puede mejorar precio.",
+        "efecto_financiero": "Aumenta costos y requisitos.",
+        "efecto_ambiental": "Genera residuos y frío.",
+        "ajuste_necesario": "Canal autorizado."
+      },
+      {
+        "decision": "Vender en Bogotá",
+        "efecto_productivo": "No cambia producción.",
+        "efecto_comercial": "Acceso a mejor precio potencial.",
+        "efecto_financiero": "Suma transporte y tiempo.",
+        "efecto_ambiental": "Emisiones y riesgo de frío.",
+        "ajuste_necesario": "Ruta y costo."
+      },
+      {
+        "decision": "Permitir recogida en finca",
+        "efecto_productivo": "Facilita salida.",
+        "efecto_comercial": "Conveniencia para comprador.",
+        "efecto_financiero": "Reduce transporte propio.",
+        "efecto_ambiental": "Menos emisiones del productor.",
+        "ajuste_necesario": "Bioseguridad de visitantes."
+      },
+      {
+        "decision": "Usar estiércol en pastos",
+        "efecto_productivo": "Puede mejorar fertilidad.",
+        "efecto_comercial": "No afecta venta directamente.",
+        "efecto_financiero": "Reduce compra de abono.",
+        "efecto_ambiental": "Beneficio o contaminación según dosis.",
+        "ajuste_necesario": "Estabilizar y registrar."
+      },
+      {
+        "decision": "Implementar registros",
+        "efecto_productivo": "Mejora decisiones.",
+        "efecto_comercial": "Permite cumplir y negociar.",
+        "efecto_financiero": "Controla margen.",
+        "efecto_ambiental": "Optimiza recursos.",
+        "ajuste_necesario": "Constancia diaria."
+      },
+      {
+        "decision": "Caracterizar ovinos y pollos",
+        "efecto_productivo": "Aclara diversificación.",
+        "efecto_comercial": "Puede abrir mercados.",
+        "efecto_financiero": "Exige costos separados.",
+        "efecto_ambiental": "Requiere límites por especie.",
+        "ajuste_necesario": "Visita adicional."
+      },
+      {
+        "decision": "Solicitar asistencia veterinaria",
+        "efecto_productivo": "Reduce enfermedad.",
+        "efecto_comercial": "Protege calidad.",
+        "efecto_financiero": "Costo o gestión recurrente.",
+        "efecto_ambiental": "Uso responsable de medicamentos.",
+        "ajuste_necesario": "Calendario y evidencia."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}

@@ -1,0 +1,2263 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "Unidad productiva familiar de pomadas artesanales. El nombre comercial, marca y registro están pendientes de verificar.",
+    "persona_entrevistada": "Iván Darío Pérez Ortiz, según el nombre del archivo, junto con su esposa. Nombre completo de la esposa, documentos, contactos, roles y condición jurídica pendientes de verificar.",
+    "tipo_actividad": "Transformación artesanal de plantas en pomadas de uso tópico, inicialmente de caléndula, mediante calentamiento de vaselina al baño de María, incorporación de flores y envasado en caliente.",
+    "ubicacion_especifica": "La producción se realiza en la vivienda familiar, en Sumapaz. Vereda, sector, dirección, condiciones del espacio y coordenadas pendientes de verificar.",
+    "producto_servicio_principal": "Pomada de caléndula en frasco de vidrio de 60 ml. Se contemplan aceites y productos capilares y para el cuidado de la piel, pero aún no existen pilotos ni fichas técnicas.",
+    "estado_actual": "Etapa inicial. El proyecto comenzó aproximadamente entre abril y mayo de 2026 y pasó a una fase independiente al terminar la beca, alrededor de junio. Después de los talleres no se ha producido nuevamente por falta de tiempo.",
+    "personas_vinculadas": "Iván Darío Pérez Ortiz y su esposa. Ambos son docentes y desarrollan la iniciativa en sus tiempos disponibles. No se reportan trabajadores, asociados ni distribuidores actuales.",
+    "coordenadas": "Pendientes de tomar en el lugar donde se realiza la producción.",
+    "descripcion_general": "La unidad nació de una beca orientada al rescate de conocimientos de medicina ancestral en la comunidad. Uno de sus resultados fueron talleres de elaboración de pomadas y dos lotes de 30 frascos. La familia decidió continuar con el producto para conocer este campo, generar un ingreso adicional y ofrecer a la comunidad de Sumapaz una alternativa local de cuidado. Su reto inmediato es estandarizar producción, higiene, costos, precio, ventas y manejo ambiental.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F02": {
+    "mision": "Elaborar de manera responsable pomadas artesanales inspiradas en conocimientos tradicionales, comenzando con caléndula, para ofrecer a la comunidad de Sumapaz una alternativa local de cuidado y generar un ingreso adicional para la familia.",
+    "vision": "En tres años, consolidar un emprendimiento o empresa más autónoma, con producción programada, proceso estandarizado, costos claros, clientes recurrentes y una oferta validada de pomadas y otros productos de cuidado.",
+    "valores": [
+      "Cuidado",
+      "amor",
+      "responsabilidad"
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Las primeras compras se dieron entre personas cercanas por confianza, voz a voz y origen local.",
+    "beneficio_cliente": "Pomada de caléndula presentada por el productor para golpes o dolor; eficacia, indicaciones y soporte sanitario pendientes.",
+    "diferencial": "Producto de pequeña escala pensado para Sumapaz, asociado con saberes tradicionales y presentado en vidrio reutilizable.",
+    "valor_ambiental": "Vidrio, ollas y trapos reutilizables; faltan controles para flores con vaselina, lavado y empaques.",
+    "valor_social_comunitario": "Rescata saberes tradicionales y facilita acceso comunitario a preparados locales.",
+    "evidencia": "Dos talleres con lotes de 30 frascos, ventas puntuales y voz a voz; pedidos, recompra, facturas y soportes pendientes.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Conocimiento inicial adquirido mediante una beca y talleres.",
+      "Participación y compromiso de la pareja.",
+      "Capacidad demostrada de 30 frascos en dos o tres horas.",
+      "Equipos e insumos iniciales disponibles.",
+      "Buena respuesta inicial mediante voz a voz.",
+      "Enfoque local y rescate de saberes tradicionales.",
+      "Presentación en vidrio reutilizable.",
+      "Valores definidos: cuidado, amor y responsabilidad."
+    ],
+    "oportunidades": [
+      "Participar en ferias y encuentros empresariales en Sumapaz y Bogotá.",
+      "Conseguir un aliado que reciba lotes previamente acordados.",
+      "Fortalecer WhatsApp y crear presencia digital básica.",
+      "Implementar retorno de frascos y fidelización.",
+      "Recibir capacitación en costos, higiene, rotulado y comercialización.",
+      "Validar aceites y productos de cuidado en una etapa posterior.",
+      "Posicionar el origen territorial y ancestral del producto.",
+      "Establecer proveedores alternos y compras programadas."
+    ],
+    "debilidades": [
+      "Unidad muy reciente y sin producción periódica.",
+      "Disponibilidad limitada porque ambos integrantes son docentes.",
+      "No existe matriz de costos ni precio unitario completo.",
+      "Precio de venta recordado de forma imprecisa.",
+      "No hay redes sociales ni base de clientes.",
+      "Retroalimentación y recompra no están registradas.",
+      "Fórmula, cantidades, tiempos y limpieza sin estandarización documental.",
+      "Producción en vivienda y controles sanitarios por verificar.",
+      "No se reportan EPP, etiqueta, lote, vida útil ni trazabilidad."
+    ],
+    "amenazas": [
+      "Desabastecimiento de frascos, vaselina, flores u otros insumos.",
+      "Pérdida de calidad o deterioro por ser una preparación artesanal.",
+      "Quemaduras, vapores o incidentes con gas durante la elaboración.",
+      "Variación de costos y fijación de precios sin conocer la rentabilidad.",
+      "Baja demanda o compras de una sola vez.",
+      "Manejo inadecuado de residuos grasos y aguas de lavado.",
+      "Promesas de uso no respaldadas o rotulado insuficiente.",
+      "Crecimiento hacia nuevos productos sin validar primero la línea actual."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Compradores cercanos",
+        "perfil_que_busca": "Personas conocidas de la familia que confían en el producto y han realizado compras puntuales.",
+        "ubicacion": "Comunidad de Sumapaz.",
+        "necesidad": "Pomada local para golpes o dolor, según el uso mencionado por el productor.",
+        "frecuencia": "Ocasional; sin recompra documentada.",
+        "criterio_compra": "Confianza, utilidad percibida y origen local.",
+        "canal": "Voz a voz / WhatsApp."
+      },
+      {
+        "tipo_actor": "Consumidor final local",
+        "perfil_que_busca": "Habitante que valora preparados tradicionales y no dispone de tiempo para elaborarlos.",
+        "ubicacion": "Sumapaz; sector por caracterizar.",
+        "necesidad": "Acceso práctico a un preparado artesanal.",
+        "frecuencia": "No determinada.",
+        "criterio_compra": "Confianza, presentación, información de uso y precio.",
+        "canal": "Venta directa potencial."
+      },
+      {
+        "tipo_actor": "Referido por voz a voz",
+        "perfil_que_busca": "Persona que conoce el producto por recomendación de un comprador o conocido.",
+        "ubicacion": "Sumapaz y contactos cercanos.",
+        "necesidad": "Producto recomendado por alguien de confianza.",
+        "frecuencia": "Ocasional.",
+        "criterio_compra": "Experiencia de terceros y facilidad de contacto.",
+        "canal": "WhatsApp/referencia."
+      },
+      {
+        "tipo_actor": "Visitante de feria potencial",
+        "perfil_que_busca": "Comprador que conoce productos locales en ferias o encuentros empresariales.",
+        "ubicacion": "Sumapaz o Bogotá.",
+        "necesidad": "Producto territorial, bien presentado y con información clara.",
+        "frecuencia": "Según evento.",
+        "criterio_compra": "Origen, calidad, empaque, precio y confianza.",
+        "canal": "Feria; no validado."
+      },
+      {
+        "tipo_actor": "Aliado comercial potencial",
+        "perfil_que_busca": "Persona o negocio que podría recibir un lote y venderlo directamente.",
+        "ubicacion": "Bogotá; actor por identificar.",
+        "necesidad": "Abastecimiento acordado y producto trazable.",
+        "frecuencia": "Por lote; no determinada.",
+        "criterio_compra": "Calidad, cumplimiento, requisitos y margen.",
+        "canal": "Acuerdo directo; no existe actualmente."
+      },
+      {
+        "tipo_actor": "Tienda especializada potencial",
+        "perfil_que_busca": "Comercio de productos naturales o de cuidado; no mencionado como cliente actual.",
+        "ubicacion": "Mercado por identificar.",
+        "necesidad": "Producto con requisitos y rotulado verificables.",
+        "frecuencia": "No determinada.",
+        "criterio_compra": "Soportes, presentación, vida útil, precio y continuidad.",
+        "canal": "Canal por validar."
+      },
+      {
+        "tipo_actor": "Otros clientes",
+        "perfil_que_busca": "Compradores de futuras líneas de aceites, productos capilares o cuidado de piel.",
+        "ubicacion": "No determinada.",
+        "necesidad": "Necesidad aún no validada.",
+        "frecuencia": "Pendiente.",
+        "criterio_compra": "Piloto, seguridad, aceptación y precio.",
+        "canal": "No existe; etapa futura."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Confianza, cercanía, un producto local y una preparación que pueda apoyar el alivio de golpes o dolor según la experiencia y expectativa manifestada por el productor.",
+    "como_se_conoce_la_necesidad": "Por solicitudes, comentarios y recomendación de voz a voz entre personas cercanas. La unidad es reciente y aún no tiene suficiente retroalimentación ni recompra para confirmar el patrón.",
+    "quienes_compran_o_podrian_comprar": "Personas cercanas de la comunidad, consumidores locales, referidos, visitantes de ferias y un eventual aliado comercial en Bogotá.",
+    "evidencia": "Dos lotes de 30 frascos elaborados en talleres, ventas puntuales y contacto por WhatsApp. Cantidad vendida, fechas, compradores, precio exacto y satisfacción pendientes.",
+    "ventaja_territorial": "Producto pensado para Sumapaz y asociado con el rescate de saberes tradicionales de la comunidad.",
+    "cambios_demanda": "No existe historial suficiente para identificar estacionalidad, frecuencia, recompra o cambios en el precio aceptado.",
+    "dificultades": "Demanda no cuantificada, compradores de una sola ocasión, falta de redes, precio impreciso, producción irregular, ausencia de costeo y sin aliado de distribución.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Iván Darío y su esposa",
+        "tipo": "Familiar/productivo",
+        "que_aporta": "Tiempo, conocimiento inicial, elaboración, decisiones y recursos disponibles.",
+        "que_recibe": "Aprendizaje e ingreso adicional.",
+        "trabajo_conjunto": "Definir roles, calendario y registros.",
+        "aporte_ambiental": "Uso responsable de insumos y manejo de residuos.",
+        "accion": "Formalizar plan familiar."
+      },
+      {
+        "actor_aliado": "Más Cultura Local",
+        "tipo": "Institucional/cultural",
+        "que_aporta": "Beca, talleres y apoyo inicial descrito por el productor.",
+        "que_recibe": "Resultados culturales y rescate de saberes.",
+        "trabajo_conjunto": "Verificar entidad, convocatoria, compromisos y soportes.",
+        "aporte_ambiental": "Puede promover prácticas responsables.",
+        "accion": "Organizar documentos de la beca."
+      },
+      {
+        "actor_aliado": "Comunidad de Sumapaz",
+        "tipo": "Social/comercial",
+        "que_aporta": "Conocimiento tradicional, confianza, comentarios y compradores iniciales.",
+        "que_recibe": "Acceso a producto local.",
+        "trabajo_conjunto": "Pilotos, encuestas y seguimiento.",
+        "aporte_ambiental": "Retorno de frascos y consumo consciente.",
+        "accion": "Crear registro de clientes."
+      },
+      {
+        "actor_aliado": "Ferias y encuentros",
+        "tipo": "Comercial/institucional",
+        "que_aporta": "Espacio para mostrar, validar y vender.",
+        "que_recibe": "Oferta territorial para asistentes.",
+        "trabajo_conjunto": "Participación con inventario, etiqueta y precio.",
+        "aporte_ambiental": "Consolidar traslados y recuperar envases.",
+        "accion": "Identificar calendario y requisitos."
+      },
+      {
+        "actor_aliado": "Proveedor de insumos",
+        "tipo": "Proveedor",
+        "que_aporta": "Vaselina, flores, cera mencionada y otros materiales.",
+        "que_recibe": "Compra recurrente.",
+        "trabajo_conjunto": "Cotizar calidad, disponibilidad y trazabilidad.",
+        "aporte_ambiental": "Reducir sobrantes y empaques.",
+        "accion": "Crear mínimo dos opciones."
+      },
+      {
+        "actor_aliado": "Proveedor de frascos",
+        "tipo": "Proveedor/ circular",
+        "que_aporta": "Frascos de vidrio de 60 ml.",
+        "que_recibe": "Compra de empaques.",
+        "trabajo_conjunto": "Asegurar medidas, tapas, higiene y reposición.",
+        "aporte_ambiental": "Facilita retorno y reutilización controlada.",
+        "accion": "Cotizar y definir protocolo de retorno."
+      },
+      {
+        "actor_aliado": "Aliado en Bogotá",
+        "tipo": "Comercial potencial",
+        "que_aporta": "Podría recibir lotes previamente acordados y ampliar ventas.",
+        "que_recibe": "Producto y margen por definir.",
+        "trabajo_conjunto": "Validar requisitos, cantidad, precio y pago.",
+        "aporte_ambiental": "Consolidar entregas.",
+        "accion": "Identificar y hacer prueba piloto."
+      },
+      {
+        "actor_aliado": "Alcaldía / asistencia técnica",
+        "tipo": "Institucional/técnico",
+        "que_aporta": "Orientación en costos, higiene, SST, ambiente, formalización y mercado.",
+        "que_recibe": "Fortalecimiento verificable de la unidad.",
+        "trabajo_conjunto": "Visita y plan de mejora.",
+        "aporte_ambiental": "Prevención de impactos y economía circular.",
+        "accion": "Gestionar acompañamiento."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Talleres de elaboración",
+        "a_quien": "Participantes de la beca / comunidad.",
+        "resultado": "Se elaboraron dos lotes de 30 frascos de pomada.",
+        "motivacion": "Aprendizaje y rescate de medicina ancestral.",
+        "evidencia": "Fechas, listas, fotografías y soportes pendientes."
+      },
+      {
+        "metodo": "Ventas puntuales",
+        "a_quien": "Personas cercanas.",
+        "resultado": "Se reportan algunas ventas, sin cantidad consolidada.",
+        "motivacion": "Confianza y utilidad esperada.",
+        "evidencia": "Facturas, registro de unidades y pagos pendientes."
+      },
+      {
+        "metodo": "Voz a voz",
+        "a_quien": "Comunidad y conocidos.",
+        "resultado": "Personas se enteran y solicitan una pomada.",
+        "motivacion": "Recomendación y cercanía.",
+        "evidencia": "Registro de solicitudes pendiente."
+      },
+      {
+        "metodo": "Retroalimentación informal",
+        "a_quien": "Primeros compradores.",
+        "resultado": "Comentarios verbales; la unidad reconoce que aún hay poca información.",
+        "motivacion": "Percepción del producto.",
+        "evidencia": "Encuesta o ficha de seguimiento pendiente."
+      },
+      {
+        "metodo": "WhatsApp",
+        "a_quien": "Contactos conocidos.",
+        "resultado": "Canal actual para recibir mensajes y coordinar compras.",
+        "motivacion": "Facilidad de contacto.",
+        "evidencia": "Base de clientes y conversaciones organizadas pendientes."
+      },
+      {
+        "metodo": "Pilotos futuros",
+        "a_quien": "Mercado por caracterizar.",
+        "resultado": "Aceites, productos capilares y cuidado de piel siguen como ideas.",
+        "motivacion": "Ampliar portafolio.",
+        "evidencia": "No existen fórmulas, pilotos, costos ni aceptación."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Pomada de caléndula",
+        "descripcion_tecnica": "Preparación artesanal con base de vaselina y caléndula, calentada al baño de María y envasada en caliente.",
+        "unidad": "Frasco de 60 ml.",
+        "insumos_principales": "Aproximadamente 2 kg de vaselina, flores de caléndula y 30 frascos por lote; otros componentes por confirmar.",
+        "condiciones_especiales": "Vida útil, temperatura, advertencias y condiciones sanitarias pendientes de definir.",
+        "presentacion": "Frasco de vidrio reutilizable.",
+        "diferencial": "Origen local, saber tradicional y pequeña escala."
+      },
+      {
+        "servicio": "Pomada con flor seca",
+        "descripcion_tecnica": "La flor seca se incorpora directamente a la vaselina líquida y se mezcla hasta obtener coloración anaranjada.",
+        "unidad": "Lote de 30 frascos.",
+        "insumos_principales": "Vaselina y flor seca; cantidad exacta de flor pendiente.",
+        "condiciones_especiales": "Evitar contaminación y documentar tiempo y temperatura.",
+        "presentacion": "Frasco de 60 ml.",
+        "diferencial": "Proceso descrito y repetible si se estandariza."
+      },
+      {
+        "servicio": "Pomada con flor fresca",
+        "descripcion_tecnica": "La flor fresca se licúa, se cuela y el líquido se incorpora a la vaselina caliente; la pulpa queda como residuo.",
+        "unidad": "Lote por validar.",
+        "insumos_principales": "Flor fresca, equipo de licuado, colador y vaselina.",
+        "condiciones_especiales": "Debe validarse estabilidad, humedad, inocuidad y vida útil.",
+        "presentacion": "Presentación pendiente de validar.",
+        "diferencial": "Aprovecha flor recién recolectada; requiere mayor control."
+      },
+      {
+        "servicio": "Aceite herbal proyectado",
+        "descripcion_tecnica": "Idea de producto que se prepara en pocas horas y debe permanecer en reposo cerca de un mes, según el productor.",
+        "unidad": "Frasco por definir.",
+        "insumos_principales": "Ingredientes, fórmula, cantidades y empaque no determinados.",
+        "condiciones_especiales": "Reposo aproximado de un mes; condiciones por validar.",
+        "presentacion": "Por definir.",
+        "diferencial": "No existe piloto ni validación."
+      },
+      {
+        "servicio": "Producto capilar proyectado",
+        "descripcion_tecnica": "Línea futura mencionada, sin definición técnica.",
+        "unidad": "No determinada.",
+        "insumos_principales": "Pendiente.",
+        "condiciones_especiales": "Pendiente.",
+        "presentacion": "Pendiente.",
+        "diferencial": "No existe piloto ni mercado validado."
+      },
+      {
+        "servicio": "Producto para cuidado de piel",
+        "descripcion_tecnica": "Línea futura distinta a la pomada para dolor o golpes.",
+        "unidad": "No determinada.",
+        "insumos_principales": "Pendiente.",
+        "condiciones_especiales": "Pendiente.",
+        "presentacion": "Pendiente.",
+        "diferencial": "No existe piloto ni mercado validado."
+      },
+      {
+        "servicio": "Soporte del producto",
+        "descripcion_tecnica": "Ficha con fórmula, lote, fecha, cantidades, temperatura, rendimiento, limpieza, vida útil, uso, advertencias y responsable.",
+        "unidad": "Por lote.",
+        "insumos_principales": "Registros físicos o digitales.",
+        "condiciones_especiales": "Conservación según política por definir.",
+        "presentacion": "Etiqueta y ficha.",
+        "diferencial": "Pendiente de implementar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Planeación y alistamiento",
+        "unidad": "Por lote",
+        "actividad_proceso": "1. Confirmar fórmula, cantidades, proveedor, frascos, área de trabajo, limpieza, elementos de protección y registro del lote.",
+        "tiempo_estimado": "Antes de producir."
+      },
+      {
+        "servicio": "Limpieza inicial",
+        "unidad": "Por lote",
+        "actividad_proceso": "2. Limpiar y preparar superficie, ollas, utensilios y frascos con un método compatible con el producto; el protocolo está pendiente de definir.",
+        "tiempo_estimado": "No determinado."
+      },
+      {
+        "servicio": "Baño de María",
+        "unidad": "Por lote",
+        "actividad_proceso": "3. Colocar agua en una olla grande y dentro una olla menor que contiene la vaselina.",
+        "tiempo_estimado": "Incluido en las 2-3 horas reportadas."
+      },
+      {
+        "servicio": "Fusión de vaselina",
+        "unidad": "Aproximadamente 2 kg",
+        "actividad_proceso": "4. Calentar a fuego medio o alto y mezclar hasta que toda la vaselina esté líquida.",
+        "tiempo_estimado": "Temperatura y minutos pendientes."
+      },
+      {
+        "servicio": "Proceso con flor seca",
+        "unidad": "Por lote",
+        "actividad_proceso": "5A. Agregar la flor seca directamente, mezclar y observar la coloración anaranjada; definir cantidad, tiempo y criterio de terminación.",
+        "tiempo_estimado": "No determinado."
+      },
+      {
+        "servicio": "Proceso con flor fresca",
+        "unidad": "Por lote alterno",
+        "actividad_proceso": "5B. Licuar las flores frescas, colar y agregar el líquido a la vaselina caliente; segregar la pulpa resultante.",
+        "tiempo_estimado": "No determinado."
+      },
+      {
+        "servicio": "Envasado",
+        "unidad": "30 frascos de 60 ml",
+        "actividad_proceso": "6. Envasar en caliente antes de que la mezcla se solidifique, controlando derrames, llenado y cierre.",
+        "tiempo_estimado": "Dentro de las 2-3 horas."
+      },
+      {
+        "servicio": "Enfriamiento",
+        "unidad": "30 frascos",
+        "actividad_proceso": "7. Dejar reposar hasta que la pomada se solidifique; el clima frío de Sumapaz favorece este paso.",
+        "tiempo_estimado": "Tiempo exacto pendiente."
+      },
+      {
+        "servicio": "Rotulado y almacenamiento",
+        "unidad": "Por frasco/lote",
+        "actividad_proceso": "8. Incorporar lote, fecha, ingredientes, uso, advertencias, contacto y condiciones verificadas; actualmente no se describe este control.",
+        "tiempo_estimado": "Pendiente."
+      },
+      {
+        "servicio": "Limpieza y cierre",
+        "unidad": "Por lote",
+        "actividad_proceso": "9. Recuperar remanentes, retirar grasa antes del lavado, limpiar ollas y utensilios, registrar producción y gestionar residuos.",
+        "tiempo_estimado": "El productor reporta que esta etapa es dispendiosa."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Vaselina",
+        "cantidad_unidad": "Aproximadamente 2 kg por lote de 30 frascos",
+        "frecuencia": "Por lote",
+        "proveedor_fuente": "Proveedor por verificar",
+        "toxicidad": "Revisar ficha",
+        "impacto_potencial": "Residuo graso, vapores al calentar y dificultad de limpieza.",
+        "manejo_ambiental": "Evitar vertido al desagüe, recuperar sobrantes y revisar ficha de seguridad.",
+        "observaciones": "$22.000 por kg; $44.000 por lote, según la entrevista."
+      },
+      {
+        "insumo": "Frascos de vidrio de 60 ml",
+        "cantidad_unidad": "30 unidades por lote",
+        "frecuencia": "Por lote",
+        "proveedor_fuente": "Proveedor por verificar",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Consumo de empaque y riesgo de rotura.",
+        "manejo_ambiental": "Implementar retorno, lavado, inspección y reutilización solo bajo protocolo seguro.",
+        "observaciones": "$73.000-$74.000 por 30 unidades."
+      },
+      {
+        "insumo": "Caléndula seca",
+        "cantidad_unidad": "Cantidad por lote no determinada",
+        "frecuencia": "Por lote",
+        "proveedor_fuente": "Proveedor por verificar",
+        "toxicidad": "Biológica",
+        "impacto_potencial": "Residuo vegetal impregnado de vaselina.",
+        "manejo_ambiental": "Dosificar, almacenar seco y definir disposición del residuo.",
+        "observaciones": "Paquete grande de $30.000; rinde más de cuatro lotes."
+      },
+      {
+        "insumo": "Caléndula fresca",
+        "cantidad_unidad": "No determinada",
+        "frecuencia": "Según fórmula",
+        "proveedor_fuente": "Origen por verificar",
+        "toxicidad": "Biológica",
+        "impacto_potencial": "Aporta humedad y genera pulpa residual.",
+        "manejo_ambiental": "Validar inocuidad, estabilidad y destino del residuo.",
+        "observaciones": "Costo y rendimiento pendientes."
+      },
+      {
+        "insumo": "Agua de acueducto",
+        "cantidad_unidad": "No medida",
+        "frecuencia": "Cada lote y limpieza",
+        "proveedor_fuente": "Acueducto",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Consumo y agua de lavado con grasa.",
+        "manejo_ambiental": "Medir por lote, retirar grasa antes del lavado y no descargar remanentes concentrados.",
+        "observaciones": "No entra en contacto directo con la pomada según el productor."
+      },
+      {
+        "insumo": "Gas",
+        "cantidad_unidad": "No medido",
+        "frecuencia": "Cada lote",
+        "proveedor_fuente": "Servicio doméstico",
+        "toxicidad": "Inflamable",
+        "impacto_potencial": "Emisiones y riesgo de incendio o fuga.",
+        "manejo_ambiental": "Revisar conexiones, ventilar y medir consumo por lote.",
+        "observaciones": "Estufa doméstica."
+      },
+      {
+        "insumo": "Estufa",
+        "cantidad_unidad": "Una, según relato",
+        "frecuencia": "Cada lote",
+        "proveedor_fuente": "Disponible en la vivienda",
+        "toxicidad": "Riesgo térmico / gas",
+        "impacto_potencial": "Consumo energético y calor.",
+        "manejo_ambiental": "Mantenimiento, superficie estable y control de llama.",
+        "observaciones": "Uso compartido con la vivienda; verificar condiciones."
+      },
+      {
+        "insumo": "Ollas",
+        "cantidad_unidad": "Mínimo dos para baño de María",
+        "frecuencia": "Cada lote",
+        "proveedor_fuente": "Disponibles por la beca",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Remanentes grasos y agua de limpieza.",
+        "manejo_ambiental": "Uso exclusivo o segregado, inventario y limpieza estandarizada.",
+        "observaciones": "La grasa residual dificulta el lavado."
+      },
+      {
+        "insumo": "Licuadora y colador",
+        "cantidad_unidad": "Una unidad de cada elemento por verificar",
+        "frecuencia": "Cuando se usa flor fresca",
+        "proveedor_fuente": "Disponibles por verificar",
+        "toxicidad": "Eléctrica/mecánica",
+        "impacto_potencial": "Pulpa residual, consumo eléctrico y limpieza.",
+        "manejo_ambiental": "Desconectar, limpiar de forma segura y evitar contaminación cruzada.",
+        "observaciones": "Inventario y uso exclusivo pendientes."
+      },
+      {
+        "insumo": "Trapos reutilizables",
+        "cantidad_unidad": "Cantidad no informada",
+        "frecuencia": "Cada lote",
+        "proveedor_fuente": "Disponibles",
+        "toxicidad": "Según contaminación",
+        "impacto_potencial": "Pueden retener grasa y generar agua de lavado.",
+        "manejo_ambiental": "Lavar de forma controlada, separar y reemplazar cuando sea necesario.",
+        "observaciones": "Se prefieren para evitar desechables."
+      },
+      {
+        "insumo": "Cera de abeja",
+        "cantidad_unidad": "Uso y cantidad no confirmados",
+        "frecuencia": "Pendiente",
+        "proveedor_fuente": "Proveedor por identificar",
+        "toxicidad": "Biológica",
+        "impacto_potencial": "Origen, calidad y residuo por verificar.",
+        "manejo_ambiental": "No incorporarla al costeo ni fórmula hasta confirmar su uso.",
+        "observaciones": "Fue mencionada entre los suministros, sin detalle del proceso."
+      },
+      {
+        "insumo": "Etiqueta y material informativo",
+        "cantidad_unidad": "No informado",
+        "frecuencia": "Cada frasco",
+        "proveedor_fuente": "Por cotizar",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Consumo de papel, tinta o adhesivo.",
+        "manejo_ambiental": "Diseño mínimo, reciclable y con información verificable.",
+        "observaciones": "Requisito técnico y comercial por desarrollar."
+      },
+      {
+        "insumo": "Limpieza / desengrasante",
+        "cantidad_unidad": "No determinado",
+        "frecuencia": "Cada lote",
+        "proveedor_fuente": "Por cotizar",
+        "toxicidad": "Según ficha",
+        "impacto_potencial": "Puede generar vertimientos y exposición química.",
+        "manejo_ambiental": "Seleccionar producto compatible, dosificar y manejar aguas de lavado.",
+        "observaciones": "Necesidad expresada por dificultad para limpiar ollas."
+      },
+      {
+        "insumo": "Elementos de protección",
+        "cantidad_unidad": "No informados",
+        "frecuencia": "Cada lote",
+        "proveedor_fuente": "Por cotizar",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Previenen quemaduras, salpicaduras y exposición.",
+        "manejo_ambiental": "Definir guantes térmicos, delantal, protección ocular y otros según evaluación.",
+        "observaciones": "El productor indicó que trabaja sin tapabocas."
+      },
+      {
+        "insumo": "Almacenamiento y registros",
+        "cantidad_unidad": "No determinados",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Propio / por adecuar",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Calidad, orden y trazabilidad.",
+        "manejo_ambiental": "Separar insumos, producto y utensilios; controlar fechas y lotes.",
+        "observaciones": "Pendiente de implementar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "No se reporta producción después de los talleres; frecuencia actual muy baja o nula por falta de tiempo.",
+    "produccion_normal": "Dos lotes de 30 frascos elaborados durante los talleres, para un total referido de 60 frascos.",
+    "capacidad_mensual_teorica": "El productor manifiesta que, si dedica dos o tres horas, puede elaborar 30 frascos. Esta es una capacidad puntual, no una frecuencia mensual comprobada.",
+    "produccion_maxima_posible": "El productor manifiesta que, si dedica dos o tres horas, puede elaborar 30 frascos. Esta es una capacidad puntual, no una frecuencia mensual comprobada.",
+    "area_numero_habitaciones": "Producción en la vivienda; metros cuadrados, distribución, ventilación, superficies y separación de uso doméstico pendientes.",
+    "limitantes_productivos": "Disponibilidad de tiempo, falta de programación, costeo incompleto, demanda no medida, limpieza dispendiosa y ausencia de proceso documentado.",
+    "limitantes_ambientales": "Acueducto para baño de María y limpieza; consumo y descarga no medidos. Residuo floral con vaselina.",
+    "capacidad_instalada": "30 frascos por sesión de dos o tres horas.",
+    "capacidad_utilizada": "Muy baja o nula actualmente.",
+    "produce_mismo_todo_ano": null,
+    "alcanza_para_demanda": null,
+    "necesidades_aumentar_sosteniblemente": "Establecer calendario, fórmula, limpieza, insumos, vida útil, demanda y porcentaje de unidades vendidas.",
+    "observaciones_o_comentarios": "Conclusión: La capacidad técnica demostrada es de 30 frascos por sesión de dos o tres horas. No puede convertirse en capacidad mensual o anual hasta definir calendario, fórmula, limpieza, insumos, vida útil, demanda y porcentaje de unidades vendidas."
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua",
+        "estado_actual": "Acueducto para baño de María y limpieza; no entra directamente en la formulación según el productor.",
+        "limite_restriccion": "Consumo y descarga no medidos.",
+        "afectacion": "La limpieza de vaselina puede aumentar agua y grasa residual.",
+        "efecto": "Vertimiento inadecuado o sobreconsumo.",
+        "incidencia": "Medio",
+        "accion_mejora": "Medir agua por lote y retirar grasa antes del lavado."
+      },
+      {
+        "condicion": "Clima",
+        "estado_actual": "El frío de Sumapaz favorece el enfriamiento y solidificación de la pomada.",
+        "limite_restriccion": "No se informan eventos climáticos negativos.",
+        "afectacion": "Facilita una etapa del proceso.",
+        "efecto": "Enfriamiento más rápido.",
+        "incidencia": "Bajo/favorable",
+        "accion_mejora": "Registrar tiempos y proteger el producto de contaminación durante el reposo."
+      },
+      {
+        "condicion": "Suelo",
+        "estado_actual": "La actividad se realiza en vivienda y no depende directamente del suelo.",
+        "limite_restriccion": "No aplica al proceso inmediato.",
+        "afectacion": "Sin afectación productiva directa identificada.",
+        "efecto": "No determinado.",
+        "incidencia": "Bajo",
+        "accion_mejora": "Verificar origen sostenible y disponibilidad de las flores."
+      },
+      {
+        "condicion": "Suministros",
+        "estado_actual": "Se requieren frascos, vaselina, flores y otros insumos; no existen aliados actuales.",
+        "limite_restriccion": "Riesgo de desabastecimiento manifestado.",
+        "afectacion": "Puede impedir elaborar el lote.",
+        "efecto": "Retraso o suspensión de producción.",
+        "incidencia": "Alto",
+        "accion_mejora": "Inventario mínimo, proveedores alternos y compras programadas."
+      },
+      {
+        "condicion": "Espacio e higiene",
+        "estado_actual": "Producción doméstica con ventilación y utensilios disponibles.",
+        "limite_restriccion": "Distribución, superficies, limpieza y separación sanitaria no verificadas. Compatibilidad con compostaje no validada.",
+        "afectacion": "Condiciona calidad y repetibilidad.",
+        "efecto": "Contaminación, deterioro o rechazo.",
+        "incidencia": "Alto",
+        "accion_mejora": "Visita, flujo limpio, protocolo de saneamiento y almacenamiento separado."
+      },
+      {
+        "condicion": "Residuos",
+        "estado_actual": "Flor impregnada de vaselina se elimina en basura común; existe interés en compostarla.",
+        "limite_restriccion": "Puede generar manejo inadecuado de residuos grasos.",
+        "afectacion": "Contaminación o afectación del compost.",
+        "efecto": "Medio-Alto",
+        "incidencia": "Alto",
+        "accion_mejora": "Segregar y consultar manejo técnico antes de compostar."
+      },
+      {
+        "condicion": "Tiempo disponible",
+        "estado_actual": "Los dos integrantes tienen empleo docente y no han retomado producción.",
+        "limite_restriccion": "No existe calendario ni responsable con tiempo asignado.",
+        "afectacion": "Reduce continuidad y atención comercial.",
+        "efecto": "Pérdida de pedidos o estancamiento.",
+        "incidencia": "Alto",
+        "accion_mejora": "Definir lotes realistas por mes y producir contra pedido."
+      },
+      {
+        "condicion": "Conclusión",
+        "estado_actual": "El clima no limita y puede favorecer el enfriamiento. Los límites principales son tiempo, suministro, espacio, estandarización, higiene y manejo de residuos.",
+        "limite_restriccion": "Faltan mediciones y visita.",
+        "afectacion": "La capacidad debe crecer de manera controlada.",
+        "efecto": "Riesgo productivo, sanitario, financiero y ambiental.",
+        "incidencia": "Alto",
+        "accion_mejora": "Validar un lote completo antes de ampliar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Térmico",
+        "peligro": "Quemaduras por vaselina, agua, ollas o envasado en caliente.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Manipulación habitual; no se informan EPP.",
+        "accion": "Guantes térmicos, delantal, pinzas, superficie estable y procedimiento."
+      },
+      {
+        "tipo": "Químico/vapores",
+        "peligro": "Exposición a vapores o componentes de vaselina calentada y productos de limpieza.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Trabajo en lugar ventilado.",
+        "accion": "Revisar fichas, controlar temperatura, ventilar y definir protección."
+      },
+      {
+        "tipo": "Incendio/gas",
+        "peligro": "Fuga, llama abierta o incendio por uso de estufa doméstica.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Controles específicos no reportados.",
+        "accion": "Inspeccionar manguera y conexión, alejar combustibles y disponer extintor."
+      },
+      {
+        "tipo": "Locativo",
+        "peligro": "Resbalones o caídas por agua, grasa, utensilios y frascos en el área.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Limpieza posterior; sin protocolo.",
+        "accion": "Orden, limpieza inmediata, señalización y piso seco."
+      },
+      {
+        "tipo": "Mecánico",
+        "peligro": "Cortes por rotura de frascos, cuchillos, licuadora o colador.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No reportados.",
+        "accion": "Inspeccionar vidrio, desconectar equipos y usar guantes apropiados."
+      },
+      {
+        "tipo": "Eléctrico",
+        "peligro": "Contacto con licuadora u otros equipos cerca de agua.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No reportados.",
+        "accion": "Revisar cables, usar manos secas y desconectar antes de limpiar."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Postura de pie, agitación repetitiva y manipulación de ollas calientes.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Trabajo compartido por la pareja.",
+        "accion": "Altura adecuada, pausas, rotación y límites de carga."
+      },
+      {
+        "tipo": "Sanitario",
+        "peligro": "Contaminación del producto por superficies, manos, utensilios, agua, frascos o ambiente doméstico.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Se busca trabajar de forma limpia; medidas sin documentar.",
+        "accion": "Protocolo de higiene, lote, control de insumos y almacenamiento."
+      },
+      {
+        "tipo": "Biológico",
+        "peligro": "Deterioro o crecimiento microbiano asociado a flores frescas y humedad.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "No se reportan análisis ni vida útil.",
+        "accion": "Validar fórmula, humedad, estabilidad, vida útil y criterios de descarte."
+      },
+      {
+        "tipo": "Ambiental",
+        "peligro": "Vertimiento de grasa o desengrasante y disposición de flor con vaselina.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Basura común para la flor; interés en compostaje.",
+        "accion": "Segregar, recuperar grasa y definir destino técnico."
+      },
+      {
+        "tipo": "Emergencias",
+        "peligro": "Ausencia de botiquín, extintor o procedimiento frente a quemadura, derrame o fuga.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "No reportados.",
+        "accion": "Botiquín, extintor, contactos y respuesta documentada."
+      },
+      {
+        "tipo": "Comercial / entrega",
+        "peligro": "Desplazamiento o entrega sin ruta, embalaje ni protección definidos.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Contacto directo por WhatsApp y voz a voz.",
+        "accion": "Definir empaque secundario, transporte y registro de entrega."
+      },
+      {
+        "tipo": "Conclusión",
+        "peligro": "Matriz preventiva basada en la entrevista; las prioridades son calor, gas, higiene, vapores, vidrio, limpieza y residuos.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Ventilación como único control explícito; no usa tapabocas.",
+        "accion": "Validar en visita, asignar controles y conservar evidencias."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Inspeccionar estufa, gas, ollas, cables, superficies y ventilación",
+        "riesgo": "Incendio, térmico, eléctrico y locativo",
+        "responsable": "Iván Darío / esposa",
+        "frecuencia": "Antes de cada lote",
+        "evidencia": "Checklist"
+      },
+      {
+        "accion_preventiva": "Usar guantes térmicos, delantal y protección ocular según la tarea",
+        "riesgo": "Quemaduras y salpicaduras",
+        "responsable": "Responsable de producción",
+        "frecuencia": "Cada lote",
+        "evidencia": "Registro/foto"
+      },
+      {
+        "accion_preventiva": "Estandarizar temperatura, tiempos, cantidades y envasado",
+        "riesgo": "Térmico, sanitario y de calidad",
+        "responsable": "Pareja productora / apoyo técnico",
+        "frecuencia": "Antes y durante cada lote",
+        "evidencia": "Ficha de lote"
+      },
+      {
+        "accion_preventiva": "Limpiar y desinfectar área, utensilios y frascos con protocolo validado",
+        "riesgo": "Sanitario",
+        "responsable": "Responsable de calidad",
+        "frecuencia": "Antes y después de cada lote",
+        "evidencia": "Planilla"
+      },
+      {
+        "accion_preventiva": "Ventilar y revisar fichas de vaselina y productos de limpieza",
+        "riesgo": "Químico/respiratorio",
+        "responsable": "Responsable de producción",
+        "frecuencia": "Cada compra y lote",
+        "evidencia": "Fichas/checklist"
+      },
+      {
+        "accion_preventiva": "Retirar remanentes grasos antes de lavar y segregar residuos",
+        "riesgo": "Ambiental/locativo",
+        "responsable": "Responsable de limpieza",
+        "frecuencia": "Después de cada lote",
+        "evidencia": "Registro de residuos"
+      },
+      {
+        "accion_preventiva": "Mantener botiquín, extintor y contactos de emergencia",
+        "riesgo": "Emergencias",
+        "responsable": "Pareja productora",
+        "frecuencia": "Revisión mensual",
+        "evidencia": "Inventario"
+      },
+      {
+        "accion_preventiva": "Inspeccionar frascos y aislar unidades rotas, contaminadas o defectuosas",
+        "riesgo": "Cortes y calidad",
+        "responsable": "Responsable de calidad",
+        "frecuencia": "Cada lote",
+        "evidencia": "Control de calidad"
+      },
+      {
+        "accion_preventiva": "Registrar incidentes, desviaciones, devoluciones y acciones correctivas",
+        "riesgo": "Gestión integral",
+        "responsable": "Iván Darío",
+        "frecuencia": "Cuando ocurra",
+        "evidencia": "Formato de incidente"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "Personas conocidas de la comunidad",
+        "responsable": "Iván Darío / esposa",
+        "frecuencia": "Ocasional"
+      },
+      {
+        "canal": "WhatsApp",
+        "activo": true,
+        "descripcion": "Mensajes con personas conocidas",
+        "responsable": "Pareja productora",
+        "frecuencia": "Según solicitud"
+      },
+      {
+        "canal": "Voz a voz",
+        "activo": true,
+        "descripcion": "Recomendación comunitaria",
+        "responsable": "Compradores / pareja",
+        "frecuencia": "Informal"
+      },
+      {
+        "canal": "Ferias/encuentros",
+        "activo": false,
+        "descripcion": "Canal deseado en Sumapaz y Bogotá",
+        "responsable": "Por definir",
+        "frecuencia": "Según calendario"
+      },
+      {
+        "canal": "Redes sociales",
+        "activo": false,
+        "descripcion": "La unidad no tiene redes actualmente",
+        "responsable": "Por definir",
+        "frecuencia": "Implementación futura"
+      },
+      {
+        "canal": "Aliado comercial en Bogotá",
+        "activo": false,
+        "descripcion": "Socio o comprador por identificar",
+        "responsable": "Iván Darío",
+        "frecuencia": "Por lote"
+      },
+      {
+        "canal": "Tienda o distribuidor",
+        "activo": false,
+        "descripcion": "No existe asociado ni distribuidor actual",
+        "responsable": "Por definir",
+        "frecuencia": "Por validar"
+      },
+      {
+        "canal": "Sitio web / QR",
+        "activo": false,
+        "descripcion": "No implementado",
+        "responsable": "Por definir",
+        "frecuencia": "Etapa futura"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Pomada de caléndula 60 ml",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Venta recordada entre $20.000 y $30.000; valor exacto no confirmado.",
+        "logistica_plataforma": "Entrega y empaque secundario pendientes.",
+        "precio_final": null,
+        "justificacion": "No mantener un precio al ojo; calcular costo total, margen y disposición a pagar."
+      },
+      {
+        "servicio": "Pomada con flor fresca",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Sin precio diferenciado",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": null,
+        "justificacion": "Validar estabilidad, rendimiento y costo antes de vender."
+      },
+      {
+        "servicio": "Aceite herbal proyectado",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Sin referencia",
+        "logistica_plataforma": "Incluye reposo cercano a un mes, según relato.",
+        "precio_final": null,
+        "justificacion": "No existe piloto ni mercado validado."
+      },
+      {
+        "servicio": "Productos capilares / piel",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Sin referencia",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": null,
+        "justificacion": "No proyectar precio hasta definir producto, fórmula, requisitos y aceptación."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": "Observación financiera: Para un lote de 30 frascos se reportan aproximadamente 2 kg de vaselina a $22.000 por kg ($44.000), 30 frascos de vidrio por $73.000-$74.000 y flor seca comprada en un paquete de $30.000 que rinde más de cuatro lotes. Al asignar como máximo $7.500 de flor por lote, el costo conocido parcial es aproximadamente $124.500-$125.500, equivalente a $4.150-$4.183 por frasco. Este valor no incluye flor fresca, cera de abeja si aplica, agua, gas, electricidad, mano de obra, limpieza, etiquetas, almacenamiento, pérdidas, transporte, requisitos ni impuestos. El precio recordado entre $20.000 y $30.000 no permite calcular margen real hasta completar y verificar todos los costos."
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Producción actual",
+        "cantidad_mensual": "0 frascos después de los talleres",
+        "precio": null,
+        "ingreso_mensual": 0,
+        "forma_pago": "No aplica",
+        "canal": "Sin producción vigente"
+      },
+      {
+        "concepto_servicio": "Producción histórica de talleres",
+        "cantidad_mensual": "Dos lotes de 30 frascos",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Efectivo, Nequi o llaves",
+        "canal": "Voz a voz / WhatsApp"
+      },
+      {
+        "concepto_servicio": "Escenario ilustrativo bajo",
+        "cantidad_mensual": "30 frascos por lote",
+        "precio": 20000,
+        "ingreso_mensual": 600000,
+        "forma_pago": "Por definir",
+        "canal": "Solo si existe pedido y venta"
+      },
+      {
+        "concepto_servicio": "Escenario ilustrativo alto",
+        "cantidad_mensual": "30 frascos por lote",
+        "precio": 30000,
+        "ingreso_mensual": 900000,
+        "forma_pago": "Por definir",
+        "canal": "Solo si existe pedido y venta"
+      },
+      {
+        "concepto_servicio": "Proyección mensual",
+        "cantidad_mensual": "No determinada",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Efectivo/Nequi / llaves",
+        "canal": "Definir después de registrar tiempo, demanda y ventas"
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": "Proyección responsable: Los escenarios de $600.000 y $900.000 corresponden únicamente a multiplicar 30 frascos por el rango de precio recordado de $20.000-$30.000. No son ventas garantizadas ni utilidad. La unidad no informó cantidad efectivamente vendida, frecuencia mensual, recompra, costos completos, devoluciones, vida útil, requisitos, impuestos ni logística. La proyección debe construirse después de elaborar y vender varios lotes con registros verificables."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Comprador cercano",
+        "estrategia": "Registrar compra, uso esperado, satisfacción, observaciones y posibilidad de recompra.",
+        "medio": "WhatsApp/llamada",
+        "frecuencia": "Después de cada venta",
+        "responsable": "Iván Darío / esposa"
+      },
+      {
+        "cliente": "Referido",
+        "estrategia": "Solicitar autorización para contacto y registrar quién recomendó el producto.",
+        "medio": "WhatsApp",
+        "frecuencia": "Cada solicitud",
+        "responsable": "Pareja productora"
+      },
+      {
+        "cliente": "Cliente recurrente",
+        "estrategia": "Confirmar necesidad, fecha, cantidad, devolución de frasco y próxima compra sin hacer promesas no verificadas.",
+        "medio": "Base de clientes",
+        "frecuencia": "Mensual/según uso",
+        "responsable": "Responsable comercial"
+      },
+      {
+        "cliente": "Cliente de feria",
+        "estrategia": "Entregar información clara, registrar contacto y hacer seguimiento posterior.",
+        "medio": "Ficha / WhatsApp",
+        "frecuencia": "Después del evento",
+        "responsable": "Responsable comercial"
+      },
+      {
+        "cliente": "Aliado comercial",
+        "estrategia": "Definir lote, requisitos, precio, margen, pago, devoluciones y frecuencia antes de producir.",
+        "medio": "Reunión/acuerdo",
+        "frecuencia": "Antes de cada lote",
+        "responsable": "Iván Darío"
+      },
+      {
+        "cliente": "Reclamo o devolución",
+        "estrategia": "Identificar lote, causa, frasco, fecha, respuesta y acción correctiva.",
+        "medio": "Teléfono/formato",
+        "frecuencia": "Cuando ocurra",
+        "responsable": "Responsable de calidad"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Pomada a comprador local",
+        "canal": "Venta directa / WhatsApp",
+        "tiempo": "Por acordar",
+        "transporte_operacion": "Medio no informado",
+        "condicion_calidad": "Frasco íntegro, cerrado, identificado y protegido del calor o contaminación",
+        "capacidad": "Por pedido",
+        "costo": "No determinado",
+        "responsable": "Iván Darío / esposa"
+      },
+      {
+        "servicio_insumo": "Pomada para feria",
+        "canal": "Evento en Sumapaz o Bogotá",
+        "tiempo": "Según calendario",
+        "transporte_operacion": "Medio pendiente",
+        "condicion_calidad": "Inventario por lote, empaque protegido e información verificable",
+        "capacidad": "No determinada",
+        "costo": "Por calcular",
+        "responsable": "Responsable comercial"
+      },
+      {
+        "servicio_insumo": "Lote para aliado en Bogotá",
+        "canal": "Entrega previamente acordada",
+        "tiempo": "Por definir",
+        "transporte_operacion": "Transporte pendiente",
+        "condicion_calidad": "Cantidad, frascos, lote, etiqueta y almacenamiento acordados",
+        "capacidad": "30 frascos por sesión como referencia",
+        "costo": "Por calcular",
+        "responsable": "Iván Darío"
+      },
+      {
+        "servicio_insumo": "Insumos",
+        "canal": "Proveedor a vivienda",
+        "tiempo": "Según compra",
+        "transporte_operacion": "Medio no informado",
+        "condicion_calidad": "Separar materiales, revisar lote, fecha y estado",
+        "capacidad": "Según inventario",
+        "costo": "Pendiente",
+        "responsable": "Responsable de compras"
+      },
+      {
+        "servicio_insumo": "Retorno de frascos",
+        "canal": "Cliente a unidad productiva",
+        "tiempo": "En próxima compra o punto de entrega",
+        "transporte_operacion": "Cliente/productor",
+        "condicion_calidad": "Frasco sin rotura; lavado y reutilización bajo protocolo",
+        "capacidad": "Por medir",
+        "costo": "Limpieza y reposición pendientes",
+        "responsable": "Responsable ambiental"
+      },
+      {
+        "servicio_insumo": "Conclusión",
+        "canal": "La entrevista no describe rutas ni costos de entrega.",
+        "tiempo": "Pendiente",
+        "transporte_operacion": "Pendiente",
+        "condicion_calidad": "No despachar sin protección, identificación y registro.",
+        "capacidad": "No determinada",
+        "costo": "No calculado",
+        "responsable": "Pareja productora"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Identificación",
+        "informacion": "Nombre de unidad, responsables, ubicación, contacto y condición jurídica.",
+        "responsable": "Iván Darío",
+        "medio": "Ficha maestra",
+        "frecuencia": "Cuando cambie",
+        "evidencia": "Documentos"
+      },
+      {
+        "elemento": "Insumos",
+        "informacion": "Proveedor, lote, fecha, cantidad, costo, ficha, vencimiento y saldo de vaselina, flores, cera si aplica y limpieza.",
+        "responsable": "Responsable de compras",
+        "medio": "Inventario",
+        "frecuencia": "Cada compra y uso",
+        "evidencia": "Factura/ficha"
+      },
+      {
+        "elemento": "Lote de producción",
+        "informacion": "Código, fecha, fórmula, flor seca o fresca, cantidades, tiempos, temperatura, responsable y rendimiento.",
+        "responsable": "Responsable de producción",
+        "medio": "Ficha de lote",
+        "frecuencia": "Cada lote",
+        "evidencia": "Registro"
+      },
+      {
+        "elemento": "Limpieza y calidad",
+        "informacion": "Área, utensilios, frascos, observaciones, unidades aceptadas, rechazadas y causa.",
+        "responsable": "Responsable de calidad",
+        "medio": "Checklist",
+        "frecuencia": "Cada lote",
+        "evidencia": "Planilla/fotos"
+      },
+      {
+        "elemento": "Producto terminado",
+        "informacion": "Lote, fecha, contenido, ingredientes, uso, advertencias, almacenamiento, vida útil y contacto verificados.",
+        "responsable": "Responsable de calidad",
+        "medio": "Etiqueta/ficha",
+        "frecuencia": "Cada lote",
+        "evidencia": "Muestra"
+      },
+      {
+        "elemento": "Venta",
+        "informacion": "Cliente, cantidad, precio, forma de pago, fecha, canal, devolución y satisfacción.",
+        "responsable": "Responsable comercial",
+        "medio": "Cuaderno/archivo",
+        "frecuencia": "Cada venta",
+        "evidencia": "Recibo/registro"
+      },
+      {
+        "elemento": "Residuos",
+        "informacion": "Cantidad y destino de flores, vaselina residual, agua de lavado, vidrio y empaques.",
+        "responsable": "Responsable ambiental",
+        "medio": "Planilla",
+        "frecuencia": "Cada lote",
+        "evidencia": "Conteo/soporte"
+      },
+      {
+        "elemento": "QR gradual",
+        "informacion": "Origen en Sumapaz, historia, lote, ingredientes, uso, advertencias, prácticas y contacto.",
+        "responsable": "Iván Darío / apoyo",
+        "medio": "Código QR",
+        "frecuencia": "Cuando existan datos confiables",
+        "evidencia": "Etiqueta"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Equipos existentes",
+        "descripcion": "Ollas y utensilios entregados o adquiridos durante la beca",
+        "valor_unitario": null,
+        "cantidad": "Inventario pendiente",
+        "total": null,
+        "requisito": "Estado, material, exclusividad y capacidad",
+        "fuente": "Beca / aporte propio"
+      },
+      {
+        "tipo": "Insumos actuales",
+        "descripcion": "Vaselina, frascos y otros insumos disponibles",
+        "valor_unitario": null,
+        "cantidad": "Existencias pendientes",
+        "total": null,
+        "requisito": "Fecha, lote, estado y suficiencia",
+        "fuente": "Beca / aporte propio"
+      },
+      {
+        "tipo": "Frascos de vidrio",
+        "descripcion": "Presentación de 60 ml con tapa",
+        "valor_unitario": null,
+        "cantidad": "Según producción",
+        "total": null,
+        "requisito": "Higiene, cierre, resistencia y retorno",
+        "fuente": "Aporte propio / por definir"
+      },
+      {
+        "tipo": "Limpieza y manejo de grasa",
+        "descripcion": "Desengrasante compatible, recipientes de recuperación y elementos de limpieza",
+        "valor_unitario": null,
+        "cantidad": "Según protocolo",
+        "total": null,
+        "requisito": "Ficha, dosificación y manejo de aguas",
+        "fuente": "Por definir"
+      },
+      {
+        "tipo": "SST y emergencias",
+        "descripcion": "Guantes térmicos, delantal, protección ocular, botiquín, extintor y señalización",
+        "valor_unitario": null,
+        "cantidad": "Según evaluación",
+        "total": null,
+        "requisito": "Adecuados al riesgo y con mantenimiento",
+        "fuente": "Prioridad preventiva"
+      },
+      {
+        "tipo": "Adecuación del espacio",
+        "descripcion": "Superficie lavable, ventilación, almacenamiento separado y zona de enfriamiento",
+        "valor_unitario": null,
+        "cantidad": "Una adecuación",
+        "total": null,
+        "requisito": "Visita y flujo sanitario",
+        "fuente": "Por definir"
+      },
+      {
+        "tipo": "Etiqueta y trazabilidad",
+        "descripcion": "Diseño, impresión, ficha técnica, lote y sistema de registros",
+        "valor_unitario": null,
+        "cantidad": "Un sistema básico",
+        "total": null,
+        "requisito": "Información verificada y legible",
+        "fuente": "Por definir"
+      },
+      {
+        "tipo": "Asistencia y requisitos",
+        "descripcion": "Costeo, estabilidad, vida útil, clasificación, rotulado, publicidad y formalización aplicables",
+        "valor_unitario": null,
+        "cantidad": "Una ruta técnica",
+        "total": null,
+        "requisito": "Conceptos y soportes antes de escalar",
+        "fuente": "Apoyo solicitado / propio"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Vaselina",
+        "descripcion": "Aproximadamente 2 kg por lote",
+        "valor_mensual_ciclo": 44000,
+        "observaciones": "Cálculo según $22.000 por kg; verificar factura, marca y lote."
+      },
+      {
+        "tipo": "Frascos",
+        "descripcion": "30 frascos de vidrio de 60 ml",
+        "valor_mensual_ciclo": 74000,
+        "observaciones": "Equivale a aproximadamente $2.433-$2.467 por frasco."
+      },
+      {
+        "tipo": "Caléndula seca",
+        "descripcion": "Parte de un paquete grande que rinde más de cuatro lotes",
+        "valor_mensual_ciclo": 7500,
+        "observaciones": "El rendimiento exacto es mayor a cuatro lotes; medir gramos usados."
+      },
+      {
+        "tipo": "Caléndula fresca",
+        "descripcion": "Flores licuadas y coladas",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Cantidad, origen, costo, rendimiento y estabilidad pendientes."
+      },
+      {
+        "tipo": "Gas",
+        "descripcion": "Estufa doméstica durante calentamiento",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Medir consumo por lote."
+      },
+      {
+        "tipo": "Agua",
+        "descripcion": "Baño de María y limpieza",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Medir litros y costo; la limpieza grasosa puede aumentar consumo."
+      },
+      {
+        "tipo": "Mano de obra",
+        "descripcion": "Dos personas durante elaboración, limpieza, compra, venta y seguimiento",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Registrar horas y asignar costo."
+      },
+      {
+        "tipo": "Limpieza",
+        "descripcion": "Trapos, producto desengrasante y manejo de residuos",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Seleccionar y cotizar método compatible."
+      },
+      {
+        "tipo": "Etiqueta y empaque secundario",
+        "descripcion": "Información, adhesivo y protección para entrega",
+        "valor_mensual_ciclo": null,
+        "observaciones": "No descrito en la entrevista."
+      },
+      {
+        "tipo": "Transporte y comercialización",
+        "descripcion": "Compras, entregas, ferias y medios digitales",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Definir por canal."
+      },
+      {
+        "tipo": "Requisitos y asistencia",
+        "descripcion": "Validaciones técnicas, sanitarias, comerciales y ambientales",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Verificar antes de ampliar."
+      },
+      {
+        "tipo": "Costo conocido parcial",
+        "descripcion": "Vaselina, frascos y asignación máxima de flor seca",
+        "valor_mensual_ciclo": 125500,
+        "observaciones": "Equivale a $4.150-$4.183 por frasco; no es costo total."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "Mes 1",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Estandarizar un lote y completar costos."
+      },
+      {
+        "mes": "Mes 2",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Producir solo con calendario y demanda validada."
+      },
+      {
+        "mes": "Mes 3",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Revisar ventas, satisfacción y costo unitario."
+      },
+      {
+        "mes": "Mes 4",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Ajustar precio y frecuencia."
+      },
+      {
+        "mes": "Mes 5",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Evaluar continuidad de proveedores."
+      },
+      {
+        "mes": "Mes 6",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Evaluación semestral de producción y mercado."
+      },
+      {
+        "mes": "Mes 7",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "No ampliar sin evidencia."
+      },
+      {
+        "mes": "Mes 8",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Validar posible aliado comercial."
+      },
+      {
+        "mes": "Mes 9",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Revisar vida útil y devoluciones."
+      },
+      {
+        "mes": "Mes 10",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Actualizar costos y disponibilidad de tiempo."
+      },
+      {
+        "mes": "Mes 11",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Preparar cierre anual con soportes."
+      },
+      {
+        "mes": "Mes 12",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Calcular unidades, ingresos, gastos, margen y residuos reales."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "Registro mínimo: El flujo de caja no puede proyectarse con responsabilidad porque no se informó cuántos frascos se vendieron, en qué meses, a qué precio exacto, cuántos lotes podrían programarse, ni los costos completos. Debe registrarse por lote y por mes: compras, horas de trabajo, agua, gas, limpieza, etiquetas, transporte, unidades producidas, rechazadas, vendidas, devueltas, pagos recibidos y saldo. Solo después de varios lotes puede definirse una meta mensual realista."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Fuente de agua",
+        "estado": "Acueducto para baño de María y limpieza; sin contacto directo con el producto según relato.",
+        "cantidad": "Litros y costo pendientes",
+        "impacto_1_a_5": 3,
+        "accion": "Medir agua por lote y documentar su uso."
+      },
+      {
+        "variable": "Agua de limpieza",
+        "estado": "La vaselina hace dispendiosa la limpieza de ollas.",
+        "cantidad": "Litros, grasa y desengrasante pendientes",
+        "impacto_1_a_5": 4,
+        "accion": "Retirar grasa antes de lavar y evitar vertidos concentrados."
+      },
+      {
+        "variable": "Vaselina",
+        "estado": "Base principal; aproximadamente 2 kg por lote.",
+        "cantidad": "2 kg / 30 frascos",
+        "impacto_1_a_5": 4,
+        "accion": "Medir merma, recuperar sobrantes y revisar ficha."
+      },
+      {
+        "variable": "Flores",
+        "estado": "Secas o frescas; cantidad exacta no estandarizada.",
+        "cantidad": "Paquete seco rinde más de 4 lotes",
+        "impacto_1_a_5": 3,
+        "accion": "Pesar entradas y residuos por lote."
+      },
+      {
+        "variable": "Residuo floral",
+        "estado": "Flor impregnada de vaselina se desecha en basura común.",
+        "cantidad": "kg pendientes",
+        "impacto_1_a_5": 4,
+        "accion": "Segregar y validar destino; no compostar sin concepto."
+      },
+      {
+        "variable": "Gas",
+        "estado": "Estufa doméstica para calentamiento.",
+        "cantidad": "Consumo pendiente",
+        "impacto_1_a_5": 3,
+        "accion": "Medir tiempo y consumo por lote y revisar conexiones."
+      },
+      {
+        "variable": "Frascos de vidrio",
+        "estado": "30 por lote; elegidos por posibilidad de segundo uso.",
+        "cantidad": "30 unidades/lote",
+        "impacto_1_a_5": 3,
+        "accion": "Implementar retorno, inspección y reutilización segura."
+      },
+      {
+        "variable": "Trapos reutilizables",
+        "estado": "Se usan para reducir desechables.",
+        "cantidad": "Cantidad y vida útil pendientes",
+        "impacto_1_a_5": 2,
+        "accion": "Registrar lavado, reemplazo y disposición."
+      },
+      {
+        "variable": "Transporte",
+        "estado": "Compras y entregas no caracterizadas.",
+        "cantidad": "km y combustible pendientes",
+        "impacto_1_a_5": 2,
+        "accion": "Consolidar pedidos y medir por ruta."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "Consumo de agua",
+        "que_se_mide": "Litros usados en baño de María y limpieza por lote.",
+        "dato_inicial": "No medido.",
+        "meta": "Construir línea base en el primer lote registrado.",
+        "frecuencia": "Cada lote",
+        "responsable": "Responsable de producción",
+        "evidencia": "Planilla/medición"
+      },
+      {
+        "indicador": "Consumo de gas",
+        "que_se_mide": "Tiempo de llama o unidad de consumo asignada por lote.",
+        "dato_inicial": "No medido.",
+        "meta": "Registrar 100% de lotes.",
+        "frecuencia": "Cada lote",
+        "responsable": "Responsable de producción",
+        "evidencia": "Registro"
+      },
+      {
+        "indicador": "Rendimiento de vaselina",
+        "que_se_mide": "kg de vaselina frente a frascos aceptados y remanente.",
+        "dato_inicial": "2 kg para 30 frascos, aproximado.",
+        "meta": "Verificar rendimiento y merma.",
+        "frecuencia": "Cada lote",
+        "responsable": "Responsable de calidad",
+        "evidencia": "Ficha de lote"
+      },
+      {
+        "indicador": "Residuo floral",
+        "que_se_mide": "kg de flor retirada o pulpa con destino.",
+        "dato_inicial": "No medido; basura común.",
+        "meta": "Registrar 100% y definir destino seguro.",
+        "frecuencia": "Cada lote",
+        "responsable": "Responsable ambiental",
+        "evidencia": "Pesaje/registro"
+      },
+      {
+        "indicador": "Frascos retornados",
+        "que_se_mide": "Unidades vendidas, retornadas, rechazadas y reutilizadas.",
+        "dato_inicial": "No existe programa.",
+        "meta": "Crear línea base y protocolo.",
+        "frecuencia": "Mensual",
+        "responsable": "Responsable comercial",
+        "evidencia": "Conteo"
+      },
+      {
+        "indicador": "Residuos grasos",
+        "que_se_mide": "Cantidad de vaselina retirada antes del lavado y destino.",
+        "dato_inicial": "No medido.",
+        "meta": "Evitar vertido al desagüe.",
+        "frecuencia": "Cada lote",
+        "responsable": "Responsable de limpieza",
+        "evidencia": "Registro"
+      },
+      {
+        "indicador": "Transporte",
+        "que_se_mide": "km, medio, combustible y unidades entregadas.",
+        "dato_inicial": "No determinado.",
+        "meta": "Consolidar entregas y medir por frasco.",
+        "frecuencia": "Cada ruta",
+        "responsable": "Iván Darío",
+        "evidencia": "Bitácora"
+      },
+      {
+        "indicador": "Huella de carbono",
+        "que_se_mide": "Gas, electricidad, transporte, vidrio e insumos.",
+        "dato_inicial": "No estimada.",
+        "meta": "Construir línea base gradual.",
+        "frecuencia": "Semestral",
+        "responsable": "Equipo asesor / productor",
+        "evidencia": "Cálculo"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Flor usada con vaselina",
+        "cantidad": "No medida",
+        "manejo_actual": "Se desecha en basura común.",
+        "accion_circular": "Segregar y consultar si existe aprovechamiento seguro; no incorporar al compost sin validación.",
+        "destino": "Gestión por definir",
+        "responsable": "Responsable ambiental"
+      },
+      {
+        "residuo_recurso": "Pulpa de flor fresca",
+        "cantidad": "No medida",
+        "manejo_actual": "No se utiliza.",
+        "accion_circular": "Evaluar por separado su composición y contaminación antes de compostar o aprovechar.",
+        "destino": "Pendiente",
+        "responsable": "Responsable de producción"
+      },
+      {
+        "residuo_recurso": "Vaselina residual",
+        "cantidad": "No medida",
+        "manejo_actual": "Se procura no desperdiciar; queda adherida en ollas.",
+        "accion_circular": "Recuperar remanente limpio dentro del mismo lote y retirar residuo antes del lavado.",
+        "destino": "Recipiente de residuos / gestor por definir",
+        "responsable": "Responsable de limpieza"
+      },
+      {
+        "residuo_recurso": "Aguas de lavado",
+        "cantidad": "No medidas",
+        "manejo_actual": "Destino no descrito.",
+        "accion_circular": "Reducir grasa y dosificar limpieza; no descargar remanentes concentrados.",
+        "destino": "Sistema doméstico sujeto a validación",
+        "responsable": "Responsable de limpieza"
+      },
+      {
+        "residuo_recurso": "Frascos de vidrio",
+        "cantidad": "30 por lote",
+        "manejo_actual": "Se entregan como envase reutilizable; no hay retorno formal.",
+        "accion_circular": "Programa de devolución, inspección, lavado y reutilización segura.",
+        "destino": "Circuito cliente-unidad",
+        "responsable": "Responsable comercial"
+      },
+      {
+        "residuo_recurso": "Trapos de tela",
+        "cantidad": "No informada",
+        "manejo_actual": "Se reutilizan para evitar desechables.",
+        "accion_circular": "Controlar lavado, vida útil y segregación si quedan contaminados con grasa.",
+        "destino": "Reúso/disposición según estado",
+        "responsable": "Responsable de limpieza"
+      },
+      {
+        "residuo_recurso": "Empaques de insumos",
+        "cantidad": "No medidos",
+        "manejo_actual": "Manejo no descrito.",
+        "accion_circular": "Separar vidrio, plástico, cartón u otros materiales y entregar a aprovechamiento cuando aplique.",
+        "destino": "Reciclaje/gestor",
+        "responsable": "Responsable de compras"
+      }
+    ],
+    "conclusion_registro_unico": {
+      "resumen": "No existe cuantificación de residuos. Hay intención de reducir desechables y usar vidrio, pero la flor con vaselina va a basura común.",
+      "accion": "Implementar separación, medición, retorno de frascos y manejo técnico de grasa y aguas.",
+      "area": "Gestión integral",
+      "responsable": "Pareja productora"
+    },
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "Agua",
+        "indicador": "Uso eficiente",
+        "descripcion": "Agua de baño de María y limpieza por lote.",
+        "estado": "Acueducto disponible, sin medición.",
+        "calificacion_1_a_5": 3,
+        "accion": "Medir y reducir consumo de limpieza.",
+        "evidencia": "Planilla"
+      },
+      {
+        "factor": "Proceso",
+        "indicador": "Capacidad y repetibilidad",
+        "descripcion": "Fórmula, tiempos, rendimiento y frecuencia.",
+        "estado": "30 frascos en 2-3 horas; sin estandarización documental.",
+        "calificacion_1_a_5": 3,
+        "accion": "Crear ficha y calendario.",
+        "evidencia": "Ficha de lote"
+      },
+      {
+        "factor": "Insumos",
+        "indicador": "Uso eficiente",
+        "descripcion": "Vaselina, flores, frascos y suministros.",
+        "estado": "Cantidades parciales y proveedores no caracterizados.",
+        "calificacion_1_a_5": 3,
+        "accion": "Inventario, pesaje y proveedores alternos.",
+        "evidencia": "Facturas/inventario"
+      },
+      {
+        "factor": "Residuos",
+        "indicador": "Separación y destino",
+        "descripcion": "Flor, vaselina, lavado y empaques.",
+        "estado": "Flor con vaselina va a basura; sin medición.",
+        "calificacion_1_a_5": 2,
+        "accion": "Segregar y definir destino.",
+        "evidencia": "Registro"
+      },
+      {
+        "factor": "Empaque",
+        "indicador": "Circularidad",
+        "descripcion": "Vidrio reutilizable y retorno.",
+        "estado": "Frasco de vidrio elegido por segundo uso; sin programa formal.",
+        "calificacion_1_a_5": 4,
+        "accion": "Implementar retorno y protocolo.",
+        "evidencia": "Conteo"
+      },
+      {
+        "factor": "Energía",
+        "indicador": "Consumo",
+        "descripcion": "Gas y electricidad por lote.",
+        "estado": "Estufa doméstica y posible licuadora; sin medición.",
+        "calificacion_1_a_5": 2,
+        "accion": "Medir y optimizar tiempos.",
+        "evidencia": "Registro"
+      },
+      {
+        "factor": "SST",
+        "indicador": "Prevención",
+        "descripcion": "Calor, vapores, gas, vidrio y limpieza.",
+        "estado": "Ventilación; no se reportan EPP ni emergencias.",
+        "calificacion_1_a_5": 2,
+        "accion": "Controles, EPP, botiquín y extintor.",
+        "evidencia": "Checklist"
+      },
+      {
+        "factor": "Comercial",
+        "indicador": "Demanda y recompra",
+        "descripcion": "Ventas, clientes, canales y satisfacción.",
+        "estado": "Voz a voz y compras puntuales; sin consolidación.",
+        "calificacion_1_a_5": 2,
+        "accion": "Registrar y validar clientes.",
+        "evidencia": "Base/encuestas"
+      },
+      {
+        "factor": "Finanzas",
+        "indicador": "Costos y margen",
+        "descripcion": "Costo completo, precio, caja y utilidad.",
+        "estado": "Costos parciales y precio al ojo.",
+        "calificacion_1_a_5": 1,
+        "accion": "Matriz de costos y flujo mensual.",
+        "evidencia": "Formato/soportes"
+      },
+      {
+        "factor": "Organización",
+        "indicador": "Roles y tiempo",
+        "descripcion": "Responsables y programación.",
+        "estado": "Pareja comprometida, pero ambos docentes y sin calendario.",
+        "calificacion_1_a_5": 3,
+        "accion": "Asignar roles y lotes realistas.",
+        "evidencia": "Plan"
+      },
+      {
+        "factor": "Trazabilidad",
+        "indicador": "Control de lote",
+        "descripcion": "Insumos, proceso, producto, venta y residuos.",
+        "estado": "No se reportan registros estructurados.",
+        "calificacion_1_a_5": 1,
+        "accion": "Implementar bitácora antes del siguiente lote.",
+        "evidencia": "Planillas"
+      }
+    ],
+    "resultado_preliminar_registro_unico": "Calificación técnica propuesta de 26 sobre 55 puntos, sujeta a visita y evidencias.",
+    "observaciones_o_comentarios": "Resultado preliminar: Calificación técnica propuesta de 26 sobre 55 puntos, sujeta a visita y evidencias. Las fortalezas principales son el aprendizaje obtenido, la participación familiar, la capacidad puntual de 30 frascos, los insumos iniciales, la confianza comunitaria, el origen territorial y el frasco de vidrio. Las brechas críticas están en estandarización, higiene, vida útil, seguridad, disponibilidad de tiempo, costos, precio, producción periódica, ventas verificadas, requisitos, trazabilidad y manejo de residuos grasos."
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "Agua y grasa",
+        "accion": "Medir agua, retirar vaselina antes del lavado y definir limpieza compatible.",
+        "prioridad": "Alta",
+        "plazo": "Antes del próximo lote",
+        "responsable": "Responsable de limpieza",
+        "recursos": "Recipientes, medidor y protocolo",
+        "indicador": "Litros y residuo por lote",
+        "evidencia": "Planilla"
+      },
+      {
+        "impacto": "Flor con vaselina",
+        "accion": "Segregar y obtener concepto antes de compostar o aprovechar.",
+        "prioridad": "Alta",
+        "plazo": "0-1 mes",
+        "responsable": "Responsable ambiental",
+        "recursos": "Recipiente y orientación técnica",
+        "indicador": "% con destino definido",
+        "evidencia": "Registro/concepto"
+      },
+      {
+        "impacto": "Vaselina e insumos",
+        "accion": "Medir entradas, rendimiento, remanentes y almacenamiento.",
+        "prioridad": "Alta",
+        "plazo": "Cada lote",
+        "responsable": "Responsable de producción",
+        "recursos": "Balanza e inventario",
+        "indicador": "% insumos trazados",
+        "evidencia": "Ficha de lote"
+      },
+      {
+        "impacto": "Gas y energía",
+        "accion": "Revisar conexiones, ventilar y registrar tiempo de calentamiento.",
+        "prioridad": "Alta",
+        "plazo": "Antes y durante cada lote",
+        "responsable": "Pareja productora",
+        "recursos": "Checklist y temporizador",
+        "indicador": "Lotes inspeccionados",
+        "evidencia": "Registro"
+      },
+      {
+        "impacto": "Vidrio",
+        "accion": "Diseñar retorno, inspección, lavado y rechazo de frascos.",
+        "prioridad": "Media",
+        "plazo": "1-3 meses",
+        "responsable": "Responsable comercial",
+        "recursos": "Protocolo y almacenamiento",
+        "indicador": "% frascos retornados",
+        "evidencia": "Conteo"
+      },
+      {
+        "impacto": "Empaques y trapos",
+        "accion": "Separar materiales, controlar reúso y entregar aprovechables.",
+        "prioridad": "Media",
+        "plazo": "Cada lote/mensual",
+        "responsable": "Responsable de limpieza",
+        "recursos": "Contenedores",
+        "indicador": "% con destino",
+        "evidencia": "Registro"
+      },
+      {
+        "impacto": "Higiene y calidad",
+        "accion": "Adecuar flujo limpio, saneamiento, etiqueta, lote y control de producto.",
+        "prioridad": "Alta",
+        "plazo": "Antes del próximo lote",
+        "responsable": "Responsable de calidad",
+        "recursos": "Protocolo, fichas y adecuaciones",
+        "indicador": "% lotes conformes",
+        "evidencia": "Checklist"
+      },
+      {
+        "impacto": "Escalamiento",
+        "accion": "No ampliar portafolio o frecuencia sin validar línea actual, costos, demanda, seguridad y ambiente.",
+        "prioridad": "Alta",
+        "plazo": "Antes de invertir",
+        "responsable": "Iván Darío / asesor",
+        "recursos": "Informe y registros",
+        "indicador": "Decisión sustentada",
+        "evidencia": "Acta / concepto"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": "Afectación reportada",
+        "situacion": "El productor no identifica eventos climáticos que hayan afectado la unidad.",
+        "riesgo": "Bajo",
+        "accion_propuesta": "Mantener registro y no atribuir efectos sin evidencia."
+      },
+      {
+        "aspecto": "Frío",
+        "situacion": "El clima frío de Sumapaz favorece el enfriamiento y la solidificación del producto.",
+        "riesgo": "Bajo/favorable",
+        "accion_propuesta": "Medir tiempo de enfriamiento y proteger de contaminación."
+      },
+      {
+        "aspecto": "Calor",
+        "situacion": "No se describen afectaciones; el producto puede ser sensible al almacenamiento, dato por validar.",
+        "riesgo": "Pendiente",
+        "accion_propuesta": "Definir temperatura de conservación y transporte mediante validación."
+      },
+      {
+        "aspecto": "Lluvia y humedad",
+        "situacion": "La elaboración se realiza bajo techo; no se informa efecto directo.",
+        "riesgo": "Bajo/pendiente",
+        "accion_propuesta": "Verificar humedad de flores y condiciones de almacenamiento."
+      },
+      {
+        "aspecto": "Suministro de flores",
+        "situacion": "No se atribuyen problemas al clima, pero el abastecimiento general fue señalado como riesgo externo.",
+        "riesgo": "Medio",
+        "accion_propuesta": "Mantener inventario y proveedores alternos sin asumir causa climática."
+      },
+      {
+        "aspecto": "Conclusión",
+        "situacion": "El clima no es actualmente un limitante y el frío ayuda al enfriamiento. La adaptación se concentra en almacenamiento, humedad, proveedores y continuidad del proceso.",
+        "riesgo": "Bajo-Medio",
+        "accion_propuesta": "Construir línea base antes de ampliar producción."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Productivo",
+        "riesgo": "Interrupción de producción",
+        "causa": "Falta de tiempo y ausencia de calendario.",
+        "consecuencia": "Pedidos incumplidos o estancamiento.",
+        "nivel": "Alto",
+        "prevencion": "Producir contra pedido y asignar fechas realistas.",
+        "respuesta": "Reprogramar y comunicar al cliente."
+      },
+      {
+        "tipo": "Calidad/sanitario",
+        "riesgo": "Producto inestable o contaminado",
+        "causa": "Fórmula, flor fresca, higiene, vida útil y almacenamiento sin validar.",
+        "consecuencia": "Deterioro, devolución o afectación al usuario.",
+        "nivel": "Alto",
+        "prevencion": "Estandarizar, validar y controlar lotes.",
+        "respuesta": "Aislar lote, suspender venta y revisar."
+      },
+      {
+        "tipo": "Suministro",
+        "riesgo": "Desabastecimiento",
+        "causa": "Dependencia de frascos, vaselina, flores y otros insumos sin aliados.",
+        "consecuencia": "No poder fabricar el lote.",
+        "nivel": "Medio-Alto",
+        "prevencion": "Inventario mínimo y proveedores alternos.",
+        "respuesta": "Ajustar fecha o cantidad."
+      },
+      {
+        "tipo": "Financiero",
+        "riesgo": "Precio sin rentabilidad",
+        "causa": "Costos incompletos y precio fijado al ojo.",
+        "consecuencia": "Pérdida de dinero o caja insuficiente.",
+        "nivel": "Alto",
+        "prevencion": "Matriz de costos, margen y registro mensual.",
+        "respuesta": "Recalcular precio y detener descuentos."
+      },
+      {
+        "tipo": "Comercial",
+        "riesgo": "Demanda insuficiente",
+        "causa": "Compradores puntuales, poca retroalimentación y sin redes.",
+        "consecuencia": "Inventario sin vender o producción irregular.",
+        "nivel": "Alto",
+        "prevencion": "Pedidos previos, seguimiento y canales graduales.",
+        "respuesta": "Reducir lote y activar contactos."
+      },
+      {
+        "tipo": "SST",
+        "riesgo": "Quemadura o exposición",
+        "causa": "Calor, vapores, gas, vidrio y ausencia de EPP reportado.",
+        "consecuencia": "Lesión o suspensión del proceso.",
+        "nivel": "Alto",
+        "prevencion": "EPP, ventilación, inspección y emergencias.",
+        "respuesta": "Primeros auxilios, atención y reporte."
+      },
+      {
+        "tipo": "Ambiental",
+        "riesgo": "Vertimiento o residuo inadecuado",
+        "causa": "Grasa, aguas de lavado y flor con vaselina.",
+        "consecuencia": "Contaminación o afectación del compost.",
+        "nivel": "Medio-Alto",
+        "prevencion": "Segregar, recuperar y validar destino.",
+        "respuesta": "Contener, no verter y consultar."
+      },
+      {
+        "tipo": "Incendio",
+        "riesgo": "Fuga o llama",
+        "causa": "Estufa doméstica y gas.",
+        "consecuencia": "Incendio, quemadura o daño.",
+        "nivel": "Alto",
+        "prevencion": "Mantenimiento, orden y extintor.",
+        "respuesta": "Cerrar suministro, evacuar y atender."
+      },
+      {
+        "tipo": "Logístico",
+        "riesgo": "Rotura o deterioro en entrega",
+        "causa": "Vidrio y transporte no definido.",
+        "consecuencia": "Pérdida, devolución o lesión.",
+        "nivel": "Medio",
+        "prevencion": "Empaque secundario e inspección.",
+        "respuesta": "Aislar unidades y registrar."
+      },
+      {
+        "tipo": "Digital",
+        "riesgo": "Baja visibilidad o pérdida de contactos",
+        "causa": "No existen redes ni base de clientes.",
+        "consecuencia": "Menor venta y seguimiento.",
+        "nivel": "Medio",
+        "prevencion": "WhatsApp organizado y base con autorización.",
+        "respuesta": "Recuperar registros y actualizar canal."
+      },
+      {
+        "tipo": "Gestión /requisitos",
+        "riesgo": "No poder formalizar o comercializar",
+        "causa": "Clasificación, rotulado, soportes y obligaciones sin verificar.",
+        "consecuencia": "Rechazo de canal o necesidad de ajustes.",
+        "nivel": "Alto",
+        "prevencion": "Revisión técnica y documental antes de escalar.",
+        "respuesta": "Suspender ampliación y corregir."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "Completar identidad, ubicación, roles, inventario y soportes de la beca.",
+        "componente": "Identidad/organizativo",
+        "responsable": "Iván Darío / esposa",
+        "tiempo": "0-1 mes",
+        "recursos": "Documentos y entrevista",
+        "resultado": "Ficha completa",
+        "evidencia": "Soportes"
+      },
+      {
+        "actividad": "Estandarizar fórmula, proceso, tiempos, temperatura, rendimiento, limpieza y lote.",
+        "componente": "Productivo / calidad",
+        "responsable": "Pareja / apoyo técnico",
+        "tiempo": "Antes del próximo lote",
+        "recursos": "Balanza, termómetro y formatos",
+        "resultado": "Proceso repetible",
+        "evidencia": "Ficha de lote"
+      },
+      {
+        "actividad": "Verificar espacio, higiene, almacenamiento, SST, emergencias y requisitos aplicables.",
+        "componente": "Sanitario/SST",
+        "responsable": "Equipo técnico/ productores",
+        "tiempo": "0-1 mes",
+        "recursos": "Visita, checklist y conceptos",
+        "resultado": "Plan de adecuación",
+        "evidencia": "Informe"
+      },
+      {
+        "actividad": "Completar matriz de costos y calcular precio mínimo y margen.",
+        "componente": "Financiero",
+        "responsable": "Iván Darío / asesor",
+        "tiempo": "0-1 mes",
+        "recursos": "Facturas, horas y consumos",
+        "resultado": "Precio sustentado",
+        "evidencia": "Matriz"
+      },
+      {
+        "actividad": "Definir calendario realista y producir un lote registrado de 30 frascos.",
+        "componente": "Productivo/organizativo",
+        "responsable": "Pareja productora",
+        "tiempo": "1-2 meses",
+        "recursos": "Insumos y ficha",
+        "resultado": "Lote trazable",
+        "evidencia": "Registro/fotos"
+      },
+      {
+        "actividad": "Validar compradores, satisfacción, recompra y rango de precio.",
+        "componente": "Comercial",
+        "responsable": "Responsable comercial",
+        "tiempo": "1-3 meses",
+        "recursos": "WhatsApp, encuesta y muestras",
+        "resultado": "Demanda caracterizada",
+        "evidencia": "Base/ encuestas"
+      },
+      {
+        "actividad": "Implementar manejo de grasa, flores, aguas, empaques y retorno de frascos.",
+        "componente": "Ambiental",
+        "responsable": "Responsable ambiental",
+        "tiempo": "Antes y desde el siguiente lote",
+        "recursos": "Contenedores y protocolo",
+        "resultado": "Residuos trazados",
+        "evidencia": "Planillas"
+      },
+      {
+        "actividad": "Organizar WhatsApp, catálogo básico y participación en una feria cuando cumpla requisitos.",
+        "componente": "Comercial/digital",
+        "responsable": "Pareja productora",
+        "tiempo": "2-4 meses",
+        "recursos": "Fotos, ficha y contactos",
+        "resultado": "Canal activo",
+        "evidencia": "Catálogo/registro"
+      },
+      {
+        "actividad": "Buscar y probar proveedor alterno y posible aliado comercial en Bogotá.",
+        "componente": "Logístico/comercial",
+        "responsable": "Iván Darío",
+        "tiempo": "2-6 meses",
+        "recursos": "Cotizaciones y reuniones",
+        "resultado": "Acuerdos piloto",
+        "evidencia": "Cotizaciones/acta"
+      },
+      {
+        "actividad": "Evaluar costos, ventas, calidad, seguridad y ambiente antes de crear aceites u otras líneas.",
+        "componente": "Gestión integral",
+        "responsable": "Productores / asesor",
+        "tiempo": "Después de varios lotes",
+        "recursos": "Informe y registros",
+        "resultado": "Decisión sustentada",
+        "evidencia": "Acta/concepto"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "Organización",
+        "indicador": "Roles y horas asignadas por lote",
+        "meta": "100% de lotes con responsables y fecha.",
+        "frecuencia": "Cada lote / mensual",
+        "responsable": "Iván Darío / esposa",
+        "evidencia": "Calendario"
+      },
+      {
+        "dimension": "Producción",
+        "indicador": "Frascos planificados, elaborados, aceptados y rechazados",
+        "meta": "Registrar 100% por lote.",
+        "frecuencia": "Cada lote",
+        "responsable": "Responsable de producción",
+        "evidencia": "Ficha"
+      },
+      {
+        "dimension": "Eficiencia",
+        "indicador": "Tiempo total, kg de vaselina y rendimiento por frasco",
+        "meta": "Construir línea base y reducir variación.",
+        "frecuencia": "Cada lote",
+        "responsable": "Responsable de calidad",
+        "evidencia": "Cálculo"
+      },
+      {
+        "dimension": "Calidad",
+        "indicador": "Lotes con fórmula, limpieza, cierre, etiqueta y almacenamiento conformes",
+        "meta": "100% antes de venta.",
+        "frecuencia": "Cada lote",
+        "responsable": "Responsable de calidad",
+        "evidencia": "Checklist"
+      },
+      {
+        "dimension": "Ventas",
+        "indicador": "Unidades vendidas, precio, ingreso, pago y saldo",
+        "meta": "Registrar 100% de ventas.",
+        "frecuencia": "Cada venta / mensual",
+        "responsable": "Responsable comercial",
+        "evidencia": "Recibo/base"
+      },
+      {
+        "dimension": "Financiera",
+        "indicador": "Costo completo, precio mínimo y margen por frasco y lote",
+        "meta": "Calcular antes de fijar precio definitivo.",
+        "frecuencia": "Cada lote/ mensual",
+        "responsable": "Iván Darío / asesor",
+        "evidencia": "Matriz"
+      },
+      {
+        "dimension": "Cliente",
+        "indicador": "Satisfacción, recomendación, recompra y reclamos",
+        "meta": "Contactar 100% de compradores iniciales.",
+        "frecuencia": "Después de cada venta",
+        "responsable": "Responsable comercial",
+        "evidencia": "Encuesta"
+      },
+      {
+        "dimension": "Digital",
+        "indicador": "Contactos organizados, consultas y ventas por WhatsApp o redes",
+        "meta": "Crear base autorizada y medir conversión.",
+        "frecuencia": "Mensual",
+        "responsable": "Responsable comercial",
+        "evidencia": "Base / reporte"
+      },
+      {
+        "dimension": "Ambiental",
+        "indicador": "Litros de agua, gas, flor, grasa, vidrio y empaques por lote",
+        "meta": "Registrar 100% de lotes.",
+        "frecuencia": "Cada lote",
+        "responsable": "Responsable ambiental",
+        "evidencia": "Planilla"
+      },
+      {
+        "dimension": "Circularidad",
+        "indicador": "Frascos retornados y reutilizados bajo protocolo",
+        "meta": "Construir línea base y aumentar retorno.",
+        "frecuencia": "Mensual",
+        "responsable": "Responsable comercial",
+        "evidencia": "Conteo"
+      },
+      {
+        "dimension": "SST",
+        "indicador": "Inspecciones, EPP, incidentes y acciones correctivas",
+        "meta": "100% de lotes inspeccionados y cero incidentes no gestionados.",
+        "frecuencia": "Cada lote/ cuando ocurra",
+        "responsable": "Pareja productora",
+        "evidencia": "Checklist/reporte"
+      },
+      {
+        "dimension": "Trazabilidad",
+        "indicador": "Insumos, lote, ventas y residuos registrados",
+        "meta": "Trazar 100% de la producción.",
+        "frecuencia": "Cada lote",
+        "responsable": "Iván Darío",
+        "evidencia": "Archivo"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Estandarizar lote de 30 frascos",
+        "efecto_productivo": "Mejora repetibilidad y control.",
+        "efecto_comercial": "Permite ofrecer cantidad y calidad claras.",
+        "efecto_financiero": "Aclara costo y rendimiento.",
+        "efecto_ambiental": "Facilita medir agua, gas y residuos.",
+        "ajuste_necesario": "Crear ficha antes del próximo lote."
+      },
+      {
+        "decision": "Programar producción contra pedido",
+        "efecto_productivo": "Reduce interrupciones y sobrantes.",
+        "efecto_comercial": "Mejora cumplimiento.",
+        "efecto_financiero": "Evita inmovilizar recursos.",
+        "efecto_ambiental": "Reduce producto vencido y residuos.",
+        "ajuste_necesario": "Ajustar al calendario docente."
+      },
+      {
+        "decision": "Asegurar proveedores",
+        "efecto_productivo": "Evita faltantes de vaselina, flores y frascos.",
+        "efecto_comercial": "Favorece continuidad.",
+        "efecto_financiero": "Permite comparar precios.",
+        "efecto_ambiental": "Facilita compras consolidadas.",
+        "ajuste_necesario": "Mantener dos opciones y un inventario mínimo."
+      },
+      {
+        "decision": "Definir precio con costos",
+        "efecto_productivo": "Sostiene la producción.",
+        "efecto_comercial": "Comunica un valor coherente.",
+        "efecto_financiero": "Protege margen y caja.",
+        "efecto_ambiental": "Incluye costos de limpieza y manejo ambiental.",
+        "ajuste_necesario": "No vender al ojo."
+      },
+      {
+        "decision": "Fortalecer WhatsApp y seguimiento",
+        "efecto_productivo": "Alinea producción con demanda.",
+        "efecto_comercial": "Aumenta contacto, recompra y recomendación.",
+        "efecto_financiero": "Mejora previsión de ingresos.",
+        "efecto_ambiental": "Puede reducir desplazamientos innecesarios.",
+        "ajuste_necesario": "Crear base autorizada y medir resultados."
+      },
+      {
+        "decision": "Participar en ferias / aliado Bogotá",
+        "efecto_productivo": "Exige inventario y calidad constante.",
+        "efecto_comercial": "Amplía mercado.",
+        "efecto_financiero": "Añade costos de evento, entrega y margen de tercero.",
+        "efecto_ambiental": "Genera transporte y empaques.",
+        "ajuste_necesario": "Hacer piloto pequeño y calcular resultado neto."
+      },
+      {
+        "decision": "Implementar frasco retornable",
+        "efecto_productivo": "Requiere inspección y lavado controlado.",
+        "efecto_comercial": "Refuerza diferencial y fidelización.",
+        "efecto_financiero": "Puede reducir reposición si funciona.",
+        "efecto_ambiental": "Disminuye consumo de envases.",
+        "ajuste_necesario": "Crear protocolo y no reutilizar frascos defectuosos."
+      },
+      {
+        "decision": "Gestionar flores y grasa",
+        "efecto_productivo": "Mejora orden y limpieza.",
+        "efecto_comercial": "Refuerza confianza.",
+        "efecto_financiero": "Incorpora costo ambiental real.",
+        "efecto_ambiental": "Evita vertidos y compost contaminado.",
+        "ajuste_necesario": "Segregar y validar destino técnico."
+      },
+      {
+        "decision": "Desarrollar aceites u otras líneas",
+        "efecto_productivo": "Diversifica, pero añade fórmula, reposo y control.",
+        "efecto_comercial": "Puede atraer nuevos clientes.",
+        "efecto_financiero": "Exige inversión y costeo adicional.",
+        "efecto_ambiental": "Genera nuevos insumos y residuos.",
+        "ajuste_necesario": "Solo después de validar la pomada actual."
+      },
+      {
+        "decision": "Adecuar espacio y trazabilidad",
+        "efecto_productivo": "Mejora higiene, seguridad y capacidad.",
+        "efecto_comercial": "Facilita acceso a canales formales.",
+        "efecto_financiero": "Requiere inversión y soportes.",
+        "efecto_ambiental": "Permite controlar consumos y residuos.",
+        "ajuste_necesario": "Definir requisitos y presupuesto antes de escalar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}

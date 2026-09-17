@@ -1,0 +1,2074 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "No cuenta con nombre oficial informado. La familia utiliza \"Vereda Santo Domingo\" o el nombre de Blanca Aurora Diaz. Para este documento se identifica como Unidad Productiva Porcícola de Blanca Aurora Díaz Meneses.",
+    "persona_entrevistada": "Titular: Blanca Aurora Díaz Meneses. La entrevista fue respondida por su hija, quien indicó trabajar con la productora y conocer la actividad. Nombre de la hija pendiente de verificar.",
+    "tipo_actividad": "Pecuaria: reproducción porcina, cría de lechones, levante, ceba y comercialización de animales vivos y carne de cerdo. El resumen inicial también menciona pollos, sin información suficiente para caracterizarlos.",
+    "ubicacion_especifica": "Vereda Santo Domingo, localidad de Sumapaz, Bogotá D.C. Nombre del predio, sector, dirección y coordenadas pendientes de verificar.",
+    "producto_servicio_principal": "Lechones para cría; cerdos de levante y ceba; animales grandes o carne de cerdo vendida por arrobas o libras; entrega local y traslado ocasional hacia Usme.",
+    "estado_actual": "Negocio familiar activo y en crecimiento. Se originó con dos marranitas recibidas mediante subsidio y se fortaleció reteniendo hembras para cría.",
+    "personas_vinculadas": "Blanca Aurora Díaz Meneses, su esposo y su hija. No se reportan empleados permanentes.",
+    "coordenadas": "Pendientes de tomar o verificar.",
+    "descripcion_general": "Unidad familiar que reproduce cerdos, vende lechones de aproximadamente dos meses y comercializa animales de ceba o carne dentro de la comunidad y hacia Usme. La demanda de lechones es alta y, según la entrevistada, suelen encargarse antes de nacer o antes del destete.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F02": {
+    "mision": "Criar y comercializar lechones y cerdos con buen estado sanitario y alimentación, aportando al sostenimiento familiar y abasteciendo a la comunidad con animales y carne de cerdo de calidad.",
+    "vision": "Consolidar una unidad porcícola más tecnificada, con cocheras, parideras, camas bajo techo, mejor alimentación, manejo sanitario organizado y canales comerciales más amplios y seguros.",
+    "valores": [
+      "Trabajo familiar",
+      "responsabilidad",
+      "cuidado de los animales",
+      "higiene",
+      "calidad",
+      "cumplimiento",
+      "perseverancia",
+      "confianza",
+      "servicio a la comunidad"
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Porque existe disponibilidad local de lechones para cría y de carne de cerdo, y la familia mantiene animales bien alimentados y con manejo sanitario.",
+    "beneficio_cliente": "Acceso a lechones jóvenes para iniciar o fortalecer otras crianzas y a carne de cerdo comercializada cerca de la comunidad.",
+    "diferencial": "Experiencia construida desde un subsidio inicial, reproductor propio, demanda anticipada de lechones y acompañamiento directo de una familia conocida en la vereda.",
+    "valor_ambiental": "Aprovechamiento de sobrantes de comida como alimentación. No se reporta tratamiento del estiércol; por tanto, el valor ambiental actual es parcial y requiere fortalecimiento.",
+    "valor_social_comunitario": "Genera ingresos para tres integrantes de la familia y abastece a vecinos de Santo Domingo; los lechones permiten que otras familias desarrollen su propia producción porcina.",
+    "evidencia": "Pedidos anticipados de lechones, ventas rápidas dentro de la comunidad, comercialización por WhatsApp, voz a voz y domicilios, y compradores de animales o carne en la localidad y en Usme.",
+    "observaciones_o_comentarios": "¿Cómo demostrar el diferencial?: Mediante registros de nacimientos, sanidad, alimentación y ventas; fotografías de las mejoras; testimonios de clientes; identificación de lotes; soportes de entrega y evidencia de higiene y bienestar animal."
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Unidad activa y de origen familiar.",
+      "Crecimiento desde dos marranitas iniciales.",
+      "Reproductor propio para la reproducción.",
+      "Retención de hembras para aumentar la piara.",
+      "Alta demanda y pedidos anticipados de lechones.",
+      "Participación de madre, padre e hija.",
+      "Venta local y posibilidad de comercialización en Usme.",
+      "Uso de WhatsApp, voz a voz y domicilios.",
+      "Uso de EPP durante sacrificio y despiece."
+    ],
+    "oportunidades": [
+      "Construir cocheras, parideras y camas bajo techo.",
+      "Mejorar la alimentación en gestación y lactancia.",
+      "Organizar registros reproductivos y financieros.",
+      "Implementar manejo del estiércol.",
+      "Fortalecer cadena de frío y transporte.",
+      "Establecer acuerdos con famas, tiendas y ferias.",
+      "Mejorar presentación, trazabilidad y fidelización.",
+      "Acceder a asistencia técnica y capacitación."
+    ],
+    "debilidades": [
+      "Animales sueltos en potrero y sin infraestructura adecuada.",
+      "No se informó inventario exacto.",
+      "No hay plan documentado de reproducción o sanidad.",
+      "El estiércol no se procesa.",
+      "Transporte de carne en moto, bolsas y lonas sin equipo frío reportado.",
+      "Ventas e ingresos periódicos sin registros consolidados.",
+      "Costos de servicios y alimentación no están separados por actividad.",
+      "Falta de equipos e instrumental suficiente."
+    ],
+    "amenazas": [
+      "Invierno: barro y deterioro del terreno.",
+      "Verano: quemaduras de piel por sol directo.",
+      "Agresividad de cerdas paridas y del reproductor.",
+      "Cortes y quemaduras durante sacrificio y chamuscado.",
+      "Enfermedades, mortalidad y fallas reproductivas.",
+      "Aumento del costo del concentrado.",
+      "Pérdida de cadena de frío o contaminación de carne.",
+      "Dependencia de ventas periódicas y negociación de precios."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Cliente directo",
+        "perfil_que_busca": "Familias de la vereda que encargan lechones para cría.",
+        "ubicacion": "Santo Domingo y comunidad cercana.",
+        "necesidad": "Animales jóvenes, sanos y listos para iniciar crianza.",
+        "frecuencia": "Por camada, aproximadamente cada seis meses según el relato.",
+        "criterio_compra": "Sanidad, tamaño, alimentación, confianza y precio.",
+        "canal": "WhatsApp, voz a voz, visita y entrega directa."
+      },
+      {
+        "tipo_actor": "Consumidor final",
+        "perfil_que_busca": "Personas que compran carne de cerdo por libra o arroba.",
+        "ubicacion": "Comunidad de la vereda y localidad.",
+        "necesidad": "Carne fresca para consumo familiar.",
+        "frecuencia": "Ocasional, según sacrificio.",
+        "criterio_compra": "Higiene, calidad, precio y cercanía.",
+        "canal": "Venta directa y domicilio."
+      },
+      {
+        "tipo_actor": "Comprador local",
+        "perfil_que_busca": "Vecinos que reservan lechones antes de nacer o antes del destete.",
+        "ubicacion": "Vereda Santo Domingo.",
+        "necesidad": "Disponibilidad asegurada de lechones.",
+        "frecuencia": "Por ciclo reproductivo.",
+        "criterio_compra": "Confianza, reserva anticipada y estado del animal.",
+        "canal": "Teléfono, WhatsApp y voz a voz."
+      },
+      {
+        "tipo_actor": "Comprador en Usme",
+        "perfil_que_busca": "Comprador o canal para marranas o animales grandes.",
+        "ubicacion": "Localidad de Usme.",
+        "necesidad": "Animales o carne para comercialización.",
+        "frecuencia": "Ocasional.",
+        "criterio_compra": "Peso, precio, condición sanitaria y entrega.",
+        "canal": "Contacto directo y transporte."
+      },
+      {
+        "tipo_actor": "Famas/tiendas",
+        "perfil_que_busca": "Canales comerciales potenciales para carne de cerdo.",
+        "ubicacion": "Sumapaz, Usme u otros sectores.",
+        "necesidad": "Abastecimiento continuo y producto conservado.",
+        "frecuencia": "Potencial.",
+        "criterio_compra": "Cadena de frío, higiene, peso, precio y cumplimiento.",
+        "canal": "Convenio comercial por gestionar."
+      },
+      {
+        "tipo_actor": "Ferias/mercados",
+        "perfil_que_busca": "Compradores de productos rurales y productores que buscan animales.",
+        "ubicacion": "Sumapaz y Bogotá.",
+        "necesidad": "Lechones, animales de cría o producto cárnico conforme a requisitos.",
+        "frecuencia": "Según convocatoria.",
+        "criterio_compra": "Origen, presentación, sanidad y trazabilidad.",
+        "canal": "Ferias y mercados campesinos."
+      },
+      {
+        "tipo_actor": "Otro",
+        "perfil_que_busca": "Compradores que recogen lechones en guacales, canastillas o vehículos pequeños.",
+        "ubicacion": "Vereda y alrededores.",
+        "necesidad": "Entrega segura de animales vivos.",
+        "frecuencia": "Por pedido.",
+        "criterio_compra": "Cumplimiento, facilidad de carga y estado del animal.",
+        "canal": "Recogida en predio o domicilio."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Lechones sanos, bien alimentados y disponibles al destete; animales o carne de cerdo de buena calidad e higiene.",
+    "como_se_conoce_la_necesidad": "Los lechones son encargados antes de nacer o antes de cumplir la edad de venta y se comercializan rápidamente.",
+    "quienes_compran_o_podrian_comprar": "Vecinos, familias de la comunidad, productores que requieren lechones, consumidores de carne, compradores en Usme, famas, tiendas y ferias.",
+    "evidencia": "Pedidos anticipados, ventas recurrentes, comercialización por WhatsApp, voz a voz y domicilios, e ingresos trimestrales reportados.",
+    "ventaja_territorial": "Cercanía con los compradores rurales, confianza comunitaria y posibilidad de ofrecer animales criados por una familia conocida.",
+    "cambios_demanda": "No se entregó información comparativa. Se manifestó que la demanda de lechones es alta y que se venden rápidamente.",
+    "dificultades": "Falta de cadena de frío, transporte limitado, ventas no continuas, ausencia de convenios comerciales y necesidad de infraestructura y alimentación para aumentar de forma segura.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Productores vecinos",
+        "tipo": "Familias porcícolas.",
+        "que_aporta": "Experiencia, intercambio de reproductores, compras y clientes.",
+        "que_recibe": "Lechones, conocimientos y reducción de costos.",
+        "trabajo_conjunto": "Compras conjuntas de concentrado e insumos.",
+        "aporte_ambiental": "Manejo colectivo de residuos y agua.",
+        "accion": "Crear red local y registro de contactos."
+      },
+      {
+        "actor_aliado": "Asociación campesina",
+        "tipo": "Organización rural potencial.",
+        "que_aporta": "Gestión, capacitación y comercialización.",
+        "que_recibe": "Oferta porcina y participación familiar.",
+        "trabajo_conjunto": "Acuerdos comerciales y compras agrupadas.",
+        "aporte_ambiental": "Buenas prácticas y gestión del estiércol.",
+        "accion": "Identificar asociación disponible."
+      },
+      {
+        "actor_aliado": "Junta de Acción Comunal",
+        "tipo": "Organización comunitaria.",
+        "que_aporta": "Convocatoria, difusión y articulación.",
+        "que_recibe": "Fortalecimiento económico local.",
+        "trabajo_conjunto": "Socializar oferta, necesidades y ferias.",
+        "aporte_ambiental": "Campañas de manejo de residuos.",
+        "accion": "Presentar el proyecto y las prioridades."
+      },
+      {
+        "actor_aliado": "Compradores locales",
+        "tipo": "Vecinos y consumidores.",
+        "que_aporta": "Demanda, reservas y pago.",
+        "que_recibe": "Lechones y carne cercana.",
+        "trabajo_conjunto": "Pedidos anticipados y programación de entregas.",
+        "aporte_ambiental": "Reducir desplazamientos mediante rutas.",
+        "accion": "Llevar base sencilla de pedidos."
+      },
+      {
+        "actor_aliado": "Ferias o mercados",
+        "tipo": "Espacios comerciales.",
+        "que_aporta": "Visibilidad y nuevos clientes.",
+        "que_recibe": "Oferta rural y animales/productos trazables.",
+        "trabajo_conjunto": "Participación conforme a requisitos.",
+        "aporte_ambiental": "Promoción de producción responsable.",
+        "accion": "Consultar convocatorias y condiciones."
+      },
+      {
+        "actor_aliado": "Instituciones de apoyo",
+        "tipo": "Alcaldía, asistencia técnica, sanidad y formación.",
+        "que_aporta": "Diagnóstico, capacitación y posibles impulsos.",
+        "que_recibe": "Unidad fortalecida y seguimiento.",
+        "trabajo_conjunto": "Infraestructura, sanidad, costos y EPP.",
+        "aporte_ambiental": "Manejo ambiental y adaptación climática.",
+        "accion": "Solicitar visita técnica integral."
+      },
+      {
+        "actor_aliado": "Aliados logísticos o digitales",
+        "tipo": "Transportadores, WhatsApp y compradores con vehículo.",
+        "que_aporta": "Entrega y comunicación.",
+        "que_recibe": "Pago por transporte o producto.",
+        "trabajo_conjunto": "Rutas seguras para animales y carne.",
+        "aporte_ambiental": "Optimización de recorridos.",
+        "accion": "Definir transporte y comprobantes."
+      },
+      {
+        "actor_aliado": "Otros aliados",
+        "tipo": "Famas, tiendas y proveedores de frío e insumos.",
+        "que_aporta": "Mercado, concentrado, medicamentos y equipos.",
+        "que_recibe": "Compras y producto.",
+        "trabajo_conjunto": "Convenios de suministro y venta.",
+        "aporte_ambiental": "Cadena de frío y menor desperdicio.",
+        "accion": "Cotizar y validar requisitos."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Encuesta",
+        "a_quien": "No se informó.",
+        "resultado": "Pendiente.",
+        "motivacion": "Pendiente.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Entrevista",
+        "a_quien": "Conversaciones directas con vecinos y compradores.",
+        "resultado": "Existe interés y reserva anticipada de lechones.",
+        "motivacion": "Sanidad, confianza, disponibilidad y precio.",
+        "evidencia": "Relato de la entrevistada."
+      },
+      {
+        "metodo": "Degustación/muestra",
+        "a_quien": "No se informó.",
+        "resultado": "No aplica para animales vivos; pendiente para carne.",
+        "motivacion": "Calidad e higiene.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Venta previa",
+        "a_quien": "Comunidad, compradores de carne y compradores en Usme.",
+        "resultado": "Los lechones se venden rápidamente y existen ventas periódicas de carne o animales grandes.",
+        "motivacion": "Necesidad productiva y consumo local.",
+        "evidencia": "Historial verbal; registros pendientes."
+      },
+      {
+        "metodo": "Carta de intención",
+        "a_quien": "Famas, tiendas o ferias.",
+        "resultado": "No existe.",
+        "motivacion": "Continuidad y cadena de frío.",
+        "evidencia": "Pendiente de gestión."
+      },
+      {
+        "metodo": "Participación en feria",
+        "a_quien": "No se informó.",
+        "resultado": "Pendiente.",
+        "motivacion": "Origen rural y acceso a nuevos clientes.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Otro",
+        "a_quien": "Pedidos por WhatsApp, voz a voz y domicilio.",
+        "resultado": "Los clientes reservan y solicitan entregas.",
+        "motivacion": "Servicio, confianza y calidad.",
+        "evidencia": "Mensajes y contactos por organizar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Lechón para cría",
+        "descripcion_tecnica": "Cerdo joven vendido aproximadamente a los dos meses, después de lactancia y manejo sanitario inicial.",
+        "unidad": "Animal/unidad.",
+        "insumos_principales": "Leche materna, concentrado en etapa aplicable, agua, hierro, desinfectantes e instrumental.",
+        "condiciones_especiales": "Mantener con la madre hasta la edad de venta y entregar en condiciones seguras.",
+        "presentacion": "Animal vivo en guacal, canastilla o vehículo del comprador.",
+        "diferencial": "Alta demanda local y reservas anticipadas."
+      },
+      {
+        "servicio": "Cerdo de levante / ceba",
+        "descripcion_tecnica": "Animal criado para alcanzar peso de venta o sacrificio.",
+        "unidad": "Animal/arroba en pie; peso pendiente.",
+        "insumos_principales": "Papa fuera de lactancia, concentrado en etapas de mayor exigencia, suero, agua y manejo sanitario.",
+        "condiciones_especiales": "Potrero o cochera; condiciones y densidad pendientes.",
+        "presentacion": "Animal vivo.",
+        "diferencial": "Producción familiar con ciclo propio y reproductor en la finca."
+      },
+      {
+        "servicio": "Carne de cerdo",
+        "descripcion_tecnica": "Carne obtenida de animales sacrificados y vendida por arroba o libra.",
+        "unidad": "Libra / arroba.",
+        "insumos_principales": "Animal cebado, gas para chamuscado, herramientas, bolsas y lonas.",
+        "condiciones_especiales": "Requiere conservación y transporte higiénico; cadena de frío no reportada.",
+        "presentacion": "Bolsas y lonas limpias, transporte en motocicleta.",
+        "diferencial": "Venta cercana y entrega a domicilio."
+      },
+      {
+        "servicio": "Cerda no preñada o animal grande",
+        "descripcion_tecnica": "Animal que no queda preñado y se destina a ceba y posterior venta o sacrificio.",
+        "unidad": "Animal/arroba.",
+        "insumos_principales": "Alimentación, agua, sanidad y manejo.",
+        "condiciones_especiales": "Mantener separado según etapa y estado.",
+        "presentacion": "Animal vivo o carne según negociación.",
+        "diferencial": "Aprovechamiento productivo de hembras que no continúan en reproducción."
+      }
+    ],
+    "observaciones_o_comentarios": "Ficha técnica pendiente: confirmar inventario, raza o cruces, edad y peso de venta, número de reproductoras y camadas, calendario reproductivo, mortalidad, vacunación, desparasitación, dosis de hierro, procedimiento y responsable del descolmillado y descolado, alimentación por etapa, condiciones de sacrificio, temperatura de conservación, vida útil, empaque, trazabilidad y requisitos sanitarios."
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Reproducción",
+        "unidad": "Reproductor y hembras; cantidades pendientes.",
+        "actividad_proceso": "1. Observar el celo y realizar la monta con el reproductor propio.",
+        "tiempo_estimado": "Según ciclo reproductivo."
+      },
+      {
+        "servicio": "Gestación",
+        "unidad": "Cerda preñada.",
+        "actividad_proceso": "2. Alimentar, suministrar agua y realizar seguimiento sanitario.",
+        "tiempo_estimado": "La entrevista refiere aproximadamente tres meses; dato por verificar."
+      },
+      {
+        "servicio": "Parto",
+        "unidad": "Camada de 10 a 12 lechones reportada.",
+        "actividad_proceso": "3. Preparar espacio, atender el nacimiento y verificar a la madre y las crías.",
+        "tiempo_estimado": "Al momento del parto."
+      },
+      {
+        "servicio": "Manejo neonatal",
+        "unidad": "Lechones recién nacidos.",
+        "actividad_proceso": "4. Aplicar hierro, descolmillar, cortar la cola con bisturí desinfectado y realizar manejo sanitario, según el relato.",
+        "tiempo_estimado": "Primeros días; cronograma pendiente."
+      },
+      {
+        "servicio": "Lactancia/cría",
+        "unidad": "Lechones con la madre.",
+        "actividad_proceso": "5. Mantener alimentación de la cerda y cuidado de la camada.",
+        "tiempo_estimado": "Aproximadamente dos meses."
+      },
+      {
+        "servicio": "Venta de lechones",
+        "unidad": "10 a 12 por camada, sujeto a supervivencia.",
+        "actividad_proceso": "6. Confirmar reservas, seleccionar, entregar en guacal o vehículo y registrar pago.",
+        "tiempo_estimado": "Alrededor de los dos meses."
+      },
+      {
+        "servicio": "Levante y ceba",
+        "unidad": "Animales retenidos o hembras no preñadas.",
+        "actividad_proceso": "7. Alimentar con papa, concentrado cuando corresponda, suero y agua; realizar sanidad.",
+        "tiempo_estimado": "Hasta peso de venta; periodo pendiente."
+      },
+      {
+        "servicio": "Sacrificio/despiece",
+        "unidad": "Animal destinado a carne.",
+        "actividad_proceso": "8. Sacrificar, chamuscar con soplete, despiezar y empacar, según el relato; condiciones y requisitos pendientes.",
+        "tiempo_estimado": "Por jornada."
+      },
+      {
+        "servicio": "Comercialización",
+        "unidad": "Lechones, animales o carne.",
+        "actividad_proceso": "9. Vender en la comunidad, llevar a domicilio o trasladar animales grandes hacia Usme.",
+        "tiempo_estimado": "Según pedido o ciclo."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Concentrado para gestación/lactancia",
+        "cantidad_unidad": "Un bulto por cerda cada 15 días, según el relato.",
+        "frecuencia": "Quincenal durante esas etapas.",
+        "proveedor_fuente": "Proveedor pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Empaques y huella de transporte.",
+        "manejo_ambiental": "Almacenar seco, dosificar y reutilizar o reciclar sacos.",
+        "observaciones": "Valor reportado: $100.000 por bulto."
+      },
+      {
+        "insumo": "Papa",
+        "cantidad_unidad": "Cantidad pendiente.",
+        "frecuencia": "Fuera de lactancia.",
+        "proveedor_fuente": "Finca o proveedor pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos orgánicos y variación nutricional.",
+        "manejo_ambiental": "Usar producto apto y registrar cantidad.",
+        "observaciones": "Se utiliza para economizar."
+      },
+      {
+        "insumo": "Suero",
+        "cantidad_unidad": "Incluido con alimentación; cantidad pendiente.",
+        "frecuencia": "Según disponibilidad.",
+        "proveedor_fuente": "Propio o proveedor pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Vertimiento y deterioro si se almacena mal.",
+        "manejo_ambiental": "Usar fresco y controlar recipientes.",
+        "observaciones": "Costo conjunto de alimento y suero: $500.000 trimestrales reportados."
+      },
+      {
+        "insumo": "Agua",
+        "cantidad_unidad": "Consumo pendiente.",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Acueducto veredal.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Consumo y aguas residuales.",
+        "manejo_ambiental": "Medir consumo, evitar fugas y mantener bebederos.",
+        "observaciones": "Factura reportada: $150.000-$170.000 mensuales; asignación productiva pendiente."
+      },
+      {
+        "insumo": "Hierro",
+        "cantidad_unidad": "Dosis por lechón pendiente.",
+        "frecuencia": "Cada camada.",
+        "proveedor_fuente": "Proveedor veterinario.",
+        "toxicidad": "Según producto",
+        "impacto_potencial": "Envases y riesgo de dosificación.",
+        "manejo_ambiental": "Aplicación capacitada, registro y disposición segura.",
+        "observaciones": "Insumo prioritario mencionado."
+      },
+      {
+        "insumo": "Desinfectantes",
+        "cantidad_unidad": "Cantidad pendiente.",
+        "frecuencia": "Cada procedimiento / limpieza.",
+        "proveedor_fuente": "Proveedor veterinario.",
+        "toxicidad": "Según producto",
+        "impacto_potencial": "Riesgo químico y vertimientos.",
+        "manejo_ambiental": "Rotulado, dosificación, guantes y almacenamiento.",
+        "observaciones": "Necesidad prioritaria."
+      },
+      {
+        "insumo": "Bisturís e instrumental",
+        "cantidad_unidad": "Según camada y procedimiento.",
+        "frecuencia": "Cada ciclo.",
+        "proveedor_fuente": "Proveedor veterinario.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Cortopunzantes y residuos biológicos.",
+        "manejo_ambiental": "Contenedor rígido, desinfección y uso capacitado.",
+        "observaciones": "Para manejo de lechones."
+      },
+      {
+        "insumo": "Gas",
+        "cantidad_unidad": "Un cilindro mensual reportado.",
+        "frecuencia": "Mensual.",
+        "proveedor_fuente": "Proveedor de gas.",
+        "toxicidad": "Inflamable",
+        "impacto_potencial": "Emisiones, incendio y quemaduras.",
+        "manejo_ambiental": "Almacenar ventilado, revisar mangueras y alejar de combustibles.",
+        "observaciones": "Valor reportado: $110.000 al mes."
+      },
+      {
+        "insumo": "Bolsas, lonas, guacales y canastillas",
+        "cantidad_unidad": "Cantidad según venta.",
+        "frecuencia": "Por entrega.",
+        "proveedor_fuente": "Comercio local / compradores.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos plásticos y riesgo de contaminación.",
+        "manejo_ambiental": "Usar materiales limpios, lavables y aptos; separar residuos.",
+        "observaciones": "Transporte actual de carne y lechones."
+      },
+      {
+        "insumo": "EPP",
+        "cantidad_unidad": "Botas, delantal, guantes y gafas.",
+        "frecuencia": "Uso permanente / reposición.",
+        "proveedor_fuente": "Comercio local.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos al final de vida.",
+        "manejo_ambiental": "Limpieza, almacenamiento y reposición.",
+        "observaciones": "Renovación solicitada."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "No se aportó producción mensual. Las ventas son periódicas por camada o sacrificio.",
+    "produccion_normal": "Camadas reportadas de 10 a 12 lechones. La frecuencia se describe como aproximadamente cada seis meses por cerda; número de cerdas pendiente.",
+    "capacidad_mensual_teorica": "Depende del inventario de reproductoras, condición del potrero, alimentación y disponibilidad de infraestructura; no puede calcularse con la información disponible.",
+    "produccion_maxima_posible": "Pendiente de determinar mediante inventario, área, capacidad de cocheras y parideras, agua, alimentación y manejo de estiércol.",
+    "area_numero_habitaciones": "Potrero y espacio detrás de la casa; dimensiones pendientes.",
+    "limitantes_productivos": "Cocheras y parideras inadecuadas, animales sueltos, falta de camas bajo techo, alimentación costosa, instrumental y cadena de frío insuficientes, y ausencia de registros.",
+    "limitantes_ambientales": "Barro y deterioro del terreno en invierno, exposición solar y quemaduras en verano, estiércol sin tratamiento y aguas de limpieza no caracterizadas.",
+    "capacidad_instalada": "Reproductor propio, piara desarrollada desde dos animales, potrero, espacio de sacrificio, motocicleta y elementos básicos. Inventario y capacidad física pendientes.",
+    "capacidad_utilizada": "Unidad activa con camadas y ventas, pero el número de animales por etapa no fue informado.",
+    "produce_mismo_todo_ano": false,
+    "alcanza_para_demanda": true,
+    "necesidades_aumentar_sosteniblemente": "Infraestructura adecuada, alimentación para gestación y lactancia, sanidad, registros, manejo de estiércol, protección climática, cadena de frío y acuerdos comerciales.",
+    "observaciones_o_comentarios": "¿Produce la misma cantidad durante todo el año?: No se precisó. La reproducción es cíclica y el clima afecta las condiciones del potrero y el bienestar animal.\n¿La producción alcanza para la demanda?: Los lechones se venden rápidamente y se reservan de manera anticipada; no se informó demanda insatisfecha cuantificada."
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua disponible",
+        "estado_actual": "Acueducto veredal; consumo y puntos de suministro pendientes.",
+        "limite_restriccion": "Costo mensual alto reportado y consumo no medido.",
+        "afectacion": "Afecta bebida, limpieza y sanidad.",
+        "efecto": "Costo y riesgo de insuficiencia o desperdicio.",
+        "incidencia": "Alta",
+        "accion_mejora": "Medir consumo, revisar fugas y usar bebederos eficientes."
+      },
+      {
+        "condicion": "Fuentes hídricas cercanas",
+        "estado_actual": "No se informaron.",
+        "limite_restriccion": "Ubicación y relación con la actividad desconocidas.",
+        "afectacion": "No puede evaluarse riesgo de vertimientos.",
+        "efecto": "Información ambiental incompleta.",
+        "incidencia": "Pendiente",
+        "accion_mejora": "Identificar fuentes, drenajes y distancias."
+      },
+      {
+        "condicion": "Suelo",
+        "estado_actual": "Animales permanecen en potrero.",
+        "limite_restriccion": "En invierno se embarra y se deteriora.",
+        "afectacion": "Genera suciedad, estrés y posible afectación sanitaria.",
+        "efecto": "Compactación y deterioro.",
+        "incidencia": "Alta",
+        "accion_mejora": "Construir pisos, camas y áreas secas; rotar y recuperar potrero."
+      },
+      {
+        "condicion": "Pendiente / topografía",
+        "estado_actual": "No informada.",
+        "limite_restriccion": "Acceso, drenaje y erosión pendientes.",
+        "afectacion": "Puede afectar infraestructura y transporte.",
+        "efecto": "Riesgo locativo y ambiental.",
+        "incidencia": "Pendiente",
+        "accion_mejora": "Realizar visita y medición."
+      },
+      {
+        "condicion": "Clima",
+        "estado_actual": "Invierno con barro; verano con sol directo.",
+        "limite_restriccion": "Falta de techo y protección.",
+        "afectacion": "Afecta piel, bienestar y manejo.",
+        "efecto": "Quemaduras, deterioro del terreno y menor desempeño.",
+        "incidencia": "Muy alta",
+        "accion_mejora": "Cocheras, parideras, sombra, camas y drenaje."
+      },
+      {
+        "condicion": "Biodiversidad",
+        "estado_actual": "No se informó.",
+        "limite_restriccion": "Interacción con potrero y entorno pendiente.",
+        "afectacion": "No se puede determinar afectación.",
+        "efecto": "Información incompleta.",
+        "incidencia": "Pendiente",
+        "accion_mejora": "Identificar cobertura y evitar expansión sobre áreas sensibles."
+      },
+      {
+        "condicion": "Uso de insumos",
+        "estado_actual": "Concentrado, papa, suero, hierro, desinfectantes, gas e instrumental.",
+        "limite_restriccion": "Dosis, almacenamiento y residuos sin registros.",
+        "afectacion": "Puede aumentar costos y riesgos sanitarios.",
+        "efecto": "Residuos, contaminación o accidentes.",
+        "incidencia": "Alta",
+        "accion_mejora": "Plan de insumos, almacenamiento y disposición."
+      },
+      {
+        "condicion": "Manejo de residuos",
+        "estado_actual": "Sobrantes de comida se aprovechan; estiércol no se procesa.",
+        "limite_restriccion": "Acumulación y manejo no definido.",
+        "afectacion": "Puede generar olores, vectores y contaminación.",
+        "efecto": "Impacto sanitario y ambiental.",
+        "incidencia": "Muy alta",
+        "accion_mejora": "Implementar recolección, almacenamiento y aprovechamiento o tratamiento."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Biológico",
+        "peligro": "Contacto con animales, sangre, estiércol y carne cruda.",
+        "aplica": true,
+        "nivel_riesgo": "Alta / según actividad",
+        "controles_actuales": "Guantes y delantal reportados.",
+        "accion": "Higiene, ropa exclusiva, lavado de manos y protocolo sanitario."
+      },
+      {
+        "tipo": "Mecánico/animal",
+        "peligro": "Mordeduras o agresividad de cerdas paridas y del reproductor.",
+        "aplica": true,
+        "nivel_riesgo": "Media-alta",
+        "controles_actuales": "Experiencia familiar.",
+        "accion": "Parideras seguras, barreras, manejo acompañado y capacitación."
+      },
+      {
+        "tipo": "Cortopunzante",
+        "peligro": "Bisturís, cuchillos y herramientas de despiece.",
+        "aplica": true,
+        "nivel_riesgo": "Por camada / sacrificio",
+        "controles_actuales": "Bisturí desinfectado y guantes.",
+        "accion": "Instrumental adecuado, guante anticorte y contenedor de cortopunzantes."
+      },
+      {
+        "tipo": "Térmico/incendio",
+        "peligro": "Quemaduras por soplete de gas y materiales inflamables.",
+        "aplica": true,
+        "nivel_riesgo": "Por sacrificio",
+        "controles_actuales": "Espacio despejado detrás de la casa, lejos de madera.",
+        "accion": "Revisión de cilindro y mangueras, extintor y procedimiento seguro."
+      },
+      {
+        "tipo": "Físico",
+        "peligro": "Sol directo, calor, lluvia y exposición climática.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Botas y trabajo al aire libre.",
+        "accion": "Techos, sombra, ropa de protección y pausas."
+      },
+      {
+        "tipo": "Locativo",
+        "peligro": "Barro, superficies resbalosas y potrero deteriorado.",
+        "aplica": true,
+        "nivel_riesgo": "Alta en invierno",
+        "controles_actuales": "Botas.",
+        "accion": "Drenaje, pisos firmes, camas y rutas despejadas."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Carga de bultos, animales, guacales y carne.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Trabajo familiar.",
+        "accion": "Técnica de carga, ayudas y distribución de peso."
+      },
+      {
+        "tipo": "Químico",
+        "peligro": "Desinfectantes y productos veterinarios.",
+        "aplica": true,
+        "nivel_riesgo": "Por ciclo",
+        "controles_actuales": "No se detalló.",
+        "accion": "Rotulado, EPP, dosificación y almacenamiento seguro."
+      },
+      {
+        "tipo": "Tránsito",
+        "peligro": "Transporte de carne en motocicleta y entregas.",
+        "aplica": true,
+        "nivel_riesgo": "Ocasional",
+        "controles_actuales": "Bolsas y lonas limpias.",
+        "accion": "Casco, carga asegurada, contenedor térmico y rutas seguras."
+      },
+      {
+        "tipo": "Psicosocial",
+        "peligro": "Responsabilidad familiar, ventas periódicas y trabajo con animales.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Distribución entre tres personas.",
+        "accion": "Organizar roles, descansos y apoyo en tareas críticas."
+      }
+    ],
+    "observaciones_o_comentarios": "Los riesgos se identificaron con base en la entrevista y deben validarse en visita de campo. Deben revisarse especialmente el manejo de cerdas paridas y del reproductor, el espacio de sacrificio y chamuscado, el uso de cuchillos y bisturís, el transporte en motocicleta, las superficies con barro y las condiciones de frío o calor."
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Usar botas, delantal, guantes, gafas y protección adecuada según la actividad.",
+        "riesgo": "Biológico, mecánico, químico y térmico.",
+        "responsable": "Familia.",
+        "frecuencia": "Cada jornada.",
+        "evidencia": "Checklist y fotografías."
+      },
+      {
+        "accion_preventiva": "Revisar parideras, puertas, cercas y zonas de manejo antes de entrar.",
+        "riesgo": "Agresiones y escapes.",
+        "responsable": "Padre / madre / hija.",
+        "frecuencia": "Diaria.",
+        "evidencia": "Registro de inspección."
+      },
+      {
+        "accion_preventiva": "Desinfectar y almacenar instrumental; disponer bisturís y agujas en contenedor rígido.",
+        "riesgo": "Cortes e infección.",
+        "responsable": "Responsable del manejo sanitario.",
+        "frecuencia": "Cada procedimiento.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "accion_preventiva": "Revisar cilindro, soplete, mangueras y mantener despejada la zona.",
+        "riesgo": "Quemadura, incendio y gas.",
+        "responsable": "Adulto responsable.",
+        "frecuencia": "Antes de cada uso.",
+        "evidencia": "Checklist."
+      },
+      {
+        "accion_preventiva": "Organizar pisos, camas, drenajes y zonas secas.",
+        "riesgo": "Caídas y exposición a barro.",
+        "responsable": "Familia.",
+        "frecuencia": "Diaria / mantenimiento.",
+        "evidencia": "Fotos."
+      },
+      {
+        "accion_preventiva": "Disponer botiquín, números de emergencia y registrar incidentes.",
+        "riesgo": "Emergencias.",
+        "responsable": "Familia.",
+        "frecuencia": "Revisión mensual/ cada evento.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "accion_preventiva": "Aplicar medidas de seguridad vial y transportar la carne en contenedor adecuado.",
+        "riesgo": "Tránsito y pérdida de calidad.",
+        "responsable": "Conductor/productora.",
+        "frecuencia": "Cada entrega.",
+        "evidencia": "Registro de ruta y temperatura."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Ferias campesinas",
+        "activo": false,
+        "descripcion": "Venta futura o acuerdos, sujetos a requisitos.",
+        "responsable": "Familia / aliados.",
+        "frecuencia": "Según convocatoria."
+      },
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "Lechones, animales y carne a la comunidad.",
+        "responsable": "Blanca Aurora y familia.",
+        "frecuencia": "Por camada o sacrificio."
+      },
+      {
+        "canal": "Redes sociales",
+        "activo": false,
+        "descripcion": "No se reportaron redes públicas.",
+        "responsable": "Pendiente.",
+        "frecuencia": "Por implementar."
+      },
+      {
+        "canal": "WhatsApp/llamadas",
+        "activo": true,
+        "descripcion": "Reservas, negociación y domicilios.",
+        "responsable": "Familia.",
+        "frecuencia": "Según pedido."
+      },
+      {
+        "canal": "Tiendas/famas / plazas",
+        "activo": false,
+        "descripcion": "Se requiere establecer convenios directos.",
+        "responsable": "Familia / apoyo institucional.",
+        "frecuencia": "Por gestionar."
+      },
+      {
+        "canal": "Compras institucionales",
+        "activo": false,
+        "descripcion": "No se identificaron.",
+        "responsable": "Pendiente.",
+        "frecuencia": "Por explorar."
+      },
+      {
+        "canal": "Comercialización asociativa",
+        "activo": false,
+        "descripcion": "Posible cooperación con productores locales.",
+        "responsable": "Familia / asociación.",
+        "frecuencia": "Por gestionar."
+      },
+      {
+        "canal": "Otro",
+        "activo": true,
+        "descripcion": "Voz a voz, recogida en predio, domicilios y traslado ocasional a Usme.",
+        "responsable": "Familia/comprador.",
+        "frecuencia": "Según venta."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Lechón para cría",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "$250.000 a $280.000; ocasionalmente $300.000.",
+        "logistica_plataforma": "Guacal, canastilla o vehículo; costo pendiente.",
+        "precio_final": null,
+        "justificacion": "Precio base de la familia y negociación con el cliente."
+      },
+      {
+        "servicio": "Cerdo en pie",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No se informó precio por animal o arroba.",
+        "logistica_plataforma": "Comprador o transporte por definir.",
+        "precio_final": null,
+        "justificacion": "Debe basarse en peso, alimentación y mercado."
+      },
+      {
+        "servicio": "Carne de cerdo por libra",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No se informó precio.",
+        "logistica_plataforma": "Sacrificio, gas, empaque, frío y domicilio.",
+        "precio_final": null,
+        "justificacion": "Requiere costeo y control sanitario."
+      },
+      {
+        "servicio": "Carne de cerdo por arroba",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No se informó precio.",
+        "logistica_plataforma": "Transporte y conservación pendientes.",
+        "precio_final": null,
+        "justificacion": "Se negocia de forma directa."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": "La familia establece un precio base y negocia con el cliente según los valores de mercado. No se aportaron costos por lechón, animal o libra de carne. Se deben incluir alimento, suero, papa, sanidad, mortalidad, servicios, gas, mano de obra, empaque, transporte y pérdidas antes de definir margen y precio mínimo."
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Lechones",
+        "cantidad_mensual": "No es mensual. Camadas de 10 a 12 lechones, vendidos cerca de los dos meses.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Contado o negociación; detalle pendiente.",
+        "canal": "Comunidad y pedidos por WhatsApp."
+      },
+      {
+        "concepto_servicio": "Ventas trimestrales totales",
+        "cantidad_mensual": "Ventas periódicas, sin desglose por producto.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Lechones, animales y/o carne."
+      },
+      {
+        "concepto_servicio": "Trimestre excelente",
+        "cantidad_mensual": "No se informó cantidad.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Clientes locales y externos."
+      },
+      {
+        "concepto_servicio": "Carne de cerdo",
+        "cantidad_mensual": "Cantidad de arrobas o libras pendiente.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Negociación directa.",
+        "canal": "Comunidad / domicilio."
+      },
+      {
+        "concepto_servicio": "Animales grandes hacia Usme",
+        "cantidad_mensual": "Frecuencia y cantidad pendientes.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Comprador o canal en Usme."
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": "La proyección debe validarse porque las ventas no son mensuales y no se informó el número de reproductoras ni de camadas por trimestre. Además, el valor de 10 a 12 lechones por $250.000-$300.000 debe conciliarse con el ingreso trimestral promedio reportado de $2.000.000 y el máximo de $3.500.000."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Cliente de lechones",
+        "estrategia": "Confirmar reserva, fecha de destete y condiciones del animal.",
+        "medio": "WhatsApp, llamada y visita.",
+        "frecuencia": "Durante gestación y antes de entrega.",
+        "responsable": "Familia."
+      },
+      {
+        "cliente": "Comprador local de carne",
+        "estrategia": "Garantizar higiene, peso acordado y entrega oportuna.",
+        "medio": "WhatsApp, voz a voz y domicilio.",
+        "frecuencia": "Según sacrificio.",
+        "responsable": "Blanca Aurora / familia."
+      },
+      {
+        "cliente": "Comprador en Usme",
+        "estrategia": "Acordar peso, precio, transporte y pago.",
+        "medio": "Llamada y contacto directo.",
+        "frecuencia": "Según disponibilidad.",
+        "responsable": "Familia."
+      },
+      {
+        "cliente": "Fama o tienda potencial",
+        "estrategia": "Ofrecer continuidad, cadena de frío y trazabilidad.",
+        "medio": "Visita, llamada y propuesta.",
+        "frecuencia": "Mensual/por acuerdo.",
+        "responsable": "Familia / asesor."
+      },
+      {
+        "cliente": "Consumidor final",
+        "estrategia": "Mantener calidad, sanidad y atención amable.",
+        "medio": "Venta directa y recomendaciones.",
+        "frecuencia": "Cada compra.",
+        "responsable": "Familia."
+      },
+      {
+        "cliente": "Aliado comercial",
+        "estrategia": "Cumplir cantidades y registrar condiciones.",
+        "medio": "WhatsApp y acta simple.",
+        "frecuencia": "Según acuerdo.",
+        "responsable": "Responsable definido."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Lechones vivos",
+        "canal": "Recogida o entrega local.",
+        "tiempo": "Día acordado.",
+        "transporte_operacion": "Guacal, canastilla o vehículo pequeño.",
+        "condicion_calidad": "Animal sano, protegido y sin sobrecarga.",
+        "capacidad": "Pendiente.",
+        "costo": "Pendiente.",
+        "responsable": "Familia/comprador."
+      },
+      {
+        "servicio_insumo": "Cerdo en pie",
+        "canal": "Venta en predio o traslado.",
+        "tiempo": "Según acuerdo.",
+        "transporte_operacion": "Vehículo apto; no detallado.",
+        "condicion_calidad": "Manejo seguro y documentos pendientes.",
+        "capacidad": "Pendiente.",
+        "costo": "Pendiente.",
+        "responsable": "Comprador/familia."
+      },
+      {
+        "servicio_insumo": "Carne local",
+        "canal": "Domicilio.",
+        "tiempo": "Mismo día.",
+        "transporte_operacion": "Motocicleta.",
+        "condicion_calidad": "Bolsas y lonas limpias; se recomienda contenedor frío.",
+        "capacidad": "Pendiente.",
+        "costo": "Combustible y empaque pendientes.",
+        "responsable": "Conductor / familia."
+      },
+      {
+        "servicio_insumo": "Carne o animal a Usme",
+        "canal": "Entrega externa.",
+        "tiempo": "El menor tiempo posible.",
+        "transporte_operacion": "Transporte por definir.",
+        "condicion_calidad": "Protección, frío y trazabilidad según producto.",
+        "capacidad": "Pendiente.",
+        "costo": "Pendiente.",
+        "responsable": "Familia/aliado."
+      },
+      {
+        "servicio_insumo": "Convenios futuros",
+        "canal": "Famas, tiendas o ferias.",
+        "tiempo": "Según acuerdo.",
+        "transporte_operacion": "Ruta programada.",
+        "condicion_calidad": "Cadena de frio y presentación uniforme.",
+        "capacidad": "Por validar.",
+        "costo": "Pendiente.",
+        "responsable": "Familia / aliado logístico."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Identificación de camada",
+        "informacion": "Fecha de nacimiento, madre, padre, número de nacidos y supervivencia.",
+        "responsable": "Familia.",
+        "medio": "Cuaderno o archivo.",
+        "frecuencia": "Cada parto.",
+        "evidencia": "Registro y fotos."
+      },
+      {
+        "elemento": "Ficha sanitaria",
+        "informacion": "Hierro, procedimientos, medicamentos, vacunas y observaciones.",
+        "responsable": "Responsable sanitario.",
+        "medio": "Bitácora.",
+        "frecuencia": "Cada evento.",
+        "evidencia": "Facturas y planilla."
+      },
+      {
+        "elemento": "Ficha de alimentación",
+        "informacion": "Concentrado, papa, suero y cantidades por etapa.",
+        "responsable": "Familia.",
+        "medio": "Cuaderno.",
+        "frecuencia": "Diaria / semanal.",
+        "evidencia": "Registro."
+      },
+      {
+        "elemento": "Lote o animal",
+        "informacion": "Fecha de ingreso o nacimiento, peso, destino y venta.",
+        "responsable": "Familia.",
+        "medio": "Ficha física.",
+        "frecuencia": "Cada animal/venta.",
+        "evidencia": "Registro."
+      },
+      {
+        "elemento": "Prácticas ambientales",
+        "informacion": "Manejo de estiércol, sobrantes y agua.",
+        "responsable": "Familia.",
+        "medio": "Bitácora y fotos.",
+        "frecuencia": "Semanal/mensual.",
+        "evidencia": "Evidencia."
+      },
+      {
+        "elemento": "Contacto comercial",
+        "informacion": "WhatsApp, nombre de la productora y ubicación.",
+        "responsable": "Familia.",
+        "medio": "Etiqueta, ficha o mensaje.",
+        "frecuencia": "Actualizar cuando cambie.",
+        "evidencia": "Captura o material."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Infraestructura porcina",
+        "descripcion": "Construcción o adecuación de cocheras, parideras y camas bajo techo.",
+        "valor_unitario": null,
+        "cantidad": "Según diseño e inventario.",
+        "total": null,
+        "requisito": "Ventilación, drenaje, bienestar, limpieza y capacidad validada.",
+        "fuente": "Bolsa de impulsos/recursos por definir."
+      },
+      {
+        "tipo": "Cubiertas y sombra",
+        "descripcion": "Protección frente a lluvia y sol.",
+        "valor_unitario": null,
+        "cantidad": "Según área.",
+        "total": null,
+        "requisito": "Material durable y manejo de aguas lluvias.",
+        "fuente": "Por definir."
+      },
+      {
+        "tipo": "Sistema de drenaje y manejo de estiércol",
+        "descripcion": "Canales, recolección y zona de almacenamiento o tratamiento.",
+        "valor_unitario": null,
+        "cantidad": "1 sistema.",
+        "total": null,
+        "requisito": "Evitar contaminación y vectores.",
+        "fuente": "Apoyo/recursos propios."
+      },
+      {
+        "tipo": "Alimento concentrado",
+        "descripcion": "Gestación, lactancia y lechones.",
+        "valor_unitario": null,
+        "cantidad": "Cantidad según plan.",
+        "total": null,
+        "requisito": "Almacenamiento seco y dosificación.",
+        "fuente": "Impulso/recursos propios."
+      },
+      {
+        "tipo": "Medicamentos e instrumental",
+        "descripcion": "Hierro, desinfectantes, bisturís y elementos de manejo.",
+        "valor_unitario": null,
+        "cantidad": "Kit por ciclo.",
+        "total": null,
+        "requisito": "Uso técnico, rotulado y disposición segura.",
+        "fuente": "Impulso."
+      },
+      {
+        "tipo": "Cadena de frío",
+        "descripcion": "Nevera, congelador portátil o contenedores térmicos para carne.",
+        "valor_unitario": null,
+        "cantidad": "Según solución.",
+        "total": null,
+        "requisito": "Capacidad, eficiencia, limpieza y control de temperatura.",
+        "fuente": "Impulso/gestión."
+      },
+      {
+        "tipo": "EPP",
+        "descripcion": "Delantales, guantes, gafas, botas y protección adicional.",
+        "valor_unitario": null,
+        "cantidad": "Kit para tres personas.",
+        "total": null,
+        "requisito": "Tallas, actividad y reposición.",
+        "fuente": "Impulso/recursos propios."
+      },
+      {
+        "tipo": "Equipos de registro y comunicación",
+        "descripcion": "Termómetro, báscula, cuaderno o herramienta digital.",
+        "valor_unitario": null,
+        "cantidad": "Según necesidad.",
+        "total": null,
+        "requisito": "Calibración y protección.",
+        "fuente": "Gestión futura."
+      },
+      {
+        "tipo": "Asistencia técnica y comercial",
+        "descripcion": "Diseño, sanidad, costos, convenios y requisitos.",
+        "valor_unitario": null,
+        "cantidad": "1 proceso.",
+        "total": null,
+        "requisito": "Acompañamiento documentado.",
+        "fuente": "Instituciones."
+      }
+    ],
+    "observaciones_o_comentarios": "Prioridades expresadas por la familia: 1) construcción y adecuación de cocheras, parideras y camas bajo techo; 2) concentrados para gestación y lactancia, hierro, desinfectantes, bisturís e instrumental; 3) equipos de conservación en frío y apoyo para convenios con famas, tiendas o ferias; y 4) renovación de botas, delantales, guantes y gafas."
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Alimentación en gestación/lactancia",
+        "descripcion": "Un bulto por cerda cada 15 días.",
+        "valor_mensual_ciclo": 100000,
+        "observaciones": "Número de cerdas y meses de uso pendientes."
+      },
+      {
+        "tipo": "Alimento y suero",
+        "descripcion": "Costo conjunto reportado.",
+        "valor_mensual_ciclo": 500000,
+        "observaciones": "Debe aclararse si incluye todos los animales."
+      },
+      {
+        "tipo": "Agua",
+        "descripcion": "Acueducto veredal.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Puede incluir consumo del hogar; asignación pendiente."
+      },
+      {
+        "tipo": "Energía",
+        "descripcion": "Servicio eléctrico.",
+        "valor_mensual_ciclo": 70000,
+        "observaciones": "Asignación a la unidad pendiente."
+      },
+      {
+        "tipo": "Gas",
+        "descripcion": "Cilindro usado, entre otros, para chamuscado.",
+        "valor_mensual_ciclo": 110000,
+        "observaciones": "Confirmar consumo exclusivo del proyecto."
+      },
+      {
+        "tipo": "Sanidad",
+        "descripcion": "Hierro, desinfectantes, bisturís, medicamentos e instrumental.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Registrar por camada y animal."
+      },
+      {
+        "tipo": "Logística y empaque",
+        "descripcion": "Bolsas, lonas, guacales, combustible y domicilios.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Separar por venta."
+      },
+      {
+        "tipo": "Mano de obra, mantenimiento y pérdidas",
+        "descripcion": "Trabajo familiar, infraestructura, mortalidad y equipos.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Valorar y registrar."
+      }
+    ],
+    "observaciones_o_comentarios": "Los costos de agua, energía y gas pueden corresponder total o parcialmente al hogar y deben separarse de la actividad porcícola. También se requiere identificar el número de animales alimentados, el consumo por etapa, la mortalidad, los gastos de sacrificio, transporte y empaque, y el valor del trabajo familiar."
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "Mes 1",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Crear línea base."
+      },
+      {
+        "mes": "Mes 2",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Definir prioridad de inversión."
+      },
+      {
+        "mes": "Mes 3",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Primera fase."
+      },
+      {
+        "mes": "Mes 4",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Verificar calidad."
+      },
+      {
+        "mes": "Mes 5",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registrar camada."
+      },
+      {
+        "mes": "Mes 6",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Calcular costo por lechón."
+      },
+      {
+        "mes": "Mes 7",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Ajustar manejo."
+      },
+      {
+        "mes": "Mes 8",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Evaluar cadena de frío."
+      },
+      {
+        "mes": "Mes 9",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Revisar margen."
+      },
+      {
+        "mes": "Mes 10",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Plan para verano."
+      },
+      {
+        "mes": "Mes 11",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Plan para invierno."
+      },
+      {
+        "mes": "Mes 12",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Decidir ampliación."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "El flujo de caja debe construirse con las fechas reales de parto, destete, venta y sacrificio. La actividad tiene ingresos periódicos y costos permanentes; por ello se recomienda separar una reserva para alimentación, sanidad, servicios, mantenimiento y emergencias entre una venta y la siguiente."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Agua",
+        "estado": "Acueducto veredal.",
+        "cantidad": "$150.000-$170.000 mensuales reportados.",
+        "impacto_1_a_5": 5,
+        "accion": "Medir consumo y separar uso productivo."
+      },
+      {
+        "variable": "Energía",
+        "estado": "Servicio eléctrico.",
+        "cantidad": "$70.000 mensuales.",
+        "impacto_1_a_5": 3,
+        "accion": "Registrar consumo y revisar equipos."
+      },
+      {
+        "variable": "Gas",
+        "estado": "Cilindro mensual.",
+        "cantidad": "$110.000.",
+        "impacto_1_a_5": 4,
+        "accion": "Revisar seguridad y eficiencia."
+      },
+      {
+        "variable": "Alimentación",
+        "estado": "Concentrado, papa y suero.",
+        "cantidad": "$500.000 trimestrales de alimento y suero; detalle pendiente.",
+        "impacto_1_a_5": 5,
+        "accion": "Plan por etapa y registro."
+      },
+      {
+        "variable": "Suelo / potrero",
+        "estado": "Barro en invierno y exposición en verano.",
+        "cantidad": "Área pendiente.",
+        "impacto_1_a_5": 5,
+        "accion": "Infraestructura, drenaje y sombra."
+      },
+      {
+        "variable": "Estiércol",
+        "estado": "No se procesa.",
+        "cantidad": "Cantidad pendiente.",
+        "impacto_1_a_5": 5,
+        "accion": "Implementar manejo y aprovechamiento."
+      },
+      {
+        "variable": "Transporte",
+        "estado": "Moto para carne; compradores transportan lechones.",
+        "cantidad": "Costo pendiente.",
+        "impacto_1_a_5": 4,
+        "accion": "Contenedores y rutas seguras."
+      },
+      {
+        "variable": "Clima",
+        "estado": "Invierno y verano afectan directamente.",
+        "cantidad": "Sin medición.",
+        "impacto_1_a_5": 5,
+        "accion": "Techo, camas, sombra y plan estacional."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "Inventario",
+        "que_se_mide": "Cerdas, padrón, lechones y animales de ceba.",
+        "dato_inicial": "No informado.",
+        "meta": "100% identificado.",
+        "frecuencia": "Mensual/evento.",
+        "responsable": "Familia.",
+        "evidencia": "Ficha."
+      },
+      {
+        "indicador": "Reproducción",
+        "que_se_mide": "Celo, monta, preñez, parto y intervalo.",
+        "dato_inicial": "No registrado.",
+        "meta": "100% de eventos.",
+        "frecuencia": "Cada evento.",
+        "responsable": "Familia.",
+        "evidencia": "Calendario."
+      },
+      {
+        "indicador": "Camada",
+        "que_se_mide": "Nacidos, vivos, mortalidad y vendidos.",
+        "dato_inicial": "10-12 lechones reportados.",
+        "meta": "Datos reales por parto.",
+        "frecuencia": "Cada parto.",
+        "responsable": "Familia.",
+        "evidencia": "Planilla."
+      },
+      {
+        "indicador": "Alimentación",
+        "que_se_mide": "Bultos, papa, suero y costo por etapa.",
+        "dato_inicial": "Parcial.",
+        "meta": "100% registrado.",
+        "frecuencia": "Semanal/mensual.",
+        "responsable": "Familia.",
+        "evidencia": "Facturas."
+      },
+      {
+        "indicador": "Sanidad",
+        "que_se_mide": "Hierro, procedimientos, tratamientos y mortalidad.",
+        "dato_inicial": "Sin bitácora reportada.",
+        "meta": "100% documentado.",
+        "frecuencia": "Cada evento.",
+        "responsable": "Responsable sanitario.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "indicador": "Ventas",
+        "que_se_mide": "Animal/producto, cantidad, precio y cliente.",
+        "dato_inicial": "$2.000.000 trimestral promedio reportado.",
+        "meta": "100% de ventas.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Familia.",
+        "evidencia": "Libro."
+      },
+      {
+        "indicador": "Costos y margen",
+        "que_se_mide": "Costo por lechón, cerdo y libra de carne.",
+        "dato_inicial": "Desconocido.",
+        "meta": "Calcular trimestralmente.",
+        "frecuencia": "Mensual/trimestre.",
+        "responsable": "Familia / asesor.",
+        "evidencia": "Hoja de costos."
+      },
+      {
+        "indicador": "Ambiente",
+        "que_se_mide": "Estiércol, agua, barro y residuos.",
+        "dato_inicial": "Manejo parcial.",
+        "meta": "Ruta definida.",
+        "frecuencia": "Semanal/mensual.",
+        "responsable": "Familia.",
+        "evidencia": "Bitácora y fotos."
+      },
+      {
+        "indicador": "Seguridad",
+        "que_se_mide": "Incidentes, EPP y condiciones inseguras.",
+        "dato_inicial": "EPP básico reportado.",
+        "meta": "Cero incidentes no atendidos.",
+        "frecuencia": "Cada jornada / evento.",
+        "responsable": "Familia.",
+        "evidencia": "Checklist."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Estiércol",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No se procesa como abono.",
+        "accion_circular": "Recolectar, almacenar y definir tratamiento o aprovechamiento.",
+        "destino": "Cocheras, potrero y animales.",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Sobrantes de comida",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Se aprovechan para alimentar cerdos.",
+        "accion_circular": "Seleccionar material apto y evitar contaminación.",
+        "destino": "Hogar o alimentación.",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Aguas de limpieza",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Evitar descarga directa y controlar sólidos.",
+        "destino": "Lavado de espacios y utensilios.",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Sangre y residuos de sacrificio",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Definir manejo sanitario y destino.",
+        "destino": "Sacrificio y despiece.",
+        "responsable": "Adultos responsables."
+      },
+      {
+        "residuo_recurso": "Bolsas y lonas",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Se usan para proteger la carne.",
+        "accion_circular": "Usar material apto y separar residuos.",
+        "destino": "Empaque y transporte.",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Envases veterinarios",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Separar y entregar por ruta segura.",
+        "destino": "Hierro, desinfectantes y medicamentos.",
+        "responsable": "Familia / proveedor."
+      },
+      {
+        "residuo_recurso": "Cortopunzantes",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Se desinfecta el bisturí, sin ruta informada.",
+        "accion_circular": "Contenedor rígido y entrega segura.",
+        "destino": "Bisturís y posibles agujas.",
+        "responsable": "Responsable sanitario."
+      }
+    ],
+    "conclusion_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "Infraestructura",
+        "indicador": "Cocheras, parideras, techo y camas.",
+        "descripcion": null,
+        "estado": "Insuficiente; animales sueltos.",
+        "calificacion_1_a_5": 1,
+        "accion": "Diseñar y construir por fases.",
+        "evidencia": "Plano y fotos."
+      },
+      {
+        "factor": "Bienestar animal",
+        "indicador": "Protección, densidad, agua y alimentación.",
+        "descripcion": null,
+        "estado": "Afectado por clima y falta de áreas adecuadas.",
+        "calificacion_1_a_5": 2,
+        "accion": "Techo, sombra, camas y manejo por etapa.",
+        "evidencia": "Checklist."
+      },
+      {
+        "factor": "Sanidad",
+        "indicador": "Registros y protocolos.",
+        "descripcion": null,
+        "estado": "Manejo básico reportado, sin documentación.",
+        "calificacion_1_a_5": 2,
+        "accion": "Plan sanitario y bitácora.",
+        "evidencia": "Registros."
+      },
+      {
+        "factor": "Agua",
+        "indicador": "Consumo y eficiencia.",
+        "descripcion": null,
+        "estado": "Acueducto, costo reportado, sin medición.",
+        "calificacion_1_a_5": 2,
+        "accion": "Medir y controlar.",
+        "evidencia": "Facturas y lectura."
+      },
+      {
+        "factor": "Suelo",
+        "indicador": "Barro, compactación y recuperación.",
+        "descripcion": null,
+        "estado": "Se deteriora en invierno.",
+        "calificacion_1_a_5": 2,
+        "accion": "Drenaje, rotación y pisos.",
+        "evidencia": "Fotos."
+      },
+      {
+        "factor": "Residuos",
+        "indicador": "Estiércol y residuos de sacrificio.",
+        "descripcion": null,
+        "estado": "Sin manejo integral.",
+        "calificacion_1_a_5": 1,
+        "accion": "Plan y zona de almacenamiento.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "factor": "Cadena de frío",
+        "indicador": "Temperatura y transporte.",
+        "descripcion": null,
+        "estado": "No se reportan equipos.",
+        "calificacion_1_a_5": 1,
+        "accion": "Equipo frío y termómetro.",
+        "evidencia": "Planilla."
+      },
+      {
+        "factor": "Comercialización",
+        "indicador": "Clientes, convenios y registros.",
+        "descripcion": null,
+        "estado": "Venta local y Usme, sin convenios.",
+        "calificacion_1_a_5": 3,
+        "accion": "Base de clientes y acuerdos.",
+        "evidencia": "Ventas."
+      },
+      {
+        "factor": "Finanzas",
+        "indicador": "Costos, ingresos y margen.",
+        "descripcion": null,
+        "estado": "Datos parciales.",
+        "calificacion_1_a_5": 2,
+        "accion": "Costeo por ciclo.",
+        "evidencia": "Hoja."
+      }
+    ],
+    "resultado_preliminar_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "Infraestructura",
+        "accion": "Diseño, cotización y construcción por fases.",
+        "prioridad": null,
+        "plazo": "6-12 meses.",
+        "responsable": "Familia/técnico.",
+        "recursos": null,
+        "indicador": "% de adecuación.",
+        "evidencia": "Fotos y acta."
+      },
+      {
+        "impacto": "Suelo",
+        "accion": "Drenaje, camas, pisos y rotación.",
+        "prioridad": null,
+        "plazo": "6 meses.",
+        "responsable": "Familia.",
+        "recursos": null,
+        "indicador": "Área protegida.",
+        "evidencia": "Registro."
+      },
+      {
+        "impacto": "Protección solar",
+        "accion": "Cubiertas y refugios.",
+        "prioridad": null,
+        "plazo": "3-6 meses.",
+        "responsable": "Familia.",
+        "recursos": null,
+        "indicador": "% de corrales con sombra.",
+        "evidencia": "Fotos."
+      },
+      {
+        "impacto": "Residuos",
+        "accion": "Recolección, almacenamiento y tratamiento.",
+        "prioridad": null,
+        "plazo": "6 meses.",
+        "responsable": "Familia / técnico.",
+        "recursos": null,
+        "indicador": "Cantidad gestionada.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "impacto": "Agua",
+        "accion": "Revisar fugas y registrar.",
+        "prioridad": null,
+        "plazo": "3 meses.",
+        "responsable": "Familia.",
+        "recursos": null,
+        "indicador": "m³ o factura asignada.",
+        "evidencia": "Registro."
+      },
+      {
+        "impacto": "Sanidad",
+        "accion": "Capacitación y bitácora.",
+        "prioridad": null,
+        "plazo": "3-6 meses.",
+        "responsable": "Familia / profesional.",
+        "recursos": null,
+        "indicador": "% de eventos registrados.",
+        "evidencia": "Planilla."
+      },
+      {
+        "impacto": "Cadena de frío",
+        "accion": "Adquirir contenedor o equipo y termómetro.",
+        "prioridad": null,
+        "plazo": "6-12 meses.",
+        "responsable": "Familia.",
+        "recursos": null,
+        "indicador": "% de entregas controladas.",
+        "evidencia": "Planilla."
+      },
+      {
+        "impacto": "Mercado",
+        "accion": "Contactar famas, tiendas y ferias.",
+        "prioridad": null,
+        "plazo": "12 meses.",
+        "responsable": "Familia / asesor.",
+        "recursos": null,
+        "indicador": "N.º de acuerdos/clientes.",
+        "evidencia": "Actas y ventas."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": "Invierno",
+        "situacion": "Los animales se embarran y el terreno se deteriora.",
+        "riesgo": "Enfermedad, suciedad, caídas y afectación del suelo.",
+        "accion_propuesta": "Cocheras, drenaje, camas secas y rotación."
+      },
+      {
+        "aspecto": "Verano",
+        "situacion": "El sol directo quema la piel de los cerdos.",
+        "riesgo": "Quemaduras, estrés y menor bienestar.",
+        "accion_propuesta": "Sombra, techo y disponibilidad de agua."
+      },
+      {
+        "aspecto": "Variación de alimento",
+        "situacion": "Concentrado se usa especialmente en gestación y lactancia.",
+        "riesgo": "Aumento de costos o alimentación insuficiente.",
+        "accion_propuesta": "Plan de compra y reserva."
+      },
+      {
+        "aspecto": "Agua",
+        "situacion": "Dependencia del acueducto veredal.",
+        "riesgo": "Costo o interrupción del suministro.",
+        "accion_propuesta": "Almacenamiento seguro y uso eficiente."
+      },
+      {
+        "aspecto": "Enfermedad",
+        "situacion": "No se informó contingencia.",
+        "riesgo": "Mortalidad y pérdida de camada.",
+        "accion_propuesta": "Plan sanitario, aislamiento y contacto profesional."
+      },
+      {
+        "aspecto": "Falla de frío",
+        "situacion": "No se reporta equipo de conservación.",
+        "riesgo": "Deterioro y contaminación de carne.",
+        "accion_propuesta": "Contenedor frío, termómetro y entrega rápida."
+      },
+      {
+        "aspecto": "Emergencias",
+        "situacion": "Uso de soplete y herramientas.",
+        "riesgo": "Incendio, quemaduras o cortes.",
+        "accion_propuesta": "Procedimiento, extintor, botiquín y EPP."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Productivo",
+        "riesgo": "Baja reproducción o mortalidad.",
+        "causa": "Sanidad, nutrición o infraestructura.",
+        "consecuencia": "Menos lechones e ingresos.",
+        "nivel": "Muy alto",
+        "prevencion": "Plan reproductivo y sanitario.",
+        "respuesta": "Diagnosticar, aislar y ajustar."
+      },
+      {
+        "tipo": "Climático",
+        "riesgo": "Barro o quemaduras solares.",
+        "causa": "Falta de techo, drenaje y sombra.",
+        "consecuencia": "Enfermedad y deterioro del terreno.",
+        "nivel": "Muy alto",
+        "prevencion": "Cocheras, camas y protección.",
+        "respuesta": "Mover animales y corregir."
+      },
+      {
+        "tipo": "Sanitario",
+        "riesgo": "Brote o contaminación.",
+        "causa": "Manejo, residuos o falta de bioseguridad.",
+        "consecuencia": "Mortalidad y pérdida de clientes.",
+        "nivel": "Muy alto",
+        "prevencion": "Limpieza, registros y asistencia.",
+        "respuesta": "Aislar y consultar."
+      },
+      {
+        "tipo": "Inocuidad",
+        "riesgo": "Carne sin conservación adecuada.",
+        "causa": "Transporte sin frío reportado.",
+        "consecuencia": "Deterioro y riesgo al consumidor.",
+        "nivel": "Muy alto",
+        "prevencion": "Cadena de frío y trazabilidad.",
+        "respuesta": "Retirar producto y revisar."
+      },
+      {
+        "tipo": "Financiero",
+        "riesgo": "Ingresos insuficientes entre ciclos.",
+        "causa": "Ventas periódicas y costos permanentes.",
+        "consecuencia": "Falta de capital para alimento.",
+        "nivel": "Alto",
+        "prevencion": "Flujo de caja y reserva.",
+        "respuesta": "Ajustar gastos y calendario."
+      },
+      {
+        "tipo": "Comercial",
+        "riesgo": "Pérdida de clientes o precio bajo.",
+        "causa": "Negociación informal y pocos canales.",
+        "consecuencia": "Menor ingreso.",
+        "nivel": "Medio-alto",
+        "prevencion": "Calidad, registros y convenios.",
+        "respuesta": "Diversificar compradores."
+      },
+      {
+        "tipo": "Laboral",
+        "riesgo": "Mordedura, corte o quemadura.",
+        "causa": "Animales agresivos, cuchillos y soplete.",
+        "consecuencia": "Lesión grave.",
+        "nivel": "Muy alto",
+        "prevencion": "EPP, barreras y procedimientos.",
+        "respuesta": "Primeros auxilios y atención."
+      },
+      {
+        "tipo": "Ambiental",
+        "riesgo": "Contaminación por estiércol o residuos.",
+        "causa": "Ausencia de tratamiento.",
+        "consecuencia": "Olores, vectores y afectación del suelo/agua.",
+        "nivel": "Muy alto",
+        "prevencion": "Plan de residuos.",
+        "respuesta": "Contener, limpiar y corregir."
+      },
+      {
+        "tipo": "Logístico",
+        "riesgo": "Daño de carne o accidente en moto.",
+        "causa": "Carga, tiempo y empaque.",
+        "consecuencia": "Pérdida y lesión.",
+        "nivel": "Alto",
+        "prevencion": "Contenedor, carga segura y rutas.",
+        "respuesta": "Suspender entrega y reportar."
+      },
+      {
+        "tipo": "Estratégico",
+        "riesgo": "Ampliar sin capacidad.",
+        "causa": "Inversión sin inventario ni diseño.",
+        "consecuencia": "Sobrecarga, deuda y fallas sanitarias.",
+        "nivel": "Alto",
+        "prevencion": "Diagnóstico y fases.",
+        "respuesta": "Detener ampliación y reevaluar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "Datos, predio, área e inventario.",
+        "componente": "Estratégico",
+        "responsable": "Familia / asesor.",
+        "tiempo": "Inmediato",
+        "recursos": "Documentos y visita.",
+        "resultado": "Línea base completa.",
+        "evidencia": "Ficha."
+      },
+      {
+        "actividad": "Cocheras, parideras, camas y",
+        "componente": "Productivo / ambiental",
+        "responsable": "Técnico/familia.",
+        "tiempo": "Inmediato",
+        "recursos": "Medición y plano.",
+        "resultado": "Diseño adecuado.",
+        "evidencia": "Informe."
+      },
+      {
+        "actividad": "Ejecutar primera fase de ctura.",
+        "componente": "Financiero / productivo",
+        "responsable": "Familia / apoyo.",
+        "tiempo": "3-9 meses",
+        "recursos": "Materiales y mano de obra.",
+        "resultado": "Áreas protegidas.",
+        "evidencia": "Cotizaciones y fo"
+      },
+      {
+        "actividad": "Establecer registros reproductivos y",
+        "componente": "Productivo / sanitario",
+        "responsable": "Familia.",
+        "tiempo": "Inmediato y continuo",
+        "recursos": "Cuaderno.",
+        "resultado": "Trazabilidad por camada.",
+        "evidencia": "Planillas."
+      },
+      {
+        "actividad": "Plan de alimentación por etapa.",
+        "componente": "Productivo / financiero",
+        "responsable": "Familia/técnico.",
+        "tiempo": "1-3 meses",
+        "recursos": "Concentrado, papa y suero.",
+        "resultado": "Consumo y costo controlados.",
+        "evidencia": "Registro."
+      },
+      {
+        "actividad": "Implementar manejo de estiércol y residuos.",
+        "componente": "Ambiental",
+        "responsable": "Familia / técnico.",
+        "tiempo": "3-6 meses",
+        "recursos": "Zona, recipientes y protocolo.",
+        "resultado": "Residuos controlados.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "actividad": "Renovar EPP y seguridad del soplete.",
+        "componente": "SST",
+        "responsable": "Familia.",
+        "tiempo": "Inmediato",
+        "recursos": "Kit y revisión.",
+        "resultado": "Menor exposición.",
+        "evidencia": "Checklist."
+      },
+      {
+        "actividad": "Evaluar solución de cadena de frío.",
+        "componente": "Comercial/sanitario",
+        "responsable": "Familia / apoyo.",
+        "tiempo": "6 meses",
+        "recursos": "Cotizaciones y equipo.",
+        "resultado": "Entregas controladas.",
+        "evidencia": "Temperaturas."
+      },
+      {
+        "actividad": "Organizar costos y flujo de caja.",
+        "componente": "Financiero",
+        "responsable": "Familia / asesor.",
+        "tiempo": "3 meses",
+        "recursos": "Registros.",
+        "resultado": "Margen por producto.",
+        "evidencia": "Hoja."
+      },
+      {
+        "actividad": "Explorar convenios con famas, tiendas o",
+        "componente": "Comercial",
+        "responsable": "Familia/institución.",
+        "tiempo": "6-12 meses",
+        "recursos": "Portafolio y contactos.",
+        "resultado": "Nuevos canales.",
+        "evidencia": "Actas y ventas."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "Identificación",
+        "indicador": "Datos, área e inventario confirmados.",
+        "meta": "100%.",
+        "frecuencia": "Una vez/actualización.",
+        "responsable": "Familia.",
+        "evidencia": "Ficha."
+      },
+      {
+        "dimension": "Infraestructura",
+        "indicador": "Cocheras, parideras y camas adecuadas.",
+        "meta": "Primera fase completada.",
+        "frecuencia": "Mensual durante obra.",
+        "responsable": "Familia / técnico.",
+        "evidencia": "Checklist."
+      },
+      {
+        "dimension": "Reproducción",
+        "indicador": "Eventos y camadas registrados.",
+        "meta": "100% de eventos.",
+        "frecuencia": "Cada evento.",
+        "responsable": "Familia.",
+        "evidencia": "Calendario."
+      },
+      {
+        "dimension": "Sanidad",
+        "indicador": "Tratamientos y mortalidad registrados.",
+        "meta": "100%.",
+        "frecuencia": "Cada evento.",
+        "responsable": "Familia / profesional.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "dimension": "Alimentación",
+        "indicador": "Consumo y costo por etapa.",
+        "meta": "100% registrado.",
+        "frecuencia": "Semanal.",
+        "responsable": "Familia.",
+        "evidencia": "Facturas."
+      },
+      {
+        "dimension": "Ventas",
+        "indicador": "Cantidad, precio, cliente y pago.",
+        "meta": "100% registrado.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Familia.",
+        "evidencia": "Libro."
+      },
+      {
+        "dimension": "Finanzas",
+        "indicador": "Costo y margen por lechón/animal/carne.",
+        "meta": "Cálculo trimestral.",
+        "frecuencia": "Mensual/trimestral.",
+        "responsable": "Familia / asesor.",
+        "evidencia": "Hoja."
+      },
+      {
+        "dimension": "Ambiente",
+        "indicador": "Estiércol y residuos con ruta.",
+        "meta": "100% gestionado.",
+        "frecuencia": "Semanal.",
+        "responsable": "Familia.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "dimension": "Cadena de frío",
+        "indicador": "Entregas con temperatura controlada.",
+        "meta": "100% de carne comercializada.",
+        "frecuencia": "Cada entrega.",
+        "responsable": "Familia.",
+        "evidencia": "Planilla."
+      },
+      {
+        "dimension": "SST",
+        "indicador": "Uso de EPP e incidentes.",
+        "meta": "EPP completo y registro.",
+        "frecuencia": "Cada jornada / evento.",
+        "responsable": "Familia.",
+        "evidencia": "Checklist."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Construir cocheras y parideras",
+        "efecto_productivo": "Mejora reproducción y manejo.",
+        "efecto_comercial": "Mayor calidad y continuidad.",
+        "efecto_financiero": "Inversión inicial alta.",
+        "efecto_ambiental": "Concentra estiércol y exige drenaje.",
+        "ajuste_necesario": "Diseño técnico y manejo de residuos."
+      },
+      {
+        "decision": "Instalar techo y camas",
+        "efecto_productivo": "Protege del clima.",
+        "efecto_comercial": "Reduce pérdidas y mejora imagen.",
+        "efecto_financiero": "Costo de materiales y mantenimiento.",
+        "efecto_ambiental": "Reduce daño al suelo si se maneja bien.",
+        "ajuste_necesario": "Ventilación y aguas lluvias."
+      },
+      {
+        "decision": "Aumentar concentrado",
+        "efecto_productivo": "Puede mejorar condición en etapas críticas.",
+        "efecto_comercial": "Favorece disponibilidad.",
+        "efecto_financiero": "Aumenta costo variable.",
+        "efecto_ambiental": "Genera sacos y transporte.",
+        "ajuste_necesario": "Plan nutricional y registro."
+      },
+      {
+        "decision": "Fortalecer sanidad",
+        "efecto_productivo": "Reduce mortalidad.",
+        "efecto_comercial": "Genera confianza.",
+        "efecto_financiero": "Costo de medicamentos y asistencia.",
+        "efecto_ambiental": "Residuos veterinarios.",
+        "ajuste_necesario": "Bitácora y disposición."
+      },
+      {
+        "decision": "Procesar estiércol",
+        "efecto_productivo": "Mejora higiene.",
+        "efecto_comercial": "Refuerza imagen responsable.",
+        "efecto_financiero": "Requiere inversión y trabajo.",
+        "efecto_ambiental": "Reduce contaminación y puede generar aboпо.",
+        "ajuste_necesario": "Diseño y seguimiento."
+      },
+      {
+        "decision": "Adquirir cadena de frío",
+        "efecto_productivo": "Conserva carne.",
+        "efecto_comercial": "Permite canales más formales.",
+        "efecto_financiero": "Inversión y energía.",
+        "efecto_ambiental": "Reduce desperdicio, aumenta consumo eléctrico.",
+        "ajuste_necesario": "Equipo eficiente y termómetro."
+      },
+      {
+        "decision": "Vender a famas/tiendas",
+        "efecto_productivo": "Exige continuidad y calidad.",
+        "efecto_comercial": "Amplía mercado.",
+        "efecto_financiero": "Puede mejorar ingresos y costos logisticos.",
+        "efecto_ambiental": "Más transporte y empaque.",
+        "ajuste_necesario": "Acuerdos y requisitos."
+      },
+      {
+        "decision": "Llevar registros",
+        "efecto_productivo": "Mejora decisiones.",
+        "efecto_comercial": "Permite cumplir pedidos.",
+        "efecto_financiero": "Revela rentabilidad.",
+        "efecto_ambiental": "Ayuda a optimizar recursos.",
+        "ajuste_necesario": "Disciplina familiar."
+      },
+      {
+        "decision": "Renovar EPP",
+        "efecto_productivo": "Evita interrupciones por accidentes.",
+        "efecto_comercial": "Protege continuidad.",
+        "efecto_financiero": "Costo moderado.",
+        "efecto_ambiental": "Residuos al final de vida.",
+        "ajuste_necesario": "Limpieza y reposición."
+      },
+      {
+        "decision": "Ampliar la piara",
+        "efecto_productivo": "Aumenta producción potencial.",
+        "efecto_comercial": "Requiere más compradores.",
+        "efecto_financiero": "Aumenta alimento y capital.",
+        "efecto_ambiental": "Aumenta estiércol, agua y presión sobre suelo.",
+        "ajuste_necesario": "Solo después de validar capacidad."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}

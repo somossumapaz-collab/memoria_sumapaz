@@ -1,0 +1,2080 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "Variedades Yam.",
+    "persona_entrevistada": "Nuvia Astrid Prieto Penagos.",
+    "tipo_actividad": "Comercial y de servicios: venta minorista de ropa, textiles, productos por catálogo, artículos de aseo y cuidado personal, paquetes, bebidas y alimentos de cafetería.",
+    "ubicacion_especifica": "Vereda San Juan, localidad de Sumapaz, Bogotá D.C. Dirección, sector y coordenadas pendientes de verificar.",
+    "producto_servicio_principal": "Sábanas térmicas, pijamas térmicas, ropa interior, ropa para hombre, mujer y niños, sudaderas, jeans, abrigos, sacos tejidos, lociones, desodorantes, talcos, paquetes y productos de cafetería, especialmente maicena.",
+    "estado_actual": "Negocio en marcha, instalado en un local arrendado pequeño.",
+    "personas_vinculadas": "Nuvia Astrid Prieto Penagos, su esposo y sus hijos.",
+    "coordenadas": "Pendientes de tomar o confirmar.",
+    "descripcion_general": "Variedades Yam ofrece productos de consumo cotidiano y artículos apropiados para el clima frío de Sumapaz. Atiende diariamente en el local, recibe pedidos por catálogo aproximadamente cada veinte días, promociona por estados de WhatsApp y realiza domicilios en varias veredas.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F02": {
+    "mision": "Ofrecer a habitantes, funcionarios y visitantes de San Juan productos variados, ropa para clima frío, artículos de catálogo, paquetes y servicios de cafetería, con atención amable, cercanía y disponibilidad según las necesidades de la comunidad.",
+    "vision": "Consolidar Variedades Yam en un local más amplio, mejor surtido, organizado y visible, con herramientas digitales que permitan recibir pedidos, promocionar productos y atender de manera segura a clientes de diferentes veredas.",
+    "valores": [
+      "Buena atención",
+      "amabilidad",
+      "responsabilidad",
+      "cumplimiento",
+      "perseverancia",
+      "honestidad",
+      "servicio",
+      "cuidado del producto",
+      "trabajo familiar",
+      "respeto por el cliente"
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Porque encuentran productos variados en un mismo punto, ropa y textiles adecuados al frío, artículos por catálogo y cafetería cerca de la Subred y de la comunidad de San Juan.",
+    "beneficio_cliente": "Acceso cercano a productos que de otra forma requerirían encargos o desplazamientos a la zona urbana; posibilidad de solicitar artículos por catálogo y recibir atención directa.",
+    "diferencial": "Combinación de tienda de variedades y cafetería, oferta adaptada al clima frío y preparación de maicena reconocida por los clientes.",
+    "valor_ambiental": "Uso cuidadoso del agua y entrega directa de residuos al camión recolector. Existe oportunidad de reducir bolsas, separar materiales reciclables y organizar mejor los residuos de empaques.",
+    "valor_social_comunitario": "Facilita el abastecimiento de vecinos, usuarios de servicios de salud y funcionarios; genera ingresos familiares y presta domicilios a varias veredas.",
+    "evidencia": "Clientes que vuelven a pedir, llamadas cuando se les termina un producto, ventas diarias y búsqueda expresa de las \"famosas maicenas\".",
+    "observaciones_o_comentarios": "¿Cómo demostrar el diferencial?: Mediante fotografías del local, catálogo actualizado, registros de pedidos y recompra, testimonios, lista de productos para clima frío, control de inventario y evidencia de ventas por WhatsApp."
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Nombre comercial definido: Variedades Yam.",
+      "Experiencia previa en ventas por catálogo.",
+      "Local en funcionamiento.",
+      "Portafolio amplio y variado.",
+      "Productos adaptados al clima frío.",
+      "Cafetería con maicena reconocida.",
+      "Venta diaria y pedidos cada veinte días.",
+      "Promoción mediante estados de WhatsApp.",
+      "Apoyo del esposo y los hijos.",
+      "Cobertura en varias veredas."
+    ],
+    "oportunidades": [
+      "Ampliar el surtido de ropa.",
+      "Implementar WhatsApp Business.",
+      "Crear catálogo digital con precios.",
+      "Mejorar publicidad y señalización.",
+      "Organizar pedidos y domicilios.",
+      "Ampliar el local a mediano plazo.",
+      "Establecer alianzas con la Subred y comunidad.",
+      "Incorporar medios de pago y registros digitales.",
+      "Ofrecer kits para clima frío."
+    ],
+    "debilidades": [
+      "Local demasiado pequeño.",
+      "Inventario limitado frente a la demanda.",
+      "Dependencia de proveedores urbanos.",
+      "Logística de pedidos con varios intermediarios.",
+      "Riesgos en domicilios en motocicleta.",
+      "No se reportan registros detallados por línea.",
+      "Agua y energía compartidas.",
+      "Residuos no separados por tipo.",
+      "Publicidad digital básica.",
+      "Costos por categoría no informados."
+    ],
+    "amenazas": [
+      "Invierno y frío extremo que obligan a cerrar temprano.",
+      "Caídas o accidentes en moto.",
+      "Lluvia y helaje durante domicilios.",
+      "Aumento de costos de mercancía y transporte.",
+      "Retrasos o pérdida de pedidos desde Bogotá.",
+      "Baja rotación de algunas referencias.",
+      "Competencia de ventas por internet y catálogos.",
+      "Acumulación de residuos comunitarios.",
+      "Variación estacional de ventas."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Cliente directo",
+        "perfil_que_busca": "Usuarios que llegan a citas médicas en la Subred.",
+        "ubicacion": "San Juan.",
+        "necesidad": "Productos rápidos, cafetería, paquetes y artículos personales.",
+        "frecuencia": "Diaria/ocasional.",
+        "criterio_compra": "Cercanía, disponibilidad, precio y rapidez.",
+        "canal": "Local."
+      },
+      {
+        "tipo_actor": "Funcionarios",
+        "perfil_que_busca": "Personas que trabajan en entidades públicas o servicios locales.",
+        "ubicacion": "San Juan.",
+        "necesidad": "Cafetería, ropa, productos personales y encargos.",
+        "frecuencia": "Diaria o periódica.",
+        "criterio_compra": "Atención, confianza, calidad y conveniencia.",
+        "canal": "Local, WhatsApp y voz a voz."
+      },
+      {
+        "tipo_actor": "Vecinos y familias",
+        "perfil_que_busca": "Habitantes que compran para el hogar o uso personal.",
+        "ubicacion": "San Juan y veredas cercanas.",
+        "necesidad": "Ropa, sábanas, pijamas, artículos de catálogo y snacks.",
+        "frecuencia": "Diaria, mensual o según necesidad.",
+        "criterio_compra": "Precio, utilidad, abrigo, calidad y confianza.",
+        "canal": "Local, WhatsApp y domicilio."
+      },
+      {
+        "tipo_actor": "Cliente de catálogo",
+        "perfil_que_busca": "Persona que encarga lociones, ropa interior, ropa u otros productos.",
+        "ubicacion": "Varias veredas.",
+        "necesidad": "Acceso a referencias no disponibles localmente.",
+        "frecuencia": "Cada veinte días o cuando se agota.",
+        "criterio_compra": "Marca, presentación, precio y cumplimiento.",
+        "canal": "Estados de WhatsApp, llamada y encargo."
+      },
+      {
+        "tipo_actor": "Cliente de cafetería",
+        "perfil_que_busca": "Usuario que busca bebidas o alimentos calientes, especialmente maicena.",
+        "ubicacion": "San Juan.",
+        "necesidad": "Calor, sabor y atención rápida.",
+        "frecuencia": "Diaria.",
+        "criterio_compra": "Sabor, higiene, temperatura y precio.",
+        "canal": "Local."
+      },
+      {
+        "tipo_actor": "Cliente de ropa para frío",
+        "perfil_que_busca": "Personas que necesitan prendas térmicas y abrigadas.",
+        "ubicacion": "Vegas, Chorreras, Santo Domingo, San Juan y parte de San Antonio.",
+        "necesidad": "Protección frente al clima.",
+        "frecuencia": "Estacional y según necesidad.",
+        "criterio_compra": "Talla, abrigo, calidad y precio.",
+        "canal": "WhatsApp, voz a voz y domicilio."
+      },
+      {
+        "tipo_actor": "Otro",
+        "perfil_que_busca": "Familiares y clientes recomendados.",
+        "ubicacion": "Regional.",
+        "necesidad": "Productos variados y encargos.",
+        "frecuencia": "Según necesidad.",
+        "criterio_compra": "Confianza y atención.",
+        "canal": "Voz a voz."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Variedad, disponibilidad, ropa abrigada, productos por catálogo, artículos personales, paquetes y bebidas calientes.",
+    "como_se_conoce_la_necesidad": "Los clientes regresan, llaman para repetir pedidos y solicitan expresamente productos como la maicena.",
+    "quienes_compran_o_podrian_comprar": "Usuarios de la Subred, funcionarios, vecinos, familias, habitantes de varias veredas y clientes digitales.",
+    "evidencia": "Ventas diarias en el local, pedidos de catálogo cada veinte días, recompra y promoción por estados de WhatsApp.",
+    "ventaja_territorial": "Ofrece productos apropiados para el clima frío y evita que la población tenga que desplazarse a Bogotá para adquirirlos.",
+    "cambios_demanda": "No se describieron cambios específicos; las ventas aumentan en diciembre y dependen de la temporada.",
+    "dificultades": "Poco espacio, inventario limitado, logística desde Bogotá, frío extremo, riesgo en domicilios y publicidad digital todavía básica.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Comerciantes vecinos",
+        "tipo": "Negocios locales.",
+        "que_aporta": "Referencias de clientes, compras compartidas y apoyo.",
+        "que_recibe": "Clientes y cooperación.",
+        "trabajo_conjunto": "Promociones conjuntas y ruta comercial.",
+        "aporte_ambiental": "Compras agrupadas reducen viajes.",
+        "accion": "Crear red de negocios."
+      },
+      {
+        "actor_aliado": "Asociación campesina/de emprendedores",
+        "tipo": "Organización territorial.",
+        "que_aporta": "Ferias, capacitación y difusión.",
+        "que_recibe": "Participación de Variedades Yam.",
+        "trabajo_conjunto": "Comercialización y formación digital.",
+        "aporte_ambiental": "Promoción de consumo local.",
+        "accion": "Identificar asociación."
+      },
+      {
+        "actor_aliado": "Junta de Acción Comunal",
+        "tipo": "Organización comunitaria.",
+        "que_aporta": "Convocatoria y difusión.",
+        "que_recibe": "Oferta para la comunidad.",
+        "trabajo_conjunto": "Eventos, publicidad y gestión de residuos.",
+        "aporte_ambiental": "Campañas de limpieza.",
+        "accion": "Socializar catálogo."
+      },
+      {
+        "actor_aliado": "Subred y entidades",
+        "tipo": "Instituciones con usuarios y funcionarios.",
+        "que_aporta": "Flujo de clientes y posibles espacios de difusión.",
+        "que_recibe": "Servicio cercano para usuarios.",
+        "trabajo_conjunto": "Promoción autorizada y pedidos.",
+        "aporte_ambiental": "Reduce desplazamientos.",
+        "accion": "Gestionar permiso para información comercial."
+      },
+      {
+        "actor_aliado": "Clientes frecuentes",
+        "tipo": "Compradores locales.",
+        "que_aporta": "Pedidos, recomendaciones y retroalimentación.",
+        "que_recibe": "Atención y productos disponibles.",
+        "trabajo_conjunto": "Lista de difusión y preventa.",
+        "aporte_ambiental": "Pedidos agrupados.",
+        "accion": "Crear base de datos."
+      },
+      {
+        "actor_aliado": "Proveedores",
+        "tipo": "Catálogos, mayoristas y comerciantes urbanos.",
+        "que_aporta": "Mercancía y precios por volumen.",
+        "que_recibe": "Compras periódicas.",
+        "trabajo_conjunto": "Pedidos consolidados y facturación.",
+        "aporte_ambiental": "Optimización de transporte.",
+        "accion": "Evaluar calidad, tiempos y costos."
+      },
+      {
+        "actor_aliado": "Aliados logísticos",
+        "tipo": "Domiciliario, familiar y transportadores.",
+        "que_aporta": "Traslado desde Bogotá y entregas rurales.",
+        "que_recibe": "Pago por servicio.",
+        "trabajo_conjunto": "Ruta segura y trazable.",
+        "aporte_ambiental": "Consolidación de carga.",
+        "accion": "Definir comprobantes y responsables."
+      },
+      {
+        "actor_aliado": "Instituciones de apoyo",
+        "tipo": "Alcaldía y programas de emprendimiento.",
+        "que_aporta": "Publicidad, formación, impulso y seguridad.",
+        "que_recibe": "Unidad fortalecida.",
+        "trabajo_conjunto": "WhatsApp Business, EPP y gestión comercial.",
+        "aporte_ambiental": "Mejores prácticas ambientales.",
+        "accion": "Solicitar acompañamiento."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Encuesta",
+        "a_quien": "No se informó.",
+        "resultado": "Pendiente.",
+        "motivacion": "Pendiente.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Entrevista / conversación",
+        "a_quien": "Clientes frecuentes.",
+        "resultado": "Solicitan nuevamente los productos cuando se terminan.",
+        "motivacion": "Confianza, variedad y atención.",
+        "evidencia": "Relato de la productora."
+      },
+      {
+        "metodo": "Degustación/muestra",
+        "a_quien": "Clientes de cafetería.",
+        "resultado": "Buscan expresamente la maicena preparada en el local.",
+        "motivacion": "Sabor y bebida caliente.",
+        "evidencia": "Recompra; registro pendiente."
+      },
+      {
+        "metodo": "Venta previa",
+        "a_quien": "Usuarios, funcionarios, vecinos y familiares.",
+        "resultado": "Ventas diarias y pedidos de catálogo cada veinte días.",
+        "motivacion": "Cercanía, utilidad y precio.",
+        "evidencia": "Histórico de ventas por implementar."
+      },
+      {
+        "metodo": "Carta de intención",
+        "a_quien": "No se informó.",
+        "resultado": "Pendiente.",
+        "motivacion": "Continuidad.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Participación en feria",
+        "a_quien": "No se informó.",
+        "resultado": "Pendiente.",
+        "motivacion": "Visibilidad.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Otro",
+        "a_quien": "Estados de WhatsApp y voz a voz.",
+        "resultado": "Generan pedidos en varias veredas.",
+        "motivacion": "Facilidad y confianza.",
+        "evidencia": "Capturas y registro de pedidos por implementar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Ropa y textiles térmicos",
+        "descripcion_tecnica": "Sábanas térmicas, pijamas, abrigos, sacos tejidos y otras prendas para clima frío.",
+        "unidad": "Unidad/juego.",
+        "insumos_principales": "Productos terminados de proveedores.",
+        "condiciones_especiales": "Lugar seco, protegido, ordenado por talla y referencia.",
+        "presentacion": "Bolsa individual.",
+        "diferencial": "Oferta adaptada al clima de Sumapaz."
+      },
+      {
+        "servicio": "Productos por catálogo",
+        "descripcion_tecnica": "Lociones, desodorantes, talcos, ropa interior y otras referencias solicitadas por encargo.",
+        "unidad": "Unidad.",
+        "insumos_principales": "Mercancía de marcas y catálogos.",
+        "condiciones_especiales": "Conservar sellados, revisar integridad y fechas cuando aplique.",
+        "presentacion": "Empaque original y bolsa individual.",
+        "diferencial": "Pedido personalizado y continuidad cada veinte días."
+      },
+      {
+        "servicio": "Paquetes y productos de tienda",
+        "descripcion_tecnica": "Snacks y artículos de consumo rápido vendidos en el local.",
+        "unidad": "Unidad / paquete.",
+        "insumos_principales": "Productos empacados de proveedor.",
+        "condiciones_especiales": "Lugar seco, limpio y control de vencimiento.",
+        "presentacion": "Empaque original.",
+        "diferencial": "Disponibilidad cercana para usuarios y vecinos."
+      },
+      {
+        "servicio": "Servicio de cafetería y maicena",
+        "descripcion_tecnica": "Preparación y venta de bebidas o alimentos de cafetería; la maicena es el producto más reconocido.",
+        "unidad": "Vaso/porción.",
+        "insumos_principales": "Agua, leche u otros ingredientes, gas y utensilios; receta pendiente.",
+        "condiciones_especiales": "Preparación higiénica, servicio caliente y protección de insumos.",
+        "presentacion": "Vaso o recipiente; pendiente de verificar.",
+        "diferencial": "Producto reconocido por sabor y pedido recurrente."
+      }
+    ],
+    "observaciones_o_comentarios": "Fichas técnicas pendientes: organizar referencias, tallas, materiales, marcas, colores, precios, proveedor, fecha de compra y garantía de ropa y catálogos; registrar lote y vencimiento de alimentos empacados; documentar receta, porción, ingredientes, tiempo, temperatura, higiene, costo y presentación de la maicena y demás productos de cafetería."
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Planeación de surtido",
+        "unidad": "Pedido mensual/ por catálogo.",
+        "actividad_proceso": "1. Revisar ventas, inventario, productos agotados y solicitudes de clientes.",
+        "tiempo_estimado": "Diario / cada veinte días."
+      },
+      {
+        "servicio": "Compra a proveedores",
+        "unidad": "Pedido consolidado.",
+        "actividad_proceso": "2. Contactar proveedores, escoger referencias y comprar por docenas cuando conviene.",
+        "tiempo_estimado": "Mensual/cada ciclo."
+      },
+      {
+        "servicio": "Logística desde Bogotá",
+        "unidad": "Mercancía por pedido.",
+        "actividad_proceso": "3. Coordinar domiciliario, entrega a familiar y envío en transporte hasta San Juan.",
+        "tiempo_estimado": "Según pedido."
+      },
+      {
+        "servicio": "Recepción",
+        "unidad": "Cada despacho.",
+        "actividad_proceso": "4. Verificar cantidad, estado, talla, referencia, empaque y costo.",
+        "tiempo_estimado": "Al recibir."
+      },
+      {
+        "servicio": "Exhibición",
+        "unidad": "Referencias disponibles.",
+        "actividad_proceso": "5. Guardar cada producto en bolsa individual y organizarlo en la vitrina.",
+        "tiempo_estimado": "Diario / cada surtido."
+      },
+      {
+        "servicio": "Venta en local",
+        "unidad": "Unidad/porción.",
+        "actividad_proceso": "6. Atender, mostrar, cobrar y registrar la venta.",
+        "tiempo_estimado": "Diario."
+      },
+      {
+        "servicio": "Cafetería",
+        "unidad": "Vaso / porción.",
+        "actividad_proceso": "7. Preparar maicena y otros productos con higiene y servir calientes.",
+        "tiempo_estimado": "Según pedido."
+      },
+      {
+        "servicio": "Domicilio",
+        "unidad": "Pedido.",
+        "actividad_proceso": "8. Empacar, verificar dirección y entregar en motocicleta con medidas de seguridad.",
+        "tiempo_estimado": "Según solicitud."
+      },
+      {
+        "servicio": "Cierre y residuos",
+        "unidad": "Jornada.",
+        "actividad_proceso": "9. Revisar caja, inventario, limpieza y entregar residuos al camión recolector.",
+        "tiempo_estimado": "Diario / según ruta."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Ropa y textiles",
+        "cantidad_unidad": "Cantidad variable; compra por docenas cuando aplica.",
+        "frecuencia": "Mensual/según rotación.",
+        "proveedor_fuente": "Proveedores de Bogotá y catálogos.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Empaques, transporte y productos sin rotación.",
+        "manejo_ambiental": "Comprar según demanda y reutilizar cajas limpias.",
+        "observaciones": "Prioridad de mayor surtido."
+      },
+      {
+        "insumo": "Productos de catálogo",
+        "cantidad_unidad": "Pedido cada veinte días.",
+        "frecuencia": "Cada veinte días.",
+        "proveedor_fuente": "Empresas de catálogo.",
+        "toxicidad": "Según producto",
+        "impacto_potencial": "Envases, empaques y transporte.",
+        "manejo_ambiental": "Control de inventario y disposición de envases.",
+        "observaciones": "Incluye lociones y cuidado personal."
+      },
+      {
+        "insumo": "Paquetes y alimentos empacados",
+        "cantidad_unidad": "Cantidad variable.",
+        "frecuencia": "Semanal / mensual.",
+        "proveedor_fuente": "Mayoristas.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos de bolsas y vencimientos.",
+        "manejo_ambiental": "Rotación PEPS y separación.",
+        "observaciones": "Venta diaria."
+      },
+      {
+        "insumo": "Ingredientes de cafetería",
+        "cantidad_unidad": "Cantidad pendiente.",
+        "frecuencia": "Semanal/según demanda.",
+        "proveedor_fuente": "Comercio local o regional.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos orgánicos y empaques.",
+        "manejo_ambiental": "Compra ajustada y manejo higiénico.",
+        "observaciones": "Receta de maicena pendiente."
+      },
+      {
+        "insumo": "Agua",
+        "cantidad_unidad": "Consumo compartido, cantidad pendiente.",
+        "frecuencia": "Permanente..",
+        "proveedor_fuente": "Acueducto de San Juan.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Consumo y aguas de lavado.",
+        "manejo_ambiental": "Uso necesario, reparación de fugas y registro.",
+        "observaciones": "Pago aproximado: $3.600."
+      },
+      {
+        "insumo": "Energía eléctrica",
+        "cantidad_unidad": "Consumo compartido.",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Empresa prestadora.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Huella y costo.",
+        "manejo_ambiental": "Apagar equipos y luces no usados.",
+        "observaciones": "Pago: $34.000-$40.000."
+      },
+      {
+        "insumo": "Gas propano",
+        "cantidad_unidad": "Una pipeta cada dos meses.",
+        "frecuencia": "Bimestral.",
+        "proveedor_fuente": "Proveedor local.",
+        "toxicidad": "Inflamable",
+        "impacto_potencial": "Emisiones, fuga e incendio.",
+        "manejo_ambiental": "Ventilación, revisión y almacenamiento seguro.",
+        "observaciones": "Valor: $110.000."
+      },
+      {
+        "insumo": "Bolsas y empaques",
+        "cantidad_unidad": "Según ventas y domicilios.",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Proveedores.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos plásticos.",
+        "manejo_ambiental": "Uso racional, bolsas reutilizables y separación.",
+        "observaciones": "Cada producto se conserva en bolsa."
+      },
+      {
+        "insumo": "Combustible y transporte",
+        "cantidad_unidad": "Cantidad y costo pendientes.",
+        "frecuencia": "Según domicilios y abastecimiento.",
+        "proveedor_fuente": "Estación / transportadores.",
+        "toxicidad": "Inflamable",
+        "impacto_potencial": "Emisiones y riesgo vial.",
+        "manejo_ambiental": "Agrupar rutas y mantenimiento de moto.",
+        "observaciones": "Cobertura interveredal."
+      },
+      {
+        "insumo": "Productos de limpieza y EPP",
+        "cantidad_unidad": "Cantidad pendiente.",
+        "frecuencia": "Diaria / periódica.",
+        "proveedor_fuente": "Comercio local.",
+        "toxicidad": "Según producto",
+        "impacto_potencial": "Vertimientos y residuos.",
+        "manejo_ambiental": "Dosificar, rotular y usar protección.",
+        "observaciones": "EPP es una necesidad prioritaria."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "No aplica como producción industrial; corresponde a una unidad comercial y de cafetería. Ingresos brutos superiores a $2.000.000 mensuales y ganancia neta mínima reportada de $800.000.",
+    "produccion_normal": "Ventas diarias en el local y pedidos de catálogo cada veinte días. La cantidad por referencia no fue informada.",
+    "capacidad_mensual_teorica": "Depende del espacio reducido, inventario, capital de trabajo, publicidad, logística y horarios afectados por el frío.",
+    "produccion_maxima_posible": "En diciembre la ganancia puede llegar aproximadamente a $1.500.000. No se informó ingreso bruto máximo.",
+    "area_numero_habitaciones": "Local arrendado pequeño; metros cuadrados pendientes de medir.",
+    "limitantes_productivos": "Poco espacio, surtido limitado, dependencia de proveedores urbanos, publicidad digital básica, transporte y riesgo en domicilios.",
+    "limitantes_ambientales": "Invierno y frío extremo que obligan a cerrar temprano, generación de empaques y consumo de gas, energía y combustible.",
+    "capacidad_instalada": "Vitrina, local, área de cafetería, gas, agua, energía y motocicleta. Equipos e inventario exactos pendientes.",
+    "capacidad_utilizada": "Atención diaria y distribución en varias veredas, sin porcentaje calculado.",
+    "produce_mismo_todo_ano": false,
+    "alcanza_para_demanda": true,
+    "necesidades_aumentar_sosteniblemente": "Mayor inventario, publicidad digital, WhatsApp Business, EPP, control de ventas e inventario, logística segura y evaluación de un local más amplio.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua disponible",
+        "estado_actual": "Acueducto de San Juan y servicio compartido.",
+        "limite_restriccion": "Consumo no medido de forma independiente.",
+        "afectacion": "Condiciona cafetería, limpieza y servicio.",
+        "efecto": "Costo y riesgo sanitario.",
+        "incidencia": "Media-alta",
+        "accion_mejora": "Registrar uso y verificar calidad."
+      },
+      {
+        "condicion": "Fuentes hídricas cercanas",
+        "estado_actual": "No se informaron.",
+        "limite_restriccion": "Relación indirecta mediante acueducto.",
+        "afectacion": "No permite evaluar impactos específicos.",
+        "efecto": "Pendiente.",
+        "incidencia": "Baja / pendiente",
+        "accion_mejora": "Mantener uso racional y no verter residuos."
+      },
+      {
+        "condicion": "Suelo/local",
+        "estado_actual": "Local arrendado pequeño.",
+        "limite_restriccion": "Espacio limitado para almacenamiento y circulación.",
+        "afectacion": "Restringe surtido y organización.",
+        "efecto": "Menor capacidad y riesgo locativo.",
+        "incidencia": "Alta",
+        "accion_mejora": "Medir área, reorganizar y evaluar ampliación."
+      },
+      {
+        "condicion": "Pendiente / topografía",
+        "estado_actual": "Rutas rurales en motocicleta.",
+        "limite_restriccion": "Vías, lluvia y superficie pueden aumentar accidentes.",
+        "afectacion": "Dificulta domicilios.",
+        "efecto": "Riesgo vial y retrasos.",
+        "incidencia": "Alta",
+        "accion_mejora": "Plan de rutas, EPP y evitar condiciones inseguras."
+      },
+      {
+        "condicion": "Clima",
+        "estado_actual": "Invierno y frío extremo.",
+        "limite_restriccion": "Helaje intenso.",
+        "afectacion": "Obliga a cerrar antes y afecta domicilios.",
+        "efecto": "Menores ventas y exposición física.",
+        "incidencia": "Muy alta",
+        "accion_mejora": "Ropa térmica, horario flexible y comunicación."
+      },
+      {
+        "condicion": "Biodiversidad",
+        "estado_actual": "No existe producción primaria directa.",
+        "limite_restriccion": "Impacto principalmente por consumo y residuos.",
+        "afectacion": "Relación indirecta.",
+        "efecto": "Bajo.",
+        "incidencia": "Baja",
+        "accion_mejora": "Compras responsables y reducción de residuos."
+      },
+      {
+        "condicion": "Uso de insumos",
+        "estado_actual": "Mercancía, gas, energía, agua, empaques y combustible.",
+        "limite_restriccion": "Sin medición por unidad de venta.",
+        "afectacion": "Aumenta costos y huella.",
+        "efecto": "Residuos y emisiones.",
+        "incidencia": "Media-alta",
+        "accion_mejora": "Registrar y optimizar."
+      },
+      {
+        "condicion": "Manejo de residuos",
+        "estado_actual": "Bolsas y empaques entregados al camión.",
+        "limite_restriccion": "No se informó separación o reciclaje.",
+        "afectacion": "Genera mayor volumen de residuos.",
+        "efecto": "Impacto local.",
+        "incidencia": "Alta",
+        "accion_mejora": "Separar cartón, plástico, orgánicos y ordinarios."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Tránsito",
+        "peligro": "Caídas o accidentes en motocicleta.",
+        "aplica": true,
+        "nivel_riesgo": "Según domicilios",
+        "controles_actuales": "Conducción despacio y con precaución.",
+        "accion": "Casco certificado, protecciones, revisión y ruta segura."
+      },
+      {
+        "tipo": "Físico",
+        "peligro": "Frío extremo, lluvia y humedad.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Flexibilidad para cerrar o conducir despacio.",
+        "accion": "Ropa térmica impermeable y limitar exposición."
+      },
+      {
+        "tipo": "Térmico",
+        "peligro": "Quemaduras con bebidas, recipientes o gas.",
+        "aplica": true,
+        "nivel_riesgo": "Según cafetería",
+        "controles_actuales": "No informado.",
+        "accion": "Guantes, superficies estables y capacitación."
+      },
+      {
+        "tipo": "Locativo",
+        "peligro": "Poco espacio, obstáculos y almacenamiento.",
+        "aplica": true,
+        "nivel_riesgo": "Permanente",
+        "controles_actuales": "Vitrina y bolsas individuales.",
+        "accion": "Organizar pasillos y carga."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Levantamiento de cajas, posturas y atención prolongada.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Apoyo familiar.",
+        "accion": "Técnica de carga, pausas y ayudas."
+      },
+      {
+        "tipo": "Eléctrico",
+        "peligro": "Conexiones y equipos del local.",
+        "aplica": true,
+        "nivel_riesgo": "Permanente",
+        "controles_actuales": "No informado.",
+        "accion": "Revisión técnica y evitar sobrecarga."
+      },
+      {
+        "tipo": "Gas",
+        "peligro": "Fuga o incendio de pipeta.",
+        "aplica": true,
+        "nivel_riesgo": "Permanente",
+        "controles_actuales": "No informado.",
+        "accion": "Ventilación, manguera certificada y extintor."
+      },
+      {
+        "tipo": "Biológico / sanitario",
+        "peligro": "Manipulación de alimentos y atención al público.",
+        "aplica": true,
+        "nivel_riesgo": "Diaria",
+        "controles_actuales": "No informado.",
+        "accion": "Lavado de manos, limpieza y protección de alimentos."
+      },
+      {
+        "tipo": "Psicosocial",
+        "peligro": "Responsabilidad del negocio y ventas variables.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Apoyo familiar y autonomía de horarios.",
+        "accion": "Distribuir tareas y descansos."
+      },
+      {
+        "tipo": "Seguridad pública",
+        "peligro": "Traslado de dinero y mercancía.",
+        "aplica": true,
+        "nivel_riesgo": "Según ruta",
+        "controles_actuales": "No informado.",
+        "accion": "Evitar altas sumas y compartir itinerario."
+      }
+    ],
+    "observaciones_o_comentarios": "Los riesgos se identifican con base en la entrevista y requieren validación mediante visita. El riesgo principal reportado es el domicilio en motocicleta, con posibilidad de caídas, lluvia y exposición al frío. También deben revisarse riesgos por gas, líquidos calientes, superficies reducidas, levantamiento de cajas, electricidad, atención al público y almacenamiento."
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Usar casco certificado, guantes, chaqueta, pantalón impermeable, botas y elementos reflectivos.",
+        "riesgo": "Tránsito, frío y lluvia.",
+        "responsable": "Nuvia / domiciliario.",
+        "frecuencia": "Cada domicilio.",
+        "evidencia": "Checklist y fotos."
+      },
+      {
+        "accion_preventiva": "Revisar frenos, llantas, luces, documentos y carga de la motocicleta.",
+        "riesgo": "Accidentes de tránsito.",
+        "responsable": "Nuvia / técnico.",
+        "frecuencia": "Antes de ruta / mantenimiento.",
+        "evidencia": "Registro."
+      },
+      {
+        "accion_preventiva": "Evitar domicilios durante clima o vias inseguras.",
+        "riesgo": "Tránsito y exposición.",
+        "responsable": "Nuvia.",
+        "frecuencia": "Según condiciones.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "accion_preventiva": "Revisar pipeta, manguera, regulador, ventilación y extintor.",
+        "riesgo": "Gas e incendio.",
+        "responsable": "Familia / técnico.",
+        "frecuencia": "Mensual.",
+        "evidencia": "Formato."
+      },
+      {
+        "accion_preventiva": "Mantener pasillos despejados, cajas estables y productos ordenados.",
+        "riesgo": "Locativo y biomecánico.",
+        "responsable": "Familia.",
+        "frecuencia": "Diaria.",
+        "evidencia": "Checklist."
+      },
+      {
+        "accion_preventiva": "Aplicar higiene en cafetería y proteger alimentos.",
+        "riesgo": "Sanitario y biológico.",
+        "responsable": "Nuvia/familia.",
+        "frecuencia": "Cada jornada.",
+        "evidencia": "Planilla."
+      },
+      {
+        "accion_preventiva": "Contar con botiquín, contactos de emergencia y registro de incidentes.",
+        "riesgo": "Emergencias.",
+        "responsable": "Nuvia.",
+        "frecuencia": "Revisión mensual.",
+        "evidencia": "Inventario."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Ferias campesinas",
+        "activo": false,
+        "descripcion": "Exhibición de ropa y productos locales.",
+        "responsable": "Nuvia/familia.",
+        "frecuencia": "Según convocatoria."
+      },
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "Local Variedades Yam en San Juan.",
+        "responsable": "Nuvia y familia.",
+        "frecuencia": "Diaria."
+      },
+      {
+        "canal": "Redes sociales",
+        "activo": true,
+        "descripcion": "Estados de WhatsApp; no se reportan otras redes.",
+        "responsable": "Nuvia.",
+        "frecuencia": "Frecuente."
+      },
+      {
+        "canal": "WhatsApp/llamadas",
+        "activo": true,
+        "descripcion": "Pedidos de catálogo, consultas y domicilios.",
+        "responsable": "Nuvia.",
+        "frecuencia": "Diaria / cada veinte días."
+      },
+      {
+        "canal": "Tiendas / restaurantes / plazas",
+        "activo": false,
+        "descripcion": "Venta al consumidor final.",
+        "responsable": "Nuvia.",
+        "frecuencia": "No aplica."
+      },
+      {
+        "canal": "Compras institucionales",
+        "activo": false,
+        "descripcion": "No se reportan contratos.",
+        "responsable": "Pendiente.",
+        "frecuencia": "Por explorar."
+      },
+      {
+        "canal": "Comercialización asociativa",
+        "activo": false,
+        "descripcion": "Podría participar en redes de emprendimientos.",
+        "responsable": "Nuvia / aliados.",
+        "frecuencia": "Por gestionar."
+      },
+      {
+        "canal": "Otro",
+        "activo": true,
+        "descripcion": "Voz a voz, domicilios y venta en Vegas, Chorreras, Santo Domingo, San Juan y parte de San Antonio.",
+        "responsable": "Nuvia/familia.",
+        "frecuencia": "Continuo."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Ropa y textiles",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Compra por docenas para obtener mejor precio.",
+        "logistica_plataforma": "Transporte desde Bogotá pendiente.",
+        "precio_final": null,
+        "justificacion": "Debe incluir costo, flete, riesgo y rotación."
+      },
+      {
+        "servicio": "Productos de catálogo",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Precio sugerido por marca y campaña.",
+        "logistica_plataforma": "Domiciliario y transporte.",
+        "precio_final": null,
+        "justificacion": "Se vende por encargo y reposición."
+      },
+      {
+        "servicio": "Paquetes y tienda",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Precio local no informado.",
+        "logistica_plataforma": "Transporte y pérdida.",
+        "precio_final": null,
+        "justificacion": "Debe controlarse vencimiento y margen."
+      },
+      {
+        "servicio": "Maicena/cafetería",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Precio no informado.",
+        "logistica_plataforma": "Consumo de agua, gas, envase y mano de obra.",
+        "precio_final": null,
+        "justificacion": "Producto reconocido; requiere costeo por vaso."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": "La productora no informó precios de venta por producto ni márgenes por categoría. Se requiere calcular costo de compra, transporte, domicilio, empaque, gas, servicios, arriendo, pérdidas, mano de obra y rotación. La inversión mensual global reportada es de aproximadamente $1.600.000."
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Ventas totales",
+        "cantidad_mensual": "No se informaron unidades.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente de verificar.",
+        "canal": "Local, WhatsApp, catálogo y domicilios."
+      },
+      {
+        "concepto_servicio": "Ganancia neta regular",
+        "cantidad_mensual": "No aplica.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Resultado mensual.",
+        "canal": "Todas las líneas."
+      },
+      {
+        "concepto_servicio": "Temporada alta",
+        "cantidad_mensual": "No se informaron unidades.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Resultado estacional.",
+        "canal": "Venta de ropa, textiles, catálogo y cafetería."
+      },
+      {
+        "concepto_servicio": "Pedidos de catálogo",
+        "cantidad_mensual": "Un ciclo aproximadamente cada veinte días.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Contado o crédito pendiente de verificar.",
+        "canal": "WhatsApp y encargo."
+      },
+      {
+        "concepto_servicio": "Venta diaria en local",
+        "cantidad_mensual": "Al menos una o varias referencias por día, sin cantidad exacta.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Usuarios, funcionarios y vecinos."
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": "La proyección se limita a las cifras globales de la entrevista. No se cuenta con ventas por categoría, precios, número de días abiertos, formas de pago, cartera, arriendo ni costos logísticos. Se recomienda registrar durante al menos tres meses para verificar que la ganancia neta corresponda a ingresos menos todos los costos."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Usuario de la Subred",
+        "estrategia": "Atención rápida, surtido básico y cafetería disponible.",
+        "medio": "Local y voz a voz.",
+        "frecuencia": "Diaria.",
+        "responsable": "Nuvia / familia."
+      },
+      {
+        "cliente": "Funcionario",
+        "estrategia": "Lista de productos, preventa y pedidos.",
+        "medio": "WhatsApp Business y local.",
+        "frecuencia": "Semanal.",
+        "responsable": "Nuvia."
+      },
+      {
+        "cliente": "Cliente de catálogo",
+        "estrategia": "Recordar fecha de cierre, confirmar pedido y avisar llegada.",
+        "medio": "WhatsApp, llamada y catálogo digital.",
+        "frecuencia": "Cada veinte días.",
+        "responsable": "Nuvia."
+      },
+      {
+        "cliente": "Cliente de ropa",
+        "estrategia": "Registrar talla y preferencias, avisar nuevos surtidos.",
+        "medio": "WhatsApp y estados.",
+        "frecuencia": "Mensual/temporada.",
+        "responsable": "Nuvia."
+      },
+      {
+        "cliente": "Cliente de cafetería",
+        "estrategia": "Mantener sabor, higiene y disponibilidad de maicena.",
+        "medio": "Atención directa.",
+        "frecuencia": "Cada visita.",
+        "responsable": "Nuvia / familia."
+      },
+      {
+        "cliente": "Cliente de domicilio",
+        "estrategia": "Confirmar pedido, costo, ruta y entrega segura.",
+        "medio": "WhatsApp y llamada.",
+        "frecuencia": "Según solicitud.",
+        "responsable": "Nuvia / esposo."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Productos de catálogo",
+        "canal": "Proveedor a casa de familiar y transporte a San Juan.",
+        "tiempo": "Según campaña y ruta.",
+        "transporte_operacion": "Domiciliario y transporte intermunicipal/rural",
+        "condicion_calidad": "Empaque integro, pedido completo y protegido.",
+        "capacidad": "Pendiente.",
+        "costo": "Pendiente.",
+        "responsable": "Nuvia / aliados."
+      },
+      {
+        "servicio_insumo": "Ropa y textiles",
+        "canal": "Abastecimiento desde Bogotá.",
+        "tiempo": "Según programación.",
+        "transporte_operacion": "Domiciliario y transportador.",
+        "condicion_calidad": "Protección de humedad, limpieza y talla correcta.",
+        "capacidad": "Pendiente.",
+        "costo": "Pendiente.",
+        "responsable": "Nuvia."
+      },
+      {
+        "servicio_insumo": "Venta local",
+        "canal": "Recogida en el local.",
+        "tiempo": "Inmediato.",
+        "transporte_operacion": "Cliente.",
+        "condicion_calidad": "Producto en bolsa individual.",
+        "capacidad": "Al detal.",
+        "costo": "Incluido.",
+        "responsable": "Nuvia/familia."
+      },
+      {
+        "servicio_insumo": "Domicilio rural",
+        "canal": "Entrega en varias veredas.",
+        "tiempo": "Según distancia y clima.",
+        "transporte_operacion": "Motocicleta.",
+        "condicion_calidad": "Producto protegido de lluvia y carga asegurada.",
+        "capacidad": "Limitada por seguridad y espacio.",
+        "costo": "Pendiente.",
+        "responsable": "Nuvia/familia."
+      },
+      {
+        "servicio_insumo": "Cafetería",
+        "canal": "Consumo en local.",
+        "tiempo": "Inmediato.",
+        "transporte_operacion": "No aplica.",
+        "condicion_calidad": "Servicio caliente, higiene y recipiente seguro.",
+        "capacidad": "Según equipos.",
+        "costo": "Incluido.",
+        "responsable": "Nuvia."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Código/referencia",
+        "informacion": "Producto, marca, talla, color, costo y precio.",
+        "responsable": "Nuvia.",
+        "medio": "Inventario físico o digital.",
+        "frecuencia": "Cada ingreso.",
+        "evidencia": "Registro."
+      },
+      {
+        "elemento": "Pedido de catálogo",
+        "informacion": "Cliente, referencia, fecha, anticipo y entrega.",
+        "responsable": "Nuvia.",
+        "medio": "WhatsApp Business y hoja.",
+        "frecuencia": "Cada ciclo.",
+        "evidencia": "Conversación y factura."
+      },
+      {
+        "elemento": "Proveedor y origen",
+        "informacion": "Nombre, ciudad, contacto, fecha y comprobante.",
+        "responsable": "Nuvia.",
+        "medio": "Carpeta o archivo.",
+        "frecuencia": "Cada compra.",
+        "evidencia": "Factura."
+      },
+      {
+        "elemento": "Producto de cafetería",
+        "informacion": "Ingredientes, fecha, preparación y precio.",
+        "responsable": "Nuvia.",
+        "medio": "Ficha sencilla.",
+        "frecuencia": "Cada cambio.",
+        "evidencia": "Ficha."
+      },
+      {
+        "elemento": "Contacto comercial",
+        "informacion": "Número, catálogo, ubicación y horario.",
+        "responsable": "Nuvia.",
+        "medio": "Perfil de WhatsApp Business.",
+        "frecuencia": "Permanente.",
+        "evidencia": "Perfil."
+      },
+      {
+        "elemento": "Prácticas responsables",
+        "informacion": "Uso racional de agua, manejo de residuos y domicilios agrupados.",
+        "responsable": "Familia.",
+        "medio": "Mensaje o ficha.",
+        "frecuencia": "Trimestral.",
+        "evidencia": "Fotos y bitácora."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Surtido de ropa para mujer y hombre",
+        "descripcion": "Pijamas, ropa interior, sudaderas, jeans y prendas térmicas.",
+        "valor_unitario": null,
+        "cantidad": "Según presupuesto y rotación.",
+        "total": null,
+        "requisito": "Tallas y referencias basadas en demanda.",
+        "fuente": "Bolsa de impulsos/recursos propios."
+      },
+      {
+        "tipo": "Surtido infantil",
+        "descripcion": "Ropa para niños y referencias solicitadas.",
+        "valor_unitario": null,
+        "cantidad": "Según demanda.",
+        "total": null,
+        "requisito": "Calidad, talla y seguridad del producto.",
+        "fuente": "Bolsa de impulsos."
+      },
+      {
+        "tipo": "Inventario de catálogo y cuidado personal",
+        "descripcion": "Lociones, desodorantes, talcos y referencias recurrentes.",
+        "valor_unitario": null,
+        "cantidad": "Según ciclo.",
+        "total": null,
+        "requisito": "Productos originales, sellados y vigentes.",
+        "fuente": "Bolsa de impulsos / capital de trabajo."
+      },
+      {
+        "tipo": "Publicidad y señalización",
+        "descripcion": "Aviso, piezas gráficas, fotografías, catálogo y material promocional.",
+        "valor_unitario": null,
+        "cantidad": "Kit.",
+        "total": null,
+        "requisito": "Información clara y actualizable.",
+        "fuente": "Bolsa de impulsos."
+      },
+      {
+        "tipo": "Herramientas digitales",
+        "descripcion": "Configuración de WhatsApp Business, catálogo, etiquetas y control de pedidos.",
+        "valor_unitario": null,
+        "cantidad": "1 proceso.",
+        "total": null,
+        "requisito": "Protección de datos y respaldo.",
+        "fuente": "Asistencia técnica."
+      },
+      {
+        "tipo": "EPP para motocicleta",
+        "descripcion": "Casco certificado, chaqueta, pantalón impermeable, guantes, botas y reflectivos.",
+        "valor_unitario": null,
+        "cantidad": "1 kit o más.",
+        "total": null,
+        "requisito": "Certificación, talla y visibilidad.",
+        "fuente": "Bolsa de impulsos/recursos propios."
+      },
+      {
+        "tipo": "Organizadores y estantería",
+        "descripcion": "Mobiliario vertical para aprovechar el local pequeño.",
+        "valor_unitario": null,
+        "cantidad": "Según diseño.",
+        "total": null,
+        "requisito": "Estable, seguro y fácil de limpiar.",
+        "fuente": "Gestión complementaria."
+      },
+      {
+        "tipo": "Elementos de cafetería y seguridad",
+        "descripcion": "Recipientes, superficies, extintor, botiquín y control de gas.",
+        "valor_unitario": null,
+        "cantidad": "Kit.",
+        "total": null,
+        "requisito": "Aptos para alimentos y seguridad.",
+        "fuente": "Recursos propios / apoyo."
+      },
+      {
+        "tipo": "Capacitación",
+        "descripcion": "Inventario, costos, ventas digitales, fotografía, domicilios y manipulación de alimentos.",
+        "valor_unitario": null,
+        "cantidad": "Proceso.",
+        "total": null,
+        "requisito": "Certificación y seguimiento.",
+        "fuente": "Instituciones."
+      }
+    ],
+    "observaciones_o_comentarios": "Prioridades expresadas por la productora: 1) ampliar el surtido de ropa, incluyendo pijamas para hombre y mujer, ropa interior, ropa infantil, sudaderas y jeans; 2) recibir apoyo publicitario e implementar herramientas como WhatsApp Business; y 3) adquirir elementos de protección personal adecuados para el clima y la seguridad en motocicleta. Un espacio más grande se plantea como necesidad de mediano plazo."
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Compra de mercancía",
+        "descripcion": "Pedidos a varios proveedores y compras por docenas.",
+        "valor_mensual_ciclo": 1600000,
+        "observaciones": "Debe desagregarse por línea."
+      },
+      {
+        "tipo": "Arriendo",
+        "descripcion": "Local arrendado.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Verificar valor y condiciones."
+      },
+      {
+        "tipo": "Agua",
+        "descripcion": "Servicio compartido del acueducto de San Juan.",
+        "valor_mensual_ciclo": 3600,
+        "observaciones": "Frecuencia mensual pendiente de confirmar."
+      },
+      {
+        "tipo": "Energía",
+        "descripcion": "Servicio compartido.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Separar consumo comercial."
+      },
+      {
+        "tipo": "Gas propano",
+        "descripcion": "Pipeta que dura aproximadamente dos meses.",
+        "valor_mensual_ciclo": 110000,
+        "observaciones": "Valor mensual solo como referencia."
+      },
+      {
+        "tipo": "Transporte y domicilios",
+        "descripcion": "Domiciliario, transporte desde Bogotá, combustible y moto.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Registrar por pedido y ruta."
+      },
+      {
+        "tipo": "Empaques y publicidad",
+        "descripcion": "Bolsas, materiales y promoción.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Separar costos."
+      },
+      {
+        "tipo": "Mantenimiento y seguridad",
+        "descripcion": "Moto, equipos, EPP, limpieza y extintor.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Crear reserva."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "Mes 1",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Crear línea base."
+      },
+      {
+        "mes": "Mes 2",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Implementar WhatsApp Business."
+      },
+      {
+        "mes": "Mes 3",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Fortalecer domicilios seguros."
+      },
+      {
+        "mes": "Mes 4",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Evaluar rotación."
+      },
+      {
+        "mes": "Mes 5",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Ajustar catálogo."
+      },
+      {
+        "mes": "Mes 6",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Revisar margen."
+      },
+      {
+        "mes": "Mes 7",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Preparar temporada."
+      },
+      {
+        "mes": "Mes 8",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Evaluar espacio."
+      },
+      {
+        "mes": "Mes 9",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Planear diciembre."
+      },
+      {
+        "mes": "Mes 10",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Temporada alta."
+      },
+      {
+        "mes": "Mes 11",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Control de caja."
+      },
+      {
+        "mes": "Mes 12",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Meta de ganancia hasta $1.500.000."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "La entrevista reporta ingresos brutos superiores a $2.000.000 y una inversión mensual de aproximadamente $1.600.000, junto con ganancias netas de $800.000 a $1.200.000. Las cifras requieren conciliación porque deben incluir arriendo, servicios, gas, transporte, domicilios, pérdidas, mano de obra y demás gastos.\nEl flujo de caja debe registrar ingresos y costos por separado para ropa, catálogo, tienda y cafetería. También debe diferenciar compras de inventario de los gastos operativos. Antes de ampliar el local o endeudarse, se recomienda verificar la rotación de cada referencia y la utilidad real durante varios meses."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Agua",
+        "estado": "Servicio compartido.",
+        "cantidad": "$3.600; consumo pendiente.",
+        "impacto_1_a_5": 2,
+        "accion": "Registrar y usar eficientemente."
+      },
+      {
+        "variable": "Energía",
+        "estado": "Servicio compartido.",
+        "cantidad": "$34.000-$40.000/mes.",
+        "impacto_1_a_5": 3,
+        "accion": "Medir y apagar equipos."
+      },
+      {
+        "variable": "Gas",
+        "estado": "Pipeta cada dos meses.",
+        "cantidad": "$110.000 por pipeta.",
+        "impacto_1_a_5": 3,
+        "accion": "Revisar conexiones y consumo."
+      },
+      {
+        "variable": "Transporte",
+        "estado": "Abastecimiento desde Bogotá y domicilios rurales.",
+        "cantidad": "Frecuencia variable.",
+        "impacto_1_a_5": 5,
+        "accion": "Consolidar rutas y registrar kilómetros."
+      },
+      {
+        "variable": "Empaques",
+        "estado": "Bolsas individuales y paquetes.",
+        "cantidad": "Cantidad pendiente.",
+        "impacto_1_a_5": 4,
+        "accion": "Reducir y separar."
+      },
+      {
+        "variable": "Residuos",
+        "estado": "Entrega al camión recolector.",
+        "cantidad": "Sin medición.",
+        "impacto_1_a_5": 3,
+        "accion": "Clasificar reciclables y orgánicos."
+      },
+      {
+        "variable": "Clima",
+        "estado": "Invierno y frío extremo.",
+        "cantidad": "Cierres anticipados.",
+        "impacto_1_a_5": 5,
+        "accion": "EPP y comunicación de horarios."
+      },
+      {
+        "variable": "Local",
+        "estado": "Espacio pequeño.",
+        "cantidad": "Área pendiente.",
+        "impacto_1_a_5": 4,
+        "accion": "Optimizar mobiliario y evaluar ampliación."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "Ventas brutas",
+        "que_se_mide": "Ingresos totales.",
+        "dato_inicial": "Más de $2.000.000/mes.",
+        "meta": "100% registradas.",
+        "frecuencia": "Diaria / mensual.",
+        "responsable": "Nuvia.",
+        "evidencia": "Caja."
+      },
+      {
+        "indicador": "Ganancia neta",
+        "que_se_mide": "Ingresos menos costos.",
+        "dato_inicial": "$800.000-$1.200.000; hasta $1.500.000.",
+        "meta": "Conciliar con soportes.",
+        "frecuencia": "Mensual.",
+        "responsable": "Nuvia / asesor.",
+        "evidencia": "Estado."
+      },
+      {
+        "indicador": "Compras",
+        "que_se_mide": "Mercancía por proveedor.",
+        "dato_inicial": "$1.600.000/mes.",
+        "meta": "100% registradas.",
+        "frecuencia": "Cada compra.",
+        "responsable": "Nuvia.",
+        "evidencia": "Facturas."
+      },
+      {
+        "indicador": "Inventario",
+        "que_se_mide": "Entrada, venta y saldo.",
+        "dato_inicial": "No consolidado.",
+        "meta": "Referencias principales controladas.",
+        "frecuencia": "Semanal.",
+        "responsable": "Nuvia / familia.",
+        "evidencia": "Inventario."
+      },
+      {
+        "indicador": "Rotación",
+        "que_se_mide": "Días por referencia.",
+        "dato_inicial": "Desconocida.",
+        "meta": "Identificar alta y baja rotación.",
+        "frecuencia": "Mensual.",
+        "responsable": "Nuvia.",
+        "evidencia": "Reporte."
+      },
+      {
+        "indicador": "Pedidos de catálogo",
+        "que_se_mide": "Número, valor y cumplimiento.",
+        "dato_inicial": "Ciclo cada veinte días.",
+        "meta": "100% trazados.",
+        "frecuencia": "Cada ciclo.",
+        "responsable": "Nuvia.",
+        "evidencia": "WhatsApp/hoja."
+      },
+      {
+        "indicador": "Clientes",
+        "que_se_mide": "Recompra y procedencia.",
+        "dato_inicial": "No registrado.",
+        "meta": "Base de clientes activa.",
+        "frecuencia": "Mensual.",
+        "responsable": "Nuvia.",
+        "evidencia": "Listado."
+      },
+      {
+        "indicador": "Domicilios",
+        "que_se_mide": "Ruta, costo e incidentes.",
+        "dato_inicial": "No registrado.",
+        "meta": "100% documentados.",
+        "frecuencia": "Cada domicilio.",
+        "responsable": "Nuvia/familia.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "indicador": "Residuos",
+        "que_se_mide": "Bolsas y empaques.",
+        "dato_inicial": "No medidos.",
+        "meta": "Separación básica.",
+        "frecuencia": "Semanal.",
+        "responsable": "Familia.",
+        "evidencia": "Bitácora."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Bolsas de paquetes",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Se entregan al camión de basura.",
+        "accion_circular": "Separar limpias y reducir.",
+        "destino": "Venta de snacks.",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Bolsas de productos",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Protegen productos; disposición no detallada.",
+        "accion_circular": "Ofrecer bolsa reutilizable y reciclar.",
+        "destino": "Ropa, catálogos y entregas.",
+        "responsable": "Nuvia."
+      },
+      {
+        "residuo_recurso": "Cartón y cajas",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Reutilizar o entregar a reciclaje.",
+        "destino": "Pedidos y transporte.",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Residuos orgánicos",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Separar y evitar mezcla.",
+        "destino": "Cafetería.",
+        "responsable": "Nuvia / familia."
+      },
+      {
+        "residuo_recurso": "Envases de cuidado personal",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Responsabilidad del cliente.",
+        "accion_circular": "Promover reciclaje o posconsumo cuando aplique.",
+        "destino": "Productos por catálogo.",
+        "responsable": "Nuvia."
+      },
+      {
+        "residuo_recurso": "Aguas de limpieza",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Dosificar productos y retirar sólidos.",
+        "destino": "Cafetería y local.",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Emisiones",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No medido.",
+        "accion_circular": "Agrupar rutas y mantener equipos.",
+        "destino": "Moto, transporte y gas.",
+        "responsable": "Nuvia / aliados."
+      }
+    ],
+    "conclusion_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "Identidad comercial",
+        "indicador": "Nombre y reconocimiento.",
+        "descripcion": null,
+        "estado": "Variedades Yam y maicena reconocida.",
+        "calificacion_1_a_5": 4,
+        "accion": "Fortalecer imagen.",
+        "evidencia": "Fotos/clientes."
+      },
+      {
+        "factor": "Surtido",
+        "indicador": "Diversidad y disponibilidad.",
+        "descripcion": null,
+        "estado": "Variado, pero insuficiente.",
+        "calificacion_1_a_5": 3,
+        "accion": "Invertir según rotación.",
+        "evidencia": "Inventario."
+      },
+      {
+        "factor": "Espacio",
+        "indicador": "Área y organización.",
+        "descripcion": null,
+        "estado": "Local muy pequeño.",
+        "calificacion_1_a_5": 2,
+        "accion": "Mobiliario vertical y evaluar ampliación.",
+        "evidencia": "Plano."
+      },
+      {
+        "factor": "Digital",
+        "indicador": "Catálogo y pedidos.",
+        "descripcion": null,
+        "estado": "Estados de WhatsApp.",
+        "calificacion_1_a_5": 2,
+        "accion": "WhatsApp Business y registros.",
+        "evidencia": "Perfil."
+      },
+      {
+        "factor": "Finanzas",
+        "indicador": "Costos, ventas y margen.",
+        "descripcion": null,
+        "estado": "Cifras globales.",
+        "calificacion_1_a_5": 2,
+        "accion": "Costeo por línea.",
+        "evidencia": "Hoja."
+      },
+      {
+        "factor": "Logística",
+        "indicador": "Abastecimiento y domicilios.",
+        "descripcion": null,
+        "estado": "Múltiples etapas y moto.",
+        "calificacion_1_a_5": 2,
+        "accion": "Trazabilidad, EPP y rutas.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "factor": "Cafetería",
+        "indicador": "Higiene y estandarización.",
+        "descripcion": null,
+        "estado": "Producto reconocido; proceso no documentado.",
+        "calificacion_1_a_5": 3,
+        "accion": "Ficha y controles.",
+        "evidencia": "Checklist."
+      },
+      {
+        "factor": "Ambiente",
+        "indicador": "Agua, energía y residuos.",
+        "descripcion": null,
+        "estado": "Uso moderado; residuos sin separar.",
+        "calificacion_1_a_5": 2,
+        "accion": "Medición y separación.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "factor": "Clientes",
+        "indicador": "Recompra y cobertura.",
+        "descripcion": null,
+        "estado": "Varias veredas y clientes recurrentes.",
+        "calificacion_1_a_5": 4,
+        "accion": "Base de datos y fidelización.",
+        "evidencia": "Listado."
+      }
+    ],
+    "resultado_preliminar_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "Surtido",
+        "accion": "Comprar ropa y productos priorizados.",
+        "prioridad": null,
+        "plazo": "3-6 meses.",
+        "responsable": "Nuvia.",
+        "recursos": null,
+        "indicador": "Rotación y ventas.",
+        "evidencia": "Facturas."
+      },
+      {
+        "impacto": "Publicidad",
+        "accion": "Configurar WhatsApp Business y piezas.",
+        "prioridad": null,
+        "plazo": "3 meses.",
+        "responsable": "Nuvia / apoyo.",
+        "recursos": null,
+        "indicador": "Contactos y pedidos.",
+        "evidencia": "Perfil."
+      },
+      {
+        "impacto": "Seguridad vial",
+        "accion": "Comprar EPP, capacitar y mantener moto.",
+        "prioridad": null,
+        "plazo": "Inmediato.",
+        "responsable": "Nuvia / familia.",
+        "recursos": null,
+        "indicador": "Uso de EPP.",
+        "evidencia": "Checklist."
+      },
+      {
+        "impacto": "Inventario",
+        "accion": "Implementar código o hoja.",
+        "prioridad": null,
+        "plazo": "3 meses.",
+        "responsable": "Nuvia.",
+        "recursos": null,
+        "indicador": "% de referencias.",
+        "evidencia": "Inventario."
+      },
+      {
+        "impacto": "Finanzas",
+        "accion": "Registrar costos, ventas y gastos.",
+        "prioridad": null,
+        "plazo": "3 meses.",
+        "responsable": "Nuvia / asesor.",
+        "recursos": null,
+        "indicador": "Margen mensual.",
+        "evidencia": "Hoja."
+      },
+      {
+        "impacto": "Cafetería",
+        "accion": "Estandarizar receta y porción.",
+        "prioridad": null,
+        "plazo": "3 meses.",
+        "responsable": "Nuvia.",
+        "recursos": null,
+        "indicador": "Costo y ventas.",
+        "evidencia": "Ficha."
+      },
+      {
+        "impacto": "Residuos",
+        "accion": "Instalar recipientes y ruta.",
+        "prioridad": null,
+        "plazo": "6 meses.",
+        "responsable": "Familia.",
+        "recursos": null,
+        "indicador": "% separado.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "impacto": "Espacio",
+        "accion": "Medir, reorganizar y evaluar nuevo local.",
+        "prioridad": null,
+        "plazo": "6-12 meses.",
+        "responsable": "Nuvia / familia.",
+        "recursos": null,
+        "indicador": "Área útil.",
+        "evidencia": "Plano/cotización."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": "Invierno",
+        "situacion": "Afecta apertura y domicilios.",
+        "riesgo": "Menores ventas y accidentes.",
+        "accion_propuesta": "Horario flexible y comunicación."
+      },
+      {
+        "aspecto": "Frío extremo",
+        "situacion": "Obliga a cerrar temprano.",
+        "riesgo": "Exposición y menor ingreso.",
+        "accion_propuesta": "EPP térmico y aviso de horario."
+      },
+      {
+        "aspecto": "Lluvia",
+        "situacion": "Aumenta riesgo en motocicleta.",
+        "riesgo": "Caídas y daño de mercancía.",
+        "accion_propuesta": "Evitar rutas inseguras y empaque impermeable."
+      },
+      {
+        "aspecto": "Vías rurales",
+        "situacion": "No se describieron; se recorren varias veredas.",
+        "riesgo": "Retrasos y accidentes.",
+        "accion_propuesta": "Planificar ruta y revisar condiciones."
+      },
+      {
+        "aspecto": "Transporte desde Bogotá",
+        "situacion": "Mercancía pasa por domiciliario, familiar y transporte.",
+        "riesgo": "Retraso, pérdida o daño.",
+        "accion_propuesta": "Comprobantes y control de pedido."
+      },
+      {
+        "aspecto": "Energía/gas",
+        "situacion": "Servicios necesarios para cafetería.",
+        "riesgo": "Interrupción o falla.",
+        "accion_propuesta": "Plan de contingencia y revisión."
+      },
+      {
+        "aspecto": "Demanda",
+        "situacion": "Variable por temporada.",
+        "riesgo": "Inventario inmovilizado.",
+        "accion_propuesta": "Comprar según rotación."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Tránsito",
+        "riesgo": "Accidente en motocicleta.",
+        "causa": "Lluvia, frío, vías y carga.",
+        "consecuencia": "Lesión y pérdida.",
+        "nivel": "Muy alto",
+        "prevencion": "EPP, mantenimiento y ruta.",
+        "respuesta": "Emergencias y suspensión."
+      },
+      {
+        "tipo": "Climático",
+        "riesgo": "Cierre anticipado.",
+        "causa": "Frío extremo.",
+        "consecuencia": "Menores ventas.",
+        "nivel": "Alto",
+        "prevencion": "Horario y venta digital.",
+        "respuesta": "Avisar y tomar pedidos."
+      },
+      {
+        "tipo": "Financiero",
+        "riesgo": "Surtido sin rotación.",
+        "causa": "Compra excesiva.",
+        "consecuencia": "Capital inmovilizado.",
+        "nivel": "Alto",
+        "prevencion": "Inventario y preventa.",
+        "respuesta": "Promoción o ajuste."
+      },
+      {
+        "tipo": "Comercial",
+        "riesgo": "Falta de mercancía solicitada.",
+        "causa": "Inventario limitado.",
+        "consecuencia": "Pérdida de clientes.",
+        "nivel": "Alto",
+        "prevencion": "Lista de demanda y reposición.",
+        "respuesta": "Encargo rápido."
+      },
+      {
+        "tipo": "Logístico",
+        "riesgo": "Pedido incompleto o retrasado.",
+        "causa": "Cadena de transporte.",
+        "consecuencia": "Incumplimiento.",
+        "nivel": "Alto",
+        "prevencion": "Comprobantes y proveedor alterno.",
+        "respuesta": "Reclamar y comunicar."
+      },
+      {
+        "tipo": "Sanitario",
+        "riesgo": "Contaminación en cafetería.",
+        "causa": "Higiene o almacenamiento.",
+        "consecuencia": "Afectación a cliente.",
+        "nivel": "Muy alto",
+        "prevencion": "Buenas prácticas.",
+        "respuesta": "Retirar producto."
+      },
+      {
+        "tipo": "Gas/incendio",
+        "riesgo": "Fuga o quemadura.",
+        "causa": "Pipeta y conexiones.",
+        "consecuencia": "Lesión y daño.",
+        "nivel": "Muy alto",
+        "prevencion": "Revisión, ventilación y extintor.",
+        "respuesta": "Cerrar válvula y evacuar."
+      },
+      {
+        "tipo": "Locativo",
+        "riesgo": "Caídas o desorden.",
+        "causa": "Espacio pequeño.",
+        "consecuencia": "Lesión y daño de producto.",
+        "nivel": "Medio-alto",
+        "prevencion": "Orden y mobiliario seguro.",
+        "respuesta": "Atender y corregir."
+      },
+      {
+        "tipo": "Ambiental",
+        "riesgo": "Acumulación de residuos.",
+        "causa": "Bolsas y falta de separación.",
+        "consecuencia": "Suciedad y contaminación.",
+        "nivel": "Medio",
+        "prevencion": "Clasificar y entregar.",
+        "respuesta": "Contener y limpiar."
+      },
+      {
+        "tipo": "Digital",
+        "riesgo": "Pérdida de pedidos o datos.",
+        "causa": "Gestión informal de WhatsApp.",
+        "consecuencia": "Reclamos.",
+        "nivel": "Medio",
+        "prevencion": "Etiquetas, respaldo y confirmación.",
+        "respuesta": "Recuperar conversación."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "Datos, área, arriendo y requisitos.",
+        "componente": "Estratégico/legal",
+        "responsable": "Nuvia / asesor.",
+        "tiempo": "Inmediato",
+        "recursos": "Documentos y visita.",
+        "resultado": "Línea base.",
+        "evidencia": "Ficha."
+      },
+      {
+        "actividad": "Levantar inventario y caja.",
+        "componente": "Financiero/comercial",
+        "responsable": "Nuvia.",
+        "tiempo": "Inmediato",
+        "recursos": "Cuaderno o herramienta digital.",
+        "resultado": "Datos confiables.",
+        "evidencia": "Registros."
+      },
+      {
+        "actividad": "Surtido mediante rotación y pedidos.",
+        "componente": "Comercial",
+        "responsable": "Nuvia.",
+        "tiempo": "1-3 meses",
+        "recursos": "Capital de trabajo.",
+        "resultado": "Mayor disponibilidad.",
+        "evidencia": "Facturas."
+      },
+      {
+        "actividad": "WhatsApp Business.",
+        "componente": "Digital",
+        "responsable": "Nuvia / apoyo.",
+        "tiempo": "1-3 meses",
+        "recursos": "Celular, fotos y capacitación.",
+        "resultado": "Catálogo activo.",
+        "evidencia": "Perfil."
+      },
+      {
+        "actividad": "Publicidad y señalización.",
+        "componente": "Comercial",
+        "responsable": "Nuvia / diseñador.",
+        "tiempo": "3 meses",
+        "recursos": "Piezas e impresión.",
+        "resultado": "Más visibilidad.",
+        "evidencia": "Fotos."
+      },
+      {
+        "actividad": "Comprar y usar EPP completo.",
+        "componente": "SST/logística",
+        "responsable": "Nuvia/familia.",
+        "tiempo": "Inmediato",
+        "recursos": "Kit certificado.",
+        "resultado": "Domicilios seguros.",
+        "evidencia": "Checklist."
+      },
+      {
+        "actividad": "Revisar motocicleta y planificar rutas.",
+        "componente": "Logístico/SST",
+        "responsable": "Nuvia/técnico.",
+        "tiempo": "Mensual",
+        "recursos": "Mantenimiento y bitácora.",
+        "resultado": "Menor riesgo.",
+        "evidencia": "Registro."
+      },
+      {
+        "actividad": "Estandarizar maicena y cafetería.",
+        "componente": "Productivo / sanitario",
+        "responsable": "Nuvia.",
+        "tiempo": "3 meses",
+        "recursos": "Ficha y controles.",
+        "resultado": "Calidad estable.",
+        "evidencia": "Checklist."
+      },
+      {
+        "actividad": "Separar residuos y reducir bolsas.",
+        "componente": "Ambiental",
+        "responsable": "Familia.",
+        "tiempo": "3-6 meses",
+        "recursos": "Recipientes y bolsas reutilizables.",
+        "resultado": "Menor residuo.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "actividad": "Evaluar ampliación o nuevo local.",
+        "componente": "Estratégico",
+        "responsable": "Nuvia / familia.",
+        "tiempo": "6-12 meses",
+        "recursos": "Medición y cotizaciones.",
+        "resultado": "Decisión viable.",
+        "evidencia": "Análisis."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "Identificación",
+        "indicador": "Datos, local y requisitos verificados.",
+        "meta": "100%.",
+        "frecuencia": "Una vez/anual.",
+        "responsable": "Nuvia.",
+        "evidencia": "Ficha."
+      },
+      {
+        "dimension": "Ventas",
+        "indicador": "Ingresos por línea.",
+        "meta": "100% registradas.",
+        "frecuencia": "Diaria / mensual.",
+        "responsable": "Nuvia.",
+        "evidencia": "Caja."
+      },
+      {
+        "dimension": "Inventario",
+        "indicador": "Entrada, salida y saldo.",
+        "meta": "Referencias principales controladas.",
+        "frecuencia": "Semanal.",
+        "responsable": "Nuvia/familia.",
+        "evidencia": "Inventario."
+      },
+      {
+        "dimension": "Margen",
+        "indicador": "Ganancia por categoría.",
+        "meta": "Calcular ropa, catálogo, tienda y cafetería.",
+        "frecuencia": "Mensual.",
+        "responsable": "Nuvia / asesor.",
+        "evidencia": "Hoja."
+      },
+      {
+        "dimension": "Clientes",
+        "indicador": "Número, vereda y recompra.",
+        "meta": "Base actualizada.",
+        "frecuencia": "Mensual.",
+        "responsable": "Nuvia.",
+        "evidencia": "Listado."
+      },
+      {
+        "dimension": "Digital",
+        "indicador": "Catálogo, consultas y pedidos.",
+        "meta": "WhatsApp Business activo.",
+        "frecuencia": "Semanal.",
+        "responsable": "Nuvia.",
+        "evidencia": "Estadísticas."
+      },
+      {
+        "dimension": "Domicilios",
+        "indicador": "Número, costo e incidentes.",
+        "meta": "100% registrados; cero accidentes.",
+        "frecuencia": "Cada ruta.",
+        "responsable": "Nuvia/familia.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "dimension": "Cafetería",
+        "indicador": "Porciones, costo y calidad.",
+        "meta": "Ficha de maicena.",
+        "frecuencia": "Diaria / mensual.",
+        "responsable": "Nuvia.",
+        "evidencia": "Registro."
+      },
+      {
+        "dimension": "Residuos",
+        "indicador": "Bolsas, cartón y orgánicos.",
+        "meta": "Separación básica.",
+        "frecuencia": "Semanal.",
+        "responsable": "Familia.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "dimension": "Clima",
+        "indicador": "Días y horas de cierre anticipado.",
+        "meta": "Registro para ajustar estrategia.",
+        "frecuencia": "Mensual.",
+        "responsable": "Nuvia.",
+        "evidencia": "Calendario."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Ampliar surtido",
+        "efecto_productivo": "Aumenta disponibilidad.",
+        "efecto_comercial": "Responde a pedidos.",
+        "efecto_financiero": "Requiere capital y rotación.",
+        "efecto_ambiental": "Más empaques y transporte.",
+        "ajuste_necesario": "Comprar según demanda."
+      },
+      {
+        "decision": "Implementar WhatsApp Business",
+        "efecto_productivo": "Organiza pedidos.",
+        "efecto_comercial": "Mejora alcance y fidelización.",
+        "efecto_financiero": "Bajo costo.",
+        "efecto_ambiental": "Reduce viajes si agrupa pedidos.",
+        "ajuste_necesario": "Actualizar catálogo."
+      },
+      {
+        "decision": "Invertir en publicidad",
+        "efecto_productivo": "No cambia operación directa.",
+        "efecto_comercial": "Aumenta visibilidad.",
+        "efecto_financiero": "Costo moderado.",
+        "efecto_ambiental": "Preferir material digital.",
+        "ajuste_necesario": "Medir resultados."
+      },
+      {
+        "decision": "Adquirir EPP",
+        "efecto_productivo": "Permite domicilios más seguros.",
+        "efecto_comercial": "Mejora continuidad.",
+        "efecto_financiero": "Inversión necesaria.",
+        "efecto_ambiental": "Sin impacto relevante.",
+        "ajuste_necesario": "Equipo certificado."
+      },
+      {
+        "decision": "Optimizar local",
+        "efecto_productivo": "Mejora almacenamiento y flujo.",
+        "efecto_comercial": "Mejor experiencia.",
+        "efecto_financiero": "Mobiliario o arriendo.",
+        "efecto_ambiental": "Reduce daño y desperdicio.",
+        "ajuste_necesario": "Diseño seguro."
+      },
+      {
+        "decision": "Cambiar a local más grande",
+        "efecto_productivo": "Aumenta capacidad.",
+        "efecto_comercial": "Permite más surtido.",
+        "efecto_financiero": "Mayor arriendo y servicios.",
+        "efecto_ambiental": "Mayor consumo potencial.",
+        "ajuste_necesario": "Estudio de viabilidad."
+      },
+      {
+        "decision": "Registrar inventario y costos",
+        "efecto_productivo": "Reduce faltantes.",
+        "efecto_comercial": "Mejora precio y servicio.",
+        "efecto_financiero": "Protege rentabilidad.",
+        "efecto_ambiental": "Evita compras innecesarias.",
+        "ajuste_necesario": "Disciplina diaria."
+      },
+      {
+        "decision": "Agrupar rutas",
+        "efecto_productivo": "Optimiza domicilios.",
+        "efecto_comercial": "Mejora tiempos.",
+        "efecto_financiero": "Reduce combustible.",
+        "efecto_ambiental": "Menores emisiones.",
+        "ajuste_necesario": "Plan semanal."
+      },
+      {
+        "decision": "Reducir bolsas",
+        "efecto_productivo": "No afecta producto si se protege.",
+        "efecto_comercial": "Refuerza imagen.",
+        "efecto_financiero": "Puede reducir gasto.",
+        "efecto_ambiental": "Menos plástico.",
+        "ajuste_necesario": "Opciones reutilizables."
+      },
+      {
+        "decision": "Estandarizar cafetería",
+        "efecto_productivo": "Mejora calidad y seguridad.",
+        "efecto_comercial": "Fortalece producto reconocido.",
+        "efecto_financiero": "Permite costeo.",
+        "efecto_ambiental": "Reduce desperdicio.",
+        "ajuste_necesario": "Ficha y controles."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}

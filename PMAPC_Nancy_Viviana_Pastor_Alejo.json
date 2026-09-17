@@ -1,0 +1,2074 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "Escuela Agroecológica. La productora indica que aún no está formalizada y que espera formalizarla en el futuro.",
+    "persona_entrevistada": "Nancy Viviana Pastor Alejo. Escritura exacta del segundo apellido pendiente de verificar.",
+    "tipo_actividad": "Pecuaria y agroindustrial artesanal: ganadería lechera, elaboración de queso campesino, venta ocasional de leche y producción de huevos de codorniz.",
+    "ubicacion_especifica": "Vereda Vega, corregimiento de San Juan, localidad de Sumapaz, Bogotá D.C. Nombre administrativo exacto y coordenadas pendientes.",
+    "producto_servicio_principal": "Queso campesino por libra y huevos de codorniz en cubetas de 24 unidades. De manera quincenal se venden aproximadamente 20 litros de leche a la escuela de San Juan para elaborar yogur.",
+    "estado_actual": "Negocio familiar en marcha, informal y con aproximadamente dos años de funcionamiento bajo la administración de la productora.",
+    "personas_vinculadas": "Nancy Viviana Pastor Alejo, su esposo y su hijo.",
+    "coordenadas": "Pendientes de tomar o verificar.",
+    "descripcion_general": "Unidad familiar que ordeña sus vacas y transforma la leche en queso campesino. Los huevos de codorniz se recolectan diariamente, se limpian y se empacan. Los productos se venden en la localidad, a docentes, vecinos, un restaurante de San Juan y un comprador que lleva queso a Fusagasugá.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F02": {
+    "mision": "Producir queso campesino, leche y huevos de codorniz para contribuir al sostenimiento de la familia, ofreciendo productos locales de buena calidad y aprovechando de manera responsable los recursos de la Escuela Agroecológica.",
+    "vision": "Aumentar la producción de queso y huevos, ampliar el número de codornices, mejorar el espacio y los equipos de transformación, formalizar el emprendimiento y participar en ferias y otros canales de comercialización.",
+    "valores": [
+      "Responsabilidad",
+      "trabajo familiar",
+      "calidad",
+      "servicio",
+      "perseverancia",
+      "cuidado del agua",
+      "aprovechamiento de residuos",
+      "compromiso con el territorio"
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Porque el queso y los huevos tienen demanda diaria entre docentes, vecinos, habitantes de San Juan y clientes que valoran la calidad y el precio.",
+    "beneficio_cliente": "Acceso cercano a queso fresco, leche y huevos de codorniz producidos en la localidad, con venta de contado y entrega directa o recogida en la finca.",
+    "diferencial": "Producción familiar de pequeña escala, leche propia, queso campesino elaborado diariamente, relación directa con los clientes y aprovechamiento del suero y del estiércol dentro de la unidad.",
+    "valor_ambiental": "El suero se utiliza para alimentar cerdos, el estiércol bovino y la codornaza se aprovechan como abono para huertas, se reporta buen uso del agua y la energía y existen paneles solares de respaldo.",
+    "valor_social_comunitario": "Genera recursos para el mercado y las necesidades familiares, abastece a docentes, vecinos, restaurante y escuela, y puede fortalecer la oferta local de alimentos.",
+    "evidencia": "Ventas diarias de queso y huevos, pedidos por teléfono, compra semanal de queso para Fusagasugá, venta quincenal de leche a la escuela y registros básicos en un cuaderno.",
+    "observaciones_o_comentarios": "¿Cómo demostrar el diferencial?: Mediante registros de ordeño, producción, postura, ventas y costos; fotografías; análisis de agua; certificados de manipulación; trazabilidad por lote; etiquetas; evidencia del aprovechamiento de residuos y testimonios de compradores."
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Queso con buena aceptación y venta frecuente.",
+      "Clientes entre docentes, vecinos y restaurante.",
+      "Comprador que lleva queso a Fusagasugá.",
+      "Tres vacas de ordeño y veinte codornices en postura.",
+      "Producción diaria de queso y huevos.",
+      "Pago de contado.",
+      "Acceso por carretera y servicios básicos.",
+      "Paneles solares de respaldo.",
+      "Aprovechamiento de suero y estiércol."
+    ],
+    "oportunidades": [
+      "Aumentar el lote hasta cien codornices.",
+      "Participar en ferias de emprendimiento.",
+      "Crear marca, etiqueta y canales digitales.",
+      "Adecuar mesa, moldes y área higiénica para queso.",
+      "Tramitar permisos sanitarios de manera gradual.",
+      "Vender a más restaurantes y tiendas.",
+      "Desarrollar yogur o arequipe en una fase futura.",
+      "Fortalecer la Escuela Agroecológica como experiencia demostrativa."
+    ],
+    "debilidades": [
+      "Emprendimiento no formalizado.",
+      "Producción de queso en la cocina familiar.",
+      "Mesa y moldes no exclusivos ni de acero inoxidable.",
+      "Estufa de leña y dificultad con leña seca en invierno.",
+      "No hay tanque de enfriamiento.",
+      "Registros financieros incompletos.",
+      "Producción baja de pasto en algunas temporadas.",
+      "Solo veinte codornices y capacidad limitada.",
+      "No existe marca o base de datos de clientes."
+    ],
+    "amenazas": [
+      "Invierno, frío y lluvia que reducen leche y pasturas.",
+      "Aumento del costo de concentrados.",
+      "Contaminación cruzada en la cocina.",
+      "Riesgos sanitarios en queso o huevos.",
+      "Dependencia de pocos compradores.",
+      "Enfermedades o mortalidad de vacas y codornices.",
+      "Variación de precios y demanda.",
+      "Accidentes durante ordeño, transporte o uso de leña."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Cliente directo",
+        "perfil_que_busca": "Docentes del Colegio Erasmo Valencia y vecinos que compran queso y huevos.",
+        "ubicacion": "Vereda Vega y San Juan.",
+        "necesidad": "Alimentos frescos para consumo familiar.",
+        "frecuencia": "Diaria o según pedido.",
+        "criterio_compra": "Calidad, frescura, precio, cercanía y confianza.",
+        "canal": "En finca, teléfono y entrega directa."
+      },
+      {
+        "tipo_actor": "Consumidor final",
+        "perfil_que_busca": "Familias y habitantes de la localidad.",
+        "ubicacion": "San Juan y veredas cercanas.",
+        "necesidad": "Queso por libra, huevos de codorniz y leche.",
+        "frecuencia": "Diaria / semanal.",
+        "criterio_compra": "Sabor, disponibilidad y origen local.",
+        "canal": "Venta directa."
+      },
+      {
+        "tipo_actor": "Comprador local",
+        "perfil_que_busca": "Restaurante de la señora Nidia y otros posibles negocios.",
+        "ubicacion": "Caserío de San Juan..",
+        "necesidad": "Queso para preparación y venta de alimentos.",
+        "frecuencia": "Según pedido.",
+        "criterio_compra": "Calidad, continuidad, precio y entrega.",
+        "canal": "Llamada y entrega."
+      },
+      {
+        "tipo_actor": "Comprador institucional",
+        "perfil_que_busca": "Escuela de San Juan que utiliza leche para elaborar yogur.",
+        "ubicacion": "San Juan.",
+        "necesidad": "Aproximadamente 20 litros de leche cada quince días.",
+        "frecuencia": "Quincenal.",
+        "criterio_compra": "Calidad, frescura, cumplimiento y cercanía.",
+        "canal": "Acuerdo directo."
+      },
+      {
+        "tipo_actor": "Restaurantes / tiendas / plazas",
+        "perfil_que_busca": "Comprador que recoge el queso semanal y lo lleva a Fusagasuga.",
+        "ubicacion": "Fusagasugá.",
+        "necesidad": "Producción semanal disponible.",
+        "frecuencia": "Cada ocho días, aproximadamente los miércoles.",
+        "criterio_compra": "Calidad, volumen, precio y cumplimiento.",
+        "canal": "Recogida en finca."
+      },
+      {
+        "tipo_actor": "Otro",
+        "perfil_que_busca": "Clientes de huevos de codorniz que hacen pedidos y recogen o reciben el producto.",
+        "ubicacion": "Localidad de Sumapaz.",
+        "necesidad": "Cubetas de 24 huevos.",
+        "frecuencia": "Diaria / semanal.",
+        "criterio_compra": "Limpieza, presentación y disponibilidad.",
+        "canal": "Llamadas y entrega directa."
+      },
+      {
+        "tipo_actor": "Aliado potencial",
+        "perfil_que_busca": "Ferias y mercados campesinos.",
+        "ubicacion": "Sumapaz y Bogotá.",
+        "necesidad": "Productos identificados, formalizados y con trazabilidad.",
+        "frecuencia": "Según convocatoria.",
+        "criterio_compra": "Origen territorial, calidad y presentación.",
+        "canal": "Feria / asociación."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Queso fresco, buen sabor, precio cómodo, huevos limpios y disponibilidad cercana.",
+    "como_se_conoce_la_necesidad": "Los compradores llaman para hacer pedidos, el queso se vende a diario y un comprador recoge la producción semanal que queda disponible.",
+    "quienes_compran_o_podrian_comprar": "Docentes, vecinos, familias, restaurante de San Juan, escuela para yogur, comprador de Fusagasugá, ferias y tiendas.",
+    "evidencia": "Pedidos diarios, ventas de contado, compra quincenal de leche, cliente semanal para Fusagasugá y anotaciones de producción.",
+    "ventaja_territorial": "Producto local, fresco, de leche propia, elaborado en pequeña escala y con aprovechamiento interno de subproductos.",
+    "cambios_demanda": "No se informó un cambio específico; la productora manifiesta que actualmente la comercialización funciona bien en la localidad.",
+    "dificultades": "Escala limitada, falta de formalización, ausencia de marca y etiquetas, poca producción de huevos y dependencia de clientes locales.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Productores vecinos",
+        "tipo": "Familias rurales",
+        "que_aporta": "Experiencia, proveedores, transporte y compras conjuntas.",
+        "que_recibe": "Intercambio de conocimientos y reducción de costos.",
+        "trabajo_conjunto": "Compra conjunta de concentrado y venta agrupada.",
+        "aporte_ambiental": "Manejo compartido de residuos y protección del agua.",
+        "accion": "Crear red de productores lácteos y avícolas."
+      },
+      {
+        "actor_aliado": "Asociación campesina",
+        "tipo": "Organización productiva",
+        "que_aporta": "Acceso a ferias, formación y comercialización.",
+        "que_recibe": "Oferta de queso, leche y huevos.",
+        "trabajo_conjunto": "Marca territorial y ventas asociativas.",
+        "aporte_ambiental": "Promoción de prácticas sostenibles.",
+        "accion": "Explorar vinculación."
+      },
+      {
+        "actor_aliado": "Junta de Acción Comunal",
+        "tipo": "Organización comunitaria",
+        "que_aporta": "Convocatoria y gestión local.",
+        "que_recibe": "Fortalecimiento económico de la vereda.",
+        "trabajo_conjunto": "Difusión, ferias y gestión de proyectos.",
+        "aporte_ambiental": "Campañas de agua, residuos y huertas.",
+        "accion": "Presentar necesidades de la unidad."
+      },
+      {
+        "actor_aliado": "Compradores locales",
+        "tipo": "Docentes, vecinos, restaurante y escuela",
+        "que_aporta": "Demanda, pago y retroalimentación.",
+        "que_recibe": "Producto fresco y entrega cercana.",
+        "trabajo_conjunto": "Pedidos programados y acuerdos de cantidad.",
+        "aporte_ambiental": "Circuitos cortos y menor transporte.",
+        "accion": "Formalizar lista de clientes y pedidos."
+      },
+      {
+        "actor_aliado": "Ferias o mercados campesinos",
+        "tipo": "Canal comercial",
+        "que_aporta": "Visibilidad y nuevos clientes.",
+        "que_recibe": "Productos locales con identidad.",
+        "trabajo_conjunto": "Participación y degustación.",
+        "aporte_ambiental": "Promoción de producción responsable.",
+        "accion": "Preparar portafolio y etiquetas."
+      },
+      {
+        "actor_aliado": "Instituciones de apoyo",
+        "tipo": "Alcaldía, asistencia técnica, salud y formación",
+        "que_aporta": "Diagnóstico, capacitación, equipos y formalización.",
+        "que_recibe": "Unidad fortalecida y evidencia de resultados.",
+        "trabajo_conjunto": "Buenas prácticas, permisos y plan productivo.",
+        "aporte_ambiental": "Uso eficiente de agua, energía y residuos.",
+        "accion": "Solicitar visita técnica integral."
+      },
+      {
+        "actor_aliado": "Aliados logísticos o digitales",
+        "tipo": "Transportadores, familiares y comunicación",
+        "que_aporta": "Entrega, pedidos y promoción.",
+        "que_recibe": "Pago o coordinación de rutas.",
+        "trabajo_conjunto": "WhatsApp, entregas y consolidación de carga.",
+        "aporte_ambiental": "Menos viajes y mejor planificación.",
+        "accion": "Crear canal de pedidos."
+      },
+      {
+        "actor_aliado": "Otros aliados",
+        "tipo": "Veterinario, proveedor de codornices y proveedor de alimentos",
+        "que_aporta": "Sanidad, genética, alimento y equipos.",
+        "que_recibe": "Compras recurrentes.",
+        "trabajo_conjunto": "Plan sanitario y abastecimiento programado.",
+        "aporte_ambiental": "Manejo responsable de medicamentos y empaques.",
+        "accion": "Crear directorio y cotizaciones."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Encuesta",
+        "a_quien": "No se informó.",
+        "resultado": "Pendiente.",
+        "motivacion": "Pendiente.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Entrevista",
+        "a_quien": "Conversaciones con docentes, vecinos, restaurante y escuela.",
+        "resultado": "Se mantienen pedidos frecuentes.",
+        "motivacion": "Calidad, precio, frescura y cercanía.",
+        "evidencia": "Relato de la productora."
+      },
+      {
+        "metodo": "Degustación/muestra",
+        "a_quien": "No se informó una actividad formal.",
+        "resultado": "Pendiente.",
+        "motivacion": "Sabor y calidad.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Venta previa",
+        "a_quien": "Docentes, vecinos, restaurante, escuela y comprador de Fusagasugá.",
+        "resultado": "Venta diaria de queso y huevos, venta quincenal de leche y recogida semanal de queso.",
+        "motivacion": "Calidad, disponibilidad y precio.",
+        "evidencia": "Cuaderno y pagos de contado por verificar."
+      },
+      {
+        "metodo": "Carta de intención",
+        "a_quien": "No existe.",
+        "resultado": "Pendiente.",
+        "motivacion": "Volumen y continuidad.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Participación en feria",
+        "a_quien": "No se informó participación actual.",
+        "resultado": "La productora desea vender en ferias de emprendimiento.",
+        "motivacion": "Origen local y presentación.",
+        "evidencia": "Pendiente."
+      },
+      {
+        "metodo": "Otro",
+        "a_quien": "Pedidos telefónicos de clientes.",
+        "resultado": "Los clientes llaman sin que la productora tenga que ofrecer constantemente.",
+        "motivacion": "Confianza y recompra.",
+        "evidencia": "Historial de llamadas pendiente."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Queso campesino",
+        "descripcion_tecnica": "Queso fresco elaborado con leche propia filtrada, cuajo, desuerado, secado y prensado.",
+        "unidad": "Libra.",
+        "insumos_principales": "Leche bovina, cuajo y sal.",
+        "condiciones_especiales": "Conservar refrigerado o congelado; temperatura y vida útil pendientes.",
+        "presentacion": "Bolsa blanca por libra.",
+        "diferencial": "Producto diario, buena aceptación y precio local competitivo."
+      },
+      {
+        "servicio": "Huevos de codorniz",
+        "descripcion_tecnica": "Huevos recolectados cada tarde, limpiados y clasificados.",
+        "unidad": "Cubeta de 24 unidades.",
+        "insumos_principales": "Veinte codornices en postura y concentrado específico.",
+        "condiciones_especiales": "Conservar limpios, secos, protegidos y rotados por fecha.",
+        "presentacion": "Cubeta de 24.",
+        "diferencial": "Producción local y entrega directa."
+      },
+      {
+        "servicio": "Leche cruda",
+        "descripcion_tecnica": "Leche obtenida de tres vacas y vendida ocasionalmente a la escuela para yogur.",
+        "unidad": "Litro.",
+        "insumos_principales": "Leche bovina fresca.",
+        "condiciones_especiales": "Filtrar, mantener protegida y entregar el mismo día.",
+        "presentacion": "Cantina o recipiente; pendiente.",
+        "diferencial": "Origen local y acuerdo quincenal."
+      },
+      {
+        "servicio": "Abono orgánico",
+        "descripcion_tecnica": "Mezcla o aprovechamiento de estiércol bovino y codornaza para huertas.",
+        "unidad": "Saco/kg; cantidad pendiente.",
+        "insumos_principales": "Estiércol y codornaza.",
+        "condiciones_especiales": "Compostar o estabilizar y aplicar de manera controlada.",
+        "presentacion": "Uso interno.",
+        "diferencial": "Economía circular en la Escuela Agroecológica."
+      }
+    ],
+    "observaciones_o_comentarios": "Fichas técnicas pendientes: registrar litros de leche por ordeño, rendimiento por libra de queso, dosis de cuajo y sal, temperaturas, tiempos, peso, vida útil, conservación, trazabilidad, limpieza de huevos, número de postura, mortalidad de codornices, proveedor del alimento y condiciones sanitarias del empaque."
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Leche",
+        "unidad": "Tres vacas en ordeño.",
+        "actividad_proceso": "1. Ordeñar aproximadamente a las 4:00 a. m. y aplicar higiene básica.",
+        "tiempo_estimado": "Diario."
+      },
+      {
+        "servicio": "Leche",
+        "unidad": "Lote diario.",
+        "actividad_proceso": "2. Llevar la leche a la cocina y filtrarla.",
+        "tiempo_estimado": "Después del ordeño."
+      },
+      {
+        "servicio": "Queso campesino",
+        "unidad": "Normalmente 8 lb diarias.",
+        "actividad_proceso": "3. Calentar la leche, agregar cuajo y dejar reposar cerca de 20 minutos.",
+        "tiempo_estimado": "Por lote."
+      },
+      {
+        "servicio": "Queso campesino",
+        "unidad": "Lote.",
+        "actividad_proceso": "4. Cortar la cuajada, retirar el suero y realizar el secado.",
+        "tiempo_estimado": "Por lote."
+      },
+      {
+        "servicio": "Queso campesino",
+        "unidad": "Moldes de una libra.",
+        "actividad_proceso": "5. Pasar a moldes, prensar con tornillo, desmoldar y empacar.",
+        "tiempo_estimado": "Por lote."
+      },
+      {
+        "servicio": "Huevos de codorniz",
+        "unidad": "Aproximadamente 20 diarios.",
+        "actividad_proceso": "6. Recolectar los huevos cada tarde.",
+        "tiempo_estimado": "Diario."
+      },
+      {
+        "servicio": "Huevos de codorniz",
+        "unidad": "Cubetas de 24.",
+        "actividad_proceso": "7. Limpiar, revisar, contar y empacar.",
+        "tiempo_estimado": "Diario / según completar cubeta."
+      },
+      {
+        "servicio": "Comercialización",
+        "unidad": "Pedidos locales y semanales.",
+        "actividad_proceso": "8. Entregar, permitir recogida en finca o enviar la producción disponible al comprador de Fusagasuga.",
+        "tiempo_estimado": "Diario/semanal."
+      },
+      {
+        "servicio": "Manejo de subproductos",
+        "unidad": "Suero y estiércol.",
+        "actividad_proceso": "9. Destinar suero a cerdos y estiércol o codornaza a abono para huertas.",
+        "tiempo_estimado": "Diario / por acumulación."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Leche bovina",
+        "cantidad_unidad": "Cantidad diaria no informada, producida por 3 vacas.",
+        "frecuencia": "Diaria.",
+        "proveedor_fuente": "Unidad productiva.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Uso de agua, pasturas y generación de estiércol.",
+        "manejo_ambiental": "Registros, bienestar animal y manejo de estiércol.",
+        "observaciones": "Materia prima del queso."
+      },
+      {
+        "insumo": "Pasturas",
+        "cantidad_unidad": "Aproximadamente 7 a 8 ha; área efectiva pendiente.",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Predio.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Sobrepastoreo y baja cobertura.",
+        "manejo_ambiental": "Rotación, recuperación y reservas.",
+        "observaciones": "El invierno y poco pasto reducen leche."
+      },
+      {
+        "insumo": "Concentrado para vacas",
+        "cantidad_unidad": "Un bulto ocasional; cantidad y precio pendientes.",
+        "frecuencia": "Cada dos días o según necesidad.",
+        "proveedor_fuente": "Proveedor por verificar.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Empaques, costo y transporte.",
+        "manejo_ambiental": "Dosificar, almacenar seco y registrar.",
+        "observaciones": "Necesidad prioritaria."
+      },
+      {
+        "insumo": "Sal para ganado",
+        "cantidad_unidad": "Bulto de referencia aproximada de $40.000.",
+        "frecuencia": "Según consumo.",
+        "proveedor_fuente": "Proveedor por verificar.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Empaque y sobredosificación.",
+        "manejo_ambiental": "Dosificar y reutilizar o reciclar saco.",
+        "observaciones": "Duración pendiente."
+      },
+      {
+        "insumo": "Cuajo y sal para queso",
+        "cantidad_unidad": "Dosis por lote; para 20 L se menciona menos de 1 cm de cuajo.",
+        "frecuencia": "Diaria.",
+        "proveedor_fuente": "Comercio.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Envases y vertimientos.",
+        "manejo_ambiental": "Dosificar, rotular y almacenar.",
+        "observaciones": "Medida debe estandarizarse."
+      },
+      {
+        "insumo": "Concentrado para codorniz",
+        "cantidad_unidad": "Bulto de $94.000 que dura casi 2 meses para 20 aves.",
+        "frecuencia": "Bimestral aproximadamente.",
+        "proveedor_fuente": "Proveedor por verificar.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Empaque y huella de transporte.",
+        "manejo_ambiental": "Almacenar seco y registrar consumo.",
+        "observaciones": "Recalcular al ampliar a 100 aves."
+      },
+      {
+        "insumo": "Codornices",
+        "cantidad_unidad": "20 actuales; meta de 80 adicionales.",
+        "frecuencia": "Inversión.",
+        "proveedor_fuente": "Proveedor de Fusagasugá.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Mayor consumo y generación de codornaza.",
+        "manejo_ambiental": "Validar espacio, bienestar y plan sanitario.",
+        "observaciones": "Precio reportado: $8.000 por ave."
+      },
+      {
+        "insumo": "Agua",
+        "cantidad_unidad": "Consumo no medido; servicio de $6.000 a $7.000 mensuales.",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Acueducto.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Consumo y aguas de lavado.",
+        "manejo_ambiental": "Medir, evitar fugas y limpiar eficientemente.",
+        "observaciones": "Productora califica uso 5/5."
+      },
+      {
+        "insumo": "Energía y leña",
+        "cantidad_unidad": "Energía de $12.000 a $15.000 mensuales; leña no cuantificada.",
+        "frecuencia": "Permanente / diaria.",
+        "proveedor_fuente": "Red, paneles solares y leña.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Emisiones, humo y consumo eléctrico.",
+        "manejo_ambiental": "Estufa eficiente o gas, ventilación y energía solar.",
+        "observaciones": "Paneles usados como respaldo."
+      },
+      {
+        "insumo": "Bolsas, cubetas y limpieza",
+        "cantidad_unidad": "Según producción.",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Comercio.",
+        "toxicidad": "Según producto",
+        "impacto_potencial": "Residuos plásticos y vertimientos.",
+        "manejo_ambiental": "Uso racional, separación y dosificación.",
+        "observaciones": "Empaque del queso y huevos."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "Como referencia: cerca de 240 libras de queso si se mantienen 8 libras diarias; aproximadamente 600 huevos al mes, equivalentes a 25 cubetas de 24; y 40 litros de leche al mes para la escuela si se entregan 20 litros cada quince días. Todo debe validarse.",
+    "produccion_normal": "Aproximadamente 8 libras de queso y 20 huevos de codorniz diarios.",
+    "capacidad_mensual_teorica": "La productora reporta un máximo de 12 libras diarias de queso cuando hay mejor producción de leche. Con veinte codornices, cerca de veinte huevos diarios.",
+    "produccion_maxima_posible": "Hasta 12 libras diarias de queso. La ampliación propuesta es llegar a cien codornices, pero la producción futura debe calcularse después de validar espacio, alimento, postura y sanidad.",
+    "area_numero_habitaciones": "Aproximadamente 7 a 8 hectáreas para la finca y un espacio de cocina de cerca de 3x2 m para elaborar queso. Área de codornices pendiente.",
+    "limitantes_productivos": "Poco pasto, alimentación insuficiente, espacio de transformación compartido, mesa y moldes no sanitarios, lote pequeño de codornices y registros incompletos.",
+    "limitantes_ambientales": "Invierno, frío, lluvia, disponibilidad de pasto, uso de leña, manejo de aguas de lavado y capacidad de aprovechar estiércol y codornaza.",
+    "capacidad_instalada": "Tres vacas, veinte codornices, prensa manual, moldes de PVC, mesón en baldosa, estufa de leña, acueducto, acceso vial, energía y paneles solares.",
+    "capacidad_utilizada": "Tres vacas en producción y veinte codornices en postura.",
+    "produce_mismo_todo_ano": false,
+    "alcanza_para_demanda": true,
+    "necesidades_aumentar_sosteniblemente": "Alimento para vacas y codornices, ampliación técnica del lote de aves, mesa y moldes de acero inoxidable, espacio exclusivo, registros, plan sanitario y diversificación comercial.",
+    "observaciones_o_comentarios": "¿Produce la misma cantidad durante todo el año?: No. En invierno y cuando hay poco pasto disminuye la producción de leche; en verano puede aumentar.\n¿La producción actual alcanza para atender la demanda?: La productora manifiesta que no se le queda el queso ni los huevos; los pedidos actuales son atendidos, pero el crecimiento requiere mayor capacidad y organización."
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua disponible",
+        "estado_actual": "Servicio de acueducto para animales y transformación.",
+        "limite_restriccion": "Consumo y calidad no medidos.",
+        "afectacion": "La falta o contaminación afecta leche, queso, aves e higiene.",
+        "efecto": "Riesgo sanitario y productivo.",
+        "incidencia": "Alta",
+        "accion_mejora": "Analizar agua, medir consumo y mantener almacenamiento limpio."
+      },
+      {
+        "condicion": "Fuentes hídricas cercanas",
+        "estado_actual": "No se describieron fuentes naturales en la entrevista.",
+        "limite_restriccion": "Pendiente de verificar.",
+        "afectacion": "Puede existir riesgo por vertimientos o manejo de estiércol.",
+        "efecto": "Impacto ambiental potencial.",
+        "incidencia": "Pendiente",
+        "accion_mejora": "Mapear drenajes y evitar descargas sin manejo."
+      },
+      {
+        "condicion": "Suelo",
+        "estado_actual": "Aproximadamente 7 a 8 hectáreas con pasturas y huertas.",
+        "limite_restriccion": "Poco pasto en la temporada reportada.",
+        "afectacion": "Reduce la alimentación y la producción de leche.",
+        "efecto": "Menor queso e ingresos.",
+        "incidencia": "Alta",
+        "accion_mejora": "Rotación, recuperación de praderas y uso técnico de abono."
+      },
+      {
+        "condicion": "Pendiente / topografía",
+        "estado_actual": "Acceso por carretera y sin dificultad relevante reportada.",
+        "limite_restriccion": "Topografía interna pendiente.",
+        "afectacion": "Puede afectar ordeño, manejo y transporte dentro del predio.",
+        "efecto": "Riesgo locativo.",
+        "incidencia": "Baja-media",
+        "accion_mejora": "Verificar rutas y mantener pasos seguros."
+      },
+      {
+        "condicion": "Clima",
+        "estado_actual": "Frío, lluvia e invierno frecuentes.",
+        "limite_restriccion": "Reduce energía del ganado y disponibilidad de pasto.",
+        "afectacion": "Disminuye leche y dificulta conseguir leña seca.",
+        "efecto": "Menor producción y mayor costo.",
+        "incidencia": "Alta",
+        "accion_mejora": "Reservas de alimento, abrigo animal, estufa alternativa y planificación."
+      },
+      {
+        "condicion": "Biodiversidad",
+        "estado_actual": "Finca denominada Escuela Agroecológica y presencia de huertas.",
+        "limite_restriccion": "No se caracterizó flora o fauna.",
+        "afectacion": "La ampliación debe evitar presión sobre el entorno.",
+        "efecto": "Impacto indirecto.",
+        "incidencia": "Media",
+        "accion_mejora": "Inventario básico y manejo agroecológico."
+      },
+      {
+        "condicion": "Uso de insumos",
+        "estado_actual": "Concentrados, sal, cuajo, bolsas, leña y productos de limpieza.",
+        "limite_restriccion": "Costos y cantidades incompletos.",
+        "afectacion": "Aumenta huella, residuos y riesgo sanitario.",
+        "efecto": "Costos y contaminación.",
+        "incidencia": "Alta",
+        "accion_mejora": "Dosificar, registrar, almacenar y buscar alternativas eficientes."
+      },
+      {
+        "condicion": "Manejo de residuos",
+        "estado_actual": "Suero a cerdos; estiércol y codornaza como abono.",
+        "limite_restriccion": "No hay cantidades ni protocolo.",
+        "afectacion": "El mal manejo puede generar olores, vectores y contaminación.",
+        "efecto": "Riesgo sanitario y ambiental.",
+        "incidencia": "Alta",
+        "accion_mejora": "Compostaje, almacenamiento y registros de aplicación."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Biológico",
+        "peligro": "Bacterias, leche cruda, estiércol, codornaza y contacto con animales.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Tapabocas y guantes durante la elaboración.",
+        "accion": "Higiene, ropa exclusiva, lavado de manos y plan sanitario."
+      },
+      {
+        "tipo": "Biológico",
+        "peligro": "Mordeduras, picotazos o enfermedades de codornices.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Experiencia de manejo.",
+        "accion": "Guantes, limpieza de jaulas y vigilancia sanitaria."
+      },
+      {
+        "tipo": "Físico",
+        "peligro": "Frío, lluvia y cambios de temperatura a las 4:00 a. m.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Botas e impermeable.",
+        "accion": "Ropa térmica, pausas y zonas protegidas."
+      },
+      {
+        "tipo": "Físico/químico",
+        "peligro": "Humo y gases de la estufa de leña.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "No se informó control.",
+        "accion": "Ventilación y transición a gas o estufa eficiente."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Ordeño, posturas, prensado y levantamiento de cantinas o bultos.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Trabajo familiar.",
+        "accion": "Técnicas de carga, mesa adecuada y pausas."
+      },
+      {
+        "tipo": "Mecánico",
+        "peligro": "Prensa manual, cuchillos, moldes y herramientas.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Experiencia.",
+        "accion": "Mantenimiento, guantes y procedimiento seguro."
+      },
+      {
+        "tipo": "Locativo",
+        "peligro": "Caídas en piso húmedo, barro o desplazamiento con lluvia.",
+        "aplica": true,
+        "nivel_riesgo": "Media-alta",
+        "controles_actuales": "Botas.",
+        "accion": "Pisos antideslizantes, orden, iluminación y drenaje."
+      },
+      {
+        "tipo": "Térmico",
+        "peligro": "Quemaduras al calentar leche y manipular ollas.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No informado.",
+        "accion": "Guantes térmicos, estufa estable y utensilios adecuados."
+      },
+      {
+        "tipo": "Eléctrico",
+        "peligro": "Equipos, conexiones y paneles solares.",
+        "aplica": true,
+        "nivel_riesgo": "Baja-media",
+        "controles_actuales": "Energía de red y paneles de respaldo.",
+        "accion": "Revisión técnica y protección de conexiones."
+      },
+      {
+        "tipo": "Tránsito / transporte",
+        "peligro": "Entrega de productos y traslado de insumos.",
+        "aplica": true,
+        "nivel_riesgo": "Según pedidos",
+        "controles_actuales": "Acceso por carretera.",
+        "accion": "Carga segura, rutas y conservación del producto."
+      }
+    ],
+    "observaciones_o_comentarios": "Los riesgos se identifican con base en la entrevista y deben validarse en visita al predio, revisando ordeño a las 4:00 a. m., manejo de vacas y codornices, pisos, estufa de leña, prensa, utensilios, transporte, almacenamiento de insumos y condiciones higiénicas de la cocina."
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Usar botas, impermeable, guantes, tapabocas, delantal y protección térmica según la tarea.",
+        "riesgo": "Biológico, físico, químico y mecánico.",
+        "responsable": "Nancy y familia.",
+        "frecuencia": "Cada jornada.",
+        "evidencia": "Checklist y fotos."
+      },
+      {
+        "accion_preventiva": "Revisar prensa, estufa, conexiones, jaulas, pisos y utensilios antes de trabajar.",
+        "riesgo": "Mecánico, eléctrico y locativo.",
+        "responsable": "Esposo/familia.",
+        "frecuencia": "Diaria / semanal.",
+        "evidencia": "Registro de revisión."
+      },
+      {
+        "accion_preventiva": "Capacitar en ordeño seguro, manipulación de alimentos, manejo de aves y cargas.",
+        "riesgo": "Biológico, biomecánico y animal.",
+        "responsable": "Familia/institución.",
+        "frecuencia": "Semestral.",
+        "evidencia": "Certificado."
+      },
+      {
+        "accion_preventiva": "Mantener el área limpia, seca, iluminada y separada de otras actividades domésticas.",
+        "riesgo": "Locativo e inocuidad.",
+        "responsable": "Nancy.",
+        "frecuencia": "Diaria.",
+        "evidencia": "Checklist."
+      },
+      {
+        "accion_preventiva": "Disponer de botiquín, números de emergencia y ruta de atención.",
+        "riesgo": "Emergencias.",
+        "responsable": "Familia.",
+        "frecuencia": "Revisión mensual.",
+        "evidencia": "Inventario del botiquín."
+      },
+      {
+        "accion_preventiva": "Registrar incidentes, accidentes, mortalidad y condiciones inseguras.",
+        "riesgo": "Seguimiento SG-SST y sanitario.",
+        "responsable": "Nancy.",
+        "frecuencia": "Cada evento.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "accion_preventiva": "Proteger los productos durante entregas y asegurar la carga.",
+        "riesgo": "Tránsito, logística e inocuidad.",
+        "responsable": "Familia.",
+        "frecuencia": "Cada traslado.",
+        "evidencia": "Registro de entrega."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Ferias campesinas",
+        "activo": false,
+        "descripcion": "Ferias de emprendimiento en Sumapaz u otros espacios.",
+        "responsable": "Nancy/familia.",
+        "frecuencia": "Según convocatoria."
+      },
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "Docentes, vecinos, restaurante y consumidores locales.",
+        "responsable": "Nancy.",
+        "frecuencia": "Diaria."
+      },
+      {
+        "canal": "Redes sociales",
+        "activo": false,
+        "descripcion": "No se reportaron redes para el emprendimiento.",
+        "responsable": "Pendiente.",
+        "frecuencia": "Por implementar."
+      },
+      {
+        "canal": "WhatsApp/llamadas",
+        "activo": true,
+        "descripcion": "Los clientes llaman para hacer pedidos.",
+        "responsable": "Nancy.",
+        "frecuencia": "Diaria / según pedido."
+      },
+      {
+        "canal": "Tiendas/restaurantes/plazas",
+        "activo": true,
+        "descripcion": "Restaurante de la señora Nidia y comprador que lleva queso a Fusagasugá.",
+        "responsable": "Nancy/comprador.",
+        "frecuencia": "Según pedido / semanal."
+      },
+      {
+        "canal": "Compras institucionales",
+        "activo": true,
+        "descripcion": "Escuela de San Juan compra cerca de 20 litros de leche cada quince días para yogur.",
+        "responsable": "Nancy.",
+        "frecuencia": "Quincenal."
+      },
+      {
+        "canal": "Comercialización asociativa",
+        "activo": false,
+        "descripcion": "Posibilidad de vincularse a organización o marca territorial.",
+        "responsable": "Nancy/aliados.",
+        "frecuencia": "Por gestionar."
+      },
+      {
+        "canal": "Otro",
+        "activo": true,
+        "descripcion": "Recogida en finca o entrega personal de huevos y queso.",
+        "responsable": "Familia.",
+        "frecuencia": "Diaria / semanal."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Queso campesino",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "En otros lugares se menciona $11.000 a $12.000 por libra.",
+        "logistica_plataforma": "Entrega local o recogida semanal; costo pendiente.",
+        "precio_final": 9000,
+        "justificacion": "Precio fijado por la productora y aceptado por los clientes."
+      },
+      {
+        "servicio": "Huevos de codorniz",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "$5.500 por cubeta de 24.",
+        "logistica_plataforma": "Entrega local o recogida.",
+        "precio_final": 5500,
+        "justificacion": "Precio actual informado."
+      },
+      {
+        "servicio": "Leche cruda",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No se informó precio.",
+        "logistica_plataforma": "Entrega a la escuela.",
+        "precio_final": null,
+        "justificacion": "Venta aproximada de 20 L cada quince días."
+      },
+      {
+        "servicio": "Abono orgánico",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No se comercializa.",
+        "logistica_plataforma": "Aplicación en huertas.",
+        "precio_final": null,
+        "justificacion": "Aprovechamiento interno de estiércol y codornaza."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": "La productora reporta un costo aproximado de $4.000 a $4.500 por libra de queso y un precio de venta de $9.000. Debe verificarse si el costo incluye alimentación, sal, cuajo, leña o gas, agua, energía, empaque, transporte, mano de obra, depreciación y pérdidas. Para los huevos no se informó costo unitario."
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Queso campesino",
+        "cantidad_mensual": "Referencia: 240 lb/mes si se mantienen 8 lb diarias; dato por verificar.",
+        "precio": 9000,
+        "ingreso_mensual": 2160000,
+        "forma_pago": "Contado.",
+        "canal": "Clientes locales y comprador de Fusagasugá."
+      },
+      {
+        "concepto_servicio": "Huevos de codorniz",
+        "cantidad_mensual": "Referencia: 600 huevos/mes, equivalentes a 25 cubetas de 24.",
+        "precio": 5500,
+        "ingreso_mensual": 137500,
+        "forma_pago": "Contado.",
+        "canal": "Clientes de la vereda."
+      },
+      {
+        "concepto_servicio": "Leche para yogur",
+        "cantidad_mensual": "Aproximadamente 40 litros al mes.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Contado.",
+        "canal": "Escuela de San Juan."
+      },
+      {
+        "concepto_servicio": "Ingreso total reportado",
+        "cantidad_mensual": "No desagregado.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Contado.",
+        "canal": "Varios canales."
+      },
+      {
+        "concepto_servicio": "Proyección con 100 codornices",
+        "cantidad_mensual": "No calculada.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Contado.",
+        "canal": "Solo después de validar postura, alimento, espacio y mercado."
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": "Las cantidades mensuales son conversiones orientativas de los datos diarios. Existe una diferencia importante entre el cálculo teórico de ventas de queso y el ingreso mensual mencionado por la productora. Antes de proyectar inversión debe registrarse durante al menos ocho semanas la producción, autoconsumo, ventas, pérdidas, clientes, costos y pagos."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Docentes y vecinos",
+        "estrategia": "Mantener calidad, precio claro y respuesta rápida a pedidos.",
+        "medio": "Llamada, WhatsApp y entrega.",
+        "frecuencia": "Diaria / semanal.",
+        "responsable": "Nancy."
+      },
+      {
+        "cliente": "Restaurante local",
+        "estrategia": "Acordar cantidades, día de entrega y presentación.",
+        "medio": "Llamada y visita.",
+        "frecuencia": "Según pedido.",
+        "responsable": "Nancy."
+      },
+      {
+        "cliente": "Escuela de San Juan",
+        "estrategia": "Cumplir la entrega quincenal de leche y documentar calidad.",
+        "medio": "Acuerdo directo.",
+        "frecuencia": "Quincenal.",
+        "responsable": "Nancy."
+      },
+      {
+        "cliente": "Comprador de Fusagasugá",
+        "estrategia": "Separar la producción semanal disponible y mantener calidad uniforme.",
+        "medio": "Llamada y recogida en finca.",
+        "frecuencia": "Semanal.",
+        "responsable": "Nancy/comprador."
+      },
+      {
+        "cliente": "Clientes de huevos",
+        "estrategia": "Recibir pedidos y reservar cubetas.",
+        "medio": "Teléfono/WhatsApp.",
+        "frecuencia": "Diaria / semanal.",
+        "responsable": "Nancy."
+      },
+      {
+        "cliente": "Nuevos clientes / ferias",
+        "estrategia": "Crear marca, etiqueta, ficha de producto y contacto.",
+        "medio": "Ferias, redes y WhatsApp.",
+        "frecuencia": "Según oportunidad.",
+        "responsable": "Familia."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Queso local",
+        "canal": "Venta directa o entrega.",
+        "tiempo": "Mismo día o según pedido.",
+        "transporte_operacion": "A pie, vehículo familiar o recogida; pendiente.",
+        "condicion_calidad": "Refrigerado, bolsa limpia y protegido.",
+        "capacidad": "Según producción.",
+        "costo": "Pendiente.",
+        "responsable": "Nancy/familia."
+      },
+      {
+        "servicio_insumo": "Queso a Fusagasugá",
+        "canal": "Comprador semanal.",
+        "tiempo": "Cada ocho días.",
+        "transporte_operacion": "Vehículo del comprador.",
+        "condicion_calidad": "Cadena de frío, empaque íntegro y registro de fecha.",
+        "capacidad": "Producción semanal disponible.",
+        "costo": "Pendiente.",
+        "responsable": "Comprador/Nancy."
+      },
+      {
+        "servicio_insumo": "Huevos de codorniz",
+        "canal": "Recogida o entrega local.",
+        "tiempo": "Mismo día o pocos días.",
+        "transporte_operacion": "Entrega directa.",
+        "condicion_calidad": "Cubeta protegida, limpia y sin golpes.",
+        "capacidad": "Hasta completar cubetas.",
+        "costo": "Pendiente.",
+        "responsable": "Nancy."
+      },
+      {
+        "servicio_insumo": "Leche",
+        "canal": "Entrega a escuela.",
+        "tiempo": "Mismo día.",
+        "transporte_operacion": "Recipiente limpio y transporte corto.",
+        "condicion_calidad": "Filtrada, protegida y fresca.",
+        "capacidad": "20 L quincenales.",
+        "costo": "Pendiente.",
+        "responsable": "Nancy."
+      },
+      {
+        "servicio_insumo": "Ferias futuras",
+        "canal": "Puesto o aliado.",
+        "tiempo": "Según evento.",
+        "transporte_operacion": "Vehículo por definir.",
+        "condicion_calidad": "Cadena de frío, etiquetas y empaque.",
+        "capacidad": "Por validar.",
+        "costo": "Pendiente.",
+        "responsable": "Familia / aliado."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Identificación del lote",
+        "informacion": "Fecha de ordeño o postura, cantidad, producto y responsable.",
+        "responsable": "Nancy.",
+        "medio": "Cuaderno / etiqueta.",
+        "frecuencia": "Diaria.",
+        "evidencia": "Planilla."
+      },
+      {
+        "elemento": "Ficha técnica",
+        "informacion": "Ingredientes, proceso, conservación, unidad y vida útil.",
+        "responsable": "Nancy/asesor.",
+        "medio": "Ficha física o digital.",
+        "frecuencia": "Cuando cambie el proceso.",
+        "evidencia": "Documento."
+      },
+      {
+        "elemento": "Prácticas sostenibles",
+        "informacion": "Suero a cerdos, estiércol y codornaza a huerta, ahorro de agua y energía solar.",
+        "responsable": "Familia.",
+        "medio": "Etiqueta, QR o WhatsApp.",
+        "frecuencia": "Trimestral.",
+        "evidencia": "Fotos y registros."
+      },
+      {
+        "elemento": "Sanidad animal",
+        "informacion": "Vacunas, tratamientos, mortalidad y periodos de retiro.",
+        "responsable": "Nancy/veterinario.",
+        "medio": "Bitácora.",
+        "frecuencia": "Cada evento.",
+        "evidencia": "Fórmulas y registros."
+      },
+      {
+        "elemento": "Ventas y clientes",
+        "informacion": "Cantidad, precio, fecha, comprador y forma de pago.",
+        "responsable": "Nancy.",
+        "medio": "Cuaderno/hoja de cálculo.",
+        "frecuencia": "Cada venta.",
+        "evidencia": "Libro de ventas."
+      },
+      {
+        "elemento": "Contacto comercial",
+        "informacion": "Teléfono, WhatsApp, ubicación y horario.",
+        "responsable": "Nancy/familia.",
+        "medio": "Etiqueta y perfil digital.",
+        "frecuencia": "Cuando cambie.",
+        "evidencia": "Etiqueta o enlace."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Codornices en postura",
+        "descripcion": "Ampliar de 20 a 100 aves mediante 80 codornices adicionales.",
+        "valor_unitario": 8000,
+        "cantidad": "80.",
+        "total": 640000,
+        "requisito": "Certificado sanitario, adaptación, densidad y plan sanitario.",
+        "fuente": "Impulso/recursos propios."
+      },
+      {
+        "tipo": "Adecuación para codornices",
+        "descripcion": "Jaulas, bebederos, comederos, bandejas y espacio para 100 aves.",
+        "valor_unitario": null,
+        "cantidad": "Según diseño.",
+        "total": null,
+        "requisito": "Bienestar, ventilación, limpieza y manejo de codornaza.",
+        "fuente": "Gestión/impulso."
+      },
+      {
+        "tipo": "Concentrado para codorniz",
+        "descripcion": "Alimento para el lote actual y ampliado.",
+        "valor_unitario": 94000,
+        "cantidad": "Cantidad mensual por recalcular.",
+        "total": null,
+        "requisito": "Almacenamiento seco y control de consumo.",
+        "fuente": "Impulso/capital de trabajo."
+      },
+      {
+        "tipo": "Concentrado para vacas",
+        "descripcion": "Suplemento para mejorar la producción de leche.",
+        "valor_unitario": null,
+        "cantidad": "Según plan nutricional.",
+        "total": null,
+        "requisito": "Dosificación y viabilidad frente a pasturas.",
+        "fuente": "Impulso/recursos propios."
+      },
+      {
+        "tipo": "Mesa de acero inoxidable",
+        "descripcion": "Mesa exclusiva para elaboración y empaque de queso.",
+        "valor_unitario": null,
+        "cantidad": "1.",
+        "total": null,
+        "requisito": "Material sanitario, fácil limpieza y altura ergonómica.",
+        "fuente": "Impulso."
+      },
+      {
+        "tipo": "Moldes de acero inoxidable",
+        "descripcion": "Reemplazo gradual de moldes de PVC.",
+        "valor_unitario": null,
+        "cantidad": "Según capacidad diaria.",
+        "total": null,
+        "requisito": "Grado alimentario y compatibilidad con la prensa.",
+        "fuente": "Impulso."
+      },
+      {
+        "tipo": "Estufa de gas o solución eficiente",
+        "descripcion": "Alternativa a la leña durante el invierno.",
+        "valor_unitario": null,
+        "cantidad": "1.",
+        "total": null,
+        "requisito": "Ventilación, seguridad, consumo y manejo de cilindro.",
+        "fuente": "Gestión futura."
+      },
+      {
+        "tipo": "Formalización y marca",
+        "descripcion": "Diagnóstico sanitario, procedimientos, etiqueta, logo y posible permiso.",
+        "valor_unitario": null,
+        "cantidad": "1 proceso.",
+        "total": null,
+        "requisito": "Cumplimiento gradual y trazabilidad.",
+        "fuente": "Instituciones."
+      },
+      {
+        "tipo": "Registros y capacitación",
+        "descripcion": "Producción, costos, sanidad, manipulación y ventas.",
+        "valor_unitario": null,
+        "cantidad": "1 proceso.",
+        "total": null,
+        "requisito": "Seguimiento y evidencia.",
+        "fuente": "Instituciones."
+      }
+    ],
+    "observaciones_o_comentarios": "Prioridades expresadas por la productora: 1) adquirir aproximadamente ochenta codornices adicionales para llegar a cien; 2) contar con alimento para codornices y vacas; y 3) mejorar la elaboración de queso con mesa y moldes de acero inoxidable. La estufa de gas, la formalización y el desarrollo de nuevos productos se plantean como fases posteriores."
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Alimentación bovina",
+        "descripcion": "Concentrado, sal y pasturas.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "La sal se reporta en $40.000 por bulto; frecuencia pendiente."
+      },
+      {
+        "tipo": "Alimentación de codornices",
+        "descripcion": "Concentrado específico.",
+        "valor_mensual_ciclo": 47000,
+        "observaciones": "El costo aumentará con la ampliación."
+      },
+      {
+        "tipo": "Sanidad animal",
+        "descripcion": "Vacunas, vitaminas, medicamentos y asistencia.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Registrar por especie."
+      },
+      {
+        "tipo": "Transformación de queso",
+        "descripcion": "Cuajo, sal, leña o gas, agua y limpieza.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "La productora estima costo de $4.000-$4.500 por libra."
+      },
+      {
+        "tipo": "Empaques",
+        "descripcion": "Bolsas para queso y cubetas para huevos.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Calcular por unidad vendida."
+      },
+      {
+        "tipo": "Servicios",
+        "descripcion": "Energía $12.000-$15.000 y agua $6.000-$7.000 mensuales.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Separar proporción productiva y familiar."
+      },
+      {
+        "tipo": "Transporte y comercialización",
+        "descripcion": "Entregas locales y movimiento de insumos.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "El comprador de Fusagasugá recoge semanalmente."
+      },
+      {
+        "tipo": "Mano de obra y mantenimiento",
+        "descripcion": "Trabajo familiar, prensa, estufa, jaulas, paneles y equipos.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Valorar tiempo y crear reserva."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "Mes 1",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Crear línea base."
+      },
+      {
+        "mes": "Mes 2",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Validar capacidad."
+      },
+      {
+        "mes": "Mes 3",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Estabilizar alimentación."
+      },
+      {
+        "mes": "Mes 4",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Ingresar aves con soporte."
+      },
+      {
+        "mes": "Mes 5",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registrar mortalidad y postura."
+      },
+      {
+        "mes": "Mes 6",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Mejorar proceso de queso."
+      },
+      {
+        "mes": "Mes 7",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Calcular margen."
+      },
+      {
+        "mes": "Mes 8",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Evaluar mercado de huevos."
+      },
+      {
+        "mes": "Mes 9",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Revisar capacidad."
+      },
+      {
+        "mes": "Mes 10",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Preparar temporada de invierno."
+      },
+      {
+        "mes": "Mes 11",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Evitar caída de leche."
+      },
+      {
+        "mes": "Mes 12",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Decidir formalización y expansión."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "La productora lleva algunas anotaciones y separa parte de los ingresos del queso, pero no cuenta con un costeo completo. Debe registrar gastos e ingresos por línea: leche y queso, huevos de codorniz y venta de leche, incluyendo autoconsumo, pérdidas y trabajo familiar.\nCondición para ampliar: demostrar que las jaulas y el espacio soportan cien codornices, asegurar alimento y sanidad, mantener compradores, registrar la postura y la mortalidad, y verificar que el aumento de codornaza pueda manejarse sin afectar agua, suelo o convivencia. La inversión láctea debe acompañarse de buenas prácticas de manufactura."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Agua",
+        "estado": "Acueducto para animales, hogar y transformación.",
+        "cantidad": "$6.000-$7.000 mensuales; volumen no medido.",
+        "impacto_1_a_5": 4,
+        "accion": "Medir consumo, revisar fugas y mantener calidad."
+      },
+      {
+        "variable": "Energía",
+        "estado": "Red eléctrica y paneles solares de respaldo.",
+        "cantidad": "$12.000-$15.000 mensuales.",
+        "impacto_1_a_5": 3,
+        "accion": "Registrar consumo y maximizar uso seguro de solar."
+      },
+      {
+        "variable": "Leña",
+        "estado": "Fuente de calor principal para queso.",
+        "cantidad": "Cantidad pendiente.",
+        "impacto_1_a_5": 5,
+        "accion": "Evaluar gas o estufa eficiente y origen responsable."
+      },
+      {
+        "variable": "Alimento animal",
+        "estado": "Pasturas y concentrados.",
+        "cantidad": "Bultos y consumo pendientes.",
+        "impacto_1_a_5": 5,
+        "accion": "Plan nutricional, compras programadas y almacenamiento."
+      },
+      {
+        "variable": "Transporte",
+        "estado": "Acceso por carretera; entregas y recogidas locales.",
+        "cantidad": "Distancias y combustible pendientes.",
+        "impacto_1_a_5": 2,
+        "accion": "Consolidar rutas."
+      },
+      {
+        "variable": "Suero",
+        "estado": "Se suministra a cerdos.",
+        "cantidad": "Cantidad pendiente.",
+        "impacto_1_a_5": 4,
+        "accion": "Cuantificar y validar manejo sanitario."
+      },
+      {
+        "variable": "Estiércol y codornaza",
+        "estado": "Se usa como abono en huertas.",
+        "cantidad": "Cantidad pendiente.",
+        "impacto_1_a_5": 4,
+        "accion": "Compostar, dosificar y registrar."
+      },
+      {
+        "variable": "Empaques",
+        "estado": "Bolsas y cubetas.",
+        "cantidad": "Cantidad pendiente.",
+        "impacto_1_a_5": 3,
+        "accion": "Reducir, reutilizar cuando sea seguro y reciclar."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "Producción de queso",
+        "que_se_mide": "Libras diarias y mensuales.",
+        "dato_inicial": "8 lb/día; máximo 12.",
+        "meta": "100% registrado.",
+        "frecuencia": "Diaria.",
+        "responsable": "Nancy.",
+        "evidencia": "Planilla."
+      },
+      {
+        "indicador": "Postura de codorniz",
+        "que_se_mide": "Huevos por día y por ave.",
+        "dato_inicial": "20 huevos/día con 20 aves.",
+        "meta": "Registro diario y dato validado.",
+        "frecuencia": "Diaria.",
+        "responsable": "Nancy/hijo.",
+        "evidencia": "Planilla."
+      },
+      {
+        "indicador": "Inventario animal",
+        "que_se_mide": "Vacas, codornices, estado y mortalidad.",
+        "dato_inicial": "3 vacas y 20 codornices.",
+        "meta": "100% identificado.",
+        "frecuencia": "Mensual/evento.",
+        "responsable": "Familia.",
+        "evidencia": "Ficha."
+      },
+      {
+        "indicador": "Rendimiento de queso",
+        "que_se_mide": "Litros por libra.",
+        "dato_inicial": "Desconocido.",
+        "meta": "Calcular por lote.",
+        "frecuencia": "Cada elaboración.",
+        "responsable": "Nancy.",
+        "evidencia": "Registro."
+      },
+      {
+        "indicador": "Ventas",
+        "que_se_mide": "Cantidad, precio, cliente y pago.",
+        "dato_inicial": "Registros parciales.",
+        "meta": "100% registrado.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Nancy.",
+        "evidencia": "Libro de ventas."
+      },
+      {
+        "indicador": "Costos y margen",
+        "que_se_mide": "Costo por libra y por cubeta.",
+        "dato_inicial": "$4.000-$4.500 estimado para queso; huevos pendiente.",
+        "meta": "Cálculo mensual completo.",
+        "frecuencia": "Mensual.",
+        "responsable": "Nancy/asesor.",
+        "evidencia": "Hoja de costos."
+      },
+      {
+        "indicador": "Alimento",
+        "que_se_mide": "Consumo y costo por especie.",
+        "dato_inicial": "Bulto de codorniz dura casi 2 meses.",
+        "meta": "Consumo unitario calculado.",
+        "frecuencia": "Semanal/mensual.",
+        "responsable": "Familia.",
+        "evidencia": "Facturas."
+      },
+      {
+        "indicador": "Sanidad e inocuidad",
+        "que_se_mide": "Tratamientos, limpieza y cumplimiento.",
+        "dato_inicial": "Sin plan documentado.",
+        "meta": "Plan vigente.",
+        "frecuencia": "Según calendario.",
+        "responsable": "Veterinario / Nancy.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "indicador": "Ambiente",
+        "que_se_mide": "Agua, energía, leña, suero y abono.",
+        "dato_inicial": "Prácticas reportadas sin medición.",
+        "meta": "100% con seguimiento.",
+        "frecuencia": "Mensual/ciclo.",
+        "responsable": "Familia.",
+        "evidencia": "Bitácora y fotos."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Suero lácteo",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Alimentación de cerdos.",
+        "accion_circular": "Cuantificar, almacenar limpio y validar ración.",
+        "destino": "Alimentación de cerdos",
+        "responsable": "Nancy/familia."
+      },
+      {
+        "residuo_recurso": "Estiércol bovino",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Permanece en potrero y se aprovecha como abono.",
+        "accion_circular": "Evitar acumulación y aplicar según necesidad.",
+        "destino": "Abono",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Codornaza",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Se usa con otros materiales para abono de huertas.",
+        "accion_circular": "Compostar, controlar humedad y registrar.",
+        "destino": "Abono de huertas",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Bolsas y cubetas",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No detallado.",
+        "accion_circular": "Separar, reciclar y usar empaque apto.",
+        "destino": "Reciclaje / Uso apto",
+        "responsable": "Nancy."
+      },
+      {
+        "residuo_recurso": "Cenizas y humo",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Uso controlado de ceniza y transición energética.",
+        "destino": "Suelo / Emisión reducida",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Aguas de lavado",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Retirar sólidos y manejar lejos de fuentes.",
+        "destino": "Disposición separada",
+        "responsable": "Nancy."
+      },
+      {
+        "residuo_recurso": "Envases veterinarios / mortalidad",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Ruta posconsumo y disposición segura.",
+        "destino": "Posconsumo / Disposición segura",
+        "responsable": "Nancy/veterinario."
+      }
+    ],
+    "conclusion_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "Uso del agua",
+        "indicador": "Consumo, fugas y limpieza.",
+        "descripcion": null,
+        "estado": "La productora se califica 5/5; no hay medición.",
+        "calificacion_1_a_5": 4,
+        "accion": "Medir y documentar.",
+        "evidencia": "Recibo y registro."
+      },
+      {
+        "factor": "Uso de energía",
+        "indicador": "Consumo y respaldo solar.",
+        "descripcion": null,
+        "estado": "Red y paneles; calificación propia 5/5.",
+        "calificacion_1_a_5": 4,
+        "accion": "Registrar y mantener paneles.",
+        "evidencia": "Recibos y revisión."
+      },
+      {
+        "factor": "Uso de leña",
+        "indicador": "Cantidad y humo.",
+        "descripcion": null,
+        "estado": "Estufa de leña diaria.",
+        "calificacion_1_a_5": 2,
+        "accion": "Evaluar gas o estufa eficiente.",
+        "evidencia": "Registro y fotos."
+      },
+      {
+        "factor": "Suelo y pastos",
+        "indicador": "Cobertura y alimento.",
+        "descripcion": null,
+        "estado": "Poco pasto reduce la leche.",
+        "calificacion_1_a_5": 2,
+        "accion": "Rotación, recuperación y reservas.",
+        "evidencia": "Calendario."
+      },
+      {
+        "factor": "Circularidad",
+        "indicador": "Suero, estiércol y codornaza aprovechados.",
+        "descripcion": null,
+        "estado": "Aprovechamiento reportado.",
+        "calificacion_1_a_5": 4,
+        "accion": "Compostaje y cuantificación.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "factor": "Bienestar animal",
+        "indicador": "Agua, alimento, espacio y sanidad.",
+        "descripcion": null,
+        "estado": "Manejo familiar; falta plan documentado.",
+        "calificacion_1_a_5": 3,
+        "accion": "Plan sanitario y validación de densidad.",
+        "evidencia": "Checklist."
+      },
+      {
+        "factor": "Inocuidad del queso",
+        "indicador": "Área, superficies, utensilios y EPP.",
+        "descripcion": null,
+        "estado": "Cocina compartida, mesón en baldosa y moldes de PVC.",
+        "calificacion_1_a_5": 2,
+        "accion": "Mesa y moldes sanitarios, área exclusiva.",
+        "evidencia": "Fotos y protocolo."
+      },
+      {
+        "factor": "Comercialización",
+        "indicador": "Clientes, canales y marca.",
+        "descripcion": null,
+        "estado": "Clientes activos, sin marca o redes.",
+        "calificacion_1_a_5": 3,
+        "accion": "Etiqueta, WhatsApp y ferias.",
+        "evidencia": "Ventas y material."
+      },
+      {
+        "factor": "Finanzas",
+        "indicador": "Costos, ingresos y margen.",
+        "descripcion": null,
+        "estado": "Información parcial y contradictoria.",
+        "calificacion_1_a_5": 2,
+        "accion": "Registro diario y conciliación.",
+        "evidencia": "Hoja de costos."
+      }
+    ],
+    "resultado_preliminar_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "Baja producción de leche por poco pasto",
+        "accion": "Plan nutricional, recuperación de praderas y reserva de alimento.",
+        "prioridad": "Alta",
+        "plazo": "3-12 meses",
+        "responsable": "Familia/técnico.",
+        "recursos": "Concentrado, semillas y asistencia.",
+        "indicador": "Litros y cobertura.",
+        "evidencia": "Planilla y fotos."
+      },
+      {
+        "impacto": "Cocina compartida",
+        "accion": "Instalar mesa exclusiva y organizar zona de proceso.",
+        "prioridad": "Alta",
+        "plazo": "3-6 meses",
+        "responsable": "Nancy/familia.",
+        "recursos": "Mesa, lavamanos y utensilios.",
+        "indicador": "Checklist sanitario.",
+        "evidencia": "Fotos."
+      },
+      {
+        "impacto": "Moldes de PVC",
+        "accion": "Reemplazar gradualmente por acero inoxidable.",
+        "prioridad": "Alta",
+        "plazo": "3-6 meses",
+        "responsable": "Nancy.",
+        "recursos": "Moldes sanitarios.",
+        "indicador": "% de moldes sustituidos.",
+        "evidencia": "Facturas."
+      },
+      {
+        "impacto": "Uso de leña",
+        "accion": "Evaluar estufa de gas o tecnología eficiente.",
+        "prioridad": "Media-alta",
+        "plazo": "6-12 meses",
+        "responsable": "Familia.",
+        "recursos": "Estufa, gas y ventilación.",
+        "indicador": "Menor leña utilizada.",
+        "evidencia": "Registro."
+      },
+      {
+        "impacto": "Ampliación de codornices",
+        "accion": "Diseño de jaulas, sanidad y compra gradual.",
+        "prioridad": "Alta",
+        "plazo": "3-9 meses",
+        "responsable": "Nancy/técnico.",
+        "recursos": "Aves, jaulas y alimento.",
+        "indicador": "Aves vivas y postura.",
+        "evidencia": "Inventario."
+      },
+      {
+        "impacto": "Residuos orgánicos",
+        "accion": "Formalizar compostaje de codornaza y estiércol.",
+        "prioridad": "Media",
+        "plazo": "3-6 meses",
+        "responsable": "Familia.",
+        "recursos": "Zona y herramientas.",
+        "indicador": "kg aprovechados.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "impacto": "Falta de datos",
+        "accion": "Registrar producción, costos, clientes y ventas.",
+        "prioridad": "Alta",
+        "plazo": "Inmediato",
+        "responsable": "Nancy.",
+        "recursos": "Cuaderno o archivo.",
+        "indicador": "100% de operaciones.",
+        "evidencia": "Registros."
+      },
+      {
+        "impacto": "Falta de marca y formalización",
+        "accion": "Crear identidad, etiqueta y ruta sanitaria gradual.",
+        "prioridad": "Media",
+        "plazo": "6-12 meses",
+        "responsable": "Nancy/asesor.",
+        "recursos": "Diseño y acompañamiento.",
+        "indicador": "Etiqueta y plan.",
+        "evidencia": "Documentos."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": "Invierno y lluvia",
+        "situacion": "Disminuyen la producción de leche y dificultan conseguir leña seca.",
+        "riesgo": "Menos queso y mayores dificultades operativas.",
+        "accion_propuesta": "Reservas de alimento y alternativa de cocción."
+      },
+      {
+        "aspecto": "Frío de madrugada",
+        "situacion": "El ordeño se realiza alrededor de las 4:00 a. m.",
+        "riesgo": "Afectación de salud y accidentes.",
+        "accion_propuesta": "Ropa térmica, impermeable e iluminación."
+      },
+      {
+        "aspecto": "Verano",
+        "situacion": "La productora indica que puede aumentar un poco la producción.",
+        "riesgo": "Posible disminución de agua o pasto si es intenso.",
+        "accion_propuesta": "Monitorear agua y reservas."
+      },
+      {
+        "aspecto": "Poco pasto",
+        "situacion": "Actualmente limita la leche.",
+        "riesgo": "Baja productividad y mayor dependencia de concentrado.",
+        "accion_propuesta": "Rotación, recuperación y suplementación."
+      },
+      {
+        "aspecto": "Falla de energía",
+        "situacion": "Existen paneles solares de respaldo.",
+        "riesgo": "Pérdida de operación o conservación.",
+        "accion_propuesta": "Mantenimiento de paneles y plan de contingencia."
+      },
+      {
+        "aspecto": "Enfermedades animales",
+        "situacion": "No se describió un plan sanitario.",
+        "riesgo": "Pérdidas de leche, aves o huevos.",
+        "accion_propuesta": "Calendario veterinario y cuarentena."
+      },
+      {
+        "aspecto": "Mercado",
+        "situacion": "La demanda local funciona actualmente.",
+        "riesgo": "Expansión sin compradores suficientes.",
+        "accion_propuesta": "Ampliar gradualmente y validar pedidos."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Sanitario",
+        "riesgo": "Contaminación del queso.",
+        "causa": "Cocina compartida, superficies y manejo de leche cruda.",
+        "consecuencia": "Enfermedad y pérdida de clientes.",
+        "nivel": "Muy alto",
+        "prevencion": "Área exclusiva, EPP, limpieza y control.",
+        "respuesta": "Retirar lote y corregir."
+      },
+      {
+        "tipo": "Sanitario animal",
+        "riesgo": "Enfermedad o mortalidad de codornices.",
+        "causa": "Aumento rápido, bioseguridad insuficiente o alimento.",
+        "consecuencia": "Pérdida de postura e inversión.",
+        "nivel": "Alto",
+        "prevencion": "Compra gradual, cuarentena y plan sanitario.",
+        "respuesta": "Aislar y consultar."
+      },
+      {
+        "tipo": "Productivo",
+        "riesgo": "Baja producción de leche.",
+        "causa": "Poco pasto, invierno y alimentación.",
+        "consecuencia": "Menos queso e ingresos.",
+        "nivel": "Alto",
+        "prevencion": "Plan nutricional y registros.",
+        "respuesta": "Suplementar y ajustar carga."
+      },
+      {
+        "tipo": "Financiero",
+        "riesgo": "Ingresos y costos mal calculados.",
+        "causa": "Registros parciales.",
+        "consecuencia": "Decisiones de inversión equivocadas.",
+        "nivel": "Alto",
+        "prevencion": "Costeo por producto y conciliación.",
+        "respuesta": "Revisar presupuesto."
+      },
+      {
+        "tipo": "Comercial",
+        "riesgo": "No vender la expansión de huevos.",
+        "causa": "Aumento sin validación de mercado.",
+        "consecuencia": "Excedentes y pérdida.",
+        "nivel": "Medio-alto",
+        "prevencion": "Pedidos previos y ampliación gradual.",
+        "respuesta": "Promoción y ajustar lote."
+      },
+      {
+        "tipo": "Ambiental",
+        "riesgo": "Acumulación de codornaza y estiércol.",
+        "causa": "Mayor número de aves y manejo insuficiente.",
+        "consecuencia": "Olores, moscas y contaminación.",
+        "nivel": "Alto",
+        "prevencion": "Compostaje y almacenamiento cubierto.",
+        "respuesta": "Contener y corregir."
+      },
+      {
+        "tipo": "Laboral",
+        "riesgo": "Caídas, patadas o golpes.",
+        "causa": "Madrugada, lluvia, animales y pisos húmedos.",
+        "consecuencia": "Lesión.",
+        "nivel": "Alto",
+        "prevencion": "EPP, iluminación y manejo seguro.",
+        "respuesta": "Primeros auxilios."
+      },
+      {
+        "tipo": "Térmico/ incendio",
+        "riesgo": "Quemaduras o incendio por leña o gas.",
+        "causa": "Estufa y combustibles.",
+        "consecuencia": "Lesión y daño del predio.",
+        "nivel": "Alto",
+        "prevencion": "Ventilación, extintor y revisión.",
+        "respuesta": "Cortar fuente y atender emergencia"
+      },
+      {
+        "tipo": "Logístico",
+        "riesgo": "Daño de queso o huevos en entrega.",
+        "causa": "Empaque o transporte inadecuado.",
+        "consecuencia": "Pérdida y reclamo.",
+        "nivel": "Medio",
+        "prevencion": "Empaque y carga segura.",
+        "respuesta": "Registrar y reemplazar según política."
+      },
+      {
+        "tipo": "Estratégico",
+        "riesgo": "Formalización incompleta.",
+        "causa": "Falta de requisitos y documentación.",
+        "consecuencia": "Limitación de mercados.",
+        "nivel": "Medio-alto",
+        "prevencion": "Ruta gradual con asesoría.",
+        "respuesta": "Mantener mercado local mientras avanza."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "Verificar identidad, ubicación, tenencia e inventario.",
+        "componente": "Estratégico",
+        "responsable": "Nancy/asesor.",
+        "tiempo": "Inmediato",
+        "recursos": "Documentos y visita.",
+        "resultado": "Línea base completa.",
+        "evidencia": "Ficha."
+      },
+      {
+        "actividad": "Registrar producción, costos, ventas y postura.",
+        "componente": "Productivo / financiero",
+        "responsable": "Nancy.",
+        "tiempo": "Inmediato y continuo",
+        "recursos": "Cuaderno o archivo.",
+        "resultado": "Datos confiables.",
+        "evidencia": "Planillas."
+      },
+      {
+        "actividad": "Diagnosticar área de queso y codornices.",
+        "componente": "Sanitario/productivo",
+        "responsable": "Técnico/familia.",
+        "tiempo": "Inmediato",
+        "recursos": "Visita y mediciones.",
+        "resultado": "Diseño de mejora.",
+        "evidencia": "Informe."
+      },
+      {
+        "actividad": "Cotizar codornices, jaulas y alimento.",
+        "componente": "Productivo / financiero",
+        "responsable": "Nancy.",
+        "tiempo": "Inmediato",
+        "recursos": "Proveedores.",
+        "resultado": "Presupuesto real.",
+        "evidencia": "Cotizaciones."
+      },
+      {
+        "actividad": "Ingresar codornices de manera gradual.",
+        "componente": "Productivo / sanitario",
+        "responsable": "Nancy/técnico.",
+        "tiempo": "3-9 meses",
+        "recursos": "Aves, equipos y alimento.",
+        "resultado": "Mayor postura sin mortalidad elevada.",
+        "evidencia": "Inventario."
+      },
+      {
+        "actividad": "Instalar mesa y moldes de acero.",
+        "componente": "Inocuidad/inversión",
+        "responsable": "Nancy/familia.",
+        "tiempo": "3-6 meses",
+        "recursos": "Equipos.",
+        "resultado": "Proceso más higiénico.",
+        "evidencia": "Facturas y fotos."
+      },
+      {
+        "actividad": "Implementar plan sanitario y bioseguridad.",
+        "componente": "Sanitario/SST",
+        "responsable": "Veterinario / familia.",
+        "tiempo": "Antes de ampliar",
+        "recursos": "Asistencia y registros.",
+        "resultado": "Riesgo reducido.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "actividad": "Estructurar compostaje y manejo de suero.",
+        "componente": "Ambiental",
+        "responsable": "Familia/técnico.",
+        "tiempo": "3-6 meses",
+        "recursos": "Zona, recipientes y formatos.",
+        "resultado": "Residuos aprovechados.",
+        "evidencia": "Registro."
+      },
+      {
+        "actividad": "Crear marca, WhatsApp y portafolio.",
+        "componente": "Comercial",
+        "responsable": "Nancy/hijo.",
+        "tiempo": "6 meses",
+        "recursos": "Diseño y fotos.",
+        "resultado": "Mejor identidad y nuevos clientes.",
+        "evidencia": "Material."
+      },
+      {
+        "actividad": "Diseñar formalización y permiso sanitario.",
+        "componente": "Legal/comercial",
+        "responsable": "Nancy/asesor.",
+        "tiempo": "6-12 meses",
+        "recursos": "Documentos y acompañamiento.",
+        "resultado": "Ruta definida.",
+        "evidencia": "Plan y soportes."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "Identificación",
+        "indicador": "Datos, ubicación y tenencia verificados.",
+        "meta": "100% confirmado.",
+        "frecuencia": "Una vez /anual.",
+        "responsable": "Nancy/asesor.",
+        "evidencia": "Ficha."
+      },
+      {
+        "dimension": "Producción láctea",
+        "indicador": "Litros y libras por día.",
+        "meta": "Registro diario.",
+        "frecuencia": "Diaria.",
+        "responsable": "Nancy.",
+        "evidencia": "Planilla."
+      },
+      {
+        "dimension": "Producción avícola",
+        "indicador": "Aves, huevos, mortalidad y postura.",
+        "meta": "100% registrado.",
+        "frecuencia": "Diaria / mensual.",
+        "responsable": "Nancy/hijo.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "dimension": "Costos",
+        "indicador": "Costo por libra y cubeta.",
+        "meta": "Cálculo mensual completo.",
+        "frecuencia": "Mensual.",
+        "responsable": "Nancy/asesor.",
+        "evidencia": "Hoja de costos."
+      },
+      {
+        "dimension": "Ventas",
+        "indicador": "Cantidad, precio, cliente y pago.",
+        "meta": "100% registrado.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Nancy.",
+        "evidencia": "Libro de ventas."
+      },
+      {
+        "dimension": "Sanidad",
+        "indicador": "Tratamientos, limpieza y bioseguridad.",
+        "meta": "Plan cumplido.",
+        "frecuencia": "Según calendario.",
+        "responsable": "Veterinario/familia.",
+        "evidencia": "Registros."
+      },
+      {
+        "dimension": "Inocuidad",
+        "indicador": "Área, mesa, moldes, EPP y temperatura.",
+        "meta": "Checklist completo.",
+        "frecuencia": "Cada lote/ mensual.",
+        "responsable": "Nancy.",
+        "evidencia": "Formato y fotos."
+      },
+      {
+        "dimension": "Ambiente",
+        "indicador": "Agua, energía, leña y residuos.",
+        "meta": "Línea base y mejora anual.",
+        "frecuencia": "Mensual/trimestral.",
+        "responsable": "Familia.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "dimension": "Comercialización",
+        "indicador": "Clientes activos y nuevos canales.",
+        "meta": "Mantener actuales y probar un canal nuevo.",
+        "frecuencia": "Mensual.",
+        "responsable": "Nancy/hijo.",
+        "evidencia": "Base de clientes."
+      },
+      {
+        "dimension": "Inversión",
+        "indicador": "Cumplimiento de prioridades y resultados.",
+        "meta": "Evaluación por fase.",
+        "frecuencia": "Trimestral.",
+        "responsable": "Familia / asesor.",
+        "evidencia": "Informe."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Comprar 80 codornices",
+        "efecto_productivo": "Aumenta postura potencial.",
+        "efecto_comercial": "Exige más compradores y cubetas.",
+        "efecto_financiero": "Inversión referencial de $640.000 más alimento y jaulas.",
+        "efecto_ambiental": "Aumenta codornaza y consumo de agua/alimento.",
+        "ajuste_necesario": "Compra gradual y capacidad validada."
+      },
+      {
+        "decision": "Comprar alimento para aves",
+        "efecto_productivo": "Sostiene postura.",
+        "efecto_comercial": "Mejora continuidad.",
+        "efecto_financiero": "Costo recurrente creciente.",
+        "efecto_ambiental": "Genera empaques y huella de transporte.",
+        "ajuste_necesario": "Dosificar y registrar."
+      },
+      {
+        "decision": "Suplementar vacas",
+        "efecto_productivo": "Puede aumentar leche y queso.",
+        "efecto_comercial": "Mejora cumplimiento.",
+        "efecto_financiero": "Aumenta costos.",
+        "efecto_ambiental": "Depende de insumos externos.",
+        "ajuste_necesario": "Plan nutricional y cálculo de retorno."
+      },
+      {
+        "decision": "Instalar mesa de acero",
+        "efecto_productivo": "Mejora higiene y organización.",
+        "efecto_comercial": "Aumenta confianza.",
+        "efecto_financiero": "Inversión inicial.",
+        "efecto_ambiental": "Facilita limpieza con menor desperdicio.",
+        "ajuste_necesario": "Diseño sanitario."
+      },
+      {
+        "decision": "Cambiar moldes a acero",
+        "efecto_productivo": "Estandariza forma y limpieza.",
+        "efecto_comercial": "Mejora presentación.",
+        "efecto_financiero": "Inversión inicial.",
+        "efecto_ambiental": "Mayor vida útil que PVC.",
+        "ajuste_necesario": "Compatibilidad con prensa."
+      },
+      {
+        "decision": "Cambiar o complementar la estufa",
+        "efecto_productivo": "Reduce interrupciones por leña húmeda.",
+        "efecto_comercial": "Mejora continuidad.",
+        "efecto_financiero": "Costo de equipo y combustible.",
+        "efecto_ambiental": "Puede reducir humo y presión sobre leña.",
+        "ajuste_necesario": "Evaluar gas, eficiencia y seguridad."
+      },
+      {
+        "decision": "Crear marca y etiqueta",
+        "efecto_productivo": "No cambia volumen.",
+        "efecto_comercial": "Facilita ferias y fidelización.",
+        "efecto_financiero": "Costo bajo-medio.",
+        "efecto_ambiental": "Permite comunicar prácticas sostenibles.",
+        "ajuste_necesario": "Trazabilidad real."
+      },
+      {
+        "decision": "Formalizar gradualmente",
+        "efecto_productivo": "Estandariza procesos.",
+        "efecto_comercial": "Abre nuevos mercados.",
+        "efecto_financiero": "Requiere tiempo y gastos.",
+        "efecto_ambiental": "Puede exigir mejores prácticas.",
+        "ajuste_necesario": "Acompañamiento y plan por etapas."
+      },
+      {
+        "decision": "Compostar residuos",
+        "efecto_productivo": "Aporta a huertas y suelo.",
+        "efecto_comercial": "Refuerza identidad agroecológica.",
+        "efecto_financiero": "Reduce compra de abono.",
+        "efecto_ambiental": "Disminuye contaminación.",
+        "ajuste_necesario": "Control de dosis y maduración."
+      },
+      {
+        "decision": "Registrar información",
+        "efecto_productivo": "Optimiza decisiones.",
+        "efecto_comercial": "Mejora cumplimiento.",
+        "efecto_financiero": "Permite conocer margen.",
+        "efecto_ambiental": "Reduce desperdicios.",
+        "ajuste_necesario": "Disciplina diaria."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}

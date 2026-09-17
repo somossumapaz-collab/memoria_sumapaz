@@ -1,0 +1,2255 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "Unidad productiva de trucha. Nombre comercial pendiente de verificar.",
+    "persona_entrevistada": "Iván Peñaloza. Apellido legal, documento, teléfono, correo y RUT pendientes de verificar.",
+    "tipo_actividad": "Actividad pecuaria/acuícola: cría, levante y comercialización local de trucha.",
+    "ubicacion_especifica": "Localidad de Sumapaz, Bogotá D.C. Vereda, sector, predio, tenencia y dirección exacta pendientes de verificar.",
+    "producto_servicio_principal": "Trucha fresca, prevista principalmente con un peso aproximado de media libra y entrega directa a restaurantes y familias. Presentación final y cadena de frío pendientes de verificar.",
+    "estado_actual": "Reactivación prevista para el mes de la entrevista. El productor tuvo experiencia previa hace aproximadamente un año y medio y plantea reiniciar con 100 o 200 alevinos.",
+    "personas_vinculadas": "Iván Peñaloza. Participación de familiares, mano de obra adicional y responsabilidades pendientes de verificar.",
+    "coordenadas": "Pendientes de tomar.",
+    "descripcion_general": "La iniciativa busca retomar la producción de trucha para responder a solicitudes de clientes locales. La experiencia previa incluye manejo del agua, baja mortalidad reportada y alimentación complementaria con lombriz roja californiana. El ciclo estimado es de seis meses para llegar a cerca de media libra y de un año para una libra. El crecimiento está limitado por la disponibilidad y oxigenación del agua durante el verano.",
+    "observaciones_o_comentarios": "Nota crítica de capacidad: La transcripción menciona de forma no coincidente máximos históricos de 300 y 500 peces, además de un reinicio con 100 o 200 alevinos. Ninguna de estas cifras debe asumirse como capacidad aprobada hasta medir caudal, oxigenación, volumen útil de los estanques, mortalidad y disponibilidad de agua en verano.\nIdentificación: El archivo recibido y la solicitud nombran al productor como Iván Peñaloza; la transcripción automática registra 'Peñalosa'. Deben verificarse la escritura legal del apellido, documento, teléfono, correo, RUT, nombre de la unidad productiva, vereda, predio y coordenadas."
+  },
+  "PMAPC_F02": {
+    "mision": "Producir y ofrecer trucha fresca de buena calidad a restaurantes y familias de Sumapaz, aplicando un manejo respetuoso de los animales, cuidando el agua disponible y generando ingresos para la familia y la reinversión en la unidad productiva.",
+    "vision": "Consolidar una producción estable de trucha, ajustada a la capacidad real del agua, con almacenamiento y recirculación, control de mortalidad y alimento, costos definidos, clientes recurrentes y entregas frescas y seguras.",
+    "valores": [
+      "Respeto hacia los animales",
+      "calidad"
+    ],
+    "observaciones_o_comentarios": "Tercer valor pendiente de concertar con el productor."
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Porque existe poca oferta local de trucha, antiguos clientes continúan preguntando por el producto y valoran recibirlo fresco sin depender del traslado desde Bogotá.",
+    "beneficio_cliente": "Acceso cercano a trucha fresca para restaurantes y consumo familiar, con atención directa y menor dificultad de transporte y conservación.",
+    "diferencial": "Experiencia previa, baja mortalidad reportada, revisión de la capacidad del agua, alimentación complementaria con lombriz roja californiana y entrega fresca directamente al comprador.",
+    "valor_ambiental": "La fuente está cercada y no ingresan animales; el agua y los sedimentos retirados durante la limpieza se aprovechan en hortalizas o invernaderos. El productor propone recircular el agua. Falta medir caudal, consumo y calidad.",
+    "valor_social_comunitario": "Acerca un alimento solicitado a familias y restaurantes de la localidad y genera ingreso familiar con posibilidad de reinversión en el emprendimiento.",
+    "evidencia": "Ventas y clientes anteriores, solicitudes posteriores para volver a ofrecer trucha y satisfacción verbal por la frescura. Registros, pedidos, fotografías y soportes de venta pendientes de organizar.",
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Experiencia previa en cría de trucha.",
+      "Baja mortalidad reportada en ciclos anteriores.",
+      "Conocimiento práctico de la capacidad y circulación del agua.",
+      "Uso de lombriz roja californiana como complemento alimentario.",
+      "Tres estanques conectados y un espacio auxiliar para limpieza.",
+      "Demanda local ya identificada.",
+      "Clientes que valoran la frescura y no regatean el precio.",
+      "Aprovechamiento de sedimentos y residuos orgánicos en el predio."
+    ],
+    "oportunidades": [
+      "Reiniciar con un lote piloto de 100-200 alevinos.",
+      "Atender restaurantes y familias con poca oferta cercana.",
+      "Instalar almacenamiento, recirculación y oxigenación de agua.",
+      "Organizar preventas antes de cada cosecha.",
+      "Implementar registros por lote, clientes y trazabilidad.",
+      "Recibir apoyo técnico, financiero y de manejo del alimento.",
+      "Reactivar acuerdos de volumen con proveedores.",
+      "Documentar el aprovechamiento circular de residuos."
+    ],
+    "debilidades": [
+      "No existe un sistema de costos, gastos, ingresos y utilidad.",
+      "Dependencia de una sola fuente de agua.",
+      "No hay tanque de almacenamiento suficiente.",
+      "Oxigenación insuficiente del pozo de respaldo.",
+      "Sobrepoblación si se aumenta el lote sin medición.",
+      "Precio actual y presentación sin definir.",
+      "Cifras históricas de capacidad y mortalidad sin conciliar.",
+      "Procesamiento y cadena de frío sin registros técnicos.",
+      "Cantidades de alimento, residuos e insumos no medidas.",
+      "Incumplimientos ambientales o sanitarios no verificados."
+    ],
+    "amenazas": [
+      "Sequía y disminución fuerte del caudal.",
+      "Baja oxigenación, estrés o mortalidad de los peces.",
+      "Aumento del costo de alevinos, alimento y transporte.",
+      "Pérdida de frescura durante la entrega.",
+      "Enfermedades o cambios en la calidad del agua.",
+      "Cortes durante el arreglo del pescado."
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Restaurante local",
+        "perfil_que_busca": "Compra trucha fresca para preparar y servir.",
+        "ubicacion": "Dentro de la localidad de Sumapaz.",
+        "necesidad": "Producto cercano, fresco y disponible.",
+        "frecuencia": "Por ciclo / según pedido.",
+        "criterio_compra": "Frescura, calidad, peso y confianza.",
+        "canal": "Llamada telefónica y entrega directa."
+      },
+      {
+        "tipo_actor": "Familia consumidora",
+        "perfil_que_busca": "Compra para consumo en el hogar.",
+        "ubicacion": "Localidad de Sumapaz.",
+        "necesidad": "Acceso sin traer pescado desde Bogotá.",
+        "frecuencia": "Ocasional/según cosecha.",
+        "criterio_compra": "Frescura, calidad, precio y cercanía.",
+        "canal": "Contacto telefónico y venta directa."
+      },
+      {
+        "tipo_actor": "Cliente anterior",
+        "perfil_que_busca": "Ya compró durante la etapa previa y solicita la reactivación.",
+        "ubicacion": "Comunidad local.",
+        "necesidad": "Continuidad de un producto conocido.",
+        "frecuencia": "Según disponibilidad.",
+        "criterio_compra": "Confianza y calidad.",
+        "canal": "Llamada telefónica."
+      },
+      {
+        "tipo_actor": "Nuevo restaurante potencial",
+        "perfil_que_busca": "Negocio que podría incorporarse a la ruta de venta.",
+        "ubicacion": "Sumapaz.",
+        "necesidad": "Oferta estable y cumplimiento.",
+        "frecuencia": "Pendiente de validar.",
+        "criterio_compra": "Precio, tamaño, frescura y entrega.",
+        "canal": "Visita o llamada."
+      },
+      {
+        "tipo_actor": "Comprador institucional",
+        "perfil_que_busca": "No reportado.",
+        "ubicacion": "Pendiente de verificar.",
+        "necesidad": "Pendiente de validar.",
+        "frecuencia": "No determinada.",
+        "criterio_compra": "Pendiente.",
+        "canal": "No definido."
+      },
+      {
+        "tipo_actor": "Intermediario / plaza",
+        "perfil_que_busca": "No reportado.",
+        "ubicacion": "Pendiente de verificar.",
+        "necesidad": "No determinada.",
+        "frecuencia": "No determinada.",
+        "criterio_compra": "Pendiente.",
+        "canal": "No definido."
+      },
+      {
+        "tipo_actor": "Otro",
+        "perfil_que_busca": "Compradores adicionales pendientes de caracterizar.",
+        "ubicacion": "Pendiente de verificar.",
+        "necesidad": "Pendiente de validar.",
+        "frecuencia": "Pendiente.",
+        "criterio_compra": "Pendiente.",
+        "canal": "Pendiente."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Trucha fresca, de buena calidad, cercana y disponible para restaurantes o familias.",
+    "como_se_conoce_la_necesidad": "Los clientes anteriores preguntan cuándo volverá a producirse y valoran no depender del transporte desde Bogotá.",
+    "quienes_compran_o_podrian_comprar": "Restaurantes y familias de la localidad; otros compradores locales pendientes de identificar.",
+    "evidencia": "Ventas anteriores, solicitudes telefónicas, clientes frecuentes y comentarios verbales. Soportes documentales pendientes.",
+    "ventaja_territorial": "Producto obtenido en Sumapaz, entregado fresco y cerca del consumidor, con experiencia local en manejo de agua y alimentación complementaria.",
+    "cambios_demanda": "No se documentaron cambios; sí se reportó que la demanda anterior superaba la disponibilidad de producto.",
+    "dificultades": "No se reportaron problemas para vender. Las barreras son la falta de producto, el agua en verano, la capacidad de los estanques, la definición del precio y la logística de entrega.",
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Corrital (nombre por verificar)",
+        "tipo": "Proveedor de alevinos",
+        "que_aporta": "Alevinos y posible descuento por volumen.",
+        "que_recibe": "Compras recurrentes.",
+        "trabajo_conjunto": "Reactivar acuerdo y definir calidad, cantidad y fechas.",
+        "aporte_ambiental": "Trazabilidad de origen y transporte.",
+        "accion": "Confirmar razón social, ubicación y condiciones."
+      },
+      {
+        "actor_aliado": "Proveedor de alimento",
+        "tipo": "Proveedor",
+        "que_aporta": "Alimento para el ciclo.",
+        "que_recibe": "Ventas programadas.",
+        "trabajo_conjunto": "Plan de abastecimiento por lote.",
+        "aporte_ambiental": "Reducir pérdidas y exceso de alimentación.",
+        "accion": "Identificar proveedor, ficha y costos."
+      },
+      {
+        "actor_aliado": "Restaurantes locales",
+        "tipo": "Comercial",
+        "que_aporta": "Pedidos y retroalimentación.",
+        "que_recibe": "Producto fresco y cercano.",
+        "trabajo_conjunto": "Preventa antes de la cosecha.",
+        "aporte_ambiental": "Menor traslado desde Bogotá.",
+        "accion": "Crear lista de contactos y cantidades."
+      },
+      {
+        "actor_aliado": "Familias y clientes anteriores",
+        "tipo": "Comunitario / comercial",
+        "que_aporta": "Demanda y recomendación.",
+        "que_recibe": "Acceso local a trucha.",
+        "trabajo_conjunto": "Aviso de disponibilidad por teléfono.",
+        "aporte_ambiental": "Circuito corto de comercialización.",
+        "accion": "Registrar pedidos y recompra."
+      },
+      {
+        "actor_aliado": "Productores vecinos",
+        "tipo": "Productivo",
+        "que_aporta": "Intercambio de experiencia, insumos o logística.",
+        "que_recibe": "Cooperación y menor costo.",
+        "trabajo_conjunto": "Posibilidad no validada.",
+        "aporte_ambiental": "Compras o transporte compartidos.",
+        "accion": "Identificar interesados."
+      },
+      {
+        "actor_aliado": "Programas de emprendimiento rural",
+        "tipo": "Institucional",
+        "que_aporta": "Asistencia, formación y posible dotación.",
+        "que_recibe": "Resultados de fortalecimiento.",
+        "trabajo_conjunto": "Agua, costos, inocuidad y comercialización.",
+        "aporte_ambiental": "Mejores prácticas y registros.",
+        "accion": "Presentar plan de inversión."
+      },
+      {
+        "actor_aliado": "Apoyo técnico acuícola/ambiental",
+        "tipo": "Técnico",
+        "que_aporta": "Medición de caudal, oxígeno, carga y manejo de residuos.",
+        "que_recibe": "Servicio o articulación.",
+        "trabajo_conjunto": "Visita y plan de manejo.",
+        "aporte_ambiental": "Evita sobrecarga de la fuente.",
+        "accion": "Gestionar acompañamiento."
+      },
+      {
+        "actor_aliado": "Aliado de transporte/cadena de frío",
+        "tipo": "Logístico",
+        "que_aporta": "Traslado de alevinos, alimento y producto.",
+        "que_recibe": "Contratación o ruta estable.",
+        "trabajo_conjunto": "Definir tiempos, capacidad y costo.",
+        "aporte_ambiental": "Reducir pérdidas y viajes.",
+        "accion": "Solicitar cotizaciones."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Venta previa",
+        "a_quien": "Restaurantes y familias locales.",
+        "resultado": "Aceptación del producto y demanda superior a la oferta reportada.",
+        "motivacion": "Frescura, calidad y cercanía.",
+        "evidencia": "Registros de venta pendientes."
+      },
+      {
+        "metodo": "Recompra/solicitud",
+        "a_quien": "Clientes anteriores.",
+        "resultado": "Continúan preguntando por trucha.",
+        "motivacion": "Confianza y disponibilidad.",
+        "evidencia": "Llamadas y testimonios pendientes de organizar."
+      },
+      {
+        "metodo": "Observación de precio",
+        "a_quien": "Clientes anteriores.",
+        "resultado": "No regateaban el precio y reconocían el esfuerzo de producción.",
+        "motivacion": "Calidad y frescura.",
+        "evidencia": "Relato del productor."
+      },
+      {
+        "metodo": "Ciclo productivo previo",
+        "a_quien": "Unidad productiva.",
+        "resultado": "Se reportó baja mortalidad y crecimiento con lombriz roja.",
+        "motivacion": "Continuidad del producto.",
+        "evidencia": "Bitácoras y cifras pendientes."
+      },
+      {
+        "metodo": "Contacto telefónico",
+        "a_quien": "Restaurantes y familias.",
+        "resultado": "Canal usado para pedidos y comunicación.",
+        "motivacion": "Acceso directo.",
+        "evidencia": "Base de contactos pendiente."
+      },
+      {
+        "metodo": "Encuesta / carta de intención",
+        "a_quien": "No realizada.",
+        "resultado": "Pendiente.",
+        "motivacion": "Validar cantidad, peso, precio y frecuencia.",
+        "evidencia": "No existe."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Trucha fresca de aproximadamente media libra",
+        "descripcion_tecnica": "Pez criado en estanques con flujo de agua; ciclo estimado de seis meses.",
+        "unidad": "Unidad/aproximadamente 0,5 lb.",
+        "insumos_principales": "Alevino, alimento, lombriz roja californiana y agua.",
+        "condiciones_especiales": "Cosecha y entrega fresca; temperatura y tiempo pendientes de definir.",
+        "presentacion": "En canal, directamente al restaurante, según la transcripción; empaque por verificar.",
+        "diferencial": "Frescura local, experiencia previa y baja mortalidad reportada."
+      },
+      {
+        "servicio": "Trucha de aproximadamente una libra",
+        "descripcion_tecnica": "Presentación posible que requeriría cerca de un año de crecimiento.",
+        "unidad": "Unidad/aproximadamente 1 lb.",
+        "insumos_principales": "Los mismos insumos durante un ciclo más largo.",
+        "condiciones_especiales": "Requiere mayor tiempo, agua, alimento y control.",
+        "presentacion": "Pendiente de definir.",
+        "diferencial": "Mayor peso, sujeto a viabilidad hídrica y comercial."
+      },
+      {
+        "servicio": "Otras presentaciones",
+        "descripcion_tecnica": "No reportadas.",
+        "unidad": "Pendiente.",
+        "insumos_principales": "Pendiente.",
+        "condiciones_especiales": "Pendiente.",
+        "presentacion": "Pendiente.",
+        "diferencial": "Pendiente de validar con clientes."
+      },
+      {
+        "servicio": "Calidad",
+        "descripcion_tecnica": "Parámetros de mortalidad, peso, agua, limpieza e inocuidad sin registros consolidados.",
+        "unidad": "Por lote.",
+        "insumos_principales": "Planillas y elementos de medición.",
+        "condiciones_especiales": "Seguimiento durante todo el ciclo.",
+        "presentacion": "Ficha técnica futura.",
+        "diferencial": "Debe demostrarse con registros."
+      },
+      {
+        "servicio": "Cadena de frío",
+        "descripcion_tecnica": "No se describieron equipos ni temperaturas para la entrega.",
+        "unidad": "Por despacho.",
+        "insumos_principales": "Hielo, contenedor o equipo pendiente de definir.",
+        "condiciones_especiales": "Desde la cosecha hasta el cliente.",
+        "presentacion": "Pendiente.",
+        "diferencial": "Brecha crítica por verificar."
+      },
+      {
+        "servicio": "Etiqueta/trazabilidad",
+        "descripcion_tecnica": "No implementada.",
+        "unidad": "Por lote.",
+        "insumos_principales": "Código, fecha, peso, origen y contacto.",
+        "condiciones_especiales": "Actualizar en cada cosecha.",
+        "presentacion": "Etiqueta o QR futuro.",
+        "diferencial": "Mejora confianza del comprador."
+      },
+      {
+        "servicio": "Soporte del producto",
+        "descripcion_tecnica": "Fotografías, pedidos, pesajes y testimonios no presentados.",
+        "unidad": "Por ciclo.",
+        "insumos_principales": "Registros del productor.",
+        "condiciones_especiales": "Archivo físico o digital.",
+        "presentacion": "Ficha y evidencias.",
+        "diferencial": "Pendiente de organizar."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Planeación del lote",
+        "unidad": "100-200 alevinos iniciales.",
+        "actividad_proceso": "1. Confirmar caudal, oxigenación, volumen de estanques, proveedor y cantidad de reinicio.",
+        "tiempo_estimado": "Antes de la compra."
+      },
+      {
+        "servicio": "Abastecimiento",
+        "unidad": "Por lote.",
+        "actividad_proceso": "2. Comprar y transportar alevinos desde Corrital, con condiciones de traslado pendientes de definir.",
+        "tiempo_estimado": "Según proveedor."
+      },
+      {
+        "servicio": "Ingreso al sistema",
+        "unidad": "Por lote.",
+        "actividad_proceso": "3. Recibir, contar y aclimatar los alevinos antes de ubicarlos en el estanque.",
+        "tiempo_estimado": "Pendiente de estandarizar."
+      },
+      {
+        "servicio": "Alimentación",
+        "unidad": "Diaria, frecuencia exacta pendiente.",
+        "actividad_proceso": "4. Suministrar alimento y complemento de lombriz roja californiana; registrar cantidad.",
+        "tiempo_estimado": "Durante el ciclo."
+      },
+      {
+        "servicio": "Manejo del agua",
+        "unidad": "Tres estanques conectados.",
+        "actividad_proceso": "5. Mantener el flujo, observar oxigenación, nivel de agua y comportamiento de los peces.",
+        "tiempo_estimado": "Diario."
+      },
+      {
+        "servicio": "Seguimiento",
+        "unidad": "Por lote.",
+        "actividad_proceso": "6. Registrar mortalidad, crecimiento, alimento, calidad del agua y novedades.",
+        "tiempo_estimado": "Semanal/diario según variable."
+      },
+      {
+        "servicio": "Limpieza",
+        "unidad": "Estanque principal.",
+        "actividad_proceso": "7. Trasladar temporalmente los peces al estanque auxiliar, limpiar y retornar cuando sea seguro.",
+        "tiempo_estimado": "Según necesidad."
+      },
+      {
+        "servicio": "Crecimiento",
+        "unidad": "Aproximadamente media libra.",
+        "actividad_proceso": "8. Mantener el lote cerca de seis meses; una libra requeriría aproximadamente un año.",
+        "tiempo_estimado": "6-12 meses."
+      },
+      {
+        "servicio": "Cosecha y arreglo",
+        "unidad": "Por pedido/lote.",
+        "actividad_proceso": "9. Cosechar y arreglar el pescado con cuchillo en un tanque de la vivienda; procedimiento sanitario pendiente de validar.",
+        "tiempo_estimado": "Al final del ciclo."
+      },
+      {
+        "servicio": "Entrega",
+        "unidad": "Producto fresco.",
+        "actividad_proceso": "10. Entregar directamente a restaurante o familia, con tiempo, empaque y temperatura por definir.",
+        "tiempo_estimado": "El mismo día, por verificar."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Alevinos de trucha",
+        "cantidad_unidad": "100-200 para el reinicio; cantidad final pendiente.",
+        "frecuencia": "Por ciclo.",
+        "proveedor_fuente": "Corrital, nombre y ubicación por verificar.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Mortalidad, sanidad y transporte.",
+        "manejo_ambiental": "Verificar origen, contar, aclimatar y registrar lote.",
+        "observaciones": "Precio y talla pendientes."
+      },
+      {
+        "insumo": "Alimento concentrado",
+        "cantidad_unidad": "Cantidad y unidad pendientes.",
+        "frecuencia": "Permanente durante el ciclo.",
+        "proveedor_fuente": "Proveedor pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Exceso de nutrientes y costo.",
+        "manejo_ambiental": "Dosificar, almacenar seco y registrar consumo.",
+        "observaciones": "El productor indica tener alimento disponible."
+      },
+      {
+        "insumo": "Lombriz roja californiana",
+        "cantidad_unidad": "Cantidad pendiente.",
+        "frecuencia": "Según plan de alimentación.",
+        "proveedor_fuente": "Fuente propia o externa por verificar.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Materia orgánica y manejo biológico.",
+        "manejo_ambiental": "Mantener manejo limpio y dosificación definida.",
+        "observaciones": "Se usa para favorecer crecimiento."
+      },
+      {
+        "insumo": "Agua",
+        "cantidad_unidad": "Caudal y volumen no medidos.",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Fuente/acueducto dentro del predio.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Recurso crítico; disminuye en verano.",
+        "manejo_ambiental": "Medir, proteger, almacenar, recircular y oxigenar.",
+        "observaciones": "Principal limitante."
+      },
+      {
+        "insumo": "Cuchillos y herramientas",
+        "cantidad_unidad": "Cantidad y estado pendientes.",
+        "frecuencia": "En cada cosecha.",
+        "proveedor_fuente": "Disponibles en la unidad.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Cortes y contaminación.",
+        "manejo_ambiental": "Mantenimiento, desinfección y técnica segura.",
+        "observaciones": "Riesgo de laceración confirmado."
+      },
+      {
+        "insumo": "Tanque para arreglo",
+        "cantidad_unidad": "Un tanque en la vivienda, características pendientes.",
+        "frecuencia": "En cada cosecha.",
+        "proveedor_fuente": "Propio.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Agua residual e inocuidad.",
+        "manejo_ambiental": "Validar material, limpieza, drenaje y separación.",
+        "observaciones": "Lugar actual reportado."
+      },
+      {
+        "insumo": "Productos de limpieza",
+        "cantidad_unidad": "No reportados.",
+        "frecuencia": "Según limpieza.",
+        "proveedor_fuente": "Pendiente.",
+        "toxicidad": "Pendiente",
+        "impacto_potencial": "Vertimientos y residuos.",
+        "manejo_ambiental": "Identificar, dosificar y almacenar separados.",
+        "observaciones": "Pendiente de verificar."
+      },
+      {
+        "insumo": "Transporte / combustible",
+        "cantidad_unidad": "Tipo, distancia, capacidad y costo pendientes.",
+        "frecuencia": "Por compra y venta.",
+        "proveedor_fuente": "Asumido por el productor.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Emisiones, costo y pérdida de frescura.",
+        "manejo_ambiental": "Consolidar rutas y definir cadena de frío.",
+        "observaciones": "El productor asume los traslados."
+      },
+      {
+        "insumo": "Hielo/contenedor térmico",
+        "cantidad_unidad": "No reportado.",
+        "frecuencia": "Por entrega.",
+        "proveedor_fuente": "Pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Consumo de energía y empaque.",
+        "manejo_ambiental": "Definir según tiempo y temperatura requeridos.",
+        "observaciones": "Brecha de cadena de frío."
+      },
+      {
+        "insumo": "Elementos de protección",
+        "cantidad_unidad": "No reportados.",
+        "frecuencia": "Cada jornada y cosecha.",
+        "proveedor_fuente": "Pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Seguridad del productor.",
+        "manejo_ambiental": "Botas antideslizantes, guante de corte y protección según tarea.",
+        "observaciones": "Recomendación técnica por validar."
+      },
+      {
+        "insumo": "OBSERVACIONES",
+        "cantidad_unidad": "Faltan facturas, cantidades, costos, fichas, proveedor, inventario y consumo por lote.",
+        "frecuencia": "N/A",
+        "proveedor_fuente": "N/A",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Sin línea base.",
+        "manejo_ambiental": "Registrar desde el lote piloto.",
+        "observaciones": "No se estiman valores sin soportes."
+      },
+      {
+        "insumo": "Insumo adicional",
+        "cantidad_unidad": "Pendiente de verificar.",
+        "frecuencia": "Pendiente.",
+        "proveedor_fuente": "Pendiente.",
+        "toxicidad": "Pendiente",
+        "impacto_potencial": "Pendiente.",
+        "manejo_ambiental": "Definir según visita.",
+        "observaciones": "No reportado."
+      },
+      {
+        "insumo": "Medicamentos / tratamientos",
+        "cantidad_unidad": "No reportados.",
+        "frecuencia": "Pendiente.",
+        "proveedor_fuente": "Pendiente.",
+        "toxicidad": "Pendiente",
+        "impacto_potencial": "Riesgo sanitario y de residuos.",
+        "manejo_ambiental": "No usar sin orientación y registro.",
+        "observaciones": "Confirmar si aplica."
+      },
+      {
+        "insumo": "Material de empaque",
+        "cantidad_unidad": "No reportado.",
+        "frecuencia": "Por venta.",
+        "proveedor_fuente": "Pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Generación de residuos.",
+        "manejo_ambiental": "Seleccionar material apto y minimizarlo.",
+        "observaciones": "Pendiente."
+      },
+      {
+        "insumo": "Instrumentos de medición",
+        "cantidad_unidad": "No reportados.",
+        "frecuencia": "Diaria / semanal.",
+        "proveedor_fuente": "Por cotizar.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Facilitan control de agua y peso.",
+        "manejo_ambiental": "Incluir en plan de inversión.",
+        "observaciones": "Necesidad de fortalecimiento."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "Actualmente no determinada; la actividad está en reactivación y no se confirmó un lote activo.",
+    "produccion_normal": "Inicio previsto con 100 o 200 alevinos; cosecha estimada después de seis meses para llegar a cerca de media libra.",
+    "capacidad_mensual_teorica": "No determinada técnicamente. Depende del caudal, oxígeno, volumen útil, mortalidad, alimento y manejo durante el verano.",
+    "produccion_maxima_posible": "El productor menciona 500 peces por ciclo como referencia histórica; no debe adoptarse como capacidad actual sin medición.",
+    "area_numero_habitaciones": "Tres estanques conectados, un espacio auxiliar de traslado y un pozo base de respaldo. Medidas, profundidad y volumen pendientes.",
+    "limitantes_productivos": "Agua, oxigenación, almacenamiento, falta de registros, definición del lote, alimentación, procesamiento, transporte y cadena de frío.",
+    "limitantes_ambientales": "Disminución del agua en verano, dependencia de una sola fuente y riesgo de sobrecarga de los estanques.",
+    "capacidad_instalada": "Estanques, bodega para alimento, manguera desde el pozo base y tanque de la vivienda para arreglo. Estado técnico pendiente.",
+    "capacidad_utilizada": "Actividad en reinicio; porcentaje de uso no calculado.",
+    "produce_mismo_todo_ano": false,
+    "alcanza_para_demanda": false,
+    "necesidades_aumentar_sosteniblemente": "Medición de agua y oxígeno, tanque de almacenamiento, recirculación, mejoras de estanques, administración del alimento, registros productivos y apoyo financiero.",
+    "observaciones_o_comentarios": "Referencia histórica: Se mencionaron 300 y 500 peces como máximos anteriores, además de una cifra anual que no quedó clara. Debe conciliarse con registros."
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua",
+        "estado_actual": "Fuente/acueducto dentro del predio; caudal no medido.",
+        "limite_restriccion": "Disminuye fuertemente en verano.",
+        "afectacion": "Limita el número de peces y la continuidad del ciclo.",
+        "efecto": "Estrés, bajo crecimiento o mortalidad.",
+        "incidencia": "Alta",
+        "accion_mejora": "Medir, almacenar, recircular y oxigenar antes de aumentar lotes."
+      },
+      {
+        "condicion": "Fuente hídrica",
+        "estado_actual": "Cercada con alambre; no ingresan animales.",
+        "limite_restriccion": "No hay árboles sembrados alrededor y falta caracterización.",
+        "afectacion": "La protección incompleta puede afectar estabilidad y calidad.",
+        "efecto": "Mayor vulnerabilidad.",
+        "incidencia": "Alta",
+        "accion_mejora": "Validar ronda, cobertura vegetal y medidas de protección."
+      },
+      {
+        "condicion": "Suelo",
+        "estado_actual": "Sedimentos y agua de limpieza se llevan a hortalizas o invernaderos.",
+        "limite_restriccion": "Cantidad y calidad no medidas.",
+        "afectacion": "Puede aportar materia orgánica o generar exceso si se aplica sin control.",
+        "efecto": "Efecto no determinado.",
+        "incidencia": "Media",
+        "accion_mejora": "Registrar cantidades y validar aplicación segura."
+      },
+      {
+        "condicion": "Pendiente / sistema de estanques",
+        "estado_actual": "El agua pasa por tres estanques y se oxigena al descender.",
+        "limite_restriccion": "Diseño, desnivel, volumen y seguridad no verificados.",
+        "afectacion": "Condiciona oxigenación y limpieza.",
+        "efecto": "Capacidad variable.",
+        "incidencia": "Alta",
+        "accion_mejora": "Levantar ficha técnica de cada estanque y mejorar estructura."
+      },
+      {
+        "condicion": "Clima",
+        "estado_actual": "La sequía es el evento crítico reportado.",
+        "limite_restriccion": "Menor caudal durante el verano.",
+        "afectacion": "Reduce disponibilidad y oxigenación.",
+        "efecto": "Riesgo de pérdida del lote.",
+        "incidencia": "Alta",
+        "accion_mejora": "Plan de contingencia con almacenamiento y lote ajustado."
+      },
+      {
+        "condicion": "Biodiversidad",
+        "estado_actual": "El productor menciona respeto hacia los animales.",
+        "limite_restriccion": "No se documentó relación con fauna, flora o zonas sensibles.",
+        "afectacion": "No determinada.",
+        "efecto": "Pendiente.",
+        "incidencia": "Media",
+        "accion_mejora": "Realizar verificación ambiental del predio."
+      },
+      {
+        "condicion": "Uso de insumos",
+        "estado_actual": "Alimento comercial y lombriz roja.",
+        "limite_restriccion": "Cantidades, composición y dosificación pendientes.",
+        "afectacion": "Excesos pueden aumentar costos y residuos en el agua.",
+        "efecto": "Deterioro de calidad del agua.",
+        "incidencia": "Alta",
+        "accion_mejora": "Plan de alimentación y registro por lote."
+      },
+      {
+        "condicion": "Manejo de residuos",
+        "estado_actual": "Sedimentos se usan en hortalizas; restos del arreglo se entregan a perros según el relato.",
+        "limite_restriccion": "Cantidades, separación y condiciones sanitarias no verificadas.",
+        "afectacion": "Puede generar olores, vectores o contaminación.",
+        "efecto": "Riesgo medio.",
+        "incidencia": "Media-Alta",
+        "accion_mejora": "Definir ruta, cantidades y aprovechamiento seguro."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Biológico",
+        "peligro": "Contacto con peces, agua y residuos orgánicos",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No descritos.",
+        "accion": "Guantes según tarea, higiene y limpieza del área."
+      },
+      {
+        "tipo": "Biológico",
+        "peligro": "Posible contaminación durante el arreglo",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Tanque en la vivienda; protocolo no informado.",
+        "accion": "Separar, limpiar, desinfectar y registrar."
+      },
+      {
+        "tipo": "Físico",
+        "peligro": "Frío, lluvia y radiación en trabajo exterior",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No informados.",
+        "accion": "Ropa adecuada, pausas y protección solar."
+      },
+      {
+        "tipo": "Químico",
+        "peligro": "Productos de limpieza",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Pendiente de verificar.",
+        "accion": "Inventariar, etiquetar y dosificar."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Posturas al alimentar, limpiar y cosechar",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No informados.",
+        "accion": "Alternar tareas y usar herramientas adecuadas."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Levantamiento de alimento y recipientes",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Bodega disponible.",
+        "accion": "Técnica de carga y límites de peso."
+      },
+      {
+        "tipo": "Mecánico",
+        "peligro": "Cuchillos para lombriz y arreglo del pescado",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Experiencia práctica.",
+        "accion": "Guante anticorte, tabla estable y almacenamiento seguro."
+      },
+      {
+        "tipo": "Locativo",
+        "peligro": "Superficies húmedas e irregulares alrededor de estanques",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No descritos.",
+        "accion": "Botas antideslizantes, orden y accesos seguros."
+      },
+      {
+        "tipo": "Seguridad",
+        "peligro": "Caída al agua durante manejo o limpieza",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No descritos.",
+        "accion": "Barandas o delimitación según visita y trabajo acompañado."
+      },
+      {
+        "tipo": "Eléctrico",
+        "peligro": "Equipos de bombeo u oxigenación",
+        "aplica": false,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "No se reporta uso actual de energía.",
+        "accion": "Revisión técnica si se instalan equipos."
+      },
+      {
+        "tipo": "Tránsito",
+        "peligro": "Traslado de alevinos, alimento y producto",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "El productor asume el transporte.",
+        "accion": "Vehículo adecuado, mantenimiento y carga segura."
+      },
+      {
+        "tipo": "Sanitario",
+        "peligro": "Pérdida de cadena de frío",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "No se informaron equipos ni temperaturas.",
+        "accion": "Definir tiempo, hielo/contenedor y control de temperatura."
+      },
+      {
+        "tipo": "Emergencia",
+        "peligro": "Corte, caída o incidente en zona rural",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Botiquín y ruta no informados.",
+        "accion": "Botiquín, teléfonos y registro de incidentes."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Usar botas antideslizantes, guantes y protección según la tarea.",
+        "riesgo": "Locativo, biológico y mecánico.",
+        "responsable": "Iván / personal vinculado.",
+        "frecuencia": "Cada jornada.",
+        "evidencia": "Checklist y fotografías."
+      },
+      {
+        "accion_preventiva": "Aplicar técnica segura de cuchillo y usar tabla estable.",
+        "riesgo": "Laceraciones.",
+        "responsable": "Responsable del arreglo.",
+        "frecuencia": "Cada cosecha.",
+        "evidencia": "Observación/registro."
+      },
+      {
+        "accion_preventiva": "Revisar accesos, bordes y superficies de los estanques.",
+        "riesgo": "Caídas y golpes.",
+        "responsable": "Iván.",
+        "frecuencia": "Semanal.",
+        "evidencia": "Lista de inspección."
+      },
+      {
+        "accion_preventiva": "Organizar el peso y traslado del alimento.",
+        "riesgo": "Biomecánico.",
+        "responsable": "Iván.",
+        "frecuencia": "Cada movimiento.",
+        "evidencia": "Checklist."
+      },
+      {
+        "accion_preventiva": "Limpiar y desinfectar tanque y utensilios con procedimiento definido.",
+        "riesgo": "Biológico/sanitario.",
+        "responsable": "Responsable de proceso.",
+        "frecuencia": "Antes y después de cada uso.",
+        "evidencia": "Planilla."
+      },
+      {
+        "accion_preventiva": "Mantener botiquín, teléfonos y ruta de atención.",
+        "riesgo": "Emergencias.",
+        "responsable": "Unidad productiva.",
+        "frecuencia": "Revisión mensual.",
+        "evidencia": "Inspección."
+      },
+      {
+        "accion_preventiva": "Definir y controlar cadena de frío.",
+        "riesgo": "Sanitario y logístico.",
+        "responsable": "Iván.",
+        "frecuencia": "Cada entrega.",
+        "evidencia": "Registro de tiempo y temperatura."
+      },
+      {
+        "accion_preventiva": "Capacitar en manejo de agua, peces y herramientas.",
+        "riesgo": "Productivo y SST.",
+        "responsable": "Equipo técnico/productor.",
+        "frecuencia": "Antes del reinicio y anual.",
+        "evidencia": "Asistencia."
+      },
+      {
+        "accion_preventiva": "Registrar cortes, caídas, mortalidad e incidentes.",
+        "riesgo": "Seguimiento SG-SST.",
+        "responsable": "Iván.",
+        "frecuencia": "Cuando ocurra.",
+        "evidencia": "Bitácora."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "Restaurantes y familias.",
+        "responsable": "Iván.",
+        "frecuencia": "Al finalizar cada ciclo / según pedido."
+      },
+      {
+        "canal": "Llamadas telefónicas",
+        "activo": true,
+        "descripcion": "Canal de contacto reportado.",
+        "responsable": "Iván.",
+        "frecuencia": "Según disponibilidad y pedidos."
+      },
+      {
+        "canal": "WhatsApp",
+        "activo": false,
+        "descripcion": "No se confirmó su uso.",
+        "responsable": "Por definir.",
+        "frecuencia": "Pendiente."
+      },
+      {
+        "canal": "Redes sociales",
+        "activo": false,
+        "descripcion": "No reportadas.",
+        "responsable": "Por definir.",
+        "frecuencia": "Pendiente."
+      },
+      {
+        "canal": "Restaurantes",
+        "activo": true,
+        "descripcion": "Entrega directa de producto fresco.",
+        "responsable": "Iván.",
+        "frecuencia": "Por cosecha."
+      },
+      {
+        "canal": "Ferias campesinas",
+        "activo": false,
+        "descripcion": "No reportadas.",
+        "responsable": "N/A",
+        "frecuencia": "Pendiente."
+      },
+      {
+        "canal": "Compras institucionales",
+        "activo": false,
+        "descripcion": "No reportadas.",
+        "responsable": "Por gestionar.",
+        "frecuencia": "Pendiente."
+      },
+      {
+        "canal": "Comercialización asociativa",
+        "activo": false,
+        "descripcion": "No reportada.",
+        "responsable": "Por explorar.",
+        "frecuencia": "Pendiente."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Trucha de aproximadamente media libra",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "$13.000 por media libra como referencia histórica.",
+        "logistica_plataforma": "Pendiente.",
+        "precio_final": null,
+        "justificacion": "Validar con ficha de costos, peso real y clientes."
+      },
+      {
+        "servicio": "Trucha de aproximadamente una libra",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No informado.",
+        "logistica_plataforma": "Pendiente.",
+        "precio_final": null,
+        "justificacion": "No proyectar hasta validar agua y mercado."
+      },
+      {
+        "servicio": "Venta a restaurante",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Pendiente.",
+        "logistica_plataforma": "Entrega asumida por productor.",
+        "precio_final": null,
+        "justificacion": "Definir cantidad mínima y ruta."
+      },
+      {
+        "servicio": "Otras presentaciones",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Pendiente.",
+        "logistica_plataforma": "Pendiente.",
+        "precio_final": null,
+        "justificacion": "Validar con compradores."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": "Observación financiera: El productor indicó que requiere apoyo para organizar costos, gastos, ingresos y utilidad. El valor histórico de $13.000 por media libra y la mención actual cercana a $16.000 son referencias verbales que deben verificarse; no permiten calcular margen ni precio final."
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Lote inicial base",
+        "cantidad_mensual": "100 alevinos / unidades cosechadas por determinar.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Efectivo.",
+        "canal": "Restaurantes y familias locales."
+      },
+      {
+        "concepto_servicio": "Lote inicial alternativo",
+        "cantidad_mensual": "Hasta 200 alevinos, decisión pendiente.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Efectivo.",
+        "canal": "Venta directa."
+      },
+      {
+        "concepto_servicio": "Referencia histórica",
+        "cantidad_mensual": "Hasta 500 peces por ciclo según una parte del relato; existe otra referencia de 300.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Efectivo.",
+        "canal": "Clientes locales."
+      },
+      {
+        "concepto_servicio": "Ciclos anuales",
+        "cantidad_mensual": "Potencialmente dos ciclos de seis meses, sujeto a reinicio, agua y manejo.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Efectivo.",
+        "canal": "Venta directa."
+      },
+      {
+        "concepto_servicio": "Proyección confiable",
+        "cantidad_mensual": "No disponible.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Requiere registro de tres meses y cierre del primer ciclo."
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": "Proyección responsable: La primera proyección debe basarse en un lote piloto de 100-200 alevinos, registrando supervivencia, peso, alimento, agua, costos y pedidos. No se deben proyectar 500 peces ni dos ciclos anuales hasta validar la capacidad hídrica y operativa."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Restaurante local",
+        "estrategia": "Acordar peso, cantidad, fecha y condición de entrega.",
+        "medio": "Llamada/visita.",
+        "frecuencia": "Antes de cada cosecha.",
+        "responsable": "Iván."
+      },
+      {
+        "cliente": "Familia consumidora",
+        "estrategia": "Avisar disponibilidad y reservar unidades.",
+        "medio": "Llamada telefónica.",
+        "frecuencia": "Por cosecha.",
+        "responsable": "Iván."
+      },
+      {
+        "cliente": "Cliente anterior",
+        "estrategia": "Informar la reactivación y confirmar interés.",
+        "medio": "Teléfono.",
+        "frecuencia": "Antes del primer lote.",
+        "responsable": "Iván."
+      },
+      {
+        "cliente": "Cliente frecuente",
+        "estrategia": "Mantener calidad, peso y frescura consistentes.",
+        "medio": "Contacto directo.",
+        "frecuencia": "Cada compra.",
+        "responsable": "Productor."
+      },
+      {
+        "cliente": "Cliente con inconformidad",
+        "estrategia": "Escuchar, registrar y resolver.",
+        "medio": "Teléfono/contacto directo.",
+        "frecuencia": "Cuando ocurra.",
+        "responsable": "Iván."
+      },
+      {
+        "cliente": "Base de clientes",
+        "estrategia": "Registrar nombre, canal, cantidad, precio y recompra.",
+        "medio": "Hoja o archivo digital.",
+        "frecuencia": "Actualizar en cada venta.",
+        "responsable": "Responsable comercial."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Alevinos",
+        "canal": "Proveedor Corrital al predio.",
+        "tiempo": "Pendiente.",
+        "transporte_operacion": "Asumido por el productor; tipo pendiente.",
+        "condicion_calidad": "Transporte de peces vivos con oxigenación adecuada.",
+        "capacidad": "100-200 iniciales.",
+        "costo": "Pendiente.",
+        "responsable": "Iván/proveedor."
+      },
+      {
+        "servicio_insumo": "Alimento",
+        "canal": "Proveedor a bodega del predio.",
+        "tiempo": "Pendiente.",
+        "transporte_operacion": "Asumido por el productor.",
+        "condicion_calidad": "Empaque seco e íntegro.",
+        "capacidad": "Según almacenamiento.",
+        "costo": "Pendiente.",
+        "responsable": "Iván."
+      },
+      {
+        "servicio_insumo": "Trucha para restaurante",
+        "canal": "Predio a restaurante local.",
+        "tiempo": "Pendiente.",
+        "transporte_operacion": "Asumido por el productor.",
+        "condicion_calidad": "Producto fresco; tiempo y temperatura por definir.",
+        "capacidad": "Según pedido.",
+        "costo": "Pendiente.",
+        "responsable": "Iván."
+      },
+      {
+        "servicio_insumo": "Trucha para familias",
+        "canal": "Venta directa / entrega local.",
+        "tiempo": "Pendiente.",
+        "transporte_operacion": "Pendiente.",
+        "condicion_calidad": "Empaque apto y conservación definida.",
+        "capacidad": "Según reservas.",
+        "costo": "Pendiente.",
+        "responsable": "Iván."
+      },
+      {
+        "servicio_insumo": "Traslado interno",
+        "canal": "Estanque principal a estanque auxiliar durante limpieza.",
+        "tiempo": "Inmediato.",
+        "transporte_operacion": "Manual/método pendiente.",
+        "condicion_calidad": "Minimizar estrés y mantener agua oxigenada.",
+        "capacidad": "Según lote.",
+        "costo": "Operación interna.",
+        "responsable": "Iván."
+      },
+      {
+        "servicio_insumo": "Residuos orgánicos",
+        "canal": "Zona de proceso/estanques a hortalizas, invernaderos o destino definido.",
+        "tiempo": "El mismo día.",
+        "transporte_operacion": "Traslado interno.",
+        "condicion_calidad": "Separación y manejo sanitario por validar.",
+        "capacidad": "Cantidad pendiente.",
+        "costo": "Pendiente.",
+        "responsable": "Iván."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Código de lote",
+        "informacion": "Fecha de ingreso, cantidad de alevinos y proveedor.",
+        "responsable": "Iván.",
+        "medio": "Cuaderno/archivo.",
+        "frecuencia": "Cada lote.",
+        "evidencia": "Registro de compra."
+      },
+      {
+        "elemento": "Alimentación",
+        "informacion": "Tipo, cantidad y frecuencia de concentrado y lombriz.",
+        "responsable": "Iván.",
+        "medio": "Bitácora.",
+        "frecuencia": "Diaria.",
+        "evidencia": "Planilla."
+      },
+      {
+        "elemento": "Agua",
+        "informacion": "Fuente, nivel/caudal, oxigenación y contingencias.",
+        "responsable": "Iván.",
+        "medio": "Bitácora.",
+        "frecuencia": "Diaria.",
+        "evidencia": "Registro/fotos."
+      },
+      {
+        "elemento": "Mortalidad y crecimiento",
+        "informacion": "Muertes, peso de muestra y novedades.",
+        "responsable": "Iván.",
+        "medio": "Planilla.",
+        "frecuencia": "Diaria / quincenal.",
+        "evidencia": "Conteo y pesajes."
+      },
+      {
+        "elemento": "Limpieza",
+        "informacion": "Fecha, estanque, traslado y manejo de sedimentos.",
+        "responsable": "Iván.",
+        "medio": "Planilla.",
+        "frecuencia": "Cada limpieza.",
+        "evidencia": "Registro."
+      },
+      {
+        "elemento": "Cosecha y arreglo",
+        "informacion": "Fecha, cantidad, peso, condiciones del proceso.",
+        "responsable": "Responsable de proceso.",
+        "medio": "Ficha de lote.",
+        "frecuencia": "Cada cosecha.",
+        "evidencia": "Planilla/fotografías."
+      },
+      {
+        "elemento": "Entrega",
+        "informacion": "Cliente, cantidad, precio, hora, temperatura y transporte.",
+        "responsable": "Iván.",
+        "medio": "Registro de venta.",
+        "frecuencia": "Cada despacho.",
+        "evidencia": "Recibo."
+      },
+      {
+        "elemento": "QR futuro",
+        "informacion": "Origen Sumapaz, productor, lote, peso, fecha, contacto y prácticas.",
+        "responsable": "Unidad productiva.",
+        "medio": "Código QR.",
+        "frecuencia": "Cada lote.",
+        "evidencia": "Etiqueta/enlace."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Prioridad 1 Agua",
+        "descripcion": "Tanque o sistema de almacenamiento de agua.",
+        "valor_unitario": null,
+        "cantidad": "1 sistema.",
+        "total": null,
+        "requisito": "Capacidad basada en caudal, consumo, oxigenación y contingencia.",
+        "fuente": "Proyecto/recursos por definir."
+      },
+      {
+        "tipo": "Prioridad 1 Agua",
+        "descripcion": "Sistema de recirculación y oxigenación.",
+        "valor_unitario": null,
+        "cantidad": "1 sistema.",
+        "total": null,
+        "requisito": "No afectar la fuente y mantener condiciones para los peces.",
+        "fuente": "Proyecto/propios."
+      },
+      {
+        "tipo": "Infraestructura",
+        "descripcion": "Adecuación de estanques, conducción y estructura solicitada por el productor.",
+        "valor_unitario": null,
+        "cantidad": "Según diagnóstico.",
+        "total": null,
+        "requisito": "Diseño, seguridad y materiales compatibles.",
+        "fuente": "Proyecto."
+      },
+      {
+        "tipo": "Medición",
+        "descripcion": "Kit para caudal, oxígeno, temperatura, pH y pesaje, según recomendación técnica.",
+        "valor_unitario": null,
+        "cantidad": "1 kit.",
+        "total": null,
+        "requisito": "Equipos calibrados y capacitación.",
+        "fuente": "Proyecto/propios."
+      },
+      {
+        "tipo": "Cadena de frío",
+        "descripcion": "Contenedor térmico, hielo o equipo requerido para la entrega.",
+        "valor_unitario": null,
+        "cantidad": "Según ruta.",
+        "total": null,
+        "requisito": "Tiempo y temperatura definidos.",
+        "fuente": "Proyecto."
+      },
+      {
+        "tipo": "Procesamiento",
+        "descripcion": "Adecuación higiénica del área, tanque, mesa y utensilios.",
+        "valor_unitario": null,
+        "cantidad": "1 área.",
+        "total": null,
+        "requisito": "Separación, limpieza, drenaje y materiales lavables.",
+        "fuente": "Proyecto/propios."
+      },
+      {
+        "tipo": "Seguridad",
+        "descripcion": "Botas, guantes de corte, botiquín, señalización y acceso seguro.",
+        "valor_unitario": null,
+        "cantidad": "Kit.",
+        "total": null,
+        "requisito": "Adecuado a las tareas y al terreno.",
+        "fuente": "Recursos."
+      },
+      {
+        "tipo": "Gestión",
+        "descripcion": "Formatos de costos, producción, clientes y capacitación.",
+        "valor_unitario": null,
+        "cantidad": "Paquete.",
+        "total": null,
+        "requisito": "Uso sencillo y seguimiento.",
+        "fuente": "Programa de fortalecimiento."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Alevinos",
+        "descripcion": "Compra por lote.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Solicitar precio, cantidad, talla y transporte."
+      },
+      {
+        "tipo": "Alimento",
+        "descripcion": "Concentrado durante 6-12 meses.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Registrar por bulto, kg y lote."
+      },
+      {
+        "tipo": "Lombriz roja",
+        "descripcion": "Producción o compra del complemento.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Definir costo real, aunque sea de producción propia."
+      },
+      {
+        "tipo": "Agua",
+        "descripcion": "Uso continuo y mantenimiento de conducción.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Medir consumo/caudal y costos asociados."
+      },
+      {
+        "tipo": "Limpieza",
+        "descripcion": "Productos, utensilios y agua.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Separar del alimento y registrar."
+      },
+      {
+        "tipo": "Transporte",
+        "descripcion": "Alevinos, alimento y entregas.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Registrar km, combustible, tiempo y mantenimiento."
+      },
+      {
+        "tipo": "Procesamiento",
+        "descripcion": "Trabajo, agua, utensilios y desinfección.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Calcular por unidad o kg."
+      },
+      {
+        "tipo": "Cadena de frío / empaque",
+        "descripcion": "Hielo, contenedor y material apto.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "No fue descrito en la entrevista."
+      },
+      {
+        "tipo": "Mano de obra",
+        "descripcion": "Alimentación, limpieza, cosecha, arreglo y venta.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Incluir horas del productor y familiares."
+      },
+      {
+        "tipo": "Mantenimiento",
+        "descripcion": "Estanques, mangueras, bodega y equipos.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Crear provisión por ciclo."
+      },
+      {
+        "tipo": "Acciones ambientales",
+        "descripcion": "Medición, protección de fuente y manejo de residuos.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Incluir en el costo real."
+      },
+      {
+        "tipo": "Ventas/utilidad",
+        "descripcion": "Ingresos por cosecha y resultado neto.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Requiere precio, unidades vendidas y costos completos."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "Enero",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registrar según fecha real de reinicio y ciclo de seis meses."
+      },
+      {
+        "mes": "Febrero",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registrar según fecha real de reinicio y ciclo de seis meses."
+      },
+      {
+        "mes": "Marzo",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registrar según fecha real de reinicio y ciclo de seis meses."
+      },
+      {
+        "mes": "Abril",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registrar según fecha real de reinicio y ciclo de seis meses."
+      },
+      {
+        "mes": "Mayo",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registrar según fecha real de reinicio y ciclo de seis meses."
+      },
+      {
+        "mes": "Junio",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registrar según fecha real de reinicio y ciclo de seis meses."
+      },
+      {
+        "mes": "Julio",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registrar según fecha real de reinicio y ciclo de seis meses."
+      },
+      {
+        "mes": "Agosto",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registrar según fecha real de reinicio y ciclo de seis meses."
+      },
+      {
+        "mes": "Septiembre",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registrar según fecha real de reinicio y ciclo de seis meses."
+      },
+      {
+        "mes": "Octubre",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registrar según fecha real de reinicio y ciclo de seis meses."
+      },
+      {
+        "mes": "Noviembre",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registrar según fecha real de reinicio y ciclo de seis meses."
+      },
+      {
+        "mes": "Diciembre",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registrar según fecha real de reinicio y ciclo de seis meses."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "Registro mínimo: Por cada lote se deben separar compra de alevinos, alimento, lombriz, agua, transporte, limpieza, mantenimiento, mortalidad, mano de obra, cosecha, peso, unidades vendidas, precio, ingresos, retiros familiares y reinversión."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Agua",
+        "estado": "Fuente única dentro del predio; disminuye en verano.",
+        "cantidad": "Caudal y consumo no medidos.",
+        "impacto_1_a_5": 5,
+        "accion": "Medir, almacenar, recircular y oxigenar."
+      },
+      {
+        "variable": "Protección de fuente",
+        "estado": "Cercada; no ingresan animales; sin árboles sembrados alrededor.",
+        "cantidad": "Longitud y cobertura pendientes.",
+        "impacto_1_a_5": 4,
+        "accion": "Validar protección y restauración pertinente."
+      },
+      {
+        "variable": "Energía",
+        "estado": "No se reportó uso de electricidad en la producción actual.",
+        "cantidad": "No aplica/por verificar.",
+        "impacto_1_a_5": 1,
+        "accion": "Registrar si se instalan bombas u oxigenadores."
+      },
+      {
+        "variable": "Transporte",
+        "estado": "El productor asume compras y entregas.",
+        "cantidad": "Tipo, km, combustible y costo pendientes.",
+        "impacto_1_a_5": 4,
+        "accion": "Planificar rutas y medir consumo."
+      },
+      {
+        "variable": "Alimento",
+        "estado": "Concentrado y lombriz roja californiana.",
+        "cantidad": "Kg por ciclo pendientes.",
+        "impacto_1_a_5": 4,
+        "accion": "Dosificar y registrar conversión/alimento."
+      },
+      {
+        "variable": "Sedimentos/ agua de limpieza",
+        "estado": "Se llevan a hortalizas o invernaderos.",
+        "cantidad": "Cantidad no medida.",
+        "impacto_1_a_5": 3,
+        "accion": "Validar aplicación y registrar."
+      },
+      {
+        "variable": "Residuos de arreglo",
+        "estado": "Parte se entrega a perros; otros destinos no quedaron claros.",
+        "cantidad": "Cantidad pendiente.",
+        "impacto_1_a_5": 3,
+        "accion": "Separar y definir manejo sanitario."
+      },
+      {
+        "variable": "Cadena de frío / empaque",
+        "estado": "No descrita.",
+        "cantidad": "Pendiente.",
+        "impacto_1_a_5": 4,
+        "accion": "Definir materiales, tiempo y temperatura."
+      },
+      {
+        "variable": "Conclusión",
+        "estado": "La huella potencial está dominada por el uso continuo de agua, el alimento y el transporte.",
+        "cantidad": "Sin línea base.",
+        "impacto_1_a_5": 5,
+        "accion": "Medir desde el lote piloto."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "Disponibilidad de agua",
+        "que_se_mide": "Caudal/nivel y días con reducción.",
+        "dato_inicial": "Pendiente.",
+        "meta": "Línea base y cero pérdidas por falta de agua.",
+        "frecuencia": "Diaria/mensual.",
+        "responsable": "Iván.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "indicador": "Calidad/oxigenación",
+        "que_se_mide": "Temperatura, oxígeno y otros parámetros definidos técnicamente.",
+        "dato_inicial": "Pendiente.",
+        "meta": "100% de controles programados.",
+        "frecuencia": "Diaria/semanal.",
+        "responsable": "Iván / apoyo técnico.",
+        "evidencia": "Planilla."
+      },
+      {
+        "indicador": "Alimento",
+        "que_se_mide": "Kg de concentrado y lombriz por lote.",
+        "dato_inicial": "Pendiente.",
+        "meta": "Registrar 100%.",
+        "frecuencia": "Diaria.",
+        "responsable": "Iván.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "indicador": "Mortalidad",
+        "que_se_mide": "Número y porcentaje por lote.",
+        "dato_inicial": "Baja según relato, sin cifra.",
+        "meta": "Definir línea base y reducción.",
+        "frecuencia": "Diaria.",
+        "responsable": "Iván.",
+        "evidencia": "Conteo."
+      },
+      {
+        "indicador": "Transporte",
+        "que_se_mide": "Viajes, km, combustible y carga.",
+        "dato_inicial": "Pendiente.",
+        "meta": "Línea base y rutas consolidadas.",
+        "frecuencia": "Cada viaje.",
+        "responsable": "Iván.",
+        "evidencia": "Cuaderno/factura."
+      },
+      {
+        "indicador": "Residuos orgánicos",
+        "que_se_mide": "Kg de sedimento, vísceras, escamas u otros.",
+        "dato_inicial": "Pendiente.",
+        "meta": "Registrar 100% y destino.",
+        "frecuencia": "Cada limpieza/cosecha.",
+        "responsable": "Iván.",
+        "evidencia": "Planilla/foto."
+      },
+      {
+        "indicador": "Huella de carbono",
+        "que_se_mide": "Emisiones de transporte, alimento y energía futura.",
+        "dato_inicial": "No estimada.",
+        "meta": "Estimar tras el primer ciclo.",
+        "frecuencia": "Por ciclo.",
+        "responsable": "Equipo asesor.",
+        "evidencia": "Cálculo."
+      },
+      {
+        "indicador": "Huella hídrica",
+        "que_se_mide": "Agua utilizada por kg o unidad cosechada.",
+        "dato_inicial": "No estimada.",
+        "meta": "Construir línea base y mejorar.",
+        "frecuencia": "Por ciclo.",
+        "responsable": "Equipo asesor / Iván.",
+        "evidencia": "Medición y cálculo."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Sedimentos y agua de limpieza de estanques",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Se trasladan a hortalizas o invernaderos.",
+        "accion_circular": "Medir, caracterizar y aplicar de forma controlada.",
+        "destino": "Uso agrícola dentro del predio.",
+        "responsable": "Iván."
+      },
+      {
+        "residuo_recurso": "Vísceras y restos del arreglo",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Parte se entrega a perros según la entrevista.",
+        "accion_circular": "Separar y validar aprovechamiento sanitario seguro.",
+        "destino": "Destino actual por verificar.",
+        "responsable": "Responsable de proceso."
+      },
+      {
+        "residuo_recurso": "Escamas y otros restos de pescado",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "El destino no quedó claro.",
+        "accion_circular": "Separar y definir compostaje u otra ruta viable con orientación.",
+        "destino": "Pendiente.",
+        "responsable": "Iván."
+      },
+      {
+        "residuo_recurso": "Mortalidad de peces",
+        "cantidad": "No reportada.",
+        "manejo_actual": "Pendiente.",
+        "accion_circular": "Crear protocolo de registro y disposición.",
+        "destino": "Pendiente.",
+        "responsable": "Iván."
+      },
+      {
+        "residuo_recurso": "Sacos de alimento",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No reportado.",
+        "accion_circular": "Mantener secos, reutilizar cuando sea seguro o entregar a reciclaje.",
+        "destino": "Reutilización/reciclaje.",
+        "responsable": "Iván."
+      },
+      {
+        "residuo_recurso": "Empaques de limpieza",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No reportado.",
+        "accion_circular": "Separar según tipo y no mezclar con orgánicos.",
+        "destino": "Ruta correspondiente.",
+        "responsable": "Responsable de limpieza."
+      },
+      {
+        "residuo_recurso": "Agua del proceso de arreglo",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Manejo no descrito.",
+        "accion_circular": "Definir recolección y disposición sin afectar suelo ni fuente.",
+        "destino": "Pendiente.",
+        "responsable": "Responsable de proceso."
+      }
+    ],
+    "conclusion_registro_unico": {
+      "resumen": "Existen prácticas de aprovechamiento, pero no hay medición ni ruta documentada para todos los residuos.",
+      "accion": "Crear registro por limpieza y cosecha.",
+      "area": "Gestión integral.",
+      "responsable": "Unidad productiva."
+    },
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "Agua",
+        "indicador": "Uso eficiente",
+        "descripcion": "Control del caudal y recirculación.",
+        "estado": "No se mide y no hay recirculación.",
+        "calificacion_1_a_5": 2,
+        "accion": "Medir e instalar solución gradual.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "factor": "Agua",
+        "indicador": "Protección de fuente",
+        "descripcion": "Cercado y cobertura vegetal.",
+        "estado": "Cercada y sin ingreso de animales; árboles no sembrados.",
+        "calificacion_1_a_5": 3,
+        "accion": "Validar medidas de protección.",
+        "evidencia": "Fotos/visita."
+      },
+      {
+        "factor": "Clima",
+        "indicador": "Reserva",
+        "descripcion": "Capacidad para sequía.",
+        "estado": "Pozo base insuficiente y sin tanque.",
+        "calificacion_1_a_5": 2,
+        "accion": "Tanque, contingencia y lote ajustado.",
+        "evidencia": "Registro."
+      },
+      {
+        "factor": "Residuos",
+        "indicador": "Aprovechamiento",
+        "descripcion": "Uso circular y disposición.",
+        "estado": "Aprovechamiento parcial sin cantidades.",
+        "calificacion_1_a_5": 3,
+        "accion": "Medir y documentar rutas.",
+        "evidencia": "Planilla."
+      },
+      {
+        "factor": "Insumos",
+        "indicador": "Producción limpia",
+        "descripcion": "Dosificación y almacenamiento.",
+        "estado": "Lombriz complementaria; concentrado sin registro.",
+        "calificacion_1_a_5": 3,
+        "accion": "Plan de alimentación.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "factor": "Biodiversidad",
+        "indicador": "Protección ecosistémica",
+        "descripcion": "No expansión a zonas sensibles.",
+        "estado": "Respeto animal reportado; predio no evaluado.",
+        "calificacion_1_a_5": 3,
+        "accion": "Verificación ambiental.",
+        "evidencia": "Visita."
+      },
+      {
+        "factor": "Energia",
+        "indicador": "Uso eficiente",
+        "descripcion": "Equipos y consumo.",
+        "estado": "No se reporta electricidad actual.",
+        "calificacion_1_a_5": 4,
+        "accion": "Registrar equipos futuros.",
+        "evidencia": "Inventario."
+      },
+      {
+        "factor": "Comercial",
+        "indicador": "Demanda",
+        "descripcion": "Clientes y aceptación.",
+        "estado": "Demanda local y recompra reportadas.",
+        "calificacion_1_a_5": 4,
+        "accion": "Organizar pedidos y evidencia.",
+        "evidencia": "Base de clientes."
+      },
+      {
+        "factor": "Finanzas",
+        "indicador": "Registros",
+        "descripcion": "Costos, precio y flujo.",
+        "estado": "No existe sistema.",
+        "calificacion_1_a_5": 1,
+        "accion": "Costeo y flujo por lote.",
+        "evidencia": "Formatos."
+      },
+      {
+        "factor": "SST",
+        "indicador": "Prevención",
+        "descripcion": "Controles de herramientas y estanques.",
+        "estado": "Riesgo de corte confirmado; controles no documentados.",
+        "calificacion_1_a_5": 2,
+        "accion": "EPP y plan básico.",
+        "evidencia": "Checklist."
+      },
+      {
+        "factor": "Infraestructura",
+        "indicador": "Calidad e inocuidad",
+        "descripcion": "Estanques, proceso y frío.",
+        "estado": "Infraestructura existente sin medidas ni protocolos.",
+        "calificacion_1_a_5": 2,
+        "accion": "Diagnóstico y adecuación.",
+        "evidencia": "Ficha técnica."
+      }
+    ],
+    "resultado_preliminar_registro_unico": "Resultado preliminar: Calificación técnica propuesta de 29 sobre 55 puntos, sujeta a visita y evidencias.",
+    "observaciones_o_comentarios": "Las fortalezas son la demanda local, la experiencia previa, el cercado de la fuente y el aprovechamiento parcial de residuos. Las brechas principales están en almacenamiento y recirculación de agua, finanzas, cadena de frío, trazabilidad, capacidad real e implementación de controles SG-SST."
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "Disminución del agua",
+        "accion": "Medir caudal/nivel e instalar almacenamiento dimensionado.",
+        "prioridad": "Alta",
+        "plazo": "0-3 meses",
+        "responsable": "Iván / apoyo técnico",
+        "recursos": "Medición y cotización",
+        "indicador": "Días con agua suficiente",
+        "evidencia": "Bitácora/soporte"
+      },
+      {
+        "impacto": "Baja oxigenación",
+        "accion": "Evaluar e instalar recirculación u oxigenación.",
+        "prioridad": "Alta",
+        "plazo": "Antes de aumentar lote",
+        "responsable": "Iván / técnico",
+        "recursos": "Diseño y equipo",
+        "indicador": "Parámetros dentro de rango",
+        "evidencia": "Planilla"
+      },
+      {
+        "impacto": "Sobrecarga de estanques",
+        "accion": "Mantener lote piloto y definir capacidad por medición.",
+        "prioridad": "Alta",
+        "plazo": "Primer ciclo",
+        "responsable": "Iván",
+        "recursos": "Registros",
+        "indicador": "% mortalidad / densidad",
+        "evidencia": "Bitácora"
+      },
+      {
+        "impacto": "Protección de la fuente",
+        "accion": "Verificar ronda, cercado y cobertura vegetal.",
+        "prioridad": "Alta",
+        "plazo": "0-6 meses",
+        "responsable": "Iván / ambiental",
+        "recursos": "Visita/material vegetal",
+        "indicador": "Medidas implementadas",
+        "evidencia": "Fotos"
+      },
+      {
+        "impacto": "Sedimentos",
+        "accion": "Medir y aplicar de forma controlada en hortalizas.",
+        "prioridad": "Media",
+        "plazo": "Desde primera limpieza",
+        "responsable": "Iván",
+        "recursos": "Recipiente/ báscula",
+        "indicador": "kg o L aprovechados",
+        "evidencia": "Planilla"
+      },
+      {
+        "impacto": "Residuos de arreglo",
+        "accion": "Definir separación y destino sanitario.",
+        "prioridad": "Alta",
+        "plazo": "Antes de primera cosecha",
+        "responsable": "Responsable de proceso",
+        "recursos": "Recipientes/ orientación",
+        "indicador": "100% con destino",
+        "evidencia": "Registro"
+      },
+      {
+        "impacto": "Uso de alimento",
+        "accion": "Dosificar y registrar concentrado y lombriz.",
+        "prioridad": "Alta",
+        "plazo": "Inmediato",
+        "responsable": "Iván",
+        "recursos": "Báscula/formato",
+        "indicador": "kg por lote",
+        "evidencia": "Bitácora"
+      },
+      {
+        "impacto": "Transporte y frío",
+        "accion": "Definir ruta, tiempo, empaque y temperatura.",
+        "prioridad": "Alta",
+        "plazo": "Antes de vender",
+        "responsable": "Iván",
+        "recursos": "Contenedor/ termómetro",
+        "indicador": "Entregas conformes",
+        "evidencia": "Registro"
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": "Sequía",
+        "situacion": "Disminuye fuertemente la disponibilidad de agua.",
+        "riesgo": "Alto",
+        "accion_propuesta": "Medir, almacenar, recircular y reducir el lote si es necesario."
+      },
+      {
+        "aspecto": "Actividad afectada",
+        "situacion": "Cría de trucha; disminuye flujo y oxigenación.",
+        "riesgo": "Alto",
+        "accion_propuesta": "Plan de contingencia y seguimiento diario."
+      },
+      {
+        "aspecto": "Medida actual",
+        "situacion": "Pozo base y manguera para apoyar el suministro.",
+        "riesgo": "Medio-Alto",
+        "accion_propuesta": "Mejorar volumen útil y oxigenación."
+      },
+      {
+        "aspecto": "Cambio de manejo",
+        "situacion": "No se reportó cambio formal de calendario o densidad.",
+        "riesgo": "Alto",
+        "accion_propuesta": "Definir época de inicio y cantidad según disponibilidad."
+      },
+      {
+        "aspecto": "Reserva",
+        "situacion": "No hay tanque; el pozo base no alcanza a oxigenar suficientemente.",
+        "riesgo": "Alto",
+        "accion_propuesta": "Cotizar tanque y sistema complementario."
+      }
+    ],
+    "observaciones_o_comentarios": "Conclusión: La sequía es la principal vulnerabilidad y puede comprometer todo el lote. No ampliar producción sin capacidad hídrica validada."
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Ambiental",
+        "riesgo": "Falta de agua",
+        "causa": "Sequía y fuente única.",
+        "consecuencia": "Estrés o pérdida del lote.",
+        "nivel": "Alto",
+        "prevencion": "Medición, reserva y lote piloto.",
+        "respuesta": "Reducir densidad y activar contingencia."
+      },
+      {
+        "tipo": "Productivo",
+        "riesgo": "Baja oxigenación",
+        "causa": "Caudal insuficiente / respaldo limitado.",
+        "consecuencia": "Mortalidad y menor crecimiento.",
+        "nivel": "Alto",
+        "prevencion": "Recirculación, oxigenación y control.",
+        "respuesta": "Traslado seguro y asistencia técnica."
+      },
+      {
+        "tipo": "Productivo",
+        "riesgo": "Sobrecarga",
+        "causa": "Aumentar animales sin conocer capacidad.",
+        "consecuencia": "Alta mortalidad y costos.",
+        "nivel": "Alto",
+        "prevencion": "No superar el lote validado.",
+        "respuesta": "Suspender incremento y ajustar."
+      },
+      {
+        "tipo": "Financiero",
+        "riesgo": "Precio sin costeo",
+        "causa": "No hay registros ni costos por unidad.",
+        "consecuencia": "Venta sin utilidad.",
+        "nivel": "Alto",
+        "prevencion": "Ficha de costos y margen.",
+        "respuesta": "Ajustar precio y presentación."
+      },
+      {
+        "tipo": "Comercial",
+        "riesgo": "Oferta insuficiente",
+        "causa": "Capacidad limitada por agua.",
+        "consecuencia": "Pérdida de pedidos.",
+        "nivel": "Medio-Alto",
+        "prevencion": "Preventa y cupos por cosecha.",
+        "respuesta": "Informar disponibilidad real."
+      },
+      {
+        "tipo": "Abastecimiento",
+        "riesgo": "Falla de alevinos o alimento",
+        "causa": "Proveedor/acuerdo no confirmado.",
+        "consecuencia": "Retraso o mayor costo.",
+        "nivel": "Medio-Alto",
+        "prevencion": "Proveedores alternos y programación.",
+        "respuesta": "Reprogramar lote."
+      },
+      {
+        "tipo": "Logístico",
+        "riesgo": "Pérdida de frescura",
+        "causa": "Tiempo, transporte y frío no definidos.",
+        "consecuencia": "Rechazo o riesgo sanitario.",
+        "nivel": "Alto",
+        "prevencion": "Cadena de frío y entrega programada.",
+        "respuesta": "Aislar producto no conforme."
+      },
+      {
+        "tipo": "SST",
+        "riesgo": "Corte con cuchillo",
+        "causa": "Picado de lombriz y arreglo de pescado.",
+        "consecuencia": "Laceración.",
+        "nivel": "Medio-Alto",
+        "prevencion": "Técnica, guante y tabla estable.",
+        "respuesta": "Primeros auxilios y registro."
+      },
+      {
+        "tipo": "Sanitario",
+        "riesgo": "Proceso no estandarizado",
+        "causa": "Tanque en vivienda y controles no descritos.",
+        "consecuencia": "Contaminación.",
+        "nivel": "Alto",
+        "prevencion": "Adecuar, limpiar y verificar.",
+        "respuesta": "Suspender proceso y corregir."
+      },
+      {
+        "tipo": "Ambiental",
+        "riesgo": "Manejo inadecuado de residuos",
+        "causa": "Cantidades y destinos incompletos.",
+        "consecuencia": "Olores, vectores o contaminación.",
+        "nivel": "Medio-Alto",
+        "prevencion": "Separación y ruta documentada.",
+        "respuesta": "Contener y disponer."
+      },
+      {
+        "tipo": "Gestión",
+        "riesgo": "Falta de registros",
+        "causa": "Operación basada en memoria.",
+        "consecuencia": "Decisiones sin evidencia.",
+        "nivel": "Alto",
+        "prevencion": "Bitácora integral por lote.",
+        "respuesta": "Reconstruir datos disponibles."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "Confirmar identidad, vereda, predio y coordenadas.",
+        "componente": "Identidad",
+        "responsable": "Iván",
+        "tiempo": "0-1 mes",
+        "recursos": "Documentos/visita",
+        "resultado": "Ficha completa",
+        "evidencia": "Soportes"
+      },
+      {
+        "actividad": "Medir fuente, estanques, caudal y oxigenación.",
+        "componente": "Ambiental/productivo",
+        "responsable": "Técnico e Iván",
+        "tiempo": "Antes del reinicio",
+        "recursos": "Instrumentos/visita",
+        "resultado": "Capacidad preliminar",
+        "evidencia": "Informe"
+      },
+      {
+        "actividad": "Definir lote piloto de 100-200 alevinos.",
+        "componente": "Productivo",
+        "responsable": "Iván / técnico",
+        "tiempo": "Inicio",
+        "recursos": "Proveedor/registro",
+        "resultado": "Reinicio controlado",
+        "evidencia": "Bitácora"
+      },
+      {
+        "actividad": "Cotizar almacenamiento, recirculación y adecuaciones.",
+        "componente": "Inversión",
+        "responsable": "Iván",
+        "tiempo": "0-2 meses",
+        "recursos": "Tres cotizaciones",
+        "resultado": "Plan de inversión",
+        "evidencia": "Soportes"
+      },
+      {
+        "actividad": "Registrar alimento, mortalidad, agua y peso.",
+        "componente": "Productivo",
+        "responsable": "Iván",
+        "tiempo": "Diario / semanal",
+        "recursos": "Formatos/báscula",
+        "resultado": "Datos por lote",
+        "evidencia": "Planillas"
+      },
+      {
+        "actividad": "Construir costos y precio por unidad/kg.",
+        "componente": "Financiero",
+        "responsable": "Iván / asesor",
+        "tiempo": "0-2 meses",
+        "recursos": "Facturas/formato",
+        "resultado": "Precio rentable",
+        "evidencia": "Ficha"
+      },
+      {
+        "actividad": "Estandarizar cosecha, arreglo y cadena de frío.",
+        "componente": "Calidad/logística",
+        "responsable": "Iván / apoyo",
+        "tiempo": "Antes de primera venta",
+        "recursos": "Procedimiento/equipos",
+        "resultado": "Entrega segura",
+        "evidencia": "Registros"
+      },
+      {
+        "actividad": "Implementar controles SG-SST y botiquín.",
+        "componente": "SST",
+        "responsable": "Iván",
+        "tiempo": "Antes del reinicio",
+        "recursos": "EPP/checklist",
+        "resultado": "Trabajo seguro",
+        "evidencia": "Inspección"
+      },
+      {
+        "actividad": "Organizar base de clientes y preventas.",
+        "componente": "Comercial/digital",
+        "responsable": "Iván",
+        "tiempo": "Antes de cosecha",
+        "recursos": "Teléfono/archivo",
+        "resultado": "Pedidos confirmados",
+        "evidencia": "Base"
+      },
+      {
+        "actividad": "Registrar y validar el destino de residuos.",
+        "componente": "Ambiental/circular",
+        "responsable": "Iván",
+        "tiempo": "Cada limpieza/cosecha",
+        "recursos": "Recipientes/planilla",
+        "resultado": "100% con destino",
+        "evidencia": "Registro"
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "Producción",
+        "indicador": "Alevinos ingresados",
+        "meta": "Registrar 100% por lote.",
+        "frecuencia": "Cada lote",
+        "responsable": "Iván",
+        "evidencia": "Compra/conteo"
+      },
+      {
+        "dimension": "Producción",
+        "indicador": "Supervivencia y mortalidad",
+        "meta": "Construir línea base y reducir pérdidas.",
+        "frecuencia": "Diaria / cierre",
+        "responsable": "Iván",
+        "evidencia": "Bitácora"
+      },
+      {
+        "dimension": "Producción",
+        "indicador": "Peso promedio y duración",
+        "meta": "Alcanzar peso acordado sin exceder límite hídrico.",
+        "frecuencia": "Quincenal/cosecha",
+        "responsable": "Iván",
+        "evidencia": "Pesajes"
+      },
+      {
+        "dimension": "Agua",
+        "indicador": "Disponibilidad y oxigenación",
+        "meta": "100% de registros y contingencia activa.",
+        "frecuencia": "Diaria",
+        "responsable": "Iván",
+        "evidencia": "Planilla"
+      },
+      {
+        "dimension": "Alimento",
+        "indicador": "Kg consumidos por lote",
+        "meta": "Registrar 100% y calcular por kg cosechado.",
+        "frecuencia": "Diaria / cierre",
+        "responsable": "Iván",
+        "evidencia": "Bitácora"
+      },
+      {
+        "dimension": "Ventas",
+        "indicador": "Unidades/kg e ingresos",
+        "meta": "Registrar 100% de la cosecha.",
+        "frecuencia": "Cada venta",
+        "responsable": "Iván",
+        "evidencia": "Recibos"
+      },
+      {
+        "dimension": "Financiera",
+        "indicador": "Costo y margen por unidad/kg",
+        "meta": "Calcular en el primer ciclo.",
+        "frecuencia": "Por ciclo",
+        "responsable": "Iván / asesor",
+        "evidencia": "Ficha"
+      },
+      {
+        "dimension": "Cliente",
+        "indicador": "Pedidos, recompra y satisfacción",
+        "meta": "Crear línea base de clientes.",
+        "frecuencia": "Por cosecha",
+        "responsable": "Iván",
+        "evidencia": "Base/llamadas"
+      },
+      {
+        "dimension": "Logística",
+        "indicador": "Tiempo y temperatura de entrega",
+        "meta": "100% de entregas conformes.",
+        "frecuencia": "Cada entrega",
+        "responsable": "Iván",
+        "evidencia": "Registro"
+      },
+      {
+        "dimension": "Ambiental",
+        "indicador": "Residuos con destino",
+        "meta": "Registrar 100%.",
+        "frecuencia": "Cada limpieza/cosecha",
+        "responsable": "Iván",
+        "evidencia": "Planilla"
+      },
+      {
+        "dimension": "Clima",
+        "indicador": "Días con reducción de agua",
+        "meta": "Registrar y responder sin pérdida del lote.",
+        "frecuencia": "Diaria en verano",
+        "responsable": "Iván",
+        "evidencia": "Bitácora"
+      },
+      {
+        "dimension": "SST",
+        "indicador": "Incidentes y cortes",
+        "meta": "Cero accidentes; registrar todo incidente.",
+        "frecuencia": "Mensual/cuando ocurra",
+        "responsable": "Iván",
+        "evidencia": "Registro"
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Reiniciar con 100 peces",
+        "efecto_productivo": "Menor carga y aprendizaje.",
+        "efecto_comercial": "Oferta limitada pero controlable.",
+        "efecto_financiero": "Menor inversión y riesgo.",
+        "efecto_ambiental": "Menor presión sobre el agua.",
+        "ajuste_necesario": "Usar como escenario base si la medición lo permite."
+      },
+      {
+        "decision": "Reiniciar con 200 peces",
+        "efecto_productivo": "Mayor volumen inicial.",
+        "efecto_comercial": "Atiende más pedidos.",
+        "efecto_financiero": "Mayor gasto en alevinos y alimento.",
+        "efecto_ambiental": "Mayor demanda de agua y oxígeno.",
+        "ajuste_necesario": "Adoptar solo con validación técnica."
+      },
+      {
+        "decision": "Subir hacia 500 peces",
+        "efecto_productivo": "Aumenta capacidad y complejidad.",
+        "efecto_comercial": "Podría cubrir más demanda.",
+        "efecto_financiero": "Aumenta capital y exposición.",
+        "efecto_ambiental": "Riesgo alto de sobrecarga hídrica.",
+        "ajuste_necesario": "No implementar sin caudal, volumen y oxígeno comprobados."
+      },
+      {
+        "decision": "Instalar tanque de almacenamiento",
+        "efecto_productivo": "Mejora continuidad.",
+        "efecto_comercial": "Reduce incumplimientos.",
+        "efecto_financiero": "Requiere inversión y mantenimiento.",
+        "efecto_ambiental": "Debe dimensionarse sin afectar la fuente.",
+        "ajuste_necesario": "Diseño técnico y plan de uso."
+      },
+      {
+        "decision": "Recircular y oxigenar",
+        "efecto_productivo": "Estabiliza el sistema.",
+        "efecto_comercial": "Mejora calidad y continuidad.",
+        "efecto_financiero": "Costo de equipo y posible energía.",
+        "efecto_ambiental": "Reduce desperdicio si se opera bien.",
+        "ajuste_necesario": "Medir consumo y mantenimiento."
+      },
+      {
+        "decision": "Usar lombriz roja",
+        "efecto_productivo": "Apoya crecimiento según experiencia.",
+        "efecto_comercial": "Refuerza diferencial.",
+        "efecto_financiero": "Debe valorarse su costo.",
+        "efecto_ambiental": "Aprovecha manejo biológico.",
+        "ajuste_necesario": "Definir dosificación e higiene."
+      },
+      {
+        "decision": "Vender a media libra",
+        "efecto_productivo": "Ciclo cercano a seis meses.",
+        "efecto_comercial": "Presentación conocida.",
+        "efecto_financiero": "Rotación más rápida.",
+        "efecto_ambiental": "Menor permanencia en estanque.",
+        "ajuste_necesario": "Confirmar peso, precio y preferencia."
+      },
+      {
+        "decision": "Criar hasta una libra",
+        "efecto_productivo": "Ciclo cercano a un año.",
+        "efecto_comercial": "Posible nuevo segmento.",
+        "efecto_financiero": "Duplica tiempo y costos.",
+        "efecto_ambiental": "Mayor uso acumulado de agua y alimento.",
+        "ajuste_necesario": "Validar antes de ofrecer."
+      },
+      {
+        "decision": "Entregar fresco directamente",
+        "efecto_productivo": "Exige cosecha y proceso coordinados.",
+        "efecto_comercial": "Aumenta valor por frescura.",
+        "efecto_financiero": "Añade transporte y cadena de frío.",
+        "efecto_ambiental": "Puede reducir trayectos si se agrupan pedidos.",
+        "ajuste_necesario": "Programar ruta y temperatura."
+      },
+      {
+        "decision": "Implementar registros y QR",
+        "efecto_productivo": "Mejora control por lote.",
+        "efecto_comercial": "Aumenta confianza y recompra.",
+        "efecto_financiero": "Costo bajo/gradual.",
+        "efecto_ambiental": "Permite medir agua, alimento y residuos.",
+        "ajuste_necesario": "Comenzar con ficha simple y escalar."
+      }
+    ],
+    "observaciones_o_comentarios": ""
+  }
+}

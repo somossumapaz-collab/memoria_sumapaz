@@ -1,0 +1,2072 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "No se informó un nombre comercial. Para este documento se identifica provisionalmente como \"Unidad productiva familiar de pollos de engorde de Jessica Andrea Palacios\".",
+    "persona_entrevistada": "Jessica Andrea Palacios. Documento informado: 1.023.000.503. Segundo apellido y demás datos de contacto pendientes de verificación.",
+    "tipo_actividad": "Pecuaria: crianza, engorde y comercialización familiar de pollos, vendidos en pie o beneficiados.",
+    "ubicacion_especifica": "Vereda Nueva Granada, localidad de Sumapaz, Bogotá D.C. Nombre del predio, sector, acceso y coordenadas pendientes de verificar.",
+    "producto_servicio_principal": "Pollos de engorde de aproximadamente seis a ocho libras, vendidos con plumas o pelados, según solicitud del cliente.",
+    "estado_actual": "Unidad temporalmente inactiva. El galpón perdió su cubierta plástica por acción del viento; permanece parte de la estructura.",
+    "personas_vinculadas": "Jessica Andrea Palacios, su esposo y sus dos hijos. La actividad se concibe también como aprendizaje rural para los niños.",
+    "coordenadas": "Pendientes de tomar o verificar.",
+    "descripcion_general": "Proyecto familiar que busca criar pollos principalmente con maíz amarillo y una proporción menor de concentrado, para venderlos a vecinos de Nueva Granada y familiares de Vega y San Juan. Los ciclos reportados duran entre cuatro y seis meses, dependiendo del clima y del manejo.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F02": {
+    "mision": "Criar pollos de engorde con cuidado familiar, limpieza y alimentación adecuada, ofreciendo a vecinos y familiares un producto fresco y cercano, mientras se fortalece el sustento y el aprendizaje de los hijos en el campo.",
+    "vision": "Contar en los próximos años con un galpón ampliado, resistente al viento y al frío, con capacidad segura para más aves, ciclos continuos, mejores registros sanitarios y una comercialización estable en Nueva Granada, Vega y San Juan.",
+    "valores": [
+      "Responsabilidad",
+      "trabajo familiar",
+      "cuidado de los animales",
+      "perseverancia",
+      "servicio al cliente",
+      "aprendizaje campesino",
+      "honestidad",
+      "aprovechamiento responsable de los residuos"
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Los clientes compran porque encuentran pollo criado por una familia conocida, disponible en la vereda y con posibilidad de adquirirlo en pie o ya pelado.",
+    "beneficio_cliente": "Acceso a un producto fresco, cercano, vendido por libra y preparado según la preferencia del cliente.",
+    "diferencial": "Manejo familiar, alimentación basada principalmente en maíz amarillo, venta directa y atención cercana a vecinos y familiares.",
+    "valor_ambiental": "La pollinaza se reutiliza en la huerta familiar, disminuyendo la disposición como residuo y aportando materia orgánica.",
+    "valor_social_comunitario": "Aporta al ingreso familiar, enseña a los hijos que existen alternativas de trabajo en el campo y abastece a familias de la vereda y de sectores cercanos.",
+    "evidencia": "Ventas previas a vecinos de Nueva Granada y familiares en Vega y San Juan; experiencia acumulada en varios ciclos y recompra basada en la atención.",
+    "observaciones_o_comentarios": "¿Cómo demostrar el diferencial?: Con registros de origen y alimentación de las aves, fotografías del galpón, bitácora sanitaria, control de pesos, testimonios de clientes, trazabilidad de ventas y evidencia del aprovechamiento de la pollinaza."
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Participación de Jessica, su esposo y dos hijos.",
+      "Experiencia reportada de cuatro a cinco años.",
+      "Venta conocida entre vecinos y familiares.",
+      "Posibilidad de ofrecer pollo en pie o beneficiado.",
+      "Alimentación principalmente con maíz amarillo.",
+      "Agua de acueducto disponible.",
+      "Reutilización de pollinaza en la huerta.",
+      "Disposición de bloques y parte de materiales para reconstrucción."
+    ],
+    "oportunidades": [
+      "Reconstruir y ampliar el galpón con materiales resistentes.",
+      "Implementar cortinas, aislamiento y calefacción segura.",
+      "Comprar aves con soporte sanitario.",
+      "Llevar registros de vacunación, mortalidad, peso y costos.",
+      "Fortalecer ventas en Vega y San Juan.",
+      "Organizar pedidos por WhatsApp.",
+      "Mejorar el proceso de beneficio y empaque.",
+      "Acceder a asistencia técnica y capacitación."
+    ],
+    "debilidades": [
+      "Unidad actualmente sin aves.",
+      "Galpón pequeño y con cubierta destruida.",
+      "Capacidad estimada solo entre quince y veinte pollos.",
+      "No existen registros sanitarios ni productivos.",
+      "Solo se usa tapabocas como elemento de protección.",
+      "Dependencia de energía tomada desde el predio del suegro.",
+      "Alimentación y costos no están estandarizados.",
+      "Mortalidad previa de cinco aves en un lote de quince."
+    ],
+    "amenazas": [
+      "Vientos fuertes que rompen la cubierta.",
+      "Frío, heladas y falta de calor para los pollitos.",
+      "Enfermedades y mortalidad por bioseguridad insuficiente.",
+      "Aumento del precio del maíz, concentrado y pollitos.",
+      "Fallas o riesgos de la conexión eléctrica.",
+      "Transporte costoso de materiales e insumos.",
+      "Contaminación por sacrificio o residuos mal manejados.",
+      "Competencia y variación de la demanda local."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Cliente directo",
+        "perfil_que_busca": "Vecinos que compran pollo para el consumo del hogar.",
+        "ubicacion": "Nueva Granada.",
+        "necesidad": "Pollo fresco, disponible y cercano.",
+        "frecuencia": "Al finalizar cada ciclo o según pedido.",
+        "criterio_compra": "Peso, precio, presentación, confianza y frescura.",
+        "canal": "Venta directa y voz a voz."
+      },
+      {
+        "tipo_actor": "Consumidor final",
+        "perfil_que_busca": "Familias que consumen el pollo comprado en pie o pelado.",
+        "ubicacion": "Nueva Granada y sectores cercanosS.",
+        "necesidad": "Proteína para alimentación familiar.",
+        "frecuencia": "Ocasional o por ciclo.",
+        "criterio_compra": "Sabor, limpieza, tamaño y precio.",
+        "canal": "Compra en el predio o por encargo."
+      },
+      {
+        "tipo_actor": "Comprador local",
+        "perfil_que_busca": "Familiares y conocidos que compran varios pollos o recomiendan clientes.",
+        "ubicacion": "Vega y San Juan.",
+        "necesidad": "Producto campesino y entrega acordada.",
+        "frecuencia": "Ocasional.",
+        "criterio_compra": "Confianza, peso, disponibilidad y cumplimiento.",
+        "canal": "Contacto personal, Ilamada o WhatsApp."
+      },
+      {
+        "tipo_actor": "Comprador institucional",
+        "perfil_que_busca": "No se identificó actualmente.",
+        "ubicacion": "Pendiente.",
+        "necesidad": "Producto formalizado, trazable y continuo.",
+        "frecuencia": "Potencial.",
+        "criterio_compra": "Requisitos sanitarios, volumen y facturación.",
+        "canal": "Por explorar."
+      },
+      {
+        "tipo_actor": "Restaurantes/ tiendas/plazas",
+        "perfil_que_busca": "No se reportan ventas actuales.",
+        "ubicacion": "Nueva Granada, San Juan u otros sectores.",
+        "necesidad": "Abastecimiento regular de pollo.",
+        "frecuencia": "Potencial.",
+        "criterio_compra": "Calidad, precio, peso y continuidad.",
+        "canal": "Visita, llamada o acuerdo."
+      },
+      {
+        "tipo_actor": "Cliente de pollo en pie",
+        "perfil_que_busca": "Personas que prefieren llevar el ave viva o con plumas.",
+        "ubicacion": "Vereda y familia ampliada.",
+        "necesidad": "Ave sana y del peso acordado.",
+        "frecuencia": "Según lote.",
+        "criterio_compra": "Estado sanitario, peso y precio.",
+        "canal": "Venta en finca."
+      },
+      {
+        "tipo_actor": "Cliente de pollo pelado",
+        "perfil_que_busca": "Personas que solicitan el pollo beneficiado.",
+        "ubicacion": "Vereda y sectores cercanos.",
+        "necesidad": "Producto listo para cocinar.",
+        "frecuencia": "Según pedido.",
+        "criterio_compra": "Limpieza, frescura, peso y empaque.",
+        "canal": "Pedido previo y entrega."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Pollo fresco, de buen peso, cercano, con precio claro y posibilidad de comprarlo con plumas o pelado.",
+    "como_se_conoce_la_necesidad": "Por las ventas anteriores a vecinos y familiares y porque los clientes regresan cuando reciben buena atención.",
+    "quienes_compran_o_podrian_comprar": "Vecinos de Nueva Granada, familiares de Vega y San Juan, otras familias, tiendas o restaurantes locales.",
+    "evidencia": "Experiencia de venta local durante varios años y ampliación previa del mercado hacia familiares fuera de la vereda. No se aportaron registros escritos.",
+    "ventaja_territorial": "Cercanía al consumidor, identidad campesina, trabajo familiar y posibilidad de aprovechar la pollinaza en la huerta.",
+    "cambios_demanda": "No se cuantificó. La productora pasó de vender únicamente en su vereda a ofrecer también a familiares en Vega y San Juan.",
+    "dificultades": "La unidad está detenida por daño del galpón; faltan aves, alimento, infraestructura, registros, control de costos y un proceso sanitario validado para el pollo pelado.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Productores vecinos",
+        "tipo": "Familias avicultoras.",
+        "que_aporta": "Experiencia, proveedores, compras conjuntas y apoyo en transporte.",
+        "que_recibe": "Reducción de costos y aprendizaje.",
+        "trabajo_conjunto": "Comprar pollitos, alimento o materiales en conjunto.",
+        "aporte_ambiental": "Manejo coordinado de pollinaza y sacos.",
+        "accion": "Identificar productores cercanosS."
+      },
+      {
+        "actor_aliado": "Asociación campesina",
+        "tipo": "Organización territorial.",
+        "que_aporta": "Capacitación, compras y comercialización asociativa.",
+        "que_recibe": "local y participación familiar.",
+        "trabajo_conjunto": "Gestionar insumos y mercados.",
+        "aporte_ambiental": "Promover buenas prácticas.",
+        "accion": "Consultar organizaciones disponibles."
+      },
+      {
+        "actor_aliado": "Junta de Acción Comunal",
+        "tipo": "Organización comunitaria.",
+        "que_aporta": "Difusión y articulación local.",
+        "que_recibe": "Fortalecimiento de economía veredal.",
+        "trabajo_conjunto": "Promover pedidos y rutas.",
+        "aporte_ambiental": "Campañas de residuos y agua.",
+        "accion": "Socializar la oferta cuando se reactive."
+      },
+      {
+        "actor_aliado": "Compradores locales",
+        "tipo": "Vecinos y familiares.",
+        "que_aporta": "Demanda, pago y recomendaciones.",
+        "que_recibe": "Pollo fresco y atención directa.",
+        "trabajo_conjunto": "Reservas por lote y pedidos anticipados.",
+        "aporte_ambiental": "Reducir desplazamientos con entregas agrupadas.",
+        "accion": "Crear listado de clientes."
+      },
+      {
+        "actor_aliado": "Ferias o mercados campesinos",
+        "tipo": "Espacios comerciales.",
+        "que_aporta": "Visibilidad y nuevos clientes.",
+        "que_recibe": "Producto rural local.",
+        "trabajo_conjunto": "Participación gradual, sujeta a requisitos.",
+        "aporte_ambiental": "Promoción del aprovechamiento de residuos.",
+        "accion": "Explorar convocatorias."
+      },
+      {
+        "actor_aliado": "Instituciones de apoyo",
+        "tipo": "Alcaldía, asistencia técnica y salud.",
+        "que_aporta": "Diagnóstico, materiales, capacitación y seguimiento.",
+        "que_recibe": "fortalecida y evidencias.",
+        "trabajo_conjunto": "Reconstrucción, bioseguridad y costos.",
+        "aporte_ambiental": "Manejo responsable de agua y pollinaza.",
+        "accion": "Solicitar visita técnica."
+      },
+      {
+        "actor_aliado": "Aliados logísticos o digitales",
+        "tipo": "Transportadores, familiares y personas con WhatsApp.",
+        "que_aporta": "Traslado de materiales, aves y producto; difusión.",
+        "que_recibe": "Pago o acuerdos de apoyo.",
+        "trabajo_conjunto": "Rutas y pedidos consolidados.",
+        "aporte_ambiental": "Menos viajes y pérdidas.",
+        "accion": "Definir contactos y costos."
+      },
+      {
+        "actor_aliado": "Otros aliados",
+        "tipo": "Proveedores de pollitos, maíz, concentrado, equipos y materiales.",
+        "que_aporta": "Insumos y orientación técnica.",
+        "que_recibe": "Compras recurrentes.",
+        "trabajo_conjunto": "Plan de abastecimiento y garantía.",
+        "aporte_ambiental": "Empaques y materiales adecuados.",
+        "accion": "Crear base de proveedores."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Encuesta",
+        "a_quien": "No se informó.",
+        "resultado": "Pendiente.",
+        "motivacion": "Pendiente.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Entrevista",
+        "a_quien": "Conversaciones con vecinos y familiares.",
+        "resultado": "Existe aceptación de pollo local en pie y pelado.",
+        "motivacion": "Frescura, cercanía, atención y presentación.",
+        "evidencia": "Relato de la productora."
+      },
+      {
+        "metodo": "Degustación / muestra",
+        "a_quien": "No se informó una actividad formal.",
+        "resultado": "Pendiente.",
+        "motivacion": "Sabor y calidad.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Venta previa",
+        "a_quien": "Vecinos de Nueva Granada y familiares en Vega y San Juan.",
+        "resultado": "Se realizaron ventas durante ciclos anteriores.",
+        "motivacion": "Peso, precio, confianza y comodidad.",
+        "evidencia": "Experiencia previa; registros pendientes."
+      },
+      {
+        "metodo": "Carta de intención",
+        "a_quien": "No existe.",
+        "resultado": "Pendiente.",
+        "motivacion": "Continuidad y precio.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Participación en feria",
+        "a_quien": "No se informó.",
+        "resultado": "Pendiente.",
+        "motivacion": "Producto campesino.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Otro",
+        "a_quien": "Recompra y recomendación por buena atención.",
+        "resultado": "Los clientes vuelven cuando son bien atendidos.",
+        "motivacion": "Servicio y confianza.",
+        "evidencia": "Testimonios pendientes."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Pollo de engorde en pie",
+        "descripcion_tecnica": "Ave criada durante un ciclo aproximado de cuatro a seis meses, con peso reportado entre seis y ocho libras.",
+        "unidad": "Ave / libra.",
+        "insumos_principales": "Pollito, maíz amarillo, pequeña cantidad de concentrado, agua, energía, cama, manejo sanitario y trabajo familiar.",
+        "condiciones_especiales": "Mantener con agua, alimento, ventilación, calor y bienestar hasta la entrega.",
+        "presentacion": "Ave viva o con plumas.",
+        "diferencial": "Venta directa y alimentación principalmente con maíz."
+      },
+      {
+        "servicio": "Pollo con plumas",
+        "descripcion_tecnica": "Ave sacrificada o entregada sin desplume completo, según el uso dado en la entrevista; procedimiento exacto pendiente.",
+        "unidad": "Libra.",
+        "insumos_principales": "Pollo de engorde y materiales de manejo.",
+        "condiciones_especiales": "Debe mantenerse protegido y entregarse en el menor tiempo posible.",
+        "presentacion": "Presentación con plumas.",
+        "diferencial": "Precio reportado de $9.000 por libra."
+      },
+      {
+        "servicio": "Pollo pelado",
+        "descripcion_tecnica": "Pollo beneficiado y desplumado para consumo; proceso de evisceración, enfriamiento y empaque pendiente de documentar..",
+        "unidad": "Libra.",
+        "insumos_principales": "Pollo, agua potable, energía o calor, utensils, EPP y empaque.",
+        "condiciones_especiales": "Requiere cadena de frío y condiciones sanitarias verificadas.",
+        "presentacion": "Bolsa apta para alimentos.",
+        "diferencial": "Precio reportado de $9.500 por libra."
+      },
+      {
+        "servicio": "Pollinaza",
+        "descripcion_tecnica": "Mezcla de estiércol y material de cama generada en el galpón.",
+        "unidad": "Kg/saco; cantidad pendiente.",
+        "insumos_principales": "Excretas, alimento derramado y cama.",
+        "condiciones_especiales": "Acopiar cubierta, estabilizar y aplicar con dosificación.",
+        "presentacion": "Uso interno en la huerta.",
+        "diferencial": "Aprovechamiento como abono."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Adecuación del galpón",
+        "unidad": "1 galpón.",
+        "actividad_proceso": "1. Medir, limpiar, reparar estructura, instalar perfiles, cubierta, malla, plástico y drenajes.",
+        "tiempo_estimado": "Antes de ingresar aves."
+      },
+      {
+        "servicio": "Preparación sanitaria",
+        "unidad": "1 galpón.",
+        "actividad_proceso": "2. Lavar, desinfectar, secar, instalar cama, comederos, bebederos, cortinas y calefacción segura.",
+        "tiempo_estimado": "Antes de cada lote."
+      },
+      {
+        "servicio": "Ingreso de aves",
+        "unidad": "15 a 20 aves inicialmente; ampliación pendiente.",
+        "actividad_proceso": "3. Comprar pollitos vacunados, revisar estado y registrar proveedor, fecha, cantidad y peso.",
+        "tiempo_estimado": "Inicio de cada ciclo."
+      },
+      {
+        "servicio": "Cría inicial",
+        "unidad": "Lote.",
+        "actividad_proceso": "4. Proporcionar calor, agua, alimento y seguimiento sanitario, especialmente durante el frío.",
+        "tiempo_estimado": "Primeras semanas."
+      },
+      {
+        "servicio": "Engorde",
+        "unidad": "Lote.",
+        "actividad_proceso": "5. Alimentar principalmente con maíz amarillo y complemento de concentrado; limpiar y controlar peso.",
+        "tiempo_estimado": "4 a 6 meses."
+      },
+      {
+        "servicio": "Venta en pie",
+        "unidad": "Según pedido.",
+        "actividad_proceso": "6. Pesar el ave, confirmar precio y entregar al comprador.",
+        "tiempo_estimado": "Al finalizar el ciclo."
+      },
+      {
+        "servicio": "Beneficio",
+        "unidad": "Según pedido.",
+        "actividad_proceso": "7. Sacrificar, escaldar, desplumar, eviscerar, lavar y enfriar con procedimiento sanitario por validar.",
+        "tiempo_estimado": "Mismo día de venta."
+      },
+      {
+        "servicio": "Empaque y entrega",
+        "unidad": "Pollos o libras.",
+        "actividad_proceso": "8. Empacar en bolsa apta, registrar peso, precio y cliente; mantener refrigerado.",
+        "tiempo_estimado": "Inmediato."
+      },
+      {
+        "servicio": "Manejo ambiental",
+        "unidad": "Pollinaza y residuos.",
+        "actividad_proceso": "9. Retirar cama, compostar o estabilizar la pollinaza y aplicarla a la huerta; gestionar residuos del beneficio.",
+        "tiempo_estimado": "Durante y al final del ciclo."
+      }
+    ],
+    "observaciones_o_comentarios": "Datos técnicos reportados: los pollos alcanzan aproximadamente seis, siete u ocho libras; el precio es de $9.000 por libra con plumas y $9.500 por libra pelado. Deben confirmarse el procedimiento exacto de beneficio, la unidad de venta, el rendimiento en canal, la vida útil, el empaque, las condiciones de refrigeración y el cumplimiento sanitario."
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Pollitos de engorde",
+        "cantidad_unidad": "15 a 20 inicialmente; cantidad futura pendiente.",
+        "frecuencia": "Cada ciclo.",
+        "proveedor_fuente": "Proveedor por identificar.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Mortalidad, transporte y riesgo sanitario.",
+        "manejo_ambiental": "Comprar con soporte de origen, vacunación y transporte adecuado.",
+        "observaciones": "Segundo orden de prioridad si la infraestructura queda lista."
+      },
+      {
+        "insumo": "Maíz amarillo molido",
+        "cantidad_unidad": "1 bulto dura aproximadamente 20 a 25 días para 15 aves, según la productora.",
+        "frecuencia": "Permanente durante el ciclo.",
+        "proveedor_fuente": "Proveedor local por verificar.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Sacos, polvo, derrame y huella de transporte.",
+        "manejo_ambiental": "Almacenar seco, dosificar y reutilizar o reciclar sacos.",
+        "observaciones": "Alimento principal reportado."
+      },
+      {
+        "insumo": "Concentrado",
+        "cantidad_unidad": "Cantidad baja, no cuantificada.",
+        "frecuencia": "Según etapa.",
+        "proveedor_fuente": "Proveedor agropecuario.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Empaques y costo.",
+        "manejo_ambiental": "Dosificar y almacenar seco.",
+        "observaciones": "Se usa en menor proporción."
+      },
+      {
+        "insumo": "Agua",
+        "cantidad_unidad": "Consumo pendiente de medir.",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Acueducto.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Desperdicio y contaminación por bebederos.",
+        "manejo_ambiental": "Bebederos eficientes, limpieza y registro.",
+        "observaciones": "No se reportan nacederos."
+      },
+      {
+        "insumo": "Energía/ calefacción",
+        "cantidad_unidad": "Consumo pendiente.",
+        "frecuencia": "Permanente, especialmente en clima frío.",
+        "proveedor_fuente": "Conexión desde el predio del suegro.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Riesgo eléctrico y consumo energético.",
+        "manejo_ambiental": "Evaluación técnica, conexiones seguras y bombillas adecuadas.",
+        "observaciones": "La luz se usa para proporcionar calor."
+      },
+      {
+        "insumo": "Cubierta, perfiles y cerramientos",
+        "cantidad_unidad": "Cantidad según medición.",
+        "frecuencia": "Inversión inicial/ mantenimiento.",
+        "proveedor_fuente": "Ferretería y recursos propios.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos de obra y plásticos.",
+        "manejo_ambiental": "Diseño resistente, reutilización de materiales aptos y disposición de sobrantes.",
+        "observaciones": "La familia tiene bloques y parte del plástico."
+      },
+      {
+        "insumo": "Cama",
+        "cantidad_unidad": "Cantidad pendiente.",
+        "frecuencia": "Cada ciclo.",
+        "proveedor_fuente": "Proveedor local.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Polvo y pollinaza.",
+        "manejo_ambiental": "Mantener seca y compostar al final.",
+        "observaciones": "Tipo de material pendiente."
+      },
+      {
+        "insumo": "Vacunas/ suplementos",
+        "cantidad_unidad": "Aplicados en agua; productos y dosis pendientes.",
+        "frecuencia": "Según plan sanitario.",
+        "proveedor_fuente": "Proveedor veterinario.",
+        "toxicidad": "Según producto",
+        "impacto_potencial": "Envases y dosificación inadecuada.",
+        "manejo_ambiental": "Plan veterinario, rotulado y disposición segura.",
+        "observaciones": "No existen registros actuales."
+      },
+      {
+        "insumo": "EPP y limpieza",
+        "cantidad_unidad": "Tapabocas, guantes, botas, overol, gafas y desinfectantes.",
+        "frecuencia": "Diaria / reposición.",
+        "proveedor_fuente": "Comercio local.",
+        "toxicidad": "Según producto",
+        "impacto_potencial": "Residuos y contacto químico.",
+        "manejo_ambiental": "Dosificar, usar EPP y separar residuos.",
+        "observaciones": "Actualmente solo reportan tapabocas."
+      },
+      {
+        "insumo": "Bolsas para empaque",
+        "cantidad_unidad": "Según ventas.",
+        "frecuencia": "Por ciclo.",
+        "proveedor_fuente": "Proveedor por definir.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos plásticos.",
+        "manejo_ambiental": "Usar material apto y reducir desperdicio.",
+        "observaciones": "Requeridas para pollo pelado."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "Actualmente no hay aves ni ventas. La unidad está detenida por el daño de la cubierta del galpón.",
+    "produccion_normal": "No se aportó una cifra estable. Los ciclos anteriores se realizaron con lotes pequeños; se menciona un lote de quince aves, de las cuales sobrevivieron diez.",
+    "capacidad_mensual_teorica": "Con la estructura actual, una vez reparada, la familia estima capacidad para quince a veinte pollos por ciclo.",
+    "produccion_maxima_posible": "Pendiente de definir mediante diseño y ampliación del galpón, densidad, ventilación, calefacción, bienestar, mano de obra y disponibilidad de alimento.",
+    "area_numero_habitaciones": "Galpón pequeño; dimensiones en metros cuadrados pendientes de medir.",
+    "limitantes_productivos": "Cubierta destruida, falta de perfiles y tejas, ausencia de aves, falta de alimento inicial, capacidad reducida, registros inexistentes y mortalidad previa.",
+    "limitantes_ambientales": "Vientos fuertes, frío, heladas, falta de cortinas, consumo energético, manejo de pollinaza y residuos del beneficio.",
+    "capacidad_instalada": "Estructura parcial, bloques disponibles, agua de acueducto y acceso a energía desde el predio del suegro.",
+    "capacidad_utilizada": "Cero aves en el momento de la entrevista.",
+    "produce_mismo_todo_ano": false,
+    "alcanza_para_demanda": false,
+    "necesidades_aumentar_sosteniblemente": "Reconstruir y ampliar técnicamente el galpón, instalar cubierta y perfiles resistentes, cortinas y calefacción segura, adquirir aves y alimento, llevar registros y validar el proceso sanitario.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua disponible",
+        "estado_actual": "Agua de acueducto.",
+        "limite_restriccion": "Consumo, calidad en el punto y continuidad no medidos.",
+        "afectacion": "Afecta bebida, limpieza y beneficio.",
+        "efecto": "Riesgo sanitario o interrupción.",
+        "incidencia": "Alta",
+        "accion_mejora": "Verificar calidad, almacenamiento y consumo."
+      },
+      {
+        "condicion": "Fuentes hídricas cercanas",
+        "estado_actual": "No se reportaron nacederos en el predio.",
+        "limite_restriccion": "Información territorial incompleta.",
+        "afectacion": "Se desconoce cercanía a corrientes o restricciones.",
+        "efecto": "Riesgo ambiental no evaluado.",
+        "incidencia": "Pendiente",
+        "accion_mejora": "Levantar mapa y verificar drenajes."
+      },
+      {
+        "condicion": "Suelo",
+        "estado_actual": "La pollinaza se usa en la huerta.",
+        "limite_restriccion": "No se conoce dosis, compostaje ni capacidad del suelo.",
+        "afectacion": "Aplicación directa excesiva puede quemar plantas o contaminar.",
+        "efecto": "Olores, vectores y nutrientes en exceso.",
+        "incidencia": "Alta",
+        "accion_mejora": "Compostar, dosificar y registrar aplicación."
+      },
+      {
+        "condicion": "Pendiente/ topografía",
+        "estado_actual": "No se describió.",
+        "limite_restriccion": "Área y drenaje pendientes .",
+        "afectacion": "Puede afectar estabilidad, acceso y escorrentía.",
+        "efecto": "Costos y humedad.",
+        "incidencia": "Media",
+        "accion_mejora": "Visita técnica y nivelación si aplica."
+      },
+      {
+        "condicion": "Clima",
+        "estado_actual": "Viento, frío y heladas afectan directamente.",
+        "limite_restriccion": "Galpón sin cubierta resistente ni cortinas.",
+        "afectacion": "Enfría aves, prolonga el ciclo y puede causar mortalidad.",
+        "efecto": "Pérdida productiva.",
+        "incidencia": "Muy alta",
+        "accion_mejora": "Cubierta, perfiles, cortinas, aislamiento y calefacción segura."
+      },
+      {
+        "condicion": "Biodiversidad",
+        "estado_actual": "No se informó interacción con fauna silvestre.",
+        "limite_restriccion": "Ingreso de depredadores o aves silvestres por cerramientos débiles.",
+        "afectacion": "Puede causar pérdidas o transmitir enfermedades.",
+        "efecto": "Mortalidad y brotes.",
+        "incidencia": "Alta",
+        "accion_mejora": "Malla, cerramiento y control de acceso."
+      },
+      {
+        "condicion": "Uso de insumos",
+        "estado_actual": "Maíz, concentrado, vacunas, energía y plástico.",
+        "limite_restriccion": "Cantidades y manejo no registrados.",
+        "afectacion": "Aumenta costos y residuos.",
+        "efecto": "Ineficiencia y riesgo.",
+        "incidencia": "Alta",
+        "accion_mejora": "Plan de compras, dosificación y almacenamiento."
+      },
+      {
+        "condicion": "Manejo de residuos",
+        "estado_actual": "Pollinaza reutilizada en huerta; otros residuos nо descritos.",
+        "limite_restriccion": "Sin protocolo de compostaje, mortalidad o beneficio.",
+        "afectacion": "Puede contaminar suelo, agua y aire.",
+        "efecto": "Olores, vectores y riesgo sanitario.",
+        "incidencia": "Muy alta",
+        "accion_mejora": "Plan integral de residuos y zona cubierta."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Biológico",
+        "peligro": "Bacterias, virus, parásitos y contacto con pollinaza.",
+        "aplica": true,
+        "nivel_riesgo": "Alta durante el ciclo",
+        "controles_actuales": "Tapabocas y limpieza básica.",
+        "accion": "Bioseguridad, guantes, botas, vacunación, control de ingreso y lavado de manos."
+      },
+      {
+        "tipo": "Físico",
+        "peligro": "Frío, heladas, viento y cambios de temperatura.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Bombilla o luz como fuente de calor.",
+        "accion": "Cubierta, cortinas, calefacción segura y monitoreo."
+      },
+      {
+        "tipo": "Químico",
+        "peligro": "Polvo de maíz, cama y desinfectantes.",
+        "aplica": true,
+        "nivel_riesgo": "Media-alta",
+        "controles_actuales": "Tapabocas.",
+        "accion": "Mascarilla adecuada, ventilación, dosificación y gafas."
+      },
+      {
+        "tipo": "Mecánico",
+        "peligro": "Cuchillos, herramientas y reparación del galpón.",
+        "aplica": true,
+        "nivel_riesgo": "Media/ocasional",
+        "controles_actuales": "No se reportaron controles.",
+        "accion": "Herramientas seguras, guantes y capacitación."
+      },
+      {
+        "tipo": "Térmico",
+        "peligro": "Agua caliente o calor durante el desplume.",
+        "aplica": true,
+        "nivel_riesgo": "Según beneficio",
+        "controles_actuales": "No informado.",
+        "accion": "Guantes térmicos, recipientes estables y procedimiento."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Carga de bultos, posturas, limpieza y manejo de aves.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Trabajo familiar.",
+        "accion": "Técnica de carga, ayudas y distribución de tareas."
+      },
+      {
+        "tipo": "Locativo",
+        "peligro": "Galpón deteriorado, plásticos, obstáculos y piso húmedo.",
+        "aplica": true,
+        "nivel_riesgo": "Alta al reactivar",
+        "controles_actuales": "Estructura parcial.",
+        "accion": "Reparar, mantener orden, iluminación y piso seco."
+      },
+      {
+        "tipo": "Eléctrico",
+        "peligro": "Conexión desde el predio del suegro y bombillas de calefacción.",
+        "aplica": true,
+        "nivel_riesgo": "Permanente",
+        "controles_actuales": "No se informó revisión.",
+        "accion": "Evaluación por técnico, protecciones y conexiones elevadas."
+      },
+      {
+        "tipo": "Psicosocial/ familiar",
+        "peligro": "Participación de niños y responsabilidades del negocio.",
+        "aplica": true,
+        "nivel_riesgo": "Variable",
+        "controles_actuales": "Supervisión familiar.",
+        "accion": "Tareas acordes a la edad y sin exposición a sacrificio, químicos o electricidad."
+      },
+      {
+        "tipo": "Tránsito",
+        "peligro": "Traslado de materiales, alimento, aves y producto.",
+        "aplica": true,
+        "nivel_riesgo": "Por ciclo",
+        "controles_actuales": "No informado.",
+        "accion": "Vehículo seguro, carga asegurada y rutas planificadas."
+      }
+    ],
+    "observaciones_o_comentarios": "Los riesgos se identifican con base en la entrevista y deben validarse mediante visita al predio. Se requiere revisar estructura, cubierta, calefacción, conexión eléctrica, manipulación de aves, limpieza, beneficio, uso de cuchillos, agua, transporte, participación de los hijos y manejo de residuos."
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Usar guantes, tapabocas, botas, overol, gafas y protección térmica según la tarea.",
+        "riesgo": "Biológico, químico, físico y mecánico.",
+        "responsable": "Jessica y adultos responsables.",
+        "frecuencia": "Cada jornada.",
+        "evidencia": "Checklist y fotografías."
+      },
+      {
+        "accion_preventiva": "Revisar estructura, techo, perfiles, malla, cortinas y piso antes de ingresar aves.",
+        "riesgo": "Estructural y locativo.",
+        "responsable": "Esposo / técnico.",
+        "frecuencia": "Antes de cada lote y después de vendavales.",
+        "evidencia": "Acta de inspección."
+      },
+      {
+        "accion_preventiva": "Evaluar la conexión eléctrica y proteger bombillas y cables de humedad.",
+        "riesgo": "Eléctrico e incendio.",
+        "responsable": "Técnico/familia.",
+        "frecuencia": "Antes de reactivar y semestral.",
+        "evidencia": "Informe y mantenimiento."
+      },
+      {
+        "accion_preventiva": "Implementar protocolo de bioseguridad, vacunación, limpieza y registro de mortalidad.",
+        "riesgo": "Biológico y sanitario.",
+        "responsable": "Jessica/veterinario.",
+        "frecuencia": "Diario y según calendario.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "accion_preventiva": "Restringir a los hijos tareas peligrosas y asignar actividades seguras y supervisadas.",
+        "riesgo": "Mecánico, biológico, térmico y eléctrico.",
+        "responsable": "Padres.",
+        "frecuencia": "Permanente.",
+        "evidencia": "Acuerdo familiar."
+      },
+      {
+        "accion_preventiva": "Disponer botiquín, números de emergencia y protocolo para accidentes.",
+        "riesgo": "Emergencias.",
+        "responsable": "Familia.",
+        "frecuencia": "Revisión mensual.",
+        "evidencia": "Checklist."
+      },
+      {
+        "accion_preventiva": "Registrar incidentes, pérdidas y condiciones inseguras.",
+        "riesgo": "Seguimiento SG-SST.",
+        "responsable": "Jessica.",
+        "frecuencia": "Cada evento.",
+        "evidencia": "Formato."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Ferias campesinas",
+        "activo": false,
+        "descripcion": "No se informó participación.",
+        "responsable": "Pendiente.",
+        "frecuencia": "Por explorar."
+      },
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "Vecinos de Nueva Granada y familiares.",
+        "responsable": "Jessica y esposo.",
+        "frecuencia": "Al finalizar cada ciclo."
+      },
+      {
+        "canal": "Redes sociales",
+        "activo": false,
+        "descripcion": "Podrían utilizar estados o grupos locales.",
+        "responsable": "Jessica / hijos adultos si aplica.",
+        "frecuencia": "Por implementar."
+      },
+      {
+        "canal": "WhatsApp/llamadas",
+        "activo": false,
+        "descripcion": "Pedidos, reservas y coordinación con Vega y San Juan.",
+        "responsable": "Jessica.",
+        "frecuencia": "Antes de cada venta."
+      },
+      {
+        "canal": "Tiendas/restaurantes / plazas",
+        "activo": false,
+        "descripcion": "No se reportan acuerdos actuales.",
+        "responsable": "Pendiente.",
+        "frecuencia": "Por explorar."
+      },
+      {
+        "canal": "Compras institucionales",
+        "activo": false,
+        "descripcion": "No se reportan.",
+        "responsable": "Pendiente.",
+        "frecuencia": "Futuro."
+      },
+      {
+        "canal": "Comercialización asociativa",
+        "activo": false,
+        "descripcion": "No se informó participación en asociación.",
+        "responsable": "Pendiente.",
+        "frecuencia": "Por gestionar."
+      },
+      {
+        "canal": "Otro",
+        "activo": true,
+        "descripcion": "Venta a familiares en Vega y San Juan y recogida en el predio.",
+        "responsable": "Familia.",
+        "frecuencia": "Según ciclo."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Pollo con plumas",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "$9.000 por libra reportados.",
+        "logistica_plataforma": "Alimento, mortalidad, pesaje y entrega pendientes.",
+        "precio_final": 9000,
+        "justificacion": "Precio utilizado previamente; debe contrastarse con costo real."
+      },
+      {
+        "servicio": "Pollo pelado",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "$9.500 por libra reportados.",
+        "logistica_plataforma": "Beneficio, agua, energía, EPP, empaque y frío pendientes.",
+        "precio_final": 9500,
+        "justificacion": "Incluye mayor trabajo, pero el margen no está calculado."
+      },
+      {
+        "servicio": "Ave en pie",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No se informó precio por unidad.",
+        "logistica_plataforma": "Manejo y entrega.",
+        "precio_final": null,
+        "justificacion": "Debe definirse si se vende por peso o por ave."
+      },
+      {
+        "servicio": "Pollinaza",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No se comercializa.",
+        "logistica_plataforma": "Traslado a huerta.",
+        "precio_final": null,
+        "justificacion": "Se aprovecha como abono; su valor indirecto puede estimarse."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": "La productora informó precios de $9.000 por libra para el pollo con plumas y $9.500 por libra para el pollo pelado. No se aportaron costos de pollitos, maíz, concentrado, energía, vacunación, mortalidad, mano de obra, beneficio, empaque o transporte. Debe calcularse el costo por ave, por libra viva y por libra beneficiada antes de reiniciar."
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Producción actual",
+        "cantidad_mensual": "Cero aves y cero ventas.",
+        "precio": null,
+        "ingreso_mensual": 0,
+        "forma_pago": "No aplica.",
+        "canal": "Unidad inactiva."
+      },
+      {
+        "concepto_servicio": "Escenario inicial",
+        "cantidad_mensual": "15 a 20 aves por ciclo de 4 a 6 meses; cantidad mensual no lineal.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Contado; pendiente de confirmar.",
+        "canal": "Vecinos y familiares."
+      },
+      {
+        "concepto_servicio": "Pollo con plumas",
+        "cantidad_mensual": "Libras por ciclo pendientes.",
+        "precio": 9000,
+        "ingreso_mensual": null,
+        "forma_pago": "Contado.",
+        "canal": "Venta directa."
+      },
+      {
+        "concepto_servicio": "Pollo pelado",
+        "cantidad_mensual": "Libras por ciclo pendientes.",
+        "precio": 9500,
+        "ingreso_mensual": null,
+        "forma_pago": "Contado.",
+        "canal": "Pedidos locales."
+      },
+      {
+        "concepto_servicio": "Pollinaza",
+        "cantidad_mensual": "Cantidad por ciclo pendiente.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "No aplica.",
+        "canal": "Huerta familiar."
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": "La proyección debe elaborarse por ciclo y no como una venta mensual uniforme. Deben registrarse aves compradas, mortalidad, duración, alimento, peso vivo, rendimiento beneficiado, libras vendidas por presentación, autoconsumo, costos e ingresos. La mortalidad inicial de cinco aves sobre quince muestra la necesidad de usar escenarios conservadores."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Cliente directo",
+        "estrategia": "Informar fecha de disponibilidad, peso, presentación y precio; cumplir reservas.",
+        "medio": "Visita, llamada y WhatsApp.",
+        "frecuencia": "Antes de terminar cada ciclo.",
+        "responsable": "Jessica."
+      },
+      {
+        "cliente": "Comprador local",
+        "estrategia": "Tomar pedidos anticipados de vecinos y familiares.",
+        "medio": "WhatsApp y voz a voz.",
+        "frecuencia": "Durante el último mes del ciclo.",
+        "responsable": "Jessica / esposo."
+      },
+      {
+        "cliente": "Consumidor final",
+        "estrategia": "Atender bien, entregar producto limpio y solicitar opinión.",
+        "medio": "Conversación directa.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Familia."
+      },
+      {
+        "cliente": "Familiares de Vega y San Juan",
+        "estrategia": "Coordinar cantidad y día de entrega para consolidar el traslado.",
+        "medio": "Llamada o WhatsApp.",
+        "frecuencia": "Según ciclo.",
+        "responsable": "Jessica."
+      },
+      {
+        "cliente": "Cliente de pollo pelado",
+        "estrategia": "Confirmar peso, proceso, empaque y hora de entrega.",
+        "medio": "Pedido previo.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Adultos responsables."
+      },
+      {
+        "cliente": "Aliado comercial futuro",
+        "estrategia": "Presentar oferta real, registros y capacidad.",
+        "medio": "Visita o mensaje.",
+        "frecuencia": "Cuando haya producción estable.",
+        "responsable": "Jessica / asesor."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Pollo en pie",
+        "canal": "Recogida en el predio.",
+        "tiempo": "Día acordado.",
+        "transporte_operacion": "Comprador o traslado familiar.",
+        "condicion_calidad": "Ave sana, protegida y con manejo cuidadoso.",
+        "capacidad": "Según lote.",
+        "costo": "Pendiente.",
+        "responsable": "Jessica/esposo."
+      },
+      {
+        "servicio_insumo": "Pollo con plumas",
+        "canal": "Entrega local.",
+        "tiempo": "Mismo día.",
+        "transporte_operacion": "A pie, moto o0 vehículo por verificar.",
+        "condicion_calidad": "Producto protegido y sin demoras.",
+        "capacidad": "Según pedido.",
+        "costo": "Pendiente.",
+        "responsable": "Adultos."
+      },
+      {
+        "servicio_insumo": "Pollo pelado",
+        "canal": "Entrega directa.",
+        "tiempo": "Inmediata después de enfriar.",
+        "transporte_operacion": "Contenedor limpio y transporte corto.",
+        "condicion_calidad": "Cadena de frío, bolsa apta y peso registrado.",
+        "capacidad": "Según pedido.",
+        "costo": "Pendiente.",
+        "responsable": "Jessica/esposo."
+      },
+      {
+        "servicio_insumo": "Pedidos a Vega / San Juan",
+        "canal": "Entrega consolidada o recogida.",
+        "tiempo": "Día acordado.",
+        "transporte_operacion": "Vehículo de la familia o comprador.",
+        "condicion_calidad": "Contenedor térmico si es beneficiado.",
+        "capacidad": "Pendiente.",
+        "costo": "Combustible por calcular.",
+        "responsable": "Familia."
+      },
+      {
+        "servicio_insumo": "Insumos y materiales",
+        "canal": "Abastecimiento al predio.",
+        "tiempo": "Según compra.",
+        "transporte_operacion": "Proveedor o vehículo contratado.",
+        "condicion_calidad": "Carga protegida y completa.",
+        "capacidad": "Según capacidad.",
+        "costo": "Alto por ubicación; pendiente.",
+        "responsable": "Esposo / proveedor."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Identificación del lote",
+        "informacion": "Proveedor, fecha, línea, cantidad, edad, peso y vacunación.",
+        "responsable": "Jessica.",
+        "medio": "Ficha física o digital.",
+        "frecuencia": "Cada ingreso.",
+        "evidencia": "Factura y registro."
+      },
+      {
+        "elemento": "Alimentación",
+        "informacion": "Cantidad de maíz, concentrado y días de uso.",
+        "responsable": "Jessica/esposo.",
+        "medio": "Cuaderno.",
+        "frecuencia": "Diaria / semanal.",
+        "evidencia": "Registro y facturas."
+      },
+      {
+        "elemento": "Sanidad",
+        "informacion": "Vacunas, suplementos, síntomas, tratamientos y mortalidad.",
+        "responsable": "Jessica/veterinario.",
+        "medio": "Bitácora.",
+        "frecuencia": "Según calendario / evento.",
+        "evidencia": "Planilla."
+      },
+      {
+        "elemento": "Peso",
+        "informacion": "Peso inicial, controles y peso final.",
+        "responsable": "Esposo / Jessica.",
+        "medio": "Báscula y registro.",
+        "frecuencia": "Quincenal/venta.",
+        "evidencia": "Planilla."
+      },
+      {
+        "elemento": "Beneficio",
+        "informacion": "Fecha, peso vivo, peso beneficiado, responsables y limpieza.",
+        "responsable": "Adultos responsables.",
+        "medio": "Ficha por lote.",
+        "frecuencia": "Cada beneficio.",
+        "evidencia": "Registro."
+      },
+      {
+        "elemento": "Venta",
+        "informacion": "Cliente, presentación, libras, precio, forma de pago y entrega.",
+        "responsable": "Jessica.",
+        "medio": "Libro o WhatsApp organizado.",
+        "frecuencia": "Cada venta.",
+        "evidencia": "Recibo o registro."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Diagnóstico y diseño",
+        "descripcion": "Medición del galpón, orientación, ventilación, densidad, drenaje y resistencia al viento.",
+        "valor_unitario": null,
+        "cantidad": "1 visita.",
+        "total": null,
+        "requisito": "Debe preceder la ampliación.",
+        "fuente": "Alcaldía/técnico."
+      },
+      {
+        "tipo": "Cubierta y perfiles",
+        "descripcion": "Tejas o cubierta resistente, perfiles, fijaciones y estructura de soporte.",
+        "valor_unitario": null,
+        "cantidad": "Según medición.",
+        "total": null,
+        "requisito": "Resistencia al viento, drenaje y seguridad.",
+        "fuente": "Prioridad solicitada al impulso."
+      },
+      {
+        "tipo": "Malla, cortinas y plástico",
+        "descripcion": "Cerramientos, protección contra corrientes de aire y regulación térmica.",
+        "valor_unitario": null,
+        "cantidad": "Según diseño.",
+        "total": null,
+        "requisito": "Ventilar sin exponer a frío; disposición de sobrantes.",
+        "fuente": "Apoyo/recursos propios."
+      },
+      {
+        "tipo": "Ampliación con bloque",
+        "descripcion": "Uso de bloques disponibles para mejorar la base y el cerramiento.",
+        "valor_unitario": null,
+        "cantidad": "Según diseño.",
+        "total": null,
+        "requisito": "No cerrar totalmente la ventilación.",
+        "fuente": "Familia."
+      },
+      {
+        "tipo": "Calefacción e instalación eléctrica",
+        "descripcion": "Bombillas, portalámparas protegidos, cableado y controles.",
+        "valor_unitario": null,
+        "cantidad": "Según capacidad.",
+        "total": null,
+        "requisito": "Revisión eléctrica y prevención de incendio.",
+        "fuente": "Apoyo/recursos propios."
+      },
+      {
+        "tipo": "Pollitos de engorde",
+        "descripcion": "Pollitos de engorde vacunados y con soporte sanitario.",
+        "valor_unitario": null,
+        "cantidad": "15 a 20 inicialmente.",
+        "total": null,
+        "requisito": "Compra después de terminar el galpón.",
+        "fuente": "Familia o impulso, según acuerdo."
+      },
+      {
+        "tipo": "Alimento inicial",
+        "descripcion": "Maíz amarillo y concentrado para al menos el primer mes.",
+        "valor_unitario": null,
+        "cantidad": "Según cálculo.",
+        "total": null,
+        "requisito": "Almacenamiento seco y dosificación.",
+        "fuente": "Familia o impulso."
+      },
+      {
+        "tipo": "Equipos y bioseguridad",
+        "descripcion": "Comederos, bebederos, termómetro, báscula, pediluvio, EPP y botiquín.",
+        "valor_unitario": null,
+        "cantidad": "Según diseño.",
+        "total": null,
+        "requisito": "Lavables, seguros y dimensionados.",
+        "fuente": "Gestión."
+      },
+      {
+        "tipo": "Zona de residuos/ beneficio",
+        "descripcion": "Área cubierta para pollinaza y, si se beneficia, espacio sanitario diferenciado.",
+        "valor_unitario": null,
+        "cantidad": "Según diagnóstico.",
+        "total": null,
+        "requisito": "Evitar contaminación y cumplir requisitos.",
+        "fuente": "Fase posterior."
+      }
+    ],
+    "observaciones_o_comentarios": "Necesidades priorizadas a partir de la entrevista: 1) reconstruir y ampliar el galpón, especialmente cubierta, tejas, perfiles y cerramientos resistentes al viento; 2) adquirir las aves para reactivar el ciclo; y 3) garantizar alimento para el inicio. El esposo manifestó que, si reciben apoyo para la estructura, la familia podría aportar las aves y la comida, sujeto a su capacidad económica."
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Pollitos",
+        "descripcion": "Compra de aves para cada ciclo.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Cantidad inicial entre 15 y 20."
+      },
+      {
+        "tipo": "Maíz amarillo",
+        "descripcion": "Alimento principal.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Un bulto dura 20-25 días para 15 aves, según entrevista."
+      },
+      {
+        "tipo": "Concentrado",
+        "descripcion": "Complemento alimenticio.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Consumo bajo y no cuantificado."
+      },
+      {
+        "tipo": "Energía",
+        "descripcion": "Bombillas de calefacción y otros usos.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Conexión desde predio del suegro; separar costo."
+      },
+      {
+        "tipo": "Agua y limpieza",
+        "descripcion": "Bebida, lavado y beneficio.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Agua de acueducto."
+      },
+      {
+        "tipo": "Sanidad",
+        "descripcion": "Vacunas, suplementos, desinfectantes y asistencia.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Implementar plan y registros."
+      },
+      {
+        "tipo": "Empaque y transporte",
+        "descripcion": "Bolsas, traslado de insumos, aves o producto.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "El transporte de materiales se percibe costoso."
+      },
+      {
+        "tipo": "Mano de obra y mantenimiento",
+        "descripcion": "Trabajo familiar, reparación y reposición de materiales.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Valorar trabajo y crear reserva."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "Mes 1",
+        "ingresos": 0,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "No ingresar aves."
+      },
+      {
+        "mes": "Mes 2",
+        "ingresos": 0,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Reconstrucción."
+      },
+      {
+        "mes": "Mes 3",
+        "ingresos": 0,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Validar funcionamiento."
+      },
+      {
+        "mes": "Mes 4",
+        "ingresos": 0,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Inicio de ciclo."
+      },
+      {
+        "mes": "Mes 5",
+        "ingresos": 0,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registro de crecimiento."
+      },
+      {
+        "mes": "Mes 6",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Depende del clima."
+      },
+      {
+        "mes": "Mes 7",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registrar rendimiento."
+      },
+      {
+        "mes": "Mes 8",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Reinversión."
+      },
+      {
+        "mes": "Mes 9",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Control de peso."
+      },
+      {
+        "mes": "Mes 10",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Según duración del ciclo."
+      },
+      {
+        "mes": "Mes 11",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Evaluar margen."
+      },
+      {
+        "mes": "Mes 12",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Decidir ampliación."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "No se suministraron costos totales ni utilidad de los ciclos anteriores. Para conocer la rentabilidad se debe registrar por lote el valor de pollitos, maíz, concentrado, energía, agua, sanidad, mortalidad, empaque, transporte, mano de obra, mantenimiento y peso vendido.\nEl flujo de caja debe construirse por ciclo de cuatro a seis meses. La inversión en infraestructura se realiza antes de generar ingresos y debe separarse de los costos operativos. No se recomienda ampliar la cantidad de aves hasta comprobar baja mortalidad, control térmico, costos cubiertos, demanda confirmada y capacidad segura del galpón."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Agua",
+        "estado": "Acueducto.",
+        "cantidad": "Consumo pendiente.",
+        "impacto_1_a_5": 5,
+        "accion": "Verificar calidad, continuidad y uso eficiente."
+      },
+      {
+        "variable": "Energía",
+        "estado": "Conexión desde predio del suegro.",
+        "cantidad": "Consumo y seguridad pendientes.",
+        "impacto_1_a_5": 5,
+        "accion": "Evaluación técnica y medición."
+      },
+      {
+        "variable": "Clima",
+        "estado": "Viento, frío y heladas.",
+        "cantidad": "Daño de galpón y ciclo más lento.",
+        "impacto_1_a_5": 5,
+        "accion": "Cubierta, perfiles, cortinas y control térmico."
+      },
+      {
+        "variable": "Alimento",
+        "estado": "Maíz amarillo y poco concentrado.",
+        "cantidad": "1 bulto/20-25 días para 15 aves.",
+        "impacto_1_a_5": 5,
+        "accion": "Plan nutricional y registro."
+      },
+      {
+        "variable": "Pollinaza",
+        "estado": "Se usa en huerta.",
+        "cantidad": "Cantidad pendiente.",
+        "impacto_1_a_5": 4,
+        "accion": "Compostar y dosificar."
+      },
+      {
+        "variable": "Plásticos y materiales",
+        "estado": "Cubierta rota y materiales de obra.",
+        "cantidad": "Cantidad pendiente.",
+        "impacto_1_a_5": 3,
+        "accion": "Reutilizar aptos y gestionar residuos."
+      },
+      {
+        "variable": "Transporte",
+        "estado": "Costo relevante para materiales e insumos.",
+        "cantidad": "Pendiente.",
+        "impacto_1_a_5": 4,
+        "accion": "Consolidar compras y cotizar fletes."
+      },
+      {
+        "variable": "Suelo/huerta",
+        "estado": "Recibe pollinaza.",
+        "cantidad": "Capacidad no evaluada.",
+        "impacto_1_a_5": 4,
+        "accion": "Plan de aplicación y monitoreo."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "Infraestructura",
+        "que_se_mide": "Porcentaje de reconstrucción y ampliación.",
+        "dato_inicial": "Cubierta destruida.",
+        "meta": "100% antes del lote.",
+        "frecuencia": "Semanal durante obra.",
+        "responsable": "Esposo/técnico.",
+        "evidencia": "Checklist y fotos."
+      },
+      {
+        "indicador": "Capacidad",
+        "que_se_mide": "Área y número seguro de aves.",
+        "dato_inicial": "15-20 estimadas.",
+        "meta": "Capacidad validada.",
+        "frecuencia": "Antes de cada lote.",
+        "responsable": "Técnico/familia.",
+        "evidencia": "Plano."
+      },
+      {
+        "indicador": "Mortalidad",
+        "que_se_mide": "Aves muertas / ingresadas.",
+        "dato_inicial": "5 de 15 en un lote inicial.",
+        "meta": "Reducir con plan sanitario.",
+        "frecuencia": "Diaria / por ciclo.",
+        "responsable": "Jessica.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "indicador": "Duración del ciclo",
+        "que_se_mide": "Días desde ingreso hasta venta.",
+        "dato_inicial": "4-6 meses reportados.",
+        "meta": "Dato real por lote.",
+        "frecuencia": "Por ciclo.",
+        "responsable": "Jessica.",
+        "evidencia": "Registro."
+      },
+      {
+        "indicador": "Peso",
+        "que_se_mide": "Peso vivo y beneficiado.",
+        "dato_inicial": "6-8 lb reportadas.",
+        "meta": "100% de ventas pesadas.",
+        "frecuencia": "Quincenal/venta.",
+        "responsable": "Familia.",
+        "evidencia": "Planilla."
+      },
+      {
+        "indicador": "Alimento",
+        "que_se_mide": "Bultos, kg, costo y días.",
+        "dato_inicial": "1 bulto/20-25 días para 15 aves.",
+        "meta": "Consumo por ave calculado.",
+        "frecuencia": "Semanal.",
+        "responsable": "Jessica/esposo.",
+        "evidencia": "Facturas."
+      },
+      {
+        "indicador": "Ventas",
+        "que_se_mide": "Libras, precio, presentación y cliente.",
+        "dato_inicial": "Sin registros.",
+        "meta": "100% registradas.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Jessica.",
+        "evidencia": "Libro."
+      },
+      {
+        "indicador": "Costos y margen",
+        "que_se_mide": "Costo por ave y por libra.",
+        "dato_inicial": "Desconocido.",
+        "meta": "Cálculo por ciclo.",
+        "frecuencia": "Mensual/ciclo.",
+        "responsable": "Jessica/ asesor.",
+        "evidencia": "Hoja de costos."
+      },
+      {
+        "indicador": "Sanidad y ambiente",
+        "que_se_mide": "Vacunas, temperatura, pollinaza y residuos.",
+        "dato_inicial": "Sin registros.",
+        "meta": "100% con seguimiento.",
+        "frecuencia": "Diaria / evento.",
+        "responsable": "Familia.",
+        "evidencia": "Bitácora."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Pollinaza y cama",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Se usa en la huerta.",
+        "accion_circular": "Compostar o estabilizar, almacenar cubierta y dosificar.",
+        "destino": "Huerta.",
+        "responsable": "Familia.."
+      },
+      {
+        "residuo_recurso": "Sacos de maíz y concentrado",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Reutilizar limpios o entregar a reciclaje.",
+        "destino": "Reciclaje.",
+        "responsable": "Jessica."
+      },
+      {
+        "residuo_recurso": "Plástico roto",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Separar, reutilizar si es apto o entregar a gestor.",
+        "destino": "Gestor de residuos.",
+        "responsable": "Esposo."
+      },
+      {
+        "residuo_recurso": "Aves muertas",
+        "cantidad": "Históricamente 5 en un lote de 15.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Protocolo veterinario de aislamiento y disposición segura.",
+        "destino": "Disposición segura.",
+        "responsable": "Jessica/veterinario."
+      },
+      {
+        "residuo_recurso": "Plumas, sangre y vísceras",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Separar y gestionar sanitariamente; no verter al drenaje.",
+        "destino": "Gestión sanitaria.",
+        "responsable": "Adultos responsables."
+      },
+      {
+        "residuo_recurso": "Aguas de lavado",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Retirar sólidos, reducir consumo y definir drenaje permitido.",
+        "destino": "Drenaje permitido.",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Bolsas y envases",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Separar reciclables y manejar envases químicos según etiqueta.",
+        "destino": "Reciclaje / Manejo especial.",
+        "responsable": "Jessica."
+      }
+    ],
+    "conclusion_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "Infraestructura climática",
+        "indicador": "Cubierta, perfiles, cortinas y estabilidad.",
+        "descripcion": null,
+        "estado": "Estructura parcial y plástico roto.",
+        "calificacion_1_a_5": 1,
+        "accion": "Reconstrucción técnica.",
+        "evidencia": "Fotos e informe."
+      },
+      {
+        "factor": "Bienestar animal",
+        "indicador": "Densidad, calor, ventilación y agua.",
+        "descripcion": null,
+        "estado": "Sin lote activo; controles incompletos.",
+        "calificacion_1_a_5": 2,
+        "accion": "Diseño y monitoreo.",
+        "evidencia": "Checklist."
+      },
+      {
+        "factor": "Bioseguridad",
+        "indicador": "Vacunas, registros, EPP y limpieza.",
+        "descripcion": null,
+        "estado": "Vacuna en agua sin registros; solo tapabocas.",
+        "calificacion_1_a_5": 2,
+        "accion": "Plan sanitario y dotación.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "factor": "Agua",
+        "indicador": "Calidad y consumo.",
+        "descripcion": null,
+        "estado": "Acueducto sin medición.",
+        "calificacion_1_a_5": 3,
+        "accion": "Verificación y registro.",
+        "evidencia": "Resultado/factura."
+      },
+      {
+        "factor": "Energía",
+        "indicador": "Seguridad y consumo.",
+        "descripcion": null,
+        "estado": "Conexión prestada.",
+        "calificacion_1_a_5": 1,
+        "accion": "Revisión eléctrica y medición.",
+        "evidencia": "Informe."
+      },
+      {
+        "factor": "Circularidad",
+        "indicador": "Aprovechamiento de pollinaza.",
+        "descripcion": null,
+        "estado": "Uso en huerta.",
+        "calificacion_1_a_5": 4,
+        "accion": "Compostaje y dosificación.",
+        "evidencia": "Registro y fotos."
+      },
+      {
+        "factor": "Comercialización",
+        "indicador": "Clientes y canales.",
+        "descripcion": null,
+        "estado": "Venta previa local y familiar.",
+        "calificacion_1_a_5": 3,
+        "accion": "Reservas y base de clientes.",
+        "evidencia": "Libro de ventas."
+      },
+      {
+        "factor": "Finanzas",
+        "indicador": "Costos y margen.",
+        "descripcion": null,
+        "estado": "No calculados.",
+        "calificacion_1_a_5": 1,
+        "accion": "Costeo por ciclo.",
+        "evidencia": "Hoja."
+      },
+      {
+        "factor": "Organización familiar",
+        "indicador": "Roles y seguridad de los hijos.",
+        "descripcion": null,
+        "estado": "Participación familiar sin protocolo.",
+        "calificacion_1_a_5": 3,
+        "accion": "Definir roles seguros.",
+        "evidencia": "Acuerdo familiar."
+      }
+    ],
+    "resultado_preliminar_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "Suelo/huerta",
+        "accion": "Compostar, dosificar y rotar áreas.",
+        "prioridad": null,
+        "plazo": "6 meses.",
+        "responsable": "Familia.",
+        "recursos": null,
+        "indicador": "kg tratados y área aplicada.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "impacto": "Agua",
+        "accion": "Medir consumo y separar sólidos.",
+        "prioridad": null,
+        "plazo": "3-6 meses.",
+        "responsable": "Jessica.",
+        "recursos": null,
+        "indicador": "Consumo y limpieza.",
+        "evidencia": "Registro."
+      },
+      {
+        "impacto": "Clima",
+        "accion": "Cubierta, perfiles, cortinas y monitoreo.",
+        "prioridad": null,
+        "plazo": "Antes del lote.",
+        "responsable": "Esposo / técnico.",
+        "recursos": null,
+        "indicador": "Incidentes y temperatura.",
+        "evidencia": "Fotos."
+      },
+      {
+        "impacto": "Residuos",
+        "accion": "Separación de plásticos, sacos, mortalidad y beneficio.",
+        "prioridad": null,
+        "plazo": "6 meses.",
+        "responsable": "Familia.",
+        "recursos": null,
+        "indicador": "% gestionado.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "impacto": "Bienestar animal",
+        "accion": "Densidad validada, agua, alimento y calefacción.",
+        "prioridad": null,
+        "plazo": "Cada ciclo.",
+        "responsable": "Jessica/técnico.",
+        "recursos": null,
+        "indicador": "Mortalidad y peso.",
+        "evidencia": "Registros."
+      },
+      {
+        "impacto": "Sanidad",
+        "accion": "Calendario, cuarentena y bioseguridad.",
+        "prioridad": null,
+        "plazo": "Antes y continuo.",
+        "responsable": "Jessica/veterinario.",
+        "recursos": null,
+        "indicador": "Cumplimiento del plan.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "impacto": "Energía",
+        "accion": "Revisión eléctrica y equipos protegidos.",
+        "prioridad": null,
+        "plazo": "Antes del lote.",
+        "responsable": "Familia / técnico.",
+        "recursos": null,
+        "indicador": "Incidentes y consumo.",
+        "evidencia": "Informe."
+      },
+      {
+        "impacto": "Mercado responsable",
+        "accion": "Reservas, trazabilidad y costeo.",
+        "prioridad": null,
+        "plazo": "6-12 meses.",
+        "responsable": "Jessica.",
+        "recursos": null,
+        "indicador": "% pedidos cumplidos.",
+        "evidencia": "Ventas."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": "Viento",
+        "situacion": "Rompió el plástico y dejó inactivo el galpón.",
+        "riesgo": "Daño estructural y pérdida de aves.",
+        "accion_propuesta": "Cubierta, perfiles, fijaciones y orientación técnica."
+      },
+      {
+        "aspecto": "Frío y heladas",
+        "situacion": "Disminuyen el calor y pueden \"tullir\" o matar los pollitos.",
+        "riesgo": "Mortalidad y ciclo más largo.",
+        "accion_propuesta": "Cortinas, aislamiento, cama seca y calefacción segura."
+      },
+      {
+        "aspecto": "Clima favorable",
+        "situacion": "Con calor y buen sol el ciclo puede bajar a cuatro meses.",
+        "riesgo": "Variabilidad de producción.",
+        "accion_propuesta": "Registrar temperatura y duración."
+      },
+      {
+        "aspecto": "Cortes o fallas eléctricas",
+        "situacion": "La energía proviene de la conexión del suegro.",
+        "riesgo": "Pérdida de calefacción.",
+        "accion_propuesta": "Plan de contingencia y revisión."
+      },
+      {
+        "aspecto": "Aumento de alimento",
+        "situacion": "Dependencia de maíz y algo de concentrado.",
+        "riesgo": "Costo alto o desabastecimiento.",
+        "accion_propuesta": "Compras programadas y cálculo de consumo."
+      },
+      {
+        "aspecto": "Lluvia / humedad",
+        "situacion": "No se detalló, pero la cubierta dañada deja entrar agua.",
+        "riesgo": "Cama húmeda, amoniaco y enfermedad.",
+        "accion_propuesta": "Techo, drenaje y limpieza."
+      },
+      {
+        "aspecto": "Transporte",
+        "situacion": "Los materiales son costosos de llevar.",
+        "riesgo": "Demoras y sobrecostos.",
+        "accion_propuesta": "Cotizar y consolidar carga."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Estructural",
+        "riesgo": "Desprendimiento o colapso de cubierta.",
+        "causa": "Viento y estructura insuficiente.",
+        "consecuencia": "Lesiones y pérdida de aves.",
+        "nivel": "Muy alto",
+        "prevencion": "Diseño, perfiles y fijaciones.",
+        "respuesta": "Evacuar, aislar y reparar."
+      },
+      {
+        "tipo": "Climático",
+        "riesgo": "Mortalidad por frío o helada.",
+        "causa": "Falta de cortinas y calefacción.",
+        "consecuencia": "Pérdida productiva.",
+        "nivel": "Muy alto",
+        "prevencion": "Aislamiento y monitoreo.",
+        "respuesta": "Aumentar calor seguro y consultar."
+      },
+      {
+        "tipo": "Sanitario",
+        "riesgo": "Enfermedad o alta mortalidad.",
+        "causa": "Sin plan ni registros.",
+        "consecuencia": "Pérdida del lote.",
+        "nivel": "Muy alto",
+        "prevencion": "Vacunación, bioseguridad y cuarentena.",
+        "respuesta": "Aislar y solicitar asistencia."
+      },
+      {
+        "tipo": "Financiero",
+        "riesgo": "No recuperar la inversión.",
+        "causa": "Mortalidad, ciclo largo y precios sin costeo.",
+        "consecuencia": "Descapitalización.",
+        "nivel": "Muy alto",
+        "prevencion": "Presupuesto conservador y registros.",
+        "respuesta": "Revisar escala y precio."
+      },
+      {
+        "tipo": "Eléctrico",
+        "riesgo": "Descarga o incendio.",
+        "causa": "Conexión compartida, humedad y bombillas.",
+        "consecuencia": "Lesión, incendio y muerte de aves.",
+        "nivel": "Muy alto",
+        "prevencion": "Instalación técnica y protección.",
+        "respuesta": "Cortar energía y atender emergencia."
+      },
+      {
+        "tipo": "Comercial",
+        "riesgo": "No vender el lote.",
+        "causa": "Pedidos no confirmados.",
+        "consecuencia": "Costos de mantenimiento y pérdidas.",
+        "nivel": "Medio-alto",
+        "prevencion": "Reservas y base de clientes.",
+        "respuesta": "Promoción local y ventas escalonadas."
+      },
+      {
+        "tipo": "Ambiental",
+        "riesgo": "Contaminación por residuos.",
+        "causa": "Pollinaza, mortalidad o beneficio mal manejados.",
+        "consecuencia": "Olores, vectores y afectación del suelo.",
+        "nivel": "Alto",
+        "prevencion": "Compostaje y rutas sanitarias.",
+        "respuesta": "Contener y corregir."
+      },
+      {
+        "tipo": "Laboral",
+        "riesgo": "Corte, quemadura, caída o exposición biológica.",
+        "causa": "Herramientas, agua caliente y galpón.",
+        "consecuencia": "Lesión familiar.",
+        "nivel": "Alto",
+        "prevencion": "EPP, orden y capacitación.",
+        "respuesta": "Primeros auxilios."
+      },
+      {
+        "tipo": "Logístico",
+        "riesgo": "Daño o faltante de materiales y aves.",
+        "causa": "Transporte costoso o inadecuado.",
+        "consecuencia": "Retraso y pérdida.",
+        "nivel": "Medio-alto",
+        "prevencion": "Proveedor y lista de entrega.",
+        "respuesta": "Reportar y reemplazar."
+      },
+      {
+        "tipo": "Estratégico",
+        "riesgo": "Ampliar sin capacidad técnica.",
+        "causa": "Falta de diseño y presupuesto.",
+        "consecuencia": "Hacinamiento y pérdidas.",
+        "nivel": "Alto",
+        "prevencion": "Validar capacidad y crecer por fases.",
+        "respuesta": "Reducir lote y ajustar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "Mentidad, predio, coordenadas y es.",
+        "componente": "Estratégico",
+        "responsable": "Jessica / asesor.",
+        "tiempo": "Inmediato",
+        "recursos": "Documentos y visita.",
+        "resultado": "Línea base completa.",
+        "evidencia": "Ficha."
+      },
+      {
+        "actividad": "lpón resistente y definir capacidad.",
+        "componente": "Productivo / ambiental",
+        "responsable": "Técnico/familia.",
+        "tiempo": "Inmediato",
+        "recursos": "Medición y plano.",
+        "resultado": "Diseño seguro.",
+        "evidencia": "Informe."
+      },
+      {
+        "actividad": "bierta, perfiles, malla, cortinas y",
+        "componente": "Financiero/logístico",
+        "responsable": "Esposo/Jessica.",
+        "tiempo": "Inmediato",
+        "recursos": "Proveedores.",
+        "resultado": "Presupuesto real.",
+        "evidencia": "Cotizaciones."
+      },
+      {
+        "actividad": "ir y ampliar la infraestructura.",
+        "componente": "Productivo/SST",
+        "responsable": "Familia/contratista.",
+        "tiempo": "Corto",
+        "recursos": "Materiales y mano de obra.",
+        "resultado": "Galpón funcional.",
+        "evidencia": "Fotos y acta."
+      },
+      {
+        "actividad": "stalación eléctrica y calefacción.",
+        "componente": "SST/productivo",
+        "responsable": "Técnico electricista.",
+        "tiempo": "Antes del lote",
+        "recursos": "Cableado y equipos.",
+        "resultado": "Calor seguro.",
+        "evidencia": "Informe."
+      },
+      {
+        "actividad": "tar bioseguridad y registros.",
+        "componente": "Sanitario",
+        "responsable": "Jessica / veterinario.",
+        "tiempo": "Antes y continuo",
+        "recursos": "EPP, formatos y productos.",
+        "resultado": "Menor mortalidad.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "actividad": "ves y alimento según capacidad",
+        "componente": "Productivo / financiero",
+        "responsable": "Familia.",
+        "tiempo": "Corto-medio",
+        "recursos": "Capital y proveedor.",
+        "resultado": "Lote iniciado.",
+        "evidencia": "Facturas."
+      },
+      {
+        "actividad": "meso, consumo, mortalidad, costos y",
+        "componente": "Productivo/financiero",
+        "responsable": "Jessica.",
+        "tiempo": "Desde el primer día",
+        "recursos": "Cuaderno o archivo.",
+        "resultado": "Datos confiables.",
+        "evidencia": "Planillas."
+      },
+      {
+        "actividad": "pedidos en Nueva Granada, Vega y",
+        "componente": "Comercial",
+        "responsable": "Jessica.",
+        "tiempo": "Último mes del ciclo",
+        "recursos": "WhatsApp y listado.",
+        "resultado": "Ventas programadas.",
+        "evidencia": "Pedidos."
+      },
+      {
+        "actividad": "-manejo de pollinaza y residuos de",
+        "componente": "Ambiental",
+        "responsable": "Familia/técnico.",
+        "tiempo": "Corto-continuo",
+        "recursos": "Zona cubierta y recipientes.",
+        "resultado": "Residuos controlados.",
+        "evidencia": "Bitácora."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "tificación",
+        "indicador": "Datos, predio y coordenadas verificados.",
+        "meta": "100% confirmado.",
+        "frecuencia": "Una vez/anual.",
+        "responsable": "Jessica / asesor.",
+        "evidencia": "Ficha."
+      },
+      {
+        "dimension": "estructura",
+        "indicador": "Galpón terminado y aprobado.",
+        "meta": "100% antes del lote.",
+        "frecuencia": "Semanal durante obra.",
+        "responsable": "Familia / técnico.",
+        "evidencia": "Checklist."
+      },
+      {
+        "dimension": "acidad",
+        "indicador": "Número seguro de aves.",
+        "meta": "Definido técnicamente.",
+        "frecuencia": "Cada modificación.",
+        "responsable": "Técnico.",
+        "evidencia": "Plano."
+      },
+      {
+        "dimension": "Jucción",
+        "indicador": "Aves ingresadas, mortalidad, ciclo y peso.",
+        "meta": "100% registrado.",
+        "frecuencia": "Diaria / ciclo.",
+        "responsable": "Jessica.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "dimension": "ento",
+        "indicador": "Consumo y costo.",
+        "meta": "100% registrado.",
+        "frecuencia": "Semanal.",
+        "responsable": "Familia.",
+        "evidencia": "Facturas."
+      },
+      {
+        "dimension": "dad",
+        "indicador": "Vacunación, sintomas y tratamientos.",
+        "meta": "Plan cumplido.",
+        "frecuencia": "Según calendario.",
+        "responsable": "Jessica / veterinario.",
+        "evidencia": "Registro."
+      },
+      {
+        "dimension": "cas",
+        "indicador": "Libras, precio, cliente y presentación.",
+        "meta": "100% registrado.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Jessica.",
+        "evidencia": "Libro."
+      },
+      {
+        "dimension": "nzas",
+        "indicador": "Costo por ave, libra y margen.",
+        "meta": "Calculado por ciclo.",
+        "frecuencia": "Mensual/ciclo.",
+        "responsable": "Jessica / asesor.",
+        "evidencia": "Hoja de costos."
+      },
+      {
+        "dimension": "iente",
+        "indicador": "Pollinaza, residuos, agua y energía.",
+        "meta": "Ruta definida y controlada.",
+        "frecuencia": "Semanal/ciclo.",
+        "responsable": "Familia.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "dimension": "SST",
+        "indicador": "EPP, incidentes y revisión eléctrica.",
+        "meta": "Cero incidentes graves.",
+        "frecuencia": "Diaria / evento.",
+        "responsable": "Adultos.",
+        "evidencia": "Checklist."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Reconstruir el galpón",
+        "efecto_productivo": "Permite reiniciar y proteger aves.",
+        "efecto_comercial": "Mejora continuidad.",
+        "efecto_financiero": "Alta inversión inicial.",
+        "efecto_ambiental": "Reduce pérdidas y dispersión de residuos.",
+        "ajuste_necesario": "Diseño resistente y ventilado."
+      },
+      {
+        "decision": "Ampliar capacidad",
+        "efecto_productivo": "Aumenta número potencial de aves.",
+        "efecto_comercial": "Permite más ventas.",
+        "efecto_financiero": "Exige más capital y alimento.",
+        "efecto_ambiental": "Aumenta pollinaza, agua y energia.",
+        "ajuste_necesario": "Crecer por fases y validar densidad."
+      },
+      {
+        "decision": "Comprar aves",
+        "efecto_productivo": "Inicia el ciclo.",
+        "efecto_comercial": "Genera futura oferta.",
+        "efecto_financiero": "Capital inmovilizado por 4-6 meses.",
+        "efecto_ambiental": "Aumenta residuos y consumo.",
+        "ajuste_necesario": "Comprar con soporte sanitario."
+      },
+      {
+        "decision": "Usar maíz como alimento principal",
+        "efecto_productivo": "Sostiene engorde, pero requiere balance.",
+        "efecto_comercial": "Puede reforzar identidad campesina.",
+        "efecto_financiero": "Costo variable.",
+        "efecto_ambiental": "Sacos y transporte.",
+        "ajuste_necesario": "Revisión nutricional y dosificación."
+      },
+      {
+        "decision": "Instalar calefacción y cortinas",
+        "efecto_productivo": "Reduce mortalidad y tiempo de ciclo.",
+        "efecto_comercial": "Mejora cumplimiento.",
+        "efecto_financiero": "Energía e inversión.",
+        "efecto_ambiental": "Mayor consumo eléctrico.",
+        "ajuste_necesario": "Equipos eficientes y seguros."
+      },
+      {
+        "decision": "Vender pollo pelado",
+        "efecto_productivo": "Agrega transformación.",
+        "efecto_comercial": "Mayor conveniencia y precio.",
+        "efecto_financiero": "Más mano de obra, agua, frío y empaque.",
+        "efecto_ambiental": "Genera residuos de beneficio.",
+        "ajuste_necesario": "Validar requisitos sanitarios."
+      },
+      {
+        "decision": "Vender por pedidos",
+        "efecto_productivo": "Ajusta producción a demanda.",
+        "efecto_comercial": "Fideliza clientes.",
+        "efecto_financiero": "Reduce riesgo de inventario.",
+        "efecto_ambiental": "Optimiza traslados.",
+        "ajuste_necesario": "Registro actualizado."
+      },
+      {
+        "decision": "Aprovechar pollinaza",
+        "efecto_productivo": "Apoya la huerta.",
+        "efecto_comercial": "Valor indirecto.",
+        "efecto_financiero": "Reduce compra de abono.",
+        "efecto_ambiental": "Beneficia si se composta; riesgo si se excede.",
+        "ajuste_necesario": "Dosificar y registrar."
+      },
+      {
+        "decision": "Involucrar a los hijos",
+        "efecto_productivo": "Fortalece aprendizaje y relevo.",
+        "efecto_comercial": "Refuerza historia familiar.",
+        "efecto_financiero": "Aporta mano de obra formativa.",
+        "efecto_ambiental": "Promueve cuidado territorial.",
+        "ajuste_necesario": "Asignar solo tareas seguras."
+      },
+      {
+        "decision": "Registrar costos y sanidad",
+        "efecto_productivo": "Mejora decisiones y reduce pérdidas.",
+        "efecto_comercial": "Aumenta confianza.",
+        "efecto_financiero": "Permite conocer margen.",
+        "efecto_ambiental": "Optimiza insumos.",
+        "ajuste_necesario": "Disciplina diaria."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}

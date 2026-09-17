@@ -1,0 +1,1900 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "HOMPAS",
+    "persona_entrevistada": "Dary Esmeralda Palacios Moreno",
+    "tipo_actividad": "Pecuaria: crianza, levante y aumento de peso de terneros y ganado mediante semiestabulación y pastoreo parcial.",
+    "ubicacion_especifica": "Localidad de Sumapaz, vereda “Ismo Tabaco” según la transcripción. Sector, nombre oficial de la vereda, predios, coordenadas y tenencia: pendientes.",
+    "producto_servicio_principal": "Terneros y ganado en pie para comercialización local o en Usme. No se realiza transformación de carne dentro de la unidad, según lo informado.",
+    "estado_actual": "Iniciativa organizativa en etapa inicial o de fortalecimiento, distribuida en tres fincas y con infraestructura insuficiente.",
+    "personas_vinculadas": "Tres jóvenes vinculados a la organización, cada uno en un espacio o finca diferente; la organización incluye jóvenes y mujeres. Nombres y funciones pendientes.",
+    "coordenadas": "pendientes",
+    "descripcion_general": "La unidad busca evitar la pérdida de terneros en las familias, fortalecer la explotación pecuaria y generar mayor solvencia económica mediante alimentación complementaria, pastoreo parcial y menor tiempo de permanencia a campo abierto.",
+    "observaciones_o_comentarios": "HOMPAS, según la transcripción. Escritura, sigla y nombre completo pendientes de verificar. Dary Esmeralda Palacios Moreno. En la grabación se escucha “Dari”; confirmar escritura con el documento de identidad. Inventario reportado: Se mencionan 3 a 4 terneros por unidad productiva y que el proceso inicia con 3 terneros. Debe verificarse el inventario actual por cada finca y el total de la organización. Tipo de animales: Terneros, algunos huérfanos de madre, y ganado Normando por su adaptación al clima del páramo y bosque andino. La frase “algunos con hosting” no es clara y queda pendiente. Mercado: Comercialización local y venta en pie hacia Usme pueblo, incluyendo famas o compradores vinculados a carne."
+  },
+  "PMAPC_F02": {
+    "mision": "Fortalecer la economía campesina y la permanencia de jóvenes y mujeres en Sumapaz mediante la crianza responsable de terneros y ganado adaptado al territorio, combinando semiestabulación, pastoreo, alimentación complementaria y aprovechamiento de residuos orgánicos.",
+    "vision": "Consolidar una red de unidades pecuarias familiares de HOMPAS con infraestructura fija, producción constante, mejores pesos en menor tiempo, manejo sanitario, bienestar animal, registros productivos y comercialización local o regional con menor impacto ambiental.",
+    "valores": [
+      "Cooperación",
+      "defensa del territorio",
+      "economía campesina",
+      "responsabilidad",
+      "cuidado de los animales",
+      "trabajo juvenil y de mujeres",
+      "sostenibilidad ambiental",
+      "solidaridad",
+      "permanencia rural"
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Por la disponibilidad de ganado en pie, la alimentación suministrada y las condiciones de la carne que posteriormente reconocen los comercializadores.",
+    "beneficio_cliente": "Acceso a animales con alimentación basada en leche inicial, pastoreo, palmiste, melaza, sal y, cuando hay recursos, concentrado.",
+    "diferencial": "Organización de jóvenes y mujeres, ganado Normando adaptado al páramo y bosque andino, agua de nacederos y un sistema de semiestabulación que busca aumentar peso en menor tiempo.",
+    "valor_ambiental": "El estiércol y la cascarilla se convierten en abono para fortalecer pastos y cultivos; el sistema combina estabulación parcial y pastoreo.",
+    "valor_social_comunitario": "Evita perder terneros huérfanos, crea oportunidades para tres jóvenes y sus familias, fortalece la economía campesina y contribuye a la pervivencia en el territorio.",
+    "evidencia": "Registros por animal y finca, pesajes mensuales, fotografías, fichas sanitarias, origen del agua, plan de alimentación, trazabilidad de ventas y evidencia del aprovechamiento de estiércol.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Organización social con jóvenes y mujeres.",
+      "Trabajo en tres fincas familiares.",
+      "Propósito de defensa territorial y economía campesina.",
+      "Experiencia con terneros, incluidos huérfanos.",
+      "Ganado Normando adaptado al clima.",
+      "Comercialización local y en Usme.",
+      "Agua proveniente de nacederos.",
+      "Aprovechamiento del estiércol como abono."
+    ],
+    "oportunidades": [
+      "Construir infraestructura fija de semiestabulación.",
+      "Establecer módulos demostrativos por finca.",
+      "Conseguir pie de cría y terneros.",
+      "Apoyo inicial en concentrado y alimentación.",
+      "Crear registros de peso y costos.",
+      "Fortalecer venta asociativa en pie.",
+      "Participar en ferias ganaderas.",
+      "Implementar manejo regenerativo de estiércol y pastos."
+    ],
+    "debilidades": [
+      "Infraestructura insuficiente.",
+      "Producción dispersa en tres fincas.",
+      "No se informan costos, ingresos ni duración del ciclo.",
+      "Alimentación con concentrado depende de disponibilidad económica.",
+      "No hay pesajes ni registros documentados.",
+      "Inventario total no consolidado.",
+      "Riesgos de manejo aumentarán con animales de mayor tamaño.",
+      "Organización y nombre legal pendientes de verificar."
+    ],
+    "amenazas": [
+      "Virus y bacterias por infraestructura inadecuada.",
+      "Humedad y clima del páramo.",
+      "Escasez o contaminación del agua.",
+      "Aumento del costo de palmiste, melaza, sal y concentrado.",
+      "Caídas o golpes durante manejo y adecuaciones.",
+      "Variación del precio por arroba.",
+      "Mortalidad o bajo crecimiento de terneros huérfanos.",
+      "Sobrepastoreo o manejo inadecuado del estiércol."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Cliente directo",
+        "perfil_que_busca": "Compradores de ganado en pie.",
+        "ubicacion": "Localidad de Sumapaz.",
+        "necesidad": "Terneros o animales para levante, engorde o comercialización.",
+        "frecuencia": "Ocasional/por ciclo.",
+        "criterio_compra": "Peso, condición corporal, sanidad, precio y confianza.",
+        "canal": "Venta directa."
+      },
+      {
+        "tipo_actor": "Comprador local",
+        "perfil_que_busca": "Personas cercanas o productores de la zona.",
+        "ubicacion": "Veredas de Sumapaz.",
+        "necesidad": "Animales adaptados al territorio.",
+        "frecuencia": "Por disponibilidad.",
+        "criterio_compra": "Adaptación, alimentación y precio.",
+        "canal": "Contacto local."
+      },
+      {
+        "tipo_actor": "Famas/ comercializadores",
+        "perfil_que_busca": "Compradores vinculados a venta de carne.",
+        "ubicacion": "Usme pueblo.",
+        "necesidad": "Ganado con buen peso y condición.",
+        "frecuencia": "Ocasional",
+        "criterio_compra": "Precio por arroba, peso y calidad.",
+        "canal": "Entrega en pie."
+      },
+      {
+        "tipo_actor": "Feria ganadera",
+        "perfil_que_busca": "Espacio de referencia y posible comercialización.",
+        "ubicacion": "Usme u otras plazas, por verificar.",
+        "necesidad": "Comparar y negociar animales.",
+        "frecuencia": "Según calendario.",
+        "criterio_compra": "Precio por arroba y estado del animal.",
+        "canal": "Feria."
+      },
+      {
+        "tipo_actor": "Comprador asociativo potencial",
+        "perfil_que_busca": "Intermediario o comprador de varios animales de HOMPAS.",
+        "ubicacion": "Sumapaz/Bogotá rural.",
+        "necesidad": "Volumen y continuidad.",
+        "frecuencia": "Programada.",
+        "criterio_compra": "Trazabilidad, sanidad, peso y cumplimiento.",
+        "canal": "Acuerdo grupal."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Animales en pie con buen peso, alimentación adecuada, agua limpia, sal y condiciones que favorezcan la calidad de la carne.",
+    "como_se_conoce_la_necesidad": "La productora refiere que los comercializadores manifiestan buena aceptación cuando la carne llega a venta.",
+    "quienes_compran_o_podrian_comprar": "Compradores locales, famas de Usme, asistentes a ferias de ganado, otros productores e intermediarios.",
+    "evidencia": "Comercialización previa local y en Usme y referencias de precio en ferias. No se aportan registros, facturas ni cantidades.",
+    "ventaja_territorial": "Ganado Normando adaptado al páramo y bosque andino, agua de nacederos y alimentación combinada con pastoreo y suplementos.",
+    "cambios_demanda": "No informados.",
+    "dificultades": "Infraestructura insuficiente, producción dispersa, ausencia de registros, costos no definidos, riesgos sanitarios y variación del precio por arroba.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Tres jóvenes de HOMPAS",
+        "tipo": "Organizativo/ productivo",
+        "que_aporta": "Trabajo, fincas y manejo de terneros.",
+        "que_recibe": "Ingreso, aprendizaje y permanencia territorial.",
+        "trabajo_conjunto": "Registros comunes y compras conjuntas.",
+        "aporte_ambiental": "Aplicación de prácticas acordadas.",
+        "accion": "Definir roles por finca."
+      },
+      {
+        "actor_aliado": "Mujeres de la organización",
+        "tipo": "Organizativo/social",
+        "que_aporta": "Conocimiento, gestión y acompañamiento.",
+        "que_recibe": "Fortalecimiento económico.",
+        "trabajo_conjunto": "Administración y comercialización.",
+        "aporte_ambiental": "Seguimiento al manejo de recursos.",
+        "accion": "Formalizar comité."
+      },
+      {
+        "actor_aliado": "Familias propietarias de fincas",
+        "tipo": "Familiar",
+        "que_aporta": "Espacio, agua y apoyo.",
+        "que_recibe": "Conservar animales y generar ingreso.",
+        "trabajo_conjunto": "Módulos de semiestabulación.",
+        "aporte_ambiental": "Protección de nacederos y pastos.",
+        "accion": "Acuerdos de uso."
+      },
+      {
+        "actor_aliado": "Productores vecinos",
+        "tipo": "Productivo",
+        "que_aporta": "Experiencia, pie de cría y posibles compras.",
+        "que_recibe": "Mercado y cooperación.",
+        "trabajo_conjunto": "Intercambio técnico y compras.",
+        "aporte_ambiental": "Manejo conjunto de residuos.",
+        "accion": "Identificar aliados."
+      },
+      {
+        "actor_aliado": "Famas y compradores de Usme",
+        "tipo": "Comercial",
+        "que_aporta": "Demanda y referencia de precio.",
+        "que_recibe": "Oferta constante.",
+        "trabajo_conjunto": "Programación de ventas.",
+        "aporte_ambiental": "Reduce viajes fallidos.",
+        "accion": "Solicitar condiciones de compra."
+      },
+      {
+        "actor_aliado": "Ferias ganaderas",
+        "tipo": "Comercial",
+        "que_aporta": "Referencia por arroba y visibilidad.",
+        "que_recibe": "Participación de la organización.",
+        "trabajo_conjunto": "Venta y comparación de precios.",
+        "aporte_ambiental": "Consolidar transporte.",
+        "accion": "Consultar calendario."
+      },
+      {
+        "actor_aliado": "Alcaldía / asistencia técnica",
+        "tipo": "Institucional",
+        "que_aporta": "Diseño, sanidad, costos y seguimiento.",
+        "que_recibe": "Información del proyecto.",
+        "trabajo_conjunto": "Visitas a tres fincas.",
+        "aporte_ambiental": "Bienestar animal y manejo ambiental.",
+        "accion": "Solicitar diagnóstico."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Venta previa",
+        "a_quien": "Compradores locales.",
+        "resultado": "Existe comercialización de animales en pie.",
+        "motivacion": "Peso, disponibilidad y cercanía.",
+        "evidencia": "Relato de la productora."
+      },
+      {
+        "metodo": "Venta en Usme",
+        "a_quien": "Famas o comercializadores.",
+        "resultado": "Los animales se llevan a Usme pueblo.",
+        "motivacion": "Acceso a mercado y referencia de precio.",
+        "evidencia": "Registros pendientes."
+      },
+      {
+        "metodo": "Referencia en ferias",
+        "a_quien": "Mercado ganadero.",
+        "resultado": "Se utiliza como tope o filtro para el precio por arroba.",
+        "motivacion": "Negociación según mercado.",
+        "evidencia": "Calendario y precios pendientes."
+      },
+      {
+        "metodo": "Retroalimentación del comercializador",
+        "a_quien": "Compradores de carne.",
+        "resultado": "Manifiestan mejores condiciones asociadas a alimentación y manejo.",
+        "motivacion": "Calidad final.",
+        "evidencia": "Testimonios no documentados."
+      },
+      {
+        "metodo": "Validación organizativa",
+        "a_quien": "Tres unidades familiares.",
+        "resultado": "Existe interés en infraestructura, pie de cría y alimento.",
+        "motivacion": "Fortalecer economía campesina.",
+        "evidencia": "Actas y acuerdos pendientes."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Ternero para levante",
+        "descripcion_tecnica": "Ternero criado desde etapa inicial; algunos pueden ser huérfanos y requieren leche en tetero. Edad y peso no informados.",
+        "unidad": "Animal / arroba / kg.",
+        "insumos_principales": "Leche, agua, sal, pasto, palmiste, melaza y concentrado cuando hay recursos.",
+        "condiciones_especiales": "Abrigo, agua limpia, manejo sanitario, identificación y espacio seguro.",
+        "presentacion": "Animal en pie.",
+        "diferencial": "Rescate de terneros y manejo organizativo."
+      },
+      {
+        "servicio": "Ganado semiestabulado",
+        "descripcion_tecnica": "Animal Normando o adaptado, manejado parte del tiempo bajo infraestructura y parte en pastoreo.",
+        "unidad": "Animal / arroba / kg.",
+        "insumos_principales": "Pasto, agua, sal, palmiste, melaza, concentrado y cama.",
+        "condiciones_especiales": "Infraestructura seca, ventilada, segura y con manejo de estiércol.",
+        "presentacion": "Animal en pie.",
+        "diferencial": "Adaptación al páramo y aumento de peso en menor tiempo."
+      },
+      {
+        "servicio": "Abono orgánico",
+        "descripcion_tecnica": "Estiércol y cascarilla aprovechados para pastos y cultivos. Proceso de estabilización no descrito.",
+        "unidad": "Kg / bulto / m³ pendiente.",
+        "insumos_principales": "Estiércol, cascarilla y material vegetal.",
+        "condiciones_especiales": "Manejo evitando escorrentía, olores, vectores y contaminación de agua.",
+        "presentacion": "Uso interno en finca.",
+        "diferencial": "Cierre de nutrientes dentro de la unidad."
+      }
+    ],
+    "observaciones_o_comentarios": "Nota: La edad, raza exacta, peso de ingreso, peso de salida, duración del ciclo, condición sanitaria, cantidad de alimento y presentación comercial deben verificarse. La meta de tres arrobas de aumento por mes es una aspiración expresada y requiere pesajes y validación técnica."
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Selección / recepción",
+        "unidad": "Ternero",
+        "actividad_proceso": "Ingresar terneros de la familia o pie de cría.",
+        "tiempo_estimado": "Inicial"
+      },
+      {
+        "servicio": "Alimentación inicial",
+        "unidad": "Ternero huérfano",
+        "actividad_proceso": "Suministrar leche en tetero a terneros que lo requieren.",
+        "tiempo_estimado": "Diario"
+      },
+      {
+        "servicio": "Transición alimentaria",
+        "unidad": "Animal",
+        "actividad_proceso": "Introducir palmiste, melaza, sal y concentrado cuando hay recursos.",
+        "tiempo_estimado": "Diario"
+      },
+      {
+        "servicio": "Agua",
+        "unidad": "Animal",
+        "actividad_proceso": "Suministrar agua proveniente de nacederos.",
+        "tiempo_estimado": "Diario / continuo"
+      },
+      {
+        "servicio": "Semiestabulación",
+        "unidad": "Animal",
+        "actividad_proceso": "Mantener parte del tiempo en infraestructura y parte en pastoreo.",
+        "tiempo_estimado": "Diario"
+      },
+      {
+        "servicio": "Pastoreo",
+        "unidad": "Animal",
+        "actividad_proceso": "Permitir alimentación en potreros.",
+        "tiempo_estimado": "Diario / parcial"
+      },
+      {
+        "servicio": "Sanidad",
+        "unidad": "Lote / finca",
+        "actividad_proceso": "Prevenir virus y bacterias.",
+        "tiempo_estimado": "Permanente"
+      },
+      {
+        "servicio": "Pesaje",
+        "unidad": "Animal",
+        "actividad_proceso": "Buscar aumento de tres arrobas al mes.",
+        "tiempo_estimado": "Mensual"
+      },
+      {
+        "servicio": "Venta",
+        "unidad": "Animal en pie",
+        "actividad_proceso": "Entregar ganado en pie localmente o en Usme.",
+        "tiempo_estimado": "Por ciclo / venta"
+      },
+      {
+        "servicio": "Residuos",
+        "unidad": "Finca",
+        "actividad_proceso": "Usar estiércol y cascarilla como abono.",
+        "tiempo_estimado": "Continuo"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Terneros / pie de cría",
+        "cantidad_unidad": "3 animales para iniciar por unidad, según relato; inventario por verificar.",
+        "frecuencia": "Por ciclo.",
+        "proveedor_fuente": "Familias / compra pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Enfermedad, mortalidad y genética.",
+        "manejo_ambiental": "Demanda de agua, alimento y espacio.",
+        "observaciones": "Compra sanitaria e identificación. Prioridad."
+      },
+      {
+        "insumo": "Leche para tetero",
+        "cantidad_unidad": "Cantidad pendiente.",
+        "frecuencia": "Etapa inicial.",
+        "proveedor_fuente": "Producción familiar / otra fuente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Contaminación y errores de manejo.",
+        "manejo_ambiental": "Envases y consumo.",
+        "observaciones": "Higiene y plan de lactancia. Uso actual."
+      },
+      {
+        "insumo": "Palmiste",
+        "cantidad_unidad": "Cantidad pendiente.",
+        "frecuencia": "Diaria / según etapa.",
+        "proveedor_fuente": "Proveedor pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Almacenamiento y formulación.",
+        "manejo_ambiental": "Empaques y transporte.",
+        "observaciones": "Mantener seco y registrar. Uso actual."
+      },
+      {
+        "insumo": "Melaza",
+        "cantidad_unidad": "Cantidad pendiente.",
+        "frecuencia": "Según ración.",
+        "proveedor_fuente": "Proveedor pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Derrames y fermentación.",
+        "manejo_ambiental": "Envases y carga orgánica.",
+        "observaciones": "Recipiente cerrado y dosificación. Uso actual."
+      },
+      {
+        "insumo": "Concentrado",
+        "cantidad_unidad": "Cantidad pendiente.",
+        "frecuencia": "Cuando hay recursos.",
+        "proveedor_fuente": "Proveedor pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Costo y almacenamiento.",
+        "manejo_ambiental": "Empaques y transporte.",
+        "observaciones": "Plan alimenticio y compras conjuntas. Necesidad prioritaria."
+      },
+      {
+        "insumo": "Sal mineralizada",
+        "cantidad_unidad": "Cantidad pendiente.",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Proveedor pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Dosificación Inadecuada.",
+        "manejo_ambiental": "Empaques.",
+        "observaciones": "Suministro técnico y seco. Uso reportado."
+      },
+      {
+        "insumo": "Agua",
+        "cantidad_unidad": "No cuantificada.",
+        "frecuencia": "Diaria.",
+        "proveedor_fuente": "Nacederos de las fincas.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Calidad y escasez.",
+        "manejo_ambiental": "Presión sobre la fuente.",
+        "observaciones": "Protección, análisis y bebederos. Disponible, por verificar."
+      },
+      {
+        "insumo": "Pasto",
+        "cantidad_unidad": "Área y oferta pendientes.",
+        "frecuencia": "Diaria.",
+        "proveedor_fuente": "Potreros.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Sobrepastoreo.",
+        "manejo_ambiental": "Compactación y erosión.",
+        "observaciones": "Rotación y aforo. Uso actual."
+      },
+      {
+        "insumo": "Cascarilla/cama",
+        "cantidad_unidad": "Cantidad pendiente.",
+        "frecuencia": "Por ciclo.",
+        "proveedor_fuente": "Proveedor pendiente.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Polvo, humedad y amoniaco.",
+        "manejo_ambiental": "Residuo orgánico.",
+        "observaciones": "Cama seca y compostaje. Uso mencionado."
+      },
+      {
+        "insumo": "Medicamentos/ vacunas",
+        "cantidad_unidad": "No informados.",
+        "frecuencia": "Según plan.",
+        "proveedor_fuente": "Veterinario/ proveedor.",
+        "toxicidad": "Biológico / químico",
+        "impacto_potencial": "Residuos y uso indebido.",
+        "manejo_ambiental": "Envases y trazas.",
+        "observaciones": "Plan sanitario y devolución de envases. Pendiente."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "No informada.",
+    "produccion_normal": "Se mencionan 3 a 4 terneros por unidad productiva; el proceso inicial sería con 3 terneros. El total actual de las tres fincas no se consolidó.",
+    "capacidad_mensual_teorica": "No calculable. Depende de infraestructura, área de pastoreo, agua, mano de obra, alimento y sanidad en cada finca.",
+    "produccion_maxima_posible": "Pendiente de diagnóstico técnico por finca. No debe inferirse únicamente a partir del número de jóvenes.",
+    "area_numero_habitaciones": "Tres fincas; áreas, potreros, corrales y número actual de animales pendientes.",
+    "limitantes_productivos": "Infraestructura, disponibilidad de concentrado, pie de cría, herramientas, pesaje, sanidad y manejo organizado.",
+    "limitantes_ambientales": "Clima húmedo, virus y bacterias, capacidad de nacederos, pastoreo, manejo de estiércol y condición del suelo.",
+    "capacidad_instalada": "Infraestructura débil o insuficiente para semiestabulación constante.",
+    "capacidad_utilizada": "Proceso inicial con pocos terneros y manejo distribuido en las fincas.",
+    "produce_mismo_todo_ano": true,
+    "alcanza_para_demanda": true,
+    "necesidades_aumentar_sosteniblemente": "Infraestructura fija, pie de cría, alimentación, herramientas, plan sanitario, rotación de potreros, protección de agua y registros por animal.",
+    "observaciones_o_comentarios": "Variación anual: No informada. Puede depender de clima, agua, pastos, disponibilidad de terneros y recursos para alimento; debe registrarse."
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua",
+        "estado_actual": "Proviene de nacederos de cada finca.",
+        "limite_restriccion": "Caudal y calidad no medidos.",
+        "afectacion": "Condiciona bebida y limpieza.",
+        "efecto": "Condiciona bebida y limpieza.",
+        "incidencia": "Alta.",
+        "accion_mejora": "Proteger, analizar y almacenar."
+      },
+      {
+        "condicion": "Fuentes hídricas",
+        "estado_actual": "Nacederos cercanos o internos.",
+        "limite_restriccion": "Riesgo de pisoteo o contaminación, por verificar.",
+        "afectacion": "Afecta salud animal y ecosistema.",
+        "efecto": "Afecta salud animal y ecosistema.",
+        "incidencia": "Alta.",
+        "accion_mejora": "Cercado y franjas de protección."
+      },
+      {
+        "condicion": "Suelo /pastos",
+        "estado_actual": "Se usan para pastoreo y aplicación de abono.",
+        "limite_restriccion": "Capacidad de carga no calculada.",
+        "afectacion": "Puede mejorar o degradarse.",
+        "efecto": "Puede mejorar o degradarse.",
+        "incidencia": "Alta.",
+        "accion_mejora": "Aforo, rotación y dosis de abono."
+      },
+      {
+        "condicion": "Topografía",
+        "estado_actual": "No descrita.",
+        "limite_restriccion": "Acceso y pendientes por verificar.",
+        "afectacion": "Afecta infraestructura y movilización.",
+        "efecto": "Afecta infraestructura y movilización.",
+        "incidencia": "Media.",
+        "accion_mejora": "Diagnóstico por finca."
+      },
+      {
+        "condicion": "Clima/humedad",
+        "estado_actual": "Páramo y bosque andino; se mencionan virus y bacterias asociados a condiciones climáticas.",
+        "limite_restriccion": "Frío y humedad.",
+        "afectacion": "Enfermedad y menor desempeño.",
+        "efecto": "Enfermedad y menor desempeño.",
+        "incidencia": "Alta.",
+        "accion_mejora": "Refugio, ventilación y sanidad."
+      },
+      {
+        "condicion": "Biodiversidad",
+        "estado_actual": "Territorio de páramo y bosque andino.",
+        "limite_restriccion": "Fragilidad ambiental.",
+        "afectacion": "Limita expansión y uso de potreros.",
+        "efecto": "Limita expansión y uso de potreros.",
+        "incidencia": "Alta.",
+        "accion_mejora": "Evitar afectación y conservar coberturas."
+      },
+      {
+        "condicion": "Residuos",
+        "estado_actual": "Estiércol y cascarilla usados como abono.",
+        "limite_restriccion": "Proceso no estandarizado.",
+        "afectacion": "Aporta nutrientes o contamina.",
+        "efecto": "Aporta nutrientes o contamina.",
+        "incidencia": "Media-alta.",
+        "accion_mejora": "Estabilizar y registrar aplicación."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Biológico",
+        "peligro": "Contactocon animales, estiércol, virus y bacterias.",
+        "aplica": true,
+        "nivel_riesgo": "Alto potencial.",
+        "controles_actuales": "No informado.",
+        "accion": "EPP, higiene y plan sanitario."
+      },
+      {
+        "tipo": "Mecánico",
+        "peligro": "Golpes/aplastamiento: Manejo de animales, especialmente al crecer.",
+        "aplica": true,
+        "nivel_riesgo": "Medio-alto.",
+        "controles_actuales": "Trabajan inicialmente con terneros.",
+        "accion": "Corrales, manga y técnicas seguras."
+      },
+      {
+        "tipo": "Locativo",
+        "peligro": "Caídas: Adecuación de infraestructura, terrenos y pisos irregulares.",
+        "aplica": true,
+        "nivel_riesgo": "Medio.",
+        "controles_actuales": "No informado.",
+        "accion": "Orden, botas y superficies seguras."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Carga de alimento, leche, cascarilla y herramientas.",
+        "aplica": true,
+        "nivel_riesgo": "Medio.",
+        "controles_actuales": "No informado.",
+        "accion": "Ayudas mecánicas y técnica de carga."
+      },
+      {
+        "tipo": "Químico",
+        "peligro": "Medicamentos, desinfectantes o gases del estiércol.",
+        "aplica": true,
+        "nivel_riesgo": "Medio.",
+        "controles_actuales": "No informado.",
+        "accion": "Manejo técnico y ventilación."
+      },
+      {
+        "tipo": "Físico",
+        "peligro": "Climático: Frío, lluvia y humedad.",
+        "aplica": true,
+        "nivel_riesgo": "Medio-alto.",
+        "controles_actuales": "Adaptación local.",
+        "accion": "Ropa, refugio y horarios."
+      },
+      {
+        "tipo": "Mecánico",
+        "peligro": "Herramientas: Construcción y reparación de infraestructura.",
+        "aplica": true,
+        "nivel_riesgo": "Medio-alto.",
+        "controles_actuales": "No informado.",
+        "accion": "Inspección y capacitación."
+      },
+      {
+        "tipo": "Tránsito / Vial",
+        "peligro": "Tránsito/traslado: Movilización de animales hacia Usme o ferias.",
+        "aplica": true,
+        "nivel_riesgo": "Medio-alto.",
+        "controles_actuales": "No informado.",
+        "accion": "Transportador autorizado y carga segura."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Usar botas, guantes, ropa de trabajo y protección climática.",
+        "riesgo": "Biológico/físico.",
+        "responsable": "Cada joven/familia.",
+        "frecuencia": "Diaria.",
+        "evidencia": "Dotación y fotografías."
+      },
+      {
+        "accion_preventiva": "Diseñar corrales, divisiones, manga y zonas de escape.",
+        "riesgo": "Golpes/aplastamiento.",
+        "responsable": "Organización/técnico.",
+        "frecuencia": "Antes de ampliar.",
+        "evidencia": "Plano e inspección."
+      },
+      {
+        "accion_preventiva": "Mantener pisos secos, drenajes y rutas despejadas.",
+        "riesgo": "Caídas/locativo.",
+        "responsable": "Responsable de finca.",
+        "frecuencia": "Diaria.",
+        "evidencia": "Lista de chequeo."
+      },
+      {
+        "accion_preventiva": "Capacitar en manejo de terneros y ganado adulto.",
+        "riesgo": "Mecánico/biológico.",
+        "responsable": "Veterinario/técnico.",
+        "frecuencia": "Semestral.",
+        "evidencia": "Registro de asistencia."
+      },
+      {
+        "accion_preventiva": "Aplicar técnica segura para cargas.",
+        "riesgo": "Biomecánico.",
+        "responsable": "Integrantes.",
+        "frecuencia": "Cada labor.",
+        "evidencia": "Procedimiento."
+      },
+      {
+        "accion_preventiva": "Disponer botiquín y números de emergencia.",
+        "riesgo": "Emergencias.",
+        "responsable": "Cada unidad.",
+        "frecuencia": "Permanente.",
+        "evidencia": "Botiquín vigente."
+      },
+      {
+        "accion_preventiva": "Registrar incidentes y enfermedades.",
+        "riesgo": "Seguimiento.",
+        "responsable": "Coordinación HOMPAS.",
+        "frecuencia": "Mensual.",
+        "evidencia": "Formato consolidado."
+      },
+      {
+        "accion_preventiva": "Planificar transporte y sujeción de animales.",
+        "riesgo": "Tránsito/bienestar animal.",
+        "responsable": "Responsable comercial.",
+        "frecuencia": "Cada venta.",
+        "evidencia": "Guía y soporte."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "Comercialización local de ganado en pie.",
+        "responsable": "Responsables de cada finca.",
+        "frecuencia": "Por ciclo."
+      },
+      {
+        "canal": "Usme pueblo",
+        "activo": true,
+        "descripcion": "Venta o traslado hacia famas y compradores.",
+        "responsable": "Organización/productor.",
+        "frecuencia": "Ocasional."
+      },
+      {
+        "canal": "Ferias ganaderas",
+        "activo": true,
+        "descripcion": "Sirven como tope o filtro del precio por arroba.",
+        "responsable": "Organización.",
+        "frecuencia": "Según calendario."
+      },
+      {
+        "canal": "Redes / WhatsApp",
+        "activo": false,
+        "descripcion": "Puede usarse para mostrar animales, peso y disponibilidad.",
+        "responsable": "Jóvenes de HOMPAS.",
+        "frecuencia": "Por implementar."
+      },
+      {
+        "canal": "Comercialización asociativa",
+        "activo": false,
+        "descripcion": "Agrupar animales de las tres fincas para negociar.",
+        "responsable": "HOMPAS.",
+        "frecuencia": "Por programar."
+      },
+      {
+        "canal": "Compras institucionales",
+        "activo": false,
+        "descripcion": "No se reportó canal para animales en pie.",
+        "responsable": "Pendiente.",
+        "frecuencia": "No aplica/explorar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Ternero para levante",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Precio por arroba en Usme y ferias.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": null,
+        "justificacion": "Registrar peso de ingreso, costos y margen."
+      },
+      {
+        "servicio": "Ganado en pie",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Tope o filtro de ferias ganaderas.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": null,
+        "justificacion": "Negociar por peso real y condición."
+      },
+      {
+        "servicio": "Abono orgánico interno",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No informada.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": null,
+        "justificacion": "Valorar ahorro en fertilización."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": "Nota financiera: La entrevista no incluye precio por arroba, peso promedio, valor de compra del ternero, costo de leche, palmiste, melaza, concentrado, sal, sanidad, transporte ni mano de obra. Por tanto, no se puede establecer precio mínimo, margen ni rentabilidad."
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Venta local actual",
+        "cantidad_mensual": "Animales no cuantificados.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Venta directa local."
+      },
+      {
+        "concepto_servicio": "Venta a Usme",
+        "cantidad_mensual": "Cantidad no informada.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Famas/compradores."
+      },
+      {
+        "concepto_servicio": "Feria ganadera",
+        "cantidad_mensual": "Potencial.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Según negociación.",
+        "canal": "Feria."
+      },
+      {
+        "concepto_servicio": "Escenario asociativo",
+        "cantidad_mensual": "Animales consolidados de tres fincas, por verificar.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Acuerdo grupal",
+        "canal": "HOMPAS/comprador fijo."
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Comprador local",
+        "estrategia": "Informar disponibilidad, peso y sanidad.",
+        "medio": "Llamada/visita.",
+        "frecuencia": "Por ciclo.",
+        "responsable": "Responsable de finca."
+      },
+      {
+        "cliente": "Fama de Usme",
+        "estrategia": "Cumplir peso acordado y condición del animal.",
+        "medio": "Teléfono/acuerdo.",
+        "frecuencia": "Antes de venta.",
+        "responsable": "Responsable comercial."
+      },
+      {
+        "cliente": "Comprador recurrente",
+        "estrategia": "Registrar preferencias y avisar con anticipación.",
+        "medio": "WhatsApp por implementar.",
+        "frecuencia": "Mensual/por lote..",
+        "responsable": "Joven designado."
+      },
+      {
+        "cliente": "Aliado asociativo",
+        "estrategia": "Consolidar oferta y calendario de las tres fincas.",
+        "medio": "Reunión / grupo digital.",
+        "frecuencia": "Mensual.",
+        "responsable": "Coordinación HOMPAS."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Animal de finca a comprador local",
+        "canal": "Venta directa.",
+        "tiempo": "Acordado.",
+        "transporte_operacion": "A pie o vehículo, por verificar.",
+        "condicion_calidad": "Animal identificado y apto",
+        "capacidad": "Por animal.",
+        "costo": "Pendiente.",
+        "responsable": "Responsable de finca."
+      },
+      {
+        "servicio_insumo": "Animal de finca a Usme",
+        "canal": "Venta regional.",
+        "tiempo": "Pendiente.",
+        "transporte_operacion": "Vehículo ganadero, por verificar.",
+        "condicion_calidad": "Bienestar, sujeción y documentos.",
+        "capacidad": "Pendiente.",
+        "costo": "Pendiente.",
+        "responsable": "Organización/ transportador."
+      },
+      {
+        "servicio_insumo": "Animales a feria",
+        "canal": "Feria ganadera.",
+        "tiempo": "Según evento.",
+        "transporte_operacion": "Transporte compartido.",
+        "condicion_calidad": "Pesaje y condiciones sanitarias.",
+        "capacidad": "Según vehículo.",
+        "costo": "Cotizar.",
+        "responsable": "HOMPAS."
+      },
+      {
+        "servicio_insumo": "Insumos a tres fincas",
+        "canal": "Compra conjunta",
+        "tiempo": "Programado.",
+        "transporte_operacion": "Ruta consolidada.",
+        "condicion_calidad": "Alimento seco y protegido.",
+        "capacidad": "Según pedido.",
+        "costo": "Pendiente.",
+        "responsable": "Coordinación."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Identificación del animal",
+        "informacion": "Código, finca, origen, sexo y raza.",
+        "responsable": "Responsable de finca.",
+        "medio": "Arete/ficha.",
+        "frecuencia": "Por animal",
+        "evidencia": "Arete/ficha."
+      },
+      {
+        "elemento": "Peso",
+        "informacion": "Peso de ingreso y mensual.",
+        "responsable": "Responsable de finca.",
+        "medio": "Planilla/báscula.",
+        "frecuencia": "Mensual",
+        "evidencia": "Planilla/báscula."
+      },
+      {
+        "elemento": "Alimentación",
+        "informacion": "Leche, pasto, palmiste, melaza, sal y concentrado.",
+        "responsable": "Responsable de finca.",
+        "medio": "Registro de consumo.",
+        "frecuencia": "Diaria/semanal",
+        "evidencia": "Registro de consumo."
+      },
+      {
+        "elemento": "Sanidad",
+        "informacion": "Vacunas, desparasitación, síntomas y tratamientos.",
+        "responsable": "Veterinario /productor.",
+        "medio": "Historia sanitaria.",
+        "frecuencia": "Por evento",
+        "evidencia": "Historia sanitaria."
+      },
+      {
+        "elemento": "Agua",
+        "informacion": "Fuente, análisis y protección.",
+        "responsable": "Familia.",
+        "medio": "Registro/fotografía.",
+        "frecuencia": "Periódica",
+        "evidencia": "Registro/fotografía."
+      },
+      {
+        "elemento": "Venta",
+        "informacion": "Fecha, peso, precio por arroba, comprador y pago.",
+        "responsable": "Responsable comercial.",
+        "medio": "Comprobante.",
+        "frecuencia": "Por venta",
+        "evidencia": "Comprobante."
+      },
+      {
+        "elemento": "Prácticas ambientales",
+        "informacion": "Cantidad, proceso y lote de aplicación.",
+        "responsable": "Responsable ambiental.",
+        "medio": "Registro y fotos.",
+        "frecuencia": "Por aplicación",
+        "evidencia": "Registro y fotos."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Infraestructura fija de semiestabulación.",
+        "descripcion": "Producción constante y manejo seguro.",
+        "valor_unitario": null,
+        "cantidad": "Un módulo por finca o diseño organizativo, por definir.",
+        "total": null,
+        "requisito": "Visita, área, agua y diseño.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Pie de cría / terneros.",
+        "descripcion": "Fortalecer inventario.",
+        "valor_unitario": null,
+        "cantidad": "Tres para iniciar por unidad, según relato; confirmar.",
+        "total": null,
+        "requisito": "Plan sanitario y capacidad.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Concentrado y alimentación inicial.",
+        "descripcion": "Asegurar crecimiento y transición.",
+        "valor_unitario": null,
+        "cantidad": "Según formulación.",
+        "total": null,
+        "requisito": "Ración y presupuesto.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Bebederos, comederos y almacenamiento.",
+        "descripcion": "Reducir pérdidas y asegurar agua.",
+        "valor_unitario": null,
+        "cantidad": "Según animales.",
+        "total": null,
+        "requisito": "Diseño por finca.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Báscula ganadera o acceso a pesaje.",
+        "descripcion": "Medir aumento de peso.",
+        "valor_unitario": null,
+        "cantidad": "Una compartida o servicio.",
+        "total": null,
+        "requisito": "Ruta y manejo seguro.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Manga, divisiones y herramientas.",
+        "descripcion": "Manejo seguro y mantenimiento.",
+        "valor_unitario": null,
+        "cantidad": "Según infraestructura.",
+        "total": null,
+        "requisito": "Diseño técnico.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Protección de nacederos y reserva de agua.",
+        "descripcion": "Cuidar fuente y continuidad.",
+        "valor_unitario": null,
+        "cantidad": "Por finca.",
+        "total": null,
+        "requisito": "Diagnóstico hídrico.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Registros y comunicación.",
+        "descripcion": "Trazabilidad organizativa.",
+        "valor_unitario": null,
+        "cantidad": "Formatos / teléfono existente.",
+        "total": null,
+        "requisito": "Responsables definidos.",
+        "fuente": "Bajo/gestionar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Compra o valor del ternero",
+        "descripcion": "Por ingreso. Diferenciar animales propios, huérfanos y comprados.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Pendiente."
+      },
+      {
+        "tipo": "Leche para tetero",
+        "descripcion": "Etapa inicial. Cuantificar litros y valor.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Pendiente."
+      },
+      {
+        "tipo": "Palmiste",
+        "descripcion": "Mensual/diaria. Registrar kg y proveedor.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Pendiente."
+      },
+      {
+        "tipo": "Melaza",
+        "descripcion": "Mensual/según ración. Registrar litros o kg.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Pendiente."
+      },
+      {
+        "tipo": "Concentrado",
+        "descripcion": "Mensual. Se usa cuando hay recursos.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Pendiente."
+      },
+      {
+        "tipo": "Sal mineralizada",
+        "descripcion": "Mensual. Registrar consumo.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Pendiente."
+      },
+      {
+        "tipo": "Sanidad",
+        "descripcion": "Por animal/ciclo. Vacunas, medicamentos y veterinario.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Pendiente."
+      },
+      {
+        "tipo": "Mano de obra",
+        "descripcion": "Diaria. Registrar horas.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Trabajo familiar y juvenil no valorado."
+      },
+      {
+        "tipo": "Infraestructura / mantenimiento",
+        "descripcion": "Inversión y mantenimiento. Principal necesidad.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Pendiente."
+      },
+      {
+        "tipo": "Transporte",
+        "descripcion": "Por compraventa. Tres fincas, Usme y ferias.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Pendiente."
+      },
+      {
+        "tipo": "Gestión ambiental",
+        "descripcion": "Mensual/por ciclo. Manejo de estiércol, agua y pastos.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Pendiente."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "1",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Unidad productiva actual: No informados. Separar por finca y animal. Ciclo de levante: Ternero, alimentación, sanidad y trabajo pendientes. Venta local/Usme: Cantidad y precio no informados. Registrar por arroba. Escenario HOMPAS: Oferta consolidada pendiente. No proyectar sin línea base."
+      },
+      {
+        "mes": "2",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "3",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "4",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "5",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "6",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "7",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "8",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "9",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "10",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "11",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "12",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "Lectura financiera: La iniciativa tiene una lógica social y productiva clara, pero no cuenta con datos suficientes para medir rentabilidad. Se requiere un registro individual por ternero y un consolidado por finca y por organización, incluyendo peso, alimentación, sanidad, mano de obra, infraestructura, transporte y precio real por arroba."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Agua consumida",
+        "estado": "No medida; proviene de nacederos.",
+        "cantidad": "No medida",
+        "impacto_1_a_5": null,
+        "accion": "Litros o capacidad de bebederos por animal."
+      },
+      {
+        "variable": "Estado del nacedero",
+        "estado": "No documentado.",
+        "cantidad": "No documentado",
+        "impacto_1_a_5": null,
+        "accion": "Inspección, cercado y calidad."
+      },
+      {
+        "variable": "Alimento comprado",
+        "estado": "No cuantificado.",
+        "cantidad": "No cuantificado",
+        "impacto_1_a_5": null,
+        "accion": "Kg de palmiste, melaza, concentrado y sal."
+      },
+      {
+        "variable": "Pastoreo",
+        "estado": "No medido.",
+        "cantidad": "No medido",
+        "impacto_1_a_5": null,
+        "accion": "Área, días de ocupación y descanso."
+      },
+      {
+        "variable": "Estiércol/cascarilla",
+        "estado": "Se usa como abono, sin cantidad.",
+        "cantidad": "Sin cantidad",
+        "impacto_1_a_5": null,
+        "accion": "Kg o volumen y destino."
+      },
+      {
+        "variable": "Transporte",
+        "estado": "No cuantificado.",
+        "cantidad": "No cuantificado",
+        "impacto_1_a_5": null,
+        "accion": "Viajes, distancia y combustible."
+      },
+      {
+        "variable": "Huella de carbono",
+        "estado": "No calculada.",
+        "cantidad": "No calculada",
+        "impacto_1_a_5": null,
+        "accion": "Alimento, transporte, manejo de estiércol y crecimiento."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "Agua consumida",
+        "que_se_mide": "Litros o capacidad de bebederos por animal.",
+        "dato_inicial": "No medida; proviene de nacederos.",
+        "meta": "Crear línea base.",
+        "frecuencia": "Diaria / semanal",
+        "responsable": "Familia",
+        "evidencia": "Registro de agua"
+      },
+      {
+        "indicador": "Estado del nacedero",
+        "que_se_mide": "Inspección, cercado y calidad.",
+        "dato_inicial": "No documentado.",
+        "meta": "Proteger 100% de fuentes usadas.",
+        "frecuencia": "Mensual",
+        "responsable": "Familia / ambiental",
+        "evidencia": "Lista de chequeo"
+      },
+      {
+        "indicador": "Alimento comprado",
+        "que_se_mide": "Kg de palmiste, melaza, concentrado y sal.",
+        "dato_inicial": "No cuantificado.",
+        "meta": "Registrar por animal.",
+        "frecuencia": "Semanal",
+        "responsable": "Responsable de finca",
+        "evidencia": "Planilla de alimento"
+      },
+      {
+        "indicador": "Pastoreo",
+        "que_se_mide": "Área, días de ocupación y descanso.",
+        "dato_inicial": "No medido.",
+        "meta": "Implementar rotación.",
+        "frecuencia": "Por cambio de potrero",
+        "responsable": "Responsable de finca",
+        "evidencia": "Mapa/bitácora de rotación"
+      },
+      {
+        "indicador": "Estiércol/cascarilla",
+        "que_se_mide": "Kg o volumen y destino.",
+        "dato_inicial": "Se usa como abono, sin cantidad.",
+        "meta": "100% con manejo definido.",
+        "frecuencia": "Mensual",
+        "responsable": "Responsable ambiental",
+        "evidencia": "Registro de abono"
+      },
+      {
+        "indicador": "Transporte",
+        "que_se_mide": "Viajes, distancia y combustible.",
+        "dato_inicial": "No cuantificado.",
+        "meta": "Consolidar rutas.",
+        "frecuencia": "Por viaje",
+        "responsable": "Responsable comercial",
+        "evidencia": "Planilla de transporte"
+      },
+      {
+        "indicador": "Huella de carbono",
+        "que_se_mide": "Alimento, transporte, manejo de estiércol y crecimiento.",
+        "dato_inicial": "No calculada.",
+        "meta": "Construir línea base anual.",
+        "frecuencia": "Anual",
+        "responsable": "HOMPAS",
+        "evidencia": "Informe de línea base"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Estiércol",
+        "cantidad": "No cuantificada",
+        "manejo_actual": "Se distribuye en pastos y cultivos.",
+        "accion_circular": "Compostar o estabilizar y dosificar.",
+        "destino": "Fertilización orgánica.",
+        "responsable": "Responsable de finca"
+      },
+      {
+        "residuo_recurso": "Cascarilla",
+        "cantidad": "No cuantificada",
+        "manejo_actual": "Se mezcla con residuos y se usa como abono.",
+        "accion_circular": "Zona cubierta y manejo por lotes.",
+        "destino": "Material estructurante.",
+        "responsable": "Responsable de finca"
+      },
+      {
+        "residuo_recurso": "Sacos de alimento",
+        "cantidad": "No cuantificada",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Separar y entregar.",
+        "destino": "Reutilización o reciclaje.",
+        "responsable": "Responsable de finca"
+      },
+      {
+        "residuo_recurso": "Envases veterinarios",
+        "cantidad": "No cuantificada",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Almacenar y entregar a gestor.",
+        "destino": "Devolución posconsumo.",
+        "responsable": "Veterinario / productor"
+      },
+      {
+        "residuo_recurso": "Agua de limpieza",
+        "cantidad": "No cuantificada",
+        "manejo_actual": "No informada.",
+        "accion_circular": "Drenajes y distancia de fuentes.",
+        "destino": "Uso eficiente y recolección controlada.",
+        "responsable": "Responsable de finca"
+      },
+      {
+        "residuo_recurso": "Pasto / cultivos",
+        "cantidad": "No cuantificada",
+        "manejo_actual": "Reciben abono orgánico.",
+        "accion_circular": "Plan de fertilización.",
+        "destino": "Ciclo de nutrientes y mejora del suelo.",
+        "responsable": "Responsable ambiental"
+      }
+    ],
+    "conclusion_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "Agua",
+        "indicador": "Protección y monitoreo.",
+        "descripcion": "Nacederos disponibles, sin medición ni análisis reportado.",
+        "estado": "Medio.",
+        "calificacion_1_a_5": null,
+        "accion": "Protección y monitoreo.",
+        "evidencia": "Registro de monitoreo de agua"
+      },
+      {
+        "factor": "Suelo / pastos",
+        "indicador": "Rotación y capacidad de carga.",
+        "descripcion": "Pastoreo parcial y aplicación de estiércol.",
+        "estado": "Medio.",
+        "calificacion_1_a_5": null,
+        "accion": "Rotación y capacidad de carga.",
+        "evidencia": "Plan de rotación de potreros"
+      },
+      {
+        "factor": "Residuos",
+        "indicador": "Compostaje y registros.",
+        "descripcion": "Aprovechamiento orgánico, sin proceso estandarizado.",
+        "estado": "Medio.",
+        "calificacion_1_a_5": null,
+        "accion": "Compostaje y registros.",
+        "evidencia": "Bitácora de compostaje"
+      },
+      {
+        "factor": "Bienestar animal",
+        "indicador": "Diseño, cama, agua y espacio.",
+        "descripcion": "Semiestabulación propuesta, infraestructura insuficiente.",
+        "estado": "Medio-bajo.",
+        "calificacion_1_a_5": null,
+        "accion": "Diseño, cama, agua y espacio.",
+        "evidencia": "Ficha de evaluación de bienestar"
+      },
+      {
+        "factor": "Sanidad",
+        "indicador": "Plan veterinario.",
+        "descripcion": "Riesgo de virus y bacterias.",
+        "estado": "Bajo.",
+        "calificacion_1_a_5": null,
+        "accion": "Plan veterinario.",
+        "evidencia": "Historia clínica y plan sanitario"
+      },
+      {
+        "factor": "Biodiversidad",
+        "indicador": "Evitar expansión sobre coberturas naturales.",
+        "descripcion": "Actividad en páramo y bosque andino.",
+        "estado": "Medio.",
+        "calificacion_1_a_5": null,
+        "accion": "Evitar expansión sobre coberturas naturales.",
+        "evidencia": "Mapa de delimitación de áreas"
+      },
+      {
+        "factor": "Organización",
+        "indicador": "Roles y consolidación de datos.",
+        "descripcion": "Tres jóvenes y participación de mujeres.",
+        "estado": "Alto potencial.",
+        "calificacion_1_a_5": null,
+        "accion": "Roles y consolidación de datos.",
+        "evidencia": "Actas de reunión y roles"
+      },
+      {
+        "factor": "Gestión ambiental",
+        "indicador": "Indicadores por finca.",
+        "descripcion": "Prácticas positivas no documentadas.",
+        "estado": "Medio.",
+        "calificacion_1_a_5": null,
+        "accion": "Indicadores por finca.",
+        "evidencia": "Reporte consolidado de indicadores"
+      }
+    ],
+    "resultado_preliminar_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "Nacederos: Contaminación o reducción del caudal.",
+        "accion": "Cercar, proteger y monitorear.",
+        "prioridad": "Alta",
+        "plazo": "0-6 meses.",
+        "responsable": "Familias / organización.",
+        "recursos": "Postes, alambre y señalización",
+        "indicador": "Fuentes protegidas.",
+        "evidencia": "Registro de fuentes cercadas"
+      },
+      {
+        "impacto": "Pastoreo: Compactación o sobrepastoreo.",
+        "accion": "Rotación y aforo.",
+        "prioridad": "Alta",
+        "plazo": "Próximo ciclo.",
+        "responsable": "Responsable de finca.",
+        "recursos": "Cerca eléctrica o divisiones",
+        "indicador": "Días de descanso.",
+        "evidencia": "Planilla de rotación de potreros"
+      },
+      {
+        "impacto": "Estiércol / cascarilla: Carga orgánica y escorrentía.",
+        "accion": "Zona cubierta, estabilización y aplicación controlada.",
+        "prioridad": "Alta",
+        "plazo": "0-3 meses.",
+        "responsable": "Responsable ambiental.",
+        "recursos": "Techo/plástico y herramientas",
+        "indicador": "Volumen manejado.",
+        "evidencia": "Registro de zona de acopio"
+      },
+      {
+        "impacto": "Infraestructura: Ocupación y materiales.",
+        "accion": "Ubicar en área intervenida y con drenajes.",
+        "prioridad": "Media",
+        "plazo": "Antes de construir.",
+        "responsable": "Técnico / familia.",
+        "recursos": "Diseño y materiales",
+        "indicador": "Diseño aprobado.",
+        "evidencia": "Plano de ubicación"
+      },
+      {
+        "impacto": "Alimento: Empaques, transporte y pérdidas.",
+        "accion": "Compras conjuntas y almacenamiento seco.",
+        "prioridad": "Media",
+        "plazo": "0-6 meses.",
+        "responsable": "HOMPAS.",
+        "recursos": "Bodega seca y estibas",
+        "indicador": "Pérdidas / sacos.",
+        "evidencia": "Control de inventario"
+      },
+      {
+        "impacto": "Sanidad: Envases y medicamentos.",
+        "accion": "Registro y devolución posconsumo.",
+        "prioridad": "Alta",
+        "plazo": "Permanente.",
+        "responsable": "Veterinario / productor.",
+        "recursos": "Contenedor de residuos",
+        "indicador": "Envases entregados.",
+        "evidencia": "Constancia de entrega a gestor"
+      },
+      {
+        "impacto": "Transporte: Emisiones y estrés animal.",
+        "accion": "Consolidar ventas y usar vehículo adecuado.",
+        "prioridad": "Media",
+        "plazo": "0-12 meses.",
+        "responsable": "Responsable comercial.",
+        "recursos": "Coordinación de fletes",
+        "indicador": "Viajes / incidentes.",
+        "evidencia": "Planilla de fletes grupales"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": null,
+        "situacion": "Frío y humedad",
+        "riesgo": "Terneros jóvenes y animales sin refugio adecuado.",
+        "accion_propuesta": "Infraestructura seca, cama y protección. Contingencia: Aislar y atender síntomas. Indicador: Enfermedad / mortalidad."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Lluvias intensas",
+        "riesgo": "Encharcamiento, acceso y pastos.",
+        "accion_propuesta": "Drenajes y almacenamiento de alimento. Contingencia: Reducir pastoreo en zonas afectadas. Indicador: Días de encharcamiento."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Sequía / menor caudal",
+        "riesgo": "Dependencia de nacederos.",
+        "accion_propuesta": "Reserva y bebederos eficientes. Contingencia: Priorizar agua animal. Indicador: Días de reserva."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Heladas",
+        "riesgo": "Disminución de pasto y estrés.",
+        "accion_propuesta": "Reserva de alimento y refugio. Contingencia: Suplementar ración. Indicador: Disponibilidad de forraje."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Eventos viales",
+        "riesgo": "Dificultan venta e insumos.",
+        "accion_propuesta": "Programar inventario y rutas. Contingencia: Reprogramar venta. Indicador: Días de interrupción."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Sanitario.",
+        "riesgo": "Virus o bacterias",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "No documentado.",
+        "respuesta": "Plan veterinario y bioseguridad."
+      },
+      {
+        "tipo": "Operativo.",
+        "riesgo": "Infraestructura insuficiente",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "Manejo parcial.",
+        "respuesta": "Diseño y construcción."
+      },
+      {
+        "tipo": "Productivo.",
+        "riesgo": "Bajo aumento de peso",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "Alimentación variable.",
+        "respuesta": "Pesaje y ración."
+      },
+      {
+        "tipo": "Productivo / sanitario.",
+        "riesgo": "Mortalidad de terneros huérfanos",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "Leche en tetero.",
+        "respuesta": "Protocolo de crianza."
+      },
+      {
+        "tipo": "Financiero / productivo.",
+        "riesgo": "Falta de concentrado",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio-alto.",
+        "prevencion": "Se compra cuando hay recursos.",
+        "respuesta": "Presupuesto y compra conjunta."
+      },
+      {
+        "tipo": "Comercial.",
+        "riesgo": "Precio variable por arroba",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio-alto.",
+        "prevencion": "Referencia de ferias.",
+        "respuesta": "Registros y negociación."
+      },
+      {
+        "tipo": "SST.",
+        "riesgo": "Golpes o caídas",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio-alto.",
+        "prevencion": "Trabajo con terneros.",
+        "respuesta": "Corrales y capacitación."
+      },
+      {
+        "tipo": "Ambiental.",
+        "riesgo": "Daño a nacederos o pastos",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "No documentado.",
+        "respuesta": "Protección y rotación."
+      },
+      {
+        "tipo": "Ambiental.",
+        "riesgo": "Manejo inadecuado de estiércol",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio-alto.",
+        "prevencion": "Uso como abono.",
+        "respuesta": "Estabilización."
+      },
+      {
+        "tipo": "Organizativo.",
+        "riesgo": "Descoordinación entre fincas",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto:",
+        "prevencion": "Organización existente.",
+        "respuesta": "Roles y consolidado mensual."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "Confirmar nombre, vereda, integrantes y predios.",
+        "componente": "Inmediato.",
+        "responsable": "HOMPAS/PMAPC.",
+        "tiempo": "30 días.",
+        "recursos": "Entrevista y visita.",
+        "resultado": "Ficha organizativa completa.",
+        "evidencia": "Ficha organizativa verificada"
+      },
+      {
+        "actividad": "Levantar inventario y línea base por finca.",
+        "componente": "Semana 1.",
+        "responsable": "Tres jóvenes.",
+        "tiempo": "30 días.",
+        "recursos": "Formatos y pesaje.",
+        "resultado": "Animales identificados.",
+        "evidencia": "Inventario inicial por finca"
+      },
+      {
+        "actividad": "Diagnosticar infraestructura y agua.",
+        "componente": "Mes 1.",
+        "responsable": "Técnico/familias.",
+        "tiempo": "2 meses.",
+        "recursos": "Visita.",
+        "resultado": "Diseños por finca.",
+        "evidencia": "Informe diagnóstico"
+      },
+      {
+        "actividad": "Formular plan sanitario.",
+        "componente": "Mes 1.",
+        "responsable": "Veterinario.",
+        "tiempo": "2 meses.",
+        "recursos": "Asistencia.",
+        "resultado": "Protocolo y calendario.",
+        "evidencia": "Documento de plan sanitario"
+      },
+      {
+        "actividad": "Definir plan alimenticio y presupuesto.",
+        "componente": "Mes 1.",
+        "responsable": "Veterinario/organización.",
+        "tiempo": "2 meses.",
+        "recursos": "Cotizaciones.",
+        "resultado": "Ración y costos.",
+        "evidencia": "Plan nutricional"
+      },
+      {
+        "actividad": "Cotizar infraestructura y herramientas.",
+        "componente": "Mes 2.",
+        "responsable": "HOMPAS/técnico.",
+        "tiempo": "3 meses.",
+        "recursos": "Diseño y proveedores.",
+        "resultado": "Presupuesto.",
+        "evidencia": "Cotizaciones"
+      },
+      {
+        "actividad": "Establecer protección de nacederos.",
+        "componente": "Mes 2.",
+        "responsable": "Familias/ambiental..",
+        "tiempo": "6 meses.",
+        "recursos": "Cercado y señalización.",
+        "resultado": "Fuentes protegidas.",
+        "evidencia": "Registro fotográfico"
+      },
+      {
+        "actividad": "Implementar manejo de estiércol.",
+        "componente": "Mes 2.",
+        "responsable": "Responsable ambiental.",
+        "tiempo": "4 meses.",
+        "recursos": "Zona cubierta.",
+        "resultado": "Abono estabilizado.",
+        "evidencia": "Área de compostaje"
+      },
+      {
+        "actividad": "Validar compradores y precios.",
+        "componente": "Mes 2.",
+        "responsable": "Responsable comercial.",
+        "tiempo": "Permanente.",
+        "recursos": "Registro de mercado.",
+        "resultado": "Canales definidos.",
+        "evidencia": "Directorio de compradores"
+      },
+      {
+        "actividad": "Revisar resultados y escalar.",
+        "componente": "Mes 6.",
+        "responsable": "HOMPAS/asesor.",
+        "tiempo": "12 meses.",
+        "recursos": "Indicadores.",
+        "resultado": "Decisión basada en datos.",
+        "evidencia": "Informe de evaluación"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "Producción",
+        "indicador": "Animales por finca.",
+        "meta": "Registrar 100 %.",
+        "frecuencia": "Mensual.",
+        "responsable": "Tres jóvenes",
+        "evidencia": "Planilla de inventario"
+      },
+      {
+        "dimension": "Producción",
+        "indicador": "Peso por animal.",
+        "meta": "Pesaje inicial y mensual.",
+        "frecuencia": "Mensual",
+        "responsable": "Tres jóvenes",
+        "evidencia": "Planilla de pesaje"
+      },
+      {
+        "dimension": "Producción",
+        "indicador": "Aumento de peso.",
+        "meta": "Definir meta técnica.",
+        "frecuencia": "Mensual.",
+        "responsable": "Tres jóvenes / técnico",
+        "evidencia": "Registro de ganancia de peso"
+      },
+      {
+        "dimension": "Sanitaria",
+        "indicador": "Enfermedades y mortalidad",
+        "meta": "Registro completo y reducción.",
+        "frecuencia": "Diaria/mensual.",
+        "responsable": "Veterinario / jóvenes",
+        "evidencia": "Ficha sanitaria"
+      },
+      {
+        "dimension": "Alimentación",
+        "indicador": "Consumo por animal.",
+        "meta": "Registrar leche, pasto y suplementos.",
+        "frecuencia": "Semanal.",
+        "responsable": "Tres jóvenes",
+        "evidencia": "Planilla de alimentación"
+      },
+      {
+        "dimension": "Comercial",
+        "indicador": "Animales vendidos y precio por arroba.",
+        "meta": "Registrar 100%",
+        "frecuencia": "Por venta.",
+        "responsable": "Responsable comercial",
+        "evidencia": "Comprobantes de venta"
+      },
+      {
+        "dimension": "Financiera",
+        "indicador": "Costo y margen por animal.",
+        "meta": "Calcular cada ciclo.",
+        "frecuencia": "Mensual/venta.",
+        "responsable": "HOMPAS / comité",
+        "evidencia": "Informe de costos"
+      },
+      {
+        "dimension": "Ambiental",
+        "indicador": "Nacederos protegidos.",
+        "meta": "100 % de fuentes utilizadas.",
+        "frecuencia": "Trimestral",
+        "responsable": "Responsable ambiental",
+        "evidencia": "Informe de protección hídrica"
+      },
+      {
+        "dimension": "Ambiental",
+        "indicador": "Estiércol con manejo definido.",
+        "meta": "100% estabilizado o aplicado técnicamente.",
+        "frecuencia": "Mensual",
+        "responsable": "Responsable ambiental",
+        "evidencia": "Registro de compostaje"
+      },
+      {
+        "dimension": "Organizativa",
+        "indicador": "Unidades que reportan datos.",
+        "meta": "100% de fincas.",
+        "frecuencia": "Mensual.",
+        "responsable": "Coordinación HOMPAS",
+        "evidencia": "Reportes mensuales"
+      },
+      {
+        "dimension": "SST",
+        "indicador": "Incidentes y condiciones inseguras.",
+        "meta": "Registro y corrección.",
+        "frecuencia": "Mensual.",
+        "responsable": "Coordinación HOMPAS",
+        "evidencia": "Bitácora de incidentes"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Construir infraestructura fija",
+        "efecto_productivo": "Permite semiestabulación constante.",
+        "efecto_comercial": "Mejora cumplimiento.",
+        "efecto_financiero": "Alta inversión.",
+        "efecto_ambiental": "Debe respetar agua, suelo y drenajes.",
+        "ajuste_necesario": "Diseño por finca."
+      },
+      {
+        "decision": "Comprar pie de cría",
+        "efecto_productivo": "Aumenta inventario.",
+        "efecto_comercial": "Mayor oferta futura.",
+        "efecto_financiero": "Requiere capital y sanidad.",
+        "efecto_ambiental": "Más demanda de recursos.",
+        "ajuste_necesario": "Capacidad validada."
+      },
+      {
+        "decision": "Apoyar alimentación",
+        "efecto_productivo": "Favorece crecimiento.",
+        "efecto_comercial": "Mejor peso.",
+        "efecto_financiero": "Aumenta costos variables.",
+        "efecto_ambiental": "Empaques y transporte.",
+        "ajuste_necesario": "Ración y registros."
+      },
+      {
+        "decision": "Usar ganado Normando",
+        "efecto_productivo": "Adaptación territorial.",
+        "efecto_comercial": "Puede ser diferencial.",
+        "efecto_financiero": "Costo genético por verificar.",
+        "efecto_ambiental": "Mejor adaptación potencial.",
+        "ajuste_necesario": "Origen y sanidad."
+      },
+      {
+        "decision": "Semiestabulación con pastoreo",
+        "efecto_productivo": "Controla alimentación.",
+        "efecto_comercial": "Regulariza oferta.",
+        "efecto_financiero": "Infraestructura y mano de obra.",
+        "efecto_ambiental": "Puede reducir presión o concentrar residuos.",
+        "ajuste_necesario": "Rotación y manejo de estiércol."
+      },
+      {
+        "decision": "Consolidar ventas de tres fincas",
+        "efecto_productivo": "Aumenta volumen.",
+        "efecto_comercial": "Mejora negociación.",
+        "efecto_financiero": "Reduce costos logísticos.",
+        "efecto_ambiental": "Menos viajes.",
+        "ajuste_necesario": "Acuerdos internos."
+      },
+      {
+        "decision": "Registrar peso y costos",
+        "efecto_productivo": "Mejora decisiones.",
+        "efecto_comercial": "Permite precio justo.",
+        "efecto_financiero": "Calcula rentabilidad.",
+        "efecto_ambiental": "Evita sobreuso de insumos.",
+        "ajuste_necesario": "Disciplina mensual."
+      },
+      {
+        "decision": "Proteger nacederos",
+        "efecto_productivo": "Asegura agua.",
+        "efecto_comercial": "Fortalece confianza.",
+        "efecto_financiero": "Requiere inversión menor.",
+        "efecto_ambiental": "Beneficio directo al ecosistema",
+        "ajuste_necesario": "Cercado y monitoreo."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}

@@ -56,6 +56,8 @@
                             style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">PMAPC</a>
                         <a href="tablero_ambiental.html" class="nav-link-btn" id="btn-tablero-ambiental"
                             style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Tablero Ambiental</a>
+                        <a href="concursos_sumapaz.html" class="nav-link-btn" id="btn-concursos-sumapaz"
+                            style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Concursos Sumapaz</a>
 
                         <a href="/convocatorias" class="nav-link-btn" id="btn-convocatorias"
                             style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Convocatorias</a>
@@ -108,6 +110,20 @@
                     Cada productor representa una historia de trabajo, tradición y sostenibilidad que mantiene viva la
                     economía rural y fortalece el territorio.
                 </p>
+                <div class="csv-download-actions">
+                    <a href="api/export_produccion_excel.php" class="btn-download-csv" id="btn-export-excel" title="Descargar producción detallada por producto (Excel)">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        Descargar Producción por Productor (Excel)
+                    </a>
+                    <a href="api/export_produccion_excel.php?mode=resumen" class="btn-download-csv btn-secondary-csv" id="btn-export-excel-resumen" title="Descargar resumen con productos concatenados (Excel)">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        Resumen por Productor (Excel)
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -200,6 +216,10 @@
                         document.getElementById('btn-tracking').style.display = 'inline-block';
                         document.getElementById('btn-pmapc').style.display = 'inline-block';
                         document.getElementById('btn-tablero-ambiental').style.display = 'inline-block';
+                    }
+
+                    if (parseInt(result.rol_id) === 12) {
+                        document.getElementById('btn-concursos-sumapaz').style.display = 'inline-block';
                     }
                     document.getElementById('btn-logout').style.display = 'inline-block';
                 }

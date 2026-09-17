@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concursos Sumapaz | Somos Sumapaz</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Static Cache-Busting -->
+    <script>
+        const timestamp = new Date().getTime();
+        document.write(`<link rel="stylesheet" href="assets/styles.css?v=${timestamp}">`);
+    </script>
+    <!-- html2pdf Library for Client-side PDF Generation (Local with CDN fallback) -->
+    <script src="assets/html2pdf.bundle.min.js"></script>
+    <script>
+        if (typeof html2pdf === 'undefined') {
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"><\/script>');
+        }
+    </script>
+    <!-- SheetJS (xlsx) Library for Client-side Excel Export -->
+    <script src="assets/xlsx.full.min.js"></script>
+
+    <style>
+        :root {
+            --primary-green: #2E5A44;
+            --primary-green-dark: #1E3D2D;
+            --accent-gold: #D4A373;
+            --bg-light: #F8F9FA;
+            --text-dark: #2B2D42;
+            --text-muted: #6C757D;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            background-color: #F4F6F8;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-section {
+            position: relative;
+            background-image: url('assets/fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 420px;
+            padding: 6.5rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin: -3rem -2rem 3rem -2rem;
+            border-bottom: 5px solid var(--primary-green);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(68, 79, 47, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1000px;
+            width: 100%;
+            padding: 0 2rem;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            margin-bottom: 0.8rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #FBF4DE;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            opacity: 0.95;
+            max-width: 850px;
+            margin: 0 auto;
+            font-weight: 400;
+            color: #FBF4DE;
+        }
+
+        .main-wrapper {
+            padding: 3rem 2rem 5rem 2rem;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .container-content {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* KPI Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            align-items: center;
+            border-left: 5px solid var(--primary-green);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .stat-info h4 {
+            margin: 0 0 0.2rem 0;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .stat-info p {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-green-dark);
+            line-height: 1;
+        }
+
+        /* Tabs Section */
+        .tabs-header {
+            display: flex;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem;
+            border-radius: 14px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.9rem 1.2rem;
+            border: none;
+            background: transparent;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+
+        .tab-btn.active {
+            background: var(--primary-green);
+            color: white;
+            box-shadow: 0 4px 12px rgba(46, 90, 68, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Filter Panel */
+        .filter-panel {
+            background: white;
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .filter-group label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .filter-control {
+            padding: 0.65rem 0.9rem;
+            border: 1px solid #DCE1E5;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+            width: 100%;
+            background: white;
+        }
+
+        .filter-control:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(46, 90, 68, 0.15);
+        }
+
+        /* Cards & Tables */
+        .concursos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .concurso-card {
+            background: white;
+            border-radius: 14px;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-top: 4px solid var(--primary-green);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .concurso-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .badge-cat {
+            background: #E8F4F8;
+            color: #1D70B8;
+        }
+
+        .badge-status-pendiente {
+            background: #FFF3CD;
+            color: #856404;
+        }
+
+        .badge-status-evaluacion {
+            background: #CCE5FF;
+            color: #004085;
+        }
+
+        .badge-status-finalizado {
+            background: #D4EDDA;
+            color: #155724;
+        }
+
+        .badge-asistio {
+            background: #D4EDDA;
+            color: #155724;
+        }
+
+        .badge-falto {
+            background: #F8D7DA;
+            color: #721C24;
+        }
+
+        .concurso-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-green-dark);
+            margin: 0.8rem 0 0.5rem 0;
+            line-height: 1.3;
+        }
+
+        .concurso-meta {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .concurso-meta-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .progress-bar-bg {
+            background: #E9ECEF;
+            border-radius: 10px;
+            height: 8px;
+            width: 100%;
+            overflow: hidden;
+            margin: 0.5rem 0 1.2rem 0;
+        }
+
+        .progress-bar-fill {
+            background: linear-gradient(90deg, #2E5A44, #488263);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        .btn-action {
+            flex: 1;
+            padding: 0.65rem 0.8rem;
+            border-radius: 8px;
+            border: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary-action {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        .btn-primary-action:hover {
+            background: var(--primary-green-dark);
+        }
+
+        .btn-pdf-action {
+            background: #E63946;
+            color: white;
+        }
+
+        .btn-pdf-action:hover {
+            background: #C1121F;
+        }
+
+        .btn-excel-action {
+            background: #1D6F42;
+            color: white;
+        }
+
+        .btn-excel-action:hover {
+            background: #144D2E;
+        }
+
+        .btn-secondary-action {
+            background: #E9ECEF;
+            color: var(--text-dark);
+        }
+
+        .btn-secondary-action:hover {
+            background: #DEE2E6;
+        }
+
+        /* Tables */
+        .table-card {
+            background: white;
+            border-radius: 14px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.92rem;
+        }
+
+        .custom-table th {
+            background: #F1F5F2;
+            color: var(--primary-green-dark);
+            padding: 1rem 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid #E2E8E4;
+        }
+
+        .custom-table td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #EDF2F0;
+            vertical-align: middle;
+        }
+
+        .custom-table tbody tr:hover {
+            background: #F9FBF9;
+        }
+
+        .signature-thumb {
+            width: 120px;
+            height: 45px;
+            object-fit: contain;
+            background: #FAF8F5;
+            border: 1px solid #E5DFD5;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .signature-thumb:hover {
+            transform: scale(1.08);
+        }
+
+        /* Modal styling */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999999 !important;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        .modal-container {
+            background: white;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 950px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1000000 !important;
+            margin: auto;
+        }
+
+        .modal-header {
+            background: var(--primary-green);
+            color: white;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .modal-close-btn {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            line-height: 1;
+            opacity: 0.8;
+        }
+
+        .modal-close-btn:hover {
+            opacity: 1;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .criteria-list {
+            background: #F8F9FA;
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .criteria-list h4 {
+            margin: 0 0 0.6rem 0;
+            color: var(--primary-green-dark);
+            font-size: 0.95rem;
+        }
+
+        .criteria-item {
+            font-size: 0.86rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-dark);
+        }
+
+        .evidence-img {
+            max-width: 100%;
+            max-height: 350px;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            object-fit: contain;
+            background: #000;
+        }
+
+        /* Printable Area styles for html2pdf */
+        .pdf-render-area {
+            background: white;
+            padding: 2.5rem;
+            font-family: 'Inter', Arial, sans-serif;
+            color: #111;
+        }
+
+        .pdf-header {
+            text-align: center;
+            border-bottom: 2px solid #2E5A44;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pdf-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #2E5A44;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .pdf-subtitle {
+            font-size: 1rem;
+            color: #555;
+            margin: 0.3rem 0 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HIDDEN PDF TEMPLATE CONTAINER (Placed at top of body for 0px offsetTop) -->
+    <div id="pdf-printable-area" style="display: none;"></div>
+    <!-- Main Header Navbar -->
+    <header id="main-header">
+        <nav class="navbar-custom">
+            <div class="container" style="display: flex; align-items: center; max-width: 1300px; margin: 0 auto; padding: 0.8rem 1.5rem;">
+                <a href="index.html">
+                    <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img" style="height: 48px;">
+                </a>
+                <div style="margin-left: auto; display: flex; align-items: center; gap: 1rem;">
+                    <div id="header-auth-container" style="display: flex; align-items: center;">
+                        <button onclick="logout()" class="nav-link-btn" id="btn-logout" style="background: transparent; border: none; color: #FBF4DE; cursor: pointer; font-weight: 600; font-size: 0.95rem;">
+                            Cerrar Sesión
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-wrapper">
+        <!-- Hero Section matching site standard -->
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Concursos & Ferias Sumapaz</h1>
+                <p class="hero-subtitle">Panel Oficial de Control: Monitoreo de Avance, Evaluación de Jurados, Descarga de Actas Oficiales y Registro de Asistencias con Firmas Digitales</p>
+            </div>
+        </section>
+
+        <!-- Container for Dashboard Content -->
+        <div class="container-content">
+
+            <!-- Executive KPI Stats Row -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>Total Concursos</h4>
+                        <p id="stat-concursos">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>Participantes</h4>
+                        <p id="stat-participantes">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>Asistencias Confirmadas</h4>
+                        <p id="stat-asistencias">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h4>Evaluaciones Realizadas</h4>
+                        <p id="stat-evaluaciones">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Panel Tabs Header -->
+            <div class="tabs-header">
+                <button class="tab-btn active" onclick="switchTab('tab-concursos')">
+                    Estado y Avance de Concursos
+                </button>
+                <button class="tab-btn" onclick="switchTab('tab-asistencias')">
+                    Control de Asistencias con Firmas
+                </button>
+            </div>
+
+            <!-- TAB 1: ESTADO Y AVANCE DE CONCURSOS -->
+            <div id="tab-concursos" class="tab-content active">
+                <!-- Filter Bar for Concursos -->
+                <div class="filter-panel" style="gap: 1.2rem;">
+                    <div class="filter-group" style="flex: 2; min-width: 260px;">
+                        <label style="font-weight: 700; color: var(--primary-green-dark);">Seleccionar Concurso</label>
+                        <select id="select-concurso" class="filter-control" onchange="onConcursoSelectChange()" style="font-weight: 600; font-size: 0.95rem; border: 2px solid var(--primary-green);">
+                            <option value="">Cargando concursos...</option>
+                        </select>
+                    </div>
+                    <div class="filter-group" style="min-width: 180px;">
+                        <label>Categoría</label>
+                        <select id="filter-categoria" class="filter-control" onchange="filterConcursosByCat()">
+                            <option value="all">Todas las Categorías</option>
+                        </select>
+                    </div>
+                    <div class="filter-group" style="flex: 1.5; min-width: 200px;">
+                        <label>Buscar Participante / Documento</label>
+                        <input type="text" id="search-participante" class="filter-control" placeholder="Nombre o documento..." oninput="filterParticipantesTable()">
+                    </div>
+                </div>
+
+                <!-- MAIN CONCURSO DETAIL & PARTICIPANTS TABLE PANEL -->
+                <div id="concurso-main-panel" class="table-card" style="margin-top: 1.5rem; background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #E6DEC9; padding: 1.8rem;">
+                    <!-- Meta Header Banner -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #EAE5D9; padding-bottom: 1.2rem; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+                                <span id="concurso-category" class="badge badge-cat">Categoría</span>
+                                <span id="concurso-maxpts" style="font-weight: 700; color: var(--primary-green);">Puntaje Máximo: 100 Pts</span>
+                            </div>
+                            <h2 id="concurso-title" style="margin: 0.6rem 0 0 0; color: var(--primary-green-dark); font-size: 1.6rem; font-weight: 700;">Seleccione un concurso</h2>
+                        </div>
+                        <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center;">
+                            <button class="btn-action btn-excel-action" onclick="downloadConcursoExcelCurrent()" style="padding: 0.6rem 1.1rem; font-size: 0.9rem;">
+                                Descargar Excel General
+                            </button>
+                            <button class="btn-action btn-pdf-action" onclick="downloadActaConcursoPDFCurrent()" style="padding: 0.6rem 1.1rem; font-size: 0.9rem;">
+                                Descargar Acta General (PDF)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Criterios List -->
+                    <div class="criteria-list">
+                        <h4 style="color: var(--primary-green-dark); margin-bottom: 0.5rem;">Criterios Oficiales de Juzgamiento:</h4>
+                        <div id="criterios-list"></div>
+                    </div>
+
+                    <!-- Leaderboard Table -->
+                    <h4 style="color: var(--primary-green-dark); margin: 1.8rem 0 0.8rem 0; font-size: 1.15rem;">Información de Participantes y Estado de Juzgamiento</h4>
+                    <div class="table-responsive" style="margin-bottom: 1.5rem;">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Pos.</th>
+                                    <th>Documento</th>
+                                    <th>Participante</th>
+                                    <th>Vereda / Contacto</th>
+                                    <th>¿Ya lo Subió?</th>
+                                    <th>Puntaje Total</th>
+                                    <th>Jurado Evaluador</th>
+                                    <th style="min-width: 220px;">Acciones / Acta</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-participantes">
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- TAB 2: CONTROL DE ASISTENCIAS Y FIRMAS -->
+            <div id="tab-asistencias" class="tab-content">
+                <!-- Filter Bar for Asistencias -->
+                <div class="filter-panel">
+                    <div class="filter-group" style="flex: 2;">
+                        <label>Buscar Participante / Cédula</label>
+                        <input type="text" id="search-asistencia" class="filter-control" placeholder="Nombre completo o documento..." oninput="loadAsistencias()">
+                    </div>
+                    <div class="filter-group">
+                        <label>Vereda</label>
+                        <select id="filter-vereda" class="filter-control" onchange="loadAsistencias()">
+                            <option value="all">Todas las Veredas</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Estado Asistencia</label>
+                        <select id="filter-asistio" class="filter-control" onchange="loadAsistencias()">
+                            <option value="all">Todos</option>
+                            <option value="1">Asistieron</option>
+                            <option value="0">No Asistieron</option>
+                        </select>
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <button class="btn-action btn-pdf-action" onclick="downloadAsistenciasPDF()" style="padding: 0.7rem 1.2rem; font-size: 0.95rem;">
+                            Descargar Asistencias en PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Asistencias Table -->
+                <div class="table-card">
+                    <div class="table-responsive">
+                        <table class="custom-table" id="table-asistencias">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Documento</th>
+                                    <th>Nombre Completo</th>
+                                    <th>Vereda</th>
+                                    <th>Edad</th>
+                                    <th>Estado Asistencia</th>
+                                    <th>Firma Digitalizada</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-asistencias">
+                                <!-- Dynamically loaded -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+
+
+
+    <!-- JS Logic -->
+    <script>
+        let allConcursos = [];
+        let filteredConcursos = [];
+        let currentConcursoDetail = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadDashboard();
+            loadAsistencias();
+            checkAuth();
+        });
+
+        async function checkAuth() {
+            try {
+                const res = await fetch('api/check_auth.php');
+                const result = await res.json();
+                if (!res.ok || !result.authenticated) {
+                    window.location.href = 'login.html';
+                    return;
+                }
+                const rolId = parseInt(result.rol_id);
+                if (!result.is_admin && rolId !== 12 && rolId !== 1) {
+                    alert('Acceso restringido: Esta pestaña sólo está disponible para usuarios autorizados.');
+                    window.location.href = 'index.html';
+                    return;
+                }
+                document.getElementById('btn-logout').style.display = 'inline-block';
+            } catch (e) {
+                console.warn("Auth check warning:", e);
+            }
+        }
+
+        async function logout() {
+            await fetch('api/logout.php');
+            window.location.reload();
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // LOAD DASHBOARD & CONCURSOS DROPDOWN
+        async function loadDashboard() {
+            try {
+                const res = await fetch('api/get_concursos_dashboard.php');
+                const data = await res.json();
+                if (!data.success) return;
+
+                // Stats
+                document.getElementById('stat-concursos').innerText = data.stats.total_concursos;
+                document.getElementById('stat-participantes').innerText = data.stats.total_participantes;
+                document.getElementById('stat-asistencias').innerText = data.stats.total_asistieron;
+                document.getElementById('stat-evaluaciones').innerText = data.stats.total_evaluaciones;
+
+                // Categories dropdown
+                const catSelect = document.getElementById('filter-categoria');
+                catSelect.innerHTML = '<option value="all">Todas las Categorías</option>';
+                data.categories.forEach(cat => {
+                    catSelect.innerHTML += `<option value="${cat}">${cat}</option>`;
+                });
+
+                allConcursos = data.concursos || [];
+                filteredConcursos = [...allConcursos];
+                
+                populateConcursosSelect(allConcursos);
+            } catch (e) {
+                console.error("Error cargando dashboard:", e);
+            }
+        }
+
+        function populateConcursosSelect(list) {
+            const select = document.getElementById('select-concurso');
+            if (!list || list.length === 0) {
+                select.innerHTML = '<option value="">No hay concursos disponibles</option>';
+                document.getElementById('tbody-participantes').innerHTML = '<tr><td colspan="8" style="text-align: center; color: var(--text-muted); padding: 2rem;">No hay concursos que coincidan con los filtros.</td></tr>';
+                return;
+            }
+
+            let html = '';
+            list.forEach(c => {
+                html += `<option value="${c.id}">${c.title} (${c.category}) - ${c.status}</option>`;
+            });
+            select.innerHTML = html;
+
+            if (list.length > 0) {
+                select.value = list[0].id;
+                loadConcursoDetalle(list[0].id);
+            }
+        }
+
+        function filterConcursosByCat() {
+            const cat = document.getElementById('filter-categoria').value;
+            if (cat === 'all') {
+                filteredConcursos = [...allConcursos];
+            } else {
+                filteredConcursos = allConcursos.filter(c => c.category === cat);
+            }
+            populateConcursosSelect(filteredConcursos);
+        }
+
+        function onConcursoSelectChange() {
+            const select = document.getElementById('select-concurso');
+            const concursoId = select.value;
+            if (concursoId) {
+                loadConcursoDetalle(concursoId);
+            }
+        }
+
+        async function loadConcursoDetalle(concursoId) {
+            const titleEl = document.getElementById('concurso-title');
+            const catEl = document.getElementById('concurso-category');
+            const maxPtsEl = document.getElementById('concurso-maxpts');
+            const critBox = document.getElementById('criterios-list');
+            const tbody = document.getElementById('tbody-participantes');
+
+            titleEl.innerText = 'Cargando detalle del concurso...';
+            catEl.innerText = 'Cargando...';
+            maxPtsEl.innerText = '';
+            critBox.innerHTML = '<p style="color: #666;">Cargando criterios de juzgamiento...</p>';
+            tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: var(--text-muted); padding: 2rem;">Cargando información de participantes...</td></tr>';
+
+            try {
+                const timestamp = new Date().getTime();
+                const res = await fetch(`api/get_concurso_detalle.php?id=${concursoId}&_t=${timestamp}`);
+                const data = await res.json();
+                
+                if (!data || !data.success) {
+                    const errMsg = (data && data.error) ? data.error : "No se pudo cargar el detalle del concurso.";
+                    titleEl.innerText = 'Error al cargar concurso';
+                    tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: #d9534f; padding: 2rem;"><strong>${errMsg}</strong></td></tr>`;
+                    return;
+                }
+
+                currentConcursoDetail = data;
+
+                titleEl.innerText = data.concurso ? data.concurso.title : 'Detalle del Concurso';
+                catEl.innerText = data.concurso ? data.concurso.category : 'General';
+                maxPtsEl.innerText = data.concurso ? `Puntaje Máximo: ${data.concurso.total_max_points} Pts` : '';
+
+                // Criterios
+                let critHtml = '';
+                if (data.criterios && Array.isArray(data.criterios) && data.criterios.length > 0) {
+                    data.criterios.forEach(crit => {
+                        const maxPointsStr = crit.max_points_str || (crit.max_points_value ? crit.max_points_value + ' puntos' : '');
+                        critHtml += `
+                            <div class="criteria-item">
+                                <strong>${crit.name}</strong> ${maxPointsStr ? '(' + maxPointsStr + ')' : ''} - <span style="color: #666;">${crit.description || ''}</span>
+                            </div>
+                        `;
+                    });
+                }
+                critBox.innerHTML = critHtml || '<p>No hay criterios cargados para este concurso.</p>';
+
+                renderParticipantesTable(data.participantes, data.concurso ? data.concurso.total_max_points : 100);
+
+            } catch (e) {
+                console.error("Error cargando detalle de concurso:", e);
+                titleEl.innerText = 'Error al cargar concurso';
+                tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: #d9534f; padding: 2rem;"><strong>Error de conexión o de servidor: ${e.message}</strong></td></tr>`;
+            }
+        }
+
+        function renderParticipantesTable(participantes, totalMax) {
+            const tbody = document.getElementById('tbody-participantes');
+            if (!participantes || !Array.isArray(participantes) || participantes.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: var(--text-muted); padding: 1.5rem;">No hay participantes inscritos en este concurso.</td></tr>';
+                return;
+            }
+
+            let html = '';
+            participantes.forEach((p, idx) => {
+                let realIndex = idx;
+                if (currentConcursoDetail && currentConcursoDetail.participantes) {
+                    const foundIdx = currentConcursoDetail.participantes.findIndex(item => {
+                        if (item.participante_id && p.participante_id) return item.participante_id === p.participante_id;
+                        if (item.concurso_participacion_id && p.concurso_participacion_id) return item.concurso_participacion_id === p.concurso_participacion_id;
+                        if (item.id && p.id) return item.id === p.id;
+                        if (item.documento_identidad && p.documento_identidad) return item.documento_identidad === p.documento_identidad;
+                        return false;
+                    });
+                    if (foundIdx >= 0) realIndex = foundIdx;
+                }
+
+                const eval = p.evaluacion;
+                const yaSubioBadge = eval 
+                    ? '<span class="badge badge-status-finalizado" style="font-size: 0.78rem; font-weight: 600;">SÍ - Evaluado</span>' 
+                    : '<span class="badge badge-status-pendiente" style="font-size: 0.78rem; font-weight: 600;">NO - Pendiente</span>';
+                
+                const score = eval 
+                    ? `<strong style="color: var(--primary-green); font-size: 0.95rem;">${eval.puntaje_total} / ${totalMax} pts</strong>` 
+                    : '<span style="color: #aaa; font-style: italic;">Sin evaluar</span>';
+                    
+                const jurado = eval && eval.nombre_jurado ? eval.nombre_jurado : '-';
+
+                let actionsHtml = '';
+                if (eval) {
+                    let hasEvid = '';
+                    if (eval.imagen_id) {
+                        hasEvid = `<button class="btn-action btn-secondary-action" style="padding: 0.35rem 0.6rem; font-size: 0.8rem;" title="Ver evidencia fotográfica abajo de la fila" onclick="event.stopPropagation(); toggleRowFoto(${realIndex})">Foto</button>`;
+                    }
+                    actionsHtml = `
+                        <div style="display: flex; gap: 0.3rem; flex-wrap: wrap;" onclick="event.stopPropagation();">
+                            <button class="btn-action btn-primary-action" style="padding: 0.35rem 0.65rem; font-size: 0.8rem;" onclick="toggleRowDetail(${realIndex})">Ver Acta</button>
+                            <button class="btn-action btn-pdf-action" style="padding: 0.35rem 0.65rem; font-size: 0.8rem;" onclick="downloadIndividualActaPDF(${realIndex})">PDF Acta</button>
+                            ${hasEvid}
+                        </div>
+                    `;
+                } else {
+                    actionsHtml = '<span style="color: #888; font-style: italic; font-size: 0.82rem;">Sin evaluación subida</span>';
+                }
+
+                html += `
+                    <tr id="row-part-${realIndex}" style="cursor: pointer;" onclick="toggleRowDetail(${realIndex})">
+                        <td><strong>#${idx + 1}</strong></td>
+                        <td><code style="font-size: 0.85rem; background: #eee; padding: 2px 5px; border-radius: 4px;">${p.documento_identidad || 'N/A'}</code></td>
+                        <td><strong>${p.nombre_completo}</strong></td>
+                        <td>${p.vereda || 'Sumapaz'}${p.telefono ? '<br><small style="color: #666;">Tel: ' + p.telefono + '</small>' : ''}</td>
+                        <td>${yaSubioBadge}</td>
+                        <td>${score}</td>
+                        <td>${jurado}</td>
+                        <td>${actionsHtml}</td>
+                    </tr>
+                    <tr id="inline-detail-row-${realIndex}" style="display: none; background: #FAF8F5;">
+                        <td colspan="8" style="padding: 0.8rem 1rem;">
+                            <div id="inline-detail-content-${realIndex}"></div>
+                        </td>
+                    </tr>
+                `;
+            });
+            tbody.innerHTML = html;
+        }
+
+        function filterParticipantesTable() {
+            if (!currentConcursoDetail || !currentConcursoDetail.participantes) return;
+            const search = document.getElementById('search-participante').value.toLowerCase();
+            const totalMax = currentConcursoDetail.concurso ? currentConcursoDetail.concurso.total_max_points : 100;
+            
+            const filtered = currentConcursoDetail.participantes.filter(p => {
+                const nameMatch = p.nombre_completo.toLowerCase().includes(search);
+                const docMatch = (p.documento_identidad || '').toLowerCase().includes(search);
+                const veredaMatch = (p.vereda || '').toLowerCase().includes(search);
+                return nameMatch || docMatch || veredaMatch;
+            });
+
+            renderParticipantesTable(filtered, totalMax);
+        }
+
+        // LOAD ASISTENCIAS
+        async function loadAsistencias() {
+            try {
+                const search = document.getElementById('search-asistencia').value;
+                const vereda = document.getElementById('filter-vereda').value;
+                const asistio = document.getElementById('filter-asistio').value;
+
+                const query = new URLSearchParams({ search, vereda, asistio }).toString();
+                const res = await fetch(`api/get_concursos_asistencias.php?${query}`);
+                const data = await res.json();
+                if (!data.success) return;
+
+                // Populate Veredas filter once
+                const veredaSelect = document.getElementById('filter-vereda');
+                if (veredaSelect.options.length <= 1) {
+                    data.veredas.forEach(v => {
+                        veredaSelect.innerHTML += `<option value="${v}">${v}</option>`;
+                    });
+                }
+
+                const tbody = document.getElementById('tbody-asistencias');
+                if (data.participantes.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-muted); padding: 2rem;">No se encontraron registros de asistencia.</td></tr>';
+                    return;
+                }
+
+                let html = '';
+                data.participantes.forEach((p, idx) => {
+                    const badgeAsistio = p.asistio ? '<span class="badge badge-asistio">Asistió</span>' : '<span class="badge badge-falto">No Asistió</span>';
+                    
+                    let firmaHtml = '<span style="color: #aaa; font-style: italic;">Sin firma</span>';
+                    if (p.firma_asistencia) {
+                        firmaHtml = `<img src="${p.firma_asistencia}" class="signature-thumb" title="Firma digitalizada de asistencia" style="height: 45px; max-width: 150px; object-fit: contain; background: white; padding: 2px; border: 1px solid #ccc; border-radius: 4px;">`;
+                    }
+
+                    html += `
+                        <tr>
+                            <td><strong>${idx + 1}</strong></td>
+                            <td>${p.documento_identidad || 'N/A'}</td>
+                            <td><strong>${p.nombre_completo}</strong></td>
+                            <td>${p.vereda || 'Sumapaz'}</td>
+                            <td>${p.edad ? p.edad + ' años' : 'N/R'}</td>
+                            <td>${badgeAsistio}</td>
+                            <td>${firmaHtml}</td>
+                        </tr>
+                    `;
+                });
+                tbody.innerHTML = html;
+            } catch (e) {
+                console.error("Error cargando asistencias:", e);
+            }
+        }
+
+        // BUILD INLINE ACTA DETAIL HTML
+        function buildActaDetailHtml(p, eval, index) {
+            if (!eval) {
+                return `
+                    <div style="background: #FFF3CD; color: #856404; padding: 1.2rem; border-radius: 10px; border-left: 5px solid #FFEBAA;">
+                        <h4 style="margin: 0 0 0.4rem 0;">Evaluación Pendiente</h4>
+                        <p style="margin: 0; font-size: 0.95rem;"><strong>${p.nombre_completo}</strong> (Doc: ${p.documento_identidad}) está inscrito(a) en el concurso pero aún <strong>NO ha subido evaluación ni calificación</strong> por parte de los jurados.</p>
+                    </div>
+                `;
+            }
+
+            let breakdownTableHtml = `
+                <table style="width: 100%; border-collapse: collapse; margin-top: 0.8rem; margin-bottom: 1rem; background: white; border-radius: 8px; overflow: hidden; border: 1px solid #DCE1E5;">
+                    <thead>
+                        <tr style="background: #2E5A44; color: white; font-size: 0.9rem;">
+                            <th style="padding: 8px; border: 1px solid #ccc;">#</th>
+                            <th style="padding: 8px; border: 1px solid #ccc;">Criterio de Evaluación</th>
+                            <th style="padding: 8px; border: 1px solid #ccc;">Puntaje Máximo</th>
+                            <th style="padding: 8px; border: 1px solid #ccc;">Puntaje Obtenido</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            if (eval.desagregado_puntaje && Array.isArray(eval.desagregado_puntaje)) {
+                eval.desagregado_puntaje.forEach((item, i) => {
+                    breakdownTableHtml += `
+                        <tr style="font-size: 0.9rem;">
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><strong>${i + 1}</strong></td>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><strong>${item.criterio || 'Criterio ' + (i+1)}</strong></td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">${item.puntaje_maximo || '-'} pts</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><strong style="color: #2E5A44; font-size: 1rem;">${item.puntaje_obtenido} pts</strong></td>
+                        </tr>
+                    `;
+                });
+            } else {
+                breakdownTableHtml += `<tr><td colspan="4" style="padding: 10px; text-align: center; color: #777;">Sin desglose de criterios.</td></tr>`;
+            }
+            breakdownTableHtml += `</tbody></table>`;
+
+            let imgHtml = '';
+            if (eval.imagen_id) {
+                imgHtml = `
+                    <div style="margin-top: 1.2rem; background: #FAF8F5; padding: 1rem; border-radius: 8px; border: 2px solid #2E5A44;">
+                        <strong style="color: #2E5A44; font-size: 1rem;">Evidencia Fotográfica Registrada en Terreno:</strong><br>
+                        <div style="margin-top: 0.6rem; text-align: center;">
+                            <img src="api/get_concurso_imagen.php?id=${eval.imagen_id}" style="max-width: 100%; max-height: 420px; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 4px 12px rgba(0,0,0,0.15); object-fit: contain;">
+                        </div>
+                    </div>
+                `;
+            }
+
+            let sigHtml = '';
+            const fPart = eval.firma_participante || p.firma_asistencia;
+            if (fPart || eval.firma_jurado) {
+                sigHtml = `
+                    <div style="display: flex; gap: 2rem; margin-top: 1.2rem; flex-wrap: wrap; background: #FAF8F5; padding: 1rem; border-radius: 8px; border: 1px solid #E5DFD5;">
+                        ${fPart ? `
+                            <div style="flex: 1; min-width: 200px;">
+                                <strong style="color: #2E5A44;">Firma Concursante (${p.nombre_completo}):</strong><br>
+                                <img src="${fPart}" style="height: 75px; max-width: 250px; background: white; padding: 5px; border: 1px solid #ccc; border-radius: 6px; margin-top: 4px; object-fit: contain;">
+                            </div>
+                        ` : ''}
+                        ${eval.firma_jurado ? `
+                            <div style="flex: 1; min-width: 200px;">
+                                <strong style="color: #2E5A44;">Firma Jurado (${eval.nombre_jurado || 'Jurado Oficial'}):</strong><br>
+                                <img src="${eval.firma_jurado}" style="height: 75px; max-width: 250px; background: white; padding: 5px; border: 1px solid #ccc; border-radius: 6px; margin-top: 4px; object-fit: contain;">
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }
+
+            const totalMax = (currentConcursoDetail && currentConcursoDetail.concurso) ? currentConcursoDetail.concurso.total_max_points : 100;
+
+            return `
+                <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 2px solid #2E5A44; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem; background: #FAF8F5; padding: 1.2rem; border-radius: 10px; border: 1px solid #E5DFD5;">
+                        <div>
+                            <h3 style="margin: 0; color: #2E5A44; font-size: 1.35rem;">${p.nombre_completo}</h3>
+                            <span style="color: #555; font-size: 0.95rem;">Documento: <strong>${p.documento_identidad || 'N/A'}</strong> | Vereda: <strong>${p.vereda || 'Sumapaz'}</strong> ${p.telefono ? '| Tel: ' + p.telefono : ''}</span>
+                        </div>
+                        <div style="text-align: right;">
+                            <span style="font-size: 1.7rem; font-weight: 800; color: #2E5A44;">${eval.puntaje_total} / ${totalMax} Pts</span><br>
+                            <span class="badge badge-status-finalizado" style="font-size: 0.88rem; padding: 0.35rem 0.9rem;">${eval.resultado_estado}</span>
+                        </div>
+                    </div>
+
+                    <p style="margin: 0.5rem 0 1rem 0; font-size: 0.95rem; color: #333;"><strong>Jurado Evaluador:</strong> ${eval.nombre_jurado || 'Jurado Oficial'} ${eval.fecha_evaluacion ? `<small style="color: #777;">(${eval.fecha_evaluacion})</small>` : ''}</p>
+                    
+                    <h5 style="margin: 1.2rem 0 0.4rem 0; color: #2E5A44; font-size: 1.05rem;">Desglose de Calificación por Criterios Oficiales:</h5>
+                    ${breakdownTableHtml}
+
+                    <div style="background: #FAF8F5; padding: 1rem; border-radius: 8px; border: 1px solid #E5DFD5; margin-top: 0.8rem;">
+                        <strong style="color: #2E5A44;">Observaciones del Jurado Evaluador:</strong>
+                        <p style="margin: 0.4rem 0 0 0; color: #444; font-size: 0.95rem;">${eval.observaciones || 'Sin observaciones registradas.'}</p>
+                    </div>
+
+                    ${sigHtml}
+                    ${imgHtml}
+
+                    <div style="margin-top: 1.2rem; text-align: right; border-top: 1px solid #EAE5D9; padding-top: 0.8rem; display: flex; justify-content: flex-end; gap: 0.8rem;">
+                        <button class="btn-action btn-pdf-action" onclick="downloadIndividualActaPDF(${index})" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
+                            Descargar PDF de esta Acta
+                        </button>
+                        <button class="btn-action" onclick="closeRowDetail(${index})" style="padding: 0.6rem 1.2rem; font-size: 0.9rem; background: #6c757d; color: white;">
+                            Cerrar Detalle
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // TOGGLE INLINE ACTA DETAIL
+        function showEvaluationDetail(index) {
+            toggleRowDetail(index);
+        }
+
+        function toggleRowDetail(index) {
+            if (!currentConcursoDetail || !currentConcursoDetail.participantes || !currentConcursoDetail.participantes[index]) {
+                return;
+            }
+            const p = currentConcursoDetail.participantes[index];
+            const eval = p.evaluacion;
+
+            const row = document.getElementById(`inline-detail-row-${index}`);
+            const contentBox = document.getElementById(`inline-detail-content-${index}`);
+            if (!row || !contentBox) return;
+
+            if (row.style.display !== 'none' && row.getAttribute('data-mode') === 'acta') {
+                row.style.display = 'none';
+                return;
+            }
+
+            let contentHtml = buildActaDetailHtml(p, eval, index);
+
+            contentBox.innerHTML = contentHtml;
+            row.setAttribute('data-mode', 'acta');
+            row.style.display = 'table-row';
+        }
+
+        // TOGGLE INLINE PHOTO BELOW ROW
+        function toggleRowFoto(index) {
+            if (!currentConcursoDetail || !currentConcursoDetail.participantes || !currentConcursoDetail.participantes[index]) {
+                return;
+            }
+            const p = currentConcursoDetail.participantes[index];
+            const eval = p.evaluacion;
+            if (!eval || !eval.imagen_id) return alert("No hay evidencia fotográfica para este participante.");
+
+            const row = document.getElementById(`inline-detail-row-${index}`);
+            const contentBox = document.getElementById(`inline-detail-content-${index}`);
+            if (!row || !contentBox) return;
+
+            if (row.style.display !== 'none' && row.getAttribute('data-mode') === 'foto') {
+                row.style.display = 'none';
+                return;
+            }
+
+            const photoHtml = `
+                <div style="background: white; border: 2px solid #2E5A44; border-radius: 12px; padding: 1.2rem; text-align: center; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">
+                        <h4 style="margin: 0; color: #2E5A44;">Evidencia Fotográfica Registrada en Terreno - ${p.nombre_completo}</h4>
+                        <button class="btn-action" onclick="closeRowDetail(${index})" style="padding: 0.35rem 0.8rem; font-size: 0.8rem; background: #6c757d; color: white;">Cerrar Foto</button>
+                    </div>
+                    <img src="api/get_concurso_imagen.php?id=${eval.imagen_id}" style="max-width: 100%; max-height: 480px; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 4px 15px rgba(0,0,0,0.15); object-fit: contain;">
+                    <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #555;">
+                        Participante: <strong>${p.nombre_completo}</strong> (Doc: ${p.documento_identidad}) | Vereda: <strong>${p.vereda || 'Sumapaz'}</strong>
+                    </div>
+                </div>
+            `;
+
+            contentBox.innerHTML = photoHtml;
+            row.setAttribute('data-mode', 'foto');
+            row.style.display = 'table-row';
+        }
+
+        function closeRowDetail(index) {
+            const row = document.getElementById(`inline-detail-row-${index}`);
+            if (row) row.style.display = 'none';
+        }
+
+        // HELPER TO CONVERT IMAGE URL / ENDPOINT TO OPTIMIZED BASE64 DATA URI FOR PDF
+        async function urlToBase64(url, maxDim = 1000) {
+            if (!url) return '';
+            if (url.startsWith('data:')) return url;
+            try {
+                const response = await fetch(url);
+                if (!response.ok) return url;
+                const blob = await response.blob();
+                
+                return new Promise((resolve) => {
+                    const img = new Image();
+                    const objectUrl = URL.createObjectURL(blob);
+                    img.onload = () => {
+                        URL.revokeObjectURL(objectUrl);
+                        let width = img.naturalWidth || 800;
+                        let height = img.naturalHeight || 600;
+                        if (width > maxDim || height > maxDim) {
+                            if (width > height) {
+                                height = Math.round((height * maxDim) / width);
+                                width = maxDim;
+                            } else {
+                                width = Math.round((width * maxDim) / height);
+                                height = maxDim;
+                            }
+                        }
+                        const canvas = document.createElement('canvas');
+                        canvas.width = width;
+                        canvas.height = height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.fillStyle = '#FFFFFF';
+                        ctx.fillRect(0, 0, width, height);
+                        ctx.drawImage(img, 0, 0, width, height);
+                        resolve(canvas.toDataURL('image/jpeg', 0.80));
+                    };
+                    img.onerror = () => {
+                        URL.revokeObjectURL(objectUrl);
+                        const reader = new FileReader();
+                        reader.onloadend = () => resolve(reader.result);
+                        reader.onerror = () => resolve(url);
+                        reader.readAsDataURL(blob);
+                    };
+                    img.src = objectUrl;
+                });
+            } catch (e) {
+                console.warn("Could not optimize image to base64 for PDF:", url, e);
+                return url;
+            }
+        }
+
+        // PDF GENERATION FUNCTIONS
+        async function downloadActaConcursoPDF(concursoId) {
+            const res = await fetch(`api/get_concurso_detalle.php?id=${concursoId}`);
+            const data = await res.json();
+            if (!data.success) return alert("Error al cargar datos del concurso para PDF");
+
+            await renderAndSaveActaPDF(data);
+        }
+
+        async function downloadActaConcursoPDFCurrent() {
+            if (currentConcursoDetail) {
+                await renderAndSaveActaPDF(currentConcursoDetail);
+            }
+        }
+
+        async function renderAndSaveActaPDF(data) {
+            if (!data || !data.concurso) return alert("No hay datos de concurso para exportar.");
+            
+            const logoBase64 = await urlToBase64('assets/logo_somossumapaz.png');
+
+            const renderArea = document.getElementById('pdf-printable-area');
+            document.body.prepend(renderArea);
+            renderArea.style.display = 'block';
+            renderArea.style.position = 'relative';
+            renderArea.style.width = '100%';
+            renderArea.style.maxWidth = '780px';
+            renderArea.style.margin = '0 auto';
+            renderArea.style.background = '#ffffff';
+            renderArea.style.color = '#2B2D42';
+            renderArea.style.padding = '15px';
+            renderArea.style.boxSizing = 'border-box';
+
+            let critListHtml = '<ol style="margin: 0.5rem 0 1.5rem 1.2rem; font-size: 0.9rem;">';
+            if (data.criterios && Array.isArray(data.criterios)) {
+                data.criterios.forEach(crit => {
+                    critListHtml += `<li><strong>${crit.name}</strong> (${crit.max_points_str}): ${crit.description || ''}</li>`;
+                });
+            }
+            critListHtml += '</ol>';
+
+            let leaderboardHtml = `
+                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.88rem;">
+                    <thead>
+                        <tr style="background: #2E5A44; color: white;">
+                            <th style="padding: 8px; border: 1px solid #ccc;">Pos.</th>
+                            <th style="padding: 8px; border: 1px solid #ccc;">Participante</th>
+                            <th style="padding: 8px; border: 1px solid #ccc;">Documento</th>
+                            <th style="padding: 8px; border: 1px solid #ccc;">Vereda</th>
+                            <th style="padding: 8px; border: 1px solid #ccc;">Puntaje Total</th>
+                            <th style="padding: 8px; border: 1px solid #ccc;">Resultado</th>
+                            <th style="padding: 8px; border: 1px solid #ccc;">Jurado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            if (data.participantes && Array.isArray(data.participantes)) {
+                data.participantes.forEach((p, idx) => {
+                    const eval = p.evaluacion;
+                    leaderboardHtml += `
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;"><strong>#${idx + 1}</strong></td>
+                            <td style="padding: 8px; border: 1px solid #ccc;"><strong>${p.nombre_completo}</strong></td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">${p.documento_identidad || 'N/A'}</td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">${p.vereda || 'Sumapaz'}</td>
+                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center; font-weight: bold; color: #2E5A44;">${eval ? eval.puntaje_total + ' Pts' : 'Sin eval'}</td>
+                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">${eval ? eval.resultado_estado : 'Pendiente'}</td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">${eval ? eval.nombre_jurado : '-'}</td>
+                        </tr>
+                    `;
+                });
+            }
+            leaderboardHtml += '</tbody></table>';
+
+            renderArea.innerHTML = `
+                <div class="pdf-render-area" style="background: #ffffff; font-family: 'Inter', sans-serif; color: #2B2D42; padding: 15px;">
+                    <div class="pdf-header" style="text-align: center; border-bottom: 2px solid #2E5A44; padding-bottom: 12px; margin-bottom: 20px;">
+                        ${logoBase64 ? `<img src="${logoBase64}" style="height: 60px; margin-bottom: 8px;">` : ''}
+                        <h1 style="margin: 0; color: #2E5A44; font-size: 1.4rem; font-weight: 800;">ALCALDÍA LOCAL DE SUMAPAZ</h1>
+                        <p style="margin: 4px 0 0 0; color: #555; font-size: 1rem; font-weight: 600;">ACTA OFICIAL DE EVALUACIÓN Y JUZGAMIENTO DE CONCURSO</p>
+                    </div>
+
+                    <div style="background: #F8F9FA; padding: 14px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #2E5A44;">
+                        <h2 style="margin: 0 0 4px 0; color: #2E5A44; font-size: 1.25rem; text-transform: uppercase;">CONCURSO: ${data.concurso.title}</h2>
+                        <p style="margin: 0; font-size: 0.95rem; color: #444;"><strong>Categoría:</strong> ${data.concurso.category} | <strong>Puntaje Máximo:</strong> ${data.concurso.total_max_points} Pts</p>
+                    </div>
+
+                    <h3 style="color: #2E5A44; font-size: 1.1rem; margin-bottom: 8px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">1. Criterios Oficiales de Evaluación</h3>
+                    ${critListHtml}
+
+                    <h3 style="color: #2E5A44; font-size: 1.1rem; margin-top: 20px; margin-bottom: 8px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">2. Cuadro de Clasificación y Resultados Finales</h3>
+                    ${leaderboardHtml}
+
+                    <div style="margin-top: 40px; font-size: 0.82rem; color: #777; text-align: center; border-top: 1px solid #ddd; padding-top: 12px;">
+                        Documento oficial generado automáticamente por el Sistema Territorial de Información Somos Sumapaz.
+                    </div>
+                </div>
+            `;
+
+            // Wait for all images inside renderArea to settle
+            const imgs = renderArea.querySelectorAll('img');
+            await Promise.all(Array.from(imgs).map(img => {
+                if (img.complete) return Promise.resolve();
+                return new Promise(res => {
+                    img.onload = res;
+                    img.onerror = res;
+                });
+            }));
+
+            const sanitizedTitle = data.concurso.title.replace(/[^a-zA-Z0-9]/g, '_');
+            const opt = {
+                margin:       [8, 8, 8, 8],
+                filename:     `Acta_Concurso_${sanitizedTitle}.pdf`,
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff', scrollY: 0, scrollX: 0 },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                pagebreak:    { mode: ['css', 'legacy'] }
+            };
+
+            const currentScrollY = window.scrollY;
+            window.scrollTo(0, 0);
+
+            try {
+                await html2pdf().set(opt).from(renderArea).save();
+            } catch (err) {
+                console.error("Error al generar PDF general:", err);
+                alert("Atención: Ocurrió un inconveniente al generar el PDF.");
+            } finally {
+                renderArea.style.display = 'none';
+                window.scrollTo(0, currentScrollY);
+            }
+        }
+
+        // INDIVIDUAL PDF ACTA GENERATION FOR SPECIFIC PARTICIPANT
+        async function downloadIndividualActaPDF(index) {
+            if (!currentConcursoDetail || !currentConcursoDetail.participantes || !currentConcursoDetail.participantes[index]) {
+                return alert("No se encontraron los datos de la evaluación del participante.");
+            }
+            const p = currentConcursoDetail.participantes[index];
+            const eval = p.evaluacion;
+            if (!eval) {
+                return alert(`El participante ${p.nombre_completo} aún no ha subido evaluación ni calificación.`);
+            }
+
+            console.log("Starting PDF generation for:", p.nombre_completo);
+            const logoBase64 = await urlToBase64('assets/logo_somossumapaz.png');
+            console.log("Logo base64 length:", logoBase64 ? logoBase64.length : 0);
+            
+            let photoBase64 = '';
+            if (eval.imagen_id) {
+                photoBase64 = await urlToBase64(`api/get_concurso_imagen.php?id=${eval.imagen_id}`);
+            }
+            console.log("Photo base64 length:", photoBase64 ? photoBase64.length : 0);
+
+            let fPartSrc = eval.firma_participante || p.firma_asistencia || '';
+            let fJuradoSrc = eval.firma_jurado || '';
+
+            if (fPartSrc) fPartSrc = await urlToBase64(fPartSrc);
+            if (fJuradoSrc) fJuradoSrc = await urlToBase64(fJuradoSrc);
+            console.log("Firma part length:", fPartSrc ? fPartSrc.length : 0, "Firma jurado length:", fJuradoSrc ? fJuradoSrc.length : 0);
+
+            const currentScrollY = window.scrollY;
+            window.scrollTo(0, 0);
+
+            const renderArea = document.getElementById('pdf-printable-area');
+            document.body.prepend(renderArea);
+            renderArea.style.display = 'block';
+            renderArea.style.position = 'relative';
+            renderArea.style.width = '100%';
+            renderArea.style.maxWidth = '750px';
+            renderArea.style.margin = '0 auto';
+            renderArea.style.background = '#ffffff';
+            renderArea.style.color = '#2B2D42';
+            renderArea.style.padding = '10px 15px';
+            renderArea.style.boxSizing = 'border-box';
+
+            let critRowsHtml = '';
+            if (eval.desagregado_puntaje && Array.isArray(eval.desagregado_puntaje)) {
+                eval.desagregado_puntaje.forEach((item, i) => {
+                    critRowsHtml += `
+                        <tr>
+                            <td style="padding: 4px 6px; border: 1px solid #ccc; text-align: center;">${i + 1}</td>
+                            <td style="padding: 4px 6px; border: 1px solid #ccc;"><strong>${item.criterio || 'Criterio ' + (i+1)}</strong></td>
+                            <td style="padding: 4px 6px; border: 1px solid #ccc; text-align: center;">${item.puntaje_maximo || '-'} pts</td>
+                            <td style="padding: 4px 6px; border: 1px solid #ccc; text-align: center; font-weight: bold; color: #2E5A44;">${item.puntaje_obtenido} pts</td>
+                        </tr>
+                    `;
+                });
+            } else {
+                critRowsHtml = `<tr><td colspan="4" style="padding: 4px 6px; border: 1px solid #ccc; text-align: center;">No hay desglose por criterio registrado.</td></tr>`;
+            }
+
+            let imgHtml = '';
+            if (photoBase64) {
+                imgHtml = `
+                    <div style="margin-top: 0.5rem; text-align: center; page-break-inside: avoid;">
+                        <h4 style="color: #2E5A44; margin-bottom: 0.2rem; text-align: left; font-size: 0.82rem;">Evidencia Fotográfica Registrada en Terreno:</h4>
+                        <img src="${photoBase64}" style="max-width: 100%; max-height: 150px; border-radius: 4px; border: 1px solid #ccc; object-fit: contain;">
+                    </div>
+                `;
+            }
+
+            let signaturesHtml = `
+                <table style="width: 100%; margin-top: 0.8rem; border: none; font-size: 0.8rem; page-break-inside: avoid;">
+                    <tr>
+                        <td style="width: 50%; text-align: center; vertical-align: bottom; padding: 2px 5px; border: none;">
+                            ${fPartSrc ? `<img src="${fPartSrc}" style="height: 42px; max-width: 150px; object-fit: contain; margin-bottom: 0.1rem;"><br>` : '<div style="height: 42px;"></div>'}
+                            <div style="border-top: 1px solid #000; padding-top: 2px; font-weight: bold; color: #2E5A44;">
+                                Firma del Concursante / Participante
+                            </div>
+                            <div style="font-size: 0.75rem; color: #555;">${p.nombre_completo}<br>C.C. ${p.documento_identidad || 'N/A'}</div>
+                        </td>
+                        <td style="width: 50%; text-align: center; vertical-align: bottom; padding: 2px 5px; border: none;">
+                            ${fJuradoSrc ? `<img src="${fJuradoSrc}" style="height: 42px; max-width: 150px; object-fit: contain; margin-bottom: 0.1rem;"><br>` : '<div style="height: 42px;"></div>'}
+                            <div style="border-top: 1px solid #000; padding-top: 2px; font-weight: bold; color: #2E5A44;">
+                                Firma del Jurado Evaluador
+                            </div>
+                            <div style="font-size: 0.75rem; color: #555;">${eval.nombre_jurado || 'Jurado Oficial'}</div>
+                        </td>
+                    </tr>
+                </table>
+            `;
+
+            renderArea.innerHTML = `
+                <div class="pdf-render-area" style="background: #ffffff; font-family: 'Segoe UI', Arial, sans-serif; color: #2B2D42; padding: 5px;">
+                    <div class="pdf-header" style="text-align: center; border-bottom: 2px solid #2E5A44; padding-bottom: 4px; margin-bottom: 8px;">
+                        ${logoBase64 ? `<img src="${logoBase64}" style="height: 40px; margin-bottom: 4px;">` : ''}
+                        <h1 style="margin: 0; color: #2E5A44; font-size: 1.15rem; font-weight: 800; text-transform: uppercase;">ALCALDÍA LOCAL DE SUMAPAZ</h1>
+                        <p style="margin: 1px 0 0 0; color: #444; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.5px;">ACTA INDIVIDUAL DE EVALUACIÓN Y JUZGAMIENTO</p>
+                    </div>
+
+                    <div style="background: #F8F9FA; padding: 6px 10px; border-radius: 4px; margin-bottom: 0.5rem; border-left: 4px solid #2E5A44;">
+                        <h2 style="margin: 0 0 0.1rem 0; color: #2E5A44; font-size: 0.95rem; text-transform: uppercase;">CONCURSO: ${currentConcursoDetail.concurso.title}</h2>
+                        <p style="margin: 0; font-size: 0.8rem; color: #444;"><strong>Categoría:</strong> ${currentConcursoDetail.concurso.category} | <strong>Puntaje Máximo del Concurso:</strong> ${currentConcursoDetail.concurso.total_max_points} Pts</p>
+                    </div>
+
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 0.5rem; font-size: 0.8rem;">
+                        <tr style="background: #EBF3EE;">
+                            <td style="padding: 4px 8px; border: 1px solid #ccc; width: 50%;"><strong>Participante:</strong> ${p.nombre_completo}</td>
+                            <td style="padding: 4px 8px; border: 1px solid #ccc; width: 50%;"><strong>Documento:</strong> ${p.documento_identidad || 'N/A'} (${p.tipo_documento || 'CC'})</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 4px 8px; border: 1px solid #ccc;"><strong>Vereda:</strong> ${p.vereda || 'Sumapaz'}</td>
+                            <td style="padding: 4px 8px; border: 1px solid #ccc;"><strong>Teléfono:</strong> ${p.telefono || 'N/R'}</td>
+                        </tr>
+                        <tr style="background: #EBF3EE;">
+                            <td style="padding: 4px 8px; border: 1px solid #ccc;"><strong>Jurado Evaluador:</strong> ${eval.nombre_jurado || 'Jurado Oficial'}</td>
+                            <td style="padding: 4px 8px; border: 1px solid #ccc;"><strong>Fecha Evaluación:</strong> ${eval.fecha_evaluacion || 'N/R'}</td>
+                        </tr>
+                    </table>
+
+                    <h3 style="color: #2E5A44; font-size: 0.88rem; margin-top: 0.4rem; margin-bottom: 0.3rem; font-weight: 700;">Desglose de Calificación por Criterios Oficiales</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 0.5rem; font-size: 0.8rem;">
+                        <thead>
+                            <tr style="background: #2E5A44; color: white;">
+                                <th style="padding: 4px 6px; border: 1px solid #ccc; width: 6%; text-align: center;">#</th>
+                                <th style="padding: 4px 6px; border: 1px solid #ccc;">Criterio de Evaluación</th>
+                                <th style="padding: 4px 6px; border: 1px solid #ccc; width: 22%; text-align: center;">Puntaje Máximo</th>
+                                <th style="padding: 4px 6px; border: 1px solid #ccc; width: 22%; text-align: center;">Puntaje Obtenido</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${critRowsHtml}
+                        </tbody>
+                        <tfoot>
+                            <tr style="background: #F1F5F2; font-size: 0.85rem;">
+                                <td colspan="3" style="padding: 5px; border: 1px solid #ccc; text-align: right; font-weight: bold;">PUNTAJE TOTAL OBTENIDO:</td>
+                                <td style="padding: 5px; border: 1px solid #ccc; text-align: center; font-weight: bold; color: #2E5A44; font-size: 0.92rem;">
+                                    ${eval.puntaje_total} / ${currentConcursoDetail.concurso.total_max_points} Pts
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <div style="margin-bottom: 0.5rem; font-size: 0.8rem; background: #FAF8F5; padding: 6px 10px; border-radius: 4px; border: 1px solid #E5DFD5;">
+                        <strong style="color: #2E5A44;">Observaciones del Jurado:</strong><br>
+                        <span>${eval.observaciones || 'Sin observaciones adicionales registradas.'}</span>
+                    </div>
+
+                    ${imgHtml}
+                    ${signaturesHtml}
+
+                    <div style="margin-top: 0.6rem; font-size: 0.7rem; color: #777; text-align: center; border-top: 1px solid #eee; padding-top: 4px;">
+                        Documento oficial expedido por el Sistema Territorial de Información Somos Sumapaz.
+                    </div>
+                </div>
+            `;
+
+            // Wait for images inside renderArea to load
+            const imgs = renderArea.querySelectorAll('img');
+            await Promise.all(Array.from(imgs).map(img => {
+                if (img.complete) return Promise.resolve();
+                return new Promise(res => {
+                    img.onload = res;
+                    img.onerror = res;
+                });
+            }));
+
+            const sanitizedName = p.nombre_completo.replace(/[^a-zA-Z0-9]/g, '_');
+            const sanitizedConcurso = currentConcursoDetail.concurso.title.replace(/[^a-zA-Z0-9]/g, '_');
+
+            const opt = {
+                margin:       [8, 8, 8, 8],
+                filename:     `Acta_Individual_${sanitizedName}_${sanitizedConcurso}.pdf`,
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff', scrollY: 0, scrollX: 0 },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                pagebreak:    { mode: ['css', 'legacy'] }
+            };
+
+            try {
+                await html2pdf().set(opt).from(renderArea).save();
+            } catch (err) {
+                console.error("Error al generar PDF individual:", err);
+                alert("Error al generar PDF. Verifique su conexión o navegador.");
+            } finally {
+                renderArea.style.display = 'none';
+                window.scrollTo(0, currentScrollY);
+            }
+        }
+
+        // GENERAL EXCEL EXPORT FUNCTIONS
+        async function downloadConcursoExcel(concursoId) {
+            let detailData = currentConcursoDetail;
+            if (!detailData || !detailData.concurso || detailData.concurso.id !== concursoId) {
+                const res = await fetch(`api/get_concurso_detalle.php?id=${concursoId}`);
+                detailData = await res.json();
+                if (!detailData || !detailData.success) {
+                    return alert("Error cargando los datos del concurso para exportar a Excel.");
+                }
+            }
+            renderAndSaveConcursoExcel(detailData);
+        }
+
+        function downloadConcursoExcelCurrent() {
+            if (currentConcursoDetail) {
+                renderAndSaveConcursoExcel(currentConcursoDetail);
+            }
+        }
+
+        function renderAndSaveConcursoExcel(data) {
+            if (typeof XLSX === 'undefined') {
+                return alert("La librería de exportación a Excel no está cargada correctamente.");
+            }
+
+            const headers = [
+                "Posición",
+                "Tipo Documento",
+                "Documento Identidad",
+                "Nombre Completo Participante",
+                "Vereda",
+                "Teléfono",
+                "¿Ya lo Subió? / Evaluado",
+                "Jurado Evaluador"
+            ];
+
+            // Add dynamic criteria headers with max points
+            data.criterios.forEach(crit => {
+                const maxStr = crit.max_points_str || (crit.max_points_value ? crit.max_points_value + ' pts' : '');
+                headers.push(maxStr ? `${crit.name} (${maxStr})` : crit.name);
+            });
+
+            headers.push(
+                "Puntaje Total",
+                "Puntaje Máximo Posible",
+                "Resultado / Estado",
+                "Observaciones",
+                "Evidencia Fotográfica",
+                "Firmas Registradas"
+            );
+
+            const rows = [headers];
+
+            data.participantes.forEach((p, idx) => {
+                const eval = p.evaluacion;
+                const row = [
+                    `#${idx + 1}`,
+                    p.tipo_documento || 'CC',
+                    p.documento_identidad || 'N/A',
+                    p.nombre_completo || '',
+                    p.vereda || 'Sumapaz',
+                    p.telefono || '',
+                    eval ? 'SÍ' : 'NO',
+                    eval && eval.nombre_jurado ? eval.nombre_jurado : '-'
+                ];
+
+                // Dynamic criterion scores
+                data.criterios.forEach((crit, critIdx) => {
+                    let scoreVal = eval ? 0 : 'N/A';
+                    if (eval && eval.desagregado_puntaje && Array.isArray(eval.desagregado_puntaje)) {
+                        const itemByName = eval.desagregado_puntaje.find(item => 
+                            item.criterio && (item.criterio.trim() === crit.name.trim() || item.criterio.toLowerCase().includes(crit.name.toLowerCase().substring(0, 8)))
+                        );
+                        if (itemByName && itemByName.puntaje_obtenido !== undefined) {
+                            scoreVal = Number(itemByName.puntaje_obtenido);
+                        } else if (eval.desagregado_puntaje[critIdx] && eval.desagregado_puntaje[critIdx].puntaje_obtenido !== undefined) {
+                            scoreVal = Number(eval.desagregado_puntaje[critIdx].puntaje_obtenido);
+                        }
+                    }
+                    row.push(scoreVal);
+                });
+
+                // Summary columns
+                row.push(
+                    eval ? Number(eval.puntaje_total) : 0,
+                    Number(data.concurso.total_max_points),
+                    eval ? (eval.resultado_estado || 'Calificado') : 'Pendiente',
+                    eval ? (eval.observaciones || '') : '',
+                    eval && eval.imagen_id ? 'SÍ' : 'NO',
+                    eval && (eval.firma_participante || p.firma_asistencia || eval.firma_jurado) ? 'SÍ' : 'NO'
+                );
+
+                rows.push(row);
+            });
+
+            const ws = XLSX.utils.aoa_to_sheet(rows);
+
+            // Set column widths dynamically
+            const colWidths = headers.map((h, colIdx) => {
+                let maxLen = h.length;
+                rows.forEach(r => {
+                    const valStr = String(r[colIdx] || '');
+                    if (valStr.length > maxLen) maxLen = valStr.length;
+                });
+                return { wch: Math.min(Math.max(maxLen + 3, 12), 45) };
+            });
+            ws['!cols'] = colWidths;
+
+            const wb = XLSX.utils.book_new();
+            const sheetName = data.concurso.title.substring(0, 31).replace(/[:\?\\\/\[\]]/g, '_');
+            XLSX.utils.book_append_sheet(wb, ws, sheetName);
+
+            const fileName = `Consolidado_Concurso_${data.concurso.title.replace(/[^a-zA-Z0-9]/g, '_')}.xlsx`;
+            XLSX.writeFile(wb, fileName);
+        }
+
+        async function downloadAsistenciasPDF() {
+            const search = document.getElementById('search-asistencia').value;
+            const vereda = document.getElementById('filter-vereda').value;
+            const asistio = document.getElementById('filter-asistio').value;
+
+            const query = new URLSearchParams({ search, vereda, asistio }).toString();
+            const res = await fetch(`api/get_concursos_asistencias.php?${query}`);
+            const data = await res.json();
+
+            if (!data.success || data.participantes.length === 0) {
+                return alert("No hay registros para exportar en PDF.");
+            }
+
+            const logoBase64 = await urlToBase64('assets/logo_somossumapaz.png');
+
+            const sigPromises = data.participantes.map(async p => {
+                if (p.firma_asistencia) {
+                    p.firma_asistencia_b64 = await urlToBase64(p.firma_asistencia);
+                }
+            });
+            await Promise.all(sigPromises);
+
+            const renderArea = document.getElementById('pdf-printable-area');
+            document.body.prepend(renderArea);
+            renderArea.style.display = 'block';
+            renderArea.style.position = 'relative';
+            renderArea.style.width = '100%';
+            renderArea.style.maxWidth = '780px';
+            renderArea.style.margin = '0 auto';
+            renderArea.style.background = '#ffffff';
+            renderArea.style.color = '#2B2D42';
+            renderArea.style.padding = '15px';
+            renderArea.style.boxSizing = 'border-box';
+
+            let rowsHtml = '';
+            data.participantes.forEach((p, idx) => {
+                let sigImg = p.firma_asistencia_b64 ? `<img src="${p.firma_asistencia_b64}" style="height: 30px; max-width: 100px; object-fit: contain;">` : '<span style="color:#aaa;">Sin firma</span>';
+                rowsHtml += `
+                    <tr>
+                        <td style="padding: 6px; border: 1px solid #ccc; text-align: center;">${idx + 1}</td>
+                        <td style="padding: 6px; border: 1px solid #ccc;">${p.documento_identidad || 'N/A'}</td>
+                        <td style="padding: 6px; border: 1px solid #ccc;"><strong>${p.nombre_completo}</strong></td>
+                        <td style="padding: 6px; border: 1px solid #ccc;">${p.vereda || 'Sumapaz'}</td>
+                        <td style="padding: 6px; border: 1px solid #ccc; text-align: center;">${p.asistio ? 'SÍ' : 'NO'}</td>
+                        <td style="padding: 6px; border: 1px solid #ccc; text-align: center;">${sigImg}</td>
+                    </tr>
+                `;
+            });
+
+            renderArea.innerHTML = `
+                <div class="pdf-render-area" style="background: #ffffff; font-family: 'Inter', sans-serif; color: #2B2D42; padding: 15px;">
+                    <div class="pdf-header" style="text-align: center; border-bottom: 2px solid #2E5A44; padding-bottom: 12px; margin-bottom: 20px;">
+                        ${logoBase64 ? `<img src="${logoBase64}" style="height: 55px; margin-bottom: 8px;">` : ''}
+                        <h1 style="margin: 0; color: #2E5A44; font-size: 1.4rem; font-weight: 800;">ALCALDÍA LOCAL DE SUMAPAZ</h1>
+                        <p style="margin: 4px 0 0 0; color: #555; font-size: 0.95rem; font-weight: 600;">REGISTRO OFICIAL DE ASISTENCIA Y FIRMAS DIGITALIZADAS</p>
+                    </div>
+
+                    <div style="margin-bottom: 1rem; font-size: 0.9rem; color: #444;">
+                        <strong>Total Registros:</strong> ${data.stats.total} | 
+                        <strong>Asistieron:</strong> ${data.stats.asistieron} | 
+                        <strong>Con Firma Registrada:</strong> ${data.stats.con_firma}
+                    </div>
+
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+                        <thead>
+                            <tr style="background: #2E5A44; color: white;">
+                                <th style="padding: 6px; border: 1px solid #ccc;">#</th>
+                                <th style="padding: 6px; border: 1px solid #ccc;">Documento</th>
+                                <th style="padding: 6px; border: 1px solid #ccc;">Nombre Completo</th>
+                                <th style="padding: 6px; border: 1px solid #ccc;">Vereda</th>
+                                <th style="padding: 6px; border: 1px solid #ccc;">Asistió</th>
+                                <th style="padding: 6px; border: 1px solid #ccc;">Firma Digital</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${rowsHtml}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+
+            const imgs = renderArea.querySelectorAll('img');
+            await Promise.all(Array.from(imgs).map(img => {
+                if (img.complete) return Promise.resolve();
+                return new Promise(res => {
+                    img.onload = res;
+                    img.onerror = res;
+                });
+            }));
+
+            const opt = {
+                margin:       [8, 8, 8, 8],
+                filename:     `Listado_Asistencias_Sumapaz.pdf`,
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff', scrollY: 0, scrollX: 0 },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                pagebreak:    { mode: ['css', 'legacy'] }
+            };
+
+            const currentScrollY = window.scrollY;
+            window.scrollTo(0, 0);
+
+            try {
+                await html2pdf().set(opt).from(renderArea).save();
+            } catch (err) {
+                console.error("Error al generar PDF asistencias:", err);
+                alert("Error al generar PDF de asistencias.");
+            } finally {
+                renderArea.style.display = 'none';
+                window.scrollTo(0, currentScrollY);
+            }
+        }
+    </script>
+</body>
+
+</html>

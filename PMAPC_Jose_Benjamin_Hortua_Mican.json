@@ -1,0 +1,2187 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "Almacén Torre 2 de los Pinos.",
+    "persona_entrevistada": "José Benjamín Hortúa Micán.",
+    "tipo_actividad": "Comercio / servicio: venta minorista y reventa de ropa, accesorios y, como proyección, calzado y prendas para clima rural.",
+    "ubicacion_especifica": "Localidad de Sumapaz, vereda Raizal, punto o establecimiento Torre 2 de los Pinos. Sector, dirección y predio: pendientes de verificar.",
+    "producto_servicio_principal": "Sudaderas, medias, ropa interior y sombreros, en cantidades limitadas..",
+    "estado_actual": "Negocio en marcha desde hace aproximadamente cinco años, limitado por falta de capital de trabajo, surtido y mobiliario de exhibición.",
+    "personas_vinculadas": "El productor atiende la mayor parte del tiempo; un familiar colabora ocasionalmente.",
+    "coordenadas": "Pendientes de verificar mediante visita.",
+    "descripcion_general": "Comercio local que cubre la necesidad de adquirir prendas y accesorios sin desplazarse hasta Bogotá. La propuesta se apoya en proximidad, atención directa, precios asequibles y conocimiento de la comunidad.",
+    "observaciones_o_comentarios": "Edad: 63 años. Fecha de nacimiento y documento de identidad: pendientes de verificar. Productos proyectados: Botas pantaneras, zapatos, zapatillas, ruanas, camisas, pantalones, gorros, sombreros y ropa para adultos y niños en diferentes tallas. Abastecimiento: La mercancía se compra en Bogotá urbana y se traslada a la vereda para su reventa. Proveedores, frecuencia, transporte y costos: pendientes de verificar. Clientes principales: Vecinos y familias de la vereda Raizal y sectores cercanos; compras diarias de baja cuantía y compras por necesidad inmediata."
+  },
+  "PMAPC_F02": {
+    "mision": "Ofrecer a las familias de la vereda Raizal ropa y accesorios básicos, disponibles cerca de su lugar de residencia, con atención amable, precios asequibles y surtido acorde con las necesidades de adultos y niños.",
+    "vision": "En los próximos años, consolidar un almacén mejor surtido y organizado, con ropa, ruanas, sombreros, botas y calzado en diferentes tallas, estanterías adecuadas y canales sencillos de promoción que permitan acercarse al potencial de ventas reportado por el productor.",
+    "valores": [
+      "Amabilidad y buen servicio",
+      "responsabilidad",
+      "honestidad en precios y negociación",
+      "compromiso con la comunidad",
+      "orden y cuidado de la mercancía."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Porque en la vereda no existe suficiente oferta de ropa y el almacén permite resolver compras urgentes sin viajar hasta Bogotá.",
+    "beneficio_cliente": "Proximidad, atención inmediata, precios accesibles y posibilidad de adquirir prendas básicas o \"desvararse\" dentro de la comunidad.",
+    "diferencial": "Atención personal del productor, conocimiento de los vecinos, negociación directa y precios que busca mantener por debajo de algunas referencias de Bogotá.",
+    "valor_ambiental": "La actividad genera pocos residuos; se reporta recolección semanal, aprovechamiento de agua lluvia para baño y lavado y no uso de leña. El negocio aún debe fortalecer reducción de bolsas, reciclaje e inventario para evitar desperdicios.",
+    "valor_social_comunitario": "Acerca bienes de uso cotidiano a una población rural, reduce desplazamientos por compras pequeñas y sostiene una alternativa de ingreso local.",
+    "evidencia": "Registro de clientes frecuentes, ventas diarias, solicitudes de productos no disponibles, comparación documentada de precios, fotografías del punto de venta, inventario y recomendaciones de la comunidad. Actualmente estas evidencias no están organizadas.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Aproximadamente cinco años de experiencia.",
+      "Ubicación en una vereda con oferta limitada de ropa.",
+      "Compras diarias, aunque sean de bajo valor.",
+      "Atención amable y relación directa con vecinos.",
+      "Precios negociables y asequibles.",
+      "Infraestructura física reportada como adecuada.",
+      "Conocimiento de productos solicitados por la comunidad."
+    ],
+    "oportunidades": [
+      "Ampliar surtido con botas, ruanas, sombreros, calzado y tallas para niños y adultos.",
+      "Mejorar exhibición con estanterías, vitrinas, percheros y señalización.",
+      "Aprender a usar WhatsApp y redes sociales.",
+      "Hacer compras programadas o conjuntas con otros comercios.",
+      "Registrar pedidos para comprar lo que realmente rota.",
+      "Incorporar bolsas reutilizables y reciclaje."
+    ],
+    "debilidades": [
+      "Capital de trabajo insuficiente.",
+      "Inventario y variedad reducidos.",
+      "Una vitrina pequeña y ausencia de estanterías.",
+      "No hay registros de inventario, costos, márgenes ni ventas por producto.",
+      "No utiliza redes sociales ni otros canales de promoción.",
+      "Dependencia de compras y transporte desde Bogotá.",
+      "Datos de arriendo y costos comerciales incompletos."
+    ],
+    "amenazas": [
+      "Aumento de precios de proveedores y transporte.",
+      "Pérdida de ventas por falta de talla o referencia.",
+      "Competencia de Bogotá o vendedores externos.",
+      "Inventario de baja rotación si se compra sin validar demanda.",
+      "Humedad, suciedad, incendio, hurto o deterioro de mercancía.",
+      "Dificultad de acceso en eventos climáticos, aunque el productor no reporta afectación grave."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Cliente directo",
+        "perfil_que_busca": "Vecinos que requieren medias, ropa interior, sudaderas o sombreros.",
+        "ubicacion": "Vereda Raizal y cercanías.",
+        "necesidad": "Compra inmediata sin desplazarse a Bogotá.",
+        "frecuencia": "Diaria / ocasional.",
+        "criterio_compra": "Disponibilidad, precio, talla, atención y cercanía.",
+        "canal": "Visita al almacén / voz a voz."
+      },
+      {
+        "tipo_actor": "Familias",
+        "perfil_que_busca": "Hogares que buscan prendas para adultos y niños.",
+        "ubicacion": "Comunidad rural local.",
+        "necesidad": "Vestuario básico y reposición por necesidad.",
+        "frecuencia": "Ocasional/temporada.",
+        "criterio_compra": "Variedad, tallas, durabilidad y precio.",
+        "canal": "Punto de venta."
+      },
+      {
+        "tipo_actor": "Trabajadores rurales",
+        "perfil_que_busca": "Potenciales compradores de botas pantaneras, ruanas, sombreros y ropa de trabajo.",
+        "ubicacion": "Raizal y otras veredas.",
+        "necesidad": "Protección frente a lluvia, frío y labores del campo.",
+        "frecuencia": "Estacional/según necesidad.",
+        "criterio_compra": "Resistencia, comodidad, talla y precio.",
+        "canal": "Punto de venta / pedido futuro."
+      },
+      {
+        "tipo_actor": "Comprador por emergencia",
+        "perfil_que_busca": "Persona que necesita una prenda o accesorio de manera inmediata.",
+        "ubicacion": "Vereda",
+        "necesidad": "Evitar viaje largo por una compra pequeña.",
+        "frecuencia": "Ocasional.",
+        "criterio_compra": "Disponibilidad inmediata.",
+        "canal": "Voz a voz y visita."
+      },
+      {
+        "tipo_actor": "Cliente recurrente",
+        "perfil_que_busca": "Vecino que regresa por la atención y precios.",
+        "ubicacion": "Local.",
+        "necesidad": "Compra cotidiana de productos básicos.",
+        "frecuencia": "Semanal/mensual, por verificar.",
+        "criterio_compra": "Confianza y trato amable.",
+        "canal": "Visita directa."
+      },
+      {
+        "tipo_actor": "Comprador institucional",
+        "perfil_que_busca": "No reportado.",
+        "ubicacion": "Pendiente.",
+        "necesidad": "Pendiente.",
+        "frecuencia": "No aplica actualmente.",
+        "criterio_compra": "Pendiente.",
+        "canal": "No existe canal identificado."
+      },
+      {
+        "tipo_actor": "Cliente digital potencial",
+        "perfil_que_busca": "Personas de veredas cercanas que podrían consultar inventario antes de desplazarse.",
+        "ubicacion": "Sumapaz",
+        "necesidad": "Confirmar talla, precio y disponibilidad.",
+        "frecuencia": "Potencial.",
+        "criterio_compra": "Respuesta rápida y fotografías reales.",
+        "canal": "WhatsApp/redes, por implementar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Disponibilidad inmediata, precios asequibles, tallas adecuadas, prendas básicas y productos útiles para el clima y el trabajo rural.",
+    "como_se_conoce_la_necesidad": "Hay compras diarias, incluso de un par de medias, y los clientes preguntan por artículos que actualmente no se encuentran en inventario.",
+    "quienes_compran_o_podrian_comprar": "Vecinos, familias, adultos, niños y trabajadores rurales de Raizal y veredas cercanas.",
+    "evidencia": "Cinco años de funcionamiento, ventas mensuales reportadas, compradores que regresan, voz a voz y solicitudes de mayor variedad. No hay registros escritos.",
+    "ventaja_territorial": "La cercanía evita desplazamientos hasta Bogotá y responde a una necesidad real de abastecimiento local.",
+    "cambios_demanda": "La entrevista no aporta una comparación histórica detallada; sí evidencia interés por ampliar a botas, ruanas, calzado y prendas de varias tallas.",
+    "dificultades": "Falta de mercancía, tallas y variedad; exhibición limitada; capital insuficiente; ausencia de redes sociales y desconocimiento de la rentabilidad por producto.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Familiar",
+        "tipo": "Apoyo familiar.",
+        "que_aporta": "Atención ocasional, apoyo en surtido o inventario.",
+        "que_recibe": "Aprendizaje e ingreso eventual.",
+        "trabajo_conjunto": "Cubrir el punto y apoyar compras.",
+        "aporte_ambiental": "Separación de residuos y cuidado de recursos.",
+        "accion": "Definir funciones y horarios."
+      },
+      {
+        "actor_aliado": "Clientes y vecinos",
+        "tipo": "Comunidad/mercado.",
+        "que_aporta": "Información sobre tallas y productos requeridos.",
+        "que_recibe": "Mayor disponibilidad y mejores precios.",
+        "trabajo_conjunto": "Lista de pedidos y preventa.",
+        "aporte_ambiental": "Reducir viajes fallidos y sobreinventario.",
+        "accion": "Crear formato de solicitudes."
+      },
+      {
+        "actor_aliado": "Proveedores de Bogotá",
+        "tipo": "Comercial.",
+        "que_aporta": "Mercancía, precios y variedad.",
+        "que_recibe": "Compras recurrentes.",
+        "trabajo_conjunto": "Negociar compras por volumen y cambios.",
+        "aporte_ambiental": "Reducir embalaje y consolidar transporte.",
+        "accion": "Comparar al menos tres proveedores."
+      },
+      {
+        "actor_aliado": "Transportadores/rutas",
+        "tipo": "Logístico.",
+        "que_aporta": "Traslado de mercancía.",
+        "que_recibe": "Pago por servicio.",
+        "trabajo_conjunto": "Consolidar viajes y entregas.",
+        "aporte_ambiental": "Menos desplazamientos por unidad.",
+        "accion": "Registrar costo y frecuencia."
+      },
+      {
+        "actor_aliado": "Junta o líderes comunitarios",
+        "tipo": "Comunitario.",
+        "que_aporta": "Difusión de oferta y necesidades.",
+        "que_recibe": "Servicio local fortalecido.",
+        "trabajo_conjunto": "Información en reuniones y carteleras.",
+        "aporte_ambiental": "Promover bolsas reutilizables.",
+        "accion": "Presentar el almacén y recoger pedidos."
+      },
+      {
+        "actor_aliado": "Alcaldía/equipo de emprendimiento",
+        "tipo": "Institucional.",
+        "que_aporta": "Asistencia, formación y posible apoyo en especie.",
+        "que_recibe": "Seguimiento e información del negocio.",
+        "trabajo_conjunto": "Plan de inventario, exhibición y digitalización.",
+        "aporte_ambiental": "Orientación en manejo de residuos y eficiencia.",
+        "accion": "Visita técnica y priorización."
+      },
+      {
+        "actor_aliado": "Otros comercios rurales",
+        "tipo": "Alianza comercial.",
+        "que_aporta": "Compras conjuntas e intercambio de referencias.",
+        "que_recibe": "Reducción de costos y mayor surtido.",
+        "trabajo_conjunto": "Pedidos consolidados.",
+        "aporte_ambiental": "Optimizar transporte.",
+        "accion": "Explorar compra asociativa."
+      },
+      {
+        "actor_aliado": "Servicio de aseo y reciclaje",
+        "tipo": "Ambiental / público.",
+        "que_aporta": "Recolección de residuos.",
+        "que_recibe": "Material separado y limpio.",
+        "trabajo_conjunto": "Separación y entrega programada.",
+        "aporte_ambiental": "Reciclaje de cartón y plástico.",
+        "accion": "Disponer punto de separación."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Venta previa",
+        "a_quien": "Vecinos y familias.",
+        "resultado": "Ventas diarias y promedio mensual reportado de $600.000 a $700.000.",
+        "motivacion": "Cercanía, precio y necesidad inmediata.",
+        "evidencia": "Relato del productor; registros pendientes."
+      },
+      {
+        "metodo": "Recompra/voz a voz",
+        "a_quien": "Clientes locales.",
+        "resultado": "Los compradores conocen el negocio y regresan por atención y disponibilidad.",
+        "motivacion": "Confianza y buen trato.",
+        "evidencia": "Recomendaciones informales."
+      },
+      {
+        "metodo": "Solicitudes de clientes",
+        "a_quien": "Personas que preguntan por referencias no disponibles.",
+        "resultado": "Interés en mayor variedad, tallas, calzado, ruanas y botas.",
+        "motivacion": "Evitar viajar a Bogotá.",
+        "evidencia": "Lista de solicitudes por implementar."
+      },
+      {
+        "metodo": "Comparación de precios",
+        "a_quien": "Mercado local frente a Bogotá.",
+        "resultado": "El productor busca ofrecer sudaderas y otros artículos a precios asequibles.",
+        "motivacion": "Ahorro y conveniencia.",
+        "evidencia": "Precios mencionados; facturas pendientes."
+      },
+      {
+        "metodo": "Encuesta formal",
+        "a_quien": "No realizada.",
+        "resultado": "No disponible.",
+        "motivacion": "No disponible.",
+        "evidencia": "Pendiente."
+      },
+      {
+        "metodo": "Redes sociales",
+        "a_quien": "No utilizada.",
+        "resultado": "No hay validación digital.",
+        "motivacion": "Potencial consulta previa de inventario.",
+        "evidencia": "Capacitación pendiente."
+      },
+      {
+        "metodo": "Feria/canal institucional",
+        "a_quien": "No reportado.",
+        "resultado": "No disponible.",
+        "motivacion": "Potencial ampliación de clientes.",
+        "evidencia": "Pendiente de explorar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Sudaderas",
+        "descripcion_tecnica": "Prenda deportiva o de uso cotidiano; referencias y tallas por verificar.",
+        "unidad": "Unidad/conjunto.",
+        "insumos_principales": "Mercancía comprada en Bogotá.",
+        "condiciones_especiales": "Lugar seco, limpio, clasificada por talla.",
+        "presentacion": "Exhibida en vitrina; entrega en bolsa.",
+        "diferencial": "Precio reportado de $25.000 y disponibilidad local."
+      },
+      {
+        "servicio": "Medias",
+        "descripcion_tecnica": "Pares de medias de referencias por verificar.",
+        "unidad": "Par.",
+        "insumos_principales": "Mercancía comprada.",
+        "condiciones_especiales": "Secas, limpias y empacadas.",
+        "presentacion": "1 par $3.000; 2 por $5.000; 3 por $7.000.",
+        "diferencial": "Compra rápida y económica."
+      },
+      {
+        "servicio": "Ropa interior",
+        "descripcion_tecnica": "Prendas para adulto o niño; marcas, materiales y tallas pendientes.",
+        "unidad": "Unidad/conjunto.",
+        "insumos_principales": "Mercancía comprada.",
+        "condiciones_especiales": "Protegida de polvo y humedad.",
+        "presentacion": "Bolsa del proveedor / bolsa de entrega.",
+        "diferencial": "Disponibilidad cercana."
+      },
+      {
+        "servicio": "Sombreros/gorros",
+        "descripcion_tecnica": "Accesorios de protección y uso cotidiano.",
+        "unidad": "Unidad.",
+        "insumos_principales": "Mercancía comprada.",
+        "condiciones_especiales": "Evitar deformación y humedad.",
+        "presentacion": "Exhibición pendiente de mejorar.",
+        "diferencial": "Utilidad para contexto rural"
+      },
+      {
+        "servicio": "Ruanas proyección",
+        "descripcion_tecnica": "Ruanas corrientes y posible ruana ovejera legítima.",
+        "unidad": "Unidad.",
+        "insumos_principales": "Proveedor y material por verificar.",
+        "condiciones_especiales": "Lugar seco y ventilado.",
+        "presentacion": "Precio proyectado: $60.000-$70.000; ovejera $500.000-$600.000.",
+        "diferencial": "Producto adecuado al clima."
+      },
+      {
+        "servicio": "Botas y calzado - proyección",
+        "descripcion_tecnica": "Botas pantaneras, zapatos y zapatillas en varias tallas.",
+        "unidad": "Par.",
+        "insumos_principales": "Mercancía comprada.",
+        "condiciones_especiales": "Clasificación por talla y modelo.",
+        "presentacion": "Caja/exhibidor.",
+        "diferencial": "Respuesta a trabajo rural y necesidad local."
+      },
+      {
+        "servicio": "Camisas, pantalones y ropa infantil - proyección",
+        "descripcion_tecnica": "Surtido básico para adultos y niños.",
+        "unidad": "Unidad.",
+        "insumos_principales": "Mercancía comprada.",
+        "condiciones_especiales": "Clasificación por talla, género y referencia.",
+        "presentacion": "Perchero, estante o vitrina.",
+        "diferencial": "Mayor variedad sin desplazamiento."
+      }
+    ],
+    "observaciones_o_comentarios": "Nota: Los productos proyectados se registran como intención de ampliación expresada por el productor. Antes de comprar grandes cantidades se debe validar rotación por talla, material, precio y temporada, y establecer condiciones de cambio con proveedores."
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Surtido del almacén",
+        "unidad": "Según capital y pedidos.",
+        "actividad_proceso": "1. Observar faltantes y solicitudes de clientes.",
+        "tiempo_estimado": "Diario / semanal."
+      },
+      {
+        "servicio": "Surtido del almacén",
+        "unidad": "Lista de compra.",
+        "actividad_proceso": "2. Comparar referencias, tallas, calidad y precios de proveedores.",
+        "tiempo_estimado": "Antes de cada compra."
+      },
+      {
+        "servicio": "Surtido del almacén",
+        "unidad": "Lote de mercancía.",
+        "actividad_proceso": "3. Comprar en Bogotá y transportar a la vereda.",
+        "tiempo_estimado": "Frecuencia pendiente."
+      },
+      {
+        "servicio": "Recepción",
+        "unidad": "Cada lote.",
+        "actividad_proceso": "4. Contar, revisar estado, tallas, costos y soportes de compra.",
+        "tiempo_estimado": "Al recibir."
+      },
+      {
+        "servicio": "Organización",
+        "unidad": "Cada referencia.",
+        "actividad_proceso": "5. Clasificar, fijar precio, etiquetar y registrar inventario.",
+        "tiempo_estimado": "Mismo día."
+      },
+      {
+        "servicio": "Exhibición",
+        "unidad": "Inventario disponible.",
+        "actividad_proceso": "6. Ubicar en vitrina, estantes o percheros, protegiendo de polvo y humedad.",
+        "tiempo_estimado": "Permanente."
+      },
+      {
+        "servicio": "Venta",
+        "unidad": "Unidad/par.",
+        "actividad_proceso": "7. Atender, mostrar opciones, negociar dentro del margen y cobrar.",
+        "tiempo_estimado": "Diario."
+      },
+      {
+        "servicio": "Entrega y reposición",
+        "unidad": "Cada venta.",
+        "actividad_proceso": "8. Entregar en bolsa, registrar venta y actualizar faltantes.",
+        "tiempo_estimado": "Inmediato; registro por implementar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Mercancía actual",
+        "cantidad_unidad": "Según surtido.",
+        "frecuencia": "Periódica.",
+        "proveedor_fuente": "Bogotá: por identificar.",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Transporte, embalajes y sobreinventario.",
+        "manejo_ambiental": "Compras según rotación y consolidar viajes.",
+        "observaciones": "Capital actual aproximado: $1.000.000; frecuencia pendiente."
+      },
+      {
+        "insumo": "Mercancía proyectada",
+        "cantidad_unidad": "Botas, ruanas, calzado y ropa variada.",
+        "frecuencia": "Por etapas.",
+        "proveedor_fuente": "Por cotizar.",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Mayor embalaje y riesgo de baja rotación.",
+        "manejo_ambiental": "Validar pedidos y comprar por lotes pequeños.",
+        "observaciones": "Prioridad principal."
+      },
+      {
+        "insumo": "Estanterías / vitrinas",
+        "cantidad_unidad": "Cantidad y dimensiones pendientes.",
+        "frecuencia": "Inversión única.",
+        "proveedor_fuente": "Por cotizar.",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Material y fin de vida.",
+        "manejo_ambiental": "Preferir materiales durables y reparables.",
+        "observaciones": "Prioridad principal."
+      },
+      {
+        "insumo": "Percheros, ganchos y organizadores",
+        "cantidad_unidad": "Pendiente.",
+        "frecuencia": "Inversión/reposición.",
+        "proveedor_fuente": "Por cotizar.",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Residuos plásticos o metálicos.",
+        "manejo_ambiental": "Reutilizar y mantener.",
+        "observaciones": "Mejora de exhibición."
+      },
+      {
+        "insumo": "Bolsas de entrega",
+        "cantidad_unidad": "Por venta.",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Proveedor pendiente.",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Residuo plástico.",
+        "manejo_ambiental": "Ofrecer bolsa reutilizable o cobrar/limitar bolsa.",
+        "observaciones": "Cantidad y costo pendientes."
+      },
+      {
+        "insumo": "Etiquetas/marcadores de precio",
+        "cantidad_unidad": "Por referencia.",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Local / Bogotá.",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Papel y adhesivos.",
+        "manejo_ambiental": "Etiquetas reutilizables y registro digital gradual.",
+        "observaciones": "No reportado actualmente."
+      },
+      {
+        "insumo": "Transporte",
+        "cantidad_unidad": "Viaje a Bogotá/vereda.",
+        "frecuencia": "Según surtido.",
+        "proveedor_fuente": "Ruta o vehículo por verificar.",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Combustible y emisiones.",
+        "manejo_ambiental": "Consolidar compras y registrar costo.",
+        "observaciones": "Dato no suministrado."
+      },
+      {
+        "insumo": "Energía eléctrica",
+        "cantidad_unidad": "Consumo compartido por verificar.",
+        "frecuencia": "Mensual.",
+        "proveedor_fuente": "Servicio eléctrico.",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Huella de carbono.",
+        "manejo_ambiental": "Iluminación eficiente y apagar equipos.",
+        "observaciones": "$60.000-$70.000 reportados; confirmar proporción del negocio."
+      },
+      {
+        "insumo": "Agua",
+        "cantidad_unidad": "Base de 11 m².",
+        "frecuencia": "Mensual.",
+        "proveedor_fuente": "Acueducto veredal.",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Consumo hídrico.",
+        "manejo_ambiental": "Cerrar grifos y usar lluvia para baño/lavado.",
+        "observaciones": "$6.000 básicos; consumo adicional se recalcula."
+      },
+      {
+        "insumo": "Gas propano",
+        "cantidad_unidad": "1 cilindro.",
+        "frecuencia": "Mensual.",
+        "proveedor_fuente": "Proveedor local.",
+        "toxicidad": "Inflamable.",
+        "impacto_potencial": "Emisiones y riesgo de incendio.",
+        "manejo_ambiental": "Almacenar ventilado y revisar conexiones.",
+        "observaciones": "$110.000; confirmar si corresponde al local o al hogar."
+      },
+      {
+        "insumo": "Aseo",
+        "cantidad_unidad": "Cantidad pendiente.",
+        "frecuencia": "Semanal/según necesidad.",
+        "proveedor_fuente": "Comercio local.",
+        "toxicidad": "Según producto.",
+        "impacto_potencial": "Envases y aguas de lavado.",
+        "manejo_ambiental": "Dosificar, separar envases y usar agua lluvia cuando sea apropiado.",
+        "observaciones": "No se informaron productos ni costos."
+      },
+      {
+        "insumo": "Teléfono/internet",
+        "cantidad_unidad": "Pendiente.",
+        "frecuencia": "Mensual",
+        "proveedor_fuente": "Operador pendiente.",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Consumo energético menor.",
+        "manejo_ambiental": "Usar para inventario y ventas.",
+        "observaciones": "No usa redes; conectividad y costo pendientes."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "Entre $600.000 y $700.000 mensuales, según lo reportado. No se especificó número de unidades ni mezcla por producto.",
+    "produccion_normal": "Existen compras diarias, incluso de un par de medias; cantidad e ingreso por día pendientes de registro.",
+    "capacidad_mensual_teorica": "Con buen surtido, considera que podría alcanzar aproximadamente $3.000.000 mensuales.",
+    "produccion_maxima_posible": "Aproximadamente $3.000.000 mensuales según expectativa del productor.",
+    "area_numero_habitaciones": "Local reportado como adecuado, con una vitrina pequeña. Metros cuadrados, distribución y almacenamiento: pendientes.",
+    "limitantes_productivos": "Capital de trabajo, inventario, variedad de tallas, mobiliario de exhibición, registros y logística de abastecimiento.",
+    "limitantes_ambientales": "Lluvia o humedad pueden afectar acceso y mercancía.",
+    "capacidad_instalada": "Punto de venta físico y experiencia de atención. Exhibición y almacenamiento insuficientes para un surtido amplio.",
+    "capacidad_utilizada": "Baja frente al potencial expresado, principalmente por falta de mercancía y estanterías.",
+    "produce_mismo_todo_ano": true,
+    "alcanza_para_demanda": false,
+    "necesidades_aumentar_sosteniblemente": "Priorizar mercancía de alta rotación, estanterías, registro de tallas/pedidos, cálculo de margen, compras escalonadas y promoción sencilla. Condición de crecimiento: No comprar surtido amplio sin validar rotación, costos, almacenamiento y flujo de caja.",
+    "observaciones_o_comentarios": "Inventario/capital actual: Inversión aproximada de $1.000.000. No se aclaró si es inventario vigente, inversión por ciclo o monto de reposición. Mano de obra: El productor atiende solo la mayor parte del tiempo; ayuda familiar ocasional. Horarios y capacidad de atención: pendientes. Limitantes comerciales: No utiliza WhatsApp ni redes sociales, venta basada en voz a voz y pérdida de oportunidades por falta de referencias. Variación durante el año: El productor no considera el clima una afectación grave. La demanda por ruanas, botas y prendas puede variar por temporada; debe medirse."
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua",
+        "estado_actual": "Acueducto veredal; base de 11 m³ por $6.000.",
+        "limite_restriccion": "Costo aumenta con consumo.",
+        "afectacion": "Uso principalmente sanitario y de limpieza.",
+        "efecto": "Uso principalmente sanitario y de limpieza.",
+        "incidencia": "Baja.",
+        "accion_mejora": "Mantener control de fugas y separar consumo del negocio."
+      },
+      {
+        "condicion": "Agua lluvia",
+        "estado_actual": "Se recolecta para baño y lavado.",
+        "limite_restriccion": "Capacidad y calidad no informadas.",
+        "afectacion": "Reduce consumo de agua potable.",
+        "efecto": "Reduce consumo de agua potable.",
+        "incidencia": "Positiva /media.",
+        "accion_mejora": "Medir volumen, mantener tanque tapado y limpiar canales."
+      },
+      {
+        "condicion": "Energía",
+        "estado_actual": "Factura de $60.000-$70.000.",
+        "limite_restriccion": "No se separa consumo del local y hogar.",
+        "afectacion": "Iluminación y operación básica.",
+        "efecto": "Iluminación y operación básica.",
+        "incidencia": "Media.",
+        "accion_mejora": "Medir equipos, usar LED y apagar cargas."
+      },
+      {
+        "condicion": "Gas",
+        "estado_actual": "Cilindro mensual de $110.000.",
+        "limite_restriccion": "Inflamable; uso comercial no confirmado.",
+        "afectacion": "No es insumo directo de venta de ropa.",
+        "efecto": "No es insumo directo de venta de ropa.",
+        "incidencia": "Baja / seguridad media.",
+        "accion_mejora": "Ubicación ventilada y revisión de conexión."
+      },
+      {
+        "condicion": "Clima",
+        "estado_actual": "El productor manifiesta adaptación y no reporta afectación grave.",
+        "limite_restriccion": "Lluvia o humedad pueden afectar acceso y mercancía.",
+        "afectacion": "Posibles cambios de demanda y riesgo de humedad.",
+        "efecto": "Posibles cambios de demanda y riesgo de humedad.",
+        "incidencia": "Baja-media.",
+        "accion_mejora": "Mantener mercancía seca y registrar ventas por temporada."
+      },
+      {
+        "condicion": "Transporte/acceso",
+        "estado_actual": "Mercancía traída desde Bogotá.",
+        "limite_restriccion": "Distancia, clima, costos y frecuencia.",
+        "afectacion": "Afecta costo y continuidad del surtido.",
+        "efecto": "Afecta costo y continuidad del surtido.",
+        "incidencia": "Media-alta.",
+        "accion_mejora": "Consolidar pedidos y registrar logística."
+      },
+      {
+        "condicion": "Biodiversidad / suelo",
+        "estado_actual": "Sin relación productiva directa.",
+        "limite_restriccion": "No aplica de forma significativa al comercio.",
+        "afectacion": "Impacto indirecto por consumo y residuos.",
+        "efecto": "Impacto indirecto por consumo y residuos.",
+        "incidencia": "Baja.",
+        "accion_mejora": "Elegir proveedores y materiales durables cuando sea viable."
+      },
+      {
+        "condicion": "Residuos",
+        "estado_actual": "Poca basura; recolección cada 8 días.",
+        "limite_restriccion": "Reciclaje específico cada 3-4 meses.",
+        "afectacion": "Riesgo de mezclar cartón y plásticos aprovechables.",
+        "efecto": "Riesgo de mezclar cartón y plásticos aprovechables.",
+        "incidencia": "Media.",
+        "accion_mejora": "Separar, almacenar limpio y entregar a reciclaje."
+      },
+      {
+        "condicion": "Empaques",
+        "estado_actual": "Entrega en bolsa.",
+        "limite_restriccion": "Consumo de plástico no cuantificado.",
+        "afectacion": "Genera residuos postconsumo.",
+        "efecto": "Genera residuos postconsumo.",
+        "incidencia": "Media.",
+        "accion_mejora": "Fomentar bolsas reutilizables y reducir empaque."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Locativo",
+        "peligro": "Caídas por pasillos, cajas o mercancía mal ubicada.",
+        "aplica": true,
+        "nivel_riesgo": "Bajo-medio; verificar.",
+        "controles_actuales": "Cuidado personal.",
+        "accion": "Mantener rutas despejadas y piso seco."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Permanecer de pie o sentado y movimientos repetitivos.",
+        "aplica": true,
+        "nivel_riesgo": "Medio.",
+        "controles_actuales": "No reportado.",
+        "accion": "Pausas activas y puesto ergonómico."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Levantamiento y traslado de cajas o bultos de mercancía.",
+        "aplica": true,
+        "nivel_riesgo": "Medio.",
+        "controles_actuales": "No reportado.",
+        "accion": "Fraccionar cargas y aplicar técnica segura"
+      },
+      {
+        "tipo": "Mecánico",
+        "peligro": "Cortes al abrir paquetes o usar tijeras/cuchillas.",
+        "aplica": true,
+        "nivel_riesgo": "Bajo-medio.",
+        "controles_actuales": "Cuidado personal.",
+        "accion": "Cortador seguro y almacenamiento protegido."
+      },
+      {
+        "tipo": "Eléctrico",
+        "peligro": "Instalación, iluminación o extensiones.",
+        "aplica": true,
+        "nivel_riesgo": "Medio.",
+        "controles_actuales": "No informado.",
+        "accion": "Revisión y no sobrecargar tomas."
+      },
+      {
+        "tipo": "Incendio",
+        "peligro": "Mercancía textil, empaques y cilindro de gas.",
+        "aplica": true,
+        "nivel_riesgo": "Alto impacto.",
+        "controles_actuales": "No informado.",
+        "accion": "Extintor, señalización y separación del gas."
+      },
+      {
+        "tipo": "Tránsito",
+        "peligro": "Desplazamientos para comprar mercancía en Bogotá.",
+        "aplica": true,
+        "nivel_riesgo": "Medio-alto.",
+        "controles_actuales": "No informado.",
+        "accion": "Transporte formal, carga segura y planificación."
+      },
+      {
+        "tipo": "Polvo/humedad",
+        "peligro": "Acumulación en textiles y posible afectación respiratoria o del producto.",
+        "aplica": true,
+        "nivel_riesgo": "Bajo-medio.",
+        "controles_actuales": "Aseo general.",
+        "accion": "Limpieza, ventilación y almacenamiento seco."
+      },
+      {
+        "tipo": "Seguridad pública",
+        "peligro": "Hurto de efectivo o mercancía.",
+        "aplica": true,
+        "nivel_riesgo": "Por verificar.",
+        "controles_actuales": "No informado.",
+        "accion": "Manejo discreto de efectivo, cerraduras e inventario."
+      },
+      {
+        "tipo": "Emergencias",
+        "peligro": "Ausencia de ruta, botiquín o números visibles.",
+        "aplica": true,
+        "nivel_riesgo": "Por verificar.",
+        "controles_actuales": "No informado.",
+        "accion": "Botiquín, contactos y plan básico."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Mantener pasillos, entrada y zona de atención libres de cajas.",
+        "riesgo": "Locativo.",
+        "responsable": "Productor.",
+        "frecuencia": "Diaria.",
+        "evidencia": "Lista de verificación / fotografía."
+      },
+      {
+        "accion_preventiva": "Organizar bodega y estantes por peso y estabilidad.",
+        "riesgo": "Caídas de objetos / carga.",
+        "responsable": "Productor/familiar.",
+        "frecuencia": "Semanal.",
+        "evidencia": "Inventario y orden."
+      },
+      {
+        "accion_preventiva": "Aplicar pausas activas y técnica de levantamiento.",
+        "riesgo": "Biomecánico.",
+        "responsable": "Productor.",
+        "frecuencia": "Diaria / al recibir mercancía.",
+        "evidencia": "Registro breve."
+      },
+      {
+        "accion_preventiva": "Revisar tomas, cables e iluminación.",
+        "riesgo": "Eléctrico/incendio.",
+        "responsable": "Técnico/productor.",
+        "frecuencia": "Semestral y visual mensual.",
+        "evidencia": "Factura o lista de revisión."
+      },
+      {
+        "accion_preventiva": "Instalar extintor, señalización y mantener cilindro ventilado.",
+        "riesgo": "Incendio.",
+        "responsable": "Productor.",
+        "frecuencia": "Inmediato/revisión mensual.",
+        "evidencia": "Extintor vigente y fotos."
+      },
+      {
+        "accion_preventiva": "Usar herramienta de corte segura y guardarla.",
+        "riesgo": "Cortes.",
+        "responsable": "Productor.",
+        "frecuencia": "Cada uso.",
+        "evidencia": "Herramienta adecuada."
+      },
+      {
+        "accion_preventiva": "Disponer botiquín, números y ruta de emergencia.",
+        "riesgo": "Primeros auxilios.",
+        "responsable": "Productor.",
+        "frecuencia": "Permanente / revisión trimestral.",
+        "evidencia": "Botiquín y cartel."
+      },
+      {
+        "accion_preventiva": "Planificar viajes y asegurar la carga.",
+        "riesgo": "Tránsito.",
+        "responsable": "Productor/transportador.",
+        "frecuencia": "Cada compra.",
+        "evidencia": "Soporte de transporte."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Ferias",
+        "activo": false,
+        "descripcion": "No se reportó participación.",
+        "responsable": "Productor/apoyo institucional.",
+        "frecuencia": "Por explorar."
+      },
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "Punto físico en la vereda.",
+        "responsable": "Productor.",
+        "frecuencia": "Diaria."
+      },
+      {
+        "canal": "Redes sociales",
+        "activo": false,
+        "descripcion": "El productor manifiesta que no sabe utilizarlas.",
+        "responsable": "Productor con capacitación.",
+        "frecuencia": "Por implementar."
+      },
+      {
+        "canal": "WhatsApp/llamadas",
+        "activo": false,
+        "descripcion": "No como canal estructurado. Puede usarse para mostrar existencias y recibir pedidos.",
+        "responsable": "Productor/familiar.",
+        "frecuencia": "Potencial diaria."
+      },
+      {
+        "canal": "Tiendas/plazas",
+        "activo": false,
+        "descripcion": "No como canal de venta. El establecimiento propio es el canal principal.",
+        "responsable": "Productor.",
+        "frecuencia": "Permanente."
+      },
+      {
+        "canal": "Compras institucionales",
+        "activo": false,
+        "descripcion": "No identificadas.",
+        "responsable": "Pendiente.",
+        "frecuencia": "No aplica actualmente."
+      },
+      {
+        "canal": "Comercialización asociativa",
+        "activo": false,
+        "descripcion": "Posible compra conjunta con otros comerciantes.",
+        "responsable": "Productor/aliados.",
+        "frecuencia": "Por evaluar."
+      },
+      {
+        "canal": "Otro: voz a voz",
+        "activo": true,
+        "descripcion": "La comunidad conoce el negocio y consulta disponibilidad.",
+        "responsable": "Clientes/productor.",
+        "frecuencia": "Permanente."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Sudadera",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Bogotá: $35.000-$40.000, según relato.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": 25000,
+        "justificacion": "Busca precio asequible verificar calidad, referencia y margen real."
+      },
+      {
+        "servicio": "Medias",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Pendiente.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": 3000,
+        "justificacion": "$3.000 el par, 2 por $5.000; 3 por $7.000. Precio promocional; calcular margen en cada combinación."
+      },
+      {
+        "servicio": "Ropa interior",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Pendiente.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": null,
+        "justificacion": "Definir por marca, talla y costo."
+      },
+      {
+        "servicio": "Sombreros/gorros",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Pendiente.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": null,
+        "justificacion": "Definir por material y proveedor."
+      },
+      {
+        "servicio": "Ruana corriente - proyección",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Pendiente.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": 70000,
+        "justificacion": "$60.000-$70.000 proyectados. Validar demanda, proveedor, material y margen."
+      },
+      {
+        "servicio": "Ruana ovejera - proyección",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Según peso y autenticidad.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": 600000,
+        "justificacion": "$500.000-$600.000 proyectados. Producto de alto valor, comprar únicamente por pedido o validación."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Ventas actuales totales",
+        "cantidad_mensual": "Unidades no registradas.",
+        "precio": null,
+        "ingreso_mensual": 700000,
+        "forma_pago": "Pendiente; probablemente contado, verificar.",
+        "canal": "Venta directa local."
+      },
+      {
+        "concepto_servicio": "Sudaderas",
+        "cantidad_mensual": "Pendiente.",
+        "precio": 25000,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente",
+        "canal": "Vecinos."
+      },
+      {
+        "concepto_servicio": "Medias",
+        "cantidad_mensual": "Pendiente..",
+        "precio": 3000,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente",
+        "canal": "Compras diarias."
+      },
+      {
+        "concepto_servicio": "Otros artículos actuales",
+        "cantidad_mensual": "Pendiente.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente",
+        "canal": "Comunidad."
+      },
+      {
+        "concepto_servicio": "Escenario con mayor surtido",
+        "cantidad_mensual": "Unidades y mezcla pendientes.",
+        "precio": null,
+        "ingreso_mensual": 3000000,
+        "forma_pago": "Por definir.",
+        "canal": "Mercado local y canales futuros."
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": "Nota: La cifra de $3.000.000 corresponde al potencial expresado por el productor si cuenta con buen surtido. No constituye una proyección validada. Antes de invertir se deben registrar ventas por referencia, talla, margen y rotación, y realizar compras escalonadas."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Vecino/cliente directo",
+        "estrategia": "Atención amable, sonrisa, información clara y precio asequible.",
+        "medio": "Presencial.",
+        "frecuencia": "Cada visita.",
+        "responsable": "Productor."
+      },
+      {
+        "cliente": "Cliente recurrente",
+        "estrategia": "Recordar tallas y productos solicitados; avisar cuando llegue mercancía.",
+        "medio": "Presencial / llamada futura.",
+        "frecuencia": "Según reposición.",
+        "responsable": "Productor."
+      },
+      {
+        "cliente": "Familias",
+        "estrategia": "Mantener surtido básico para adultos y niños y ofrecer opciones por presupuesto.",
+        "medio": "Punto de venta.",
+        "frecuencia": "Permanente.",
+        "responsable": "Productor."
+      },
+      {
+        "cliente": "Cliente por pedido",
+        "estrategia": "Tomar solicitud y anticipo cuando corresponda, confirmar fecha y precio.",
+        "medio": "WhatsApp/teléfono por implementar.",
+        "frecuencia": "Por pedido.",
+        "responsable": "Productor/familiar."
+      },
+      {
+        "cliente": "Cliente potencial digital",
+        "estrategia": "Fotografías reales de existencias, talla, precio y ubicación.",
+        "medio": "WhatsApp/Facebook con capacitación.",
+        "frecuencia": "Semanal.",
+        "responsable": "Productor/apoyo familiar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Mercancía de entrada",
+        "canal": "Proveedor Bogotá → local.",
+        "tiempo": "Según programación.",
+        "transporte_operacion": "Pendiente de verificar.",
+        "condicion_calidad": "Cajas o bolsas secas, limpias y protegidas.",
+        "capacidad": "Según compra.",
+        "costo": "Pendiente.",
+        "responsable": "Productor."
+      },
+      {
+        "servicio_insumo": "Venta en local",
+        "canal": "Entrega directa.",
+        "tiempo": "Inmediata.",
+        "transporte_operacion": "No requiere.",
+        "condicion_calidad": "Producto limpio, talla revisada y en buen estado.",
+        "capacidad": "Unidad/par.",
+        "costo": "Incluido en operación.",
+        "responsable": "Productor."
+      },
+      {
+        "servicio_insumo": "Pedido especial",
+        "canal": "Bogotá local cliente.",
+        "tiempo": "Fecha acordada.",
+        "transporte_operacion": "Por definir.",
+        "condicion_calidad": "Confirmar referencia, talla, costo y condiciones de cambio.",
+        "capacidad": "Según pedido.",
+        "costo": "Cobro por definir.",
+        "responsable": "Productor."
+      },
+      {
+        "servicio_insumo": "Posible entrega veredal",
+        "canal": "Pedido local.",
+        "tiempo": "Por definir.",
+        "transporte_operacion": "Ruta/transporte local.",
+        "condicion_calidad": "Bolsa protegida de lluvia y humedad.",
+        "capacidad": "Pequeña.",
+        "costo": "Pendiente.",
+        "responsable": "Productor/aliado."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Proveedor y factura",
+        "informacion": "Proveedor, fecha, referencia, talla, cantidad y costo.",
+        "responsable": "Productor.",
+        "medio": "Factura/recibo/foto.",
+        "frecuencia": "Cada compra",
+        "evidencia": "Factura/recibo/foto."
+      },
+      {
+        "elemento": "Inventario",
+        "informacion": "Código, descripción, talla, costo, precio, entrada y saldo.",
+        "responsable": "Productor/familiar.",
+        "medio": "Cuaderno o hoja de cálculo.",
+        "frecuencia": "Diaria/semanal",
+        "evidencia": "Cuaderno o hoja de cálculo."
+      },
+      {
+        "elemento": "Venta",
+        "informacion": "Fecha, producto, cantidad, precio y forma de pago.",
+        "responsable": "Productor.",
+        "medio": "Registro diario.",
+        "frecuencia": "Diaria",
+        "evidencia": "Registro diario."
+      },
+      {
+        "elemento": "Precio y margen",
+        "informacion": "Costo unitario, gastos asociados, margen mínimo y descuento máximo.",
+        "responsable": "Productor/asesor.",
+        "medio": "Lista de precios.",
+        "frecuencia": "Por compra/modificación",
+        "evidencia": "Lista de precios."
+      },
+      {
+        "elemento": "Origen/ ubicación",
+        "informacion": "Nombre comercial, vereda, punto, teléfono y horario.",
+        "responsable": "Productor.",
+        "medio": "Aviso/ficha/WhatsApp.",
+        "frecuencia": "Permanente",
+        "evidencia": "Aviso/ficha/WhatsApp."
+      },
+      {
+        "elemento": "Prácticas sostenibles",
+        "informacion": "Bolsas reutilizables, separación de cartón/plástico y ahorro de agua/energía.",
+        "responsable": "Productor.",
+        "medio": "Registro y fotografías.",
+        "frecuencia": "Mensual",
+        "evidencia": "Registro y fotografías."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Surtido de mercancía de alta rotación.",
+        "descripcion": "Ropa, calzado, ruanas, sombreros y tallas diversas; cantidad no definida. Evitar ventas perdidas y ampliar oferta.",
+        "valor_unitario": null,
+        "cantidad": "Cantidad no definida.",
+        "total": 1000000,
+        "requisito": "Inventario y pedidos por talla antes de comprar.",
+        "fuente": "Cotizar, capital actual aproximado $1.000.000."
+      },
+      {
+        "tipo": "Estanterías y vitrinas.",
+        "descripcion": "Exhibir y proteger la mercancía.",
+        "valor_unitario": null,
+        "cantidad": "Cantidad y dimensiones pendientes.",
+        "total": null,
+        "requisito": "Medir local y definir distribución segura.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Percheros, ganchos y organizadores.",
+        "descripcion": "Clasificar por talla y tipo.",
+        "valor_unitario": null,
+        "cantidad": "Pendiente.",
+        "total": null,
+        "requisito": "Diseño de exhibición y flujo de clientes.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Capital de trabajo para reposición.",
+        "descripcion": "Sostener rotación sin usar todo el efectivo.",
+        "valor_unitario": null,
+        "cantidad": "Pendiente.",
+        "total": null,
+        "requisito": "Flujo de caja y margen por referencia.",
+        "fuente": "Definir."
+      },
+      {
+        "tipo": "Aviso, nombre comercial y señalización de precios.",
+        "descripcion": "Mejorar visibilidad y confianza.",
+        "valor_unitario": null,
+        "cantidad": "Un sistema básico.",
+        "total": null,
+        "requisito": "Confirmar nombre y datos de contacto.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Registro de inventario y ventas.",
+        "descripcion": "Controlar rotación y utilidad.",
+        "valor_unitario": null,
+        "cantidad": "Cuaderno, formatos o equipo existente.",
+        "total": null,
+        "requisito": "Capacitación y disciplina diaria.",
+        "fuente": "Bajo/por definir."
+      },
+      {
+        "tipo": "Capacitación en WhatsApp y redes.",
+        "descripcion": "Promocionar disponibilidad y recibir pedidos.",
+        "valor_unitario": null,
+        "cantidad": "Una ruta formativa.",
+        "total": null,
+        "requisito": "Conectividad, teléfono y apoyo familiar.",
+        "fuente": "Gestionar."
+      },
+      {
+        "tipo": "Bolsas reutilizables / empaque responsable.",
+        "descripcion": "Reducir plástico y mejorar imagen.",
+        "valor_unitario": null,
+        "cantidad": "Lote piloto.",
+        "total": null,
+        "requisito": "Definir costo y aceptación del cliente.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Extintor y botiquín.",
+        "descripcion": "Seguridad del punto de venta.",
+        "valor_unitario": null,
+        "cantidad": "1 de cada uno.",
+        "total": null,
+        "requisito": "Ubicación y revisión periódica.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Iluminación eficiente.",
+        "descripcion": "Mejorar exhibición y reducir consumo.",
+        "valor_unitario": null,
+        "cantidad": "Según diagnóstico.",
+        "total": null,
+        "requisito": "Revisión eléctrica.",
+        "fuente": "Cotizar."
+      },
+      {
+        "tipo": "Entrega local o transporte consolidado.",
+        "descripcion": "Ampliar cobertura y reducir costos.",
+        "valor_unitario": null,
+        "cantidad": "Según demanda.",
+        "total": null,
+        "requisito": "Validar pedidos y rutas.",
+        "fuente": "Pendiente."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Compra de mercancía / inventario",
+        "descripcion": "Frecuencia no aclarada. Confirmar si es inversión vigente, mensual o por viaje.",
+        "valor_mensual_ciclo": 1000000,
+        "observaciones": "Aproximadamente $1.000.000."
+      },
+      {
+        "tipo": "Arriendo",
+        "descripcion": "Mensual. El productor dice que apenas alcanza para arriendo y reposición, pero no informa valor.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Pendiente."
+      },
+      {
+        "tipo": "Energía",
+        "descripcion": "Mensual. Confirmar cuánto corresponde al almacén y cuánto al hogar.",
+        "valor_mensual_ciclo": 70000,
+        "observaciones": "$60.000-$70.000."
+      },
+      {
+        "tipo": "Agua",
+        "descripcion": "Mensual. Aumenta según consumo; uso compartido por verificar.",
+        "valor_mensual_ciclo": 6000,
+        "observaciones": "$6.000 básicos por 11 m³."
+      },
+      {
+        "tipo": "Gas propano",
+        "descripcion": "Mensual. No es costo directo de ropa; confirmar uso compartido y ubicación segura.",
+        "valor_mensual_ciclo": 110000,
+        "observaciones": "$110.000 por cilindro."
+      },
+      {
+        "tipo": "Transporte de mercancía",
+        "descripcion": "Según compra. Ruta, combustible, pasajes y carga no informados.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Pendiente."
+      },
+      {
+        "tipo": "Bolsas / empaque",
+        "descripcion": "Por venta. Cuantificar y reducir.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Pendiente:"
+      },
+      {
+        "tipo": "Mano de obra",
+        "descripcion": "Diaria / ocasional. Registrar tiempo y posible remuneración.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Trabajo propio no valorado; ayuda familiar ocasional."
+      },
+      {
+        "tipo": "Aseo/mantenimiento",
+        "descripcion": "Mensual. Productos, agua y reparaciones no discriminados.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Pendiente."
+      },
+      {
+        "tipo": "Digital/publicidad",
+        "descripcion": "Actual. No utiliza redes; futura conectividad y promoción deben presupuestarse.",
+        "valor_mensual_ciclo": 0,
+        "observaciones": "$0 o no reportado."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "1",
+        "ingresos": 700000,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Operación mensual actual: $600.000-$700.000. Faltan costo de mercancía vendida, arriendo, transporte y gastos compartidos. Reposición/inversión reportada: Aproximadamente $1.000.000. Servicios reportados: Agua $6.000 base; energía $60.000-$70.000; gas $110.000. Escenario de ampliación: Hasta $3.000.000 según productor."
+      },
+      {
+        "mes": "2",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "3",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "4",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "5",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "6",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "7",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "8",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "9",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "10",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "11",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "12",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "Lectura financiera: La unidad tiene demanda local y ventas continuas, pero no cuenta con información suficiente para determinar utilidad. El ingreso reportado no debe confundirse con ganancia. Se requiere separar inventario, costo de la mercancía vendida, arriendo, transporte, servicios compartidos, descuentos y efectivo disponible para reposición. Regla de control propuesta: Registrar toda venta. Registrar compra y gasto. Ingreso costo de venta - gastos. Revisión semanal y cierre mensual."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Consumo de agua",
+        "estado": "Base de 11 m³/$6.000; total real no informado.",
+        "cantidad": "Base de 11 m³",
+        "impacto_1_a_5": null,
+        "accion": "Lectura mensual y separación de usos."
+      },
+      {
+        "variable": "Agua lluvia aprovechada",
+        "estado": "Se usa en baño y lavado; volumen desconocido.",
+        "cantidad": "Volumen desconocido",
+        "impacto_1_a_5": null,
+        "accion": "Capacidad del tanque y número de usos."
+      },
+      {
+        "variable": "Consumo eléctrico",
+        "estado": "$60.000-$70.000 mensuales compartidos.",
+        "cantidad": "Compartido con hogar",
+        "impacto_1_a_5": null,
+        "accion": "kWh y equipos del local."
+      },
+      {
+        "variable": "Gas propano",
+        "estado": "1 cilindro mensual/$110.000.",
+        "cantidad": "1 cilindro mensual",
+        "impacto_1_a_5": null,
+        "accion": "Registrar uso y ubicación."
+      },
+      {
+        "variable": "Viajes de abastecimiento",
+        "estado": "No cuantificados.",
+        "cantidad": "No cuantificados",
+        "impacto_1_a_5": null,
+        "accion": "Viajes/mes, distancia, costo y carga."
+      },
+      {
+        "variable": "Bolsas entregadas",
+        "estado": "No cuantificadas.",
+        "cantidad": "No cuantificadas",
+        "impacto_1_a_5": null,
+        "accion": "Unidades por semana."
+      },
+      {
+        "variable": "Cartón y plástico recuperado",
+        "estado": "Recolección general semanal; reciclaje cada 3-4 meses.",
+        "cantidad": "Reciclaje cada 3-4 meses",
+        "impacto_1_a_5": null,
+        "accion": "Kg o bolsas separadas."
+      },
+      {
+        "variable": "Mercancía dañada / no vendida",
+        "estado": "No reportada.",
+        "cantidad": "No reportada",
+        "impacto_1_a_5": null,
+        "accion": "Unidades y valor mensual."
+      },
+      {
+        "variable": "Huella de carbono",
+        "estado": "No calculada.",
+        "cantidad": "No calculada",
+        "impacto_1_a_5": null,
+        "accion": "Energía, gas y transporte."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "Consumo de agua",
+        "que_se_mide": "Lectura mensual y separación de usos.",
+        "dato_inicial": "Base de 11 m³/$6.000; total real no informado.",
+        "meta": "Mantener consumo eficiente y sin fugas.",
+        "frecuencia": "Mensual",
+        "responsable": "Productor",
+        "evidencia": "Factura de acueducto veredal"
+      },
+      {
+        "indicador": "Agua lluvia aprovechada",
+        "que_se_mide": "Capacidad del tanque y número de usos.",
+        "dato_inicial": "Se usa en baño y lavado; volumen desconocido.",
+        "meta": "Medir y mantener sistema limpio.",
+        "frecuencia": "Mensual",
+        "responsable": "Productor",
+        "evidencia": "Registro de usos/limpieza"
+      },
+      {
+        "indicador": "Consumo eléctrico",
+        "que_se_mide": "kWh y equipos del local.",
+        "dato_inicial": "$60.000-$70.000 mensuales compartidos.",
+        "meta": "Usar iluminación eficiente y apagar cargas.",
+        "frecuencia": "Mensual",
+        "responsable": "Productor",
+        "evidencia": "Factura de energía"
+      },
+      {
+        "indicador": "Gas propano",
+        "que_se_mide": "Registrar uso y ubicación.",
+        "dato_inicial": "1 cilindro mensual/$110.000.",
+        "meta": "Confirmar si es ajeno a la operación comercial.",
+        "frecuencia": "Mensual",
+        "responsable": "Productor",
+        "evidencia": "Recibo de gas"
+      },
+      {
+        "indicador": "Viajes de abastecimiento",
+        "que_se_mide": "Viajes/mes, distancia, costo y carga.",
+        "dato_inicial": "No cuantificados.",
+        "meta": "Consolidar compras.",
+        "frecuencia": "Por viaje",
+        "responsable": "Productor",
+        "evidencia": "Registro de viajes/compras"
+      },
+      {
+        "indicador": "Bolsas entregadas",
+        "que_se_mide": "Unidades por semana.",
+        "dato_inicial": "No cuantificadas.",
+        "meta": "Reducir y ofrecer alternativa reutilizable.",
+        "frecuencia": "Semanal",
+        "responsable": "Productor",
+        "evidencia": "Registro de bolsas compradas/entregadas"
+      },
+      {
+        "indicador": "Cartón y plástico recuperado",
+        "que_se_mide": "Kg o bolsas separadas.",
+        "dato_inicial": "Recolección general semanal; reciclaje cada 3-4 meses.",
+        "meta": "Separación permanente.",
+        "frecuencia": "Mensual",
+        "responsable": "Productor",
+        "evidencia": "Registro de entrega a reciclaje"
+      },
+      {
+        "indicador": "Mercancía dañada / no vendida",
+        "que_se_mide": "Unidades y valor mensual.",
+        "dato_inicial": "No reportada.",
+        "meta": "Evitar deterioro y liquidar/donar responsablemente.",
+        "frecuencia": "Mensual",
+        "responsable": "Productor",
+        "evidencia": "Inventario de bajas/deterioro"
+      },
+      {
+        "indicador": "Huella de carbono",
+        "que_se_mide": "Energía, gas y transporte.",
+        "dato_inicial": "No calculada.",
+        "meta": "Construir línea base anual.",
+        "frecuencia": "Anual",
+        "responsable": "Productor",
+        "evidencia": "Cálculo de línea base"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Bolsas de entrega",
+        "cantidad": "No cuantificada",
+        "manejo_actual": "Se entrega la mercancía en bolsa.",
+        "accion_circular": "Medir uso y ofrecer alternativa.",
+        "destino": "Bolsa reutilizable o entrega sin bolsa.",
+        "responsable": "Productor."
+      },
+      {
+        "residuo_recurso": "Cajas / empaques de proveedor",
+        "cantidad": "No informada",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Separar cartón limpio y seco.",
+        "destino": "Reutilizar para almacenamiento o entregar a reciclaje.",
+        "responsable": "Productor."
+      },
+      {
+        "residuo_recurso": "Ganchos/perchas",
+        "cantidad": "No informada",
+        "manejo_actual": "No reportado.",
+        "accion_circular": "Comprar durables y recuperar.",
+        "destino": "Reutilización prolongada.",
+        "responsable": "Productor."
+      },
+      {
+        "residuo_recurso": "Mercancía de baja rotación",
+        "cantidad": "No registrada",
+        "manejo_actual": "No registrada.",
+        "accion_circular": "Informe de antigüedad de inventario.",
+        "destino": "Promoción, cambio con proveedor, preventa o donación.",
+        "responsable": "Productor."
+      },
+      {
+        "residuo_recurso": "Mercancía dañada",
+        "cantidad": "No reportada",
+        "manejo_actual": "No reportada.",
+        "accion_circular": "Registrar causa y destino.",
+        "destino": "Reparación, uso alternativo o gestión responsable.",
+        "responsable": "Productor."
+      },
+      {
+        "residuo_recurso": "Agua lluvia",
+        "cantidad": "Volumen desconocido",
+        "manejo_actual": "Se usa para baño y lavado.",
+        "accion_circular": "Tanque tapado y limpieza.",
+        "destino": "Aumentar sustitución de agua potable cuando sea seguro.",
+        "responsable": "Productor."
+      },
+      {
+        "residuo_recurso": "Residuos ordinarios / reciclables",
+        "cantidad": "Poca basura",
+        "manejo_actual": "Carro recolector cada 8 días.",
+        "accion_circular": "Punto de separación y almacenamiento corto.",
+        "destino": "Separación para volqueta de reciclaje.",
+        "responsable": "Productor."
+      }
+    ],
+    "conclusion_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "Agua",
+        "indicador": "Medir volumen y mantener captación.",
+        "descripcion": "Uso moderado y aprovechamiento de lluvia.",
+        "estado": "Medio-alto.",
+        "calificacion_1_a_5": null,
+        "accion": "Medir volumen y mantener captación.",
+        "evidencia": "Registro de consumo de agua"
+      },
+      {
+        "factor": "Energía",
+        "indicador": "Línea base y LED.",
+        "descripcion": "Factura reportada sin separación de usos.",
+        "estado": "Medio.",
+        "calificacion_1_a_5": null,
+        "accion": "Línea base y LED.",
+        "evidencia": "Factura y bombillos LED"
+      },
+      {
+        "factor": "Residuos",
+        "indicador": "Separar cartón y plástico.",
+        "descripcion": "Poco volumen y recolección frecuente, sin separación detallada.",
+        "estado": "Medio.",
+        "calificacion_1_a_5": null,
+        "accion": "Separar cartón y plástico.",
+        "evidencia": "Punto de separación"
+      },
+      {
+        "factor": "Empaques",
+        "indicador": "Reducir y reutilizar.",
+        "descripcion": "Entrega en bolsas; cantidad desconocida.",
+        "estado": "Medio-bajo.",
+        "calificacion_1_a_5": null,
+        "accion": "Reducir y reutilizar.",
+        "evidencia": "Bolsas reutilizables"
+      },
+      {
+        "factor": "Transporte",
+        "indicador": "Consolidar compras y medir viajes.",
+        "descripcion": "Abastecimiento desde Bogotá.",
+        "estado": "Medio-bajo.",
+        "calificacion_1_a_5": null,
+        "accion": "Consolidar compras y medir viajes.",
+        "evidencia": "Planilla de viajes"
+      },
+      {
+        "factor": "Biodiversidad / suelo",
+        "indicador": "Evitar contaminación y consumo innecesario.",
+        "descripcion": "Impacto directo mínimo por tratarse de comercio.",
+        "estado": "No aplica/indirecto.",
+        "calificacion_1_a_5": null,
+        "accion": "Evitar contaminación y consumo innecesario.",
+        "evidencia": "Buenas prácticas"
+      },
+      {
+        "factor": "Consumo responsable",
+        "indicador": "Comprar por demanda y calidad durable.",
+        "descripcion": "Surtido limitado, pero no hay control de rotación.",
+        "estado": "Medio.",
+        "calificacion_1_a_5": null,
+        "accion": "Comprar por demanda y calidad durable.",
+        "evidencia": "Lista de proveedores calificados"
+      },
+      {
+        "factor": "Valor social",
+        "indicador": "Ampliar sin perder accesibilidad.",
+        "descripcion": "Servicio cercano para comunidad rural.",
+        "estado": "Alto.",
+        "calificacion_1_a_5": null,
+        "accion": "Ampliar sin perder accesibilidad.",
+        "evidencia": "Lista de precios accesibles"
+      },
+      {
+        "factor": "Gestión ambiental",
+        "indicador": "Plan sencillo con indicadores.",
+        "descripcion": "Prácticas aisladas, sin registro.",
+        "estado": "Medio.",
+        "calificacion_1_a_5": null,
+        "accion": "Plan sencillo con indicadores.",
+        "evidencia": "Plan de manejo ambiental"
+      }
+    ],
+    "resultado_preliminar_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "Agua: Consumo y fugas posibles.",
+        "accion": "Cerrar grifos, medir consumo y mantener captación de lluvia.",
+        "prioridad": "Media",
+        "plazo": "0-3 meses.",
+        "responsable": "Productor.",
+        "recursos": "Medidor / balde / herramientas",
+        "indicador": "m/mes y fugas corregidas.",
+        "evidencia": "Facturas y planilla"
+      },
+      {
+        "impacto": "Energía: Consumo no separado.",
+        "accion": "Inventario de equipos, LED y apagado.",
+        "prioridad": "Media",
+        "plazo": "0-6 meses.",
+        "responsable": "Productor/técnico.",
+        "recursos": "Bombillos LED",
+        "indicador": "kWh o valor mensual.",
+        "evidencia": "Facturas de energía"
+      },
+      {
+        "impacto": "Empaques: Bolsas plásticas por venta.",
+        "accion": "Reducir, reutilizar y ofrecer bolsa durable.",
+        "prioridad": "Media",
+        "plazo": "0-4 meses.",
+        "responsable": "Productor.",
+        "recursos": "Bolsas de tela o papel piloto",
+        "indicador": "Bolsas/100 ventas.",
+        "evidencia": "Registro de compras de bolsas"
+      },
+      {
+        "impacto": "Residuos: Cartón y plástico mezclados.",
+        "accion": "Separación y entrega a reciclaje.",
+        "prioridad": "Alta",
+        "plazo": "Inmediato.",
+        "responsable": "Productor/aseo.",
+        "recursos": "Cajas o canecas de separación",
+        "indicador": "Kg o bolsas separadas.",
+        "evidencia": "Recibos de entrega de reciclaje"
+      },
+      {
+        "impacto": "Inventario: Riesgo de mercancía obsoleta o dañada.",
+        "accion": "Compras escalonadas, rotación PEPS y control de humedad.",
+        "prioridad": "Alta",
+        "plazo": "0-3 meses.",
+        "responsable": "Productor.",
+        "recursos": "Cuaderno de inventario",
+        "indicador": "Unidades >90 días y dañadas.",
+        "evidencia": "Registro de inventario"
+      },
+      {
+        "impacto": "Transporte: Emisiones y costo por viajes a Bogotá.",
+        "accion": "Consolidar pedidos y proveedores.",
+        "prioridad": "Media",
+        "plazo": "0-6 meses.",
+        "responsable": "Productor.",
+        "recursos": "Agenda de pedidos",
+        "indicador": "Viajes/mes y costo.",
+        "evidencia": "Registro de viajes"
+      },
+      {
+        "impacto": "Gas/incendio: Cilindro y textiles combustibles.",
+        "accion": "Ventilación, separación, extintor y revisión.",
+        "prioridad": "Alta",
+        "plazo": "0-2 meses.",
+        "responsable": "Productor.",
+        "recursos": "Extintor ABC, señalización",
+        "indicador": "Controles instalados.",
+        "evidencia": "Extintor e inspección"
+      },
+      {
+        "impacto": "Comunicación ambiental: Clientes no conocen prácticas.",
+        "accion": "Aviso sobre bolsas y reciclaje.",
+        "prioridad": "Baja",
+        "plazo": "0-6 meses.",
+        "responsable": "Productor.",
+        "recursos": "Cartel informativo",
+        "indicador": "Mensaje visible.",
+        "evidencia": "Fotografía del aviso"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": null,
+        "situacion": "Lluvia intensa",
+        "riesgo": "Acceso y mercancía expuesta a humedad.",
+        "accion_propuesta": "Almacenamiento elevado, techo y empaque seco. Contingencia: Mover mercancía y ventilar. Indicador: Unidades afectadas."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Frío",
+        "riesgo": "Aumenta demanda de ruanas y ropa abrigada, pero puede generar faltantes.",
+        "accion_propuesta": "Plan de compras estacional. Contingencia: Pedidos rápidos y lista de espera. Indicador: Ventas/faltantes de prendas de frío."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Verano / calor",
+        "riesgo": "Cambio de demanda y posible polvo.",
+        "accion_propuesta": "Ajustar surtido y limpieza. Contingencia: Promocionar prendas adecuadas. Indicador: Rotación por temporada."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Viento",
+        "riesgo": "Posible daño de aviso o entrada de polvo.",
+        "accion_propuesta": "Fijar aviso y cerrar exhibición. Contingencia: Reparar y limpiar. Indicador: Daños registrados."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Interrupción vial",
+        "riesgo": "Dependencia de abastecimiento desde Bogotá.",
+        "accion_propuesta": "Inventario mínimo y compras anticipadas. Contingencia: Priorizar referencias esenciales. Indicador: Días sin surtido."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Variabilidad general",
+        "riesgo": "El productor no reporta afectación grave.",
+        "accion_propuesta": "Registrar ventas y eventos. Contingencia: Ajustar surtido. Indicador: Comparación mensual."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Comercial/financiero.",
+        "riesgo": "Falta de inventario",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "Compra limitada.",
+        "respuesta": "Priorizar referencias y tallas según pedidos."
+      },
+      {
+        "tipo": "Financiero.",
+        "riesgo": "Capital de trabajo insuficiente",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "Reposición con ventas.",
+        "respuesta": "Flujo de caja y compras por etapas."
+      },
+      {
+        "tipo": "Financiero.",
+        "riesgo": "Desconocimiento del margen",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "Precio definido por experiencia.",
+        "respuesta": "Registrar costo total y margen mínimo."
+      },
+      {
+        "tipo": "Comercial.",
+        "riesgo": "Inventario de baja rotación",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "No reportado.",
+        "respuesta": "Compras pequeñas, cambios y seguimiento por edad."
+      },
+      {
+        "tipo": "Logístico.",
+        "riesgo": "Dependencia de Bogotá",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio-alto,",
+        "prevencion": "Abastecimiento directo.",
+        "respuesta": "Más proveedores y compras consolidadas,"
+      },
+      {
+        "tipo": "Digital/comercial.",
+        "riesgo": "No uso de canales digitales",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio.",
+        "prevencion": "Voz a voz.",
+        "respuesta": "Capacitación y catálogo básico."
+      },
+      {
+        "tipo": "Operativo.",
+        "riesgo": "Exhibición insuficiente",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio-alto.",
+        "prevencion": "Vitrina pequeña.",
+        "respuesta": "Estanterías seguras y señalización."
+      },
+      {
+        "tipo": "Ambiental/seguridad.",
+        "riesgo": "Humedad / deterioro / incendio",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "No informado.",
+        "respuesta": "Almacenamiento seco, extintor y revisión."
+      },
+      {
+        "tipo": "Seguridad/financiero.",
+        "riesgo": "Hurto o diferencias de inventario",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "Atención directa.",
+        "respuesta": "Inventario, cierre y manejo de efectivo."
+      },
+      {
+        "tipo": "SST/logístico.",
+        "riesgo": "Accidente en compra / carga",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio-alto.",
+        "prevencion": "No informado.",
+        "respuesta": "Transporte seguro y manejo de cargas."
+      },
+      {
+        "tipo": "Estratégico.",
+        "riesgo": "Escalamiento sin demanda validada",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "Expectativa de ventas.",
+        "respuesta": "Pilotos, preventa y revisión mensual."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "Confirmar nombre, ubicación, área, arriendo, horario y datos del productor.",
+        "componente": "Inmediato.",
+        "responsable": "Productor/equipo PMAPC.",
+        "tiempo": "30 días.",
+        "recursos": "Visita y entrevista.",
+        "resultado": "Línea base confiable.",
+        "evidencia": "Ficha de caracterización"
+      },
+      {
+        "actividad": "Levantar inventario inicial por referencia, talla, costo y precio.",
+        "componente": "Semana 1.",
+        "responsable": "Productor/familiar.",
+        "tiempo": "30 días.",
+        "recursos": "Formato o cuaderno.",
+        "resultado": "Conocer existencias y capital.",
+        "evidencia": "Inventario inicial escrito"
+      },
+      {
+        "actividad": "Registrar ventas y gastos diariamente.",
+        "componente": "Semana 1.",
+        "responsable": "Productor.",
+        "tiempo": "Permanente.",
+        "recursos": "Formato sencillo.",
+        "resultado": "Utilidad y rotación medibles.",
+        "evidencia": "Libro de registro diario"
+      },
+      {
+        "actividad": "Recoger pedidos y faltantes de clientes.",
+        "componente": "Semana 1.",
+        "responsable": "Productor.",
+        "tiempo": "2 meses.",
+        "recursos": "Lista visible/WhatsApp futuro.",
+        "resultado": "Surtido basado en demanda.",
+        "evidencia": "Lista de solicitudes"
+      },
+      {
+        "actividad": "Cotizar y comprar mercancía priorizada por etapas.",
+        "componente": "Mes 1.",
+        "responsable": "Productor/asesor.",
+        "tiempo": "3-6 meses.",
+        "recursos": "Capital y proveedores.",
+        "resultado": "Menos ventas perdidas.",
+        "evidencia": "Facturas de compra"
+      },
+      {
+        "actividad": "Medir local y adquirir estanterías, vitrinas y percheros.",
+        "componente": "Mes 1.",
+        "responsable": "Productor/proveedor.",
+        "tiempo": "4 meses.",
+        "recursos": "Mobiliario.",
+        "resultado": "Exhibición segura y ordenada.",
+        "evidencia": "Mobiliario instalado"
+      },
+      {
+        "actividad": "Definir política de precios, margen y descuentos.",
+        "componente": "Mes 1.",
+        "responsable": "Productor/asesor financiero.",
+        "tiempo": "2 meses.",
+        "recursos": "Costos y referencias.",
+        "resultado": "Precios sostenibles.",
+        "evidencia": "Lista de precios con margen"
+      },
+      {
+        "actividad": "Capacitar en WhatsApp y crear catálogo básico.",
+        "componente": "Mes 2.",
+        "responsable": "Productor/familiar / institución.",
+        "tiempo": "4 meses.",
+        "recursos": "Teléfono y formación.",
+        "resultado": "Nuevo canal de pedidos.",
+        "evidencia": "Catálogo en WhatsApp Business"
+      },
+      {
+        "actividad": "Implementar separación de residuos y reducción de bolsas.",
+        "componente": "Inmediato.",
+        "responsable": "Productor.",
+        "tiempo": "3 meses.",
+        "recursos": "Recipientes y bolsas reutilizables.",
+        "resultado": "Menor residuo.",
+        "evidencia": "Punto de separación y bolsas de tela"
+      },
+      {
+        "actividad": "Instalar controles básicos de seguridad.",
+        "componente": "Mes 1.",
+        "responsable": "Productor/técnico.",
+        "tiempo": "3 meses.",
+        "recursos": "Extintor, botiquín, revisión.",
+        "resultado": "Punto de venta más seguro.",
+        "evidencia": "Extintor y botiquín instalados"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "Comercial",
+        "indicador": "Ventas mensuales.",
+        "meta": "Aumentar gradualmente con evidencia; validar antes de usar $3.000.000 como meta.",
+        "frecuencia": "Mensual.",
+        "responsable": "Productor",
+        "evidencia": "Libro de registro de ventas"
+      },
+      {
+        "dimension": "Comercial",
+        "indicador": "Ventas perdidas por falta de stock.",
+        "meta": "Registrar 100 % de solicitudes no atendidas.",
+        "frecuencia": "Diaria.",
+        "responsable": "Productor",
+        "evidencia": "Lista de faltantes"
+      },
+      {
+        "dimension": "Comercial",
+        "indicador": "Clientes recurrentes.",
+        "meta": "Construir base sencilla.",
+        "frecuencia": "Mensual.",
+        "responsable": "Productor",
+        "evidencia": "Directorio de clientes"
+      },
+      {
+        "dimension": "Producto",
+        "indicador": "Referencias y tallas activas.",
+        "meta": "Inventario completo y actualizado.",
+        "frecuencia": "Semanal.",
+        "responsable": "Productor/familiar",
+        "evidencia": "Planilla de inventario"
+      },
+      {
+        "dimension": "Producto",
+        "indicador": "Rotación por referencia.",
+        "meta": "Identificar alta, media y baja rotación.",
+        "frecuencia": "Mensual.",
+        "responsable": "Productor",
+        "evidencia": "Informe de rotación"
+      },
+      {
+        "dimension": "Financiera",
+        "indicador": "Margen bruto por producto.",
+        "meta": "Calcular antes de descuentos.",
+        "frecuencia": "Cada compra/mensual.",
+        "responsable": "Productor",
+        "evidencia": "Análisis de margen"
+      },
+      {
+        "dimension": "Financiera",
+        "indicador": "Efectivo disponible para reposición.",
+        "meta": "Separar caja del negocio.",
+        "frecuencia": "Semanal.",
+        "responsable": "Productor",
+        "evidencia": "Arqueo de caja"
+      },
+      {
+        "dimension": "Digital",
+        "indicador": "Consultas o pedidos por WhatsApp.",
+        "meta": "Canal piloto después de capacitación.",
+        "frecuencia": "Semanal.",
+        "responsable": "Productor/familiar",
+        "evidencia": "Métricas de WhatsApp Business"
+      },
+      {
+        "dimension": "Operativa",
+        "indicador": "Área de exhibición organizada.",
+        "meta": "Estanterías instaladas y 100% del inventario clasificado.",
+        "frecuencia": "Mensual.",
+        "responsable": "Productor",
+        "evidencia": "Fotografías del local"
+      },
+      {
+        "dimension": "Ambiental",
+        "indicador": "Bolsas entregadas.",
+        "meta": "Reducir por venta y ofrecer reutilizable.",
+        "frecuencia": "Mensual.",
+        "responsable": "Productor",
+        "evidencia": "Registro de compras de bolsas"
+      },
+      {
+        "dimension": "Ambiental",
+        "indicador": "Residuos reciclables separados.",
+        "meta": "Separación permanente.",
+        "frecuencia": "Mensual.",
+        "responsable": "Productor",
+        "evidencia": "Registro de reciclaje"
+      },
+      {
+        "dimension": "SST",
+        "indicador": "Incidentes/condiciones inseguras.",
+        "meta": "Registrar y corregir.",
+        "frecuencia": "Mensual.",
+        "responsable": "Productor",
+        "evidencia": "Bitácora de SST"
+      },
+      {
+        "dimension": "Gestión",
+        "indicador": "Registros completos de venta, compra y gasto.",
+        "meta": "100% de movimientos registrados.",
+        "frecuencia": "Diaria / mensual.",
+        "responsable": "Productor",
+        "evidencia": "Libro contable simple"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Aumentar surtido priorizado",
+        "efecto_productivo": "Más tallas y referencias.",
+        "efecto_comercial": "Reduce ventas perdidas.",
+        "efecto_financiero": "Requiere capital y rotación.",
+        "efecto_ambiental": "Más embalajes y transporte.",
+        "ajuste_necesario": "Comprar por pedidos y datos, no por intuición solamente."
+      },
+      {
+        "decision": "Instalar estanterías/vitrinas",
+        "efecto_productivo": "Orden y protección.",
+        "efecto_comercial": "Mejor visibilidad..",
+        "efecto_financiero": "Inversión con vida útil larga.",
+        "efecto_ambiental": "Material durable.",
+        "ajuste_necesario": "Medir local y asegurar estabilidad."
+      },
+      {
+        "decision": "Registrar inventario y ventas",
+        "efecto_productivo": "Control de existencias.",
+        "efecto_comercial": "Permite responder disponibilidad.",
+        "efecto_financiero": "Calcula margen y caja.",
+        "efecto_ambiental": "Evita sobrecompra y desperdicio.",
+        "ajuste_necesario": "Registro diario simple."
+      },
+      {
+        "decision": "Capacitar en WhatsApp",
+        "efecto_productivo": "Organiza pedidos.",
+        "efecto_comercial": "Amplía alcance.",
+        "efecto_financiero": "Bajo costo y potencial de venta.",
+        "efecto_ambiental": "Reduce viajes fallidos.",
+        "ajuste_necesario": "Usar fotos reales y datos actualizados."
+      },
+      {
+        "decision": "Negociar compras consolidadas",
+        "efecto_productivo": "Mejora abastecimiento.",
+        "efecto_comercial": "Mayor variedad.",
+        "efecto_financiero": "Puede bajar costo logístico.",
+        "efecto_ambiental": "Menos viajes.",
+        "ajuste_necesario": "Comparar proveedores y no sobreinventariar."
+      },
+      {
+        "decision": "Mantener precios asequibles",
+        "efecto_productivo": "No aplica.",
+        "efecto_comercial": "Conserva confianza",
+        "efecto_financiero": "Debe respetar margen mínimo.",
+        "efecto_ambiental": "Sin efecto directo.",
+        "ajuste_necesario": "No vender por debajo del costo total."
+      },
+      {
+        "decision": "Reducir bolsas",
+        "efecto_productivo": "Entrega responsable.",
+        "efecto_comercial": "Mejora imagen.",
+        "efecto_financiero": "Puede reducir costo.",
+        "efecto_ambiental": "Menos residuos.",
+        "ajuste_necesario": "Comunicar y ofrecer alternativa."
+      },
+      {
+        "decision": "Aprovechar agua lluvia",
+        "efecto_productivo": "Apoya limpieza y servicios",
+        "efecto_comercial": "Sin efecto directo.",
+        "efecto_financiero": "Ahorro potencial",
+        "efecto_ambiental": "Menor agua potable.",
+        "ajuste_necesario": "Mantener calidad y tanque."
+      },
+      {
+        "decision": "Fortalecer seguridad",
+        "efecto_productivo": "Protege personas y mercancía.",
+        "efecto_comercial": "Confianza.",
+        "efecto_financiero": "Evita pérdidas.",
+        "efecto_ambiental": "Previene emergencias.",
+        "ajuste_necesario": "Extintor, instalación y orden."
+      },
+      {
+        "decision": "Incluir ruanas y botas",
+        "efecto_productivo": "Diversifica surtido.",
+        "efecto_comercial": "Responde al contexto rural.",
+        "efecto_financiero": "Alto capital si se compra mucho.",
+        "efecto_ambiental": "Mayor transporte y empaque.",
+        "ajuste_necesario": "Pilotear por talla, temporada o pedido."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}

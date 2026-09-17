@@ -1,0 +1,2260 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "Variedades Rose.",
+    "persona_entrevistada": "Gilma Rocío Romero Guzmán. Teléfono informado: 311 268 4729. Documento, correo, propiedad, tenencia y condición jurídica pendientes.",
+    "tipo_actividad": "Comercio minorista rural de calzado, ropa y productos congelados de crema helada. La entrevistada aclara que compra productos terminados y no los fabrica.",
+    "ubicacion_especifica": "Vereda La Unión. El negocio está dentro del caserío; dirección exacta, predio, localidad administrativa, acceso y coordenadas pendientes.",
+    "producto_servicio_principal": "Calzado colegial y general; jeans, chaquetas y otras prendas; productos congelados de crema helada; atención y venta directa en el local.",
+    "estado_actual": "Unidad activa con ventas frecuentes. El calzado colegial, la ropa y los congelados funcionan bien; se requiere más variedad y mejores elementos de exhibición.",
+    "personas_vinculadas": "Gilma atiende con apoyo de su hija. Menciona a sus hijos, pero su participación, horarios y responsabilidades no quedaron definidos. Desearía contar con una empleada cuando las ventas lo permitan.",
+    "coordenadas": "Pendientes de tomar en el local del caserío de La Unión.",
+    "descripcion_general": "La unidad lleva aproximadamente cuatro años. Se abastece en Bogotá y vende directamente a residentes de La Unión y veredas cercanas. La distancia, el transporte irregular, la poca base de clientes del caserío y los cortes eléctricos limitan su crecimiento. La productora busca convertirla en un almacén con mayor surtido y capacidad de exhibición para atender necesidades del territorio.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F02": {
+    "mision": "Ofrecer a las familias de La Unión y veredas cercanas calzado, ropa y productos congelados de buena calidad, mediante atención directa, disponibilidad local y conservación adecuada.",
+    "vision": "Consolidar Variedades Rose como un almacén rural más amplio y organizado, con surtido suficiente, exhibición atractiva, energía de respaldo confiable, registros de inventario y finanzas y capacidad para responder a las necesidades del territorio.",
+    "valores": [],
+    "observaciones_o_comentarios": "No se solicitaron valores de forma explícita. Del relato se identifican preliminarmente buena atención, calidad, responsabilidad, cercanía, cuidado ambiental y servicio a la comunidad; deben validarse con Gilma."
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Porque la comunidad requiere calzado, ropa y productos congelados sin desplazarse hasta Bogotá, especialmente calzado colegial y prendas según el clima.",
+    "beneficio_cliente": "Acceso cercano, revisión presencial de tallas y calidad, atención directa y disponibilidad del único punto de productos congelados referido en el caserío.",
+    "diferencial": "Aproximadamente cuatro años de experiencia, clientela recurrente, ventas frecuentes, diversidad de líneas, facturas de compra y apoyo familiar.",
+    "valor_ambiental": "Uso de agua de acueducto, caneca exterior para envolturas, rechazo a quemar basura o arrojarla a los ríos. Deben medirse consumos, pérdidas por frío y residuos.",
+    "valor_social_comunitario": "Abastecimiento local para La Unión, El Tunal, La Playa, Paquilo, San Juan, Las Totumas y otros sectores; la escritura exacta de algunos lugares debe confirmarse.",
+    "evidencia": "Retorno de clientes, ventas casi diarias, solicitudes de mayor variedad, buen desempeño del calzado colegial y de los congelados. Faltan inventarios, cifras, comprobantes de venta y registro de satisfacción.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Aproximadamente cuatro años de funcionamiento.",
+      "Ventas frecuentes y clientes que regresan.",
+      "Buen desempeño del calzado colegial, ropa y congelados.",
+      "Único punto de congelados referido en el caserío.",
+      "Atención directa y preferencia por mostrar el producto.",
+      "Apoyo de la hija.",
+      "Facturas de compra conservadas.",
+      "Diversificación por temporada y clima."
+    ],
+    "oportunidades": [
+      "Ampliar surtido según solicitudes reales.",
+      "Incorporar estanterías, vitrinas, maniquíes y avisos.",
+      "Dimensionar respaldo energético para el congelador.",
+      "Consolidar pedidos y rutas desde Bogotá.",
+      "Registrar tallas, rotación y ventas.",
+      "Fortalecer relación con veredas cercanas.",
+      "Ajustar surtido a temporada escolar, lluvia y sol.",
+      "Evaluar apoyo institucional y técnico."
+    ],
+    "debilidades": [
+      "Exhibición y mobiliario insuficientes.",
+      "Variedad menor a la solicitada.",
+      "Sin costos, ventas ni márgenes consolidados.",
+      "Inventario y capacidad no cuantificados.",
+      "Dependencia de Bogotá y transporte irregular.",
+      "Planta de respaldo sin potencia suficiente.",
+      "Pérdidas de congelados por cortes.",
+      "Documentos no actualizados para la dirección actual.",
+      "Operación concentrada en Gilma y su hija."
+    ],
+    "amenazas": [
+      "Competidor similar en un caserío pequeño.",
+      "Demanda local limitada.",
+      "Cortes eléctricos por lluvias y vientos.",
+      "Daño de productos congelados.",
+      "Transporte no diario o falta de vehiculo.",
+      "Variación de precios y costos de Bogotá.",
+      "Sobreinventario de tallas o prendas sin rotación.",
+      "Cambios estacionales en la demanda.",
+      "Pérdida de continuidad por ausencia de las responsables."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Familia con estudiantes",
+        "perfil_que_busca": "Busca calzado colegial, talla correcta y disponibilidad cercana.",
+        "ubicacion": "La Unión y veredas cercanas.",
+        "necesidad": "Comprar sin desplazarse a Bogotá.",
+        "frecuencia": "Temporada escolar y reposición.",
+        "criterio_compra": "Talla, calidad, precio y resistencia.",
+        "canal": "Visita al local."
+      },
+      {
+        "tipo_actor": "Comprador de calzado",
+        "perfil_que_busca": "Persona que requiere calzado general y prefiere revisarlo físicamente.",
+        "ubicacion": "Caserío y territorio cercano.",
+        "necesidad": "Variedad de modelos y tallas.",
+        "frecuencia": "Frecuencia pendiente.",
+        "criterio_compra": "Ajuste, diseño, calidad y precio.",
+        "canal": "Venta directa."
+      },
+      {
+        "tipo_actor": "Comprador de ropa",
+        "perfil_que_busca": "Cliente de jeans, prendas y chaquetas.",
+        "ubicacion": "La Unión y sectores vecinos.",
+        "necesidad": "Ropa disponible localmente.",
+        "frecuencia": "Casi diaria en conjunto con otras líneas; por medir.",
+        "criterio_compra": "Calidad, talla, clima, variedad y precio.",
+        "canal": "Local físico."
+      },
+      {
+        "tipo_actor": "Consumidor de congelados",
+        "perfil_que_busca": "Familia, visitante o residente que compra productos de crema helada.",
+        "ubicacion": "Principalmente el caserío.",
+        "necesidad": "Producto frío disponible en el único punto referido.",
+        "frecuencia": "Mayor con días soleados.",
+        "criterio_compra": "Conservación, disponibilidad y precio.",
+        "canal": "Compra directa."
+      },
+      {
+        "tipo_actor": "Cliente de La Unión",
+        "perfil_que_busca": "Residente que compra diferentes líneas según necesidad.",
+        "ubicacion": "Vereda La Unión.",
+        "necesidad": "Cercanía y atención.",
+        "frecuencia": "Frecuente; sin cifra.",
+        "criterio_compra": "Surtido, confianza y calidad.",
+        "canal": "Local."
+      },
+      {
+        "tipo_actor": "Cliente de otra vereda",
+        "perfil_que_busca": "Persona que se desplaza desde sectores mencionados en la entrevista.",
+        "ubicacion": "El Tunal, La Playa, Paquilo, San Juan, Las Totumas y otros; exactitud pendiente.",
+        "necesidad": "Evitar viaje hasta Bogotá.",
+        "frecuencia": "Eventual.",
+        "criterio_compra": "Disponibilidad, talla y precio.",
+        "canal": "Visita al local."
+      },
+      {
+        "tipo_actor": "Cliente recurrente",
+        "perfil_que_busca": "Comprador que vuelve por buena atención y calidad.",
+        "ubicacion": "Zona de influencia.",
+        "necesidad": "Respuesta confiable.",
+        "frecuencia": "Recompra no medida.",
+        "criterio_compra": "Calidad, trato y existencia.",
+        "canal": "Atención presencial."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Productos de calidad, variedad suficiente, tallas disponibles, atención cercana y congelados bien conservados.",
+    "como_se_conoce_la_necesidad": "La productora reporta ventas frecuentes, retorno de clientes y solicitudes de más variedad; el calzado colegial y los congelados funcionan especialmente bien.",
+    "quienes_compran_o_podrian_comprar": "Familias con estudiantes, compradores de calzado y ropa, consumidores de congelados y habitantes de La Unión y veredas cercanas.",
+    "evidencia": "Facturas de compra, local físico, congelador y relato de recompra. No se aportaron inventario, base de clientes, ventas, precios ni registros de pérdidas.",
+    "ventaja_territorial": "Punto cercano dentro del caserío, diversidad de líneas y reducción del desplazamiento a Bogotá.",
+    "cambios_demanda": "La demanda cambia con el clima y la temporada. Días soleados favorecen congelados; invierno favorece chaquetas y reduce parte del consumo frío.",
+    "dificultades": "Poca exhibición, variedad limitada, transporte distante, cortes de energía, respaldo insuficiente, mercado pequeño y ausencia de cifras financieras.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Gilma Rocío Romero Guzmán",
+        "tipo": "Propietaria / operadora",
+        "que_aporta": "Experiencia, atención, compras, local y relación con clientes.",
+        "que_recibe": "Ingreso y fortalecimiento de la unidad.",
+        "trabajo_conjunto": "Definir funciones, horarios, registros y plan de continuidad.",
+        "aporte_ambiental": "Uso responsable de recursos y manejo de residuos.",
+        "accion": "Formalizar plan de operación."
+      },
+      {
+        "actor_aliado": "Hija de Gilma",
+        "tipo": "Apoyo familiar",
+        "que_aporta": "Colaboración en atención y operación.",
+        "que_recibe": "Aprendizaje y apoyo familiar.",
+        "trabajo_conjunto": "Definir rol, horario, responsabilidades y condiciones seguras.",
+        "aporte_ambiental": "Apoyar orden y separación.",
+        "accion": "Acordar funciones."
+      },
+      {
+        "actor_aliado": "Clientes de La Unión",
+        "tipo": "Comercial/comunitario",
+        "que_aporta": "Demanda, recompra y referencia.",
+        "que_recibe": "Acceso cercano a productos.",
+        "trabajo_conjunto": "Priorizar tallas, prendas y congelados.",
+        "aporte_ambiental": "Menos viajes a Bogotá por unidad comprada.",
+        "accion": "Registrar solicitudes."
+      },
+      {
+        "actor_aliado": "Clientes de otras veredas",
+        "tipo": "Comercial / territorial",
+        "que_aporta": "Amplían mercado y comunican necesidades.",
+        "que_recibe": "Oferta cercana.",
+        "trabajo_conjunto": "Confirmar lugares, productos y frecuencia.",
+        "aporte_ambiental": "Consolidar desplazamientos.",
+        "accion": "Actualizar base."
+      },
+      {
+        "actor_aliado": "Proveedores de calzado y ropa",
+        "tipo": "Proveedor",
+        "que_aporta": "Mercancía terminada, factura, cambios y tallas.",
+        "que_recibe": "Compras recurrentes.",
+        "trabajo_conjunto": "Acordar calidad, devolución, crédito y entrega.",
+        "aporte_ambiental": "Optimizar empaques y carga.",
+        "accion": "Comparar proveedores."
+      },
+      {
+        "actor_aliado": "Proveedor de congelados",
+        "tipo": "Proveedor",
+        "que_aporta": "Producto, conservación, factura y orientación de frio.",
+        "que_recibe": "Ventas recurrentes.",
+        "trabajo_conjunto": "Definir transporte, temperaturas, devolución y contingencia.",
+        "aporte_ambiental": "Prevenir pérdidas de producto.",
+        "accion": "Formalizar protocolo."
+      },
+      {
+        "actor_aliado": "Transportadores",
+        "tipo": "Logistico",
+        "que_aporta": "Traslado desde Bogotá o ruta disponible.",
+        "que_recibe": "Pago por servicio.",
+        "trabajo_conjunto": "Consolidar compras, horarios y carga.",
+        "aporte_ambiental": "Reducir viajes y emisiones por unidad.",
+        "accion": "Cotizar alternativas."
+      },
+      {
+        "actor_aliado": "Apoyo técnico o institucional",
+        "tipo": "Técnico/institucional",
+        "que_aporta": "Diagnóstico eléctrico, solar, comercial y de formalización.",
+        "que_recibe": "Unidad más resiliente y trazable.",
+        "trabajo_conjunto": "Dimensionar solución, mobiliario y plan de mejora.",
+        "aporte_ambiental": "Eficiencia energética y reducción de pérdidas.",
+        "accion": "Gestionar concepto y apoyo."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Funcionamiento durante cuatro años",
+        "a_quien": "Comunidad de La Unión y alrededores.",
+        "resultado": "La unidad se mantiene activa con varias líneas.",
+        "motivacion": "Cercanía y disponibilidad.",
+        "evidencia": "Fecha exacta y soportes pendientes."
+      },
+      {
+        "metodo": "Venta de calzado colegial",
+        "a_quien": "Familias con estudiantes.",
+        "resultado": "Línea reportada como de buen funcionamiento.",
+        "motivacion": "Compra local y talla disponible.",
+        "evidencia": "Ventas por temporada pendientes."
+      },
+      {
+        "metodo": "Venta de ropa y calzado",
+        "a_quien": "Clientes locales y de veredas.",
+        "resultado": "Se vende algo casi todos los días en el conjunto del negocio.",
+        "motivacion": "Calidad y atención.",
+        "evidencia": "Registro diario pendiente."
+      },
+      {
+        "metodo": "Productos congelados",
+        "a_quien": "Consumidores del caserio.",
+        "resultado": "Buen desempeño por ser el único punto referido.",
+        "motivacion": "Disponibilidad cercana.",
+        "evidencia": "Ventas, pérdidas y temperatura pendientes."
+      },
+      {
+        "metodo": "Recompra",
+        "a_quien": "Clientes atendidos.",
+        "resultado": "El cliente vuelve, indicador referido de aceptación.",
+        "motivacion": "Buena atención y calidad.",
+        "evidencia": "Base y satisfacción pendientes."
+      },
+      {
+        "metodo": "Solicitudes de mayor variedad",
+        "a_quien": "Clientes actuales y potenciales.",
+        "resultado": "Existe interés por más referencias.",
+        "motivacion": "Encontrar más productos en el territorio.",
+        "evidencia": "Lista de solicitudes y pedidos piloto pendientes."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Calzado colegial",
+        "descripcion_tecnica": "Calzado terminado para estudiantes; marcas, materiales, tallas y referencias pendientes.",
+        "unidad": "Par",
+        "insumos_principales": "Proveedor de Bogotá, factura, tallaje e inventario.",
+        "condiciones_especiales": "Zona seca, organizada por talla y referencia.",
+        "presentacion": "Caja o presentación comercial.",
+        "diferencial": "Línea de buen desempeño local."
+      },
+      {
+        "servicio": "Calzado general",
+        "descripcion_tecnica": "Modelos para distintos clientes; inventario exacto pendiente.",
+        "unidad": "Par",
+        "insumos_principales": "Proveedor, factura, talla, costo y cambio.",
+        "condiciones_especiales": "Exhibición limpia y almacenamiento seco.",
+        "presentacion": "Caja/par.",
+        "diferencial": "Acceso cercano y revisión presencial."
+      },
+      {
+        "servicio": "Jeans y otras prendas",
+        "descripcion_tecnica": "Ropa terminada comprada para reventa; marcas, tallas y composición pendientes.",
+        "unidad": "Unidad",
+        "insumos_principales": "Proveedor, factura, talla, color y costo.",
+        "condiciones_especiales": "Perchas, estantes o exhibición protegida.",
+        "presentacion": "Prenda/empaque.",
+        "diferencial": "Oferta local diversificada."
+      },
+      {
+        "servicio": "Chaquetas",
+        "descripcion_tecnica": "Prendas con mayor oportunidad durante clima frío o lluvioso.",
+        "unidad": "Unidad",
+        "insumos_principales": "Proveedor, tallas y referencias.",
+        "condiciones_especiales": "Exhibición seca y ordenada.",
+        "presentacion": "Prenda.",
+        "diferencial": "Respuesta estacional."
+      },
+      {
+        "servicio": "Productos congelados de crema helada",
+        "descripcion_tecnica": "Productos terminados que requieren conservación; marcas y presentaciones pendientes.",
+        "unidad": "Unidad/presentación",
+        "insumos_principales": "Proveedor, factura y cadena de frío.",
+        "condiciones_especiales": "Congelador; temperatura y capacidad por verificar.",
+        "presentacion": "Empaque individual o comercial.",
+        "diferencial": "Único punto referido en el caserío."
+      },
+      {
+        "servicio": "Atención y venta presencial",
+        "descripcion_tecnica": "Orientación sobre talla, observación directa del producto y entrega en el local.",
+        "unidad": "Servicio",
+        "insumos_principales": "Tiempo, orden, inventario y comprobante.",
+        "condiciones_especiales": "Local físico.",
+        "presentacion": "Entrega directa.",
+        "diferencial": "Preferencia de la productora y cercanía."
+      },
+      {
+        "servicio": "Mayor variedad por pedido",
+        "descripcion_tecnica": "Posible ampliación basada en solicitudes de clientes; productos aún no definidos.",
+        "unidad": "Referencia por validar",
+        "insumos_principales": "Lista de demanda, proveedor y capital.",
+        "condiciones_especiales": "Solo con espacio y rotación comprobados.",
+        "presentacion": "Presentación comercial.",
+        "diferencial": "Oportunidad de crecimiento sin sobreinventario."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Revisión de demanda",
+        "unidad": "Por período",
+        "actividad_proceso": "Registrar solicitudes, tallas, referencias, temporada, clima y rotación.",
+        "tiempo_estimado": "Antes de comprar."
+      },
+      {
+        "servicio": "Planeación de compra",
+        "unidad": "Por viaje",
+        "actividad_proceso": "Definir presupuesto, proveedores, cantidades, transporte y capacidad de exhibición o frío.",
+        "tiempo_estimado": "Según inventario."
+      },
+      {
+        "servicio": "Viaje o pedido a Bogotá",
+        "unidad": "Por compra",
+        "actividad_proceso": "Adquirir productos terminados de ropa, calzado y congelados; conservar soportes.",
+        "tiempo_estimado": "Según reposición; frecuencia pendiente."
+      },
+      {
+        "servicio": "Transporte",
+        "unidad": "Cada compra",
+        "actividad_proceso": "Proteger mercancía, mantener frío cuando aplique y coordinar ruta disponible.",
+        "tiempo_estimado": "Desde Bogotá al caserío."
+      },
+      {
+        "servicio": "Recepción",
+        "unidad": "Cada lote",
+        "actividad_proceso": "Comparar factura, cantidad, talla, integridad, fecha y temperatura cuando corresponda.",
+        "tiempo_estimado": "Al ingreso."
+      },
+      {
+        "servicio": "Almacenamiento y exhibición",
+        "unidad": "Por producto",
+        "actividad_proceso": "Organizar calzado y ropa; conservar congelados; evitar humedad, mezcla y sobrecarga.",
+        "tiempo_estimado": "Permanente."
+      },
+      {
+        "servicio": "Atención al cliente",
+        "unidad": "Cada visita",
+        "actividad_proceso": "Mostrar producto, apoyar elección de talla o prenda y brindar buena atención.",
+        "tiempo_estimado": "Durante la venta."
+      },
+      {
+        "servicio": "Venta y entrega",
+        "unidad": "Cada unidad",
+        "actividad_proceso": "Entregar producto conforme y registrar cantidad, precio, pago y saldo.",
+        "tiempo_estimado": "Cada venta."
+      },
+      {
+        "servicio": "Reposición",
+        "unidad": "Por inventario",
+        "actividad_proceso": "Reponer según rotación real y solicitudes sin comprar variedad excesiva.",
+        "tiempo_estimado": "Semanal/mensual."
+      },
+      {
+        "servicio": "Residuos y pérdidas",
+        "unidad": "Según generación",
+        "actividad_proceso": "Separar empaques, registrar productos dañados y entregar residuos ordinarios a recolección.",
+        "tiempo_estimado": "Cuando ocurra."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Calzado colegial",
+        "cantidad_unidad": "Inventario no determinado",
+        "frecuencia": "Según venta / temporada",
+        "proveedor_fuente": "Bogotá; proveedor pendiente",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Sobreinventario de tallas y empaques.",
+        "manejo_ambiental": "Kárdex por talla y conservación seca.",
+        "observaciones": "Línea de buen funcionamiento."
+      },
+      {
+        "insumo": "Calzado general",
+        "cantidad_unidad": "Cantidad no informada",
+        "frecuencia": "Según rotación",
+        "proveedor_fuente": "Por verificar",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Referencias sin salida y cajas.",
+        "manejo_ambiental": "Inventario por talla, modelo y costo.",
+        "observaciones": "Más variedad solicitada."
+      },
+      {
+        "insumo": "Jeans",
+        "cantidad_unidad": "Cantidad no informada",
+        "frecuencia": "Según venta",
+        "proveedor_fuente": "Por verificar",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Prendas sin rotación y empaques.",
+        "manejo_ambiental": "Orden por talla y referencia..",
+        "observaciones": "Linea activa."
+      },
+      {
+        "insumo": "Chaquetas",
+        "cantidad_unidad": "No determinado",
+        "frecuencia": "Estacional/según venta",
+        "proveedor_fuente": "Por verificar",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Sobreinventario estacional.",
+        "manejo_ambiental": "Comprar según clima y demanda.",
+        "observaciones": "Mayor oportunidad en invierno."
+      },
+      {
+        "insumo": "Otras prendas",
+        "cantidad_unidad": "Inventario pendiente",
+        "frecuencia": "Según venta",
+        "proveedor_fuente": "Por verificar",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Falta de variedad o baja rotación.",
+        "manejo_ambiental": "Registro de solicitudes y mínimos.",
+        "observaciones": "Productos exactos pendientes."
+      },
+      {
+        "insumo": "Productos congelados",
+        "cantidad_unidad": "Cantidad y presentación pendientes",
+        "frecuencia": "Según venta y clima",
+        "proveedor_fuente": "Proveedor pendiente",
+        "toxicidad": "Alimento congelado",
+        "impacto_potencial": "Descongelamiento, pérdida y empaques.",
+        "manejo_ambiental": "Temperatura, rotación y contingencia.",
+        "observaciones": "Ventas altas con clima soleado."
+      },
+      {
+        "insumo": "Congelador",
+        "cantidad_unidad": "Un equipo referido",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Propio",
+        "toxicidad": "Eléctrica/frío",
+        "impacto_potencial": "Consumo, corte y pérdida de producto.",
+        "manejo_ambiental": "Mantenimiento, lectura y respaldo.",
+        "observaciones": "Capacidad y potencia pendientes."
+      },
+      {
+        "insumo": "Planta de respaldo",
+        "cantidad_unidad": "Un equipo referido",
+        "frecuencia": "Durante cortes",
+        "proveedor_fuente": "Propia",
+        "toxicidad": "Combustible / eléctrica",
+        "impacto_potencial": "Potencia insuficiente y manejo seguro.",
+        "manejo_ambiental": "Diagnóstico técnico y operación segura.",
+        "observaciones": "No logró mover adecuadamente el congelador."
+      },
+      {
+        "insumo": "Estanterías",
+        "cantidad_unidad": "No determinadas",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Por cotizar",
+        "toxicidad": "Locativa",
+        "impacto_potencial": "Exhibición limitada o caída si es inestable.",
+        "manejo_ambiental": "Anclaje, capacidad y distribución.",
+        "observaciones": "Necesidad prioritaria."
+      },
+      {
+        "insumo": "Vitrinas",
+        "cantidad_unidad": "No determinadas",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Por cotizar",
+        "toxicidad": "Locativa",
+        "impacto_potencial": "Acceso, vidrio y espacio.",
+        "manejo_ambiental": "Diseño seguro y visible.",
+        "observaciones": "Necesidad expresada."
+      },
+      {
+        "insumo": "Maniquíes",
+        "cantidad_unidad": "No determinados",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Por cotizar",
+        "toxicidad": "Locativa",
+        "impacto_potencial": "Obstrucción o caída.",
+        "manejo_ambiental": "Base estable y ubicación segura.",
+        "observaciones": "Mejorar exhibición."
+      },
+      {
+        "insumo": "Avisos",
+        "cantidad_unidad": "No determinados",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Por cotizar",
+        "toxicidad": "Visual/locativa",
+        "impacto_potencial": "Instalación inadecuada.",
+        "manejo_ambiental": "Diseño legible y fijación segura.",
+        "observaciones": "Necesidad expresada."
+      },
+      {
+        "insumo": "Agua de acueducto",
+        "cantidad_unidad": "No medida",
+        "frecuencia": "Uso del local y consumo humano por confirmar",
+        "proveedor_fuente": "Acueducto",
+        "toxicidad": "Calidad de red",
+        "impacto_potencial": "Consumo y residuos.",
+        "manejo_ambiental": "Uso eficiente y no contaminación.",
+        "observaciones": "La productora refiere uso responsable."
+      },
+      {
+        "insumo": "Electricidad",
+        "cantidad_unidad": "No medida",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Red eléctrica",
+        "toxicidad": "Eléctrica",
+        "impacto_potencial": "Cortes y daño de congelados.",
+        "manejo_ambiental": "Medición, protección y respaldo.",
+        "observaciones": "Afectada por lluvias y vientos."
+      },
+      {
+        "insumo": "Transporte",
+        "cantidad_unidad": "Viaje o carga desde Bogotá",
+        "frecuencia": "Según compra",
+        "proveedor_fuente": "Ruta por verificar",
+        "toxicidad": "Vial/emisiones",
+        "impacto_potencial": "Demora, costo y falta de servicio diario.",
+        "manejo_ambiental": "Consolidar carga y soportes.",
+        "observaciones": "No cuenta con transporte propio referido."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "Comercialización de calzado, ropa y productos congelados de crema helada.",
+    "produccion_normal": "Aproximadamente cuatro años; fecha exacta pendiente.",
+    "capacidad_mensual_teorica": "Gilma y su hija. Participación de otros hijos, horarios y capacidad de atención pendientes.",
+    "produccion_maxima_posible": "En el conjunto de líneas se vende algo casi todos los días, aunque puede haber días sin venta de calzado.",
+    "area_numero_habitaciones": "La productora mencionó aproximadamente 'un salario mínimo', sin precisar si corresponde a ventas brutas, ingreso, utilidad o capacidad; no se usa como cálculo.",
+    "limitantes_productivos": "No se informaron cantidades por línea, talla, referencia ni valor.",
+    "limitantes_ambientales": "Actualmente limitada; se requieren estanterias, vitrinas, maniquies y avisos.",
+    "capacidad_instalada": "Existe un congelador, pero no se informaron volumen, potencia, temperatura ni carga máxima.",
+    "capacidad_utilizada": "La planta adquirida no tuvo potencia suficiente para operar el congelador de forma confiable.",
+    "produce_mismo_todo_ano": null,
+    "alcanza_para_demanda": null,
+    "necesidades_aumentar_sosteniblemente": "La reposición desde Bogotá está limitada por distancia, falta de vehículo y transporte no diario.",
+    "observaciones_o_comentarios": "Conclusión: La capacidad comercial no puede fijarse con la entrevista. Debe definirse por inventario, espacio, capital, rotación, demanda, transporte, exhibición, frío y disponibilidad de las responsables."
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Electricidad",
+        "estado_actual": "Red disponible, con cortes durante lluvias y vientos.",
+        "limite_restriccion": "Frecuencia, duración, voltaje y consumo pendientes.",
+        "afectacion": "Interrumpe el congelador.",
+        "efecto": "Pérdida de producto e ingreso.",
+        "incidencia": "Alta",
+        "accion_mejora": "Diagnóstico, protección y respaldo dimensionado."
+      },
+      {
+        "condicion": "Cadena de frío",
+        "estado_actual": "Congelador activo; condiciones no registradas.",
+        "limite_restriccion": "Temperatura, capacidad y mantenimiento pendientes.",
+        "afectacion": "Productos pueden descongelarse.",
+        "efecto": "Daño, inocuidad y merma.",
+        "incidencia": "Alta",
+        "accion_mejora": "Termómetro, bitácora, rotación y contingencia."
+      },
+      {
+        "condicion": "Respaldo energético",
+        "estado_actual": "Planta adquirida sin potencia suficiente.",
+        "limite_restriccion": "Potencia, estado, combustible y conexión pendientes.",
+        "afectacion": "No sostiene el congelador.",
+        "efecto": "Nuevas pérdidas y riesgo eléctrico.",
+        "incidencia": "Alta",
+        "accion_mejora": "Calcular carga y comparar solución solar o alternativa segura."
+      },
+      {
+        "condicion": "Lluvias y vientos",
+        "estado_actual": "Eventos fuertes asociados con interrupción eléctrica.",
+        "limite_restriccion": "No hay registro de frecuencia.",
+        "afectacion": "Afectan energía, transporte y ventas.",
+        "efecto": "Discontinuidad.",
+        "incidencia": "Alta",
+        "accion_mejora": "Plan de temporada y contactos de emergencia."
+      },
+      {
+        "condicion": "Clima y demanda",
+        "estado_actual": "Invierno baja congelados; sol aumenta ventas; chaquetas responden al frío.",
+        "limite_restriccion": "Sin cifras por temporada.",
+        "afectacion": "Cambia rotación por línea.",
+        "efecto": "Sobreinventario o agotados.",
+        "incidencia": "Media-Alta",
+        "accion_mejora": "Planificar inventario por clima y ventas reales."
+      },
+      {
+        "condicion": "Transporte",
+        "estado_actual": "Abastecimiento desde Bogotá y servicio no diario.",
+        "limite_restriccion": "Ruta, costo y frecuencia pendientes.",
+        "afectacion": "Dificulta reposición.",
+        "efecto": "Desabastecimiento o costo alto.",
+        "incidencia": "Medio-Alto",
+        "accion_mejora": "Consolidar compras y evaluar entregas."
+      },
+      {
+        "condicion": "Mercado",
+        "estado_actual": "Caserío pequeño; temor a un competidor similar.",
+        "limite_restriccion": "Demanda y población no medidas.",
+        "afectacion": "Divide clientela.",
+        "efecto": "Menores ventas.",
+        "incidencia": "Medio-Alto",
+        "accion_mejora": "Diferenciar calidad, variedad y servicio sin sobrecomprar."
+      },
+      {
+        "condicion": "Formalización",
+        "estado_actual": "Papeles e Industria y Comercio corresponden a otra dirección.",
+        "limite_restriccion": "Vigencia y requisitos actuales pendientes.",
+        "afectacion": "Puede limitar apoyos u operación.",
+        "efecto": "Trámite o restricción.",
+        "incidencia": "Alta",
+        "accion_mejora": "Actualizar información y obtener concepto aplicable."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Eléctrico",
+        "peligro": "Congelador, planta, tomas, extensiones y posibles variaciones de red.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "No se describieron controles técnicos.",
+        "accion": "Inspección eléctrica, protecciones y conexión segura."
+      },
+      {
+        "tipo": "Cadena de frío",
+        "peligro": "Pérdida de temperatura durante cortes.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Congelador existente; respaldo insuficiente.",
+        "accion": "Bitácora, termómetro, contingencia e inmovilización de producto dudoso."
+      },
+      {
+        "tipo": "Incendio",
+        "peligro": "Electricidad, planta, combustible y materiales de empaque.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Extintor y procedimiento no informados.",
+        "accion": "Evaluar extintor, ventilación, combustible y evacuación."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Carga de cajas, calzado, ropa, congelados y equipos.",
+        "aplica": true,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "Apoyo de la hija.",
+        "accion": "Límites de carga, ayudas y almacenamiento a altura segura."
+      },
+      {
+        "tipo": "Ergonómico",
+        "peligro": "Permanencia de pie, atención y organización del local.",
+        "aplica": true,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "No informado.",
+        "accion": "Pausas, silla adecuada y distribución de tareas."
+      },
+      {
+        "tipo": "Locativo",
+        "peligro": "Mercancía, cajas, exhibidores y espacio limitado.",
+        "aplica": true,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "La productora refiere orden.",
+        "accion": "Pasillos libres, anclaje y capacidad de estantes."
+      },
+      {
+        "tipo": "Caídas/golpes",
+        "peligro": "Cajas, maniquíes futuros, vitrinas y acceso de clientes.",
+        "aplica": true,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "No informados.",
+        "accion": "Orden, bases estables, iluminación y piso seco."
+      },
+      {
+        "tipo": "Vial",
+        "peligro": "Viajes a Bogotá y traslado de mercancía.",
+        "aplica": true,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "Transporte irregular.",
+        "accion": "Plan de viaje, carga protegida y transporte formal."
+      },
+      {
+        "tipo": "Climático",
+        "peligro": "Lluvias y vientos fuertes.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "No se reportó protocolo.",
+        "accion": "Alertas, cierre seguro y respaldo de energía."
+      },
+      {
+        "tipo": "Residuos",
+        "peligro": "Empaques de congelados y embalajes.",
+        "aplica": true,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "Caneca exterior y recolección ordinaria.",
+        "accion": "Separación, recipientes y frecuencia de entrega."
+      },
+      {
+        "tipo": "Público",
+        "peligro": "Atención de clientes y manejo de dinero o inventario.",
+        "aplica": true,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "No se reportaron incidentes.",
+        "accion": "Control de acceso, caja segura y contactos visibles."
+      },
+      {
+        "tipo": "Organización",
+        "peligro": "Continuidad dependiente de Gilma y su hija.",
+        "aplica": true,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "Apoyo familiar.",
+        "accion": "Horarios, reemplazo y cierre seguro."
+      },
+      {
+        "tipo": "Conclusión",
+        "peligro": "Gilma no percibe riesgos mayores, pero existen peligros eléctricos, de frío, incendio, carga, tránsito, clima y atención al público.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Orden personal como control referido.",
+        "accion": "Validar en visita e implementar plan básico SST."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Inspeccionar congelador, planta, red y protecciones",
+        "riesgo": "Eléctrico/incendio",
+        "responsable": "Técnico/Gilma",
+        "frecuencia": "Inmediata y anual",
+        "evidencia": "Informe"
+      },
+      {
+        "accion_preventiva": "Dimensionar respaldo energético según carga real",
+        "riesgo": "Continuidad / eléctrico",
+        "responsable": "Técnico/Gilma",
+        "frecuencia": "Antes de nueva inversión",
+        "evidencia": "Cálculo/cotización"
+      },
+      {
+        "accion_preventiva": "Registrar temperatura, cortes y pérdidas",
+        "riesgo": "Cadena de frío",
+        "responsable": "Gilma/hija",
+        "frecuencia": "Diaria/cuando ocurra",
+        "evidencia": "Bitácora"
+      },
+      {
+        "accion_preventiva": "Definir respuesta ante descongelamiento",
+        "riesgo": "Alimentario / financiero",
+        "responsable": "Gilma / proveedor",
+        "frecuencia": "Antes de operar sin vigilancia",
+        "evidencia": "Procedimiento"
+      },
+      {
+        "accion_preventiva": "Evaluar extintor, botiquín, señalización y evacuación",
+        "riesgo": "Incendio/emergencias",
+        "responsable": "Gilma / apoyo",
+        "frecuencia": "0-1 mes",
+        "evidencia": "Checklist"
+      },
+      {
+        "accion_preventiva": "Organizar carga y mobiliario con pasillos libres",
+        "riesgo": "Biomecánico / locativo",
+        "responsable": "Gilma/hija",
+        "frecuencia": "Cada compra",
+        "evidencia": "Inspección"
+      },
+      {
+        "accion_preventiva": "Planificar viajes y transporte seguro",
+        "riesgo": "Vial",
+        "responsable": "Gilma",
+        "frecuencia": "Cada compra",
+        "evidencia": "Comprobantes"
+      },
+      {
+        "accion_preventiva": "Separar residuos y mantener caneca señalizada",
+        "riesgo": "Ambiental/público",
+        "responsable": "Gilma/hija",
+        "frecuencia": "Diaria / semanal",
+        "evidencia": "Registro"
+      },
+      {
+        "accion_preventiva": "Definir horarios, respaldo y cierre por ausencia",
+        "riesgo": "Organización",
+        "responsable": "Gilma/hija",
+        "frecuencia": "Mensual",
+        "evidencia": "Calendario"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Tienda fisica",
+        "activo": true,
+        "descripcion": "Local en el caserío de La Unión",
+        "responsable": "Gilma/hija",
+        "frecuencia": "Según horario"
+      },
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "Cliente observa, elige y compra personalmente",
+        "responsable": "Gilma/hija",
+        "frecuencia": "Casi diaria en conjunto"
+      },
+      {
+        "canal": "Atención presencial",
+        "activo": true,
+        "descripcion": "Preferencia expresa de la productora",
+        "responsable": "Gilma",
+        "frecuencia": "Cada cliente"
+      },
+      {
+        "canal": "Clientes de otras veredas",
+        "activo": true,
+        "descripcion": "Se desplazan desde sectores cercanosS",
+        "responsable": "Gilma",
+        "frecuencia": "Eventual"
+      },
+      {
+        "canal": "Voz a voz/recompra",
+        "activo": true,
+        "descripcion": "Clientes vuelven por atención y calidad",
+        "responsable": "Clientes/Gilma",
+        "frecuencia": "Informal"
+      },
+      {
+        "canal": "WhatsApp/publicaciones",
+        "activo": false,
+        "descripcion": "La productora evita publicar porque prefiere mostrar el producto en persona",
+        "responsable": "No aplica actualmente",
+        "frecuencia": "No definido"
+      },
+      {
+        "canal": "Redes sociales",
+        "activo": false,
+        "descripcion": "No se reportaron",
+        "responsable": "Por definir",
+        "frecuencia": "Futura si la productora lo decide"
+      },
+      {
+        "canal": "Domicilio",
+        "activo": false,
+        "descripcion": "No se describieron entregas; la venta ocurre en el local",
+        "responsable": "Por definir",
+        "frecuencia": "No reportado"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Calzado",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Línea activa y colegial de buen desempeño.",
+        "logistica_plataforma": "Abastecimiento desde Bogotá.",
+        "precio_final": null,
+        "justificacion": "Definir con factura + transporte + gastos + margen; método actual no informado."
+      },
+      {
+        "servicio": "Ropa, jeans y chaquetas",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Demanda variable por clima.",
+        "logistica_plataforma": "Bogotá y ruta local.",
+        "precio_final": null,
+        "justificacion": "Registrar costo y margen por referencia."
+      },
+      {
+        "servicio": "Productos congelados",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Buen desempeño con clima soleado.",
+        "logistica_plataforma": "Cadena de frío por verificar.",
+        "precio_final": null,
+        "justificacion": "Incluir pérdidas eléctricas y no vender producto afectado."
+      },
+      {
+        "servicio": "Nuevas variedades",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Clientes solicitan más variedad.",
+        "logistica_plataforma": "Proveedor y ruta pendientes.",
+        "precio_final": null,
+        "justificacion": "Comprar piloto solo con solicitudes y capacidad."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": "Observación financiera: La productora no explicó cómo fija los precios y no aportó costos, gastos, márgenes ni flujo de caja. Mencionó una referencia mensual cercana a 'un salario mínimo', pero no quedó claro si corresponde a ventas brutas, ingreso, utilidad o capacidad, por lo que no se convierte a pesos ni se usa para cálculos. Una respuesta posterior quedó transcrita de forma incoherente y tampoco se utiliza. Deben registrarse ventas por línea, compras, transporte, energía, pérdidas de congelados, inventario, mano de obra y margen."
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Ventas actuales del negocio",
+        "cantidad_mensual": "Algo se vende casi todos los días en el conjunto de líneas",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Medio de pago pendiente",
+        "canal": "Local físico"
+      },
+      {
+        "concepto_servicio": "Calzado",
+        "cantidad_mensual": "Cantidad mensual no determinada",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Por definir",
+        "canal": "Venta directa"
+      },
+      {
+        "concepto_servicio": "Ropa y chaquetas",
+        "cantidad_mensual": "Cantidad mensual no determinada",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Por definir",
+        "canal": "Local"
+      },
+      {
+        "concepto_servicio": "Productos congelados",
+        "cantidad_mensual": "Cantidad variable según clima",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Por definir",
+        "canal": "Punto físico"
+      },
+      {
+        "concepto_servicio": "Ampliación futura",
+        "cantidad_mensual": "Más variedad según pedidos y espacio",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Por definir",
+        "canal": "Clientes territoriales"
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": "Proyección responsable: No se proyectan ventas, ingresos ni utilidades porque faltan cantidades, precios, costos, inventario, rotación, estacionalidad, pérdidas por cortes y naturaleza de la referencia mensual informada. La ampliación debe comenzar con registro de ventas reales, pedidos por talla o referencia y compras piloto; el respaldo energético requiere diagnóstico técnico y cotización independiente."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Familia con estudiantes",
+        "estrategia": "Registrar tallas y temporada; avisar cuando haya calzado colegial disponible.",
+        "medio": "Visita/contacto autorizado",
+        "frecuencia": "Antes y durante temporada escolar",
+        "responsable": "Gilma"
+      },
+      {
+        "cliente": "Cliente recurrente",
+        "estrategia": "Conservar buena atención, calidad y registro de recompra.",
+        "medio": "Local/ficha",
+        "frecuencia": "Cada venta",
+        "responsable": "Gilma / hija"
+      },
+      {
+        "cliente": "Cliente de otra vereda",
+        "estrategia": "Confirmar existencia, talla, precio y horario antes del desplazamiento.",
+        "medio": "Teléfono si el cliente lo autoriza",
+        "frecuencia": "Cada solicitud",
+        "responsable": "Gilma"
+      },
+      {
+        "cliente": "Consumidor de congelados",
+        "estrategia": "Asegurar producto íntegro, frío y disponibilidad por clima.",
+        "medio": "Local",
+        "frecuencia": "Cada compra",
+        "responsable": "Gilma/hija"
+      },
+      {
+        "cliente": "Cliente nuevo",
+        "estrategia": "Registrar necesidad, producto solicitado y satisfacción sin obligar canal digital.",
+        "medio": "Ficha básica",
+        "frecuencia": "Primera compra",
+        "responsable": "Gilma"
+      },
+      {
+        "cliente": "Cambio o reclamo",
+        "estrategia": "Registrar producto, talla, factura, causa, condición y respuesta del proveedor.",
+        "medio": "Local/formato",
+        "frecuencia": "Cuando ocurra",
+        "responsable": "Gilma/proveedor"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Calzado desde Bogotá",
+        "canal": "Proveedor a local",
+        "tiempo": "Según rotación",
+        "transporte_operacion": "Transporte por definir",
+        "condicion_calidad": "Factura, talla, modelo, integridad y cantidad",
+        "capacidad": "Según espacio y capital",
+        "costo": "Por calcular",
+        "responsable": "Gilma/proveedor"
+      },
+      {
+        "servicio_insumo": "Ropa desde Bogotá",
+        "canal": "Proveedor a local",
+        "tiempo": "Según rotación y clima",
+        "transporte_operacion": "Transporte por definir",
+        "condicion_calidad": "Factura, talla, referencia y estado",
+        "capacidad": "Inventario gradual",
+        "costo": "Por calcular",
+        "responsable": "Gilma"
+      },
+      {
+        "servicio_insumo": "Productos congelados",
+        "canal": "Cadena de frío",
+        "tiempo": "Según demanda",
+        "transporte_operacion": "Medio y tiempo por verificar",
+        "condicion_calidad": "Temperatura, empaque y fecha",
+        "capacidad": "Según congelador validado",
+        "costo": "Por calcular",
+        "responsable": "Gilma/proveedor"
+      },
+      {
+        "servicio_insumo": "Venta local",
+        "canal": "Cliente acude al negocio",
+        "tiempo": "Casi diaria en conjunto",
+        "transporte_operacion": "Sin entrega reportada",
+        "condicion_calidad": "Producto correcto y conforme",
+        "capacidad": "Inventario disponible",
+        "costo": "Incluido en precio",
+        "responsable": "Gilma/hija"
+      },
+      {
+        "servicio_insumo": "Cliente de otra vereda",
+        "canal": "Desplazamiento al caserío",
+        "tiempo": "Eventual",
+        "transporte_operacion": "A cargo del cliente",
+        "condicion_calidad": "Confirmación previa recomendada",
+        "capacidad": "Por solicitud",
+        "costo": "No determinado",
+        "responsable": "Gilma"
+      },
+      {
+        "servicio_insumo": "Conclusión",
+        "canal": "La logística depende de Bogotá y de transporte no diario.",
+        "tiempo": "Pendiente de estandarizar",
+        "transporte_operacion": "Consolidar compras y comparar proveedores o entregas",
+        "condicion_calidad": "Mantener frio y proteger mercancía",
+        "capacidad": "Inventario gradual",
+        "costo": "No calculado",
+        "responsable": "Gilma / apoyo"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Identificación",
+        "informacion": "Variedades Rose, propietaria, ubicación, teléfono, documentos y responsables.",
+        "responsable": "Gilma",
+        "medio": "Ficha maestra",
+        "frecuencia": "Cuando cambie",
+        "evidencia": "Soportes"
+      },
+      {
+        "elemento": "Proveedor",
+        "informacion": "Nombre, contacto, ciudad, factura, cambios, crédito y entrega.",
+        "responsable": "Gilma",
+        "medio": "Base de proveedores",
+        "frecuencia": "Cada compra",
+        "evidencia": "Factura"
+      },
+      {
+        "elemento": "Calzado",
+        "informacion": "Marca, referencia, talla, color, costo, precio, entrada, salida y saldo.",
+        "responsable": "Gilma/hija",
+        "medio": "Kárdex",
+        "frecuencia": "Cada movimiento",
+        "evidencia": "Inventario"
+      },
+      {
+        "elemento": "Ropa",
+        "informacion": "Tipo, talla, referencia, temporada, costo, precio y saldo.",
+        "responsable": "Gilma/hija",
+        "medio": "Kárdex",
+        "frecuencia": "Cada movimiento",
+        "evidencia": "Inventario"
+      },
+      {
+        "elemento": "Congelados/ frío",
+        "informacion": "Producto, lote o fecha, cantidad, temperatura, corte, pérdida y venta.",
+        "responsable": "Gilma / hija",
+        "medio": "Bitácora",
+        "frecuencia": "Diaria/cada evento",
+        "evidencia": "Planilla"
+      },
+      {
+        "elemento": "Venta",
+        "informacion": "Fecha, producto, cantidad, precio, pago, cliente si autoriza y cambio.",
+        "responsable": "Gilma",
+        "medio": "Cuaderno/archivo",
+        "frecuencia": "Cada venta",
+        "evidencia": "Comprobante"
+      },
+      {
+        "elemento": "Residuos y pérdidas",
+        "informacion": "Empaques, producto dañado, cantidad, causa y destino.",
+        "responsable": "Gilma",
+        "medio": "Registro",
+        "frecuencia": "Según generación",
+        "evidencia": "Fotos/soporte"
+      },
+      {
+        "elemento": "QR gradual",
+        "informacion": "Historia, ubicación, líneas vigentes, horario y prácticas verificadas.",
+        "responsable": "Gilma / apoyo",
+        "medio": "Código QR",
+        "frecuencia": "Cuando existan soportes",
+        "evidencia": "Etiqueta"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Estanterías",
+        "descripcion": "Mobiliario para organizar calzado y ropa con capacidad y anclaje seguros",
+        "valor_unitario": null,
+        "cantidad": "Según diseño del local",
+        "total": null,
+        "requisito": "Medidas, carga y pasillos",
+        "fuente": "Apoyo/capital propio"
+      },
+      {
+        "tipo": "Vitrinas",
+        "descripcion": "Exhibición protegida y visible",
+        "valor_unitario": null,
+        "cantidad": "Según distribución",
+        "total": null,
+        "requisito": "Vidrio, estabilidad y acceso",
+        "fuente": "Apoyo/propio"
+      },
+      {
+        "tipo": "Maniquíes",
+        "descripcion": "Exhibición de prendas",
+        "valor_unitario": null,
+        "cantidad": "Cantidad por definir",
+        "total": null,
+        "requisito": "Base estable y espacio",
+        "fuente": "Apoyo/propio"
+      },
+      {
+        "tipo": "Avisos",
+        "descripcion": "Identificación y señalización del negocio",
+        "valor_unitario": null,
+        "cantidad": "Según diseño",
+        "total": null,
+        "requisito": "Ubicación, permiso y fijación",
+        "fuente": "Apoyo/propio"
+      },
+      {
+        "tipo": "Respaldo energético",
+        "descripcion": "Solución dimensionada para congelador: solar u otra alternativa técnica",
+        "valor_unitario": null,
+        "cantidad": "Según cálculo de carga",
+        "total": null,
+        "requisito": "Diagnóstico eléctrico, autonomía y seguridad",
+        "fuente": "Apoyo solicitado / propio"
+      },
+      {
+        "tipo": "Congelador y monitoreo",
+        "descripcion": "Mantenimiento, termómetro, protección y contingencia",
+        "valor_unitario": null,
+        "cantidad": "Según diagnóstico",
+        "total": null,
+        "requisito": "Equipo apto y registro",
+        "fuente": "Propio / apoyo"
+      },
+      {
+        "tipo": "Inventario piloto",
+        "descripcion": "Más variedad de tallas, referencias y prendas según demanda",
+        "valor_unitario": null,
+        "cantidad": "Según pedidos",
+        "total": null,
+        "requisito": "Rotación, capital y espacio",
+        "fuente": "Propio / apoyo"
+      },
+      {
+        "tipo": "Formalización y registros",
+        "descripcion": "Actualización de dirección, documentos, inventario, ventas y costos",
+        "valor_unitario": null,
+        "cantidad": "Según requisito",
+        "total": null,
+        "requisito": "Concepto y archivo",
+        "fuente": "Gestión propia / institucional"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Calzado colegial",
+        "descripcion": "Inventario por talla y referencia",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Costo, precio y rotación pendientes."
+      },
+      {
+        "tipo": "Calzado general",
+        "descripcion": "Inventario comercial",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Proveedores y cantidades pendientes."
+      },
+      {
+        "tipo": "Jeans y ropa",
+        "descripcion": "Prendas para venta",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Tallas, referencias y margen pendientes."
+      },
+      {
+        "tipo": "Chaquetas",
+        "descripcion": "Inventario estacional",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Ajustar a clima y demanda."
+      },
+      {
+        "tipo": "Productos congelados",
+        "descripcion": "Compra y conservación",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Incluir energía, transporte y merma."
+      },
+      {
+        "tipo": "Transporte",
+        "descripcion": "Viaje o flete desde Bogotá",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Ruta, frecuencia y costo pendientes."
+      },
+      {
+        "tipo": "Electricidad",
+        "descripcion": "Congelador e iluminación",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Medir consumo y cortes."
+      },
+      {
+        "tipo": "Pérdidas por frío",
+        "descripcion": "Productos dañados durante cortes",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Cuantificar unidades, costo y destino."
+      },
+      {
+        "tipo": "Mobiliario",
+        "descripcion": "Estanterías, vitrinas y maniquies",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Prioridad de exhibición."
+      },
+      {
+        "tipo": "Respaldo energético",
+        "descripcion": "Diagnóstico y solución para congelador",
+        "valor_mensual_ciclo": null,
+        "observaciones": "No comprar sin cálculo de carga."
+      },
+      {
+        "tipo": "Trabajo y formalización",
+        "descripcion": "Tiempo de Gilma, apoyo familiar y trámites",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Registrar costo y responsabilidades."
+      },
+      {
+        "tipo": "Costo conocido parcial",
+        "descripcion": "No consolidable",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Construir costo y margen por línea."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "Mes 1",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Definir linea base."
+      },
+      {
+        "mes": "Mes 2",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "No invertir en respaldo sin cálculo."
+      },
+      {
+        "mes": "Mes 3",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Cotizar antes de comprar."
+      },
+      {
+        "mes": "Mes 4",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Medir rotación."
+      },
+      {
+        "mes": "Mes 5",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Validar funcionamiento."
+      },
+      {
+        "mes": "Mes 6",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Revisar margen."
+      },
+      {
+        "mes": "Mes 7",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Eliminar referencias sin salida."
+      },
+      {
+        "mes": "Mes 8",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "No sobreabastecer."
+      },
+      {
+        "mes": "Mes 9",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Comparar costos."
+      },
+      {
+        "mes": "Mes 10",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Auditar pérdidas."
+      },
+      {
+        "mes": "Mes 11",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Preparar cierre anual."
+      },
+      {
+        "mes": "Mes 12",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Consolidar compras, ventas y pérdidas."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "Registro mínimo: El flujo de caja debe construirse con ventas reales por línea y no con la referencia ambigua de un salario mínimo. Para cada mes deben registrarse producto, talla o presentación, entradas, salidas, saldo, costo, transporte, precio, pago, crédito, energía, pérdidas por cortes, mobiliario, mano de obra, residuos y balance. No se proyectan utilidades hasta contar con al menos un ciclo de información confiable."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Agua de acueducto",
+        "estado": "Red disponible y uso responsable referido.",
+        "cantidad": "Consumo no medido",
+        "impacto_1_a_5": 2,
+        "accion": "Medir consumo y mantener buenas prácticas."
+      },
+      {
+        "variable": "Electricidad",
+        "estado": "Congelador e iluminación; cortes por lluvias y vientos.",
+        "cantidad": "kWh y cortes pendientes",
+        "impacto_1_a_5": 5,
+        "accion": "Medir y proteger equipos."
+      },
+      {
+        "variable": "Productos congelados",
+        "estado": "Se han presentado daños por falta de energía.",
+        "cantidad": "Cantidad y valor pendientes",
+        "impacto_1_a_5": 5,
+        "accion": "Registrar pérdidas y asegurar frío."
+      },
+      {
+        "variable": "Empaques de congelados",
+        "estado": "Se depositan en caneca y van a recolección ordinaria.",
+        "cantidad": "No medidos",
+        "impacto_1_a_5": 3,
+        "accion": "Separar cuando sean aprovechables."
+      },
+      {
+        "variable": "Cartón y plástico comercial",
+        "estado": "Generación no descrita.",
+        "cantidad": "No medida",
+        "impacto_1_a_5": 3,
+        "accion": "Caracterizar y separar."
+      },
+      {
+        "variable": "Transporte",
+        "estado": "Abastecimiento desde Bogotá.",
+        "cantidad": "Viajes, km y costo pendientes",
+        "impacto_1_a_5": 4,
+        "accion": "Consolidar compras y medir huella."
+      },
+      {
+        "variable": "Inventario",
+        "estado": "Variedad y cantidades no cuantificadas.",
+        "cantidad": "No determinado",
+        "impacto_1_a_5": 3,
+        "accion": "Evitar sobreinventario por tallas o clima."
+      },
+      {
+        "variable": "Respaldo energético",
+        "estado": "Planta insuficiente; alternativa solar deseada.",
+        "cantidad": "Potencia y autonomia pendientes",
+        "impacto_1_a_5": 5,
+        "accion": "Dimensionar solución segura y eficiente."
+      },
+      {
+        "variable": "Clima",
+        "estado": "Sol, lluvia y frío cambian ventas y continuidad eléctrica.",
+        "cantidad": "Sin registro",
+        "impacto_1_a_5": 4,
+        "accion": "Registrar temporada, ventas y cortes."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "Consumo de agua",
+        "que_se_mide": "$m^{3}$ o litros usados en la unidad.",
+        "dato_inicial": "No medido.",
+        "meta": "Construir línea base.",
+        "frecuencia": "Mensual",
+        "responsable": "Gilma",
+        "evidencia": "Factura/lectura"
+      },
+      {
+        "indicador": "Consumo eléctrico",
+        "que_se_mide": "kWh de congelador e iluminación.",
+        "dato_inicial": "No medido.",
+        "meta": "Medir 100%.",
+        "frecuencia": "Mensual",
+        "responsable": "Gilma",
+        "evidencia": "Factura/lectura"
+      },
+      {
+        "indicador": "Temperatura de congelación",
+        "que_se_mide": "Temperatura, aperturas, cortes y duración.",
+        "dato_inicial": "Sin registro.",
+        "meta": "100% de lecturas definidas.",
+        "frecuencia": "Diaria/continua",
+        "responsable": "Gilma/hija",
+        "evidencia": "Bitácora"
+      },
+      {
+        "indicador": "Pérdida de congelados",
+        "que_se_mide": "Unidades y valor dañados por cortes.",
+        "dato_inicial": "No cuantificada.",
+        "meta": "Reducir a cero por causa controlable.",
+        "frecuencia": "Cada evento",
+        "responsable": "Gilma",
+        "evidencia": "Registro/fotos"
+      },
+      {
+        "indicador": "Rotación de inventario",
+        "que_se_mide": "Entradas, salidas, saldo, talla y días.",
+        "dato_inicial": "No medida.",
+        "meta": "Registrar 100%.",
+        "frecuencia": "Semanal/mensual",
+        "responsable": "Gilma",
+        "evidencia": "Kárdex"
+      },
+      {
+        "indicador": "Residuos ordinarios",
+        "que_se_mide": "kg o bolsas entregadas a recolección.",
+        "dato_inicial": "No medidos.",
+        "meta": "Medir y separar.",
+        "frecuencia": "Semanal/mensual",
+        "responsable": "Gilma/hija",
+        "evidencia": "Planilla"
+      },
+      {
+        "indicador": "Reciclables",
+        "que_se_mide": "Cartón, plástico y embalajes aprovechables.",
+        "dato_inicial": "No caracterizados.",
+        "meta": "Separar 100% de lo aprovechable.",
+        "frecuencia": "Mensual",
+        "responsable": "Gilma",
+        "evidencia": "Registro/fotos"
+      },
+      {
+        "indicador": "Transporte",
+        "que_se_mide": "Viajes, km, carga y costo por compra.",
+        "dato_inicial": "No medido.",
+        "meta": "Medir 100%.",
+        "frecuencia": "Cada viaje",
+        "responsable": "Gilma",
+        "evidencia": "Comprobantes"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Envolturas de congelados",
+        "cantidad": "No medido",
+        "manejo_actual": "Se depositan en la caneca y se entregan al carro de basura.",
+        "accion_circular": "Separar según material y mantener caneca visible.",
+        "destino": "Recolección/ reciclaje si aplica",
+        "responsable": "Gilma/hija"
+      },
+      {
+        "residuo_recurso": "Cartón de calzado",
+        "cantidad": "Cantidad pendiente",
+        "manejo_actual": "Manejo no descrito.",
+        "accion_circular": "Reutilizar para almacenamiento o entregar limpio y seco.",
+        "destino": "Reúso / reciclaje",
+        "responsable": "Gilma"
+      },
+      {
+        "residuo_recurso": "Plásticos y bolsas",
+        "cantidad": "Cantidad pendiente",
+        "manejo_actual": "Manejo no descrito.",
+        "accion_circular": "Reducir, clasificar y entregar a aprovechamiento si aplica.",
+        "destino": "Reúso / reciclaje",
+        "responsable": "Gilma"
+      },
+      {
+        "residuo_recurso": "Productos congelados dañados",
+        "cantidad": "Cantidad y valor pendientes",
+        "manejo_actual": "Se reportan pérdidas durante cortes.",
+        "accion_circular": "Aislar, registrar y gestionar según orientación del proveedor y recolección aplicable.",
+        "destino": "Destino por verificar",
+        "responsable": "Gilma / proveedor"
+      },
+      {
+        "residuo_recurso": "Residuos ordinarios",
+        "cantidad": "No medidos",
+        "manejo_actual": "Se entregan al carro de la basura.",
+        "accion_circular": "Usar recipiente, cerrar bolsas y respetar frecuencia.",
+        "destino": "Recolección autorizada",
+        "responsable": "Gilma"
+      },
+      {
+        "residuo_recurso": "Embalajes de ropa",
+        "cantidad": "Cantidad pendiente",
+        "manejo_actual": "Manejo no descrito.",
+        "accion_circular": "Separar cartón y plástico limpios.",
+        "destino": "Reciclaje",
+        "responsable": "Gilma/hija"
+      },
+      {
+        "residuo_recurso": "Equipos eléctricos futuros",
+        "cantidad": "No aplica actualmente",
+        "manejo_actual": "Planta actual por evaluar; sistema solar deseado.",
+        "accion_circular": "Mantener, reparar o entregar equipos obsoletos a ruta autorizada.",
+        "destino": "Gestor posconsumo",
+        "responsable": "Gilma/técnico"
+      }
+    ],
+    "conclusion_registro_unico": {
+      "resumen": "No existe balance de residuos. Hay caneca y recolección, pero no se documentó separación.",
+      "accion": "Caracterizar, separar y registrar pérdidas y empaques.",
+      "area": "Gestión integral",
+      "responsable": "Gilma"
+    },
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "Agua",
+        "indicador": "Uso eficiente",
+        "descripcion": "Acueducto y consumo del local.",
+        "estado": "Buena intención reportada; cantidad sin medir.",
+        "calificacion_1_a_5": 3,
+        "accion": "Medir y mantener uso responsable.",
+        "evidencia": "Factura/registro"
+      },
+      {
+        "factor": "Proceso",
+        "indicador": "Capacidad y repetibilidad",
+        "descripcion": "Compra, transporte, exhibición, frío y venta.",
+        "estado": "Operación activa, no documentada.",
+        "calificacion_1_a_5": 3,
+        "accion": "Crear procedimiento básico.",
+        "evidencia": "Registro"
+      },
+      {
+        "factor": "Insumos",
+        "indicador": "Trazabilidad",
+        "descripcion": "Calzado, ropa y congelados.",
+        "estado": "Facturas referidas; inventario y costos pendientes.",
+        "calificacion_1_a_5": 2,
+        "accion": "Kárdex por línea.",
+        "evidencia": "Archivo"
+      },
+      {
+        "factor": "Residuos",
+        "indicador": "Separación y destino",
+        "descripcion": "Envolturas, cartón, plástico y producto dañado.",
+        "estado": "Caneca y recolección; separación no documentada.",
+        "calificacion_1_a_5": 2,
+        "accion": "Clasificar y registrar.",
+        "evidencia": "Planilla"
+      },
+      {
+        "factor": "Almacenamiento",
+        "indicador": "Exhibición y conservación",
+        "descripcion": "Mercancía, congelador y mobiliario.",
+        "estado": "Exhibición limitada y frío vulnerable.",
+        "calificacion_1_a_5": 2,
+        "accion": "Mobiliario seguro y monitoreo.",
+        "evidencia": "Checklist"
+      },
+      {
+        "factor": "Infraestructura",
+        "indicador": "Continuidad energética",
+        "descripcion": "Local, red, planta y congelador.",
+        "estado": "Planta insuficiente y cortes recurrentes.",
+        "calificacion_1_a_5": 2,
+        "accion": "Diagnóstico y respaldo.",
+        "evidencia": "Informe"
+      },
+      {
+        "factor": "SST",
+        "indicador": "Prevención",
+        "descripcion": "Electricidad, carga, público, viaje y emergencias.",
+        "estado": "Riesgos subestimados; controles no documentados.",
+        "calificacion_1_a_5": 2,
+        "accion": "Plan, dotación y capacitación.",
+        "evidencia": "Checklist"
+      },
+      {
+        "factor": "Comercial",
+        "indicador": "Demanda y recompra",
+        "descripcion": "Clientes del caserío y varias veredas.",
+        "estado": "Ventas frecuentes y retorno de clientes.",
+        "calificacion_1_a_5": 4,
+        "accion": "Registrar solicitudes y ventas.",
+        "evidencia": "Base"
+      },
+      {
+        "factor": "Finanzas",
+        "indicador": "Costo y margen",
+        "descripcion": "Compra, transporte, energía, pérdida y venta.",
+        "estado": "Sin cifras confiables.",
+        "calificacion_1_a_5": 1,
+        "accion": "Matriz por línea.",
+        "evidencia": "Formato"
+      },
+      {
+        "factor": "Organización",
+        "indicador": "Roles y continuidad",
+        "descripcion": "Gilma y su hija .",
+        "estado": "Apoyo familiar; funciones y respaldo pendientes.",
+        "calificacion_1_a_5": 3,
+        "accion": "Plan de horarios y roles.",
+        "evidencia": "Plan"
+      },
+      {
+        "factor": "Trazabilidad",
+        "indicador": "Control integral",
+        "descripcion": "Proveedor, inventario, venta, frío y residuo.",
+        "estado": "Facturas referidas; registros estructurados no reportados.",
+        "calificacion_1_a_5": 3,
+        "accion": "Implementar archivo.",
+        "evidencia": "Planillas"
+      }
+    ],
+    "resultado_preliminar_registro_unico": "Resultado preliminar: Calificación técnica propuesta de 27 sobre 55 puntos, sujeta a visita y evidencias.",
+    "observaciones_o_comentarios": "Resultado preliminar: Calificación técnica propuesta de 27 sobre 55 puntos, sujeta a visita y evidencias. Las fortalezas principales son la continuidad aproximada de cuatro años, la clientela que regresa, las ventas frecuentes, la diversidad de líneas, la atención directa, el apoyo familiar y el uso de facturas. Las brechas críticas están en registros financieros, inventario, exhibición, transporte, formalización para la dirección actual, seguridad energética del congelador, cuantificación de pérdidas, residuos y controles de SST."
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "Pérdidas por frío",
+        "accion": "Registrar cortes, temperatura, unidades dañadas y destino.",
+        "prioridad": "Alta",
+        "plazo": "Inmediato",
+        "responsable": "Gilma / hija",
+        "recursos": "Bitácora y recipientes",
+        "indicador": "% eventos trazados",
+        "evidencia": "Registro"
+      },
+      {
+        "impacto": "Energia",
+        "accion": "Diagnosticar carga y seleccionar respaldo seguro y eficiente.",
+        "prioridad": "Alta",
+        "plazo": "0-2 meses",
+        "responsable": "Técnico/Gilma",
+        "recursos": "Medición y cotizaciones",
+        "indicador": "Autonomía verificada",
+        "evidencia": "Informe"
+      },
+      {
+        "impacto": "Agua",
+        "accion": "Medir consumo y mantener uso responsable del acueducto.",
+        "prioridad": "Media",
+        "plazo": "Desde el primer mes",
+        "responsable": "Gilma",
+        "recursos": "Factura/planilla",
+        "indicador": "$m^{3}$ por mes",
+        "evidencia": "Registro"
+      },
+      {
+        "impacto": "Empaques",
+        "accion": "Separar envolturas, cartón y plástico aprovechables.",
+        "prioridad": "Media-Alta",
+        "plazo": "0-1 mes",
+        "responsable": "Gilma/hija",
+        "recursos": "Recipientes y señalización",
+        "indicador": "% residuos separados",
+        "evidencia": "Fotos"
+      },
+      {
+        "impacto": "Transporte",
+        "accion": "Consolidar compras y registrar ruta, carga y costo.",
+        "prioridad": "Media-Alta",
+        "plazo": "Cada compra",
+        "responsable": "Gilma",
+        "recursos": "Planilla y comprobantes",
+        "indicador": "Costo por unidad",
+        "evidencia": "Registro"
+      },
+      {
+        "impacto": "Exhibición",
+        "accion": "Instalar mobiliario estable, seguro y ajustado al espacio.",
+        "prioridad": "Alta",
+        "plazo": "0-3 meses",
+        "responsable": "Gilma/apoyo",
+        "recursos": "Diseño y cotización",
+        "indicador": "% mobiliario instalado",
+        "evidencia": "Informe"
+      },
+      {
+        "impacto": "Formalización",
+        "accion": "Actualizar dirección y verificar requisitos aplicables.",
+        "prioridad": "Alta",
+        "plazo": "0-2 meses",
+        "responsable": "Gilma/entidad",
+        "recursos": "Documentos y asistencia",
+        "indicador": "% trámites definidos",
+        "evidencia": "Concepto"
+      },
+      {
+        "impacto": "Inventario",
+        "accion": "Comprar según pedidos, tallas, clima y rotación.",
+        "prioridad": "Alta",
+        "plazo": "Cada ciclo",
+        "responsable": "Gilma",
+        "recursos": "Kárdex",
+        "indicador": "Rotación / pérdidas",
+        "evidencia": "Reporte"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": "Cortes de energía",
+        "situacion": "Lluvias y vientos han ocasionado interrupciones que afectan el congelador.",
+        "riesgo": "Alto",
+        "accion_propuesta": "Dimensionar respaldo, monitorear temperatura y establecer contingencia."
+      },
+      {
+        "aspecto": "Lluvias fuertes",
+        "situacion": "Reducen ventas de congelados y pueden afectar transporte y red eléctrica.",
+        "riesgo": "Medio-Alto",
+        "accion_propuesta": "Ajustar inventario, compras y rutas a pronóstico y temporada."
+      },
+      {
+        "aspecto": "Vientos fuertes",
+        "situacion": "Se asocian con fallas de alumbrado eléctrico.",
+        "riesgo": "Alto",
+        "accion_propuesta": "Revisar instalaciones, contactos y protocolo de cierre."
+      },
+      {
+        "aspecto": "Días soleados",
+        "situacion": "Aumentan la demanda de productos congelados.",
+        "riesgo": "Oportunidad/ riesgo de falta de inventario",
+        "accion_propuesta": "Planificar mínimos sin exceder capacidad de frio."
+      },
+      {
+        "aspecto": "Frío e invierno",
+        "situacion": "Puede favorecer chaquetas y otras prendas, pero bajar congelados.",
+        "riesgo": "Medio",
+        "accion_propuesta": "Usar registros estacionales para equilibrar surtido."
+      },
+      {
+        "aspecto": "Conclusión",
+        "situacion": "La adaptación depende de energia resiliente, frío controlado, inventario estacional y transporte planificado.",
+        "riesgo": "Alto",
+        "accion_propuesta": "Cerrar brechas antes de ampliar congelados o mercancía."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Cadena de frío",
+        "riesgo": "Producto descongelado o fuera de condición",
+        "causa": "Corte eléctrico y respaldo insuficiente.",
+        "consecuencia": "Pérdida económica y posible producto no conforme.",
+        "nivel": "Alto",
+        "prevencion": "Temperatura, alarma, rotación y contingencia.",
+        "respuesta": "Aislar, registrar y consultar proveedor."
+      },
+      {
+        "tipo": "Eléctrico",
+        "riesgo": "Sobrecarga o conexión inadecuada",
+        "causa": "Planta insuficiente o sistema sin diagnóstico.",
+        "consecuencia": "Daño de equipo, incendio o lesión.",
+        "nivel": "Alto",
+        "prevencion": "Cálculo de carga y protecciones.",
+        "respuesta": "Desconectar, evacuar y solicitar técnico."
+      },
+      {
+        "tipo": "Financiero",
+        "riesgo": "Pérdidas por cortes",
+        "causa": "Producto congelado dañado.",
+        "consecuencia": "Menor capital y flujo.",
+        "nivel": "Alto",
+        "prevencion": "Registro, respaldo y seguro si aplica.",
+        "respuesta": "Detener compra y cuantificar pérdida."
+      },
+      {
+        "tipo": "Comercial",
+        "riesgo": "Competidor en mercado pequeño",
+        "causa": "Base de clientes limitada.",
+        "consecuencia": "Disminución de ventas.",
+        "nivel": "Medio-Alto",
+        "prevencion": "Calidad, atención, surtido medido y diferenciación.",
+        "respuesta": "Ajustar inventario y servicio."
+      },
+      {
+        "tipo": "Inventario",
+        "riesgo": "Tallas o prendas sin salida",
+        "causa": "Compra sin datos de demanda.",
+        "consecuencia": "Capital inmovilizado.",
+        "nivel": "Medio-Alto",
+        "prevencion": "Pedidos piloto y kárdex.",
+        "respuesta": "Detener reposición y promover solo producto conforme."
+      },
+      {
+        "tipo": "Suministro",
+        "riesgo": "Retraso de reposición",
+        "causa": "Distancia y transporte no diario.",
+        "consecuencia": "Desabastecimiento.",
+        "nivel": "Medio-Alto",
+        "prevencion": "Consolidar viajes y comparar entregas.",
+        "respuesta": "Priorizar líneas críticas."
+      },
+      {
+        "tipo": "Regulatorio",
+        "riesgo": "Documentación desactualizada",
+        "causa": "Papeles corresponden a otra dirección.",
+        "consecuencia": "Dificultad para operar o acceder a apoyo.",
+        "nivel": "Alto",
+        "prevencion": "Concepto y actualización documental.",
+        "respuesta": "Regularizar antes de trámites o expansión."
+      },
+      {
+        "tipo": "SST",
+        "riesgo": "Lesión por carga o caída",
+        "causa": "Cajas, mobiliario y viajes.",
+        "consecuencia": "Lesión o ausencia.",
+        "nivel": "Medio-Alto",
+        "prevencion": "Ayudas, orden y capacitación.",
+        "respuesta": "Primeros auxilios y reporte."
+      },
+      {
+        "tipo": "Ambiental",
+        "riesgo": "Mezcla de empaques y producto dañado",
+        "causa": "Separación no documentada.",
+        "consecuencia": "Mayor disposición y contaminación.",
+        "nivel": "Medio",
+        "prevencion": "Segregación y registro.",
+        "respuesta": "Contener y entregar correctamente."
+      },
+      {
+        "tipo": "Climático",
+        "riesgo": "Lluvias y vientos",
+        "causa": "Eventos fuertes.",
+        "consecuencia": "Cierre, cortes y menor venta.",
+        "nivel": "Alto",
+        "prevencion": "Alertas, inventario estacional y contingencia.",
+        "respuesta": "Cerrar de forma segura."
+      },
+      {
+        "tipo": "Organización",
+        "riesgo": "Interrupción por ausencia",
+        "causa": "Dependencia de Gilma y su hija.",
+        "consecuencia": "Cierre y falta de control de frío.",
+        "nivel": "Alto",
+        "prevencion": "Roles, monitoreo y persona de respaldo.",
+        "respuesta": "Asegurar frío y suspender operación si es necesario."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "Completar identidad comercial, dirección y documentos vigentes.",
+        "componente": "Identidad/legal",
+        "responsable": "Gilma / apoyo",
+        "tiempo": "0-1 mes",
+        "recursos": "Soportes y orientación",
+        "resultado": "Ficha actualizada",
+        "evidencia": "Documentos"
+      },
+      {
+        "actividad": "Realizar inventario por línea, talla, costo, precio y rotación.",
+        "componente": "Comercial/financiero",
+        "responsable": "Gilma/hija",
+        "tiempo": "Inmediato",
+        "recursos": "Formato y etiquetas",
+        "resultado": "Inventario confiable",
+        "evidencia": "Kárdex"
+      },
+      {
+        "actividad": "Medir ventas, gastos, transporte, energía, pérdidas y margen.",
+        "componente": "Financiero",
+        "responsable": "Gilma/asesor",
+        "tiempo": "Desde el primer mes",
+        "recursos": "Planilla",
+        "resultado": "Flujo de caja real",
+        "evidencia": "Reporte"
+      },
+      {
+        "actividad": "Diagnosticar congelador, planta, red y carga requerida.",
+        "componente": "Energía / frio",
+        "responsable": "Técnico/Gilma",
+        "tiempo": "0-1 mes",
+        "recursos": "Medición e informe",
+        "resultado": "Requerimiento definido",
+        "evidencia": "Concepto"
+      },
+      {
+        "actividad": "Cotizar e instalar respaldo energético técnicamente adecuado.",
+        "componente": "Continuidad",
+        "responsable": "Gilma / apoyo",
+        "tiempo": "Después del diagnóstico",
+        "recursos": "Cotizaciones y capital",
+        "resultado": "Frío continuo",
+        "evidencia": "Prueba"
+      },
+      {
+        "actividad": "Cotizar e instalar estanterías, vitrinas, maniquíes y avisos.",
+        "componente": "Productivo/comercial",
+        "responsable": "Gilma / apoyo",
+        "tiempo": "0-3 meses",
+        "recursos": "Diseño y cotización",
+        "resultado": "Mejor exhibición",
+        "evidencia": "Fotos"
+      },
+      {
+        "actividad": "Actualizar clientes y registrar tallas, referencias y pedidos.",
+        "componente": "Mercado",
+        "responsable": "Gilma",
+        "tiempo": "0-1 mes",
+        "recursos": "Ficha de solicitudes",
+        "resultado": "Demanda validada",
+        "evidencia": "Base"
+      },
+      {
+        "actividad": "Consolidar compras y transporte desde Bogotá.",
+        "componente": "Logistica",
+        "responsable": "Gilma",
+        "tiempo": "Cada compra",
+        "recursos": "Ruta y comprobantes",
+        "resultado": "Menor costo por unidad",
+        "evidencia": "Registro"
+      },
+      {
+        "actividad": "Implementar controles SST, emergencia y cierre seguro.",
+        "componente": "SST",
+        "responsable": "Gilma / apoyo",
+        "tiempo": "0-1 mes",
+        "recursos": "Dotación y capacitación",
+        "resultado": "Riesgos controlados",
+        "evidencia": "Checklist"
+      },
+      {
+        "actividad": "Separar residuos y registrar productos dañados.",
+        "componente": "Ambiental",
+        "responsable": "Gilma / hija",
+        "tiempo": "Desde el primer mes",
+        "recursos": "Recipientes y planilla",
+        "resultado": "Residuos trazados",
+        "evidencia": "Registro"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "Organización",
+        "indicador": "Horarios, funciones y persona de respaldo",
+        "meta": "100% de jornadas con responsable o cierre seguro.",
+        "frecuencia": "Semanal/mensual",
+        "responsable": "Gilma",
+        "evidencia": "Calendario"
+      },
+      {
+        "dimension": "Inventario",
+        "indicador": "Entradas, salidas, talla, saldo y ubicación",
+        "meta": "Registrar 100% de productos.",
+        "frecuencia": "Cada movimiento",
+        "responsable": "Gilma/hija",
+        "evidencia": "Kárdex"
+      },
+      {
+        "dimension": "Rotación",
+        "indicador": "Días de inventario por referencia",
+        "meta": "Reponer solo productos con salida o pedido.",
+        "frecuencia": "Mensual",
+        "responsable": "Gilma",
+        "evidencia": "Reporte"
+      },
+      {
+        "dimension": "Cadena de frío",
+        "indicador": "Temperatura y cortes",
+        "meta": "100% de lecturas definidas.",
+        "frecuencia": "Diaria/continua",
+        "responsable": "Gilma/hija",
+        "evidencia": "Bitácora"
+      },
+      {
+        "dimension": "Pérdidas",
+        "indicador": "Unidades dañadas y valor",
+        "meta": "Reducir a cero por causas controlables.",
+        "frecuencia": "Cada evento/mensual",
+        "responsable": "Gilma",
+        "evidencia": "Registro"
+      },
+      {
+        "dimension": "Ventas",
+        "indicador": "Producto, cantidad, precio, pago y saldo",
+        "meta": "Registrar 100%.",
+        "frecuencia": "Cada venta / mensual",
+        "responsable": "Gilma",
+        "evidencia": "Comprobante"
+      },
+      {
+        "dimension": "Financiera",
+        "indicador": "Costo, transporte, energía, pérdida y margen",
+        "meta": "Calcular mensualmente por línea.",
+        "frecuencia": "Mensual",
+        "responsable": "Gilma/asesor",
+        "evidencia": "Matriz"
+      },
+      {
+        "dimension": "Cliente",
+        "indicador": "Solicitudes, tallas, satisfacción y recompra",
+        "meta": "Actualizar y responder solicitudes verificadas.",
+        "frecuencia": "Cada contacto",
+        "responsable": "Gilma",
+        "evidencia": "Base"
+      },
+      {
+        "dimension": "Mercado",
+        "indicador": "Ventas por vereda, clima y temporada",
+        "meta": "Comprar con demanda validada.",
+        "frecuencia": "Mensual/estacional",
+        "responsable": "Gilma",
+        "evidencia": "Reporte"
+      },
+      {
+        "dimension": "Ambiental",
+        "indicador": "Agua, energía, transporte y residuos",
+        "meta": "Medir 100% de variables priorizadas.",
+        "frecuencia": "Mensual/generación",
+        "responsable": "Gilma",
+        "evidencia": "Planilla"
+      },
+      {
+        "dimension": "SST",
+        "indicador": "Inspecciones, incidentes, carga y emergencias",
+        "meta": "100% de tareas críticas controladas.",
+        "frecuencia": "Diaria / cuando ocurra",
+        "responsable": "Gilma/hija",
+        "evidencia": "Checklist"
+      },
+      {
+        "dimension": "Trazabilidad",
+        "indicador": "Proveedor, compra, inventario, venta y pérdida",
+        "meta": "Trazar 100% de movimientos.",
+        "frecuencia": "Cada movimiento",
+        "responsable": "Gilma",
+        "evidencia": "Archivo"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Medir inventario y ventas",
+        "efecto_productivo": "Define capacidad y rotación.",
+        "efecto_comercial": "Permite ofrecer variedad real.",
+        "efecto_financiero": "Evita capital inmovilizado.",
+        "efecto_ambiental": "Reduce empaques y viajes innecesarios.",
+        "ajuste_necesario": "Implementar kárdex antes de ampliar."
+      },
+      {
+        "decision": "Mejorar exhibición",
+        "efecto_productivo": "Ordena y protege mercancía.",
+        "efecto_comercial": "Facilita elección y venta presencial.",
+        "efecto_financiero": "Requiere inversión cotizada.",
+        "efecto_ambiental": "Evita daño y desorden.",
+        "ajuste_necesario": "Diseñar según espacio y capacidad."
+      },
+      {
+        "decision": "Asegurar energía de respaldo",
+        "efecto_productivo": "Conserva productos congelados.",
+        "efecto_comercial": "Mantiene disponibilidad y confianza.",
+        "efecto_financiero": "Reduce pérdidas por cortes.",
+        "efecto_ambiental": "Puede mejorar eficiencia si se dimensiona bien.",
+        "ajuste_necesario": "Instalar solo después de diagnóstico."
+      },
+      {
+        "decision": "Mantener venta presencial",
+        "efecto_productivo": "Aprovecha la atención directa.",
+        "efecto_comercial": "Respeta preferencia de la productora.",
+        "efecto_financiero": "Evita costos de canal no deseado.",
+        "efecto_ambiental": "No cambia huella sin medir viajes de clientes.",
+        "ajuste_necesario": "Fortalecer señalización y servicio."
+      },
+      {
+        "decision": "Ampliar variedad gradualmente",
+        "efecto_productivo": "Responde a pedidos.",
+        "efecto_comercial": "Aumenta posibilidad de compra local.",
+        "efecto_financiero": "Controla exposición de capital.",
+        "efecto_ambiental": "Evita sobreinventario y residuos.",
+        "ajuste_necesario": "Usar pilotos por talla y referencia."
+      },
+      {
+        "decision": "Planificar por clima",
+        "efecto_productivo": "Ajusta chaquetas y congelados.",
+        "efecto_comercial": "Mejora disponibilidad estacional.",
+        "efecto_financiero": "Reduce pérdidas y agotados.",
+        "efecto_ambiental": "Disminuye producto dañado o sin salida.",
+        "ajuste_necesario": "Cruzar ventas con clima y temporada."
+      },
+      {
+        "decision": "Consolidar transporte",
+        "efecto_productivo": "Mejora reposición.",
+        "efecto_comercial": "Reduce faltantes.",
+        "efecto_financiero": "Disminuye costo por unidad.",
+        "efecto_ambiental": "Reduce viajes y emisiones.",
+        "ajuste_necesario": "Comparar ruta, proveedor y entrega."
+      },
+      {
+        "decision": "Actualizar formalización",
+        "efecto_productivo": "Aclara condiciones de operación.",
+        "efecto_comercial": "Refuerza confianza y acceso a apoyo.",
+        "efecto_financiero": "Evita costos por correcciones tardías.",
+        "efecto_ambiental": "Define obligaciones aplicables.",
+        "ajuste_necesario": "Obtener concepto por escrito."
+      },
+      {
+        "decision": "Separar residuos",
+        "efecto_productivo": "Ordena el local.",
+        "efecto_comercial": "Mejora experiencia del cliente.",
+        "efecto_financiero": "Permite controlar disposición.",
+        "efecto_ambiental": "Recupera materiales y evita basura en calle o ríos.",
+        "ajuste_necesario": "Medir y entregar según tipo."
+      },
+      {
+        "decision": "Definir roles y continuidad",
+        "efecto_productivo": "Mantiene atención y monitoreo de frío.",
+        "efecto_comercial": "Evita cierres imprevistos.",
+        "efecto_financiero": "Protege inventario e ingreso.",
+        "efecto_ambiental": "Previene pérdidas de energía y residuos.",
+        "ajuste_necesario": "Acordar horarios y respaldo."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}

@@ -1,0 +1,1888 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "Nombre preliminar expresado en la entrevista: \"Gallinas Tuna Luna\". La escritura exacta y su uso como marca deben confirmarse.",
+    "persona_entrevistada": "Myriam Milagrita Tautiva Cruz",
+    "tipo_actividad": "Pecuaria - avicultura campesina familiar de doble propósito.",
+    "ubicacion_especifica": "Vereda Túnel Bajo, predio El Diamante, localidad de Sumapaz.",
+    "producto_servicio_principal": "Huevos campesinos o criollos y gallinas campesinas para consumo; proyección de reproducción y obtención de pollitos.",
+    "estado_actual": "Negocio familiar en marcha, de pequeña escala y con interés de ampliación.",
+    "personas_vinculadas": "La productora, su esposo y su hijo menor.",
+    "coordenadas": "Pendientes de verificar.",
+    "descripcion_general": "La unidad mantiene actualmente diez gallinas campesinas en libertad, alimentadas principalmente con maíz, recursos del campo y residuos orgánicos domésticos aprovechables. La productora vende huevos y gallinas por encargo a la comunidad, docentes del colegio y algunos compradores que llevan productos a Bogotá. Requiere aumentar y renovar el lote de aves, adecuar un galpón y mejorar los espacios de postura.",
+    "observaciones_o_comentarios": "Fecha de nacimiento: 3 de marzo de 1969."
+  },
+  "PMAPC_F02": {
+    "mision": "Producir y ofrecer huevos y gallinas campesinas de buena calidad para las familias y compradores de la comunidad, mediante un manejo familiar, alimentación basada en maíz y recursos del campo, aprovechamiento de residuos orgánicos y cuidado responsable de las aves.",
+    "vision": "Consolidar una unidad avícola familiar estable, con más gallinas productivas, un galpón adecuado, mejores espacios de postura, mayor producción y canales de venta suficientes para que el emprendimiento continúe de manera autónoma y contribuya al sostenimiento de la familia.",
+    "valores": [
+      "Responsabilidad",
+      "dedicación",
+      "trabajo familiar",
+      "honestidad",
+      "cuidado animal",
+      "aprovechamiento responsable de recursos",
+      "compromiso con la comunidad"
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "En la comunidad preguntan por huevos campesinos, pollos o gallinas para consumo. Los docentes del colegio y otros conocidos realizan encargos cuando hay disponibilidad.",
+    "beneficio_cliente": "Acceso a huevos criollos y gallinas campesinas de origen local, producidos a pequeña escala y disponibles por encargo.",
+    "diferencial": "Las gallinas permanecen sueltas, consumen maíz, recursos del campo y desperdicios orgánicos aprovechables; la productora indicó que casi no utiliza concentrado comercial.",
+    "valor_ambiental": "Aprovechamiento de cáscaras y otros residuos orgánicos domésticos como alimento para las aves, disminuyendo parte de los residuos que se desechan.",
+    "valor_social_comunitario": "Aporta alimentos locales, genera una alternativa de ingreso y autoconsumo para la familia y atiende encargos de docentes y habitantes de la zona.",
+    "evidencia": "Ventas previas, encargos, fotografías del manejo en libertad, registro de alimentación, producción diaria y testimonios de compradores. Estos soportes aún deben organizarse.",
+    "observaciones_o_comentarios": "Cuidado del agua, suelo o ambiente: El agua proviene del acueducto asociado a fuentes locales. La unidad debe complementar esta práctica con manejo adecuado del estiércol, protección de las fuentes y control de la carga animal; estas medidas están pendientes de verificar en campo."
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Experiencia aproximada de ocho a diez años con gallinas campesinas.",
+      "Demanda conocida de huevos y gallinas campesinas en la comunidad.",
+      "Trabajo familiar con apoyo del esposo y el hijo menor.",
+      "Terreno, clima y disponibilidad de agua descritos como favorables.",
+      "Manejo en libertad y alimentación con maíz, recursos del campo y residuos orgánicos.",
+      "Doble propósito: huevos y aves para consumo; posibilidad futura de pollitos.",
+      "Relación directa con docentes y compradores locales."
+    ],
+    "oportunidades": [
+      "Aumentar y renovar el número de gallinas productivas.",
+      "Adecuar galpón, nidos, comederos y bebederos.",
+      "Fortalecer ventas a docentes, comunidad y compradores en Bogotá.",
+      "Crear pedidos por WhatsApp y registro de clientes.",
+      "Recibir asistencia técnica en nutrición, sanidad, postura, reproducción y bioseguridad.",
+      "Reducir costos mediante formulación alimentaria adecuada y compras organizadas.",
+      "Desarrollar una marca y presentación sencilla para los huevos."
+    ],
+    "debilidades": [
+      "Solo diez gallinas y parte del lote está envejeciendo.",
+      "Producción y oferta limitadas frente a la demanda potencial.",
+      "No existen registros de producción, ventas, costos, mortalidad o clientes.",
+      "No se ha definido la capacidad máxima ni el área disponible.",
+      "Ausencia o insuficiencia de galpón y espacios adecuados de postura.",
+      "Costo del maíz alto frente a las ventas de huevos reportadas.",
+      "Transporte dependiente de rutas, busetas o vehículos de terceros.",
+      "Bioseguridad, vacunación, desparasitación y manejo sanitario no fueron documentados."
+    ],
+    "amenazas": [
+      "Aumento del precio o escasez del maíz.",
+      "Enfermedades aviares, mortalidad o disminución de la postura.",
+      "Depredadores, pérdidas o accidentes de aves en manejo libre.",
+      "Lluvias, frío o cambios climáticos que afecten bienestar y producción.",
+      "Rotura o contaminación de huevos durante almacenamiento y transporte.",
+      "Dificultades de acceso y logística para enviar pedidos.",
+      "Dependencia de pocos compradores y ventas ocasionales."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Docentes del colegio",
+        "perfil_que_busca": "Compran huevos campesinos por encargo cuando hay disponibilidad; en ocasiones llevan producto a Bogotá.",
+        "ubicacion": "Colegio cercano / Bogotá.",
+        "necesidad": "Alimento campesino de origen local.",
+        "frecuencia": "Ocasional o semanal según postura.",
+        "criterio_compra": "Frescura, condición campesina, disponibilidad y confianza.",
+        "canal": "Encargo directo, llamada o mensaje."
+      },
+      {
+        "tipo_actor": "Comunidad local",
+        "perfil_que_busca": "Familias y conocidos que preguntan por huevos, gallinas o pollos campesinos.",
+        "ubicacion": "Vereda Túnel Bajo y zona cercana.",
+        "necesidad": "Consumo doméstico.",
+        "frecuencia": "Ocasional.",
+        "criterio_compra": "Precio, tamaño, calidad y cercanía.",
+        "canal": "Venta directa y voz a voz."
+      },
+      {
+        "tipo_actor": "Comprador de gallina viva",
+        "perfil_que_busca": "Persona que recibe el ave sin preparación.",
+        "ubicacion": "Local/por confirmar.",
+        "necesidad": "Gallina campesina para consumo o cría.",
+        "frecuencia": "Ocasional.",
+        "criterio_compra": "Peso, tamaño, estado y precio.",
+        "canal": "Encargo y entrega directa."
+      },
+      {
+        "tipo_actor": "Comprador de gallina arreglada",
+        "perfil_que_busca": "Solicita que la productora entregue el ave preparada.",
+        "ubicacion": "Local/por confirmar.",
+        "necesidad": "Producto listo para cocinar.",
+        "frecuencia": "Ocasional.",
+        "criterio_compra": "Higiene, peso, frescura y precio.",
+        "canal": "Pedido previo."
+      },
+      {
+        "tipo_actor": "Contactos en Bogotá",
+        "perfil_que_busca": "Reciben productos enviados mediante ruta, buseta o carro de confianza.",
+        "ubicacion": "Bogotá.",
+        "necesidad": "Acceso a producto campesino.",
+        "frecuencia": "Ocasional",
+        "criterio_compra": "Calidad, empaque y entrega segura.",
+        "canal": "Encargo y transporte de terceros."
+      },
+      {
+        "tipo_actor": "Cliente potencial",
+        "perfil_que_busca": "Tiendas, mercados campesinos, grupos de consumo o compradores institucionales.",
+        "ubicacion": "Sumapaz/Bogotá.",
+        "necesidad": "Oferta regular de huevos campesinos.",
+        "frecuencia": "Pendiente.",
+        "criterio_compra": "Cantidad constante, inocuidad, empaque y trazabilidad.",
+        "canal": "Alianza o comercialización organizada."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Huevos campesinos o criollos, gallinas campesinas para consumo, cercanía, confianza, buen tamaño y disponibilidad.",
+    "como_se_conoce_la_necesidad": "La productora indicó que las personas le preguntan si tiene huevos, pollos o gallinas campesinas y realizan encargos.",
+    "quienes_compran_o_podrian_comprar": "Docentes del colegio, habitantes de la comunidad, conocidos, familias en Bogotá, tiendas o mercados campesinos potenciales.",
+    "evidencia": "Ventas previas de huevos y gallinas, encargos de docentes y comercialización sostenida a pequeña escala durante aproximadamente ocho a diez años.",
+    "ventaja_territorial": "Producto local de Sumapaz, manejo familiar, gallinas en libertad y alimentación principalmente con maíz y recursos disponibles en el predio.",
+    "cambios_demanda": "No se informó un cambio específico. Existe interés persistente por productos campesinos.",
+    "dificultades": "Baja cantidad disponible, gallinas envejecidas, falta de galpón, ausencia de registros y canales formales, costo alto del maíz y dependencia de transporte de terceros.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Docentes/colegio",
+        "tipo": "Compradores y referentes.",
+        "que_aporta": "Pedidos, recomendaciones y demanda conocida.",
+        "que_recibe": "Producto local y entregas coordinadas.",
+        "trabajo_conjunto": "Lista de pedidos y días de entrega.",
+        "aporte_ambiental": "Reducir viajes individuales agrupando pedidos.",
+        "accion": "Crear contacto y registro de encargos."
+      },
+      {
+        "actor_aliado": "Comunidad y vecinos",
+        "tipo": "Clientes y red local.",
+        "que_aporta": "Compras, referencias y apoyo.",
+        "que_recibe": "Huevos y gallinas cercanos.",
+        "trabajo_conjunto": "Ventas directas y alertas de demanda.",
+        "aporte_ambiental": "Intercambio de residuos orgánicos aptos o empaques reutilizables bajo control.",
+        "accion": "Identificar clientes frecuentes."
+      },
+      {
+        "actor_aliado": "Otros avicultores",
+        "tipo": "Productores vecinos.",
+        "que_aporta": "Experiencia, compra conjunta y disponibilidad de aves.",
+        "que_recibe": "Intercambio de saberes y mercado.",
+        "trabajo_conjunto": "Compra de maíz, vacunación y reemplazo de aves.",
+        "aporte_ambiental": "Buenas prácticas y manejo de residuos.",
+        "accion": "Conformar grupo de cooperación."
+      },
+      {
+        "actor_aliado": "Junta de Acción Comunal",
+        "tipo": "Organización territorial.",
+        "que_aporta": "Difusión y articulación.",
+        "que_recibe": "Fortalecimiento de economía local.",
+        "trabajo_conjunto": "Directorio de productores y ferias.",
+        "aporte_ambiental": "Campañas ambientales.",
+        "accion": "Socializar la unidad productiva."
+      },
+      {
+        "actor_aliado": "Alcaldia/SENA/ asistencia técnica",
+        "tipo": "Instituciones de apoyo.",
+        "que_aporta": "Capacitación, visita técnica y posible fortalecimiento.",
+        "que_recibe": "Unidad con seguimiento y resultados.",
+        "trabajo_conjunto": "Plan sanitario, costos, galpón y comercialización.",
+        "aporte_ambiental": "Bioseguridad, agua y manejo de estiércol.",
+        "accion": "Solicitar acompañamiento y registrar avances."
+      },
+      {
+        "actor_aliado": "Proveedor de maíz/insumos",
+        "tipo": "Proveedor.",
+        "que_aporta": "Alimento, bandejas y materiales.",
+        "que_recibe": "Compras recurrentes.",
+        "trabajo_conjunto": "Cotización, compra programada o conjunta.",
+        "aporte_ambiental": "Reducción de empaques y desperdicio.",
+        "accion": "Comparar precios y calidad."
+      },
+      {
+        "actor_aliado": "Transportadores/rutas",
+        "tipo": "Aliado logistico.",
+        "que_aporta": "Envio a Bogotá o puntos cercanos.",
+        "que_recibe": "Pago por servicio y carga organizada.",
+        "trabajo_conjunto": "Dias fijos y empaque seguro.",
+        "aporte_ambiental": "Consolidar entregas para reducir viajes.",
+        "accion": "Definir responsables y costos."
+      },
+      {
+        "actor_aliado": "Aliados digitales",
+        "tipo": "WhatsApp y contactos.",
+        "que_aporta": "Pedidos, difusión y seguimiento.",
+        "que_recibe": "Oferta actualizada.",
+        "trabajo_conjunto": "Catálogo básico y lista de clientes.",
+        "aporte_ambiental": "Menos papel y viajes innecesarios.",
+        "accion": "Crear ficha con nombre, productos y precios."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Encuesta formal",
+        "a_quien": "No se informó.",
+        "resultado": "Pendiente.",
+        "motivacion": "Pendiente.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Conversaciones / encargos",
+        "a_quien": "Docentes y personas de la comunidad.",
+        "resultado": "Preguntan por huevos y gallinas campesinas y compran cuando hay producto,",
+        "motivacion": "Origen campesino, frescura y cercanía.",
+        "evidencia": "Relato de la productora; registro pendiente."
+      },
+      {
+        "metodo": "Venta previa de huevos",
+        "a_quien": "Docentes, comunidad y contactos.",
+        "resultado": "Se venden aproximadamente una o dos cubetas semanales cuando hay producción.",
+        "motivacion": "Consumo doméstico y preferencia por huevo criollo.",
+        "evidencia": "Recibos o registro pendientes."
+      },
+      {
+        "metodo": "Venta previa de gallinas",
+        "a_quien": "Compradores locales.",
+        "resultado": "Se venden vivas o arregladas según solicitud y tamaño.",
+        "motivacion": "Producto campesino para consumo.",
+        "evidencia": "Número de ventas pendiente."
+      },
+      {
+        "metodo": "Experiencia acumulada",
+        "a_quien": "Mercado local.",
+        "resultado": "La actividad se ha mantenido a pequeña escala aproximadamente ocho a diez años.",
+        "motivacion": "Demanda recurrente.",
+        "evidencia": "Histórico no documentado."
+      },
+      {
+        "metodo": "Prueba de expansión",
+        "a_quien": "No realizada.",
+        "resultado": "Pendiente aumentar aves y verificar demanda.",
+        "motivacion": "Mayor disponibilidad y continuidad.",
+        "evidencia": "Plan de prueba pendiente."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Huevo campesino o criollo",
+        "descripcion_tecnica": "Huevo producido por gallinas campesinas manejadas en libertad.",
+        "unidad": "Unidad o cubeta de 30 huevos.",
+        "insumos_principales": "Alimentación reportada: maíz, recursos del campo y residuos orgánicos domésticos aprovechables; agua de la unidad.",
+        "condiciones_especiales": "Recolectar limpio, separar huevos quebrados o sucios, proteger de golpes y almacenar en lugar fresco y seco. Protocolo pendiente.",
+        "presentacion": "Unidad, cubeta o empaque por definir.",
+        "diferencial": "Producción familiar y local; gallinas en libertad."
+      },
+      {
+        "servicio": "Gallina campesina viva",
+        "descripcion_tecnica": "Ave de doble propósito vendida según tamaño y peso.",
+        "unidad": "Animal",
+        "insumos_principales": "Gallina criada con maiz, recursos del campo, agua y manejo libre.",
+        "condiciones_especiales": "Verificar estado sanitario, bienestar y transporte seguro.",
+        "presentacion": "Entrega viva; medio pendiente.",
+        "diferencial": "Producto campesino local y venta directa."
+      },
+      {
+        "servicio": "Gallina campesina arreglada",
+        "descripcion_tecnica": "Ave preparada por solicitud del comprador.",
+        "unidad": "Animal/unidad.",
+        "insumos_principales": "Ave, agua e insumos de higiene no detallados.",
+        "condiciones_especiales": "Requiere protocolo de sacrificio, Inocuidad, cadena de frío y cumplimiento de requisitos; proceso exacto pendiente de verificar.",
+        "presentacion": "Empaque y conservación pendientes.",
+        "diferencial": "Servicio adicional solicitado por algunos clientes."
+      },
+      {
+        "servicio": "Pollitos campesinos - proyectado",
+        "descripcion_tecnica": "Crias obtenidas de reproducción de gallinas campesinas.",
+        "unidad": "Pollito.",
+        "insumos_principales": "Huevos fértiles, gallina clueca o incubación y manejo de cría.",
+        "condiciones_especiales": "Actualmente no se reportó una producción regular ni instalaciones definidas",
+        "presentacion": "Pendiente.",
+        "diferencial": "Posibilidad de multiplicar el pie de cría y fortalecer el doble propósito."
+      }
+    ],
+    "observaciones_o_comentarios": "Nota: La ficha sanitaria y las condiciones de manipulación de gallinas arregladas deben ser verificadas antes de ampliar esta línea. No se debe asumir cumplimiento sanitario sin visita y soportes."
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Manejo de gallinas",
+        "unidad": "10 aves actuales.",
+        "actividad_proceso": "1. Revisar diariamente el estado de las aves, disponibilidad de agua, espacio de descanso y zonas de postura.",
+        "tiempo_estimado": "Diario."
+      },
+      {
+        "servicio": "Alimentación",
+        "unidad": "Lote de aves.",
+        "actividad_proceso": "2. Suministrar maiz y permitir acceso controlado a recursos del campo; ofrecer residuos orgánicos aptos y evitar alimentos dañados o contaminados.",
+        "tiempo_estimado": "Diario."
+      },
+      {
+        "servicio": "Postura",
+        "unidad": "Nidos/cajas.",
+        "actividad_proceso": "3. Mantener limpios y secos los cajones o nidos donde ponen las gallinas.",
+        "tiempo_estimado": "Diario/según uso."
+      },
+      {
+        "servicio": "Recolección de huevos",
+        "unidad": "8 a 10 huevos reportados por dia.",
+        "actividad_proceso": "4. Recolectar, revisar integridad y separar huevos rotos, muy sucios o anormales.",
+        "tiempo_estimado": "Una o más veces al día."
+      },
+      {
+        "servicio": "Clasificación y empaque",
+        "unidad": "Unidad o cubeta.",
+        "actividad_proceso": "5. Contar, ordenar y empacar los huevos para autoconsumo o venta; el método actual de empaque no fue descrito.",
+        "tiempo_estimado": "Antes de la entrega."
+      },
+      {
+        "servicio": "Venta de huevos",
+        "unidad": "1 a 2 cubetas por semana reportadas.",
+        "actividad_proceso": "6. Recibir el encargo, acordar precio y coordinar entrega local o envío en ruta, buseta o carro.",
+        "tiempo_estimado": "Semanal / según pedido."
+      },
+      {
+        "servicio": "Venta de gallina",
+        "unidad": "Animal.",
+        "actividad_proceso": "7. Seleccionar el ave según tamaño y solicitud; entregar viva o arreglarla si el cliente lo pide. El proceso de preparación no fue descrito y requiere protocolo sanitario.",
+        "tiempo_estimado": "Ocasional."
+      },
+      {
+        "servicio": "Renovación / reproducción",
+        "unidad": "Lote futuro.",
+        "actividad_proceso": "8. Seleccionar aves productivas, reemplazar gallinas envejecidas y planificar reproducción o compra de nuevas gallinas.",
+        "tiempo_estimado": "Por ciclo; pendiente definir."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Maiz",
+        "cantidad_unidad": "Aproximadamente 1,5 arrobas por semana para 10 gallinas, según entrevista.",
+        "frecuencia": "Semanal",
+        "proveedor_fuente": "Proveedor no identificado.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Uso de suelo, transporte, empaques y costo elevado..",
+        "manejo_ambiental": "Medir consumo real, evitar desperdicio y evaluar formulación técnica.",
+        "observaciones": "Costo reportado: $60.000-$70.000 por semana."
+      },
+      {
+        "insumo": "Recursos del campo/pastored",
+        "cantidad_unidad": "No medida.",
+        "frecuencia": "Diario.",
+        "proveedor_fuente": "Predio El Diamante.",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Sobreuso del suelo o acceso a plantas no aptas si no se controla.",
+        "manejo_ambiental": "Rotar áreas y revisar disponibilidad y seguridad.",
+        "observaciones": "Gallinas manejadas sueltas"
+      },
+      {
+        "insumo": "Residuos orgánicos domésticos",
+        "cantidad_unidad": "No medido.",
+        "frecuencia": "Diario/según generación,",
+        "proveedor_fuente": "Hogar,",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Riesgo sanitario si están dañados o contienen materiales no aptos.",
+        "manejo_ambiental": "Seleccionar residuos frescos y retirar sobrantes.",
+        "observaciones": "Cáscaras y desperdicios son aprovechados por las aves"
+      },
+      {
+        "insumo": "Agua",
+        "cantidad_unidad": "Consumo no medido",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Acueducto asociado a nacedero, chorro y quebrada, según entrevista",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Presión sobre el recurso y contaminación de recipientes.",
+        "manejo_ambiental": "Limpiar hebederos, evitar fugas y proteger fuentes.",
+        "observaciones": "Se suministra en recipientes."
+      },
+      {
+        "insumo": "Cajones/nidos",
+        "cantidad_unidad": "Cantidad y estado pendientes.",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Existentes en el predio.",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Residuos de material y riesgo de suciedad.",
+        "manejo_ambiental": "Mantener secos, lavables y suficientes",
+        "observaciones": "Requieren adecuación."
+      },
+      {
+        "insumo": "Galpón/cerramiento",
+        "cantidad_unidad": "No existe o es insuficiente: confirmar.",
+        "frecuencia": "Inversión.",
+        "proveedor_fuente": "Construcción local.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Uso de materiales y ocupación de suelo.",
+        "manejo_ambiental": "Diseño ventilado, seco, seguro y acorde al número de aves.",
+        "observaciones": "Necesidad expresada."
+      },
+      {
+        "insumo": "Comederos y bebederos",
+        "cantidad_unidad": "Cantidad y tipo pendientes.",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Compra o adecuación.",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Desperdicio de alimento y agua.",
+        "manejo_ambiental": "Equipos lavables y dimensionados.",
+        "observaciones": "Actualmente usa recipientes para agua"
+      },
+      {
+        "insumo": "Cubetas/empaques",
+        "cantidad_unidad": "Cantidad pendiente.",
+        "frecuencia": "Semanal/según ventas.",
+        "proveedor_fuente": "Compra o reutilización controlada",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Residuos de cartón o plástico y contaminación.",
+        "manejo_ambiental": "Usar empaques limpios, resistentes y reutilizables cuando sea seguro",
+        "observaciones": "Presentación actual no detallada."
+      },
+      {
+        "insumo": "Insumos sanitarios/veterinarios",
+        "cantidad_unidad": "No informados.",
+        "frecuencia": "Según plan técnico.",
+        "proveedor_fuente": "Proveedor/asistencia técnica",
+        "toxicidad": "Según producto",
+        "impacto_potencial": "Riesgo para aves, personas y ambiente por uso inadecuado.",
+        "manejo_ambiental": "Solo bajo orientación, registro y disposición correcta.",
+        "observaciones": "Vacunación, desparasitación y desinfección pendientes de verificar."
+      },
+      {
+        "insumo": "Transporte",
+        "cantidad_unidad": "Según pedido.",
+        "frecuencia": "Ocasional",
+        "proveedor_fuente": "Ruta, buseta o carro de terceros",
+        "toxicidad": "N/A.",
+        "impacto_potencial": "Combustible y riesgo de daño del producto.",
+        "manejo_ambiental": "Consolidar pedidos y proteger empaques.",
+        "observaciones": "Costo no reportado."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "8 a 10 huevos diarios. Como estimación aritmética, equivaldría a aproximadamente 240-300 huevos en 30 días, pero debe validarse con registro diario.",
+    "produccion_normal": "Aproximadamente una o dos cubetas de 30 huevos por semana cuando hay disponibilidad, equivalentes a 30-60 huevos semanales vendidos.",
+    "capacidad_mensual_teorica": "No fue definida.",
+    "produccion_maxima_posible": "La postura reportada de 8-10 huevos diarios es el máximo observado mencionado, no una capacidad técnica validada.",
+    "area_numero_habitaciones": "Pendiente de medir. Las gallinas permanecen sueltas en el predio y cuentan con cajones para postura.",
+    "limitantes_productivos": "Pocas gallinas, aves envejecidas, falta o insuficiencia de galpón, nidos por mejorar, costo del maíz, ausencia de registros y sin plan sanitario documentado.",
+    "limitantes_ambientales": "Consumo de agua no medido, manejo del estiércol no informado, interacción del manejo libre con suelo y fauna, y necesidad de proteger fuentes hídricas.",
+    "capacidad_instalada": "Diez gallinas, espacio libre en el predio, recipientes para agua y cajones de postura; dimensiones y estado pendientes.",
+    "capacidad_utilizada": "No puede expresarse en porcentaje sin conocer capacidad del terreno, galpón y número de nidos. El lote actual es de diez aves.",
+    "produce_mismo_todo_ano": false,
+    "alcanza_para_demanda": false,
+    "necesidades_aumentar_sosteniblemente": "Renovar y aumentar el lote con gallinas productivas, adecuar galpón y nidos, asegurar agua y alimentación, implementar bioseguridad, calcular costos y ampliar canales de venta.",
+    "observaciones_o_comentarios": "Número actual de animales: 10 gallinas campesinas. Parte de la producción se destina al hogar u otros usos no cuantificados."
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua disponible",
+        "estado_actual": "Acueducto asociado a nacedero, chorro y quebrada; consumo no medido,",
+        "limite_restriccion": "Disponibilidad y calidad no verificadas; bebederos en recipientes.",
+        "afectacion": "Es indispensable para bienestar, postura y limpieza.",
+        "efecto": "Disminución de postura o enfermedad si falta o se contamina.",
+        "incidencia": "Alta.",
+        "accion_mejora": "Medir, limpiar bebederos, evitar fugas y revisar calidad."
+      },
+      {
+        "condicion": "Fuentes hidricas cercanas",
+        "estado_actual": "Se mencionan nacedero, chorro y quebrada.",
+        "limite_restriccion": ", protección y riesgo de acceso directo de aves pendientes.",
+        "afectacion": "Una mala protección puede contaminar o degradar la fuente.",
+        "efecto": "Afectación del agua y del predio.",
+        "incidencia": "Alta.",
+        "accion_mejora": "Visita técnica, aislamiento y protección de rondas."
+      },
+      {
+        "condicion": "Suelo / área libre",
+        "estado_actual": "Terreno descrito como favorable y gallinas sueltas.",
+        "limite_restriccion": "Årea y carga animal no medidas.",
+        "afectacion": "El aumento sin manejo puede dejar suelo desnudo o concentrar estiércol.",
+        "efecto": "Compactación, olores o contaminación.",
+        "incidencia": "Media-Alta.",
+        "accion_mejora": "Medir área, rotar zonas y controlar densidad."
+      },
+      {
+        "condicion": "Pendiente/topografia",
+        "estado_actual": "No informada.",
+        "limite_restriccion": "Riesgo de escorrentia o zonas húmedas pendiente.",
+        "afectacion": "Puede afectar estabilidad del galpón y manejo de residuos.",
+        "efecto": "Erosión o humedad.",
+        "incidencia": "Pendiente.",
+        "accion_mejora": "Evaluar ubicación segura y drenaje."
+      },
+      {
+        "condicion": "Clima",
+        "estado_actual": "La productora lo considera favorable.",
+        "limite_restriccion": "No se describieron heladas, lluvias o sequías específicas.",
+        "afectacion": "Cambios fuertes pueden disminuir postura y bienestar.",
+        "efecto": "Variación productiva.",
+        "incidencia": "Media.",
+        "accion_mejora": "Registrar clima y proteger del frío, lluvia y viento."
+      },
+      {
+        "condicion": "Biodiversidad",
+        "estado_actual": "Manejo libre en entorno rural..",
+        "limite_restriccion": "Interacción con fauna, depredadores y aves silvestres no evaluada.",
+        "afectacion": "Puede generar pérdidas o riesgo sanitario.",
+        "efecto": "Mortalidad o transmisión de enfermedades.",
+        "incidencia": "Media-Alta.",
+        "accion_mejora": "Malla, encierro nocturno y evitar contacto con aves silvestres."
+      },
+      {
+        "condicion": "Uso de insumos",
+        "estado_actual": "Principalmente maiz; casi no usa concentrado según la productora.",
+        "limite_restriccion": "Consumo y balance nutricional no evaluados.",
+        "afectacion": "Una dieta desbalanceada puede elevar costos y reducir postura.",
+        "efecto": "Baja eficiencia y desperdicio.",
+        "incidencia": "Alta",
+        "accion_mejora": "Asistencia nutricional y registro de alimento."
+      },
+      {
+        "condicion": "Manejo de resíduos",
+        "estado_actual": "Residuos orgánicos domésticos se usan como alimento; estiércol no descrito.",
+        "limite_restriccion": "Cantidades y disposición final pendientes.",
+        "afectacion": "Puede aportar a circularidad o generar olores y vectores.",
+        "efecto": "Impacto sanitario y ambiental.",
+        "incidencia": "Alta",
+        "accion_mejora": "Seleccionar sobras y establecer manejo de gallinaza/compostaje."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Biológico",
+        "peligro": "Contacto con aves, huevos, heces, plumas y residuos orgánicos.",
+        "aplica": true,
+        "nivel_riesgo": "Diario.",
+        "controles_actuales": "No se describieron controles específicos.",
+        "accion": "Lavado de manos, botas, guantes para limpieza, separación de ropa y plan sanitario."
+      },
+      {
+        "tipo": "Biológico",
+        "peligro": "Picaduras, parásitos, roedores o aves silvestres.",
+        "aplica": true,
+        "nivel_riesgo": "Variable.",
+        "controles_actuales": "Manejo libre.",
+        "accion": "Control integrado, limpieza, malla y almacenamiento seguro de maíz."
+      },
+      {
+        "tipo": "Físico",
+        "peligro": "Frio, lluvia, sol y viento durante atención de aves.",
+        "aplica": true,
+        "nivel_riesgo": "Diario.",
+        "controles_actuales": "No documentado",
+        "accion": "Ropa adecuada, horarios y refugio."
+      },
+      {
+        "tipo": "Quimico",
+        "peligro": "Desinfectantes o medicamentos veterinarios.",
+        "aplica": true,
+        "nivel_riesgo": "Según uso.",
+        "controles_actuales": "No documentado",
+        "accion": "Rotulado, dosificación, elementos de protección y orientación técnica."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Carga de arrobas de maíz, agua, aves y posturas repetitivas.",
+        "aplica": true,
+        "nivel_riesgo": "Semanal/diario.",
+        "controles_actuales": "Apoyo familiar.",
+        "accion": "Dividir cargas, usar técnicas seguras y ayudas de transporte."
+      },
+      {
+        "tipo": "Mecánico",
+        "peligro": "Picotazos, rasguños y atrapamientos al sujetar aves.",
+        "aplica": true,
+        "nivel_riesgo": "Ocasional.",
+        "controles_actuales": "Experiencia de la productora.",
+        "accion": "Guantes apropiados y manejo tranquilo."
+      },
+      {
+        "tipo": "Mecánico/corte",
+        "peligro": "Cuchillos, agua caliente u otros elementos al arreglar gallinas, si aplica.",
+        "aplica": true,
+        "nivel_riesgo": "Ocasional.",
+        "controles_actuales": "No documentado.",
+        "accion": "Area segura, utensilios adecuados, protección y protocolo."
+      },
+      {
+        "tipo": "Locativo",
+        "peligro": "Superficies irregulares, barro, derrames de agua y obstáculos.",
+        "aplica": true,
+        "nivel_riesgo": "Diario.",
+        "controles_actuales": "No documentado.",
+        "accion": "Orden, drenaje, iluminación y calzado antideslizante."
+      },
+      {
+        "tipo": "Transporte",
+        "peligro": "Envio de huevos en rutas, busetas o carros.",
+        "aplica": true,
+        "nivel_riesgo": "Según pedido.",
+        "controles_actuales": "Uso de vehículo de terceros.",
+        "accion": "Empaque seguro, responsable identificado y trazabilidad de entrega."
+      }
+    ],
+    "observaciones_o_comentarios": "Nota: La productora no reportó accidentes ni enfermedades laborales. Los riesgos anteriores son una identificación preventiva basada en las tareas descritas y deben validarse durante visita."
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Usar botas y guantes para limpieza; lavar manos después de manipular aves, huevos, estiércol y residuos.",
+        "riesgo": "Biológico y locativo.",
+        "responsable": "Myriam y familia.",
+        "frecuencia": "Diario.",
+        "evidencia": "Lista/fotografias."
+      },
+      {
+        "accion_preventiva": "Mantener maíz protegido de humedad, plagas y animales.",
+        "riesgo": "Biológico y pérdida de insumo.",
+        "responsable": "Familia.",
+        "frecuencia": "Permanente.",
+        "evidencia": "Inspección."
+      },
+      {
+        "accion_preventiva": "Limpiar nidos, bebederos, comederos y zona de descanso.",
+        "riesgo": "Biológico y sanitario.",
+        "responsable": "Familia.",
+        "frecuencia": "Diario/semanal.",
+        "evidencia": "Planilla."
+      },
+      {
+        "accion_preventiva": "Dividir las cargas de maíz y utilizar técnica segura o apoyo.",
+        "riesgo": "Biomecánico.",
+        "responsable": "Familia.",
+        "frecuencia": "Cada compra.",
+        "evidencia": "Observación."
+      },
+      {
+        "accion_preventiva": "Definir protocolo seguro e higiénico para arreglar gallinas o suspender esta preparación hasta validarlo.",
+        "riesgo": "Cortes, quemaduras e inocuidad.",
+        "responsable": "Myriam/asistencia técnica.",
+        "frecuencia": "Antes de cada proceso.",
+        "evidencia": "Protocolo."
+      },
+      {
+        "accion_preventiva": "Disponer botiquín y números de emergencia",
+        "riesgo": "Emergencias.",
+        "responsable": "Familia.",
+        "frecuencia": "Permanente; revisión mensual.",
+        "evidencia": "Botiquin."
+      },
+      {
+        "accion_preventiva": "Registrar incidentes, mortalidad y condiciones inseguras.",
+        "riesgo": "Seguimiento SG-SST y sanitario.",
+        "responsable": "Myriam.",
+        "frecuencia": "Cuando ocurra/mensual.",
+        "evidencia": "Registro."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Ferias campesinas",
+        "activo": false,
+        "descripcion": "Potencial.",
+        "responsable": "Por definir.",
+        "frecuencia": "Pendiente."
+      },
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "En el predio y por encargo.",
+        "responsable": "Myriam.",
+        "frecuencia": "Semanal/ocasional."
+      },
+      {
+        "canal": "Redes sociales",
+        "activo": false,
+        "descripcion": "Potencial catálogo básico.",
+        "responsable": "Hijo/Myriam.",
+        "frecuencia": "Pendiente."
+      },
+      {
+        "canal": "WhatsApp/llamadas",
+        "activo": true,
+        "descripcion": "Uso básico probable para encargos; confirmar. Contacto con conocidos y seguimiento institucional.",
+        "responsable": "Myriam.",
+        "frecuencia": "Según pedido."
+      },
+      {
+        "canal": "Colegio/docentes",
+        "activo": true,
+        "descripcion": "Pedidos de docentes cercanos.",
+        "responsable": "Myriam.",
+        "frecuencia": "Según disponibilidad."
+      },
+      {
+        "canal": "Bogotá",
+        "activo": true,
+        "descripcion": "Envio encargado por ruta, buseta o carro.",
+        "responsable": "Myriam/transportador.",
+        "frecuencia": "Según pedido."
+      },
+      {
+        "canal": "Tiendas/restaurantes",
+        "activo": false,
+        "descripcion": "Potencial si se garantiza cantidad e inocuidad.",
+        "responsable": "Por definir.",
+        "frecuencia": "Pendiente."
+      },
+      {
+        "canal": "Comercialización asociativa",
+        "activo": false,
+        "descripcion": "Potencial con productores vecinos.",
+        "responsable": "Por definir.",
+        "frecuencia": "Pendiente."
+      },
+      {
+        "canal": "Voz a voz",
+        "activo": true,
+        "descripcion": "Comunidaddocentes , y conocidos.",
+        "responsable": "Familia",
+        "frecuencia": "Permanente."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Huevo campesino",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No investigada.",
+        "logistica_plataforma": "Pendiente.",
+        "precio_final": 800,
+        "justificacion": "$700-$800 por unidad. Precio utilizado por la productora según costo del maiz y carácter campesino."
+      },
+      {
+        "servicio": "Cubeta de 30 huevos",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No investigada.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": 24000,
+        "justificacion": "$21.000-$24.000 por cubeta, cálculo derivado de 30 huevos a $700-$800. Presentación usual de 30 unidades: precio debe confirmarse."
+      },
+      {
+        "servicio": "Gallina campesina",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No investigada.",
+        "logistica_plataforma": "Pendiente.",
+        "precio_final": 50000,
+        "justificacion": "Aproximadamente $45.000-550.000 según tamaño y peso. Precio variable por condición del ave"
+      },
+      {
+        "servicio": "Gallina sin arreglar",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No investigada",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": null,
+        "justificacion": "La productora descuenta aproximadamente $4.000-$5.000 frente al valor acordado cuando el comprador la recibe sin preparación. Diferencia por el trabajo de arreglo."
+      },
+      {
+        "servicio": "Pollito campesino proyectado",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No investigada.",
+        "logistica_plataforma": "Pendiente",
+        "precio_final": null,
+        "justificacion": "No definido. Linea futura."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": "Nota: El precio debe calcularse incluyendo alimento, reposición de aves, mortalidad, agua, sanidad, empaque, transporte, tiempo de trabajo y, cuando aplique, preparación de la gallina. Con los datos reportados, la venta de huevos por sí sola parece insuficiente para cubrir el maíz; se requiere verificación inmediata."
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Producción de huevos estimada",
+        "cantidad_mensual": "240-300 huevos/mes, calculados desde 8-10 diarios; requiere registro.",
+        "precio": 800,
+        "ingreso_mensual": 240000,
+        "forma_pago": "Pendiente.",
+        "canal": "Comunidad/docentes."
+      },
+      {
+        "concepto_servicio": "Venta real reportada de huevos",
+        "cantidad_mensual": "4-8 cubetas/mes usando 4 semanas, equivalentes a 120-240 huevos.",
+        "precio": 24000,
+        "ingreso_mensual": 192000,
+        "forma_pago": "Pendiente.",
+        "canal": "Docentes, comunidad y Bogotá."
+      },
+      {
+        "concepto_servicio": "Gallinas campesinas",
+        "cantidad_mensual": "Cantidad mensual no informada.",
+        "precio": 50000,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Compradores por encargo."
+      },
+      {
+        "concepto_servicio": "Gallina sin arreglar",
+        "cantidad_mensual": "Cantidad no informada.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Comprador directo."
+      },
+      {
+        "concepto_servicio": "Escenario de ampliación",
+        "cantidad_mensual": "Número de gallinas y postura pendientes de definir.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pendiente.",
+        "canal": "Nuevos clientes."
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": "Rangos de precio en PDF: Huevo $700-$800, Cubeta $21.000-$24.000, Gallinas $45.000-$50.000. Producción de huevos estimada ingreso mensual $168.000-$240.000 si toda se vendiera. Venta real reportada ingreso mensual $84.000-$192.000 antes de costos."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Docentes",
+        "estrategia": "Confirmar disponibilidad, reservar pedidos y mantener calidad constante.",
+        "medio": "WhatsApp, llamada o entrega directa.",
+        "frecuencia": "Semanal/según postura.",
+        "responsable": "Myriam."
+      },
+      {
+        "cliente": "Comunidad local",
+        "estrategia": "Atender encargos, informar fecha de postura y ofrecer producto fresco.",
+        "medio": "Voz a voz y contacto directo.",
+        "frecuencia": "Según pedido.",
+        "responsable": "Myriam/familia."
+      },
+      {
+        "cliente": "Comprador en Bogotá",
+        "estrategia": "Confirmar cantidad, empaque, responsable de transporte y recepción.",
+        "medio": "Llamada/WhatsApp.",
+        "frecuencia": "Cada envio.",
+        "responsable": "Myriam."
+      },
+      {
+        "cliente": "Comprador de gallina",
+        "estrategia": "Acordar peso aproximado, estado, precio y si la recibe viva o arreglada.",
+        "medio": "Contacto directo.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Myriam."
+      },
+      {
+        "cliente": "Cliente potencial frecuente",
+        "estrategia": "Crear lista de pedidos y ofrecer día fijo de entrega.",
+        "medio": "WhatsApp.",
+        "frecuencia": "Semanal.",
+        "responsable": "Myriam/hijo."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Huevos venta local",
+        "canal": "Entrega directa o recogida en el predio.",
+        "tiempo": "Acordado con el comprador; pendiente estandarizar.",
+        "transporte_operacion": "A pie o medio local, según distancia",
+        "condicion_calidad": "Cubeta limpia, huevos integros, protegidos del sol, humedad y golpes.",
+        "capacidad": "Según postura y pedidos.",
+        "costo": "Pendiente.",
+        "responsable": "Myriam/fantilia."
+      },
+      {
+        "servicio_insumo": "Huevos - Bogotá",
+        "canal": "Envío encargado.",
+        "tiempo": "Según horario de ruta o vehículo.",
+        "transporte_operacion": "Buseta, ruta o carro de confianza.",
+        "condicion_calidad": "Empaque rígido, identificación del destinatario y confirmación de entrega.",
+        "capacidad": "Cantidad pendiente.",
+        "costo": "No reportado.",
+        "responsable": "Myriam/transportador."
+      },
+      {
+        "servicio_insumo": "Gallina viva",
+        "canal": "Recogida directa o transporte acordado.",
+        "tiempo": "Según pedido.",
+        "transporte_operacion": "Comprador o vehículo acordado.",
+        "condicion_calidad": "Bienestar, ventilación y sujeción segura.",
+        "capacidad": "Ocasional",
+        "costo": "Pendiente.",
+        "responsable": "Myriam/comprador."
+      },
+      {
+        "servicio_insumo": "Gallina arreglada",
+        "canal": "Entrega directa; condiciones no descritas.",
+        "tiempo": "Debe ser inmediata o con conservación adecuada,",
+        "transporte_operacion": "Pendiente.",
+        "condicion_calidad": "Higiene, empaque apto y cadena de frio según validación sanitaria.",
+        "capacidad": "Ocasional.",
+        "costo": "Pendiente.",
+        "responsable": "Myriam."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Identificación de la unidad",
+        "informacion": "Nombre, productora, vereda, predio, contacto y fotografia.",
+        "responsable": "Myriam/hijo.",
+        "medio": "Ficha de WhatsApp; QR gradual.",
+        "frecuencia": "Actualizar cuando cambie",
+        "evidencia": "Ficha digital."
+      },
+      {
+        "elemento": "Lote de huevos",
+        "informacion": "Fecha de recolección, cantidad, número de gallinas y observaciones.",
+        "responsable": "Myriam.",
+        "medio": "Cuaderno o planilla.",
+        "frecuencia": "Diario.",
+        "evidencia": "Registro."
+      },
+      {
+        "elemento": "Alimentación",
+        "informacion": "Cantidad de maíz y otros alimentos suministrados:",
+        "responsable": "Myriam.",
+        "medio": "Planilla.",
+        "frecuencia": "Diario / semanal.",
+        "evidencia": "Registro y facturas."
+      },
+      {
+        "elemento": "Venta",
+        "informacion": "Cliente, cantidad, precio, fecha, forma de entrega y pago.",
+        "responsable": "Myriam.",
+        "medio": "Cuaderno/teléfono.",
+        "frecuencia": "Cada venta.",
+        "evidencia": "Recibo o mensaje."
+      },
+      {
+        "elemento": "Sanidad",
+        "informacion": "Vacunas, tratamientos, mortalidad y novedades.",
+        "responsable": "Myriam/técnico.",
+        "medio": "Registro sanitario.",
+        "frecuencia": "Cuando ocurra.",
+        "evidencia": "Soporte."
+      },
+      {
+        "elemento": "Gallina arreglada",
+        "informacion": "Fecha, ave, comprador, condiciones de preparación y entrega.",
+        "responsable": "Myriam.",
+        "medio": "Registro específico.",
+        "frecuencia": "Cada proceso.",
+        "evidencia": "Planilla; sujeto a validación sanitaria."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Gallimas productivas de reemplazo",
+        "descripcion": "Aumentar y renovar el lote con aves sanas, adaptadas y de doble propósito.",
+        "valor_unitario": null,
+        "cantidad": "Cantidad a definir según capacidad.",
+        "total": null,
+        "requisito": "Origen sanitario, edad, raza, cuarentena y plan de adaptación.",
+        "fuente": "Apoyo/recursos propios."
+      },
+      {
+        "tipo": "Galpón",
+        "descripcion": "Estructura para descanso, encierro nocturno, protección y maneja.",
+        "valor_unitario": null,
+        "cantidad": "1",
+        "total": null,
+        "requisito": "Ventilación, drenaje, luz, densidad, limpieza y protección de fauna.",
+        "fuente": "Apoyo/construcción familiar."
+      },
+      {
+        "tipo": "Nidos/cajones de postura",
+        "descripcion": "Espacios limpios, secos y suficientes.",
+        "valor_unitario": null,
+        "cantidad": "Según número de gallinas.",
+        "total": null,
+        "requisito": "Material lavable, fácil recolección y bienestar.",
+        "fuente": "Apoyo/compra."
+      },
+      {
+        "tipo": "Comederos y bebederos",
+        "descripcion": "Equipos que reduzcan desperdicio y contaminación.",
+        "valor_unitario": null,
+        "cantidad": "Según diseño.",
+        "total": null,
+        "requisito": "Lavables y dimensionados",
+        "fuente": "Apoyo/compra."
+      },
+      {
+        "tipo": "Malla/cerca de protección",
+        "descripcion": "Controlar área, depredadores y contacto con aves silvestres",
+        "valor_unitario": null,
+        "cantidad": "Según perimetro.",
+        "total": null,
+        "requisito": "No afectar fuentes, fauna ni trânsito seguru.",
+        "fuente": "Apoyo/compra."
+      },
+      {
+        "tipo": "Almacenamiento de maiz",
+        "descripcion": "Recipiente seco y protegido de roedores.",
+        "valor_unitario": null,
+        "cantidad": "1 o más",
+        "total": null,
+        "requisito": "Hermético o protegido, ventilado y separado del suelo.",
+        "fuente": "Compra"
+      },
+      {
+        "tipo": "Cubetas y empaque",
+        "descripcion": "Material limpio y resistente para huevos.",
+        "valor_unitario": null,
+        "cantidad": "Según ventas.",
+        "total": null,
+        "requisito": "Reutilización solo si es higiénicamente segura.",
+        "fuente": "Compra."
+      },
+      {
+        "tipo": "Bioseguridad y SST",
+        "descripcion": "Botas, guantes, elementos de limpieza, pediluvio si se recomienda y botiquin.",
+        "valor_unitario": null,
+        "cantidad": "Según plan.",
+        "total": null,
+        "requisito": "Uso correcto y almacenamiento",
+        "fuente": "Apoyo/compra."
+      },
+      {
+        "tipo": "Asistencia técnica y registros",
+        "descripcion": "Nutrición, sanidad, costus, mercado y trazabilidad.",
+        "valor_unitario": null,
+        "cantidad": "Plan de acompañamiento",
+        "total": null,
+        "requisito": "Seguimiento documentada.",
+        "fuente": "Instituciones/familia"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Variable principal",
+        "descripcion": "Maíz: aproximadamente 1,5 arrobas por semana.",
+        "valor_mensual_ciclo": 280000,
+        "observaciones": "$60.000-$70.000 semanales: $240.000-$280.000 en cuatro semanas. Dato reportado; confirmar facturas, unidad y consumo real."
+      },
+      {
+        "tipo": "Variable",
+        "descripcion": "Agua para consumo de aves y limpieza.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "No se informó factura ni cantidad."
+      },
+      {
+        "tipo": "Variable",
+        "descripcion": "Cubetas, empaques y materiales de entrega.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Presentación actual no descrita."
+      },
+      {
+        "tipo": "Variable",
+        "descripcion": "Transporte de huevos o gallinas.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Buseta, ruta o carro de terceros."
+      },
+      {
+        "tipo": "Variable",
+        "descripcion": "Medicamentos, vacunas, desparasitación y desinfección.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "No se informó un plan sanitario."
+      },
+      {
+        "tipo": "Variable",
+        "descripcion": "Preparación de gallinas: agua, energia, insumos, empaque y tiempo.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Debe calcularse por ave y validarse sanitariamente."
+      },
+      {
+        "tipo": "Reposición",
+        "descripcion": "Compra de gallinas productivas y mortalidad.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Parte del lote actual está envejeciendo."
+      },
+      {
+        "tipo": "Fijo/inversión",
+        "descripcion": "Galpón, nidos, comederos, bebederos y malla.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Requiere cotización y diseño técnico."
+      },
+      {
+        "tipo": "Mano de obra",
+        "descripcion": "Tiempo de Myriam, esposo e hijo.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "No valorado. Debe incluirse para conocer la utilidad real."
+      },
+      {
+        "tipo": "Otros",
+        "descripcion": "Mantenimiento, limpieza y pérdidas por huevos rotos o no vendidos.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Registrar mensualmente."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "1",
+        "ingresos": 192000,
+        "gastos_operativos": 280000,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": -88000,
+        "observaciones": "Venta reportada de huevos: $84.000-$192.000, estimación de 4-8 cubetas/mes a $21.000-$24.000. Maíz: $240.000-$280.000 usando cuatro semanas. Resultado parcial solo huevos-maíz: con los extremos reportados sería aproximadamente entre -$196.000 y -$48.000 al mes."
+      },
+      {
+        "mes": "2",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "3",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "4",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "5",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "6",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "7",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "8",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "9",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "10",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "11",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      },
+      {
+        "mes": "12",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Pendiente de registro."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "Análisis financiero prioritario: Antes de aumentar el número de aves se debe confirmar cuánto maíz se compra realmente, cuántos huevos se producen, cuántos se venden, cuántos se consumen y cuántas gallinas se comercializan. Sin este registro, una ampliación podría aumentar las pérdidas aunque aumente la producción."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Agua para aves",
+        "estado": "Bebederos.",
+        "cantidad": "No medido.",
+        "impacto_1_a_5": null,
+        "accion": "Medir recipientes llenados y pérdidas."
+      },
+      {
+        "variable": "Agua de limpieza",
+        "estado": "Nidos, galpón, utensilios y procesamiento si aplica.",
+        "cantidad": "No medido.",
+        "impacto_1_a_5": null,
+        "accion": "Limpieza eficiente y evitar vertimientos contaminantes."
+      },
+      {
+        "variable": "Alimento",
+        "estado": "Maiz",
+        "cantidad": "1,5 arrobas/semana reportadas.",
+        "impacto_1_a_5": null,
+        "accion": "Confirmar peso y calcular consumo por gallina y por huevo."
+      },
+      {
+        "variable": "Transporte de insumos",
+        "estado": "Compra de maiz y materiales.",
+        "cantidad": "No medido.",
+        "impacto_1_a_5": null,
+        "accion": "Compras conjuntas o programadas."
+      },
+      {
+        "variable": "Transporte de ventas",
+        "estado": "Ruta, buseta o carro.",
+        "cantidad": "Ocasional; no medido.",
+        "impacto_1_a_5": null,
+        "accion": "Consolidar pedidos."
+      },
+      {
+        "variable": "Energia",
+        "estado": "Galpón o preparación de aves, si aplica.",
+        "cantidad": "No informado.",
+        "impacto_1_a_5": null,
+        "accion": "Registrar solo si se utiliza."
+      },
+      {
+        "variable": "Residuos/gallinaza",
+        "estado": "Aves y alimentos.",
+        "cantidad": "No medido.",
+        "impacto_1_a_5": null,
+        "accion": "Compostaje o uso controlado."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Cáscaras y resíduos orgánicos domésticos",
+        "cantidad": null,
+        "manejo_actual": "Las gallinas consumen parte de estos residuos.",
+        "accion_circular": "Aprovechar solo resíduos aptos y frescos.",
+        "destino": null,
+        "responsable": null
+      },
+      {
+        "residuo_recurso": "Gallinaza y cama",
+        "cantidad": null,
+        "manejo_actual": "No se informó.",
+        "accion_circular": "Compostaje controlado y uso como ahono si es viable.",
+        "destino": null,
+        "responsable": null
+      },
+      {
+        "residuo_recurso": "Maíz derramado",
+        "cantidad": null,
+        "manejo_actual": "No informado.",
+        "accion_circular": "Reducir pérdidas con comederos adecuados.",
+        "destino": null,
+        "responsable": null
+      },
+      {
+        "residuo_recurso": "Cubetas de huevo",
+        "cantidad": null,
+        "manejo_actual": "No se detalló.",
+        "accion_circular": "Reutilizar o reciclar cuando estén limpias y en buen estado.",
+        "destino": null,
+        "responsable": null
+      },
+      {
+        "residuo_recurso": "Sacos de maiz",
+        "cantidad": null,
+        "manejo_actual": "No se informό.",
+        "accion_circular": "Reutilización segura o entrega a reciclaje.",
+        "destino": null,
+        "responsable": null
+      },
+      {
+        "residuo_recurso": "Aves de descarte/mortalidad",
+        "cantidad": null,
+        "manejo_actual": "No se informó.",
+        "accion_circular": "No corresponde a aprovechamiento sin protocolo.",
+        "destino": null,
+        "responsable": null
+      }
+    ],
+    "conclusion_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "Agua",
+        "indicador": null,
+        "descripcion": "Disponibilidad reportada por acueducto y fuentes locales",
+        "estado": null,
+        "calificacion_1_a_5": null,
+        "accion": "Proteger rondas, medir consumo y mantener bebederos.",
+        "evidencia": null
+      },
+      {
+        "factor": "Suelo",
+        "indicador": null,
+        "descripcion": "Gallinas sueltas; área no medida.",
+        "estado": null,
+        "calificacion_1_a_5": null,
+        "accion": "Rotación y densidad adecuada.",
+        "evidencia": null
+      },
+      {
+        "factor": "Vegetación",
+        "indicador": null,
+        "descripcion": "Recursos del campo forman parte de la alimentación.",
+        "estado": null,
+        "calificacion_1_a_5": null,
+        "accion": "Delimitar áreas y conservar cobertura.",
+        "evidencia": null
+      },
+      {
+        "factor": "Biodiversidad",
+        "indicador": null,
+        "descripcion": "Entorno rural con posible presencia de aves silvestres y fauna.",
+        "estado": null,
+        "calificacion_1_a_5": null,
+        "accion": "Encierro nocturno y malla preventiva.",
+        "evidencia": null
+      },
+      {
+        "factor": "Residuos orgánicos",
+        "indicador": null,
+        "descripcion": "Parte se aprovecha como alimento.",
+        "estado": null,
+        "calificacion_1_a_5": null,
+        "accion": "Protocolo de aprovechamiento.",
+        "evidencia": null
+      },
+      {
+        "factor": "Gallinaza",
+        "indicador": null,
+        "descripcion": "Manejo no informado.",
+        "estado": null,
+        "calificacion_1_a_5": null,
+        "accion": "Compostaje y aplicación dosificada.",
+        "evidencia": null
+      },
+      {
+        "factor": "Bienestar animal",
+        "indicador": null,
+        "descripcion": "Manejo libre y familiar.",
+        "estado": null,
+        "calificacion_1_a_5": null,
+        "accion": "Galpón, nidos, alimento balanceado y plan sanitario.",
+        "evidencia": null
+      }
+    ],
+    "resultado_preliminar_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "Protección del agua",
+        "accion": "Verificar fuentes, impedir contaminación y mantener bebederos limpios.",
+        "prioridad": "Alta",
+        "plazo": "0-2 meses.",
+        "responsable": "Familia/técnico,",
+        "recursos": "Visita, malla y limpieza.",
+        "indicador": "Cero acceso directo a fuente/ registro de agua.",
+        "evidencia": "Fotos y planilla"
+      },
+      {
+        "impacto": "Manejo de gallinaza",
+        "accion": "Definir recolección, almacenamiento cubierto y compostaje si es viable.",
+        "prioridad": "Alta.",
+        "plazo": "0-3 meses.",
+        "responsable": "Myriam/técnico.",
+        "recursos": "Recipiente o zona de compostaje.",
+        "indicador": "Gallinaza manejada sin olores ni escorrentia.",
+        "evidencia": "Registro."
+      },
+      {
+        "impacto": "Alimentación",
+        "accion": "Medir maiz, reducir desperdicio y ajustar dieta con asistencia",
+        "prioridad": "Alta.",
+        "plazo": "Inmediato.",
+        "responsable": "Myriam/técnico",
+        "recursos": "Balanza/planilla.",
+        "indicador": "kg alimento/huevo.",
+        "evidencia": "Registro."
+      },
+      {
+        "impacto": "Suelo y carga animal",
+        "accion": "Medir área y establecer rotación.",
+        "prioridad": "Media-Alta",
+        "plazo": "0-3 meses.",
+        "responsable": "Familla.",
+        "recursos": "Cercas o malla.",
+        "indicador": "Cobertura vegetal conservada.",
+        "evidencia": "Fotos"
+      },
+      {
+        "impacto": "Empaques",
+        "accion": "Usar cubetas limpias, resistentes y separar las dañadas.",
+        "prioridad": "Media.",
+        "plazo": "Inmediato.",
+        "responsable": "Myriam.",
+        "recursos": "Cubetas.",
+        "indicador": "Menor rotura y reutilización segura.",
+        "evidencia": "Registro de pérdidas."
+      },
+      {
+        "impacto": "Residuos orgánicos",
+        "accion": "Seleccionar sobras aptas y retirar sobrantes",
+        "prioridad": "Alta",
+        "plazo": "Inmediato.",
+        "responsable": "Familia",
+        "recursos": "Recipientes.",
+        "indicador": "Cero alimento descompuesto.",
+        "evidencia": "Lista"
+      },
+      {
+        "impacto": "Sanidad/mortalidad",
+        "accion": "Implementar plan sanitario y disposición segura.",
+        "prioridad": "Alta.",
+        "plazo": "0-2 meses",
+        "responsable": "Myriam/veterinario.",
+        "recursos": "Asistencia e insumos",
+        "indicador": "Mortalidad y tratamientos registrados.",
+        "evidencia": "Plan sanitario."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": null,
+        "situacion": "Frio intenso/heladas",
+        "riesgo": "Menor postura, estrés y enfermedades.",
+        "accion_propuesta": "Galpón seco, sin corrientes directas, cama adecuada y agua disponible."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Lluvias fuertes",
+        "riesgo": "Barro, humedad, contaminación de nidos y enfermedades.",
+        "accion_propuesta": "Drenaje, cubierta, nidos secos y restricción de zonas anegadas."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Sequía o disminución de agua",
+        "riesgo": "Riesgo para hidratación y limpieza.",
+        "accion_propuesta": "Reserva segura, revisión de fugas y capacidad acorde al lote."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Aumento del precio o escasez de maiz",
+        "riesgo": "Incremento de costos y menor alimentación.",
+        "accion_propuesta": "Compras programadas, proveedores alternos y formulación técnica con recursos permitidos."
+      },
+      {
+        "aspecto": null,
+        "situacion": "Ola de calor",
+        "riesgo": "Estrés, menor consumo y postura",
+        "accion_propuesta": "Sombra, ventilación y agua fresca."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Productivo/sanitario",
+        "riesgo": "Enfermedad o mortalidad de aves",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto",
+        "prevencion": "Experiencia familiar, plan no documentado,",
+        "respuesta": "Plan sanitario, cuarentena y registros."
+      },
+      {
+        "tipo": "Productiva.",
+        "riesgo": "Disminución de postura por edad",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto",
+        "prevencion": "La productora reconoce aves envejecidas.",
+        "respuesta": "Renovar lote gradualmente."
+      },
+      {
+        "tipo": "Financiero",
+        "riesgo": "Costo de maiz superior al ingreso por huevos",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Critico",
+        "prevencion": "No hay registros",
+        "respuesta": "Medir, ajustar dieta, precio y mezcla de productos."
+      },
+      {
+        "tipo": "Productive/hienestar.",
+        "riesgo": "Falta de galpón o protección",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "Cajones y manejo libre.",
+        "respuesta": "Construir galpón adecuado y encierro nocturno"
+      },
+      {
+        "tipo": "Productiva/hiodiversidad.",
+        "riesgo": "Depredación o pérdida de aves",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto",
+        "prevencion": "No informado.",
+        "respuesta": "Malla, refugio y conteo diario."
+      },
+      {
+        "tipo": "Comercial/inocuidad.",
+        "riesgo": "Contaminación o rotura de huevos",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio-Alto.",
+        "prevencion": "No documentado,",
+        "respuesta": "Recolección frecuente, clasificación y empaque"
+      },
+      {
+        "tipo": "Logistico",
+        "riesgo": "Daño durante envio.",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio.",
+        "prevencion": "Envio por terceros",
+        "respuesta": "Empaque rígido y confirmación de entrega."
+      },
+      {
+        "tipo": "Comercial.",
+        "riesgo": "Venta irregular/pocos clientes",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio-Alto.",
+        "prevencion": "Voz a voz y docentes.",
+        "respuesta": "Lista de clientes y dias de pedido."
+      },
+      {
+        "tipo": "Financiero/organizativo.",
+        "riesgo": "Sin registros de costos y producción",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Alto.",
+        "prevencion": "No existen registros.",
+        "respuesta": "Planilla diaria y cierre mensual."
+      },
+      {
+        "tipo": "Digital.",
+        "riesgo": "Datos y pedidos perdidos",
+        "causa": null,
+        "consecuencia": null,
+        "nivel": "Medio.",
+        "prevencion": "Comunicación informal.",
+        "respuesta": "Respaldo de contactos y pedidos."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "Contar y caracterizar las gallinas: edad, estado, postura y sanidad",
+        "componente": "Productiva",
+        "responsable": "Myriam/técnico.",
+        "tiempo": "Inmediato.",
+        "recursos": "Formato y visita",
+        "resultado": "Linea hase real del lote.",
+        "evidencia": "Inventario."
+      },
+      {
+        "actividad": "Registrar huevos diarios, ventas, autoconsumo, roturas y mortalidad.",
+        "componente": "Productiva/financiera",
+        "responsable": "Myriam",
+        "tiempo": "Inmediato y permanente.",
+        "recursos": "Cuaderno,",
+        "resultado": "Datos reales mensuales.",
+        "evidencia": "Planilla"
+      },
+      {
+        "actividad": "Pesar y registrat el maiz suministrado y su costo.",
+        "componente": "Financiera/ambiental.",
+        "responsable": "Myriam",
+        "tiempo": "Semanal",
+        "recursos": "Balanza y facturas.",
+        "resultado": "Costo de alimento por huevo.",
+        "evidencia": "Registro."
+      },
+      {
+        "actividad": "Calcular costo y actualizar precios de huevo y gallina",
+        "componente": "Financiera/comercial.",
+        "responsable": "Myriam/apoyo.",
+        "tiempo": "0-2 meses",
+        "recursos": "Registros y hoja de costos.",
+        "resultado": "Precio mínimo sostenible",
+        "evidencia": "Hoja de cálculo."
+      },
+      {
+        "actividad": "Diseñar y cotizar galpón, nidos, comederos, bebederos y malla.",
+        "componente": "Productiva/ambiental/SST.",
+        "responsable": "Familia/técnico.",
+        "tiempo": "0-3 meses",
+        "recursos": "Visita y cotizaciones.",
+        "resultado": "Infraestructura priorizada",
+        "evidencia": "Diseño/cotizaciones."
+      },
+      {
+        "actividad": "Definir cantidad y origen de nuevas gallinas",
+        "componente": "Productiva.",
+        "responsable": "Myriam/técnico.",
+        "tiempo": "Después de validar capacidad.",
+        "recursos": "Cotizaciones y plan sanitaris.",
+        "resultado": "Renovación gradual y segura.",
+        "evidencia": "Registro de compra."
+      },
+      {
+        "actividad": "Implementar plan sanitario y bioseguridad.",
+        "componente": "Productiva/SST.",
+        "responsable": "Myriam/veterinario.",
+        "tiempo": "0-2 meses.",
+        "recursos": "Capacitación e insumos.",
+        "resultado": "Menor riesgo de enfermedad.",
+        "evidencia": "Plán y soportes."
+      },
+      {
+        "actividad": "Crear lista de clientes y día de entrega",
+        "componente": "Comercial/digital.",
+        "responsable": "Myriam/hijo.",
+        "tiempo": "0-2 meses",
+        "recursos": "Teléfono y ficha.",
+        "resultado": "Pedidos organizados",
+        "evidencia": "Registro."
+      },
+      {
+        "actividad": "Definir manejo de gallimaza y protección del agua.",
+        "componente": "Ambiental.",
+        "responsable": "Familia/técnico.",
+        "tiempo": "0-3 meses",
+        "recursos": "Zona de manejo y malla",
+        "resultado": "Sin contaminación ni vectores.",
+        "evidencia": "Fotos/registru,"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "Productiva",
+        "indicador": "Número de gallinas activas y productivas.",
+        "meta": "Inventario completo y renovación planificada.",
+        "frecuencia": "Mensual",
+        "responsable": "Myriamu",
+        "evidencia": "Registro."
+      },
+      {
+        "dimension": "Productiva",
+        "indicador": "Huevos producidos por día y por gallina",
+        "meta": "Registrar 100% y definir promedio real.",
+        "frecuencia": "Diario/mensual.",
+        "responsable": "Myriam.",
+        "evidencia": "Planilla"
+      },
+      {
+        "dimension": "Comercial",
+        "indicador": "Cubetas y huevos vendidos.",
+        "meta": "Registrar 100% de ventas",
+        "frecuencia": "Semanal/mensual.",
+        "responsable": "Myriam.",
+        "evidencia": "Ventas."
+      },
+      {
+        "dimension": "Financiera",
+        "indicador": "Ingreso por huevos y gallinas.",
+        "meta": "Cierre mensual completo.",
+        "frecuencia": "Mensual,",
+        "responsable": "Myriam.",
+        "evidencia": "Recibos."
+      },
+      {
+        "dimension": "Financiera",
+        "indicador": "Costo de maiz por huevo vendido",
+        "meta": "Indicador calculado y tendencia controlada",
+        "frecuencia": "Mensual,",
+        "responsable": "Myriam/apoyo.",
+        "evidencia": "Hoja de costos"
+      },
+      {
+        "dimension": "Sanidad",
+        "indicador": "Mortalidad, enfermedades y tratamientos.",
+        "meta": "Registro completo y plan sanitario.",
+        "frecuencia": "Mensual/evento.",
+        "responsable": "Myriam/técnico.",
+        "evidencia": "Registro"
+      },
+      {
+        "dimension": "Cliente",
+        "indicador": "Clientes activos y pedidos repetidos.",
+        "meta": "Base de clientes y seguimiento,",
+        "frecuencia": "Mensual.",
+        "responsable": "Myriam/hijo.",
+        "evidencia": "Lista"
+      },
+      {
+        "dimension": "Ambiental",
+        "indicador": "Agua utilizada.",
+        "meta": "Registro semanal.",
+        "frecuencia": "Semanal/mensual.",
+        "responsable": "Familia.",
+        "evidencia": "Planilla"
+      },
+      {
+        "dimension": "Ambiental",
+        "indicador": "Residuos orgánicos aprovechados y gallinaza manejada.",
+        "meta": "Manejo documentado y sin impactos.",
+        "frecuencia": "Mensual",
+        "responsable": "Familia.",
+        "evidencia": "Registro/fotos."
+      },
+      {
+        "dimension": "SST/bienestar",
+        "indicador": "Inspecciones de galpón, nidos y equipos.",
+        "meta": "Inspección semanal y cero incidentes prevenibles",
+        "frecuencia": "Semanal.",
+        "responsable": "Familia",
+        "evidencia": "Lista"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Aumentar el número de gallinas",
+        "efecto_productivo": "Puede aumentar huevos y aves disponibles.",
+        "efecto_comercial": "Mejora continuidad de oferta.",
+        "efecto_financiero": "Aumenta compra de aves, alimento y sanidad.",
+        "efecto_ambiental": "Aumenta agua, gallinaza y presión sobre suelo.",
+        "ajuste_necesario": "Solo después de medir capacidad, mercado y Costos."
+      },
+      {
+        "decision": "Construir galpón",
+        "efecto_productivo": "Protege aves y organiza postura",
+        "efecto_comercial": "Mejora calidad y confianza.",
+        "efecto_financiero": "Requiere inversión y mantenimiento.",
+        "efecto_ambiental": "Ocupa suelo y usa materiales puede reducir pérdidas.",
+        "ajuste_necesario": "Diseño técnico, drenaje, ventilación y ubicación segura."
+      },
+      {
+        "decision": "Mantener manejo libre",
+        "efecto_productivo": "Favorece comportamiento y acceso a campo.",
+        "efecto_comercial": "Refuerza identidad campesina.",
+        "efecto_financiero": "Puede reducir parte del alimento, pero aumenta riesgos.",
+        "efecto_ambiental": "Puede afectar suelo y fauna si no se controla.",
+        "ajuste_necesario": "Rotación, malla y encierro nocturno."
+      },
+      {
+        "decision": "Producir pollitos",
+        "efecto_productivo": "Permite renovar o ampliar el lote.",
+        "efecto_comercial": "Crea nueva linea de venta.",
+        "efecto_financiero": "Requiere incubación, alimento y manejo de cria",
+        "efecto_ambiental": "Aumenta consumo y residuos.",
+        "ajuste_necesario": "Iniciar solo con capacidad, sanidad y mercado definidos."
+      },
+      {
+        "decision": "Enviar más producto a Bogotá",
+        "efecto_productivo": "Permite salida de producción.",
+        "efecto_comercial": "Amplia mercado.",
+        "efecto_financiero": "Agrega empaque, transporte y riesgo de pérdida.",
+        "efecto_ambiental": "Aumenta huella de transporte.",
+        "ajuste_necesario": "Consolidar pedidos y calcular costo logistico."
+      },
+      {
+        "decision": "Subir o ajustar precios",
+        "efecto_productivo": "No cambia producción.",
+        "efecto_comercial": "Puede afectar demanda, pero mejora sostenibilidad.",
+        "efecto_financiero": "Ayuda a cubrir costos.",
+        "efecto_ambiental": "Puede financiar mejores prácticas.",
+        "ajuste_necesario": "Basar precio en costos y valor real."
+      },
+      {
+        "decision": "Aprovechar residuos orgánicos",
+        "efecto_productivo": "Complementa alimentación.",
+        "efecto_comercial": "Apoya relato ambiental.",
+        "efecto_financiero": "Puede reducir parte de costos.",
+        "efecto_ambiental": "Reduce residuos si se hace bien.",
+        "ajuste_necesario": "Solo residuos aptos y dieta balanceada,"
+      },
+      {
+        "decision": "Implementar registros",
+        "efecto_productivo": "Permite mejorar decisiones.",
+        "efecto_comercial": "Ayuda a cumplir pedidos.",
+        "efecto_financiero": "Muestra utilidad o pérdida",
+        "efecto_ambiental": "Permite medir agua, alimento y residuos.",
+        "ajuste_necesario": "Formato simple y revisión mensual."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}

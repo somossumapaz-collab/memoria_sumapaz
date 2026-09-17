@@ -1,0 +1,1996 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "Empenagos, según pronunciación de la transcripción. Escritura exacta, nombre comercial, marca y registro pendientes de verificar.",
+    "persona_entrevistada": "Cindy García, quien manifestó hablar en representación de Empenagos porque el productor no podía realizar la entrevista por asuntos personales.",
+    "tipo_actividad": "Pecuaria y agroindustrial artesanal: ganadería bovina de leche y elaboración de queso campesino con leche producida en la finca.",
+    "ubicacion_especifica": "Vereda Chorreras, finca Los Pinos. La frase \"finca Chorre\" también aparece en la transcripción; nombre exacto del predio, sector, localidad administrativa, ruta de acceso y tenencia pendientes.",
+    "producto_servicio_principal": "Queso campesino artesanal vendido por libra, prensado, embolsado y conservado en refrigeración.",
+    "estado_actual": "Negocio familiar en marcha, informal según la información disponible, con ventas semanales a una intermediaria y participación ocasional en ferias locales.",
+    "personas_vinculadas": "La transcripción señala a Edwin, a su padre Enrique Penagos y a su hermano Eduardo Penagos como los tres partícipes. Roles, apellidos completos, jornadas, remuneración y relación con Fredy Penagos pendientes.",
+    "coordenadas": "Pendientes de tomar y verificar en el predio.",
+    "descripcion_general": "Proyecto familiar concebido como fuente de ingresos y proyecto de vida. Ordeña vacas, transporta la leche hasta la cocina, la transforma en queso, la prensa, embolsa y refrigera. Busca mejorar raza y praderas y aprender a comercializar con menos intermediación y costos logísticos.",
+    "observaciones_o_comentarios": "Productor de referencia: Fredy Penagos, conforme al nombre del archivo remitido. Su participación y relación exacta con las personas mencionadas en la entrevista deben confirmarse. Teléfono: 314 480 3021, interpretado del dictado \"tres 14 4 80 30 y 2 0 1\"; debe confirmarse antes de uso."
+  },
+  "PMAPC_F02": {
+    "mision": "Producir queso campesino de manera limpia y responsable a partir de la leche de la unidad familiar, generando ingresos y aportando al proyecto de vida de sus integrantes.",
+    "vision": "Fortalecer en los próximos años la calidad del hato y de las praderas, sostener la producción frente al clima y comercializar el queso desde Sumapaz con mayor venta directa y menor dependencia de intermediarios.",
+    "valores": [
+      "Limpieza",
+      "responsabilidad",
+      "trabajo familiar",
+      "cumplimiento"
+    ],
+    "observaciones_o_comentarios": "Limpieza y responsabilidad fueron expresados de manera directa. También se relacionan el trabajo familiar y el cumplimiento, sujetos a validación con los integrantes."
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Por disponibilidad semanal de queso campesino, relación estable con la intermediaria y ausencia de quejas reportadas.",
+    "beneficio_cliente": "Acceso a queso fresco de producción familiar, elaborado con leche propia, entregado embolsado y refrigerado.",
+    "diferencial": "La unidad identifica como elementos especiales la limpieza y la responsabilidad en la elaboración.",
+    "valor_ambiental": "El suero se aprovecha como alimento para cerdos; se construyen pozos o pocetas para reducir el ingreso del ganado al río y se distribuye el agua disponible mediante zanjas en verano. La efectividad y seguridad de estas prácticas requieren visita.",
+    "valor_social_comunitario": "Generación de ingresos para un proyecto de vida familiar y oferta de alimento local en Sumapaz y en ferias.",
+    "evidencia": "Intermediaria que recoge cada ocho días, pago en efectivo, ventas en ferias, ausencia de quejas reportada y fotografías mencionadas. Soportes, registros y contactos pendientes.",
+    "observaciones_o_comentarios": "Cómo demostrarlo: Bitácora de ordeño y producción, registro de lotes, temperaturas y refrigeración, fotos, análisis de agua, controles sanitarios, trazabilidad, costos y constancias de compradores."
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Proyecto familiar con tres participes reportados.",
+      "Doce vacas en producción o rotación.",
+      "Producción mensual de 400-420 lb de queso.",
+      "Compradora semanal estable.",
+      "Pago en efectivo.",
+      "Elaboración con leche propia.",
+      "Limpieza y responsabilidad como diferenciales.",
+      "Aprovechamiento del suero en cerdos."
+    ],
+    "oportunidades": [
+      "Mejoramiento técnico de raza y praderas.",
+      "Venta directa y circuitos cortos en Sumapaz.",
+      "Participación más planificada en ferias.",
+      "Marca, etiqueta, WhatsApp y base de clientes.",
+      "Costeo real por libra y negociación informada.",
+      "Mejora de inocuidad y cadena de frio.",
+      "Protección del agua y adaptación climática.",
+      "Cooperación con productores y rutas compartidas."
+    ],
+    "debilidades": [
+      "Identidad, roles y titularidad no aclarados.",
+      "Dependencia de una sola intermediaria.",
+      "Sin costo completo por libra ni margen validado.",
+      "Sin registros de leche, rendimiento, lotes o pérdidas.",
+      "Infraestructura higiénica no caracterizada.",
+      "Consumo y calidad del agua no medidos.",
+      "No se reportan marca, etiqueta ni base de clientes.",
+      "Costos logisticos y sanitarios no determinados."
+    ],
+    "amenazas": [
+      "Precios bajos en la venta mediante intermediación.",
+      "Frio y lluvias que afectan crias recién nacidas.",
+      "Diarrea o enfermedad con debilitamiento y muerte.",
+      "Escasez de agua en verano.",
+      "Riesgo de pérdida de ganado cerca del río.",
+      "Enfermedad animal y pérdidas imprevistas.",
+      "Alto costo para salir a Fusagasuga o Bogotá.",
+      "Riesgos de inocuidad si falla refrigeración o higiene."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Cliente directo",
+        "perfil_que_busca": "Intermediaria, mujer no identificada, recoge 96-110 lb por visita.",
+        "ubicacion": "San Juan",
+        "necesidad": "Queso disponible para reventa.",
+        "frecuencia": "Cada 8 dias, miércoles.",
+        "criterio_compra": "Precio, continuidad y aceptación.",
+        "canal": "Recogida en vivienda/finca."
+      },
+      {
+        "tipo_actor": "Consumidor final",
+        "perfil_que_busca": "Personas que adquieren el queso a través de la intermediaria.",
+        "ubicacion": "Principalmente Fusagasuga; detalle pendiente.",
+        "necesidad": "Queso campesino fresco.",
+        "frecuencia": "No determinada.",
+        "criterio_compra": "Calidad, sabor, frescura y precio; validar.",
+        "canal": "Canal indirecto."
+      },
+      {
+        "tipo_actor": "Comprador local",
+        "perfil_que_busca": "Intermediaria de San Juan, compradora principal.",
+        "ubicacion": "San Juan, Sumapaz.",
+        "necesidad": "Volumen semanal para comercializar.",
+        "frecuencia": "Semanal.",
+        "criterio_compra": "Cumplimiento, volumen y precio acordado.",
+        "canal": "Acuerdo directo, contacto pendiente."
+      },
+      {
+        "tipo_actor": "Comprador Institucional",
+        "perfil_que_busca": "No reportado. Posibles colegios, programas o mercados públicos por validar.",
+        "ubicacion": "Sumapaz/Bogotá.",
+        "necesidad": "Producto con requisitos sanitarios y trazabilidad.",
+        "frecuencia": "No aplica actualmente.",
+        "criterio_compra": "Calidad, formalización y entrega.",
+        "canal": "Por gestionar"
+      },
+      {
+        "tipo_actor": "Tiendas / restaurantes / plazas",
+        "perfil_que_busca": "Destino comercial en Fusagasugá no identificado.",
+        "ubicacion": "Fusagasugá.",
+        "necesidad": "Queso refrigerado y uniforme.",
+        "frecuencia": "Pendiente.",
+        "criterio_compra": "Precio, inocuidad, presentación y vida útil.",
+        "canal": "A través de intermediaria."
+      },
+      {
+        "tipo_actor": "Ferias / consumidor local",
+        "perfil_que_busca": "Visitantes y habitantes que compran cuando se realizan ferias.",
+        "ubicacion": "Sumapaz.",
+        "necesidad": "Producto local y cercano.",
+        "frecuencia": "Según convocatoria.",
+        "criterio_compra": "Origen, calidad, precio y confianza.",
+        "canal": "Venta en feria."
+      },
+      {
+        "tipo_actor": "Aliado potencial",
+        "perfil_que_busca": "Productores, asociaciones o rutas compartidas para venta directa.",
+        "ubicacion": "Sumapaz / Bogotá rural-urbana.",
+        "necesidad": "Reducir costo de salida y dependencia.",
+        "frecuencia": "Por estructurar.",
+        "criterio_compra": "Cooperación, volumen y logística.",
+        "canal": "Red asociativa / WhatsApp."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Queso campesino disponible semanalmente, con calidad constante, limpieza, cumplimiento y precio aceptable.",
+    "como_se_conoce_la_necesidad": "La intermediaria regresa cada ocho días y no se han reportado quejas. La unidad también vende cuando participa en ferias.",
+    "quienes_compran_o_podrian_comprar": "La intermediaria de San Juan, consumidores en Fusagasugá, asistentes a ferias, familias, tiendas, restaurantes y compradores institucionales por validar.",
+    "evidencia": "Ventas semanales de 96-110 lb, pago en efectivo, continuidad de la compradora y participación en ferias. No se aportaron facturas, registros ni contactos.",
+    "ventaja_territorial": "Origen territorial, leche propia, producción familiar y posibilidad de circuitos cortos. Estas ventajas deben documentarse sin hacer afirmaciones no verificadas.",
+    "cambios_demanda": "No se informó. Debe preguntarse por variaciones de volumen, precio y preferencias.",
+    "dificultades": "Precio local bajo, mayor margen capturado por la intermediación y alto costo de trasladar producto a Fusagasugá o Bogotá.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Productores vecinos",
+        "tipo": "Familias pecuarias",
+        "que_aporta": "Experiencia, volúmenes y rutas.",
+        "que_recibe": "Menores costos y aprendizaje.",
+        "trabajo_conjunto": "Compras, frío y transporte compartidos.",
+        "aporte_ambiental": "Protección de agua y praderas.",
+        "accion": "Mapear productores interesados."
+      },
+      {
+        "actor_aliado": "Asociación campesina",
+        "tipo": "Organización potencial",
+        "que_aporta": "Ferias, representación y gestión.",
+        "que_recibe": "Oferta territorial de queso.",
+        "trabajo_conjunto": "Marca o venta asociativa.",
+        "aporte_ambiental": "Buenas prácticas comunes.",
+        "accion": "Verificar organizaciones activas."
+      },
+      {
+        "actor_aliado": "JAC",
+        "tipo": "Comunitario",
+        "que_aporta": "Convocatoria y articulación.",
+        "que_recibe": "Fortalecimiento local.",
+        "trabajo_conjunto": "Capacitación y proyectos.",
+        "aporte_ambiental": "Acciones colectivas sobre agua.",
+        "accion": "Presentar necesidades priorizadas."
+      },
+      {
+        "actor_aliado": "Intermediaria actual",
+        "tipo": "Compradora",
+        "que_aporta": "Compra recurrente y salida a Fusagasugá.",
+        "que_recibe": "Producto y margen comercial.",
+        "trabajo_conjunto": "Acuerdo de volumen, calidad y precio.",
+        "aporte_ambiental": "Agrupar viajes.",
+        "accion": "Registrar entregas y negociar."
+      },
+      {
+        "actor_aliado": "Ferias",
+        "tipo": "Canal comercial",
+        "que_aporta": "Contacto directo y validación.",
+        "que_recibe": "Oferta local.",
+        "trabajo_conjunto": "Venta, degustación y base de clientes.",
+        "aporte_ambiental": "Circuito corto.",
+        "accion": "Preparar portafolio y precios."
+      },
+      {
+        "actor_aliado": "Instituciones",
+        "tipo": "Asistencia técnica",
+        "que_aporta": "Veterinaria, pasturas, Inocuidad y mercado.",
+        "que_recibe": "Unidad fortalecida.",
+        "trabajo_conjunto": "Visitas, formación y gestión.",
+        "aporte_ambiental": "Agua, suelo, residuos.",
+        "accion": "Solicitar acompañamiento integral."
+      },
+      {
+        "actor_aliado": "Aliado logistico/digital",
+        "tipo": "Transportador o red",
+        "que_aporta": "Ruta, pedidos y comunicación.",
+        "que_recibe": "Pago y carga consolidada",
+        "trabajo_conjunto": "Entrega compartida y WhatsApp.",
+        "aporte_ambiental": "Menos viajes por libra.",
+        "accion": "Cotizar rutas piloto."
+      },
+      {
+        "actor_aliado": "Otros",
+        "tipo": "Clientes directos potenciales",
+        "que_aporta": "Pedidos y retroalimentación.",
+        "que_recibe": "Queso local confiable.",
+        "trabajo_conjunto": "Preventa semanal.",
+        "aporte_ambiental": "Menos intermediación.",
+        "accion": "Crear base de clientes,"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Encuesta",
+        "a_quien": "No aplicada o no reportada.",
+        "resultado": "Sin resultado.",
+        "motivacion": "Pendiente.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Entrevista",
+        "a_quien": "No se reportó entrevista formal a clientes.",
+        "resultado": "Pendiente.",
+        "motivacion": "Pendiente.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Degustación / muestra",
+        "a_quien": "No reportada como actividad separada.",
+        "resultado": "Pendiente.",
+        "motivacion": "Pendiente.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Venta previa",
+        "a_quien": "Intermediaria de San Juan.",
+        "resultado": "Compra recurrente de 96-110 lb cada ocho dias no hay quejas reportadas.",
+        "motivacion": "Disponibilidad, continuidad y calidad percibida.",
+        "evidencia": "Historial verbal registros pendientes."
+      },
+      {
+        "metodo": "Carta de intención",
+        "a_quien": "No reportada.",
+        "resultado": "No aplica actualmente.",
+        "motivacion": "Pendiente.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Participación en feria",
+        "a_quien": "Asistentes a ferias locales.",
+        "resultado": "Se comercializa producto cuando hay feria; cantidades no informadas.",
+        "motivacion": "Producto local y compra directa.",
+        "evidencia": "Fotos y registros por recopilar."
+      },
+      {
+        "metodo": "Otro",
+        "a_quien": "Intermediaria y compradores finales.",
+        "resultado": "Pago en efectivo y recompra.",
+        "motivacion": "Relación de confianza.",
+        "evidencia": "Contacto y comprobarites pendientes."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Queso campesino",
+        "descripcion_tecnica": "Queso artesanal obtenido de leche propia: calentamiento, cuajado, desuerado, salado, prensado, recorte y refrigeración. Parámetros técnicos pendientes.",
+        "unidad": "Libra",
+        "insumos_principales": "Leche bovina, cuajo y sal. Dosis y rendimiento pendientes.",
+        "condiciones_especiales": "Bolsa y nevera; iniciar y mantener cadena de frio. Temperatura y vida útil pendientes.",
+        "presentacion": "Pieza por libra, embolsada, marcado referido pero detalle pendiente.",
+        "diferencial": "Leche propia, limpieza y responsabilidad."
+      },
+      {
+        "servicio": "Suero",
+        "descripcion_tecnica": "Subproducto liquido del desuerado; actualmente no se comercializa.",
+        "unidad": "Litro; cantidad pendiente",
+        "insumos_principales": "Suero de leche .",
+        "condiciones_especiales": "Manejo inmediato y condiciones sanitarias pendientes.",
+        "presentacion": "Se entrega o usa para cerdos",
+        "diferencial": "Aprovechamiento interno."
+      },
+      {
+        "servicio": "Leche cruda",
+        "descripcion_tecnica": "Materia prima obtenida de 12 vacas en rotación; no se reporta venta como producto.",
+        "unidad": "Litro; volumen pendiente",
+        "insumos_principales": "Leche bovina.",
+        "condiciones_especiales": "Garrafones y traslado a cocina; tiempos y temperatura pendientes.",
+        "presentacion": "A granel para transformación interna.",
+        "diferencial": "Origen en la finca."
+      },
+      {
+        "servicio": "Otros",
+        "descripcion_tecnica": "No se reportaron otros productos comerciales.",
+        "unidad": "No aplica",
+        "insumos_principales": "No aplica",
+        "condiciones_especiales": "No aplica",
+        "presentacion": "No aplica",
+        "diferencial": "Pendiente de verificar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Queso campesino",
+        "unidad": "Lote diario; cantidad pendiente",
+        "actividad_proceso": "1. Ordeñar las vacas temprano.",
+        "tiempo_estimado": "No informado."
+      },
+      {
+        "servicio": "Queso campesino",
+        "unidad": "Leche del día",
+        "actividad_proceso": "2. Trasladar la leche en garrafones sobre una yegua desde el potrero hasta la cocina.",
+        "tiempo_estimado": "Depende de la distancia; pendiente."
+      },
+      {
+        "servicio": "Queso campesino",
+        "unidad": "Lote del dia",
+        "actividad_proceso": "3. Verter en recipiente, tibiar y agregar cuajo según litros y temperatura.",
+        "tiempo_estimado": "No informado; temperatura pendiente."
+      },
+      {
+        "servicio": "Queso campesino",
+        "unidad": "Lote del día",
+        "actividad_proceso": "4. Esperar cuajado, retirar suero, salar la cuajada, llevar a prensa y apretar.",
+        "tiempo_estimado": "Cuajado y prensado: pendientes."
+      },
+      {
+        "servicio": "Queso campesino",
+        "unidad": "Piezas obtenidas",
+        "actividad_proceso": "5. Al día siguiente, desmoldar, recortar bordes, dar forma, embolsar, marcar según lo referido y refrigerar.",
+        "tiempo_estimado": "Un día más refrigeración; detalle pendiente."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Leche bovina",
+        "cantidad_unidad": "Volumen diario pendiente",
+        "frecuencia": "Diaria",
+        "proveedor_fuente": "Doce vacas de la unidad",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Alta demanda de agua/pastura; riesgo sanitario.",
+        "manejo_ambiental": "Ordeño higiénico y registro.",
+        "observaciones": null
+      },
+      {
+        "insumo": "Sal",
+        "cantidad_unidad": "Parte de $200.000-$220.000 junto con cuajo: desagregar",
+        "frecuencia": "Mensual",
+        "proveedor_fuente": "Proveedor pendiente",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Empaques y consumo de recurso.",
+        "manejo_ambiental": "Dosificar, almacenar seco y registrar.",
+        "observaciones": null
+      },
+      {
+        "insumo": "Cuajo",
+        "cantidad_unidad": "Cantidad y presentación pendientes",
+        "frecuencia": "Mensual",
+        "proveedor_fuente": "Proveedor pendiente",
+        "toxicidad": "Ficha pendiente",
+        "impacto_potencial": "Envase, dosificación e inocuidad.",
+        "manejo_ambiental": "Seguir ficha, lote, vencimiento y disposición.",
+        "observaciones": null
+      },
+      {
+        "insumo": "Bolsas",
+        "cantidad_unidad": "Cantidad mensual pendiente",
+        "frecuencia": "Por lote",
+        "proveedor_fuente": "Proveedor pendiente",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuo plástico.",
+        "manejo_ambiental": "Reducir, seleccionar material apto y disponer.",
+        "observaciones": null
+      },
+      {
+        "insumo": "Agua",
+        "cantidad_unidad": "Consumo no medido",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Pozos/pocetas y flujos de la finca",
+        "toxicidad": "/A N",
+        "impacto_potencial": "Escasez y riesgo de contaminación.",
+        "manejo_ambiental": "Medir, proteger fuentes y analizar calidad.",
+        "observaciones": null
+      },
+      {
+        "insumo": "Energia / refrigeración",
+        "cantidad_unidad": "Consumo pendiente",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Red o fuente pendiente",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Consumo energético y riesgo de pérdida.",
+        "manejo_ambiental": "Termómetro, mantenimiento y registro.",
+        "observaciones": null
+      },
+      {
+        "insumo": "Pasturas/forraje",
+        "cantidad_unidad": "Area y consumo pendientes",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Praderas de la finca",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Compactación y presión sobre suelo/agua.",
+        "manejo_ambiental": "Plan de praderas y rotación técnica.",
+        "observaciones": null
+      }
+    ],
+    "observaciones_o_comentarios": "OBSERVACIONES: Garrafones, recipientes, prensa y yegua son recursos del proceso, no consumibles. Deben inventariarse, revisarse para inocuidad, capacidad, ergonomia y mantenimiento."
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "Aproximadamente 400-420 lb de queso. También se reportan 96-110 lb cada ocho días. Debe verificarse con pesajes y registros.",
+    "produccion_normal": null,
+    "capacidad_mensual_teorica": null,
+    "produccion_maxima_posible": "No determinada. No debe estimarse sin litros de leche, rendimiento por vaca, conversión leche/queso, descanso, sanidad, praderas, agua y mercado.",
+    "area_numero_habitaciones": "Doce vacas reportadas; área, razas, edades, estado reproductivo, litros por vaca y número efectivo en ordeño pendientes.",
+    "limitantes_productivos": "Calidad genética y de praderas; número de animales; salud de crias; ausencia de registros y estandarización del proceso.",
+    "limitantes_ambientales": "Frío y lluvias intensas para crías, escasez de agua en verano y cercanía de potreros al río.",
+    "capacidad_instalada": "Cocina, recipientes, prensa, garrafones y nevera reportados; capacidad, estado, exclusividad, materiales y requisitos sanitarios no determinados.",
+    "capacidad_utilizada": "No calculable con la información disponible.",
+    "produce_mismo_todo_ano": null,
+    "alcanza_para_demanda": null,
+    "necesidades_aumentar_sosteniblemente": "Mejorar raza y praderas, asegurar agua, fortalecer sanidad y protección de crías, medir capacidad y validar mercado directo. Aumentar animales solo después de comprobar carga y viabilidad.",
+    "observaciones_o_comentarios": "Variación anual: Las vacas se rotan durante el año y algunas se dejan descansar alrededor de 6,5-7 meses, según la respuesta el sentido técnico exacto y la etapa productiva deben aclararse.\n¿Alcanza para la demanda?: La intermediaria recoge la producción disponible y no se reportan quejas, pero no existe estimación de demanda ni pedidos no atendidos."
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua disponible",
+        "estado_actual": "Pozos/pocetas y pequeños flujos; sin medición.",
+        "limite_restriccion": "Disminuye en verano.",
+        "afectacion": "Reduce bebida y manejo del hato.",
+        "efecto": "Riesgo de baja producción y bienestar.",
+        "incidencia": "Alta",
+        "accion_mejora": "Balance hidrico, almacenamiento y bebederos."
+      },
+      {
+        "condicion": "Fuentes hidricas",
+        "estado_actual": "Dos potreros colindan con río, flujos internos referidos.",
+        "limite_restriccion": "Ingreso del ganado y contaminación/pérdida.",
+        "afectacion": "Obliga a manejar acceso y distribución..",
+        "efecto": "Riesgo ambiental y animal..",
+        "incidencia": "Alta",
+        "accion_mejora": "Cercar/proteger rondas y definir puntos de bebida"
+      },
+      {
+        "condicion": "Suelo",
+        "estado_actual": "Praderas en uso; diagnóstico no informado.",
+        "limite_restriccion": "Calidad y carga desconocidas.",
+        "afectacion": "Limita alimentación y número de animales.",
+        "efecto": "Variación de leche y costos.",
+        "incidencia": "Alta",
+        "accion_mejora": "Análisis de suelo y plan de praderas."
+      },
+      {
+        "condicion": "Pendiente / topografia",
+        "estado_actual": "Potreros y traslados con yegua; detalle pendiente.",
+        "limite_restriccion": "Distancia y terreno no medidos.",
+        "afectacion": "Aumenta esfuerzo y riesgo logistico.",
+        "efecto": "Tiempo, carga y accidentes.",
+        "incidencia": "Media",
+        "accion_mejora": "Mapear rutas y superficies."
+      },
+      {
+        "condicion": "Clima",
+        "estado_actual": "Frio/lluvia y verano fuerte.",
+        "limite_restriccion": "Crías débiles, enfermedad y falta de agua",
+        "afectacion": "Afecta sanidad, praderas y producción.",
+        "efecto": "Mortalidad y menor leche.",
+        "incidencia": "Alta",
+        "accion_mejora": "Refugios, plan sanitario y plan de sequía."
+      },
+      {
+        "condicion": "Biodiversidad",
+        "estado_actual": "No caracterizada; entorno de río y páramo.",
+        "limite_restriccion": "No expandir sobre zonas sensibles.",
+        "afectacion": "Condiciona ampliación y manejo.",
+        "efecto": "Posible afectación ecosistémica.",
+        "incidencia": "Media",
+        "accion_mejora": "Delimitar áreas y conservar cobertura."
+      },
+      {
+        "condicion": "Uso de insumos",
+        "estado_actual": "Sal, cuajo, bolsas; veterinarios no detallados.",
+        "limite_restriccion": "Dosis y residuos sin registro.",
+        "afectacion": "Puede afectar inocuidad y ambiente.",
+        "efecto": "Riesgo sanitario y de residuos.",
+        "incidencia": "Media",
+        "accion_mejora": "Inventario, fichas y disposición segura."
+      },
+      {
+        "condicion": "Manejo de residuos",
+        "estado_actual": "Suero a cerdos, demás residuos no descritos.",
+        "limite_restriccion": "Cantidades y protocolo desconocidos.",
+        "afectacion": "Aprovecha un flujo pero deja vacios",
+        "efecto": "Olores, vertimientos o plásticos.",
+        "incidencia": "Media",
+        "accion_mejora": "Medir, separar y documentar destinos."
+      }
+    ],
+    "observaciones_o_comentarios": "Valoración preliminar basada en la entrevista requiere visita, mediciones y revisión normativa."
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Biológico",
+        "peligro": "Virus/enfermedad diarreica en crías",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Protección plástica improvisada",
+        "accion": "Plan veterinario, aislamiento y registros."
+      },
+      {
+        "tipo": "Biológico",
+        "peligro": "Bacterias por leche cruda y animales",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Limpieza referida; controles no descritos.",
+        "accion": "Higiene, agua segura, EPP e inocuidad."
+      },
+      {
+        "tipo": "Biológico",
+        "peligro": "Picaduras",
+        "aplica": false,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "No reportadas.",
+        "accion": "Verificar fauna, insectos y medidas."
+      },
+      {
+        "tipo": "Biológico",
+        "peligro": "Mordeduras/golpes de animales",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Experiencia de manejo: no descrita.",
+        "accion": "Manejo bovino seguro y rutas de escape."
+      },
+      {
+        "tipo": "Fisico",
+        "peligro": "Temperatura, frío y lluvia",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Trabajo continúa aunque llueva.",
+        "accion": "Ropa térmica, impermeable y refugio"
+      },
+      {
+        "tipo": "Fisico",
+        "peligro": "Radiación solar",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No reportado:",
+        "accion": "Sombrero, protección y pausas."
+      },
+      {
+        "tipo": "Fisico",
+        "peligro": "Ruido",
+        "aplica": false,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "No reportado:",
+        "accion": "Verificar equipos y exposición."
+      },
+      {
+        "tipo": "Químico",
+        "peligro": "Polvos",
+        "aplica": true,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "No reportado:",
+        "accion": "Verificar rutas, forraje y ventilación."
+      },
+      {
+        "tipo": "Químico",
+        "peligro": "Gases",
+        "aplica": false,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "No reportado.",
+        "accion": "Ventilar y revisar combustión si aplica."
+      },
+      {
+        "tipo": "Químico",
+        "peligro": "Material particulado",
+        "aplica": false,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "No reportado.",
+        "accion": "Validar en visita."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Posturas durante ordeño y prensado",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "No se informaron controles.",
+        "accion": "Ergonomia, altura de trabajo y pausas.."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Movimientos repetitivos",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "No se informaron controles.",
+        "accion": "Rotación de tareas y técnica."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Cargas: garrafones, recipientes y queso",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Yegua para transporte interno..",
+        "accion": "Limitar peso, ayudas y capacitación."
+      },
+      {
+        "tipo": "Seguridad",
+        "peligro": "Herramientas, prensa, cuchillos y recipientes",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Experiencia; estado pendiente.",
+        "accion": "Guardas, mantenimiento y guantes."
+      },
+      {
+        "tipo": "Seguridad",
+        "peligro": "Superficies irregulares, barro y rio",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Pozos y manejo de potreros.",
+        "accion": "Senderos, botas, iluminación y drenaje."
+      },
+      {
+        "tipo": "Seguridad",
+        "peligro": "Electricidad de nevera y cocina",
+        "aplica": true,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "No reportado.",
+        "accion": "Revisión técnica y conexiones protegidas."
+      },
+      {
+        "tipo": "Seguridad",
+        "peligro": "Traslado en yegua/rutas rurales",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Uso de yegua intermediaria recoge.",
+        "accion": "Carga estable, ruta segura y comunicación."
+      }
+    ],
+    "observaciones_o_comentarios": "Identificación técnica preliminar a partir de las actividades relatadas. Debe validarse en visita con las personas que realizan ordeño, transporte, transformación, refrigeración y manejo animal. * Riesgo potencial inherente a la actividad no fue descrito con detalle y debe confirmarse en visita."
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Usar botas antideslizantes, impermeable, rора térmica, guantes y delantal según tarea.",
+        "riesgo": "Clima, biológico, locativo e inocuidad.",
+        "responsable": "Familia / operarios.",
+        "frecuencia": "Cada jornada.",
+        "evidencia": "Checklist y fotos."
+      },
+      {
+        "accion_preventiva": "Revisar prensa, cuchillos, recipientes, garrafones, nevera, conexiones y superficies.",
+        "riesgo": "Mecánico, eléctrico y locativo.",
+        "responsable": "Responsable operativo.",
+        "frecuencia": "Diaria / semanal.",
+        "evidencia": "Registro de inspección."
+      },
+      {
+        "accion_preventiva": "Capacitar en ordeño y manejo bovino seguro, posturas, cargas e inocuidad.",
+        "riesgo": "Animal, biomecánico y biológico.",
+        "responsable": "Familia/ asistencia técnica.",
+        "frecuencia": "Inicial y semestral.",
+        "evidencia": "Acta o certificado."
+      },
+      {
+        "accion_preventiva": "Mantener cocina y zonas de trabajo limpias, secas, Iluminadas y separadas.",
+        "riesgo": "Caídas y contaminación.",
+        "responsable": "Responsable de transformación.",
+        "frecuencia": "Cada lote.",
+        "evidencia": "Lista de limpieza."
+      },
+      {
+        "accion_preventiva": "Disponer de botiquin, contactos y ruta de emergencia desde el predio.",
+        "riesgo": "Emergencias.",
+        "responsable": "Familia.",
+        "frecuencia": "Revisión mensual.",
+        "evidencia": "Inventario y cartel."
+      },
+      {
+        "accion_preventiva": "Registrar incidentes, accidentes, enfermedades animales y condiciones inseguras.",
+        "riesgo": "Seguimiento SG-SST y sanitario.",
+        "responsable": "Persona designada.",
+        "frecuencia": "Cada evento.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "accion_preventiva": "Asegurar garrafones en la yegua y proteger el queso durante recogida y transporte.",
+        "riesgo": "Carga, tránsito e inocuidad.",
+        "responsable": "Responsable operativo / compradora.",
+        "frecuencia": "Cada traslado.",
+        "evidencia": "Registro de entrega."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Ferias campesinas",
+        "activo": true,
+        "descripcion": "Ferias que se realizan en Sumapaz.",
+        "responsable": "Familia; rol por definir.",
+        "frecuencia": "Según convocatoria."
+      },
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "Venta en feria; venta directa regular pendiente.",
+        "responsable": "Familia.",
+        "frecuencia": "Ocasional."
+      },
+      {
+        "canal": "Redes sociales",
+        "activo": false,
+        "descripcion": "No se reportaron canales propias.",
+        "responsable": "Por asignar.",
+        "frecuencia": "Por implementar."
+      },
+      {
+        "canal": "WhatsApp/llamadas",
+        "activo": false,
+        "descripcion": "Contacto actual no descrito teléfono por confirmar.",
+        "responsable": "Por asignar.",
+        "frecuencia": "Por estructurar."
+      },
+      {
+        "canal": "Tiendas/restaurantes / plazas",
+        "activo": true,
+        "descripcion": "Destino en Fusagasuga mediante intermediaria; negocio final no identificado.",
+        "responsable": "Intermediaria.",
+        "frecuencia": "Semanal."
+      },
+      {
+        "canal": "Compras institucionales",
+        "activo": false,
+        "descripcion": "No reportadas.",
+        "responsable": "Por gestionar.",
+        "frecuencia": "No aplica actualmente."
+      },
+      {
+        "canal": "Comercialización asociativa",
+        "activo": false,
+        "descripcion": "Interés en aprender a vender sin intermediarios; alianza no reportada.",
+        "responsable": "Familia/ aliados.",
+        "frecuencia": "Por explorar."
+      },
+      {
+        "canal": "Otro",
+        "activo": true,
+        "descripcion": "Intermediaria de San Juan recoge el producto en la vivienda/finca.",
+        "responsable": "Compradora y familia.",
+        "frecuencia": "Cada 8 días, miércoles."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Queso campesino",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "$8.000/lb en el acuerdo actual otras referencias pendientes.",
+        "logistica_plataforma": "Compradora recoge; costo real y margen de Intermediación pendientes.",
+        "precio_final": 8000.0,
+        "justificacion": "Precio acordado con intermediaria. Debe incluir leche, mano de obra, insumos, energia, empaque, sanidad pérdidas y 50% del arrendatario."
+      },
+      {
+        "servicio": "Venta directa futura",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Investigar en Sumapaz y Fusagasuga",
+        "logistica_plataforma": "Ruta y frío por cotizar.",
+        "precio_final": null,
+        "justificacion": "No fijar hasta calcular costo y validar demanda"
+      },
+      {
+        "servicio": "Suero",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No se comercializa",
+        "logistica_plataforma": "Uso intemo.",
+        "precio_final": null,
+        "justificacion": "Se aprovecha como alimento para cerdos."
+      },
+      {
+        "servicio": "Otros",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No aplica,",
+        "logistica_plataforma": "No aplica",
+        "precio_final": null,
+        "justificacion": "No reportados."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Queso referencia baja",
+        "cantidad_mensual": "400 lb",
+        "precio": 8000.0,
+        "ingreso_mensual": 3200000.0,
+        "forma_pago": "Efectivo",
+        "canal": "Intermediaria de San Juan / Fusagasuga."
+      },
+      {
+        "concepto_servicio": "Queso referencia alta",
+        "cantidad_mensual": "420 lb",
+        "precio": 8000.0,
+        "ingreso_mensual": 3360000.0,
+        "forma_pago": "Efectivo",
+        "canal": "Mismo canal."
+      },
+      {
+        "concepto_servicio": "Entrega semanal",
+        "cantidad_mensual": "96-110 lb cada 8 días",
+        "precio": 8000.0,
+        "ingreso_mensual": null,
+        "forma_pago": "Efectivo",
+        "canal": "Intermediaria miércoles."
+      },
+      {
+        "concepto_servicio": "Venta directa futura",
+        "cantidad_mensual": "No proyectada",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Por definir",
+        "canal": "Ferias, clientes directos o alianzas."
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": "Cálculo preliminar: después de entregar el 50% del producido al arrendatario quedarian $1.600.000-$1.680.000; al descontar $200.000-$220.000 de sal y cuajo, el resultado parcial seria aproximadamente $1.380.000-$1.480.000. No equivale a utilidad neta porque faltan alimentación, trabajo, agua, energia, empaque, sanidad, depreciación, pérdidas, transporte, impuestos y otros costos. Ingreso bruto entrega semanal: $768.000-$880.000 por entrega."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Intermediaria actual",
+        "estrategia": "Acordar volumen, precio, día, pago, temperatura y retroalimentación.",
+        "medio": "Llamada/WhatsApp/registro de entrega.",
+        "frecuencia": "Semanal.",
+        "responsable": "Responsable comercial por definir."
+      },
+      {
+        "cliente": "Clientes de feria",
+        "estrategia": "Registrar contacto, ofrecer información clara y recibir pedidos.",
+        "medio": "Feria, tarjeta o WhatsApp.",
+        "frecuencia": "Cada evento y seguimiento.",
+        "responsable": "Familia."
+      },
+      {
+        "cliente": "Consumidor final",
+        "estrategia": "Mantener calidad uniforme, etiqueta y fecha de elaboración.",
+        "medio": "Empaque y contacto directo.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Transformador/ comercial."
+      },
+      {
+        "cliente": "Comprador institucional",
+        "estrategia": "Preparar ficha, soportes y capacidad real.",
+        "medio": "Correo, visita o convocatoria.",
+        "frecuencia": "Según oportunidad.",
+        "responsable": "Unidad / aliado."
+      },
+      {
+        "cliente": "Aliado comercial",
+        "estrategia": "Coordinar rutas y venta agrupada sin perder trazabilidad.",
+        "medio": "Grupo de WhatsApp y actas.",
+        "frecuencia": "Semanal / mensual.",
+        "responsable": "Delegado de la unidad."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Leche a cocina",
+        "canal": "Traslado interno",
+        "tiempo": "Inmediato medir",
+        "transporte_operacion": "Garrafones en yegua",
+        "condicion_calidad": "Recipientes limpios, cerrados y tiempo/temperatura controlados",
+        "capacidad": "Pendiente",
+        "costo": "No determinado",
+        "responsable": "Persona de ordeño."
+      },
+      {
+        "servicio_insumo": "Queso a intermediaria",
+        "canal": "Recogida en finca/vivienda",
+        "tiempo": "Cada 8 días",
+        "transporte_operacion": "Vehiculo de compradora, confirmar",
+        "condicion_calidad": "Bolsa integra, rotulado, refrigeración y registro de salida.",
+        "capacidad": "96-110 lb",
+        "costo": "No determinado",
+        "responsable": "Familia/ Intermediaria."
+      },
+      {
+        "servicio_insumo": "Queso a feria",
+        "canal": "Venta directa",
+        "tiempo": "Según evento",
+        "transporte_operacion": "Por definir",
+        "condicion_calidad": "Cadena de frío, protección y tiempo máximo validado.",
+        "capacidad": "Pendiente",
+        "costo": "Por cotizar",
+        "responsable": "Familia"
+      },
+      {
+        "servicio_insumo": "Venta directa urbana",
+        "canal": "Ruta futura",
+        "tiempo": "Por diseñar",
+        "transporte_operacion": "Compartido o contratado",
+        "condicion_calidad": "Cadena de frío y entrega programada.",
+        "capacidad": "Pendiente",
+        "costo": "Por cotizar",
+        "responsable": "Alianza/ responsable comercial."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Código QR/ etiqueta",
+        "informacion": "Productor, vereda, lote, fecha, conservación y contacto.",
+        "responsable": "Responsable comercial.",
+        "medio": "Etiqueta y ficha digital.",
+        "frecuencia": "Cada lote.",
+        "evidencia": "Foto y archivo maestro."
+      },
+      {
+        "elemento": "Ficha técnica",
+        "informacion": "Ingredientes, presentación, proceso, temperatura y vida útil validada.",
+        "responsable": "Transformador / técnico.",
+        "medio": "Archivo físicodigital/.",
+        "frecuencia": "Al cambiar proceso.",
+        "evidencia": "Versión firmada."
+      },
+      {
+        "elemento": "Prácticas sostenibles",
+        "informacion": "Suero, agua, praderas, fuentes y residuos.",
+        "responsable": "Responsable ambiental.",
+        "medio": "Bitácora y fotos.",
+        "frecuencia": "Mensual.",
+        "evidencia": "Registro."
+      },
+      {
+        "elemento": "Lote/producción",
+        "informacion": "Vacas o leche, litros, cuajo, sal, libras, pérdidas y refrigeración.",
+        "responsable": "Responsable operativo.",
+        "medio": "Cuaderno / hoja de cálculo.",
+        "frecuencia": "Cada elaboración.",
+        "evidencia": "Planilla."
+      },
+      {
+        "elemento": "Contacto comercial",
+        "informacion": "Cliente, cantidad, precio, pago, queja y devolución.",
+        "responsable": "Responsable comercial.",
+        "medio": "WhatsApp y base de datos.",
+        "frecuencia": "Cada venta.",
+        "evidencia": "Registro de entrega."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Maquinaria/equipo",
+        "descripcion": "Termómetro, balanza, recipientes o mesa apta, moldes y frío según diagnóstico.",
+        "valor_unitario": null,
+        "cantidad": "Por definir",
+        "total": null,
+        "requisito": "Grado alimentario, capacidad y mantenimiento.",
+        "fuente": "Por definir."
+      },
+      {
+        "tipo": "Infraestructura",
+        "descripcion": "Adecuación higiénica de elaboración, drenaje, agua segura, protección de crías y puntos de bebida",
+        "valor_unitario": null,
+        "cantidad": "Por definir",
+        "total": null,
+        "requisito": "Diseño técnico, inocuidad y protección hidrica.",
+        "fuente": "Por definir."
+      },
+      {
+        "tipo": "Muebles/enseres",
+        "descripcion": "Estantería o superficies lavables separadas.",
+        "valor_unitario": null,
+        "cantidad": "Por definir",
+        "total": null,
+        "requisito": "Material sanitario y ubicación",
+        "fuente": "Por definir."
+      },
+      {
+        "tipo": "Herramientas/varios",
+        "descripcion": "Elementos para manejo de praderas, cercas, zanjas seguras y EPP",
+        "valor_unitario": null,
+        "cantidad": "Por definir",
+        "total": null,
+        "requisito": "Visita, medidas y seguridad.",
+        "fuente": "Por definir."
+      },
+      {
+        "tipo": "TIC",
+        "descripcion": "Teléfono/datos y hoja de registro si no están disponibles.",
+        "valor_unitario": null,
+        "cantidad": "1",
+        "total": null,
+        "requisito": "Responsable y respaldo.",
+        "fuente": "Por definir."
+      },
+      {
+        "tipo": "Empaque/QR",
+        "descripcion": "Bolsas aptas, etiquetas de lote, marca piloto y ficha.",
+        "valor_unitario": null,
+        "cantidad": "Lote piloto",
+        "total": null,
+        "requisito": "Normativa, frío y no declarar atributos sin soporte.",
+        "fuente": "Por definir."
+      },
+      {
+        "tipo": "Preoperativos",
+        "descripcion": "Diagnóstico veterinario, pasturas/suelo, agua, inocuidad, costos y mercado.",
+        "valor_unitario": null,
+        "cantidad": "Paquete",
+        "total": null,
+        "requisito": "Profesionales competentes y soportes.",
+        "fuente": "Gestión/recursos propios."
+      },
+      {
+        "tipo": "Ambiental",
+        "descripcion": "Protección de ronda, bebederos, almacenamiento de agua y manejo de residuos.",
+        "valor_unitario": null,
+        "cantidad": "Por definir",
+        "total": null,
+        "requisito": "Permisos y no intervenir fuente sin validación.",
+        "fuente": "Gestión/proyecto."
+      }
+    ],
+    "observaciones_o_comentarios": "Todas las inversiones están por cotizar y dependen de diagnóstico técnico, capacidad ambiental, mercado y presupuesto."
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Costos fijos",
+        "descripcion": "Mano de obra, tenencia/arrendamiento, energia, mantenimiento y depreciación.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "El acuerdo del arrendatario es 50% del producido; naturaleza contractual y contable pendiente."
+      },
+      {
+        "tipo": "Costos variables",
+        "descripcion": "Sal y cuajo.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Valor conjunto informado; separar cantidades, precios, bolsas y demás insumos. $200.000-$220.000"
+      },
+      {
+        "tipo": "Costos logisticos",
+        "descripcion": "Traslado interno en yegua y recogida por intermediaria; rutas futuras.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "El alto costo de salir a Fusagasugá/Bogotá es una limitante, sin cifra."
+      },
+      {
+        "tipo": "Empaque/etiqueta / QR",
+        "descripcion": "Bolsas actuales, marcado y futura etiqueta.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Cantidad, material, proveedor y costo pendientes."
+      },
+      {
+        "tipo": "Costos ambientales",
+        "descripcion": "Agua, protección de fuente, residuos, praderas y adaptación climática.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Deben incluirse antes de invertir."
+      },
+      {
+        "tipo": "Costos digitales",
+        "descripcion": "Teléfono, datos, diseño y registro.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "No se reportó canal digital propio."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "1",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Supone 400-420 lb a $8.000 y producción estable."
+      },
+      {
+        "mes": "2",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Supone 400-420 lb a $8.000 y producción estable."
+      },
+      {
+        "mes": "3",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Supone 400-420 lb a $8.000 y producción estable."
+      },
+      {
+        "mes": "4",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Supone 400-420 lb a $8.000 y producción estable."
+      },
+      {
+        "mes": "5",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Supone 400-420 lb a $8.000 y producción estable."
+      },
+      {
+        "mes": "6",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Supone 400-420 lb a $8.000 y producción estable."
+      },
+      {
+        "mes": "7",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Supone 400-420 lb a $8.000 y producción estable."
+      },
+      {
+        "mes": "8",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Supone 400-420 lb a $8.000 y producción estable."
+      },
+      {
+        "mes": "9",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Supone 400-420 lb a $8.000 y producción estable."
+      },
+      {
+        "mes": "10",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Supone 400-420 lb a $8.000 y producción estable."
+      },
+      {
+        "mes": "11",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Supone 400-420 lb a $8.000 y producción estable."
+      },
+      {
+        "mes": "12",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Supone 400-420 lb a $8.000 y producción estable."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "Escenario repetido únicamente para ordenar la información actual no es pronostico financiero. Debe reemplazarse por registros reales mes a mes. Incluye preliminarmente la participación del 50% del arrendatario y $200.000-$220.000 de sal/cuajo. Balance parcial, no utilidad neta, faltan todos los costos no informados. Valores en texto: Ingresos: $3.200.000-$3.360.000, Gastos productivos: $1.800.000-$1.900.000, Balance: $1.380.000-$1.480.000."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Reutilización",
+        "estado": "No se informó reutilización de agua,",
+        "cantidad": "Pendiente",
+        "impacto_1_a_5": 2,
+        "accion": "Identificar aguas limpias reutilizables sin afectar inocuidad"
+      },
+      {
+        "variable": "Cercania a fuentes.",
+        "estado": "Dos potreros colindan con rio; también se mencionan pequeños chorros.",
+        "cantidad": "2 potreros; fuentes por contar",
+        "impacto_1_a_5": 5,
+        "accion": "Delimitar rondas y accesos."
+      },
+      {
+        "variable": "Vegetación alrededor",
+        "estado": "No descrita",
+        "cantidad": "Pendiente",
+        "impacto_1_a_5": 3,
+        "accion": "Verificar cobertura y restaurar si procede."
+      },
+      {
+        "variable": "Disponibilidad anual",
+        "estado": "Insuficiente durante veranos fuertes.",
+        "cantidad": "No medida",
+        "impacto_1_a_5": 5,
+        "accion": "Balance, reserva y distribución segura."
+      },
+      {
+        "variable": "Árboles cerca de agua",
+        "estado": "No informado.",
+        "cantidad": "Pendiente",
+        "impacto_1_a_5": 3,
+        "accion": "Evaluar restauración con especies adecuadas."
+      },
+      {
+        "variable": "Uso productivo",
+        "estado": "Bebida animal; usos en limpieza y queso no detallados.",
+        "cantidad": "No medido",
+        "impacto_1_a_5": 4,
+        "accion": "Medir por actividad y garantizar calidad."
+      },
+      {
+        "variable": "Riesgo de contaminación",
+        "estado": "Ganado cerca del rio y manejo de suero/insumos nivel real pendiente.",
+        "cantidad": "Pendiente",
+        "impacto_1_a_5": 5,
+        "accion": "Evitar ingreso, vertimientos y escorrentia."
+      },
+      {
+        "variable": "Consumo",
+        "estado": "No se sabe si es alto, bajo o suficiente.",
+        "cantidad": "Pendiente",
+        "impacto_1_a_5": 3,
+        "accion": "Registro diario/semanal."
+      },
+      {
+        "variable": "Dependencia",
+        "estado": "Pozos/pocetas y flujos del predio o colindantes; origen exacto pendiente.",
+        "cantidad": "Pendiente",
+        "impacto_1_a_5": 4,
+        "accion": "Aclarar fuente, autorización y estacionalidad."
+      },
+      {
+        "variable": "Agua lluvia",
+        "estado": "No se reportó captación.",
+        "cantidad": "Pendiente",
+        "impacto_1_a_5": 2,
+        "accion": "Evaluar captación segura para usos permitidos."
+      },
+      {
+        "variable": "Bebederos",
+        "estado": "Se hacen pozos o pocetas para que los animales no entren al río.",
+        "cantidad": "Número pendiente",
+        "impacto_1_a_5": 4,
+        "accion": "Convertir en puntos seguros, limpios y protegidos."
+      },
+      {
+        "variable": "Riego eficiente",
+        "estado": "No aplica como riego; se abren zanjas para distribuir chorros en verano.",
+        "cantidad": "Pendiente",
+        "impacto_1_a_5": 4,
+        "accion": "Diseño hídrico; evitar erosión e intervención no autorizada."
+      },
+      {
+        "variable": "Problema en verano",
+        "estado": "Si, la unidad se queda sin agua o con pocos flujos.",
+        "cantidad": "Recurrente frecuencia pendiente",
+        "impacto_1_a_5": 5,
+        "accion": "Plan de sequia y almacenamiento."
+      },
+      {
+        "variable": "Cuidado actual",
+        "estado": "Evitar ganado junto al rio en invierno pocetas y distribución por zanjas.",
+        "cantidad": "Pendiente",
+        "impacto_1_a_5": 4,
+        "accion": "Formalizar, cercar, monitorear y mantener."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "Consumo de agua",
+        "que_se_mide": "Litros para animales, limpieza y transformación.",
+        "dato_inicial": "No medido.",
+        "meta": "Medir 100% de usos criticos.",
+        "frecuencia": "Semanal / mensual.",
+        "responsable": "Familia.",
+        "evidencia": "Planilla y fotos."
+      },
+      {
+        "indicador": "Fuente de agua",
+        "que_se_mide": "Origen, caudal, estacionalidad y protección.",
+        "dato_inicial": "Pozos/pocetas, rio/chorros; verificar.",
+        "meta": "Mapa y protección definida.",
+        "frecuencia": "Trimestral/clima.",
+        "responsable": "Responsable ambiental.",
+        "evidencia": "Mapa y registro."
+      },
+      {
+        "indicador": "Energia",
+        "que_se_mide": "Consumo de nevera y equipos.",
+        "dato_inicial": "No medido.",
+        "meta": "Establecer linea base y mantener frio.",
+        "frecuencia": "Mensual.",
+        "responsable": "Transformador.",
+        "evidencia": "Factura/lectura."
+      },
+      {
+        "indicador": "Transporte",
+        "que_se_mide": "Distancia, carga y medio por entrega.",
+        "dato_inicial": "Yegua interma, compradora externa",
+        "meta": "Registrar 100% y agrupar rutas.",
+        "frecuencia": "Cada entrega.",
+        "responsable": "Comercial.",
+        "evidencia": "Registro."
+      },
+      {
+        "indicador": "Insumos",
+        "que_se_mide": "Sal, cuajo, bolsas y veterinarios.",
+        "dato_inicial": "$200.000-$220.000 solo sal/cuajo.",
+        "meta": "Inventario completo por lote.",
+        "frecuencia": "Cada compra/lote.",
+        "responsable": "Operativo.",
+        "evidencia": "Facturas y lotes."
+      },
+      {
+        "indicador": "Huella de carbono",
+        "que_se_mide": "Energía, transporte, hato e insumos.",
+        "dato_inicial": "No estimada.",
+        "meta": "Estimación gradual tras linea base.",
+        "frecuencia": "Anual.",
+        "responsable": "Asistencia técnica.",
+        "evidencia": "Hoja de cálculo."
+      },
+      {
+        "indicador": "Huella hidrica",
+        "que_se_mide": "Agua por libra de queso.",
+        "dato_inicial": "No estimada.",
+        "meta": "Medir litros y libras por lote.",
+        "frecuencia": "Mensual.",
+        "responsable": "Familia/técnico.",
+        "evidencia": "Planilla."
+      }
+    ],
+    "observaciones_o_comentarios": "Conclusión F19 Gestión del Recurso Hídrico: El agua es una limitante critica. Hay intención de reducir el acceso del ganado al río, pero faltan medición, protección física, calidad y plan de sequía. Prioridad inmediata.\nConclusión F19 Indicadores: Sin mediciones no es posible estimar huellas. Debe priorizarse agua, energia, transporte, leche e insumos. Linea base en 3 meses."
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Suero de queso",
+        "cantidad": "No medida",
+        "manejo_actual": "Se suministra a cerdos.",
+        "accion_circular": "Medir por lote, conservar higiénicamente y ajustar ración con asistencia.",
+        "destino": "Cerdos de la unidad.",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Bolsas y reciclables",
+        "cantidad": "No medida",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Reducir, separar y evaluar empaque apto de menor impacto.",
+        "destino": "Reciclaje/gestor, verificar.",
+        "responsable": "Transformador."
+      },
+      {
+        "residuo_recurso": "No aprovechables",
+        "cantidad": "No medida",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Separar y disponer con servicio o ruta autorizada.",
+        "destino": "Destino pendiente.",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Estiércol/ orgánicos",
+        "cantidad": "No informado",
+        "manejo_actual": "No descrito en entrevista.",
+        "accion_circular": "Evaluar manejo agronómico seguro y compostaje.",
+        "destino": "Praderas/suelo si es viable.",
+        "responsable": "Responsable ambiental."
+      },
+      {
+        "residuo_recurso": "Peligrosos",
+        "cantidad": "No informado",
+        "manejo_actual": "Medicamentos y envases veterinarios pendientes.",
+        "accion_circular": "Separar, almacenar y entregar a gestor/punto autorizado.",
+        "destino": "Gestor autorizado.",
+        "responsable": "Responsable sanitario."
+      },
+      {
+        "residuo_recurso": "Total",
+        "cantidad": "No determinado",
+        "manejo_actual": "Información incompleta..",
+        "accion_circular": "Pesar o estimar todos los flujos.",
+        "destino": "Según clasificación.",
+        "responsable": "Unidad."
+      }
+    ],
+    "conclusion_registro_unico": {
+      "resumen": "El suero ya se aprovecha, pero faltan cantidades, bioseguridad y manejo de empaques, estiércol, envases y mortalidad.",
+      "accion": "Plan integral de residuos.",
+      "area": "Trazabilidad.",
+      "responsable": "Unidad/técnico."
+    },
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "Agua",
+        "indicador": "Uso eficiente",
+        "descripcion": "Ahorro y control.",
+        "estado": "Sin medición; zanjas en verano.",
+        "calificacion_1_a_5": 2,
+        "accion": "Balance, mantenimiento y bebederos.",
+        "evidencia": "Planilla."
+      },
+      {
+        "factor": "Agua",
+        "indicador": "Protección fuentes",
+        "descripcion": "Rondas y accesos.",
+        "estado": "Pocetas para evitar ingreso; sin cercado reportado.",
+        "calificacion_1_a_5": 3,
+        "accion": "Delimitar y proteger.",
+        "evidencia": "Mapa/fotos."
+      },
+      {
+        "factor": "Suelo",
+        "indicador": "Conservación",
+        "descripcion": "Cobertura y carga",
+        "estado": "Praderas requieren mejora; sin análisis.",
+        "calificacion_1_a_5": 2,
+        "accion": "Diagnóstico y rotación.",
+        "evidencia": "Análisis/registro."
+      },
+      {
+        "factor": "Suelo",
+        "indicador": "Erosión",
+        "descripcion": "Escorrentía y pendientes.",
+        "estado": "No evaluada; zanjas pueden requerir diseño.",
+        "calificacion_1_a_5": 2,
+        "accion": "Visita y obras seguras.",
+        "evidencia": "Fotos/plan."
+      },
+      {
+        "factor": "Biodiversidad",
+        "indicador": "Protección",
+        "descripcion": "No expansión sensible.",
+        "estado": "No caracterizada.",
+        "calificacion_1_a_5": 2,
+        "accion": "Delimitar y conservar cobertura.",
+        "evidencia": "Mapa."
+      },
+      {
+        "factor": "Energia",
+        "indicador": "Uso eficiente",
+        "descripcion": "Refrigeración.",
+        "estado": "Nevera sin consumo ni temperatura registrados.",
+        "calificacion_1_a_5": 2,
+        "accion": "Termómetro y mantenimiento.",
+        "evidencia": "Registro."
+      },
+      {
+        "factor": "Residuos",
+        "indicador": "Manejo",
+        "descripcion": "Separación y aprovechamiento.",
+        "estado": "Suero a cerdos; demás flujos pendientes.",
+        "calificacion_1_a_5": 3,
+        "accion": "Plan integral.",
+        "evidencia": "Pesajes."
+      },
+      {
+        "factor": "Insumos",
+        "indicador": "Producción limpia",
+        "descripcion": "Uso y dosis responsables.",
+        "estado": "Sal/cuajo; veterinarios no detallados.",
+        "calificacion_1_a_5": 2,
+        "accion": "Inventario y fichas.",
+        "evidencia": "Facturas."
+      },
+      {
+        "factor": "Normativa",
+        "indicador": "Cumplimiento",
+        "descripcion": "Sanitario, ambiental y laboral.",
+        "estado": "No informado.",
+        "calificacion_1_a_5": 1,
+        "accion": "Ruta gradual de requisitos.",
+        "evidencia": "Soportes."
+      }
+    ],
+    "resultado_preliminar_registro_unico": "Resultado preliminar: 19/45.",
+    "observaciones_o_comentarios": "Prioridades: agua, suelo/praderas, inocuidad, registros y residuos."
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "Escasez/uso de agua",
+        "accion": "Medir, mantener puntos de bebida y diseñar reserva segura.",
+        "prioridad": "Alta",
+        "plazo": "0-3 meses",
+        "responsable": "Familia/técnico",
+        "recursos": "Medidores, tanquesbebederos/ por cotizar",
+        "indicador": "L'animal y dias de autonomia",
+        "evidencia": "Planilia/fotos"
+      },
+      {
+        "impacto": "Fuentes hidricas",
+        "accion": "Delimitar rondas, evitar ingreso de ganado y vertimientos.",
+        "prioridad": "Alta",
+        "plazo": "0-6 meses",
+        "responsable": "Familia/ambientai",
+        "recursos": "Cerca, señalización, asistencia",
+        "indicador": "% perímetro protegido",
+        "evidencia": "Mapa/fotos"
+      },
+      {
+        "impacto": "Suelo/praderas",
+        "accion": "Analizar suelo y ejecutar pian de rotación y mejoramiento.",
+        "prioridad": "Alta",
+        "plazo": "1-6 meses",
+        "responsable": "Productor/agronomia",
+        "recursos": "Muestreo, semillas/insumos por definir",
+        "indicador": "Area manejada",
+        "evidencia": "Análisis/bitácora"
+      },
+      {
+        "impacto": "Residuos",
+        "accion": "Medir suero, separar empaques y definir mortalidad/estiércol",
+        "prioridad": "Alta",
+        "plazo": "0-3 meses",
+        "responsable": "Familia",
+        "recursos": "Recipientes y plan",
+        "indicador": "% residuos trazados",
+        "evidencia": "Registro"
+      },
+      {
+        "impacto": "Insumos",
+        "accion": "Registrar cuajo, sal, medicamentos, dosis, envases y vencimientos",
+        "prioridad": "Alta",
+        "plazo": "Inmediato",
+        "responsable": "Operativo/sanitario",
+        "recursos": "Inventario",
+        "indicador": "% compras registradas",
+        "evidencia": "Facturas/fichas"
+      },
+      {
+        "impacto": "Biodiversidad",
+        "accion": "No ampliar sobre zonas sensibles y conservar cobertura ribereña.",
+        "prioridad": "Media",
+        "plazo": "3-12 meses",
+        "responsable": "Familia/técnico",
+        "recursos": "Mapa y plantas si procede",
+        "indicador": "Area protegida",
+        "evidencia": "Fotos"
+      },
+      {
+        "impacto": "Transporte/emisiones",
+        "accion": "Consolidar entregas y comparar ruta directa con intermediación.",
+        "prioridad": "Media",
+        "plazo": "2-6 meses",
+        "responsable": "Comercial/aliados",
+        "recursos": "Cotizaciones y pedidos",
+        "indicador": "Costo y km/lb",
+        "evidencia": "Registro de ruta"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": "Eventos recientes",
+        "situacion": "Frío y lluvias fuertes afectan crias; verano reduce o agota el agua.",
+        "riesgo": "Alto",
+        "accion_propuesta": "Registrar eventos, mortalidad, leche y agua."
+      },
+      {
+        "aspecto": "Componentes afectados",
+        "situacion": "Crías recién nacidas, salud animal, disponibilidad de agua, praderas y producción de leche/queso.",
+        "riesgo": "Alto",
+        "accion_propuesta": "Plan sanitario, forrajero e hídrico."
+      },
+      {
+        "aspecto": "Protección actual",
+        "situacion": "Alejar ganado del río; poner plásticos como techos para crías; abrir zanjas para distribuir chorros,",
+        "riesgo": "Medio-alto",
+        "accion_propuesta": "Diseñar refugios seguros y distribución hídrica técnica."
+      },
+      {
+        "aspecto": "Cambios de manejo",
+        "situacion": "Se rotan vacas durante el año; relación exacta con clima y reproducción pendiente.",
+        "riesgo": "Medio",
+        "accion_propuesta": "Calendario de ordeño, partos, descanso y clima."
+      },
+      {
+        "aspecto": "Reserva de agua",
+        "situacion": "Pozos/pocetas, pero la unidad reporta quedarse sin agua en verano; capacidad desconocida",
+        "riesgo": "Alto",
+        "accion_propuesta": "Dimensionar reserva y bebederos."
+      },
+      {
+        "aspecto": "Necesidad de adaptación",
+        "situacion": "Mejoramiento de praderas, refugios para crías, salud preventiva, protección de fuentes y almacenamiento/distribución de agua.",
+        "riesgo": "Alto",
+        "accion_propuesta": "Plan por etapas y presupuesto."
+      }
+    ],
+    "observaciones_o_comentarios": "Conclusión: La capacidad actual es baja-media porque existen prácticas reactivas, pero no mediciones, infraestructura dimensionada ni protocolo. Priorizar agua, crías y praderas antes de aumentar el hato."
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Comercial",
+        "riesgo": "Dependencia y precio bajo",
+        "causa": "Una sola intermediaria.",
+        "consecuencia": "Menor margen o pérdida del canal.",
+        "nivel": "Alto",
+        "prevencion": "Costeo, clientes y acuerdos.",
+        "respuesta": "Fenas, preventa y canales alternos."
+      },
+      {
+        "tipo": "Productivo",
+        "riesgo": "Baja producción",
+        "causa": "Raza, praderas, sanidad, rotación y agua.",
+        "consecuencia": "Menos queso e ingresos.",
+        "nivel": "Alto",
+        "prevencion": "Diagnóstico y registros.",
+        "respuesta": "Ajustar hato y calendario."
+      },
+      {
+        "tipo": "Ambiental",
+        "riesgo": "Afectación hídrica",
+        "causa": "Ganado cerca del río y flujos sin protección medida.",
+        "consecuencia": "Contaminación, sanción o pérdida animal.",
+        "nivel": "Alto",
+        "prevencion": "Cercar, beber fuera y monitorear.",
+        "respuesta": "Retirar ganado y corregir acceso."
+      },
+      {
+        "tipo": "Ambiental",
+        "riesgo": "Deterioro de suelo",
+        "causa": "Carga y praderas sin diagnóstico.",
+        "consecuencia": "Menor forraje y erosión.",
+        "nivel": "Medio-alto",
+        "prevencion": "Análisis y rotación.",
+        "respuesta": "Recuperación y ajuste de carga."
+      },
+      {
+        "tipo": "Climático",
+        "riesgo": "Frio, lluvia y sequia",
+        "causa": "Variabilidad climática.",
+        "consecuencia": "Enfermedad, mortalidad y falta de agua.",
+        "nivel": "Alto",
+        "prevencion": "Refugios, reserva y sanidad.",
+        "respuesta": "Atención veterinaria y contingencia"
+      },
+      {
+        "tipo": "Logistico",
+        "riesgo": "Pérdida de fric",
+        "causa": "Traslado/recogida sin parámetros documentados.",
+        "consecuencia": "Deterioro y quejas.",
+        "nivel": "Alto",
+        "prevencion": "Termómetro, empaque y tiempos.",
+        "respuesta": "Retener lote no conforme."
+      },
+      {
+        "tipo": "Digital",
+        "riesgo": "Pérdida de clientes/datos",
+        "causa": "Sin base ni registros.",
+        "consecuencia": "Dependencia y poca recompra.",
+        "nivel": "Medio",
+        "prevencion": "Cuaderno y respaldo digital.",
+        "respuesta": "Reconstruir contactos y pedidos."
+      },
+      {
+        "tipo": "Organizativo",
+        "riesgo": "Roles no definidos",
+        "causa": "Identidad de participantes ambigua.",
+        "consecuencia": "Tareas, pagos y decisiones confusas.",
+        "nivel": "Alto",
+        "prevencion": "Acordar roles y titularidad.",
+        "respuesta": "Acta familiar y responsable."
+      },
+      {
+        "tipo": "Financiero",
+        "riesgo": "Costos o pérdidas",
+        "causa": "Costeo incompleto, enfermedad y 50% de participación.",
+        "consecuencia": "Balance menor al estimado.",
+        "nivel": "Alto",
+        "prevencion": "Costo por libra y contingencia.",
+        "respuesta": "Ajustar precio, volumen y gastos."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "Confirmar titular, participantes, predio, teléfono, coordenadas y tenencia.",
+        "componente": "Organizativo",
+        "responsable": "Fredy/Cindy/familia/equipo",
+        "tiempo": "0-30 días",
+        "recursos": "Entrevista y visita",
+        "resultado": "Linea base válida",
+        "evidencia": "Ficha firmada"
+      },
+      {
+        "actividad": "Realizar diagnóstico del hato, reproducción, sanidad, raza y rendimiento.",
+        "componente": "Productivo",
+        "responsable": "Veterinario/familia",
+        "tiempo": "Mes 1-2",
+        "recursos": "Visita y registros",
+        "resultado": "Plan bovino",
+        "evidencia": "Informe"
+      },
+      {
+        "actividad": "Analizar suelo y diseñar mejoramiento/rotación de praderas.",
+        "componente": "Productivo/ambiental",
+        "responsable": "Agronomia/familia",
+        "tiempo": "Mes 1-4",
+        "recursos": "Muestreo y plan.",
+        "resultado": "Oferta forrajera mejorada",
+        "evidencia": "Análisis/bitácora"
+      },
+      {
+        "actividad": "Medir agua y diseñar protección, bebederos y reserva de verano.",
+        "componente": "Ambiental",
+        "responsable": "Técnico/familia",
+        "tiempo": "Mes 1-6",
+        "recursos": "Mapa, aforo, cotización",
+        "resultado": "Mayor seguridad hídrica",
+        "evidencia": "Plan/fotos"
+      },
+      {
+        "actividad": "Mejorar refugio de crías y protocolo de enfermedaddiarrea/",
+        "componente": "Sanitario",
+        "responsable": "Veterinario/familia",
+        "tiempo": "Mes 1-3",
+        "recursos": "Diseño, materiales y botiquin",
+        "resultado": "Menor enfermedad y mortalidad",
+        "evidencia": "Registro sanitario"
+      },
+      {
+        "actividad": "Estandarizar queso, higiene, lotes, temperatura, frío y vida útil.",
+        "componente": "Productivo/sanitario",
+        "responsable": "Transformador/técnico",
+        "tiempo": "Mes 1-4",
+        "recursos": "Termómetro, formatos, análisis",
+        "resultado": "Producto consistente",
+        "evidencia": "Fichas/lotes"
+      },
+      {
+        "actividad": "Registrar producción, costos, ventas, pagos, pérdidas y calcular costo/lb.",
+        "componente": "Financiero",
+        "responsable": "Responsable designado",
+        "tiempo": "Inmediato-3 meses",
+        "recursos": "Cuademo/hoja digital",
+        "resultado": "Precio y margen reales",
+        "evidencia": "Registros"
+      },
+      {
+        "actividad": "Validar venta directa, ferias, clientes y ruta compartida..",
+        "componente": "Comercial",
+        "responsable": "Responsable comercial",
+        "tiempo": "Mes 2-6",
+        "recursos": "Base, llamadas y piloto",
+        "resultado": "Menos dependencia",
+        "evidencia": "Pedidos/ventas"
+      },
+      {
+        "actividad": "Crear marca/etiqueta piloto y trazabilidad sin afirmaciones no soportadas.",
+        "componente": "Digital/trazabilidad",
+        "responsable": "Familia/diseño.",
+        "tiempo": "Mes 4-8",
+        "recursos": "Disefio, ficha y QR",
+        "resultado": "Producto identificable",
+        "evidencia": "Etiqueta piloto"
+      },
+      {
+        "actividad": "Implementar residuos, SST, EPP botiquin y roles familiares.",
+        "componente": "Ambiental/SST",
+        "responsable": "Familia/técnicos",
+        "tiempo": "0-6 meses",
+        "recursos": "Recipientes, EPP y acta",
+        "resultado": "Operación más segura",
+        "evidencia": "Checklist/acta"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "Ventas",
+        "indicador": "Lb, ingreso y precio por canal.",
+        "meta": "100% de ventas registradas.",
+        "frecuencia": "Cada venta / mensual",
+        "responsable": "Comercial",
+        "evidencia": "Planilla"
+      },
+      {
+        "dimension": "Producción",
+        "indicador": "Litros de leche, Ib de queso, rendimiento y pérdidas.",
+        "meta": "100% de lotes registrados.",
+        "frecuencia": "Diaria/lote",
+        "responsable": "Operativo",
+        "evidencia": "Bitácora"
+      },
+      {
+        "dimension": "Financiera",
+        "indicador": "Costo/lb, margen y balance.",
+        "meta": "Costo completo en 3 meses.",
+        "frecuencia": "Mensual",
+        "responsable": "Financiero",
+        "evidencia": "Hoja de costos"
+      },
+      {
+        "dimension": "Cliente",
+        "indicador": "Compradores recurrentes, quejas y recompra",
+        "meta": "Base activa y respuesta a 100% de quejas.",
+        "frecuencia": "Semanal / mensual",
+        "responsable": "Comercial",
+        "evidencia": "Base/registro"
+      },
+      {
+        "dimension": "Digital",
+        "indicador": "Lotes con etiqueta/QR actualizado.",
+        "meta": "Piloto y luego 100% si se implementa.",
+        "frecuencia": "Cada lote",
+        "responsable": "Trazabilidad",
+        "evidencia": "Archivo"
+      },
+      {
+        "dimension": "Logística",
+        "indicador": "Entregas puntuales y temperatura.",
+        "meta": "100% registradas y sin ruptura documentada.",
+        "frecuencia": "Cada entrega",
+        "responsable": "Operativo/compradora",
+        "evidencia": "Registro"
+      },
+      {
+        "dimension": "Ambiental",
+        "indicador": "Agua, fuentes protegidas, suero y residuos.",
+        "meta": "Línea base y 100% de flujos criticos.",
+        "frecuencia": "Semanal/mensual",
+        "responsable": "Ambiental",
+        "evidencia": "Planilla/fotos"
+      },
+      {
+        "dimension": "Regenerativa",
+        "indicador": "Área de pradera manejada y cobertura protegida.",
+        "meta": "Plan aprobado y avance medido.",
+        "frecuencia": "Trimestral",
+        "responsable": "Familia/técnico",
+        "evidencia": "Mapa/fotos"
+      },
+      {
+        "dimension": "Cooperación",
+        "indicador": "Alianzas, rutas o ventas compartidas",
+        "meta": "Al menos un piloto validado.",
+        "frecuencia": "Trimestral",
+        "responsable": "Comercial",
+        "evidencia": "Acta/ventas"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Aumentar producción",
+        "efecto_productivo": "Más leche/queso, mayor carga.",
+        "efecto_comercial": "Exige pedidos adicionales.",
+        "efecto_financiero": "Más inversión y riesgo.",
+        "efecto_ambiental": "Más agua, pradera y residuos.",
+        "ajuste_necesario": "Solo tras capacidad y mercado verificados."
+      },
+      {
+        "decision": "Cambiar insumos",
+        "efecto_productivo": "Puede mejorar sanidad/calidad.",
+        "efecto_comercial": "Refuerza consistencia.",
+        "efecto_financiero": "Cambia costo/lb.",
+        "efecto_ambiental": "Puede reducir o aumentar impacto.",
+        "ajuste_necesario": "Ficha, dosis, costo y disposición."
+      },
+      {
+        "decision": "Ampliar canales",
+        "efecto_productivo": "Exige continuidad.",
+        "efecto_comercial": "Reduce dependencia.",
+        "efecto_financiero": "Suma logistica y posible margen.",
+        "efecto_ambiental": "Más transporte si no se agrupa.",
+        "ajuste_necesario": "Piloto con costo y frío."
+      },
+      {
+        "decision": "Comprar equipo",
+        "efecto_productivo": "Mejora control y capacidad.",
+        "efecto_comercial": "Puede elevar confianza.",
+        "efecto_financiero": "Inversión y depreciación.",
+        "efecto_ambiental": "Energia y fin de vida.",
+        "ajuste_necesario": "Dimensionar antes de cotizar."
+      },
+      {
+        "decision": "Fortalecer transformación",
+        "efecto_productivo": "Estandariza queso.",
+        "efecto_comercial": "Mejora presentación.",
+        "efecto_financiero": "Agrega costos y valor.",
+        "efecto_ambiental": "Usa agua/energía y genera suero",
+        "ajuste_necesario": "Inocuidad, vida útil y mercado."
+      },
+      {
+        "decision": "Participar en ferias",
+        "efecto_productivo": "Requiere inventario.",
+        "efecto_comercial": "Venta directa y validación.",
+        "efecto_financiero": "Costo de evento/transporte.",
+        "efecto_ambiental": "Circuito corto si es local.",
+        "ajuste_necesario": "Preventa y cadena de frío."
+      },
+      {
+        "decision": "Implementar QR",
+        "efecto_productivo": "Exige lotes y registros.",
+        "efecto_comercial": "Aumenta información al cliente.",
+        "efecto_financiero": "Costo de diseño/impresión.",
+        "efecto_ambiental": "Uso adicional de material.",
+        "ajuste_necesario": "Datos verificables y actualización."
+      },
+      {
+        "decision": "Empaque sostenible",
+        "efecto_productivo": "Debe conservar calidad.",
+        "efecto_comercial": "Puede diferenciar.",
+        "efecto_financiero": "Costo por comparar.",
+        "efecto_ambiental": "Puede reducir plástico.",
+        "ajuste_necesario": "Validar aptitud, frío y disposición."
+      },
+      {
+        "decision": "Asociarse",
+        "efecto_productivo": "Puede compartir recursos.",
+        "efecto_comercial": "Agrupa oferta y rutas.",
+        "efecto_financiero": "Reduce costos o reparte margen.",
+        "efecto_ambiental": "Menos viajes y acciones colectivas.",
+        "ajuste_necesario": "Acuerdos, roles y trazabilidad."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}

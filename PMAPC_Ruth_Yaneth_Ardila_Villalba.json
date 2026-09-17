@@ -1,0 +1,2064 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "Unidad productiva ovina de la Finca Diamante Uno. No se informó un nombre comercial independiente.",
+    "persona_entrevistada": "Ruth Yaneth Ardila. El segundo apellido o nombre completo mencionado al inicio de la entrevista no se comprendió con claridad y debe verificarse.",
+    "tipo_actividad": "Pecuaria: reproducción, cría, levante y comercialización en pie de ovejas camuras u ovinos de pelo destinados principalmente a carne.",
+    "ubicacion_especifica": "Vereda Nueva Granada, localidad de Sumapaz, Bogotá D.C., Finca Diamante Uno. Sector, acceso y coordenadas pendientes de verificar.",
+    "producto_servicio_principal": "Crías ovinas de uno a dos meses encargadas por compradores y animales de mayor tamaño, especialmente machos, vendidos en pie para comercio o sacrificio fuera del predio.",
+    "estado_actual": "Negocio familiar en marcha desde hace aproximadamente tres años y medio a cuatro años. La productora comenzó con tres animales y reporta actualmente cerca de veintiún o veintidós.",
+    "personas_vinculadas": "Cuatro integrantes del hogar participan en el manejo de la unidad productiva. Nombres, edades, roles y dedicación pendientes de confirmar.",
+    "coordenadas": "Pendientes de tomar o verificar.",
+    "descripcion_general": "Emprendimiento pecuario familiar basado en reproducción natural, pastoreo y venta de animales vivos. La productora ha participado con sus animales en ferias agroambientales, donde reporta reconocimientos para hembras y reproductor. Busca recuperar el manejo con cerca eléctrica, distribuir agua a los potreros y fortalecer la energía solar.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F02": {
+    "mision": "Criar y comercializar ovejas camuras sanas y adaptadas a las condiciones de Nueva Granada, mediante el trabajo familiar, el pastoreo, el cuidado responsable de los animales y una atención cercana a los compradores.",
+    "vision": "Consolidar en los próximos años una unidad ovina organizada, con energia solar suficiente para la cerca eléctrica, agua distribuida en los potreros, divisiones funcionales, refugio frente al invierno, mejores registros y opciones comerciales de mayor valor.",
+    "valores": [
+      "Perseverancia",
+      "trabajo familiar",
+      "responsabilidad",
+      "sinceridad",
+      "cuidado animal",
+      "cumplimiento",
+      "experiencia campesina",
+      "compromiso con el territorio",
+      "disposición para mejorar"
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Porque requieren crías o animales en pie para reproducción, levante, comercio o sacrificio, y la productora ya es conocida por compradores de diferentes veredas.",
+    "beneficio_cliente": "Acceso a ovinos de pelo criados en finca, adaptados al clima de Sumapaz y disponibles en distintas edades, desde crías de uno o dos meses hasta machos de mayor tamaño.",
+    "diferencial": "Experiencia familiar, crecimiento del pie de cría desde tres animales, adaptación al pastoreo local, venta directa en finca y reconocimientos reportados en ferias agroambientales.",
+    "valor_ambiental": "Sistema basado principalmente en pastoreo, sin sacrificio en el predio y con generación limitada de residuos concentrados. La mejora de agua, divisiones y energía solar puede reducir presión sobre otras áreas y ordenar el uso del suelo.",
+    "valor_social_comunitario": "Aporta ingresos al hogar, involucra a cuatro integrantes de la familia, fortalece una actividad pecuaria local y ofrece animales a compradores de diferentes veredas.",
+    "evidencia": "Ventas previas de crías y animales grandes, encargos anticipados, compradores que llegan a la finca y participación reconocida en ferias agroambientales. Soportes pendientes.",
+    "observaciones_o_comentarios": "¿Cómo demostrar el diferencial?: Con inventario e identificación animal, registros de nacimientos, pesos, sanidad y ventas, fotografías, certificados o evidencias de ferias, testimonios de compradores y documentación de las prácticas de manejo."
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Tres años y medio a cuatro años de experiencia.",
+      "Crecimiento desde tres animales hasta cerca de veintiún o veintidós.",
+      "Participación de cuatro integrantes de la familia.",
+      "Demanda mediante encargos de crías y ventas de animales grandes.",
+      "Compradores de diferentes veredas y venta directa en finca.",
+      "Animales adaptados al territorio y manejo principalmente en pastoreo.",
+      "Reconocimientos reportados en ferias agroambientales.",
+      "Conocimiento práctico de medicamentos y tiempos de retiro."
+    ],
+    "oportunidades": [
+      "Fortalecer el sistema solar para energizar cercas.",
+      "Distribuir agua a cada potrero mediante mangueras y bebederos.",
+      "Dividir potreros y mejorar rotación.",
+      "Construir refugio seco para invierno.",
+      "Implementar identificación, pesaje y registros.",
+      "Mejorar genética con reproductores seleccionados.",
+      "Comercializar lotes programados o asociativos.",
+      "Evaluar carne empacada solo después de cumplir requisitos sanitarios y de frío."
+    ],
+    "debilidades": [
+      "No cuenta con energía eléctrica de red.",
+      "El sistema solar actual no soporta nevera ni cerca eléctrica.",
+      "Falta de corriente desorganiza el manejo y mezcla los ovinos con el ganado.",
+      "No hay distribución de agua entre potreros.",
+      "No existe refugio específico para invierno.",
+      "No utiliza concentrado y el maíz es costoso.",
+      "No hay registros formales de inventario, sanidad, peso, costos o ventas.",
+      "Uso parcial de elementos de protección personal."
+    ],
+    "amenazas": [
+      "Inviernos fuertes, humedad y frío.",
+      "Escasez o alto costo de maíz, medicamentos y suplementos.",
+      "Falla total del sistema solar o de las cercas.",
+      "Escape, pérdida, ataque de perros o mezcla con otros animales.",
+      "Enfermedades parasitarias y mortalidad de crías.",
+      "Venta temprana por falta de capacidad de manejo.",
+      "Dependencia de compradores informales.",
+      "Requisitos sanitarios y de cadena de frío para vender carne."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Cliente directo",
+        "perfil_que_busca": "Personas que encargan crías de uno o dos meses para levante o reproducción.",
+        "ubicacion": "Nueva Granada y otras veredas.",
+        "necesidad": "Animales jóvenes, sanos y disponibles.",
+        "frecuencia": "Según nacimientos; ocasional.",
+        "criterio_compra": "Edad, estado sanitario, tamaño, sexo, confianza y precio.",
+        "canal": "Llamada, recomendación y compra en finca."
+      },
+      {
+        "tipo_actor": "Consumidor final",
+        "perfil_que_busca": "Persona que consume la carne después del sacrificio realizado fuera del predio.",
+        "ubicacion": "Localidad y municipios cercanos; pendiente.",
+        "necesidad": "Carne ovina o caprina local.",
+        "frecuencia": "Ocasional o estacional.",
+        "criterio_compra": "Calidad, sabor, peso, higiene y precio.",
+        "canal": "A través del comprador o comerciante."
+      },
+      {
+        "tipo_actor": "Comprador local",
+        "perfil_que_busca": "Vecinos o comerciantes que compran animales grandes en pie.",
+        "ubicacion": "Nueva Granada y veredas cercanas.",
+        "necesidad": "Animales listos para comercialización o sacrificio.",
+        "frecuencia": "Principalmente hacia diciembre y según demanda.",
+        "criterio_compra": "Peso, condición corporal, edad y precio.",
+        "canal": "Visita a la finca y contacto directo."
+      },
+      {
+        "tipo_actor": "Comprador institucional",
+        "perfil_que_busca": "No identificado actualmente.",
+        "ubicacion": "Pendiente.",
+        "necesidad": "Oferta formal, trazable y constante.",
+        "frecuencia": "Potencial.",
+        "criterio_compra": "Requisitos sanitarios, volumen, facturación y bienestar animal.",
+        "canal": "Por explorar."
+      },
+      {
+        "tipo_actor": "Restaurantes / tiendas/plazas",
+        "perfil_que_busca": "No se reportan ventas directas actuales.",
+        "ubicacion": "Localidad, Cabrera o municipios cercanos; pendiente.",
+        "necesidad": "Carne legalmente beneficiada y refrigerada.",
+        "frecuencia": "Potencial.",
+        "criterio_compra": "Calidad, presentación, cadena de frío y precio.",
+        "canal": "Solo mediante alianza formal."
+      },
+      {
+        "tipo_actor": "Ferias/compradores de genética",
+        "perfil_que_busca": "Participantes de ferias o productores interesados en animales destacados.",
+        "ubicacion": "Sumapaz.",
+        "necesidad": "Reproductores o hembras con buen desempeño.",
+        "frecuencia": "Según evento.",
+        "criterio_compra": "Conformación, antecedentes, sanidad y reconocimiento.",
+        "canal": "Ferias agroambientales y contacto directo."
+      },
+      {
+        "tipo_actor": "Otro",
+        "perfil_que_busca": "Compradores de diferentes veredas que ya conocen a la productora.",
+        "ubicacion": "Distintas veredas no especificadas.",
+        "necesidad": "Animales disponibles en finca.",
+        "frecuencia": "Según encargo.",
+        "criterio_compra": "Confianza y facilidad de negociación.",
+        "canal": "Venta directa, con entrega según acuerdo."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Crías sanas, animales de buen tamaño y machos aptos para levante, reproducción, comercio o sacrificio.",
+    "como_se_conoce_la_necesidad": "Porque las crías quedan encargadas y son entregadas cuando cumplen aproximadamente uno o dos meses, mientras los animales grandes se venden por temporada o solicitud.",
+    "quienes_compran_o_podrian_comprar": "Personas de la vereda, compradores de otras veredas, comerciantes, productores pecuarios y, a futuro, aliados para comercialización formal de carne.",
+    "evidencia": "Ventas en finca, animales encargados, crecimiento del inventario y participación en ferias agroambientales. No se aportaron facturas o registros.",
+    "ventaja_territorial": "Animales criados en condiciones de páramo, adaptados al clima, en pastoreo y dentro de una unidad familiar con experiencia local.",
+    "cambios_demanda": "No se informó un análisis histórico. La productora considera que vender carne podría generar mayor valor, pero actualmente no cuenta con refrigeración ni infraestructura.",
+    "dificultades": "Falta de registros y pesaje, venta en pie con precios no documentados, transporte según negociación, ausencia de energía y frío, y necesidad de vender algunas crías tempranamente cuando aumenta el inventario.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Productores vecinos",
+        "tipo": "Ganaderos y ovinocultores.",
+        "que_aporta": "Experiencia, reproductores, apoyo en manejo y posibles puntos de energía o agua.",
+        "que_recibe": "Apoyo mutuo e intercambio de insumos o reproductores.",
+        "trabajo_conjunto": "Compras conjuntas, manejo sanitario y apoyo en emergencias.",
+        "aporte_ambiental": "Rotación, control de carga y protección de fuentes.",
+        "accion": "Crear red local de ovinos."
+      },
+      {
+        "actor_aliado": "Asociación campesina",
+        "tipo": "Organización productiva.",
+        "que_aporta": "Gestión, comercialización y compras de insumos.",
+        "que_recibe": "Oferta de animales y participación de la familia.",
+        "trabajo_conjunto": "Ventas agrupadas y negociación de precios.",
+        "aporte_ambiental": "Buenas prácticas territoriales.",
+        "accion": "Identificar asociación activa."
+      },
+      {
+        "actor_aliado": "Junta de Acción Comunal",
+        "tipo": "Organización comunitaria.",
+        "que_aporta": "Convocatoria e información institucional.",
+        "que_recibe": "Fortalecimiento económico local.",
+        "trabajo_conjunto": "Gestión de proyectos y ferias.",
+        "aporte_ambiental": "Cuidado de agua y caminos.",
+        "accion": "Presentar necesidades de energía y agua."
+      },
+      {
+        "actor_aliado": "Compradores locales",
+        "tipo": "Clientes y comerciantes.",
+        "que_aporta": "Demanda, pago y retroalimentación.",
+        "que_recibe": "Animales sanos y cumplimiento.",
+        "trabajo_conjunto": "Programar encargos y lotes.",
+        "aporte_ambiental": "Reducir viajes al coordinar entregas.",
+        "accion": "Registrar datos y condiciones."
+      },
+      {
+        "actor_aliado": "Ferias o mercados campesinos",
+        "tipo": "Espacios de visibilidad.",
+        "que_aporta": "Reconocimiento y nuevos contactos.",
+        "que_recibe": "Animales destacados e identidad territorial.",
+        "trabajo_conjunto": "Participación en exhibiciones y ruedas de negocio.",
+        "aporte_ambiental": "Promover manejo responsable.",
+        "accion": "Recuperar certificados y evidencias."
+      },
+      {
+        "actor_aliado": "Instituciones de apoyo",
+        "tipo": "Alcaldía, asistencia pecuaria, sanidad y formación.",
+        "que_aporta": "Diagnóstico, energía solar, agua, cercas, sanidad y capacitación.",
+        "que_recibe": "Unidad fortalecida y seguimiento.",
+        "trabajo_conjunto": "Visitas técnicas, formación y acompañamiento integral.",
+        "aporte_ambiental": "Ordenamiento de potreros, bienestar animal y protección del agua.",
+        "accion": "Solicitar visita técnica integral."
+      },
+      {
+        "actor_aliado": "Aliados logísticos o digitales",
+        "tipo": "Transportadores, familiares y contactos.",
+        "que_aporta": "Traslado de animales y comunicación.",
+        "que_recibe": "Pago o coordinación de entregas.",
+        "trabajo_conjunto": "Rutas agrupadas.",
+        "aporte_ambiental": "Menos desplazamientos y estrés animal.",
+        "accion": "Definir transportadores y costos."
+      },
+      {
+        "actor_aliado": "Otros aliados",
+        "tipo": "Técnico veterinario y proveedor solar.",
+        "que_aporta": "Plan sanitario y diseño energético.",
+        "que_recibe": "Contratación o compras.",
+        "trabajo_conjunto": "Mantenimiento preventivo.",
+        "aporte_ambiental": "Uso responsable de medicamentos y energía renovable.",
+        "accion": "Cotizar y seleccionar apoyo."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Encuesta",
+        "a_quien": "No se informó.",
+        "resultado": "Pendiente.",
+        "motivacion": "Pendiente.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Entrevista",
+        "a_quien": "Conversaciones y negociaciones con compradores.",
+        "resultado": "Las crías se encargan y los animales grandes encuentran salida comercial.",
+        "motivacion": "Disponibilidad, edad, tamaño y confianza.",
+        "evidencia": "Relato de la productora."
+      },
+      {
+        "metodo": "Degustación/muestra",
+        "a_quien": "No aplica para venta actual en pie.",
+        "resultado": "No realizada.",
+        "motivacion": "Calidad de carne, si se formaliza en el futuro.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Venta previa",
+        "a_quien": "Compradores de la finca y de diferentes veredas.",
+        "resultado": "Ventas de crías de uno o dos meses y de machos grandes, especialmente hacia diciembre.",
+        "motivacion": "Levante, reproducción o sacrificio.",
+        "evidencia": "Registros pendientes."
+      },
+      {
+        "metodo": "Carta de intención",
+        "a_quien": "No existe.",
+        "resultado": "Pendiente.",
+        "motivacion": "Volumen, precio y continuidad.",
+        "evidencia": "No disponible."
+      },
+      {
+        "metodo": "Participación en feria",
+        "a_quien": "Ferias agroambientales.",
+        "resultado": "La productora reporta animales campeones y un reproductor ubicado en segundo o tercer lugar.",
+        "motivacion": "Calidad del animal y reconocimiento.",
+        "evidencia": "Diplomas o fotografías pendientes."
+      },
+      {
+        "metodo": "Otro",
+        "a_quien": "Encargos anticipados.",
+        "resultado": "Crías separadas para clientes antes de la entrega.",
+        "motivacion": "Confianza y disponibilidad programada.",
+        "evidencia": "Mensajes o contactos pendientes."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Cría ovina",
+        "descripcion_tecnica": "Animal joven de aproximadamente uno a dos meses, proveniente del pie de cría de la finca.",
+        "unidad": "Animal.",
+        "insumos_principales": "Leche materna, pastoreo, agua y manejo sanitario.",
+        "condiciones_especiales": "Mantener con la madre hasta edad de entrega definida y en potrero seguro.",
+        "presentacion": "Venta en pie.",
+        "diferencial": "Encargo anticipado y adaptación al territorio."
+      },
+      {
+        "servicio": "Macho de levante o ceba",
+        "descripcion_tecnica": "Animal criado en pastoreo y vendido cuando alcanza mayor edad o tamaño.",
+        "unidad": "Animal/peso vivo.",
+        "insumos_principales": "Pasto, agua, maíz ocasional y suplementos si están disponibles.",
+        "condiciones_especiales": "Potreros divididos, agua permanente y protección climática.",
+        "presentacion": "Venta en pie.",
+        "diferencial": "Animales reportados de seis meses y alrededor de cuatro y media a cinco arrobas, dato por verificar."
+      },
+      {
+        "servicio": "Hembra de cría",
+        "descripcion_tecnica": "Oveja destinada a reproducción y crecimiento del pie de cría.",
+        "unidad": "Animal.",
+        "insumos_principales": "Pastoreo, agua, sal y manejo reproductivo.",
+        "condiciones_especiales": "Separación por lotes y seguimiento de preñez y parto.",
+        "presentacion": "Venta en pie o permanencia en finca.",
+        "diferencial": "Base reproductiva seleccionada."
+      },
+      {
+        "servicio": "Reproductor",
+        "descripcion_tecnica": "Macho destinado a monta natural y mejoramiento del rebaño.",
+        "unidad": "Animal.",
+        "insumos_principales": "Nutrición, control sanitario y registros de servicio.",
+        "condiciones_especiales": "Manejo separado cuando corresponda.",
+        "presentacion": "Venta o servicio reproductivo potencial.",
+        "diferencial": "Reconocimiento reportado en feria; soporte pendiente."
+      }
+    ],
+    "observaciones_o_comentarios": "Ficha técnica pendiente: confirmar raza o cruce, sexo, edad, identificación, peso al nacimiento y venta, condición corporal, calendario sanitario, reproducción, mortalidad, destete, alimentación, manejo de tiempos de retiro de medicamentos, criterios de selección y requisitos de movilización. Para carne, sería necesario un proceso separado con sacrificio autorizado, refrigeración, empaque y trazabilidad."
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Manejo del rebaño",
+        "unidad": "Aproximadamente 21-22 animales.",
+        "actividad_proceso": "1. Revisar diariamente estado, ubicación, agua, cercas y condición de los animales.",
+        "tiempo_estimado": "Diario."
+      },
+      {
+        "servicio": "Alimentación",
+        "unidad": "Rebaño completo.",
+        "actividad_proceso": "2. Mantener en potreros, ofrecer agua y complementar con maíz cuando es posible; definir sales y suplementos con asistencia técnica.",
+        "tiempo_estimado": "Diario."
+      },
+      {
+        "servicio": "Reproducción",
+        "unidad": "Hembras de cría y reproductor.",
+        "actividad_proceso": "3. Controlar monta, posibles preñeces y fechas de parto.",
+        "tiempo_estimado": "Según ciclo."
+      },
+      {
+        "servicio": "Parto y cría",
+        "unidad": "Crías nacidas.",
+        "actividad_proceso": "4. Vigilar parto, calostro, identificación, crecimiento y sanidad.",
+        "tiempo_estimado": "Nacimiento a destete."
+      },
+      {
+        "servicio": "Sanidad",
+        "unidad": "Animales según necesidad.",
+        "actividad_proceso": "5. Desparasitar, vitaminar o tratar únicamente con dosis, indicación y tiempo de retiro registrados.",
+        "tiempo_estimado": "Según calendario / caso."
+      },
+      {
+        "servicio": "Selección",
+        "unidad": "Crías y machos.",
+        "actividad_proceso": "6. Definir animales para reposición, encargo, levante o venta.",
+        "tiempo_estimado": "Mensual/por lote."
+      },
+      {
+        "servicio": "Venta de crías",
+        "unidad": "Animales de 1-2 meses.",
+        "actividad_proceso": "7. Confirmar comprador, revisar salud, acordar precio, entrega y transporte.",
+        "tiempo_estimado": "Según encargo."
+      },
+      {
+        "servicio": "Venta de animales grandes",
+        "unidad": "Machos o animales de mayor peso.",
+        "actividad_proceso": "8. Pesar o estimar con método validado y vender en pie, especialmente en temporada de diciembre.",
+        "tiempo_estimado": "Según demanda."
+      },
+      {
+        "servicio": "Manejo ambiental",
+        "unidad": "Potreros y estiércol disperso.",
+        "actividad_proceso": "9. Rotar potreros, proteger la toma de agua, manejar medicamentos y evitar sobrecarga.",
+        "tiempo_estimado": "Continuo."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Pasturas",
+        "cantidad_unidad": "Área y capacidad de carga pendientes.",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Finca Diamante Uno.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Sobrepastoreo, compactación y pérdida de cobertura.",
+        "manejo_ambiental": "División, rotación y descanso.",
+        "observaciones": "Principal fuente de alimento."
+      },
+      {
+        "insumo": "Agua",
+        "cantidad_unidad": "Consumo y caudal pendientes.",
+        "frecuencia": "Permanente.",
+        "proveedor_fuente": "Toma o pequeño curso de agua en una esquina del potrero.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Pisoteo, contaminación y acceso desigual.",
+        "manejo_ambiental": "Conducción por manguera y bebederos.",
+        "observaciones": "La productora solicita un punto de agua por potrero."
+      },
+      {
+        "insumo": "Maiz",
+        "cantidad_unidad": "Cantidad pendiente.",
+        "frecuencia": "Ocasional.",
+        "proveedor_fuente": "Compra externa.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Empaques y huella de transporte.",
+        "manejo_ambiental": "Dosificar y almacenar seco.",
+        "observaciones": "Se usa, pero el precio es alto."
+      },
+      {
+        "insumo": "Concentrado",
+        "cantidad_unidad": "Actualmente no se compra.",
+        "frecuencia": "Potencial.",
+        "proveedor_fuente": "Proveedor por definir.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Costo, empaques y sobrealimentación.",
+        "manejo_ambiental": "Usar solo con plan nutricional.",
+        "observaciones": "La productora afirma que no lo utiliza."
+      },
+      {
+        "insumo": "Sal mineralizada",
+        "cantidad_unidad": "No informada.",
+        "frecuencia": "Permanente/por definir.",
+        "proveedor_fuente": "Proveedor agropecuario.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Empaques y sobredosificación.",
+        "manejo_ambiental": "Dosificar y proteger de lluvia.",
+        "observaciones": "Necesidad por evaluar."
+      },
+      {
+        "insumo": "Desparasitantes",
+        "cantidad_unidad": "Según necesidad",
+        "frecuencia": "Periódica.",
+        "proveedor_fuente": "Proveedor veterinario.",
+        "toxicidad": "Según producto",
+        "impacto_potencial": "Residuos, toxicidad y resistencia.",
+        "manejo_ambiental": "Plan sanitario, EPP y disposición de envases.",
+        "observaciones": "No hay registro formal. Se aplican cuando el animal se observa erizado o débil."
+      },
+      {
+        "insumo": "Vitaminas/inyectables",
+        "cantidad_unidad": "Según animal.",
+        "frecuencia": "Ocasional.",
+        "proveedor_fuente": "Proveedor veterinario.",
+        "toxicidad": "Según producto",
+        "impacto_potencial": "Agujas, envases y periodos de retiro.",
+        "manejo_ambiental": "Aplicación responsable y contenedor rígido.",
+        "observaciones": "Se aplican cuando el animal se observa erizado o débil."
+      },
+      {
+        "insumo": "Sistema solar",
+        "cantidad_unidad": "Planta, paneles, batería, controlador e inversor por dimensionar.",
+        "frecuencia": "Inversión / mantenimiento.",
+        "proveedor_fuente": "Proveedor técnico.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Residuos eléctricos al final de vida.",
+        "manejo_ambiental": "Equipo certificado y gestión RAEE.",
+        "observaciones": "Prioridad para cerca eléctrica."
+      },
+      {
+        "insumo": "Cerca eléctrica",
+        "cantidad_unidad": "Energizador, cuerda o alambre, postes y aisladores por medir.",
+        "frecuencia": "Inversión / mantenimiento.",
+        "proveedor_fuente": "Proveedor rural.",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Riesgo eléctrico y residuos.",
+        "manejo_ambiental": "Instalación técnica, señalización y revisión.",
+        "observaciones": "Necesaria para mantener lotes separados."
+      },
+      {
+        "insumo": "Manguera y bebederos",
+        "cantidad_unidad": "Metros y unidades por medir.",
+        "frecuencia": "Inversión / mantenimiento.",
+        "proveedor_fuente": "Proveedor local..",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Fugas y uso de plástico.",
+        "manejo_ambiental": "Dimensionar y reparar.",
+        "observaciones": "Segunda prioridad expresada."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "No se informó una cantidad mensual de animales vendidos. La producción es por ciclo reproductivo y depende de nacimientos, crecimiento y encargos.",
+    "produccion_normal": "Inventario actual aproximado de veintiún o veintidós animales. Se venden crías a uno o dos meses y animales grandes cuando alcanzan tamaño comercial.",
+    "capacidad_mensual_teorica": "La capacidad está limitada por falta de cerca eléctrica propia, agua distribuida, energía, refugio y alimentación suplementaria.",
+    "produccion_maxima_posible": "La productora menciona que el inventario ha llegado aproximadamente a treinta animales, pero la cifra y sostenibilidad deben verificarse.",
+    "area_numero_habitaciones": "Potreros de la Finca Diamante Uno. Área en hectáreas, número de divisiones y capacidad de carga pendientes.",
+    "limitantes_productivos": "Falta de energía para la cerca, desorganización de los lotes, acceso concentrado al agua, alto costo del maíz, ausencia de refugio y registros.",
+    "limitantes_ambientales": "Invierno, humedad, presión sobre potreros y toma de agua, posibles zonas de barro y ausencia de medición de carga animal.",
+    "capacidad_instalada": "Potreros, rebaño de cría, sistema solar antiguo y cercamiento parcial. Equipos y estado exacto pendientes de visita.",
+    "capacidad_utilizada": "Alrededor de veintiún o veintidós animales; composición por hembras, machos y crías pendiente.",
+    "produce_mismo_todo_ano": false,
+    "alcanza_para_demanda": false,
+    "necesidades_aumentar_sosteniblemente": "Energía solar dimensionada, cerca eléctrica, divisiones, conducción de agua, bebederos, refugio, plan nutricional y sanitario, pesaje, registros y mercado programado.",
+    "observaciones_o_comentarios": "¿Produce la misma cantidad durante todo el año?: No. Los nacimientos y ventas dependen del ciclo reproductivo, la edad, los encargos, la disponibilidad de pasto y la temporada.\n¿La producción actual alcanza para atender la demanda?: Las crías suelen quedar encargadas; sin embargo, la productora vende temprano cuando el número de animales aumenta y no cuenta con suficiente infraestructura."
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua disponible",
+        "estado_actual": "Existe una toma o corriente pequeña en una esquina del potrero.",
+        "limite_restriccion": "No llega a todos los potreros y no se conoce caudal o calidad.",
+        "afectacion": "Concentra animales y limita rotación.",
+        "efecto": "Pisoteo, deshidratación o desplazamiento.",
+        "incidencia": "Muy alta",
+        "accion_mejora": "Diseñar conducción, almacenamiento y bebederos."
+      },
+      {
+        "condicion": "Fuentes hídricas cercanas",
+        "estado_actual": "Paso de agua en el área de pastoreo.",
+        "limite_restriccion": "Protección y distancia no verificadas.",
+        "afectacion": "El acceso directo puede deteriorar orillas y calidad.",
+        "efecto": "Impacto ambiental y sanitario.",
+        "incidencia": "Alta",
+        "accion_mejora": "Aislar el punto y abastecer por fuera."
+      },
+      {
+        "condicion": "Suelo",
+        "estado_actual": "Uso en pastoreo.",
+        "limite_restriccion": "Área, cobertura y carga no medidas.",
+        "afectacion": "El aumento del rebaño puede generar sobrepastoreo.",
+        "efecto": "Pérdida de cobertura y compactación.",
+        "incidencia": "Alta",
+        "accion_mejora": "Rotación, aforo y ajuste de carga."
+      },
+      {
+        "condicion": "Pendiente / topografía",
+        "estado_actual": "Se mantiene a los animales en la parte alta, descrita como más seca.",
+        "limite_restriccion": "Rutas, pendientes y erosión pendientes.",
+        "afectacion": "Puede aumentar riesgo de caídas o pérdida de suelo.",
+        "efecto": "Lesiones y degradación.",
+        "incidencia": "Media-alta",
+        "accion_mejora": "Mapear zonas seguras y mantener cobertura."
+      },
+      {
+        "condicion": "Clima",
+        "estado_actual": "El invierno afecta fuertemente a los animales.",
+        "limite_restriccion": "No existe refugio específico.",
+        "afectacion": "Humedad y frío aumentan estrés y enfermedad.",
+        "efecto": "Menor crecimiento y mortalidad de crías.",
+        "incidencia": "Muy alta",
+        "accion_mejora": "Refugio seco, drenaje y manejo por lotes."
+      },
+      {
+        "condicion": "Biodiversidad",
+        "estado_actual": "No se informó afectación directa.",
+        "limite_restriccion": "Interacción con perros, fauna o vegetación por verificar.",
+        "afectacion": "Pueden existir ataques o conflicto con áreas sensibles.",
+        "efecto": "Pérdidas o presión ambiental.",
+        "incidencia": "Media",
+        "accion_mejora": "Cercas seguras y monitoreo."
+      },
+      {
+        "condicion": "Uso de insumos",
+        "estado_actual": "Maíz ocasional, medicamentos y sistema solar.",
+        "limite_restriccion": "Costo alto y falta de registros.",
+        "afectacion": "Limita nutrición y puede generar residuos peligrosos.",
+        "efecto": "Baja productividad y riesgo sanitario.",
+        "incidencia": "Alta",
+        "accion_mejora": "Plan nutricional y sanitario con registro."
+      },
+      {
+        "condicion": "Manejo de residuos",
+        "estado_actual": "No hay sacrificio; estiércol queda disperso en potrero.",
+        "limite_restriccion": "No se informó manejo de envases, agujas o mortalidad.",
+        "afectacion": "Riesgo químico y biológico si se disponen mal.",
+        "efecto": "Contaminación puntual.",
+        "incidencia": "Alta",
+        "accion_mejora": "Ruta de residuos veterinarios y protocolo de mortalidad.."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Biológico",
+        "peligro": "Parásitos, bacterias, zoonosis y contacto con excretas.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Desparasitación y observación práctica.",
+        "accion": "Plan sanitario, higiene y guantes."
+      },
+      {
+        "tipo": "Biológico",
+        "peligro": "Mordeduras, golpes o pisotones de animales.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Experiencia familiar.",
+        "accion": "Manejo por lotes y sujeción segura."
+      },
+      {
+        "tipo": "Físico",
+        "peligro": "Frío, lluvia, humedad y viento.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Ubicación en zona alta más seca.",
+        "accion": "Ropa impermeable, refugio y pausas."
+      },
+      {
+        "tipo": "Químico",
+        "peligro": "Medicamentos, vitaminas y desparasitantes.",
+        "aplica": true,
+        "nivel_riesgo": "Ocasional",
+        "controles_actuales": "Guantes en algunos procedimientos.",
+        "accion": "EPP completo, dosis, etiqueta y almacenamiento."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Posturas, caminatas y manipulación de animales.",
+        "aplica": true,
+        "nivel_riesgo": "Media-alta",
+        "controles_actuales": "Trabajo familiar.",
+        "accion": "Técnica, apoyo y pausas."
+      },
+      {
+        "tipo": "Mecánico",
+        "peligro": "Cercas, herramientas y energizador.",
+        "aplica": true,
+        "nivel_riesgo": "Permanente",
+        "controles_actuales": "Cerca eléctrica previa con punto prestado.",
+        "accion": "Instalación técnica y revisión."
+      },
+      {
+        "tipo": "Locativo",
+        "peligro": "Barro, desniveles y superficies irregulares.",
+        "aplica": true,
+        "nivel_riesgo": "Alta en invierno",
+        "controles_actuales": "Botas.",
+        "accion": "Rutas, drenaje y orden."
+      },
+      {
+        "tipo": "Eléctrico",
+        "peligro": "Sistema solar, baterías y cerca eléctrica.",
+        "aplica": true,
+        "nivel_riesgo": "Permanente",
+        "controles_actuales": "Sistema solar antiguo.",
+        "accion": "Diagnóstico, protecciones y señalización."
+      },
+      {
+        "tipo": "Tránsito",
+        "peligro": "Movilización de animales y entregas.",
+        "aplica": true,
+        "nivel_riesgo": "Según venta",
+        "controles_actuales": "Entrega según negociación.",
+        "accion": "Vehículo apto, documentación y carga segura."
+      },
+      {
+        "tipo": "Psicosocial",
+        "peligro": "Carga familiar y frustración por apoyos no concretados.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Trabajo compartido en el hogar.",
+        "accion": "Roles claros, información transparente y acompañamiento."
+      }
+    ],
+    "observaciones_o_comentarios": "Los riesgos se identifican de manera preventiva con base en la entrevista. Deben validarse mediante visita al predio, observando cercas, sistema solar, potreros, acceso al agua, manejo de animales, aplicación de medicamentos, transporte, condiciones de invierno y participación de los cuatro integrantes del hogar."
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Usar botas, guantes según tarea, ropa impermeable y protección para frío.",
+        "riesgo": "Biológico, físico, químico y locativo.",
+        "responsable": "Ruth y familia.",
+        "frecuencia": "Cada jornada.",
+        "evidencia": "Checklist y fotos."
+      },
+      {
+        "accion_preventiva": "Revisar sistema solar, energizador, cuerdas, aisladores y postes antes de operar.",
+        "riesgo": "Eléctrico y mecánico.",
+        "responsable": "Adulto responsable / técnico.",
+        "frecuencia": "Semanal y después de tormentas.",
+        "evidencia": "Bitácora de revisión."
+      },
+      {
+        "accion_preventiva": "Aplicar medicamentos con guantes, dosis y tiempo de retiro registrados.",
+        "riesgo": "Químico y sanitario.",
+        "responsable": "Ruth/veterinario.",
+        "frecuencia": "Cada aplicación.",
+        "evidencia": "Registro sanitario."
+      },
+      {
+        "accion_preventiva": "Separar animales por edad, sexo o condición y evitar maniobras individuales de riesgo.",
+        "riesgo": "Golpes, escapes y bienestar.",
+        "responsable": "Familia.",
+        "frecuencia": "Diario / según manejo.",
+        "evidencia": "Plan de lotes."
+      },
+      {
+        "accion_preventiva": "Mantener rutas secas, retirar obstáculos y mejorar drenaje en invierno.",
+        "riesgo": "Caídas y lesiones.",
+        "responsable": "Familia.",
+        "frecuencia": "Semanal/lluvia.",
+        "evidencia": "Inspección."
+      },
+      {
+        "accion_preventiva": "Disponer botiquín, números de emergencia y apoyo para movilización.",
+        "riesgo": "Emergencias.",
+        "responsable": "Ruth.",
+        "frecuencia": "Revisión mensual.",
+        "evidencia": "Lista y botiquín."
+      },
+      {
+        "accion_preventiva": "Registrar incidentes, mortalidad y condiciones inseguras.",
+        "riesgo": "Seguimiento SG-SST y productivo.",
+        "responsable": "Ruth.",
+        "frecuencia": "Cada evento.",
+        "evidencia": "Bitácora."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Ferias campesinas",
+        "activo": true,
+        "descripcion": "Ferias agroambientales donde los animales han recibido reconocimientos.",
+        "responsable": "Ruth/familia.",
+        "frecuencia": "Según convocatoria."
+      },
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "Compradores reciben o recogen animales en la finca.",
+        "responsable": "Ruth/familia.",
+        "frecuencia": "Según nacimientos y demanda."
+      },
+      {
+        "canal": "Redes sociales",
+        "activo": false,
+        "descripcion": "Podría utilizar estados o publicaciones.",
+        "responsable": "Ruth/familiar.",
+        "frecuencia": "Por implementar."
+      },
+      {
+        "canal": "WhatsApp/llamadas",
+        "activo": true,
+        "descripcion": "Coordinación de encargos y entregas.",
+        "responsable": "Ruth.",
+        "frecuencia": "Según pedido."
+      },
+      {
+        "canal": "Tiendas/restaurantes / plazas",
+        "activo": false,
+        "descripcion": "Solo sería posible para carne formalmente beneficiada y refrigerada.",
+        "responsable": "Pendiente.",
+        "frecuencia": "Fase futura."
+      },
+      {
+        "canal": "Compras institucionales",
+        "activo": false,
+        "descripcion": "No se identificaron.",
+        "responsable": "Pendiente.",
+        "frecuencia": "Por explorar."
+      },
+      {
+        "canal": "Comercialización asociativa",
+        "activo": false,
+        "descripcion": "Posible venta agrupada de animales.",
+        "responsable": "Productores/organización.",
+        "frecuencia": "Por gestionar."
+      },
+      {
+        "canal": "Otro",
+        "activo": true,
+        "descripcion": "Compradores de diferentes veredas y comerciantes de animales en pie.",
+        "responsable": "Ruth.",
+        "frecuencia": "Ocasional/estacional."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Cría de 1-2 meses",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No se informó precio.",
+        "logistica_plataforma": "Transporte según acuerdo.",
+        "precio_final": null,
+        "justificacion": "Debe considerar alimentación de la madre, sanidad, mortalidad y manejo."
+      },
+      {
+        "servicio": "Macho de aproximadamente 6 meses",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Se reporta un peso aproximado de 4,5 a 5 arrobas, sin precio.",
+        "logistica_plataforma": "Pesaje, documentación y transporte.",
+        "precio_final": null,
+        "justificacion": "Precio debe definirse por peso vivo y condición."
+      },
+      {
+        "servicio": "Hembra de cría",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No se informó.",
+        "logistica_plataforma": "Entrega en finca o transporte.",
+        "precio_final": null,
+        "justificacion": "Debe considerar valor reproductivo y sanidad."
+      },
+      {
+        "servicio": "Reproductor",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "No se informó.",
+        "logistica_plataforma": "Transporte y soporte sanitario.",
+        "precio_final": null,
+        "justificacion": "Podría tener diferencial por genética y premios, si se soportan."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": "No se suministraron precios, costos de alimentación, sanidad, mano de obra, mortalidad, infraestructura o transporte. Se recomienda fijar precios con pesaje real, registro de costos por ciclo y diferenciación entre cría, animal de levante, hembra reproductiva y reproductor."
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Crías de 1-2 meses",
+        "cantidad_mensual": "Variable según nacimientos y encargos; no informada.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Contado/por confirmar.",
+        "canal": "Compradores de diferentes veredas."
+      },
+      {
+        "concepto_servicio": "Animales grandes",
+        "cantidad_mensual": "Venta estacional, principalmente hacia diciembre; cantidad pendiente.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Contado/por confirmar.",
+        "canal": "Comerciantes o compradores en finca."
+      },
+      {
+        "concepto_servicio": "Hembras de cría",
+        "cantidad_mensual": "Solo si se decide vender; cantidad pendiente.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Por confirmar.",
+        "canal": "Productores pecuarios."
+      },
+      {
+        "concepto_servicio": "Reproductores",
+        "cantidad_mensual": "Ocasional.",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Por confirmar.",
+        "canal": "Ferias o compradores especializados."
+      },
+      {
+        "concepto_servicio": "Carne ovina futura",
+        "cantidad_mensual": "No aplica actualmente.",
+        "precio": null,
+        "ingreso_mensual": 0,
+        "forma_pago": "No aplica.",
+        "canal": "Solo después de formalización, sacrificio autorizado y frío."
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": "No se realiza una proyección numérica porque la entrevista no aporta calendario de partos, tasa de natalidad, mortalidad, número de ventas, precios ni costos. La unidad debe registrar por al menos un ciclo reproductivo completo antes de comprometer volúmenes o proyectar ingresos."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Comprador de crías",
+        "estrategia": "Confirmar reserva, fecha aproximada, sexo y estado sanitario.",
+        "medio": "WhatsApp/llamada.",
+        "frecuencia": "Desde el nacimiento hasta entrega.",
+        "responsable": "Ruth."
+      },
+      {
+        "cliente": "Comprador de animales grandes",
+        "estrategia": "Informar peso, edad, condición y disponibilidad.",
+        "medio": "Llamada, fotos y visita.",
+        "frecuencia": "Antes de temporada de venta.",
+        "responsable": "Ruth/familia."
+      },
+      {
+        "cliente": "Comprador de genética",
+        "estrategia": "Conservar registros, fotos y soportes de ferias.",
+        "medio": "Contacto directo y ferias.",
+        "frecuencia": "Según evento.",
+        "responsable": "Ruth."
+      },
+      {
+        "cliente": "Consumidor final futuro",
+        "estrategia": "Garantizar procedencia, sacrificio autorizado y cadena de frío.",
+        "medio": "Etiqueta, WhatsApp y aliado comercial.",
+        "frecuencia": "Solo cuando se formalice.",
+        "responsable": "Ruth/aliado."
+      },
+      {
+        "cliente": "Aliado comercial",
+        "estrategia": "Acordar lotes, precio por peso, transporte y pago.",
+        "medio": "Reunión y documento simple.",
+        "frecuencia": "Por lote.",
+        "responsable": "Ruth."
+      },
+      {
+        "cliente": "Cliente recurrente",
+        "estrategia": "Llevar base de datos y seguimiento de recompra.",
+        "medio": "Teléfono / WhatsApp.",
+        "frecuencia": "Trimestral o según nacimientos.",
+        "responsable": "Familiar designado."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Cría ovina",
+        "canal": "Recogida en finca.",
+        "tiempo": "Día acordado.",
+        "transporte_operacion": "Vehículo del comprador o aliado.",
+        "condicion_calidad": "Animal sano, hidratado e identificado.",
+        "capacidad": "Una o varias; pendiente.",
+        "costo": "Por acordar.",
+        "responsable": "Ruth/comprador."
+      },
+      {
+        "servicio_insumo": "Cría ovina",
+        "canal": "Entrega externa.",
+        "tiempo": "Mismo día.",
+        "transporte_operacion": "Vehículo apto para animales.",
+        "condicion_calidad": "Espacio ventilado, sin hacinamiento.",
+        "capacidad": "Pendiente.",
+        "costo": "Combustible y servicio.",
+        "responsable": "Familia / transportador."
+      },
+      {
+        "servicio_insumo": "Animal grande",
+        "canal": "Venta en finca.",
+        "tiempo": "Día acordado.",
+        "transporte_operacion": "Recogida del comprador.",
+        "condicion_calidad": "Pesaje, ayuno y movilización según requisitos.",
+        "capacidad": "Según vehículo.",
+        "costo": "Por acordar.",
+        "responsable": "Ruth/comprador."
+      },
+      {
+        "servicio_insumo": "Animal para feria",
+        "canal": "Traslado a evento.",
+        "tiempo": "Según programación.",
+        "transporte_operacion": "Vehículo acondicionado.",
+        "condicion_calidad": "Bienestar, documentos y protección climática.",
+        "capacidad": "Pendiente.",
+        "costo": "Pendiente.",
+        "responsable": "Familia/organización."
+      },
+      {
+        "servicio_insumo": "Carne futura",
+        "canal": "No implementado.",
+        "tiempo": "Cadena inmediata.",
+        "transporte_operacion": "Vehículo refrigerado.",
+        "condicion_calidad": "Sacrificio autorizado y temperatura controlada.",
+        "capacidad": "No validada.",
+        "costo": "Pendiente.",
+        "responsable": "Aliado formal."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Identificación animal",
+        "informacion": "Número, fotografía, sexo, fecha de nacimiento y madre.",
+        "responsable": "Ruth/familia.",
+        "medio": "Arete y cuaderno.",
+        "frecuencia": "Al nacimiento / actualización.",
+        "evidencia": "Ficha."
+      },
+      {
+        "elemento": "Reproducción",
+        "informacion": "Monta, reproductor, posible preñez, parto y número de crías.",
+        "responsable": "Ruth.",
+        "medio": "Cuaderno.",
+        "frecuencia": "Cada evento.",
+        "evidencia": "Registro."
+      },
+      {
+        "elemento": "Sanidad",
+        "informacion": "Desparasitación, vitaminas, enfermedad, medicamento y tiempo de retiro.",
+        "responsable": "Ruth/veterinario.",
+        "medio": "Bitácora.",
+        "frecuencia": "Cada aplicación.",
+        "evidencia": "Fórmula y registro."
+      },
+      {
+        "elemento": "Peso",
+        "informacion": "Peso al nacimiento, destete, venta y condición corporal.",
+        "responsable": "Familia/técnico.",
+        "medio": "Báscula o cinta validada.",
+        "frecuencia": "Mensual/venta.",
+        "evidencia": "Planilla."
+      },
+      {
+        "elemento": "Venta",
+        "informacion": "Animal, comprador, precio, fecha, destino y transporte.",
+        "responsable": "Ruth.",
+        "medio": "Libro de ventas.",
+        "frecuencia": "Cada venta.",
+        "evidencia": "Recibo o soporte."
+      },
+      {
+        "elemento": "Origen y prácticas",
+        "informacion": "Finca, pastoreo, agua, energía solar y reconocimientos.",
+        "responsable": "Ruth.",
+        "medio": "Ficha física, WhatsApp o QR futuro.",
+        "frecuencia": "Actualización anual.",
+        "evidencia": "Fotos y documentos."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "agnóstico técnico egral",
+        "descripcion": "Medición de potreros, inventario, agua, cercas, energía, refugio y capacidad de carga.",
+        "valor_unitario": null,
+        "cantidad": "1 visita.",
+        "total": null,
+        "requisito": "Base para priorizar inversión.",
+        "fuente": "Alcaldía/profesional."
+      },
+      {
+        "tipo": "stema solar",
+        "descripcion": "Paneles, estructura, controlador, batería, inversor y protecciones dimensionados para energizador y cargas definidas.",
+        "valor_unitario": null,
+        "cantidad": "1 sistema.",
+        "total": null,
+        "requisito": "Instalación certificada y plan de disposición de baterías.",
+        "fuente": "Proyecto/recursos propios."
+      },
+      {
+        "tipo": "ergizador de cerca uerda o alambre éctrico",
+        "descripcion": "Equipo compatible con sistema solar y longitud de cercas. Material para divisiones y conducción de corriente.",
+        "valor_unitario": null,
+        "cantidad": "1. Metros por medir.",
+        "total": null,
+        "requisito": "Protecciones, puesta a tierra y señalización. Durabilidad y mantenimiento.",
+        "fuente": "Proyecto / Proyecto/proveedor."
+      },
+      {
+        "tipo": "stes, aisladores y cesorios",
+        "descripcion": "Soporte de divisiones de potreros.",
+        "valor_unitario": null,
+        "cantidad": "Según diseño.",
+        "total": null,
+        "requisito": "Evitar afectación de fuentes y vegetación.",
+        "fuente": "Proyecto."
+      },
+      {
+        "tipo": "anguera",
+        "descripcion": "Conducción desde la toma a diferentes potreros.",
+        "valor_unitario": null,
+        "cantidad": "Metros por medir.",
+        "total": null,
+        "requisito": "Diámetro, presión, protección y fugas.",
+        "fuente": "Proyecto."
+      },
+      {
+        "tipo": "bederos y accesorios",
+        "descripcion": "Puntos de agua con flotador o control.",
+        "valor_unitario": null,
+        "cantidad": "Según divisiones.",
+        "total": null,
+        "requisito": "Base firme, limpieza y drenaje.",
+        "fuente": "Proyecto."
+      },
+      {
+        "tipo": "fugio ovino",
+        "descripcion": "Cobertizo seco y ventilado para invierno, especialmente crías.",
+        "valor_unitario": null,
+        "cantidad": "1 o más.",
+        "total": null,
+        "requisito": "Ubicación fuera de rondas y con drenaje.",
+        "fuente": "Fase posterior/apoyo."
+      },
+      {
+        "tipo": "saje y registros",
+        "descripcion": "Báscula, cinta, aretes, aplicador, formatos y botiquín.",
+        "valor_unitario": null,
+        "cantidad": "1 kit.",
+        "total": null,
+        "requisito": "Bienestar y trazabilidad.",
+        "fuente": "Recursos propios / apoyo."
+      }
+    ],
+    "observaciones_o_comentarios": "Prioridades expresadas por la productora: 1) una planta o sistema solar con capacidad para operar la cerca eléctrica; 2) manguera e instalación para llevar agua de potrero a potrero; у 3) cuerda, alambre y accesorios para organizar divisiones con cerca eléctrica. Se recomienda integrar las tres en un solo diseño técnico de energía, agua y rotación."
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Alimentación",
+        "descripcion": "Maíz, sal, suplementos o forraje de respaldo.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "El maíz se considera costoso y el concentrado no se usa actualmente."
+      },
+      {
+        "tipo": "Sanidad",
+        "descripcion": "Desparasitantes, vitaminas, vacunas, atención y medicamentos.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Registrar por animal y respetar tiempos de retiro."
+      },
+      {
+        "tipo": "Mantenimiento de cercas",
+        "descripcion": "Cuerda, postes, aisladores y reparaciones.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Crear reserva mensual."
+      },
+      {
+        "tipo": "Energía solar",
+        "descripcion": "Mantenimiento, batería y reposición de componentes.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Separar inversión inicial y depreciación."
+      },
+      {
+        "tipo": "Agua",
+        "descripcion": "Mangueras, bebederos, reparaciones y limpieza.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Medir pérdidas y mantenimiento."
+      },
+      {
+        "tipo": "Transporte",
+        "descripcion": "Movilización a compradores, ferias o atención veterinaria.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Depende de la negociación."
+      },
+      {
+        "tipo": "Mano de obra",
+        "descripcion": "Trabajo de cuatro integrantes de la familia.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Valorar tiempo aunque no se pague en efectivo."
+      },
+      {
+        "tipo": "Pérdidas/mortalidad",
+        "descripcion": "Animales enfermos, muertos, fugados o ventas tempranas.",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Debe registrarse como costo."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "Mes 1",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registrar ventas vigentes. Inventario y diagnóstico. Traslados. Medición de agua y potreros. Crear línea base."
+      },
+      {
+        "mes": "Mes 2",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Según ventas. Cotizaciones solares y cercas. Visitas técnicas. Diseño de exclusión de toma. Definir sistema."
+      },
+      {
+        "mes": "Mes 3",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Según ventas. Compra/instalación primera fase. Transporte de materiales. Protección de fuente. Priorizar energía y agua."
+      },
+      {
+        "mes": "Mes 4",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Según nacimientos. Cercas y divisiones. Entregas. Rotación inicial. Separar lotes."
+      },
+      {
+        "mes": "Mes 5",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Según ventas. Mangueras y bebederos. Logística. Agua distribuida. Revisar fugas."
+      },
+      {
+        "mes": "Mes 6",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Según ventas. Sanidad y mantenimiento. Contactos comerciales. Seguimiento de suelo. Calcular costos."
+      },
+      {
+        "mes": "Mes 7",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Según ventas. Operación mensual. Entregas. Manejo de invierno. Evaluar refugio."
+      },
+      {
+        "mes": "Mes 8",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Según ventas. Operación mensual. Ferias/promoción. Seguimiento. Registrar peso."
+      },
+      {
+        "mes": "Mes 9",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Según ventas. Operación mensual. Programar temporada. Seguimiento. Preparar animales grandes."
+      },
+      {
+        "mes": "Mes 10",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Según ventas. Operación mensual. Negociación. Seguimiento. Confirmar compradores."
+      },
+      {
+        "mes": "Mes 11",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Según ventas. Operación mensual. Transporte. Seguimiento. Control sanitario previo."
+      },
+      {
+        "mes": "Mes 12",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Venta estacional si aplica. Operación y mantenimiento. Entregas de diciembre. Evaluación anual. Decidir crecimiento."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "La entrevista no contiene registros financieros. Se debe implementar una hoja sencilla por ciclo que incluya inventario inicial, nacimientos, compras, alimentación, sanidad, infraestructura, transporte, mortalidad, ventas e inventario final, para calcular el costo por cría y por kilogramo o arroba de peso vivo.\nCondición para ampliar el rebaño: demostrar durante un ciclo completo que la nueva energía y las divisiones funcionan, el agua llega a todos los potreros, la carga animal es compatible con el área, el invierno se maneja sin pérdidas importantes y existen registros de sanidad, peso, costos y compradores."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Fuente de agua",
+        "estado": "Toma o curso pequeño en una esquina del potrero.",
+        "cantidad": "Caudal y calidad pendientes.",
+        "impacto_1_a_5": 5,
+        "accion": "Medir, proteger y conducir."
+      },
+      {
+        "variable": "Uso de agua",
+        "estado": "Bebida animal; no hay distribución completa.",
+        "cantidad": "No medido.",
+        "impacto_1_a_5": 5,
+        "accion": "Bebederos, control de fugas y registro."
+      },
+      {
+        "variable": "Energía",
+        "estado": "Sistema solar antiguo e insuficiente.",
+        "cantidad": "Capacidad no informada..",
+        "impacto_1_a_5": 5,
+        "accion": "Diagnóstico y sistema dimensionado."
+      },
+      {
+        "variable": "Pasturas",
+        "estado": "Alimentación principal en potreros.",
+        "cantidad": "Área y aforo pendientes.",
+        "impacto_1_a_5": 5,
+        "accion": "Rotación y capacidad de carga."
+      },
+      {
+        "variable": "Transporte",
+        "estado": "Entrega según negociación.",
+        "cantidad": "Rutas y costos pendientes.",
+        "impacto_1_a_5": 3,
+        "accion": "Agrupar y registrar movilizaciones."
+      },
+      {
+        "variable": "Medicamentos",
+        "estado": "Uso ocasional de vitaminas y desparasitantes.",
+        "cantidad": "Sin inventario.",
+        "impacto_1_a_5": 4,
+        "accion": "Plan sanitario y disposición segura."
+      },
+      {
+        "variable": "Residuos",
+        "estado": "Estiércol disperso; sin sacrificio.",
+        "cantidad": "No medido.",
+        "impacto_1_a_5": 3,
+        "accion": "Manejo de envases, agujas y mortalidad."
+      },
+      {
+        "variable": "Clima",
+        "estado": "Invierno afecta de manera importante.",
+        "cantidad": "Sin datos meteorológicos.",
+        "impacto_1_a_5": 5,
+        "accion": "Refugio, drenaje y reservas."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "onsumo de agua",
+        "que_se_mide": "Litros o tiempo de flujo por lote.",
+        "dato_inicial": "No medido.",
+        "meta": "Línea base y reducción de fugas.",
+        "frecuencia": "Mensual.",
+        "responsable": "Ruth/familia.",
+        "evidencia": "Registro."
+      },
+      {
+        "indicador": "untos de agua",
+        "que_se_mide": "Potreros con bebedero funcional.",
+        "dato_inicial": "Un punto concentrado.",
+        "meta": "Cobertura de divisiones prioritarias.",
+        "frecuencia": "Mensual.",
+        "responsable": "Familia.",
+        "evidencia": "Mapa y fotos."
+      },
+      {
+        "indicador": "nergía solar",
+        "que_se_mide": "Generación, estado y fallas.",
+        "dato_inicial": "Sistema antiguo insuficiente.",
+        "meta": "Cerca funcionando de forma estable.",
+        "frecuencia": "Semanal/mensual.",
+        "responsable": "Adulto responsable.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "indicador": "otación",
+        "que_se_mide": "Número de potreros y días de descanso.",
+        "dato_inicial": "Sin sistema estable por falta de corriente.",
+        "meta": "Calendario activo.",
+        "frecuencia": "Mensual.",
+        "responsable": "Ruth.",
+        "evidencia": "Planilla."
+      },
+      {
+        "indicador": "arga animal",
+        "que_se_mide": "Animales por área.",
+        "dato_inicial": "21-22; área desconocida.",
+        "meta": "Carga validada técnicamente.",
+        "frecuencia": "Trimestral.",
+        "responsable": "Ruth/técnico.",
+        "evidencia": "Inventario y mapa."
+      },
+      {
+        "indicador": "ansporte",
+        "que_se_mide": "Viajes y distancia por venta.",
+        "dato_inicial": "No registrado.",
+        "meta": "Rutas agrupadas.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Familia.",
+        "evidencia": "Registro."
+      },
+      {
+        "indicador": "esiduos veterinarios",
+        "que_se_mide": "Envases, agujas y medicamentos vencidos.",
+        "dato_inicial": "Sin registro.",
+        "meta": "100% con ruta segura.",
+        "frecuencia": "Cada aplicación / trimestral.",
+        "responsable": "Ruth.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "indicador": "Mortalidad y pérdidas",
+        "que_se_mide": "Número, causa y disposición.",
+        "dato_inicial": "No informado.",
+        "meta": "100% registrado y reducción.",
+        "frecuencia": "Cada evento.",
+        "responsable": "Ruth.",
+        "evidencia": "Registro."
+      },
+      {
+        "indicador": "obertura del suelo",
+        "que_se_mide": "Estado visual y áreas degradadas.",
+        "dato_inicial": "Pendiente.",
+        "meta": "Mantener cobertura y recuperación.",
+        "frecuencia": "Trimestral.",
+        "responsable": "Familia/técnico.",
+        "evidencia": "Fotos."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Estiércol",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "Permanece disperso en el potrero.",
+        "accion_circular": "Mantener distribución mediante rotación y evitar acumulación cerca del agua.",
+        "destino": "Potrero",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Envases veterinarios",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Separar y entregar a proveedor o programa posconsumo.",
+        "destino": "Proveedor / posconsumo",
+        "responsable": "Ruth/veterinario."
+      },
+      {
+        "residuo_recurso": "Agujas y cortopunzantes",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Contenedor rígido y entrega segura.",
+        "destino": "Entrega segura",
+        "responsable": "Ruth/veterinario."
+      },
+      {
+        "residuo_recurso": "Sacos de maíz o sal",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Reutilizar limpios o reciclar.",
+        "destino": "Reutilización / reciclaje",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Restos de cerca",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Reparar, clasificar y disponer responsablemente.",
+        "destino": "Disposición responsable",
+        "responsable": "Familia."
+      },
+      {
+        "residuo_recurso": "Baterías y equipos solares",
+        "cantidad": "Una instalación antigua; estado pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Mantenimiento y gestor RAEE al final de vida.",
+        "destino": "Gestor RAEE",
+        "responsable": "Proveedor/familia."
+      },
+      {
+        "residuo_recurso": "Mortalidad animal",
+        "cantidad": "Pendiente.",
+        "manejo_actual": "No informado.",
+        "accion_circular": "Protocolo veterinario y disposición segura.",
+        "destino": "Disposición segura",
+        "responsable": "Ruth/veterinario."
+      }
+    ],
+    "conclusion_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "gua",
+        "indicador": "Protección, conducción y bebederos.",
+        "descripcion": null,
+        "estado": "Un punto de agua sin distribución.",
+        "calificacion_1_a_5": 2,
+        "accion": "Aislar, conducir y medir.",
+        "evidencia": "Mapa y fotos."
+      },
+      {
+        "factor": "Suelo y pasturas",
+        "indicador": "Cobertura, rotación y carga.",
+        "descripcion": null,
+        "estado": "Pastoreo con manejo desorganizado por falta de corriente.",
+        "calificacion_1_a_5": 2,
+        "accion": "Divisiones y calendario.",
+        "evidencia": "Planilla."
+      },
+      {
+        "factor": "Energía renovable",
+        "indicador": "Capacidad y funcionamiento.",
+        "descripcion": null,
+        "estado": "Sistema solar antiguo insuficiente.",
+        "calificacion_1_a_5": 2,
+        "accion": "Rediseñar y mantener.",
+        "evidencia": "Ficha técnica."
+      },
+      {
+        "factor": "Sienestar animal",
+        "indicador": "Agua, refugio, agrupación y sanidad.",
+        "descripcion": null,
+        "estado": "Sin refugio y con problemas de cercamiento.",
+        "calificacion_1_a_5": 2,
+        "accion": "Agua, cerca y cobertizo.",
+        "evidencia": "Checklist."
+      },
+      {
+        "factor": "Giodiversidad",
+        "indicador": "Interacción con áreas sensibles y fauna.",
+        "descripcion": null,
+        "estado": "No evaluada.",
+        "calificacion_1_a_5": 3,
+        "accion": "Visita y exclusión de zonas sensibles.",
+        "evidencia": "Mapa."
+      },
+      {
+        "factor": "Circularidad",
+        "indicador": "Aprovechamiento y gestión de residuos.",
+        "descripcion": null,
+        "estado": "Estiércol disperso; otros residuos sin ruta.",
+        "calificacion_1_a_5": 3,
+        "accion": "Plan de residuos veterinarios.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "factor": "Comercialización",
+        "indicador": "Registros, compradores y pesaje.",
+        "descripcion": null,
+        "estado": "Ventas previas sin datos consolidados.",
+        "calificacion_1_a_5": 2,
+        "accion": "Libro de ventas y pesaje.",
+        "evidencia": "Registros."
+      },
+      {
+        "factor": "inanzas",
+        "indicador": "Costos y margen.",
+        "descripcion": null,
+        "estado": "No calculados.",
+        "calificacion_1_a_5": 1,
+        "accion": "Costeo por animal.",
+        "evidencia": "Hoja de costos."
+      },
+      {
+        "factor": "Seguridad laboral",
+        "indicador": "EPP y controles.",
+        "descripcion": null,
+        "estado": "Botas y guantes ocasionales.",
+        "calificacion_1_a_5": 2,
+        "accion": "EPP y plan básico.",
+        "evidencia": "Checklist."
+      }
+    ],
+    "resultado_preliminar_registro_unico": null,
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "a",
+        "accion": "Conducción, bebederos y exclusión.",
+        "prioridad": null,
+        "plazo": "6 meses.",
+        "responsable": "Familia / técnico.",
+        "recursos": null,
+        "indicador": "% potreros cubiertos.",
+        "evidencia": "Mapa y fotos."
+      },
+      {
+        "impacto": "lo",
+        "accion": "Dividir potreros y ajustar carga.",
+        "prioridad": null,
+        "plazo": "12 meses.",
+        "responsable": "Ruth.",
+        "recursos": null,
+        "indicador": "Días de descanso y cobertura.",
+        "evidencia": "Calendario."
+      },
+      {
+        "impacto": "ma/refugio",
+        "accion": "Construir refugio seco y drenaje.",
+        "prioridad": null,
+        "plazo": "6-12 meses.",
+        "responsable": "Familia.",
+        "recursos": null,
+        "indicador": "Incidencias y mortalidad.",
+        "evidencia": "Fotos y registros."
+      },
+      {
+        "impacto": "ergía",
+        "accion": "Instalar sistema dimensionado.",
+        "prioridad": null,
+        "plazo": "3-6 meses.",
+        "responsable": "Técnico/familia.",
+        "recursos": null,
+        "indicador": "Horas de servicio y fallas.",
+        "evidencia": "Informe."
+      },
+      {
+        "impacto": "nestar animal",
+        "accion": "Cerca eléctrica y lotes.",
+        "prioridad": null,
+        "plazo": "3-6 meses.",
+        "responsable": "Familia.",
+        "recursos": null,
+        "indicador": "% animales correctamente ubicados.",
+        "evidencia": "Checklist."
+      },
+      {
+        "impacto": "nidad",
+        "accion": "Plan sanitario, pesaje y tiempos de retiro.",
+        "prioridad": null,
+        "plazo": "6 meses.",
+        "responsable": "Ruth/veterinario.",
+        "recursos": null,
+        "indicador": "Cumplimiento del plan.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "impacto": "siduos",
+        "accion": "Separación y posconsumo.",
+        "prioridad": null,
+        "plazo": "6 meses.",
+        "responsable": "Ruth.",
+        "recursos": null,
+        "indicador": "% entregado.",
+        "evidencia": "Soportes."
+      },
+      {
+        "impacto": "rcado",
+        "accion": "Registros, peso y alianzas.",
+        "prioridad": null,
+        "plazo": "12 meses.",
+        "responsable": "Ruth.",
+        "recursos": null,
+        "indicador": "Margen y número de clientes.",
+        "evidencia": "Libro de ventas."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": "Invierno",
+        "situacion": "Es el evento climático que más afecta a los animales.",
+        "riesgo": "Frío, humedad, enfermedad y menor crecimiento.",
+        "accion_propuesta": "Refugio, drenaje, lotes secos y vigilancia de crías."
+      },
+      {
+        "aspecto": "Verano",
+        "situacion": "No se describió como principal problema.",
+        "riesgo": "Menor pasto o agua, por verificar.",
+        "accion_propuesta": "Reserva de agua y seguimiento de pasturas."
+      },
+      {
+        "aspecto": "Viento",
+        "situacion": "No se informó.",
+        "riesgo": "Daño de cercas o enfriamiento.",
+        "accion_propuesta": "Diseño resistente y monitoreo."
+      },
+      {
+        "aspecto": "Falla energética",
+        "situacion": "No hay red y el sistema solar es insuficiente.",
+        "riesgo": "Escape y mezcla de animales.",
+        "accion_propuesta": "Sistema solar de respaldo y mantenimiento."
+      },
+      {
+        "aspecto": "Disponibilidad de alimento",
+        "situacion": "Pastoreo y maíz costoso.",
+        "riesgo": "Pérdida de condición corporal.",
+        "accion_propuesta": "Aforo, reservas y suplementación estratégica."
+      },
+      {
+        "aspecto": "Agua",
+        "situacion": "Solo está disponible en un punto.",
+        "riesgo": "Acceso desigual y deterioro.",
+        "accion_propuesta": "Distribución a potreros."
+      },
+      {
+        "aspecto": "Mercado",
+        "situacion": "Venta variable y estacional.",
+        "riesgo": "Venta temprana o precio bajo.",
+        "accion_propuesta": "Programar nacimientos, peso y compradores."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Productivo",
+        "riesgo": "Escape o mezcla con ganado.",
+        "causa": "Falta de corriente y divisiones.",
+        "consecuencia": "Pérdidas, accidentes y manejo deficiente.",
+        "nivel": "Muy alto",
+        "prevencion": "Sistema solar y cercas.",
+        "respuesta": "Reagrupar y reparar."
+      },
+      {
+        "tipo": "Climático",
+        "riesgo": "Afectación por invierno.",
+        "causa": "Falta de refugio y humedad.",
+        "consecuencia": "Enfermedad y mortalidad.",
+        "nivel": "Muy alto",
+        "prevencion": "Cobertizo y drenaje.",
+        "respuesta": "Trasladar a zona seca y atender."
+      },
+      {
+        "tipo": "Sanitario",
+        "riesgo": "Parasitismo o enfermedad.",
+        "causa": "Plan reactivo y pocos registros.",
+        "consecuencia": "Bajo crecimiento y pérdidas.",
+        "nivel": "Alto",
+        "prevencion": "Calendario y asistencia.",
+        "respuesta": "Aislar, diagnosticar y tratar."
+      },
+      {
+        "tipo": "Jutricional",
+        "riesgo": "Insuficiencia de alimento.",
+        "causa": "Maíz caro y pasto variable.",
+        "consecuencia": "Baja condición y reproducción.",
+        "nivel": "Alto",
+        "prevencion": "Aforo y suplemento estratégico.",
+        "respuesta": "Priorizar lotes vulnerables."
+      },
+      {
+        "tipo": "Hídrico",
+        "riesgo": "Acceso limitado o contaminación.",
+        "causa": "Un punto de agua.",
+        "consecuencia": "Estrés y riesgo sanitario.",
+        "nivel": "Muy alto",
+        "prevencion": "Bebederos y protección.",
+        "respuesta": "Suministro alterno y reparación."
+      },
+      {
+        "tipo": "inanciero",
+        "riesgo": "Vender sin conocer costos.",
+        "causa": "No hay registros ni pesaje.",
+        "consecuencia": "Bajo margen.",
+        "nivel": "Alto",
+        "prevencion": "Costeo y peso real.",
+        "respuesta": "Renegociar y ajustar."
+      },
+      {
+        "tipo": "Comercial",
+        "riesgo": "Dependencia de compradores informales.",
+        "causa": "Pocos canales.",
+        "consecuencia": "Precio inestable.",
+        "nivel": "Medio-alto",
+        "prevencion": "Base de clientes y alianzas.",
+        "respuesta": "Buscar compradores alternos."
+      },
+      {
+        "tipo": "aboral",
+        "riesgo": "Golpes, caídas o exposición a medicamentos.",
+        "causa": "Manejo y terreno.",
+        "consecuencia": "Lesión familiar.",
+        "nivel": "Alto",
+        "prevencion": "EPP, apoyo y rutas seguras.",
+        "respuesta": "Primeros auxilios."
+      },
+      {
+        "tipo": "mbiental",
+        "riesgo": "Sobrepastoreo o deterioro de la toma.",
+        "causa": "Aumento sin capacidad de carga.",
+        "consecuencia": "Degradación de suelo y agua.",
+        "nivel": "Muy alto",
+        "prevencion": "Rotación y aislamiento.",
+        "respuesta": "Reducir carga y recuperar."
+      },
+      {
+        "tipo": "Estratégico",
+        "riesgo": "Invertir en carne sin condiciones.",
+        "causa": "Falta de frío y formalización.",
+        "consecuencia": "Pérdida económica o sanción.",
+        "nivel": "Alto",
+        "prevencion": "Estudio por fases.",
+        "respuesta": "Mantener venta en pie hasta cumplir."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "entidad, predio, inventario y as.",
+        "componente": "Estratégico",
+        "responsable": "Ruth/asesor.",
+        "tiempo": "Inmediato",
+        "recursos": "Documentos y visita.",
+        "resultado": "Línea base confirmada.",
+        "evidencia": "Ficha."
+      },
+      {
+        "actividad": "eros, cercas, fuente y recorridos.",
+        "componente": "Productivo / ambiental",
+        "responsable": "Técnico/familia.",
+        "tiempo": "Inmediato",
+        "recursos": "Levantamiento.",
+        "resultado": "Diseño integrado.",
+        "evidencia": "Mapa."
+      },
+      {
+        "actividad": "car sistema solar y demanda del or.",
+        "componente": "Energético",
+        "responsable": "Proveedor técnico.",
+        "tiempo": "Inmediato",
+        "recursos": "Medición y cotizaciones.",
+        "resultado": "Sistema dimensionado.",
+        "evidencia": "Informe."
+      },
+      {
+        "actividad": "Fortalecer sistema solar.",
+        "componente": "Productivo / ambiental",
+        "responsable": "Proveedor/familia.",
+        "tiempo": "Corto",
+        "recursos": "Paneles y componentes.",
+        "resultado": "Corriente estable.",
+        "evidencia": "Acta y fotos."
+      },
+      {
+        "actividad": "rca eléctrica y divisiones.",
+        "componente": "Productivo/ bienestar",
+        "responsable": "Familia/técnico.",
+        "tiempo": "Corto",
+        "recursos": "Cuerda, postes y aisladores.",
+        "resultado": "Lotes organizados.",
+        "evidencia": "Checklist."
+      },
+      {
+        "actividad": "anguera y bebederos.",
+        "componente": "Hídrico/ambiental",
+        "responsable": "Familia/técnico.",
+        "tiempo": "Corto",
+        "recursos": "Mangueras y accesorios.",
+        "resultado": "Agua en potreros.",
+        "evidencia": "Mapa y prueba."
+      },
+      {
+        "actividad": "tar inventario, identificación, peso y",
+        "componente": "Productivo/ trazabilidad",
+        "responsable": "Ruth.",
+        "tiempo": "Inmediato-continuo",
+        "recursos": "Aretes, báscula y formatos.",
+        "resultado": "Datos confiables.",
+        "evidencia": "Registros."
+      },
+      {
+        "actividad": "Tugio para invierno.",
+        "componente": "Climático/bienestar",
+        "responsable": "Técnico/familia.",
+        "tiempo": "3-6 meses",
+        "recursos": "Diseño y materiales.",
+        "resultado": "Protección de crías.",
+        "evidencia": "Informe."
+      },
+      {
+        "actividad": "ostos y precios.",
+        "componente": "Financiero/comercial",
+        "responsable": "Ruth/asesor.",
+        "tiempo": "6 meses",
+        "recursos": "Registros.",
+        "resultado": "Margen conocido.",
+        "evidencia": "Hoja de costos."
+      },
+      {
+        "actividad": "compradores y alianzas.",
+        "componente": "Comercial",
+        "responsable": "Ruth/familia.",
+        "tiempo": "6-12 meses",
+        "recursos": "Base de datos y contactos.",
+        "resultado": "Ventas programadas.",
+        "evidencia": "Libro de ventas."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "tificación",
+        "indicador": "Datos, inventario y coordenadas verificados.",
+        "meta": "100% confirmado.",
+        "frecuencia": "Una vez/anual.",
+        "responsable": "Ruth / asesor.",
+        "evidencia": "Ficha."
+      },
+      {
+        "dimension": "gia",
+        "indicador": "Cerca eléctrica operativa.",
+        "meta": "Funcionamiento estable.",
+        "frecuencia": "Semanal.",
+        "responsable": "Familia.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "dimension": "a",
+        "indicador": "Potreros con bebedero.",
+        "meta": "Cobertura prioritaria completa.",
+        "frecuencia": "Mensual.",
+        "responsable": "Familia.",
+        "evidencia": "Mapa."
+      },
+      {
+        "dimension": "ción",
+        "indicador": "Potreros y días de descanso.",
+        "meta": "Calendario activo.",
+        "frecuencia": "Mensual.",
+        "responsable": "Ruth.",
+        "evidencia": "Registro."
+      },
+      {
+        "dimension": "ntario",
+        "indicador": "Animales por sexo, edad y función.",
+        "meta": "100% identificados.",
+        "frecuencia": "Mensual.",
+        "responsable": "Ruth.",
+        "evidencia": "Ficha."
+      },
+      {
+        "dimension": "oducción",
+        "indicador": "Partos, crías y mortalidad.",
+        "meta": "100% registrados.",
+        "frecuencia": "Cada evento.",
+        "responsable": "Ruth.",
+        "evidencia": "Bitácora."
+      },
+      {
+        "dimension": "dad",
+        "indicador": "Tratamientos y tiempos de retiro.",
+        "meta": "100% documentados.",
+        "frecuencia": "Cada aplicación.",
+        "responsable": "Ruth/veterinario.",
+        "evidencia": "Registro."
+      },
+      {
+        "dimension": "cas",
+        "indicador": "Animales, peso, precio y comprador.",
+        "meta": "100% de ventas registradas.",
+        "frecuencia": "Cada venta.",
+        "responsable": "Ruth.",
+        "evidencia": "Libro."
+      },
+      {
+        "dimension": "nzas",
+        "indicador": "Costo y margen por animal.",
+        "meta": "Cálculo por ciclo.",
+        "frecuencia": "Trimestral/venta.",
+        "responsable": "Ruth/asesor.",
+        "evidencia": "Hoja."
+      },
+      {
+        "dimension": "iente",
+        "indicador": "Cobertura, fuente y residuos.",
+        "meta": "Sin deterioro y rutas definidas.",
+        "frecuencia": "Trimestral.",
+        "responsable": "Familia / técnico.",
+        "evidencia": "Fotos y bitácora."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Fortalecer sistema solar",
+        "efecto_productivo": "Permite manejar cercas.",
+        "efecto_comercial": "Mejora continuidad y confianza.",
+        "efecto_financiero": "Inversión inicial y mantenimiento.",
+        "efecto_ambiental": "Usa energía renovable, pero genera RAEE.",
+        "ajuste_necesario": "Diseño técnico y plan de baterías."
+      },
+      {
+        "decision": "Instalar cerca eléctrica",
+        "efecto_productivo": "Organiza lotes y rotación.",
+        "efecto_comercial": "Mejora condición y oferta.",
+        "efecto_financiero": "Costo de materiales.",
+        "efecto_ambiental": "Reduce sobrepastoreo si se usa bien.",
+        "ajuste_necesario": "Calendario y revisión."
+      },
+      {
+        "decision": "Distribuir agua",
+        "efecto_productivo": "Mejora bienestar y uso de potreros.",
+        "efecto_comercial": "Favorece crecimiento.",
+        "efecto_financiero": "Inversión y mantenimiento.",
+        "efecto_ambiental": "Protege toma si se aísla.",
+        "ajuste_necesario": "Medir caudal y fugas."
+      },
+      {
+        "decision": "Construir refugio",
+        "efecto_productivo": "Reduce pérdidas en invierno.",
+        "efecto_comercial": "Mejora calidad animal.",
+        "efecto_financiero": "Inversión en materiales.",
+        "efecto_ambiental": "Debe ubicarse fuera de zonas sensibles.",
+        "ajuste_necesario": "Diseño y drenaje."
+      },
+      {
+        "decision": "Aumentar rebaño",
+        "efecto_productivo": "Más crías potenciales.",
+        "efecto_comercial": "Mayor oferta.",
+        "efecto_financiero": "Más alimento y sanidad.",
+        "efecto_ambiental": "Mayor presión sobre suelo y agua.",
+        "ajuste_necesario": "Solo con carga validada."
+      },
+      {
+        "decision": "Mejorar nutrición",
+        "efecto_productivo": "Mejora crecimiento y reproducción.",
+        "efecto_comercial": "Animales con mejor peso.",
+        "efecto_financiero": "Costo recurrente.",
+        "efecto_ambiental": "Empaques y huella de insumos.",
+        "ajuste_necesario": "Plan por categoría."
+      },
+      {
+        "decision": "Registrar peso y costos",
+        "efecto_productivo": "Permite selección.",
+        "efecto_comercial": "Sustenta precio.",
+        "efecto_financiero": "Mejora rentabilidad.",
+        "efecto_ambiental": "Optimiza recursos.",
+        "ajuste_necesario": "Disciplina de registro."
+      },
+      {
+        "decision": "Vender carne",
+        "efecto_productivo": "Agrega transformación externa.",
+        "efecto_comercial": "Puede aumentar valor.",
+        "efecto_financiero": "Alta inversión y requisitos.",
+        "efecto_ambiental": "Más energía, empaques y residuos.",
+        "ajuste_necesario": "Fase futura con aliado formal."
+      },
+      {
+        "decision": "Participar en ferias",
+        "efecto_productivo": "Promueve genética.",
+        "efecto_comercial": "Amplía contactos.",
+        "efecto_financiero": "Transporte y preparación.",
+        "efecto_ambiental": "Debe cuidar bienestar.",
+        "ajuste_necesario": "Documentos y bioseguridad."
+      },
+      {
+        "decision": "Gestionar residuos",
+        "efecto_productivo": "Protege sanidad.",
+        "efecto_comercial": "Refuerza confianza.",
+        "efecto_financiero": "Costo bajo-medio.",
+        "efecto_ambiental": "Reduce contaminación.",
+        "ajuste_necesario": "Rutas y evidencias."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}

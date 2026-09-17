@@ -1,0 +1,2260 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "Botica Veterinaria El Salitre.",
+    "persona_entrevistada": "Yolanda Morales. En la transcripción se escucha un apellido final semejante a 'Pavo', cuya escritura debe verificarse. Documento, teléfono completo, correo, propiedad y condición jurídica pendientes.",
+    "tipo_actividad": "Comercio rural de medicamentos y vacunas veterinarias, alimentos para animales, maíz, sal, botas o calzado y otros insumos de apoyo a familias ganaderas y campesinas.",
+    "ubicacion_especifica": "Finca El Salitre. La vereda fue transcrita como 'Petal' y la historia se relaciona con la comunidad de Betania; nombre oficial, localidad, dirección, acceso y coordenadas pendientes.",
+    "producto_servicio_principal": "Medicamentos y vacunas para ganado; productos para desparasitación, enfermedades y atención del parto; maíz; alimentos para perros, gatos, pollos de engorde y pollitos; sal; botas o calzado. La venta de gasolina fue suspendida después de un hurto.",
+    "estado_actual": "Unidad parcialmente activa. Hay oferta limitada de alimentos y productos complementarios, pero no existe un inventario veterinario vigente y suficiente. Parte de la medicina anterior se venció.",
+    "personas_vinculadas": "Actualmente Yolanda atiende sola. Su esposo Libardo, ya fallecido, participó en el abastecimiento, administración y contacto con clientes. Los hijos no están vinculados de manera permanente.",
+    "coordenadas": "Pendientes de tomar en la Finca El Salitre.",
+    "descripcion_general": "La botica fue creada inicialmente como iniciativa comunitaria. y desarrolló clientela en Betania y otras veredas. La cercanía evitaba desplazamientos para conseguir productos veterinarios. La continuidad se afectó por el fallecimiento del esposo, la ausencia temporal de Yolanda, el vencimiento de inventario, la falta de capital e insumos y un incidente de seguridad. La reactivación requiere inventario seguro, documentación, cadena de frío, manejo de residuos, controles de SST, costos y mercado verificados.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F02": {
+    "mision": "Facilitar a las familias rurales el acceso cercano a insumos veterinarios y alimentos para animales, mediante una atención responsable, productos vigentes, conservación adecuada, precios transparentes y orientación dentro del alcance autorizado.",
+    "vision": "Reactivar gradualmente la Botica Veterinaria El Salitre como un punto rural seguro, abastecido y confiable, con inventario de rotación real, documentos al día, cadena de frío controlada, clientes recuperados y registros de compras, vencimientos, ventas y residuos.",
+    "valores": [],
+    "observaciones_o_comentarios": "No se solicitaron valores de forma explícita. Del relato se identifican preliminarmente servicio a la comunidad, responsabilidad, transparencia en precios y facturas, comunicación y cuidado de los productos; deben validarse con Yolanda."
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Porque las familias ganaderas y propietarias de animales necesitan productos cercanos cuando se presenta una enfermedad, desparasitación, parto, vacunación o necesidad de alimento.",
+    "beneficio_cliente": "Reduce desplazamientos a Bogotá o al centro, permite consultar disponibilidad por teléfono y adquirir insumos cerca de las veredas.",
+    "diferencial": "Trayectoria comunitaria, conocimiento de la clientela rural, congelador para vacunas, comunicación directa y práctica histórica de mostrar facturas y explicar el recargo de transporte.",
+    "valor_ambiental": "Nacimiento de agua protegido con árboles y tanques; separación histórica de cartón, plástico y frascos. Es necesario reactivar la separación y gestionar de forma autorizada medicamentos vencidos y sus envases.",
+    "valor_social_comunitario": "Servicio cercano para Betania y familias de otras veredas, especialmente cuando el ganado requería atención o vacunas.",
+    "evidencia": "Relato de clientela recurrente, llamadas para informar reabastecimiento, facturas de proveedores, vitrina y congelador. Faltan inventario actual, documentos, comprobantes, registros de temperatura, ventas y satisfacción.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Reconocimiento comunitario e historia de servicio.",
+      "Clientela rural de varias veredas.",
+      "Comunicación telefónica y atención directa.",
+      "Vitrina y congelador existentes.",
+      "Piso en baldosa en el área del negocio.",
+      "Nacimiento de agua protegido.",
+      "Experiencia con facturas y recargos transparentes.",
+      "Oferta complementaria de alimentos, sal y calzado."
+    ],
+    "oportunidades": [
+      "Reactivar con inventario pequeño y de larga vigencia.",
+      "Recuperar clientes ganaderos históricos.",
+      "Formalizar proveedores, documentos y registros.",
+      "Verificar y fortalecer cadena de frío.",
+      "Mejorar puerta, bodega y seguridad.",
+      "Implementar control digital o físico de lotes y vencimientos.",
+      "Retomar reciclaje y devolución posconsumo.",
+      "Consolidar pedidos para reducir viajes."
+    ],
+    "debilidades": [
+      "Yolanda atiende sola.",
+      "Línea veterinaria casi sin inventario vigente.",
+      "Pérdida económica por productos vencidos.",
+      "Documentación o certificación no localizada.",
+      "Costos, precios, ventas y márgenes sin registros actuales.",
+      "Extintor, botiquín y EPP faltantes.",
+      "Seguridad física insuficiente.",
+      "Reciclaje suspendido.",
+      "Capacidad e inventario actual inciertos."
+    ],
+    "amenazas": [
+      "Hurto o ingreso no autorizado.",
+      "Venta accidental de productos vencidos.",
+      "Pérdida de cadena de frio.",
+      "Sanciones por requisitos no verificados.",
+      "Variación de precios y costo de transporte.",
+      "Humedad sobre sal, alimentos o empaques.",
+      "Manejo inadecuado de residuos farmacéuticos.",
+      "Riesgo eléctrico, químico o de incendio.",
+      "Discontinuidad por depender de una sola persona."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Ganadero o productor de leche",
+        "perfil_que_busca": "Familia rural con bovinos que requiere medicamentos, vacunas o productos para partos.",
+        "ubicacion": "Betania y veredas cercanas; nombres exactos pendientes.",
+        "necesidad": "Respuesta cercana ante enfermedad, vacunación o retención de placenta.",
+        "frecuencia": "Según necesidad del animal.",
+        "criterio_compra": "Disponibilidad, vigencia, conservación, confianza y precio.",
+        "canal": "Llamada y compra directa."
+      },
+      {
+        "tipo_actor": "Propietario de aves",
+        "perfil_que_busca": "Persona que compra maíz, alimento para pollos de engorde o pollitos.",
+        "ubicacion": "Zona rural cercana.",
+        "necesidad": "Alimento disponible sin viajar a Bogotá.",
+        "frecuencia": "Frecuencia pendiente.",
+        "criterio_compra": "Calidad, presentación, precio y disponibilidad.",
+        "canal": "Venta directa."
+      },
+      {
+        "tipo_actor": "Propietario de perros",
+        "perfil_que_busca": "Hogar o finca que compra alimento para perro.",
+        "ubicacion": "Comunidad y veredas.",
+        "necesidad": "Abastecimiento cercano.",
+        "frecuencia": "Recurrente; sin dato exacto.",
+        "criterio_compra": "Marca, tamaño, precio y continuidad.",
+        "canal": "Local/teléfono."
+      },
+      {
+        "tipo_actor": "Propietario de gatos",
+        "perfil_que_busca": "Hogar que compra alimento para gato.",
+        "ubicacion": "Comunidad y veredas.",
+        "necesidad": "Presentaciones accesibles.",
+        "frecuencia": "Recurrente; por verificar.",
+        "criterio_compra": "Marca, precio y disponibilidad.",
+        "canal": "Local/teléfono."
+      },
+      {
+        "tipo_actor": "Comprador de sal",
+        "perfil_que_busca": "Productor o familia que requiere sal; uso exacto pendiente",
+        "ubicacion": "Zona rural.",
+        "necesidad": "Producto seco y disponible.",
+        "frecuencia": "Por validar..",
+        "criterio_compra": "Ausencia de humedad y precio.",
+        "canal": "Venta directa."
+      },
+      {
+        "tipo_actor": "Comprador de botas o calzado",
+        "perfil_que_busca": "Persona de la comunidad que necesita calzado para trabajo rural.",
+        "ubicacion": "Zona cercana.",
+        "necesidad": "Producto disponible localmente.",
+        "frecuencia": "Ocasional.",
+        "criterio_compra": "Talla, resistencia y precio.",
+        "canal": "Venta directa."
+      },
+      {
+        "tipo_actor": "Cliente de otra vereda",
+        "perfil_que_busca": "Persona que llama antes de desplazarse desde sectores mencionados en la entrevista.",
+        "ubicacion": "Betania, Nazareth, Ramal y otros nombres por confirmar.",
+        "necesidad": "Confirmar existencia antes del viaje.",
+        "frecuencia": "Cuando surge la necesidad.",
+        "criterio_compra": "Respuesta telefónica, producto correcto y cumplimiento.",
+        "canal": "Teléfono/local."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Productos veterinarios vigentes, cercanos y conservados según su naturaleza; alimentos disponibles y atención confiable.",
+    "como_se_conoce_la_necesidad": "Los clientes llamaban cuando el ganado enfermaba y regresaban a la botica; el esposo avisaba por teléfono cuando llegaban los productos agotados.",
+    "quienes_compran_o_podrian_comprar": "Ganaderos, productores de leche, propietarios de aves, perros y gatos, compradores de sal y de botas o calzado de Betania y veredas cercanas.",
+    "evidencia": "Facturas históricas, relato de llamadas y compras, congelador y vitrina. No se aportaron base de clientes, ventas, temperatura, inventarios ni comprobantes actuales.",
+    "ventaja_territorial": "Cercanía territorial, relación comunitaria y reducción del desplazamiento a Bogotá para compras urgentes.",
+    "cambios_demanda": "La línea veterinaria perdió continuidad y no se confirmó si toda la clientela mantiene interés. Los alimentos y otros productos tienen alguna rotación, pero sin cifras.",
+    "dificultades": "Falta de inventario, vencimientos, documentación no localizada, transporte costoso, operación unipersonal, seguridad y ausencia de controles formales.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "Yolanda Morales",
+        "tipo": "Propietaria / operadora",
+        "que_aporta": "Local, experiencia, relación con clientes y atención.",
+        "que_recibe": "Ingreso y continuidad de la unidad.",
+        "trabajo_conjunto": "Definir horarios, funciones, limites de carga y registros.",
+        "aporte_ambiental": "Cuidado del nacimiento de agua y separación de residuos.",
+        "accion": "Formalizar plan de operación."
+      },
+      {
+        "actor_aliado": "Clientes ganaderos",
+        "tipo": "Comercial/comunitario",
+        "que_aporta": "Demanda, referencia y comunicación de necesidades.",
+        "que_recibe": "Acceso cercano a productos vigentes.",
+        "trabajo_conjunto": "Validar productos prioritarios, frecuencia y presentación.",
+        "aporte_ambiental": "Pedidos consolidados reducen viajes.",
+        "accion": "Actualizar contactos."
+      },
+      {
+        "actor_aliado": "Proveedores veterinarios de Bogotá",
+        "tipo": "Proveedor",
+        "que_aporta": "Medicamentos, vacunas, facturas, fichas y condiciones de compra.",
+        "que_recibe": "Ventas recurrentes.",
+        "trabajo_conjunto": "Verificar autorización, lotes, vencimientos, devolución y crédito.",
+        "aporte_ambiental": "Programas posconsumo y consolidación de transporte.",
+        "accion": "Seleccionar proveedores formales."
+      },
+      {
+        "actor_aliado": "Proveedor de alimentos",
+        "tipo": "Proveedor",
+        "que_aporta": "Maíz y alimentos para perros, gatos y aves.",
+        "que_recibe": "Compras periódicas.",
+        "trabajo_conjunto": "Cotizar marca, peso, lote y transporte.",
+        "aporte_ambiental": "Gestionar sacos y evitar pérdidas por humedad.",
+        "accion": "Crear inventario mínimo."
+      },
+      {
+        "actor_aliado": "Autoridad o asistencia veterinaria",
+        "tipo": "Institucional/técnica",
+        "que_aporta": "Orientación sobre comercialización, receta, vacunas, almacenamiento y residuos.",
+        "que_recibe": "Cumplimiento y sanidad territorial.",
+        "trabajo_conjunto": "Visita, requisitos y plan de mejora.",
+        "aporte_ambiental": "Prevención de contaminación y uso inadecuado.",
+        "accion": "Gestionar concepto."
+      },
+      {
+        "actor_aliado": "Alcaldía/proyecto",
+        "tipo": "Institucional",
+        "que_aporta": "Posible apoyo con insumos, seguridad, extintor o fortalecimiento.",
+        "que_recibe": "Unidad reactivada con trazabilidad.",
+        "trabajo_conjunto": "Definir alcance, entrega y seguimiento.",
+        "aporte_ambiental": "Condicionar apoyo a manejo seguro.",
+        "accion": "Solicitar respuesta formal."
+      },
+      {
+        "actor_aliado": "Transportadores",
+        "tipo": "Logístico",
+        "que_aporta": "Traslado desde Bogotá o la agencia hasta la finca.",
+        "que_recibe": "Pago por servicio.",
+        "trabajo_conjunto": "Consolidar ruta, carga y comprobantes.",
+        "aporte_ambiental": "Reducir viajes y emisiones por unidad.",
+        "accion": "Cotizar alternativas."
+      },
+      {
+        "actor_aliado": "Gestor posconsumo / residuos",
+        "tipo": "Ambiental",
+        "que_aporta": "Recepción autorizada de medicamentos, envases o residuos especiales.",
+        "que_recibe": "Material segregado y soportado.",
+        "trabajo_conjunto": "Definir ruta y acta de entrega.",
+        "aporte_ambiental": "Evita disposición en basura ordinaria.",
+        "accion": "Identificar gestor aplicable."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Creación comunitaria",
+        "a_quien": "Familias de Betania.",
+        "resultado": "La comunidad seleccionó y utilizó la botica como punto cercano.",
+        "motivacion": "Acceso a productos veterinarios.",
+        "evidencia": "Historia y propiedad documental pendientes."
+      },
+      {
+        "metodo": "Atención con Yolanda y Libardo",
+        "a_quien": "Clientes rurales.",
+        "resultado": "La unidad se consolidó con atención familiar y comunicación directa.",
+        "motivacion": "Confianza y disponibilidad.",
+        "evidencia": "Cronología y registros pendientes."
+      },
+      {
+        "metodo": "Aviso de reabastecimiento",
+        "a_quien": "Clientes conocidos.",
+        "resultado": "El esposo llamaba cuando llegaban productos agotados.",
+        "motivacion": "Facilitar compra oportuna.",
+        "evidencia": "Base telefónica pendiente."
+      },
+      {
+        "metodo": "Facturas y precio explicado",
+        "a_quien": "Comprador directo.",
+        "resultado": "Se mostraba el costo y se explicaba el incremento por transporte.",
+        "motivacion": "Transparencia.",
+        "evidencia": "Facturas históricas por localizar."
+      },
+      {
+        "metodo": "Reposición cada 20 días o mensual",
+        "a_quien": "Mercado histórico.",
+        "resultado": "Se viajaba cuando vacunas y medicamentos se agotaban.",
+        "motivacion": "Mantener surtido.",
+        "evidencia": "Cantidades y fechas pendientes."
+      },
+      {
+        "metodo": "Reactivación actual",
+        "a_quien": "Clientes históricos y nuevos.",
+        "resultado": "Solo hay oferta parcial; la línea veterinaria requiere validación antes de vender.",
+        "motivacion": "Recuperar el servicio sin repetir pérdidas.",
+        "evidencia": "Inventario, pedidos piloto y soportes pendientes."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Medicamentos veterinarios",
+        "descripcion_tecnica": "Productos para ganado mencionados con nombres parcialmente transcritos: oxitocina, enrofloxacina, desparasitantes, vitaminas y otros; etiquetas exactas pendientes.",
+        "unidad": "Frasco/presentación por verificar",
+        "insumos_principales": "Proveedor formal, factura, lote, ficha y control de vencimiento.",
+        "condiciones_especiales": "Vitrina separada; condiciones específicas por ficha.",
+        "presentacion": "Envase original.",
+        "diferencial": "Cercanía y atención comunitaria."
+      },
+      {
+        "servicio": "Vacunas para ganado",
+        "descripcion_tecnica": "Vacunas, incluida una para carbón mencionada históricamente; nombre y autorización pendientes.",
+        "unidad": "Dosis/frasco",
+        "insumos_principales": "Proveedor, equipo de frío y registro de temperatura.",
+        "condiciones_especiales": "Congelador o equipo existente; idoneidad por verificar.",
+        "presentacion": "Empaque original y cadena de frío.",
+        "diferencial": "Disponibilidad local histórica."
+      },
+      {
+        "servicio": "Productos para parto y desparasitación",
+        "descripcion_tecnica": "Insumos para retención de placenta y desparasitación de bovinos.",
+        "unidad": "Frasco/dosis",
+        "insumos_principales": "Ficha, orientación autorizada y registro de venta.",
+        "condiciones_especiales": "Según fabricante.",
+        "presentacion": "Presentación original.",
+        "diferencial": "Respuesta a necesidades frecuentes."
+      },
+      {
+        "servicio": "Maíz y alimento para aves",
+        "descripcion_tecnica": "Maíz, alimento para pollo de engorde y producto para pollitos recién nacidos; nombres y marcas pendientes.",
+        "unidad": "Bulto/unidad",
+        "insumos_principales": "Proveedor, lote, peso y almacenamiento seco.",
+        "condiciones_especiales": "Zona seca separada de medicamentos.",
+        "presentacion": "Saco o presentación comercial.",
+        "diferencial": "Abastecimiento rural cercano."
+      },
+      {
+        "servicio": "Alimento para perros y gatos",
+        "descripcion_tecnica": "Productos comerciales de marcas y presentaciones no informadas.",
+        "unidad": "Bulto / paquete",
+        "insumos_principales": "Proveedor, lote, fecha y rotación.",
+        "condiciones_especiales": "Almacenamiento seco.",
+        "presentacion": "Empaque original o modalidad por verificar.",
+        "diferencial": "Oferta complementaria activa."
+      },
+      {
+        "servicio": "Sal, botas y calzado",
+        "descripcion_tecnica": "Productos complementarios para la actividad rural. La sal presenta riesgo de humedad.",
+        "unidad": "Unidad/bulto",
+        "insumos_principales": "Proveedor y comprobante.",
+        "condiciones_especiales": "Sal en lugar seco; calzado separado.",
+        "presentacion": "Presentación comercial.",
+        "diferencial": "Diversificación local."
+      },
+      {
+        "servicio": "Gasolina - línea suspendida",
+        "descripcion_tecnica": "Venta ocasional reportada en el pasado. Se retiró después de un hurto.",
+        "unidad": "Cantidad no informada",
+        "insumos_principales": "No reactivar sin verificar seguridad, legalidad y manejo de combustibles.",
+        "condiciones_especiales": "No aplica actualmente.",
+        "presentacion": "No aplica.",
+        "diferencial": "Actividad histórica, no vigente."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Planeación de inventario",
+        "unidad": "Por período",
+        "actividad_proceso": "Revisar demanda, existencias, lotes, vencimientos, capital, seguridad y requisitos.",
+        "tiempo_estimado": "Antes de comprar."
+      },
+      {
+        "servicio": "Pedido al proveedor",
+        "unidad": "Por compra",
+        "actividad_proceso": "Solicitar productos prioritarios de larga vigencia, facturas, fichas y condiciones de devolución.",
+        "tiempo_estimado": "Según rotación real."
+      },
+      {
+        "servicio": "Viaje y transporte",
+        "unidad": "Por compra",
+        "actividad_proceso": "Traslado a Bogotá o recepción mediante ruta; consolidar carga y conservar soportes.",
+        "tiempo_estimado": "Históricamente cada 20 días o mensual."
+      },
+      {
+        "servicio": "Recepción",
+        "unidad": "Cada lote",
+        "actividad_proceso": "Comparar factura, cantidad, integridad, lote, vencimiento, temperatura y registro sanitario aplicable.",
+        "tiempo_estimado": "Al ingreso."
+      },
+      {
+        "servicio": "Almacenamiento",
+        "unidad": "Por producto",
+        "actividad_proceso": "Separar medicamentos, vacunas, alimentos, sal, calzado y residuos; controlar humedad y acceso.",
+        "tiempo_estimado": "Permanente."
+      },
+      {
+        "servicio": "Cadena de frío",
+        "unidad": "Vacunas",
+        "actividad_proceso": "Mantener temperatura definida por fabricante y registrar cortes, apertura y entrega.",
+        "tiempo_estimado": "Continuo."
+      },
+      {
+        "servicio": "Atención al cliente",
+        "unidad": "Cada solicitud",
+        "actividad_proceso": "Confirmar existencia y orientar únicamente dentro del alcance autorizado; remitir cuando corresponda.",
+        "tiempo_estimado": "Cuando llaman o visitan."
+      },
+      {
+        "servicio": "Venta y factura",
+        "unidad": "Cada producto",
+        "actividad_proceso": "Registrar cliente, producto, lote, vencimiento, cantidad, precio, pago y soporte.",
+        "tiempo_estimado": "Cada venta."
+      },
+      {
+        "servicio": "Seguimiento y reposición",
+        "unidad": "Por inventario",
+        "actividad_proceso": "Avisar disponibilidad, revisar rotación y reponer antes de agotar sin sobreabastecer.",
+        "tiempo_estimado": "Semanal/mensual."
+      },
+      {
+        "servicio": "Residuos y vencidos",
+        "unidad": "Según generación",
+        "actividad_proceso": "Separar, inmovilizar y entregar medicamentos o envases especiales a ruta autorizada.",
+        "tiempo_estimado": "Cuando ocurra / por programa."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Medicamentos veterinarios",
+        "cantidad_unidad": "Inventario actual pendiente",
+        "frecuencia": "Según rotación",
+        "proveedor_fuente": "Veterinarias del centro de Bogotá; nombres pendientes",
+        "toxicidad": "Farmacológica",
+        "impacto_potencial": "Vencimiento, exposición y uso inadecuado.",
+        "manejo_ambiental": "Ficha, lote, acceso restringido y devolución autorizada.",
+        "observaciones": "Comprar poca cantidad y larga vigencia."
+      },
+      {
+        "insumo": "Vacunas",
+        "cantidad_unidad": "Sin existencias confirmadas",
+        "frecuencia": "Según demanda",
+        "proveedor_fuente": "Proveedor autorizado",
+        "toxicidad": "Biológica / farmacológica",
+        "impacto_potencial": "Ruptura de frío y pérdida de eficacia.",
+        "manejo_ambiental": "Temperatura, equipo validado y bitácora.",
+        "observaciones": "Congelador existente por revisar."
+      },
+      {
+        "insumo": "Desparasitantes y productos para parto",
+        "cantidad_unidad": "No determinada",
+        "frecuencia": "Ocasional",
+        "proveedor_fuente": "Por verificar",
+        "toxicidad": "Farmacológica",
+        "impacto_potencial": "Dosificación y residuos.",
+        "manejo_ambiental": "Venta y orientación conforme a requisitos.",
+        "observaciones": "Nombres exactos pendientes."
+      },
+      {
+        "insumo": "Maíz",
+        "cantidad_unidad": "Cantidad no informada",
+        "frecuencia": "Según venta",
+        "proveedor_fuente": "Por verificar",
+        "toxicidad": "Polvo/alimento",
+        "impacto_potencial": "Sacos, plagas y humedad.",
+        "manejo_ambiental": "Almacenar seco y rotar.",
+        "observaciones": "Línea parcialmente activa."
+      },
+      {
+        "insumo": "Alimento para perros y gatos",
+        "cantidad_unidad": "Cantidad no informada",
+        "frecuencia": "Según venta",
+        "proveedor_fuente": "Por verificar",
+        "toxicidad": "Alimento/polvo",
+        "impacto_potencial": "Empaques, plagas y caducidad.",
+        "manejo_ambiental": "PEPS, limpieza y separación.",
+        "observaciones": "Marcas y precios pendientes."
+      },
+      {
+        "insumo": "Alimento para pollos y pollitos",
+        "cantidad_unidad": "No determinado",
+        "frecuencia": "Según demanda",
+        "proveedor_fuente": "Por verificar",
+        "toxicidad": "Alimento/polvo",
+        "impacto_potencial": "Humedad, plagas y desperdicio.",
+        "manejo_ambiental": "Lote, fecha y almacenamiento seco.",
+        "observaciones": "Producto exacto pendiente."
+      },
+      {
+        "insumo": "Sal",
+        "cantidad_unidad": "No determinada",
+        "frecuencia": "Según venta",
+        "proveedor_fuente": "Por verificar",
+        "toxicidad": "Higroscópica",
+        "impacto_potencial": "Absorción de humedad y pérdida.",
+        "manejo_ambiental": "Recipiente o estiba seca.",
+        "observaciones": "La productora reporta humedad."
+      },
+      {
+        "insumo": "Botas/calzado",
+        "cantidad_unidad": "Inventario no determinado",
+        "frecuencia": "Ocasional",
+        "proveedor_fuente": "Por verificar",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Materiales y embalajes.",
+        "manejo_ambiental": "Separar de químicos y humedad.",
+        "observaciones": "Línea complementaria."
+      },
+      {
+        "insumo": "Vitrina y estantes",
+        "cantidad_unidad": "Una vitrina referida",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Propios",
+        "toxicidad": "Locativa",
+        "impacto_potencial": "Mezcla o acceso no controlado.",
+        "manejo_ambiental": "Separación por categoría y señalización.",
+        "observaciones": "Capacidad pendiente."
+      },
+      {
+        "insumo": "Congelador",
+        "cantidad_unidad": "Un equipo",
+        "frecuencia": "Continuo cuando haya vacunas",
+        "proveedor_fuente": "Propio",
+        "toxicidad": "Eléctrica/frío",
+        "impacto_potencial": "Energia y pérdida de cadena de frío.",
+        "manejo_ambiental": "Mantenimiento, termómetro y registro.",
+        "observaciones": "Idoneidad pendiente."
+      },
+      {
+        "insumo": "Agua de nacimiento",
+        "cantidad_unidad": "No medida",
+        "frecuencia": "Uso doméstico y de unidad por confirmar",
+        "proveedor_fuente": "Finca",
+        "toxicidad": "Calidad por verificar",
+        "impacto_potencial": "Consumo y protección de fuente..",
+        "manejo_ambiental": "Mantener arborización y tanques protegidos.",
+        "observaciones": "Disponibilidad alta reportada."
+      },
+      {
+        "insumo": "Electricidad",
+        "cantidad_unidad": "No medida",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Red por verificar",
+        "toxicidad": "Eléctrica",
+        "impacto_potencial": "Consumo y falla del equipo de frío.",
+        "manejo_ambiental": "Inspección, respaldo y registro de cortes.",
+        "observaciones": "Costo pendiente."
+      },
+      {
+        "insumo": "Transporte",
+        "cantidad_unidad": "Viaje a Bogotá y tramo en taxi",
+        "frecuencia": "Históricamente 20 días / mes",
+        "proveedor_fuente": "Bus, taxi y transporte local",
+        "toxicidad": "Vial/emisiones",
+        "impacto_potencial": "Costo, accidentes y tiempos.",
+        "manejo_ambiental": "Consolidar pedidos y proteger carga.",
+        "observaciones": "Taxi histórico $20.000-$25.000."
+      },
+      {
+        "insumo": "EPP, extintor y botiquín",
+        "cantidad_unidad": "No disponibles",
+        "frecuencia": "Cada tarea / emergencia",
+        "proveedor_fuente": "Por cotizar",
+        "toxicidad": "Preventiva",
+        "impacto_potencial": "Exposición química, incendio y lesión.",
+        "manejo_ambiental": "Dotar según evaluación.",
+        "observaciones": "Necesidad expresada por Yolanda."
+      },
+      {
+        "insumo": "Seguridad física",
+        "cantidad_unidad": "Puerta y bodega por fortalecer",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Por cotizar",
+        "toxicidad": "Locativa/pública",
+        "impacto_potencial": "Hurto, ingreso y pérdida de inventario.",
+        "manejo_ambiental": "Cerramiento, puerta, iluminación y control.",
+        "observaciones": "Hubo hurto de gasolina."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "La línea veterinaria no cuenta con un inventario vigente, completo y verificado. Algunos productos se vencieron durante la interrupción.",
+    "produccion_normal": "La productora mencionó cerca de seis unidades o frascos, pero la expresión no es clara y se desconoce estado, lote y vigencia.",
+    "capacidad_mensual_teorica": "Maíz, alimento para perros y gatos, productos para aves, sal y calzado se mencionan como existencias o líneas actuales; cantidades pendientes.",
+    "produccion_maxima_posible": "La productora mencionó una posible capacidad de 'unos 500', sin unidad ni cálculo; dato no utilizable hasta verificar inventario y espacio.",
+    "area_numero_habitaciones": "Vitrina para mantener medicamentos separados; capacidad, cierre, iluminación y condiciones pendientes.",
+    "limitantes_productivos": "La sal puede humedecerse; alimentos y empaques requieren zona seca, estibas, control de plagas y rotación.",
+    "limitantes_ambientales": "Una bodega pequeña y entrada de madera requieren fortalecimiento de seguridad antes de aumentar inventario.",
+    "capacidad_instalada": "La demanda veterinaria ocurre cuando los animales enferman, paren o requieren vacuna; nо se midió frecuencia por producto.",
+    "capacidad_utilizada": "No hay sistema actualizado de mínimos, máximos, rotación, vencimientos ni ventas.",
+    "produce_mismo_todo_ano": null,
+    "alcanza_para_demanda": null,
+    "necesidades_aumentar_sosteniblemente": "Yolanda trabaja sola. Horario, carga máxima, apoyo para compras y reemplazo durante ausencias pendientes.",
+    "observaciones_o_comentarios": "Conclusión: La capacidad actual no puede establecerse. Debe definirse por espacio seguro, capital, rotación, vida útil, cadena de frío, seguridad y disponibilidad de Yolanda."
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua",
+        "estado_actual": "Nacimiento propio protegido con árboles y tanques; abundante según la productora.",
+        "limite_restriccion": "Calidad, consumo, concesión o uso aplicable pendientes.",
+        "afectacion": "Fuente cercana y posible línea de agua frente a la casa.",
+        "efecto": "Humedad, afectación vial o pérdida de calidad.",
+        "incidencia": "Media-Alta",
+        "accion_mejora": "Verificar fuente, calidad, conducción y problema frente al predio."
+      },
+      {
+        "condicion": "Humedad",
+        "estado_actual": "El área del negocio se reporta seca, pero la casa cerrada concentra humedad y la sal se humedece.",
+        "limite_restriccion": "Monitoreo y almacenamiento no definidos.",
+        "afectacion": "Afecta productos higroscópicos y empaques.",
+        "efecto": "Pérdida de sal o alimento.",
+        "incidencia": "Alta",
+        "accion_mejora": "Estibas, recipientes, ventilación e inspección."
+      },
+      {
+        "condicion": "Cadena de frío",
+        "estado_actual": "Congelador existente.",
+        "limite_restriccion": "Temperatura, mantenimiento y cortes no registrados.",
+        "afectacion": "Vacunas pueden perder eficacia.",
+        "efecto": "Riesgo sanitario y económico.",
+        "incidencia": "Alta",
+        "accion_mejora": "Validar equipo, termómetro, bitácora y contingencia."
+      },
+      {
+        "condicion": "Productos vencidos",
+        "estado_actual": "Parte del inventario se venció durante la ausencia.",
+        "limite_restriccion": "Cantidad, ubicación y destino desconocidos.",
+        "afectacion": "Riesgo de venta, uso o disposición incorrecta.",
+        "efecto": "Daño animal, sanción o contaminación.",
+        "incidencia": "Alta",
+        "accion_mejora": "Inmovilizar, inventariar y entregar a gestor autorizado."
+      },
+      {
+        "condicion": "Seguridad",
+        "estado_actual": "Hubo ingreso no autorizado y hurto de gasolina.",
+        "limite_restriccion": "Puerta y bodega vulnerables.",
+        "afectacion": "Limita inventario y continuidad.",
+        "efecto": "Pérdida, riesgo personal y financiero.",
+        "incidencia": "Alta",
+        "accion_mejora": "Reforzar acceso y protocolo antes de surtir."
+      },
+      {
+        "condicion": "Transporte",
+        "estado_actual": "Abastecimiento histórico desde Bogotá.",
+        "limite_restriccion": "Costos, frecuencia y ruta actual pendientes.",
+        "afectacion": "Retrasa reposición y encarece productos.",
+        "efecto": "Desabastecimiento o margen insuficiente.",
+        "incidencia": "Medio-Alto",
+        "accion_mejora": "Consolidar pedidos y comparar proveedores/rutas."
+      },
+      {
+        "condicion": "Documentación",
+        "estado_actual": "La productora recuerda papeles o certificación, pero no los localiza.",
+        "limite_restriccion": "Vigencia y autoridad pendientes.",
+        "afectacion": "Puede limitar venta de medicamentos o vacunas.",
+        "efecto": "Sanción o cierre.",
+        "incidencia": "Alta",
+        "accion_mejora": "Recuperar documentos y solicitar concepto formal."
+      },
+      {
+        "condicion": "Conclusión",
+        "estado_actual": "La reactivación depende de inventario vigente, documentación, seguridad, almacenamiento seco, cadena de frío, transporte y gestión de vencidos.",
+        "limite_restriccion": "Faltan visita y soportes.",
+        "afectacion": "No debe surtirse por volumen sin validar rotación.",
+        "efecto": "Pérdidas, riesgo sanitario y ambiental.",
+        "incidencia": "Alto",
+        "accion_mejora": "Reinicio pequeño y condicionado a verificación."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Químico/ farmacológico",
+        "peligro": "Contacto, derrame o uso incorrecto de medicamentos veterinarios.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Organización referida; fichas y EPP no documentados.",
+        "accion": "Inventario, fichas, guantes y acceso restringido."
+      },
+      {
+        "tipo": "Productos vencidos",
+        "peligro": "Manipulación, venta accidental o disposición inadecuada.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "No reportados.",
+        "accion": "Inmovilizar, rotular y entregar a ruta autorizada."
+      },
+      {
+        "tipo": "Cadena de frío",
+        "peligro": "Falla eléctrica o temperatura inadecuada de vacunas.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Congelador existente.",
+        "accion": "Termómetro, mantenimiento, bitácora y contingencia."
+      },
+      {
+        "tipo": "Eléctrico",
+        "peligro": "Congelador, iluminación, cableado y humedad.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No informado.",
+        "accion": "Inspección, puesta a tierra y desconexión segura."
+      },
+      {
+        "tipo": "Incendio",
+        "peligro": "Medicamentos, cartón, plásticos, electricidad y antecedente de gasolina.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "No hay extintor.",
+        "accion": "Extintor adecuado, señalización y no reactivar combustible sin concepto."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Carga de bultos de alimento, cajas y mercancía.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Yolanda trabaja sola.",
+        "accion": "Límites, ayudas, almacenamiento bajo y apoyo."
+      },
+      {
+        "tipo": "Locativo",
+        "peligro": "Puertas, bodega, humedad, estantes y posible desorden.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Piso en baldosa.",
+        "accion": "Orden, estantería estable, iluminación y piso seco."
+      },
+      {
+        "tipo": "Seguridad pública",
+        "peligro": "Hurto, ingreso no autorizado o confrontación.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Se retiró la gasolina después del hurto.",
+        "accion": "Puerta segura, control de acceso, contactos y no confrontación."
+      },
+      {
+        "tipo": "Biológico",
+        "peligro": "Contacto indirecto con productos para animales y clientes provenientes de fincas.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "La productora no identifica riesgo.",
+        "accion": "Higiene, separación y orientación sanitaria."
+      },
+      {
+        "tipo": "Respiratorio",
+        "peligro": "Polvo de maíz, alimento, limpieza o empaques.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Yolanda menciona tapabocas.",
+        "accion": "Ventilación y protección según tarea."
+      },
+      {
+        "tipo": "Viat",
+        "peligro": "Viajes a Bogotá y traslado de carga.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Bus y taxi históricos.",
+        "accion": "Plan de viaje, carga segura y transporte formal."
+      },
+      {
+        "tipo": "Emergencias",
+        "peligro": "Ausencia de botiquín, extintor y procedimiento.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Necesidad expresada.",
+        "accion": "Dotación, capacitación y contactos visibles."
+      },
+      {
+        "tipo": "Conclusión",
+        "peligro": "La productora no percibe riesgos importantes, pero existen peligros farmacológicos, eléctricos, de incendio, carga, seguridad y residuos.",
+        "aplica": true,
+        "nivel_riesgo": "Alta",
+        "controles_actuales": "Orden personal como control informal.",
+        "accion": "Validar en visita e implementar plan SST."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Inventariar y separar productos vigentes, vencidos, dañados y desconocidos",
+        "riesgo": "Farmacológico / ambiental",
+        "responsable": "Yolanda / apoyo técnico",
+        "frecuencia": "Inmediata y mensual",
+        "evidencia": "Inventario/fotos"
+      },
+      {
+        "accion_preventiva": "Gestionar medicamentos y envases vencidos mediante ruta autorizada",
+        "riesgo": "Químico/sanitario",
+        "responsable": "Responsable de residuos",
+        "frecuencia": "Según inventario",
+        "evidencia": "Acta de entrega"
+      },
+      {
+        "accion_preventiva": "Validar congelador, temperatura, energía y contingencia",
+        "riesgo": "Cadena de frío / eléctrico",
+        "responsable": "Técnico/Yolanda",
+        "frecuencia": "Antes de comprar vacunas y diaria",
+        "evidencia": "Bitácora"
+      },
+      {
+        "accion_preventiva": "Dotar extintor, botiquín, EPP y señalización",
+        "riesgo": "Incendio/emergencias",
+        "responsable": "Yolanda / apoyo",
+        "frecuencia": "Antes de reabrir linea veterinaria.",
+        "evidencia": "Checklist"
+      },
+      {
+        "accion_preventiva": "Reforzar puerta, bodega, iluminación y control de acceso",
+        "riesgo": "Seguridad pública / locativa",
+        "responsable": "Yolanda / apoyo",
+        "frecuencia": "Antes de aumentar inventario",
+        "evidencia": "Informe/foto"
+      },
+      {
+        "accion_preventiva": "Almacenar bultos en seco, a altura segura y con ayuda de carga",
+        "riesgo": "Biomecánico / humedad",
+        "responsable": "Yolanda / apoyo",
+        "frecuencia": "Cada compra",
+        "evidencia": "Inspección"
+      },
+      {
+        "accion_preventiva": "Registrar lotes, vencimientos, facturas, ventas y devoluciones",
+        "riesgo": "Trazabilidad",
+        "responsable": "Yolanda",
+        "frecuencia": "Cada movimiento",
+        "evidencia": "Kárdex"
+      },
+      {
+        "accion_preventiva": "Definir protocolo de atención, remisión y respuesta ante derrame",
+        "riesgo": "Farmacológico / público",
+        "responsable": "Yolanda/técnico",
+        "frecuencia": "Antes de operar",
+        "evidencia": "Procedimiento"
+      },
+      {
+        "accion_preventiva": "Registrar incidentes, cortes de energía, pérdidas y acciones",
+        "riesgo": "Gestión integral",
+        "responsable": "Yolanda",
+        "frecuencia": "Cuando ocurra",
+        "evidencia": "Formato"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "Clientes llegan a la botica",
+        "responsable": "Yolanda",
+        "frecuencia": "Según necesidad"
+      },
+      {
+        "canal": "Llamada telefónica",
+        "activo": true,
+        "descripcion": "Consulta de disponibilidad y aviso de reabastecimiento",
+        "responsable": "Yolanda",
+        "frecuencia": "Cuando se requiere"
+      },
+      {
+        "canal": "Voz a voz",
+        "activo": true,
+        "descripcion": "Comunidad y clientes históricos",
+        "responsable": "Yolanda / clientes",
+        "frecuencia": "Informal"
+      },
+      {
+        "canal": "Comunidad de Betania",
+        "activo": true,
+        "descripcion": "Origen e influencia histórica de la botica",
+        "responsable": "Yolanda",
+        "frecuencia": "Por validar"
+      },
+      {
+        "canal": "Otras veredas",
+        "activo": true,
+        "descripcion": "Nazareth, Ramal y otros nombres transcritos; exactitud pendiente",
+        "responsable": "Yolanda",
+        "frecuencia": "Según llamada"
+      },
+      {
+        "canal": "WhatsApp/redes",
+        "activo": false,
+        "descripcion": "No se reportaron",
+        "responsable": "Por definir",
+        "frecuencia": "Futura"
+      },
+      {
+        "canal": "Domicilio",
+        "activo": false,
+        "descripcion": "No se describió entrega; clientes acudían al local",
+        "responsable": "Por definir",
+        "frecuencia": "Por validar"
+      },
+      {
+        "canal": "Institucional/ campañas",
+        "activo": false,
+        "descripcion": "Vacunación comunitaria histórica; canal actual no confirmado",
+        "responsable": "Por definir",
+        "frecuencia": "Futura"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Medicamento veterinario",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Históricamente se compraba con cuenta para reventa.",
+        "logistica_plataforma": "Viaje a Bogotá y traslado hasta la agencia/finca.",
+        "precio_final": null,
+        "justificacion": "Precio costo soportado + transporte + gastos + margen razonable; cumplir requisitos."
+      },
+      {
+        "servicio": "Vacuna",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Demanda histórica importante.",
+        "logistica_plataforma": "Transporte con frío por definir.",
+        "precio_final": null,
+        "justificacion": "No fijar precio sin controlar temperatura y merma."
+      },
+      {
+        "servicio": "Maíz y alimentos",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Línea parcialmente activa.",
+        "logistica_plataforma": "Proveedor y ruta pendientes.",
+        "precio_final": null,
+        "justificacion": "Registrar costo por kg, bulto o presentación."
+      },
+      {
+        "servicio": "Sal, botas y calzado",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Venta complementaria.",
+        "logistica_plataforma": "Almacenamiento seco y por tallas.",
+        "precio_final": null,
+        "justificacion": "Actualizar precio con factura y rotación."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": "Observación financiera: No se informaron ingresos, costos totales ni márgenes actuales. El precio histórico se construía con la factura del proveedor, un incremento por transporte y el margen de reventa. Se reportó un taxi de aproximadamente $20.000 a $25.000 para un tramo en Bogotá, según la carga, sin incluir bus, transporte local, tiempo, pérdidas ni almacenamiento. Una referencia de frasco fue transcrita como '250' y '75', pero unidad, producto, fecha y moneda no son confiables; no se usa para cálculos."
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Ventas actuales de alimentos y productos complementarios",
+        "cantidad_mensual": "Cantidad no determinada",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Medio de pago pendiente",
+        "canal": "Venta directa"
+      },
+      {
+        "concepto_servicio": "Linea veterinaria actual",
+        "cantidad_mensual": "Sin inventario vigente suficiente verificado",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Por definir",
+        "canal": "Botica/teléfono"
+      },
+      {
+        "concepto_servicio": "Reposición histórica",
+        "cantidad_mensual": "Compras cada 20 días o mensual cuando se agotaba inventario",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Pago y crédito por verificar",
+        "canal": "Compra y reventa"
+      },
+      {
+        "concepto_servicio": "Reactivación piloto",
+        "cantidad_mensual": "Inventario pequeño de productos prioritarios y larga vigencia",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Según venta",
+        "canal": "Clientes históricos"
+      },
+      {
+        "concepto_servicio": "Capacidad futura",
+        "cantidad_mensual": "Dato 'unos 500' sin unidad ni soporte",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Por definir",
+        "canal": "Mercado por validar"
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": "Proyección responsable: No se calculan ventas ni utilidades porque faltan inventario, unidades, productos, rotación, precios, costos, vencimientos y frecuencia de compra. La reposición cada 20 días o mensual es un dato histórico y no garantiza demanda actual. La reactivación debe comenzar con pedidos y un inventario pequeño de larga vigencia, registrando cada compra y venta antes de ampliar."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Cliente ganadero histórico",
+        "estrategia": "Actualizar contacto, necesidades, productos prioritarios y frecuencia; avisar solo cuando exista inventario vigente.",
+        "medio": "Llamada/visita",
+        "frecuencia": "Antes de surtir y cuando llegue producto",
+        "responsable": "Yolanda"
+      },
+      {
+        "cliente": "Cliente de otra vereda",
+        "estrategia": "Confirmar disponibilidad, presentación, precio y condiciones antes del desplazamiento.",
+        "medio": "Teléfono",
+        "frecuencia": "Cada solicitud",
+        "responsable": "Yolanda"
+      },
+      {
+        "cliente": "Comprador de alimentos",
+        "estrategia": "Mantener mínimos de productos con rotación y registrar marca, peso y recompra.",
+        "medio": "Local/teléfono",
+        "frecuencia": "Cada venta",
+        "responsable": "Yolanda"
+      },
+      {
+        "cliente": "Cliente de vacunas",
+        "estrategia": "Informar lote, vencimiento y conservación; vender conforme a requisitos y registrar entrega.",
+        "medio": "Ficha / llamada",
+        "frecuencia": "Cada campaña o solicitud",
+        "responsable": "Responsable técnica"
+      },
+      {
+        "cliente": "Cliente nuevo",
+        "estrategia": "Registrar origen, necesidad, autorización de datos y satisfacción.",
+        "medio": "Ficha básica",
+        "frecuencia": "Primera compra",
+        "responsable": "Yolanda"
+      },
+      {
+        "cliente": "Reclamo o devolución",
+        "estrategia": "Inmovilizar producto, registrar lote, causa, condición de frío y respuesta del proveedor.",
+        "medio": "Teléfono / formato",
+        "frecuencia": "Cuando ocurra",
+        "responsable": "Yolanda/proveedor"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Medicamentos desde Bogotá",
+        "canal": "Proveedor a botica",
+        "tiempo": "Según inventario",
+        "transporte_operacion": "Bus, taxi y ruta local",
+        "condicion_calidad": "Factura, lote, vencimiento, integridad y condiciones de transporte",
+        "capacidad": "Pedido pequeño",
+        "costo": "Por calcular",
+        "responsable": "Yolanda / proveedor"
+      },
+      {
+        "servicio_insumo": "Vacunas",
+        "canal": "Cadena de frío",
+        "tiempo": "Según demanda",
+        "transporte_operacion": "Medio refrigerado por definir",
+        "condicion_calidad": "Temperatura y tiempo registrados",
+        "capacidad": "Solo capacidad validada",
+        "costo": "Por calcular",
+        "responsable": "Responsable de frío"
+      },
+      {
+        "servicio_insumo": "Alimentos y maiz",
+        "canal": "Proveedor a botica",
+        "tiempo": "Según rotación",
+        "transporte_operacion": "Carga por definir",
+        "condicion_calidad": "Saco íntegro, seco, con lote y fecha",
+        "capacidad": "Según espacio seco",
+        "costo": "Por calcular",
+        "responsable": "Yolanda"
+      },
+      {
+        "servicio_insumo": "Venta local",
+        "canal": "Cliente acude",
+        "tiempo": "Según necesidad",
+        "transporte_operacion": "Sin entrega reportada",
+        "condicion_calidad": "Producto correcto, vigente y soportado",
+        "capacidad": "Inventario disponible",
+        "costo": "Incluido en precio",
+        "responsable": "Yolanda"
+      },
+      {
+        "servicio_insumo": "Cliente de otra vereda",
+        "canal": "Llamada y visita",
+        "tiempo": "Eventual",
+        "transporte_operacion": "Desplazamiento del cliente",
+        "condicion_calidad": "Confirmación previa de existencia",
+        "capacidad": "Por solicitud",
+        "costo": "No determinado",
+        "responsable": "Yolanda"
+      },
+      {
+        "servicio_insumo": "Conclusión",
+        "canal": "La logística histórica depende de viajes a Bogotá y compra presencial.",
+        "tiempo": "Pendiente de estandarizar",
+        "transporte_operacion": "Comparar rutas y proveedores",
+        "condicion_calidad": "No transportar vacunas sin control ni mezclar alimentos con químicos",
+        "capacidad": "Inventario gradual",
+        "costo": "No calculado",
+        "responsable": "Yolanda / apoyo"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Identificación",
+        "informacion": "Botica, propietaria, predio, vereda, contacto, documentos y responsables.",
+        "responsable": "Yolanda",
+        "medio": "Ficha maestra",
+        "frecuencia": "Cuando cambie",
+        "evidencia": "Documentos"
+      },
+      {
+        "elemento": "Proveedor",
+        "informacion": "Nombre, autorización, factura, contacto, condiciones de crédito y devolución.",
+        "responsable": "Yolanda",
+        "medio": "Base de proveedores",
+        "frecuencia": "Cada compra",
+        "evidencia": "Factura/contrato"
+      },
+      {
+        "elemento": "Producto",
+        "informacion": "Nombre exacto, principio activo, presentación, lote, vencimiento, cantidad y ubicación.",
+        "responsable": "Yolanda",
+        "medio": "Kárdex",
+        "frecuencia": "Cada movimiento",
+        "evidencia": "Registro"
+      },
+      {
+        "elemento": "Cadena de frío",
+        "informacion": "Equipo, temperatura, hora, corte, recepción y entrega de vacunas.",
+        "responsable": "Responsable de frío",
+        "medio": "Bitácora",
+        "frecuencia": "Continua/cada venta",
+        "evidencia": "Planilla"
+      },
+      {
+        "elemento": "Alimentos y calzado",
+        "informacion": "Marca, peso o talla, lote, fecha, costo, saldo y humedad.",
+        "responsable": "Yolanda",
+        "medio": "Inventario",
+        "frecuencia": "Cada compra / venta",
+        "evidencia": "Factura"
+      },
+      {
+        "elemento": "Venta",
+        "informacion": "Cliente, producto, lote, cantidad, precio, pago, fecha, orientación y devolución.",
+        "responsable": "Yolanda",
+        "medio": "Cuaderno/archivo",
+        "frecuencia": "Cada venta",
+        "evidencia": "Comprobante"
+      },
+      {
+        "elemento": "Residuos",
+        "informacion": "Vencidos, envases, cartón, plástico, sacos, cantidad, almacenamiento y destino.",
+        "responsable": "Responsable ambiental",
+        "medio": "Bitácora",
+        "frecuencia": "Según generación",
+        "evidencia": "Acta/fotos"
+      },
+      {
+        "elemento": "QR gradual",
+        "informacion": "Historia comunitaria, contacto, productos vigentes, proveedores y prácticas verificadas.",
+        "responsable": "Yolanda / apoyo",
+        "medio": "Código QR",
+        "frecuencia": "Cuando existan soportes",
+        "evidencia": "Etiqueta"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Inventario veterinario",
+        "descripcion": "Productos prioritarios de larga vigencia y rotación comprobada",
+        "valor_unitario": null,
+        "cantidad": "Según pedidos",
+        "total": null,
+        "requisito": "Proveedor, autorización, lote y vencimiento",
+        "fuente": "Apoyo/capital propio"
+      },
+      {
+        "tipo": "Cadena de frío",
+        "descripcion": "Termómetro, mantenimiento, registro y contingencia para congelador",
+        "valor_unitario": null,
+        "cantidad": "Según diagnóstico",
+        "total": null,
+        "requisito": "Equipo apto y requisitos de vacuna",
+        "fuente": "Propio / apoyo"
+      },
+      {
+        "tipo": "Alimentos y maíz",
+        "descripcion": "Inventario inicial pequeño, seco y trazable",
+        "valor_unitario": null,
+        "cantidad": "Según rotación",
+        "total": null,
+        "requisito": "Marca, peso, lote y espacio",
+        "fuente": "Propio / apoyo"
+      },
+      {
+        "tipo": "Seguridad",
+        "descripcion": "Puerta exterior, bodega, cerraduras, iluminación y control de acceso",
+        "valor_unitario": null,
+        "cantidad": "Una adecuación",
+        "total": null,
+        "requisito": "Diagnóstico de seguridad",
+        "fuente": "Apoyo solicitado / propio"
+      },
+      {
+        "tipo": "SST y emergencias",
+        "descripcion": "Extintor, botiquín, EPP, señalización y capacitación",
+        "valor_unitario": null,
+        "cantidad": "Según evaluación",
+        "total": null,
+        "requisito": "Adecuados a productos y riesgos",
+        "fuente": "Apoyo/propio"
+      },
+      {
+        "tipo": "Almacenamiento",
+        "descripcion": "Estantes, estibas, recipientes y separación de categorías",
+        "valor_unitario": null,
+        "cantidad": "Según inventario",
+        "total": null,
+        "requisito": "Carga, humedad y acceso seguros",
+        "fuente": "Propio / apoyo"
+      },
+      {
+        "tipo": "Gestión de vencidos",
+        "descripcion": "Inventario, recipientes, transporte y entrega autorizada",
+        "valor_unitario": null,
+        "cantidad": "Según hallazgo",
+        "total": null,
+        "requisito": "Ruta y acta de disposición",
+        "fuente": "Responsabilidad del generador/ proveedor"
+      },
+      {
+        "tipo": "Documentación",
+        "descripcion": "Recuperación de soportes, trámites y asistencia técnica",
+        "valor_unitario": null,
+        "cantidad": "Según requisito",
+        "total": null,
+        "requisito": "Concepto de autoridades competentes",
+        "fuente": "Gestión propia / institucional"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Medicamentos",
+        "descripcion": "Compra de inventario pequeño y vigente",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Producto, cantidad, proveedor y crédito pendientes."
+      },
+      {
+        "tipo": "Vacunas",
+        "descripcion": "Compra y conservación en frío",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Incluir energía, termómetro, transporte y pérdida."
+      },
+      {
+        "tipo": "Maíz",
+        "descripcion": "Bultos o presentaciones para venta",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Marca, peso, cantidad y rotación pendientes."
+      },
+      {
+        "tipo": "Alimento para perros y gatos",
+        "descripcion": "Inventario comercial",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Presentación, costo y margen pendientes."
+      },
+      {
+        "tipo": "Alimento para aves",
+        "descripcion": "Pollos de engorde y pollitos",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Producto exacto y demanda pendientes."
+      },
+      {
+        "tipo": "Sal",
+        "descripcion": "Inventario con control de humedad",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Incluir pérdidas por humedad."
+      },
+      {
+        "tipo": "Botas/calzado",
+        "descripcion": "Inventario por talla",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Costo, cantidad y rotación pendientes."
+      },
+      {
+        "tipo": "Transporte",
+        "descripcion": "Bus, taxi, flete y ruta local",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Actualizar costo total por compra."
+      },
+      {
+        "tipo": "Electricidad",
+        "descripcion": "Congelador, iluminación y seguridad",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Medir consumo y cortes."
+      },
+      {
+        "tipo": "Seguridad y SST",
+        "descripcion": "Puerta, bodega, extintor, botiquín y EPP",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Inversión previa al aumento de inventario."
+      },
+      {
+        "tipo": "Residuos y formalización",
+        "descripcion": "Vencidos, envases, gestor, documentos y trámites",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Incluir costos y soportes."
+      },
+      {
+        "tipo": "Costo conocido parcial",
+        "descripcion": "No consolidable",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Construir costo y margen por cada producto."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "Mes 1",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "No mezclar inventario usable y vencido."
+      },
+      {
+        "mes": "Mes 2",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Reforzar acceso antes de surtir."
+      },
+      {
+        "mes": "Mes 3",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Medir rotación real."
+      },
+      {
+        "mes": "Mes 4",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "No comprar vacunas sin control."
+      },
+      {
+        "mes": "Mes 5",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Registrar lotes y vencimientos."
+      },
+      {
+        "mes": "Mes 6",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Revisar margen por producto."
+      },
+      {
+        "mes": "Mes 7",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Eliminar productos sin rotación."
+      },
+      {
+        "mes": "Mes 8",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "No sobreabastecer."
+      },
+      {
+        "mes": "Mes 9",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Actualizar proveedores."
+      },
+      {
+        "mes": "Mes 10",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Auditar vencimientos."
+      },
+      {
+        "mes": "Mes 11",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Preparar inventario anual."
+      },
+      {
+        "mes": "Mes 12",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Consolidar compras, ventas, pérdidas y residuos."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "Registro mínimo: El flujo de caja debe iniciar con el inventario físico y las ventas reales de las líneas que continúan activas. Para cada mes deben registrarse producto, lote, vencimiento, entradas, salidas, saldo, costo, transporte, precio, pago, crédito, pérdida por humedad o vencimiento, electricidad, seguridad, mano de obra, residuos y balance. No se proyectan ingresos veterinarios hasta tener inventario vigente, requisitos y demanda comprobados."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Agua de nacimiento",
+        "estado": "Fuente propia protegida con árboles y tanques.",
+        "cantidad": "No medida",
+        "impacto_1_a_5": 4,
+        "accion": "Verificar calidad, uso, conducción y protección."
+      },
+      {
+        "variable": "Electricidad/frío",
+        "estado": "Congelador disponible para vacunas.",
+        "cantidad": "Consumo y temperatura pendientes",
+        "impacto_1_a_5": 4,
+        "accion": "Medir energía y validar cadena de frío."
+      },
+      {
+        "variable": "Medicamentos y vacunas",
+        "estado": "Inventario anterior con productos vencidos; línea actual limitada.",
+        "cantidad": "Cantidad pendiente",
+        "impacto_1_a_5": 5,
+        "accion": "Inventariar, prevenir vencimiento y gestionar residuos."
+      },
+      {
+        "variable": "Alimentos",
+        "estado": "Maíz y alimentos para varias especies.",
+        "cantidad": "Cantidad y peso pendientes",
+        "impacto_1_a_5": 3,
+        "accion": "Registrar kg, humedad, sacos y rotación."
+      },
+      {
+        "variable": "Sal",
+        "estado": "Puede absorber humedad.",
+        "cantidad": "Cantidad pendiente",
+        "impacto_1_a_5": 3,
+        "accion": "Almacenar seca y medir pérdida."
+      },
+      {
+        "variable": "Cartón, plástico y frascos",
+        "estado": "Separación histórica suspendida.",
+        "cantidad": "No medidos",
+        "impacto_1_a_5": 4,
+        "accion": "Retomar separación y definir destinos."
+      },
+      {
+        "variable": "Transporte",
+        "estado": "Abastecimiento histórico desde Bogotá.",
+        "cantidad": "km y combustible pendientes",
+        "impacto_1_a_5": 4,
+        "accion": "Consolidar pedidos y medir costo/emisión."
+      },
+      {
+        "variable": "Seguridad/gasolina histórica",
+        "estado": "Combustible retirado después de hurto.",
+        "cantidad": "No aplica actualmente",
+        "impacto_1_a_5": 5,
+        "accion": "No reactivar sin concepto legal, ambiental y de seguridad."
+      },
+      {
+        "variable": "Humedad y almacenamiento",
+        "estado": "Casa cerrada y sal afectada; negocio reportado sin humedad directa.",
+        "cantidad": "Medición pendiente",
+        "impacto_1_a_5": 4,
+        "accion": "Monitorear, ventilar y usar estibas."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "Consumo de agua",
+        "que_se_mide": "Litros y uso en la unidad.",
+        "dato_inicial": "No medido.",
+        "meta": "Construir línea base.",
+        "frecuencia": "Mensual",
+        "responsable": "Yolanda",
+        "evidencia": "Planilla"
+      },
+      {
+        "indicador": "Consumo eléctrico",
+        "que_se_mide": "kWh del congelador e iluminación.",
+        "dato_inicial": "No medido.",
+        "meta": "Medir 100%.",
+        "frecuencia": "Mensual",
+        "responsable": "Yolanda",
+        "evidencia": "Factura/lectura"
+      },
+      {
+        "indicador": "Temperatura de frío",
+        "que_se_mide": "Temperatura, cortes y duración.",
+        "dato_inicial": "Sin registro.",
+        "meta": "100% del tiempo requerido.",
+        "frecuencia": "Diaria/continua",
+        "responsable": "Responsable de frío",
+        "evidencia": "Bitácora"
+      },
+      {
+        "indicador": "Vencimientos",
+        "que_se_mide": "Unidades por vencer, vencidas y valor perdido.",
+        "dato_inicial": "Existencias pendientes.",
+        "meta": "Cero ventas vencidas; alertas 100%.",
+        "frecuencia": "Semanal/mensual",
+        "responsable": "Yolanda",
+        "evidencia": "Kárdex"
+      },
+      {
+        "indicador": "Rotación de inventario",
+        "que_se_mide": "Entradas, salidas, días y saldo por producto.",
+        "dato_inicial": "No medida.",
+        "meta": "Registrar 100%.",
+        "frecuencia": "Semanal/mensual",
+        "responsable": "Yolanda",
+        "evidencia": "Inventario"
+      },
+      {
+        "indicador": "Residuos especiales",
+        "que_se_mide": "Medicamentos, vacunas y envases entregados.",
+        "dato_inicial": "No medido.",
+        "meta": "Trazar 100%.",
+        "frecuencia": "Según generación",
+        "responsable": "Responsable ambiental",
+        "evidencia": "Acta"
+      },
+      {
+        "indicador": "Reciclables",
+        "que_se_mide": "kg de cartón, plástico, frascos y sacos.",
+        "dato_inicial": "Separación suspendida.",
+        "meta": "Separar 100%.",
+        "frecuencia": "Mensual",
+        "responsable": "Yolanda",
+        "evidencia": "Registro/fotos"
+      },
+      {
+        "indicador": "Transporte",
+        "que_se_mide": "Viajes, km, carga y costo por compra.",
+        "dato_inicial": "Dato histórico parcial.",
+        "meta": "Medir 100%.",
+        "frecuencia": "Cada viaje",
+        "responsable": "Yolanda",
+        "evidencia": "Comprobantes"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Cartón",
+        "cantidad": "No medido",
+        "manejo_actual": "Se separaba históricamente; práctica suspendida.",
+        "accion_circular": "Mantener seco y entregar a aprovechamiento.",
+        "destino": "Reciclaje",
+        "responsable": "Yolanda"
+      },
+      {
+        "residuo_recurso": "Plástico",
+        "cantidad": "No medido",
+        "manejo_actual": "Separación histórica.",
+        "accion_circular": "Clasificar por tipo y evitar contaminación con químicos.",
+        "destino": "Reúso / reciclaje",
+        "responsable": "Yolanda"
+      },
+      {
+        "residuo_recurso": "Frascos y envases veterinarios",
+        "cantidad": "Cantidad pendiente",
+        "manejo_actual": "Manejo actual no descrito.",
+        "accion_circular": "No reutilizar; seguir etiqueta y programa posconsumo.",
+        "destino": "Gestor autorizado",
+        "responsable": "Responsable ambiental"
+      },
+      {
+        "residuo_recurso": "Medicamentos o vacunas vencidos",
+        "cantidad": "Inventario pendiente",
+        "manejo_actual": "Parte del inventario se venció.",
+        "accion_circular": "Inmovilizar, registrar y entregar a ruta autorizada.",
+        "destino": "Gestor/proveedor",
+        "responsable": "Yolanda"
+      },
+      {
+        "residuo_recurso": "Sacos de alimento",
+        "cantidad": "Cantidad pendiente",
+        "manejo_actual": "Manejo actual no descrito.",
+        "accion_circular": "Vaciar, conservar secos y entregar a aprovechamiento si están limpios.",
+        "destino": "Reúso/reciclaje",
+        "responsable": "Yolanda"
+      },
+      {
+        "residuo_recurso": "Residuos ordinarios",
+        "cantidad": "No medidos",
+        "manejo_actual": "Actualmente se entregan a la volqueta.",
+        "accion_circular": "Separar aprovechables, no aprovechables y especiales.",
+        "destino": "Recolección autorizada",
+        "responsable": "Yolanda"
+      },
+      {
+        "residuo_recurso": "Envases de combustible históricos",
+        "cantidad": "No aplica actualmente",
+        "manejo_actual": "La venta de gasolina fue suspendida.",
+        "accion_circular": "No reactivar ni almacenar sin requisitos y sistema seguro.",
+        "destino": "No aplica",
+        "responsable": "Yolanda/autoridad"
+      }
+    ],
+    "conclusion_registro_unico": {
+      "resumen": "No existe balance de residuos. La separación histórica se interrumpió y los vencidos requieren prioridad.",
+      "accion": "Implementar segregación, almacenamiento y soportes.",
+      "area": "Gestión integral",
+      "responsable": "Yolanda"
+    },
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "Agua",
+        "indicador": "Protección y control",
+        "descripcion": "Nacimiento, árboles y tanques.",
+        "estado": "Buena protección reportada; calidad y consumo sin medir.",
+        "calificacion_1_a_5": 4,
+        "accion": "Verificar y registrar.",
+        "evidencia": "Fotos/resultado"
+      },
+      {
+        "factor": "Proceso",
+        "indicador": "Capacidad y repetibilidad",
+        "descripcion": "Compra, recepción, almacenamiento y venta .",
+        "estado": "Proceso histórico, hoy discontinuo y no documentado.",
+        "calificacion_1_a_5": 2,
+        "accion": "Crear procedimiento.",
+        "evidencia": "Registro"
+      },
+      {
+        "factor": "Insumos",
+        "indicador": "Trazabilidad",
+        "descripcion": ", vacunas, . Medicamentos alimentos, sal y calzado",
+        "estado": "Inventario, lotes y costos pendientes.",
+        "calificacion_1_a_5": 1,
+        "accion": "Kárdex y facturas.",
+        "evidencia": "Archivo"
+      },
+      {
+        "factor": "Residuos",
+        "indicador": "Separación y destino",
+        "descripcion": "Vencidos, envases, cartón, plástico y sacos.",
+        "estado": "Reciclaje suspendido; vencidos sin destino confirmado.",
+        "calificacion_1_a_5": 1,
+        "accion": "Segregar y entregar.",
+        "evidencia": "Actas"
+      },
+      {
+        "factor": "Almacenamiento",
+        "indicador": "Humedad y separación",
+        "descripcion": "Vitrina, bodega, alimentos y sal.",
+        "estado": "Área de negocio seca; sal afectada y capacidad incierta.",
+        "calificacion_1_a_5": 2,
+        "accion": "Estibas, zonas y control.",
+        "evidencia": "Checklist"
+      },
+      {
+        "factor": "Infraestructura",
+        "indicador": "Seguridad y continuidad",
+        "descripcion": "Puerta, bodega, piso, vitrina y congelador.",
+        "estado": "Piso en baldosa; seguridad débil y equipo sin validar.",
+        "calificacion_1_a_5": 2,
+        "accion": "Diagnóstico y mejora.",
+        "evidencia": "Informe"
+      },
+      {
+        "factor": "SST",
+        "indicador": "Prevención",
+        "descripcion": "Químicos, carga, frío, electricidad, incendio y hurto.",
+        "estado": "Riesgos subestimados; sin extintor ni botiquín.",
+        "calificacion_1_a_5": 1,
+        "accion": "Plan, EPP y emergencias.",
+        "evidencia": "Checklist"
+      },
+      {
+        "factor": "Comercial",
+        "indicador": "Demanda y continuidad",
+        "descripcion": "Clientes comunitarios y de varias veredas.",
+        "estado": "Reconocimiento histórico; demanda actual no medida.",
+        "calificacion_1_a_5": 3,
+        "accion": "Actualizar clientes y pedidos.",
+        "evidencia": "Base"
+      },
+      {
+        "factor": "Finanzas",
+        "indicador": "Costo y margen",
+        "descripcion": "Compra, transporte, pérdidas y venta.",
+        "estado": "Sin cifras actuales ni rentabilidad calculada.",
+        "calificacion_1_a_5": 1,
+        "accion": "Matriz por producto.",
+        "evidencia": "Formato"
+      },
+      {
+        "factor": "Organización",
+        "indicador": "Roles y respaldo",
+        "descripcion": "Yolanda trabaja sola.",
+        "estado": "Experiencia alta; continuidad vulnerable.",
+        "calificacion_1_a_5": 2,
+        "accion": "Plan de horarios y apoyo.",
+        "evidencia": "Plan"
+      },
+      {
+        "factor": "Trazabilidad",
+        "indicador": "Control integral",
+        "descripcion": "Proveedor, lote, temperatura, venta y residuo.",
+        "estado": "Registros estructurados no reportados.",
+        "calificacion_1_a_5": 1,
+        "accion": "Implementar archivo.",
+        "evidencia": "Planillas"
+      }
+    ],
+    "resultado_preliminar_registro_unico": "Resultado preliminar: Calificación técnica propuesta de 20 sobre 55 puntos, sujeta a visita y evidencias.",
+    "observaciones_o_comentarios": "Resultado preliminar: Calificación técnica propuesta de 20 sobre 55 puntos, sujeta a visita y evidencias. Las fortalezas principales son la historia comunitaria, la clientela territorial, la cercanía, la experiencia de Yolanda, la vitrina, el congelador y la protección del nacimiento de agua. Las brechas críticas están en el inventario vencido o incierto, documentación, cadena de frío, seguridad, operación unipersonal, extintor y botiquín, costos, trazabilidad y gestión de residuos farmacéuticos."
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "Medicamentos vencidos",
+        "accion": "Inventariar, inmovilizar y entregar a ruta autorizada.",
+        "prioridad": "Alta",
+        "plazo": "Inmediato",
+        "responsable": "Yolanda/gestor",
+        "recursos": "Recipientes, listado y transporte",
+        "indicador": "% unidades trazadas",
+        "evidencia": "Acta"
+      },
+      {
+        "impacto": "Agua",
+        "accion": "Verificar calidad, uso, conducción y protección del nacimiento.",
+        "prioridad": "Alta",
+        "plazo": "0-2 meses",
+        "responsable": "Yolanda/técnico",
+        "recursos": "Muestreo y revisión",
+        "indicador": "Parámetros / hallazgos",
+        "evidencia": "Informe"
+      },
+      {
+        "impacto": "Reciclaje",
+        "accion": "Retomar separación de cartón, plástico, frascos y sacos.",
+        "prioridad": "Media-Alta",
+        "plazo": "0-1 mes",
+        "responsable": "Yolanda",
+        "recursos": "Recipientes y señalización",
+        "indicador": "% residuos separados",
+        "evidencia": "Registro"
+      },
+      {
+        "impacto": "Energía y frío",
+        "accion": "Medir consumo y asegurar temperatura y contingencia.",
+        "prioridad": "Alta",
+        "plazo": "Antes de vacunas",
+        "responsable": "Técnico/Yolanda",
+        "recursos": "Termómetro y mantenimiento",
+        "indicador": "% lecturas conformes",
+        "evidencia": "Bitácora"
+      },
+      {
+        "impacto": "Humedad",
+        "accion": "Proteger sal y alimentos con estibas, recipientes y ventilación.",
+        "prioridad": "Alta",
+        "plazo": "0-1 mes",
+        "responsable": "Yolanda",
+        "recursos": "Estibas/higrómetro si aplica",
+        "indicador": "Unidades sin daño",
+        "evidencia": "Checklist"
+      },
+      {
+        "impacto": "Transporte",
+        "accion": "Consolidar pedidos y medir costo y viajes.",
+        "prioridad": "Media",
+        "plazo": "Cada compra",
+        "responsable": "Yolanda",
+        "recursos": "Ruta y comprobantes",
+        "indicador": "Costo por unidad",
+        "evidencia": "Registro"
+      },
+      {
+        "impacto": "Seguridad",
+        "accion": "Reforzar acceso y almacenamiento para evitar pérdida de sustancias y productos.",
+        "prioridad": "Alta",
+        "plazo": "Antes de surtir",
+        "responsable": "Yolanda/apoyo",
+        "recursos": "Puerta, cerradura e iluminación",
+        "indicador": "Incidentes",
+        "evidencia": "Informe/fotos"
+      },
+      {
+        "impacto": "Formalización",
+        "accion": "Verificar requisitos de productos, almacenamiento y residuos.",
+        "prioridad": "Alta",
+        "plazo": "0-2 meses",
+        "responsable": "Yolanda/entidad",
+        "recursos": "Documentos y asistencia",
+        "indicador": "% requisitos cumplidos",
+        "evidencia": "Concepto"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": "Afectación reportada",
+        "situacion": "Cuando la casa queda sola se percibe humedad y la sal puede afectarse.",
+        "riesgo": "Medio-Alto",
+        "accion_propuesta": "Ventilar, inspeccionar y almacenar sobre estibas en recipientes secos."
+      },
+      {
+        "aspecto": "Agua frente al predio",
+        "situacion": "Se reporta una línea o nacimiento de agua en la carretera frente a la casa, sin solución confirmada.",
+        "riesgo": "Alto",
+        "accion_propuesta": "Solicitar revisión de drenaje, estabilidad y conducción."
+      },
+      {
+        "aspecto": "Frío",
+        "situacion": "No se describió afectación directa; puede influir en humedad y energía.",
+        "riesgo": "Pendiente",
+        "accion_propuesta": "Medir temperatura y humedad del local."
+      },
+      {
+        "aspecto": "Calor/verano",
+        "situacion": "No se reportó escasez de agua.",
+        "riesgo": "Bajo-Medio",
+        "accion_propuesta": "Mantener fuente protegida y vigilar temperatura de productos."
+      },
+      {
+        "aspecto": "Lluvia y humedad",
+        "situacion": "El negocio se reporta seco, pero otras áreas de la casa acumulan humedad.",
+        "riesgo": "Medio-Alto",
+        "accion_propuesta": "Revisar cubierta, ventilación, bodega y producto higroscópico."
+      },
+      {
+        "aspecto": "Conclusión",
+        "situacion": "La adaptación se concentra en humedad, conducción del agua, almacenamiento seco, energía y continuidad de la cadena de frío.",
+        "riesgo": "Alto",
+        "accion_propuesta": "Cerrar brechas antes de aumentar inventario."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Sanitario",
+        "riesgo": "Venta o uso de producto vencido",
+        "causa": "Inventario sin control durante la ausencia.",
+        "consecuencia": "Daño animal, sanción y pérdida de confianza.",
+        "nivel": "Alto",
+        "prevencion": "Kárdex, alertas e inmovilización.",
+        "respuesta": "Suspender venta, aislar lote y reportar."
+      },
+      {
+        "tipo": "Cadena de frío",
+        "riesgo": "Vacuna fuera de temperatura",
+        "causa": "Equipo o energía sin monitoreo.",
+        "consecuencia": "Pérdida de eficacia y capital.",
+        "nivel": "Alto",
+        "prevencion": "Termómetro, bitácora y contingencia.",
+        "respuesta": "Inmovilizar y consultar proveedor."
+      },
+      {
+        "tipo": "Seguridad",
+        "riesgo": "Hurto o acceso no autorizado",
+        "causa": "Puerta y bodega vulnerables.",
+        "consecuencia": "Pérdida y riesgo personal.",
+        "nivel": "Alto",
+        "prevencion": "Cerramiento y control de acceso.",
+        "respuesta": "No confrontar, reportar y suspender operación."
+      },
+      {
+        "tipo": "Incendio",
+        "riesgo": "Evento con electricidad o sustancias",
+        "causa": "Sin extintor; antecedente de gasolina.",
+        "consecuencia": "Lesión, incendio y daño.",
+        "nivel": "Alto",
+        "prevencion": "Extintor, orden y no almacenar combustible.",
+        "respuesta": "Evacuar y activar emergencias."
+      },
+      {
+        "tipo": "Financiero",
+        "riesgo": "Pérdida por vencimiento",
+        "causa": "Compra mayor a rotación y discontinuidad.",
+        "consecuencia": "Capital inmovilizado.",
+        "nivel": "Alto",
+        "prevencion": "Pedidos pequeños y larga vigencia.",
+        "respuesta": "Detener compra y liquidar solo producto conforme."
+      },
+      {
+        "tipo": "Comercial",
+        "riesgo": "No recuperar clientes",
+        "causa": "Desabastecimiento prolongado.",
+        "consecuencia": "Baja venta y flujo.",
+        "nivel": "Medio-Alto",
+        "prevencion": "Actualizar contactos y pedidos previos.",
+        "respuesta": "Reducir inventario y reforzar comunicación."
+      },
+      {
+        "tipo": "Suministro",
+        "riesgo": "Retraso o alto costo de reposición",
+        "causa": "Dependencia de Bogotá y transporte.",
+        "consecuencia": "Desabastecimiento o margen bajo.",
+        "nivel": "Medio-Alto",
+        "prevencion": "Dos proveedores y compras consolidadas.",
+        "respuesta": "Reprogramar y priorizar."
+      },
+      {
+        "tipo": "Regulatorio",
+        "riesgo": "Documentos o autorización insuficientes",
+        "causa": "Certificación no localizada.",
+        "consecuencia": "Sanción o restricción.",
+        "nivel": "Alto",
+        "prevencion": "Concepto y archivo documental.",
+        "respuesta": "Suspender linea afectada y regularizar."
+      },
+      {
+        "tipo": "SST",
+        "riesgo": "Exposición química o carga",
+        "causa": "Falta de EPP y trabajo individual.",
+        "consecuencia": "Lesión o enfermedad.",
+        "nivel": "Alto",
+        "prevencion": "EPP, ayudas y capacitación.",
+        "respuesta": "Primeros auxilios y reporte."
+      },
+      {
+        "tipo": "Ambiental",
+        "riesgo": "Disposición de medicamentos en basura",
+        "causa": "Ruta no definida.",
+        "consecuencia": "Contaminación de agua o suelo.",
+        "nivel": "Alto",
+        "prevencion": "Segregación y gestor autorizado.",
+        "respuesta": "Contener y entregar con acta."
+      },
+      {
+        "tipo": "Organización",
+        "riesgo": "Interrupción por ausencia de Yolanda",
+        "causa": "No hay persona de respaldo.",
+        "consecuencia": "Cierre y nuevos vencimientos.",
+        "nivel": "Alto",
+        "prevencion": "Plan de reemplazo y mínimos.",
+        "respuesta": "Cerrar de forma segura y no comprar en exceso."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "Completar identidad, ubicación, propiedad, teléfono y documentos.",
+        "componente": "Identidad/legal",
+        "responsable": "Yolanda/apoyo",
+        "tiempo": "0-1 mes",
+        "recursos": "Documentos y entrevista",
+        "resultado": "Ficha completa",
+        "evidencia": "Soportes"
+      },
+      {
+        "actividad": "Realizar inventario físico de vigentes, vencidos y dudosos.",
+        "componente": "Sanitario/financiero",
+        "responsable": "Yolanda/técnico",
+        "tiempo": "Inmediato",
+        "recursos": "Formato y etiquetas",
+        "resultado": "Inventario confiable",
+        "evidencia": "Kárdex"
+      },
+      {
+        "actividad": "Gestionar productos vencidos y envases con ruta autorizada.",
+        "componente": "Ambiental/sanitario",
+        "responsable": "Yolanda/gestor",
+        "tiempo": "0-1 mes",
+        "recursos": "Recipientes y transporte",
+        "resultado": "Cero vencidos sin destino",
+        "evidencia": "Acta"
+      },
+      {
+        "actividad": "Reforzar puerta, bodega, iluminación y control de acceso.",
+        "componente": "Seguridad",
+        "responsable": "Yolanda/apoyo",
+        "tiempo": "0-2 meses",
+        "recursos": "Diagnóstico y cotización",
+        "resultado": "Local protegido",
+        "evidencia": "Informe"
+      },
+      {
+        "actividad": "Dotar extintor, botiquín, EPP y señalización.",
+        "componente": "SST",
+        "responsable": "Yolanda / apoyo",
+        "tiempo": "0-1 mes",
+        "recursos": "Dotación y capacitación",
+        "resultado": "Emergencias controladas",
+        "evidencia": "Checklist"
+      },
+      {
+        "actividad": "Validar congelador, temperatura, energía y contingencia.",
+        "componente": "Cadena de frio",
+        "responsable": "Técnico/Yolanda",
+        "tiempo": "Antes de vacunas",
+        "recursos": "Termómetro y mantenimiento",
+        "resultado": "Frío verificable",
+        "evidencia": "Bitácora"
+      },
+      {
+        "actividad": "Recuperar certificación y verificar requisitos aplicables.",
+        "componente": "Legal/sanitario",
+        "responsable": "Yolanda/entidad",
+        "tiempo": "0-2 meses",
+        "recursos": "Archivo y asistencia",
+        "resultado": "Operación autorizada",
+        "evidencia": "Concepto"
+      },
+      {
+        "actividad": "Actualizar clientes y priorizar productos por pedido y rotación.",
+        "componente": "Comercial",
+        "responsable": "Yolanda",
+        "tiempo": "0-1 mes",
+        "recursos": "Contactos y ficha",
+        "resultado": "Demanda validada",
+        "evidencia": "Base"
+      },
+      {
+        "actividad": "Reabastecer gradualmente y registrar cada compra, venta y vencimiento.",
+        "componente": "Productivo/financiero",
+        "responsable": "Yolanda",
+        "tiempo": "Después de controles",
+        "recursos": "Capital y kárdex",
+        "resultado": "Reinicio controlado",
+        "evidencia": "Facturas"
+      },
+      {
+        "actividad": "Retomar separación de reciclables y medir agua, energía y transporte.",
+        "componente": "Ambiental",
+        "responsable": "Yolanda",
+        "tiempo": "Desde el primer mes",
+        "recursos": "Recipientes y planillas",
+        "resultado": "Línea base",
+        "evidencia": "Registros"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "Organización",
+        "indicador": "Horarios, ausencias y persona de respaldo",
+        "meta": "100% de períodos con responsable o cierre seguro.",
+        "frecuencia": "Semanal/mensual",
+        "responsable": "Yolanda",
+        "evidencia": "Calendario"
+      },
+      {
+        "dimension": "Inventario",
+        "indicador": "Entradas, salidas, saldo y ubicación",
+        "meta": "Registrar 100% de productos.",
+        "frecuencia": "Cada movimiento",
+        "responsable": "Yolanda",
+        "evidencia": "Kárdex"
+      },
+      {
+        "dimension": "Vencimientos",
+        "indicador": "Lotes y dias restantes",
+        "meta": "Cero productos vencidos disponibles para venta.",
+        "frecuencia": "Semanal",
+        "responsable": "Yolanda",
+        "evidencia": "Alertas"
+      },
+      {
+        "dimension": "Cadena de frío",
+        "indicador": "Temperatura y cortes",
+        "meta": "100% de lecturas conformes.",
+        "frecuencia": "Diaria / continua",
+        "responsable": "Responsable de frío",
+        "evidencia": "Bitácora"
+      },
+      {
+        "dimension": "Calidad",
+        "indicador": "Integridad, etiqueta, factura y almacenamiento",
+        "meta": "100% antes de venta.",
+        "frecuencia": "Cada recepción / venta",
+        "responsable": "Yolanda",
+        "evidencia": "Checklist"
+      },
+      {
+        "dimension": "Ventas",
+        "indicador": "Producto, lote, cantidad, precio, pago y saldo",
+        "meta": "Registrar 100%.",
+        "frecuencia": "Cada venta / mensual",
+        "responsable": "Yolanda",
+        "evidencia": "Comprobante"
+      },
+      {
+        "dimension": "Financiera",
+        "indicador": "Costo, transporte, pérdida y margen por producto",
+        "meta": "Calcular y actualizar mensualmente.",
+        "frecuencia": "Mensual",
+        "responsable": "Yolanda / asesor",
+        "evidencia": "Matriz"
+      },
+      {
+        "dimension": "Cliente",
+        "indicador": "Solicitudes, satisfacción, recompra y reclamos",
+        "meta": "Actualizar clientes y registrar respuesta.",
+        "frecuencia": "Cada contacto",
+        "responsable": "Yolanda",
+        "evidencia": "Base"
+      },
+      {
+        "dimension": "Mercado",
+        "indicador": "Pedidos por línea y vereda",
+        "meta": "Comprar solo con demanda validada.",
+        "frecuencia": "Mensual",
+        "responsable": "Yolanda",
+        "evidencia": "Reporte"
+      },
+      {
+        "dimension": "Ambiental",
+        "indicador": "Agua, energía, reciclables y residuos especiales",
+        "meta": "Trazar 100% de flujos.",
+        "frecuencia": "Mensual/generación",
+        "responsable": "Yolanda",
+        "evidencia": "Planilla/acta"
+      },
+      {
+        "dimension": "SST/seguridad",
+        "indicador": "Inspecciones, EPP, incidentes y accesos",
+        "meta": "100% de jornadas críticas controladas.",
+        "frecuencia": "Diaria/cuando ocurra",
+        "responsable": "Yolanda",
+        "evidencia": "Checklist"
+      },
+      {
+        "dimension": "Trazabilidad",
+        "indicador": "Proveedor, lote, recepción, venta y destino final",
+        "meta": "Trazar 100% de productos veterinarios.",
+        "frecuencia": "Cada movimiento",
+        "responsable": "Yolanda",
+        "evidencia": "Archivo"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Gestionar vencidos",
+        "efecto_productivo": "Evita ofrecer productos ineficaces.",
+        "efecto_comercial": "Protege confianza.",
+        "efecto_financiero": "Reconoce pérdida y evita nueva exposición.",
+        "efecto_ambiental": "Previene contaminación.",
+        "ajuste_necesario": "Inmovilizar y entregar con acta."
+      },
+      {
+        "decision": "Fortalecer seguridad",
+        "efecto_productivo": "Permite mantener inventario.",
+        "efecto_comercial": "Mejora continuidad del servicio.",
+        "efecto_financiero": "Reduce riesgo de pérdida.",
+        "efecto_ambiental": "Evita derrames o acceso a sustancias.",
+        "ajuste_necesario": "Adecuar antes de surtir."
+      },
+      {
+        "decision": "Verificar documentos",
+        "efecto_productivo": "Define productos y procesos autorizados.",
+        "efecto_comercial": "Refuerza legitimidad.",
+        "efecto_financiero": "Evita sanciones.",
+        "efecto_ambiental": "Aclara obligaciones de residuos.",
+        "ajuste_necesario": "Obtener concepto por escrito."
+      },
+      {
+        "decision": "Reactivar gradualmente",
+        "efecto_productivo": "Permite medir rotación.",
+        "efecto_comercial": "Ajusta oferta a pedidos.",
+        "efecto_financiero": "Reduce capital expuesto.",
+        "efecto_ambiental": "Disminuye vencidos y viajes innecesarios.",
+        "ajuste_necesario": "Comprar poca cantidad y larga vigencia."
+      },
+      {
+        "decision": "Mantener alimentos",
+        "efecto_productivo": "Sostiene línea activa.",
+        "efecto_comercial": "Conserva contacto con clientes.",
+        "efecto_financiero": "Genera flujo medible.",
+        "efecto_ambiental": "Produce sacos y riesgo de humedad.",
+        "ajuste_necesario": "Rotar por lote y almacenar seco."
+      },
+      {
+        "decision": "Recuperar clientes por teléfono",
+        "efecto_productivo": "Orienta inventario prioritario.",
+        "efecto_comercial": "Reactiva relación histórica.",
+        "efecto_financiero": "Reduce compras sin salida.",
+        "efecto_ambiental": "Consolida desplazamientos.",
+        "ajuste_necesario": "Registrar pedidos antes de comprar."
+      },
+      {
+        "decision": "Controlar cadena de frío",
+        "efecto_productivo": "Protege eficacia de vacunas.",
+        "efecto_comercial": "Evita reclamos.",
+        "efecto_financiero": "Reduce pérdidas.",
+        "efecto_ambiental": "Aumenta energía medida.",
+        "ajuste_necesario": "Usar equipo validado y bitácora."
+      },
+      {
+        "decision": "Proteger agua y controlar humedad",
+        "efecto_productivo": "Mejora condiciones del local.",
+        "efecto_comercial": "Protege calidad de productos.",
+        "efecto_financiero": "Reduce pérdidas de sal y alimento.",
+        "efecto_ambiental": "Conserva la fuente.",
+        "ajuste_necesario": "Revisar conducción, estibas y ventilación."
+      },
+      {
+        "decision": "Retomar reciclaje",
+        "efecto_productivo": "Ordena almacenamiento.",
+        "efecto_comercial": "Fortalece confianza ambiental.",
+        "efecto_financiero": "Puede reducir disposición.",
+        "efecto_ambiental": "Recupera materiales.",
+        "ajuste_necesario": "Separar sin mezclar residuos farmacéuticos."
+      },
+      {
+        "decision": "Mantener suspendida la gasolina",
+        "efecto_productivo": "Evita interferencia con alimentos y medicamentos.",
+        "efecto_comercial": "Concentra la propuesta de valor.",
+        "efecto_financiero": "Renuncia a ingreso no medido pero reduce exposición.",
+        "efecto_ambiental": "Evita emisiones y derrames.",
+        "ajuste_necesario": "No reactivar sin requisitos, infraestructura y seguridad."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}

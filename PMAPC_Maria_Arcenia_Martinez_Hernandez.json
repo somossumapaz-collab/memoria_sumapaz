@@ -1,0 +1,2266 @@
+{
+  "PMAPC_F01": {
+    "nombre_unidad_productiva": "No fue informado. Se identifica provisionalmente como unidad productiva avícola de María Arcenia; nombre comercial, marca y registro pendientes de verificar.",
+    "persona_entrevistada": "María Arcenia. Apellidos, documento, teléfono, correo, tenencia del predio y condición jurídica pendientes. Una hija participa en la actividad; nombre y rol por confirmar.",
+    "tipo_actividad": "Cría de gallinas ponedoras y comercialización de huevos por cubeta. La productora también ha tenido gallinas criollas y un grupo referido como 'legas', denominación exacta pendiente.",
+    "ubicacion_especifica": "Vereda Laguna Verde Baja. Localidad, corregimiento, nombre del predio, dirección, referencia de acceso y coordenadas pendientes de verificar.",
+    "producto_servicio_principal": "Huevos de gallina vendidos por cubeta. La gallinaza se aprovecha en plantas, cebolla y potrero. Actualmente no existe producción comercial activa.",
+    "estado_actual": "Unidad temporalmente inactiva. El galpón debe permanecer desocupado, limpiarse y descansar aproximadamente cuatro meses antes de recibir nuevas gallinas, según la recomendación técnica relatada.",
+    "personas_vinculadas": "María Arcenia y una hija. Distribución de funciones, tiempo disponible, remuneración y apoyos adicionales pendientes.",
+    "coordenadas": "Pendientes de tomar en la unidad productiva de la vereda Laguna Verde Baja.",
+    "descripcion_general": "La productora tiene experiencia prolongada en manejo de gallinas y venta directa de huevos, especialmente a personas vinculadas con un colegio. No reporta dificultad histórica para vender. Busca recuperar un lote cercano a 50 aves, pero antes requiere saneamiento, reparación del galpón, manejo del piso y humedad, bioseguridad, reposición de equipos y aves, registros y costeo actualizado.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F02": {
+    "mision": "Producir huevos de buena calidad mediante el cuidado responsable de las gallinas, alimentación adecuada, agua limpia y trabajo familiar, ofreciendo un producto confiable a la comunidad y aprovechando la gallinaza en la finca.",
+    "vision": "En tres años, reactivar la unidad con el galpón limpio y mejorado, equipos funcionales y un lote aproximado de 50 gallinas, con producción estable, clientes recuperados y registros básicos de manejo, costos y ventas.",
+    "valores": [
+      "Responsabilidad",
+      "amor",
+      "puntualidad",
+      "honestidad",
+      "cumplimiento"
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F03": {
+    "por_que_adquieren_el_servicio": "Por la buena calidad de los huevos y la confianza construida con compradores que ya conocían el producto.",
+    "beneficio_cliente": "Acceso cercano a huevos producidos por una unidad familiar con experiencia y atención directa.",
+    "diferencial": "Trayectoria de 18 a 19 años, manejo familiar, alimentación de las gallinas asociada por la productora con la calidad del huevo y facilidad histórica de venta.",
+    "valor_ambiental": "Aprovechamiento de gallinaza en plantas, cebolla y potrero, uso de plástico para proteger el galpón en lluvia e interés en sembrar plantas.",
+    "valor_social_comunitario": "Abastecimiento histórico a personas de la comunidad y de un colegio, con participación de la productora y su hija.",
+    "evidencia": "Relato de ventas históricas, experiencia con hasta 50 gallinas y producción mencionada en cubetas. Faltan registros, fotos actuales, pesajes o conteos, soportes de clientes y evidencia sanitaria.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F04": {
+    "fortalezas": [
+      "Trayectoria de 18 a 19 años.",
+      "Experiencia con lotes de hasta 50 gallinas.",
+      "Venta histórica sin dificultad reportada.",
+      "Calidad del huevo reconocida por compradores.",
+      "Participación familiar con una hija.",
+      "Disponibilidad anual de agua de acueducto.",
+      "Aprovechamiento de gallinaza en la finca.",
+      "Galpón, comederos y bebederos existentes por verificar."
+    ],
+    "oportunidades": [
+      "Reparar y sanear el galpón antes del reinicio.",
+      "Mejorar piso, drenaje, bebederos y comederos.",
+      "Recuperar clientes del colegio y la comunidad.",
+      "Explorar el canal mencionado como Procanzo.",
+      "Validar ventas en Bogotá sin perder margen.",
+      "Implementar bioseguridad y trazabilidad.",
+      "Sembrar plantas y fortalecer cobertura vegetal.",
+      "Reiniciar gradualmente hasta llegar a 50 aves."
+    ],
+    "debilidades": [
+      "Producción actualmente inactiva.",
+      "Galpón antiguo y deteriorado.",
+      "Piso en tierra que se vuelve barro con lluvia.",
+      "Descanso sanitario de unos cuatro meses.",
+      "Inventario actual de aves y equipos incierto.",
+      "Sin registros de producción, mortalidad ni ventas.",
+      "Costos y precio actual incompletos.",
+      "Datos de producción contradictorios.",
+      "Controles de SST y bioseguridad no documentados."
+    ],
+    "amenazas": [
+      "Lluvia, humedad, barro y enfermedad de las aves.",
+      "Reingreso de gallinas antes del saneamiento.",
+      "Deterioro estructural del galpón.",
+      "Variación del precio del alimento.",
+      "Enfermedades, plagas y mortalidad.",
+      "Falta de cumplimiento de apoyos prometidos.",
+      "Pérdida de clientes durante la inactividad.",
+      "Reinicio sin capital, aves o equipos suficientes.",
+      "Contaminación si la gallinaza se maneja mal."
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F05": {
+    "perfiles_cliente_multiples_filas": [
+      {
+        "tipo_actor": "Comprador histórico del colegio",
+        "perfil_que_busca": "Personas vinculadas con un colegio mencionado como 'Campes / Jaime Garza'; nombre exacto pendiente.",
+        "ubicacion": "Zona cercana; ubicación pendiente.",
+        "necesidad": "Huevos de buena calidad y acceso fácil.",
+        "frecuencia": "Semanal, según el relato.",
+        "criterio_compra": "Calidad, confianza, disponibilidad y precio.",
+        "canal": "Venta directa histórica."
+      },
+      {
+        "tipo_actor": "Comprador local",
+        "perfil_que_busca": "Vecinos o personas que acudían a llevar el producto.",
+        "ubicacion": "Vereda y alrededores.",
+        "necesidad": "Cubetas de huevo cercanas.",
+        "frecuencia": "Según disponibilidad.",
+        "criterio_compra": "Calidad y confianza en la productora.",
+        "canal": "Voz a voz/finca."
+      },
+      {
+        "tipo_actor": "Canal Procanzo",
+        "perfil_que_busca": "Actor comercial mencionado como posible comprador; denominación y naturaleza pendientes.",
+        "ubicacion": "Ubicación pendiente.",
+        "necesidad": "Abastecimiento de huevo.",
+        "frecuencia": "Por validar.",
+        "criterio_compra": "Volumen, calidad, precio y entrega.",
+        "canal": "Contacto futuro."
+      },
+      {
+        "tipo_actor": "Comprador en Bogotá",
+        "perfil_que_busca": "Familia, tienda o intermediario potencial no identificado.",
+        "ubicacion": "Bogotá.",
+        "necesidad": "Huevo con oferta estable.",
+        "frecuencia": "Por pedido.",
+        "criterio_compra": "Calidad, empaque, transporte y precio.",
+        "canal": "Canal potencial."
+      },
+      {
+        "tipo_actor": "Cliente institucional futuro",
+        "perfil_que_busca": "Colegio u organización que pueda recibir producción regular.",
+        "ubicacion": "Zona por verificar.",
+        "necesidad": "Continuidad y producto inocuo.",
+        "frecuencia": "Semanal o acordada.",
+        "criterio_compra": "Cantidad, calidad, cumplimiento y soporte.",
+        "canal": "Acuerdo por construir."
+      },
+      {
+        "tipo_actor": "Familia consumidora",
+        "perfil_que_busca": "Hogar que compra huevo para consumo.",
+        "ubicacion": "Comunidad local.",
+        "necesidad": "Producto fresco y confiable.",
+        "frecuencia": "Semanal o quincenal.",
+        "criterio_compra": "Calidad, tamaño, limpieza y precio.",
+        "canal": "Venta directa."
+      },
+      {
+        "tipo_actor": "Otros clientes",
+        "perfil_que_busca": "Tiendas, mercados o aliados que puedan absorber excedentes después del reinicio.",
+        "ubicacion": "Sumapaz o Bogotá.",
+        "necesidad": "Oferta trazable y constante.",
+        "frecuencia": "Por validar.",
+        "criterio_compra": "Margen neto, logística y pago.",
+        "canal": "Piloto futuro."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F06": {
+    "que_buscan_los_compradores": "Huevos de buena calidad. La productora relaciona esta calidad con una alimentación adecuada de las gallinas.",
+    "como_se_conoce_la_necesidad": "Por la facilidad histórica de venta, la compra de personas del colegio y compradores que acudían directamente.",
+    "quienes_compran_o_podrian_comprar": "Compradores del colegio, vecinos, el canal referido como Procanzo, hogares, tiendas y compradores en Bogotá.",
+    "evidencia": "Relato de producción y ventas históricas. No hay pedidos, facturas, lista de clientes, registro de frecuencia ni satisfacción documentada.",
+    "ventaja_territorial": "Experiencia local, venta directa, cercanía con compradores conocidos y uso de gallinaza dentro de la finca.",
+    "cambios_demanda": "La unidad está inactiva y no se verificó si los antiguos compradores mantienen interés ni cuál es el precio actual.",
+    "dificultades": "Galpón en saneamiento, piso en tierra, lluvia y barro, falta de aves actuales, equipos por mejorar, costos desactualizados y producción contradictoria.",
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F07": {
+    "alianzas_cooperacion_multiples_filas": [
+      {
+        "actor_aliado": "María y su hija",
+        "tipo": "Familiar/productivo",
+        "que_aporta": "Experiencia, trabajo, galpón y cuidado de aves.",
+        "que_recibe": "Ingreso y sostenimiento familiar.",
+        "trabajo_conjunto": "Definir funciones, turnos y registros.",
+        "aporte_ambiental": "Aprovechamiento de gallinaza y siembra.",
+        "accion": "Formalizar plan familiar."
+      },
+      {
+        "actor_aliado": "Compradores del colegio",
+        "tipo": "Comercial histórico",
+        "que_aporta": "Demanda y referencia de calidad.",
+        "que_recibe": "Huevos por cubeta.",
+        "trabajo_conjunto": "Verificar interés, cantidad, precio y frecuencia.",
+        "aporte_ambiental": "Compra cercana puede reducir viajes.",
+        "accion": "Recuperar contactos."
+      },
+      {
+        "actor_aliado": "Compradores locales",
+        "tipo": "Comercial",
+        "que_aporta": "Venta directa y voz a voz.",
+        "que_recibe": "Producto cercano.",
+        "trabajo_conjunto": "Registrar pedidos y satisfacción.",
+        "aporte_ambiental": "Menor distancia de entrega.",
+        "accion": "Crear base autorizada."
+      },
+      {
+        "actor_aliado": "Procanzo",
+        "tipo": "Comercial potencial",
+        "que_aporta": "Posible canal de compra",
+        "que_recibe": "Abastecimiento de huevo.",
+        "trabajo_conjunto": "Verificar nombre, requisitos y condiciones.",
+        "aporte_ambiental": "Pedidos consolidados pueden optimizar rutas.",
+        "accion": "Hacer contacto."
+      },
+      {
+        "actor_aliado": "Proveedor de alimento",
+        "tipo": "Proveedor",
+        "que_aporta": "Ponedora, maíz, calcio y otros insumos.",
+        "que_recibe": "Compra recurrente.",
+        "trabajo_conjunto": "Cotizar, conservar facturas, lotes y fichas.",
+        "aporte_ambiental": "Gestión de empaques y dosificación.",
+        "accion": "Identificar dos opciones."
+      },
+      {
+        "actor_aliado": "Ingeniero o agrónomo",
+        "tipo": "Técnico",
+        "que_aporta": "Recomendación de vaciar, limpiar y arreglar el galpón.",
+        "que_recibe": "Mejora verificable de la unidad.",
+        "trabajo_conjunto": "Emitir diagnóstico, protocolo y acta de cierre.",
+        "aporte_ambiental": "Prevención sanitaria y manejo del piso.",
+        "accion": "Obtener soporte técnico."
+      },
+      {
+        "actor_aliado": "Alcaldía/proyecto",
+        "tipo": "Institucional",
+        "que_aporta": "Posible apoyo con arreglo, bebederos o aves.",
+        "que_recibe": "Reactivación productiva sustentada.",
+        "trabajo_conjunto": "Definir alcance, cronograma y entrega.",
+        "aporte_ambiental": "Adecuación puede reducir pérdidas y contaminación.",
+        "accion": "Solicitar respuesta formal."
+      },
+      {
+        "actor_aliado": "Asistencia sanitaria",
+        "tipo": "Institucional/técnica",
+        "que_aporta": "Bioseguridad, sanidad aviar, SST y requisitos.",
+        "que_recibe": "Unidad más segura y trazable.",
+        "trabajo_conjunto": "Visita y plan de reinicio.",
+        "aporte_ambiental": "Previene enfermedad y mejora gestión de residuos.",
+        "accion": "Gestionar acompañamiento."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F08": {
+    "validaciones_mercado_multiples_filas": [
+      {
+        "metodo": "Venta en colegio",
+        "a_quien": "Personas del colegio referido.",
+        "resultado": "La productora vendía allí gran parte de los huevos.",
+        "motivacion": "Buena calidad del producto.",
+        "evidencia": "Registros y nombre exacto pendientes."
+      },
+      {
+        "metodo": "Venta directa",
+        "a_quien": "Compradores que acudían por el producto.",
+        "resultado": "No reporta dificultad para vender.",
+        "motivacion": "Confianza y disponibilidad.",
+        "evidencia": "Base de clientes pendiente."
+      },
+      {
+        "metodo": "Producción con 12 gallinas",
+        "a_quien": "Mercado histórico.",
+        "resultado": "Se reportaron 12 cubetas al mes.",
+        "motivacion": "Aprovechar un lote pequeño.",
+        "evidencia": "Tamaño de cubeta y período pendientes."
+      },
+      {
+        "metodo": "Venta semanal",
+        "a_quien": "Compradores históricos.",
+        "resultado": "Se reportaron 6-7 cubetas por semana, dato inconsistente con el anterior.",
+        "motivacion": "Demanda recurrente.",
+        "evidencia": "Dato por confirmar con la productora."
+      },
+      {
+        "metodo": "Precio y pago",
+        "a_quien": "Comprador directo.",
+        "resultado": "La productora fijaba el precio y recibía efectivo.",
+        "motivacion": "Control directo de la venta.",
+        "evidencia": "Soportes pendientes."
+      },
+      {
+        "metodo": "Mercado futuro",
+        "a_quien": "Colegio, Procanzo y Bogotá.",
+        "resultado": "Solo existe interés expresado; no hay validación actual.",
+        "motivacion": "Reactivar y diversificar.",
+        "evidencia": "Encuestas, pedidos y pruebas pendientes."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F09": {
+    "fichas_tecnicas_multiples_filas": [
+      {
+        "servicio": "Huevo campesino",
+        "descripcion_tecnica": "Huevo de gallinas ponedoras manejadas en galpón; raza, clasificación y protocolo pendientes.",
+        "unidad": "Cubeta; número de huevos pendiente.",
+        "insumos_principales": "Gallinas, alimento, agua, calcio, sanidad, galpón, comedero y bebedero.",
+        "condiciones_especiales": "Lugar, temperatura, limpieza y rotación pendientes.",
+        "presentacion": "Cubeta no descrita.",
+        "diferencial": "Experiencia y calidad reconocida."
+      },
+      {
+        "servicio": "Producción con 12 gallinas",
+        "descripcion_tecnica": "Escenario histórico reportado para un lote de 12 aves.",
+        "unidad": "12 cubetas al mes, según una respuesta.",
+        "insumos_principales": "Un bulto mensual de ponedora o maíz como referencia.",
+        "condiciones_especiales": "Venta directa histórica.",
+        "presentacion": "$12.000 por cubeta en esa época.",
+        "diferencial": "Escala familiar y cliente cercano."
+      },
+      {
+        "servicio": "Producción semanal histórica",
+        "descripcion_tecnica": "Segundo dato de ventas informado durante la entrevista.",
+        "unidad": "6-7 cubetas por semana.",
+        "insumos_principales": "Relación con número de aves no definida.",
+        "condiciones_especiales": "Se vendía semanalmente.",
+        "presentacion": "$12.000 histórico; período pendiente.",
+        "diferencial": "Dato por confirmar por inconsistencia."
+      },
+      {
+        "servicio": "Producción máxima",
+        "descripcion_tecnica": "La productora reporta haber manejado hasta 50 aves: 20 ponedoras, 15 criollas y 15 'legas'.",
+        "unidad": "Lote de aves.",
+        "insumos_principales": "Capacidad, alimento y equipos por recalcular.",
+        "condiciones_especiales": "No aplica actualmente.",
+        "presentacion": "Huevos por cubeta.",
+        "diferencial": "Meta aproximada para el reinicio."
+      },
+      {
+        "servicio": "Gallinaza",
+        "descripcion_tecnica": "Subproducto recolectado de las gallinas.",
+        "unidad": "Cantidad no medida.",
+        "insumos_principales": "Excretas y material acompañante por verificar.",
+        "condiciones_especiales": "Se usa en plantas, cebolla y potrero.",
+        "presentacion": "Sin presentación comercial.",
+        "diferencial": "Aprovechamiento interno."
+      },
+      {
+        "servicio": "Producción actual",
+        "descripcion_tecnica": "No existe un lote productivo activo durante la entrevista.",
+        "unidad": "Cero ventas actuales verificadas.",
+        "insumos_principales": "Galpón en limpieza y descanso.",
+        "condiciones_especiales": "No aplica.",
+        "presentacion": "No aplica.",
+        "diferencial": "Reinicio condicionado a saneamiento."
+      },
+      {
+        "servicio": "Soporte del producto",
+        "descripcion_tecnica": "Ficha con fecha, lote, aves, alimentación, sanidad, postura, selección, pérdidas y venta.",
+        "unidad": "Por lote / día.",
+        "insumos_principales": "Registros físicos o digitales.",
+        "condiciones_especiales": "Archivo y trazabilidad.",
+        "presentacion": "Etiqueta o ficha básica.",
+        "diferencial": "Pendiente de implementar."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F10": {
+    "proceso_prestacion_servicio_multiples_filas": [
+      {
+        "servicio": "Planeación del reinicio",
+        "unidad": "Por ciclo",
+        "actividad_proceso": "Confirmar cierre sanitario, reparaciones, aves, equipos, alimento, agua, mercado y capital.",
+        "tiempo_estimado": "Antes de comprar o recibir aves."
+      },
+      {
+        "servicio": "Vacío y desinfección",
+        "unidad": "Galpón",
+        "actividad_proceso": "Mantener desocupado, limpiar, desinfectar y verificar condiciones según orientación técnica.",
+        "tiempo_estimado": "Aproximadamente 4 meses; fechas pendientes."
+      },
+      {
+        "servicio": "Adecuación",
+        "unidad": "Galpón",
+        "actividad_proceso": "Reparar estructura, piso, drenaje, cerramientos, comederos y bebederos.",
+        "tiempo_estimado": "Por definir."
+      },
+      {
+        "servicio": "Ingreso de aves",
+        "unidad": "Lote",
+        "actividad_proceso": "Comprar o recibir gallinas sanas con edad, origen y plan sanitario verificados.",
+        "tiempo_estimado": "Después del cierre técnico."
+      },
+      {
+        "servicio": "Alimentación y agua",
+        "unidad": "Diaria",
+        "actividad_proceso": "Suministrar ponedora o maíz según fórmula técnica, calcio y agua limpia; lavar bebederos.",
+        "tiempo_estimado": "Todos los días."
+      },
+      {
+        "servicio": "Manejo sanitario",
+        "unidad": "Por lote",
+        "actividad_proceso": "Observar aves y aplicar medicina o plantas solo con orientación y registro.",
+        "tiempo_estimado": "Según plan sanitario."
+      },
+      {
+        "servicio": "Recolección",
+        "unidad": "Huevos/día",
+        "actividad_proceso": "Recoger, contar y separar huevos limpios, fisurados o no conformes.",
+        "tiempo_estimado": "Frecuencia pendiente."
+      },
+      {
+        "servicio": "Empaque",
+        "unidad": "Cubeta",
+        "actividad_proceso": "Organizar huevos por criterio definido, identificar fecha y protegerlos.",
+        "tiempo_estimado": "Cada recolección/venta."
+      },
+      {
+        "servicio": "Venta",
+        "unidad": "Cubetas",
+        "actividad_proceso": "Fijar precio, entregar y recibir pago en efectivo; otros medios por validar.",
+        "tiempo_estimado": "Históricamente semanal."
+      },
+      {
+        "servicio": "Limpieza y gallinaza",
+        "unidad": "Diaria / periódica",
+        "actividad_proceso": "Limpiar equipos, controlar humedad y recolectar gallinaza para uso seguro en finca.",
+        "tiempo_estimado": "Frecuencia pendiente."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F11": {
+    "insumos_multiples_filas": [
+      {
+        "insumo": "Gallinas ponedoras",
+        "cantidad_unidad": "12 iniciales; hasta 50 históricas",
+        "frecuencia": "Por ciclo",
+        "proveedor_fuente": "Proyecto o compra; por verificar",
+        "toxicidad": "Biológica",
+        "impacto_potencial": "Consumo de agua/alimento y generación de gallinaza.",
+        "manejo_ambiental": "Origen, cuarentena, sanidad y capacidad de carga.",
+        "observaciones": "Inventario actual pendiente."
+      },
+      {
+        "insumo": "Alimento ponedora",
+        "cantidad_unidad": "1 bulto para 10-12 gallinas",
+        "frecuencia": "Mensual, según relato",
+        "proveedor_fuente": "Por verificar",
+        "toxicidad": "Según ficha",
+        "impacto_potencial": "Costo, empaques y huella indirecta.",
+        "manejo_ambiental": "Dosificar, almacenar seco y registrar consumo.",
+        "observaciones": "$110.000 actual aparente; hasta $130.000."
+      },
+      {
+        "insumo": "Maíz",
+        "cantidad_unidad": "Alternativa de un bulto",
+        "frecuencia": "Mensual, según relato",
+        "proveedor_fuente": "Por verificar",
+        "toxicidad": "Según ficha",
+        "impacto_potencial": "Producción agrícola y empaque.",
+        "manejo_ambiental": "No sustituir dieta balanceada sin validación.",
+        "observaciones": "No se aclaró si reemplaza o complementa ponedora."
+      },
+      {
+        "insumo": "Agua de acueducto",
+        "cantidad_unidad": "No medida",
+        "frecuencia": "Diaria",
+        "proveedor_fuente": "Acueducto",
+        "toxicidad": "Calidad por verificar",
+        "impacto_potencial": "Consumo y agua de lavado.",
+        "manejo_ambiental": "Medir, conservar limpia y manejar efluente.",
+        "observaciones": "Disponible todo el año; sin reutilización."
+      },
+      {
+        "insumo": "Calcio",
+        "cantidad_unidad": "Un frasco; tamaño pendiente",
+        "frecuencia": "No determinada",
+        "proveedor_fuente": "Por verificar",
+        "toxicidad": "Según ficha",
+        "impacto_potencial": "Envase y sobredosificación.",
+        "manejo_ambiental": "Dosificar según orientación y conservar ficha.",
+        "observaciones": "$8.000 histórico; precio actual pendiente."
+      },
+      {
+        "insumo": "Medicinas o plantas",
+        "cantidad_unidad": "No determinada",
+        "frecuencia": "Ocasional",
+        "proveedor_fuente": "Por verificar",
+        "toxicidad": "Veterinaria / según producto",
+        "impacto_potencial": "Residuos, envases y riesgo sanitario.",
+        "manejo_ambiental": "Registrar producto, dosis, retiro y destino del envase.",
+        "observaciones": "Aproximadamente $20.000; frecuencia pendiente."
+      },
+      {
+        "insumo": "Cubetas/empaque",
+        "cantidad_unidad": "Cantidad no informada",
+        "frecuencia": "Según producción",
+        "proveedor_fuente": "Por verificar",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Consumo de cartón o plástico.",
+        "manejo_ambiental": "Mantener limpias y separar aprovechables.",
+        "observaciones": "Tamaño y costo pendientes."
+      },
+      {
+        "insumo": "Comederos",
+        "cantidad_unidad": "Recibidos con el apoyo inicial",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Proyecto/propios",
+        "toxicidad": "Mecánica / sanitaria",
+        "impacto_potencial": "Desperdicio de alimento y limpieza.",
+        "manejo_ambiental": "Inventariar, reparar y ajustar altura/capacidad.",
+        "observaciones": "Cantidad y estado pendientes."
+      },
+      {
+        "insumo": "Bebederos",
+        "cantidad_unidad": "Recibidos inicialmente: nuevos prometidos",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Proyecto/propios",
+        "toxicidad": "Sanitaria",
+        "impacto_potencial": "Consumo de agua, humedad y barro.",
+        "manejo_ambiental": "Evitar fugas, lavar y controlar nivel.",
+        "observaciones": "Cantidad, entrega y estado pendientes."
+      },
+      {
+        "insumo": "Galpón y corral",
+        "cantidad_unidad": "Una estructura de cerca de 19 años",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Propio / apoyo",
+        "toxicidad": "Locativa/biológica",
+        "impacto_potencial": "Materiales, suelo y bioseguridad.",
+        "manejo_ambiental": "Reparar y desinfectar antes del reinicio.",
+        "observaciones": "Piso en tierra y deterioro reportado."
+      },
+      {
+        "insumo": "Plástico de cubierta",
+        "cantidad_unidad": "Cantidad no informada",
+        "frecuencia": "En lluvia",
+        "proveedor_fuente": "Propio",
+        "toxicidad": "Según material",
+        "impacto_potencial": "Residuo plástico y ventilación.",
+        "manejo_ambiental": "Inspeccionar, reutilizar si es seguro y disponer bien.",
+        "observaciones": "Se usa para cubrir el galpón."
+      },
+      {
+        "insumo": "Limpieza y desinfección",
+        "cantidad_unidad": "Productos y dosis no informados",
+        "frecuencia": "Durante vacío y operación",
+        "proveedor_fuente": "Por cotizar",
+        "toxicidad": "Según ficha",
+        "impacto_potencial": "Efluentes y exposición.",
+        "manejo_ambiental": "Protocolo, EPP, dosificación y registro.",
+        "observaciones": "Proceso actual por verificar."
+      },
+      {
+        "insumo": "EPP y bioseguridad",
+        "cantidad_unidad": "No reportados",
+        "frecuencia": "Cada ingreso / tarea",
+        "proveedor_fuente": "Por cotizar",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Prevención de lesiones y contagio.",
+        "manejo_ambiental": "Botas, guantes, tapabocas y pediluvio según evaluación.",
+        "observaciones": "Pendiente de implementar."
+      },
+      {
+        "insumo": "Recolección de gallinaza",
+        "cantidad_unidad": "Recipiente/herramienta no informados",
+        "frecuencia": "Periódica",
+        "proveedor_fuente": "Propios/por cotizar",
+        "toxicidad": "Biológica",
+        "impacto_potencial": "Olores, vectores y contaminación.",
+        "manejo_ambiental": "Recolectar seco, cubrir y dosificar en suelo.",
+        "observaciones": "Se usa en plantas, cebolla y potrero."
+      },
+      {
+        "insumo": "Almacenamiento y registros",
+        "cantidad_unidad": "Espacio y formatos no informados",
+        "frecuencia": "Permanente",
+        "proveedor_fuente": "Propio/por adecuar",
+        "toxicidad": "N/A",
+        "impacto_potencial": "Calidad, pérdidas y trazabilidad.",
+        "manejo_ambiental": "Separar alimento, químicos, huevos y residuos.",
+        "observaciones": "Pendiente."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12": {
+    "produccion_mensual_real": "No hay lote productivo activo ni ventas verificadas durante la entrevista.",
+    "produccion_normal": "Con 12 gallinas, la productora reportó 12 cubetas al mes.",
+    "capacidad_mensual_teorica": "Más adelante reportó ventas semanales de 6 a 7 cubetas. No se aclaró el número de aves ni el período.",
+    "produccion_maxima_posible": "Recibió 12 gallinas y llegó a tener hasta 50: 20 ponedoras, 15 criollas y 15 aves denominadas 'legas'.",
+    "area_numero_habitaciones": "Galpón antiguo con piso en tierra que se vuelve barro. Dimensiones, densidad, ventilación y cerramiento pendientes.",
+    "limitantes_productivos": "No determinada porque el galpón está vacio o sin lote productivo, requiere saneamiento y reparación, y el inventario de equipos no está confirmado.",
+    "limitantes_ambientales": "No determinada porque el galpón está vacio o sin lote productivo, requiere saneamiento y reparación, y el inventario de equipos no está confirmado.",
+    "capacidad_instalada": "No determinada porque el galpón está vacio o sin lote productivo, requiere saneamiento y reparación, y el inventario de equipos no está confirmado.",
+    "capacidad_utilizada": "0 cubetas verificadas",
+    "produce_mismo_todo_ano": null,
+    "alcanza_para_demanda": null,
+    "necesidades_aumentar_sosteniblemente": "Meta de reinicio después de aproximadamente cuatro meses de saneamiento; fecha exacta y plan de poblamiento pendientes.",
+    "observaciones_o_comentarios": "Conclusión: No es posible definir capacidad actual. Debe cerrarse el proceso sanitario y realizar un reinicio gradual, midiendo aves, huevos, cubetas, mortalidad, alimento, agua, tiempo y ventas."
+  },
+  "PMAPC_F12A": {
+    "limites_ambientales_multiples_filas": [
+      {
+        "condicion": "Agua",
+        "estado_actual": "Acueducto disponible todo el año; uso para bebida y lavado.",
+        "limite_restriccion": "Consumo y calidad no medidos.",
+        "afectacion": "La postura y la salud dependen de agua limpia.",
+        "efecto": "Enfermedad o menor producción.",
+        "incidencia": "Alta",
+        "accion_mejora": "Analizar, medir y mantener bebederos sin fuga."
+      },
+      {
+        "condicion": "Clima",
+        "estado_actual": "La lluvia genera barro y humedad.",
+        "limite_restriccion": "Protección actual con plástico; drenaje pendiente.",
+        "afectacion": "Aumenta suciedad y riesgo sanitario.",
+        "efecto": "Enfermedad y menor postura.",
+        "incidencia": "Alta",
+        "accion_mejora": "Cubierta, drenaje, piso y plan de lluvias."
+      },
+      {
+        "condicion": "Piso/suelo",
+        "estado_actual": "Galpón con piso en tierra.",
+        "limite_restriccion": "No hay superficie seca o cementada verificada.",
+        "afectacion": "Retiene humedad y dificulta limpieza.",
+        "efecto": "Barro, vectores y bioseguridad deficiente.",
+        "incidencia": "Alta",
+        "accion_mejora": "Evaluar solución técnica lavable y drenada."
+      },
+      {
+        "condicion": "Bioseguridad",
+        "estado_actual": "Galpón en vacío y limpieza por unos cuatro meses.",
+        "limite_restriccion": "Protocolo, productos y fecha de cierre no documentados.",
+        "afectacion": "Ingreso prematuro puede reactivar enfermedad.",
+        "efecto": "Pérdida de aves y producción.",
+        "incidencia": "Alta",
+        "accion_mejora": "Certificar limpieza antes de poblar."
+      },
+      {
+        "condicion": "Suministros",
+        "estado_actual": "Alimento variable de $110.000 a $130.000 por bulto.",
+        "limite_restriccion": "Capital y proveedor no confirmados.",
+        "afectacion": "Faltantes afectan postura y bienestar.",
+        "efecto": "Menor producción o reinicio fallido.",
+        "incidencia": "Medio-Alto",
+        "accion_mejora": "Presupuesto, inventario mínimo y proveedores."
+      },
+      {
+        "condicion": "Espacio e infraestructura",
+        "estado_actual": "Galpón de cerca de 19 años, deteriorado.",
+        "limite_restriccion": "Capacidad, estructura y equipos sin diagnóstico.",
+        "afectacion": "Limita número de aves y seguridad.",
+        "efecto": "Accidente, enfermedad o sobrepoblación.",
+        "incidencia": "Alta",
+        "accion_mejora": "Visita, reparación y aforo técnico."
+      },
+      {
+        "condicion": "Residuos",
+        "estado_actual": "Gallinaza usada en plantas, cebolla y potrero.",
+        "limite_restriccion": "Cantidad, almacenamiento y dosis no definidos.",
+        "afectacion": "Puede aprovecharse o contaminar.",
+        "efecto": "Nutrientes o afectación de agua/suelo.",
+        "incidencia": "Medio-Alto",
+        "accion_mejora": "Medir, cubrir, madurar si aplica y dosificar."
+      },
+      {
+        "condicion": "Conclusión",
+        "estado_actual": "La reactivación depende de saneamiento, piso seco, estructura, agua, equipos, alimento, aves, bioseguridad y mercado.",
+        "limite_restriccion": "Faltan visita y soportes.",
+        "afectacion": "No debe poblarse por costumbre o fecha estimada solamente.",
+        "efecto": "Riesgo sanitario, productivo y financiero.",
+        "incidencia": "Alto",
+        "accion_mejora": "Autorizar reinicio con verificación técnica."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12B": {
+    "riesgos_sst_multiples_filas": [
+      {
+        "tipo": "Biológico",
+        "peligro": "Contacto con aves, gallinaza, plumas, polvo y microorganismos.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "La productora no reportó incidentes; controles no documentados.",
+        "accion": "Bioseguridad, higiene, EPP y plan sanitario."
+      },
+      {
+        "tipo": "Locativo",
+        "peligro": "Barro, piso irregular, humedad y posibles caídas.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Plástico para cubrir el galpón.",
+        "accion": "Drenaje, piso seguro, botas y orden."
+      },
+      {
+        "tipo": "Estructural",
+        "peligro": "Galpón deteriorado por cerca de 19 años de uso.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Revisión referida por un ingeniero.",
+        "accion": "Diagnóstico y reparación antes del ingreso."
+      },
+      {
+        "tipo": "Animal",
+        "peligro": "Picotazos, arañazos, escape o manipulación de aves.",
+        "aplica": true,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "Experiencia de manejo.",
+        "accion": "Técnica segura y elementos de contención."
+      },
+      {
+        "tipo": "Biomecánico",
+        "peligro": "Carga de bultos, agua, equipos y posturas repetitivas.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No reportados.",
+        "accion": "Ayudas de carga, límites y pausas."
+      },
+      {
+        "tipo": "Químico",
+        "peligro": "Desinfectantes, medicamentos y calcio.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No reportados.",
+        "accion": "Fichas, dosis, guantes y almacenamiento."
+      },
+      {
+        "tipo": "Respiratorio",
+        "peligro": "Polvo de alimento, plumas, gallinaza y limpieza.",
+        "aplica": true,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "No reportados.",
+        "accion": "Ventilación, limpieza húmeda segura y respirador según evaluación."
+      },
+      {
+        "tipo": "Sanitario",
+        "peligro": "Huevos contaminados por barro, agua, equipos o manejo..",
+        "aplica": true,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "Calidad histórica percibida.",
+        "accion": "Clasificación, higiene, almacenamiento y lote."
+      },
+      {
+        "tipo": "Eléctrico",
+        "peligro": "Instalaciones, iluminación o equipos en ambiente húmedo.",
+        "aplica": false,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "No se informó uso eléctrico.",
+        "accion": "Verificar instalación antes de operar."
+      },
+      {
+        "tipo": "Climático",
+        "peligro": "Lluvia, humedad y enfriamiento del galpón.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Cubierta plástica.",
+        "accion": "Cubierta fija segura, drenaje y contingencia."
+      },
+      {
+        "tipo": "Emergencias",
+        "peligro": "Ausencia no confirmada de botiquín, extintor y protocolo.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "No reportados.",
+        "accion": "Dotación, contactos y respuesta básica."
+      },
+      {
+        "tipo": "Comercial / transporte",
+        "peligro": "Ruptura, suciedad o pérdida de huevos durante entrega.",
+        "aplica": true,
+        "nivel_riesgo": "Baja",
+        "controles_actuales": "Venta directa histórica.",
+        "accion": "Cubeta segura, ruta y registro."
+      },
+      {
+        "tipo": "Conclusión",
+        "peligro": "La productora indicó no haber presentado riesgos, pero la matriz técnica identifica peligros propios de la actividad.",
+        "aplica": true,
+        "nivel_riesgo": "Media",
+        "controles_actuales": "Experiencia y cobertura con plástico.",
+        "accion": "Validar en visita y asignar controles."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F12C": {
+    "plan_acciones_sst_multiples_filas": [
+      {
+        "accion_preventiva": "Inspeccionar galpón, piso, cubierta, bebederos, comederos y cerramientos",
+        "riesgo": "Locativo, estructural y animal",
+        "responsable": "María / apoyo técnico",
+        "frecuencia": "Antes del reinicio y semanal",
+        "evidencia": "Checklist/acta"
+      },
+      {
+        "accion_preventiva": "Cumplir vacío, limpieza y desinfección con productos y dosis definidos",
+        "riesgo": "Biológico / químico",
+        "responsable": "Responsable sanitaria",
+        "frecuencia": "Durante cierre / por ciclo",
+        "evidencia": "Protocolo/registro"
+      },
+      {
+        "accion_preventiva": "Usar botas, guantes, ropa de trabajo y protección respiratoria según tarea",
+        "riesgo": "Biológico, químico y locativo",
+        "responsable": "Responsable de tarea",
+        "frecuencia": "Cada jornada",
+        "evidencia": "Registro/foto"
+      },
+      {
+        "accion_preventiva": "Controlar ingreso de aves, personas, equipos y alimento",
+        "riesgo": "Bioseguridad",
+        "responsable": "María / hija",
+        "frecuencia": "Cada ingreso",
+        "evidencia": "Bitácora"
+      },
+      {
+        "accion_preventiva": "Registrar alimento, agua, sanidad, postura, mortalidad y descarte",
+        "riesgo": "Productivo / sanitario",
+        "responsable": "María",
+        "frecuencia": "Diaria / semanal",
+        "evidencia": "Planilla"
+      },
+      {
+        "accion_preventiva": "Reducir carga manual de bultos y definir almacenamiento seguro",
+        "riesgo": "Biomecánico",
+        "responsable": "Familia",
+        "frecuencia": "Cada compra",
+        "evidencia": "Checklist"
+      },
+      {
+        "accion_preventiva": "Mantener botiquín, extintor, contactos y respuesta ante enfermedad",
+        "riesgo": "Emergencias",
+        "responsable": "Familia",
+        "frecuencia": "Revisión mensual",
+        "evidencia": "Inventario"
+      },
+      {
+        "accion_preventiva": "Recolectar gallinaza con control de humedad, vectores y destino",
+        "riesgo": "Ambiental/biológico",
+        "responsable": "Responsable ambiental",
+        "frecuencia": "Según generación",
+        "evidencia": "Bitácora"
+      },
+      {
+        "accion_preventiva": "Registrar incidentes, enfermedad, roturas, devoluciones y correcciones",
+        "riesgo": "Gestión integral",
+        "responsable": "María",
+        "frecuencia": "Cuando ocurra",
+        "evidencia": "Formato"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F13": {
+    "canales_venta_multiples_filas": [
+      {
+        "canal": "Venta directa",
+        "activo": true,
+        "descripcion": "Compradores que acudían por huevos; canal histórico",
+        "responsable": "María",
+        "frecuencia": "Históricamente semanal"
+      },
+      {
+        "canal": "WhatsApp",
+        "activo": false,
+        "descripcion": "No reportado",
+        "responsable": "Por definir",
+        "frecuencia": "Implementación futura"
+      },
+      {
+        "canal": "Voz a voz",
+        "activo": true,
+        "descripcion": "Comunidad y compradores conocidos",
+        "responsable": "María / hija",
+        "frecuencia": "Informal"
+      },
+      {
+        "canal": "Colegio/institucional",
+        "activo": true,
+        "descripcion": "Colegio mencionado como Campes/Jaime Garza; nombre pendiente",
+        "responsable": "María",
+        "frecuencia": "Histórica"
+      },
+      {
+        "canal": "Procanzo",
+        "activo": false,
+        "descripcion": "Canal mencionado como posibilidad; pendiente de validar",
+        "responsable": "Por definir",
+        "frecuencia": "Futura"
+      },
+      {
+        "canal": "Bogotá",
+        "activo": false,
+        "descripcion": "Mercado potencial sin comprador identificado",
+        "responsable": "Por definir",
+        "frecuencia": "Por pedido"
+      },
+      {
+        "canal": "Tienda o distribuidor",
+        "activo": false,
+        "descripcion": "No implementado",
+        "responsable": "Por definir",
+        "frecuencia": "Etapa futura"
+      },
+      {
+        "canal": "Feria/redes/QR",
+        "activo": false,
+        "descripcion": "No reportados",
+        "responsable": "Por definir",
+        "frecuencia": "Después del reinicio"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F14": {
+    "estrategia_precios_multiples_filas": [
+      {
+        "servicio": "Cubeta de huevo / histórico",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "$12.000 por cubeta en la época referida. La productora indicó que actualmente vale más, sin cifra.",
+        "logistica_plataforma": "Venta directa; costo no informado.",
+        "precio_final": 12000,
+        "justificacion": "No usar como precio actual sin actualizar costo y mercado."
+      },
+      {
+        "servicio": "Cubeta de huevo / reinicio",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Sin referencia.",
+        "logistica_plataforma": "Colegio, comunidad, Procanzo o Bogotá por validar.",
+        "precio_final": null,
+        "justificacion": "Definir después de varios lotes registrados."
+      },
+      {
+        "servicio": "Gallinaza",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Sin precio; uso interno.",
+        "logistica_plataforma": "Aplicación en plantas. cebolla y potrero.",
+        "precio_final": null,
+        "justificacion": "Valorar ahorro o beneficio sin inventar ingreso."
+      },
+      {
+        "servicio": "Reactivación / aves",
+        "costo_unitario": null,
+        "margen": null,
+        "precio_minimo": null,
+        "referencia": "Sin referencia.",
+        "logistica_plataforma": "Depende de apoyo o compra propia.",
+        "precio_final": null,
+        "justificacion": "No reiniciar sin presupuesto, cierre sanitario y mercado."
+      }
+    ],
+    "recomendacion_costeo_registro_unico": null,
+    "observaciones_o_comentarios": "Observación financiera: Para 10 a 12 gallinas se reportó un bulto mensual de alimento ponedora o maíz, con un precio aparente actual de $110.000 y compras históricas de hasta $130.000; medicamentos o plantas por aproximadamente $20.000, sin frecuencia definida; y calcio a $8.000 por frasco en una época anterior. Faltan aves, reparación, bebederos, comederos, piso, desinfección, cubetas, agua, mano de obra, mortalidad y transporte. Los valores históricos no permiten calcular utilidad ni precio mínimo actual."
+  },
+  "PMAPC_F15": {
+    "proyeccion_ventas_multiples_filas": [
+      {
+        "concepto_servicio": "Producción actual",
+        "cantidad_mensual": "0 cubetas verificadas",
+        "precio": null,
+        "ingreso_mensual": 0,
+        "forma_pago": "No aplica",
+        "canal": "Unidad inactiva"
+      },
+      {
+        "concepto_servicio": "Escenario histórico mensual",
+        "cantidad_mensual": "12 cubetas al mes con 12 gallinas, según una respuesta",
+        "precio": 12000,
+        "ingreso_mensual": 144000,
+        "forma_pago": "Efectivo",
+        "canal": "Venta directa / colegio"
+      },
+      {
+        "concepto_servicio": "Escenario histórico semanal",
+        "cantidad_mensual": "6-7 cubetas por semana, según otra respuesta",
+        "precio": 12000,
+        "ingreso_mensual": null,
+        "forma_pago": "Efectivo",
+        "canal": "Compradores históricos"
+      },
+      {
+        "concepto_servicio": "Precio actual",
+        "cantidad_mensual": "Cantidad no determinada",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Por definir",
+        "canal": "Mercado por validar"
+      },
+      {
+        "concepto_servicio": "Proyección futura",
+        "cantidad_mensual": "Hasta 50 gallinas como meta; producción no calculada",
+        "precio": null,
+        "ingreso_mensual": null,
+        "forma_pago": "Según acuerdo",
+        "canal": "Colegio, comunidad, Procanzo o Bogotá"
+      }
+    ],
+    "inconsistencia_verificar_registro_unico": null,
+    "observaciones_o_comentarios": "Proyección responsable: Los $144.000 mensuales y $72.000-$84.000 semanales son multiplicaciones ilustrativas de datos históricos y no constituyen ventas certificadas ni utilidad. Los dos reportes de producción son contradictorios y podrían corresponder a épocas o tamaños de lote diferentes. Deben verificarse número de gallinas, huevos por cubeta, postura diaria, pérdidas, semanas activas, precio y costos completos antes de proyectar el reinicio."
+  },
+  "PMAPC_F15A": {
+    "estrategia_fidelizacion_multiples_filas": [
+      {
+        "cliente": "Comprador histórico del colegio",
+        "estrategia": "Confirmar nombre, contacto, interés, cantidad, precio y condiciones de reinicio.",
+        "medio": "Llamada/visita",
+        "frecuencia": "Antes de poblar",
+        "responsable": "María"
+      },
+      {
+        "cliente": "Comprador local",
+        "estrategia": "Avisar disponibilidad solo cuando exista lote conforme y registrar pedido y pago.",
+        "medio": "Voz a voz/teléfono",
+        "frecuencia": "Cada venta",
+        "responsable": "María / hija"
+      },
+      {
+        "cliente": "Procanzo",
+        "estrategia": "Verificar actor, requisitos, volumen, precio, transporte y pago.",
+        "medio": "Reunión/ficha",
+        "frecuencia": "Después de validar producción",
+        "responsable": "Responsable comercial"
+      },
+      {
+        "cliente": "Comprador en Bogotá",
+        "estrategia": "Calcular transporte, rotura y margen antes de ofrecer.",
+        "medio": "Teléfono/muestra",
+        "frecuencia": "Piloto",
+        "responsable": "Responsable comercial"
+      },
+      {
+        "cliente": "Cliente institucional",
+        "estrategia": "Entregar ficha, capacidad, sanidad, presentación y calendario real.",
+        "medio": "Acuerdo básico",
+        "frecuencia": "Por ciclo",
+        "responsable": "Maria"
+      },
+      {
+        "cliente": "Reclamo o devolución",
+        "estrategia": "Registrar fecha, lote, rotura, limpieza, causa, respuesta y corrección.",
+        "medio": "Teléfono/formato",
+        "frecuencia": "Cuando ocurra",
+        "responsable": "Responsable de calidad"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15B": {
+    "logistica_ultima_milla_multiples_filas": [
+      {
+        "servicio_insumo": "Huevos a comprador local",
+        "canal": "Venta directa",
+        "tiempo": "Semanal histórica",
+        "transporte_operacion": "Medio y distancia pendientes",
+        "condicion_calidad": "Limpios, íntegros, identificados y protegidos",
+        "capacidad": "No determinada",
+        "costo": "Por calcular",
+        "responsable": "María / hija"
+      },
+      {
+        "servicio_insumo": "Huevos al colegio",
+        "canal": "Institucional histórico",
+        "tiempo": "Según acuerdo",
+        "transporte_operacion": "Ruta pendiente",
+        "condicion_calidad": "constantes",
+        "capacidad": "Cantidad y cumplimiento por validar",
+        "costo": "Por calcular",
+        "responsable": "María"
+      },
+      {
+        "servicio_insumo": "Huevos a Procanzo",
+        "canal": "Canal potencial",
+        "tiempo": "Por pedido",
+        "transporte_operacion": "Medio por definir",
+        "condicion_calidad": "Requisitos y presentación por verificar",
+        "capacidad": "Por negociar",
+        "costo": "Por calcular",
+        "responsable": "Responsable comercial"
+      },
+      {
+        "servicio_insumo": "Huevos a Bogotá",
+        "canal": "Comprador potencial",
+        "tiempo": "Por pedido",
+        "transporte_operacion": "Vehículo y embalaje por definir",
+        "condicion_calidad": "Control de rotura, temperatura y limpieza",
+        "capacidad": "Piloto pequeño",
+        "costo": "Por calcular",
+        "responsable": "Responsable comercial"
+      },
+      {
+        "servicio_insumo": "Compra de insumos",
+        "canal": "Proveedor a unidad",
+        "tiempo": "Mensual/según inventario",
+        "transporte_operacion": "Desde Bogotá en ocasiones; medio pendiente",
+        "condicion_calidad": "Fecha, lote y almacenamiento",
+        "capacidad": "Según presupuesto",
+        "costo": "Pendiente",
+        "responsable": "Responsable de compras"
+      },
+      {
+        "servicio_insumo": "Conclusión",
+        "canal": "No existe logistica activa ni capacidad validada.",
+        "tiempo": "Pendiente de estandarizar",
+        "transporte_operacion": "Rutas y medios por medir",
+        "condicion_calidad": "No entregar producto sucio, roto o sin identificación",
+        "capacidad": "Definir tras reinicio",
+        "costo": "No calculado",
+        "responsable": "Familia productora"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F15C": {
+    "trazabilidad_qr_multiples_filas": [
+      {
+        "elemento": "Identificación",
+        "informacion": "Nombre de unidad, productora, hija, predio, vereda, contacto y condición jurídica.",
+        "responsable": "María",
+        "medio": "Ficha maestra",
+        "frecuencia": "Cuando cambie",
+        "evidencia": "Documentos"
+      },
+      {
+        "elemento": "Insumos",
+        "informacion": "Proveedor, lote, fecha, cantidad, costo y saldo de aves, alimento, calcio, medicinas, limpieza y cubetas.",
+        "responsable": "Responsable de compras",
+        "medio": "Inventario",
+        "frecuencia": "Cada compra / uso",
+        "evidencia": "Factura/ficha"
+      },
+      {
+        "elemento": "Lote de aves",
+        "informacion": "Origen, número, edad, tipo, ingreso, sanidad, mortalidad y salida.",
+        "responsable": "Responsable productiva",
+        "medio": "Ficha de lote",
+        "frecuencia": "Cada ciclo",
+        "evidencia": "Registro"
+      },
+      {
+        "elemento": "Producción",
+        "informacion": "Fecha, huevos recogidos, conformes, rotos, sucios, cubetas y responsable.",
+        "responsable": "María / hija",
+        "medio": "Planilla",
+        "frecuencia": "Diaria",
+        "evidencia": "Registro"
+      },
+      {
+        "elemento": "Calidad y limpieza",
+        "informacion": "Agua, galpón, equipos, alimento, desinfección, plagas y observaciones.",
+        "responsable": "Responsable de calidad",
+        "medio": "Checklist",
+        "frecuencia": "Diaria / semanal",
+        "evidencia": "Planilla/fotos"
+      },
+      {
+        "elemento": "Venta",
+        "informacion": "Cliente, cubetas, unidades, precio, pago, fecha, canal, devolución y saldo.",
+        "responsable": "Maria",
+        "medio": "Cuaderno/archivo",
+        "frecuencia": "Cada venta",
+        "evidencia": "Comprobante"
+      },
+      {
+        "elemento": "Residuos",
+        "informacion": "Gallinaza, agua de lavado, empaques, mortalidad y destino.",
+        "responsable": "Responsable ambiental",
+        "medio": "Bitácora",
+        "frecuencia": "Según generación",
+        "evidencia": "Medición/fotos"
+      },
+      {
+        "elemento": "QR gradual",
+        "informacion": "Origen, historia, fecha, lote, conservación, contacto y prácticas verificadas.",
+        "responsable": "María / apoyo",
+        "medio": "Código QR",
+        "frecuencia": "Cuando existan datos confiables",
+        "evidencia": "Etiqueta"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F16": {
+    "inversion_requerida_multiples_filas": [
+      {
+        "tipo": "Equipos existentes",
+        "descripcion": "Galpón, comederos, bebederos y cubierta plástica",
+        "valor_unitario": null,
+        "cantidad": "Inventario pendiente",
+        "total": null,
+        "requisito": "Estado, propiedad y capacidad",
+        "fuente": "Propio/apoyo previo"
+      },
+      {
+        "tipo": "Reparación de galpón",
+        "descripcion": "Estructura, cubierta, cerramiento, ventilación y seguridad",
+        "valor_unitario": null,
+        "cantidad": "Una adecuación",
+        "total": null,
+        "requisito": "Diagnóstico y diseño",
+        "fuente": "Apoyo solicitado / propio"
+      },
+      {
+        "tipo": "Piso y drenaje",
+        "descripcion": "Solución seca, limpiable y técnicamente apropiada",
+        "valor_unitario": null,
+        "cantidad": "Según área",
+        "total": null,
+        "requisito": "Pendiente, manejo de humedad y efluente",
+        "fuente": "Por definir"
+      },
+      {
+        "tipo": "Bebederos y comederos",
+        "descripcion": "Reposición o reparación según inventario",
+        "valor_unitario": null,
+        "cantidad": "Según número de aves",
+        "total": null,
+        "requisito": "Capacidadlimpieza , y reducción de desperdicio",
+        "fuente": "Apoyo prometido / propio"
+      },
+      {
+        "tipo": "Gallinas",
+        "descripcion": "Lote sano para reinicio gradual",
+        "valor_unitario": null,
+        "cantidad": "Cantidad inicial por definir",
+        "total": null,
+        "requisito": "Origen, edad, sanidad y capacidad",
+        "fuente": "Proyecto/compra propia"
+      },
+      {
+        "tipo": "Bioseguridad y limpieza",
+        "descripcion": "Desinfectantes, pediluvio, control de plagas y herramientas",
+        "valor_unitario": null,
+        "cantidad": "Según protocolo",
+        "total": null,
+        "requisito": "Fichas, dosis y cierre sanitario",
+        "fuente": "Prioridad preventiva"
+      },
+      {
+        "tipo": "SST y almacenamiento",
+        "descripcion": "EPP, botiquín, extintor, estantes y recipientes",
+        "valor_unitario": null,
+        "cantidad": "Según evaluación",
+        "total": null,
+        "requisito": "Adecuados al riesgo",
+        "fuente": "Por definir"
+      },
+      {
+        "tipo": "Cubetas y registros",
+        "descripcion": "Empaque limpio, formatos y posible identificación",
+        "valor_unitario": null,
+        "cantidad": "Según producción",
+        "total": null,
+        "requisito": "Tamaño, material y trazabilidad",
+        "fuente": "Propio / apoyo"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F17": {
+    "costos_multiples_filas": [
+      {
+        "tipo": "Alimento ponedora",
+        "descripcion": "Un bulto para 10-12 gallinas",
+        "valor_mensual_ciclo": 110000,
+        "observaciones": "Precio variable; peso del bulto y marca pendientes."
+      },
+      {
+        "tipo": "Maíz",
+        "descripcion": "Un bulto mensual como alternativa referida",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Definir si sustituye o complementa el alimento."
+      },
+      {
+        "tipo": "Medicinas o plantas",
+        "descripcion": "Prevención o manejo ocasional",
+        "valor_mensual_ciclo": 20000,
+        "observaciones": "Producto, dosis, frecuencia y retiro pendientes."
+      },
+      {
+        "tipo": "Calcio",
+        "descripcion": "Un frasco",
+        "valor_mensual_ciclo": 8000,
+        "observaciones": "Presentación, frecuencia y precio actual pendientes."
+      },
+      {
+        "tipo": "Agua",
+        "descripcion": "Acueducto para bebida y lavado",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Medir consumo y costo asociado."
+      },
+      {
+        "tipo": "Gallinas",
+        "descripcion": "Compra o reposición del lote",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Origen, edad y cantidad por definir."
+      },
+      {
+        "tipo": "Galpón",
+        "descripcion": "Reparación, saneamiento, piso y drenaje",
+        "valor_mensual_ciclo": null,
+        "observaciones": "No reiniciar antes de cierre técnico."
+      },
+      {
+        "tipo": "Equipos",
+        "descripcion": "Bebederos, comederos, recipientes y herramientas",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Inventariar y verificar apoyo prometido."
+      },
+      {
+        "tipo": "Empaque",
+        "descripcion": "Cubetas y material de identificación",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Cantidad y costo por producción."
+      },
+      {
+        "tipo": "Mano de obra",
+        "descripcion": "María y una hija",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Registrar horas de alimentación, limpieza, recolección y venta."
+      },
+      {
+        "tipo": "Sanidad, SST y transporte",
+        "descripcion": "Bioseguridad, EPP, controles y rutas",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Incluir antes de calcular precio."
+      },
+      {
+        "tipo": "Costo conocido parcial",
+        "descripcion": "No consolidable por datos históricos y faltantes",
+        "valor_mensual_ciclo": null,
+        "observaciones": "Construir costo por gallina, huevo, cubeta y mes."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F18": {
+    "flujo_caja_mensual_12_filas_meses": [
+      {
+        "mes": "Mes 1",
+        "ingresos": 0,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Documentar inicio del vacío."
+      },
+      {
+        "mes": "Mes 2",
+        "ingresos": 0,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Verificar avance."
+      },
+      {
+        "mes": "Mes 3",
+        "ingresos": 0,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Preparar reinicio."
+      },
+      {
+        "mes": "Mes 4",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "No poblar sin autorización."
+      },
+      {
+        "mes": "Mes 5",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Medir postura y mortalidad."
+      },
+      {
+        "mes": "Mes 6",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Calcular costo por cubeta."
+      },
+      {
+        "mes": "Mes 7",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Revisar bienestar y densidad."
+      },
+      {
+        "mes": "Mes 8",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "No ampliar sin demanda."
+      },
+      {
+        "mes": "Mes 9",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Actualizar proveedores."
+      },
+      {
+        "mes": "Mes 10",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Revisar margen neto."
+      },
+      {
+        "mes": "Mes 11",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Preparar cierre anual."
+      },
+      {
+        "mes": "Mes 12",
+        "ingresos": null,
+        "gastos_operativos": null,
+        "gastos_comerciales": null,
+        "gastos_ambientales": null,
+        "balance": null,
+        "observaciones": "Consolidar aves, huevos, ventas e impactos."
+      }
+    ],
+    "registro_minimo_requerido_registro_unico": null,
+    "observaciones_o_comentarios": "Registro mínimo: El flujo de caja actual debe iniciar en cero mientras la unidad permanezca sin producción. Para cada mes deben registrarse gallinas iniciales y finales, postura, huevos conformes, cubetas, mortalidad, alimento, calcio, sanidad, agua, limpieza, mano de obra, reparación, empaque, transporte, ventas, pagos, devoluciones, gallinaza y saldo. Los datos históricos no sustituyen registros del nuevo ciclo."
+  },
+  "PMAPC_F19": {
+    "indicadores_huella_multiples_filas": [
+      {
+        "variable": "Agua de acueducto",
+        "estado": "Disponible todo el año para bebida y limpieza.",
+        "cantidad": "No medida",
+        "impacto_1_a_5": 3,
+        "accion": "Medir consumo y calidad."
+      },
+      {
+        "variable": "Alimento",
+        "estado": "Un bulto mensual referido para 10-12 aves.",
+        "cantidad": "Peso pendiente",
+        "impacto_1_a_5": 4,
+        "accion": "Registrar kg, desperdicio y postura."
+      },
+      {
+        "variable": "Medicinas/calcio",
+        "estado": "Uso ocasional, con datos históricos.",
+        "cantidad": "No determinado",
+        "impacto_1_a_5": 3,
+        "accion": "Fichas, dosis y envases."
+      },
+      {
+        "variable": "Aves y huevos",
+        "estado": "No hay producción actual; máximo histórico 50 aves.",
+        "cantidad": "Inventario actual pendiente",
+        "impacto_1_a_5": 3,
+        "accion": "Balance por ciclo y cubeta."
+      },
+      {
+        "variable": "Gallinaza",
+        "estado": "Aprovechada en plantas, cebolla y potrero.",
+        "cantidad": "No medida",
+        "impacto_1_a_5": 4,
+        "accion": "Medir, almacenar y dosificar."
+      },
+      {
+        "variable": "Agua de lavado",
+        "estado": "Se usa para limpiar bebederos; destino no informado.",
+        "cantidad": "No medida",
+        "impacto_1_a_5": 4,
+        "accion": "Caracterizar y evitar descarga contaminante."
+      },
+      {
+        "variable": "Materiales/plástico",
+        "estado": "Cubierta plástica y posibles empaques de insumos.",
+        "cantidad": "No determinado",
+        "impacto_1_a_5": 3,
+        "accion": "Inventariar, reutilizar con seguridad y separar."
+      },
+      {
+        "variable": "Transporte",
+        "estado": "Alimento enviado desde Bogotá en ocasiones; ventas por rutas no descritas.",
+        "cantidad": "km y medio pendientes",
+        "impacto_1_a_5": 3,
+        "accion": "Medir rutas y costo por cubeta."
+      },
+      {
+        "variable": "Suelo y vegetación",
+        "estado": "Piso en tierra con barro; interés en sembrar plantas.",
+        "cantidad": "Área pendiente",
+        "impacto_1_a_5": 5,
+        "accion": "Resolver drenaje y fortalecer cobertura fuera del galpón."
+      }
+    ],
+    "seguimiento_huella_multiples_filas": [
+      {
+        "indicador": "Consumo de agua",
+        "que_se_mide": "Litros para aves y limpieza.",
+        "dato_inicial": "No medido.",
+        "meta": "Construir línea base.",
+        "frecuencia": "Diaria / semanal",
+        "responsable": "Responsable ambiental",
+        "evidencia": "Planilla"
+      },
+      {
+        "indicador": "Consumo de alimento",
+        "que_se_mide": "kg ofrecidos, sobrantes y aves.",
+        "dato_inicial": "Un bulto/mes referido.",
+        "meta": "Registrar 100%.",
+        "frecuencia": "Diaria/mensual",
+        "responsable": "María",
+        "evidencia": "Inventario"
+      },
+      {
+        "indicador": "Postura",
+        "que_se_mide": "Huevos por día y por gallina.",
+        "dato_inicial": "Sin dato actual.",
+        "meta": "Registrar 100% de días productivos.",
+        "frecuencia": "Diaria",
+        "responsable": "María / hija",
+        "evidencia": "Planilla"
+      },
+      {
+        "indicador": "Rendimiento comercial",
+        "que_se_mide": "Huevos conformes, cubetas y pérdidas.",
+        "dato_inicial": "12/mes y 6-7/semana históricos contradictorios.",
+        "meta": "Construir línea base nueva.",
+        "frecuencia": "Diaria / semanal",
+        "responsable": "Responsable de calidad",
+        "evidencia": "Ficha"
+      },
+      {
+        "indicador": "Gallinaza",
+        "que_se_mide": "kg generados y destino.",
+        "dato_inicial": "No medida.",
+        "meta": "Trazar 100%.",
+        "frecuencia": "Semanal/mensual",
+        "responsable": "Responsable ambiental",
+        "evidencia": "Bitácora"
+      },
+      {
+        "indicador": "Agua de lavado",
+        "que_se_mide": "Litros, productos y destino.",
+        "dato_inicial": "No medido.",
+        "meta": "Controlar 100%.",
+        "frecuencia": "Cada limpieza",
+        "responsable": "Responsable de limpieza",
+        "evidencia": "Registro"
+      },
+      {
+        "indicador": "Empaques",
+        "que_se_mide": "Cubetas y sacos adquiridos, reutilizados o descartados.",
+        "dato_inicial": "No medido.",
+        "meta": "Separar 100%.",
+        "frecuencia": "Mensual",
+        "responsable": "Responsable de compras",
+        "evidencia": "Inventario"
+      },
+      {
+        "indicador": "Suelo / plantas",
+        "que_se_mide": "Barro, drenaje, cobertura y siembra.",
+        "dato_inicial": "Piso en tierra; siembra deseada.",
+        "meta": "Eliminar encharcamiento del galpón.",
+        "frecuencia": "Mensual/lluvia",
+        "responsable": "Familia",
+        "evidencia": "Fotos/planilla"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F20": {
+    "economia_circular_residuos_multiples_filas": [
+      {
+        "residuo_recurso": "Gallinaza",
+        "cantidad": "No medida",
+        "manejo_actual": "Se recoge para plantas, cebolla y potrero.",
+        "accion_circular": "Medir, cubrir y aplicar según necesidad del suelo.",
+        "destino": "Finca",
+        "responsable": "Responsable ambiental"
+      },
+      {
+        "residuo_recurso": "Agua de lavado",
+        "cantidad": "No medida",
+        "manejo_actual": "Destino no informado.",
+        "accion_circular": "Reducir consumo, separar sólidos y definir manejo seguro.",
+        "destino": "Sistema por definir",
+        "responsable": "Responsable de limpieza"
+      },
+      {
+        "residuo_recurso": "Sacos de alimento",
+        "cantidad": "Un bulto mensual referido",
+        "manejo_actual": "Manejo no descrito.",
+        "accion_circular": "Separar, almacenar secos y entregar a aprovechamiento si aplica.",
+        "destino": "Reúso / gestor",
+        "responsable": "Responsable de compras"
+      },
+      {
+        "residuo_recurso": "Envases de medicina/calcio",
+        "cantidad": "No determinada",
+        "manejo_actual": "Manejo no descrito.",
+        "accion_circular": "No reutilizar para alimentos; seguir ficha y gestor aplicable.",
+        "destino": "Sistema por definir",
+        "responsable": "Responsable sanitaria"
+      },
+      {
+        "residuo_recurso": "Cubetas",
+        "cantidad": "No determinada",
+        "manejo_actual": "Presentación histórica.",
+        "accion_circular": "Conservar limpias, reducir rotura y evaluar retorno seguro.",
+        "destino": "Reúso/ reciclaje",
+        "responsable": "Responsable comercial"
+      },
+      {
+        "residuo_recurso": "Huevos rotos o no conformes",
+        "cantidad": "No informada",
+        "manejo_actual": "No descrito.",
+        "accion_circular": "Registrar causa y definir destino sanitario.",
+        "destino": "Pendiente",
+        "responsable": "Responsable de calidad"
+      },
+      {
+        "residuo_recurso": "Mortalidad de aves",
+        "cantidad": "No informada",
+        "manejo_actual": "No descrito.",
+        "accion_circular": "Implementar protocolo sanitario y registro; no disponer sin orientación.",
+        "destino": "Gestión autorizada",
+        "responsable": "Responsable sanitaria"
+      }
+    ],
+    "conclusion_registro_unico": {
+      "resumen": "No existe balance de residuos. La gallinaza tiene uso interno, pero faltan controles para los demás flujos.",
+      "accion": "Implementar medición, almacenamiento y trazabilidad.",
+      "area": "Gestión integral",
+      "responsable": "Familia productora"
+    },
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F21": {
+    "evaluacion_ambiental_regenerativa_multiples_filas": [
+      {
+        "factor": "Agua",
+        "indicador": "Disponibilidad y control",
+        "descripcion": "Acueducto, bebida y limpieza.",
+        "estado": "Disponibilidad alta; consumo y calidad sin medir.",
+        "calificacion_1_a_5": 3,
+        "accion": "Medir y analizar.",
+        "evidencia": "Planilla/resultado"
+      },
+      {
+        "factor": "Proceso",
+        "indicador": "Capacidad y repetibilidad",
+        "descripcion": "Saneamiento, manejo y postura.",
+        "estado": "Unidad inactiva; proceso no documentado.",
+        "calificacion_1_a_5": 1,
+        "accion": "Crear protocolo y ficha.",
+        "evidencia": "Registro"
+      },
+      {
+        "factor": "Insumos",
+        "indicador": "Trazabilidad",
+        "descripcion": "Aves, alimento, calcio, sanidad y cubetas.",
+        "estado": "Costos parciales y proveedores pendientes.",
+        "calificacion_1_a_5": 2,
+        "accion": "Inventario, facturas y fichas.",
+        "evidencia": "Archivo"
+      },
+      {
+        "factor": "Residuos",
+        "indicador": "Aprovechamiento y destino",
+        "descripcion": "Gallinaza, agua, envases y mortalidad.",
+        "estado": "Gallinaza aprovechada; otros flujos sin control.",
+        "calificacion_1_a_5": 3,
+        "accion": "Medir y gestionar.",
+        "evidencia": "Bitácora"
+      },
+      {
+        "factor": "Empaque",
+        "indicador": "Protección y formalización",
+        "descripcion": "Cubetas y posible identificación.",
+        "estado": "Tamaño, material y criterios pendientes.",
+        "calificacion_1_a_5": 1,
+        "accion": "Validar empaque y rotulado.",
+        "evidencia": "Muestra"
+      },
+      {
+        "factor": "Infraestructura",
+        "indicador": "Continuidad y bioseguridad",
+        "descripcion": "Galpón, piso, cubierta y equipos.",
+        "estado": "Deteriorado y en saneamiento.",
+        "calificacion_1_a_5": 1,
+        "accion": "Diagnóstico y reparación.",
+        "evidencia": "Informe"
+      },
+      {
+        "factor": "SST",
+        "indicador": "Prevención y ",
+        "descripcion": "Aves, barro, cargas, polvo químicos.",
+        "estado": "La productora no reporta riesgos; controles no documentados.",
+        "calificacion_1_a_5": 1,
+        "accion": "Plan, EPP y emergencias.",
+        "evidencia": "Checklist"
+      },
+      {
+        "factor": "Comercial",
+        "indicador": "Demanda y continuidad",
+        "descripcion": "Clientes históricos y canales potenciales.",
+        "estado": "Buena referencia histórica, sin ventas actuales.",
+        "calificacion_1_a_5": 3,
+        "accion": "Revalidar mercado.",
+        "evidencia": "Pedidos/contactos"
+      },
+      {
+        "factor": "Finanzas",
+        "indicador": "Costo y margen",
+        "descripcion": "Costos, precio, caja y rentabilidad.",
+        "estado": "Datos históricos e incompletos.",
+        "calificacion_1_a_5": 1,
+        "accion": "Matriz por cubeta y mes.",
+        "evidencia": "Formato"
+      },
+      {
+        "factor": "Organización",
+        "indicador": "Roles y personal",
+        "descripcion": "María y una hija.",
+        "estado": "Experiencia alta; roles no escritos.",
+        "calificacion_1_a_5": 3,
+        "accion": "Asignar funciones y horas.",
+        "evidencia": "Plan"
+      },
+      {
+        "factor": "Trazabilidad",
+        "indicador": "Control integral",
+        "descripcion": "Aves, insumos, huevos, venta y residuos.",
+        "estado": "Registros estructurados no reportados.",
+        "calificacion_1_a_5": 1,
+        "accion": "Implementar bitácora.",
+        "evidencia": "Planillas"
+      }
+    ],
+    "resultado_preliminar_registro_unico": "Resultado preliminar: Calificación técnica propuesta de 20 sobre 55 puntos, sujeta a visita y evidencias.",
+    "observaciones_o_comentarios": "Resultado preliminar: Calificación técnica propuesta de 20 sobre 55 puntos, sujeta a visita y evidencias. Las fortalezas principales son la trayectoria, la experiencia con hasta 50 aves, la facilidad histórica de venta, el agua disponible y el aprovechamiento de gallinaza. Las brechas críticas se concentran en la inactividad actual, el galpón deteriorado, el piso en tierra y la humedad, el cierre sanitario sin soporte, la falta de aves e inventario, los registros, la bioseguridad, el SST, el costeo y la validación comercial."
+  },
+  "PMAPC_F22": {
+    "plan_manejo_mitigacion_multiples_filas": [
+      {
+        "impacto": "Saneamiento",
+        "accion": "Completar vacío, limpieza, desinfección y verificación antes de ingresar aves.",
+        "prioridad": "Alta",
+        "plazo": "Durante los 4 meses referidos",
+        "responsable": "María/técnico",
+        "recursos": "Protocolo, productos y EPP",
+        "indicador": "% actividades cumplidas",
+        "evidencia": "Acta / registro"
+      },
+      {
+        "impacto": "Piso y humedad",
+        "accion": "Diseñar solución de piso, drenaje y cubierta que evite. barro.",
+        "prioridad": "Alta",
+        "plazo": "Antes del reinicio",
+        "responsable": "Familia / técnico",
+        "recursos": "Diseño y cotizaciones",
+        "indicador": "Días sin encharcamiento",
+        "evidencia": "Informe/fotos"
+      },
+      {
+        "impacto": "Gallinaza",
+        "accion": "Medir, almacenar cubierta y aplicar de forma controlada.",
+        "prioridad": "Alta",
+        "plazo": "Desde el primer lote",
+        "responsable": "Responsable ambiental",
+        "recursos": "Recipientes y bitácora",
+        "indicador": "% gallinaza trazada",
+        "evidencia": "Registro"
+      },
+      {
+        "impacto": "Agua",
+        "accion": "Medir bebida y lavado y verificar calidad.",
+        "prioridad": "Media-Alta",
+        "plazo": "0-2 meses",
+        "responsable": "Responsable ambiental",
+        "recursos": "Medición y análisis",
+        "indicador": "Litros/parámetros",
+        "evidencia": "Planilla/resultado"
+      },
+      {
+        "impacto": "Insumos",
+        "accion": "Registrar alimento, calcio, sanidad, empaque y desperdicio.",
+        "prioridad": "Alta",
+        "plazo": "Antes y durante el ciclo",
+        "responsable": "María",
+        "recursos": "Inventario y facturas",
+        "indicador": "% compras registradas",
+        "evidencia": "Archivo"
+      },
+      {
+        "impacto": "Empaques",
+        "accion": "Validar cubeta limpia, protección e identificación.",
+        "prioridad": "Media",
+        "plazo": "Antes de vender",
+        "responsable": "Responsable de calidad",
+        "recursos": "Muestras y cotizaciones",
+        "indicador": "% unidades conformes",
+        "evidencia": "Ficha/muestra"
+      },
+      {
+        "impacto": "Revegetación",
+        "accion": "Sembrar plantas en áreas apropiadas sin obstruir ventilación o drenaje.",
+        "prioridad": "Media",
+        "plazo": "Según asistencia",
+        "responsable": "Familia",
+        "recursos": "Material vegetal y concepto",
+        "indicador": "Plantas establecidas",
+        "evidencia": "Registro/fotos"
+      },
+      {
+        "impacto": "Escalamiento",
+        "accion": "Reiniciar con un lote gradual y no llegar a 50 aves sin capacidad, mercado y registros.",
+        "prioridad": "Alta",
+        "plazo": "Antes de invertir",
+        "responsable": "Familia / asesor",
+        "recursos": "Plan y presupuesto",
+        "indicador": "Decisión sustentada",
+        "evidencia": "Acta/concepto"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F22A": {
+    "adaptacion_cambio_climatico_multiples_filas": [
+      {
+        "aspecto": "Afectación reportada",
+        "situacion": "La lluvia convierte el piso en tierra en barro y la productora lo asocia con enfermedad de las gallinas.",
+        "riesgo": "Alto",
+        "accion_propuesta": "Piso, drenaje, cubierta y control de humedad."
+      },
+      {
+        "aspecto": "Frío",
+        "situacion": "No se describió afectación directa por bajas temperaturas.",
+        "riesgo": "Pendiente",
+        "accion_propuesta": "Medir condiciones del galpón y proteger sin reducir ventilación."
+      },
+      {
+        "aspecto": "Calor/verano",
+        "situacion": "No se reportó escasez de agua; el acueducto está disponible todo el año.",
+        "riesgo": "Medio",
+        "accion_propuesta": "Mantener agua limpia, sombra y ventilación."
+      },
+      {
+        "aspecto": "Lluvia y humedad",
+        "situacion": "Se usa plástico para cubrir el galpón.",
+        "riesgo": "Alto",
+        "accion_propuesta": "Reemplazar soluciones improvisadas por cubierta segura y drenaje."
+      },
+      {
+        "aspecto": "Suministros",
+        "situacion": "El alimento varía de precio y a veces se envía desde Bogotá.",
+        "riesgo": "Medio-Alto",
+        "accion_propuesta": "Inventario mínimo, proveedores y presupuesto."
+      },
+      {
+        "aspecto": "Conclusión",
+        "situacion": "La adaptación debe concentrarse en lluvia, humedad, piso seco, cubierta, ventilación, agua y abastecimiento.",
+        "riesgo": "Alto",
+        "accion_propuesta": "Cerrar estas brechas antes de poblar el galpón."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F23": {
+    "matriz_riesgos_integrales_multiples_filas": [
+      {
+        "tipo": "Productivo",
+        "riesgo": "Baja postura o pérdida de aves",
+        "causa": "Enfermedad, alimento, edad, estrés o manejo.",
+        "consecuencia": "Menor venta e ingreso.",
+        "nivel": "Alto",
+        "prevencion": "Plan sanitario, dieta, agua y registros.",
+        "respuesta": "Aislar, consultar y ajustar."
+      },
+      {
+        "tipo": "Sanitario",
+        "riesgo": "Reaparición de enfermedad",
+        "causa": "Ingreso antes de terminar saneamiento.",
+        "consecuencia": "Mortalidad y nuevo cierre.",
+        "nivel": "Alto",
+        "prevencion": "Vacío, desinfección y verificación.",
+        "respuesta": "Suspender ingreso y atender."
+      },
+      {
+        "tipo": "Suministro",
+        "riesgo": "Falta de alimento, calcio o sanidad",
+        "causa": "Precio, ruta, proveedor o caja.",
+        "consecuencia": "Menor bienestar y postura.",
+        "nivel": "Medio-Alto",
+        "prevencion": "Inventario mínimo y dos opciones.",
+        "respuesta": "Reprogramar y priorizar."
+      },
+      {
+        "tipo": "Financiero",
+        "riesgo": "Reinicio sin rentabilidad",
+        "causa": "Costos históricos e incompletos.",
+        "consecuencia": "Pérdida de capital.",
+        "nivel": "Alto",
+        "prevencion": "Presupuesto y costo por cubeta.",
+        "respuesta": "Reducir lote y recalcular."
+      },
+      {
+        "tipo": "Comercial",
+        "riesgo": "No recuperar compradores",
+        "causa": "Inactividad y mercado no revalidado.",
+        "consecuencia": "Huevos sin salida.",
+        "nivel": "Alto",
+        "prevencion": "Pedidos previos y reinicio gradual.",
+        "respuesta": "Reducir producción y activar contactos."
+      },
+      {
+        "tipo": "SST",
+        "riesgo": "Caída, carga o exposición biológica",
+        "causa": "Barro, bultos, polvo, gallinaza y químicos.",
+        "consecuencia": "Lesión o enfermedad.",
+        "nivel": "Alto",
+        "prevencion": "Piso seguro, EPP y técnica.",
+        "respuesta": "Primeros auxilios y reporte."
+      },
+      {
+        "tipo": "Ambiental",
+        "riesgo": "Exceso o mala aplicación de gallinaza",
+        "causa": "Sin medición ni almacenamiento.",
+        "consecuencia": "Olores, vectores o contaminación.",
+        "nivel": "Alto",
+        "prevencion": "Cubrir, medir y dosificar.",
+        "respuesta": "Contener y corregir destino."
+      },
+      {
+        "tipo": "Estructural",
+        "riesgo": "Falla del galpón",
+        "causa": "Deterioro por antigüedad.",
+        "consecuencia": "Lesión, escape o pérdida.",
+        "nivel": "Alto",
+        "prevencion": "Diagnóstico y reparación.",
+        "respuesta": "Evacuar y suspender uso."
+      },
+      {
+        "tipo": "Climático",
+        "riesgo": "Barro y humedad",
+        "causa": "Lluvia y piso en tierra.",
+        "consecuencia": "Enfermedad y dificultad de limpieza.",
+        "nivel": "Alto",
+        "prevencion": "Drenaje, cubierta y piso.",
+        "respuesta": "Retirar agua y reforzar controles."
+      },
+      {
+        "tipo": "Logístico",
+        "riesgo": "Rotura o retraso de huevos",
+        "causa": "Empaque, ruta y transporte no definidos.",
+        "consecuencia": "Pérdida o devolución.",
+        "nivel": "Medio",
+        "prevencion": "Cubeta segura y ruta.",
+        "respuesta": "Separar, registrar y reponer según acuerdo."
+      },
+      {
+        "tipo": "Gestión/apoyo",
+        "riesgo": "Esperar insumos o arreglos no entregados",
+        "causa": "Compromisos sin soporte ni cronograma.",
+        "consecuencia": "Retraso del reinicio.",
+        "nivel": "Medio-Alto",
+        "prevencion": "Solicitar respuesta formal y plan alterno.",
+        "respuesta": "Repriorizar inversión."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F24": {
+    "plan_accion_multiples_filas": [
+      {
+        "actividad": "Completar identidad, predio, coordenadas, hija, cronología e inventario.",
+        "componente": "Identidad/organización",
+        "responsable": "María/hija",
+        "tiempo": "0-1 mes",
+        "recursos": "Documentos y entrevista",
+        "resultado": "Ficha completa",
+        "evidencia": "Soportes"
+      },
+      {
+        "actividad": "Documentar vacío, limpieza, desinfección y cierre técnico del galpón.",
+        "componente": "Sanitario",
+        "responsable": "María / apoyo técnico",
+        "tiempo": "Durante 4 meses",
+        "recursos": "Protocolo y productos",
+        "resultado": "Saneamiento verificable",
+        "evidencia": "Acta / planilla"
+      },
+      {
+        "actividad": "Diagnosticar y cotizar estructura, piso, drenaje, cubierta, comederos y bebederos.",
+        "componente": "Infraestructura",
+        "responsable": "Técnico/familia",
+        "tiempo": "0-2 meses",
+        "recursos": "Visita y cotizaciones",
+        "resultado": "Plan de adecuación",
+        "evidencia": "Informe"
+      },
+      {
+        "actividad": "Construir presupuesto de aves, alimento, sanidad, empaque, trabajo y venta.",
+        "componente": "Financiero",
+        "responsable": "María / asesor",
+        "tiempo": "0-1 mes",
+        "recursos": "Facturas y cotizaciones",
+        "resultado": "Costo y capital definidos",
+        "evidencia": "Matriz"
+      },
+      {
+        "actividad": "Revalidar colegio, compradores locales y Procanzo antes de poblar.",
+        "componente": "Comercial",
+        "responsable": "María",
+        "tiempo": "0-2 meses",
+        "recursos": "Contactos y ficha",
+        "resultado": "Pedidos potenciales",
+        "evidencia": "Base/mensajes"
+      },
+      {
+        "actividad": "Implementar bioseguridad, SST, EPP, botiquín y respuesta a enfermedad.",
+        "componente": "SST/sanitario",
+        "responsable": "Familia / apoyo",
+        "tiempo": "Antes del reinicio",
+        "recursos": "EPP y checklist",
+        "resultado": "Trabajo más seguro",
+        "evidencia": "Registros"
+      },
+      {
+        "actividad": "Iniciar lote pequeño con origen, edad, sanidad y capacidad verificados.",
+        "componente": "Productivo",
+        "responsable": "María / técnico",
+        "tiempo": "Después del cierre",
+        "recursos": "Aves y ficha",
+        "resultado": "Reinicio controlado",
+        "evidencia": "Registro"
+      },
+      {
+        "actividad": "Medir alimento, agua, huevos, cubetas, mortalidad, gallinaza y costos.",
+        "componente": "Productivo / ambiental",
+        "responsable": "María / hija",
+        "tiempo": "Desde el primer día",
+        "recursos": "Formatos y balanza",
+        "resultado": "Línea base",
+        "evidencia": "Planillas"
+      },
+      {
+        "actividad": "Registrar cada cliente, venta, pago, rotura, devolución y satisfacción.",
+        "componente": "Comercial/calidad",
+        "responsable": "Maria",
+        "tiempo": "Cada venta",
+        "recursos": "Cuaderno/archivo",
+        "resultado": "Ventas trazables",
+        "evidencia": "Comprobantes"
+      },
+      {
+        "actividad": "Evaluar crecimiento hasta 50 aves solo después de varios meses conformes.",
+        "componente": "Gestión integral",
+        "responsable": "Familia / asesor",
+        "tiempo": "Después de 3-6 meses",
+        "recursos": "Indicadores y presupuesto",
+        "resultado": "Decisión sustentada",
+        "evidencia": "Acta/concepto"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F25": {
+    "indicadores_integrales_multiples_filas": [
+      {
+        "dimension": "Organización",
+        "indicador": "Roles, horas y calendario",
+        "meta": "100% de jornadas con responsable.",
+        "frecuencia": "Semanal/mensual",
+        "responsable": "María / hija",
+        "evidencia": "Calendario"
+      },
+      {
+        "dimension": "Aves",
+        "indicador": "Ingresos, salidas, edad, mortalidad y estado",
+        "meta": "Registrar 100% del lote.",
+        "frecuencia": "Diaria / ciclo",
+        "responsable": "Responsable productiva",
+        "evidencia": "Ficha"
+      },
+      {
+        "dimension": "Producción",
+        "indicador": "Huevos totales, conformes, rotos, sucios y cubetas",
+        "meta": "Registrar 100% de días.",
+        "frecuencia": "Diaria/semanal",
+        "responsable": "María / hija",
+        "evidencia": "Planilla"
+      },
+      {
+        "dimension": "Eficiencia",
+        "indicador": "Huevos por gallina y alimento por cubeta",
+        "meta": "Construir línea base y reducir variación.",
+        "frecuencia": "Semanal/mensual",
+        "responsable": "Responsable productiva",
+        "evidencia": "Cálculo"
+      },
+      {
+        "dimension": "Calidad",
+        "indicador": "Agua, higiene, integridad, empaque y almacenamiento",
+        "meta": "100% antes de venta.",
+        "frecuencia": "Diaria / venta",
+        "responsable": "Responsable de calidad",
+        "evidencia": "Checklist"
+      },
+      {
+        "dimension": "Ventas",
+        "indicador": "Cubetas, unidades, precio, ingreso, pago y saldo",
+        "meta": "Registrar 100% de ventas.",
+        "frecuencia": "Cada venta / mensual",
+        "responsable": "María",
+        "evidencia": "Comprobante"
+      },
+      {
+        "dimension": "Financiera",
+        "indicador": "Costo por gallina, huevo, cubeta y margen",
+        "meta": "Calcular y actualizar mensualmente.",
+        "frecuencia": "Mensual",
+        "responsable": "María / asesor",
+        "evidencia": "Matriz"
+      },
+      {
+        "dimension": "Cliente",
+        "indicador": "Interés, satisfacción, recompra y reclamos",
+        "meta": "Contactar y registrar compradores.",
+        "frecuencia": "Cada venta/ciclo",
+        "responsable": "Responsable comercial",
+        "evidencia": "Base"
+      },
+      {
+        "dimension": "Mercado",
+        "indicador": "Clientes activos, pedidos y canales",
+        "meta": "Validar demanda antes de ampliar.",
+        "frecuencia": "Mensual",
+        "responsable": "María",
+        "evidencia": "Reporte"
+      },
+      {
+        "dimension": "Ambiental",
+        "indicador": "Agua, gallinaza, efluente, sacos y envases",
+        "meta": "Trazar 100% de flujos.",
+        "frecuencia": "Semanal/mensual",
+        "responsable": "Responsable ambiental",
+        "evidencia": "Planilla"
+      },
+      {
+        "dimension": "SST/bioseguridad",
+        "indicador": "Inspecciones, EPP, ingresos, incidentes y acciones",
+        "meta": "100% de jornadas críticas controladas.",
+        "frecuencia": "Diaria / cuando ocurra",
+        "responsable": "Familia",
+        "evidencia": "Checklist"
+      },
+      {
+        "dimension": "Trazabilidad",
+        "indicador": "Insumos, aves, huevos, ventas y residuos",
+        "meta": "Trazar 100% de la producción.",
+        "frecuencia": "Diaria / ciclo",
+        "responsable": "María",
+        "evidencia": "Archivo"
+      }
+    ],
+    "observaciones_o_comentarios": null
+  },
+  "PMAPC_F26": {
+    "matriz_coherencia_sistemica_multiples_filas": [
+      {
+        "decision": "Completar saneamiento",
+        "efecto_productivo": "Reduce reingreso de enfermedad.",
+        "efecto_comercial": "Evita incumplir por pérdida de aves.",
+        "efecto_financiero": "Protege inversión del nuevo lote.",
+        "efecto_ambiental": "Mejora manejo de limpieza.",
+        "ajuste_necesario": "Cerrar con verificación técnica."
+      },
+      {
+        "decision": "Reparar piso y galpón",
+        "efecto_productivo": "Mejora bioseguridad y capacidad.",
+        "efecto_comercial": "Refuerza confianza en el producto.",
+        "efecto_financiero": "Requiere inversión inicial.",
+        "efecto_ambiental": "Reduce barro y pérdidas de agua.",
+        "ajuste_necesario": "Diseñar antes de comprar materiales."
+      },
+      {
+        "decision": "Reiniciar con lote pequeño",
+        "efecto_productivo": "Permite medir postura y manejo.",
+        "efecto_comercial": "Ajusta oferta a pedidos reales.",
+        "efecto_financiero": "Reduce capital expuesto.",
+        "efecto_ambiental": "Limita residuos durante aprendizaje.",
+        "ajuste_necesario": "Escalar con indicadores."
+      },
+      {
+        "decision": "Llegar a 50 aves",
+        "efecto_productivo": "Aumenta producción y exigencias.",
+        "efecto_comercial": "Necesita clientes estables.",
+        "efecto_financiero": "Aumenta alimento, aves y caja.",
+        "efecto_ambiental": "Aumenta agua y gallinaza.",
+        "ajuste_necesario": "Solo con capacidad y mercado."
+      },
+      {
+        "decision": "Recuperar colegio",
+        "efecto_productivo": "Da salida regular.",
+        "efecto_comercial": "Reactiva relación histórica.",
+        "efecto_financiero": "Puede sostener caja.",
+        "efecto_ambiental": "Reduce trayectos si es cercano.",
+        "ajuste_necesario": "Formalizar cantidad y pago."
+      },
+      {
+        "decision": "Abrir Procanzo / Bogotá",
+        "efecto_productivo": "Exige mayor continuidad.",
+        "efecto_comercial": "Diversifica canales.",
+        "efecto_financiero": "Añade transporte y empaque.",
+        "efecto_ambiental": "Aumenta movilidad y residuos.",
+        "ajuste_necesario": "Hacer piloto con margen."
+      },
+      {
+        "decision": "Registrar costos y postura",
+        "efecto_productivo": "Aclara eficiencia.",
+        "efecto_comercial": "Permite prometer cantidades reales.",
+        "efecto_financiero": "Define precio mínimo y margen.",
+        "efecto_ambiental": "Mide recursos por cubeta.",
+        "ajuste_necesario": "Implementar desde el primer día."
+      },
+      {
+        "decision": "Mejorar bebederos",
+        "efecto_productivo": "Favorece agua limpia y reduce humedad.",
+        "efecto_comercial": "Apoya calidad del huevo.",
+        "efecto_financiero": "Requiere compra o apoyo.",
+        "efecto_ambiental": "Reduce desperdicio de agua.",
+        "ajuste_necesario": "Dimensionar por número de aves."
+      },
+      {
+        "decision": "Aprovechar gallinaza",
+        "efecto_productivo": "Gestiona subproducto.",
+        "efecto_comercial": "Fortalece relato ambiental verificable.",
+        "efecto_financiero": "Puede reducir compra de abono.",
+        "efecto_ambiental": "Recicla nutrientes si se dosifica.",
+        "ajuste_necesario": "Medir y proteger de lluvia."
+      },
+      {
+        "decision": "Sembrar plantas",
+        "efecto_productivo": "Mejora entorno sin sustituir adecuación.",
+        "efecto_comercial": "Puede fortalecer identidad rural.",
+        "efecto_financiero": "Costo e impacto por valorar.",
+        "efecto_ambiental": "Aumenta cobertura vegetal.",
+        "ajuste_necesario": "Ubicar sin afectar ventilación."
+      }
+    ],
+    "observaciones_o_comentarios": null
+  }
+}
