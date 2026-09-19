@@ -607,6 +607,11 @@
                 <input type="text" id="search-input" placeholder="Buscar por nombre, vereda o cédula..." onkeyup="applyFilters()" style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
             </div>
             <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                <select id="filter-year-select" onchange="onYearSelectChange(this.value)" style="padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px; font-weight: 600; color: #444F2F;">
+                    <option value="2025" selected>Año Beneficio: 2025 (Etapa 1)</option>
+                    <option value="2026">Año Beneficio: 2026 (Etapa 2 - Nuevos 150)</option>
+                    <option value="all">Año Beneficio: Todos (2025 y 2026)</option>
+                </select>
                 <select id="filter-level-select" onchange="onLevelSelectChange(this.value)" style="padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px;">
                     <option value="all">Filtro Nivel: Todos</option>
                     <option value="1">Nivel 1 (Cúspide)</option>
@@ -637,19 +642,21 @@
             <table class="data-table" id="niveles-table">
                 <thead>
                     <tr>
-                        <th style="text-align: center; width: 100px;">Nivel</th>
+                        <th style="text-align: center; width: 90px;">Nivel</th>
                         <th>Productor</th>
                         <th>Cédula</th>
                         <th>Vereda</th>
                         <th>Predio / Contacto</th>
-                        <th style="text-align: center;">PMAPC</th>
-                        <th style="text-align: center; width: 160px;">Documento PMAPC (PDF)</th>
-                        <th style="text-align: center; width: 110px;">Detalle</th>
+                        <th style="text-align: center; width: 110px;">Fecha Beneficio</th>
+                        <th style="text-align: center; width: 100px;">PMAPC</th>
+                        <th style="text-align: center; width: 130px;">Observaciones</th>
+                        <th style="text-align: center; width: 150px;">Documento PMAPC (PDF)</th>
+                        <th style="text-align: center; width: 90px;">Detalle</th>
                     </tr>
                 </thead>
                 <tbody id="niveles-tbody">
                     <tr>
-                        <td colspan="8" style="text-align: center; padding: 2rem;">Cargando información de beneficiarios...</td>
+                        <td colspan="10" style="text-align: center; padding: 2rem;">Cargando información de beneficiarios...</td>
                     </tr>
                 </tbody>
             </table>
@@ -707,6 +714,7 @@
     <script>
         let allBeneficiaries = [];
         let selectedLevel = null; // null = all
+        let selectedYear = '2025'; // '2025', '2026', 'all'
         let chartVeredasInstance = null;
         let chartCatsInstance = null;
 
@@ -758,9 +766,9 @@
                 }
 
                 if (resProds.success && Array.isArray(resProds.data)) {
-                    // Filter only beneficiaries (beneficiario_2026 == 1)
+                    // Include beneficiaries for 2025 and 2026
                     allBeneficiaries = resProds.data
-                        .filter(p => parseInt(p.beneficiario_2026 || 0) === 1)
+                        .filter(p => parseInt(p.fecha_beneficio || 0) === 2025 || parseInt(p.fecha_beneficio || 0) === 2026 || parseInt(p.beneficiario_2026 || 0) === 1)
                         .map(p => ({
                             ...p,
                             coordenadas: coordsMap[parseInt(p.id)] || p.coordenadas || null
@@ -848,7 +856,7 @@
                 const coords = parseCoords(p.coordenadas);
                 if (coords) {
                     mappedCount++;
-                    const lvl = parseInt(p.nivel_priorizacion || 4);
+                    const lvl = getProducerLevel(p);
                     const color = levelColors[lvl] || '#444F2F';
                     const hasPmapc = parseInt(p.tiene_pmapc || 0) === 1;
 
@@ -906,6 +914,22 @@
             }
         }
 
+        function getYearFilteredList() {
+            if (selectedYear === '2025') {
+                return allBeneficiaries.filter(p => parseInt(p.fecha_beneficio || 0) === 2025 || (parseInt(p.beneficiario_2026 || 0) === 1 && !p.fecha_beneficio));
+            } else if (selectedYear === '2026') {
+                return allBeneficiaries.filter(p => parseInt(p.fecha_beneficio || 0) === 2026);
+            }
+            return allBeneficiaries;
+        }
+
+        function getProducerLevel(p) {
+            if (selectedYear === '2026') {
+                return parseInt(p.nivel_priorizacion_2026 || p.nivel_priorizacion || 4);
+            }
+            return parseInt(p.nivel_priorizacion || 4);
+        }
+
         function updateCounts() {
             const counts = { 1: 0, 2: 0, 3: 0, 4: 0 };
             const pmapcDone = { 1: 0, 2: 0, 3: 0, 4: 0 };
@@ -913,8 +937,10 @@
             let totalDone = 0;
             let totalPending = 0;
 
-            allBeneficiaries.forEach(p => {
-                const lvl = parseInt(p.nivel_priorizacion || 4);
+            const cohort = getYearFilteredList();
+
+            cohort.forEach(p => {
+                const lvl = getProducerLevel(p);
                 const hasPmapc = parseInt(p.tiene_pmapc || 0) === 1;
 
                 if (counts[lvl] !== undefined) {
@@ -929,9 +955,9 @@
                 }
             });
 
-            const total = allBeneficiaries.length || 1;
+            const total = cohort.length || 1;
 
-            document.getElementById('total-beneficiarios-count').textContent = allBeneficiaries.length;
+            if (document.getElementById('total-beneficiarios-count')) document.getElementById('total-beneficiarios-count').textContent = cohort.length;
             if (document.getElementById('hero-total-done')) document.getElementById('hero-total-done').textContent = totalDone;
             if (document.getElementById('hero-total-pending')) document.getElementById('hero-total-pending').textContent = totalPending;
 
@@ -997,11 +1023,19 @@
             }
         }
 
+        function onYearSelectChange(val) {
+            selectedYear = val;
+            updateCounts();
+            renderCharts();
+            renderTable();
+            updateMapMarkers();
+        }
+
         function getFilteredData() {
-            let list = allBeneficiaries;
+            let list = getYearFilteredList();
 
             if (selectedLevel !== null) {
-                list = list.filter(p => parseInt(p.nivel_priorizacion || 4) === selectedLevel);
+                list = list.filter(p => getProducerLevel(p) === selectedLevel);
             }
 
             const searchVal = document.getElementById('search-input').value.toLowerCase().trim();
@@ -1024,9 +1058,10 @@
         }
 
         function renderCharts() {
+            const cohort = getYearFilteredList();
             const levelData = (selectedLevel !== null)
-                ? allBeneficiaries.filter(p => parseInt(p.nivel_priorizacion || 4) === selectedLevel)
-                : allBeneficiaries;
+                ? cohort.filter(p => getProducerLevel(p) === selectedLevel)
+                : cohort;
 
             // 1. Veredas Distribution
             const veredaCounts = {};
@@ -1114,13 +1149,14 @@
 
         function renderTable() {
             const list = getFilteredData();
+            const cohort = getYearFilteredList();
             const tbody = document.getElementById('niveles-tbody');
-            document.getElementById('counter-showing-txt').textContent = `Mostrando ${list.length} de ${allBeneficiaries.length} beneficiarios`;
+            document.getElementById('counter-showing-txt').textContent = `Mostrando ${list.length} de ${cohort.length} beneficiarios`;
 
             if (list.length === 0) {
                 tbody.innerHTML = `
                     <tr>
-                        <td colspan="8" style="text-align: center; padding: 2.5rem; color: #999;">
+                        <td colspan="10" style="text-align: center; padding: 2.5rem; color: #999;">
                             No se encontraron beneficiarios con los filtros seleccionados.
                         </td>
                     </tr>
@@ -1130,7 +1166,7 @@
 
             let html = '';
             list.forEach(p => {
-                const lvl = parseInt(p.nivel_priorizacion || 4);
+                const lvl = getProducerLevel(p);
                 const hasPmapc = parseInt(p.tiene_pmapc || 0) === 1;
 
                 const lvlBadgeColor = {
@@ -1145,6 +1181,20 @@
                 const pmapcBadge = hasPmapc
                     ? `<span style="background:#2A9D8F; color:white; padding: 4px 8px; border-radius:12px; font-size:0.8rem; font-weight:500;">Realizado</span>`
                     : `<span style="background:#CCCCCC; color:#555; padding: 4px 8px; border-radius:12px; font-size:0.8rem; font-weight:500;">Pendiente</span>`;
+
+                const fechaBen = p.fecha_beneficio ? p.fecha_beneficio : (parseInt(p.beneficiario_2026 || 0) === 1 ? '2025' : '-');
+                const fechaBadge = `<span style="background:#444F2F; color:white; padding: 4px 10px; border-radius:12px; font-size:0.8rem; font-weight:600;">${fechaBen}</span>`;
+
+                let obsBadge = '<span style="color:#888;">-</span>';
+                if (p.observacion) {
+                    if (p.observacion.includes('Desistió')) {
+                        obsBadge = `<span style="background:#E74C3C; color:white; padding: 4px 8px; border-radius:12px; font-size:0.75rem; font-weight:600;">Desistió</span>`;
+                    } else if (p.observacion.includes('Reemplazo')) {
+                        obsBadge = `<span style="background:#27AE60; color:white; padding: 4px 8px; border-radius:12px; font-size:0.75rem; font-weight:600;">${escapeHtml(p.observacion)}</span>`;
+                    } else {
+                        obsBadge = `<span style="background:#8E44AD; color:white; padding: 4px 8px; border-radius:12px; font-size:0.75rem; font-weight:600;">${escapeHtml(p.observacion)}</span>`;
+                    }
+                }
 
                 const pdfButton = hasPmapc
                     ? `<a href="api/download_pmapc_pdf.php?id=${p.id}" target="_blank" class="btn-pdf-act" title="Ver PDF PMAPC">
@@ -1164,7 +1214,9 @@
                             <div>${escapeHtml(p.nombre_predio || '-')}</div>
                             <div style="font-size: 0.8rem; color: #666;">${escapeHtml(p.telefono || '')}</div>
                         </td>
+                        <td style="text-align: center;">${fechaBadge}</td>
                         <td style="text-align: center;">${pmapcBadge}</td>
+                        <td style="text-align: center;">${obsBadge}</td>
                         <td style="text-align: center;">${pdfButton}</td>
                         <td style="text-align: center;">
                             <button class="btn-detail-act" onclick="openModal(${p.id})">
@@ -1187,7 +1239,7 @@
             const p = allBeneficiaries.find(item => parseInt(item.id) === parseInt(id));
             if (!p) return;
 
-            const lvl = parseInt(p.nivel_priorizacion || 4);
+            const lvl = getProducerLevel(p);
             const hasPmapc = parseInt(p.tiene_pmapc || 0) === 1;
 
             document.getElementById('modal-productor-name').textContent = p.nombre_completo;
@@ -1230,21 +1282,23 @@
                 return;
             }
 
-            const headers = ["Nivel de Priorización", "Nombre Completo", "Número de Documento", "Vereda", "Nombre de Predio", "Teléfono", "Estado PMAPC"];
+            const headers = ["Nivel de Priorización", "Nombre Completo", "Número de Documento", "Vereda", "Nombre de Predio", "Teléfono", "Fecha Beneficio", "Estado PMAPC", "Observación"];
             
             let csvRows = [];
             csvRows.push(headers.join(";"));
 
             list.forEach(p => {
-                const lvl = "Nivel " + parseInt(p.nivel_priorizacion || 4);
+                const lvl = "Nivel " + getProducerLevel(p);
                 const name = `"${(p.nombre_completo || '').replace(/"/g, '""')}"`;
                 const doc = `"${(p.numero_documento || '').replace(/"/g, '""')}"`;
                 const vereda = `"${(p.vereda || '').replace(/"/g, '""')}"`;
                 const predio = `"${(p.nombre_predio || '').replace(/"/g, '""')}"`;
                 const tel = `"${(p.telefono || '').replace(/"/g, '""')}"`;
+                const fechaBen = p.fecha_beneficio ? p.fecha_beneficio : (parseInt(p.beneficiario_2026 || 0) === 1 ? '2025' : '-');
                 const pmapc = parseInt(p.tiene_pmapc || 0) === 1 ? "Realizado" : "Pendiente";
+                const obs = `"${(p.observacion || '-').replace(/"/g, '""')}"`;
 
-                csvRows.push([lvl, name, doc, vereda, predio, tel, pmapc].join(";"));
+                csvRows.push([lvl, name, doc, vereda, predio, tel, fechaBen, pmapc, obs].join(";"));
             });
 
             const csvContent = "\uFEFF" + csvRows.join("\n");
@@ -1255,6 +1309,7 @@
             link.setAttribute("href", url);
             
             let filename = "beneficiarios_priorizados";
+            if (selectedYear) filename += `_anio_${selectedYear}`;
             if (selectedLevel !== null) filename += `_nivel_${selectedLevel}`;
             const pmapcVal = document.getElementById('filter-pmapc-select').value;
             if (pmapcVal === 'yes') filename += `_con_pmapc`;
