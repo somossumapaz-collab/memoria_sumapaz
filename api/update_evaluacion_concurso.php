@@ -73,25 +73,41 @@ try {
 
     $desagregadoJson = json_encode($desagregadoClean, JSON_UNESCAPED_UNICODE);
 
-    $stmtUpdate = $pdo->prepare("
-        UPDATE evaluaciones 
-        SET puntaje_total = ?, 
-            observaciones = ?, 
-            nombre_jurado = CASE WHEN ? <> '' THEN ? ELSE nombre_jurado END, 
-            desagregado_puntaje = ?,
-            resultado_estado = ?
-        WHERE id = ?
-    ");
-
-    $stmtUpdate->execute([
-        $puntajeTotal,
-        $observaciones,
-        $nombreJurado,
-        $nombreJurado,
-        $desagregadoJson,
-        $resultadoEstado,
-        $evaluacionId
-    ]);
+    if ($nombreJurado !== '') {
+        $stmtUpdate = $pdo->prepare("
+            UPDATE evaluaciones 
+            SET puntaje_total = ?, 
+                observaciones = ?, 
+                nombre_jurado = ?, 
+                desagregado_puntaje = ?,
+                resultado_estado = ?
+            WHERE id = ?
+        ");
+        $stmtUpdate->execute([
+            $puntajeTotal,
+            $observaciones,
+            $nombreJurado,
+            $desagregadoJson,
+            $resultadoEstado,
+            $evaluacionId
+        ]);
+    } else {
+        $stmtUpdate = $pdo->prepare("
+            UPDATE evaluaciones 
+            SET puntaje_total = ?, 
+                observaciones = ?, 
+                desagregado_puntaje = ?,
+                resultado_estado = ?
+            WHERE id = ?
+        ");
+        $stmtUpdate->execute([
+            $puntajeTotal,
+            $observaciones,
+            $desagregadoJson,
+            $resultadoEstado,
+            $evaluacionId
+        ]);
+    }
 
     echo json_encode([
         'success' => true,

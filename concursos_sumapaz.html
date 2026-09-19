@@ -978,13 +978,30 @@
                 }
                 critBox.innerHTML = critHtml || '<p>No hay criterios cargados para este concurso.</p>';
 
-                renderParticipantesTable(data.participantes, data.concurso ? data.concurso.total_max_points : 100);
+                const totalMax = getConcursoTotalMaxPoints(data);
+                renderParticipantesTable(data.participantes, totalMax);
 
             } catch (e) {
                 console.error("Error cargando detalle de concurso:", e);
                 titleEl.innerText = 'Error al cargar concurso';
                 tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: #d9534f; padding: 2rem;"><strong>Error de conexión o de servidor: ${e.message}</strong></td></tr>`;
             }
+        }
+
+        function getConcursoTotalMaxPoints(concursoDetail) {
+            if (!concursoDetail) return 100;
+            if (concursoDetail.criterios && Array.isArray(concursoDetail.criterios) && concursoDetail.criterios.length > 0) {
+                let sum = 0;
+                concursoDetail.criterios.forEach(c => {
+                    const pts = parseFloat(c.max_points) || parseFloat(c.max_points_value) || 0;
+                    sum += pts;
+                });
+                if (sum > 0) return sum;
+            }
+            if (concursoDetail.concurso && concursoDetail.concurso.total_max_points > 0) {
+                return parseFloat(concursoDetail.concurso.total_max_points);
+            }
+            return 100;
         }
 
         function renderParticipantesTable(participantes, totalMax) {
@@ -1067,7 +1084,7 @@
         function filterParticipantesTable() {
             if (!currentConcursoDetail || !currentConcursoDetail.participantes) return;
             const search = document.getElementById('search-participante').value.toLowerCase();
-            const totalMax = currentConcursoDetail.concurso ? currentConcursoDetail.concurso.total_max_points : 100;
+            const totalMax = getConcursoTotalMaxPoints(currentConcursoDetail);
             
             const filtered = currentConcursoDetail.participantes.filter(p => {
                 const nameMatch = p.nombre_completo.toLowerCase().includes(search);
@@ -1143,17 +1160,26 @@
                 `;
             }
 
-            const totalMax = (currentConcursoDetail && currentConcursoDetail.concurso) ? currentConcursoDetail.concurso.total_max_points : 100;
+            const totalMax = getConcursoTotalMaxPoints(currentConcursoDetail);
             const evalId = eval.evaluacion_id;
+            const evalTotal = (eval && eval.puntaje_total !== undefined && eval.puntaje_total !== null) ? Number(eval.puntaje_total) : 0;
 
             let breakdown = eval.desagregado_puntaje;
             if (!breakdown || !Array.isArray(breakdown) || breakdown.length === 0) {
                 if (currentConcursoDetail && currentConcursoDetail.criterios && currentConcursoDetail.criterios.length > 0) {
-                    breakdown = currentConcursoDetail.criterios.map(c => ({
-                        criterio: c.name,
-                        puntaje_maximo: c.max_points,
-                        puntaje_obtenido: 0
-                    }));
+                    breakdown = currentConcursoDetail.criterios.map(c => {
+                        const maxPts = c.max_points || c.max_points_value || 0;
+                        let initObt = 0;
+                        if (evalTotal > 0 && totalMax > 0) {
+                            initObt = Math.round((maxPts / totalMax) * evalTotal * 10) / 10;
+                            if (initObt > maxPts) initObt = maxPts;
+                        }
+                        return {
+                            criterio: c.name,
+                            puntaje_maximo: maxPts,
+                            puntaje_obtenido: initObt
+                        };
+                    });
                 }
             }
 
@@ -1205,17 +1231,27 @@
             }
             breakdownTableHtml += `</tbody></table>`;
 
-            let imgHtml = '';
-            if (eval.imagen_id) {
-                imgHtml = `
-                    <div style="margin-top: 1.2rem; background: #FAF8F5; padding: 1rem; border-radius: 8px; border: 2px solid #2E5A44;">
-                        <strong style="color: #2E5A44; font-size: 1rem;">Evidencia Fotográfica Registrada en Terreno:</strong><br>
-                        <div style="margin-top: 0.6rem; text-align: center;">
-                            <img src="api/get_concurso_imagen.php?id=${eval.imagen_id}" style="max-width: 100%; max-height: 420px; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 4px 12px rgba(0,0,0,0.15); object-fit: contain;">
-                        </div>
+            let imgHtml = `
+                <div style="margin-top: 1.2rem; background: #FAF8F5; padding: 1.2rem; border-radius: 10px; border: 2px solid #2E5A44;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 0.8rem;">
+                        <strong style="color: #2E5A44; font-size: 1.05rem;">📷 Evidencia Fotográfica Registrada en Terreno:</strong>
+                        <label class="btn-action" style="background: #2E5A44; color: white; padding: 0.55rem 1.2rem; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+                            <span>${eval.imagen_id ? '🔄 Cambiar Evidencia Fotográfica' : '➕ Subir / Adjuntar Evidencia Fotográfica'}</span>
+                            <input type="file" id="input-foto-inline-${index}" accept="image/*" style="display: none;" onchange="subirEvidenciaFotografica(${evalId}, ${index})">
+                        </label>
                     </div>
-                `;
-            }
+                    <div id="status-foto-${index}" style="font-size: 0.9rem; font-weight: 700; color: #2E5A44; margin-bottom: 0.5rem; text-align: right;"></div>
+                    
+                    <div id="container-img-preview-${index}" style="text-align: center; ${eval.imagen_id ? '' : 'display: none;'} margin-top: 0.6rem;">
+                        <img src="${eval.imagen_id ? 'api/get_concurso_imagen.php?id=' + eval.imagen_id : ''}" id="img-preview-${index}" style="max-width: 100%; max-height: 420px; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 4px 12px rgba(0,0,0,0.15); object-fit: contain;">
+                    </div>
+
+                    <div id="no-img-badge-${index}" style="margin-top: 0.4rem; color: #64748B; font-size: 0.9rem; text-align: center; ${eval.imagen_id ? 'display: none;' : ''} background: white; padding: 1.2rem; border-radius: 8px; border: 1px dashed #CBD5E1;">
+                        No hay foto o evidencia fotográfica adjunta en esta evaluación.<br>
+                        <small style="color: #888;">Haga clic en el botón verde superior para seleccionar y guardar una foto en la base de datos.</small>
+                    </div>
+                </div>
+            `;
 
             let sigHtml = '';
             const fPart = eval.firma_participante || p.firma_asistencia;
@@ -1265,7 +1301,7 @@
                         <label style="font-weight: 700; color: #2E5A44; font-size: 0.95rem; display: block; margin-bottom: 0.3rem;">
                             Observaciones del Jurado Evaluador:
                         </label>
-                        <textarea id="inline-obs-${index}" rows="2" style="width: 100%; padding: 0.6rem; border: 1px solid #CBD5E1; border-radius: 6px; font-size: 0.93rem; background: white;" placeholder="Escriba observaciones o notas de la evaluación...">${escapeHtml(eval.observaciones || '')}</textarea>
+                        <textarea id="inline-obs-${index}" rows="3" style="width: 100%; padding: 0.6rem; border: 1px solid #CBD5E1; border-radius: 6px; font-size: 0.95rem; background: white; color: #2B2D42;" placeholder="Escriba observaciones o notas de la evaluación...">${escapeHtml(eval.observaciones || '')}</textarea>
                     </div>
 
                     ${sigHtml}

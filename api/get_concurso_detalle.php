@@ -27,7 +27,12 @@ try {
     // 2. Fetch criteria for this contest
     $stmtCrit = $pdo->prepare("SELECT * FROM criterios WHERE concurso_id = ? ORDER BY id ASC");
     $stmtCrit->execute([$concursoId]);
-    $criterios = $stmtCrit->fetchAll(PDO::FETCH_ASSOC);
+    $rawCriterios = $stmtCrit->fetchAll(PDO::FETCH_ASSOC);
+    $criterios = [];
+    foreach ($rawCriterios as $cr) {
+        $cr['max_points'] = (int)($cr['max_points_value'] ?: 0);
+        $criterios[] = $cr;
+    }
 
     // 3. Fetch participants and their evaluations
     $sqlPart = "
@@ -50,11 +55,12 @@ try {
             e.desagregado_puntaje,
             e.firma_participante,
             e.firma_jurado,
-            e.imagen_id,
+            COALESCE(e.imagen_id, img.id) as imagen_id,
             e.created_at as fecha_evaluacion
         FROM concurso_participaciones cp
         INNER JOIN feria_participantes fp ON cp.participante_id = fp.id
         LEFT JOIN evaluaciones e ON e.concurso_participacion_id = cp.id
+        LEFT JOIN imagenes img ON (img.id = e.imagen_id OR img.id = e.id OR img.id = cp.id)
         WHERE cp.concurso_id = ?
         ORDER BY COALESCE(e.puntaje_total, -1) DESC, fp.nombre_completo ASC
     ";
