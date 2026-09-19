@@ -693,6 +693,9 @@
                             <h2 id="concurso-title" style="margin: 0.6rem 0 0 0; color: var(--primary-green-dark); font-size: 1.6rem; font-weight: 700;">Seleccione un concurso</h2>
                         </div>
                         <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center;">
+                            <button class="btn-action btn-primary-action" onclick="openModalAddParticipante()" style="padding: 0.6rem 1.1rem; font-size: 0.9rem; background: var(--primary-green); color: white;">
+                                ➕ Agregar Participante
+                            </button>
                             <button class="btn-action btn-excel-action" onclick="downloadConcursoExcelCurrent()" style="padding: 0.6rem 1.1rem; font-size: 0.9rem;">
                                 Descargar Excel General
                             </button>
@@ -709,7 +712,12 @@
                     </div>
 
                     <!-- Leaderboard Table -->
-                    <h4 style="color: var(--primary-green-dark); margin: 1.8rem 0 0.8rem 0; font-size: 1.15rem;">Información de Participantes y Estado de Juzgamiento</h4>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin: 1.8rem 0 0.8rem 0; flex-wrap: wrap; gap: 1rem;">
+                        <h4 style="color: var(--primary-green-dark); margin: 0; font-size: 1.15rem;">Información de Participantes y Estado de Juzgamiento</h4>
+                        <button class="btn-action btn-primary-action" onclick="openModalAddParticipante()" style="padding: 0.5rem 1rem; font-size: 0.88rem; background: var(--primary-green); color: white;">
+                            ➕ Agregar Participante
+                        </button>
+                    </div>
                     <div class="table-responsive" style="margin-bottom: 1.5rem;">
                         <table class="custom-table">
                             <thead>
@@ -721,7 +729,7 @@
                                     <th>¿Ya lo Subió?</th>
                                     <th>Puntaje Total</th>
                                     <th>Jurado Evaluador</th>
-                                    <th style="min-width: 220px;">Acciones / Acta</th>
+                                    <th style="min-width: 280px;">Acciones / Acta</th>
                                 </tr>
                             </thead>
                             <tbody id="tbody-participantes">
@@ -1012,10 +1020,16 @@
                             <button class="btn-action btn-primary-action" style="padding: 0.35rem 0.65rem; font-size: 0.8rem;" onclick="toggleRowDetail(${realIndex})">Ver Acta</button>
                             <button class="btn-action btn-pdf-action" style="padding: 0.35rem 0.65rem; font-size: 0.8rem;" onclick="downloadIndividualActaPDF(${realIndex})">PDF Acta</button>
                             ${hasEvid}
+                            <button class="btn-action" style="padding: 0.35rem 0.6rem; font-size: 0.8rem; background: #DC3545; color: white;" title="Quitar participante de este concurso" onclick="event.stopPropagation(); quitarParticipanteConConfirmacion(${realIndex})">🗑️ Quitar</button>
                         </div>
                     `;
                 } else {
-                    actionsHtml = '<span style="color: #888; font-style: italic; font-size: 0.82rem;">Sin evaluación subida</span>';
+                    actionsHtml = `
+                        <div style="display: flex; gap: 0.4rem; align-items: center;" onclick="event.stopPropagation();">
+                            <span style="color: #888; font-style: italic; font-size: 0.82rem;">Sin evaluación</span>
+                            <button class="btn-action" style="padding: 0.35rem 0.6rem; font-size: 0.8rem; background: #DC3545; color: white;" title="Quitar participante de este concurso" onclick="event.stopPropagation(); quitarParticipanteConConfirmacion(${realIndex})">🗑️ Quitar</button>
+                        </div>
+                    `;
                 }
 
                 html += `
@@ -1885,7 +1899,299 @@
                 window.scrollTo(0, currentScrollY);
             }
         }
+
+        // ==========================================
+        // QUITAR Y AGREGAR PARTICIPANTES A CONCURSOS
+        // ==========================================
+
+        async function quitarParticipanteConConfirmacion(realIndex) {
+            if (!currentConcursoDetail || !currentConcursoDetail.participantes || !currentConcursoDetail.participantes[realIndex]) return;
+            const p = currentConcursoDetail.participantes[realIndex];
+            const cpId = p.concurso_participacion_id || p.id;
+            const nameStr = p.nombre_completo || 'este participante';
+            const docStr = p.documento_identidad ? ` (Doc: ${p.documento_identidad})` : '';
+
+            const mensaje = `¿Está seguro de que desea eliminar a "${nameStr}"${docStr} de este concurso?\n\n⚠️ Esta acción desvinculará al participante de este concurso y eliminará las evaluaciones asociadas.`;
+            
+            if (!confirm(mensaje)) return;
+
+            try {
+                const res = await fetch('api/remove_participante_concurso.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ concurso_participacion_id: cpId })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    if (currentConcursoDetail && currentConcursoDetail.concurso) {
+                        await loadConcursoDetalle(currentConcursoDetail.concurso.id);
+                    }
+                    await loadDashboard();
+                    alert('Participante desvinculado del concurso correctamente.');
+                } else {
+                    alert('Error: ' + (data.error || 'No se pudo desvincular el participante.'));
+                }
+            } catch (e) {
+                console.error("Error al quitar participante:", e);
+                alert('Error de conexión o servidor al intentar quitar el participante.');
+            }
+        }
+
+        function openModalAddParticipante() {
+            if (!currentConcursoDetail || !currentConcursoDetail.concurso) {
+                alert('Por favor seleccione un concurso primero.');
+                return;
+            }
+            document.getElementById('modal-agregar-participante').style.display = 'flex';
+            switchAddTab('search');
+            document.getElementById('input-search-add').value = '';
+            onSearchAddCandidateInput();
+        }
+
+        function closeModalAgregar() {
+            document.getElementById('modal-agregar-participante').style.display = 'none';
+        }
+
+        function switchAddTab(mode) {
+            const btnSearch = document.getElementById('tab-add-search-btn');
+            const btnNew = document.getElementById('tab-add-new-btn');
+            const tabSearch = document.getElementById('add-tab-search');
+            const tabNew = document.getElementById('add-tab-new');
+
+            if (mode === 'search') {
+                btnSearch.style.background = 'var(--primary-green)';
+                btnSearch.style.color = 'white';
+                btnNew.style.background = '#E9ECEF';
+                btnNew.style.color = 'var(--text-dark)';
+                tabSearch.style.display = 'block';
+                tabNew.style.display = 'none';
+            } else {
+                btnNew.style.background = 'var(--primary-green)';
+                btnNew.style.color = 'white';
+                btnSearch.style.background = '#E9ECEF';
+                btnSearch.style.color = 'var(--text-dark)';
+                tabSearch.style.display = 'none';
+                tabNew.style.display = 'block';
+            }
+        }
+
+        let searchDebounceTimer = null;
+        function onSearchAddCandidateInput() {
+            clearTimeout(searchDebounceTimer);
+            searchDebounceTimer = setTimeout(loadAvailableCandidates, 300);
+        }
+
+        async function loadAvailableCandidates() {
+            if (!currentConcursoDetail || !currentConcursoDetail.concurso) return;
+            const concursoId = currentConcursoDetail.concurso.id;
+            const q = document.getElementById('input-search-add').value.trim();
+            const container = document.getElementById('add-candidates-list');
+
+            container.innerHTML = '<p style="color: #888; text-align: center; padding: 1rem;">Buscando candidatos disponibles...</p>';
+
+            try {
+                const res = await fetch(`api/search_participantes_disponibles.php?concurso_id=${concursoId}&q=${encodeURIComponent(q)}`);
+                const data = await res.json();
+
+                if (!data.success || !data.candidates || data.candidates.length === 0) {
+                    container.innerHTML = '<p style="color: #888; text-align: center; padding: 1rem;">No se encontraron candidatos disponibles para agregar.</p>';
+                    return;
+                }
+
+                let html = '';
+                data.candidates.forEach(cand => {
+                    const pidAttr = cand.id ? `data-pid="${cand.id}"` : '';
+                    const docAttr = `data-doc="${escapeHtml(cand.documento_identidad || '')}"`;
+                    const nameAttr = `data-name="${escapeHtml(cand.nombre_completo || '')}"`;
+                    const veredaAttr = `data-vereda="${escapeHtml(cand.vereda || '')}"`;
+                    const telAttr = `data-tel="${escapeHtml(cand.telefono || '')}"`;
+
+                    html += `
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.8rem; border-bottom: 1px solid #eee;">
+                            <div>
+                                <strong style="color: var(--primary-green-dark);">${escapeHtml(cand.nombre_completo)}</strong>
+                                <div style="font-size: 0.8rem; color: #666;">
+                                    Doc: <code>${escapeHtml(cand.documento_identidad || 'N/A')}</code> | Vereda: ${escapeHtml(cand.vereda || 'Sumapaz')}
+                                </div>
+                            </div>
+                            <button class="btn-action btn-primary-action" style="padding: 0.35rem 0.75rem; font-size: 0.8rem; background: var(--primary-green); color: white;" ${pidAttr} ${docAttr} ${nameAttr} ${veredaAttr} ${telAttr} onclick="executeAddCandidateFromList(this)">
+                                ➕ Agregar
+                            </button>
+                        </div>
+                    `;
+                });
+                container.innerHTML = html;
+
+            } catch (e) {
+                console.error("Error al buscar candidatos:", e);
+                container.innerHTML = '<p style="color: #C1121F; text-align: center; padding: 1rem;">Error de conexión al buscar candidatos.</p>';
+            }
+        }
+
+        async function executeAddCandidateFromList(btn) {
+            if (!currentConcursoDetail || !currentConcursoDetail.concurso) return;
+            const concursoId = currentConcursoDetail.concurso.id;
+            const pid = btn.getAttribute('data-pid');
+            const doc = btn.getAttribute('data-doc');
+            const name = btn.getAttribute('data-name');
+            const vereda = btn.getAttribute('data-vereda');
+            const tel = btn.getAttribute('data-tel');
+
+            btn.disabled = true;
+            btn.innerText = 'Agregando...';
+
+            const payload = {
+                concurso_id: concursoId
+            };
+            if (pid) {
+                payload.participante_id = parseInt(pid);
+            } else {
+                payload.documento_identidad = doc;
+                payload.nombre_completo = name;
+                payload.vereda = vereda;
+                payload.telefono = tel;
+            }
+
+            try {
+                const res = await fetch('api/add_participante_concurso.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                if (data.success) {
+                    closeModalAgregar();
+                    await loadConcursoDetalle(concursoId);
+                    await loadDashboard();
+                    alert('Participante agregado al concurso con éxito.');
+                } else {
+                    alert('Error: ' + (data.error || 'No se pudo agregar el participante.'));
+                }
+            } catch (e) {
+                console.error("Error al agregar participante:", e);
+                alert('Error de conexión o servidor al intentar agregar el participante.');
+            } finally {
+                btn.disabled = false;
+                btn.innerText = '➕ Agregar';
+            }
+        }
+
+        async function executeAddNuevoParticipante(e) {
+            e.preventDefault();
+            if (!currentConcursoDetail || !currentConcursoDetail.concurso) return;
+            const concursoId = currentConcursoDetail.concurso.id;
+
+            const tipoDoc = document.getElementById('new-tipo-doc').value;
+            const doc = document.getElementById('new-documento').value.trim();
+            const nombre = document.getElementById('new-nombre').value.trim();
+            const vereda = document.getElementById('new-vereda').value.trim();
+            const tel = document.getElementById('new-telefono').value.trim();
+
+            if (!doc || !nombre) {
+                alert('Por favor complete el documento de identidad y nombre completo.');
+                return;
+            }
+
+            const payload = {
+                concurso_id: concursoId,
+                tipo_documento: tipoDoc,
+                documento_identidad: doc,
+                nombre_completo: nombre,
+                vereda: vereda,
+                telefono: tel
+            };
+
+            try {
+                const res = await fetch('api/add_participante_concurso.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                if (data.success) {
+                    closeModalAgregar();
+                    document.getElementById('form-new-participante').reset();
+                    await loadConcursoDetalle(concursoId);
+                    await loadDashboard();
+                    alert('Nuevo participante registrado y agregado al concurso con éxito.');
+                } else {
+                    alert('Error: ' + (data.error || 'No se pudo agregar el participante.'));
+                }
+            } catch (e) {
+                console.error("Error al registrar nuevo participante:", e);
+                alert('Error de conexión o servidor al intentar agregar el participante.');
+            }
+        }
     </script>
+
+    <!-- MODAL AGREGAR PARTICIPANTE -->
+    <div class="modal-overlay" id="modal-agregar-participante">
+        <div class="modal-container" style="max-width: 650px;">
+            <div class="modal-header">
+                <h3>➕ Agregar Participante al Concurso</h3>
+                <button class="modal-close-btn" onclick="closeModalAgregar()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="display: flex; gap: 0.5rem; border-bottom: 2px solid #EAE5D9; margin-bottom: 1.2rem;">
+                    <button class="btn-action" id="tab-add-search-btn" onclick="switchAddTab('search')" style="background: var(--primary-green); color: white; border-radius: 8px 8px 0 0;">
+                        🔍 Buscar Existente
+                    </button>
+                    <button class="btn-action" id="tab-add-new-btn" onclick="switchAddTab('new')" style="background: #E9ECEF; color: var(--text-dark); border-radius: 8px 8px 0 0;">
+                        👤 Registrar Nuevo
+                    </button>
+                </div>
+
+                <!-- Tab Search -->
+                <div id="add-tab-search">
+                    <div style="margin-bottom: 1rem;">
+                        <label style="font-weight: 600; font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">Buscar por Nombre, Documento o Vereda</label>
+                        <input type="text" id="input-search-add" class="filter-control" placeholder="Escriba para buscar..." oninput="onSearchAddCandidateInput()">
+                    </div>
+                    <div id="add-candidates-list" style="max-height: 280px; overflow-y: auto; border: 1px solid #E5E5E5; border-radius: 8px; padding: 0.5rem;">
+                        <p style="color: #888; text-align: center; padding: 1rem;">Cargando candidatos disponibles...</p>
+                    </div>
+                </div>
+
+                <!-- Tab New -->
+                <div id="add-tab-new" style="display: none;">
+                    <form id="form-new-participante" onsubmit="executeAddNuevoParticipante(event)">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 1rem;">
+                            <div>
+                                <label style="font-weight: 600; font-size: 0.82rem; color: var(--text-muted);">Tipo de Documento</label>
+                                <select id="new-tipo-doc" class="filter-control" style="margin-top: 0.3rem;">
+                                    <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+                                    <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                                    <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label style="font-weight: 600; font-size: 0.82rem; color: var(--text-muted);">Número de Documento *</label>
+                                <input type="text" id="new-documento" class="filter-control" placeholder="Ej: 1032656123" required style="margin-top: 0.3rem;">
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label style="font-weight: 600; font-size: 0.82rem; color: var(--text-muted);">Nombre Completo *</label>
+                            <input type="text" id="new-nombre" class="filter-control" placeholder="Nombre y Apellidos" required style="margin-top: 0.3rem;">
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 1.2rem;">
+                            <div>
+                                <label style="font-weight: 600; font-size: 0.82rem; color: var(--text-muted);">Vereda</label>
+                                <input type="text" id="new-vereda" class="filter-control" placeholder="Ej: San Juan" style="margin-top: 0.3rem;">
+                            </div>
+                            <div>
+                                <label style="font-weight: 600; font-size: 0.82rem; color: var(--text-muted);">Teléfono</label>
+                                <input type="text" id="new-telefono" class="filter-control" placeholder="Ej: 3101234567" style="margin-top: 0.3rem;">
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.8rem; justify-content: flex-end;">
+                            <button type="button" class="btn-action btn-secondary-action" onclick="closeModalAgregar()">Cancelar</button>
+                            <button type="submit" class="btn-action btn-primary-action" style="background: var(--primary-green); color: white;">Guardar y Agregar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
