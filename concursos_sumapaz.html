@@ -1020,6 +1020,7 @@
                             <button class="btn-action btn-primary-action" style="padding: 0.35rem 0.65rem; font-size: 0.8rem;" onclick="toggleRowDetail(${realIndex})">Ver Acta</button>
                             <button class="btn-action btn-pdf-action" style="padding: 0.35rem 0.65rem; font-size: 0.8rem;" onclick="downloadIndividualActaPDF(${realIndex})">PDF Acta</button>
                             ${hasEvid}
+                            <button class="btn-action" style="padding: 0.35rem 0.6rem; font-size: 0.8rem; background: #E67E22; color: white;" title="Editar calificación y puntajes por criterio" onclick="event.stopPropagation(); openModalEditarPuntaje(${realIndex})">✏️ Editar</button>
                             <button class="btn-action" style="padding: 0.35rem 0.6rem; font-size: 0.8rem; background: #DC3545; color: white;" title="Quitar participante de este concurso" onclick="event.stopPropagation(); quitarParticipanteConConfirmacion(${realIndex})">🗑️ Quitar</button>
                         </div>
                     `;
@@ -1144,19 +1145,33 @@
                     </thead>
                     <tbody>
             `;
-            if (eval.desagregado_puntaje && Array.isArray(eval.desagregado_puntaje)) {
-                eval.desagregado_puntaje.forEach((item, i) => {
+            let breakdown = eval.desagregado_puntaje;
+            if (!breakdown || !Array.isArray(breakdown) || breakdown.length === 0) {
+                if (currentConcursoDetail && currentConcursoDetail.criterios && currentConcursoDetail.criterios.length > 0) {
+                    breakdown = currentConcursoDetail.criterios.map(c => ({
+                        criterio: c.name,
+                        puntaje_maximo: c.max_points,
+                        puntaje_obtenido: null
+                    }));
+                }
+            }
+
+            if (breakdown && Array.isArray(breakdown) && breakdown.length > 0) {
+                breakdown.forEach((item, i) => {
+                    const obtPts = (item.puntaje_obtenido !== undefined && item.puntaje_obtenido !== null) 
+                        ? `<strong style="color: #2E5A44; font-size: 1rem;">${item.puntaje_obtenido} pts</strong>` 
+                        : `<span style="color: #888; font-style: italic;">Sin asignar (Editar)</span>`;
                     breakdownTableHtml += `
                         <tr style="font-size: 0.9rem;">
                             <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><strong>${i + 1}</strong></td>
                             <td style="padding: 8px; border: 1px solid #ddd;"><strong>${item.criterio || 'Criterio ' + (i+1)}</strong></td>
-                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">${item.puntaje_maximo || '-'} pts</td>
-                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><strong style="color: #2E5A44; font-size: 1rem;">${item.puntaje_obtenido} pts</strong></td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">${item.puntaje_maximo ? item.puntaje_maximo + ' pts' : '-'}</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">${obtPts}</td>
                         </tr>
                     `;
                 });
             } else {
-                breakdownTableHtml += `<tr><td colspan="4" style="padding: 10px; text-align: center; color: #777;">Sin desglose de criterios.</td></tr>`;
+                breakdownTableHtml += `<tr><td colspan="4" style="padding: 10px; text-align: center; color: #777;">Sin desglose de criterios. Use el botón "✏️ Editar Puntaje" para ingresar las notas por criterio.</td></tr>`;
             }
             breakdownTableHtml += `</tbody></table>`;
 
@@ -1222,6 +1237,9 @@
                     ${imgHtml}
 
                     <div style="margin-top: 1.2rem; text-align: right; border-top: 1px solid #EAE5D9; padding-top: 0.8rem; display: flex; justify-content: flex-end; gap: 0.8rem;">
+                        <button class="btn-action" onclick="openModalEditarPuntaje(${index})" style="padding: 0.6rem 1.2rem; font-size: 0.9rem; background: #E67E22; color: white;" title="Editar calificación y desglose de criterios">
+                            ✏️ Editar Puntaje
+                        </button>
                         <button class="btn-action btn-pdf-action" onclick="downloadIndividualActaPDF(${index})" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
                             Descargar PDF de esta Acta
                         </button>
@@ -1528,14 +1546,26 @@
             renderArea.style.boxSizing = 'border-box';
 
             let critRowsHtml = '';
-            if (eval.desagregado_puntaje && Array.isArray(eval.desagregado_puntaje)) {
-                eval.desagregado_puntaje.forEach((item, i) => {
+            let breakdownPdf = eval.desagregado_puntaje;
+            if (!breakdownPdf || !Array.isArray(breakdownPdf) || breakdownPdf.length === 0) {
+                if (currentConcursoDetail && currentConcursoDetail.criterios && currentConcursoDetail.criterios.length > 0) {
+                    breakdownPdf = currentConcursoDetail.criterios.map(c => ({
+                        criterio: c.name,
+                        puntaje_maximo: c.max_points,
+                        puntaje_obtenido: null
+                    }));
+                }
+            }
+
+            if (breakdownPdf && Array.isArray(breakdownPdf) && breakdownPdf.length > 0) {
+                breakdownPdf.forEach((item, i) => {
+                    const obtTxt = (item.puntaje_obtenido !== undefined && item.puntaje_obtenido !== null) ? `${item.puntaje_obtenido} pts` : '-';
                     critRowsHtml += `
                         <tr>
                             <td style="padding: 4px 6px; border: 1px solid #ccc; text-align: center;">${i + 1}</td>
                             <td style="padding: 4px 6px; border: 1px solid #ccc;"><strong>${item.criterio || 'Criterio ' + (i+1)}</strong></td>
-                            <td style="padding: 4px 6px; border: 1px solid #ccc; text-align: center;">${item.puntaje_maximo || '-'} pts</td>
-                            <td style="padding: 4px 6px; border: 1px solid #ccc; text-align: center; font-weight: bold; color: #2E5A44;">${item.puntaje_obtenido} pts</td>
+                            <td style="padding: 4px 6px; border: 1px solid #ccc; text-align: center;">${item.puntaje_maximo ? item.puntaje_maximo + ' pts' : '-'}</td>
+                            <td style="padding: 4px 6px; border: 1px solid #ccc; text-align: center; font-weight: bold; color: #2E5A44;">${obtTxt}</td>
                         </tr>
                     `;
                 });
@@ -2122,6 +2152,149 @@
                 alert('Error de conexión o servidor al intentar agregar el participante.');
             }
         }
+
+        // ==========================================
+        // EDITAR PUNTAJES Y CRITERIOS DE EVALUACIÓN
+        // ==========================================
+        let currentEditEvalId = null;
+        let currentEditRealIndex = null;
+
+        function openModalEditarPuntaje(realIndex) {
+            if (!currentConcursoDetail || !currentConcursoDetail.participantes || !currentConcursoDetail.participantes[realIndex]) return;
+            const p = currentConcursoDetail.participantes[realIndex];
+            
+            if (!p.evaluacion) {
+                alert("Solo se pueden editar los puntajes de participantes que ya cuentan con calificación registrada.");
+                return;
+            }
+
+            currentEditRealIndex = realIndex;
+            currentEditEvalId = p.evaluacion.evaluacion_id;
+
+            document.getElementById('edit-score-participant-name').textContent = p.nombre_completo;
+            document.getElementById('edit-score-participant-info').textContent = `Documento: ${p.documento_identidad || 'N/A'} | Vereda: ${p.vereda || 'Sumapaz'}`;
+            document.getElementById('edit-eval-jurado').value = p.evaluacion.nombre_jurado || '';
+            document.getElementById('edit-eval-observaciones').value = p.evaluacion.observaciones || '';
+
+            // Construir la lista de criterios: utilizar desagregado si existe, sino construir desde criterios oficiales
+            let breakdown = p.evaluacion.desagregado_puntaje;
+            if (!breakdown || !Array.isArray(breakdown) || breakdown.length === 0) {
+                breakdown = (currentConcursoDetail.criterios || []).map(c => ({
+                    criterio: c.name,
+                    puntaje_maximo: c.max_points,
+                    puntaje_obtenido: 0
+                }));
+            }
+
+            const tbody = document.getElementById('edit-criterios-tbody');
+            let html = '';
+            breakdown.forEach((item, idx) => {
+                const critName = escapeHtml(item.criterio || `Criterio ${idx + 1}`);
+                const maxPts = item.puntaje_maximo || 100;
+                const obtPts = item.puntaje_obtenido !== undefined ? item.puntaje_obtenido : 0;
+
+                html += `
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 8px; font-weight: 500; color: #333;">
+                            ${critName}
+                            <input type="hidden" class="edit-crit-name" value="${critName}">
+                            <input type="hidden" class="edit-crit-max" value="${maxPts}">
+                        </td>
+                        <td style="padding: 8px; text-align: center; color: #666; font-weight: 600;">
+                            ${maxPts} pts
+                        </td>
+                        <td style="padding: 8px; text-align: center;">
+                            <input type="number" 
+                                   class="edit-crit-obt" 
+                                   step="0.5" 
+                                   min="0" 
+                                   max="${maxPts}" 
+                                   value="${obtPts}" 
+                                   oninput="recalcularTotalEditarPuntaje()" 
+                                   style="width: 85px; padding: 5px; text-align: center; font-weight: 700; border: 1px solid #ccc; border-radius: 4px; color: #2E5A44;">
+                        </td>
+                    </tr>
+                `;
+            });
+
+            tbody.innerHTML = html || '<tr><td colspan="3" style="padding: 10px; text-align: center; color: #888;">No hay criterios configurados en este concurso.</td></tr>';
+            
+            recalcularTotalEditarPuntaje();
+            document.getElementById('modal-editar-puntaje').style.display = 'flex';
+        }
+
+        function closeModalEditarPuntaje() {
+            document.getElementById('modal-editar-puntaje').style.display = 'none';
+            currentEditEvalId = null;
+            currentEditRealIndex = null;
+        }
+
+        function recalcularTotalEditarPuntaje() {
+            const inputs = document.querySelectorAll('.edit-crit-obt');
+            let total = 0;
+            inputs.forEach(input => {
+                const val = parseFloat(input.value) || 0;
+                total += val;
+            });
+            
+            const totalMax = (currentConcursoDetail && currentConcursoDetail.concurso) ? currentConcursoDetail.concurso.total_max_points : 100;
+            document.getElementById('edit-total-points-display').textContent = `${total} / ${totalMax} Pts`;
+        }
+
+        async function guardarEditarPuntaje() {
+            if (!currentEditEvalId) return;
+
+            const btnSubmit = document.getElementById('btn-save-score-submit');
+            btnSubmit.disabled = true;
+            btnSubmit.innerText = 'Guardando...';
+
+            try {
+                const jurado = document.getElementById('edit-eval-jurado').value.trim();
+                const observaciones = document.getElementById('edit-eval-observaciones').value.trim();
+
+                const names = document.querySelectorAll('.edit-crit-name');
+                const maxs = document.querySelectorAll('.edit-crit-max');
+                const obts = document.querySelectorAll('.edit-crit-obt');
+
+                const desagregado = [];
+                names.forEach((el, idx) => {
+                    desagregado.push({
+                        criterio: el.value,
+                        puntaje_maximo: parseFloat(maxs[idx].value) || 0,
+                        puntaje_obtenido: parseFloat(obts[idx].value) || 0
+                    });
+                });
+
+                const res = await fetch('api/update_evaluacion_concurso.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        evaluacion_id: currentEditEvalId,
+                        nombre_jurado: jurado,
+                        observaciones: observaciones,
+                        desagregado_puntaje: desagregado
+                    })
+                });
+
+                const data = await res.json();
+                if (data.success) {
+                    closeModalEditarPuntaje();
+                    if (currentConcursoDetail && currentConcursoDetail.concurso) {
+                        await loadConcursoDetalle(currentConcursoDetail.concurso.id);
+                    }
+                    await loadDashboard();
+                    alert('✅ Calificación y puntajes actualizados correctamente.');
+                } else {
+                    alert('❌ Error: ' + (data.error || 'No se pudo actualizar el puntaje.'));
+                }
+            } catch (e) {
+                console.error("Error al guardar edición de puntaje:", e);
+                alert('❌ Error de conexión o servidor al intentar guardar.');
+            } finally {
+                btnSubmit.disabled = false;
+                btnSubmit.innerText = '💾 Guardar Cambios';
+            }
+        }
     </script>
 
     <!-- MODAL AGREGAR PARTICIPANTE -->
@@ -2189,6 +2362,70 @@
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL EDITAR PUNTAJE -->
+    <div class="modal-overlay" id="modal-editar-puntaje">
+        <div class="modal-container" style="max-width: 700px;">
+            <div class="modal-header" style="background: #2E5A44;">
+                <h3 style="display: flex; align-items: center; gap: 0.5rem; margin: 0; color: white;">
+                    ✏️ Editar Calificación y Puntajes por Criterio
+                </h3>
+                <button class="modal-close-btn" onclick="closeModalEditarPuntaje()">&times;</button>
+            </div>
+            <div class="modal-body" style="padding: 1.5rem;">
+                <div style="background: #FAF8F5; padding: 1rem; border-radius: 8px; border: 1px solid #E5DFD5; margin-bottom: 1.2rem;">
+                    <h4 id="edit-score-participant-name" style="margin: 0 0 0.4rem 0; color: #2E5A44; font-size: 1.15rem;"></h4>
+                    <p id="edit-score-participant-info" style="margin: 0; font-size: 0.88rem; color: #555;"></p>
+                </div>
+
+                <form id="form-editar-puntaje" onsubmit="event.preventDefault(); guardarEditarPuntaje();">
+                    <div style="margin-bottom: 1.2rem;">
+                        <label style="display: block; font-weight: 600; color: #2B2D42; margin-bottom: 0.3rem; font-size: 0.9rem;">
+                            Jurado Evaluador:
+                        </label>
+                        <input type="text" id="edit-eval-jurado" style="width: 100%; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; font-size: 0.95rem;" placeholder="Nombre del jurado oficial">
+                    </div>
+
+                    <h5 style="color: #2E5A44; margin: 1.2rem 0 0.6rem 0; font-size: 1rem;">Criterios de Evaluación y Ajuste de Puntajes:</h5>
+                    <div style="max-height: 280px; overflow-y: auto; border: 1px solid #ddd; border-radius: 8px; padding: 0.5rem; background: #fff; margin-bottom: 1rem;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background: #F4F1EA; text-align: left; font-size: 0.85rem; color: #444;">
+                                    <th style="padding: 8px;">Criterio Oficial</th>
+                                    <th style="padding: 8px; text-align: center; width: 100px;">Máx. Pts</th>
+                                    <th style="padding: 8px; text-align: center; width: 130px;">Puntaje Obtenido</th>
+                                </tr>
+                            </thead>
+                            <tbody id="edit-criterios-tbody">
+                                <!-- Dynamic rows -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; background: #EAE5D9; padding: 0.8rem 1.2rem; border-radius: 8px; margin-bottom: 1.2rem;">
+                        <span style="font-weight: 700; color: #2B2D42; font-size: 1rem;">PUNTAJE TOTAL RECALCULADO:</span>
+                        <span id="edit-total-points-display" style="font-weight: 800; color: #2E5A44; font-size: 1.4rem;">0 / 100 Pts</span>
+                    </div>
+
+                    <div style="margin-bottom: 1.2rem;">
+                        <label style="display: block; font-weight: 600; color: #2B2D42; margin-bottom: 0.3rem; font-size: 0.9rem;">
+                            Observaciones del Jurado:
+                        </label>
+                        <textarea id="edit-eval-observaciones" rows="3" style="width: 100%; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; font-size: 0.9rem;" placeholder="Observaciones o notas adicionales del jurado..."></textarea>
+                    </div>
+
+                    <div style="display: flex; gap: 0.8rem; justify-content: flex-end; border-top: 1px solid #eee; padding-top: 1rem;">
+                        <button type="button" class="btn-action btn-secondary-action" onclick="closeModalEditarPuntaje()" style="padding: 0.65rem 1.3rem;">
+                            Cancelar
+                        </button>
+                        <button type="submit" id="btn-save-score-submit" class="btn-action btn-primary-action" style="padding: 0.65rem 1.5rem; background: #2E5A44;">
+                            💾 Guardar Cambios
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
