@@ -2307,6 +2307,64 @@
                 }
             }
         }
+
+        async function subirEvidenciaFotografica(evalId, index) {
+            const fileInput = document.getElementById(`input-foto-inline-${index}`);
+            const statusSpan = document.getElementById(`status-foto-${index}`);
+            if (!fileInput || !fileInput.files || fileInput.files.length === 0) return;
+
+            if (!evalId) {
+                alert('Debe tener una evaluación registrada para adjuntar evidencia fotográfica.');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            if (file.size > 15 * 1024 * 1024) {
+                alert('El archivo de imagen supera el límite máximo permitido de 15 MB.');
+                return;
+            }
+
+            if (statusSpan) statusSpan.innerHTML = '⏳ Guardando foto en la base de datos...';
+
+            const formData = new FormData();
+            formData.append('evaluacion_id', evalId);
+            formData.append('imagen', file);
+
+            try {
+                const res = await fetch('api/upload_evaluacion_imagen.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await res.json();
+
+                if (data.success && data.imagen_id) {
+                    if (statusSpan) statusSpan.innerHTML = '✅ ¡Evidencia fotográfica guardada en BD!';
+                    
+                    const imgPreview = document.getElementById(`img-preview-${index}`);
+                    const containerPreview = document.getElementById(`container-img-preview-${index}`);
+                    const noImgBadge = document.getElementById(`no-img-badge-${index}`);
+
+                    if (imgPreview) {
+                        imgPreview.src = `api/get_concurso_imagen.php?id=${data.imagen_id}&t=${Date.now()}`;
+                    }
+                    if (containerPreview) containerPreview.style.display = 'block';
+                    if (noImgBadge) noImgBadge.style.display = 'none';
+
+                    if (currentConcursoDetail && currentConcursoDetail.participantes && currentConcursoDetail.participantes[index]) {
+                        if (currentConcursoDetail.participantes[index].evaluacion) {
+                            currentConcursoDetail.participantes[index].evaluacion.imagen_id = data.imagen_id;
+                        }
+                    }
+                } else {
+                    if (statusSpan) statusSpan.innerHTML = '❌ Error al guardar imagen';
+                    alert('❌ Error: ' + (data.error || 'No se pudo guardar la imagen.'));
+                }
+            } catch (e) {
+                console.error("Error al subir evidencia fotográfica:", e);
+                if (statusSpan) statusSpan.innerHTML = '❌ Error de servidor';
+                alert('❌ Error al conectar con el servidor.');
+            }
+        }
     </script>
 
     <!-- MODAL AGREGAR PARTICIPANTE -->
