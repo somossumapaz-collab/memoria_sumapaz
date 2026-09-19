@@ -1017,10 +1017,10 @@
                     }
                     actionsHtml = `
                         <div style="display: flex; gap: 0.3rem; flex-wrap: wrap;" onclick="event.stopPropagation();">
-                            <button class="btn-action btn-primary-action" style="padding: 0.35rem 0.65rem; font-size: 0.8rem;" onclick="toggleRowDetail(${realIndex})">Ver Acta</button>
+                            <button class="btn-action btn-primary-action" style="padding: 0.35rem 0.65rem; font-size: 0.8rem;" onclick="event.stopPropagation(); toggleRowDetail(${realIndex})">Ver Acta</button>
                             <button class="btn-action btn-pdf-action" style="padding: 0.35rem 0.65rem; font-size: 0.8rem;" onclick="downloadIndividualActaPDF(${realIndex})">PDF Acta</button>
                             ${hasEvid}
-                            <button class="btn-action" style="padding: 0.35rem 0.6rem; font-size: 0.8rem; background: #E67E22; color: white;" title="Editar calificación y puntajes por criterio" onclick="event.stopPropagation(); openModalEditarPuntaje(${realIndex})">✏️ Editar</button>
+                            <button class="btn-action" style="padding: 0.35rem 0.6rem; font-size: 0.8rem; background: #E67E22; color: white;" title="Editar puntajes abajo en pantalla" onclick="event.stopPropagation(); toggleEditInlineRow(${realIndex})">✏️ Editar</button>
                             <button class="btn-action" style="padding: 0.35rem 0.6rem; font-size: 0.8rem; background: #DC3545; color: white;" title="Quitar participante de este concurso" onclick="event.stopPropagation(); quitarParticipanteConConfirmacion(${realIndex})">🗑️ Quitar</button>
                         </div>
                     `;
@@ -2181,6 +2181,190 @@
         // ==========================================
         // EDICIÓN DE PUNTAJES DIRECTA EN PANTALLA (SIN MODALES)
         // ==========================================
+        function toggleEditInlineRow(realIndex) {
+            const row = document.getElementById(`inline-detail-row-${realIndex}`);
+            const content = document.getElementById(`inline-detail-content-${realIndex}`);
+            if (!row || !content) return;
+
+            // Toggle hide if already showing edit box
+            if (row.style.display !== 'none' && content.getAttribute('data-mode') === 'edit') {
+                row.style.display = 'none';
+                content.removeAttribute('data-mode');
+                return;
+            }
+
+            if (!currentConcursoDetail || !currentConcursoDetail.participantes || !currentConcursoDetail.participantes[realIndex]) return;
+            const p = currentConcursoDetail.participantes[realIndex];
+            const eval = p.evaluacion;
+
+            if (!eval) {
+                alert('Este participante aún no tiene calificación para editar.');
+                return;
+            }
+
+            const totalMax = currentConcursoDetail.concurso ? currentConcursoDetail.concurso.total_max_points : 100;
+            const evalId = eval.evaluacion_id;
+
+            let breakdown = eval.desagregado_puntaje;
+            if (!breakdown || !Array.isArray(breakdown) || breakdown.length === 0) {
+                if (currentConcursoDetail.criterios && currentConcursoDetail.criterios.length > 0) {
+                    breakdown = currentConcursoDetail.criterios.map(c => ({
+                        criterio: c.name,
+                        puntaje_maximo: c.max_points,
+                        puntaje_obtenido: 0
+                    }));
+                }
+            }
+
+            let rowsHtml = '';
+            if (breakdown && breakdown.length > 0) {
+                breakdown.forEach((item, i) => {
+                    const critName = escapeHtml(item.criterio || `Criterio ${i + 1}`);
+                    const maxPts = item.puntaje_maximo || 100;
+                    const curPts = (item.puntaje_obtenido !== undefined && item.puntaje_obtenido !== null) ? item.puntaje_obtenido : 0;
+
+                    rowsHtml += `
+                        <tr style="border-bottom: 1px solid #EAE5D9;">
+                            <td style="padding: 10px; font-weight: 600; color: #2B2D42;">${critName}</td>
+                            <td style="padding: 10px; text-align: center; color: #666;">${maxPts} pts</td>
+                            <td style="padding: 10px; text-align: center; font-weight: 700; color: #6C757D;">${curPts} pts</td>
+                            <td style="padding: 10px; text-align: center;">
+                                <input type="number" 
+                                       class="inline-edit-crit-obt-${realIndex}" 
+                                       step="0.5" 
+                                       min="0" 
+                                       max="${maxPts}" 
+                                       value="${curPts}" 
+                                       oninput="recalcularEditInlineScore(${realIndex}, ${totalMax})" 
+                                       style="width: 100px; padding: 6px 10px; font-size: 1rem; font-weight: 700; text-align: center; border: 2px solid #E67E22; border-radius: 6px; color: #D35400; background: #FFF8F0;">
+                                <input type="hidden" class="inline-edit-crit-name-${realIndex}" value="${critName}">
+                                <input type="hidden" class="inline-edit-crit-max-${realIndex}" value="${maxPts}">
+                            </td>
+                        </tr>
+                    `;
+                });
+            } else {
+                rowsHtml = `<tr><td colspan="4" style="padding: 15px; text-align: center; color: #888;">No hay criterios registrados para este concurso.</td></tr>`;
+            }
+
+            content.setAttribute('data-mode', 'edit');
+            content.innerHTML = `
+                <div style="background: #FFF8F0; padding: 1.5rem; border-radius: 10px; border: 2px solid #E67E22; margin: 0.5rem 0; box-shadow: 0 4px 12px rgba(230,126,34,0.15);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.8rem;">
+                        <div>
+                            <h4 style="margin: 0; color: #D35400; font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">
+                                ✏️ Modificar Puntaje: <strong>${escapeHtml(p.nombre_completo)}</strong>
+                            </h4>
+                            <small style="color: #666;">Doc: ${escapeHtml(p.documento_identidad || 'N/A')} | Vereda: ${escapeHtml(p.vereda || 'Sumapaz')}</small>
+                        </div>
+                        <div style="background: white; padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid #E67E22;">
+                            <span style="font-size: 0.85rem; color: #555; font-weight: 600;">Nuevo Total: </span>
+                            <strong id="inline-edit-total-lbl-${realIndex}" style="font-size: 1.4rem; color: #D35400; font-weight: 800;">${eval.puntaje_total} / ${totalMax} Pts</strong>
+                        </div>
+                    </div>
+
+                    <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; border: 1px solid #EAE5D9; margin-bottom: 1rem;">
+                        <thead>
+                            <tr style="background: #E67E22; color: white; font-size: 0.88rem; text-align: left;">
+                                <th style="padding: 10px;">Criterio</th>
+                                <th style="padding: 10px; text-align: center; width: 110px;">Máx. Pts</th>
+                                <th style="padding: 10px; text-align: center; width: 130px;">Puntaje Actual</th>
+                                <th style="padding: 10px; text-align: center; width: 160px;">Nuevo Puntaje</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${rowsHtml}
+                        </tbody>
+                    </table>
+
+                    <div style="display: flex; gap: 0.8rem; justify-content: flex-end; align-items: center;">
+                        <button class="btn-action" onclick="closeInlineDetail(${realIndex})" style="padding: 0.6rem 1.2rem; background: #6C757D; color: white; font-weight: 600;">
+                            Cancelar
+                        </button>
+                        <button class="btn-action" id="btn-save-edit-inline-${realIndex}" onclick="guardarEdicionPuntajeDirecta(${evalId}, ${realIndex})" style="padding: 0.65rem 1.6rem; background: #27AE60; color: white; font-weight: 700; font-size: 1rem;">
+                            💾 Guardar
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            row.style.display = 'table-row';
+            recalcularEditInlineScore(realIndex, totalMax);
+        }
+
+        function recalcularEditInlineScore(realIndex, totalMax) {
+            const inputs = document.querySelectorAll(`.inline-edit-crit-obt-${realIndex}`);
+            let total = 0;
+            inputs.forEach(input => {
+                const val = parseFloat(input.value) || 0;
+                total += val;
+            });
+            const lbl = document.getElementById(`inline-edit-total-lbl-${realIndex}`);
+            if (lbl) {
+                lbl.textContent = `${total} / ${totalMax || 100} Pts`;
+            }
+        }
+
+        async function guardarEdicionPuntajeDirecta(evalId, realIndex) {
+            if (!evalId) return;
+
+            const btn = document.getElementById(`btn-save-edit-inline-${realIndex}`);
+            if (btn) {
+                btn.disabled = true;
+                btn.innerText = 'Guardando...';
+            }
+
+            try {
+                const names = document.querySelectorAll(`.inline-edit-crit-name-${realIndex}`);
+                const maxs = document.querySelectorAll(`.inline-edit-crit-max-${realIndex}`);
+                const obts = document.querySelectorAll(`.inline-edit-crit-obt-${realIndex}`);
+
+                const desagregado = [];
+                names.forEach((el, idx) => {
+                    desagregado.push({
+                        criterio: el.value,
+                        puntaje_maximo: parseFloat(maxs[idx].value) || 0,
+                        puntaje_obtenido: parseFloat(obts[idx].value) || 0
+                    });
+                });
+
+                const res = await fetch('api/update_evaluacion_concurso.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        evaluacion_id: evalId,
+                        desagregado_puntaje: desagregado
+                    })
+                });
+
+                const data = await res.json();
+                if (data.success) {
+                    if (currentConcursoDetail && currentConcursoDetail.concurso) {
+                        await loadConcursoDetalle(currentConcursoDetail.concurso.id);
+                    }
+                    await loadDashboard();
+                    alert('✅ Puntaje actualizado y guardado correctamente.');
+                } else {
+                    alert('❌ Error: ' + (data.error || 'No se pudo guardar el puntaje.'));
+                }
+            } catch (e) {
+                console.error("Error al guardar edición de puntaje:", e);
+                alert('❌ Error de conexión o servidor al intentar guardar.');
+            } finally {
+                if (btn) {
+                    btn.disabled = false;
+                    btn.innerText = '💾 Guardar';
+                }
+            }
+        }
+
+        function closeInlineDetail(realIndex) {
+            const row = document.getElementById(`inline-detail-row-${realIndex}`);
+            const content = document.getElementById(`inline-detail-content-${realIndex}`);
+            if (row) row.style.display = 'none';
+            if (content) content.removeAttribute('data-mode');
+        }
+
         function recalcularTotalInline(index, totalMax) {
             const inputs = document.querySelectorAll(`.inline-crit-obt-${index}`);
             let total = 0;
