@@ -337,6 +337,26 @@
             transform: scale(1.03);
         }
 
+        .btn-carac-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background-color: #EFEBE4;
+            color: #444F2F;
+            border: 1px solid #444F2F;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-carac-link:hover {
+            background-color: #444F2F;
+            color: #FFFFFF;
+        }
+
         .btn-detail-act {
             background-color: #444F2F;
             color: white;
@@ -1314,7 +1334,12 @@
                 html += `
                     <tr>
                         <td style="text-align: center;">${lvlBadgeHtml}</td>
-                        <td style="font-weight: 600; color: #444F2F;">${escapeHtml(p.nombre_completo)}</td>
+                        <td>
+                            <div style="font-weight: 600; color: #444F2F; margin-bottom: 4px;">${escapeHtml(p.nombre_completo)}</div>
+                            <a href="ver_caracterizacion.html?id=${p.id}" target="_blank" class="btn-carac-link" title="Ver Caracterización de ${escapeHtml(p.nombre_completo)}">
+                                📋 Ver Caracterización
+                            </a>
+                        </td>
                         <td>${escapeHtml(p.numero_documento || '-')}</td>
                         <td>${escapeHtml(p.vereda || '-')}</td>
                         <td>
@@ -1361,15 +1386,21 @@
                 : `<span style="color: #999;">❌ Sin PMAPC Diligenciado</span>`;
 
             const actionsBox = document.getElementById('modal-actions-box');
+            let actionsHtml = `
+                <a href="ver_caracterizacion.html?id=${p.id}" target="_blank" class="btn-carac-link" style="font-size: 0.9rem; padding: 8px 16px; border-radius: 20px;">
+                    📋 Ver Caracterización
+                </a>
+            `;
+
             if (hasPmapc) {
-                actionsBox.innerHTML = `
+                actionsHtml += `
                     <a href="api/download_pmapc_pdf.php?id=${p.id}" target="_blank" class="btn-pdf-act" style="font-size: 0.95rem; padding: 10px 20px;">
                         📄 Abrir PMAPC PDF
                     </a>
                 `;
             } else {
                 const canQuitar = (!p.observacion || !p.observacion.includes('Desistió'));
-                actionsBox.innerHTML = `
+                actionsHtml += `
                     <button class="btn-pdf-off" disabled style="font-size: 0.95rem; padding: 10px 20px;">
                         🚫 PMAPC No Disponible
                     </button>
@@ -1380,6 +1411,7 @@
                     ` : ''}
                 `;
             }
+            actionsBox.innerHTML = actionsHtml;
 
             document.getElementById('producer-modal').style.display = 'flex';
         }
