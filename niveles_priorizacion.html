@@ -317,6 +317,26 @@
             opacity: 0.7;
         }
 
+        .btn-quitar-act {
+            background-color: #E74C3C;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 16px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .btn-quitar-act:hover {
+            background-color: #C0392B;
+            transform: scale(1.03);
+        }
+
         .btn-detail-act {
             background-color: #444F2F;
             color: white;
@@ -705,6 +725,80 @@
 
                 <div style="margin-top: 2rem; display: flex; justify-content: flex-end; gap: 1rem;" id="modal-actions-box">
                     <!-- PDF button injected dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Quitar Beneficiario -->
+    <div class="producer-modal-overlay" id="quitar-modal" style="display: none; align-items: center; justify-content: center; z-index: 10000;">
+        <div class="producer-modal-content" style="max-width: 500px; width: 90%; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <div class="modal-header" style="background: linear-gradient(135deg, #C0392B 0%, #922B21 100%); color: white; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="margin: 0; font-size: 1.25rem; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                    ❌ Retirar Beneficiario
+                </h3>
+                <button onclick="closeQuitarModal()" style="background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; line-height: 1;">&times;</button>
+            </div>
+            <div class="modal-body" style="padding: 1.5rem;">
+                <p style="margin-top: 0; color: #555; font-size: 0.95rem; line-height: 1.5;">
+                    Estás a punto de retirar a <strong id="quitar-productor-nombre" style="color: #2C3E50;">-</strong> del listado de beneficiarios.
+                </p>
+                <div style="margin-bottom: 1.25rem;">
+                    <label for="quitar-comentario" style="display: block; font-weight: 700; color: #444F2F; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                        Motivo / Comentario del Retiro <span style="color: #E74C3C;">*</span>
+                    </label>
+                    <textarea id="quitar-comentario" rows="4" placeholder="Escribe aquí el motivo por el cual el productor es retirado (ej. Desistimiento voluntario, cambio de residencia, no cumple requisitos)..." style="width: 100%; padding: 0.75rem; border: 1.5px solid #ccc; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.9rem; resize: vertical; box-sizing: border-box;"></textarea>
+                    <div id="quitar-error-msg" style="color: #E74C3C; font-size: 0.85rem; font-weight: 600; margin-top: 0.4rem; display: none;">
+                        Por favor ingresa un comentario o motivo para continuar.
+                    </div>
+                </div>
+                <input type="hidden" id="quitar-productor-id" value="">
+                <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.5rem;">
+                    <button onclick="closeQuitarModal()" style="padding: 0.75rem 1.25rem; background: #E0E0E0; color: #333; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                        Cancelar
+                    </button>
+                    <button id="btn-confirmar-quitar" onclick="submitQuitarBeneficiario()" style="padding: 0.75rem 1.25rem; background: #E74C3C; color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#C0392B'" onmouseout="this.style.backgroundColor='#E74C3C'">
+                        Confirmar y Recalcular
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Resultado de Reemplazo -->
+    <div class="producer-modal-overlay" id="reemplazo-modal" style="display: none; align-items: center; justify-content: center; z-index: 10001;">
+        <div class="producer-modal-content" style="max-width: 550px; width: 90%; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <div class="modal-header" style="background: linear-gradient(135deg, #2A9D8F 0%, #1F7A6F 100%); color: white; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="margin: 0; font-size: 1.25rem; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                    🎉 Recálculo Exitoso — Nuevo Beneficiario
+                </h3>
+                <button onclick="closeReemplazoModal()" style="background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; line-height: 1;">&times;</button>
+            </div>
+            <div class="modal-body" style="padding: 1.5rem;">
+                <div style="background: #FDEDEC; border-left: 4px solid #E74C3C; padding: 1rem; border-radius: 8px; margin-bottom: 1.25rem;">
+                    <h4 style="margin: 0 0 0.3rem 0; color: #C0392B; font-size: 0.85rem; text-transform: uppercase;">Productor Retirado</h4>
+                    <p style="margin: 0; font-weight: 700; color: #2C3E50; font-size: 1rem;" id="rep-retirado-nombre">-</p>
+                    <p style="margin: 0.2rem 0 0 0; font-size: 0.85rem; color: #555;" id="rep-retirado-motivo">-</p>
+                </div>
+
+                <div style="background: #E8F8F5; border-left: 4px solid #2A9D8F; padding: 1.25rem; border-radius: 8px;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 0.5rem;">
+                        <span style="background: #2A9D8F; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">NUEVO BENEFICIARIO</span>
+                        <span id="rep-nuevo-nivel" style="background: #444F2F; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">Nivel -</span>
+                    </div>
+                    <h3 style="margin: 0 0 0.5rem 0; color: #1F7A6F; font-size: 1.2rem; font-weight: 800;" id="rep-nuevo-nombre">-</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem; color: #333;">
+                        <div><strong>Cédula:</strong> <span id="rep-nuevo-doc">-</span></div>
+                        <div><strong>Vereda:</strong> <span id="rep-nuevo-vereda">-</span></div>
+                        <div><strong>Predio:</strong> <span id="rep-nuevo-predio">-</span></div>
+                        <div><strong>Puntaje Ajustado:</strong> <span id="rep-nuevo-puntaje">-</span></div>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+                    <button onclick="closeReemplazoModal()" style="padding: 0.75rem 1.5rem; background: #444F2F; color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.95rem;">
+                        Entendido / Actualizar Listado
+                    </button>
                 </div>
             </div>
         </div>
@@ -1196,13 +1290,26 @@
                     }
                 }
 
-                const pdfButton = hasPmapc
-                    ? `<a href="api/download_pmapc_pdf.php?id=${p.id}" target="_blank" class="btn-pdf-act" title="Ver PDF PMAPC">
+                let pdfButton = '';
+                if (hasPmapc) {
+                    pdfButton = `<a href="api/download_pmapc_pdf.php?id=${p.id}" target="_blank" class="btn-pdf-act" title="Ver PDF PMAPC">
                          📄 Ver PMAPC (PDF)
-                       </a>`
-                    : `<button class="btn-pdf-off" disabled title="Este productor aún no ha diligenciado el PMAPC">
-                         🚫 Sin PMAPC
-                       </button>`;
+                       </a>`;
+                } else {
+                    const canQuitar = (!p.observacion || !p.observacion.includes('Desistió'));
+                    pdfButton = `
+                        <div style="display: flex; flex-direction: column; gap: 6px; align-items: center;">
+                            <button class="btn-pdf-off" disabled title="Este productor aún no ha diligenciado el PMAPC" style="margin: 0; padding: 6px 12px; font-size: 0.8rem;">
+                                 🚫 Sin PMAPC
+                            </button>
+                            ${canQuitar ? `
+                                <button class="btn-quitar-act" onclick="openQuitarModal(${p.id}, '${escapeHtml(p.nombre_completo)}')" title="Quitar beneficiario del programa">
+                                    ❌ Quitar
+                                </button>
+                            ` : ''}
+                        </div>
+                    `;
+                }
 
                 html += `
                     <tr>
@@ -1261,10 +1368,16 @@
                     </a>
                 `;
             } else {
+                const canQuitar = (!p.observacion || !p.observacion.includes('Desistió'));
                 actionsBox.innerHTML = `
                     <button class="btn-pdf-off" disabled style="font-size: 0.95rem; padding: 10px 20px;">
                         🚫 PMAPC No Disponible
                     </button>
+                    ${canQuitar ? `
+                        <button class="btn-quitar-act" onclick="closeModal(); openQuitarModal(${p.id}, '${escapeHtml(p.nombre_completo)}');" style="font-size: 0.95rem; padding: 10px 20px; border-radius: 20px;">
+                            ❌ Quitar Beneficiario
+                        </button>
+                    ` : ''}
                 `;
             }
 
@@ -1273,6 +1386,81 @@
 
         function closeModal() {
             document.getElementById('producer-modal').style.display = 'none';
+        }
+
+        function openQuitarModal(id, nombre) {
+            document.getElementById('quitar-productor-id').value = id;
+            document.getElementById('quitar-productor-nombre').textContent = nombre;
+            document.getElementById('quitar-comentario').value = '';
+            document.getElementById('quitar-error-msg').style.display = 'none';
+            document.getElementById('quitar-modal').style.display = 'flex';
+        }
+
+        function closeQuitarModal() {
+            document.getElementById('quitar-modal').style.display = 'none';
+        }
+
+        async function submitQuitarBeneficiario() {
+            const id = document.getElementById('quitar-productor-id').value;
+            const comentario = document.getElementById('quitar-comentario').value.trim();
+            const errorMsg = document.getElementById('quitar-error-msg');
+            const btn = document.getElementById('btn-confirmar-quitar');
+
+            if (!comentario) {
+                errorMsg.style.display = 'block';
+                return;
+            }
+            errorMsg.style.display = 'none';
+
+            btn.disabled = true;
+            btn.textContent = 'Procesando...';
+
+            try {
+                const res = await fetch('api/quitar_beneficiario.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ productor_id: id, comentario: comentario })
+                });
+                const result = await res.json();
+
+                if (res.ok && result.success) {
+                    closeQuitarModal();
+
+                    document.getElementById('rep-retirado-nombre').textContent = result.removed.nombre_completo;
+                    document.getElementById('rep-retirado-motivo').textContent = 'Motivo: ' + result.removed.comentario;
+
+                    if (result.replacement) {
+                        document.getElementById('rep-nuevo-nombre').textContent = result.replacement.nombre_completo;
+                        document.getElementById('rep-nuevo-doc').textContent = result.replacement.numero_documento || 'N/A';
+                        document.getElementById('rep-nuevo-vereda').textContent = result.replacement.vereda || 'N/A';
+                        document.getElementById('rep-nuevo-predio').textContent = result.replacement.nombre_predio || 'N/A';
+                        document.getElementById('rep-nuevo-nivel').textContent = 'Nivel ' + result.replacement.nivel_2026;
+                        document.getElementById('rep-nuevo-puntaje').textContent = result.replacement.puntaje_ajustado + ' pts';
+                    } else {
+                        document.getElementById('rep-nuevo-nombre').textContent = 'Sin reemplazo disponible en lista de espera';
+                        document.getElementById('rep-nuevo-doc').textContent = '-';
+                        document.getElementById('rep-nuevo-vereda').textContent = '-';
+                        document.getElementById('rep-nuevo-predio').textContent = '-';
+                        document.getElementById('rep-nuevo-nivel').textContent = '-';
+                        document.getElementById('rep-nuevo-puntaje').textContent = '-';
+                    }
+
+                    document.getElementById('reemplazo-modal').style.display = 'flex';
+                } else {
+                    alert('Error: ' + (result.error || 'No se pudo retirar el beneficiario.'));
+                }
+            } catch (err) {
+                console.error('Error submitting withdrawal:', err);
+                alert('Error de conexión con el servidor.');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Confirmar y Recalcular';
+            }
+        }
+
+        function closeReemplazoModal() {
+            document.getElementById('reemplazo-modal').style.display = 'none';
+            loadBeneficiaries();
         }
 
         function exportFilteredDataToCSV() {
