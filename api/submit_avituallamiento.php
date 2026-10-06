@@ -41,11 +41,11 @@ try {
 
     $requiredFiles = [
         'id_cedula' => 'cedula',
-        'id_rut' => 'rut',
         'id_certificacion_bancaria' => 'certificacion_bancaria'
     ];
 
     $optionalFiles = [
+        'id_rut' => 'rut',
         'id_curso_manipulacion' => 'curso_manipulacion'
     ];
 
