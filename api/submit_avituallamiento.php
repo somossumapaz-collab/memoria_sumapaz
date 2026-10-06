@@ -39,17 +39,20 @@ try {
         }
     }
 
-    $fileFields = [
+    $requiredFiles = [
         'id_cedula' => 'cedula',
         'id_rut' => 'rut',
-        'id_curso_manipulacion' => 'curso_manipulacion',
         'id_certificacion_bancaria' => 'certificacion_bancaria'
+    ];
+
+    $optionalFiles = [
+        'id_curso_manipulacion' => 'curso_manipulacion'
     ];
 
     $savedFiles = [];
 
-    // File Upload Processing
-    foreach ($fileFields as $field => $suffix) {
+    // File Upload Processing - Required Files
+    foreach ($requiredFiles as $field => $suffix) {
         if (!isset($_FILES[$field]) || $_FILES[$field]['error'] !== UPLOAD_ERR_OK) {
             throw new Exception("El archivo obligatorio para '$field' falta o tiene errores de subida.");
         }
@@ -58,7 +61,6 @@ try {
         $originalName = $_FILES[$field]['name'];
         $ext = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
         
-        // e.g. 10305678rut.pdf
         $newName = $cedula . $suffix . '.' . $ext;
         $destPath = $uploadDir . $newName;
 
@@ -66,8 +68,27 @@ try {
             throw new Exception("Error al guardar el archivo $field en el servidor.");
         }
 
-        // Store the final filename for the database record
         $savedFiles[$field] = $newName;
+    }
+
+    // File Upload Processing - Optional Files
+    foreach ($optionalFiles as $field => $suffix) {
+        if (isset($_FILES[$field]) && $_FILES[$field]['error'] === UPLOAD_ERR_OK) {
+            $tmpName = $_FILES[$field]['tmp_name'];
+            $originalName = $_FILES[$field]['name'];
+            $ext = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
+
+            $newName = $cedula . $suffix . '.' . $ext;
+            $destPath = $uploadDir . $newName;
+
+            if (move_uploaded_file($tmpName, $destPath)) {
+                $savedFiles[$field] = $newName;
+            } else {
+                $savedFiles[$field] = null;
+            }
+        } else {
+            $savedFiles[$field] = null;
+        }
     }
 
     // Insert into DB

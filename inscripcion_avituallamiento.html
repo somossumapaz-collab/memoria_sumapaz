@@ -34,6 +34,11 @@
                 <div class="search-container"
                     style="margin-left: auto; display: flex; align-items: center; gap: 1.5rem;">
 
+                    <a href="inscripcion_productores.html" class="nav-link-btn" id="btn-register-prod"
+                        style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600; padding: 8px 14px; border-radius: 6px;">
+                        Registrar Productor
+                    </a>
+
                     <!-- Admin Options -->
                     <div id="header-auth-container" style="display: none; align-items: center; gap: 1rem;">
                         <a href="productores_registrados.html" class="nav-link-btn" id="btn-dashboard"
@@ -192,7 +197,7 @@
                             style="background: #fdfdfd; padding: 1.5rem; border: 1px solid #eaeaea; border-radius: 8px;">
                             <label
                                 style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.8rem; display: block;">Curso
-                                de Manipulación de Alimentos *</label>
+                                de Manipulación de Alimentos (Opcional)</label>
                             <label for="id_curso_manipulacion"
                                 style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 1rem; background: #e8f5e9; color: var(--primary-green); font-weight: bold; border-radius: 8px; cursor: pointer; border: 1px solid #c8e6c9; text-align: center; transition: background 0.2s;">
                                 <span>📁 Seleccionar Certificado (Solo PDF)</span>
@@ -278,8 +283,8 @@
             const cursoFile = document.getElementById('id_curso_manipulacion').files.length;
             const certFile = document.getElementById('id_certificacion_bancaria').files.length;
 
-            if (!cedulaFile || !rutFile || !cursoFile || !certFile) {
-                document.getElementById('error-modal-text').textContent = 'Debe anexar todos los soportes para guardar inscripción';
+            if (!cedulaFile || !rutFile || !certFile) {
+                document.getElementById('error-modal-text').textContent = 'Debe anexar los soportes obligatorios (Cédula, RUT y Certificación Bancaria) para guardar la inscripción';
                 document.getElementById('error-modal').classList.add('active');
                 return;
             }
