@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruta del Productor | Somos Sumapaz</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Static Cache-Busting -->
+    <script>
+        const timestamp = new Date().getTime();
+        document.write(`<link rel="stylesheet" href="assets/styles.css?v=${timestamp}">`);
+    </script>
+
+    <style>
+        :root {
+            --primary-green: #2E5A44;
+            --primary-green-dark: #1E3D2D;
+            --primary-green-light: #444F2F;
+            --accent-gold: #D4A373;
+            --accent-gold-light: #FBF4DE;
+            --bg-sand: #F4F6F8;
+            --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --text-dark: #212529;
+            --text-muted: #6C757D;
+        }
+
+        body {
+            background-color: var(--bg-sand);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-section {
+            position: relative;
+            background-image: url('assets/fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 300px;
+            padding: 4.5rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            border-bottom: 5px solid var(--primary-green);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(46, 90, 68, 0.85) 0%, rgba(15, 30, 22, 0.75) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .hero-title {
+            font-size: 2.6rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            color: var(--accent-gold-light);
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            line-height: 1.5;
+            opacity: 0.95;
+            color: #F8F9FA;
+            font-weight: 400;
+        }
+
+        .main-wrapper {
+            max-width: 1200px;
+            margin: -2.5rem auto 4rem auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Top Controls Card */
+        .search-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .search-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 2px solid #E2E8F0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(46, 90, 68, 0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.85rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .select-productor {
+            padding: 0.75rem 1rem;
+            border: 2px solid #E2E8F0;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            background-color: #F8FAFC;
+            cursor: pointer;
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .btn-nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--primary-green);
+            font-weight: 700;
+            background: #EBF3ED;
+            padding: 0.6rem 1.25rem;
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-nav-back:hover {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        /* Producer Profile Card */
+        .producer-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2.5rem;
+            border-left: 6px solid var(--primary-green);
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .producer-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        .producer-avatar {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            box-shadow: 0 4px 15px rgba(46, 90, 68, 0.3);
+            margin: 0 auto;
+        }
+
+        .producer-info h2 {
+            margin: 0 0 0.4rem 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            color: var(--primary-green-dark);
+        }
+
+        .producer-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        .producer-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-weight: 500;
+        }
+
+        .tenure-badge {
+            background: linear-gradient(135deg, #FFF8E7 0%, #FEEBC8 100%);
+            border: 1px solid #FBD38D;
+            color: #744210;
+            padding: 0.8rem 1.4rem;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(212, 163, 115, 0.15);
+        }
+
+        .tenure-badge .tenure-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            display: block;
+            margin-bottom: 0.2rem;
+            color: #975A16;
+        }
+
+        .tenure-badge .tenure-value {
+            font-size: 1.15rem;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin-top: 1.25rem;
+            width: 100%;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 0.35rem;
+        }
+
+        .progress-bar-bg {
+            height: 10px;
+            background: #E2E8F0;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-green) 0%, var(--accent-gold) 100%);
+            border-radius: 20px;
+            transition: width 0.6s ease;
+        }
+
+        /* Timeline / Bubble Roadmap */
+        .timeline-section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-green-dark);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .timeline-container {
+            position: relative;
+            padding: 1rem 0;
+        }
+
+        /* Vertical Connector Line */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 35px;
+            top: 40px;
+            bottom: 40px;
+            width: 5px;
+            background: linear-gradient(180deg, var(--primary-green) 0%, var(--accent-gold) 60%, #CBD5E1 100%);
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        .bubble-item {
+            position: relative;
+            display: flex;
+            gap: 1.75rem;
+            margin-bottom: 2.25rem;
+            z-index: 2;
+        }
+
+        .bubble-node {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            border-radius: 50%;
+            background: white;
+            border: 4px solid var(--primary-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+            transition: transform 0.25 ease, box-shadow 0.25s ease;
+        }
+
+        .bubble-item:hover .bubble-node {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(46, 90, 68, 0.25);
+        }
+
+        .bubble-node.completed {
+            border-color: var(--primary-green);
+            background: #EBF3ED;
+        }
+
+        .bubble-node.active {
+            border-color: var(--accent-gold);
+            background: #FFFBF0;
+        }
+
+        .bubble-node.empty {
+            border-color: #CBD5E1;
+            background: #F8FAFC;
+        }
+
+        .bubble-content {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            flex: 1;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease;
+        }
+
+        .bubble-content:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .bubble-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            border-bottom: 2px solid #F1F5F9;
+            padding-bottom: 0.75rem;
+        }
+
+        .bubble-title-group h3 {
+            margin: 0 0 0.2rem 0;
+            font-size: 1.25rem;
+            color: var(--primary-green-dark);
+            font-weight: 700;
+        }
+
+        .bubble-title-group p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .badge-status {
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .status-green {
+            background: #D1E7DD;
+            color: #0F5132;
+        }
+
+        .status-gold {
+            background: #FFF3CD;
+            color: #664D03;
+        }
+
+        .status-gray {
+            background: #E2E8F0;
+            color: #475569;
+        }
+
+        /* Detail Grids inside bubbles */
+        .bubble-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 0.85rem;
+        }
+
+        .detail-card {
+            background: #F8FAFC;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            border: 1px solid #EDF2F7;
+        }
+
+        .detail-card-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .detail-card-value {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Event / Contest items list */
+        .subitem-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .subitem-card {
+            background: #F8FAFC;
+            border-left: 4px solid var(--primary-green);
+            padding: 0.85rem 1.1rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .subitem-info strong {
+            color: var(--primary-green-dark);
+            font-size: 0.95rem;
+            display: block;
+        }
+
+        .subitem-info span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .subitem-date {
+            font-size: 0.8rem;
+            font-weight: 700;
+            background: white;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            color: var(--primary-green);
+            border: 1px solid #CBD5E1;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .empty-state h3 {
+            color: var(--primary-green);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .timeline-container::before {
+                left: 20px;
+            }
+            .bubble-node {
+                width: 45px;
+                height: 45px;
+                min-width: 45px;
+                font-size: 1.2rem;
+            }
+            .bubble-item {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Hero -->
+    <div class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">📍 Ruta del Productor</h1>
+            <p class="hero-subtitle">Visualización por burbujas de la trayectoria campesina: vinculación, avance PMAPC, circuitos de comercialización, ferias y concursos.</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+
+        <!-- Top Search and Selection Controls -->
+        <div class="search-card">
+            <div class="search-group">
+                <a href="productores_registrados.html" class="btn-nav-back">← Volver al Listado</a>
+            </div>
+            <div class="search-group">
+                <div class="search-input-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="search-input" class="search-input" placeholder="Buscar por nombre, cédula o vereda...">
+                </div>
+            </div>
+            <div class="search-group" style="justify-content: flex-end;">
+                <select id="select-productor" class="select-productor">
+                    <option value="">-- Seleccionar Productor --</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Dynamic Container for Producer Profile & Route -->
+        <div id="route-container">
+            <div class="empty-state">
+                <h3>Cargando información de la Ruta del Productor...</h3>
+                <p>Por favor espera un momento mientras consultamos el historial campesino.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let allProducersList = [];
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const params = new URLSearchParams(window.location.search);
+            const urlId = params.get('id');
+            const urlDoc = params.get('documento');
+
+            await loadProducersDropdown();
+
+            if (urlId) {
+                loadProducerRoute({ id: urlId });
+            } else if (urlDoc) {
+                loadProducerRoute({ documento: urlDoc });
+            } else if (allProducersList.length > 0) {
+                // Default to first producer in list if no ID specified
+                loadProducerRoute({ id: allProducersList[0].id });
+            }
+
+            // Setup search listener
+            const searchInput = document.getElementById('search-input');
+            const selectProducer = document.getElementById('select-productor');
+
+            selectProducer.addEventListener('change', (e) => {
+                const val = e.target.value;
+                if (val) {
+                    loadProducerRoute({ id: val });
+                }
+            });
+
+            let debounceTimer;
+            searchInput.addEventListener('input', (e) => {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(() => {
+                    const query = e.target.value.trim();
+                    if (query.length >= 2) {
+                        loadProducerRoute({ search: query });
+                    }
+                }, 400);
+            });
+        });
+
+        async function loadProducersDropdown() {
+            try {
+                const res = await fetch('api/get_ruta_productor.php?list_producers=1');
+                const data = await res.json();
+                if (data.success && data.producers) {
+                    allProducersList = data.producers;
+                    const select = document.getElementById('select-productor');
+                    select.innerHTML = '<option value="">-- Seleccionar Productor (' + allProducersList.length + ') --</option>';
+                    allProducersList.forEach(p => {
+                        const opt = document.createElement('option');
+                        opt.value = p.id;
+                        opt.textContent = `${p.nombre_completo} - ${p.vereda || 'Sumapaz'} (${p.numero_documento})`;
+                        select.appendChild(opt);
+                    });
+                }
+            } catch (err) {
+                console.error("Error loading producers list:", err);
+            }
+        }
+
+        async function loadProducerRoute(paramsObj) {
+            const container = document.getElementById('route-container');
+            container.innerHTML = `
+                <div class="empty-state">
+                    <h3>🔍 Cargando Ruta del Productor...</h3>
+                </div>
+            `;
+
+            try {
+                const query = new URLSearchParams(paramsObj).toString();
+                const res = await fetch(`api/get_ruta_productor.php?${query}`);
+                const data = await res.json();
+
+                if (data.success && data.productor) {
+                    renderProducerRoute(data.productor, data.burbujas);
+                    // Update dropdown selection if needed
+                    const select = document.getElementById('select-productor');
+                    select.value = data.productor.id;
+                } else {
+                    container.innerHTML = `
+                        <div class="empty-state">
+                            <h3 style="color: #C53030;">⚠️ Productor no encontrado</h3>
+                            <p>${data.error || 'No se pudo encontrar el historial del productor solicitado.'}</p>
+                        </div>
+                    `;
+                }
+            } catch (err) {
+                console.error("Error loading route:", err);
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <h3 style="color: #C53030;">Error de Conexión</h3>
+                        <p>No se pudo conectar con el servidor para obtener la ruta.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function renderProducerRoute(productor, burbujas) {
+            const container = document.getElementById('route-container');
+            const initials = productor.nombre_completo.split(' ').map(n => n[0]).slice(0, 2).join('');
+
+            let html = `
+                <!-- Producer Header Card -->
+                <div class="producer-card">
+                    <div class="producer-avatar">${initials}</div>
+                    <div class="producer-info">
+                        <h2>${productor.nombre_completo}</h2>
+                        <div class="producer-meta">
+                            <span class="producer-meta-item">🪪 ${productor.tipo_documento} ${productor.numero_documento}</span>
+                            <span class="producer-meta-item">📍 Vereda: ${productor.vereda || 'No especificada'}</span>
+                            <span class="producer-meta-item">🏡 Predio: ${productor.nombre_predio || 'No especificado'}</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-header">
+                                <span>Avance en la Ruta Sumapaceña</span>
+                                <span>${productor.porcentaje_avance}% Completado</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: ${productor.porcentaje_avance}%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tenure-badge">
+                        <span class="tenure-title">Tiempo Vinculado</span>
+                        <span class="tenure-value">${productor.antiguedad_texto}</span>
+                        <div style="font-size: 0.75rem; font-weight: 500; margin-top: 0.2rem;">Desde: ${productor.fecha_creacion}</div>
+                    </div>
+                </div>
+
+                <!-- Timeline Title -->
+                <div class="timeline-section-title">
+                    <span>🧭 Hitos y Trayectoria Campesina</span>
+                </div>
+
+                <!-- Bubble Timeline -->
+                <div class="timeline-container">
+            `;
+
+            burbujas.forEach(b => {
+                let statusClass = 'status-green';
+                let nodeClass = 'completed';
+
+                if (b.estado.includes('Sin') || b.estado.includes('Pendiente')) {
+                    statusClass = 'status-gray';
+                    nodeClass = 'empty';
+                } else if (b.estado.includes('Proceso') || b.estado.includes('Activo')) {
+                    statusClass = 'status-gold';
+                    nodeClass = 'active';
+                }
+
+                html += `
+                    <div class="bubble-item">
+                        <div class="bubble-node ${nodeClass}">
+                            ${b.icono || '📌'}
+                        </div>
+                        <div class="bubble-content">
+                            <div class="bubble-header">
+                                <div class="bubble-title-group">
+                                    <h3>${b.titulo}</h3>
+                                    <p>${b.subtitulo}</p>
+                                </div>
+                                <span class="badge-status ${statusClass}">${b.estado}</span>
+                            </div>
+                `;
+
+                // Render details grid if available
+                if (b.detalles && Object.keys(b.detalles).length > 0) {
+                    html += `<div class="bubble-details-grid">`;
+                    for (const [key, val] of Object.entries(b.detalles)) {
+                        html += `
+                            <div class="detail-card">
+                                <div class="detail-card-label">${key}</div>
+                                <div class="detail-card-value">${val}</div>
+                            </div>
+                        `;
+                    }
+                    html += `</div>`;
+                }
+
+                // Render events subitems if Burbuja 4
+                if (b.id === 4 && b.eventos && b.eventos.length > 0) {
+                    html += `
+                        <div style="margin-top: 1.25rem;">
+                            <div style="font-size: 0.85rem; font-weight: 700; color: var(--primary-green); text-transform: uppercase; margin-bottom: 0.5rem;">
+                                🎪 Participación en Eventos y Circuitos (${b.eventos.length}):
+                            </div>
+                            <div class="subitem-list">
+                    `;
+                    b.eventos.forEach(ev => {
+                        html += `
+                            <div class="subitem-card">
+                                <div class="subitem-info">
+                                    <strong>${ev.nombre}</strong>
+                                    <span>${ev.observaciones}</span>
+                                </div>
+                                <span class="subitem-date">📅 ${ev.fecha}</span>
+                            </div>
+                        `;
+                    });
+                    html += `</div></div>`;
+                }
+
+                // Render contests subitems if Burbuja 5
+                if (b.id === 5 && b.concursos && b.concursos.length > 0) {
+                    html += `
+                        <div style="margin-top: 1.25rem;">
+                            <div style="font-size: 0.85rem; font-weight: 700; color: var(--primary-green); text-transform: uppercase; margin-bottom: 0.5rem;">
+                                🏆 Concursos Tradicionales Registrados (${b.concursos.length}):
+                            </div>
+                            <div class="subitem-list">
+                    `;
+                    b.concursos.forEach(c => {
+                        const scoreTxt = c.puntaje_total ? `Puntaje: ${c.puntaje_total} pts` : 'Pendiente Evaluación';
+                        html += `
+                            <div class="subitem-card">
+                                <div class="subitem-info">
+                                    <strong>${c.concurso_titulo}</strong>
+                                    <span>Categoría: ${c.concurso_categoria || 'Tradicional'} ${c.nombre_jurado ? ' | Jurado: ' + c.nombre_jurado : ''}</span>
+                                </div>
+                                <span class="subitem-date" style="background: var(--accent-gold-light); color: var(--primary-green-dark);">⭐ ${scoreTxt}</span>
+                            </div>
+                        `;
+                    });
+                    html += `</div></div>`;
+                }
+
+                html += `
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `</div>`;
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+
+</html>
