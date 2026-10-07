@@ -882,7 +882,7 @@
                 if (resProds.success && Array.isArray(resProds.data)) {
                     // Include beneficiaries for 2025 and 2026
                     allBeneficiaries = resProds.data
-                        .filter(p => parseInt(p.fecha_beneficio || 0) === 2025 || parseInt(p.fecha_beneficio || 0) === 2026 || parseInt(p.beneficiario_2026 || 0) === 1)
+                        .filter(p => parseInt(p.fecha_beneficio || 0) === 2025 || parseInt(p.fecha_beneficio || 0) === 2026)
                         .map(p => ({
                             ...p,
                             coordenadas: coordsMap[parseInt(p.id)] || p.coordenadas || null
@@ -1030,7 +1030,7 @@
 
         function getYearFilteredList() {
             if (selectedYear === '2025') {
-                return allBeneficiaries.filter(p => parseInt(p.fecha_beneficio || 0) === 2025 || (parseInt(p.beneficiario_2026 || 0) === 1 && !p.fecha_beneficio));
+                return allBeneficiaries.filter(p => parseInt(p.fecha_beneficio || 0) === 2025);
             } else if (selectedYear === '2026') {
                 return allBeneficiaries.filter(p => parseInt(p.fecha_beneficio || 0) === 2026);
             }
@@ -1296,7 +1296,7 @@
                     ? `<span style="background:#2A9D8F; color:white; padding: 4px 8px; border-radius:12px; font-size:0.8rem; font-weight:500;">Realizado</span>`
                     : `<span style="background:#CCCCCC; color:#555; padding: 4px 8px; border-radius:12px; font-size:0.8rem; font-weight:500;">Pendiente</span>`;
 
-                const fechaBen = p.fecha_beneficio ? p.fecha_beneficio : (parseInt(p.beneficiario_2026 || 0) === 1 ? '2025' : '-');
+                const fechaBen = p.fecha_beneficio ? p.fecha_beneficio : '-';
                 const fechaBadge = `<span style="background:#444F2F; color:white; padding: 4px 10px; border-radius:12px; font-size:0.8rem; font-weight:600;">${fechaBen}</span>`;
 
                 let obsBadge = '<span style="color:#888;">-</span>';
@@ -1514,7 +1514,7 @@
                 const vereda = `"${(p.vereda || '').replace(/"/g, '""')}"`;
                 const predio = `"${(p.nombre_predio || '').replace(/"/g, '""')}"`;
                 const tel = `"${(p.telefono || '').replace(/"/g, '""')}"`;
-                const fechaBen = p.fecha_beneficio ? p.fecha_beneficio : (parseInt(p.beneficiario_2026 || 0) === 1 ? '2025' : '-');
+                const fechaBen = p.fecha_beneficio ? p.fecha_beneficio : '-';
                 const pmapc = parseInt(p.tiene_pmapc || 0) === 1 ? "Realizado" : "Pendiente";
                 const obs = `"${(p.observacion || '-').replace(/"/g, '""')}"`;
 

@@ -7,7 +7,7 @@
     <meta http-equiv="Expires" content="0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscripción | Somos Sumapaz</title>
+    <title>Inscripción Tejedoras y Artesanas | Somos Sumapaz</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,39 +32,23 @@
                 </a>
 
                 <div class="search-container"
-                    style="margin-left: auto; display: flex; align-items: center; gap: 1.5rem;">
+                    style="margin-left: auto; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
 
-                    <!-- Admin Options (Login / Dashboard / Inscripción) -->
-                    <a href="inscripcion_productores.html" class="nav-link-btn" id="btn-register"
+                    <a href="inscripcion_productores.html" class="nav-link-btn" id="btn-register-prod"
                         style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600; padding: 8px 14px; border-radius: 6px;">
                         Registrar Productor
-                    </a>
-                    <a href="inscripcion_avituallamiento.html" class="nav-link-btn" id="btn-register-avit"
-                        style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600; padding: 8px 14px; border-radius: 6px;">
-                        Inscripción Avituallamiento
-                    </a>
-                    <a href="inscripcion_tejedoras.html" class="nav-link-btn" id="btn-register-tejedoras"
-                        style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600; padding: 8px 14px; border-radius: 6px;">
-                        Tejedoras
                     </a>
                     <a href="inscripcion_jovenes.html" class="nav-link-btn" id="btn-register-jovenes"
                         style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600; padding: 8px 14px; border-radius: 6px;">
                         Jóvenes Rurales
                     </a>
 
-                    <!-- Admin Options (Login / Dashboard / Inscripción) -->
+                    <!-- Admin Options -->
                     <div id="header-auth-container" style="display: none; align-items: center; gap: 1rem;">
-
-                        <a href="inscripcion_avituallamiento.html" class="nav-link-btn" id="btn-avituallamiento"
-                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600; padding: 8px 14px; border-radius: 6px;">
-                            Avituallamiento
-                        </a>
-
                         <a href="productores_registrados.html" class="nav-link-btn" id="btn-dashboard"
                             style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600; padding: 8px 14px; border-radius: 6px;">
                             Dashboard
                         </a>
-
                         <a href="pmapc.html" class="nav-link-btn" id="btn-pmapc"
                             style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600; padding: 8px 14px; border-radius: 6px;">
                             PMAPC
@@ -73,16 +57,12 @@
                         <button onclick="logout()" class="nav-link-btn" id="btn-logout"
                             style="margin: 0; background-color: transparent; cursor: pointer; color: #FBF4DE; border: none; padding: 8px; border-radius: 6px;"
                             title="Cerrar Sesión">
-
                             <svg fill="none" viewBox="0 0 24 24" stroke="#FBF4DE" stroke-width="2"
                                 style="width: 24px; height: 24px; transform: scaleX(-1);">
-
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
                             </svg>
-
                         </button>
-
                     </div>
                 </div>
             </div>
@@ -91,14 +71,15 @@
 
     <main class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
         <div class="form-wrapper">
-            <h1 class="serif form-title" id="page-title">Formulario de Inscripción Productores Sumapaz</h1>
-            <p class="form-subtitle" id="page-subtitle"> Por favor diligencia los siguientes datos.</p>
+            <h1 class="serif form-title" id="page-title">Formulario de Inscripción para Tejedoras y Artesanas</h1>
+            <p class="form-subtitle" id="page-subtitle"> Por favor diligencia todos los datos obligatorios y adjunta tu soporte de identificación.</p>
 
-            <form id="inscripcion-form" class="custom-form">
+            <form id="inscripcion-form" class="custom-form" enctype="multipart/form-data">
                 <div class="form-grid">
                     <div class="form-group">
-                        <label for="nombre">Nombre Completo *</label>
-                        <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan Pérez">
+                        <label for="nombre_completo">Nombre Completo *</label>
+                        <input type="text" id="nombre_completo" name="nombre_completo" required
+                            placeholder="Ej. María Elena Rodríguez">
                     </div>
 
                     <div class="form-group">
@@ -106,20 +87,17 @@
                         <select id="tipo_documento" name="tipo_documento" required>
                             <option value="" disabled selected>Selecciona una opción</option>
                             <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+                            <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
                             <option value="Pasaporte">Pasaporte</option>
-                            <option value="NIT">NIT</option>
                             <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                            <option value="NIT">NIT</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="cedula">Número de Documento *</label>
-                        <input type="text" id="cedula" name="cedula" required placeholder="Ej. 1234567890">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cedula_file">Subir Cédula (PDF) *</label>
-                        <input type="file" id="cedula_file" name="cedula_file" accept=".pdf">
+                        <label for="numero_documento">Número de Documento *</label>
+                        <input type="text" id="numero_documento" name="numero_documento" required
+                            placeholder="Ej. 1234567890">
                     </div>
 
                     <div class="form-group">
@@ -133,8 +111,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="correo">Correo Electrónico (Opcional)</label>
-                        <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com">
+                        <label for="correo_electronico">Correo Electrónico (Opcional)</label>
+                        <input type="email" id="correo_electronico" name="correo_electronico"
+                            placeholder="ejemplo@correo.com">
                     </div>
 
                     <div class="form-group">
@@ -173,20 +152,44 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="nombre_predio">Nombre del Predio *</label>
+                        <label for="nombre_predio">Nombre del Predio / Taller *</label>
                         <input type="text" id="nombre_predio" name="nombre_predio" required
-                            placeholder="Ej. Finca La Esperanza">
+                            placeholder="Ej. Taller Artesanal La Esperanza / Finca San Pedro">
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 1.5rem;">
+                    <label for="tecnica_artesania">Tipo de Técnica de Tejido o Artesanía *</label>
+                    <textarea id="tecnica_artesania" name="tecnica_artesania" required rows="3"
+                        style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc; font-family: 'Inter', sans-serif;"
+                        placeholder="Describe la técnica de tejido o artesanía que realizas (ej. Crochet, telar de madera, bordado a mano en lana de oveja, talla en madera, etc.)"></textarea>
+                </div>
+
+                <div style="margin-top: 2.5rem; margin-bottom: 2rem;">
+                    <h2 class="serif section-title"
+                        style="color: var(--earth-brown); border-bottom: 2px solid var(--light-green); padding-bottom: 0.5rem;">
+                        Documento de Identificación</h2>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">Por favor adjunta tu documento en formato PDF:</p>
+
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <!-- Cédula -->
+                        <div class="form-group"
+                            style="background: #fdfdfd; padding: 1.5rem; border: 1px solid #eaeaea; border-radius: 8px;">
+                            <label
+                                style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.8rem; display: block;">Cédula o Documento de Identidad *</label>
+                            <label for="id_cedula"
+                                style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 1rem; background: #e8f5e9; color: var(--primary-green); font-weight: bold; border-radius: 8px; cursor: pointer; border: 1px solid #c8e6c9; text-align: center; transition: background 0.2s;">
+                                <span>📁 Seleccionar Cédula / Documento (Solo PDF)</span>
+                            </label>
+                            <input type="file" id="id_cedula" name="id_cedula" accept=".pdf" style="display: none;" required
+                                onchange="this.previousElementSibling.querySelector('span').textContent = '✅ ' + (this.files[0] ? this.files[0].name : 'Seleccionar Cédula / Documento (Solo PDF)')">
+                        </div>
                     </div>
                 </div>
 
                 <div class="form-submit-container" id="create-actions">
-                    <button type="submit" class="btn btn-submit" id="submit-btn-main">Enviar Inscripción</button>
-                </div>
-
-                <div class="form-submit-container" id="edit-actions" style="display: none;">
-                    <button type="button" class="btn btn-submit" style="background-color: #757575;"
-                        onclick="window.location.href='productores_registrados.html'">Cancelar</button>
-                    <button type="submit" class="btn btn-submit" id="submit-btn-edit">Guardar Cambios</button>
+                    <button type="submit" class="btn btn-submit" id="submit-btn-main"
+                        style="width: 100%; font-size: 1.1rem; padding: 1rem;">Guardar Inscripción Tejedoras</button>
                 </div>
             </form>
         </div>
@@ -199,14 +202,8 @@
                 <img src="assets/logo_somossumapaz.png" alt="Exito" style="width: 80px; height: auto;">
             </div>
             <h2 class="serif modal-title" id="success-title">¡Inscripción Exitosa!</h2>
-            <p class="modal-text" id="success-message">Gracias por realizar la inscripción de productores locales.
-                Pronto nos pondremos en contacto contigo.
-                <br><br>
-                <strong>¡Únete a nuestro grupo de WhatsApp!</strong><br>
-                Abre este enlace para unirte: <a href="https://chat.whatsapp.com/HJ0QlsHMr2I2Jc1wJszBAM?mode=gi_t" target="_blank" style="color: var(--primary-green); font-weight: 600; text-decoration: underline;">https://chat.whatsapp.com/HJ0QlsHMr2I2Jc1wJszBAM?mode=gi_t</a> e invita a otros a ingresar al grupo.
-            </p>
-            <button id="modal-close-btn" class="btn btn-submit"
-                style="width: 100%; margin-top: 1.5rem;">Aceptar</button>
+            <p class="modal-text" id="success-message">Tus datos y documento han sido guardados correctamente en el programa de Tejedoras y Artesanas.</p>
+            <button id="modal-close-btn" class="btn btn-submit" style="width: 100%; margin-top: 1.5rem;">Cerrar</button>
         </div>
     </div>
 
@@ -226,87 +223,37 @@
 
     <!-- App Logic -->
     <script>
-        let currentEditId = null;
-
         document.addEventListener('DOMContentLoaded', async () => {
-
-            // --- AUTH CHECK: Do not strictly protect, just show header if logged in ---
             try {
                 const authRes = await fetch('api/check_auth.php');
                 const authResult = await authRes.json();
-
                 if (authRes.ok && authResult.authenticated) {
-                    // Show admin header items since user is logged in
                     document.getElementById('header-auth-container').style.display = 'flex';
                 }
             } catch (error) {
                 console.error('Error checking auth:', error);
             }
-            // ------------------------
-
-            const urlParams = new URLSearchParams(window.location.search);
-            const editId = urlParams.get('edit');
-
-            if (editId) {
-                currentEditId = editId;
-
-                // Change UI for Edit Mode
-                document.getElementById('page-title').textContent = 'Editar Productor';
-                document.getElementById('page-subtitle').textContent = 'Actualiza la información del productor seleccionado.';
-                document.getElementById('create-actions').style.display = 'none';
-                const editActions = document.getElementById('edit-actions');
-                editActions.style.display = 'flex';
-                editActions.style.gap = '1rem';
-                editActions.style.justifyContent = 'center';
-
-                // Fetch existing data
-                try {
-                    const response = await fetch(`api/get_productor.php?id=${editId}`);
-                    const result = await response.json();
-
-                    if (response.ok && result.success) {
-                        const p = result.data;
-                        document.getElementById('nombre').value = p.nombre_completo;
-                        document.getElementById('tipo_documento').value = p.tipo_documento;
-                        document.getElementById('cedula').value = p.numero_documento;
-                        document.getElementById('fecha_nacimiento').value = p.fecha_nacimiento;
-                        document.getElementById('telefono').value = p.telefono;
-                        document.getElementById('correo').value = p.correo_electronico || '';
-                        document.getElementById('vereda').value = p.vereda;
-                        document.getElementById('nombre_predio').value = p.nombre_predio;
-                    } else {
-                        alert('Error cargando productor: ' + (result.error || 'Desconocido'));
-                        window.location.href = 'productores_registrados.html';
-                    }
-                } catch (error) {
-                    console.error('Error fetching producer:', error);
-                    alert('Error de red al intentar cargar la información.');
-                }
-            } else {
-                // Enforce PDF upload on registration
-                document.getElementById('cedula_file').required = true;
-            }
-
         });
 
         document.getElementById('inscripcion-form').addEventListener('submit', async function (e) {
             e.preventDefault();
 
-            const submitBtnId = currentEditId ? 'submit-btn-edit' : 'submit-btn-main';
-            const submitBtn = document.getElementById(submitBtnId);
-            const originalText = submitBtn.textContent;
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Enviando...';
-
-            const formData = new FormData(this);
-            let apiUrl = 'api/submit_inscripcion.php';
-            if (currentEditId) {
-                apiUrl = 'api/update_productor.php';
-                formData.append('id', currentEditId);
+            const cedulaFile = document.getElementById('id_cedula').files.length;
+            if (!cedulaFile) {
+                document.getElementById('error-modal-text').textContent = 'Debe anexar la Cédula de Ciudadanía o Documento de Identidad en formato PDF.';
+                document.getElementById('error-modal').classList.add('active');
+                return;
             }
 
+            const submitBtn = document.getElementById('submit-btn-main');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Guardando y enviando datos...';
+
+            const formData = new FormData(this);
+
             try {
-                const response = await fetch(apiUrl, {
+                const response = await fetch('api/submit_tejedoras.php', {
                     method: 'POST',
                     body: formData
                 });
@@ -314,24 +261,17 @@
                 const result = await response.json();
 
                 if (response.ok && result.success) {
-                    if (currentEditId) {
-                        document.getElementById('success-title').textContent = '¡Actualización Exitosa!';
-                        document.getElementById('success-message').innerHTML = `
-                            Los datos del productor han sido guardados correctamente.
-                            <br><br>
-                            <strong>¡Únete a nuestro grupo de WhatsApp!</strong><br>
-                            Abre este enlace para unirte: <a href="https://chat.whatsapp.com/HJ0QlsHMr2I2Jc1wJszBAM?mode=gi_t" target="_blank" style="color: var(--primary-green); font-weight: 600; text-decoration: underline;">https://chat.whatsapp.com/HJ0QlsHMr2I2Jc1wJszBAM?mode=gi_t</a> e invita a otros a ingresar al grupo.
-                        `;
-                    }
-                    // Show custom modal
                     document.getElementById('success-modal').classList.add('active');
+                    this.reset();
+                    const span = document.querySelector('#id_cedula').previousElementSibling.querySelector('span');
+                    if (span) span.textContent = '📁 Seleccionar Cédula / Documento (Solo PDF)';
                 } else {
-                    document.getElementById('error-modal-text').textContent = result.error || 'Ocurrió un problema al enviar la información.';
+                    document.getElementById('error-modal-text').textContent = result.error || 'Ocurrió un problema al guardar la información.';
                     document.getElementById('error-modal').classList.add('active');
                 }
             } catch (error) {
                 console.error('Error enviando formulario:', error);
-                document.getElementById('error-modal-text').textContent = 'Ocurrió un error de red al intentar enviar el formulario. Por favor, intenta de nuevo más tarde.';
+                document.getElementById('error-modal-text').textContent = 'Ocurrió un error de red o de servidor al intentar enviar el formulario.';
                 document.getElementById('error-modal').classList.add('active');
             } finally {
                 submitBtn.disabled = false;
@@ -339,14 +279,8 @@
             }
         });
 
-        // Close Modal Logic
         document.getElementById('modal-close-btn').addEventListener('click', function () {
             document.getElementById('success-modal').classList.remove('active');
-            if (currentEditId) {
-                window.location.href = 'productores_registrados.html';
-            } else {
-                document.getElementById('inscripcion-form').reset();
-            }
         });
 
         document.getElementById('error-close-btn').addEventListener('click', function () {
