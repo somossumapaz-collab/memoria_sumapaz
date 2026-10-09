@@ -331,10 +331,6 @@
                         <label for="longitud">Longitud</label>
                         <input type="number" step="any" id="longitud" name="longitud" placeholder="Ej. -74.12345">
                     </div>
-                    <div class="form-group">
-                        <label for="altitud_msnm">Altitud (msnm)</label>
-                        <input type="number" step="any" id="altitud_msnm" name="altitud_msnm" placeholder="Ej. 3450">
-                    </div>
                 </div>
                 <div id="gps-status" style="font-size: 0.85rem; color: #666; margin-top: 6px;"></div>
 
@@ -576,24 +572,28 @@
 
         function fetchGpsLocation() {
             const status = document.getElementById('gps-status');
-            status.textContent = 'Obteniendo coordenadas GPS...';
+            const confirmGeoloc = confirm("¿Te encuentras actualmente en el lugar del predio / finca donde se realizará el concurso?\n\n- Presiona ACEPTAR si estás en el predio para capturar las coordenadas GPS automáticas.\n- Presiona CANCELAR si no estás en el sitio para ingresarlas manualmente.");
+
+            if (!confirmGeoloc) {
+                status.textContent = 'Por favor ingresa las coordenadas de Latitud y Longitud manualmente a continuación.';
+                return;
+            }
+
+            status.textContent = 'Obteniendo coordenadas GPS del dispositivo...';
             if ("geolocation" in navigator) {
                 navigator.geolocation.getCurrentPosition(
                     (position) => {
                         document.getElementById('latitud').value = position.coords.latitude.toFixed(6);
                         document.getElementById('longitud').value = position.coords.longitude.toFixed(6);
-                        if (position.coords.altitude !== null) {
-                            document.getElementById('altitud_msnm').value = Math.round(position.coords.altitude);
-                        }
-                        status.textContent = 'Coordenadas capturadas con éxito.';
+                        status.textContent = 'Coordenadas GPS de Latitud y Longitud capturadas con éxito.';
                     },
                     (error) => {
-                        status.textContent = 'No se pudo obtener el GPS: ' + error.message;
+                        status.textContent = 'No se pudo obtener la ubicación GPS automática: ' + error.message + '. Por favor ingresa las coordenadas manualmente.';
                     },
                     { enableHighAccuracy: true, timeout: 10000 }
                 );
             } else {
-                status.textContent = 'Geolocalización no disponible en el navegador.';
+                status.textContent = 'La geolocalización no está disponible en este navegador. Ingresa las coordenadas manualmente.';
             }
         }
 
