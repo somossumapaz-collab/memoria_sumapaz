@@ -321,9 +321,13 @@
                             style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">
                             Concursos Sumapaz
                         </a>
+                        <a href="feria_ambiental.html" class="nav-link-btn" id="btn-feria-ambiental"
+                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">
+                            Feria Agroambiental
+                        </a>
                         <a href="ruta_productor.html" class="nav-link-btn" id="btn-ruta-productor"
                             style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">
-                            📍 Ruta Productor
+                            Ruta Productor
                         </a>
 
                         <button onclick="logout()" class="nav-link-btn" id="btn-logout"
@@ -1646,6 +1650,10 @@
                     window.location.href = 'login.html';
                     return; // Stop rendering
                 } else {
+                    if (authResult.rol_id === 13) {
+                        window.location.href = 'feria_ambiental.html';
+                        return;
+                    }
                     if (authResult.user_id === 12 || authResult.rol_id === 12 || authResult.is_concursos_only) {
                         window.location.href = 'concursos_sumapaz.html';
                         return;

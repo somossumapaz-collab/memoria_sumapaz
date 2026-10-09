@@ -7,7 +7,7 @@
     <meta http-equiv="Expires" content="0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscripción Tejedoras y Artesanas | Somos Sumapaz</title>
+    <title>Inscripción Tejedoras, Tejedores y Artesanos | Somos Sumapaz</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,7 +71,7 @@
 
     <main class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
         <div class="form-wrapper">
-            <h1 class="serif form-title" id="page-title">Formulario de Inscripción para Tejedoras y Artesanas</h1>
+            <h1 class="serif form-title" id="page-title">Formulario de Inscripción para Tejedoras, Tejedores y Artesanos</h1>
             <p class="form-subtitle" id="page-subtitle"> Por favor diligencia todos los datos obligatorios y adjunta tu soporte de identificación.</p>
 
             <form id="inscripcion-form" class="custom-form" enctype="multipart/form-data">
@@ -179,17 +179,17 @@
                                 style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.8rem; display: block;">Cédula o Documento de Identidad *</label>
                             <label for="id_cedula"
                                 style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 1rem; background: #e8f5e9; color: var(--primary-green); font-weight: bold; border-radius: 8px; cursor: pointer; border: 1px solid #c8e6c9; text-align: center; transition: background 0.2s;">
-                                <span>📁 Seleccionar Cédula / Documento (Solo PDF)</span>
+                                <span>Seleccionar Cédula / Documento (Solo PDF)</span>
                             </label>
                             <input type="file" id="id_cedula" name="id_cedula" accept=".pdf" style="display: none;" required
-                                onchange="this.previousElementSibling.querySelector('span').textContent = '✅ ' + (this.files[0] ? this.files[0].name : 'Seleccionar Cédula / Documento (Solo PDF)')">
+                                onchange="this.previousElementSibling.querySelector('span').textContent = (this.files[0] ? 'Archivo seleccionado: ' + this.files[0].name : 'Seleccionar Cédula / Documento (Solo PDF)')">
                         </div>
                     </div>
                 </div>
 
                 <div class="form-submit-container" id="create-actions">
                     <button type="submit" class="btn btn-submit" id="submit-btn-main"
-                        style="width: 100%; font-size: 1.1rem; padding: 1rem;">Guardar Inscripción Tejedoras</button>
+                        style="width: 100%; font-size: 1.1rem; padding: 1rem;">Guardar Inscripción Tejedoras y Tejedores</button>
                 </div>
             </form>
         </div>
@@ -202,7 +202,7 @@
                 <img src="assets/logo_somossumapaz.png" alt="Exito" style="width: 80px; height: auto;">
             </div>
             <h2 class="serif modal-title" id="success-title">¡Inscripción Exitosa!</h2>
-            <p class="modal-text" id="success-message">Tus datos y documento han sido guardados correctamente en el programa de Tejedoras y Artesanas.</p>
+            <p class="modal-text" id="success-message">Tus datos y documento han sido guardados correctamente en el programa de Tejedoras, Tejedores y Artesanos.</p>
             <button id="modal-close-btn" class="btn btn-submit" style="width: 100%; margin-top: 1.5rem;">Cerrar</button>
         </div>
     </div>
@@ -264,7 +264,7 @@
                     document.getElementById('success-modal').classList.add('active');
                     this.reset();
                     const span = document.querySelector('#id_cedula').previousElementSibling.querySelector('span');
-                    if (span) span.textContent = '📁 Seleccionar Cédula / Documento (Solo PDF)';
+                    if (span) span.textContent = 'Seleccionar Cédula / Documento (Solo PDF)';
                 } else {
                     document.getElementById('error-modal-text').textContent = result.error || 'Ocurrió un problema al guardar la información.';
                     document.getElementById('error-modal').classList.add('active');

@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <title>Feria Agroambiental | Somos Sumapaz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="assets/html2pdf.bundle.min.js"></script>
+    <script src="assets/xlsx.full.min.js"></script>
+    <style>
+        :root {
+            --primary-green: #3F6028;
+            --primary-green-dark: #35551F;
+            --accent-orange: #F4B35E;
+            --accent-gold: #D4A373;
+            --olive: #444F2F;
+            --bg-light: #F4F6F8;
+            --text-dark: #111111;
+            --text-muted: #6C757D;
+            --border-color: #333333;
+            --header-gray: #D9D9D9;
+            --light-gray: #EFEFEF;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        /* FLOATING LOGOUT BUTTON AT BOTTOM-RIGHT */
+        .floating-logout {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 2500;
+            background: var(--primary-green-dark);
+            color: #FBF4DE;
+            border: 1px solid rgba(251, 244, 222, 0.35);
+            border-radius: 30px;
+            padding: 0.65rem 1.35rem;
+            font-weight: 700;
+            font-size: 0.88rem;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .floating-logout:hover {
+            background: var(--primary-green);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* TOP NAVIGATION BAR WITH LOGOS (SOMOS SUMAPAZ AT LEFT, EVENT LOGO AT RIGHT) */
+        .topbar {
+            background: var(--olive);
+            color: #FBF4DE;
+            padding: 0.75rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+        }
+
+        .topbar .site-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .topbar .site-logo {
+            height: 55px;
+            max-height: 55px;
+            width: auto;
+            object-fit: contain;
+            background: transparent;
+            padding: 0;
+            border: none;
+        }
+
+        .topbar .brand-title-box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topbar .brand-title {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: #FBF4DE;
+            line-height: 1.2;
+        }
+
+        .topbar .brand-subtitle {
+            font-size: 0.8rem;
+            font-weight: 500;
+            opacity: 0.85;
+            color: #FBF4DE;
+        }
+
+        .topbar .event-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .topbar .event-logo {
+            height: 60px;
+            max-height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* HERO SECTION MATCHING SITE STANDARD */
+        .hero-section {
+            position: relative;
+            background-image: url('assets/fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 280px;
+            padding: 4rem 1.5rem 3.5rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            border-bottom: 5px solid var(--primary-green);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(53, 85, 31, 0.88) 0%, rgba(0, 0, 0, 0.5) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1100px;
+            width: 100%;
+            padding: 0 1.5rem;
+        }
+
+        .hero-title {
+            font-size: 2.6rem;
+            margin-bottom: 0.6rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #FBF4DE;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            line-height: 1.5;
+            opacity: 0.95;
+            max-width: 850px;
+            margin: 0 auto;
+            font-weight: 400;
+            color: #FBF4DE;
+        }
+
+        /* BUTTONS */
+        .btn {
+            border: none;
+            border-radius: 8px;
+            padding: 0.55rem 1.1rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover { opacity: 0.92; transform: translateY(-1px); }
+        .btn:active { transform: scale(0.98); }
+        .btn-light { background: rgba(251, 244, 222, 0.18); color: #FBF4DE; border: 1px solid rgba(251, 244, 222, 0.3); }
+        .btn-primary { background: var(--primary-green); color: #fff; }
+        .btn-gold { background: var(--accent-gold); color: #fff; }
+        .btn-outline { background: #fff; color: var(--primary-green); border: 1px solid var(--primary-green); }
+        .btn-sm { padding: 0.38rem 0.75rem; font-size: 0.78rem; white-space: nowrap; }
+
+        /* MAIN CONTENT CONTAINER */
+        main {
+            padding: 2rem 1.5rem 5rem 1.5rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .page-title h2 {
+            margin: 0;
+            font-size: 1.6rem;
+            color: var(--primary-green-dark);
+            font-weight: 800;
+        }
+
+        .page-title p {
+            margin: 0.3rem 0 0 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: var(--card-shadow);
+            padding: 1.25rem 1.4rem;
+            border: 1px solid #E3E6EA;
+        }
+
+        .card h3 {
+            margin: 0 0 1rem 0;
+            font-size: 1.05rem;
+            color: var(--primary-green-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+        }
+
+        /* FILTERS PANEL */
+        .filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 0.8rem;
+            align-items: end;
+        }
+
+        .filters label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .filters input, .filters select, .map-controls select {
+            width: 100%;
+            padding: 0.55rem 0.7rem;
+            border: 1px solid #CCCCCC;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            background: #fff;
+            color: var(--text-dark);
+        }
+
+        .filters .range { display: flex; gap: 0.35rem; }
+        .chk { display: flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; color: var(--text-dark); }
+        .active-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.85rem; }
+        .chip { background: #E8F0EB; color: var(--primary-green-dark); border-radius: 999px; padding: 0.2rem 0.75rem; font-size: 0.75rem; font-weight: 600; }
+
+        /* EXECUTIVE KPIS CLEAN CARDS */
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 1rem;
+            margin: 1.25rem 0;
+        }
+
+        .kpi {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: var(--card-shadow);
+            padding: 1.1rem 1.25rem;
+            border: 1px solid #E3E6EA;
+            border-left: none;
+        }
+
+        .kpi .v {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--primary-green-dark);
+            line-height: 1.1;
+        }
+
+        .kpi .l {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+
+        .grid-2 { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 1.25rem; }
+        @media (max-width: 1100px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+        /* MAP CONTAINER WITHOUT BASE TILE LAYER */
+        #map {
+            height: 520px;
+            border-radius: 12px;
+            background-color: #F8FAF9;
+            border: 1px solid #E3E6EA;
+        }
+
+        .map-controls { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; }
+        .map-controls select { width: auto; }
+        .legend { background: #fff; padding: 10px 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.15); font-size: 12px; line-height: 19px; }
+        .legend i { width: 16px; height: 12px; display: inline-block; margin-right: 6px; border: 1px solid #999; vertical-align: middle; }
+        .chart-box { position: relative; height: 280px; }
+        .chart-box.tall { height: 520px; }
+
+        /* VEREDA POPUP STYLING */
+        .vereda-popup-content {
+            font-family: 'Inter', sans-serif;
+            padding: 4px;
+            max-width: 320px;
+        }
+        .vereda-popup-content h4 {
+            margin: 0 0 8px 0;
+            color: var(--primary-green-dark);
+            font-size: 1rem;
+            font-weight: 800;
+            border-bottom: 2px solid var(--primary-green);
+            padding-bottom: 4px;
+        }
+        .vereda-popup-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin-bottom: 10px;
+            font-size: 0.8rem;
+        }
+        .vereda-popup-stats div {
+            background: #F1F4F2;
+            padding: 6px 8px;
+            border-radius: 6px;
+            border: 1px solid #E3E6EA;
+        }
+        .vereda-popup-stats b {
+            display: block;
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+        .vereda-popup-list {
+            max-height: 140px;
+            overflow-y: auto;
+            border-top: 1px solid #E3E6EA;
+            padding-top: 6px;
+            font-size: 0.78rem;
+        }
+        .vereda-popup-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 0;
+            border-bottom: 1px dashed #E3E6EA;
+        }
+
+        /* TABLES */
+        .table-wrap { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+        th {
+            text-align: left;
+            background: #F1F4F2;
+            color: var(--primary-green-dark);
+            padding: 0.7rem 0.65rem;
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            white-space: nowrap;
+            user-select: none;
+            border-bottom: 2px solid #D9D9D9;
+        }
+        th.nosort { cursor: default; }
+        td { padding: 0.6rem 0.65rem; border-bottom: 1px solid #E3E6EA; vertical-align: top; }
+        tr:hover td { background: #FAFBFA; }
+        .tag { display: inline-block; background: #EEF3EF; color: var(--primary-green-dark); border-radius: 6px; padding: 0.12rem 0.5rem; margin: 0.1rem 0.15rem 0.1rem 0; font-size: 0.72rem; }
+        .muted { color: var(--text-muted); }
+        .dup { background: #FFF3CD; color: #856404; border-radius: 6px; padding: 0.05rem 0.4rem; font-size: 0.68rem; font-weight: 700; }
+        .pager { display: flex; justify-content: space-between; align-items: center; margin-top: 0.85rem; font-size: 0.82rem; color: var(--text-muted); gap: 0.5rem; flex-wrap: wrap; }
+
+        /* MODAL / ACTA FORMAT MATCHING ANDROID APP PDF EXACTLY */
+        .modal-bg {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            display: none;
+            align-items: flex-start;
+            justify-content: center;
+            z-index: 3000;
+            overflow-y: auto;
+            padding: 2rem 1rem;
+        }
+        .modal-bg.open { display: flex; }
+        .modal { background: #fff; border-radius: 12px; width: 100%; max-width: 920px; box-shadow: 0 10px 40px rgba(0,0,0,.4); border: 1px solid #333; }
+        .modal-head { display: flex; justify-content: space-between; align-items: center; padding: 0.9rem 1.2rem; background: #F8F9FA; border-bottom: 2px solid var(--primary-green); border-radius: 12px 12px 0 0; gap: 0.5rem; flex-wrap: wrap; }
+        .modal-head h2 { margin: 0; font-size: 1.15rem; color: var(--primary-green-dark); font-weight: 800; font-family: Georgia, serif; }
+        .modal-body { padding: 1.5rem; background: #fff; }
+
+        /* OFFICIAL ANDROID ACTA STYLING */
+        .official-acta {
+            font-family: Georgia, serif;
+            color: #111111;
+            background: #fff;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .acta-hero-header {
+            position: relative;
+            height: 110px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .acta-wave-orange {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 65%;
+            height: 65px;
+            background: var(--accent-orange);
+            clip-path: ellipse(70% 100% at 20% 0%);
+            z-index: 1;
+        }
+
+        .acta-wave-green {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 110px;
+            background: var(--primary-green);
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+            z-index: 2;
+        }
+
+        .acta-logos-row {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+        }
+
+        .acta-logos-row img {
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .acta-titles-box {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .acta-title-main {
+            font-size: 13.5px;
+            font-weight: bold;
+            color: var(--primary-green-dark);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .acta-title-sub {
+            font-size: 10px;
+            font-weight: bold;
+            color: var(--primary-green-dark);
+            margin: 2px 0 0 0;
+            text-transform: uppercase;
+        }
+
+        .acta-divider-line {
+            border-bottom: 1px solid var(--border-color);
+            margin: 10px 0 15px 0;
+        }
+
+        .acta-table-header {
+            background-color: var(--header-gray);
+            border: 1px solid var(--border-color);
+            padding: 5px 8px;
+            font-size: 9px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #111;
+        }
+
+        .acta-grid-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 8.5pt;
+            margin-bottom: 12px;
+        }
+
+        .acta-grid-table td {
+            border: 1px solid var(--border-color);
+            padding: 5px 8px;
+            font-size: 8.5pt;
+        }
+
+        .acta-grid-table tr:nth-child(even) td {
+            background-color: var(--light-gray);
+        }
+
+        .acta-grid-table td.label-cell {
+            width: 32%;
+            font-weight: bold;
+            background-color: #F7F7F7;
+        }
+
+        .acta-consideraciones-box {
+            border: 1px solid var(--border-color);
+            padding: 8px 10px;
+            font-size: 7.5pt;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            background-color: #FAFAFA;
+        }
+
+        .acta-contests-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 7.5pt;
+            margin-bottom: 15px;
+        }
+
+        .acta-contests-table th {
+            background-color: var(--header-gray);
+            border: 1px solid var(--border-color);
+            padding: 5px 6px;
+            font-size: 7.5pt;
+            font-weight: bold;
+            color: #111;
+            text-transform: none;
+        }
+
+        .acta-contests-table td {
+            border: 1px solid var(--border-color);
+            padding: 5px 6px;
+        }
+
+        .acta-contests-table tr:nth-child(even) td {
+            background-color: var(--light-gray);
+        }
+
+        .acta-obs-box {
+            border: 1px solid var(--border-color);
+            padding: 8px 10px;
+            min-height: 50px;
+            font-size: 8pt;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .acta-juramento-text {
+            font-size: 7.5pt;
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .acta-signatures-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+
+        .acta-signature-card {
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 10px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .acta-signature-card img {
+            max-height: 90px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .acta-signature-line {
+            border-top: 1px solid #333;
+            margin-top: 6px;
+            padding-top: 4px;
+            font-size: 8pt;
+            font-weight: bold;
+        }
+
+        .acta-footer-banner {
+            background-color: var(--primary-green);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 6px 10px;
+            font-size: 9pt;
+            font-weight: bold;
+            margin-top: 20px;
+            letter-spacing: 0.05em;
+        }
+
+        .loading { text-align: center; padding: 3rem; color: var(--text-muted); }
+        .spinner { width: 36px; height: 36px; border: 4px solid #e0e0e0; border-top-color: var(--primary-green); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .error-box { background: #FDECEC; color: #8A1C1C; padding: 1rem; border-radius: 10px; }
+    </style>
+</head>
+
+<body>
+    <!-- FLOATING LOGOUT BUTTON AT BOTTOM RIGHT -->
+    <button class="floating-logout" onclick="logout()" title="Cerrar Sesión">
+        Cerrar Sesión
+    </button>
+
+    <!-- TOP NAVIGATION BAR WITH LOGOS (SOMOS SUMAPAZ AT LEFT, EVENT LOGO AT RIGHT) -->
+    <header class="topbar">
+        <div class="site-logo-container">
+            <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="site-logo">
+            <div class="brand-title-box">
+                <div class="brand-title">Feria Agroambiental</div>
+                <div class="brand-subtitle">Inscripciones a concursos - App Concursos Sumapaz</div>
+            </div>
+        </div>
+        <div class="event-logo-container">
+            <a href="productores_registrados.html" class="btn btn-light" id="btn-dashboard" style="display:none">Volver al Dashboard</a>
+            <img src="assets/logo_feria.png" alt="Feria Agroambiental" class="event-logo">
+        </div>
+    </header>
+
+    <!-- HERO BANNER MATCHING SITE DESIGN -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Feria Agroambiental Sumapaz</h1>
+        </div>
+    </section>
+
+    <main>
+        <div class="page-title">
+            <div>
+                <h2>Tablero de inscripciones</h2>
+                <p id="last-update">Cargando datos...</p>
+            </div>
+            <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+                <button class="btn btn-outline" onclick="loadData()">Actualizar</button>
+                <button class="btn btn-gold" onclick="exportExcel()">Exportar Excel</button>
+            </div>
+        </div>
+
+        <!-- FILTROS -->
+        <section class="card">
+            <div class="filters">
+                <div style="grid-column: span 2">
+                    <label>Persona (nombre o documento)</label>
+                    <input type="text" id="f-persona" placeholder="Buscar por nombre o número de documento...">
+                </div>
+                <div><label>Vereda</label><select id="f-vereda"></select></div>
+                <div><label>Género</label><select id="f-genero"></select></div>
+                <div><label>Categoría</label><select id="f-categoria"></select></div>
+                <div style="grid-column: span 2"><label>Concurso</label><select id="f-concurso"></select></div>
+                <div><label>Inscriptor</label><select id="f-inscriptor"></select></div>
+                <div><label>Fecha desde</label><input type="date" id="f-desde"></div>
+                <div><label>Fecha hasta</label><input type="date" id="f-hasta"></div>
+                <div>
+                    <label>Edad</label>
+                    <div class="range"><input type="number" id="f-edad-min" placeholder="Mín" min="0"><input type="number" id="f-edad-max" placeholder="Máx" min="0"></div>
+                </div>
+                <div><label>Escolaridad</label><select id="f-escolaridad"></select></div>
+                <div>
+                    <label class="chk" style="text-transform:none;font-size:.82rem;color:var(--text-dark)"><input type="checkbox" id="f-dedup" checked style="width:auto"> Ocultar duplicados</label>
+                    <button class="btn btn-outline btn-sm" onclick="resetFilters()" style="margin-top:.35rem">Limpiar filtros</button>
+                </div>
+            </div>
+            <div class="active-chips" id="active-chips"></div>
+        </section>
+
+        <!-- EXECUTIVE KPIS CLEAN CARDS -->
+        <section class="kpis">
+            <div class="kpi"><div class="v" id="k-personas">-</div><div class="l">Personas inscritas</div></div>
+            <div class="kpi"><div class="v" id="k-inscripciones">-</div><div class="l">Inscripciones a concursos</div></div>
+            <div class="kpi"><div class="v" id="k-veredas">-</div><div class="l">Veredas representadas</div></div>
+            <div class="kpi"><div class="v" id="k-mujeres">-</div><div class="l">Mujeres</div></div>
+            <div class="kpi"><div class="v" id="k-edad">-</div><div class="l">Edad promedio</div></div>
+            <div class="kpi"><div class="v" id="k-concursos">-</div><div class="l">Concursos con inscritos</div></div>
+            <div class="kpi"><div class="v" id="k-geo">-</div><div class="l">Con georreferencia</div></div>
+        </section>
+
+        <!-- VECTOR MAPA DE COROPLETAS (SIN MAPA DE FONDO) + TABLA VEREDAS -->
+        <section class="grid-2">
+            <div class="card">
+                <h3>
+                    <span>Mapa de coropletas por vereda</span>
+                    <span class="map-controls">
+                        <select id="map-metric">
+                            <option value="personas">Personas inscritas</option>
+                            <option value="inscripciones">Inscripciones a concursos</option>
+                            <option value="mujeres_pct">% Mujeres</option>
+                            <option value="edad_prom">Edad promedio</option>
+                        </select>
+                        <label class="chk"><input type="checkbox" id="map-points" checked> Puntos GPS</label>
+                    </span>
+                </h3>
+                <div id="map"></div>
+                <p class="muted" style="font-size:.75rem;margin:.5rem 0 0">Haz clic en una vereda para desplegar ventana de estadísticas. Al cerrar el pop-up se limpia el filtro automáticamente.</p>
+            </div>
+            <div class="card">
+                <h3>Personas e inscripciones por vereda</h3>
+                <div class="chart-box tall"><canvas id="ch-vereda"></canvas></div>
+            </div>
+        </section>
+
+        <section class="card" style="margin-bottom:1.25rem">
+            <h3>Inscripciones por concurso</h3>
+            <div class="chart-box" id="box-concurso" style="height:420px"><canvas id="ch-concurso"></canvas></div>
+        </section>
+
+        <section class="grid-3">
+            <div class="card"><h3>Distribución por género</h3><div class="chart-box"><canvas id="ch-genero"></canvas></div></div>
+            <div class="card"><h3>Rangos de edad por género</h3><div class="chart-box"><canvas id="ch-edad"></canvas></div></div>
+            <div class="card"><h3>Nivel de escolaridad</h3><div class="chart-box"><canvas id="ch-escolaridad"></canvas></div></div>
+        </section>
+
+        <section class="grid-2">
+            <div class="card"><h3>Inscripciones por fecha</h3><div class="chart-box"><canvas id="ch-fecha"></canvas></div></div>
+            <div class="card"><h3>Inscripciones por categoría</h3><div class="chart-box"><canvas id="ch-categoria"></canvas></div></div>
+        </section>
+
+        <!-- TABLA PRINCIPAL DE PERSONAS E INSCRIPCIONES -->
+        <section class="card">
+            <h3><span>Personas inscritas y actas <span class="muted" id="table-count" style="font-weight:500;font-size:.85rem"></span></span></h3>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th data-sort="id">#</th>
+                            <th data-sort="nombreCompleto">Persona</th>
+                            <th data-sort="numero_documento">Documento</th>
+                            <th data-sort="vereda">Vereda</th>
+                            <th data-sort="genero">Género</th>
+                            <th data-sort="edadValida">Edad</th>
+                            <th class="nosort">Concursos</th>
+                            <th data-sort="nombre_inscriptor">Inscriptor</th>
+                            <th data-sort="fechaDia">Fecha</th>
+                            <th class="nosort">Acta</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody"><tr><td colspan="10" class="loading"><div class="spinner"></div>Cargando datos...</td></tr></tbody>
+                </table>
+            </div>
+            <div class="pager">
+                <span id="pager-info"></span>
+                <span style="display:flex;gap:.4rem;align-items:center">
+                    <select id="page-size" style="padding:.3rem;border-radius:6px;border:1px solid #CCCCCC">
+                        <option>15</option><option selected>25</option><option>50</option><option>100</option>
+                    </select>
+                    <button class="btn btn-outline btn-sm" id="prev-page">Anterior</button>
+                    <button class="btn btn-outline btn-sm" id="next-page">Siguiente</button>
+                </span>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL ACTA DIGITAL (FORMATO OFICIAL ANDROID APP) -->
+    <div class="modal-bg" id="acta-modal" onclick="if(event.target===this) closeActa()">
+        <div class="modal">
+            <div class="modal-head">
+                <h2 id="acta-title">Acta de inscripción</h2>
+                <div style="display:flex;gap:.4rem">
+                    <button class="btn btn-primary btn-sm" onclick="downloadActaPdf()">Descargar PDF</button>
+                    <button class="btn btn-outline btn-sm" onclick="printActa()">Imprimir</button>
+                    <button class="btn btn-outline btn-sm" onclick="closeActa()">Cerrar</button>
+                </div>
+            </div>
+            <div class="modal-body" id="acta-body"></div>
+        </div>
+    </div>
+
+    <script>
+        // ================== ESTADO Y CONFIGURACIÓN ==================
+        const state = {
+            raw: null,
+            concursosById: {},
+            personas: [],
+            filtered: [],
+            geojson: null,
+            sort: { key: 'id', dir: -1 },
+            page: 1,
+            veredaFromMap: null
+        };
+        const charts = {};
+        let map, choroLayer, pointsLayer, legendCtl;
+
+        const COLORS = ['#2E5A44', '#D4A373', '#444F2F', '#C9677F', '#3D7EA6', '#8AB17D', '#E76F51', '#6D597A', '#2A9D8F', '#B5838D', '#E9C46A', '#577590'];
+        const GENDER_COLORS = { 'Femenino': '#C9677F', 'Masculino': '#3D7EA6', 'Otro': '#E9C46A', 'No binario': '#E9C46A', 'Sin dato': '#B0B0B0' };
+        const AGE_BINS = [[0, 17, '< 18'], [18, 28, '18-28'], [29, 40, '29-40'], [41, 59, '41-59'], [60, 200, '60+']];
+
+        const VEREDA_ALIAS = {
+            'LAS AURAS': 'LASURAS', 'LAS ANIMAS': 'LASANIMAS', 'RAIZAL': 'EL RAIZAL', 'ISTMO': 'ITSMO',
+            'SANTA ROSA': 'SANTA ROSA BAJA', 'PENALISA': 'PENALISA', 'TOLDO': 'EL TOLDO', 'NAZARET': 'NAZARETH'
+        };
+        const norm = s => (s || '').toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().replace(/\s+/g, ' ').trim();
+        const geoKey = v => { const n = norm(v); return VEREDA_ALIAS[n] || n; };
+        const esc = s => (s === null || s === undefined ? '' : String(s)).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        const titleCase = s => (s || '').toLowerCase().replace(/(^|\s)\S/g, t => t.toUpperCase());
+
+        // ================== AUTH CHECK ==================
+        async function checkAuth() {
+            try {
+                const res = await fetch('api/check_auth.php');
+                const a = await res.json();
+                if (!res.ok || !a.authenticated) { location.href = 'login.html'; return false; }
+                if (a.rol_id !== 1 && a.rol_id !== 13) { location.href = 'productores_registrados.html'; return false; }
+                if (a.rol_id === 1) document.getElementById('btn-dashboard').style.display = 'inline-flex';
+                return true;
+            } catch (e) { location.href = 'login.html'; return false; }
+        }
+        async function logout() { try { await fetch('api/logout.php'); } catch (e) { } location.href = 'login.html'; }
+
+        // ================== CARGA DE DATOS ==================
+        async function loadData() {
+            document.getElementById('last-update').textContent = 'Cargando datos...';
+            try {
+                const [res, geo] = await Promise.all([
+                    fetch('api/get_feria_ambiental.php?t=' + Date.now()),
+                    state.geojson ? Promise.resolve(null) : fetch('assets/veredas_sumapaz.geojson').then(r => r.json()).catch(() => null)
+                ]);
+                const data = await res.json();
+                if (!data.success) throw new Error(data.error || 'Error');
+                if (geo) state.geojson = geo;
+                state.raw = data;
+                prepareData();
+                fillFilterOptions();
+                applyFilters();
+                document.getElementById('last-update').textContent =
+                    `${data.productores.length} registros en servidor - actualizado ${new Date().toLocaleString('es-CO')}`;
+            } catch (e) {
+                console.error(e);
+                document.getElementById('last-update').innerHTML = `<span class="error-box">No se pudieron cargar los datos: ${esc(e.message)}</span>`;
+                document.getElementById('tbody').innerHTML = `<tr><td colspan="10"><div class="error-box">Error: ${esc(e.message)}</div></td></tr>`;
+            }
+        }
+
+        function prepareData() {
+            const { concursos, productores, inscripciones } = state.raw;
+            state.concursosById = {};
+            concursos.forEach(c => state.concursosById[c.id] = c);
+
+            const inscByProd = {};
+            inscripciones.forEach(i => {
+                (inscByProd[i.productor_id] = inscByProd[i.productor_id] || []).push(i);
+            });
+
+            const groups = {};
+            productores.forEach(p => {
+                const key = p.numero_documento ? 'D:' + norm(p.numero_documento)
+                    : 'N:' + norm(p.nombre + ' ' + p.apellido) + '|' + (p.fecha_inscripcion || '').slice(0, 16);
+                (groups[key] = groups[key] || []).push(p);
+            });
+
+            state.personas = productores.map(p => {
+                const edadValida = (p.edad !== null && p.edad >= 0 && p.edad <= 110) ? p.edad : null;
+                const fechaDia = (p.fecha_inscripcion || '').slice(0, 10);
+                return {
+                    ...p,
+                    nombreCompleto: titleCase((p.nombre + ' ' + p.apellido).trim()) || '(Sin nombre)',
+                    vereda: p.vereda || 'SIN VEREDA',
+                    genero: p.genero || 'Sin dato',
+                    edadValida,
+                    fechaDia,
+                    nombre_inscriptor: p.nombre_inscriptor || '',
+                    nivel_escolaridad: p.nivel_escolaridad || 'Sin dato',
+                    inscripciones: inscByProd[p.id] || [],
+                    isDuplicate: false,
+                    duplicateCount: 1
+                };
+            });
+
+            const byId = {};
+            state.personas.forEach(p => byId[p.id] = p);
+            Object.values(groups).forEach(g => {
+                if (g.length < 2) return;
+                const sorted = g.map(x => byId[x.id]).sort((a, b) => b.id - a.id);
+                const keep = sorted[0];
+                keep.duplicateCount = g.length;
+                const seen = new Set(keep.inscripciones.map(i => i.concurso_id));
+                sorted.slice(1).forEach(d => {
+                    d.isDuplicate = true;
+                    d.inscripciones.forEach(i => { if (!seen.has(i.concurso_id)) { seen.add(i.concurso_id); keep.inscripciones.push(i); } });
+                });
+            });
+        }
+
+        // ================== OPCIONES DE FILTRO ==================
+        function setOptions(id, values, allLabel, labelFn) {
+            const sel = document.getElementById(id);
+            const prev = sel.value;
+            sel.innerHTML = `<option value="">${allLabel}</option>` +
+                values.map(v => `<option value="${esc(v.value ?? v)}">${esc(labelFn ? labelFn(v) : (v.label ?? v))}</option>`).join('');
+            if ([...sel.options].some(o => o.value === prev)) sel.value = prev;
+        }
+
+        function fillFilterOptions() {
+            const uniq = arr => [...new Set(arr.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'es'));
+            const P = state.personas;
+            setOptions('f-vereda', uniq(P.map(p => p.vereda)), 'Todas');
+            setOptions('f-genero', uniq(P.map(p => p.genero)), 'Todos');
+            setOptions('f-inscriptor', uniq(P.map(p => p.nombre_inscriptor || '(Sin inscriptor)')), 'Todos');
+            setOptions('f-escolaridad', uniq(P.map(p => p.nivel_escolaridad)), 'Todas');
+            const cats = uniq(state.raw.concursos.map(c => c.categoria));
+            setOptions('f-categoria', cats.map(c => ({ value: c, label: shortCat(c) })), 'Todas');
+            updateConcursoOptions();
+        }
+
+        function updateConcursoOptions() {
+            const cat = document.getElementById('f-categoria').value;
+            const list = state.raw.concursos.filter(c => !cat || c.categoria === cat);
+            setOptions('f-concurso', list.map(c => ({ value: String(c.id), label: c.nombre })), 'Todos');
+        }
+
+        function shortCat(c) {
+            const m = (c || '').match(/^Categor[ií]a\s+([IVXLC]+)\s*:\s*(.*)$/i);
+            if (!m) return c;
+            const rest = m[2].length > 45 ? m[2].slice(0, 45) + '...' : m[2];
+            return `Cat. ${m[1]}: ${rest}`;
+        }
+
+        function getFilters() {
+            const v = id => document.getElementById(id).value;
+            return {
+                persona: norm(v('f-persona')),
+                vereda: v('f-vereda'),
+                genero: v('f-genero'),
+                categoria: v('f-categoria'),
+                concurso: v('f-concurso') ? parseInt(v('f-concurso')) : null,
+                inscriptor: v('f-inscriptor'),
+                desde: v('f-desde'),
+                hasta: v('f-hasta'),
+                edadMin: v('f-edad-min') !== '' ? parseInt(v('f-edad-min')) : null,
+                edadMax: v('f-edad-max') !== '' ? parseInt(v('f-edad-max')) : null,
+                escolaridad: v('f-escolaridad'),
+                dedup: document.getElementById('f-dedup').checked
+            };
+        }
+
+        function matchingInscripciones(p, f) {
+            return p.inscripciones.filter(i => {
+                if (f.concurso && i.concurso_id !== f.concurso) return false;
+                if (f.categoria) {
+                    const c = state.concursosById[i.concurso_id];
+                    if (!c || c.categoria !== f.categoria) return false;
+                }
+                return true;
+            });
+        }
+
+        function applyFilters() {
+            const f = getFilters();
+            const out = [];
+            state.personas.forEach(p => {
+                if (f.dedup && p.isDuplicate) return;
+                if (f.persona && !norm(p.nombreCompleto + ' ' + p.numero_documento).includes(f.persona)) return;
+                if (f.vereda && p.vereda !== f.vereda) return;
+                if (f.genero && p.genero !== f.genero) return;
+                if (f.inscriptor && (p.nombre_inscriptor || '(Sin inscriptor)') !== f.inscriptor) return;
+                if (f.escolaridad && p.nivel_escolaridad !== f.escolaridad) return;
+                if (f.desde && (!p.fechaDia || p.fechaDia < f.desde)) return;
+                if (f.hasta && (!p.fechaDia || p.fechaDia > f.hasta)) return;
+                if (f.edadMin !== null && (p.edadValida === null || p.edadValida < f.edadMin)) return;
+                if (f.edadMax !== null && (p.edadValida === null || p.edadValida > f.edadMax)) return;
+                const insc = matchingInscripciones(p, f);
+                if ((f.concurso || f.categoria) && insc.length === 0) return;
+                out.push({ ...p, inscFiltradas: (f.concurso || f.categoria) ? insc : p.inscripciones });
+            });
+            state.filtered = out;
+            state.page = 1;
+            renderChips(f);
+            renderKPIs();
+            renderMap();
+            renderCharts();
+            renderTable();
+        }
+
+        function renderChips(f) {
+            const chips = [];
+            if (f.persona) chips.push('Persona: ' + document.getElementById('f-persona').value);
+            if (f.vereda) chips.push('Vereda: ' + f.vereda);
+            if (f.genero) chips.push('Género: ' + f.genero);
+            if (f.categoria) chips.push(shortCat(f.categoria));
+            if (f.concurso) chips.push('Concurso: ' + (state.concursosById[f.concurso]?.nombre || f.concurso));
+            if (f.inscriptor) chips.push('Inscriptor: ' + f.inscriptor);
+            if (f.desde || f.hasta) chips.push(`Fecha: ${f.desde || '...'} -> ${f.hasta || '...'}`);
+            if (f.edadMin !== null || f.edadMax !== null) chips.push(`Edad: ${f.edadMin ?? 0} - ${f.edadMax ?? 'Max'}`);
+            if (f.escolaridad) chips.push('Escolaridad: ' + f.escolaridad);
+            document.getElementById('active-chips').innerHTML = chips.map(c => `<span class="chip">${esc(c)}</span>`).join('');
+        }
+
+        function resetFilters() {
+            ['f-persona', 'f-vereda', 'f-genero', 'f-categoria', 'f-concurso', 'f-inscriptor', 'f-desde', 'f-hasta', 'f-edad-min', 'f-edad-max', 'f-escolaridad']
+                .forEach(id => document.getElementById(id).value = '');
+            document.getElementById('f-dedup').checked = true;
+            state.veredaFromMap = null;
+            updateConcursoOptions();
+            applyFilters();
+        }
+
+        // ================== KPIS EXECUTIVE ==================
+        function renderKPIs() {
+            const P = state.filtered;
+            const ins = P.reduce((s, p) => s + p.inscFiltradas.length, 0);
+            const ver = new Set(P.map(p => p.vereda)).size;
+            const fem = P.filter(p => norm(p.genero) === 'FEMENINO').length;
+            const ages = P.map(p => p.edadValida).filter(a => a !== null);
+            const conc = new Set(P.flatMap(p => p.inscFiltradas.map(i => i.concurso_id))).size;
+            const geo = P.filter(p => p.latitud && p.longitud).length;
+            document.getElementById('k-personas').textContent = P.length;
+            document.getElementById('k-inscripciones').textContent = ins;
+            document.getElementById('k-veredas').textContent = ver;
+            document.getElementById('k-mujeres').textContent = P.length ? `${fem} (${Math.round(fem * 100 / P.length)}%)` : '0';
+            document.getElementById('k-edad').textContent = ages.length ? (ages.reduce((a, b) => a + b, 0) / ages.length).toFixed(1) : '-';
+            document.getElementById('k-concursos').textContent = conc;
+            document.getElementById('k-geo').textContent = geo;
+        }
+
+        // ================== MAPA VECTORIAL DE COROPLETAS (SIN MAPA DE FONDO) CON POPUP AUTO-LIMPIABLE ==================
+        function initMap() {
+            map = L.map('map', { zoomControl: true, attributionControl: false }).setView([4.02, -74.25], 10);
+            
+            // CLEAN VEREDA FILTER AUTOMATICALLY WHEN MAP POPUP IS CLOSED (CLICKING 'X' OR OUTSIDE)
+            map.on('popupclose', () => {
+                const sel = document.getElementById('f-vereda');
+                if (sel.value && state.veredaFromMap) {
+                    sel.value = '';
+                    state.veredaFromMap = null;
+                    applyFilters();
+                }
+            });
+
+            document.getElementById('map-metric').addEventListener('change', renderMap);
+            document.getElementById('map-points').addEventListener('change', renderMap);
+        }
+
+        function veredaStats() {
+            const stats = {};
+            state.filtered.forEach(p => {
+                const k = geoKey(p.vereda);
+                const s = stats[k] = stats[k] || { nombre: p.vereda, personas: 0, inscripciones: 0, mujeres: 0, hombres: 0, edadSum: 0, edadN: 0, listaPersonas: [] };
+                s.personas++;
+                s.inscripciones += p.inscFiltradas.length;
+                if (norm(p.genero) === 'FEMENINO') s.mujeres++;
+                else if (norm(p.genero) === 'MASCULINO') s.hombres++;
+                if (p.edadValida !== null) { s.edadSum += p.edadValida; s.edadN++; }
+                s.listaPersonas.push(p);
+            });
+            Object.values(stats).forEach(s => {
+                s.mujeres_pct = s.personas ? Math.round(s.mujeres * 100 / s.personas) : 0;
+                s.hombres_pct = s.personas ? Math.round(s.hombres * 100 / s.personas) : 0;
+                s.edad_prom = s.edadN ? +(s.edadSum / s.edadN).toFixed(1) : 0;
+            });
+            return stats;
+        }
+
+        function colorScale(v, max) {
+            if (!v) return '#F2F6F3';
+            const palette = ['#E3EFE7', '#B9DDC4', '#8AC69D', '#57AA74', '#2E7D52', '#1B5637'];
+            const idx = Math.min(palette.length - 1, Math.floor((v / max) * (palette.length - 1) + 0.0001));
+            return palette[Math.max(1, idx)];
+        }
+
+        function renderMap() {
+            if (!map) return;
+            const metric = document.getElementById('map-metric').value;
+            const labels = { personas: 'Personas', inscripciones: 'Inscripciones', mujeres_pct: '% Mujeres', edad_prom: 'Edad prom.' };
+            const stats = veredaStats();
+            const max = Math.max(1, ...Object.values(stats).map(s => s[metric] || 0));
+
+            if (choroLayer) map.removeLayer(choroLayer);
+            if (pointsLayer) map.removeLayer(pointsLayer);
+            if (legendCtl) map.removeControl(legendCtl);
+
+            if (state.geojson) {
+                choroLayer = L.geoJSON(state.geojson, {
+                    style: feat => {
+                        const s = stats[geoKey(feat.properties.nombre)];
+                        const selected = state.veredaFromMap && geoKey(state.veredaFromMap) === geoKey(feat.properties.nombre);
+                        return {
+                            fillColor: colorScale(s ? s[metric] : 0, max),
+                            weight: selected ? 3 : 1.2,
+                            color: selected ? '#D4A373' : '#3F6028',
+                            fillOpacity: s ? 0.88 : 0.25,
+                            opacity: 0.95
+                        };
+                    },
+                    onEachFeature: (feat, layer) => {
+                        const s = stats[geoKey(feat.properties.nombre)];
+                        const name = titleCase(feat.properties.nombre);
+                        
+                        layer.bindTooltip(`<b>${esc(name)}</b><br>` + (s
+                            ? `Personas: ${s.personas}<br>Inscripciones: ${s.inscripciones}<br>Mujeres: ${s.mujeres_pct}%<br>Edad prom.: ${s.edad_prom || '-'}`
+                            : '<i>Sin inscritos</i>'), { sticky: true });
+                        
+                        layer.on('mouseover', () => layer.setStyle({ weight: 3, color: '#D4A373' }));
+                        layer.on('mouseout', () => choroLayer.resetStyle(layer));
+                        
+                        // POPUP CON ESTADÍSTICAS COMPLETAS AL DAR CLIC EN VEREDA
+                        layer.on('click', (e) => {
+                            const match = state.personas.find(p => geoKey(p.vereda) === geoKey(feat.properties.nombre));
+                            const sel = document.getElementById('f-vereda');
+                            const value = match ? match.vereda : '';
+                            if (sel.value !== value && value) {
+                                sel.value = value;
+                                state.veredaFromMap = value;
+                                applyFilters();
+                            }
+
+                            if (s) {
+                                const listHtml = s.listaPersonas.map(p => `
+                                    <div class="vereda-popup-item">
+                                        <div><b>${esc(p.nombreCompleto)}</b> <span style="color:#777;font-size:0.7rem;">(${esc(p.numero_documento || 'Sin doc')})</span></div>
+                                        <button class="btn btn-primary btn-sm" style="padding:2px 6px;font-size:0.7rem;" onclick="openActa(${p.id})">Acta</button>
+                                    </div>
+                                `).join('');
+
+                                const popupContent = `
+                                    <div class="vereda-popup-content">
+                                        <h4>Vereda ${esc(name)}</h4>
+                                        <div class="vereda-popup-stats">
+                                            <div><b>Personas</b>${s.personas}</div>
+                                            <div><b>Inscripciones</b>${s.inscripciones}</div>
+                                            <div><b>% Mujeres</b>${s.mujeres_pct}% (${s.mujeres})</div>
+                                            <div><b>% Hombres</b>${s.hombres_pct}% (${s.hombres})</div>
+                                            <div><b>Edad Promedio</b>${s.edad_prom || '-'} años</div>
+                                        </div>
+                                        <div style="font-weight:700;font-size:0.75rem;margin-bottom:4px;color:var(--primary-green-dark);">Personas inscritas:</div>
+                                        <div class="vereda-popup-list">${listHtml}</div>
+                                    </div>
+                                `;
+                                L.popup({ maxWidth: 330 })
+                                 .setLatLng(e.latlng)
+                                 .setContent(popupContent)
+                                 .openOn(map);
+                            }
+                        });
+                    }
+                }).addTo(map);
+                if (!map._fitted) { map.fitBounds(choroLayer.getBounds(), { padding: [15, 15] }); map._fitted = true; }
+
+                legendCtl = L.control({ position: 'bottomright' });
+                legendCtl.onAdd = () => {
+                    const div = L.DomUtil.create('div', 'legend');
+                    const steps = 5;
+                    let html = `<b>${labels[metric]}</b><br><i style="background:#F2F6F3"></i>0 / sin dato<br>`;
+                    for (let i = 1; i <= steps; i++) {
+                        const from = Math.round((max * (i - 1)) / steps * 10) / 10, to = Math.round((max * i) / steps * 10) / 10;
+                        html += `<i style="background:${colorScale(to, max)}"></i>${from} - ${to}<br>`;
+                    }
+                    div.innerHTML = html;
+                    return div;
+                };
+                legendCtl.addTo(map);
+            }
+
+            if (document.getElementById('map-points').checked) {
+                pointsLayer = L.layerGroup();
+                state.filtered.filter(p => p.latitud && p.longitud).forEach(p => {
+                    L.circleMarker([p.latitud, p.longitud], {
+                        radius: 6, weight: 1.5, color: '#fff',
+                        fillColor: GENDER_COLORS[p.genero] || '#3F6028', fillOpacity: 0.95
+                    }).bindPopup(`<b>${esc(p.nombreCompleto)}</b><br>${esc(p.vereda)} · ${esc(p.genero)} · ${p.edadValida ?? '-'} años<br>
+                        ${p.inscFiltradas.length} concurso(s)<br><a href="#" onclick="openActa(${p.id});return false;">Ver acta digital</a>`)
+                        .addTo(pointsLayer);
+                });
+                pointsLayer.addTo(map);
+            }
+        }
+
+        // ================== GRÁFICAS ==================
+        function drawChart(id, config) {
+            if (charts[id]) charts[id].destroy();
+            charts[id] = new Chart(document.getElementById(id), config);
+        }
+
+        const baseOpts = (extra = {}) => ({ responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } }, ...extra });
+
+        function countBy(arr, fn) {
+            const m = {};
+            arr.forEach(x => { const k = fn(x); m[k] = (m[k] || 0) + 1; });
+            return m;
+        }
+
+        function renderCharts() {
+            const P = state.filtered;
+
+            const vs = Object.values(veredaStats()).sort((a, b) => b.personas - a.personas);
+            drawChart('ch-vereda', {
+                type: 'bar',
+                data: {
+                    labels: vs.map(s => titleCase(s.nombre)),
+                    datasets: [
+                        { label: 'Personas', data: vs.map(s => s.personas), backgroundColor: '#3F6028' },
+                        { label: 'Inscripciones', data: vs.map(s => s.inscripciones), backgroundColor: '#D4A373' }
+                    ]
+                },
+                options: baseOpts({ indexAxis: 'y', scales: { x: { beginAtZero: true, ticks: { precision: 0 } } } })
+            });
+
+            const cc = {};
+            P.forEach(p => p.inscFiltradas.forEach(i => { cc[i.concurso_id] = (cc[i.concurso_id] || 0) + 1; }));
+            const concEntries = Object.entries(cc).sort((a, b) => b[1] - a[1]);
+            document.getElementById('box-concurso').style.height = Math.max(220, concEntries.length * 30 + 60) + 'px';
+            drawChart('ch-concurso', {
+                type: 'bar',
+                data: {
+                    labels: concEntries.map(([id]) => { const n = state.concursosById[id]?.nombre || ('Concurso ' + id); return n.length > 70 ? n.slice(0, 70) + '...' : n; }),
+                    datasets: [{ label: 'Inscritos', data: concEntries.map(e => e[1]), backgroundColor: concEntries.map((_, i) => COLORS[i % COLORS.length]) }]
+                },
+                options: baseOpts({
+                    indexAxis: 'y', plugins: { legend: { display: false } },
+                    scales: { x: { beginAtZero: true, ticks: { precision: 0 } }, y: { ticks: { font: { size: 11 } } } },
+                    onClick: (e, els) => {
+                        if (!els.length) return;
+                        const id = concEntries[els[0].index][0];
+                        document.getElementById('f-categoria').value = '';
+                        updateConcursoOptions();
+                        document.getElementById('f-concurso').value = id;
+                        applyFilters();
+                    }
+                })
+            });
+
+            const g = countBy(P, p => p.genero);
+            const gk = Object.keys(g);
+            drawChart('ch-genero', {
+                type: 'doughnut',
+                data: { labels: gk, datasets: [{ data: gk.map(k => g[k]), backgroundColor: gk.map((k, i) => GENDER_COLORS[k] || COLORS[i]) }] },
+                options: baseOpts({ cutout: '55%' })
+            });
+
+            const genders = gk.length ? gk : ['Sin dato'];
+            const ageLabels = [...AGE_BINS.map(b => b[2]), 'Sin dato'];
+            const binOf = a => a === null ? 'Sin dato' : (AGE_BINS.find(b => a >= b[0] && a <= b[1]) || [, , 'Sin dato'])[2];
+            drawChart('ch-edad', {
+                type: 'bar',
+                data: {
+                    labels: ageLabels,
+                    datasets: genders.map((gen, i) => ({
+                        label: gen,
+                        data: ageLabels.map(l => P.filter(p => p.genero === gen && binOf(p.edadValida) === l).length),
+                        backgroundColor: GENDER_COLORS[gen] || COLORS[i]
+                    }))
+                },
+                options: baseOpts({ scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true, ticks: { precision: 0 } } } })
+            });
+
+            const es = Object.entries(countBy(P, p => p.nivel_escolaridad)).sort((a, b) => b[1] - a[1]);
+            drawChart('ch-escolaridad', {
+                type: 'bar',
+                data: { labels: es.map(e => e[0]), datasets: [{ label: 'Personas', data: es.map(e => e[1]), backgroundColor: '#444F2F' }] },
+                options: baseOpts({ plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { precision: 0 } } } })
+            });
+
+            const fp = countBy(P.filter(p => p.fechaDia), p => p.fechaDia);
+            const fi = {};
+            P.forEach(p => { if (p.fechaDia) fi[p.fechaDia] = (fi[p.fechaDia] || 0) + p.inscFiltradas.length; });
+            const days = Object.keys(fp).sort();
+            drawChart('ch-fecha', {
+                type: 'line',
+                data: {
+                    labels: days,
+                    datasets: [
+                        { label: 'Personas', data: days.map(d => fp[d]), borderColor: '#3F6028', backgroundColor: 'rgba(63,96,40,.15)', fill: true, tension: .3 },
+                        { label: 'Inscripciones', data: days.map(d => fi[d] || 0), borderColor: '#D4A373', backgroundColor: 'rgba(212,163,115,.15)', fill: true, tension: .3 }
+                    ]
+                },
+                options: baseOpts({ scales: { y: { beginAtZero: true, ticks: { precision: 0 } } } })
+            });
+
+            const cat = {};
+            P.forEach(p => p.inscFiltradas.forEach(i => { const c = state.concursosById[i.concurso_id]?.categoria || 'Sin categoría'; cat[c] = (cat[c] || 0) + 1; }));
+            const catE = Object.entries(cat).sort((a, b) => b[1] - a[1]);
+            drawChart('ch-categoria', {
+                type: 'doughnut',
+                data: { labels: catE.map(e => shortCat(e[0])), datasets: [{ data: catE.map(e => e[1]), backgroundColor: catE.map((_, i) => COLORS[i % COLORS.length]) }] },
+                options: baseOpts({ plugins: { legend: { position: 'right', labels: { boxWidth: 10, font: { size: 10 } } } } })
+            });
+        }
+
+        // ================== RENDER TABLA ==================
+        function renderTable() {
+            const { key, dir } = state.sort;
+            const rows = [...state.filtered].sort((a, b) => {
+                let x = a[key], y = b[key];
+                if (x === null || x === undefined) x = ''; if (y === null || y === undefined) y = '';
+                if (typeof x === 'number' && typeof y === 'number') return (x - y) * dir;
+                return String(x).localeCompare(String(y), 'es', { numeric: true }) * dir;
+            });
+            const size = parseInt(document.getElementById('page-size').value);
+            const pages = Math.max(1, Math.ceil(rows.length / size));
+            state.page = Math.min(state.page, pages);
+            const slice = rows.slice((state.page - 1) * size, state.page * size);
+
+            document.getElementById('table-count').textContent = `(${rows.length})`;
+            document.getElementById('pager-info').textContent = rows.length
+                ? `Mostrando ${(state.page - 1) * size + 1}-${Math.min(state.page * size, rows.length)} de ${rows.length} · Página ${state.page}/${pages}` : 'Sin resultados';
+            document.getElementById('prev-page').disabled = state.page <= 1;
+            document.getElementById('next-page').disabled = state.page >= pages;
+
+            document.querySelectorAll('th[data-sort]').forEach(th => {
+                th.textContent = th.textContent.replace(/ \^| v$/, '');
+                if (th.dataset.sort === key) th.textContent += dir === 1 ? ' ^' : ' v';
+            });
+
+            const tb = document.getElementById('tbody');
+            if (!slice.length) { tb.innerHTML = '<tr><td colspan="10" class="loading">No hay registros con los filtros seleccionados.</td></tr>'; return; }
+            tb.innerHTML = slice.map(p => `
+                <tr>
+                    <td class="muted">${p.id}</td>
+                    <td><b>${esc(p.nombreCompleto)}</b>${p.duplicateCount > 1 ? ` <span class="dup" title="Registros repetidos en servidor">x${p.duplicateCount}</span>` : ''}${p.isDuplicate ? ' <span class="dup">duplicado</span>' : ''}
+                        ${p.telefono ? `<div class="muted" style="font-size:.74rem">Tel: ${esc(p.telefono)}</div>` : ''}</td>
+                    <td>${esc(p.numero_documento) || '<span class="muted">-</span>'}</td>
+                    <td>${esc(titleCase(p.vereda))}</td>
+                    <td>${esc(p.genero)}</td>
+                    <td>${p.edadValida ?? '<span class="muted">-</span>'}</td>
+                    <td>${p.inscFiltradas.map(i => `<span class="tag" title="${esc(state.concursosById[i.concurso_id]?.nombre)}">${esc(shortName(state.concursosById[i.concurso_id]?.nombre || ('#' + i.concurso_id)))}</span>`).join('') || '<span class="muted">-</span>'}</td>
+                    <td>${esc(p.nombre_inscriptor) || '<span class="muted">-</span>'}</td>
+                    <td style="white-space:nowrap">${esc(p.fecha_inscripcion || '')}</td>
+                    <td><button class="btn btn-primary btn-sm" onclick="openActa(${p.id})">Ver</button></td>
+                </tr>`).join('');
+        }
+        const shortName = n => n.length > 38 ? n.slice(0, 38) + '...' : n;
+
+        // ================== MODAL DE ACTA DIGITAL FORMATO EXACTO ANDROID PDF ==================
+        let currentActaName = 'acta';
+        async function openActa(id) {
+            const modal = document.getElementById('acta-modal');
+            const body = document.getElementById('acta-body');
+            modal.classList.add('open');
+            body.innerHTML = '<div class="loading"><div class="spinner"></div>Cargando formato de acta oficial...</div>';
+            try {
+                const res = await fetch('api/get_feria_ambiental_acta.php?id=' + id);
+                const d = await res.json();
+                if (!d.success) throw new Error(d.error);
+                const p = d.productor;
+                currentActaName = 'Acta_Inscripcion_' + (p.nombre || id).replace(/\s+/g, '_');
+                document.getElementById('acta-title').textContent = 'Acta de Inscripción Oficial - ' + titleCase(p.nombre);
+                
+                const yes = b => b ? 'Sí' : 'No';
+                const latStr = p.latitud !== null ? (+p.latitud).toFixed(6) : 'N/A';
+                const lngStr = p.longitud !== null ? (+p.longitud).toFixed(6) : 'N/A';
+                const altStr = p.altitud_msnm !== null ? `${Math.round(p.altitud_msnm)} msnm` : 'N/A';
+                
+                body.innerHTML = `
+                <div class="official-acta" id="acta-print">
+                    <!-- INSTITUTIONAL HERO HEADER MATCHING ANDROID PDF WAVE ACCENT -->
+                    <div class="acta-hero-header">
+                        <div class="acta-wave-orange"></div>
+                        <div class="acta-wave-green"></div>
+                        <div class="acta-logos-row">
+                            <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz">
+                            <img src="assets/logo_feria.png" alt="Feria Agroambiental">
+                        </div>
+                    </div>
+                    <div class="acta-titles-box">
+                        <div class="acta-title-main">XXV FERIA AGROAMBIENTAL DE SUMAPAZ</div>
+                        <div class="acta-title-sub">FORMATO DE INSCRIPCIÓN A CONCURSOS EN FINCA</div>
+                    </div>
+                    <div class="acta-divider-line"></div>
+
+                    <!-- SECCIÓN 1: DATOS GENERALES DEL PRODUCTOR Y PREDIO -->
+                    <div class="acta-table-header">1. DATOS GENERALES DEL PRODUCTOR Y PREDIO</div>
+                    <table class="acta-grid-table">
+                        <tr>
+                            <td class="label-cell">Fecha de Inscripción:</td>
+                            <td>${esc(p.fecha_inscripcion || 'N/A')}</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Nombre Productor / Concursante:</td>
+                            <td><b>${esc(titleCase(p.nombre))}</b></td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Documento de Identificación:</td>
+                            <td>${esc(p.tipo_documento || 'CC')}: ${esc(p.numero_documento || 'N/A')}</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Nombre de la Finca / Predio:</td>
+                            <td>${esc(p.nombre_predio || 'N/A')} (Extensión: ${esc(p.extension_finca || 'N/A')})</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Corregimiento / Vereda:</td>
+                            <td>${esc(titleCase(p.vereda || 'N/A'))}</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Coordenadas GPS Predio:</td>
+                            <td>Lat: ${latStr} | Lon: ${lngStr} | Alt: ${altStr}</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Teléfono / Contacto / Email:</td>
+                            <td>Tel: ${esc(p.telefono || 'N/A')} | Email: ${esc(p.email || 'N/A')}</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Caracterización Demográfica:</td>
+                            <td>Género: ${esc(p.genero || 'N/A')} | Edad: ${esc(p.edad || 'N/A')} | Escolaridad: ${esc(p.nivel_escolaridad || 'N/A')} | LGBTIQ+: ${yes(p.es_lgbtiq)}</td>
+                        </tr>
+                    </table>
+
+                    <!-- CONSIDERACIONES GENERALES BOX MATCHING ANDROID SPEC -->
+                    <div class="acta-table-header">CONSIDERACIONES GENERALES DE PARTICIPACIÓN</div>
+                    <div class="acta-consideraciones-box">
+                        • Su predio podrá inscribirse una sola vez a nombre del propietario o arrendatario en la Feria Agroambiental.<br>
+                        • Su predio podrá participar en las categorías y concursos que desee cumpliendo el reglamento oficial.
+                    </div>
+
+                    <!-- SECCIÓN 2: CONCURSOS EN LOS QUE SE INSCRIBIÓ -->
+                    <div class="acta-table-header">2. CONCURSOS EN LOS QUE SE INSCRIBIÓ (${d.concursos.length} SELECCIONADOS)</div>
+                    <table class="acta-contests-table">
+                        <thead>
+                            <tr>
+                                <th style="width:35px;text-align:center;">No.</th>
+                                <th style="width:45%;">Categoría</th>
+                                <th>Concurso Seleccionado</th>
+                                <th style="width:100px;text-align:center;">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${d.concursos.length ? d.concursos.map((c, i) => `
+                                <tr>
+                                    <td style="text-align:center;font-weight:bold;">${i + 1}</td>
+                                    <td>${esc(c.categoria || 'General')}</td>
+                                    <td><b>${esc(c.nombre_concurso || ('Concurso #' + c.id_concurso))}</b></td>
+                                    <td style="text-align:center;font-weight:bold;color:var(--primary-green);">[ X ] INSCRITO</td>
+                                </tr>
+                            `).join('') : `
+                                <tr>
+                                    <td colspan="4" style="text-align:center;font-style:italic;color:#666;">Sin concursos registrados.</td>
+                                </tr>
+                            `}
+                        </tbody>
+                    </table>
+
+                    <!-- SECCIÓN 3: OBSERVACIONES -->
+                    <div class="acta-table-header">3. OBSERVACIONES Y ANOTACIONES DE INSCRIPCIÓN</div>
+                    <div class="acta-obs-box">
+                        ${p.observaciones ? esc(p.observaciones) : 'Sin observaciones registradas.'}
+                    </div>
+
+                    <!-- JURAMENTO LEGAL Y SECCIÓN DE FIRMAS DIGITALES MATCHING ANDROID APP -->
+                    <div class="acta-table-header">4. REGISTRO OFICIAL DE FIRMAS DIGITALES</div>
+                    <div class="acta-juramento-text">
+                        "Declaro bajo la gravedad de juramento que los datos suministrados en este formato de inscripción corresponden a la realidad de mi predio y producción."
+                    </div>
+                    <div class="acta-signatures-grid">
+                        <div class="acta-signature-card">
+                            ${p.firma_productor ? `<img src="${p.firma_productor}">` : '<div style="height:70px;"></div>'}
+                            <div class="acta-signature-line">
+                                Firma del Productor / Concursante<br>
+                                <b>${esc(titleCase(p.nombre))}</b><br>
+                                Documento: ${esc(p.numero_documento || 'N/A')}
+                            </div>
+                        </div>
+                        <div class="acta-signature-card">
+                            ${p.firma_inscriptor ? `<img src="${p.firma_inscriptor}">` : '<div style="height:70px;"></div>'}
+                            <div class="acta-signature-line">
+                                Firma de quien Inscribe (Profesional / Técnico)<br>
+                                <b>${esc(p.nombre_inscriptor || 'Profesional Inscripción')}</b>
+                            </div>
+                        </div>
+                    </div>
+
+                    ${p.fotos.length ? `
+                        <div class="acta-table-header">REGISTRO FOTOGRÁFICO DE EVIDENCIA DE CAMPO</div>
+                        <div class="acta-photos" style="margin-top:10px;">
+                            ${p.fotos.map(f => `<img src="${f}">`).join('')}
+                        </div>
+                    ` : ''}
+
+                    <!-- FOOTER INSTITUCIONAL MATCHING ANDROID PDF -->
+                    <div class="acta-footer-banner">
+                        ALCALDÍA LOCAL DE SUMAPAZ
+                    </div>
+                </div>`;
+            } catch (e) {
+                body.innerHTML = `<div class="error-box">No se pudo cargar el acta: ${esc(e.message)}</div>`;
+            }
+        }
+        function closeActa() { document.getElementById('acta-modal').classList.remove('open'); }
+        function downloadActaPdf() {
+            const el = document.getElementById('acta-print');
+            if (!el || typeof html2pdf === 'undefined') return;
+            html2pdf().set({
+                margin: [6, 6, 6, 6], filename: currentActaName + '.pdf',
+                image: { type: 'jpeg', quality: 0.95 }, html2canvas: { scale: 2, useCORS: true },
+                jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }, pagebreak: { mode: ['css', 'legacy'] }
+            }).from(el).save();
+        }
+        function printActa() {
+            const el = document.getElementById('acta-print');
+            if (!el) return;
+            const w = window.open('', '_blank');
+            const css = [...document.querySelectorAll('style')].map(s => s.innerHTML).join('\n');
+            w.document.write(`<html><head><title>${currentActaName}</title><style>${css} body{background:#fff}</style></head><body>${el.outerHTML}</body></html>`);
+            w.document.close();
+            w.onload = () => { w.focus(); w.print(); };
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeActa(); });
+
+        // ================== EXPORTAR EXCEL ==================
+        function exportExcel() {
+            if (typeof XLSX === 'undefined') return alert('Librería de Excel no disponible');
+            const personas = state.filtered.map(p => ({
+                ID: p.id, Nombre: p.nombreCompleto, 'Tipo documento': p.tipo_documento, Documento: p.numero_documento,
+                Vereda: p.vereda, Género: p.genero, Edad: p.edadValida, Escolaridad: p.nivel_escolaridad,
+                Teléfono: p.telefono, Correo: p.email, Predio: p.nombre_predio, Latitud: p.latitud, Longitud: p.longitud,
+                'LGBTIQ+': p.es_lgbtiq ? 'Sí' : 'No', Discapacidad: p.condicion_discapacidad,
+                'Parques Nacionales': p.en_parques_nacionales ? 'Sí' : 'No', Inscriptor: p.nombre_inscriptor,
+                'Fecha inscripción': p.fecha_inscripcion, 'N.º concursos': p.inscFiltradas.length,
+                Concursos: p.inscFiltradas.map(i => state.concursosById[i.concurso_id]?.nombre || i.concurso_id).join(' | '),
+                Observaciones: p.observaciones
+            }));
+            const insc = [];
+            state.filtered.forEach(p => p.inscFiltradas.forEach(i => insc.push({
+                'ID persona': p.id, Persona: p.nombreCompleto, Documento: p.numero_documento, Vereda: p.vereda,
+                Género: p.genero, Edad: p.edadValida, Categoría: state.concursosById[i.concurso_id]?.categoria,
+                Concurso: state.concursosById[i.concurso_id]?.nombre, Fecha: i.fecha
+            })));
+            const vered = Object.values(veredaStats()).map(s => ({ Vereda: s.nombre, Personas: s.personas, Inscripciones: s.inscripciones, '% Mujeres': s.mujeres_pct, 'Edad promedio': s.edad_prom }));
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(personas), 'Personas');
+            XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(insc), 'Inscripciones');
+            XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(vered), 'Por vereda');
+            XLSX.writeFile(wb, `Feria_Agroambiental_${new Date().toISOString().slice(0, 10)}.xlsx`);
+        }
+
+        // ================== INIT ==================
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (!(await checkAuth())) return;
+            initMap();
+            let t;
+            document.getElementById('f-persona').addEventListener('input', () => { clearTimeout(t); t = setTimeout(applyFilters, 250); });
+            ['f-vereda', 'f-genero', 'f-concurso', 'f-inscriptor', 'f-desde', 'f-hasta', 'f-edad-min', 'f-edad-max', 'f-escolaridad', 'f-dedup']
+                .forEach(id => document.getElementById(id).addEventListener('change', () => {
+                    if (id === 'f-vereda') state.veredaFromMap = document.getElementById('f-vereda').value || null;
+                    applyFilters();
+                }));
+            document.getElementById('f-categoria').addEventListener('change', () => { updateConcursoOptions(); applyFilters(); });
+            document.querySelectorAll('th[data-sort]').forEach(th => th.addEventListener('click', () => {
+                const k = th.dataset.sort;
+                state.sort = { key: k, dir: state.sort.key === k ? -state.sort.dir : 1 };
+                renderTable();
+            }));
+            document.getElementById('page-size').addEventListener('change', () => { state.page = 1; renderTable(); });
+            document.getElementById('prev-page').addEventListener('click', () => { state.page--; renderTable(); });
+            document.getElementById('next-page').addEventListener('click', () => { state.page++; renderTable(); });
+            await loadData();
+        });
+    </script>
+</body>
+
+</html>

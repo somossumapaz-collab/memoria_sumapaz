@@ -29,7 +29,7 @@ try {
     $stmtCheck = $pdo->prepare("SELECT id FROM proveedores_tejedoras WHERE numero_documento = :cedula");
     $stmtCheck->execute(['cedula' => $cedula]);
     if ($stmtCheck->fetchColumn()) {
-        throw new Exception('Este documento ya se encuentra inscrito en el programa de Tejedoras y Artesanas.');
+        throw new Exception('Este documento ya se encuentra inscrito en el programa de Tejedoras, Tejedores y Artesanos.');
     }
 
     // File Upload Validation for id_cedula

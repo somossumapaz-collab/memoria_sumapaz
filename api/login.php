@@ -68,8 +68,11 @@ try {
 
         // Role 6 is specifically Ambientales (Tablero Ambiental ONLY)
         // User ID 12 or Role ID 12 is specifically Concursos Sumapaz ONLY
+        // Role 13 is Feria Agroambiental (App concursosSumapaz) -> feria_ambiental.html ONLY
         $redirect_target = 'productores_registrados.html';
-        if ($is_concursos_only) {
+        if ($user_rol_id === 13) {
+            $redirect_target = 'feria_ambiental.html';
+        } else if ($is_concursos_only) {
             $redirect_target = 'concursos_sumapaz.html';
         } else if ($user_rol_id === 6) {
             $redirect_target = 'tablero_ambiental.html';
