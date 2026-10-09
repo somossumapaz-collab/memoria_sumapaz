@@ -31,43 +31,6 @@
                     <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img">
                 </a>
 
-                <div class="search-container"
-                    style="margin-left: auto; display: flex; align-items: center; gap: 1.5rem;">
-
-                    <a href="inscripcion_productores.html" class="nav-link-btn" id="btn-register-prod"
-                        style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600; padding: 8px 14px; border-radius: 6px;">
-                        Registrar Productor
-                    </a>
-                    <a href="inscripcion_tejedoras.html" class="nav-link-btn" id="btn-register-tejedoras"
-                        style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600; padding: 8px 14px; border-radius: 6px;">
-                        Tejedoras
-                    </a>
-                    <a href="inscripcion_jovenes.html" class="nav-link-btn" id="btn-register-jovenes"
-                        style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600; padding: 8px 14px; border-radius: 6px;">
-                        Jóvenes Rurales
-                    </a>
-
-                    <!-- Admin Options -->
-                    <div id="header-auth-container" style="display: none; align-items: center; gap: 1rem;">
-                        <a href="productores_registrados.html" class="nav-link-btn" id="btn-dashboard"
-                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600; padding: 8px 14px; border-radius: 6px;">
-                            Dashboard
-                        </a>
-                        <a href="pmapc.html" class="nav-link-btn" id="btn-pmapc"
-                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600; padding: 8px 14px; border-radius: 6px;">
-                            PMAPC
-                        </a>
-
-                        <button onclick="logout()" class="nav-link-btn" id="btn-logout"
-                            style="margin: 0; background-color: transparent; cursor: pointer; color: #FBF4DE; border: none; padding: 8px; border-radius: 6px;"
-                            title="Cerrar Sesión">
-                            <svg fill="none" viewBox="0 0 24 24" stroke="#FBF4DE" stroke-width="2"
-                                style="width: 24px; height: 24px; transform: scaleX(-1);">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
-                            </svg>
-                        </button>
-                    </div>
                 </div>
             </div>
         </nav>
@@ -194,7 +157,8 @@
                             style="background: #fdfdfd; padding: 1.5rem; border: 1px solid #eaeaea; border-radius: 8px;">
                             <label
                                 style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.8rem; display: block;">RUT (con actividad económica 1084) (Opcional)</label>
-
+
+
                             <label for="id_rut"
                                 style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 1rem; background: #e8f5e9; color: var(--primary-green); font-weight: bold; border-radius: 8px; cursor: pointer; border: 1px solid #c8e6c9; text-align: center; transition: background 0.2s;">
                                 <span>📁 Seleccionar RUT (Solo PDF)</span>
@@ -233,6 +197,18 @@
                                 onchange="this.previousElementSibling.querySelector('span').textContent = '✅ ' + (this.files[0] ? this.files[0].name : 'Seleccionar Certificación (Solo PDF)')">
                         </div>
                     </div>
+                </div>
+
+                
+                <!-- TRATAMIENTO DE DATOS PERSONALES HABEAS DATA -->
+                <div style="background: #fdfdfd; padding: 1.25rem; border: 1px solid #eaeaea; border-radius: 8px; margin-top: 2rem; margin-bottom: 1.5rem;">
+                    <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; font-size: 0.88rem; color: #333333; line-height: 1.5;">
+                        <input type="checkbox" id="habeas_data" name="habeas_data" required style="margin-top: 3px; width: 19px; height: 19px; accent-color: var(--primary-green);">
+                        <span>
+                            <strong style="color: var(--primary-green);">Autorización para el Tratamiento de Datos Personales (Ley 1581 de 2012 y Decreto 1377 de 2013 - Colombia) *</strong><br>
+                            Autorizo de manera libre, previa, explícita e informada la recolección, almacenamiento y tratamiento de mis datos personales de conformidad con la Ley 1581 de 2012 de Habeas Data y demás normas vigentes en Colombia, exclusivamente para los fines de inscripción, verificación y gestión institucional del programa.
+                        </span>
+                    </label>
                 </div>
 
                 <div class="form-submit-container" id="create-actions">

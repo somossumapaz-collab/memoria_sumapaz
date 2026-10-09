@@ -33,7 +33,7 @@ try {
         SELECT id, local_id, nombre_productor, apellido_productor, tipo_documento, numero_documento,
                nombre_predio, extension_finca, vereda, cuenca, latitud, longitud, altitud_msnm,
                telefono, email, genero, edad, nivel_escolaridad, es_lgbtiq, condicion_discapacidad,
-               en_parques_nacionales, notes, nombre_inscriptor, fecha_inscripcion, created_at,
+               en_parques_nacionales, notes, nombre_inscriptor, origen_registro, fecha_inscripcion, created_at,
                (firma_productor IS NOT NULL AND firma_productor != '') AS tiene_firma_productor,
                (firma_inscriptor IS NOT NULL AND firma_inscriptor != '') AS tiene_firma_inscriptor,
                (photo_paths IS NOT NULL AND photo_paths != '') AS tiene_fotos
@@ -70,6 +70,7 @@ try {
             'en_parques_nacionales' => (int)$r['en_parques_nacionales'] === 1,
             'observaciones' => $obs,
             'nombre_inscriptor' => trim($r['nombre_inscriptor'] ?? ''),
+            'origen_registro' => $r['origen_registro'] ?: 'movil',
             'fecha_inscripcion' => $r['fecha_inscripcion'] ?: $r['created_at'],
             'created_at' => $r['created_at'],
             'tiene_firma_productor' => (bool)$r['tiene_firma_productor'],

@@ -1359,7 +1359,7 @@
                     <td>${esc(p.genero)}</td>
                     <td>${p.edadValida ?? '<span class="muted">-</span>'}</td>
                     <td>${p.inscFiltradas.map(i => `<span class="tag" title="${esc(state.concursosById[i.concurso_id]?.nombre)}">${esc(shortName(state.concursosById[i.concurso_id]?.nombre || ('#' + i.concurso_id)))}</span>`).join('') || '<span class="muted">-</span>'}</td>
-                    <td>${esc(p.nombre_inscriptor) || '<span class="muted">-</span>'}</td>
+                    <td>${p.origen_registro === 'web' ? '<span class="tag" style="background:#E0F2FE;color:#0369A1;font-weight:bold;">Web</span>' : (esc(p.nombre_inscriptor) || '<span class="muted">App Móvil</span>')}</td>
                     <td style="white-space:nowrap">${esc(p.fecha_inscripcion || '')}</td>
                     <td><button class="btn btn-primary btn-sm" onclick="openActa(${p.id})">Ver</button></td>
                 </tr>`).join('');

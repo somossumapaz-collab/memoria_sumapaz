@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción Feria Agroambiental Sumapaz | Somos Sumapaz</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Static Cache-Busting -->
+    <script>
+        const timestamp = new Date().getTime();
+        document.write(`<link rel="stylesheet" href="assets/styles.css?v=${timestamp}">`);
+    </script>
+    <style>
+        /* Specific enhancements for Feria form matching tejedoras design */
+        .category-card {
+            background: #FAF8F2;
+            border: 1px solid #E5DFD0;
+            border-radius: 8px;
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+        }
+
+        .category-header-bar {
+            background: #EFEAD8;
+            padding: 12px 16px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--earth-brown);
+            border-bottom: 1px solid #DCD4C0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-contests-list {
+            padding: 14px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #FFFFFF;
+        }
+
+        .contest-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 8px 10px;
+            border-radius: 6px;
+            transition: background 0.15s ease;
+        }
+
+        .contest-row:hover {
+            background: #F7F5EE;
+        }
+
+        .contest-row input[type="checkbox"] {
+            margin-top: 3px;
+            accent-color: var(--primary-green);
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .contest-row-label {
+            font-size: 0.95rem;
+            line-height: 1.4;
+            color: #2C3E50;
+            cursor: pointer;
+        }
+
+        .gps-btn {
+            background: var(--light-green);
+            color: var(--primary-green);
+            border: 1px solid var(--primary-green);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .gps-btn:hover {
+            background: var(--primary-green);
+            color: #FFFFFF;
+        }
+
+        .receipt-box {
+            background: #FBF9F3;
+            border: 1px solid #E2DAC8;
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin: 1.2rem 0;
+            text-align: left;
+        }
+
+        .receipt-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px dashed #DDD5C2;
+            font-size: 0.92rem;
+        }
+
+        .receipt-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Static Header with logo on left and feria logo on right -->
+    <header id="main-header">
+        <nav class="navbar-custom">
+            <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                    <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img" style="height: 52px; width: auto; object-fit: contain;">
+                </a>
+                <img src="assets/logo_feria.png" alt="Feria Agroambiental" class="logo-img" style="height: 56px; width: auto; object-fit: contain;">
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
+        <div class="form-wrapper">
+            <h1 class="serif form-title" id="page-title">Formulario de Inscripción Feria Agroambiental</h1>
+            <p class="form-subtitle" id="page-subtitle">Por favor diligencia todos los datos obligatorios para realizar la inscripción oficial de tu predio y producción.</p>
+
+            <form id="feria-form" class="custom-form" enctype="multipart/form-data">
+                
+                <!-- 1. DATOS PERSONALES -->
+                <h2 class="serif section-title" style="color: var(--earth-brown); border-bottom: 2px solid var(--light-green); padding-bottom: 0.5rem; margin-top: 1rem; margin-bottom: 1.5rem;">
+                    1. Datos Personales del Productor(a)
+                </h2>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nombre_productor">Nombres del Productor(a) *</label>
+                        <input type="text" id="nombre_productor" name="nombre_productor" required placeholder="Ej. María Elena">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apellido_productor">Apellidos del Productor(a) *</label>
+                        <input type="text" id="apellido_productor" name="apellido_productor" required placeholder="Ej. Rodríguez Pérez">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo_documento">Tipo de Documento *</label>
+                        <select id="tipo_documento" name="tipo_documento" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+                            <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                            <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numero_documento">Número de Documento *</label>
+                        <input type="text" id="numero_documento" name="numero_documento" required placeholder="Ej. 1234567890">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha_nacimiento">Fecha de Nacimiento *</label>
+                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required onchange="calculateAge(this.value)">
+                        <span id="edad-badge" style="font-size: 0.82rem; color: var(--earth-brown); margin-top: 3px; font-weight: 500;"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genero">Género *</label>
+                        <select id="genero" name="genero" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Otro">Otro</option>
+                            <option value="Prefiero no decir">Prefiero no decir</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono / Celular *</label>
+                        <input type="tel" id="telefono" name="telefono" required placeholder="Ej. 300 123 4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico (Opcional)</label>
+                        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nivel_escolaridad">Nivel de Escolaridad *</label>
+                        <select id="nivel_escolaridad" name="nivel_escolaridad" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="Primaria">Primaria</option>
+                            <option value="Secundaria">Secundaria</option>
+                            <option value="Técnico/Tecnólogo">Técnico/Tecnólogo</option>
+                            <option value="Profesional">Profesional</option>
+                            <option value="Postgrado">Postgrado</option>
+                            <option value="Ninguno">Ninguno</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="es_lgbtiq">¿Se identifica como población LGBTIQ+? *</label>
+                        <select id="es_lgbtiq" name="es_lgbtiq" required>
+                            <option value="0" selected>No</option>
+                            <option value="1">Sí</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="condicion_discapacidad">Condición de Discapacidad *</label>
+                        <select id="condicion_discapacidad" name="condicion_discapacidad" required onchange="toggleDiscapacidadExtra(this.value)">
+                            <option value="Ninguna" selected>Ninguna</option>
+                            <option value="Física">Física</option>
+                            <option value="Visual">Visual</option>
+                            <option value="Auditiva">Auditiva</option>
+                            <option value="Intelectual">Intelectual</option>
+                            <option value="Otra">Otra</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="discapacidad-extra-group" style="display: none;">
+                        <label for="custom_discapacidad">Especificar condición</label>
+                        <input type="text" id="custom_discapacidad" name="custom_discapacidad" placeholder="Especificar condición">
+                    </div>
+                </div>
+
+                <!-- 2. DATOS DEL PREDIO -->
+                <h2 class="serif section-title" style="color: var(--earth-brown); border-bottom: 2px solid var(--light-green); padding-bottom: 0.5rem; margin-top: 2.5rem; margin-bottom: 1.5rem;">
+                    2. Datos del Predio y Ubicación
+                </h2>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nombre_predio">Nombre del Predio / Finca *</label>
+                        <input type="text" id="nombre_predio" name="nombre_predio" required placeholder="Ej. Finca La Esperanza">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vereda">Vereda *</label>
+                        <select id="vereda" name="vereda" required onchange="toggleVeredaExtra(this.value)">
+                            <option value="" disabled selected>Selecciona una vereda</option>
+                            <option value="SAN JOSE">SAN JOSE</option>
+                            <option value="NUEVA GRANADA">NUEVA GRANADA</option>
+                            <option value="CONCEPCION">CONCEPCION</option>
+                            <option value="TUNAL ALTO">TUNAL ALTO</option>
+                            <option value="LAGUNITAS">LAGUNITAS</option>
+                            <option value="TUNAL BAJO">TUNAL BAJO</option>
+                            <option value="LA UNION">LA UNION URBANO</option>
+                            <option value="CHORRERAS">CHORRERAS</option>
+                            <option value="SANTO DOMINGO">SANTO DOMINGO</option>
+                            <option value="LAS VEGAS">LAS VEGAS</option>
+                            <option value="SAN JUAN">SAN JUAN</option>
+                            <option value="CAPITOLIO">CAPITOLIO</option>
+                            <option value="EL TOLDO">EL TOLDO</option>
+                            <option value="LAS SOPAS">LAS SOPAS</option>
+                            <option value="LOS RIOS">LOS RIOS</option>
+                            <option value="SAN ANTONIO">SAN ANTONIO</option>
+                            <option value="LAS PALMAS">LAS PALMAS</option>
+                            <option value="LAS ANIMAS">LAS ANIMAS</option>
+                            <option value="LAS AURAS">LAS AURAS</option>
+                            <option value="NAZARETH">NAZARETH URBANO</option>
+                            <option value="TAQUECITOS">TAQUECITOS</option>
+                            <option value="PEÑALIZA">PEÑALIZA</option>
+                            <option value="LAGUNA VERDE">LAGUNA VERDE</option>
+                            <option value="RAIZAL">RAIZAL</option>
+                            <option value="SANTA ROSA">SANTA ROSA</option>
+                            <option value="BETANIA">BETANIA</option>
+                            <option value="EL ITSMO">EL ITSMO</option>
+                            <option value="EL TABACO">EL TABACO</option>
+                            <option value="OTRA VEREDA">Otra vereda</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="vereda-extra-group" style="display: none;">
+                        <label for="custom_vereda">Nombre de otra vereda</label>
+                        <input type="text" id="custom_vereda" name="custom_vereda" placeholder="Especificar nombre de la vereda">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cuenca">Cuenca Hidrográfica *</label>
+                        <select id="cuenca" name="cuenca" required>
+                            <option value="" disabled selected>Selecciona una cuenca</option>
+                            <option value="Cuenca Río Sumapaz">Cuenca Río Sumapaz</option>
+                            <option value="Cuenca Río Blanco">Cuenca Río Blanco</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="extension_finca">Extensión del Predio (Ha / Fanegadas) *</label>
+                        <input type="text" id="extension_finca" name="extension_finca" required placeholder="Ej. 5 Ha / 3 Fanegadas">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="en_parques_nacionales">¿Se encuentra en Parques Nacionales Naturales (PNN Sumapaz)? *</label>
+                        <select id="en_parques_nacionales" name="en_parques_nacionales" required>
+                            <option value="0" selected>No</option>
+                            <option value="1">Sí</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 3. COORDENADAS GPS (OPCIONALES) -->
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--light-green); padding-bottom: 0.5rem;">
+                    <h2 class="serif section-title" style="border: none; padding: 0; margin: 0; color: var(--earth-brown);">
+                        3. Coordenadas GPS (Opcionales)
+                    </h2>
+                    <button type="button" class="gps-btn" onclick="fetchGpsLocation()">Capturar GPS Actual</button>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="latitud">Latitud</label>
+                        <input type="number" step="any" id="latitud" name="latitud" placeholder="Ej. 4.12345">
+                    </div>
+                    <div class="form-group">
+                        <label for="longitud">Longitud</label>
+                        <input type="number" step="any" id="longitud" name="longitud" placeholder="Ej. -74.12345">
+                    </div>
+                    <div class="form-group">
+                        <label for="altitud_msnm">Altitud (msnm)</label>
+                        <input type="number" step="any" id="altitud_msnm" name="altitud_msnm" placeholder="Ej. 3450">
+                    </div>
+                </div>
+                <div id="gps-status" style="font-size: 0.85rem; color: #666; margin-top: 6px;"></div>
+
+                <!-- 4. CONCURSOS -->
+                <h2 class="serif section-title" style="color: var(--earth-brown); border-bottom: 2px solid var(--light-green); padding-bottom: 0.5rem; margin-top: 2.5rem; margin-bottom: 1rem;">
+                    4. Inscripción a Concursos Agroambientales *
+                </h2>
+                <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    Por favor marca al menos uno de los concursos en los cuales participará tu predio o producción:
+                </p>
+
+                <div id="categories-container">
+                    <!-- Dinámicamente cargados -->
+                </div>
+
+                <!-- 5. EVIDENCIA FOTOGRÁFICA -->
+                <h2 class="serif section-title" style="color: var(--earth-brown); border-bottom: 2px solid var(--light-green); padding-bottom: 0.5rem; margin-top: 2.5rem; margin-bottom: 1.5rem;">
+                    5. Evidencia Fotográfica (Opcional)
+                </h2>
+
+                <div class="form-group" style="background: #fdfdfd; padding: 1.2rem; border: 1px solid #eaeaea; border-radius: 8px;">
+                    <label style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.5rem; display: block;">Adjuntar fotos del predio o cultivo (JPG, PNG)</label>
+                    <input type="file" id="fotos" name="fotos[]" accept="image/*" multiple style="width: 100%; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px;">
+                    <span style="font-size: 0.8rem; color: #666; margin-top: 4px; display: block;">Puedes seleccionar múltiples archivos de imagen.</span>
+                </div>
+
+                <!-- 6. OBSERVACIONES -->
+                <h2 class="serif section-title" style="color: var(--earth-brown); border-bottom: 2px solid var(--light-green); padding-bottom: 0.5rem; margin-top: 2.5rem; margin-bottom: 1.5rem;">
+                    6. Observaciones Adicionales (Opcional)
+                </h2>
+
+                <div class="form-group">
+                    <textarea id="observaciones" name="observaciones" rows="3"
+                        style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc; font-family: 'Inter', sans-serif;"
+                        placeholder="Anota cualquier observación o consideración adicional sobre la inscripción..."></textarea>
+                </div>
+
+                <!-- TRATAMIENTO DE DATOS PERSONALES HABEAS DATA -->
+                <div style="background: #fdfdfd; padding: 1.25rem; border: 1px solid #eaeaea; border-radius: 8px; margin-top: 2rem;">
+                    <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; font-size: 0.88rem; color: #333333; line-height: 1.5;">
+                        <input type="checkbox" id="habeas_data" name="habeas_data" required style="margin-top: 3px; width: 19px; height: 19px; accent-color: var(--primary-green);">
+                        <span>
+                            <strong style="color: var(--primary-green);">Autorización para el Tratamiento de Datos Personales (Ley 1581 de 2012 y Decreto 1377 de 2013 - Colombia) *</strong><br>
+                            Autorizo de manera libre, previa, explícita e informada la recolección, almacenamiento y tratamiento de mis datos personales de conformidad con la Ley 1581 de 2012 de Habeas Data y demás normas vigentes en Colombia, exclusivamente para los fines de inscripción, verificación y gestión institucional del programa.
+                        </span>
+                    </label>
+                </div>
+
+                <!-- BOTÓN DE ENVÍO -->
+                <div class="form-submit-container" id="create-actions" style="margin-top: 2.5rem;">
+                    <button type="submit" class="btn btn-submit" id="submit-btn-main"
+                        style="width: 100%; font-size: 1.1rem; padding: 1rem;">Guardar Inscripción Feria Agroambiental</button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <!-- Custom Success Modal -->
+    <div id="success-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 620px;">
+            <div class="modal-icon">
+                <img src="assets/logo_somossumapaz.png" alt="Exito" style="width: 80px; height: auto;">
+            </div>
+            <h2 class="serif modal-title" id="success-title">¡Inscripción Exitosa!</h2>
+            <p class="modal-text" id="success-message" style="margin-bottom: 0.5rem;">Los datos y concursos han sido registrados correctamente en la Feria Agroambiental Sumapaz.</p>
+
+            <div class="receipt-box">
+                <div class="receipt-item">
+                    <span style="color: #666; font-weight: 500;">Número de Registro:</span>
+                    <span style="font-weight: 700; color: var(--primary-green);" id="res-registro">-</span>
+                </div>
+                <div class="receipt-item">
+                    <span style="color: #666; font-weight: 500;">Productor(a):</span>
+                    <span style="font-weight: 700; color: #222;" id="res-nombre">-</span>
+                </div>
+                <div class="receipt-item">
+                    <span style="color: #666; font-weight: 500;">Documento:</span>
+                    <span style="font-weight: 700; color: #222;" id="res-doc">-</span>
+                </div>
+                <div class="receipt-item">
+                    <span style="color: #666; font-weight: 500;">Fecha y Hora:</span>
+                    <span style="font-weight: 700; color: #222;" id="res-fecha">-</span>
+                </div>
+                <div class="receipt-item">
+                    <span style="color: #666; font-weight: 500;">Concursos Inscritos:</span>
+                    <span style="font-weight: 700; color: #222;" id="res-concursos-count">-</span>
+                </div>
+            </div>
+
+            <div style="text-align: left; margin-top: 1rem;">
+                <label style="font-weight: 700; font-size: 0.88rem; color: var(--earth-brown); display: block; margin-bottom: 4px;">Detalle de Concursos Seleccionados:</label>
+                <ul id="res-concursos-list" style="font-size: 0.85rem; color: #444; padding-left: 20px; margin: 0; line-height: 1.4;"></ul>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                <button class="btn btn-submit" onclick="window.print()" style="background-color: var(--earth-brown); flex: 1;">Imprimir Comprobante</button>
+                <button class="btn btn-submit" onclick="resetAndCloseModal()" style="flex: 1;">Nueva Inscripción</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Error Modal -->
+    <div id="error-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon" style="background: #444F2F;">
+                <img src="assets/logo_somossumapaz.png" alt="Error" style="width: 80px; height: auto; filter: grayscale(100%);">
+            </div>
+            <h2 class="serif modal-title" style="color: #D32F2F;">Aviso</h2>
+            <p id="error-modal-text" class="modal-text">Ocurrió un error al enviar la inscripción.</p>
+            <button id="error-close-btn" class="btn btn-submit" style="width: 100%; margin-top: 1.5rem; background-color: #D32F2F;" onclick="document.getElementById('error-modal').classList.remove('active')">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- App Logic -->
+    <script>
+        const categoriesData = [
+            {
+                name: "Categoría I. Reconocimiento a las prácticas ambientales",
+                contests: [
+                    { id: 1, name: "Finca con mejor manejo sostenible e interrelación de los recursos naturales propios de los ecosistemas presentes en la localidad de Sumapaz." },
+                    { id: 2, name: "Familia campesina con mejor manejo de residuos orgánicos e inorgánicos generados en su finca." },
+                    { id: 3, name: "Casa campesina que mejor reconozca y exalte la cultura y tradiciones campesinas sumapaceñas." },
+                    { id: 4, name: "Mejor individuo arbóreo de mayor conservación y representación del valor biológico, cultural e histórico de la localidad de Sumapaz." }
+                ]
+            },
+            {
+                name: "Categoría II. Exaltación de costumbres y tradiciones en el área agrícola",
+                contests: [
+                    { id: 5, name: "Mejor huerta casera campesina." },
+                    { id: 6, name: "Mejor finca sumapaceña con buenas prácticas agrícolas, culturales y saberes ancestrales." },
+                    { id: 7, name: "Finca con mejor producción bajo cubierta." }
+                ]
+            },
+            {
+                name: "Categoría III. Enaltecimiento de la producción pecuaria y especies menores",
+                contests: [
+                    { id: 8, name: "Mejor cabra lechera." },
+                    { id: 9, name: "Mejor producción ovina." },
+                    { id: 10, name: "Mejor ovejo reproductor." },
+                    { id: 11, name: "Mejor cerdo reproductor." },
+                    { id: 12, name: "Mejor cerda de cría." },
+                    { id: 13, name: "Mejor producción porcícola." },
+                    { id: 14, name: "Mejor producción piscícola." },
+                    { id: 15, name: "Mejor producción cunícula." },
+                    { id: 16, name: "Mejor producción apícola." },
+                    { id: 17, name: "Mejor producción avícola." }
+                ]
+            },
+            {
+                name: "Categoría IV. Enaltecimiento de los animales para la producción pecuaria",
+                contests: [
+                    { id: 18, name: "Finca con mejores prácticas de bienestar animal." }
+                ]
+            },
+            {
+                name: "Categoría V. Buenas prácticas de manufactura e inocuidad agropecuaria",
+                contests: [
+                    { id: 19, name: "Buenas prácticas y rutina de ordeño." },
+                    { id: 20, name: "Buenas prácticas de cosecha y postcosecha en la producción agrícola orgánica." },
+                    { id: 21, name: "Buenas prácticas de manufactura en la transformación de productos agropecuarios de pequeña escala." }
+                ]
+            },
+            {
+                name: "Categoría VI. Empresa local con mejor manejo de manufactura e inocuidad",
+                contests: [
+                    { id: 22, name: "Empresa local con mejor manejo de manufactura e inocuidad en la elaboración de sus productos." }
+                ]
+            },
+            {
+                name: "Categoría VII. Mejor jardín sumapaceño",
+                contests: [
+                    { id: 23, name: "Mejor jardín sumapaceño." }
+                ]
+            },
+            {
+                name: "Categoría VIII. Vereda sostenible",
+                contests: [
+                    { id: 24, name: "Mejor vereda de la localidad de Sumapaz con mejores propuestas de desarrollo rural sostenible." }
+                ]
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCategories();
+        });
+
+        function renderCategories() {
+            const container = document.getElementById('categories-container');
+            container.innerHTML = categoriesData.map((cat, idx) => `
+                <div class="category-card">
+                    <div class="category-header-bar" onclick="toggleCategory(${idx})">
+                        <span>${cat.name}</span>
+                        <span id="cat-arrow-${idx}">-</span>
+                    </div>
+                    <div class="category-contests-list" id="cat-body-${idx}">
+                        ${cat.contests.map(c => `
+                            <label class="contest-row">
+                                <input type="checkbox" name="concursos[]" value="${c.id}">
+                                <span class="contest-row-label">${c.name}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleCategory(idx) {
+            const body = document.getElementById(`cat-body-${idx}`);
+            const arrow = document.getElementById(`cat-arrow-${idx}`);
+            if (body.style.display === 'none') {
+                body.style.display = 'flex';
+                arrow.textContent = '-';
+            } else {
+                body.style.display = 'none';
+                arrow.textContent = '+';
+            }
+        }
+
+        function calculateAge(dobStr) {
+            if (!dobStr) return;
+            const dob = new Date(dobStr);
+            const today = new Date();
+            let age = today.getFullYear() - dob.getFullYear();
+            const m = today.getMonth() - dob.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+            document.getElementById('edad-badge').textContent = `Edad calculada: ${age} años`;
+        }
+
+        function toggleDiscapacidadExtra(val) {
+            document.getElementById('discapacidad-extra-group').style.display = (val === 'Otra') ? 'block' : 'none';
+        }
+
+        function toggleVeredaExtra(val) {
+            document.getElementById('vereda-extra-group').style.display = (val === 'OTRA VEREDA') ? 'block' : 'none';
+        }
+
+        function fetchGpsLocation() {
+            const status = document.getElementById('gps-status');
+            status.textContent = 'Obteniendo coordenadas GPS...';
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        document.getElementById('latitud').value = position.coords.latitude.toFixed(6);
+                        document.getElementById('longitud').value = position.coords.longitude.toFixed(6);
+                        if (position.coords.altitude !== null) {
+                            document.getElementById('altitud_msnm').value = Math.round(position.coords.altitude);
+                        }
+                        status.textContent = 'Coordenadas capturadas con éxito.';
+                    },
+                    (error) => {
+                        status.textContent = 'No se pudo obtener el GPS: ' + error.message;
+                    },
+                    { enableHighAccuracy: true, timeout: 10000 }
+                );
+            } else {
+                status.textContent = 'Geolocalización no disponible en el navegador.';
+            }
+        }
+
+        document.getElementById('feria-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const checkedContests = document.querySelectorAll('input[name="concursos[]"]:checked');
+            if (checkedContests.length === 0) {
+                document.getElementById('error-modal-text').textContent = 'Debe seleccionar al menos un concurso para realizar la inscripción.';
+                document.getElementById('error-modal').classList.add('active');
+                return;
+            }
+
+            const btnSubmit = document.getElementById('submit-btn-main');
+            const originalText = btnSubmit.textContent;
+            btnSubmit.disabled = true;
+            btnSubmit.textContent = 'Guardando e inscribiendo...';
+
+            const formData = new FormData(this);
+
+            try {
+                const res = await fetch('api/submit_feria_web.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await res.json();
+
+                if (res.ok && result.success) {
+                    document.getElementById('res-registro').textContent = result.numero_registro;
+                    document.getElementById('res-nombre').textContent = result.nombre_completo;
+                    document.getElementById('res-doc').textContent = result.documento;
+                    document.getElementById('res-fecha').textContent = result.fecha_inscripcion;
+                    document.getElementById('res-concursos-count').textContent = `${result.concursos_count} concurso(s)`;
+
+                    const ul = document.getElementById('res-concursos-list');
+                    ul.innerHTML = (result.concursos_nombres || []).map(c => `<li>${c}</li>`).join('');
+
+                    document.getElementById('success-modal').classList.add('active');
+                    this.reset();
+                    document.getElementById('edad-badge').textContent = '';
+                } else {
+                    document.getElementById('error-modal-text').textContent = result.error || 'Ocurrió un problema al guardar la información.';
+                    document.getElementById('error-modal').classList.add('active');
+                }
+            } catch (err) {
+                console.error('Error enviando formulario:', err);
+                document.getElementById('error-modal-text').textContent = 'Ocurrió un error de red o de servidor al enviar la inscripción.';
+                document.getElementById('error-modal').classList.add('active');
+            } finally {
+                btnSubmit.disabled = false;
+                btnSubmit.textContent = originalText;
+            }
+        });
+
+        function resetAndCloseModal() {
+            document.getElementById('success-modal').classList.remove('active');
+            document.getElementById('gps-status').textContent = '';
+            document.getElementById('discapacidad-extra-group').style.display = 'none';
+            document.getElementById('vereda-extra-group').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
