@@ -65,12 +65,16 @@ try {
         }
 
         $is_concursos_only = ($user_id === 12 || $user_rol_id === 12);
+        $is_kardex = ($user_id === 14 || $user_rol_id === 14);
 
         // Role 6 is specifically Ambientales (Tablero Ambiental ONLY)
         // User ID 12 or Role ID 12 is specifically Concursos Sumapaz ONLY
+        // User ID 14 or Role ID 14 is Kardex Agroambiental
         // Role 13 is Feria Agroambiental (App concursosSumapaz) -> feria_ambiental.html ONLY
         $redirect_target = 'productores_registrados.html';
-        if ($user_rol_id === 13) {
+        if ($is_kardex) {
+            $redirect_target = 'kardex_agroambiental.html';
+        } else if ($user_rol_id === 13) {
             $redirect_target = 'feria_ambiental.html';
         } else if ($is_concursos_only) {
             $redirect_target = 'concursos_sumapaz.html';
