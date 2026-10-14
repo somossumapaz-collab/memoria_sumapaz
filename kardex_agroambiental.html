@@ -507,8 +507,115 @@
             line-height: 1;
         }
 
-        .modal-body {
-            padding: 1.25rem;
+        /* Thumbnails & Image Helpers */
+        .prod-thumb-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .prod-thumb {
+            width: 44px;
+            height: 44px;
+            border-radius: 6px;
+            object-fit: cover;
+            border: 1px solid var(--border-subtle);
+            cursor: pointer;
+            transition: transform 0.15s ease;
+            background: #EDF2F7;
+        }
+
+        .prod-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .btn-thumb-upload {
+            background: #F7FAFC;
+            border: 1px dashed var(--border-subtle);
+            border-radius: 6px;
+            width: 44px;
+            height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: all 0.2s ease;
+        }
+
+        .btn-thumb-upload:hover {
+            background: #EBF8FA;
+            border-color: var(--accent-green);
+            color: var(--primary-green);
+        }
+
+        .voucher-thumb-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            cursor: pointer;
+            background: #EBF8FA;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #B2F5EA;
+        }
+
+        /* Badges Paz y Salvo */
+        .badge-paz-ok {
+            background: #C6F6D5;
+            color: #22543D;
+            border: 1px solid #9AE6B4;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.25rem 0.55rem;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .badge-paz-no {
+            background: #FEEBC8;
+            color: #7B341E;
+            border: 1px solid #FBD38D;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.25rem 0.55rem;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .modal-large {
+            max-width: 950px !important;
+        }
+
+        /* Gallery in Modal */
+        .modal-evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            gap: 0.65rem;
+            margin-top: 0.5rem;
+        }
+
+        .modal-evidence-thumb {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 6px;
+            object-fit: cover;
+            border: 1px solid var(--border-light);
+            cursor: pointer;
+            transition: transform 0.15s ease;
+        }
+
+        .modal-evidence-thumb:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -537,6 +644,7 @@
                                 Inscripciones <span class="tab-arrow">▼</span>
                             </button>
                             <div class="nav-dropdown-menu">
+                                <a href="solicitud_insumos.html" class="nav-dropdown-item" id="item-reg-solicitud" style="font-weight: 700; color: #D4A373;">📋 Solicitud de Insumos</a>
                                 <a href="inscripcion_feria.html" class="nav-dropdown-item" id="item-reg-feria">Inscripción Feria</a>
                                 <a href="inscripcion_jovenes.html" class="nav-dropdown-item" id="item-reg-jovenes">Jóvenes Emprendedores</a>
                                 <a href="inscripcion_tejedoras.html" class="nav-dropdown-item" id="item-reg-tejedoras">Tejedoras y Artesanos</a>
@@ -642,12 +750,21 @@
                         <p id="kpi-stock-bajo">0</p>
                     </div>
                 </div>
+                <div class="stat-card" style="border-left: 4px solid #C05621; cursor: pointer;" onclick="switchTab('tab-solicitudes')">
+                    <div class="stat-info">
+                        <h4>Solicitudes Pendientes</h4>
+                        <p id="kpi-solicitudes-pendientes" style="color: #C05621;">0</p>
+                    </div>
+                </div>
             </div>
 
             <!-- Main Panel Tabs Header -->
             <div class="tabs-header">
                 <button class="tab-btn active" onclick="switchTab('tab-inventario')">
                     Inventario General (Stock Actual)
+                </button>
+                <button class="tab-btn" id="btn-tab-solicitudes" onclick="switchTab('tab-solicitudes')">
+                    📋 Solicitudes de Insumos <span id="badge-tab-solicitudes" style="background: #C53030; color: white; padding: 2px 7px; border-radius: 10px; font-size: 0.72rem; margin-left: 4px; display: none;">0</span>
                 </button>
                 <button class="tab-btn" onclick="switchTab('tab-nuevo-movimiento')">
                     Registrar Ingreso / Salida
@@ -700,6 +817,7 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>Foto</th>
                                 <th>Categoría</th>
                                 <th>Insumo / Producto</th>
                                 <th>Stock Actual</th>
@@ -710,7 +828,7 @@
                             </tr>
                         </thead>
                         <tbody id="tbody-productos">
-                            <tr><td colspan="8" style="text-align: center; padding: 2rem;">Cargando inventario...</td></tr>
+                            <tr><td colspan="9" style="text-align: center; padding: 2rem;">Cargando inventario...</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -770,6 +888,16 @@
                             <div class="form-group">
                                 <label>Documento / Acta de Referencia</label>
                                 <input type="text" id="form-documento-ref" class="filter-control" placeholder="Ej: Remisión 001, Acta #15">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Número de Proyecto / Línea</label>
+                                <input type="text" id="form-numero-proyecto" class="filter-control" placeholder="Ej. PY-2671, PY-2666">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Foto / Comprobante de Movimiento</label>
+                                <input type="file" id="form-comprobante-file" accept="image/*" class="filter-control">
                             </div>
 
                             <div class="form-group" id="group-fecha-ingreso">
@@ -843,6 +971,7 @@
                         <thead>
                             <tr>
                                 <th>N°</th>
+                                <th>Soporte</th>
                                 <th>Tipo</th>
                                 <th>Insumo / Producto</th>
                                 <th>Cantidad</th>
@@ -850,6 +979,7 @@
                                 <th>Stock Res.</th>
                                 <th>Responsable / Beneficiario</th>
                                 <th>Cédula</th>
+                                <th>Proyecto</th>
                                 <th>Fecha Ingreso</th>
                                 <th>Fecha Salida</th>
                                 <th>Vereda</th>
@@ -858,7 +988,7 @@
                             </tr>
                         </thead>
                         <tbody id="tbody-kardex">
-                            <tr><td colspan="13" style="text-align: center; padding: 2rem;">Cargando historial de movimientos...</td></tr>
+                            <tr><td colspan="15" style="text-align: center; padding: 2rem;">Cargando historial de movimientos...</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -926,6 +1056,83 @@
                             </div>
                         </div>
                     </div>
+            <!-- TAB 5: SOLICITUDES DE INSUMOS Y PAZ Y SALVO -->
+            <div id="tab-solicitudes" class="tab-content">
+                <div class="filter-panel">
+                    <div class="filter-group" style="flex: 1.5; min-width: 200px;">
+                        <label>Buscar Solicitud</label>
+                        <input type="text" id="search-solicitud" class="filter-control" placeholder="Buscar por código, cédula, productor, proyecto..." oninput="filterSolicitudesTable()">
+                    </div>
+                    <div class="filter-group" style="min-width: 170px;">
+                        <label>Estado Solicitud</label>
+                        <select id="filter-solicitud-estado" class="filter-control" onchange="loadSolicitudesList()">
+                            <option value="all">Todas las Solicitudes</option>
+                            <option value="PENDIENTE" selected>Pendientes de Despacho</option>
+                            <option value="PENDIENTES_EVIDENCIA">Despachadas (Esperando Evidencias)</option>
+                            <option value="PENDIENTES_PAZ_Y_SALVO">Con Evidencias (Listas para Paz y Salvo)</option>
+                            <option value="PAZ_Y_SALVO">Finalizadas con Paz y Salvo</option>
+                        </select>
+                    </div>
+                    <div class="filter-group" style="min-width: 150px;">
+                        <label>Vereda</label>
+                        <select id="filter-solicitud-vereda" class="filter-control" onchange="filterSolicitudesTable()">
+                            <option value="all">Todas las Veredas</option>
+                        </select>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-self: flex-end;">
+                        <a href="solicitud_insumos.html" target="_blank" class="btn-action" style="background: var(--accent-green); color: white; text-decoration: none; padding: 0.6rem 1rem; border-radius: 6px; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.4rem;">
+                            ➕ Abrir Formato Solicitud
+                        </a>
+                        <button onclick="loadSolicitudesList()" class="btn-action btn-secondary" style="padding: 0.6rem 1rem;">
+                            🔄 Refrescar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- KPI SUB-ROW FOR SOLICITUDES -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
+                    <div style="background: white; border: 1px solid var(--border-light); border-radius: 6px; padding: 0.75rem 1rem;">
+                        <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Total Radicadas</div>
+                        <div id="sol-kpi-total" style="font-size: 1.4rem; font-weight: 800; color: var(--primary-green-dark);">0</div>
+                    </div>
+                    <div style="background: #FEFCBF; border: 1px solid #FAF089; border-radius: 6px; padding: 0.75rem 1rem;">
+                        <div style="font-size: 0.75rem; color: #744210; font-weight: 700; text-transform: uppercase;">Pendientes Despacho</div>
+                        <div id="sol-kpi-pendientes" style="font-size: 1.4rem; font-weight: 800; color: #744210;">0</div>
+                    </div>
+                    <div style="background: #EBF8FF; border: 1px solid #BEE3F8; border-radius: 6px; padding: 0.75rem 1rem;">
+                        <div style="font-size: 0.75rem; color: #2B6CB0; font-weight: 700; text-transform: uppercase;">Esperando Evidencias</div>
+                        <div id="sol-kpi-despachados" style="font-size: 1.4rem; font-weight: 800; color: #2B6CB0;">0</div>
+                    </div>
+                    <div style="background: #FAF5FF; border: 1px solid #E9D8FD; border-radius: 6px; padding: 0.75rem 1rem;">
+                        <div style="font-size: 0.75rem; color: #6B46C1; font-weight: 700; text-transform: uppercase;">Listas Paz y Salvo</div>
+                        <div id="sol-kpi-evidencias" style="font-size: 1.4rem; font-weight: 800; color: #6B46C1;">0</div>
+                    </div>
+                    <div style="background: #C6F6D5; border: 1px solid #9AE6B4; border-radius: 6px; padding: 0.75rem 1rem;">
+                        <div style="font-size: 0.75rem; color: #22543D; font-weight: 700; text-transform: uppercase;">Paz y Salvo Emitido</div>
+                        <div id="sol-kpi-paz" style="font-size: 1.4rem; font-weight: 800; color: #22543D;">0</div>
+                    </div>
+                </div>
+
+                <div class="table-card">
+                    <table class="custom-table" id="table-solicitudes">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Fecha</th>
+                                <th>Proyecto</th>
+                                <th>Productor / Beneficiario</th>
+                                <th>Cédula</th>
+                                <th>Vereda / Predio</th>
+                                <th>Items</th>
+                                <th>Estado</th>
+                                <th>Paz y Salvo</th>
+                                <th style="text-align: center;">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-solicitudes">
+                            <tr><td colspan="10" style="text-align: center; padding: 2rem;">Cargando solicitudes...</td></tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -976,6 +1183,16 @@
                         <input type="text" id="modal-concepto" class="filter-control" placeholder="Ej: Entrega a Productor, Compra Insumos" required>
                     </div>
 
+                    <div class="form-group" style="margin-bottom: 0.85rem;">
+                        <label>Número de Proyecto</label>
+                        <input type="text" id="modal-numero-proyecto" class="filter-control" placeholder="Ej. PY-2671">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 0.85rem;">
+                        <label>Foto / Comprobante de Movimiento</label>
+                        <input type="file" id="modal-comprobante-file" accept="image/*" class="filter-control">
+                    </div>
+
                     <div class="form-group" style="margin-bottom: 1.25rem;">
                         <label>Observaciones</label>
                         <input type="text" id="modal-observaciones" class="filter-control" placeholder="Notas adicionales">
@@ -987,6 +1204,190 @@
                     </div>
                 </form>
             </div>
+        </div>
+    </div>
+
+    <!-- MODAL 1: GESTIÓN DE SOLICITUD DE INSUMOS -->
+    <div id="modal-gestion-solicitud" class="modal-overlay">
+        <div class="modal-container modal-large">
+            <div class="modal-header" style="background: var(--primary-green-dark);">
+                <div>
+                    <h3 id="mgmt-sol-codigo" style="display: inline-block;">SOL-XXXX</h3>
+                    <span id="mgmt-sol-badge-estado" style="margin-left: 0.5rem;"></span>
+                </div>
+                <button onclick="cerrarGestionSolicitud()" class="modal-close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Solicitud Details Grid -->
+                <div style="background: #F8FAFC; border: 1px solid var(--border-light); border-radius: 8px; padding: 1.1rem; margin-bottom: 1.25rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem; font-size: 0.88rem;">
+                        <div><strong>Proyecto:</strong> <span id="mgmt-sol-proyecto">-</span></div>
+                        <div><strong>Fecha Solicitud:</strong> <span id="mgmt-sol-fecha">-</span></div>
+                        <div><strong>Productor:</strong> <span id="mgmt-sol-productor">-</span></div>
+                        <div><strong>Cédula:</strong> <span id="mgmt-sol-cedula">-</span></div>
+                        <div><strong>Vereda / Predio:</strong> <span id="mgmt-sol-vereda-predio">-</span></div>
+                        <div><strong>Solicitado por:</strong> <span id="mgmt-sol-solicitante">-</span></div>
+                    </div>
+                    <div style="margin-top: 0.5rem; font-size: 0.85rem;" id="mgmt-sol-meta-box">
+                        <strong>Meta:</strong> <span id="mgmt-sol-meta">-</span>
+                    </div>
+                    <div style="margin-top: 0.4rem; font-size: 0.85rem;" id="mgmt-sol-obs-box">
+                        <strong>Observaciones:</strong> <span id="mgmt-sol-observaciones">-</span>
+                    </div>
+                </div>
+
+                <!-- ALERTA DE BLOQUEO POR PAZ Y SALVO PREVIO -->
+                <div id="mgmt-alerta-bloqueo" style="display: none; background: #FFF5F5; border: 2px solid #E53E3E; border-radius: 8px; padding: 1rem; margin-bottom: 1.25rem; color: #9B2C2C;">
+                    <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                        <span style="font-size: 1.6rem; line-height: 1;">🚫</span>
+                        <div>
+                            <strong style="font-size: 0.98rem;">BLOQUEO ESTRICTO POR PAZ Y SALVO</strong>
+                            <p style="margin: 0.35rem 0 0 0; font-size: 0.88rem; line-height: 1.4;" id="mgmt-bloqueo-mensaje">
+                                Este productor o proyecto tiene entregas anteriores pendientes sin Paz y Salvo. No se puede despachar esta solicitud hasta que se apruebe el Paz y Salvo pendiente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TABLA DE ITEMS SOLICITADOS -->
+                <div style="margin-bottom: 1.25rem;">
+                    <h4 style="margin: 0 0 0.5rem 0; color: var(--primary-green-dark); font-size: 1rem;">
+                        Insumos Solicitados y Asignación de Despacho
+                    </h4>
+                    <div style="overflow-x: auto;">
+                        <table class="custom-table" style="font-size: 0.85rem;">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Descripción Solicitada</th>
+                                    <th>Insumo en Inventario (Kardex)</th>
+                                    <th>Cant. Solicitada</th>
+                                    <th>Cant. a Despachar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="mgmt-tbody-items">
+                                <!-- Filas generadas dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN DE DESPACHO (SI ESTÁ PENDIENTE) -->
+                <div id="mgmt-box-despacho" style="display: none; background: #F0FFF4; border: 1px solid #9AE6B4; border-radius: 8px; padding: 1.25rem; margin-bottom: 1.25rem;">
+                    <h4 style="margin: 0 0 0.75rem 0; color: #22543D;">
+                        📦 Registro de Entrega y Salida de Insumos (Bodega)
+                    </h4>
+                    <form id="mgmt-form-despacho" onsubmit="handleDespachoFormSubmit(event)">
+                        <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                            <div class="form-group">
+                                <label style="color: #22543D;">Fecha y Hora Real de Entrega *</label>
+                                <input type="datetime-local" id="mgmt-fecha-entrega" class="filter-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label style="color: #22543D;">Foto de Entrega en Bodega (Registro Obligatorio) *</label>
+                                <input type="file" id="mgmt-foto-entrega-file" accept="image/*" class="filter-control" required onchange="previewFotoEntregaBodega(event)">
+                            </div>
+                        </div>
+
+                        <div id="mgmt-preview-foto-box" style="display: none; margin-top: 0.75rem; max-width: 250px;">
+                            <img id="mgmt-preview-foto-img" src="" alt="Preview" style="width: 100%; border-radius: 6px; border: 1px solid var(--border-light);">
+                        </div>
+
+                        <div style="margin-top: 1rem; text-align: right;">
+                            <button type="submit" id="mgmt-btn-despachar" class="btn-action btn-salida" style="padding: 0.65rem 1.75rem; font-size: 0.92rem;">
+                                Confirmar Despacho y Descontar Kardex
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- SECCIÓN DE SÓPORTE DE ENTREGA REGISTRADO -->
+                <div id="mgmt-box-foto-entrega-view" style="display: none; background: white; border: 1px solid var(--border-light); border-radius: 8px; padding: 1rem; margin-bottom: 1.25rem;">
+                    <h4 style="margin: 0 0 0.5rem 0; color: var(--primary-green-dark); font-size: 0.95rem;">
+                        📸 Constancia de Entrega en Bodega
+                    </h4>
+                    <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                        <img id="mgmt-view-foto-entrega-img" src="" class="prod-thumb" style="width: 80px; height: 80px; cursor: pointer;" onclick="openLightbox(this.src, 'Foto de Salida en Bodega')" alt="Entrega">
+                        <div style="font-size: 0.85rem; color: var(--text-muted);" id="mgmt-view-fecha-entrega-lbl">
+                            Fecha de entrega: -
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN DE EVIDENCIAS Y PAZ Y SALVO (SI TIENE SOPORTES CARGADOS) -->
+                <div id="mgmt-box-evidencias-revision" style="display: none; background: #FAF5FF; border: 1px solid #E9D8FD; border-radius: 8px; padding: 1.25rem; margin-bottom: 1.25rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <h4 style="margin: 0; color: #6B46C1; font-size: 1rem;">
+                            📑 Revisión de Acta de Entrega y Evidencias Fotográficas
+                        </h4>
+                        <div id="mgmt-badge-paz-status"></div>
+                    </div>
+
+                    <div style="margin-bottom: 0.75rem; font-size: 0.9rem;">
+                        <strong>Acta de Entrega Firmada:</strong>
+                        <a id="mgmt-link-acta" href="#" target="_blank" style="color: var(--primary-green); font-weight: 700; margin-left: 0.5rem;">
+                            📄 Ver Documento de Acta
+                        </a>
+                    </div>
+
+                    <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.4rem;">
+                        Evidencias Fotográficas de Entrega / Campo:
+                    </div>
+                    <div class="modal-evidence-grid" id="mgmt-galeria-evidencias"></div>
+
+                    <!-- BOTÓN PARA EMITIR PAZ Y SALVO -->
+                    <div id="mgmt-box-btn-paz" style="margin-top: 1.25rem; text-align: right; border-top: 1px dashed #D6BCFA; padding-top: 1rem;">
+                        <button type="button" onclick="confirmarAprobacionPazYSalvo()" class="btn-action" style="background: #276749; color: white; padding: 0.75rem 1.75rem; font-size: 0.95rem; font-weight: 700; border-radius: 6px;">
+                            🛡️ Aprobar y Otorgar Paz y Salvo Oficial
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PIE DEL MODAL -->
+                <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+                    <button type="button" onclick="cerrarGestionSolicitud()" class="btn-action btn-secondary">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: CARGAR / CAMBIAR FOTO DE INSUMO -->
+    <div id="modal-foto-insumo" class="modal-overlay">
+        <div class="modal-container" style="max-width: 480px;">
+            <div class="modal-header">
+                <h3>Fotografía de Insumo</h3>
+                <button onclick="cerrarModalFotoInsumo()" class="modal-close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="form-foto-insumo" onsubmit="handleGuardarFotoInsumo(event)">
+                    <input type="hidden" id="foto-insumo-prod-id">
+                    
+                    <div style="font-weight: 700; margin-bottom: 0.75rem; color: var(--primary-green-dark);" id="foto-insumo-prod-nombre">-</div>
+
+                    <div style="text-align: center; margin-bottom: 1rem;">
+                        <img id="foto-insumo-preview" src="assets/logo_somossumapaz.png" style="width: 140px; height: 140px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-light);" alt="Preview">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.25rem;">
+                        <label>Seleccionar Nueva Imagen *</label>
+                        <input type="file" id="foto-insumo-file" accept="image/*" class="filter-control" required onchange="previewFotoInsumoLocal(event)">
+                    </div>
+
+                    <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
+                        <button type="button" onclick="cerrarModalFotoInsumo()" class="btn-action btn-secondary">Cancelar</button>
+                        <button type="submit" id="btn-save-foto-insumo" class="btn-action btn-ingreso">Guardar Foto</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: LIGHTBOX VISOR DE IMAGEN AMPLIADA -->
+    <div id="modal-lightbox" class="modal-overlay" onclick="closeLightbox()" style="background: rgba(0,0,0,0.85); z-index: 100000;">
+        <div style="position: relative; max-width: 90vw; max-height: 90vh; text-align: center;" onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()" style="position: absolute; top: -40px; right: 0; background: transparent; border: none; color: white; font-size: 2rem; cursor: pointer;">&times;</button>
+            <img id="lightbox-img" src="" style="max-width: 100%; max-height: 80vh; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); display: block; margin: 0 auto;">
+            <div id="lightbox-caption" style="color: #F8FAF9; font-size: 0.9rem; margin-top: 0.75rem; font-weight: 600;"></div>
         </div>
     </div>
 
@@ -1011,6 +1412,7 @@
             await loadDashboardData();
             await loadProductosCatalog();
             await loadKardexMovimientosHistory();
+            await loadSolicitudesList();
         });
 
         async function checkAuthSession() {
@@ -1098,6 +1500,16 @@
                     document.getElementById('kpi-total-salidas').textContent = kpis.total_salidas || 0;
                     document.getElementById('kpi-stock-bajo').textContent = kpis.stock_bajo_count || 0;
 
+                    const solPend = parseInt(kpis.solicitudes_pendientes || 0);
+                    const kpiSolEl = document.getElementById('kpi-solicitudes-pendientes');
+                    if (kpiSolEl) kpiSolEl.textContent = solPend;
+
+                    const badgeTabSol = document.getElementById('badge-tab-solicitudes');
+                    if (badgeTabSol) {
+                        badgeTabSol.textContent = solPend;
+                        badgeTabSol.style.display = (solPend > 0) ? 'inline-block' : 'none';
+                    }
+
                     allCategorias = data.categorias || [];
                     allVeredas = data.veredas || [];
 
@@ -1109,14 +1521,18 @@
 
                     const veredaFormSelect = document.getElementById('form-vereda');
                     const veredaModalSelect = document.getElementById('modal-vereda');
+                    const veredaSolFilter = document.getElementById('filter-solicitud-vereda');
                     
                     let veredaOpts = '<option value="">Seleccione una vereda...</option>';
+                    let veredaFilterOpts = '<option value="all">Todas las Veredas</option>';
                     allVeredas.forEach(v => {
                         veredaOpts += `<option value="${v}">${v}</option>`;
+                        veredaFilterOpts += `<option value="${v}">${v}</option>`;
                     });
                     
-                    veredaFormSelect.innerHTML = veredaOpts;
-                    veredaModalSelect.innerHTML = veredaOpts;
+                    if (veredaFormSelect) veredaFormSelect.innerHTML = veredaOpts;
+                    if (veredaModalSelect) veredaModalSelect.innerHTML = veredaOpts;
+                    if (veredaSolFilter) veredaSolFilter.innerHTML = veredaFilterOpts;
                 }
             } catch (err) {
                 console.error('Error loading dashboard:', err);
@@ -1141,7 +1557,7 @@
         function renderProductosTable(productos) {
             const tbody = document.getElementById('tbody-productos');
             if (!productos || productos.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 2rem;">No se encontraron insumos con los filtros seleccionados.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; padding: 2rem;">No se encontraron insumos con los filtros seleccionados.</td></tr>';
                 return;
             }
 
@@ -1163,9 +1579,24 @@
                     badgeLabel = 'Stock Bajo';
                 }
 
+                let fotoHtml = '';
+                if (p.imagen_url) {
+                    fotoHtml = `
+                        <div class="prod-thumb-container">
+                            <img src="${p.imagen_url}" class="prod-thumb" onclick="openLightbox('${p.imagen_url}', '${escapeHtml(p.nombre)}')" title="Click para ampliar">
+                            <button type="button" onclick="abrirModalFotoInsumo(${p.id})" title="Cambiar foto de insumo" style="background: none; border: none; cursor: pointer; font-size: 0.85rem; padding: 0.2rem;" aria-label="Cambiar foto">✏️</button>
+                        </div>
+                    `;
+                } else {
+                    fotoHtml = `
+                        <button type="button" class="btn-thumb-upload" onclick="abrirModalFotoInsumo(${p.id})" title="Subir fotografía de insumo">📷</button>
+                    `;
+                }
+
                 html += `
                     <tr>
                         <td style="font-weight: 700; color: var(--text-muted);">#${p.id}</td>
+                        <td style="text-align: center;">${fotoHtml}</td>
                         <td><span class="badge badge-cat">${escapeHtml(p.categoria_nombre)}</span></td>
                         <td style="font-weight: 700; color: var(--primary-green-dark);">${escapeHtml(p.nombre)}</td>
                         <td style="font-size: 1rem; font-weight: 800; color: ${stock <= 0 ? '#C53030' : 'var(--primary-green)'};">${stock.toLocaleString('es-CO')}</td>
@@ -1299,6 +1730,27 @@
 
             const tipo = document.getElementById('form-tipo').value;
             const fechaMov = (tipo === 'INGRESO') ? document.getElementById('form-fecha-ingreso').value : document.getElementById('form-fecha-salida').value;
+            const btn = document.getElementById('btn-submit-mov');
+            btn.disabled = true;
+            btn.textContent = 'Guardando...';
+
+            let comprobanteUrl = null;
+            const fileInput = document.getElementById('form-comprobante-file');
+            if (fileInput && fileInput.files && fileInput.files[0]) {
+                btn.textContent = 'Subiendo comprobante...';
+                try {
+                    const compData = new FormData();
+                    compData.append('archivo', fileInput.files[0]);
+                    compData.append('tipo', 'comprobante');
+                    const compRes = await fetch('api/upload_kardex_archivo.php', { method: 'POST', body: compData });
+                    const compJson = await compRes.json();
+                    if (compJson.success) {
+                        comprobanteUrl = compJson.file_url;
+                    }
+                } catch (upErr) {
+                    console.warn('Error subiendo comprobante:', upErr);
+                }
+            }
 
             const payload = {
                 producto_id: document.getElementById('form-producto-id').value,
@@ -1309,15 +1761,13 @@
                 vereda: document.getElementById('form-vereda').value,
                 concepto: document.getElementById('form-concepto').value,
                 documento_referencia: document.getElementById('form-documento-ref').value,
+                numero_proyecto: document.getElementById('form-numero-proyecto').value.trim() || null,
+                comprobante_url: comprobanteUrl,
                 observaciones: document.getElementById('form-observaciones').value,
                 fecha_movimiento: fechaMov,
                 fecha_ingreso: (tipo === 'INGRESO' ? fechaMov : null),
                 fecha_salida: (tipo === 'SALIDA' ? fechaMov : null)
             };
-
-            const btn = document.getElementById('btn-submit-mov');
-            btn.disabled = true;
-            btn.textContent = 'Guardando...';
 
             try {
                 const res = await fetch('api/submit_kardex_movimiento.php', {
@@ -1334,6 +1784,7 @@
                     await loadDashboardData();
                     await loadProductosCatalog();
                     await loadKardexMovimientosHistory();
+                    await loadSolicitudesList();
                     switchTab('tab-inventario');
                 } else {
                     alert('Error: ' + (data.error || 'No se pudo guardar el movimiento'));
@@ -1375,7 +1826,7 @@
         function renderKardexHistoryTable(movimientos) {
             const tbody = document.getElementById('tbody-kardex');
             if (!movimientos || movimientos.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="13" style="text-align: center; padding: 2rem;">No se encontraron registros de movimientos en el Kardex.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="15" style="text-align: center; padding: 2rem;">No se encontraron registros de movimientos en el Kardex.</td></tr>';
                 return;
             }
 
@@ -1385,9 +1836,15 @@
                 const badgeClass = isIngreso ? 'badge-ingreso' : 'badge-salida';
                 const cantFormatted = (isIngreso ? '+' : '-') + parseFloat(m.cantidad).toLocaleString('es-CO');
 
+                let soporteHtml = '<span style="color:#A0AEC0;">-</span>';
+                if (m.comprobante_url) {
+                    soporteHtml = `<button type="button" class="voucher-thumb-link" onclick="openLightbox('${m.comprobante_url}', 'Comprobante Movimiento #${m.id}')">📷 Ver</button>`;
+                }
+
                 html += `
                     <tr>
                         <td style="font-weight: 700; color: var(--text-muted);">#${m.id}</td>
+                        <td style="text-align: center;">${soporteHtml}</td>
                         <td><span class="badge ${badgeClass}">${m.tipo}</span></td>
                         <td style="font-weight: 700; color: var(--primary-green-dark);">${escapeHtml(m.producto_nombre)}</td>
                         <td style="font-weight: 800; font-size: 0.95rem;">${cantFormatted} ${escapeHtml(m.unidad_medida)}</td>
@@ -1395,6 +1852,7 @@
                         <td style="font-weight: 800; color: var(--primary-green-dark);">${parseFloat(m.stock_resultante).toLocaleString('es-CO')}</td>
                         <td style="font-weight: 600;">${escapeHtml(m.responsable)}</td>
                         <td>${escapeHtml(m.cedula_responsable || '-')}</td>
+                        <td style="font-weight: 600; color: var(--text-muted);">${escapeHtml(m.numero_proyecto || '-')}</td>
                         <td style="white-space: nowrap; font-size: 0.82rem;">${escapeHtml(m.fecha_ingreso || (isIngreso ? m.fecha_movimiento : '-'))}</td>
                         <td style="white-space: nowrap; font-size: 0.82rem;">${escapeHtml(m.fecha_salida || (!isIngreso ? m.fecha_movimiento : '-'))}</td>
                         <td>${escapeHtml(m.vereda || '-')}</td>
@@ -1412,6 +1870,7 @@
                 return m.producto_nombre.toLowerCase().includes(search) ||
                        m.responsable.toLowerCase().includes(search) ||
                        (m.cedula_responsable && m.cedula_responsable.toLowerCase().includes(search)) ||
+                       (m.numero_proyecto && m.numero_proyecto.toLowerCase().includes(search)) ||
                        (m.vereda && m.vereda.toLowerCase().includes(search)) ||
                        m.concepto.toLowerCase().includes(search) ||
                        (m.documento_referencia && m.documento_referencia.toLowerCase().includes(search));
@@ -1445,6 +1904,27 @@
 
             const tipo = document.getElementById('modal-tipo').value;
             const nowIso = new Date().toISOString().slice(0, 19).replace('T', ' ');
+            const submitBtn = document.getElementById('modal-submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Guardando...';
+
+            let modalCompUrl = null;
+            const fileInput = document.getElementById('modal-comprobante-file');
+            if (fileInput && fileInput.files && fileInput.files[0]) {
+                submitBtn.textContent = 'Subiendo comprobante...';
+                try {
+                    const mData = new FormData();
+                    mData.append('archivo', fileInput.files[0]);
+                    mData.append('tipo', 'comprobante');
+                    const mRes = await fetch('api/upload_kardex_archivo.php', { method: 'POST', body: mData });
+                    const mJson = await mRes.json();
+                    if (mJson.success) {
+                        modalCompUrl = mJson.file_url;
+                    }
+                } catch (upErr) {
+                    console.warn('Error subiendo comprobante en modal:', upErr);
+                }
+            }
 
             const payload = {
                 producto_id: document.getElementById('modal-producto-id').value,
@@ -1454,6 +1934,8 @@
                 cedula_responsable: document.getElementById('modal-cedula').value,
                 vereda: document.getElementById('modal-vereda').value,
                 concepto: document.getElementById('modal-concepto').value,
+                numero_proyecto: document.getElementById('modal-numero-proyecto').value.trim() || null,
+                comprobante_url: modalCompUrl,
                 observaciones: document.getElementById('modal-observaciones').value,
                 fecha_movimiento: nowIso,
                 fecha_ingreso: (tipo === 'INGRESO' ? nowIso : null),
@@ -1475,13 +1957,507 @@
                     await loadDashboardData();
                     await loadProductosCatalog();
                     await loadKardexMovimientosHistory();
+                    await loadSolicitudesList();
                 } else {
                     alert('Error: ' + (data.error || 'No se pudo guardar el movimiento'));
                 }
             } catch (err) {
                 alert('Error al conectar con el servidor');
                 console.error(err);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Guardar Movimiento';
             }
+        }
+
+        // =========================================================================
+        // SECCIÓN SOLICITUDES DE INSUMOS, DESPACHO Y PAZ Y SALVO
+        // =========================================================================
+        let allSolicitudes = [];
+        let currentSolicitudGestion = null;
+
+        async function loadSolicitudesList() {
+            try {
+                const estado = document.getElementById('filter-solicitud-estado') ? document.getElementById('filter-solicitud-estado').value : 'all';
+                let url = `api/get_kardex_solicitudes.php?estado=${estado}`;
+
+                const res = await fetch(url);
+                const data = await res.json();
+
+                if (data.success) {
+                    allSolicitudes = data.solicitudes || [];
+                    const counts = data.counts || {};
+
+                    if (document.getElementById('sol-kpi-total')) document.getElementById('sol-kpi-total').textContent = counts.total || 0;
+                    if (document.getElementById('sol-kpi-pendientes')) document.getElementById('sol-kpi-pendientes').textContent = counts.pendientes || 0;
+                    if (document.getElementById('sol-kpi-despachados')) document.getElementById('sol-kpi-despachados').textContent = counts.despachados_sin_evidencias || 0;
+                    if (document.getElementById('sol-kpi-evidencias')) document.getElementById('sol-kpi-evidencias').textContent = counts.listas_paz_y_salvo || 0;
+                    if (document.getElementById('sol-kpi-paz')) document.getElementById('sol-kpi-paz').textContent = counts.con_paz_y_salvo || 0;
+
+                    const pendCount = parseInt(counts.pendientes || 0);
+                    const kpiSolCard = document.getElementById('kpi-solicitudes-pendientes');
+                    if (kpiSolCard) kpiSolCard.textContent = pendCount;
+
+                    const badgeTab = document.getElementById('badge-tab-solicitudes');
+                    if (badgeTab) {
+                        badgeTab.textContent = pendCount;
+                        badgeTab.style.display = (pendCount > 0) ? 'inline-block' : 'none';
+                    }
+
+                    renderSolicitudesTable(allSolicitudes);
+                }
+            } catch (err) {
+                console.error('Error cargando solicitudes:', err);
+            }
+        }
+
+        function renderSolicitudesTable(solicitudes) {
+            const tbody = document.getElementById('tbody-solicitudes');
+            if (!tbody) return;
+
+            if (!solicitudes || solicitudes.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="10" style="text-align: center; padding: 2rem;">No se encontraron solicitudes con los filtros actuales.</td></tr>';
+                return;
+            }
+
+            let html = '';
+            solicitudes.forEach(s => {
+                let badgeClass = 'badge-pendiente';
+                let badgeLabel = 'Pendiente';
+
+                if (s.estado === 'DESPACHADO') {
+                    badgeClass = 'badge-despachado';
+                    badgeLabel = 'Despachado (Sin Evidencias)';
+                } else if (s.estado === 'EVIDENCIAS_CARGADAS') {
+                    badgeClass = 'badge-evidencias';
+                    badgeLabel = 'Evidencias Listas';
+                } else if (s.estado === 'PAZ_Y_SALVO') {
+                    badgeClass = 'badge-paz-salvo';
+                    badgeLabel = 'Paz y Salvo';
+                }
+
+                const pazBadge = (s.paz_y_salvo == 1) 
+                    ? `<span class="badge-paz-ok">🛡️ Paz y Salvo</span>` 
+                    : `<span class="badge-paz-no">⚠️ Pendiente</span>`;
+
+                html += `
+                    <tr>
+                        <td style="font-weight: 800; color: var(--primary-green-dark);">${escapeHtml(s.codigo_solicitud)}</td>
+                        <td style="white-space: nowrap; font-size: 0.82rem;">${escapeHtml(s.fecha_solicitud)}</td>
+                        <td style="font-weight: 700; color: var(--text-muted); font-size: 0.85rem;">${escapeHtml(s.numero_proyecto)}</td>
+                        <td style="font-weight: 700;">${escapeHtml(s.nombre_productor)}</td>
+                        <td>${escapeHtml(s.cedula_productor)}</td>
+                        <td style="font-size: 0.85rem;">${escapeHtml(s.vereda)} ${s.nombre_predio ? ' - ' + escapeHtml(s.nombre_predio) : ''}</td>
+                        <td style="text-align: center; font-weight: 700;">${s.total_items || 0}</td>
+                        <td><span class="badge ${badgeClass}">${badgeLabel}</span></td>
+                        <td>${pazBadge}</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <button onclick="abrirGestionSolicitud(${s.id})" class="btn-action btn-ingreso" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;">
+                                Gestionar
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            tbody.innerHTML = html;
+        }
+
+        function filterSolicitudesTable() {
+            const search = document.getElementById('search-solicitud').value.toLowerCase();
+            const vereda = document.getElementById('filter-solicitud-vereda').value;
+
+            const filtered = allSolicitudes.filter(s => {
+                const matchSearch = (s.codigo_solicitud && s.codigo_solicitud.toLowerCase().includes(search)) ||
+                                    (s.nombre_productor && s.nombre_productor.toLowerCase().includes(search)) ||
+                                    (s.cedula_productor && s.cedula_productor.toLowerCase().includes(search)) ||
+                                    (s.numero_proyecto && s.numero_proyecto.toLowerCase().includes(search)) ||
+                                    (s.solicitante_nombre && s.solicitante_nombre.toLowerCase().includes(search)) ||
+                                    (s.vereda && s.vereda.toLowerCase().includes(search));
+
+                const matchVereda = (vereda === 'all' || s.vereda === vereda);
+                return matchSearch && matchVereda;
+            });
+
+            renderSolicitudesTable(filtered);
+        }
+
+        async function abrirGestionSolicitud(solicitudId) {
+            try {
+                const res = await fetch(`api/get_kardex_solicitudes.php?id=${solicitudId}`);
+                const data = await res.json();
+
+                if (!data.success || !data.solicitud) {
+                    alert('No se pudo cargar la solicitud.');
+                    return;
+                }
+
+                currentSolicitudGestion = data.solicitud;
+                const s = currentSolicitudGestion;
+
+                document.getElementById('mgmt-sol-codigo').textContent = s.codigo_solicitud;
+                document.getElementById('mgmt-sol-proyecto').textContent = s.numero_proyecto + (s.linea_inversion ? ' - ' + s.linea_inversion : '');
+                document.getElementById('mgmt-sol-fecha').textContent = s.fecha_solicitud + (s.fecha_retiro ? ` (Estimada: ${s.fecha_retiro})` : '');
+                document.getElementById('mgmt-sol-productor').textContent = s.nombre_productor;
+                document.getElementById('mgmt-sol-cedula').textContent = s.cedula_productor;
+                document.getElementById('mgmt-sol-vereda-predio').textContent = s.vereda + (s.nombre_predio ? ' • Predio: ' + s.nombre_predio : '');
+                document.getElementById('mgmt-sol-solicitante').textContent = `${s.solicitante_nombre} (CPS: ${s.solicitante_cps || '-'}, Cargo: ${s.solicitante_cargo || '-'})`;
+                document.getElementById('mgmt-sol-meta').textContent = s.meta || 'No especificada';
+                document.getElementById('mgmt-sol-observaciones').textContent = s.observaciones || 'Ninguna';
+
+                // Badge estado
+                const badgeContainer = document.getElementById('mgmt-sol-badge-estado');
+                let badgeClass = 'badge-pendiente';
+                let badgeLabel = 'Pendiente de Despacho';
+                if (s.estado === 'DESPACHADO') { badgeClass = 'badge-despachado'; badgeLabel = 'Despachado (Sin Evidencias)'; }
+                else if (s.estado === 'EVIDENCIAS_CARGADAS') { badgeClass = 'badge-evidencias'; badgeLabel = 'Evidencias Cargadas'; }
+                else if (s.estado === 'PAZ_Y_SALVO') { badgeClass = 'badge-paz-salvo'; badgeLabel = 'Paz y Salvo Aprobado'; }
+                badgeContainer.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+                // Alerta de Bloqueo por Paz y Salvo
+                const boxBloqueo = document.getElementById('mgmt-alerta-bloqueo');
+                const btnDespachar = document.getElementById('mgmt-btn-despachar');
+                if (s.tiene_bloqueo_paz_y_salvo && s.estado === 'PENDIENTE') {
+                    boxBloqueo.style.display = 'block';
+                    const bloq = s.solicitud_bloqueante;
+                    document.getElementById('mgmt-bloqueo-mensaje').textContent = `El productor (Cédula: ${s.cedula_productor}) o el proyecto (${s.numero_proyecto}) tiene la solicitud anterior ${bloq.codigo_solicitud} pendiente sin Paz y Salvo. Según la norma institucional, no se puede autorizar ninguna nueva salida de insumos hasta que se emita el Paz y Salvo previo.`;
+                    if (btnDespachar) btnDespachar.disabled = true;
+                } else {
+                    boxBloqueo.style.display = 'none';
+                    if (btnDespachar) btnDespachar.disabled = false;
+                }
+
+                // Render items table
+                const tbodyItems = document.getElementById('mgmt-tbody-items');
+                tbodyItems.innerHTML = '';
+                (s.items || []).forEach((it, idx) => {
+                    let prodOptions = '<option value="">-- Mapear a Insumo de Kardex --</option>';
+                    allProductos.forEach(p => {
+                        const isSelected = (it.producto_id && it.producto_id == p.id) || (!it.producto_id && p.nombre.toLowerCase().includes(it.descripcion.toLowerCase()));
+                        prodOptions += `<option value="${p.id}" ${isSelected ? 'selected' : ''}>${escapeHtml(p.nombre)} (Stock: ${p.stock_actual} ${p.unidad_medida})</option>`;
+                    });
+
+                    const cantEntregarDefault = (s.estado === 'PENDIENTE') ? it.cantidad_solicitada : (it.cantidad_entregada || it.cantidad_solicitada);
+                    const disabledAttr = (s.estado !== 'PENDIENTE') ? 'disabled' : '';
+
+                    tbodyItems.innerHTML += `
+                        <tr data-item-id="${it.id}">
+                            <td style="font-weight: 700;">${idx + 1}</td>
+                            <td style="font-weight: 700; color: var(--primary-green-dark);">${escapeHtml(it.descripcion)}</td>
+                            <td>
+                                <select class="filter-control mgmt-item-prod-select" style="font-size: 0.82rem; padding: 0.35rem 0.5rem;" ${disabledAttr}>
+                                    ${prodOptions}
+                                </select>
+                            </td>
+                            <td>${it.cantidad_solicitada} ${escapeHtml(it.unidad_medida)}</td>
+                            <td>
+                                <input type="number" step="0.01" min="0.01" value="${cantEntregarDefault}" class="filter-control mgmt-item-cant-input" style="width: 100px; font-size: 0.85rem; padding: 0.35rem 0.5rem;" ${disabledAttr}>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+                // Sección Despacho (si PENDIENTE)
+                const boxDespacho = document.getElementById('mgmt-box-despacho');
+                if (s.estado === 'PENDIENTE') {
+                    boxDespacho.style.display = 'block';
+                    const now = new Date();
+                    now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                    document.getElementById('mgmt-fecha-entrega').value = now.toISOString().slice(0, 16);
+                    document.getElementById('mgmt-preview-foto-box').style.display = 'none';
+                    document.getElementById('mgmt-foto-entrega-file').value = '';
+                } else {
+                    boxDespacho.style.display = 'none';
+                }
+
+                // Sección Foto Entrega en Bodega
+                const boxFotoEntregaView = document.getElementById('mgmt-box-foto-entrega-view');
+                if (s.foto_entrega_url) {
+                    boxFotoEntregaView.style.display = 'block';
+                    document.getElementById('mgmt-view-foto-entrega-img').src = s.foto_entrega_url;
+                    document.getElementById('mgmt-view-fecha-entrega-lbl').textContent = 'Fecha y hora de salida: ' + (s.fecha_entrega || '-');
+                } else {
+                    boxFotoEntregaView.style.display = 'none';
+                }
+
+                // Sección Evidencias y Paz y Salvo
+                const boxEvidenciasRev = document.getElementById('mgmt-box-evidencias-revision');
+                const boxBtnPaz = document.getElementById('mgmt-box-btn-paz');
+                if (s.acta_entrega_url || (s.evidencias_fotos_array && s.evidencias_fotos_array.length > 0)) {
+                    boxEvidenciasRev.style.display = 'block';
+
+                    const linkActa = document.getElementById('mgmt-link-acta');
+                    if (s.acta_entrega_url) {
+                        linkActa.href = s.acta_entrega_url;
+                        linkActa.style.display = 'inline';
+                    } else {
+                        linkActa.style.display = 'none';
+                    }
+
+                    const galeria = document.getElementById('mgmt-galeria-evidencias');
+                    galeria.innerHTML = '';
+                    (s.evidencias_fotos_array || []).forEach(f => {
+                        galeria.innerHTML += `
+                            <img src="${f}" class="modal-evidence-thumb" onclick="openLightbox('${f}', 'Evidencia Fotográfica de Entrega')" alt="Evidencia">
+                        `;
+                    });
+
+                    // Botón para otorgar Paz y Salvo si aún no lo tiene
+                    if (s.paz_y_salvo == 1) {
+                        boxBtnPaz.style.display = 'none';
+                        document.getElementById('mgmt-badge-paz-status').innerHTML = `<span class="badge-paz-ok">🛡️ Paz y Salvo Oficial Otorgado el ${s.fecha_paz_y_salvo || ''}</span>`;
+                    } else {
+                        boxBtnPaz.style.display = 'block';
+                        document.getElementById('mgmt-badge-paz-status').innerHTML = `<span class="badge-paz-no">⚠️ Pendiente de Aprobación</span>`;
+                    }
+                } else {
+                    boxEvidenciasRev.style.display = 'none';
+                }
+
+                document.getElementById('modal-gestion-solicitud').style.display = 'flex';
+
+            } catch (err) {
+                alert('Error al consultar el detalle de la solicitud.');
+                console.error(err);
+            }
+        }
+
+        function cerrarGestionSolicitud() {
+            document.getElementById('modal-gestion-solicitud').style.display = 'none';
+            currentSolicitudGestion = null;
+        }
+
+        function previewFotoEntregaBodega(e) {
+            const previewBox = document.getElementById('mgmt-preview-foto-box');
+            const previewImg = document.getElementById('mgmt-preview-foto-img');
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    previewImg.src = ev.target.result;
+                    previewBox.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        async function handleDespachoFormSubmit(e) {
+            e.preventDefault();
+            if (!currentSolicitudGestion) return;
+
+            const sol = currentSolicitudGestion;
+            const fileFoto = document.getElementById('mgmt-foto-entrega-file').files[0];
+            const fechaEntrega = document.getElementById('mgmt-fecha-entrega').value;
+
+            if (!fileFoto) {
+                alert('Es obligatorio adjuntar la fotografía de entrega en bodega.');
+                return;
+            }
+
+            const trRows = document.querySelectorAll('#mgmt-tbody-items tr');
+            const itemsPayload = [];
+
+            for (const tr of trRows) {
+                const itemId = tr.getAttribute('data-item-id');
+                const prodSelect = tr.querySelector('.mgmt-item-prod-select');
+                const cantInput = tr.querySelector('.mgmt-item-cant-input');
+
+                const prodId = parseInt(prodSelect.value);
+                const cant = parseFloat(cantInput.value || 0);
+
+                if (!prodId) {
+                    alert('Debe asociar todos los ítems solicitados a un producto correspondiente de inventario Kardex.');
+                    return;
+                }
+
+                if (cant <= 0) {
+                    alert('La cantidad a despachar debe ser mayor a 0.');
+                    return;
+                }
+
+                itemsPayload.push({
+                    item_id: itemId,
+                    producto_id: prodId,
+                    cantidad_entregada: cant
+                });
+            }
+
+            const btn = document.getElementById('mgmt-btn-despachar');
+            btn.disabled = true;
+            btn.textContent = 'Subiendo fotografía de entrega...';
+
+            try {
+                // 1. Subir Foto Entrega
+                const fData = new FormData();
+                fData.append('archivo', fileFoto);
+                fData.append('tipo', 'entrega');
+
+                const resFoto = await fetch('api/upload_kardex_archivo.php', { method: 'POST', body: fData });
+                const jsonFoto = await resFoto.json();
+                if (!jsonFoto.success) throw new Error(jsonFoto.error || 'Error subiendo foto de entrega');
+
+                btn.textContent = 'Registrando salida en Kardex...';
+
+                // 2. Ejecutar despacho en API
+                const resDesp = await fetch('api/despachar_kardex_solicitud.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        solicitud_id: sol.id,
+                        fecha_entrega: fechaEntrega,
+                        foto_entrega_url: jsonFoto.file_url,
+                        items: itemsPayload
+                    })
+                });
+
+                const dataDesp = await resDesp.json();
+
+                if (dataDesp.success) {
+                    alert('¡Despacho registrado con éxito! El inventario ha sido actualizado.');
+                    cerrarGestionSolicitud();
+                    await loadDashboardData();
+                    await loadProductosCatalog();
+                    await loadKardexMovimientosHistory();
+                    await loadSolicitudesList();
+                } else {
+                    alert('Error en despacho: ' + (dataDesp.error || 'No se pudo completar el despacho'));
+                }
+
+            } catch (err) {
+                alert('Error al despachar solicitud: ' + err.message);
+                console.error(err);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Confirmar Despacho y Descontar Kardex';
+            }
+        }
+
+        async function confirmarAprobacionPazYSalvo() {
+            if (!currentSolicitudGestion) return;
+            const sol = currentSolicitudGestion;
+
+            const conf = confirm(`¿Está seguro de otorgar el PAZ Y SALVO oficial para la Solicitud ${sol.codigo_solicitud} del productor ${sol.nombre_productor} y el proyecto ${sol.numero_proyecto}?\n\nAl aprobarlo, se habilitará la posibilidad de realizar nuevas entregas a este proyecto y productor.`);
+            if (!conf) return;
+
+            try {
+                const res = await fetch('api/aprobar_paz_y_salvo.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        solicitud_id: sol.id,
+                        observaciones: `Paz y Salvo otorgado satisfactoriamente tras verificación de acta y evidencias fotográficas de entrega en campo.`
+                    })
+                });
+
+                const data = await res.json();
+                if (data.success) {
+                    alert('🛡️ ¡Paz y Salvo otorgado satisfactoriamente!');
+                    cerrarGestionSolicitud();
+                    await loadDashboardData();
+                    await loadSolicitudesList();
+                } else {
+                    alert('Error: ' + (data.error || 'No se pudo otorgar el Paz y Salvo'));
+                }
+            } catch (err) {
+                alert('Error de conexión al emitir Paz y Salvo');
+                console.error(err);
+            }
+        }
+
+        // =========================================================================
+        // CARGA DE FOTO DE INSUMO
+        // =========================================================================
+        function abrirModalFotoInsumo(prodId) {
+            const p = allProductos.find(item => item.id == prodId);
+            if (!p) return;
+
+            document.getElementById('foto-insumo-prod-id').value = p.id;
+            document.getElementById('foto-insumo-prod-nombre').textContent = `${p.nombre} (${p.categoria_nombre})`;
+            document.getElementById('foto-insumo-preview').src = p.imagen_url || 'assets/logo_somossumapaz.png';
+            document.getElementById('foto-insumo-file').value = '';
+            document.getElementById('modal-foto-insumo').style.display = 'flex';
+        }
+
+        function cerrarModalFotoInsumo() {
+            document.getElementById('modal-foto-insumo').style.display = 'none';
+        }
+
+        function previewFotoInsumoLocal(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    document.getElementById('foto-insumo-preview').src = ev.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        async function handleGuardarFotoInsumo(e) {
+            e.preventDefault();
+            const prodId = document.getElementById('foto-insumo-prod-id').value;
+            const file = document.getElementById('foto-insumo-file').files[0];
+
+            if (!file) {
+                alert('Debe seleccionar un archivo de imagen.');
+                return;
+            }
+
+            const btn = document.getElementById('btn-save-foto-insumo');
+            btn.disabled = true;
+            btn.textContent = 'Subiendo...';
+
+            try {
+                // 1. Subir imagen
+                const fData = new FormData();
+                fData.append('archivo', file);
+                fData.append('tipo', 'producto');
+
+                const resUp = await fetch('api/upload_kardex_archivo.php', { method: 'POST', body: fData });
+                const jsonUp = await resUp.json();
+                if (!jsonUp.success) throw new Error(jsonUp.error || 'Error al subir imagen');
+
+                // 2. Asociar al producto en base de datos
+                const resDb = await fetch('api/actualizar_imagen_producto.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        producto_id: prodId,
+                        imagen_url: jsonUp.file_url
+                    })
+                });
+
+                const jsonDb = await resDb.json();
+                if (jsonDb.success) {
+                    alert('¡Fotografía de insumo actualizada con éxito!');
+                    cerrarModalFotoInsumo();
+                    await loadProductosCatalog();
+                } else {
+                    alert('Error: ' + (jsonDb.error || 'No se pudo actualizar el registro'));
+                }
+
+            } catch (err) {
+                alert('Error al guardar foto: ' + err.message);
+                console.error(err);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Guardar Foto';
+            }
+        }
+
+        // =========================================================================
+        // LIGHTBOX
+        // =========================================================================
+        function openLightbox(imgUrl, caption) {
+            if (!imgUrl) return;
+            document.getElementById('lightbox-img').src = imgUrl;
+            document.getElementById('lightbox-caption').textContent = caption || '';
+            document.getElementById('modal-lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('modal-lightbox').style.display = 'none';
+            document.getElementById('lightbox-img').src = '';
         }
 
         function exportInventoryToExcel() {
@@ -1524,6 +2500,7 @@
                 'Stock Resultante': parseFloat(m.stock_resultante),
                 'Responsable / Beneficiario': m.responsable,
                 'Cédula / Documento': m.cedula_responsable || '',
+                'Proyecto': m.numero_proyecto || '',
                 'Fecha Ingreso': m.fecha_ingreso || '',
                 'Fecha Salida': m.fecha_salida || '',
                 'Vereda / Destino': m.vereda || '',

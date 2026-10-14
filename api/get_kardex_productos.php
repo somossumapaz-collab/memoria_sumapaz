@@ -37,6 +37,7 @@ try {
             p.stock_minimo,
             p.estado,
             p.notas,
+            p.imagen_url,
             p.categoria_id,
             c.nombre as categoria_nombre,
             p.fecha_actualizacion

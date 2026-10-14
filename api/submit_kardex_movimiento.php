@@ -27,6 +27,9 @@ $cedulaResponsable = isset($input['cedula_responsable']) ? trim($input['cedula_r
 $vereda = isset($input['vereda']) ? trim($input['vereda']) : '';
 $concepto = isset($input['concepto']) ? trim($input['concepto']) : '';
 $docRef = isset($input['documento_referencia']) ? trim($input['documento_referencia']) : '';
+$comprobanteUrl = isset($input['comprobante_url']) ? trim($input['comprobante_url']) : null;
+$solicitudId = isset($input['solicitud_id']) && !empty($input['solicitud_id']) ? (int)$input['solicitud_id'] : null;
+$numeroProyecto = isset($input['numero_proyecto']) ? trim($input['numero_proyecto']) : null;
 $observaciones = isset($input['observaciones']) ? trim($input['observaciones']) : '';
 $fechaMov = isset($input['fecha_movimiento']) && !empty($input['fecha_movimiento']) ? trim($input['fecha_movimiento']) : date('Y-m-d H:i:s');
 $fechaIngreso = isset($input['fecha_ingreso']) && !empty($input['fecha_ingreso']) ? trim($input['fecha_ingreso']) : ($tipo === 'INGRESO' ? $fechaMov : null);
@@ -61,6 +64,43 @@ if (empty($concepto)) {
     http_response_code(400);
     echo json_encode(['success' => false, 'error' => 'El concepto o motivo del movimiento es obligatorio.']);
     exit;
+}
+
+// -------------------------------------------------------------
+// CONTROL ESTRICTO DE PAZ Y SALVO POR PROYECTO Y PRODUCTOR
+// Si es una SALIDA y se relaciona cédula o número de proyecto,
+// verificar que no tenga entregas previas sin Paz y Salvo.
+// -------------------------------------------------------------
+if ($tipo === 'SALIDA') {
+    if (!empty($cedulaResponsable) || !empty($numeroProyecto)) {
+        $pazCheckSql = "
+            SELECT codigo_solicitud, nombre_productor, numero_proyecto, estado, fecha_entrega 
+            FROM kardex_solicitudes 
+            WHERE (
+                (:cedula != '' AND cedula_productor = :cedula)
+                OR (:proyecto != '' AND numero_proyecto = :proyecto)
+            )
+            AND estado IN ('DESPACHADO', 'EVIDENCIAS_CARGADAS')
+            AND paz_y_salvo = 0
+            LIMIT 1
+        ";
+        $stmtPaz = $pdo->prepare($pazCheckSql);
+        $stmtPaz->execute([
+            'cedula' => $cedulaResponsable ?: '',
+            'proyecto' => $numeroProyecto ?: ''
+        ]);
+        $solicitudBloqueante = $stmtPaz->fetch(PDO::FETCH_ASSOC);
+
+        if ($solicitudBloqueante) {
+            http_response_code(400);
+            $fechaBloq = !empty($solicitudBloqueante['fecha_entrega']) ? date('d/m/Y', strtotime($solicitudBloqueante['fecha_entrega'])) : 'previa';
+            echo json_encode([
+                'success' => false,
+                'error' => "BLOQUEO POR PAZ Y SALVO: El productor ({$solicitudBloqueante['nombre_productor']}) o el proyecto ({$solicitudBloqueante['numero_proyecto']}) tiene entregas anteriores pendientes sin Paz y Salvo (Solicitud {$solicitudBloqueante['codigo_solicitud']} del {$fechaBloq}). Debe registrarse el acta y evidencias de entrega y concederse el Paz y Salvo antes de autorizar nuevas salidas."
+            ], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+    }
 }
 
 $usuarioId = isset($_SESSION['user_id']) ? (int)$_SESSION['user_id'] : 14;
@@ -113,12 +153,12 @@ try {
             producto_id, tipo, cantidad, stock_anterior, stock_resultante, 
             fecha_movimiento, fecha_ingreso, fecha_salida, usuario_id, 
             responsable, cedula_responsable, vereda, concepto, 
-            documento_referencia, observaciones
+            documento_referencia, comprobante_url, solicitud_id, numero_proyecto, observaciones
         ) VALUES (
             :producto_id, :tipo, :cantidad, :stock_anterior, :stock_resultante, 
             :fecha_movimiento, :fecha_ingreso, :fecha_salida, :usuario_id, 
             :responsable, :cedula_responsable, :vereda, :concepto, 
-            :documento_referencia, :observaciones
+            :documento_referencia, :comprobante_url, :solicitud_id, :numero_proyecto, :observaciones
         )
     ");
 
@@ -137,6 +177,9 @@ try {
         'vereda' => $vereda,
         'concepto' => $concepto,
         'documento_referencia' => $docRef,
+        'comprobante_url' => $comprobanteUrl,
+        'solicitud_id' => $solicitudId,
+        'numero_proyecto' => $numeroProyecto,
         'observaciones' => $observaciones
     ]);
 

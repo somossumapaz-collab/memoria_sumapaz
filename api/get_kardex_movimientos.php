@@ -59,6 +59,9 @@ try {
             m.vereda,
             m.concepto,
             m.documento_referencia,
+            m.comprobante_url,
+            m.solicitud_id,
+            m.numero_proyecto,
             m.observaciones,
             COALESCE(u.nombre, 'Sistema') as usuario_registra
         FROM kardex_movimientos m

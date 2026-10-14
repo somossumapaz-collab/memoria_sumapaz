@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Favicon / Logo en pestaña del navegador -->
+    <link rel="icon" type="image/png" href="assets/logo_somossumapaz.png">
+    <link rel="shortcut icon" type="image/png" href="assets/logo_somossumapaz.png">
+    <link rel="apple-touch-icon" href="assets/logo_somossumapaz.png">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Insumos Agroambientales | Somos Sumapaz</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Static Cache-Busting -->
+    <script>
+        const timestamp = new Date().getTime();
+        document.write(`<link rel="stylesheet" href="assets/styles.css?v=${timestamp}">`);
+    </script>
+
+    <style>
+        :root {
+            --primary-green: #2E5A44;
+            --primary-green-dark: #1E3D2D;
+            --accent-green: #3B7A5C;
+            --neutral-bg: #F4F6F8;
+            --card-bg: #FFFFFF;
+            --text-main: #2B2D42;
+            --text-muted: #5A626A;
+            --border-light: #E2E8F0;
+            --border-subtle: #CBD5E1;
+            --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            background-color: var(--neutral-bg);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+        }
+
+        #main-header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2000;
+            background-color: #444F2F;
+        }
+
+        .navbar-custom {
+            background-color: #444F2F;
+            padding: 0.8rem 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-section {
+            position: relative;
+            background-image: url('assets/fondo.jpg');
+            background-size: cover;
+            background-position: center center;
+            width: 100%;
+            padding: 3rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-green-dark);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 61, 45, 0.88) 0%, rgba(15, 30, 22, 0.84) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero-title {
+            font-size: 2.3rem;
+            margin: 0 0 0.5rem 0;
+            font-weight: 800;
+            color: #F8FAF9;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: #E2E8F0;
+            margin: 0;
+        }
+
+        .main-container {
+            max-width: 1100px;
+            margin: -2rem auto 4rem auto;
+            position: relative;
+            z-index: 10;
+            padding: 0 1rem;
+        }
+
+        .nav-tabs-portal {
+            display: flex;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.4rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-subtle);
+            margin-bottom: 1.5rem;
+        }
+
+        .tab-portal-btn {
+            flex: 1;
+            padding: 0.85rem 1rem;
+            border: none;
+            background: transparent;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .tab-portal-btn.active {
+            background: var(--primary-green);
+            color: white;
+            box-shadow: 0 2px 6px rgba(46, 90, 68, 0.3);
+        }
+
+        .portal-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-subtle);
+            margin-bottom: 2rem;
+        }
+
+        .section-header {
+            border-bottom: 2px solid #EDF2F7;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h2 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: var(--primary-green-dark);
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .form-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .form-group label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .form-control {
+            padding: 0.65rem 0.85rem;
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            font-size: 0.92rem;
+            outline: none;
+            width: 100%;
+            background: white;
+            box-sizing: border-box;
+            color: var(--text-main);
+            transition: border-color 0.15s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(46, 90, 68, 0.1);
+        }
+
+        /* Items Table */
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .items-table th {
+            background: #F8FAFC;
+            color: var(--primary-green-dark);
+            font-weight: 700;
+            padding: 0.65rem 0.75rem;
+            text-align: left;
+            border-bottom: 2px solid var(--border-light);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+        }
+
+        .items-table td {
+            padding: 0.65rem 0.75rem;
+            border-bottom: 1px solid var(--border-light);
+            vertical-align: middle;
+        }
+
+        .btn-add-item {
+            background: #EBF8FA;
+            color: #2C7A7B;
+            border: 1px dashed #4FD1C5;
+            padding: 0.65rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-add-item:hover {
+            background: #E6FFFA;
+            border-color: #319795;
+        }
+
+        .btn-remove-item {
+            background: #FFF5F5;
+            color: #C53030;
+            border: 1px solid #FEB2B2;
+            border-radius: 4px;
+            padding: 0.35rem 0.65rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        /* Digital Signature Pad */
+        .signature-box {
+            border: 2px dashed var(--border-subtle);
+            border-radius: 8px;
+            background: #FCFDFD;
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        #signature-canvas {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            cursor: crosshair;
+            touch-action: none;
+            width: 100%;
+            max-width: 500px;
+            height: 160px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .btn-primary-action {
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.85rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(46, 90, 68, 0.25);
+        }
+
+        .btn-primary-action:hover {
+            background: var(--primary-green-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Status Badges */
+        .badge-status {
+            display: inline-block;
+            padding: 0.35rem 0.8rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .badge-pendiente {
+            background: #FEFCBF;
+            color: #744210;
+            border: 1px solid #FAF089;
+        }
+
+        .badge-despachado {
+            background: #EBF8FF;
+            color: #2B6CB0;
+            border: 1px solid #BEE3F8;
+        }
+
+        .badge-evidencias {
+            background: #FAF5FF;
+            color: #6B46C1;
+            border: 1px solid #E9D8FD;
+        }
+
+        .badge-paz-salvo {
+            background: #C6F6D5;
+            color: #22543D;
+            border: 1px solid #9AE6B4;
+        }
+
+        /* Photo Grid Preview */
+        .photo-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+
+        .preview-img-box {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            background: #000;
+        }
+
+        .preview-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .alert-box {
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin-bottom: 1.25rem;
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+
+        .alert-info {
+            background: #EBF8FF;
+            border: 1px solid #BEE3F8;
+            color: #2C5282;
+        }
+
+        .alert-warning {
+            background: #FFFAF0;
+            border: 1px solid #FEEBC8;
+            color: #7B341E;
+        }
+
+        .alert-success {
+            background: #F0FFF4;
+            border: 1px solid #C6F6D5;
+            color: #22543D;
+        }
+
+        .alert-danger {
+            background: #FFF5F5;
+            border: 1px solid #FED7D7;
+            color: #9B2C2C;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main Header Navbar -->
+    <header id="main-header">
+        <nav class="navbar-custom">
+            <div class="container" style="display: flex; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0.75rem 1.5rem;">
+                <a href="index.html">
+                    <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img" style="height: 50px; max-height: 50px; width: auto; object-fit: contain;">
+                </a>
+
+                <div style="margin-left: auto; display: flex; align-items: center; gap: 1rem;">
+                    <a href="kardex_agroambiental.html" style="color: #FBF4DE; text-decoration: none; font-size: 0.9rem; font-weight: 700; padding: 0.5rem 1rem; border: 1px solid rgba(251,244,222,0.3); border-radius: 20px;">
+                        Ir a Kardex Agroambiental ➔
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Solicitud de Insumos Agroambientales</h1>
+            <p class="hero-subtitle">
+                Formato Oficial de Retiro y Entrega de Insumos • Equipo Agroambiental de Sumapaz
+            </p>
+        </div>
+    </section>
+
+    <main class="main-container">
+        <!-- Portal Tabs -->
+        <div class="nav-tabs-portal">
+            <button class="tab-portal-btn active" id="btn-tab-nueva" onclick="switchPortalTab('tab-nueva')">
+                📝 Nueva Solicitud de Insumos
+            </button>
+            <button class="tab-portal-btn" id="btn-tab-consultar" onclick="switchPortalTab('tab-consultar')">
+                🔍 Consultar y Cargar Evidencias / Paz y Salvo
+            </button>
+        </div>
+
+        <!-- TAB 1: NUEVA SOLICITUD (PÚBLICA) -->
+        <div id="tab-nueva" class="portal-tab-content">
+            <div class="portal-card">
+                <div class="alert-box alert-info">
+                    <strong>ℹ️ Información Importante:</strong> Este formulario no requiere inicio de sesión. Diligencie la información correspondiente al proyecto, beneficiario e insumos requeridos. Al registrar, obtendrá su <strong>Código de Solicitud</strong> con el cual podrá consultar el estado y cargar el acta firmada y fotos de entrega una vez se despachen los insumos.
+                </div>
+
+                <form id="form-solicitud-insumos" onsubmit="handleNuevaSolicitudSubmit(event)">
+                    
+                    <!-- 1. IDENTIFICACIÓN DEL PROYECTO -->
+                    <div class="section-header">
+                        <h2><span>1.</span> Datos del Proyecto y Solicitud</h2>
+                    </div>
+
+                    <div class="form-grid-3">
+                        <div class="form-group">
+                            <label>Fecha de Solicitud *</label>
+                            <input type="date" id="sol-fecha-solicitud" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Fecha Estimada de Retiro</label>
+                            <input type="date" id="sol-fecha-retiro" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Línea de Inversión / Proyecto *</label>
+                            <select id="sol-proyecto-select" class="form-control" required onchange="onProyectoChange()">
+                                <option value="">-- Seleccionar Proyecto --</option>
+                                <option value="PY-2671">PY-2671 - Asistencia técnica agropecuaria y ambiental</option>
+                                <option value="PY-2666">PY-2666 - Protección y bienestar animal</option>
+                                <option value="PY-2682">PY-2682 - Reverdecimiento Urbano</option>
+                                <option value="PY-2613">PY-2613 - Manejo de emergencias y mitigación del riesgo</option>
+                                <option value="PY-1648">PY-1648 - Sistema de Cosechas de Agua Lluvia / PROCEDAS</option>
+                                <option value="PY-1634">PY-1634 - Asistencia Técnica agropecuaria y ambiental</option>
+                                <option value="PY-1669">PY-1669 - Educación Ambiental</option>
+                                <option value="PY-1651">PY-1651 - Restauración Ecológica</option>
+                                <option value="PY-2327">PY-2327 - Fortalecimiento Institucional</option>
+                                <option value="PY-2689">PY-2689 - Energías alternativas</option>
+                                <option value="OTRO">Otro Proyecto (Escribir Código)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-grid-2" id="box-proyecto-custom" style="display: none;">
+                        <div class="form-group">
+                            <label>Código Personalizado de Proyecto *</label>
+                            <input type="text" id="sol-proyecto-custom" class="form-control" placeholder="Ej. PY-9999 o CSU-712-2024">
+                        </div>
+                        <div class="form-group">
+                            <label>Nombre de la Línea de Inversión</label>
+                            <input type="text" id="sol-linea-custom" class="form-control" placeholder="Descripción de la línea">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label>Meta del Proyecto</label>
+                        <textarea id="sol-meta" rows="2" class="form-control" placeholder="Ej. Apoyar 500 predios rurales con buenas prácticas agropecuarias y ambientales..."></textarea>
+                    </div>
+
+                    <!-- 2. PREDIO Y PRODUCTOR BENEFICIARIO -->
+                    <div class="section-header">
+                        <h2><span>2.</span> Productor Beneficiario y Predio</h2>
+                    </div>
+
+                    <div class="form-grid-3">
+                        <div class="form-group">
+                            <label>Nombre del Productor / Beneficiario *</label>
+                            <input type="text" id="sol-productor-nombre" class="form-control" placeholder="Nombres y apellidos completos" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Cédula de Ciudadanía *</label>
+                            <input type="text" id="sol-productor-cedula" class="form-control" placeholder="Número de identificación" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono de Contacto</label>
+                            <input type="tel" id="sol-productor-telefono" class="form-control" placeholder="Ej. 312 345 6789">
+                        </div>
+                    </div>
+
+                    <div class="form-grid-3">
+                        <div class="form-group">
+                            <label>Vereda de Sumapaz *</label>
+                            <select id="sol-vereda" class="form-control" required>
+                                <option value="">Cargando veredas...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Nombre de la Finca / Predio</label>
+                            <input type="text" id="sol-predio" class="form-control" placeholder="Ej. Finca El Alto, La Esmeralda">
+                        </div>
+                        <div class="form-group">
+                            <label>Actividad en Predio</label>
+                            <input type="text" id="sol-actividad" class="form-control" placeholder="Ej. Apoyo Sistema Productivo Pecuario (Pollos)">
+                        </div>
+                    </div>
+
+                    <!-- 3. INSUMOS SOLICITADOS -->
+                    <div class="section-header" style="margin-top: 1.5rem;">
+                        <h2><span>3.</span> Insumos Solicitados para Retiro</h2>
+                    </div>
+
+                    <div style="overflow-x: auto;">
+                        <table class="items-table" id="tabla-solicitud-items">
+                            <thead>
+                                <tr>
+                                    <th style="width: 45px;">Item</th>
+                                    <th>Insumo / Descripción *</th>
+                                    <th style="width: 150px;">Unidad Medida *</th>
+                                    <th style="width: 130px;">Cantidad *</th>
+                                    <th style="width: 60px; text-align: center;">Quitar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-solicitud-items">
+                                <!-- Filas dinámicas generadas en JS -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <button type="button" class="btn-add-item" onclick="agregarFilaInsumo()">
+                        ➕ Agregar Otro Insumo
+                    </button>
+
+                    <!-- 4. DATOS DE QUIEN SOLICITA Y FIRMA DIGITAL -->
+                    <div class="section-header" style="margin-top: 2rem;">
+                        <h2><span>4.</span> Datos de Quién Solicita y Firma</h2>
+                    </div>
+
+                    <div class="form-grid-3">
+                        <div class="form-group">
+                            <label>Nombre de Quién Solicita *</label>
+                            <input type="text" id="sol-solicitante-nombre" class="form-control" placeholder="Ej. Wilson Rey Moreno" required>
+                        </div>
+                        <div class="form-group">
+                            <label>CPS (Contrato) *</label>
+                            <input type="text" id="sol-solicitante-cps" class="form-control" placeholder="Ej. 109-2026" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Cargo *</label>
+                            <input type="text" id="sol-solicitante-cargo" class="form-control" placeholder="Ej. Profesional Pecuario" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.25rem;">
+                        <label>Observaciones Generales</label>
+                        <textarea id="sol-observaciones" rows="2" class="form-control" placeholder="Notas adicionales o justificación de retiro..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Firma Digital de Quién Solicita (Dibujar en el recuadro) *</label>
+                        <div class="signature-box">
+                            <canvas id="signature-canvas" width="500" height="160"></canvas>
+                            <div style="margin-top: 0.5rem; display: flex; justify-content: center; gap: 1rem;">
+                                <button type="button" onclick="clearSignature()" style="background: #EDF2F7; border: 1px solid var(--border-subtle); padding: 0.35rem 0.85rem; border-radius: 4px; font-size: 0.82rem; cursor: pointer;">
+                                    Limpiar Firma
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem; text-align: center;">
+                        <button type="submit" id="btn-submit-solicitud" class="btn-primary-action">
+                            Registrar Solicitud de Insumos
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- TAB 2: CONSULTAR Y SUBIR EVIDENCIAS / PAZ Y SALVO -->
+        <div id="tab-consultar" class="portal-tab-content" style="display: none;">
+            <div class="portal-card">
+                <div class="section-header">
+                    <h2>Consulta de Solicitud y Carga de Soportes</h2>
+                </div>
+
+                <div class="alert-box alert-info">
+                    Ingrese el <strong>Código de Solicitud</strong> (ej. <code>SOL-2026-0001</code>) y el <strong>Número de Cédula</strong> del productor beneficiario para verificar el estado de despacho, adjuntar el <strong>Acta de Entrega firmada</strong> y subir las <strong>Evidencias Fotográficas</strong>.
+                </div>
+
+                <form id="form-consulta-solicitud" onsubmit="handleConsultaSubmit(event)" style="margin-bottom: 1.5rem;">
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label>Código de Solicitud *</label>
+                            <input type="text" id="cons-codigo" class="form-control" placeholder="Ej. SOL-2026-0001" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Cédula del Productor *</label>
+                            <input type="text" id="cons-cedula" class="form-control" placeholder="Número de identificación" required>
+                        </div>
+                    </div>
+                    <div style="text-align: right; margin-top: 0.5rem;">
+                        <button type="submit" class="btn-primary-action" style="padding: 0.65rem 1.5rem;">
+                            Buscar Solicitud
+                        </button>
+                    </div>
+                </form>
+
+                <!-- RESULTADO DE LA CONSULTA -->
+                <div id="box-resultado-consulta" style="display: none; border-top: 2px dashed var(--border-light); padding-top: 1.5rem;">
+                    
+                    <!-- Ficha Resumen -->
+                    <div style="background: #F8FAFC; border: 1px solid var(--border-light); border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                            <div>
+                                <h3 id="res-codigo" style="margin: 0; color: var(--primary-green-dark); font-size: 1.35rem;">SOL-XXXX</h3>
+                                <div style="font-size: 0.85rem; color: var(--text-muted);" id="res-fecha">Fecha: -</div>
+                            </div>
+                            <div id="res-badge-estado">
+                                <span class="badge-status badge-pendiente">PENDIENTE</span>
+                            </div>
+                        </div>
+
+                        <div class="form-grid-3" style="font-size: 0.9rem;">
+                            <div><strong>Productor:</strong> <span id="res-productor">-</span></div>
+                            <div><strong>Cédula:</strong> <span id="res-cedula">-</span></div>
+                            <div><strong>Vereda:</strong> <span id="res-vereda">-</span></div>
+                            <div><strong>Predio:</strong> <span id="res-predio">-</span></div>
+                            <div><strong>Proyecto:</strong> <span id="res-proyecto">-</span></div>
+                            <div><strong>Solicitante:</strong> <span id="res-solicitante">-</span></div>
+                        </div>
+
+                        <!-- Banner de Paz y Salvo -->
+                        <div id="banner-paz-y-salvo" style="display: none; margin-top: 1.25rem; background: #C6F6D5; border: 1px solid #9AE6B4; padding: 1rem; border-radius: 8px; color: #22543D;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <span style="font-size: 1.7rem;">🛡️</span>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 1.05rem;">PAZ Y SALVO CONCEDIDO</h4>
+                                    <div style="font-size: 0.85rem; margin-top: 0.2rem;" id="res-paz-info">
+                                        Esta entrega cuenta con Paz y Salvo oficial debidamente aprobado.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FOTO DE ENTREGA TOMADA EN BODEGA -->
+                    <div id="box-foto-entrega" style="display: none; margin-bottom: 1.5rem; background: white; border: 1px solid var(--border-light); border-radius: 8px; padding: 1.25rem;">
+                        <h4 style="margin: 0 0 0.5rem 0; color: var(--primary-green-dark);">
+                            📸 Registro Fotográfico de Salida / Entrega en Bodega
+                        </h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0 0 1rem 0;">
+                            Fotografía de constancia registrada por el equipo de Kardex al entregar los insumos.
+                        </p>
+                        <div style="max-width: 380px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-light);">
+                            <img id="res-foto-entrega-img" src="" alt="Foto de Entrega" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.4rem;" id="res-fecha-entrega">
+                            Fecha de entrega: -
+                        </div>
+                    </div>
+
+                    <!-- FORMULARIO PARA CARGAR ACTA Y FOTOS (SI ESTÁ DESPACHADO) -->
+                    <div id="box-subida-evidencias" style="display: none; background: #F0FFF4; border: 1px solid #C6F6D5; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                        <h3 style="margin-top: 0; color: #22543D; font-size: 1.15rem;">
+                            📥 Cargar Acta de Entrega y Evidencias Fotográficas
+                        </h3>
+                        <p style="font-size: 0.88rem; color: #276749; margin-bottom: 1.25rem;">
+                            Adjunte el acta física firmada por el beneficiario y las fotos de constancia de entrega/uso en la finca para que el equipo administrativo pueda emitir el <strong>Paz y Salvo</strong>.
+                        </p>
+
+                        <form id="form-upload-evidencias" onsubmit="handleSubirEvidenciasSubmit(event)">
+                            <input type="hidden" id="evid-solicitud-id">
+                            <input type="hidden" id="evid-token">
+
+                            <!-- Archivo Acta -->
+                            <div class="form-group" style="margin-bottom: 1.25rem;">
+                                <label style="color: #22543D;">Acta de Entrega Firmada (PDF o Imagen) *</label>
+                                <input type="file" id="evid-archivo-acta" accept="application/pdf,image/*" class="form-control" required>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">Formatos admitidos: PDF, JPG, PNG (máx. 10 MB)</span>
+                            </div>
+
+                            <!-- Fotos Evidencias Múltiples -->
+                            <div class="form-group" style="margin-bottom: 1.25rem;">
+                                <label style="color: #22543D;">Fotografías de Evidencia en Campo (1 o más fotos) *</label>
+                                <input type="file" id="evid-archivos-fotos" accept="image/*" multiple class="form-control" required onchange="previewEvidenciasFotos(event)">
+                                <div class="photo-preview-grid" id="evid-fotos-preview"></div>
+                            </div>
+
+                            <button type="submit" id="btn-submit-evidencias" class="btn-primary-action" style="background: #276749;">
+                                Subir Acta y Evidencias Fotográficas
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- EVIDENCIAS YA CARGADAS (VISTA PREVIA) -->
+                    <div id="box-evidencias-cargadas" style="display: none; background: white; border: 1px solid var(--border-light); border-radius: 8px; padding: 1.25rem;">
+                        <h4 style="margin: 0 0 0.75rem 0; color: var(--primary-green-dark);">
+                            📄 Soportes Cargados Registrados
+                        </h4>
+                        
+                        <div id="item-acta-cargada" style="margin-bottom: 1rem; font-size: 0.9rem;">
+                            <strong>Acta de Entrega:</strong> 
+                            <a id="res-link-acta" href="#" target="_blank" style="color: var(--primary-green); font-weight: 700; margin-left: 0.5rem;">
+                                📄 Ver Acta de Entrega Adjunta
+                            </a>
+                        </div>
+
+                        <div style="font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>Galería de Evidencias Fotográficas:</strong></div>
+                        <div class="photo-preview-grid" id="res-galeria-fotos"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SUCCESS MODAL FOR NEW REQUEST -->
+    <div id="modal-solicitud-exito" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 3000; align-items: center; justify-content: center;">
+        <div style="background: white; border-radius: 12px; max-width: 550px; width: 90%; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3); text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: 0.5rem;">✅</div>
+            <h2 style="color: var(--primary-green-dark); margin: 0 0 0.5rem 0; font-size: 1.5rem;">¡Solicitud Registrada con Éxito!</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+                Su requerimiento ha sido radicado ante el equipo agroambiental de Kardex. Guarde este código para consultar el estado y adjuntar evidencias.
+            </p>
+
+            <div style="background: #F8FAFC; border: 2px dashed var(--primary-green); border-radius: 8px; padding: 1rem; margin-bottom: 1.5rem;">
+                <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Código de Solicitud</div>
+                <div id="modal-res-codigo" style="font-size: 1.6rem; font-weight: 800; color: var(--primary-green); letter-spacing: 0.05em; margin-top: 0.2rem;">
+                    SOL-2026-0000
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+                <button onclick="copiarCodigoSolicitud()" style="background: #EDF2F7; border: 1px solid var(--border-subtle); padding: 0.65rem 1.25rem; border-radius: 6px; font-weight: 700; cursor: pointer;">
+                    📋 Copiar Código
+                </button>
+                <button onclick="irAConsultaDirecta()" class="btn-primary-action" style="padding: 0.65rem 1.5rem;">
+                    Ir a Consultar Solicitud
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        let catalogProductos = [];
+        let canvas, ctx, isDrawing = false;
+        let lastRegisteredCode = '';
+        let lastRegisteredCedula = '';
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            initSignaturePad();
+            initDateDefaults();
+            await loadVeredasCatalog();
+            await loadProductosCatalog();
+            
+            // Agregar 2 filas iniciales de insumos
+            agregarFilaInsumo();
+            agregarFilaInsumo();
+
+            // Si viene con parámetros URL ?codigo=...&cedula=... o ?token=...
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('codigo') || urlParams.get('token')) {
+                switchPortalTab('tab-consultar');
+                if (urlParams.get('codigo')) document.getElementById('cons-codigo').value = urlParams.get('codigo');
+                if (urlParams.get('cedula')) document.getElementById('cons-cedula').value = urlParams.get('cedula');
+                ejecutarConsulta(urlParams.get('codigo'), urlParams.get('cedula'), urlParams.get('token'));
+            }
+        });
+
+        function switchPortalTab(tabId) {
+            document.querySelectorAll('.tab-portal-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.portal-tab-content').forEach(c => c.style.display = 'none');
+
+            if (tabId === 'tab-nueva') {
+                document.getElementById('btn-tab-nueva').classList.add('active');
+                document.getElementById('tab-nueva').style.display = 'block';
+            } else {
+                document.getElementById('btn-tab-consultar').classList.add('active');
+                document.getElementById('tab-consultar').style.display = 'block';
+            }
+        }
+
+        function initDateDefaults() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('sol-fecha-solicitud').value = today;
+        }
+
+        async function loadVeredasCatalog() {
+            try {
+                const res = await fetch('api/get_kardex_dashboard.php');
+                const data = await res.json();
+                if (data.success && data.veredas) {
+                    const select = document.getElementById('sol-vereda');
+                    let opts = '<option value="">-- Seleccionar Vereda --</option>';
+                    data.veredas.forEach(v => {
+                        opts += `<option value="${v}">${v}</option>`;
+                    });
+                    select.innerHTML = opts;
+                }
+            } catch (e) {
+                console.warn('Error loading veredas:', e);
+            }
+        }
+
+        async function loadProductosCatalog() {
+            try {
+                const res = await fetch('api/get_kardex_productos.php');
+                const data = await res.json();
+                if (data.success) {
+                    catalogProductos = data.productos || [];
+                }
+            } catch (e) {
+                console.warn('Error loading productos:', e);
+            }
+        }
+
+        function onProyectoChange() {
+            const sel = document.getElementById('sol-proyecto-select').value;
+            const customBox = document.getElementById('box-proyecto-custom');
+            if (sel === 'OTRO') {
+                customBox.style.display = 'grid';
+                document.getElementById('sol-proyecto-custom').required = true;
+            } else {
+                customBox.style.display = 'none';
+                document.getElementById('sol-proyecto-custom').required = false;
+            }
+        }
+
+        let itemRowCount = 0;
+        function agregarFilaInsumo() {
+            itemRowCount++;
+            const tbody = document.getElementById('tbody-solicitud-items');
+            const tr = document.createElement('tr');
+            tr.id = `row-item-${itemRowCount}`;
+
+            let prodOpts = '<option value="">-- Seleccionar del Catálogo o Escribir Manual --</option>';
+            catalogProductos.forEach(p => {
+                prodOpts += `<option value="${p.id}" data-name="${escapeHtml(p.nombre)}" data-unit="${escapeHtml(p.unidad_medida)}">${escapeHtml(p.nombre)} (${p.unidad_medida})</option>`;
+            });
+
+            tr.innerHTML = `
+                <td style="font-weight: 700; color: var(--text-muted);">${tbody.children.length + 1}</td>
+                <td>
+                    <select class="form-control item-catalog-select" onchange="onItemCatalogSelect(this, ${itemRowCount})" style="margin-bottom: 0.35rem;">
+                        ${prodOpts}
+                    </select>
+                    <input type="text" class="form-control item-desc-input" placeholder="Nombre específico del insumo" required>
+                </td>
+                <td>
+                    <input type="text" class="form-control item-unit-input" placeholder="Ej. Bulto, Kilo, Unidad" required>
+                </td>
+                <td>
+                    <input type="number" step="0.01" min="0.01" class="form-control item-cant-input" placeholder="0.00" required>
+                </td>
+                <td style="text-align: center;">
+                    <button type="button" class="btn-remove-item" onclick="eliminarFilaInsumo(${itemRowCount})">✕</button>
+                </td>
+            `;
+
+            tbody.appendChild(tr);
+            renumerarFilas();
+        }
+
+        function onItemCatalogSelect(selectEl, rowId) {
+            const row = document.getElementById(`row-item-${rowId}`);
+            if (!row) return;
+
+            const selectedOpt = selectEl.options[selectEl.selectedIndex];
+            if (selectedOpt && selectedOpt.value) {
+                row.querySelector('.item-desc-input').value = selectedOpt.getAttribute('data-name') || '';
+                row.querySelector('.item-unit-input').value = selectedOpt.getAttribute('data-unit') || 'Unidad';
+            }
+        }
+
+        function eliminarFilaInsumo(rowId) {
+            const tbody = document.getElementById('tbody-solicitud-items');
+            if (tbody.children.length <= 1) {
+                alert('Debe conservar al menos un insumo en la solicitud.');
+                return;
+            }
+            const row = document.getElementById(`row-item-${rowId}`);
+            if (row) row.remove();
+            renumerarFilas();
+        }
+
+        function renumerarFilas() {
+            const tbody = document.getElementById('tbody-solicitud-items');
+            Array.from(tbody.children).forEach((tr, idx) => {
+                tr.children[0].textContent = idx + 1;
+            });
+        }
+
+        // SIGNATURE CANVAS
+        function initSignaturePad() {
+            canvas = document.getElementById('signature-canvas');
+            if (!canvas) return;
+            ctx = canvas.getContext('2d');
+            ctx.strokeStyle = "#1A365D";
+            ctx.lineWidth = 2.5;
+            ctx.lineCap = "round";
+
+            function getPos(e) {
+                const rect = canvas.getBoundingClientRect();
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                return {
+                    x: (clientX - rect.left) * (canvas.width / rect.width),
+                    y: (clientY - rect.top) * (canvas.height / rect.height)
+                };
+            }
+
+            function startDraw(e) {
+                isDrawing = true;
+                const pos = getPos(e);
+                ctx.beginPath();
+                ctx.moveTo(pos.x, pos.y);
+                e.preventDefault();
+            }
+
+            function draw(e) {
+                if (!isDrawing) return;
+                const pos = getPos(e);
+                ctx.lineTo(pos.x, pos.y);
+                ctx.stroke();
+                e.preventDefault();
+            }
+
+            function stopDraw() {
+                isDrawing = false;
+            }
+
+            canvas.addEventListener('mousedown', startDraw);
+            canvas.addEventListener('mousemove', draw);
+            window.addEventListener('mouseup', stopDraw);
+
+            canvas.addEventListener('touchstart', startDraw, { passive: false });
+            canvas.addEventListener('touchmove', draw, { passive: false });
+            window.addEventListener('touchend', stopDraw);
+        }
+
+        function clearSignature() {
+            if (canvas && ctx) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+        }
+
+        function isCanvasBlank() {
+            const pixelBuffer = new Uint32Array(
+                ctx.getImageData(0, 0, canvas.width, canvas.height).data.buffer
+            );
+            return !pixelBuffer.some(color => color !== 0);
+        }
+
+        async function handleNuevaSolicitudSubmit(e) {
+            e.preventDefault();
+
+            if (isCanvasBlank()) {
+                alert('Por favor realice su firma digital en el recuadro antes de continuar.');
+                return;
+            }
+
+            const rows = document.querySelectorAll('#tbody-solicitud-items tr');
+            const items = [];
+            rows.forEach(r => {
+                const sel = r.querySelector('.item-catalog-select');
+                const desc = r.querySelector('.item-desc-input').value.trim();
+                const unit = r.querySelector('.item-unit-input').value.trim();
+                const cant = parseFloat(r.querySelector('.item-cant-input').value || 0);
+
+                if (desc && cant > 0) {
+                    items.push({
+                        producto_id: sel.value ? parseInt(sel.value) : null,
+                        descripcion: desc,
+                        unidad_medida: unit || 'Unidad',
+                        cantidad_solicitada: cant
+                    });
+                }
+            });
+
+            if (items.length === 0) {
+                alert('Debe ingresar al menos un insumo con cantidad válida.');
+                return;
+            }
+
+            let numProyecto = document.getElementById('sol-proyecto-select').value;
+            let lineaInv = '';
+            if (numProyecto === 'OTRO') {
+                numProyecto = document.getElementById('sol-proyecto-custom').value.trim();
+                lineaInv = document.getElementById('sol-linea-custom').value.trim();
+            } else {
+                const optText = document.getElementById('sol-proyecto-select').selectedOptions[0].text;
+                lineaInv = optText;
+            }
+
+            const payload = {
+                fecha_solicitud: document.getElementById('sol-fecha-solicitud').value,
+                fecha_retiro: document.getElementById('sol-fecha-retiro').value || null,
+                numero_proyecto: numProyecto,
+                linea_inversion: lineaInv,
+                meta: document.getElementById('sol-meta').value.trim(),
+                vereda: document.getElementById('sol-vereda').value,
+                nombre_predio: document.getElementById('sol-predio').value.trim(),
+                nombre_productor: document.getElementById('sol-productor-nombre').value.trim(),
+                cedula_productor: document.getElementById('sol-productor-cedula').value.trim(),
+                telefono_productor: document.getElementById('sol-productor-telefono').value.trim(),
+                actividad: document.getElementById('sol-actividad').value.trim(),
+                solicitante_nombre: document.getElementById('sol-solicitante-nombre').value.trim(),
+                solicitante_cps: document.getElementById('sol-solicitante-cps').value.trim(),
+                solicitante_cargo: document.getElementById('sol-solicitante-cargo').value.trim(),
+                solicitante_firma: canvas.toDataURL('image/png'),
+                observaciones: document.getElementById('sol-observaciones').value.trim(),
+                items: items
+            };
+
+            const btn = document.getElementById('btn-submit-solicitud');
+            btn.disabled = true;
+            btn.textContent = 'Enviando Solicitud...';
+
+            try {
+                const res = await fetch('api/submit_kardex_solicitud.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    lastRegisteredCode = data.codigo_solicitud;
+                    lastRegisteredCedula = payload.cedula_productor;
+                    document.getElementById('modal-res-codigo').textContent = data.codigo_solicitud;
+                    document.getElementById('modal-solicitud-exito').style.display = 'flex';
+                    document.getElementById('form-solicitud-insumos').reset();
+                    clearSignature();
+                } else {
+                    alert('Error: ' + (data.error || 'No se pudo registrar la solicitud'));
+                }
+            } catch (err) {
+                alert('Error de conexión al enviar la solicitud');
+                console.error(err);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Registrar Solicitud de Insumos';
+            }
+        }
+
+        function copiarCodigoSolicitud() {
+            navigator.clipboard.writeText(lastRegisteredCode).then(() => {
+                alert('Código copiado al portapapeles: ' + lastRegisteredCode);
+            });
+        }
+
+        function irAConsultaDirecta() {
+            document.getElementById('modal-solicitud-exito').style.display = 'none';
+            switchPortalTab('tab-consultar');
+            document.getElementById('cons-codigo').value = lastRegisteredCode;
+            document.getElementById('cons-cedula').value = lastRegisteredCedula;
+            ejecutarConsulta(lastRegisteredCode, lastRegisteredCedula, null);
+        }
+
+        // TAB 2: CONSULTAR Y SUBIR EVIDENCIAS
+        function handleConsultaSubmit(e) {
+            e.preventDefault();
+            const codigo = document.getElementById('cons-codigo').value.trim();
+            const cedula = document.getElementById('cons-cedula').value.trim();
+            ejecutarConsulta(codigo, cedula, null);
+        }
+
+        async function ejecutarConsulta(codigo, cedula, token) {
+            let url = 'api/get_kardex_solicitudes.php?';
+            if (token) {
+                url += `token=${encodeURIComponent(token)}`;
+            } else {
+                url += `codigo=${encodeURIComponent(codigo)}&cedula=${encodeURIComponent(cedula)}`;
+            }
+
+            try {
+                const res = await fetch(url);
+                const data = await res.json();
+
+                if (data.success && data.solicitud) {
+                    renderFichaConsulta(data.solicitud);
+                } else {
+                    alert('No se encontró ninguna solicitud con los datos ingresados. Verifique el código y documento.');
+                    document.getElementById('box-resultado-consulta').style.display = 'none';
+                }
+            } catch (err) {
+                alert('Error al consultar la solicitud');
+                console.error(err);
+            }
+        }
+
+        function renderFichaConsulta(sol) {
+            const box = document.getElementById('box-resultado-consulta');
+            box.style.display = 'block';
+
+            document.getElementById('res-codigo').textContent = sol.codigo_solicitud;
+            document.getElementById('res-fecha').textContent = 'Fecha de radicado: ' + sol.fecha_solicitud;
+            document.getElementById('res-productor').textContent = sol.nombre_productor;
+            document.getElementById('res-cedula').textContent = sol.cedula_productor;
+            document.getElementById('res-vereda').textContent = sol.vereda;
+            document.getElementById('res-predio').textContent = sol.nombre_predio || '-';
+            document.getElementById('res-proyecto').textContent = sol.numero_proyecto;
+            document.getElementById('res-solicitante').textContent = sol.solicitante_nombre;
+
+            // Badges
+            const badgeContainer = document.getElementById('res-badge-estado');
+            let badgeClass = 'badge-pendiente';
+            let badgeLabel = 'PENDIENTE DE DESPACHO';
+
+            if (sol.estado === 'DESPACHADO') {
+                badgeClass = 'badge-despachado';
+                badgeLabel = 'DESPACHADO (ESPERANDO EVIDENCIAS)';
+            } else if (sol.estado === 'EVIDENCIAS_CARGADAS') {
+                badgeClass = 'badge-evidencias';
+                badgeLabel = 'EVIDENCIAS CARGADAS (EN REVISIÓN)';
+            } else if (sol.estado === 'PAZ_Y_SALVO') {
+                badgeClass = 'badge-paz-salvo';
+                badgeLabel = 'PAZ Y SALVO CONCEDIDO';
+            }
+            badgeContainer.innerHTML = `<span class="badge-status ${badgeClass}">${badgeLabel}</span>`;
+
+            // Paz y Salvo Banner
+            const bannerPaz = document.getElementById('banner-paz-y-salvo');
+            if (sol.paz_y_salvo == 1) {
+                bannerPaz.style.display = 'block';
+                document.getElementById('res-paz-info').textContent = `Paz y Salvo oficial aprobado el ${sol.fecha_paz_y_salvo || ''} por ${sol.paz_y_salvo_por_nombre || 'Equipo Agroambiental'}.`;
+            } else {
+                bannerPaz.style.display = 'none';
+            }
+
+            // Foto de entrega en bodega
+            const boxFotoEntrega = document.getElementById('box-foto-entrega');
+            if (sol.foto_entrega_url) {
+                boxFotoEntrega.style.display = 'block';
+                document.getElementById('res-foto-entrega-img').src = sol.foto_entrega_url;
+                document.getElementById('res-fecha-entrega').textContent = 'Fecha y hora de salida: ' + (sol.fecha_entrega || '-');
+            } else {
+                boxFotoEntrega.style.display = 'none';
+            }
+
+            // Subida de evidencias (habilitada si estado === 'DESPACHADO' o ya cargó pero no tiene Paz y Salvo aún)
+            const boxSubida = document.getElementById('box-subida-evidencias');
+            document.getElementById('evid-solicitud-id').value = sol.id;
+            document.getElementById('evid-token').value = sol.token_seguimiento;
+
+            if (sol.estado === 'DESPACHADO' || (sol.estado === 'EVIDENCIAS_CARGADAS' && sol.paz_y_salvo == 0)) {
+                boxSubida.style.display = 'block';
+            } else {
+                boxSubida.style.display = 'none';
+            }
+
+            // Evidencias cargadas (si ya subió acta o fotos)
+            const boxCargadas = document.getElementById('box-evidencias-cargadas');
+            if (sol.acta_entrega_url || (sol.evidencias_fotos_array && sol.evidencias_fotos_array.length > 0)) {
+                boxCargadas.style.display = 'block';
+                const linkActa = document.getElementById('res-link-acta');
+                if (sol.acta_entrega_url) {
+                    linkActa.href = sol.acta_entrega_url;
+                    linkActa.style.display = 'inline';
+                } else {
+                    linkActa.style.display = 'none';
+                }
+
+                const galeria = document.getElementById('res-galeria-fotos');
+                galeria.innerHTML = '';
+                (sol.evidencias_fotos_array || []).forEach(f => {
+                    galeria.innerHTML += `
+                        <div class="preview-img-box">
+                            <a href="${f}" target="_blank">
+                                <img src="${f}" alt="Evidencia">
+                            </a>
+                        </div>
+                    `;
+                });
+            } else {
+                boxCargadas.style.display = 'none';
+            }
+        }
+
+        // Preview de fotos de evidencias
+        let filesToUpload = [];
+        function previewEvidenciasFotos(e) {
+            const preview = document.getElementById('evid-fotos-preview');
+            preview.innerHTML = '';
+            filesToUpload = Array.from(e.target.files);
+
+            filesToUpload.forEach(file => {
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    const div = document.createElement('div');
+                    div.className = 'preview-img-box';
+                    div.innerHTML = `<img src="${ev.target.result}" alt="Preview">`;
+                    preview.appendChild(div);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        async function handleSubirEvidenciasSubmit(e) {
+            e.preventDefault();
+            const solId = document.getElementById('evid-solicitud-id').value;
+            const token = document.getElementById('evid-token').value;
+            const fileActa = document.getElementById('evid-archivo-acta').files[0];
+            const filesFotos = document.getElementById('evid-archivos-fotos').files;
+
+            if (!fileActa) {
+                alert('Debe adjuntar el Acta de Entrega.');
+                return;
+            }
+
+            if (filesFotos.length === 0) {
+                alert('Debe adjuntar al menos una fotografía de evidencia.');
+                return;
+            }
+
+            const btn = document.getElementById('btn-submit-evidencias');
+            btn.disabled = true;
+            btn.textContent = 'Subiendo archivos...';
+
+            try {
+                // 1. Subir Acta
+                const formActa = new FormData();
+                formActa.append('archivo', fileActa);
+                formActa.append('tipo', 'acta');
+
+                const resActa = await fetch('api/upload_kardex_archivo.php', { method: 'POST', body: formActa });
+                const dataActa = await resActa.json();
+                if (!dataActa.success) throw new Error(dataActa.error || 'Error subiendo acta');
+
+                const actaUrl = dataActa.file_url;
+
+                // 2. Subir Fotos de evidencia
+                const fotosUrls = [];
+                for (let i = 0; i < filesFotos.length; i++) {
+                    const formFoto = new FormData();
+                    formFoto.append('archivo', filesFotos[i]);
+                    formFoto.append('tipo', 'evidencia');
+
+                    const resFoto = await fetch('api/upload_kardex_archivo.php', { method: 'POST', body: formFoto });
+                    const dataFoto = await resFoto.json();
+                    if (dataFoto.success) {
+                        fotosUrls.push(dataFoto.file_url);
+                    }
+                }
+
+                if (fotosUrls.length === 0) {
+                    throw new Error('No se pudo subir ninguna de las fotos de evidencia');
+                }
+
+                // 3. Registrar evidencias en la solicitud
+                const resEvid = await fetch('api/subir_evidencias_solicitud.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        solicitud_id: solId,
+                        token: token,
+                        acta_entrega_url: actaUrl,
+                        evidencias_fotos: fotosUrls
+                    })
+                });
+                const dataEvid = await resEvid.json();
+
+                if (dataEvid.success) {
+                    alert('¡Acta de entrega y evidencias fotográficas cargadas exitosamente!');
+                    // Recargar vista
+                    ejecutarConsulta(null, null, token);
+                } else {
+                    alert('Error: ' + (dataEvid.error || 'No se pudieron registrar las evidencias'));
+                }
+
+            } catch (err) {
+                alert('Error al subir soportes: ' + err.message);
+                console.error(err);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Subir Acta y Evidencias Fotográficas';
+            }
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/[&<>"']/g, function(m) {
+                return {
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#039;'
+                }[m];
+            });
+        }
+    </script>
+</body>
+
+</html>

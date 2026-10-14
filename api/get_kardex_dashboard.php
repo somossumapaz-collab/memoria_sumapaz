@@ -28,6 +28,18 @@ try {
     ");
     $movData = $stmtMov->fetch(PDO::FETCH_ASSOC);
 
+    // 2.1 Solicitudes KPI count
+    $stmtSolKpi = $pdo->query("
+        SELECT 
+            COUNT(id) as total_solicitudes,
+            SUM(CASE WHEN estado = 'PENDIENTE' THEN 1 ELSE 0 END) as solicitudes_pendientes,
+            SUM(CASE WHEN estado = 'DESPACHADO' THEN 1 ELSE 0 END) as solicitudes_despachadas,
+            SUM(CASE WHEN estado = 'EVIDENCIAS_CARGADAS' THEN 1 ELSE 0 END) as solicitudes_con_evidencias,
+            SUM(CASE WHEN estado = 'PAZ_Y_SALVO' THEN 1 ELSE 0 END) as solicitudes_con_paz_y_salvo
+        FROM kardex_solicitudes
+    ");
+    $solKpiData = $stmtSolKpi->fetch(PDO::FETCH_ASSOC);
+
     // 3. Categories with stock sum
     $stmtCats = $pdo->query("
         SELECT 
@@ -53,7 +65,7 @@ try {
 
     echo json_encode([
         'success' => true,
-        'kpis' => array_merge($kpiData, $movData),
+        'kpis' => array_merge($kpiData, $movData, $solKpiData),
         'categorias' => $categorias,
         'veredas' => $veredas
     ], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
