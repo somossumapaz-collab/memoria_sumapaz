@@ -417,7 +417,7 @@
 
                 <div style="margin-left: auto; display: flex; align-items: center; gap: 1rem;">
                     <a href="kardex_agroambiental.html" style="color: #FBF4DE; text-decoration: none; font-size: 0.9rem; font-weight: 700; padding: 0.5rem 1rem; border: 1px solid rgba(251,244,222,0.3); border-radius: 20px;">
-                        Ir a Kardex Agroambiental ➔
+                        Ir a Kardex Agroambiental &rarr;
                     </a>
                 </div>
             </div>
@@ -439,10 +439,10 @@
         <!-- Portal Tabs -->
         <div class="nav-tabs-portal">
             <button class="tab-portal-btn active" id="btn-tab-nueva" onclick="switchPortalTab('tab-nueva')">
-                📝 Nueva Solicitud de Insumos
+                Nueva Solicitud de Insumos
             </button>
             <button class="tab-portal-btn" id="btn-tab-consultar" onclick="switchPortalTab('tab-consultar')">
-                🔍 Consultar y Cargar Evidencias / Paz y Salvo
+                Consultar y Cargar Evidencias / Paz y Salvo
             </button>
         </div>
 
@@ -450,7 +450,7 @@
         <div id="tab-nueva" class="portal-tab-content">
             <div class="portal-card">
                 <div class="alert-box alert-info">
-                    <strong>ℹ️ Información Importante:</strong> Este formulario no requiere inicio de sesión. Diligencie la información correspondiente al proyecto, beneficiario e insumos requeridos. Al registrar, obtendrá su <strong>Código de Solicitud</strong> con el cual podrá consultar el estado y cargar el acta firmada y fotos de entrega una vez se despachen los insumos.
+                    <strong>Información Importante:</strong> Este formulario no requiere inicio de sesión. Diligencie la información correspondiente al proyecto, beneficiario e insumos requeridos. Al registrar, obtendrá su <strong>Código de Solicitud</strong> con el cual podrá consultar el estado y cargar el acta firmada y fotos de entrega una vez se despachen los insumos.
                 </div>
 
                 <form id="form-solicitud-insumos" onsubmit="handleNuevaSolicitudSubmit(event)">
@@ -541,6 +541,39 @@
                         </div>
                     </div>
 
+                    <!-- Coordenadas Geográficas del Predio -->
+                    <div style="background: #F8FAFC; border: 1px solid var(--border-light); border-radius: 8px; padding: 1rem 1.25rem; margin-top: 0.5rem; margin-bottom: 1.25rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.75rem;">
+                            <div>
+                                <label style="font-size: 0.85rem; font-weight: 700; color: var(--primary-green-dark); text-transform: uppercase;">
+                                    Coordenadas Geográficas del Predio (GPS)
+                                </label>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">
+                                    Ubicación geográfica de la finca o predio en Sumapaz (opcional).
+                                </div>
+                            </div>
+                            <button type="button" onclick="capturarCoordenadasGPS()" style="padding: 0.45rem 0.95rem; font-size: 0.82rem; background: #EBF8FA; color: #234E52; border: 1px solid #B2F5EA; border-radius: 6px; font-weight: 700; cursor: pointer;">
+                                Capturar Ubicación GPS Actual
+                            </button>
+                        </div>
+
+                        <div class="form-grid-3">
+                            <div class="form-group">
+                                <label for="sol-latitud">Latitud</label>
+                                <input type="number" step="any" id="sol-latitud" class="form-control" placeholder="Ej. 4.123456">
+                            </div>
+                            <div class="form-group">
+                                <label for="sol-longitud">Longitud</label>
+                                <input type="number" step="any" id="sol-longitud" class="form-control" placeholder="Ej. -74.123456">
+                            </div>
+                            <div class="form-group">
+                                <label for="sol-altitud">Altitud (m.s.n.m.)</label>
+                                <input type="number" step="1" id="sol-altitud" class="form-control" placeholder="Ej. 3450">
+                            </div>
+                        </div>
+                        <div id="sol-gps-status" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.35rem;"></div>
+                    </div>
+
                     <!-- 3. INSUMOS SOLICITADOS -->
                     <div class="section-header" style="margin-top: 1.5rem;">
                         <h2><span>3.</span> Insumos Solicitados para Retiro</h2>
@@ -564,7 +597,7 @@
                     </div>
 
                     <button type="button" class="btn-add-item" onclick="agregarFilaInsumo()">
-                        ➕ Agregar Otro Insumo
+                        + Agregar Otro Insumo
                     </button>
 
                     <!-- 4. DATOS DE QUIEN SOLICITA Y FIRMA DIGITAL -->
@@ -663,6 +696,7 @@
                             <div><strong>Cédula:</strong> <span id="res-cedula">-</span></div>
                             <div><strong>Vereda:</strong> <span id="res-vereda">-</span></div>
                             <div><strong>Predio:</strong> <span id="res-predio">-</span></div>
+                            <div><strong>Coordenadas GPS:</strong> <span id="res-coordenadas">-</span></div>
                             <div><strong>Proyecto:</strong> <span id="res-proyecto">-</span></div>
                             <div><strong>Solicitante:</strong> <span id="res-solicitante">-</span></div>
                         </div>
@@ -670,7 +704,7 @@
                         <!-- Banner de Paz y Salvo -->
                         <div id="banner-paz-y-salvo" style="display: none; margin-top: 1.25rem; background: #C6F6D5; border: 1px solid #9AE6B4; padding: 1rem; border-radius: 8px; color: #22543D;">
                             <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                <span style="font-size: 1.7rem;">🛡️</span>
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#22543D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                                 <div>
                                     <h4 style="margin: 0; font-size: 1.05rem;">PAZ Y SALVO CONCEDIDO</h4>
                                     <div style="font-size: 0.85rem; margin-top: 0.2rem;" id="res-paz-info">
@@ -684,7 +718,7 @@
                     <!-- FOTO DE ENTREGA TOMADA EN BODEGA -->
                     <div id="box-foto-entrega" style="display: none; margin-bottom: 1.5rem; background: white; border: 1px solid var(--border-light); border-radius: 8px; padding: 1.25rem;">
                         <h4 style="margin: 0 0 0.5rem 0; color: var(--primary-green-dark);">
-                            📸 Registro Fotográfico de Salida / Entrega en Bodega
+                            Registro Fotográfico de Salida / Entrega en Bodega
                         </h4>
                         <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0 0 1rem 0;">
                             Fotografía de constancia registrada por el equipo de Kardex al entregar los insumos.
@@ -700,7 +734,7 @@
                     <!-- FORMULARIO PARA CARGAR ACTA Y FOTOS (SI ESTÁ DESPACHADO) -->
                     <div id="box-subida-evidencias" style="display: none; background: #F0FFF4; border: 1px solid #C6F6D5; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
                         <h3 style="margin-top: 0; color: #22543D; font-size: 1.15rem;">
-                            📥 Cargar Acta de Entrega y Evidencias Fotográficas
+                            Cargar Acta de Entrega y Evidencias Fotográficas
                         </h3>
                         <p style="font-size: 0.88rem; color: #276749; margin-bottom: 1.25rem;">
                             Adjunte el acta física firmada por el beneficiario y las fotos de constancia de entrega/uso en la finca para que el equipo administrativo pueda emitir el <strong>Paz y Salvo</strong>.
@@ -733,13 +767,13 @@
                     <!-- EVIDENCIAS YA CARGADAS (VISTA PREVIA) -->
                     <div id="box-evidencias-cargadas" style="display: none; background: white; border: 1px solid var(--border-light); border-radius: 8px; padding: 1.25rem;">
                         <h4 style="margin: 0 0 0.75rem 0; color: var(--primary-green-dark);">
-                            📄 Soportes Cargados Registrados
+                            Soportes Cargados Registrados
                         </h4>
                         
                         <div id="item-acta-cargada" style="margin-bottom: 1rem; font-size: 0.9rem;">
                             <strong>Acta de Entrega:</strong> 
                             <a id="res-link-acta" href="#" target="_blank" style="color: var(--primary-green); font-weight: 700; margin-left: 0.5rem;">
-                                📄 Ver Acta de Entrega Adjunta
+                                Ver Acta de Entrega Adjunta
                             </a>
                         </div>
 
@@ -755,8 +789,10 @@
     <!-- SUCCESS MODAL FOR NEW REQUEST -->
     <div id="modal-solicitud-exito" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 3000; align-items: center; justify-content: center;">
         <div style="background: white; border-radius: 12px; max-width: 550px; width: 90%; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3); text-align: center;">
-            <div style="font-size: 3rem; margin-bottom: 0.5rem;">✅</div>
-            <h2 style="color: var(--primary-green-dark); margin: 0 0 0.5rem 0; font-size: 1.5rem;">¡Solicitud Registrada con Éxito!</h2>
+            <div style="margin-bottom: 0.75rem;">
+                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#2E5A44" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;"><circle cx="12" cy="12" r="10"></circle><path d="M8 12l2.5 2.5L16 9"></path></svg>
+            </div>
+            <h2 style="color: var(--primary-green-dark); margin: 0 0 0.5rem 0; font-size: 1.5rem;">Solicitud Registrada con Éxito</h2>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
                 Su requerimiento ha sido radicado ante el equipo agroambiental de Kardex. Guarde este código para consultar el estado y adjuntar evidencias.
             </p>
@@ -770,7 +806,7 @@
 
             <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
                 <button onclick="copiarCodigoSolicitud()" style="background: #EDF2F7; border: 1px solid var(--border-subtle); padding: 0.65rem 1.25rem; border-radius: 6px; font-weight: 700; cursor: pointer;">
-                    📋 Copiar Código
+                    Copiar Código
                 </button>
                 <button onclick="irAConsultaDirecta()" class="btn-primary-action" style="padding: 0.65rem 1.5rem;">
                     Ir a Consultar Solicitud
@@ -841,6 +877,35 @@
             }
         }
 
+        function capturarCoordenadasGPS() {
+            const status = document.getElementById('sol-gps-status');
+            if (!("geolocation" in navigator)) {
+                status.style.color = '#C53030';
+                status.textContent = 'La geolocalización no está disponible en este dispositivo/navegador. Puede ingresar las coordenadas manualmente.';
+                return;
+            }
+
+            status.style.color = '#2B6CB0';
+            status.textContent = 'Obteniendo coordenadas GPS del dispositivo...';
+
+            navigator.geolocation.getCurrentPosition(
+                (pos) => {
+                    document.getElementById('sol-latitud').value = pos.coords.latitude.toFixed(6);
+                    document.getElementById('sol-longitud').value = pos.coords.longitude.toFixed(6);
+                    if (pos.coords.altitude !== null && pos.coords.altitude !== undefined) {
+                        document.getElementById('sol-altitud').value = Math.round(pos.coords.altitude);
+                    }
+                    status.style.color = '#276749';
+                    status.textContent = 'Coordenadas GPS de Latitud y Longitud capturadas con éxito.';
+                },
+                (err) => {
+                    status.style.color = '#C53030';
+                    status.textContent = 'No se pudo obtener la ubicación GPS: ' + err.message + '. Ingrese las coordenadas manualmente si lo desea.';
+                },
+                { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+            );
+        }
+
         async function loadProductosCatalog() {
             try {
                 const res = await fetch('api/get_kardex_productos.php');
@@ -892,7 +957,7 @@
                     <input type="number" step="0.01" min="0.01" class="form-control item-cant-input" placeholder="0.00" required>
                 </td>
                 <td style="text-align: center;">
-                    <button type="button" class="btn-remove-item" onclick="eliminarFilaInsumo(${itemRowCount})">✕</button>
+                    <button type="button" class="btn-remove-item" onclick="eliminarFilaInsumo(${itemRowCount})" title="Quitar fila">&times;</button>
                 </td>
             `;
 
@@ -1038,6 +1103,9 @@
                 linea_inversion: lineaInv,
                 meta: document.getElementById('sol-meta').value.trim(),
                 vereda: document.getElementById('sol-vereda').value,
+                latitud: document.getElementById('sol-latitud').value ? parseFloat(document.getElementById('sol-latitud').value) : null,
+                longitud: document.getElementById('sol-longitud').value ? parseFloat(document.getElementById('sol-longitud').value) : null,
+                altitud_msnm: document.getElementById('sol-altitud').value ? parseInt(document.getElementById('sol-altitud').value) : null,
                 nombre_predio: document.getElementById('sol-predio').value.trim(),
                 nombre_productor: document.getElementById('sol-productor-nombre').value.trim(),
                 cedula_productor: document.getElementById('sol-productor-cedula').value.trim(),
@@ -1138,6 +1206,14 @@
             document.getElementById('res-cedula').textContent = sol.cedula_productor;
             document.getElementById('res-vereda').textContent = sol.vereda;
             document.getElementById('res-predio').textContent = sol.nombre_predio || '-';
+            
+            let coordsTxt = 'No registradas';
+            if (sol.latitud && sol.longitud) {
+                coordsTxt = `Lat: ${parseFloat(sol.latitud).toFixed(5)}, Lon: ${parseFloat(sol.longitud).toFixed(5)}`;
+                if (sol.altitud_msnm) coordsTxt += ` (${sol.altitud_msnm} m.s.n.m.)`;
+            }
+            document.getElementById('res-coordenadas').textContent = coordsTxt;
+
             document.getElementById('res-proyecto').textContent = sol.numero_proyecto;
             document.getElementById('res-solicitante').textContent = sol.solicitante_nombre;
 

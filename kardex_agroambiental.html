@@ -644,7 +644,7 @@
                                 Inscripciones <span class="tab-arrow">▼</span>
                             </button>
                             <div class="nav-dropdown-menu">
-                                <a href="solicitud_insumos.html" class="nav-dropdown-item" id="item-reg-solicitud" style="font-weight: 700; color: #D4A373;">📋 Solicitud de Insumos</a>
+                                <a href="solicitud_insumos.html" class="nav-dropdown-item" id="item-reg-solicitud" style="font-weight: 700; color: #D4A373;">Solicitud de Insumos</a>
                                 <a href="inscripcion_feria.html" class="nav-dropdown-item" id="item-reg-feria">Inscripción Feria</a>
                                 <a href="inscripcion_jovenes.html" class="nav-dropdown-item" id="item-reg-jovenes">Jóvenes Emprendedores</a>
                                 <a href="inscripcion_tejedoras.html" class="nav-dropdown-item" id="item-reg-tejedoras">Tejedoras y Artesanos</a>
@@ -764,7 +764,7 @@
                     Inventario General (Stock Actual)
                 </button>
                 <button class="tab-btn" id="btn-tab-solicitudes" onclick="switchTab('tab-solicitudes')">
-                    📋 Solicitudes de Insumos <span id="badge-tab-solicitudes" style="background: #C53030; color: white; padding: 2px 7px; border-radius: 10px; font-size: 0.72rem; margin-left: 4px; display: none;">0</span>
+                    Solicitudes de Insumos <span id="badge-tab-solicitudes" style="background: #C53030; color: white; padding: 2px 7px; border-radius: 10px; font-size: 0.72rem; margin-left: 4px; display: none;">0</span>
                 </button>
                 <button class="tab-btn" onclick="switchTab('tab-nuevo-movimiento')">
                     Registrar Ingreso / Salida
@@ -1015,7 +1015,7 @@
                                 </div>
                             </div>
 
-                            <div style="font-size: 1.2rem; color: var(--primary-green-dark); font-weight: 700;">1 : N ➔</div>
+                            <div style="font-size: 1.2rem; color: var(--primary-green-dark); font-weight: 700;">1 : N &rarr;</div>
 
                             <!-- ENTIDAD 2 -->
                             <div style="background: white; border: 1px solid var(--primary-green); border-radius: 6px; width: 270px; box-shadow: var(--shadow-subtle);">
@@ -1033,7 +1033,7 @@
                                 </div>
                             </div>
 
-                            <div style="font-size: 1.2rem; color: var(--primary-green-dark); font-weight: 700;">1 : N ➔</div>
+                            <div style="font-size: 1.2rem; color: var(--primary-green-dark); font-weight: 700;">1 : N &rarr;</div>
 
                             <!-- ENTIDAD 3 -->
                             <div style="background: white; border: 1px solid var(--primary-green); border-radius: 6px; width: 300px; box-shadow: var(--shadow-subtle);">
@@ -1081,10 +1081,10 @@
                     </div>
                     <div style="display: flex; gap: 0.5rem; align-self: flex-end;">
                         <a href="solicitud_insumos.html" target="_blank" class="btn-action" style="background: var(--accent-green); color: white; text-decoration: none; padding: 0.6rem 1rem; border-radius: 6px; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.4rem;">
-                            ➕ Abrir Formato Solicitud
+                            + Abrir Formato Solicitud
                         </a>
                         <button onclick="loadSolicitudesList()" class="btn-action btn-secondary" style="padding: 0.6rem 1rem;">
-                            🔄 Refrescar
+                            Refrescar
                         </button>
                     </div>
                 </div>
@@ -1226,6 +1226,7 @@
                         <div><strong>Productor:</strong> <span id="mgmt-sol-productor">-</span></div>
                         <div><strong>Cédula:</strong> <span id="mgmt-sol-cedula">-</span></div>
                         <div><strong>Vereda / Predio:</strong> <span id="mgmt-sol-vereda-predio">-</span></div>
+                        <div><strong>Coordenadas GPS:</strong> <span id="mgmt-sol-coordenadas">-</span></div>
                         <div><strong>Solicitado por:</strong> <span id="mgmt-sol-solicitante">-</span></div>
                     </div>
                     <div style="margin-top: 0.5rem; font-size: 0.85rem;" id="mgmt-sol-meta-box">
@@ -1239,7 +1240,7 @@
                 <!-- ALERTA DE BLOQUEO POR PAZ Y SALVO PREVIO -->
                 <div id="mgmt-alerta-bloqueo" style="display: none; background: #FFF5F5; border: 2px solid #E53E3E; border-radius: 8px; padding: 1rem; margin-bottom: 1.25rem; color: #9B2C2C;">
                     <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
-                        <span style="font-size: 1.6rem; line-height: 1;">🚫</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E53E3E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
                         <div>
                             <strong style="font-size: 0.98rem;">BLOQUEO ESTRICTO POR PAZ Y SALVO</strong>
                             <p style="margin: 0.35rem 0 0 0; font-size: 0.88rem; line-height: 1.4;" id="mgmt-bloqueo-mensaje">
@@ -1275,7 +1276,7 @@
                 <!-- SECCIÓN DE DESPACHO (SI ESTÁ PENDIENTE) -->
                 <div id="mgmt-box-despacho" style="display: none; background: #F0FFF4; border: 1px solid #9AE6B4; border-radius: 8px; padding: 1.25rem; margin-bottom: 1.25rem;">
                     <h4 style="margin: 0 0 0.75rem 0; color: #22543D;">
-                        📦 Registro de Entrega y Salida de Insumos (Bodega)
+                        Registro de Entrega y Salida de Insumos (Bodega)
                     </h4>
                     <form id="mgmt-form-despacho" onsubmit="handleDespachoFormSubmit(event)">
                         <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
@@ -1304,7 +1305,7 @@
                 <!-- SECCIÓN DE SÓPORTE DE ENTREGA REGISTRADO -->
                 <div id="mgmt-box-foto-entrega-view" style="display: none; background: white; border: 1px solid var(--border-light); border-radius: 8px; padding: 1rem; margin-bottom: 1.25rem;">
                     <h4 style="margin: 0 0 0.5rem 0; color: var(--primary-green-dark); font-size: 0.95rem;">
-                        📸 Constancia de Entrega en Bodega
+                        Constancia de Entrega en Bodega
                     </h4>
                     <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
                         <img id="mgmt-view-foto-entrega-img" src="" class="prod-thumb" style="width: 80px; height: 80px; cursor: pointer;" onclick="openLightbox(this.src, 'Foto de Salida en Bodega')" alt="Entrega">
@@ -1318,7 +1319,7 @@
                 <div id="mgmt-box-evidencias-revision" style="display: none; background: #FAF5FF; border: 1px solid #E9D8FD; border-radius: 8px; padding: 1.25rem; margin-bottom: 1.25rem;">
                     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
                         <h4 style="margin: 0; color: #6B46C1; font-size: 1rem;">
-                            📑 Revisión de Acta de Entrega y Evidencias Fotográficas
+                            Revisión de Acta de Entrega y Evidencias Fotográficas
                         </h4>
                         <div id="mgmt-badge-paz-status"></div>
                     </div>
@@ -1326,7 +1327,7 @@
                     <div style="margin-bottom: 0.75rem; font-size: 0.9rem;">
                         <strong>Acta de Entrega Firmada:</strong>
                         <a id="mgmt-link-acta" href="#" target="_blank" style="color: var(--primary-green); font-weight: 700; margin-left: 0.5rem;">
-                            📄 Ver Documento de Acta
+                            Ver Documento de Acta
                         </a>
                     </div>
 
@@ -1338,7 +1339,7 @@
                     <!-- BOTÓN PARA EMITIR PAZ Y SALVO -->
                     <div id="mgmt-box-btn-paz" style="margin-top: 1.25rem; text-align: right; border-top: 1px dashed #D6BCFA; padding-top: 1rem;">
                         <button type="button" onclick="confirmarAprobacionPazYSalvo()" class="btn-action" style="background: #276749; color: white; padding: 0.75rem 1.75rem; font-size: 0.95rem; font-weight: 700; border-radius: 6px;">
-                            🛡️ Aprobar y Otorgar Paz y Salvo Oficial
+                            Aprobar y Otorgar Paz y Salvo Oficial
                         </button>
                     </div>
                 </div>
@@ -1584,12 +1585,12 @@
                     fotoHtml = `
                         <div class="prod-thumb-container">
                             <img src="${p.imagen_url}" class="prod-thumb" onclick="openLightbox('${p.imagen_url}', '${escapeHtml(p.nombre)}')" title="Click para ampliar">
-                            <button type="button" onclick="abrirModalFotoInsumo(${p.id})" title="Cambiar foto de insumo" style="background: none; border: none; cursor: pointer; font-size: 0.85rem; padding: 0.2rem;" aria-label="Cambiar foto">✏️</button>
+                            <button type="button" onclick="abrirModalFotoInsumo(${p.id})" title="Cambiar foto de insumo" style="background: none; border: none; cursor: pointer; padding: 0.2rem; display: inline-flex; align-items: center;" aria-label="Cambiar foto"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4A5568" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
                         </div>
                     `;
                 } else {
                     fotoHtml = `
-                        <button type="button" class="btn-thumb-upload" onclick="abrirModalFotoInsumo(${p.id})" title="Subir fotografía de insumo">📷</button>
+                        <button type="button" class="btn-thumb-upload" onclick="abrirModalFotoInsumo(${p.id})" title="Subir fotografía de insumo" style="display:inline-flex; align-items:center; justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></button>
                     `;
                 }
 
@@ -1838,7 +1839,7 @@
 
                 let soporteHtml = '<span style="color:#A0AEC0;">-</span>';
                 if (m.comprobante_url) {
-                    soporteHtml = `<button type="button" class="voucher-thumb-link" onclick="openLightbox('${m.comprobante_url}', 'Comprobante Movimiento #${m.id}')">📷 Ver</button>`;
+                    soporteHtml = `<button type="button" class="voucher-thumb-link" onclick="openLightbox('${m.comprobante_url}', 'Comprobante Movimiento #${m.id}')">Ver Soporte</button>`;
                 }
 
                 html += `
@@ -2037,8 +2038,8 @@
                 }
 
                 const pazBadge = (s.paz_y_salvo == 1) 
-                    ? `<span class="badge-paz-ok">🛡️ Paz y Salvo</span>` 
-                    : `<span class="badge-paz-no">⚠️ Pendiente</span>`;
+                    ? `<span class="badge-paz-ok">Paz y Salvo</span>` 
+                    : `<span class="badge-paz-no">Pendiente</span>`;
 
                 html += `
                     <tr>
@@ -2101,6 +2102,14 @@
                 document.getElementById('mgmt-sol-productor').textContent = s.nombre_productor;
                 document.getElementById('mgmt-sol-cedula').textContent = s.cedula_productor;
                 document.getElementById('mgmt-sol-vereda-predio').textContent = s.vereda + (s.nombre_predio ? ' • Predio: ' + s.nombre_predio : '');
+                
+                let coordsTxt = 'No registradas';
+                if (s.latitud && s.longitud) {
+                    coordsTxt = `Lat: ${parseFloat(s.latitud).toFixed(5)}, Lon: ${parseFloat(s.longitud).toFixed(5)}`;
+                    if (s.altitud_msnm) coordsTxt += ` (${s.altitud_msnm} m.s.n.m.)`;
+                }
+                document.getElementById('mgmt-sol-coordenadas').textContent = coordsTxt;
+
                 document.getElementById('mgmt-sol-solicitante').textContent = `${s.solicitante_nombre} (CPS: ${s.solicitante_cps || '-'}, Cargo: ${s.solicitante_cargo || '-'})`;
                 document.getElementById('mgmt-sol-meta').textContent = s.meta || 'No especificada';
                 document.getElementById('mgmt-sol-observaciones').textContent = s.observaciones || 'Ninguna';
@@ -2205,10 +2214,10 @@
                     // Botón para otorgar Paz y Salvo si aún no lo tiene
                     if (s.paz_y_salvo == 1) {
                         boxBtnPaz.style.display = 'none';
-                        document.getElementById('mgmt-badge-paz-status').innerHTML = `<span class="badge-paz-ok">🛡️ Paz y Salvo Oficial Otorgado el ${s.fecha_paz_y_salvo || ''}</span>`;
+                        document.getElementById('mgmt-badge-paz-status').innerHTML = `<span class="badge-paz-ok">Paz y Salvo Oficial Otorgado el ${s.fecha_paz_y_salvo || ''}</span>`;
                     } else {
                         boxBtnPaz.style.display = 'block';
-                        document.getElementById('mgmt-badge-paz-status').innerHTML = `<span class="badge-paz-no">⚠️ Pendiente de Aprobación</span>`;
+                        document.getElementById('mgmt-badge-paz-status').innerHTML = `<span class="badge-paz-no">Pendiente de Aprobación</span>`;
                     }
                 } else {
                     boxEvidenciasRev.style.display = 'none';
@@ -2351,7 +2360,7 @@
 
                 const data = await res.json();
                 if (data.success) {
-                    alert('🛡️ ¡Paz y Salvo otorgado satisfactoriamente!');
+                    alert('¡Paz y Salvo otorgado satisfactoriamente!');
                     cerrarGestionSolicitud();
                     await loadDashboardData();
                     await loadSolicitudesList();

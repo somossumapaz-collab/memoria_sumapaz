@@ -30,6 +30,9 @@ $numeroProyecto = isset($input['numero_proyecto']) ? trim($input['numero_proyect
 $lineaInversion = isset($input['linea_inversion']) ? trim($input['linea_inversion']) : '';
 $meta = isset($input['meta']) ? trim($input['meta']) : '';
 $vereda = isset($input['vereda']) ? trim($input['vereda']) : '';
+$latitud = isset($input['latitud']) && $input['latitud'] !== '' && is_numeric($input['latitud']) ? (float)$input['latitud'] : null;
+$longitud = isset($input['longitud']) && $input['longitud'] !== '' && is_numeric($input['longitud']) ? (float)$input['longitud'] : null;
+$altitudMsnm = isset($input['altitud_msnm']) && $input['altitud_msnm'] !== '' && is_numeric($input['altitud_msnm']) ? (int)$input['altitud_msnm'] : null;
 $nombrePredio = isset($input['nombre_predio']) ? trim($input['nombre_predio']) : '';
 $nombreProductor = isset($input['nombre_productor']) ? trim($input['nombre_productor']) : '';
 $cedulaProductor = isset($input['cedula_productor']) ? trim($input['cedula_productor']) : '';
@@ -109,13 +112,13 @@ try {
     $stmtSol = $pdo->prepare("
         INSERT INTO kardex_solicitudes (
             codigo_solicitud, token_seguimiento, fecha_solicitud, fecha_retiro, 
-            numero_proyecto, linea_inversion, meta, vereda, nombre_predio, 
+            numero_proyecto, linea_inversion, meta, vereda, latitud, longitud, altitud_msnm, nombre_predio, 
             nombre_productor, cedula_productor, telefono_productor, actividad, 
             solicitante_nombre, solicitante_cps, solicitante_cargo, solicitante_firma, 
             observaciones, estado
         ) VALUES (
             :codigo_solicitud, :token_seguimiento, :fecha_solicitud, :fecha_retiro, 
-            :numero_proyecto, :linea_inversion, :meta, :vereda, :nombre_predio, 
+            :numero_proyecto, :linea_inversion, :meta, :vereda, :latitud, :longitud, :altitud_msnm, :nombre_predio, 
             :nombre_productor, :cedula_productor, :telefono_productor, :actividad, 
             :solicitante_nombre, :solicitante_cps, :solicitante_cargo, :solicitante_firma, 
             :observaciones, 'PENDIENTE'
@@ -131,6 +134,9 @@ try {
         'linea_inversion' => $lineaInversion,
         'meta' => $meta,
         'vereda' => $vereda,
+        'latitud' => $latitud,
+        'longitud' => $longitud,
+        'altitud_msnm' => $altitudMsnm,
         'nombre_predio' => $nombrePredio,
         'nombre_productor' => $nombreProductor,
         'cedula_productor' => $cedulaProductor,

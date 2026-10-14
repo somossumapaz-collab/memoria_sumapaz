@@ -38,6 +38,9 @@ try {
             `linea_inversion` VARCHAR(255) NULL,
             `meta` TEXT NULL,
             `vereda` VARCHAR(150) NOT NULL,
+            `latitud` DECIMAL(10,8) NULL,
+            `longitud` DECIMAL(11,8) NULL,
+            `altitud_msnm` INT NULL,
             `nombre_predio` VARCHAR(255) NULL,
             `nombre_productor` VARCHAR(255) NOT NULL,
             `cedula_productor` VARCHAR(50) NOT NULL,
@@ -67,6 +70,11 @@ try {
             INDEX (`paz_y_salvo`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
     ");
+
+    try { $pdo->exec("ALTER TABLE `kardex_solicitudes` ADD COLUMN `latitud` DECIMAL(10,8) NULL AFTER `vereda`;"); } catch (Exception $e) {}
+    try { $pdo->exec("ALTER TABLE `kardex_solicitudes` ADD COLUMN `longitud` DECIMAL(11,8) NULL AFTER `latitud`;"); } catch (Exception $e) {}
+    try { $pdo->exec("ALTER TABLE `kardex_solicitudes` ADD COLUMN `altitud_msnm` INT NULL AFTER `longitud`;"); } catch (Exception $e) {}
+
 
     // 4. Create kardex_solicitud_items table
     $pdo->exec("
