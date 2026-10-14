@@ -4,7 +4,9 @@
  * Devuelve el registro completo con firmas (base64), fotos, concursos inscritos y evaluaciones.
  * Acceso: rol 1 (admin) y rol 13 (feria ambiental).
  */
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 header('Content-Type: application/json; charset=utf-8');
 require_once __DIR__ . '/db_config.php';
 
@@ -23,18 +25,20 @@ if ($id <= 0) {
     exit;
 }
 
-/** Divide un campo que puede contener varias imágenes data-URI concatenadas. */
-function splitImages($raw) {
-    $raw = trim((string)$raw);
-    if ($raw === '') return [];
-    if (strpos($raw, 'data:image') === false) return [];
-    $parts = preg_split('/(?=data:image\/)/', $raw, -1, PREG_SPLIT_NO_EMPTY);
-    $out = [];
-    foreach ($parts as $p) {
-        $p = rtrim(trim($p), ",;| \n\r\t");
-        if (strpos($p, 'data:image/') === 0) $out[] = $p;
+if (!function_exists('splitImages')) {
+    /** Divide un campo que puede contener varias imágenes data-URI concatenadas. */
+    function splitImages($raw) {
+        $raw = trim((string)$raw);
+        if ($raw === '') return [];
+        if (strpos($raw, 'data:image') === false) return [];
+        $parts = preg_split('/(?=data:image\/)/', $raw, -1, PREG_SPLIT_NO_EMPTY);
+        $out = [];
+        foreach ($parts as $p) {
+            $p = rtrim(trim($p), ",;| \n\r\t");
+            if (strpos($p, 'data:image/') === 0) $out[] = $p;
+        }
+        return $out;
     }
-    return $out;
 }
 
 try {
@@ -99,6 +103,8 @@ try {
             'nombre_predio' => $p['nombre_predio'],
             'extension_finca' => $p['extension_finca'],
             'vereda' => $p['vereda'],
+            'cuenca' => $p['cuenca'] ?? '',
+            'notes' => $p['notes'] ?? '',
             'latitud' => $p['latitud'],
             'longitud' => $p['longitud'],
             'altitud_msnm' => $p['altitud_msnm'],
