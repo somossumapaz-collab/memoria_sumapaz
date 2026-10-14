@@ -41,60 +41,81 @@
                     <div style="display: flex; align-items: center; gap: 0.5rem;">
                         <span class="search-label" style="margin-bottom: 0;">Busca el producto que necesitas</span>
                         <div class="search-bar" style="margin-bottom: 0;">
-                            <span class="search-icon">🔍</span>
+                            <svg class="search-icon" style="width: 16px; height: 16px; color: var(--text-muted); display: inline-block; vertical-align: middle;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
                             <input type="text" id="home-search-input" placeholder="Buscar..." autocomplete="off">
                             <div id="search-suggestions" class="suggestions-dropdown"></div>
                         </div>
                     </div>
                     <!-- Admin Options (Login / Dashboard / Inscripción) -->
-                    <div id="header-auth-container" style="display: flex; align-items: center; gap: 1rem;">
-                        <a href="inscripcion_feria.html" class="nav-link-btn" id="btn-register-feria"
-                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Inscripción Feria</a>
-                        <a href="inscripcion_productores.html" class="nav-link-btn" id="btn-register"
-                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Registrar
-                            Productor</a>
-                        <a href="inscripcion_avituallamiento.html" class="nav-link-btn" id="btn-register-avit"
-                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Inscripción
-                            Avituallamiento</a>
-                        <a href="inscripcion_tejedoras.html" class="nav-link-btn" id="btn-register-tejedoras"
-                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Tejedores (a) y Artesanos (a)</a>
-                        <a href="inscripcion_jovenes.html" class="nav-link-btn" id="btn-register-jovenes"
-                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Jóvenes
-                            Rurales</a>
-                        <a href="productores_registrados.html" class="nav-link-btn" id="btn-dashboard"
-                            style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Dashboard</a>
-                        <a href="avituallamiento_registrados.html" class="nav-link-btn" id="btn-dashboard-avit"
-                            style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Dashboard Avit.</a>
-                        <a href="transporte_seguimiento.html" class="nav-link-btn" id="btn-tracking"
-                            style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Seguimiento</a>
-                        <a href="pmapc.html" class="nav-link-btn" id="btn-pmapc"
-                            style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">PMAPC</a>
-                        <a href="tablero_ambiental.html" class="nav-link-btn" id="btn-tablero-ambiental"
-                            style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Tablero Ambiental</a>
-                        <a href="concursos_sumapaz.html" class="nav-link-btn" id="btn-concursos-sumapaz"
-                            style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Concursos Sumapaz</a>
-                        <a href="kardex_agroambiental.html" class="nav-link-btn" id="btn-kardex-agroambiental"
-                            style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Kardex Agroambiental</a>
-                        <a href="ruta_productor.html" class="nav-link-btn" id="btn-ruta-productor"
-                            style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">📍 Ruta Productor</a>
+                    <!-- 4 Pestañas de Navegación Somos Sumapaz -->
+                    <div id="header-auth-container" class="nav-tabs-wrapper">
 
-                        <a href="/convocatorias" class="nav-link-btn" id="btn-convocatorias"
-                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Convocatorias</a>
-                        <a href="infografia.html" class="nav-link-btn" id="btn-infografia"
-                            style="margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Infografía</a>
-                        <a href="login.html" class="nav-link-btn" title="Iniciar Sesión" id="btn-login"
-                            style="margin: 0; padding: 0.5rem; display: flex; align-items: center; justify-content: center; color: #FBF4DE;">
+                        <!-- 1. Inscripciones -->
+                        <div class="nav-tab-dropdown" id="tab-inscripciones">
+                            <button class="nav-tab-btn" type="button" aria-haspopup="true">
+                                Inscripciones <span class="tab-arrow">▼</span>
+                            </button>
+                            <div class="nav-dropdown-menu">
+                                <a href="inscripcion_feria.html" class="nav-dropdown-item" id="item-reg-feria">Inscripción Feria</a>
+                                <a href="inscripcion_jovenes.html" class="nav-dropdown-item" id="item-reg-jovenes">Jóvenes Emprendedores</a>
+                                <a href="inscripcion_tejedoras.html" class="nav-dropdown-item" id="item-reg-tejedoras">Tejedoras y Artesanos</a>
+                                <a href="inscripcion_avituallamiento.html" class="nav-dropdown-item" id="item-reg-avit">Inscripción Avituallamiento</a>
+                                <a href="inscripcion_productores.html" class="nav-dropdown-item" id="item-reg-productor">Registrar Productor</a>
+                            </div>
+                        </div>
+
+                        <!-- 2. Emprendimiento (Protegido - Admin / Usuario 1) -->
+                        <div class="nav-tab-dropdown" id="tab-emprendimiento" style="display: none;">
+                            <button class="nav-tab-btn" type="button" aria-haspopup="true">
+                                Emprendimiento <span class="tab-arrow">▼</span>
+                            </button>
+                            <div class="nav-dropdown-menu">
+                                <a href="productores_registrados.html" class="nav-dropdown-item" id="item-dash-prod">Dashboard</a>
+                                <a href="avituallamiento_registrados.html" class="nav-dropdown-item" id="item-dash-avit">Dashboard Avituallamiento</a>
+                                <a href="ruta_productor.html" class="nav-dropdown-item" id="item-dash-seguimiento">Seguimiento</a>
+                                <a href="niveles_priorizacion.html" class="nav-dropdown-item" id="item-dash-priorizacion">Priorización</a>
+                                <a href="pmapc.html" class="nav-dropdown-item" id="item-dash-pmapc">PMAPC</a>
+                            </div>
+                        </div>
+
+                        <!-- 3. Agroambiental (Protegido según Rol) -->
+                        <div class="nav-tab-dropdown" id="tab-agroambiental" style="display: none;">
+                            <button class="nav-tab-btn" type="button" aria-haspopup="true">
+                                Agroambiental <span class="tab-arrow">▼</span>
+                            </button>
+                            <div class="nav-dropdown-menu">
+                                <a href="tablero_ambiental.html" class="nav-dropdown-item" id="item-agro-tablero">Tablero Agroambiental</a>
+                                <a href="feria_ambiental.html" class="nav-dropdown-item" id="item-agro-concursos-ambiental">Concursos Feria Ambiental</a>
+                                <a href="kardex_agroambiental.html" class="nav-dropdown-item" id="item-agro-kardex">Kardex Agroambiental</a>
+                                <a href="concursos_sumapaz.html" class="nav-dropdown-item" id="item-agro-concursos-sumapaz">Concursos Sumapaz</a>
+                            </div>
+                        </div>
+
+                        <!-- 4. Convocatorias -->
+                        <div class="nav-tab-dropdown" id="tab-convocatorias">
+                            <button class="nav-tab-btn" type="button" aria-haspopup="true">
+                                Convocatorias <span class="tab-arrow">▼</span>
+                            </button>
+                            <div class="nav-dropdown-menu align-right">
+                                <a href="convocatorias.html" class="nav-dropdown-item" id="item-conv-convocatorias">Convocatorias</a>
+                                <a href="infografia.html" class="nav-dropdown-item" id="item-conv-infografia">Infografía</a>
+                            </div>
+                        </div>
+
+                        <!-- Auth Actions -->
+                        <a href="login.html" class="header-auth-btn" title="Iniciar Sesión" id="btn-login">
                             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-                                style="width: 24px; height: 24px;">
+                                style="width: 22px; height: 22px;">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
                             </svg>
                         </a>
-                        <button onclick="logout()" class="nav-link-btn" id="btn-logout"
-                            style="display: none; margin: 0; background-color: transparent; cursor: pointer; color: #FBF4DE; border: none;"
-                            title="Cerrar Sesión">
+                        <button onclick="logout()" class="header-auth-btn" id="btn-logout"
+                            style="display: none;" title="Cerrar Sesión">
                             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-                                style="width: 24px; height: 24px; transform: scaleX(-1);">
+                                style="width: 22px; height: 22px; transform: scaleX(-1);">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
                             </svg>
@@ -214,39 +235,68 @@
 
     <!-- App Logic -->
     <script>
-        // Check Auth Status on Load
+        // Check Auth Status on Load & Role-Based Navigation
         document.addEventListener('DOMContentLoaded', async () => {
+            // Dropdown click/touch toggle support
+            document.addEventListener('click', (e) => {
+                const tabDropdown = e.target.closest('.nav-tab-dropdown');
+                const tabBtn = e.target.closest('.nav-tab-btn');
+                document.querySelectorAll('.nav-tab-dropdown').forEach(d => {
+                    if (d !== tabDropdown) d.classList.remove('active');
+                });
+                if (tabDropdown && tabBtn) {
+                    tabDropdown.classList.toggle('active');
+                }
+            });
+
             try {
                 const res = await fetch('api/check_auth.php');
                 const result = await res.json();
                 if (res.ok && result.authenticated) {
-                    if (result.user_id === 12 || result.rol_id === 12 || result.is_concursos_only) {
+                    const userId = parseInt(result.user_id);
+                    const rolId = parseInt(result.rol_id);
+
+                    if (userId === 12 || rolId === 12 || result.is_concursos_only) {
                         window.location.href = 'concursos_sumapaz.html';
                         return;
                     }
-                    document.getElementById('btn-login').style.display = 'none';
-                    if (result.rol_id === 6) {
-                        document.getElementById('btn-dashboard').style.display = 'none';
-                        document.getElementById('btn-dashboard-avit').style.display = 'none';
-                        document.getElementById('btn-register').style.display = 'none';
-                        document.getElementById('btn-tracking').style.display = 'none';
-                        document.getElementById('btn-pmapc').style.display = 'none';
-                        document.getElementById('btn-tablero-ambiental').style.display = 'inline-block';
-                    } else {
-                        document.getElementById('btn-dashboard').style.display = 'inline-block';
-                        document.getElementById('btn-dashboard-avit').style.display = 'inline-block';
-                        document.getElementById('btn-register').style.display = 'inline-block';
-                        document.getElementById('btn-tracking').style.display = 'inline-block';
-                        document.getElementById('btn-pmapc').style.display = 'inline-block';
-                        document.getElementById('btn-tablero-ambiental').style.display = 'inline-block';
-                        document.getElementById('btn-concursos-sumapaz').style.display = 'inline-block';
-                        document.getElementById('btn-ruta-productor').style.display = 'inline-block';
-                    }
 
-                    if (parseInt(result.rol_id) === 12) {
-                        document.getElementById('btn-concursos-sumapaz').style.display = 'inline-block';
+                    document.getElementById('btn-login').style.display = 'none';
+                    document.getElementById('btn-logout').style.display = 'inline-flex';
+
+                    if (rolId === 6) {
+                        // Rol 6: Únicamente Tablero Agroambiental
+                        document.getElementById('tab-emprendimiento').style.display = 'none';
+                        document.getElementById('tab-agroambiental').style.display = 'inline-block';
+                        document.getElementById('item-agro-tablero').style.display = 'block';
+                        document.getElementById('item-agro-concursos-ambiental').style.display = 'none';
+                        document.getElementById('item-agro-kardex').style.display = 'none';
+                        document.getElementById('item-agro-concursos-sumapaz').style.display = 'none';
+                    } else if (rolId === 13) {
+                        // Rol 13: Feria Agroambiental
+                        document.getElementById('tab-emprendimiento').style.display = 'none';
+                        document.getElementById('tab-agroambiental').style.display = 'inline-block';
+                        document.getElementById('item-agro-tablero').style.display = 'none';
+                        document.getElementById('item-agro-concursos-ambiental').style.display = 'block';
+                        document.getElementById('item-agro-kardex').style.display = 'none';
+                        document.getElementById('item-agro-concursos-sumapaz').style.display = 'none';
+                    } else if (rolId === 14 || userId === 14) {
+                        // Rol 14: Kardex y Feria Agroambiental
+                        document.getElementById('tab-emprendimiento').style.display = 'none';
+                        document.getElementById('tab-agroambiental').style.display = 'inline-block';
+                        document.getElementById('item-agro-tablero').style.display = 'none';
+                        document.getElementById('item-agro-concursos-ambiental').style.display = 'block';
+                        document.getElementById('item-agro-kardex').style.display = 'block';
+                        document.getElementById('item-agro-concursos-sumapaz').style.display = 'none';
+                    } else {
+                        // Usuario 1 (Admin): Puede ver TODO
+                        document.getElementById('tab-emprendimiento').style.display = 'inline-block';
+                        document.getElementById('tab-agroambiental').style.display = 'inline-block';
+                        document.getElementById('item-agro-tablero').style.display = 'block';
+                        document.getElementById('item-agro-concursos-ambiental').style.display = 'block';
+                        document.getElementById('item-agro-kardex').style.display = 'block';
+                        document.getElementById('item-agro-concursos-sumapaz').style.display = 'block';
                     }
-                    document.getElementById('btn-logout').style.display = 'inline-block';
                 }
             } catch (error) {
                 console.error('Error checking auth:', error);

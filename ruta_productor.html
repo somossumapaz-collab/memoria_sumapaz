@@ -537,12 +537,91 @@
 
 <body>
 
+    <!-- Header Navbar Somos Sumapaz -->
+    <header id="main-header">
+        <nav class="navbar-custom">
+            <div class="container" style="display: flex; align-items: center; max-width: 1300px; margin: 0 auto; padding: 0.75rem 1.5rem;">
+                <a href="index.html">
+                    <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img" style="height: 50px;">
+                </a>
+
+                <div class="search-container" style="margin-left: auto; display: flex; align-items: center; gap: 1.5rem;">
+                    <!-- 4 Pestañas de Navegación Somos Sumapaz -->
+                    <div id="header-auth-container" class="nav-tabs-wrapper">
+
+                        <!-- 1. Inscripciones -->
+                        <div class="nav-tab-dropdown" id="tab-inscripciones">
+                            <button class="nav-tab-btn" type="button" aria-haspopup="true">
+                                Inscripciones <span class="tab-arrow">▼</span>
+                            </button>
+                            <div class="nav-dropdown-menu">
+                                <a href="inscripcion_feria.html" class="nav-dropdown-item" id="item-reg-feria">Inscripción Feria</a>
+                                <a href="inscripcion_jovenes.html" class="nav-dropdown-item" id="item-reg-jovenes">Jóvenes Emprendedores</a>
+                                <a href="inscripcion_tejedoras.html" class="nav-dropdown-item" id="item-reg-tejedoras">Tejedoras y Artesanos</a>
+                                <a href="inscripcion_avituallamiento.html" class="nav-dropdown-item" id="item-reg-avit">Inscripción Avituallamiento</a>
+                                <a href="inscripcion_productores.html" class="nav-dropdown-item" id="item-reg-productor">Registrar Productor</a>
+                            </div>
+                        </div>
+
+                        <!-- 2. Emprendimiento (Página actual activa) -->
+                        <div class="nav-tab-dropdown" id="tab-emprendimiento">
+                            <button class="nav-tab-btn" type="button" aria-haspopup="true" style="background-color: rgba(251, 244, 222, 0.2); border-color: rgba(251, 244, 222, 0.4);">
+                                Emprendimiento <span class="tab-arrow">▼</span>
+                            </button>
+                            <div class="nav-dropdown-menu">
+                                <a href="productores_registrados.html" class="nav-dropdown-item" id="item-dash-prod">Dashboard</a>
+                                <a href="avituallamiento_registrados.html" class="nav-dropdown-item" id="item-dash-avit">Dashboard Avituallamiento</a>
+                                <a href="ruta_productor.html" class="nav-dropdown-item" id="item-dash-seguimiento" style="font-weight: 700; color: #FFFFFF; border-left-color: #D4A373;">Seguimiento</a>
+                                <a href="niveles_priorizacion.html" class="nav-dropdown-item" id="item-dash-priorizacion">Priorización</a>
+                                <a href="pmapc.html" class="nav-dropdown-item" id="item-dash-pmapc">PMAPC</a>
+                            </div>
+                        </div>
+
+                        <!-- 3. Agroambiental -->
+                        <div class="nav-tab-dropdown" id="tab-agroambiental">
+                            <button class="nav-tab-btn" type="button" aria-haspopup="true">
+                                Agroambiental <span class="tab-arrow">▼</span>
+                            </button>
+                            <div class="nav-dropdown-menu">
+                                <a href="tablero_ambiental.html" class="nav-dropdown-item" id="item-agro-tablero">Tablero Agroambiental</a>
+                                <a href="feria_ambiental.html" class="nav-dropdown-item" id="item-agro-concursos-ambiental">Concursos Feria Ambiental</a>
+                                <a href="kardex_agroambiental.html" class="nav-dropdown-item" id="item-agro-kardex">Kardex Agroambiental</a>
+                                <a href="concursos_sumapaz.html" class="nav-dropdown-item" id="item-agro-concursos-sumapaz">Concursos Sumapaz</a>
+                            </div>
+                        </div>
+
+                        <!-- 4. Convocatorias -->
+                        <div class="nav-tab-dropdown" id="tab-convocatorias">
+                            <button class="nav-tab-btn" type="button" aria-haspopup="true">
+                                Convocatorias <span class="tab-arrow">▼</span>
+                            </button>
+                            <div class="nav-dropdown-menu align-right">
+                                <a href="convocatorias.html" class="nav-dropdown-item" id="item-conv-convocatorias">Convocatorias</a>
+                                <a href="infografia.html" class="nav-dropdown-item" id="item-conv-infografia">Infografía</a>
+                            </div>
+                        </div>
+
+                        <!-- Cerrar Sesión -->
+                        <button onclick="logout()" class="header-auth-btn" id="btn-logout" title="Cerrar Sesión">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                style="width: 22px; height: 22px; transform: scaleX(-1);">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                            </svg>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <!-- Header Hero -->
     <div class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">📍 Ruta del Productor</h1>
-            <p class="hero-subtitle">Visualización por burbujas de la trayectoria campesina: vinculación, avance PMAPC, circuitos de comercialización, ferias y concursos.</p>
+            <h1 class="hero-title">Ruta del Productor</h1>
+            <p class="hero-subtitle">Visualización de la trayectoria campesina: vinculación, avance PMAPC, circuitos de comercialización, ferias y concursos.</p>
         </div>
     </div>
 
@@ -813,6 +892,27 @@
 
             html += `</div>`;
             container.innerHTML = html;
+        }
+
+        // Dropdown click/touch toggle support
+        document.addEventListener('click', (e) => {
+            const tabDropdown = e.target.closest('.nav-tab-dropdown');
+            const tabBtn = e.target.closest('.nav-tab-btn');
+            document.querySelectorAll('.nav-tab-dropdown').forEach(d => {
+                if (d !== tabDropdown) d.classList.remove('active');
+            });
+            if (tabDropdown && tabBtn) {
+                tabDropdown.classList.toggle('active');
+            }
+        });
+
+        async function logout() {
+            try {
+                await fetch('api/logout.php');
+                window.location.href = 'login.html';
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
         }
     </script>
 </body>

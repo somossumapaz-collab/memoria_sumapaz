@@ -598,15 +598,76 @@
     <!-- Main Header Navbar -->
     <header id="main-header">
         <nav class="navbar-custom">
-            <div class="container" style="display: flex; align-items: center; max-width: 1300px; margin: 0 auto; padding: 0.8rem 1.5rem;">
+            <div class="container" style="display: flex; align-items: center; max-width: 1350px; margin: 0 auto; padding: 0.75rem 1.5rem;">
                 <a href="index.html">
-                    <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img" style="height: 48px;">
+                    <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img" style="height: 50px; max-height: 50px; width: auto; object-fit: contain;">
                 </a>
-                <div style="margin-left: auto; display: flex; align-items: center; gap: 1rem;">
-                    <div id="header-auth-container" style="display: flex; align-items: center;">
-                        <button onclick="logout()" class="nav-link-btn" id="btn-logout" style="background: transparent; border: none; color: #FBF4DE; cursor: pointer; font-weight: 600; font-size: 0.95rem;">
-                            Cerrar Sesión
+
+                <div class="search-container" style="margin-left: auto; display: flex; align-items: center; gap: 1.25rem;">
+                    <!-- 4 Pestañas de Navegación Somos Sumapaz -->
+                    <div id="header-auth-container" class="nav-tabs-wrapper">
+
+                        <!-- 1. Inscripciones -->
+                        <div class="nav-tab-dropdown" id="tab-inscripciones">
+                            <button class="nav-tab-btn" type="button" aria-haspopup="true">
+                                Inscripciones <span class="tab-arrow">▼</span>
+                            </button>
+                            <div class="nav-dropdown-menu">
+                                <a href="inscripcion_feria.html" class="nav-dropdown-item" id="item-reg-feria">Inscripción Feria</a>
+                                <a href="inscripcion_jovenes.html" class="nav-dropdown-item" id="item-reg-jovenes">Jóvenes Emprendedores</a>
+                                <a href="inscripcion_tejedoras.html" class="nav-dropdown-item" id="item-reg-tejedoras">Tejedoras y Artesanos</a>
+                                <a href="inscripcion_avituallamiento.html" class="nav-dropdown-item" id="item-reg-avit">Inscripción Avituallamiento</a>
+                                <a href="inscripcion_productores.html" class="nav-dropdown-item" id="item-reg-productor">Registrar Productor</a>
+                            </div>
+                        </div>
+
+                        <!-- 2. Emprendimiento -->
+                        <div class="nav-tab-dropdown" id="tab-emprendimiento">
+                            <button class="nav-tab-btn" type="button" aria-haspopup="true">
+                                Emprendimiento <span class="tab-arrow">▼</span>
+                            </button>
+                            <div class="nav-dropdown-menu">
+                                <a href="productores_registrados.html" class="nav-dropdown-item" id="item-dash-prod">Dashboard</a>
+                                <a href="avituallamiento_registrados.html" class="nav-dropdown-item" id="item-dash-avit">Dashboard Avituallamiento</a>
+                                <a href="ruta_productor.html" class="nav-dropdown-item" id="item-dash-seguimiento">Seguimiento</a>
+                                <a href="niveles_priorizacion.html" class="nav-dropdown-item" id="item-dash-priorizacion">Priorización</a>
+                                <a href="pmapc.html" class="nav-dropdown-item" id="item-dash-pmapc">PMAPC</a>
+                            </div>
+                        </div>
+
+                        <!-- 3. Agroambiental (Página actual activa) -->
+                        <div class="nav-tab-dropdown" id="tab-agroambiental">
+                            <button class="nav-tab-btn" type="button" aria-haspopup="true" style="background-color: rgba(251, 244, 222, 0.2); border-color: rgba(251, 244, 222, 0.4);">
+                                Agroambiental <span class="tab-arrow">▼</span>
+                            </button>
+                            <div class="nav-dropdown-menu">
+                                <a href="tablero_ambiental.html" class="nav-dropdown-item" id="item-agro-tablero">Tablero Agroambiental</a>
+                                <a href="feria_ambiental.html" class="nav-dropdown-item" id="item-agro-concursos-ambiental">Concursos Feria Ambiental</a>
+                                <a href="kardex_agroambiental.html" class="nav-dropdown-item" id="item-agro-kardex">Kardex Agroambiental</a>
+                                <a href="concursos_sumapaz.html" class="nav-dropdown-item" id="item-agro-concursos-sumapaz" style="font-weight: 700; color: #FFFFFF; border-left-color: #D4A373;">Concursos Sumapaz</a>
+                            </div>
+                        </div>
+
+                        <!-- 4. Convocatorias -->
+                        <div class="nav-tab-dropdown" id="tab-convocatorias">
+                            <button class="nav-tab-btn" type="button" aria-haspopup="true">
+                                Convocatorias <span class="tab-arrow">▼</span>
+                            </button>
+                            <div class="nav-dropdown-menu align-right">
+                                <a href="convocatorias.html" class="nav-dropdown-item" id="item-conv-convocatorias">Convocatorias</a>
+                                <a href="infografia.html" class="nav-dropdown-item" id="item-conv-infografia">Infografía</a>
+                            </div>
+                        </div>
+
+                        <!-- Cerrar Sesión -->
+                        <button onclick="logout()" class="header-auth-btn" id="btn-logout" title="Cerrar Sesión">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                style="width: 22px; height: 22px; transform: scaleX(-1);">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                            </svg>
                         </button>
+
                     </div>
                 </div>
             </div>
@@ -699,7 +760,7 @@
                         </div>
                         <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center;">
                             <button class="btn-action btn-primary-action" onclick="openModalAddParticipante()" style="padding: 0.6rem 1.1rem; font-size: 0.9rem; background: var(--primary-green); color: white;">
-                                ➕ Agregar Participante
+                                Agregar Participante
                             </button>
                             <button class="btn-action btn-excel-action" onclick="downloadConcursoExcelCurrent()" style="padding: 0.6rem 1.1rem; font-size: 0.9rem;">
                                 Descargar Excel General
@@ -720,7 +781,7 @@
                     <div style="display: flex; justify-content: space-between; align-items: center; margin: 1.8rem 0 0.8rem 0; flex-wrap: wrap; gap: 1rem;">
                         <h4 style="color: var(--primary-green-dark); margin: 0; font-size: 1.15rem;">Información de Participantes y Estado de Juzgamiento</h4>
                         <button class="btn-action btn-primary-action" onclick="openModalAddParticipante()" style="padding: 0.5rem 1rem; font-size: 0.88rem; background: var(--primary-green); color: white;">
-                            ➕ Agregar Participante
+                            Agregar Participante
                         </button>
                     </div>
                     <div class="table-responsive" style="margin-bottom: 1.5rem;">
@@ -840,7 +901,15 @@
                 const isConcursosOnly = (userId === 12 || rolId === 12 || result.is_concursos_only === true);
 
                 if (isConcursosOnly) {
-                    // Hide header links pointing to other modules for user 12
+                    // Hide other navigation tabs for user 12
+                    const tabInsc = document.getElementById('tab-inscripciones');
+                    const tabEmp = document.getElementById('tab-emprendimiento');
+                    const tabAgro = document.getElementById('tab-agroambiental');
+                    const tabConv = document.getElementById('tab-convocatorias');
+                    if (tabInsc) tabInsc.style.display = 'none';
+                    if (tabEmp) tabEmp.style.display = 'none';
+                    if (tabAgro) tabAgro.style.display = 'none';
+                    if (tabConv) tabConv.style.display = 'none';
                     document.querySelectorAll('a[href]').forEach(link => {
                         const href = link.getAttribute('href') || '';
                         if (href && !href.includes('concursos_sumapaz.html') && !href.includes('logout') && !href.startsWith('#') && !href.startsWith('javascript:')) {
@@ -852,11 +921,27 @@
                     window.location.href = 'index.html';
                     return;
                 }
-                document.getElementById('btn-logout').style.display = 'inline-block';
+                const btnLogout = document.getElementById('btn-logout');
+                if (btnLogout) btnLogout.style.display = 'inline-flex';
             } catch (e) {
                 console.warn("Auth check warning:", e);
             }
         }
+
+        document.addEventListener('click', function(e) {
+            const isDropdownBtn = e.target.closest('.nav-tab-btn');
+            const activeDropdown = e.target.closest('.nav-tab-dropdown');
+            
+            document.querySelectorAll('.nav-tab-dropdown').forEach(drop => {
+                if (drop !== activeDropdown) {
+                    drop.classList.remove('active');
+                }
+            });
+            
+            if (isDropdownBtn && activeDropdown) {
+                activeDropdown.classList.toggle('active');
+            }
+        });
 
         async function logout() {
             await fetch('api/logout.php');
@@ -1052,15 +1137,15 @@
                             <button class="btn-action btn-primary-action" style="padding: 0.35rem 0.65rem; font-size: 0.8rem;" onclick="event.stopPropagation(); toggleRowDetail(${realIndex})">Ver Acta</button>
                             <button class="btn-action btn-pdf-action" style="padding: 0.35rem 0.65rem; font-size: 0.8rem;" onclick="downloadIndividualActaPDF(${realIndex})">PDF Acta</button>
                             ${hasEvid}
-                            <button class="btn-action" style="padding: 0.35rem 0.6rem; font-size: 0.8rem; background: #E67E22; color: white;" title="Editar puntajes abajo en pantalla" onclick="event.stopPropagation(); toggleEditInlineRow(${realIndex})">✏️ Editar</button>
-                            <button class="btn-action" style="padding: 0.35rem 0.6rem; font-size: 0.8rem; background: #DC3545; color: white;" title="Quitar participante de este concurso" onclick="event.stopPropagation(); quitarParticipanteConConfirmacion(${realIndex})">🗑️ Quitar</button>
+                            <button class="btn-action" style="padding: 0.35rem 0.6rem; font-size: 0.8rem; background: #E67E22; color: white;" title="Editar puntajes abajo en pantalla" onclick="event.stopPropagation(); toggleEditInlineRow(${realIndex})">Editar</button>
+                            <button class="btn-action" style="padding: 0.35rem 0.6rem; font-size: 0.8rem; background: #DC3545; color: white;" title="Quitar participante de este concurso" onclick="event.stopPropagation(); quitarParticipanteConConfirmacion(${realIndex})">Quitar</button>
                         </div>
                     `;
                 } else {
                     actionsHtml = `
                         <div style="display: flex; gap: 0.4rem; align-items: center;" onclick="event.stopPropagation();">
                             <span style="color: #888; font-style: italic; font-size: 0.82rem;">Sin evaluación</span>
-                            <button class="btn-action" style="padding: 0.35rem 0.6rem; font-size: 0.8rem; background: #DC3545; color: white;" title="Quitar participante de este concurso" onclick="event.stopPropagation(); quitarParticipanteConConfirmacion(${realIndex})">🗑️ Quitar</button>
+                            <button class="btn-action" style="padding: 0.35rem 0.6rem; font-size: 0.8rem; background: #DC3545; color: white;" title="Quitar participante de este concurso" onclick="event.stopPropagation(); quitarParticipanteConConfirmacion(${realIndex})">Quitar</button>
                         </div>
                     `;
                 }
@@ -1239,9 +1324,9 @@
             let imgHtml = `
                 <div style="margin-top: 1.2rem; background: #FAF8F5; padding: 1.2rem; border-radius: 10px; border: 2px solid #2E5A44;">
                     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 0.8rem;">
-                        <strong style="color: #2E5A44; font-size: 1.05rem;">📷 Evidencia Fotográfica Registrada en Terreno:</strong>
+                        <strong style="color: #2E5A44; font-size: 1.05rem;">Evidencia Fotográfica Registrada en Terreno:</strong>
                         <label class="btn-action" style="background: #2E5A44; color: white; padding: 0.55rem 1.2rem; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
-                            <span>${eval.imagen_id ? '🔄 Cambiar Evidencia Fotográfica' : '➕ Subir / Adjuntar Evidencia Fotográfica'}</span>
+                            <span>${eval.imagen_id ? 'Cambiar Evidencia Fotográfica' : 'Subir / Adjuntar Evidencia Fotográfica'}</span>
                             <input type="file" id="input-foto-inline-${index}" accept="image/*" style="display: none;" onchange="subirEvidenciaFotografica(${evalId}, ${index})">
                         </label>
                     </div>
@@ -1314,10 +1399,10 @@
 
                     <div style="margin-top: 1.2rem; text-align: right; border-top: 2px solid #EAE5D9; padding-top: 1rem; display: flex; justify-content: flex-end; gap: 0.8rem; flex-wrap: wrap;">
                         <button class="btn-action" id="btn-save-inline-${index}" onclick="guardarCalificacionInline(${evalId}, ${index})" style="padding: 0.65rem 1.4rem; font-size: 0.95rem; background: #2E5A44; color: white; font-weight: 700;">
-                            💾 Guardar Cambios de Puntaje
+                            Guardar Cambios de Puntaje
                         </button>
                         <button class="btn-action btn-pdf-action" onclick="downloadIndividualActaPDF(${index})" style="padding: 0.65rem 1.2rem; font-size: 0.9rem;">
-                            📄 PDF Acta
+                            PDF Acta
                         </button>
                         <button class="btn-action" onclick="closeRowDetail(${index})" style="padding: 0.65rem 1.2rem; font-size: 0.9rem; background: #6c757d; color: white;">
                             Cerrar
@@ -2025,7 +2110,7 @@
             const nameStr = p.nombre_completo || 'este participante';
             const docStr = p.documento_identidad ? ` (Doc: ${p.documento_identidad})` : '';
 
-            const mensaje = `¿Está seguro de que desea eliminar a "${nameStr}"${docStr} de este concurso?\n\n⚠️ Esta acción desvinculará al participante de este concurso y eliminará las evaluaciones asociadas.`;
+            const mensaje = `¿Está seguro de que desea eliminar a "${nameStr}"${docStr} de este concurso?\n\nEsta acción desvinculará al participante de este concurso y eliminará las evaluaciones asociadas.`;
             
             if (!confirm(mensaje)) return;
 
@@ -2129,7 +2214,7 @@
                                 </div>
                             </div>
                             <button class="btn-action btn-primary-action" style="padding: 0.35rem 0.75rem; font-size: 0.8rem; background: var(--primary-green); color: white;" ${pidAttr} ${docAttr} ${nameAttr} ${veredaAttr} ${telAttr} onclick="executeAddCandidateFromList(this)">
-                                ➕ Agregar
+                                Agregar
                             </button>
                         </div>
                     `;
@@ -2186,7 +2271,7 @@
                 alert('Error de conexión o servidor al intentar agregar el participante.');
             } finally {
                 btn.disabled = false;
-                btn.innerText = '➕ Agregar';
+                btn.innerText = 'Agregar';
             }
         }
 
@@ -2298,17 +2383,17 @@
                         await loadConcursoDetalle(currentConcursoDetail.concurso.id);
                     }
                     await loadDashboard();
-                    alert('✅ Calificación guardada en pantalla correctamente.');
+                    alert('Calificación guardada en pantalla correctamente.');
                 } else {
-                    alert('❌ Error: ' + (data.error || 'No se pudo guardar la calificación.'));
+                    alert('Error: ' + (data.error || 'No se pudo guardar la calificación.'));
                 }
             } catch (e) {
                 console.error("Error al guardar calificación inline:", e);
-                alert('❌ Error de conexión o servidor al intentar guardar.');
+                alert('Error de conexión o servidor al intentar guardar.');
             } finally {
                 if (btn) {
                     btn.disabled = false;
-                    btn.innerText = '💾 Guardar Cambios de Puntaje';
+                    btn.innerText = 'Guardar Cambios de Puntaje';
                 }
             }
         }
@@ -2329,7 +2414,7 @@
                 return;
             }
 
-            if (statusSpan) statusSpan.innerHTML = '⏳ Guardando foto en la base de datos...';
+            if (statusSpan) statusSpan.innerHTML = 'Guardando foto en la base de datos...';
 
             const formData = new FormData();
             formData.append('evaluacion_id', evalId);
@@ -2343,7 +2428,7 @@
                 const data = await res.json();
 
                 if (data.success && data.imagen_id) {
-                    if (statusSpan) statusSpan.innerHTML = '✅ ¡Evidencia fotográfica guardada en BD!';
+                    if (statusSpan) statusSpan.innerHTML = '¡Evidencia fotográfica guardada en BD!';
                     
                     const imgPreview = document.getElementById(`img-preview-${index}`);
                     const containerPreview = document.getElementById(`container-img-preview-${index}`);
@@ -2361,13 +2446,13 @@
                         }
                     }
                 } else {
-                    if (statusSpan) statusSpan.innerHTML = '❌ Error al guardar imagen';
-                    alert('❌ Error: ' + (data.error || 'No se pudo guardar la imagen.'));
+                    if (statusSpan) statusSpan.innerHTML = 'Error al guardar imagen';
+                    alert('Error: ' + (data.error || 'No se pudo guardar la imagen.'));
                 }
             } catch (e) {
                 console.error("Error al subir evidencia fotográfica:", e);
-                if (statusSpan) statusSpan.innerHTML = '❌ Error de servidor';
-                alert('❌ Error al conectar con el servidor.');
+                if (statusSpan) statusSpan.innerHTML = 'Error de servidor';
+                alert('Error al conectar con el servidor.');
             }
         }
     </script>
@@ -2376,16 +2461,16 @@
     <div class="modal-overlay" id="modal-agregar-participante">
         <div class="modal-container" style="max-width: 650px;">
             <div class="modal-header">
-                <h3>➕ Agregar Participante al Concurso</h3>
+                <h3>Agregar Participante al Concurso</h3>
                 <button class="modal-close-btn" onclick="closeModalAgregar()">&times;</button>
             </div>
             <div class="modal-body">
                 <div style="display: flex; gap: 0.5rem; border-bottom: 2px solid #EAE5D9; margin-bottom: 1.2rem;">
                     <button class="btn-action" id="tab-add-search-btn" onclick="switchAddTab('search')" style="background: var(--primary-green); color: white; border-radius: 8px 8px 0 0;">
-                        🔍 Buscar Existente
+                        Buscar Existente
                     </button>
                     <button class="btn-action" id="tab-add-new-btn" onclick="switchAddTab('new')" style="background: #E9ECEF; color: var(--text-dark); border-radius: 8px 8px 0 0;">
-                        👤 Registrar Nuevo
+                        Registrar Nuevo
                     </button>
                 </div>
 

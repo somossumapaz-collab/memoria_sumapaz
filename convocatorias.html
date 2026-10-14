@@ -139,34 +139,77 @@
                 </a>
                 <div class="search-container"
                     style="margin-left: auto; display: flex; align-items: center; gap: 1.5rem;">
-                    <div id="header-links" style="display: flex; align-items: center; gap: 1rem;">
+                    <!-- 4 Pestañas de Navegación Somos Sumapaz -->
+                    <div id="header-auth-container" class="nav-tabs-wrapper">
 
-                        <div id="auth-links" style="display: flex; align-items: center; gap: 1rem;">
-                            <!-- Only visible when logged in -->
-                            <a href="productores_registrados.html" class="nav-link-btn" id="btn-dashboard"
-                                style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Dashboard</a>
-                            <a href="transporte_seguimiento.html" class="nav-link-btn" id="btn-tracking"
-                                style="display: none; margin: 0; background-color: transparent; color: #FBF4DE; border: none; font-weight: 600;">Seguimiento</a>
-                            <button onclick="logout()" class="nav-link-btn" id="btn-logout"
-                                style="display: none; margin: 0; background-color: transparent; cursor: pointer; color: #FBF4DE; border: none;"
-                                title="Cerrar Sesión">
-                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-                                    style="width: 24px; height: 24px; transform: scaleX(-1);">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
-                                </svg>
+                        <!-- 1. Inscripciones -->
+                        <div class="nav-tab-dropdown" id="tab-inscripciones">
+                            <button class="nav-tab-btn" type="button" aria-haspopup="true">
+                                Inscripciones <span class="tab-arrow">▼</span>
                             </button>
+                            <div class="nav-dropdown-menu">
+                                <a href="inscripcion_feria.html" class="nav-dropdown-item" id="item-reg-feria">Inscripción Feria</a>
+                                <a href="inscripcion_jovenes.html" class="nav-dropdown-item" id="item-reg-jovenes">Jóvenes Emprendedores</a>
+                                <a href="inscripcion_tejedoras.html" class="nav-dropdown-item" id="item-reg-tejedoras">Tejedoras y Artesanos</a>
+                                <a href="inscripcion_avituallamiento.html" class="nav-dropdown-item" id="item-reg-avit">Inscripción Avituallamiento</a>
+                                <a href="inscripcion_productores.html" class="nav-dropdown-item" id="item-reg-productor">Registrar Productor</a>
+                            </div>
                         </div>
 
-                        <a href="login.html" class="nav-link-btn" id="btn-login"
-                            style="margin: 0; padding: 0.5rem; display: flex; align-items: center; justify-content: center; color: #FBF4DE;"
-                            title="Iniciar Sesión">
+                        <!-- 2. Emprendimiento (Protegido - Admin / Usuario 1) -->
+                        <div class="nav-tab-dropdown" id="tab-emprendimiento" style="display: none;">
+                            <button class="nav-tab-btn" type="button" aria-haspopup="true">
+                                Emprendimiento <span class="tab-arrow">▼</span>
+                            </button>
+                            <div class="nav-dropdown-menu">
+                                <a href="productores_registrados.html" class="nav-dropdown-item" id="item-dash-prod">Dashboard</a>
+                                <a href="avituallamiento_registrados.html" class="nav-dropdown-item" id="item-dash-avit">Dashboard Avituallamiento</a>
+                                <a href="ruta_productor.html" class="nav-dropdown-item" id="item-dash-seguimiento">Seguimiento</a>
+                                <a href="niveles_priorizacion.html" class="nav-dropdown-item" id="item-dash-priorizacion">Priorización</a>
+                                <a href="pmapc.html" class="nav-dropdown-item" id="item-dash-pmapc">PMAPC</a>
+                            </div>
+                        </div>
+
+                        <!-- 3. Agroambiental (Protegido según Rol) -->
+                        <div class="nav-tab-dropdown" id="tab-agroambiental" style="display: none;">
+                            <button class="nav-tab-btn" type="button" aria-haspopup="true">
+                                Agroambiental <span class="tab-arrow">▼</span>
+                            </button>
+                            <div class="nav-dropdown-menu">
+                                <a href="tablero_ambiental.html" class="nav-dropdown-item" id="item-agro-tablero">Tablero Agroambiental</a>
+                                <a href="feria_ambiental.html" class="nav-dropdown-item" id="item-agro-concursos-ambiental">Concursos Feria Ambiental</a>
+                                <a href="kardex_agroambiental.html" class="nav-dropdown-item" id="item-agro-kardex">Kardex Agroambiental</a>
+                                <a href="concursos_sumapaz.html" class="nav-dropdown-item" id="item-agro-concursos-sumapaz">Concursos Sumapaz</a>
+                            </div>
+                        </div>
+
+                        <!-- 4. Convocatorias (Página actual activa) -->
+                        <div class="nav-tab-dropdown" id="tab-convocatorias">
+                            <button class="nav-tab-btn" type="button" aria-haspopup="true" style="background-color: rgba(251, 244, 222, 0.2); border-color: rgba(251, 244, 222, 0.4);">
+                                Convocatorias <span class="tab-arrow">▼</span>
+                            </button>
+                            <div class="nav-dropdown-menu align-right">
+                                <a href="convocatorias.html" class="nav-dropdown-item" id="item-conv-convocatorias" style="font-weight: 700; color: #FFFFFF; border-left-color: #D4A373;">Convocatorias</a>
+                                <a href="infografia.html" class="nav-dropdown-item" id="item-conv-infografia">Infografía</a>
+                            </div>
+                        </div>
+
+                        <!-- Auth Actions -->
+                        <a href="login.html" class="header-auth-btn" title="Iniciar Sesión" id="btn-login">
                             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-                                style="width: 24px; height: 24px;">
+                                style="width: 22px; height: 22px;">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
                             </svg>
                         </a>
+                        <button onclick="logout()" class="header-auth-btn" id="btn-logout"
+                            style="display: none;" title="Cerrar Sesión">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                style="width: 22px; height: 22px; transform: scaleX(-1);">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -235,18 +278,44 @@
                 const authRes = await fetch('api/check_auth.php');
                 const authResult = await authRes.json();
                 if (authResult.authenticated) {
-                    if (authResult.user_id === 12 || authResult.rol_id === 12 || authResult.is_concursos_only) {
+                    const userId = parseInt(authResult.user_id);
+                    const rolId = parseInt(authResult.rol_id);
+
+                    if (userId === 12 || rolId === 12 || authResult.is_concursos_only) {
                         window.location.href = 'concursos_sumapaz.html';
                         return;
                     }
-                    document.getElementById('btn-login').style.display = 'none';
-                    document.getElementById('btn-dashboard').style.display = 'inline-block';
-                    document.getElementById('btn-tracking').style.display = 'inline-block';
-                    document.getElementById('btn-logout').style.display = 'inline-block';
+                    if (rolId === 6) {
+                        window.location.href = 'tablero_ambiental.html';
+                        return;
+                    }
+
+                    const btnLogin = document.getElementById('btn-login');
+                    const btnLogout = document.getElementById('btn-logout');
+                    if (btnLogin) btnLogin.style.display = 'none';
+                    if (btnLogout) btnLogout.style.display = 'inline-flex';
+
+                    // Si es Admin (usuario 1) o autorizado, habilitar pestañas de gestión
+                    const tabEmp = document.getElementById('tab-emprendimiento');
+                    const tabAgro = document.getElementById('tab-agroambiental');
+                    if (tabEmp) tabEmp.style.display = 'inline-block';
+                    if (tabAgro) tabAgro.style.display = 'inline-block';
                 }
             } catch (e) {
                 console.error("Auth check failed", e);
             }
+
+            // Dropdown click/touch toggle support
+            document.addEventListener('click', (e) => {
+                const tabDropdown = e.target.closest('.nav-tab-dropdown');
+                const tabBtn = e.target.closest('.nav-tab-btn');
+                document.querySelectorAll('.nav-tab-dropdown').forEach(d => {
+                    if (d !== tabDropdown) d.classList.remove('active');
+                });
+                if (tabDropdown && tabBtn) {
+                    tabDropdown.classList.toggle('active');
+                }
+            });
 
             // Load Data
             await loadData();
