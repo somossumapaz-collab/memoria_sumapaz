@@ -1471,21 +1471,39 @@
                 }
             }
 
-            let corregimiento = '';
-            let corregimientoTitulo = 'LOCALIDAD DE SUMAPAZ';
-
-            if (esBlanco) {
-                corregimiento = 'Nazareth';
-                corregimientoTitulo = 'NAZARETH';
-            } else if (esSumapaz) {
-                corregimiento = 'San Juan de Sumapaz';
-                corregimientoTitulo = 'SAN JUAN DE SUMAPAZ';
-            } else if (vereda) {
-                corregimiento = titleCase(vereda);
-                corregimientoTitulo = vereda;
+            // Subtítulo del acta bajo "XXV FERIA AGROAMBIENTAL DE SUMAPAZ":
+            // Depende de la vereda de la persona (ej. EL ITSMO, BETANIA, SANTO DOMINGO, etc.)
+            let veredaTitulo = '';
+            if (vereda) {
+                const normVereda = {
+                    'PENALISA': 'PEÑALISA',
+                    'LOS RIOS': 'LOS RÍOS',
+                    'LAS ANIMAS': 'LAS ÁNIMAS',
+                    'RAIZAL': 'EL RAIZAL',
+                    'ITSMO': 'EL ITSMO',
+                    'LA UNION': 'LA UNIÓN',
+                    'CONCEPCION': 'CONCEPCIÓN',
+                    'SAN JOSE': 'SAN JOSÉ'
+                }[vereda] || vereda;
+                veredaTitulo = normVereda.toUpperCase();
+            } else if (rawCuenca) {
+                veredaTitulo = rawCuenca.toUpperCase();
+            } else {
+                veredaTitulo = 'LOCALIDAD DE SUMAPAZ';
             }
 
-            return { esBlanco, esSumapaz, corregimiento, corregimientoTitulo };
+            let corregimiento = (p.corregimiento || '').trim();
+            if (!corregimiento) {
+                if (esBlanco) {
+                    corregimiento = 'Nazareth';
+                } else if (esSumapaz) {
+                    corregimiento = 'San Juan de Sumapaz';
+                } else if (vereda) {
+                    corregimiento = titleCase(vereda);
+                }
+            }
+
+            return { esBlanco, esSumapaz, corregimiento, veredaTitulo };
         }
 
         let currentActaName = 'acta';
@@ -1552,7 +1570,7 @@
                             </div>
                             <div class="acta-title-block">
                                 <div class="acta-title-main">XXV FERIA AGROAMBIENTAL DE SUMAPAZ</div>
-                                <div class="acta-title-sub">${esc(ubi.corregimientoTitulo)}</div>
+                                <div class="acta-title-sub">${esc(ubi.veredaTitulo)}</div>
                             </div>
 
                             <table class="acta-table">
@@ -1725,7 +1743,7 @@
                                 </div>
                                 <div class="acta-title-block">
                                     <div class="acta-title-main">XXV FERIA AGROAMBIENTAL DE SUMAPAZ</div>
-                                    <div class="acta-title-sub">${esc(ubi.corregimientoTitulo)}</div>
+                                    <div class="acta-title-sub">${esc(ubi.veredaTitulo)}</div>
                                 </div>
                                 <div class="acta-hdr-cell font-bold" style="padding: 6px; font-size: 8.5pt; border: 1px solid #000; margin-bottom: 10px;">
                                     REGISTRO FOTOGRÁFICO DE EVIDENCIA DE CAMPO (${p.fotos.length} FOTOGRAFÍAS)
