@@ -472,18 +472,7 @@
                         <div class="form-group">
                             <label>Línea de Inversión / Proyecto *</label>
                             <select id="sol-proyecto-select" class="form-control" required onchange="onProyectoChange()">
-                                <option value="">-- Seleccionar Proyecto --</option>
-                                <option value="PY-2671">PY-2671 - Asistencia técnica agropecuaria y ambiental</option>
-                                <option value="PY-2666">PY-2666 - Protección y bienestar animal</option>
-                                <option value="PY-2682">PY-2682 - Reverdecimiento Urbano</option>
-                                <option value="PY-2613">PY-2613 - Manejo de emergencias y mitigación del riesgo</option>
-                                <option value="PY-1648">PY-1648 - Sistema de Cosechas de Agua Lluvia / PROCEDAS</option>
-                                <option value="PY-1634">PY-1634 - Asistencia Técnica agropecuaria y ambiental</option>
-                                <option value="PY-1669">PY-1669 - Educación Ambiental</option>
-                                <option value="PY-1651">PY-1651 - Restauración Ecológica</option>
-                                <option value="PY-2327">PY-2327 - Fortalecimiento Institucional</option>
-                                <option value="PY-2689">PY-2689 - Energías alternativas</option>
-                                <option value="OTRO">Otro Proyecto (Escribir Código)</option>
+                                <option value="">Cargando proyectos oficiales de Sumapaz...</option>
                             </select>
                         </div>
                     </div>
@@ -491,7 +480,7 @@
                     <div class="form-grid-2" id="box-proyecto-custom" style="display: none;">
                         <div class="form-group">
                             <label>Código Personalizado de Proyecto *</label>
-                            <input type="text" id="sol-proyecto-custom" class="form-control" placeholder="Ej. PY-9999 o CSU-712-2024">
+                            <input type="text" id="sol-proyecto-custom" class="form-control" placeholder="Ej. 2671 o CSU-712-2024">
                         </div>
                         <div class="form-group">
                             <label>Nombre de la Línea de Inversión</label>
@@ -500,8 +489,11 @@
                     </div>
 
                     <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <label>Meta del Proyecto</label>
-                        <textarea id="sol-meta" rows="2" class="form-control" placeholder="Ej. Apoyar 500 predios rurales con buenas prácticas agropecuarias y ambientales..."></textarea>
+                        <label>Meta del Proyecto *</label>
+                        <select id="sol-meta-select" class="form-control" onchange="onMetaSelectChange()" style="margin-bottom: 0.5rem;" required>
+                            <option value="">-- Seleccionar primero un proyecto para ver sus metas --</option>
+                        </select>
+                        <textarea id="sol-meta" rows="2" class="form-control" placeholder="Seleccione la meta arriba o edite el texto..." required></textarea>
                     </div>
 
                     <!-- 2. PREDIO Y PRODUCTOR BENEFICIARIO -->
@@ -701,6 +693,10 @@
                             <div><strong>Solicitante:</strong> <span id="res-solicitante">-</span></div>
                         </div>
 
+                        <div style="margin-top: 0.75rem; font-size: 0.88rem; border-top: 1px dashed var(--border-light); padding-top: 0.5rem; color: var(--text-main);">
+                            <strong>Meta del Proyecto:</strong> <span id="res-meta">-</span>
+                        </div>
+
                         <!-- Banner de Paz y Salvo -->
                         <div id="banner-paz-y-salvo" style="display: none; margin-top: 1.25rem; background: #C6F6D5; border: 1px solid #9AE6B4; padding: 1rem; border-radius: 8px; color: #22543D;">
                             <div style="display: flex; align-items: center; gap: 0.75rem;">
@@ -818,6 +814,7 @@
     <!-- JAVASCRIPT LOGIC -->
     <script>
         let catalogProductos = [];
+        let catalogProyectos = {};
         let canvas, ctx, isDrawing = false;
         let lastRegisteredCode = '';
         let lastRegisteredCedula = '';
@@ -825,6 +822,7 @@
         document.addEventListener('DOMContentLoaded', async () => {
             initSignaturePad();
             initDateDefaults();
+            await loadProyectosCatalog();
             await loadVeredasCatalog();
             await loadProductosCatalog();
             
@@ -918,15 +916,118 @@
             }
         }
 
+        async function loadProyectosCatalog() {
+            try {
+                let data = null;
+                try {
+                    const res = await fetch('assets/proyectos_metas_sumapaz.json');
+                    if (res.ok) data = await res.json();
+                } catch (e) {
+                    console.warn('Fallback to api/get_proyectos_metas.php');
+                }
+
+                if (!data) {
+                    const resApi = await fetch('api/get_proyectos_metas.php');
+                    if (resApi.ok) data = await resApi.json();
+                }
+
+                if (Array.isArray(data)) {
+                    catalogProyectos = {};
+                    data.forEach(item => {
+                        const cod = String(item.codigo).trim();
+                        if (!catalogProyectos[cod]) {
+                            catalogProyectos[cod] = {
+                                codigo: cod,
+                                nombre: item.nombre,
+                                metas: []
+                            };
+                        }
+                        if (item.meta && !catalogProyectos[cod].metas.includes(item.meta.trim())) {
+                            catalogProyectos[cod].metas.push(item.meta.trim());
+                        }
+                    });
+
+                    const select = document.getElementById('sol-proyecto-select');
+                    let opts = '<option value="">-- Seleccionar Proyecto / Línea de Inversión --</option>';
+
+                    const sortedCodes = Object.keys(catalogProyectos).sort((a, b) => {
+                        const numA = parseInt(a, 10);
+                        const numB = parseInt(b, 10);
+                        if (!isNaN(numA) && !isNaN(numB)) return numA - numB;
+                        return a.localeCompare(b);
+                    });
+
+                    sortedCodes.forEach(c => {
+                        const p = catalogProyectos[c];
+                        opts += `<option value="${p.codigo}" data-codigo="${p.codigo}" data-nombre="${escapeHtml(p.nombre)}">Proyecto ${p.codigo} - ${escapeHtml(p.nombre)}</option>`;
+                    });
+
+                    opts += '<option value="OTRO">Otro Proyecto (Escribir Código Personalizado)</option>';
+                    select.innerHTML = opts;
+                }
+            } catch (err) {
+                console.error('Error cargando proyectos y metas:', err);
+            }
+        }
+
         function onProyectoChange() {
-            const sel = document.getElementById('sol-proyecto-select').value;
+            const selVal = document.getElementById('sol-proyecto-select').value;
             const customBox = document.getElementById('box-proyecto-custom');
-            if (sel === 'OTRO') {
+            const metaSelect = document.getElementById('sol-meta-select');
+            const metaText = document.getElementById('sol-meta');
+
+            if (selVal === 'OTRO') {
                 customBox.style.display = 'grid';
                 document.getElementById('sol-proyecto-custom').required = true;
+                metaSelect.innerHTML = '<option value="OTRA">Otra Meta (Escribir personalizada abajo)</option>';
+                metaSelect.disabled = true;
+                metaText.value = '';
+                metaText.placeholder = 'Escriba la meta correspondiente al proyecto personalizado...';
+                metaText.readOnly = false;
+                return;
+            }
+
+            customBox.style.display = 'none';
+            document.getElementById('sol-proyecto-custom').required = false;
+            metaSelect.disabled = false;
+
+            if (!selVal || !catalogProyectos[selVal]) {
+                metaSelect.innerHTML = '<option value="">-- Seleccionar primero un proyecto para ver sus metas --</option>';
+                metaText.value = '';
+                return;
+            }
+
+            const proj = catalogProyectos[selVal];
+            const metas = proj.metas || [];
+
+            let opts = '';
+            if (metas.length === 1) {
+                opts += `<option value="${escapeHtml(metas[0])}">${escapeHtml(metas[0])}</option>`;
+                metaSelect.innerHTML = opts;
+                metaText.value = metas[0];
             } else {
-                customBox.style.display = 'none';
-                document.getElementById('sol-proyecto-custom').required = false;
+                opts += `<option value="">-- Seleccionar Meta del Proyecto (${metas.length} disponibles) --</option>`;
+                metas.forEach((m, idx) => {
+                    opts += `<option value="${escapeHtml(m)}">${idx + 1}. ${escapeHtml(m)}</option>`;
+                });
+                opts += '<option value="OTRA">Otra Meta (Escribir personalizada)</option>';
+                metaSelect.innerHTML = opts;
+                metaText.value = '';
+            }
+        }
+
+        function onMetaSelectChange() {
+            const metaSelect = document.getElementById('sol-meta-select');
+            const metaText = document.getElementById('sol-meta');
+            const val = metaSelect.value;
+            if (val === 'OTRA') {
+                metaText.value = '';
+                metaText.placeholder = 'Escriba la meta personalizada aquí...';
+                metaText.focus();
+            } else if (val) {
+                metaText.value = val;
+            } else {
+                metaText.value = '';
             }
         }
 
@@ -1092,8 +1193,14 @@
                 numProyecto = document.getElementById('sol-proyecto-custom').value.trim();
                 lineaInv = document.getElementById('sol-linea-custom').value.trim();
             } else {
-                const optText = document.getElementById('sol-proyecto-select').selectedOptions[0].text;
-                lineaInv = optText;
+                const proj = catalogProyectos[numProyecto];
+                lineaInv = proj ? proj.nombre : numProyecto;
+            }
+
+            const metaVal = document.getElementById('sol-meta').value.trim();
+            if (!metaVal) {
+                alert('Por favor seleccione o ingrese la Meta del Proyecto.');
+                return;
             }
 
             const payload = {
@@ -1101,7 +1208,7 @@
                 fecha_retiro: document.getElementById('sol-fecha-retiro').value || null,
                 numero_proyecto: numProyecto,
                 linea_inversion: lineaInv,
-                meta: document.getElementById('sol-meta').value.trim(),
+                meta: metaVal,
                 vereda: document.getElementById('sol-vereda').value,
                 latitud: document.getElementById('sol-latitud').value ? parseFloat(document.getElementById('sol-latitud').value) : null,
                 longitud: document.getElementById('sol-longitud').value ? parseFloat(document.getElementById('sol-longitud').value) : null,
@@ -1214,7 +1321,8 @@
             }
             document.getElementById('res-coordenadas').textContent = coordsTxt;
 
-            document.getElementById('res-proyecto').textContent = sol.numero_proyecto;
+            document.getElementById('res-proyecto').textContent = sol.numero_proyecto + (sol.linea_inversion ? ' - ' + sol.linea_inversion : '');
+            document.getElementById('res-meta').textContent = sol.meta || 'No especificada';
             document.getElementById('res-solicitante').textContent = sol.solicitante_nombre;
 
             // Badges

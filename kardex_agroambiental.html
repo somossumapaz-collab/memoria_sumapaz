@@ -892,7 +892,7 @@
 
                             <div class="form-group">
                                 <label>Número de Proyecto / Línea</label>
-                                <input type="text" id="form-numero-proyecto" class="filter-control" placeholder="Ej. PY-2671, PY-2666">
+                                <input type="text" id="form-numero-proyecto" class="filter-control" placeholder="Ej. 2671" list="list-proyectos-kardex">
                             </div>
 
                             <div class="form-group">
@@ -1079,6 +1079,12 @@
                             <option value="all">Todas las Veredas</option>
                         </select>
                     </div>
+                    <div class="filter-group" style="min-width: 170px;">
+                        <label>Proyecto</label>
+                        <select id="filter-solicitud-proyecto" class="filter-control" onchange="filterSolicitudesTable()">
+                            <option value="all">Todos los Proyectos</option>
+                        </select>
+                    </div>
                     <div style="display: flex; gap: 0.5rem; align-self: flex-end;">
                         <a href="solicitud_insumos.html" target="_blank" class="btn-action" style="background: var(--accent-green); color: white; text-decoration: none; padding: 0.6rem 1rem; border-radius: 6px; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.4rem;">
                             + Abrir Formato Solicitud
@@ -1185,8 +1191,9 @@
 
                     <div class="form-group" style="margin-bottom: 0.85rem;">
                         <label>Número de Proyecto</label>
-                        <input type="text" id="modal-numero-proyecto" class="filter-control" placeholder="Ej. PY-2671">
+                        <input type="text" id="modal-numero-proyecto" class="filter-control" placeholder="Ej. 2671" list="list-proyectos-kardex">
                     </div>
+                    <datalist id="list-proyectos-kardex"></datalist>
 
                     <div class="form-group" style="margin-bottom: 0.85rem;">
                         <label>Foto / Comprobante de Movimiento</label>
@@ -1398,6 +1405,7 @@
         let allMovimientos = [];
         let allCategorias = [];
         let allVeredas = [];
+        let allProyectosCatalog = {};
 
         document.addEventListener('DOMContentLoaded', async () => {
             checkAuthSession();
@@ -1411,6 +1419,7 @@
             onFormTipoChange();
 
             await loadDashboardData();
+            await loadProyectosCatalog();
             await loadProductosCatalog();
             await loadKardexMovimientosHistory();
             await loadSolicitudesList();
@@ -1537,6 +1546,69 @@
                 }
             } catch (err) {
                 console.error('Error loading dashboard:', err);
+            }
+        }
+
+        async function loadProyectosCatalog() {
+            try {
+                let data = null;
+                try {
+                    const res = await fetch('assets/proyectos_metas_sumapaz.json');
+                    if (res.ok) data = await res.json();
+                } catch(e) {}
+
+                if (!data) {
+                    const resApi = await fetch('api/get_proyectos_metas.php');
+                    if (resApi.ok) data = await resApi.json();
+                }
+
+                if (Array.isArray(data)) {
+                    allProyectosCatalog = {};
+                    data.forEach(item => {
+                        const cod = String(item.codigo).trim();
+                        if (!allProyectosCatalog[cod]) {
+                            allProyectosCatalog[cod] = {
+                                codigo: cod,
+                                nombre: item.nombre,
+                                metas: []
+                            };
+                        }
+                        if (item.meta && !allProyectosCatalog[cod].metas.includes(item.meta.trim())) {
+                            allProyectosCatalog[cod].metas.push(item.meta.trim());
+                        }
+                    });
+
+                    const sortedCodes = Object.keys(allProyectosCatalog).sort((a, b) => {
+                        const numA = parseInt(a, 10);
+                        const numB = parseInt(b, 10);
+                        if (!isNaN(numA) && !isNaN(numB)) return numA - numB;
+                        return a.localeCompare(b);
+                    });
+
+                    // Datalist for inputs
+                    const datalist = document.getElementById('list-proyectos-kardex');
+                    if (datalist) {
+                        let dlHtml = '';
+                        sortedCodes.forEach(c => {
+                            const p = allProyectosCatalog[c];
+                            dlHtml += `<option value="${p.codigo}">Proyecto ${p.codigo} - ${escapeHtml(p.nombre)}</option>`;
+                        });
+                        datalist.innerHTML = dlHtml;
+                    }
+
+                    // Select filter for solicitudes
+                    const solFilter = document.getElementById('filter-solicitud-proyecto');
+                    if (solFilter) {
+                        let fHtml = '<option value="all">Todos los Proyectos</option>';
+                        sortedCodes.forEach(c => {
+                            const p = allProyectosCatalog[c];
+                            fHtml += `<option value="${p.codigo}">Proyecto ${p.codigo} - ${escapeHtml(p.nombre.length > 55 ? p.nombre.substring(0, 52) + '...' : p.nombre)}</option>`;
+                        });
+                        solFilter.innerHTML = fHtml;
+                    }
+                }
+            } catch (err) {
+                console.error('Error cargando catálogo de proyectos:', err);
             }
         }
 
@@ -2067,17 +2139,21 @@
         function filterSolicitudesTable() {
             const search = document.getElementById('search-solicitud').value.toLowerCase();
             const vereda = document.getElementById('filter-solicitud-vereda').value;
+            const proyecto = document.getElementById('filter-solicitud-proyecto') ? document.getElementById('filter-solicitud-proyecto').value : 'all';
 
             const filtered = allSolicitudes.filter(s => {
                 const matchSearch = (s.codigo_solicitud && s.codigo_solicitud.toLowerCase().includes(search)) ||
                                     (s.nombre_productor && s.nombre_productor.toLowerCase().includes(search)) ||
                                     (s.cedula_productor && s.cedula_productor.toLowerCase().includes(search)) ||
                                     (s.numero_proyecto && s.numero_proyecto.toLowerCase().includes(search)) ||
+                                    (s.linea_inversion && s.linea_inversion.toLowerCase().includes(search)) ||
+                                    (s.meta && s.meta.toLowerCase().includes(search)) ||
                                     (s.solicitante_nombre && s.solicitante_nombre.toLowerCase().includes(search)) ||
                                     (s.vereda && s.vereda.toLowerCase().includes(search));
 
                 const matchVereda = (vereda === 'all' || s.vereda === vereda);
-                return matchSearch && matchVereda;
+                const matchProyecto = (proyecto === 'all' || s.numero_proyecto === proyecto);
+                return matchSearch && matchVereda && matchProyecto;
             });
 
             renderSolicitudesTable(filtered);
