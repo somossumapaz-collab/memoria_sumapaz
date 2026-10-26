@@ -192,6 +192,8 @@
         .btn-light { background: rgba(251, 244, 222, 0.18); color: #FBF4DE; border: 1px solid rgba(251, 244, 222, 0.3); }
         .btn-primary { background: var(--primary-green); color: #fff; }
         .btn-gold { background: var(--accent-gold); color: #fff; }
+        .btn-danger { background: #B91C1C; color: #fff; }
+        .btn-danger:hover { background: #991B1B; }
         .btn-outline { background: #fff; color: var(--primary-green); border: 1px solid var(--primary-green); }
         .btn-sm { padding: 0.38rem 0.75rem; font-size: 0.78rem; white-space: nowrap; }
 
@@ -394,7 +396,25 @@
         th.nosort { cursor: default; }
         td { padding: 0.6rem 0.65rem; border-bottom: 1px solid #E3E6EA; vertical-align: top; }
         tr:hover td { background: #FAFBFA; }
-        .tag { display: inline-block; background: #EEF3EF; color: var(--primary-green-dark); border-radius: 6px; padding: 0.12rem 0.5rem; margin: 0.1rem 0.15rem 0.1rem 0; font-size: 0.72rem; }
+        .tag { display: inline-flex; align-items: center; gap: 0.25rem; background: #EEF3EF; color: var(--primary-green-dark); border-radius: 6px; padding: 0.14rem 0.5rem; margin: 0.12rem 0.15rem 0.12rem 0; font-size: 0.72rem; }
+        .tag-del { border: none; background: rgba(185, 28, 28, 0.12); color: #B91C1C; border-radius: 4px; width: 16px; height: 16px; line-height: 14px; font-size: 0.75rem; font-weight: 800; cursor: pointer; padding: 0; display: inline-flex; align-items: center; justify-content: center; transition: all 0.15s; }
+        .tag-del:hover { background: #B91C1C; color: #fff; }
+        .btn-add-tag { display: inline-flex; align-items: center; gap: 0.2rem; background: #fff; color: var(--primary-green); border: 1px dashed var(--primary-green); border-radius: 6px; padding: 0.12rem 0.48rem; margin: 0.12rem 0; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s; }
+        .btn-add-tag:hover { background: var(--primary-green); color: #fff; border-style: solid; }
+        .concursos-cat-group { border: 1px solid #E3E6EA; border-radius: 10px; margin-bottom: 0.85rem; overflow: hidden; }
+        .concursos-cat-head { background: #F1F4F2; color: var(--primary-green-dark); font-weight: 700; font-size: 0.82rem; padding: 0.6rem 0.85rem; border-bottom: 1px solid #E3E6EA; }
+        .concursos-item { display: flex; align-items: flex-start; gap: 0.6rem; padding: 0.55rem 0.85rem; border-bottom: 1px solid #F1F4F2; cursor: pointer; font-size: 0.83rem; transition: background 0.15s; }
+        .concursos-item:last-child { border-bottom: none; }
+        .concursos-item:hover { background: #F8FAF9; }
+        .concursos-item.checked { background: #EEF6F0; font-weight: 600; }
+        .concursos-item input[type="checkbox"] { margin-top: 0.18rem; width: 16px; height: 16px; accent-color: var(--primary-green); cursor: pointer; flex-shrink: 0; }
+        .dup-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1rem; margin-top: 0.85rem; }
+        .dup-card { border: 2px solid #E3E6EA; border-radius: 12px; padding: 1rem; background: #fff; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; transition: border-color 0.15s, box-shadow 0.15s; }
+        .dup-card:hover { border-color: var(--primary-green); box-shadow: 0 4px 16px rgba(63, 96, 40, 0.12); }
+        .dup-card-head { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E3E6EA; padding-bottom: 0.5rem; }
+        .dup-field { font-size: 0.8rem; padding: 0.3rem 0.45rem; border-radius: 6px; margin-bottom: 0.2rem; }
+        .dup-field.is-diff { background: #FFF8E1; border-left: 3px solid #F59E0B; font-weight: 600; }
+        .dup-field b { color: var(--text-muted); font-size: 0.72rem; text-transform: uppercase; display: inline-block; min-width: 95px; }
         .muted { color: var(--text-muted); }
         .dup { background: #FFF3CD; color: #856404; border-radius: 6px; padding: 0.05rem 0.4rem; font-size: 0.68rem; font-weight: 700; }
         .pager { display: flex; justify-content: space-between; align-items: center; margin-top: 0.85rem; font-size: 0.82rem; color: var(--text-muted); gap: 0.5rem; flex-wrap: wrap; }
@@ -673,6 +693,8 @@
             </div>
             <div style="display:flex;gap:.6rem;flex-wrap:wrap">
                 <button class="btn btn-outline" onclick="loadData()">Actualizar</button>
+
+                <button class="btn btn-danger" id="btn-delete-dups" onclick="deleteAllDuplicates()">Eliminar todos los duplicados</button>
                 <button class="btn btn-gold" onclick="exportExcel()">Exportar Excel</button>
             </div>
         </div>
@@ -796,12 +818,59 @@
             <div class="modal-head">
                 <h2 id="acta-title">Acta de inscripción</h2>
                 <div style="display:flex;gap:.4rem">
+                    <button class="btn btn-gold btn-sm" onclick="if(currentActaProductorId) openConcursosModal(currentActaProductorId)">Editar concursos</button>
                     <button class="btn btn-primary btn-sm" onclick="downloadActaPdf()">Descargar PDF</button>
                     <button class="btn btn-outline btn-sm" onclick="printActa()">Imprimir</button>
                     <button class="btn btn-outline btn-sm" onclick="closeActa()">Cerrar</button>
                 </div>
             </div>
             <div class="modal-body" id="acta-body"></div>
+        </div>
+    </div>
+
+    <!-- MODAL GESTIONAR CONCURSOS DE UN PRODUCTOR -->
+    <div class="modal-bg" id="concursos-modal" onclick="if(event.target===this) closeConcursosModal()">
+        <div class="modal" style="max-width:740px">
+            <div class="modal-head">
+                <div>
+                    <h2 id="concursos-modal-title">Gestionar concursos</h2>
+                    <div id="concursos-modal-subtitle" class="muted" style="font-size:0.8rem;margin-top:2px;"></div>
+                </div>
+                <div style="display:flex;gap:.4rem;align-items:center">
+                    <span id="concursos-selected-badge" class="chip" style="font-size:0.8rem">0 seleccionados</span>
+                    <button class="btn btn-primary btn-sm" id="btn-save-concursos" onclick="saveConcursosModal()">Guardar cambios</button>
+                    <button class="btn btn-outline btn-sm" onclick="closeConcursosModal()">Cancelar</button>
+                </div>
+            </div>
+            <div class="modal-body" style="max-height:75vh;overflow-y:auto">
+                <div style="margin-bottom:0.85rem;display:flex;gap:0.5rem;align-items:center">
+                    <input type="text" id="concursos-search" placeholder="Filtrar concurso por nombre o categoría..." oninput="filterConcursosModal()" style="width:100%;padding:0.55rem 0.75rem;border:1px solid #CCC;border-radius:8px;font-family:inherit;font-size:0.85rem;">
+                </div>
+                <div id="concursos-modal-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL ELEGIR CUÁL DUPLICADO DEJAR CUANDO HAY DIFERENCIAS -->
+    <div class="modal-bg" id="dup-modal" onclick="if(event.target===this) closeDupModal()">
+        <div class="modal" style="max-width:900px">
+            <div class="modal-head">
+                <div>
+                    <h2 id="dup-modal-title">Registros duplicados con diferencias</h2>
+                    <div id="dup-modal-subtitle" class="muted" style="font-size:0.82rem;margin-top:2px;"></div>
+                </div>
+                <div style="display:flex;gap:.4rem;align-items:center">
+                    <button class="btn btn-outline btn-sm" onclick="closeDupModal()">Cancelar</button>
+                </div>
+            </div>
+            <div class="modal-body" style="max-height:78vh;overflow-y:auto">
+                <div id="dup-diff-summary" style="background:#FFF8E1;border:1px solid #FCD34D;color:#92400E;padding:0.65rem 0.9rem;border-radius:8px;font-size:0.83rem;margin-bottom:0.75rem;"></div>
+                <label class="chk" style="font-size:0.83rem;font-weight:600;margin-bottom:0.5rem;">
+                    <input type="checkbox" id="dup-merge-concursos" style="width:auto">
+                    Unir también los concursos de las demás copias en el registro que elijas conservar
+                </label>
+                <div id="dup-modal-cards" class="dup-cards-grid"></div>
+            </div>
         </div>
     </div>
 
@@ -906,7 +975,9 @@
                     fechaDia,
                     nombre_inscriptor: p.nombre_inscriptor || '',
                     nivel_escolaridad: p.nivel_escolaridad || 'Sin dato',
-                    inscripciones: inscByProd[p.id] || [],
+                    inscripciones: [...(inscByProd[p.id] || [])],
+                    origInscripciones: [...(inscByProd[p.id] || [])],
+                    duplicateGroupIds: [p.id],
                     isDuplicate: false,
                     duplicateCount: 1
                 };
@@ -918,11 +989,22 @@
                 if (g.length < 2) return;
                 const sorted = g.map(x => byId[x.id]).sort((a, b) => b.id - a.id);
                 const keep = sorted[0];
+                const groupIds = sorted.map(x => x.id);
+                sorted.forEach(x => { x.duplicateGroupIds = groupIds; });
                 keep.duplicateCount = g.length;
                 const seen = new Set(keep.inscripciones.map(i => i.concurso_id));
                 sorted.slice(1).forEach(d => {
                     d.isDuplicate = true;
                     d.inscripciones.forEach(i => { if (!seen.has(i.concurso_id)) { seen.add(i.concurso_id); keep.inscripciones.push(i); } });
+                });
+            });
+            const dupCount = state.personas.filter(p => p.isDuplicate).length;
+            const btnDelDups = document.getElementById('btn-delete-dups');
+            if (btnDelDups) {
+                btnDelDups.textContent = dupCount > 0 ? `Eliminar todos los duplicados (${dupCount})` : 'Eliminar todos los duplicados';
+            }
+            [].forEach(() => {
+                [].forEach(() => {
                 });
             });
         }
@@ -1357,10 +1439,18 @@
                     <td>${esc(titleCase(p.vereda))}</td>
                     <td>${esc(p.genero)}</td>
                     <td>${p.edadValida ?? '<span class="muted">-</span>'}</td>
-                    <td>${p.inscFiltradas.map(i => `<span class="tag" title="${esc(state.concursosById[i.concurso_id]?.nombre)}">${esc(shortName(state.concursosById[i.concurso_id]?.nombre || ('#' + i.concurso_id)))}</span>`).join('') || '<span class="muted">-</span>'}</td>
+                    <td>
+                        ${p.inscFiltradas.map(i => `<span class="tag" title="${esc(state.concursosById[i.concurso_id]?.nombre)}">${esc(shortName(state.concursosById[i.concurso_id]?.nombre || ('#' + i.concurso_id)))} <button class="tag-del" title="Quitar este concurso" onclick="removeConcursoIndividual(${p.id}, ${i.concurso_id})">×</button></span>`).join('')}
+                        <button class="btn-add-tag" title="Agregar o quitar concursos" onclick="openConcursosModal(${p.id})">+ Concursos</button>
+                    </td>
                     <td>${p.origen_registro === 'web' ? '<span class="tag" style="background:#E0F2FE;color:#0369A1;font-weight:bold;">Web</span>' : (esc(p.nombre_inscriptor) || '<span class="muted">App Móvil</span>')}</td>
                     <td style="white-space:nowrap">${esc(p.fecha_inscripcion || '')}</td>
-                    <td><button class="btn btn-primary btn-sm" onclick="openActa(${p.id})">Ver</button></td>
+                    <td style="white-space:nowrap">
+                        <div style="display:flex;gap:.35rem;align-items:center">
+                            <button class="btn btn-primary btn-sm" onclick="openActa(${p.id})">Ver</button>
+                            ${(p.duplicateCount > 1 || p.isDuplicate) ? `<button class="btn btn-danger btn-sm" onclick="handleDeleteDuplicate(${p.id})" title="Eliminar copias duplicadas">Eliminar duplicado</button>` : ''}
+                        </div>
+                    </td>
                 </tr>`).join('');
         }
         const shortName = n => n.length > 38 ? n.slice(0, 38) + '...' : n;
@@ -1507,9 +1597,11 @@
         }
 
         let currentActaName = 'acta';
+        let currentActaProductorId = null;
         async function openActa(id) {
             const modal = document.getElementById('acta-modal');
             const body = document.getElementById('acta-body');
+            currentActaProductorId = id;
             modal.classList.add('open');
             body.innerHTML = '<div class="loading"><div class="spinner"></div>Cargando formato de acta oficial...</div>';
             try {
@@ -1549,7 +1641,7 @@
                     if (selectedIds.has(cId)) return true;
                     const cln = (cName || '').toLowerCase().trim();
                     if (registeredNames.some(rn => rn && (cln.includes(rn) || rn.includes(cln.slice(0, 22))))) return true;
-                    if (notesLower && cln.length > 5 && notesLower.includes(cln.slice(0, 25))) return true;
+                    if (d.concursos.length === 0 && !(p.notes || '').startsWith('CONCURSOS SELECCIONADOS:') && notesLower && cln.length > 5 && notesLower.includes(cln.slice(0, 25))) return true;
                     return false;
                 }
 
@@ -1788,7 +1880,321 @@
             w.document.close();
             w.onload = () => { w.focus(); w.print(); };
         }
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeActa(); });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                if (document.getElementById('dup-modal').classList.contains('open')) closeDupModal();
+                else if (document.getElementById('concursos-modal').classList.contains('open')) closeConcursosModal();
+                else closeActa();
+            }
+        });
+
+        // ================== ELIMINAR DUPLICADOS (GLOBAL Y POR FILA) ==================
+        async function deleteAllDuplicates() {
+            const dupCount = state.personas.filter(p => p.isDuplicate).length;
+            const msg = dupCount > 0
+                ? `Se detectaron ${dupCount} copia(s) duplicada(s).\n\nPara cada persona repetida se dejará un único registro conservando TODOS los concursos diferentes inscritos en sus copias (si un concurso se repite queda solo 1), además de sus firmas y fotos.\n\n¿Desea eliminar todos los duplicados ahora?`
+                : `¿Desea verificar y eliminar todos los registros o concursos duplicados en la base de datos?`;
+            if (!confirm(msg)) return;
+
+            const btn = document.getElementById('btn-delete-dups');
+            const origText = btn ? btn.textContent : 'Eliminar todos los duplicados';
+            if (btn) { btn.disabled = true; btn.textContent = 'Eliminando duplicados...'; }
+            try {
+                const res = await fetch('api/manage_feria_ambiental.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'delete_all_duplicates' })
+                });
+                const d = await res.json();
+                if (!res.ok || !d.success) throw new Error(d.error || 'Error al eliminar duplicados');
+                alert(d.message || 'Todos los duplicados fueron eliminados correctamente.');
+                await loadData();
+            } catch (e) {
+                alert('Error: ' + e.message);
+            } finally {
+                if (btn) { btn.disabled = false; btn.textContent = origText; }
+            }
+        }
+
+        let activeDupGroupIds = [];
+
+        function getOrigConcursosIds(c) {
+            return [...new Set((c.origInscripciones || []).map(i => Number(i.concurso_id)))].sort((a, b) => a - b);
+        }
+
+        async function handleDeleteDuplicate(productorId) {
+            const p = state.personas.find(x => x.id === productorId);
+            if (!p) return;
+            const copies = (p.duplicateGroupIds || [p.id])
+                .map(id => state.personas.find(x => x.id === id))
+                .filter(Boolean)
+                .sort((a, b) => b.id - a.id);
+
+            if (copies.length < 2) {
+                alert('Este registro no tiene copias duplicadas.');
+                return;
+            }
+
+            const checks = [
+                { key: 'nombre', label: 'Nombre', fn: c => norm(c.nombreCompleto) },
+                { key: 'documento', label: 'Documento', fn: c => norm(c.numero_documento) },
+                { key: 'vereda', label: 'Vereda', fn: c => norm(c.vereda) },
+                { key: 'predio', label: 'Predio / Finca', fn: c => norm(c.nombre_predio) },
+                { key: 'extension', label: 'Extensión finca', fn: c => norm(c.extension_finca) },
+                { key: 'telefono', label: 'Teléfono', fn: c => norm(c.telefono) },
+                { key: 'email', label: 'Correo', fn: c => norm(c.email) },
+                { key: 'genero', label: 'Género', fn: c => norm(c.genero) },
+                { key: 'edad', label: 'Edad', fn: c => String(c.edadValida ?? '') },
+                { key: 'escolaridad', label: 'Escolaridad', fn: c => norm(c.nivel_escolaridad) },
+                { key: 'observaciones', label: 'Observaciones', fn: c => norm(c.observaciones) }
+            ];
+
+            const diffKeys = new Set();
+            const diffLabels = [];
+            checks.forEach(ch => {
+                const distinct = new Set(copies.map(ch.fn));
+                if (distinct.size > 1) {
+                    diffKeys.add(ch.key);
+                    diffLabels.push(ch.label);
+                }
+            });
+
+            // Si todas las copias tienen exactamente la misma información y los mismos concursos, dejar solo una automáticamente
+            if (diffKeys.size === 0) {
+                const scored = [...copies].sort((a, b) => {
+                    const scoreA = (a.tiene_firma_productor ? 4 : 0) + (a.tiene_firma_inscriptor ? 2 : 0) + (a.tiene_fotos ? 1 : 0);
+                    const scoreB = (b.tiene_firma_productor ? 4 : 0) + (b.tiene_firma_inscriptor ? 2 : 0) + (b.tiene_fotos ? 1 : 0);
+                    return (scoreB - scoreA) || (b.id - a.id);
+                });
+                const keep = scored[0];
+                const deleteIds = scored.slice(1).map(c => c.id);
+                await executeResolveDuplicate(keep.id, deleteIds, true,
+                    `Todas las ${copies.length} copias de ${p.nombreCompleto} son idénticas. Se dejó únicamente el registro #${keep.id}.`);
+                return;
+            }
+
+            // Si hay diferencias entre las copias, mostrar modal comparativo para elegir cuál dejar
+            activeDupGroupIds = copies.map(c => c.id);
+            document.getElementById('dup-modal-title').textContent = `Elegir cuál registro dejar — ${p.nombreCompleto}`;
+            document.getElementById('dup-modal-subtitle').textContent =
+                `Se encontraron ${copies.length} copias para el documento ${p.numero_documento || '(sin documento)'} con diferencias.`;
+            document.getElementById('dup-diff-summary').innerHTML =
+                `<b>Diferencias detectadas en los datos:</b> ${esc(diffLabels.join(', '))}. Selecciona cuál registro deseas conservar (se conservarán todos los concursos diferentes inscritos en cualquiera de las copias y si se repiten quedará solo 1).`;
+            const chkMerge = document.getElementById('dup-merge-concursos');
+            if (chkMerge) chkMerge.checked = true;
+
+            const cardsHtml = copies.map(c => {
+                const origIds = getOrigConcursosIds(c);
+                const concTags = origIds.length
+                    ? origIds.map(cid => `<span class="tag">${esc(shortName(state.concursosById[cid]?.nombre || ('#' + cid)))}</span>`).join('')
+                    : '<span class="muted">Sin concursos registrados</span>';
+                const mediaBadges = [
+                    c.tiene_firma_productor ? '<span class="tag" style="background:#DCFCE7;color:#166534;">Firma productor</span>' : '<span class="tag" style="background:#FEE2E2;color:#991B1B;">Sin firma prod.</span>',
+                    c.tiene_firma_inscriptor ? '<span class="tag" style="background:#DCFCE7;color:#166534;">Firma promotor</span>' : '',
+                    c.tiene_fotos ? '<span class="tag" style="background:#E0F2FE;color:#0369A1;">Con fotos</span>' : ''
+                ].filter(Boolean).join(' ');
+
+                return `
+                <div class="dup-card">
+                    <div>
+                        <div class="dup-card-head">
+                            <div>
+                                <b style="font-size:1rem;color:var(--primary-green-dark);">Registro #${c.id}</b>
+                                <div class="muted" style="font-size:0.74rem;">Fecha: ${esc(c.fecha_inscripcion || '-')}</div>
+                            </div>
+                            <button class="btn btn-outline btn-sm" onclick="openActa(${c.id})">Ver acta</button>
+                        </div>
+                        <div style="margin-top:0.55rem;">
+                            <div class="dup-field ${diffKeys.has('nombre') ? 'is-diff' : ''}"><b>Nombre:</b> ${esc(c.nombreCompleto)}</div>
+                            <div class="dup-field ${diffKeys.has('documento') ? 'is-diff' : ''}"><b>Documento:</b> ${esc(c.numero_documento || '-')}</div>
+                            <div class="dup-field ${diffKeys.has('vereda') ? 'is-diff' : ''}"><b>Vereda:</b> ${esc(titleCase(c.vereda || '-'))}</div>
+                            <div class="dup-field ${diffKeys.has('predio') || diffKeys.has('extension') ? 'is-diff' : ''}"><b>Predio:</b> ${esc(c.nombre_predio || '-')} ${c.extension_finca ? `(${esc(c.extension_finca)} fan.)` : ''}</div>
+                            <div class="dup-field ${diffKeys.has('telefono') ? 'is-diff' : ''}"><b>Teléfono:</b> ${esc(c.telefono || '-')}</div>
+                            <div class="dup-field ${diffKeys.has('email') ? 'is-diff' : ''}"><b>Correo:</b> ${esc(c.email || '-')}</div>
+                            <div class="dup-field ${diffKeys.has('genero') || diffKeys.has('edad') ? 'is-diff' : ''}"><b>Género / Edad:</b> ${esc(c.genero || '-')} · ${c.edadValida ?? '-'} años</div>
+                            <div class="dup-field ${diffKeys.has('escolaridad') ? 'is-diff' : ''}"><b>Escolaridad:</b> ${esc(c.nivel_escolaridad || '-')}</div>
+                            <div class="dup-field"><b>Inscriptor:</b> ${esc(c.nombre_inscriptor || (c.origen_registro === 'web' ? 'Web' : 'App Móvil'))}</div>
+                            <div class="dup-field ${diffKeys.has('observaciones') ? 'is-diff' : ''}"><b>Observaciones:</b> ${esc(c.observaciones || 'Ninguna')}</div>
+                            <div class="dup-field ${diffKeys.has('concursos') ? 'is-diff' : ''}" style="margin-top:0.35rem;">
+                                <b style="display:block;margin-bottom:0.25rem;">Concursos en esta copia (${origIds.length}):</b>
+                                <div>${concTags}</div>
+                            </div>
+                            <div style="margin-top:0.45rem;">${mediaBadges}</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="width:100%;margin-top:0.5rem;" onclick="confirmKeepDuplicate(${c.id})">
+                        Dejar este registro (#${c.id}) y eliminar ${copies.length - 1} copia(s)
+                    </button>
+                </div>`;
+            }).join('');
+
+            document.getElementById('dup-modal-cards').innerHTML = cardsHtml;
+            document.getElementById('dup-modal').classList.add('open');
+        }
+
+        function closeDupModal() {
+            document.getElementById('dup-modal').classList.remove('open');
+            activeDupGroupIds = [];
+        }
+
+        async function confirmKeepDuplicate(keepId) {
+            const deleteIds = activeDupGroupIds.filter(id => id !== keepId);
+            if (!deleteIds.length) return;
+            const mergeConcursos = document.getElementById('dup-merge-concursos')?.checked || false;
+            closeDupModal();
+            await executeResolveDuplicate(keepId, deleteIds, mergeConcursos);
+        }
+
+        async function executeResolveDuplicate(keepId, deleteIds, mergeConcursos, customSuccessMsg) {
+            try {
+                const res = await fetch('api/manage_feria_ambiental.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        action: 'resolve_duplicate_group',
+                        keep_id: keepId,
+                        delete_ids: deleteIds,
+                        merge_concursos: mergeConcursos
+                    })
+                });
+                const d = await res.json();
+                if (!res.ok || !d.success) throw new Error(d.error || 'Error al eliminar duplicado');
+                alert(customSuccessMsg || d.message || 'Duplicado eliminado correctamente.');
+                await loadData();
+            } catch (e) {
+                alert('Error: ' + e.message);
+            }
+        }
+
+        let editingConcursosProdId = null;
+        let editingConcursosSet = new Set();
+
+        function openConcursosModal(productorId) {
+            const p = state.personas.find(x => x.id === productorId);
+            if (!p) return;
+            editingConcursosProdId = productorId;
+            editingConcursosSet = new Set((p.inscripciones || []).map(i => Number(i.concurso_id)));
+
+            document.getElementById('concursos-modal-title').textContent = 'Concursos de ' + p.nombreCompleto;
+            document.getElementById('concursos-modal-subtitle').textContent =
+                `Doc: ${p.numero_documento || 'Sin documento'} · Vereda: ${titleCase(p.vereda || '')}`;
+            document.getElementById('concursos-search').value = '';
+            renderConcursosModalList();
+            document.getElementById('concursos-modal').classList.add('open');
+        }
+
+        function closeConcursosModal() {
+            document.getElementById('concursos-modal').classList.remove('open');
+            editingConcursosProdId = null;
+        }
+
+        function updateConcursosBadge() {
+            const badge = document.getElementById('concursos-selected-badge');
+            if (badge) badge.textContent = `${editingConcursosSet.size} seleccionado(s)`;
+        }
+
+        function toggleConcursoItem(cid, checkboxEl) {
+            const id = Number(cid);
+            if (checkboxEl.checked) editingConcursosSet.add(id);
+            else editingConcursosSet.delete(id);
+            const row = checkboxEl.closest('.concursos-item');
+            if (row) row.classList.toggle('checked', checkboxEl.checked);
+            updateConcursosBadge();
+        }
+
+        function filterConcursosModal() {
+            renderConcursosModalList();
+        }
+
+        function renderConcursosModalList() {
+            const q = norm(document.getElementById('concursos-search')?.value || '');
+            const allConcursos = (state.raw && state.raw.concursos && state.raw.concursos.length)
+                ? state.raw.concursos
+                : DOCX_CATEGORIES.flatMap(cat => cat.contests.map(c => ({ id: c.id, categoria: cat.title, nombre: c.name })));
+
+            const byCat = {};
+            allConcursos.forEach(c => {
+                if (q && !norm(c.nombre + ' ' + c.categoria).includes(q)) return;
+                const cat = c.categoria || 'General';
+                (byCat[cat] = byCat[cat] || []).push(c);
+            });
+
+            const container = document.getElementById('concursos-modal-list');
+            const cats = Object.keys(byCat);
+            if (!cats.length) {
+                container.innerHTML = '<div class="muted" style="text-align:center;padding:1.5rem;">No se encontraron concursos con ese filtro.</div>';
+                updateConcursosBadge();
+                return;
+            }
+
+            container.innerHTML = cats.map(cat => `
+                <div class="concursos-cat-group">
+                    <div class="concursos-cat-head">${esc(cat)}</div>
+                    ${byCat[cat].map(c => {
+                        const checked = editingConcursosSet.has(Number(c.id));
+                        return `
+                        <label class="concursos-item ${checked ? 'checked' : ''}">
+                            <input type="checkbox" ${checked ? 'checked' : ''} onchange="toggleConcursoItem(${c.id}, this)">
+                            <span><b>#${c.id}</b> — ${esc(c.nombre)}</span>
+                        </label>`;
+                    }).join('')}
+                </div>
+            `).join('');
+            updateConcursosBadge();
+        }
+
+        async function saveConcursosModal() {
+            if (!editingConcursosProdId) return;
+            const prodId = editingConcursosProdId;
+            const btn = document.getElementById('btn-save-concursos');
+            if (btn) { btn.disabled = true; btn.textContent = 'Guardando...'; }
+            try {
+                const res = await fetch('api/manage_feria_ambiental.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        action: 'set_concursos',
+                        productor_id: prodId,
+                        group_ids: (state.personas.find(x => x.id === prodId)?.duplicateGroupIds) || [prodId],
+                        concurso_ids: Array.from(editingConcursosSet)
+                    })
+                });
+                const d = await res.json();
+                if (!res.ok || !d.success) throw new Error(d.error || 'No se pudieron actualizar los concursos');
+                closeConcursosModal();
+                await loadData();
+                if (document.getElementById('acta-modal').classList.contains('open') && currentActaProductorId === prodId) {
+                    await openActa(prodId);
+                }
+            } catch (e) {
+                alert('Error al guardar concursos: ' + e.message);
+            } finally {
+                if (btn) { btn.disabled = false; btn.textContent = 'Guardar cambios'; }
+            }
+        }
+
+        async function removeConcursoIndividual(productorId, concursoId) {
+            const p = state.personas.find(x => x.id === productorId);
+            const cName = state.concursosById[concursoId]?.nombre || ('Concurso #' + concursoId);
+            if (!confirm(`¿Quitar el concurso "${cName}" de ${p ? p.nombreCompleto : ('Productor #' + productorId)}?`)) return;
+            try {
+                const res = await fetch('api/manage_feria_ambiental.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        action: 'remove_concurso',
+                        productor_id: productorId,
+                        group_ids: p ? (p.duplicateGroupIds || [productorId]) : [productorId],
+                        concurso_id: concursoId
+                    })
+                });
+                const d = await res.json();
+                if (!res.ok || !d.success) throw new Error(d.error || 'No se pudo quitar el concurso');
+                await loadData();
+            } catch (e) {
+                alert('Error: ' + e.message);
+            }
+        }
 
         // ================== EXPORTAR EXCEL ==================
         function exportExcel() {

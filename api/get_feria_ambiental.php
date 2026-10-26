@@ -69,6 +69,7 @@ try {
             'condicion_discapacidad' => $r['condicion_discapacidad'],
             'en_parques_nacionales' => (int)$r['en_parques_nacionales'] === 1,
             'observaciones' => $obs,
+            'notes' => $r['notes'] ?? '',
             'nombre_inscriptor' => trim($r['nombre_inscriptor'] ?? ''),
             'origen_registro' => $r['origen_registro'] ?: 'movil',
             'fecha_inscripcion' => $r['fecha_inscripcion'] ?: $r['created_at'],
