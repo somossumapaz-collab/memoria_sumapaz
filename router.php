@@ -10,6 +10,14 @@ $path = str_replace('\\', '/', $path);
 // Log para depuración (opcional, puedes borrarlo luego)
 // file_put_contents(__DIR__ . '/router_log.txt', "URI: $uri | Path: $path\n", FILE_APPEND);
 
+// Bloquear acceso directo a carpeta protegida de soportes y scripts CLI
+if (strpos($path, '/storage/') === 0 || $path === '/storage' || $path === '/api/cli_migrate_despacho.php') {
+    http_response_code(403);
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(['success' => false, 'message' => 'Acceso directo no autorizado.']);
+    return true;
+}
+
 // 1. Si es un archivo físico (imagen, css, etc.), dejar que PHP lo sirva
 if ($uri !== '/' && file_exists(__DIR__ . $uri) && !is_dir(__DIR__ . $uri)) {
     return false;

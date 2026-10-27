@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" type="image/png" href="assets/logo_somossumapaz.png">
+    <link rel="shortcut icon" type="image/png" href="assets/logo_somossumapaz.png">
+    <link rel="apple-touch-icon" href="assets/logo_somossumapaz.png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Despacho | Somos Sumapaz</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-green: #3F6028;
+            --primary-green-dark: #35551F;
+            --accent-orange: #F4B35E;
+            --accent-gold: #D4A373;
+            --olive: #444F2F;
+            --bg-light: #F4F6F8;
+            --text-dark: #111111;
+            --text-muted: #6C757D;
+            --border-color: #E3E6EA;
+            --header-gray: #D9D9D9;
+            --light-gray: #EFEFEF;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.45;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin-top: 0;
+        }
+
+        /* FLOATING LOGOUT BUTTON AT BOTTOM-RIGHT (IGUAL A FERIA AMBIENTAL) */
+        .floating-logout {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 2500;
+            background: var(--primary-green-dark);
+            color: #FBF4DE;
+            border: 1px solid rgba(251, 244, 222, 0.35);
+            border-radius: 30px;
+            padding: 0.65rem 1.35rem;
+            font-weight: 700;
+            font-size: 0.88rem;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .floating-logout:hover {
+            background: var(--primary-green);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* TOP NAVIGATION BAR */
+        .topbar {
+            background-color: #444F2F;
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .topbar-container {
+            display: flex;
+            align-items: center;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+
+        .site-logo {
+            height: 55px;
+            max-height: 55px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .nav-tabs-wrapper {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-tab-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-tab-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.48rem 0.85rem;
+            background-color: transparent;
+            color: #FBF4DE;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-tab-btn:hover,
+        .nav-tab-dropdown:hover .nav-tab-btn,
+        .nav-tab-dropdown.active .nav-tab-btn {
+            background-color: rgba(251, 244, 222, 0.16);
+            border-color: rgba(251, 244, 222, 0.32);
+            color: #FFFFFF;
+        }
+
+        .nav-tab-btn .tab-arrow {
+            font-size: 0.6rem;
+            opacity: 0.85;
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background-color: #353E24;
+            border: 1px solid rgba(251, 244, 222, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            padding: 0.4rem 0;
+            margin-top: 0.3rem;
+            z-index: 9999;
+            display: none;
+        }
+
+        .nav-dropdown-menu.align-right {
+            left: auto;
+            right: 0;
+        }
+
+        .nav-tab-dropdown:hover .nav-dropdown-menu,
+        .nav-tab-dropdown.active .nav-dropdown-menu {
+            display: block;
+        }
+
+        .nav-dropdown-item {
+            display: block;
+            padding: 0.6rem 1.1rem;
+            color: #FBF4DE;
+            font-size: 0.86rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .nav-dropdown-item:hover {
+            background-color: rgba(251, 244, 222, 0.15);
+            color: #FFFFFF;
+        }
+
+        /* HERO SECTION MATCHING FERIA AMBIENTAL */
+        .hero-section {
+            position: relative;
+            background-image: url('assets/fondo.jpg');
+            background-size: cover;
+            background-position: center center;
+            width: 100%;
+            padding: 3.5rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            margin: 0;
+            border-bottom: 3px solid var(--primary-green-dark);
+            min-height: 210px;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 61, 45, 0.85) 0%, rgba(15, 30, 22, 0.80) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 1rem;
+        }
+
+        .hero-title {
+            font-size: 2.5rem !important;
+            margin: 0 !important;
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 800 !important;
+            letter-spacing: -0.02em !important;
+            color: #F8FAF9 !important;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+            line-height: 1.2;
+        }
+
+        /* MAIN CONTAINER */
+        main {
+            padding: 2rem 1.5rem 5rem 1.5rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .page-title h2 {
+            margin: 0;
+            font-size: 1.6rem;
+            color: var(--primary-green-dark);
+            font-weight: 800;
+        }
+
+        .page-title p {
+            margin: 0.3rem 0 0 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* BUTTONS MATCHING FERIA AMBIENTAL */
+        .btn {
+            border: none;
+            border-radius: 8px;
+            padding: 0.55rem 1.1rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover { opacity: 0.92; transform: translateY(-1px); }
+        .btn:active { transform: scale(0.98); }
+        .btn-primary { background: var(--primary-green); color: #fff; }
+        .btn-gold { background: var(--accent-gold); color: #fff; }
+        .btn-danger { background: #B91C1C; color: #fff; }
+        .btn-danger:hover { background: #991B1B; }
+        .btn-outline { background: #fff; color: var(--primary-green); border: 1px solid var(--primary-green); }
+        .btn-sm { padding: 0.38rem 0.75rem; font-size: 0.78rem; white-space: nowrap; }
+
+        /* CARDS & SOBER KPI CARDS (SIN COLORES ESTRIDENTES NI BORDE IZQUIERDO) */
+        .card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: var(--card-shadow);
+            padding: 1.25rem 1.4rem;
+            border: 1px solid #E3E6EA;
+            margin-bottom: 1.25rem;
+        }
+
+        .card h3 {
+            margin: 0 0 1rem 0;
+            font-size: 1.05rem;
+            color: var(--primary-green-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+        }
+
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+            gap: 1rem;
+            margin: 1.25rem 0;
+        }
+
+        .kpi {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: var(--card-shadow);
+            padding: 1.1rem 1.25rem;
+            border: 1px solid #E3E6EA;
+            border-left: none;
+            cursor: pointer;
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+
+        .kpi:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary-green);
+        }
+
+        .kpi .v {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--primary-green-dark);
+            line-height: 1.1;
+        }
+
+        .kpi .l {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-top: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .kpi .s {
+            font-size: 0.73rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* FILTERS PANEL MATCHING FERIA AMBIENTAL */
+        .filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+            gap: 0.8rem;
+            align-items: end;
+        }
+
+        .filters label, .form-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .filters input, .filters select, .input-ctrl {
+            width: 100%;
+            padding: 0.55rem 0.7rem;
+            border: 1px solid #CCCCCC;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            background: #fff;
+            color: var(--text-dark);
+        }
+
+        .chk {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.82rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* TABS */
+        .tabs-header {
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 2px solid #E3E6EA;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: #fff;
+            border: 1px solid #E3E6EA;
+            border-bottom: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 10px 10px 0 0;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary-green-dark);
+            background: #F8FAF9;
+        }
+
+        .tab-btn.active {
+            background: var(--primary-green);
+            color: #fff;
+            border-color: var(--primary-green);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* TABLES MATCHING FERIA AMBIENTAL */
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.83rem;
+        }
+
+        th {
+            text-align: left;
+            background: #F1F4F2;
+            color: var(--primary-green-dark);
+            padding: 0.7rem 0.65rem;
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+            border-bottom: 2px solid #D9D9D9;
+            font-weight: 700;
+        }
+
+        td {
+            padding: 0.65rem;
+            border-bottom: 1px solid #E3E6EA;
+            vertical-align: top;
+        }
+
+        tr:hover td {
+            background: #FAFBFA;
+        }
+
+        /* SOBER TAGS / BADGES */
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            background: #EEF3EF;
+            color: var(--primary-green-dark);
+            border: 1px solid #D5E2D8;
+            border-radius: 6px;
+            padding: 0.16rem 0.55rem;
+            margin: 0.1rem 0.15rem 0.1rem 0;
+            font-size: 0.71rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .tag-neutral { background: #F1F3F5; color: #343A40; border-color: #DEE2E6; }
+        .tag-dark { background: #E9ECEF; color: #212529; border-color: #CED4DA; }
+        .tag-warn { background: #FFF8E6; color: #7C5800; border-color: #F5E0A3; }
+        .tag-alert { background: #FDF2F2; color: #842029; border-color: #F1C2C5; }
+
+        .muted { color: var(--text-muted); }
+
+        /* MODAL MATCHING FERIA AMBIENTAL (.modal-bg + .modal-bg.open) */
+        .modal-bg {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            display: none;
+            align-items: flex-start;
+            justify-content: center;
+            z-index: 3000;
+            overflow-y: auto;
+            padding: 2rem 1rem;
+        }
+
+        .modal-bg.open {
+            display: flex;
+        }
+
+        .modal {
+            background: #fff;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 1180px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid #333;
+            overflow: hidden;
+        }
+
+        .modal-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.35rem;
+            background: #F8F9FA;
+            border-bottom: 2px solid var(--primary-green);
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .modal-head h2 {
+            margin: 0;
+            font-size: 1.15rem;
+            color: var(--primary-green-dark);
+            font-weight: 800;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .modal-body {
+            padding: 1.4rem;
+            background: #fff;
+            max-height: 84vh;
+            overflow-y: auto;
+        }
+
+        .section-box {
+            background: #FFFFFF;
+            border: 1px solid #E3E6EA;
+            border-radius: 10px;
+            padding: 1.1rem 1.25rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .section-box h4 {
+            margin: 0 0 0.75rem 0;
+            font-size: 0.95rem;
+            color: var(--primary-green-dark);
+            font-weight: 800;
+            border-bottom: 1px solid #E3E6EA;
+            padding-bottom: 0.45rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 0.75rem;
+            font-size: 0.83rem;
+        }
+
+        .info-cell {
+            background: #F8FAF9;
+            border: 1px solid #E3E6EA;
+            border-radius: 8px;
+            padding: 0.65rem 0.8rem;
+        }
+
+        .info-cell b {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+
+        pre.msg-raw {
+            background: #F8FAF9;
+            color: #111111;
+            border: 1px solid #E3E6EA;
+            padding: 0.8rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            white-space: pre-wrap;
+            word-break: break-word;
+            max-height: 240px;
+            overflow-y: auto;
+            margin: 0.35rem 0 0 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .modal-subtabs {
+            display: flex;
+            gap: 0.45rem;
+            border-bottom: 1px solid #E3E6EA;
+            margin-bottom: 1.1rem;
+            flex-wrap: wrap;
+        }
+
+        .modal-subtab-btn {
+            background: #F1F4F2;
+            border: 1px solid #E3E6EA;
+            border-bottom: none;
+            padding: 0.55rem 1rem;
+            border-radius: 8px 8px 0 0;
+            font-weight: 700;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .modal-subtab-btn.active {
+            background: var(--primary-green);
+            color: #fff;
+            border-color: var(--primary-green);
+        }
+
+        .modal-subtab-pane {
+            display: none;
+        }
+
+        .modal-subtab-pane.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- BOTÓN FLOTANTE DE CERRAR SESIÓN IGUAL A FERIA AMBIENTAL -->
+    <button class="floating-logout" onclick="logout()" title="Cerrar Sesión">
+        Cerrar Sesión
+    </button>
+
+    <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
+    <header class="topbar">
+        <div class="topbar-container">
+            <a href="despacho.html">
+                <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="site-logo">
+            </a>
+
+            <div id="header-auth-container" class="nav-tabs-wrapper">
+                <!-- Pestañas globales ocultas por defecto: SOLO se muestran si el usuario autenticado es ADMIN_REAL -->
+                <div class="nav-tab-dropdown admin-only-tab" id="tab-inscripciones" style="display: none;">
+                    <button class="nav-tab-btn" type="button">Inscripciones <span class="tab-arrow">&#9662;</span></button>
+                    <div class="nav-dropdown-menu">
+                        <a href="inscripcion_feria.html" class="nav-dropdown-item">Inscripción Feria</a>
+                        <a href="inscripcion_jovenes.html" class="nav-dropdown-item">Jóvenes Emprendedores</a>
+                        <a href="inscripcion_tejedoras.html" class="nav-dropdown-item">Tejedoras y Artesanos</a>
+                        <a href="inscripcion_avituallamiento.html" class="nav-dropdown-item">Inscripción Avituallamiento</a>
+                        <a href="inscripcion_productores.html" class="nav-dropdown-item">Registrar Productor</a>
+                    </div>
+                </div>
+
+                <div class="nav-tab-dropdown admin-only-tab" id="tab-emprendimiento" style="display: none;">
+                    <button class="nav-tab-btn" type="button">Emprendimiento <span class="tab-arrow">&#9662;</span></button>
+                    <div class="nav-dropdown-menu">
+                        <a href="productores_registrados.html" class="nav-dropdown-item">Dashboard</a>
+                        <a href="avituallamiento_registrados.html" class="nav-dropdown-item">Dashboard Avituallamiento</a>
+                        <a href="ruta_productor.html" class="nav-dropdown-item">Seguimiento</a>
+                        <a href="niveles_priorizacion.html" class="nav-dropdown-item">Priorización</a>
+                        <a href="pmapc.html" class="nav-dropdown-item">PMAPC</a>
+                    </div>
+                </div>
+
+                <div class="nav-tab-dropdown admin-only-tab" id="tab-agroambiental" style="display: none;">
+                    <button class="nav-tab-btn" type="button">Agroambiental <span class="tab-arrow">&#9662;</span></button>
+                    <div class="nav-dropdown-menu">
+                        <a href="tablero_ambiental.html" class="nav-dropdown-item">Tablero Agroambiental</a>
+                        <a href="feria_ambiental.html" class="nav-dropdown-item">Concursos Feria Ambiental</a>
+                        <a href="kardex_agroambiental.html" class="nav-dropdown-item">Kardex Agroambiental</a>
+                        <a href="concursos_sumapaz.html" class="nav-dropdown-item">Concursos Sumapaz</a>
+                    </div>
+                </div>
+
+                <div class="nav-tab-dropdown admin-only-tab" id="tab-convocatorias" style="display: none;">
+                    <button class="nav-tab-btn" type="button">Convocatorias <span class="tab-arrow">&#9662;</span></button>
+                    <div class="nav-dropdown-menu align-right">
+                        <a href="convocatorias.html" class="nav-dropdown-item">Convocatorias</a>
+                        <a href="infografia.html" class="nav-dropdown-item">Infografía</a>
+                    </div>
+                </div>
+
+                <!-- Pestaña Despacho (Única visible para el usuario 16; visible también para Admin) -->
+                <div class="nav-tab-dropdown" id="tab-despacho">
+                    <button class="nav-tab-btn" type="button" style="background-color: rgba(251, 244, 222, 0.22); border-color: rgba(251, 244, 222, 0.45);">
+                        Despacho <span class="tab-arrow">&#9662;</span>
+                    </button>
+                    <div class="nav-dropdown-menu align-right">
+                        <a href="despacho.html" class="nav-dropdown-item" style="font-weight: 700; color: #FFFFFF;">Seguimiento Contractual</a>
+                        <a href="reporte_despacho.html" target="_blank" class="nav-dropdown-item">Formulario de Actualización (Sin Login)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO BANNER SIN SUBTÍTULO -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Despacho — Seguimiento Contractual y Alertas</h1>
+        </div>
+    </section>
+
+    <main id="despacho-main-content" style="display: none;">
+        <div class="page-title">
+            <div>
+                <h2>Tablero de seguimiento contractual</h2>
+                <p id="lbl-periodo-subtitle">Cargando datos...</p>
+            </div>
+            <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+                <a href="reporte_despacho.html" target="_blank" class="btn btn-outline">Formulario de Actualización por Contrato</a>
+                <button class="btn btn-outline" onclick="loadDashboardData(false)">Actualizar</button>
+                <button class="btn btn-primary" onclick="switchDespachoTab('periodos')">Periodos y Obligaciones</button>
+            </div>
+        </div>
+
+        <!-- TARJETAS DE INDICADORES EJECUTIVOS SOBRIAS (SIN BORDE IZQUIERDO NI COLORES ESTRIDENTES) -->
+        <section class="kpis">
+            <div class="kpi" onclick="applyQuickFilter('')">
+                <div class="v" id="kpi-total">0</div>
+                <div class="l">Registros Consolidados</div>
+                <div class="s" id="kpi-grupos-sub">Grupos obra/inter: 0</div>
+            </div>
+            <div class="kpi" onclick="applyQuickFilter('CRÍTICA')">
+                <div class="v" id="kpi-critica">0</div>
+                <div class="l">Alertas Críticas</div>
+                <div class="s">Corte origen: <span id="kpi-orig-critica">0</span></div>
+            </div>
+            <div class="kpi" onclick="applyQuickFilter('ALTA')">
+                <div class="v" id="kpi-alta">0</div>
+                <div class="l">Alertas Altas</div>
+                <div class="s">Corte origen: <span id="kpi-orig-alta">0</span></div>
+            </div>
+            <div class="kpi" onclick="applyQuickFilter('VALIDAR DATOS')">
+                <div class="v" id="kpi-validar">0</div>
+                <div class="l">Validar Datos</div>
+                <div class="s">Con conflicto: <span id="kpi-conflicto-cnt">0</span></div>
+            </div>
+            <div class="kpi" onclick="applyQuickFilter('SEGUIMIENTO')">
+                <div class="v" id="kpi-seguimiento">0</div>
+                <div class="l">En Seguimiento</div>
+                <div class="s">Corte origen: <span id="kpi-orig-seguimiento">0</span></div>
+            </div>
+            <div class="kpi" onclick="applyQuickFilter('CIERRE')">
+                <div class="v" id="kpi-cierre">0</div>
+                <div class="l">Cierre / Liquidación</div>
+                <div class="s">Corte origen: <span id="kpi-orig-cierre">0</span></div>
+            </div>
+            <div class="kpi" onclick="toggleSoloFaltantes()">
+                <div class="v" id="kpi-faltantes-periodo">0</div>
+                <div class="l">Sin Reporte en Periodo</div>
+                <div class="s">Sin Mensaje 1 base: <span id="kpi-sin-m1">0</span></div>
+            </div>
+        </section>
+
+        <!-- PESTAÑAS INTERNAS DEL MÓDULO (SIN EMOJIS) -->
+        <div class="tabs-header">
+            <button class="tab-btn active" id="btn-tab-maestro" onclick="switchDespachoTab('maestro')">
+                Consolidado Maestro y Control por Periodo (<span id="lbl-count-filtered">0</span>)
+            </button>
+            <button class="tab-btn" id="btn-tab-alertas" onclick="switchDespachoTab('alertas')">
+                Alertas Vigentes (<span id="lbl-count-alertas">0</span>) e Historial
+            </button>
+            <button class="tab-btn" id="btn-tab-criterios" onclick="switchDespachoTab('criterios')">
+                Criterios Cualitativos de Alertas (3 Reglas)
+            </button>
+            <button class="tab-btn" id="btn-tab-periodos" onclick="switchDespachoTab('periodos')">
+                Periodos de Reporte y Obligaciones
+            </button>
+        </div>
+
+        <!-- PESTAÑA 1: CONSOLIDADO MAESTRO -->
+        <div id="view-maestro" class="tab-content active">
+            <section class="card">
+                <div class="filters">
+                    <div>
+                        <label for="f-periodo">Periodo de Seguimiento</label>
+                        <select id="f-periodo" onchange="loadDashboardData(false)"></select>
+                    </div>
+                    <div>
+                        <label for="f-area">Área / Dependencia</label>
+                        <select id="f-area" onchange="loadDashboardData(false)">
+                            <option value="">Todas las Áreas</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="f-proyecto">Proyecto de Inversión</label>
+                        <select id="f-proyecto" onchange="loadDashboardData(false)">
+                            <option value="">Todos los Proyectos</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="f-responsable">Responsable / Apoyo</label>
+                        <select id="f-responsable" onchange="loadDashboardData(false)">
+                            <option value="">Todos los Responsables</option>
+                            <option value="__SIN_RESPONSABLE__">Sin responsable asignado</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="f-nivel">Nivel / Categoría Alerta</label>
+                        <select id="f-nivel" onchange="loadDashboardData(false)">
+                            <option value="">Todos los Niveles</option>
+                            <option value="CRÍTICA">CRÍTICA</option>
+                            <option value="ALTA">ALTA</option>
+                            <option value="VALIDAR DATOS">VALIDAR DATOS</option>
+                            <option value="SEGUIMIENTO">SEGUIMIENTO</option>
+                            <option value="CIERRE">CIERRE / LIQUIDACIÓN</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="f-estado-con">Estado Contractual</label>
+                        <select id="f-estado-con" onchange="loadDashboardData(false)">
+                            <option value="">Todos</option>
+                            <option value="EN_EJECUCION">EN EJECUCIÓN</option>
+                            <option value="SUSPENDIDO">SUSPENDIDO</option>
+                            <option value="EN_MODIFICACION">EN MODIFICACIÓN / PRÓRROGA</option>
+                            <option value="TERMINADO">TERMINADO</option>
+                            <option value="EN_LIQUIDACION">EN LIQUIDACIÓN</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="f-estado-ent">Estado Entrega (Periodo)</label>
+                        <select id="f-estado-ent" onchange="loadDashboardData(false)">
+                            <option value="">Todos</option>
+                            <option value="RECIBIDO">RECIBIDO</option>
+                            <option value="PENDIENTE">PENDIENTE</option>
+                            <option value="FALTANTE">FALTANTE / VENCIDO</option>
+                            <option value="DESACTUALIZADO">DESACTUALIZADO</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="f-estado-rev">Estado Revisión Despacho</label>
+                        <select id="f-estado-rev" onchange="loadDashboardData(false)">
+                            <option value="">Todos</option>
+                            <option value="SIN_REPORTE">SIN REPORTE EN PERIODO</option>
+                            <option value="PENDIENTE_REVISION">PENDIENTE REVISIÓN</option>
+                            <option value="OBSERVADO">OBSERVADO / POR VALIDAR</option>
+                            <option value="DEVUELTO">DEVUELTO PARA CORRECCIÓN</option>
+                            <option value="APROBADO">APROBADO</option>
+                        </select>
+                    </div>
+                    <div style="grid-column: span 2;">
+                        <label for="f-search">Búsqueda rápida</label>
+                        <input type="text" id="f-search" placeholder="Buscar por contrato, grupo, contratista u objeto..." oninput="debounceLoad()">
+                    </div>
+                    <div>
+                        <label class="chk" style="text-transform:none;">
+                            <input type="checkbox" id="f-solo-faltantes" style="width:auto;" onchange="loadDashboardData(false)">
+                            Solo faltantes / sin M1
+                        </label>
+                        <button type="button" class="btn btn-outline btn-sm" style="margin-top:0.35rem; width:100%;" onclick="resetFilters()">Limpiar filtros</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h3>
+                    <span>Contratos y grupos consolidados</span>
+                </h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Contrato / Grupo y Proyectos</th>
+                                <th>Responsable</th>
+                                <th>Plazo Vigente y Días Restantes</th>
+                                <th>Última Actualización y Recepción</th>
+                                <th>Ejecución Física / Financiera</th>
+                                <th>Entrega y Revisión (Periodo)</th>
+                                <th>Nivel / Alerta Consolidada</th>
+                                <th style="text-align: center;">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-contratos">
+                            <tr><td colspan="9" style="text-align: center; padding: 2.5rem;" class="muted">Cargando contratos...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <!-- PESTAÑA 2: ALERTAS VIGENTES E HISTORIAL -->
+        <div id="view-alertas" class="tab-content">
+            <section class="card">
+                <h3>Alertas Vigentes Activas</h3>
+                <p class="muted" style="margin: 0 0 1rem 0; font-size: 0.85rem;">
+                    Separación entre alertas de riesgo contractual y alertas por falta de reporte o actualización. Cada registro conserva la condición evaluada, los datos usados, la fecha y la versión de la regla.
+                </p>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nivel</th>
+                                <th>Categoría / Criterio</th>
+                                <th>Contrato / Grupo</th>
+                                <th>Responsable</th>
+                                <th>Tipo y Descripción de Alerta</th>
+                                <th>Datos Usados y Dato por Validar</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-alertas-vigentes"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="card">
+                <h3>Historial Trazable de Eventos de Alertas</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fecha / Corte</th>
+                                <th>Contrato</th>
+                                <th>Cambio / Dato Actualizado</th>
+                                <th>Efecto en la Alerta</th>
+                                <th>Registrado por</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-historial-alertas"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <!-- PESTAÑA 3: CRITERIOS CUALITATIVOS DE ALERTAS -->
+        <div id="view-criterios" class="tab-content">
+            <section class="card">
+                <h3>Criterios Cualitativos de Alertas Contractuales</h3>
+                <p class="muted" style="font-size: 0.86rem; margin-bottom: 1.25rem;">
+                    Los tres criterios cualitativos de supervisión están registrados sin activar umbrales numéricos inventados de días o porcentajes. Los criterios 1 y 2 permanecen pendientes de validación de parámetros por Despacho/Administración, mientras que el criterio 3 opera sobre las obligaciones de cada periodo.
+                </p>
+                <div id="criterios-config-container"></div>
+            </section>
+        </div>
+
+        <!-- PESTAÑA 4: PERIODOS Y OBLIGACIONES -->
+        <div id="view-periodos" class="tab-content">
+            <section class="card">
+                <h3>Abrir Nuevo Periodo de Reporte</h3>
+                <p class="muted" style="font-size: 0.85rem; margin-bottom: 1rem;">
+                    Al crear un nuevo periodo, se generan obligaciones esperadas independientes para cada contrato activo. Un reporte cargado en un periodo anterior no cumple el periodo nuevo.
+                </p>
+                <form onsubmit="handleCreatePeriodo(event)" class="filters">
+                    <div>
+                        <label>Código del Periodo *</label>
+                        <input type="text" id="per-codigo" placeholder="Ej: SEM-2026-11-02" required>
+                    </div>
+                    <div>
+                        <label>Nombre del Periodo *</label>
+                        <input type="text" id="per-nombre" placeholder="Ej: Semana del 27 oct al 2 nov 2026" required>
+                    </div>
+                    <div>
+                        <label>Fecha Inicio *</label>
+                        <input type="date" id="per-inicio" required>
+                    </div>
+                    <div>
+                        <label>Fecha Fin *</label>
+                        <input type="date" id="per-fin" required>
+                    </div>
+                    <div>
+                        <label>Fecha Límite Entrega *</label>
+                        <input type="date" id="per-limite" required>
+                    </div>
+                    <div>
+                        <label class="chk" style="text-transform:none; margin-bottom:0.4rem;">
+                            <input type="checkbox" id="per-activo" checked style="width:auto;"> Marcar como periodo activo
+                        </label>
+                        <button type="submit" class="btn btn-primary btn-sm" style="width:100%;">Crear Periodo y Obligaciones</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="card">
+                <h3>Periodos Registrados en el Sistema</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Nombre</th>
+                                <th>Tipo</th>
+                                <th>Rango de Fechas</th>
+                                <th>Fecha Límite</th>
+                                <th>Estado</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-periodos-list"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- MODAL DE FICHA, TRACKING DE ACTUALIZACIONES, REVISIÓN, ENLACES Y ALERTAS -->
+    <div class="modal-bg" id="modal-contrato" onclick="if(event.target===this) closeContratoModal()">
+        <div class="modal">
+            <div class="modal-head">
+                <div>
+                    <h2 id="modal-title">Ficha y Tracking del Contrato</h2>
+                    <div id="modal-subtitle" class="muted" style="font-size: 0.8rem; margin-top: 2px;"></div>
+                </div>
+                <div style="display:flex; gap:0.45rem; align-items:center;">
+                    <button type="button" class="btn btn-outline btn-sm" onclick="closeContratoModal()">Cerrar</button>
+                </div>
+            </div>
+            <div class="modal-body" id="modal-body-content">
+                Cargando información del contrato...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let dashboardState = null;
+        let currentPeriodoId = null;
+        let searchTimer = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initDespachoApp();
+
+            document.addEventListener('click', function(e) {
+                const isDropdownBtn = e.target.closest('.nav-tab-btn');
+                const activeDropdown = e.target.closest('.nav-tab-dropdown');
+                document.querySelectorAll('.nav-tab-dropdown').forEach(drop => {
+                    if (drop !== activeDropdown) drop.classList.remove('active');
+                });
+                if (isDropdownBtn && activeDropdown) {
+                    activeDropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        async function initDespachoApp() {
+            try {
+                const res = await fetch('api/despacho_api.php?action=auth_status', { credentials: 'same-origin' });
+                if (!res.ok) {
+                    window.location.href = 'login.html';
+                    return;
+                }
+                const authData = await res.json();
+                if (!authData.success || !authData.authorized) {
+                    window.location.href = 'login.html';
+                    return;
+                }
+
+                // Regla de navegación solicitada:
+                // Usuario 16 (DESPACHO) solo ve la pestaña de Despacho en el banner.
+                // Solo el Administrador real (ADMIN_REAL, rol_id === 1) ve las demás pestañas del sistema.
+                const isRealAdmin = authData.user && authData.user.perfil_despacho === 'ADMIN_REAL' && Number(authData.user.id) !== 16;
+                document.querySelectorAll('.admin-only-tab').forEach(el => {
+                    el.style.display = isRealAdmin ? '' : 'none';
+                });
+
+                document.getElementById('despacho-main-content').style.display = 'block';
+                await loadDashboardData(true);
+            } catch (err) {
+                window.location.href = 'login.html';
+            }
+        }
+
+        function debounceLoad() {
+            clearTimeout(searchTimer);
+            searchTimer = setTimeout(() => loadDashboardData(false), 250);
+        }
+
+        async function loadDashboardData(populateSelects = false) {
+            const params = new URLSearchParams({ action: 'dashboard' });
+            const perVal = document.getElementById('f-periodo').value;
+            if (perVal) params.set('periodo_id', perVal);
+            const areaVal = document.getElementById('f-area').value;
+            if (areaVal) params.set('area_id', areaVal);
+            const proyVal = document.getElementById('f-proyecto').value;
+            if (proyVal) params.set('proyecto_id', proyVal);
+            const respVal = document.getElementById('f-responsable').value;
+            if (respVal) params.set('responsable', respVal);
+            const nivVal = document.getElementById('f-nivel').value;
+            if (nivVal) params.set('nivel_alerta', nivVal);
+            const estConVal = document.getElementById('f-estado-con').value;
+            if (estConVal) params.set('estado_contractual', estConVal);
+            const estEntVal = document.getElementById('f-estado-ent').value;
+            if (estEntVal) params.set('estado_entrega', estEntVal);
+            const estRevVal = document.getElementById('f-estado-rev').value;
+            if (estRevVal) params.set('estado_revision', estRevVal);
+            const searchVal = document.getElementById('f-search').value.trim();
+            if (searchVal) params.set('search', searchVal);
+            if (document.getElementById('f-solo-faltantes').checked) {
+                params.set('solo_faltantes', '1');
+            }
+
+            const res = await fetch(`api/despacho_api.php?${params.toString()}`, { credentials: 'same-origin' });
+            if (res.status === 401 || res.status === 403) {
+                window.location.href = 'login.html';
+                return;
+            }
+            const data = await res.json();
+            if (!data.success) return;
+
+            dashboardState = data;
+            currentPeriodoId = data.periodo_seleccionado_id;
+
+            if (populateSelects) {
+                populateCatalogSelects(data.catalogos, data.periodo_seleccionado_id);
+            }
+
+            const perObj = (data.catalogos.periodos || []).find(p => Number(p.id) === Number(data.periodo_seleccionado_id));
+            document.getElementById('lbl-periodo-subtitle').textContent = perObj
+                ? `Periodo activo de consulta: ${perObj.nombre} (${perObj.codigo}) — Límite de entrega: ${perObj.fecha_limite_entrega}`
+                : 'Consulta general consolidada';
+
+            renderKpis(data.kpis);
+            renderContratosTable(data.contratos);
+            renderAlertasTables(data.alertas_vigentes, data.historial_alertas);
+            renderCriteriosConfig(data.catalogos.reglas_alerta_config || []);
+            renderPeriodosTable(data.catalogos.periodos || []);
+        }
+
+        function populateCatalogSelects(cat, selectedPerId) {
+            const selPer = document.getElementById('f-periodo');
+            selPer.innerHTML = (cat.periodos || []).map(p =>
+                `<option value="${p.id}" ${Number(p.id) === Number(selectedPerId) ? 'selected' : ''}>${escapeHtml(p.nombre)} (${escapeHtml(p.codigo)})${Number(p.es_periodo_activo) === 1 ? ' [ACTIVO]' : ''}</option>`
+            ).join('');
+
+            const selArea = document.getElementById('f-area');
+            selArea.innerHTML = '<option value="">Todas las Áreas</option>' + (cat.areas || []).map(a =>
+                `<option value="${a.id}">${escapeHtml(a.nombre)}</option>`
+            ).join('');
+
+            const selProy = document.getElementById('f-proyecto');
+            selProy.innerHTML = '<option value="">Todos los Proyectos</option>' + (cat.proyectos || []).map(p =>
+                `<option value="${p.id}">Proy. ${escapeHtml(p.codigo)} — ${escapeHtml(p.nombre)}</option>`
+            ).join('');
+
+            const selResp = document.getElementById('f-responsable');
+            selResp.innerHTML = '<option value="">Todos los Responsables</option><option value="__SIN_RESPONSABLE__">Sin responsable asignado</option>' +
+                (cat.responsables || []).map(r => `<option value="${escapeHtml(r)}">${escapeHtml(r)}</option>`).join('');
+        }
+
+        function renderKpis(k) {
+            document.getElementById('kpi-total').textContent = k.total_contratos;
+            document.getElementById('kpi-grupos-sub').textContent = `Grupos obra/inter: ${k.grupos_obra_interventoria_count}`;
+
+            document.getElementById('kpi-critica').textContent = k.niveles_alerta_actuales['CRÍTICA'] ?? 0;
+            document.getElementById('kpi-orig-critica').textContent = k.categorias_origen['CRÍTICA'] ?? 0;
+
+            document.getElementById('kpi-alta').textContent = k.niveles_alerta_actuales['ALTA'] ?? 0;
+            document.getElementById('kpi-orig-alta').textContent = k.categorias_origen['ALTA'] ?? 0;
+
+            document.getElementById('kpi-validar').textContent = k.niveles_alerta_actuales['VALIDAR DATOS'] ?? 0;
+            document.getElementById('kpi-conflicto-cnt').textContent = k.con_conflicto_validar_count ?? 0;
+
+            document.getElementById('kpi-seguimiento').textContent = k.niveles_alerta_actuales['SEGUIMIENTO'] ?? 0;
+            document.getElementById('kpi-orig-seguimiento').textContent = k.categorias_origen['SEGUIMIENTO'] ?? 0;
+
+            document.getElementById('kpi-cierre').textContent = k.niveles_alerta_actuales['CIERRE'] ?? 0;
+            document.getElementById('kpi-orig-cierre').textContent = k.categorias_origen['CIERRE'] ?? 0;
+
+            document.getElementById('kpi-faltantes-periodo').textContent = k.resumen_periodo_seleccionado.sin_reporte_en_periodo ?? 0;
+            document.getElementById('kpi-sin-m1').textContent = k.sin_mensaje1_count ?? 0;
+        }
+
+        function badgeForNivel(nivel) {
+            const n = (nivel || '').toUpperCase();
+            if (n === 'CRÍTICA' || n === 'CRITICA') return '<span class="tag tag-alert">CRÍTICA</span>';
+            if (n === 'ALTA') return '<span class="tag tag-warn">ALTA</span>';
+            if (n === 'VALIDAR DATOS') return '<span class="tag tag-dark">VALIDAR DATOS</span>';
+            if (n === 'CIERRE') return '<span class="tag tag-neutral">CIERRE</span>';
+            return '<span class="tag">SEGUIMIENTO</span>';
+        }
+
+        function badgeForRevision(est) {
+            const e = (est || 'SIN_REPORTE').toUpperCase();
+            if (e === 'APROBADO') return '<span class="tag">APROBADO</span>';
+            if (e === 'DEVUELTO') return '<span class="tag tag-alert">DEVUELTO</span>';
+            if (e === 'OBSERVADO') return '<span class="tag tag-warn">OBSERVADO</span>';
+            if (e === 'PENDIENTE_REVISION') return '<span class="tag tag-neutral">PEND. REVISIÓN</span>';
+            if (e === 'HISTORICO') return '<span class="tag tag-neutral">HISTÓRICO</span>';
+            return '<span class="tag tag-alert">SIN REPORTE</span>';
+        }
+
+        function renderContratosTable(list) {
+            document.getElementById('lbl-count-filtered').textContent = list.length;
+            const tbody = document.getElementById('tbody-contratos');
+            if (!list.length) {
+                tbody.innerHTML = '<tr><td colspan="9" style="text-align:center; padding: 2rem;" class="muted">No se encontraron contratos con los filtros seleccionados.</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = list.map(c => {
+                const proysBadges = (c.proyectos_asociados || []).map(p =>
+                    `<span class="tag tag-neutral">Proy. ${escapeHtml(p.codigo)}</span>`
+                ).join('');
+
+                const grpBadge = Number(c.es_grupo) === 1
+                    ? `<span class="tag tag-dark">GRUPO OBRA+INTER</span>`
+                    : '';
+
+                const m1Badge = Number(c.tiene_mensaje1) === 0
+                    ? `<div style="margin-top:4px;"><span class="tag tag-alert">SIN MENSAJE 1 (FICHA)</span></div>`
+                    : '';
+
+                let plazoHtml = `<div><strong>Fin vigente:</strong> ${escapeHtml(c.fecha_fin_vigente_texto || 'Sin fecha validada')}</div>`;
+                if (c.estado_plazo === 'PAUSADO_POR_SUSPENSION') {
+                    plazoHtml += `<span class="tag tag-warn">PAUSADO (SUSPENDIDO)</span>`;
+                } else if (c.dias_restantes_plazo_vigente !== null) {
+                    const d = Number(c.dias_restantes_plazo_vigente);
+                    plazoHtml += `<div style="font-weight:700; color:var(--primary-green-dark);">${d < 0 ? `Vencido hace ${Math.abs(d)} días` : `${d} días restantes`}</div>`;
+                } else {
+                    plazoHtml += `<small class="muted">${escapeHtml(c.estado_plazo)}</small>`;
+                }
+
+                const fRepHtml = `
+                    <div><strong>Último reporte:</strong> ${escapeHtml(c.fecha_ultimo_reporte_texto || 'No informada')}</div>
+                    <div style="font-size:0.75rem;" class="muted"><strong>Recepción sist.:</strong> ${escapeHtml((c.fecha_recepcion_sistema || '').slice(0, 16) || 'Corte base')}</div>
+                    ${c.dias_desde_ultimo_reporte !== null ? `<small class="muted">Hace ${c.dias_desde_ultimo_reporte} días</small>` : ''}
+                `;
+
+                const fisTxt = c.ejecucion_fisica_pct !== null ? `${c.ejecucion_fisica_pct}%` : (c.ejecucion_fisica_texto ? escapeHtml(c.ejecucion_fisica_texto.slice(0, 28)) : 'Sin dato (NULL)');
+                const finTxt = c.ejecucion_financiera_pct !== null ? `${c.ejecucion_financiera_pct}%` : (c.ejecucion_financiera_texto ? escapeHtml(c.ejecucion_financiera_texto.slice(0, 28)) : 'Sin dato (NULL)');
+                let orientativoHtml = '';
+                if (c.nota_indicador_temporal) {
+                    orientativoHtml = `<div style="font-size:0.71rem; margin-top:3px;" class="muted">${escapeHtml(c.nota_indicador_temporal)}</div>`;
+                }
+
+                const obl = c.obligacion_periodo || {};
+                const entPer = obl.estado_entrega_efectivo || obl.estado_entrega || 'FALTANTE';
+                const revPer = obl.estado_revision || 'SIN_REPORTE';
+
+                const conflictoHtml = c.dato_conflicto
+                    ? `<div style="margin-top:4px; padding:4px 6px; background:#F8FAF9; border:1px solid #E3E6EA; border-radius:6px; font-size:0.74rem;"><strong>Por validar:</strong> ${escapeHtml(c.dato_conflicto)}</div>`
+                    : '';
+
+                return `
+                    <tr>
+                        <td style="font-weight:700;" class="muted">${c.fila_excel || c.id}</td>
+                        <td>
+                            <div style="font-weight:700; color:var(--primary-green-dark);">${escapeHtml(c.titulo_grupo)}</div>
+                            <div style="font-size:0.78rem;" class="muted">${grpBadge} ${escapeHtml(c.numero_contrato)} &bull; ${escapeHtml(c.area_nombre || '')}</div>
+                            <div style="margin-top:2px;">${proysBadges}</div>
+                            ${m1Badge}
+                        </td>
+                        <td>
+                            <div style="font-weight:600;">${c.responsable_nombre ? escapeHtml(c.responsable_nombre) : '<span class="muted">Sin responsable (NULL)</span>'}</div>
+                            <small class="muted">Estado: ${escapeHtml(c.estado_contractual)}</small>
+                        </td>
+                        <td>${plazoHtml}</td>
+                        <td>${fRepHtml}</td>
+                        <td>
+                            <div><strong>Física:</strong> ${fisTxt}</div>
+                            <div><strong>Financiera:</strong> ${finTxt}</div>
+                            ${orientativoHtml}
+                        </td>
+                        <td>
+                            <div style="margin-bottom:3px;"><span class="tag ${entPer === 'RECIBIDO' ? '' : 'tag-alert'}">ENTREGA: ${escapeHtml(entPer)}</span></div>
+                            <div>${badgeForRevision(revPer)}</div>
+                            ${obl.radicado_ultimo ? `<small style="display:block; margin-top:2px;" class="muted">${escapeHtml(obl.radicado_ultimo)}</small>` : ''}
+                        </td>
+                        <td>
+                            <div style="margin-bottom:3px;">${badgeForNivel(c.nivel_alerta)} <strong style="font-size:0.78rem;">${escapeHtml(c.tipo_alerta || '')}</strong></div>
+                            <div style="font-size:0.78rem;">${escapeHtml(c.alerta_consolidada || '')}</div>
+                            ${conflictoHtml}
+                        </td>
+                        <td style="text-align:center; white-space:nowrap;">
+                            <div style="display:flex; flex-direction:column; gap:0.35rem;">
+                                <button type="button" class="btn btn-primary btn-sm" onclick="openContratoModal(${c.id}, 'tracking')">Ficha / Tracking</button>
+                                <a href="reporte_despacho.html?contrato_id=${c.id}" target="_blank" class="btn btn-outline btn-sm">Completar / Editar</a>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function renderAlertasTables(vigentes, historial) {
+            document.getElementById('lbl-count-alertas').textContent = (vigentes || []).length;
+            const tbVig = document.getElementById('tbody-alertas-vigentes');
+            tbVig.innerHTML = (vigentes || []).map(a => `
+                <tr>
+                    <td>${badgeForNivel(a.nivel_alerta)}</td>
+                    <td>
+                        <div style="font-weight:700; font-size:0.76rem;">${escapeHtml(a.categoria_alerta)}</div>
+                        <small class="muted">${escapeHtml(a.criterio_codigo || '')}</small>
+                    </td>
+                    <td>
+                        <strong>${escapeHtml(a.titulo_grupo)}</strong><br>
+                        <small class="muted">${escapeHtml(a.numero_contrato)}</small>
+                    </td>
+                    <td>${escapeHtml(a.responsable_nombre || 'Sin asignar')}</td>
+                    <td>
+                        <strong>${escapeHtml(a.tipo_alerta)}</strong><br>
+                        ${escapeHtml(a.descripcion_alerta)}
+                        <div style="font-size:0.73rem; margin-top:3px;" class="muted">
+                            Condición: ${escapeHtml(a.condicion_evaluada || 'Corte 19/10/2026')} | Regla: ${escapeHtml(a.version_regla || '')}
+                        </div>
+                    </td>
+                    <td style="font-size:0.78rem;">
+                        ${a.dato_por_validar ? `<div style="font-weight:600;">Por validar: ${escapeHtml(a.dato_por_validar)}</div>` : '<span class="muted">Sin conflicto adicional</span>'}
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-outline btn-sm" onclick="openContratoModal(${a.contrato_id}, 'alertas')">Gestionar</button>
+                    </td>
+                </tr>
+            `).join('');
+
+            const tbHist = document.getElementById('tbody-historial-alertas');
+            tbHist.innerHTML = (historial || []).map(h => `
+                <tr>
+                    <td><strong>${escapeHtml(h.fecha_corte_texto || (h.created_at || '').slice(0, 10))}</strong></td>
+                    <td>${escapeHtml(h.contrato_nombre_referencia || h.numero_contrato || '')}</td>
+                    <td>${escapeHtml(h.cambio_dato)}</td>
+                    <td>${escapeHtml(h.efecto_alerta || '')}</td>
+                    <td><small class="muted">${escapeHtml(h.usuario_nombre || 'Sistema')}</small></td>
+                </tr>
+            `).join('');
+        }
+
+        function renderCriteriosConfig(reglas) {
+            const container = document.getElementById('criterios-config-container');
+            container.innerHTML = reglas.map(r => {
+                const p = r.parametros || {};
+                return `
+                    <div class="section-box">
+                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                            <div>
+                                <span class="tag">${escapeHtml(r.categoria_alerta)}</span>
+                                <strong style="font-size:0.96rem; margin-left:0.4rem; color:var(--primary-green-dark);">${escapeHtml(r.nombre_criterio)}</strong>
+                            </div>
+                            <div>
+                                <span class="tag tag-neutral">Estado: ${escapeHtml(r.estado_validacion)}</span>
+                                <span class="tag tag-neutral">Versión Regla v${r.version_regla}</span>
+                            </div>
+                        </div>
+                        <p style="margin:0.5rem 0; font-size:0.85rem;">${escapeHtml(r.descripcion_criterio)}</p>
+                        <div style="font-size:0.8rem; background:#F8FAF9; border:1px solid #E3E6EA; padding:0.65rem; border-radius:8px;">
+                            <strong>Nota metodológica:</strong> ${escapeHtml(r.nota_metodologica || '')}<br>
+                            <strong>Parámetros configurados:</strong> <code>${escapeHtml(JSON.stringify(p))}</code>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderPeriodosTable(periodos) {
+            const tbody = document.getElementById('tbody-periodos-list');
+            tbody.innerHTML = periodos.map(p => `
+                <tr>
+                    <td><strong>${escapeHtml(p.codigo)}</strong></td>
+                    <td>${escapeHtml(p.nombre)}</td>
+                    <td>${escapeHtml(p.tipo_periodo)}</td>
+                    <td>${escapeHtml(p.fecha_inicio)} a ${escapeHtml(p.fecha_fin)}</td>
+                    <td><strong>${escapeHtml(p.fecha_limite_entrega)}</strong></td>
+                    <td>${Number(p.es_periodo_activo) === 1 ? '<span class="tag">ACTIVO</span>' : `<span class="tag tag-neutral">${escapeHtml(p.estado)}</span>`}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline btn-sm" onclick="selectPeriodoFilter(${p.id})">Ver cumplimiento de este periodo</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function selectPeriodoFilter(pid) {
+            document.getElementById('f-periodo').value = String(pid);
+            switchDespachoTab('maestro');
+            loadDashboardData(false);
+        }
+
+        async function handleCreatePeriodo(e) {
+            e.preventDefault();
+            const payload = {
+                action: 'create_period',
+                codigo: document.getElementById('per-codigo').value.trim(),
+                nombre: document.getElementById('per-nombre').value.trim(),
+                tipo_periodo: 'SEMANAL',
+                fecha_inicio: document.getElementById('per-inicio').value,
+                fecha_fin: document.getElementById('per-fin').value,
+                fecha_limite_entrega: document.getElementById('per-limite').value,
+                es_periodo_activo: document.getElementById('per-activo').checked ? 1 : 0
+            };
+
+            const res = await fetch('api/despacho_api.php?action=create_period', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'same-origin',
+                body: JSON.stringify(payload)
+            });
+            const data = await res.json();
+            if (!res.ok || !data.success) {
+                alert(data.message || 'Error al crear periodo.');
+                return;
+            }
+            alert(data.message);
+            await loadDashboardData(true);
+            switchDespachoTab('maestro');
+        }
+
+        function switchModalSubtab(subtabId) {
+            document.querySelectorAll('.modal-subtab-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.subtab === subtabId);
+            });
+            document.querySelectorAll('.modal-subtab-pane').forEach(pane => {
+                pane.classList.toggle('active', pane.id === `modal-pane-${subtabId}`);
+            });
+        }
+
+        async function openContratoModal(contratoId, initialSubtab = 'tracking') {
+            const modal = document.getElementById('modal-contrato');
+            const body = document.getElementById('modal-body-content');
+            modal.classList.add('open');
+            body.innerHTML = '<div style="padding:2.5rem; text-align:center;" class="muted">Cargando ficha y tracking de actualizaciones del contrato...</div>';
+
+            try {
+                const res = await fetch(`api/despacho_api.php?action=contract_detail&id=${contratoId}`, { credentials: 'same-origin' });
+                const data = await res.json();
+                if (!res.ok || !data.success) {
+                    body.innerHTML = `<div style="padding:1.5rem; color:#B91C1C;">Error: ${escapeHtml(data.message || 'No se pudo cargar el contrato')}</div>`;
+                    return;
+                }
+
+                const c = data.contrato;
+                document.getElementById('modal-title').textContent = `${c.numero_contrato} — ${c.titulo_grupo}`;
+                document.getElementById('modal-subtitle').textContent = `Responsable: ${c.responsable_nombre || 'Sin asignar'} | Área: ${c.area_nombre || 'N/A'} | Estado Contractual: ${c.estado_contractual} | Nivel Alerta: ${c.nivel_alerta}`;
+
+                const versiones = data.versiones || [];
+                const ultimaVersion = versiones[0] || null;
+                const ultimoReporte = (data.reportes || [])[0] || null;
+
+                // 1. Bloque de Última Actualización Vigente
+                const ultimaActHtml = ultimaVersion ? `
+                    <div class="info-grid" style="margin-bottom:0.85rem;">
+                        <div class="info-cell">
+                            <b>Último Radicado y Versión</b>
+                            <strong>${escapeHtml(ultimaVersion.radicado)} (Versión #${ultimaVersion.numero_version})</strong>
+                            <div style="margin-top:4px;">${badgeForRevision(ultimaVersion.estado_version)} <span class="tag tag-neutral">${escapeHtml(ultimaVersion.tipo_mensaje)}</span></div>
+                        </div>
+                        <div class="info-cell">
+                            <b>Fecha del Reporte vs Recepción</b>
+                            <div>Reporte: <strong>${escapeHtml(ultimaVersion.fecha_reporte_texto || c.fecha_ultimo_reporte_texto || 'No informada')}</strong></div>
+                            <div class="muted" style="font-size:0.76rem;">Recepción sistema: ${escapeHtml(ultimaVersion.created_at)}</div>
+                        </div>
+                        <div class="info-cell">
+                            <b>Periodo y Reportante</b>
+                            <div>Periodo: <strong>${escapeHtml(ultimaVersion.periodo_nombre || 'Corte inicial')}</strong></div>
+                            <div class="muted" style="font-size:0.76rem;">Reportado por: ${escapeHtml(ultimaVersion.responsable_reportante || c.responsable_nombre || 'No especificado')}</div>
+                        </div>
+                        <div class="info-cell">
+                            <b>Avance en Última Actualización</b>
+                            <div>Física: <strong>${ultimaVersion.ejecucion_fisica_pct !== null ? ultimaVersion.ejecucion_fisica_pct + '%' : escapeHtml(ultimaVersion.ejecucion_fisica_texto || 'Sin dato (NULL)')}</strong></div>
+                            <div>Financiera: <strong>${ultimaVersion.ejecucion_financiera_pct !== null ? ultimaVersion.ejecucion_financiera_pct + '%' : escapeHtml(ultimaVersion.ejecucion_financiera_texto || 'Sin dato (NULL)')}</strong></div>
+                        </div>
+                    </div>
+                    ${ultimaVersion.comentario_revision ? `
+                        <div style="padding:0.65rem 0.85rem; background:#FFF8E6; border:1px solid #F5E0A3; border-radius:8px; font-size:0.82rem; margin-bottom:0.85rem;">
+                            <strong>Última observación de revisión Despacho:</strong> ${escapeHtml(ultimaVersion.comentario_revision)}
+                        </div>
+                    ` : ''}
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:0.85rem;">
+                        <div>
+                            <span class="form-label">Mensaje 1 Vigente (Ficha Contractual)</span>
+                            <pre class="msg-raw">${c.mensaje1_texto ? escapeHtml(c.mensaje1_texto) : (ultimaVersion.mensaje1_texto_original ? escapeHtml(ultimaVersion.mensaje1_texto_original) : 'Sin Mensaje 1 registrado')}</pre>
+                        </div>
+                        <div>
+                            <span class="form-label">Mensaje 2 Vigente (Último Reporte de Ejecución)</span>
+                            <pre class="msg-raw">${ultimaVersion.mensaje2_texto_original ? escapeHtml(ultimaVersion.mensaje2_texto_original) : (c.mensaje2_ultimo_texto ? escapeHtml(c.mensaje2_ultimo_texto) : 'Sin Mensaje 2 registrado')}</pre>
+                        </div>
+                    </div>
+                ` : '<p class="muted">No hay versiones registradas para este contrato.</p>';
+
+                // 2. Bloque de Revisión Oficial de Despacho
+                const revisionBoxHtml = ultimoReporte ? `
+                    <div class="section-box">
+                        <h4>
+                            <span>Revisión Oficial de Despacho sobre Último Reporte (${escapeHtml(ultimoReporte.radicado)} — Versión #${ultimoReporte.version_actual})</span>
+                            <span>${badgeForRevision(ultimoReporte.estado_revision)}</span>
+                        </h4>
+                        <p class="muted" style="margin:0 0 0.65rem 0; font-size:0.82rem;">
+                            Recibir un reporte no implica aprobación automática ni cierra alertas de riesgo contractual. Si devuelve u observa el reporte, indique el motivo.
+                        </p>
+                        <div style="display:flex; gap:0.6rem; flex-wrap:wrap; align-items:center;">
+                            <input type="text" id="rev-comentario" class="input-ctrl" style="flex:1; min-width:240px;" placeholder="Observación o motivo de aprobación/devolución..." value="${escapeHtml(ultimoReporte.comentario_revision || '')}">
+                            <label class="chk" style="text-transform:none;">
+                                <input type="checkbox" id="rev-aplicar-ficha" checked style="width:auto;"> Aplicar datos a ficha validada al aprobar
+                            </label>
+                            <button type="button" class="btn btn-primary btn-sm" onclick="revisarReporte(${ultimoReporte.id}, 'APROBADO', ${c.id})">Aprobar Reporte</button>
+                            <button type="button" class="btn btn-gold btn-sm" onclick="revisarReporte(${ultimoReporte.id}, 'OBSERVADO', ${c.id})">Observar</button>
+                            <button type="button" class="btn btn-danger btn-sm" onclick="revisarReporte(${ultimoReporte.id}, 'DEVUELTO', ${c.id})">Devolver para Corrección</button>
+                        </div>
+                    </div>
+                ` : '';
+
+                // 3. Tracking de todas las versiones recibidas + Obligaciones por periodo
+                const obligacionesRows = (data.obligaciones || []).map(o => `
+                    <tr>
+                        <td><strong>${escapeHtml(o.periodo_codigo)}</strong> — ${escapeHtml(o.periodo_nombre)}</td>
+                        <td>${escapeHtml(o.fecha_limite_entrega)}</td>
+                        <td><span class="tag ${o.estado_entrega === 'RECIBIDO' ? '' : 'tag-alert'}">${escapeHtml(o.estado_entrega)}</span></td>
+                        <td>${badgeForRevision(o.estado_revision)}</td>
+                        <td>${escapeHtml(o.fecha_ultima_entrega || 'Sin entrega en este periodo')}</td>
+                    </tr>
+                `).join('');
+
+                const versionesTimelineHtml = versiones.map((v, idx) => {
+                    const cambios = (v.datos_estructurados && Array.isArray(v.datos_estructurados.resumen_cambios))
+                        ? v.datos_estructurados.resumen_cambios
+                        : [];
+                    const cambiosHtml = cambios.length
+                        ? `<div style="margin-bottom:0.55rem; padding:0.5rem 0.7rem; background:#EEF4EF; border-radius:6px; font-size:0.8rem;">
+                             <strong>Modificaciones registradas en esta versión:</strong>
+                             <ul style="margin:0.25rem 0 0 1.15rem; padding:0;">
+                               ${cambios.map(ch => `<li>${escapeHtml(ch)}</li>`).join('')}
+                             </ul>
+                           </div>`
+                        : '';
+                    return `
+                    <div class="section-box" style="background:${idx === 0 ? '#FFFFFF' : '#F8FAF9'};">
+                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.5rem;">
+                            <div>
+                                <span class="tag ${idx === 0 ? '' : 'tag-neutral'}">${idx === 0 ? 'ÚLTIMA VERSIÓN' : 'HISTÓRICO'}</span>
+                                <strong style="margin-left:0.35rem;">Versión #${v.numero_version} — Radicado ${escapeHtml(v.radicado)}</strong>
+                                <span class="tag tag-neutral">${escapeHtml(v.tipo_mensaje)}</span>
+                                ${badgeForRevision(v.estado_version)}
+                            </div>
+                            <div style="font-size:0.78rem;" class="muted">
+                                Periodo: <strong>${escapeHtml(v.periodo_nombre || 'General')}</strong> |
+                                Fecha informada: <strong>${escapeHtml(v.fecha_reporte_texto || 'N/A')}</strong> |
+                                Recepción: <strong>${escapeHtml(v.created_at)}</strong>
+                            </div>
+                        </div>
+                        <div style="font-size:0.82rem; margin-bottom:0.5rem;">
+                            <strong>Reportante:</strong> ${escapeHtml(v.responsable_reportante || 'N/A')} |
+                            <strong>Física:</strong> ${escapeHtml(v.ejecucion_fisica_texto || (v.ejecucion_fisica_pct !== null ? v.ejecucion_fisica_pct + '%' : 'NULL'))} |
+                            <strong>Financiera:</strong> ${escapeHtml(v.ejecucion_financiera_texto || (v.ejecucion_financiera_pct !== null ? v.ejecucion_financiera_pct + '%' : 'NULL'))} |
+                            <strong>Estado reportado:</strong> ${escapeHtml(v.estado_reportado_texto || 'NULL')} |
+                            <strong>Fin informado:</strong> ${escapeHtml(v.fecha_fin_reportada_texto || 'NULL')}
+                        </div>
+                        ${cambiosHtml}
+                        ${v.comentario_revision ? `<div style="margin-bottom:0.5rem; padding:0.45rem 0.65rem; background:#FFF8E6; border:1px solid #F5E0A3; border-radius:6px; font-size:0.8rem;"><strong>Observación Revisión:</strong> ${escapeHtml(v.comentario_revision)}</div>` : ''}
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:0.75rem;">
+                            <div>
+                                <span class="form-label">Mensaje 1 en esta versión</span>
+                                <pre class="msg-raw">${v.mensaje1_texto_original ? escapeHtml(v.mensaje1_texto_original) : '(Sin Mensaje 1 en esta versión)'}</pre>
+                            </div>
+                            <div>
+                                <span class="form-label">Mensaje 2 en esta versión</span>
+                                <pre class="msg-raw">${v.mensaje2_texto_original ? escapeHtml(v.mensaje2_texto_original) : '(Sin Mensaje 2 en esta versión)'}</pre>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                }).join('');
+
+                const adjuntosHtml = (data.adjuntos || []).length
+                    ? (data.adjuntos || []).map(adj => `
+                        <a href="api/despacho_adjunto.php?id=${adj.id}" target="_blank" class="btn btn-outline btn-sm" style="margin:0.2rem;">
+                            Descargar ${escapeHtml(adj.nombre_original)} (${Math.round(adj.tamano_bytes / 1024)} KB)
+                        </a>
+                    `).join('')
+                    : '<span class="muted" style="font-size:0.83rem;">Sin archivos adjuntos cargados.</span>';
+
+                // 4. Bitácora y eventos de tracking
+                const bitacoraRows = (data.bitacora || []).slice(0, 25).map(b => `
+                    <tr>
+                        <td>${escapeHtml(b.created_at)}</td>
+                        <td><span class="tag tag-neutral">${escapeHtml(b.accion)}</span></td>
+                        <td>${escapeHtml(b.actor_nombre || b.actor_tipo)}</td>
+                        <td>${escapeHtml(b.descripcion)}</td>
+                    </tr>
+                `).join('');
+
+                // 5. Ficha Contractual y Componentes
+                const compHtml = (data.componentes || []).map(cm => `
+                    <tr>
+                        <td><span class="tag tag-neutral">${escapeHtml(cm.tipo_componente)}</span></td>
+                        <td><strong>${escapeHtml(cm.numero_componente)}</strong></td>
+                        <td>${escapeHtml(cm.contratista || 'Sin dato')}</td>
+                        <td>${cm.valor_total !== null ? '$' + Number(cm.valor_total).toLocaleString('es-CO') : 'Sin desagregar'}</td>
+                        <td>${cm.avance_fisico_pct !== null ? cm.avance_fisico_pct + '%' : 'N/A'}</td>
+                        <td>${cm.avance_financiero_pct !== null ? cm.avance_financiero_pct + '%' : 'N/A'}</td>
+                    </tr>
+                `).join('');
+
+                // 6. Enlaces con token
+                const enlacesHtml = (data.enlaces_carga || []).map(e => `
+                    <tr>
+                        <td><code>${escapeHtml(e.token_prefijo)}...</code></td>
+                        <td>${escapeHtml(e.alcance)}</td>
+                        <td>${escapeHtml(e.periodo_nombre || 'General')}</td>
+                        <td>${e.usos_realizados} / ${e.max_usos}</td>
+                        <td>${escapeHtml(e.expira_en)}</td>
+                        <td>${Number(e.revocado) === 1 ? '<span class="tag tag-alert">REVOCADO</span>' : '<span class="tag">ACTIVO</span>'}</td>
+                        <td>
+                            ${Number(e.revocado) === 0 ? `<button type="button" class="btn btn-danger btn-sm" onclick="revocarEnlace(${e.id}, ${c.id})">Revocar</button>` : ''}
+                        </td>
+                    </tr>
+                `).join('');
+
+                // 7. Alertas del contrato
+                const alertasContratoHtml = (data.alertas || []).map(al => `
+                    <div class="section-box">
+                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                            <div>
+                                ${badgeForNivel(al.nivel_alerta)}
+                                <span class="tag tag-neutral">${escapeHtml(al.categoria_alerta)}</span>
+                                <strong>${escapeHtml(al.tipo_alerta)}</strong>
+                            </div>
+                            <span class="tag ${al.estado_alerta === 'ACTIVA' ? 'tag-alert' : ''}">${escapeHtml(al.estado_alerta)}</span>
+                        </div>
+                        <p style="margin:0.45rem 0; font-size:0.84rem;">${escapeHtml(al.descripcion_alerta)}</p>
+                        ${al.dato_por_validar ? `<div style="font-size:0.8rem;" class="muted"><strong>Dato en conflicto / por validar:</strong> ${escapeHtml(al.dato_por_validar)}</div>` : ''}
+                        ${al.estado_alerta === 'ACTIVA' ? `
+                            <div style="margin-top:0.6rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+                                <input type="text" id="motivo-cierre-alerta-${al.id}" class="input-ctrl" style="flex:1;" placeholder="Motivo justificado para resolver o cambiar estado de esta alerta...">
+                                <button type="button" class="btn btn-primary btn-sm" onclick="cambiarEstadoAlerta(${al.id}, 'RESUELTA', ${c.id})">Marcar Resuelta</button>
+                                <button type="button" class="btn btn-outline btn-sm" onclick="cambiarEstadoAlerta(${al.id}, 'EN_GESTION', ${c.id})">En Gestión</button>
+                            </div>
+                        ` : `<div style="font-size:0.78rem;" class="muted">Motivo cierre/gestión: ${escapeHtml(al.motivo_cierre || '')}</div>`}
+                    </div>
+                `).join('');
+
+                body.innerHTML = `
+                    <div class="modal-subtabs">
+                        <button type="button" class="modal-subtab-btn" data-subtab="tracking" onclick="switchModalSubtab('tracking')">
+                            Última Actualización y Tracking (${versiones.length})
+                        </button>
+                        <button type="button" class="modal-subtab-btn" data-subtab="ficha" onclick="switchModalSubtab('ficha')">
+                            Ficha Contractual y Componentes
+                        </button>
+                        <button type="button" class="modal-subtab-btn" data-subtab="alertas" onclick="switchModalSubtab('alertas')">
+                            Alertas del Contrato (${(data.alertas || []).length})
+                        </button>
+                    </div>
+
+                    <!-- SUBPESTAÑA 1: ÚLTIMA ACTUALIZACIÓN Y TRACKING COMPLETO -->
+                    <div class="modal-subtab-pane" id="modal-pane-tracking">
+                        <div class="section-box">
+                            <h4>
+                                <span>Última Actualización Registrada (Total versiones en historial: ${versiones.length})</span>
+                                <a href="reporte_despacho.html?contrato_id=${c.id}" target="_blank" class="btn btn-outline btn-sm">Actualizar Mensaje 1 / Mensaje 2</a>
+                            </h4>
+                            ${ultimaActHtml}
+                        </div>
+
+                        ${revisionBoxHtml}
+
+                        <div class="section-box">
+                            <h4>Cumplimiento de Obligaciones por Periodo</h4>
+                            <div class="table-wrap">
+                                <table>
+                                    <thead><tr><th>Periodo</th><th>Fecha Límite</th><th>Estado Entrega</th><th>Estado Revisión</th><th>Última Recepción</th></tr></thead>
+                                    <tbody>${obligacionesRows || '<tr><td colspan="5">Sin obligaciones registradas.</td></tr>'}</tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="section-box">
+                            <h4>
+                                <span>Historial Cronológico de Versiones y Textos Originales (${versiones.length})</span>
+                            </h4>
+                            <div style="margin-bottom:0.85rem;"><strong>Soportes Adjuntos:</strong> ${adjuntosHtml}</div>
+                            ${versionesTimelineHtml}
+                        </div>
+
+                        <div class="section-box">
+                            <h4>Bitácora de Tracking y Auditoría del Contrato</h4>
+                            <div class="table-wrap">
+                                <table>
+                                    <thead><tr><th>Fecha / Hora</th><th>Evento</th><th>Actor</th><th>Detalle</th></tr></thead>
+                                    <tbody>${bitacoraRows || '<tr><td colspan="4" class="muted">Sin eventos registrados.</td></tr>'}</tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUBPESTAÑA 2: FICHA CONTRACTUAL Y COMPONENTES -->
+                    <div class="modal-subtab-pane" id="modal-pane-ficha">
+                        <div class="section-box">
+                            <h4>Ficha Contractual Validada e Indicadores Temporales</h4>
+                            <div class="info-grid">
+                                <div class="info-cell">
+                                    <b>Objeto Contractual</b>
+                                    ${escapeHtml(c.objeto || 'Pendiente en Mensaje 1')}
+                                </div>
+                                <div class="info-cell">
+                                    <b>Contratista / Interventoría</b>
+                                    <div>Contratista: <strong>${escapeHtml(c.contratista || 'No especificado')}</strong></div>
+                                    <div>Interventoría: ${escapeHtml(c.interventoria_nombre || 'N/A')}</div>
+                                </div>
+                                <div class="info-cell">
+                                    <b>Valores Contractuales</b>
+                                    <div>Inicial: <strong>${c.valor_inicial !== null ? '$' + Number(c.valor_inicial).toLocaleString('es-CO') : 'NULL'}</strong></div>
+                                    <div>Total: <strong>${c.valor_total !== null ? '$' + Number(c.valor_total).toLocaleString('es-CO') : 'NULL'}</strong></div>
+                                </div>
+                                <div class="info-cell">
+                                    <b>Plazos y Fechas</b>
+                                    <div>Inicio: ${escapeHtml(c.fecha_inicio_texto || 'NULL')}</div>
+                                    <div>Fin Inicial: ${escapeHtml(c.fecha_fin_inicial_texto || 'NULL')}</div>
+                                    <div>Fin Vigente: <strong>${escapeHtml(c.fecha_fin_vigente_texto || 'NULL')}</strong></div>
+                                </div>
+                            </div>
+                            <div style="margin-top:0.85rem; font-size:0.82rem;" class="muted">
+                                <strong>Indicador Plazo:</strong> ${escapeHtml(c.nota_indicador_temporal || c.estado_plazo)}
+                            </div>
+                            <div style="margin-top:1rem;">
+                                <span class="form-label">Componentes Registrados (Obra / Interventoría / Principal — Sin duplicar totales)</span>
+                                <div class="table-wrap">
+                                    <table>
+                                        <thead><tr><th>Tipo</th><th>Número</th><th>Contratista</th><th>Valor</th><th>% Físico</th><th>% Financiero</th></tr></thead>
+                                        <tbody>${compHtml}</tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUBPESTAÑA 3: ENLACES DE CARGA SIN LOGIN -->
+                    <div class="modal-subtab-pane" id="modal-pane-enlaces">
+                        <div class="section-box">
+                            <h4>Generar Enlace Individual con Token Acotado (Sin Login)</h4>
+                            <p class="muted" style="font-size:0.82rem; margin:0 0 0.75rem 0;">
+                                Genere un enlace único para que el responsable cargue Mensaje 1 y/o Mensaje 2 en este contrato y periodo sin acceso al resto del sistema.
+                            </p>
+                            <div style="display:flex; gap:0.6rem; flex-wrap:wrap; align-items:center; margin-bottom:0.85rem;">
+                                <select id="gen-alcance" class="input-ctrl" style="width:auto; min-width:260px;">
+                                    <option value="AMBOS">Alcance: Mensaje 1 + Mensaje 2</option>
+                                    <option value="MENSAJE_2">Alcance: Solo Mensaje 2 (Periódico)</option>
+                                    <option value="MENSAJE_1">Alcance: Solo Mensaje 1 (Ficha)</option>
+                                    <option value="CORRECCION">Alcance: Corrección de Reporte Devuelto</option>
+                                </select>
+                                <button type="button" class="btn btn-primary btn-sm" onclick="generarEnlaceModal(${c.id})">Generar Enlace con Token</button>
+                                <button type="button" class="btn btn-outline btn-sm" onclick="generarRequerimientoManual(${c.id})">Registrar Requerimiento Interno</button>
+                            </div>
+                            <div id="box-nuevo-enlace" style="display:none; margin-bottom:0.85rem; padding:0.85rem; background:#F8FAF9; border:1px solid #E3E6EA; border-radius:8px; font-size:0.84rem;"></div>
+                            <div class="table-wrap">
+                                <table>
+                                    <thead><tr><th>Prefijo Token</th><th>Alcance</th><th>Periodo</th><th>Usos</th><th>Expira</th><th>Estado</th><th>Acción</th></tr></thead>
+                                    <tbody>${enlacesHtml || '<tr><td colspan="7" class="muted">Sin enlaces generados aún.</td></tr>'}</tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUBPESTAÑA 4: ALERTAS DEL CONTRATO -->
+                    <div class="modal-subtab-pane" id="modal-pane-alertas">
+                        <div class="section-box">
+                            <h4>Alertas Registradas en el Contrato</h4>
+                            ${alertasContratoHtml || '<p class="muted" style="font-size:0.84rem;">Sin alertas registradas para este contrato.</p>'}
+                        </div>
+
+                        <div class="section-box">
+                            <h4>Registrar Nueva Alerta Manual Justificada</h4>
+                            <div class="filters" style="margin-bottom:0.65rem;">
+                                <div>
+                                    <label>Categoría</label>
+                                    <select id="man-al-cat">
+                                        <option value="RIESGO_CONTRACTUAL">Riesgo Contractual</option>
+                                        <option value="FALTA_REPORTE">Falta de Reporte / Información</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label>Criterio Cualitativo</label>
+                                    <select id="man-al-crit">
+                                        <option value="TERMINACION_CERCANA_EJECUCION_INSUFICIENTE">1. Terminación cercana / ejecución insuficiente</option>
+                                        <option value="EJECUCION_FINANCIERA_MUY_BAJA">2. Ejecución financiera muy baja</option>
+                                        <option value="FALTA_INFORMACION_ACTUALIZACION">3. Ausencia de información / actualización</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label>Nivel de Alerta</label>
+                                    <select id="man-al-niv">
+                                        <option value="ALTA">ALTA</option>
+                                        <option value="CRÍTICA">CRÍTICA</option>
+                                        <option value="VALIDAR DATOS">VALIDAR DATOS</option>
+                                        <option value="SEGUIMIENTO">SEGUIMIENTO</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label>Tipo Corto</label>
+                                    <input type="text" id="man-al-tipo" placeholder="Ej: Rezago financiero">
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+                                <input type="text" id="man-al-desc" class="input-ctrl" style="flex:1;" placeholder="Explicación detallada de la condición y evidencia...">
+                                <button type="button" class="btn btn-danger btn-sm" onclick="crearAlertaManual(${c.id})">Crear Alerta</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                switchModalSubtab(initialSubtab);
+            } catch (err) {
+                body.innerHTML = `<div style="padding:1.5rem; color:#B91C1C;">Error de conexión al cargar el contrato: ${escapeHtml(err.message)}</div>`;
+            }
+        }
+
+        function closeContratoModal() {
+            document.getElementById('modal-contrato').classList.remove('open');
+        }
+
+        async function revisarReporte(reporteId, decision, contratoId) {
+            const comentario = document.getElementById('rev-comentario').value.trim();
+            const aplicar = document.getElementById('rev-aplicar-ficha').checked;
+            if ((decision === 'DEVUELTO' || decision === 'OBSERVADO') && !comentario) {
+                alert('Para devolver u observar el reporte debe escribir el motivo u observación.');
+                return;
+            }
+
+            const res = await fetch('api/despacho_api.php?action=review_report', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'same-origin',
+                body: JSON.stringify({
+                    action: 'review_report',
+                    reporte_id: reporteId,
+                    decision: decision,
+                    comentario: comentario,
+                    aplicar_ficha_validada: aplicar ? 1 : 0
+                })
+            });
+            const data = await res.json();
+            if (!res.ok || !data.success) {
+                alert(data.message || 'Error al registrar revisión.');
+                return;
+            }
+            await openContratoModal(contratoId, 'tracking');
+            await loadDashboardData(false);
+        }
+
+        async function generarEnlaceModal(contratoId) {
+            const alcanceEl = document.getElementById('gen-alcance');
+            const alcance = alcanceEl ? alcanceEl.value : 'AMBOS';
+            const res = await fetch('api/despacho_api.php?action=generate_upload_link', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'same-origin',
+                body: JSON.stringify({
+                    action: 'generate_upload_link',
+                    contrato_id: contratoId,
+                    periodo_id: currentPeriodoId,
+                    alcance: alcance,
+                    dias_vigencia: 7,
+                    max_usos: 10
+                })
+            });
+            const data = await res.json();
+            if (!res.ok || !data.success) {
+                alert(data.message || 'Error al generar enlace.');
+                return;
+            }
+            const fullUrl = new URL(data.url_relativa, window.location.href).href;
+            const box = document.getElementById('box-nuevo-enlace');
+            if (box) {
+                box.style.display = 'block';
+                box.innerHTML = `
+                    <div style="font-weight:700; color:var(--primary-green-dark); margin-bottom:0.35rem;">
+                        Enlace individual generado (expira: ${escapeHtml(data.expira_en)})
+                    </div>
+                    <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+                        <input type="text" id="input-generated-url" class="input-ctrl" style="flex:1;" value="${escapeHtml(fullUrl)}" readonly onclick="this.select()">
+                        <button type="button" class="btn btn-primary btn-sm" onclick="copyGeneratedUrl()">Copiar enlace</button>
+                        <a href="${escapeHtml(fullUrl)}" target="_blank" class="btn btn-outline btn-sm">Abrir formulario</a>
+                    </div>
+                `;
+            }
+        }
+
+        function copyGeneratedUrl() {
+            const inp = document.getElementById('input-generated-url');
+            if (!inp) return;
+            inp.select();
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(inp.value);
+            } else {
+                document.execCommand('copy');
+            }
+        }
+
+        async function quickGenerateToken(contratoId) {
+            await openContratoModal(contratoId, 'enlaces');
+            await generarEnlaceModal(contratoId);
+        }
+
+        async function revocarEnlace(enlaceId, contratoId) {
+            const res = await fetch('api/despacho_api.php?action=revoke_upload_link', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'same-origin',
+                body: JSON.stringify({ action: 'revoke_upload_link', enlace_id: enlaceId })
+            });
+            const data = await res.json();
+            if (data.success) {
+                await openContratoModal(contratoId, 'enlaces');
+            }
+        }
+
+        async function generarRequerimientoManual(contratoId) {
+            const res = await fetch('api/despacho_api.php?action=create_manual_requirement', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'same-origin',
+                body: JSON.stringify({
+                    action: 'create_manual_requirement',
+                    contrato_id: contratoId,
+                    periodo_id: currentPeriodoId,
+                    motivo: 'ACTUALIZACION_PERIODICA',
+                    generar_enlace: 1
+                })
+            });
+            const data = await res.json();
+            if (!res.ok || !data.success) {
+                alert(data.message || 'Error al generar requerimiento.');
+                return;
+            }
+            const box = document.getElementById('box-nuevo-enlace');
+            if (box) {
+                box.style.display = 'block';
+                box.innerHTML = `
+                    <strong>Requerimiento Interno Registrado (#${data.requerimiento_id}):</strong>
+                    <pre class="msg-raw" style="margin-top:6px;">${escapeHtml(data.mensaje_generado)}</pre>
+                `;
+            }
+        }
+
+        async function crearAlertaManual(contratoId) {
+            const desc = document.getElementById('man-al-desc').value.trim();
+            if (!desc) {
+                alert('Debe escribir la explicación justificada de la alerta.');
+                return;
+            }
+            const payload = {
+                action: 'create_manual_alert',
+                contrato_id: contratoId,
+                categoria_alerta: document.getElementById('man-al-cat').value,
+                criterio_codigo: document.getElementById('man-al-crit').value,
+                nivel_alerta: document.getElementById('man-al-niv').value,
+                tipo_alerta: document.getElementById('man-al-tipo').value.trim() || 'Alerta manual Despacho',
+                descripcion_alerta: desc,
+                actualizar_nivel_contrato: 1
+            };
+            const res = await fetch('api/despacho_api.php?action=create_manual_alert', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'same-origin',
+                body: JSON.stringify(payload)
+            });
+            const data = await res.json();
+            if (!res.ok || !data.success) {
+                alert(data.message || 'Error al crear alerta.');
+                return;
+            }
+            await openContratoModal(contratoId, 'alertas');
+            await loadDashboardData(false);
+        }
+
+        async function cambiarEstadoAlerta(alertaId, nuevoEstado, contratoId) {
+            const motivo = document.getElementById(`motivo-cierre-alerta-${alertaId}`).value.trim();
+            if (!motivo) {
+                alert('Debe indicar el motivo justificado y evidencia para cambiar el estado de la alerta.');
+                return;
+            }
+            const res = await fetch('api/despacho_api.php?action=update_alert_status', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'same-origin',
+                body: JSON.stringify({
+                    action: 'update_alert_status',
+                    alerta_id: alertaId,
+                    estado_alerta: nuevoEstado,
+                    motivo: motivo
+                })
+            });
+            const data = await res.json();
+            if (!res.ok || !data.success) {
+                alert(data.message || 'Error al actualizar alerta.');
+                return;
+            }
+            await openContratoModal(contratoId, 'alertas');
+            await loadDashboardData(false);
+        }
+
+        function switchDespachoTab(tabName) {
+            ['maestro', 'alertas', 'criterios', 'periodos'].forEach(t => {
+                document.getElementById(`view-${t}`).classList.toggle('active', t === tabName);
+                document.getElementById(`btn-tab-${t}`).classList.toggle('active', t === tabName);
+            });
+        }
+
+        function applyQuickFilter(nivel) {
+            document.getElementById('f-nivel').value = nivel;
+            document.getElementById('f-solo-faltantes').checked = false;
+            switchDespachoTab('maestro');
+            loadDashboardData(false);
+        }
+
+        function toggleSoloFaltantes() {
+            const chk = document.getElementById('f-solo-faltantes');
+            chk.checked = !chk.checked;
+            switchDespachoTab('maestro');
+            loadDashboardData(false);
+        }
+
+        function resetFilters() {
+            document.getElementById('f-area').value = '';
+            document.getElementById('f-proyecto').value = '';
+            document.getElementById('f-responsable').value = '';
+            document.getElementById('f-nivel').value = '';
+            document.getElementById('f-estado-con').value = '';
+            document.getElementById('f-estado-ent').value = '';
+            document.getElementById('f-estado-rev').value = '';
+            document.getElementById('f-search').value = '';
+            document.getElementById('f-solo-faltantes').checked = false;
+            loadDashboardData(false);
+        }
+
+        async function logout() {
+            try { await fetch('api/logout.php'); } catch (e) {}
+            localStorage.removeItem('is_admin');
+            localStorage.removeItem('user_rol_id');
+            window.location.href = 'login.html';
+        }
+
+        function escapeHtml(str) {
+            if (str === null || str === undefined) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+    </script>
+</body>
+
+</html>

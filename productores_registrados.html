@@ -339,6 +339,29 @@
                             </div>
                         </div>
 
+                        <!-- 5. Despacho (Visible exclusivamente para usuario Despacho ID 16 y Admin real verificado en servidor) -->
+                        <div class="nav-tab-dropdown" id="tab-despacho" style="display: none;">
+                            <button class="nav-tab-btn" type="button" aria-haspopup="true">
+                                Despacho <span class="tab-arrow">▼</span>
+                            </button>
+                            <div class="nav-dropdown-menu align-right">
+                                <a href="despacho.html" class="nav-dropdown-item" id="item-despacho-tablero">Tablero Seguimiento Contractual</a>
+                            </div>
+                        </div>
+                        <script>
+                            (function() {
+                                fetch('api/despacho_api.php?action=auth_status', { credentials: 'same-origin' })
+                                    .then(function(r) { return r.ok ? r.json() : null; })
+                                    .then(function(d) {
+                                        if (d && d.success && d.authorized) {
+                                            var el = document.getElementById('tab-despacho');
+                                            if (el) el.style.display = '';
+                                        }
+                                    })
+                                    .catch(function() {});
+                            })();
+                        </script>
+
                         <!-- Cerrar Sesión -->
                         <button onclick="logout()" class="header-auth-btn" id="btn-logout" title="Cerrar Sesión">
                             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"

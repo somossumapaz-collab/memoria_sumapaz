@@ -64,6 +64,13 @@ try {
             $_SESSION['is_admin'] = true;
         }
 
+        $is_despacho = ($user_id === 16 && strtolower(trim((string)$user['nombre'])) === 'despacho');
+        $is_real_admin = ($user_rol_id === 1 && !in_array($user_id, [7, 8], true));
+        if ($is_despacho) {
+            $rol_nombre = 'DESPACHO';
+            $_SESSION['rol'] = $rol_nombre;
+        }
+
         $is_concursos_only = ($user_id === 12 || $user_rol_id === 12);
         $is_kardex = ($user_id === 14 || $user_rol_id === 14);
 
@@ -71,8 +78,11 @@ try {
         // User ID 12 or Role ID 12 is specifically Concursos Sumapaz ONLY
         // User ID 14 or Role ID 14 is Kardex Agroambiental
         // Role 13 is Feria Agroambiental (App concursosSumapaz) -> feria_ambiental.html ONLY
+        // User ID 16 ('despacho') -> despacho.html
         $redirect_target = 'productores_registrados.html';
-        if ($is_kardex) {
+        if ($is_despacho) {
+            $redirect_target = 'despacho.html';
+        } else if ($is_kardex) {
             $redirect_target = 'kardex_agroambiental.html';
         } else if ($user_rol_id === 13) {
             $redirect_target = 'feria_ambiental.html';
@@ -86,10 +96,13 @@ try {
             'success' => true, 
             'message' => 'Login exitoso', 
             'redirect' => $redirect_target,
+            'redirect_to' => $redirect_target,
             'user_id' => $user_id,
+            'username' => $user['nombre'],
             'rol' => $rol_nombre,
             'rol_id' => $user_rol_id,
-            'is_concursos_only' => $is_concursos_only
+            'is_concursos_only' => $is_concursos_only,
+            'can_access_despacho' => ($is_despacho || $is_real_admin)
         ]);
     } else {
         // Authentication failed
