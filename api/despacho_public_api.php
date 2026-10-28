@@ -479,8 +479,85 @@ try {
 
         $areasOut = $pdo->query("SELECT id, codigo, nombre FROM despacho_areas WHERE activo = 1 ORDER BY nombre ASC")->fetchAll(PDO::FETCH_ASSOC);
 
+        // Verificación de sesión real de Despacho o Administrador
+        $sessionUser = verifyDespachoSession($pdo, false);
+        $canCreateContract = !empty($sessionUser['is_real_admin']) || !empty($sessionUser['is_despacho']);
+        $currentUserInfo = [
+            'authenticated' => $sessionUser !== null,
+            'is_real_admin' => !empty($sessionUser['is_real_admin']),
+            'is_despacho' => !empty($sessionUser['is_despacho']),
+            'can_create_contract' => $canCreateContract,
+            'nombre' => $sessionUser['nombre'] ?? null,
+            'perfil' => $sessionUser['perfil_despacho'] ?? null,
+        ];
+
+        // Mapeo de proyectos por contrato
+        $stmtProyRel = $pdo->query("SELECT cp.contrato_id, p.id AS proyecto_id, p.codigo AS proyecto_codigo, p.nombre AS proyecto_nombre
+            FROM despacho_contrato_proyectos cp
+            INNER JOIN despacho_proyectos p ON p.id = cp.proyecto_id
+            WHERE p.activo = 1");
+        $proysByContrato = [];
+        foreach ($stmtProyRel->fetchAll(PDO::FETCH_ASSOC) as $pr) {
+            $proysByContrato[(int)$pr['contrato_id']][] = [
+                'id' => (int)$pr['proyecto_id'],
+                'codigo' => $pr['proyecto_codigo'],
+                'nombre' => $pr['proyecto_nombre']
+            ];
+        }
+
+        // Listado plano de todos los contratos para búsqueda y agrupamiento por responsable
+        $stmtAllCon = $pdo->query("SELECT c.id, c.numero_contrato, c.titulo_grupo, c.responsable_nombre,
+                c.contratista, c.objeto, c.estado_contractual, c.tiene_mensaje1, c.fecha_ultimo_reporte_texto,
+                c.ejecucion_fisica_pct, c.ejecucion_financiera_pct, c.fecha_fin_vigente_texto, c.fecha_fin_inicial_texto
+            FROM despacho_contratos c
+            ORDER BY COALESCE(c.fila_excel, 9999) ASC, c.id ASC");
+        $allContratosRaw = $stmtAllCon->fetchAll(PDO::FETCH_ASSOC);
+
+        $allContratosOut = [];
+        $responsablesMap = [];
+
+        foreach ($allContratosRaw as $c) {
+            $cid = (int)$c['id'];
+            $proys = $proysByContrato[$cid] ?? [];
+            $resp = trim((string)($c['responsable_nombre'] ?? ''));
+            $respKey = $resp !== '' ? $resp : 'Sin responsable asignado';
+
+            $cData = [
+                'id' => $cid,
+                'numero_contrato' => $c['numero_contrato'],
+                'titulo_grupo' => $c['titulo_grupo'],
+                'contratista' => $c['contratista'],
+                'objeto' => $c['objeto'],
+                'responsable_nombre' => $resp !== '' ? $resp : null,
+                'estado_contractual' => $c['estado_contractual'],
+                'tiene_mensaje1' => (int)$c['tiene_mensaje1'] === 1,
+                'fecha_ultimo_reporte_texto' => $c['fecha_ultimo_reporte_texto'],
+                'ejecucion_fisica_pct' => $c['ejecucion_fisica_pct'] !== null ? (float)$c['ejecucion_fisica_pct'] : null,
+                'ejecucion_financiera_pct' => $c['ejecucion_financiera_pct'] !== null ? (float)$c['ejecucion_financiera_pct'] : null,
+                'proyectos' => $proys
+            ];
+
+            $allContratosOut[] = $cData;
+
+            if (!isset($responsablesMap[$respKey])) {
+                $responsablesMap[$respKey] = [
+                    'nombre' => $respKey,
+                    'total_contratos' => 0,
+                    'contratos' => []
+                ];
+            }
+            $responsablesMap[$respKey]['total_contratos']++;
+            $responsablesMap[$respKey]['contratos'][] = $cData;
+        }
+
+        ksort($responsablesMap, SORT_NATURAL | SORT_FLAG_CASE);
+        $responsablesOut = array_values($responsablesMap);
+
         echo json_encode([
             'success' => true,
+            'user' => $currentUserInfo,
+            'responsables' => $responsablesOut,
+            'contratos' => $allContratosOut,
             'proyectos' => $proyectosOut,
             'areas' => $areasOut
         ], JSON_UNESCAPED_UNICODE);
@@ -663,6 +740,17 @@ try {
                 $contratoId = (int)($stmtFindNew->fetchColumn() ?: 0);
 
                 if ($contratoId <= 0) {
+                    $sessionUser = verifyDespachoSession($pdo, false);
+                    $canCreate = !empty($sessionUser['is_real_admin']) || !empty($sessionUser['is_despacho']);
+                    if (!$canCreate) {
+                        http_response_code(403);
+                        echo json_encode([
+                            'success' => false,
+                            'message' => 'Acceso denegado: solo el usuario Despacho o Administrador puede registrar o ingresar nuevos contratos al sistema.'
+                        ], JSON_UNESCAPED_UNICODE);
+                        exit;
+                    }
+
                     $nuevoTitulo = trim((string)($rawBody['nuevo_titulo_grupo'] ?? '')) ?: ('Contrato ' . $nuevoNum);
                     $nuevoAreaId = !empty($rawBody['nuevo_area_id']) ? (int)$rawBody['nuevo_area_id'] : null;
                     $nuevoResp = trim((string)($rawBody['responsable_reportante'] ?? '')) ?: null;
@@ -1126,7 +1214,7 @@ try {
             'ejecucion_financiera_valor = ?',
             'estado_reportado_texto = COALESCE(?, estado_reportado_texto)',
             'fecha_fin_vigente_texto = COALESCE(?, fecha_fin_vigente_texto)',
-            'responsable_nombre = COALESCE(?, responsable_nombre)'
+            'responsable_nombre = COALESCE(responsable_nombre, ?)'
         ];
         $updParams = [
             $reporteId,

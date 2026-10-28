@@ -730,93 +730,289 @@
 
         <!-- TARJETAS DE INDICADORES EJECUTIVOS SOBRIAS (SIN BORDE IZQUIERDO NI COLORES ESTRIDENTES) -->
         <section class="kpis">
-            <div class="kpi" onclick="applyQuickFilter('')">
+            <div class="kpi" onclick="resetFilters()">
                 <div class="v" id="kpi-total">0</div>
                 <div class="l">Contratos con Seguimiento</div>
                 <div class="s" id="kpi-grupos-sub">Grupos obra/inter: 0</div>
             </div>
-            <div class="kpi" onclick="applyQuickFilter('')">
-                <div class="v" id="kpi-ultima-fecha">—</div>
-                <div class="l">Última Fecha de Seguimiento</div>
-                <div class="s">Fecha más reciente entre todos los contratos</div>
+            <div class="kpi" onclick="document.getElementById('f-responsable').focus()">
+                <div class="v" id="kpi-total-responsables">0</div>
+                <div class="l">Responsables / Apoyos</div>
+                <div class="s" id="kpi-proyectos-cubiertos">Supervisores en seguimiento</div>
             </div>
-            <div class="kpi" onclick="toggleSoloFaltantes()">
+            <div class="kpi" onclick="filterAtraso('al_dia')">
+                <div class="v" id="kpi-reportados-semana">0</div>
+                <div class="l">Reportados Esta Semana</div>
+                <div class="s">Al día</div>
+            </div>
+            <div class="kpi" onclick="filterAtraso('mas_de_una_semana')">
                 <div class="v" id="kpi-faltantes-periodo">0</div>
-                <div class="l">Contratos sin Actualización Semanal</div>
-                <div class="s">Pendientes de reporte en el periodo activo</div>
+                <div class="l">Sin Reporte Semanal</div>
+                <div class="s">Con atraso</div>
             </div>
         </section>
 
-        <!-- TABLERO CONSOLIDADO MAESTRO -->
+        <!-- TABLERO CONSOLIDADO MAESTRO DE CONTRATOS -->
         <div id="view-maestro" class="tab-content active">
-            <section class="card">
-                <div class="filters">
-                    <!-- Selectores auxiliares ocultos para mantener compatibilidad sin recargar la interfaz -->
-                    <select id="f-periodo" style="display:none;" onchange="loadDashboardData(false)"></select>
-                    <select id="f-area" style="display:none;" onchange="loadDashboardData(false)"><option value="">Todas las Áreas</option></select>
-                    <select id="f-nivel" style="display:none;" onchange="loadDashboardData(false)"><option value="">Todos</option></select>
-                    <select id="f-estado-ent" style="display:none;" onchange="loadDashboardData(false)"><option value="">Todos</option></select>
-                    <select id="f-estado-rev" style="display:none;" onchange="loadDashboardData(false)"><option value="">Todos</option></select>
+            <div id="view-contratos-container">
+                <section class="card">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:0.5rem; padding-bottom:0.75rem; border-bottom:1px solid #E3E6EA;">
+                        <div>
+                            <h3 style="margin:0; border:none; padding:0;">Seguimiento y Control Contractual</h3>
+                            <div class="muted" style="font-size:0.83rem; margin-top:2px;">Consolidado de contratos, proyectos asociados y reportes semanales de ejecución.</div>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-primary" onclick="openCrearContratoModal()">+ Crear Nuevo Contrato</button>
+                        </div>
+                    </div>
 
-                    <div>
-                        <label for="f-proyecto">Proyecto de Inversión</label>
-                        <select id="f-proyecto" onchange="loadDashboardData(false)">
-                            <option value="">Todos los Proyectos</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="f-responsable">Apoyo a la Supervisión</label>
-                        <select id="f-responsable" onchange="loadDashboardData(false)">
-                            <option value="">Todos</option>
-                            <option value="__SIN_RESPONSABLE__">Sin apoyo asignado</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="f-estado-con">Estado</label>
-                        <select id="f-estado-con" onchange="loadDashboardData(false)">
-                            <option value="">Todos</option>
-                            <option value="EN_EJECUCION">EN EJECUCIÓN</option>
-                            <option value="SUSPENDIDO">SUSPENDIDO</option>
-                            <option value="EN_MODIFICACION">EN MODIFICACIÓN / PRÓRROGA</option>
-                            <option value="TERMINADO">TERMINADO</option>
-                            <option value="EN_LIQUIDACION">EN LIQUIDACIÓN</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="f-search">Buscar Contrato o Contratista</label>
-                        <input type="text" id="f-search" placeholder="No. contrato, contratista u objeto..." oninput="debounceLoad()">
-                    </div>
-                    <div>
-                        <label class="chk" style="text-transform:none;">
-                            <input type="checkbox" id="f-solo-faltantes" style="width:auto;" onchange="loadDashboardData(false)">
-                            Sin reporte semanal
-                        </label>
-                        <button type="button" class="btn btn-outline btn-sm" style="margin-top:0.35rem; width:100%;" onclick="resetFilters()">Limpiar filtros</button>
-                    </div>
-                </div>
-            </section>
+                    <div class="filters">
+                        <!-- Selectores auxiliares ocultos para mantener compatibilidad -->
+                        <select id="f-periodo" style="display:none;" onchange="loadDashboardData(false)"></select>
+                        <select id="f-area" style="display:none;" onchange="loadDashboardData(false)"><option value="">Todas las Áreas</option></select>
+                        <select id="f-nivel" style="display:none;" onchange="loadDashboardData(false)"><option value="">Todos</option></select>
+                        <select id="f-estado-ent" style="display:none;" onchange="loadDashboardData(false)"><option value="">Todos</option></select>
+                        <select id="f-estado-rev" style="display:none;" onchange="loadDashboardData(false)"><option value="">Todos</option></select>
 
-            <section class="card">
-                <div class="table-wrap">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>No. Proyecto</th>
-                                <th>Mensaje 1: Información del Contrato</th>
-                                <th>Apoyo a la Supervisión</th>
-                                <th>Duración y Fechas</th>
-                                <th>Mensaje 2: Último Reporte Semanal</th>
-                                <th>Ejecución Financiera / Física</th>
-                                <th style="text-align: center;">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody-contratos">
-                            <tr><td colspan="7" style="text-align: center; padding: 2.5rem;" class="muted">Cargando proyectos y contratos...</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+                        <div>
+                            <label for="f-search">Buscar Contrato o Contratista</label>
+                            <input type="text" id="f-search" placeholder="No. contrato, contratista u objeto..." oninput="debounceLoad()">
+                        </div>
+                        <div>
+                            <label for="f-responsable">Responsable / Apoyo</label>
+                            <select id="f-responsable" onchange="loadDashboardData(false)">
+                                <option value="">Todos los Responsables</option>
+                                <option value="__SIN_RESPONSABLE__">Sin apoyo asignado</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="f-proyecto">Proyecto que Afecta</label>
+                            <select id="f-proyecto" onchange="loadDashboardData(false)">
+                                <option value="">Todos los Proyectos</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="f-atraso">Atraso en Reporte</label>
+                            <select id="f-atraso" onchange="loadDashboardData(false)">
+                                <option value="">Todos los estados de atraso</option>
+                                <option value="al_dia">Al día</option>
+                                <option value="una_semana">Una semana de atraso</option>
+                                <option value="mas_de_una_semana">Más de una semana de atraso</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="f-estado-con">Estado Contractual</label>
+                            <select id="f-estado-con" onchange="loadDashboardData(false)">
+                                <option value="">Todos</option>
+                                <option value="EN_EJECUCION">EN EJECUCIÓN</option>
+                                <option value="SUSPENDIDO">SUSPENDIDO</option>
+                                <option value="EN_MODIFICACION">EN MODIFICACIÓN / PRÓRROGA</option>
+                                <option value="TERMINADO">TERMINADO</option>
+                                <option value="EN_LIQUIDACION">EN LIQUIDACIÓN</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="chk" style="text-transform:none;">
+                                <input type="checkbox" id="f-solo-faltantes" style="width:auto;" onchange="loadDashboardData(false)">
+                                Sin reporte semanal
+                            </label>
+                            <button type="button" class="btn btn-outline btn-sm" style="margin-top:0.35rem; width:100%;" onclick="resetFilters()">Limpiar filtros</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Contrato</th>
+                                    <th>Proyecto(s) que Afecta</th>
+                                    <th>Responsable (Apoyo Supervisión)</th>
+                                    <th>Duración y Fechas</th>
+                                    <th>Último Reporte Semanal</th>
+                                    <th>Ejecución Financiera / Física</th>
+                                    <th style="text-align: center;">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-contratos">
+                                <tr><td colspan="7" style="text-align: center; padding: 2.5rem;" class="muted">Cargando contratos...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
         </div>
+    </main>
+
+    <!-- MODAL CREAR NUEVO CONTRATO (DESPACHO / ADMIN) -->
+    <div class="modal-bg" id="modal-crear-contrato" onclick="if(event.target===this) closeCrearContratoModal()">
+        <div class="modal" style="max-width: 680px;">
+            <div class="modal-head">
+                <div>
+                    <h2 style="font-size: 1.15rem; margin: 0;">Crear Nuevo Contrato</h2>
+                    <div class="muted" style="font-size: 0.8rem; margin-top: 2px;">
+                        Ingrese la información básica del contrato y vincúlelo a un responsable y proyecto de inversión.
+                    </div>
+                </div>
+                <button type="button" class="btn btn-outline btn-sm" onclick="closeCrearContratoModal()">Cerrar</button>
+            </div>
+            <div class="modal-body" style="padding: 1.25rem;">
+                <form id="form-crear-contrato" onsubmit="handleGuardarNuevoContrato(event)">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; margin-bottom: 0.85rem;">
+                        <div>
+                            <label class="form-label" for="nuevo-con-numero">Número del Contrato *</label>
+                            <input type="text" id="nuevo-con-numero" class="input-ctrl" placeholder="Ej: CSU-650-2026" required>
+                        </div>
+                        <div>
+                            <label class="form-label" for="nuevo-con-titulo">Título / Objeto Resumido *</label>
+                            <input type="text" id="nuevo-con-titulo" class="input-ctrl" placeholder="Ej: Dotación de Elementos Pedagógicos" required>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 0.85rem;">
+                        <label class="form-label" for="nuevo-con-objeto">Objeto Completo del Contrato</label>
+                        <textarea id="nuevo-con-objeto" class="input-ctrl" rows="2" placeholder="Descripción del objeto contractual..."></textarea>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; margin-bottom: 0.85rem;">
+                        <div>
+                            <label class="form-label" for="nuevo-con-contratista">Contratista / Operador</label>
+                            <input type="text" id="nuevo-con-contratista" class="input-ctrl" placeholder="Nombre o razón social del contratista">
+                        </div>
+                        <div>
+                            <label class="form-label" for="nuevo-con-responsable">Responsable (Apoyo a la supervisión)</label>
+                            <input type="text" id="nuevo-con-responsable" class="input-ctrl" list="lista-responsables-sugeridos" placeholder="Escriba o seleccione el responsable...">
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; margin-bottom: 0.85rem;">
+                        <div>
+                            <label class="form-label" for="nuevo-con-proyecto">Proyecto de Inversión Asociado</label>
+                            <select id="nuevo-con-proyecto" class="input-ctrl">
+                                <option value="">-- Sin proyecto inicial --</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label" for="nuevo-con-area">Área / Dependencia</label>
+                            <select id="nuevo-con-area" class="input-ctrl">
+                                <option value="">-- Seleccione un área --</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.85rem; margin-bottom: 0.85rem;">
+                        <div>
+                            <label class="form-label" for="nuevo-con-valor">Valor Inicial (COP)</label>
+                            <input type="number" id="nuevo-con-valor" class="input-ctrl" placeholder="Ej: 120000000" min="0" step="any">
+                        </div>
+                        <div>
+                            <label class="form-label" for="nuevo-con-duracion">Duración del Contrato</label>
+                            <input type="text" id="nuevo-con-duracion" class="input-ctrl" placeholder="Ej: 4 meses">
+                        </div>
+                        <div>
+                            <label class="form-label" for="nuevo-con-estado">Estado Contractual</label>
+                            <select id="nuevo-con-estado" class="input-ctrl">
+                                <option value="EN_EJECUCION" selected>EN EJECUCIÓN</option>
+                                <option value="SUSPENDIDO">SUSPENDIDO</option>
+                                <option value="EN_MODIFICACION">EN MODIFICACIÓN</option>
+                                <option value="TERMINADO">TERMINADO</option>
+                                <option value="EN_LIQUIDACION">EN LIQUIDACIÓN</option>
+                                <option value="LIQUIDADO">LIQUIDADO</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; margin-bottom: 1.15rem;">
+                        <div>
+                            <label class="form-label" for="nuevo-con-inicio">Fecha de Inicio</label>
+                            <input type="date" id="nuevo-con-inicio" class="input-ctrl">
+                        </div>
+                        <div>
+                            <label class="form-label" for="nuevo-con-fin">Fecha de Terminación Inicial</label>
+                            <input type="date" id="nuevo-con-fin" class="input-ctrl">
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: flex-end; gap: 0.5rem; border-top: 1px solid #E3E6EA; padding-top: 0.85rem;">
+                        <button type="button" class="btn btn-outline" onclick="closeCrearContratoModal()">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" id="btn-submit-crear-contrato">Crear y Guardar Contrato</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL ASIGNAR / VINCULAR PROYECTO DE INVERSIÓN -->
+    <div class="modal-bg" id="modal-asignar-proyecto" onclick="if(event.target===this) closeAsignarProyectoModal()">
+        <div class="modal" style="max-width: 520px;">
+            <div class="modal-head">
+                <div>
+                    <h2 style="font-size: 1.15rem; margin: 0;">Asignar Proyecto de Inversión</h2>
+                    <div class="muted" style="font-size: 0.8rem; margin-top: 2px;">
+                        Vincule o modifique el Proyecto de Inversión al que pertenece este contrato.
+                    </div>
+                </div>
+                <button type="button" class="btn btn-outline btn-sm" onclick="closeAsignarProyectoModal()">Cerrar</button>
+            </div>
+            <div class="modal-body" style="padding: 1.25rem;">
+                <input type="hidden" id="asig-contrato-id" value="">
+                <div id="asig-info-contrato" style="margin-bottom: 0.85rem; padding: 0.65rem 0.85rem; background: #F8FAF9; border: 1px solid #E3E6EA; border-radius: 8px; font-size: 0.85rem;"></div>
+
+                <div class="form-group" style="margin-bottom: 1.15rem;">
+                    <label class="form-label" for="select-asignar-proyecto-id">Proyecto de Inversión que Afecta *</label>
+                    <select id="select-asignar-proyecto-id" class="input-ctrl">
+                        <option value="">-- Sin proyecto / Desvincular --</option>
+                    </select>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 0.5rem; border-top: 1px solid #E3E6EA; padding-top: 0.85rem;">
+                    <button type="button" class="btn btn-outline" onclick="closeAsignarProyectoModal()">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btn-confirmar-asignar-proyecto" onclick="guardarAsignacionProyecto()">Guardar Proyecto Asociado</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE REASIGNACIÓN DE RESPONSABLE (DESPACHO / ADMINISTRADOR) -->
+    <div class="modal-bg" id="modal-reasignar-responsable" onclick="if(event.target===this) closeReasignarModal()">
+        <div class="modal" style="max-width: 540px;">
+            <div class="modal-head">
+                <div>
+                    <h2 style="font-size: 1.12rem; margin: 0;">Asignar Responsable (Despacho / Administrador)</h2>
+                    <div class="muted" style="font-size: 0.8rem; margin-top: 2px;">Solo el usuario administrador o despacho puede modificar o reasignar el responsable.</div>
+                </div>
+                <button type="button" class="btn btn-outline btn-sm" onclick="closeReasignarModal()">Cerrar</button>
+            </div>
+            <div class="modal-body" style="padding: 1.25rem;">
+                <form id="form-reasignar-responsable" onsubmit="handleGuardarReasignacion(event)">
+                    <input type="hidden" id="reasignar-contrato-id" value="">
+                    <input type="hidden" id="reasignar-proyecto-codigo" value="">
+
+                    <div id="box-reasignar-info" style="padding: 0.75rem 0.9rem; background: #EEF4EF; border-radius: 8px; font-size: 0.84rem; margin-bottom: 1rem;"></div>
+
+                    <div class="form-group" style="margin-bottom: 0.85rem;" id="grp-alcance-reasignacion">
+                        <label for="select-alcance-reasignacion">Alcance de la asignación *</label>
+                        <select id="select-alcance-reasignacion" class="form-control" onchange="updateAlcanceReasignacion()">
+                            <option value="CONTRATO">Aplicar únicamente a este Contrato</option>
+                            <option value="PROYECTO">Aplicar a TODOS los contratos del Proyecto de Inversión</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.15rem;">
+                        <label for="input-nuevo-responsable-nombre">Nombre del Responsable (Apoyo a la supervisión) *</label>
+                        <input type="text" id="input-nuevo-responsable-nombre" list="lista-responsables-sugeridos" class="form-control" placeholder="Escriba o seleccione el responsable..." required>
+                        <datalist id="lista-responsables-sugeridos"></datalist>
+                    </div>
+
+                    <div style="display: flex; justify-content: flex-end; gap: 0.6rem; border-top: 1px solid #E3E6EA; padding-top: 0.85rem;">
+                        <button type="button" class="btn btn-outline" onclick="closeReasignarModal()">Cancelar</button>
+                        <button type="submit" id="btn-confirmar-reasignacion" class="btn btn-primary">Guardar Asignación</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     </main>
 
     <!-- MODAL DE FICHA, TRACKING DE ACTUALIZACIONES, REVISIÓN, ENLACES Y ALERTAS -->
@@ -904,6 +1100,8 @@
             if (nivVal) params.set('nivel_alerta', nivVal);
             const estConVal = document.getElementById('f-estado-con').value;
             if (estConVal) params.set('estado_contractual', estConVal);
+            const atrasoVal = document.getElementById('f-atraso').value;
+            if (atrasoVal) params.set('atraso', atrasoVal);
             const estEntVal = document.getElementById('f-estado-ent').value;
             if (estEntVal) params.set('estado_entrega', estEntVal);
             const estRevVal = document.getElementById('f-estado-rev').value;
@@ -952,12 +1150,27 @@
             const selResp = document.getElementById('f-responsable');
             selResp.innerHTML = '<option value="">Todos los Responsables</option><option value="__SIN_RESPONSABLE__">Sin responsable asignado</option>' +
                 (cat.responsables || []).map(r => `<option value="${escapeHtml(r)}">${escapeHtml(r)}</option>`).join('');
+
+            const dlResp = document.getElementById('lista-responsables-sugeridos');
+            if (dlResp && Array.isArray(cat.responsables)) {
+                dlResp.innerHTML = cat.responsables.map(r => `<option value="${escapeHtml(r)}"></option>`).join('');
+            }
         }
 
         function renderKpis(k) {
             document.getElementById('kpi-total').textContent = k.total_contratos ?? 0;
             document.getElementById('kpi-grupos-sub').textContent = `Grupos obra/inter: ${k.grupos_obra_interventoria_count ?? 0}`;
-            document.getElementById('kpi-ultima-fecha').textContent = k.ultima_fecha_seguimiento || 'Sin registros';
+            
+            const resumenResp = (dashboardState && dashboardState.resumen_responsables) || [];
+            const countResp = resumenResp.filter(r => r.responsable !== 'Sin responsable asignado').length;
+            const kpiResp = document.getElementById('kpi-total-responsables');
+            if (kpiResp) kpiResp.textContent = countResp;
+
+            let reportadosEstaSemana = 0;
+            resumenResp.forEach(r => reportadosEstaSemana += (r.contratos_reportados || 0));
+            const kpiRepSem = document.getElementById('kpi-reportados-semana');
+            if (kpiRepSem) kpiRepSem.textContent = reportadosEstaSemana;
+
             document.getElementById('kpi-faltantes-periodo').textContent = k.resumen_periodo_seleccionado?.sin_reporte_en_periodo ?? 0;
         }
 
@@ -983,142 +1196,395 @@
         function renderContratosTable(list) {
             const tbody = document.getElementById('tbody-contratos');
             if (!list.length) {
-                tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 2rem;" class="muted">No se encontraron proyectos o contratos con los filtros seleccionados.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 2rem;" class="muted">No se encontraron contratos con los filtros seleccionados.</td></tr>';
                 return;
             }
 
-            // Agrupar siempre por Número de Proyecto y de ahí desprender sus contratos
-            const gruposPorProyecto = new Map();
-            const fProyVal = document.getElementById('f-proyecto').value;
+            const canManage = Boolean(dashboardState && dashboardState.user && (dashboardState.user.is_real_admin || dashboardState.user.is_despacho));
 
-            list.forEach(c => {
+            tbody.innerHTML = list.map(c => {
                 const proys = (c.proyectos_asociados && c.proyectos_asociados.length)
                     ? c.proyectos_asociados
-                    : [{ proyecto_id: 0, codigo: 'SIN_PROYECTO', nombre: 'Contratos pendientes de asociar a Número de Proyecto' }];
+                    : [];
 
-                proys.forEach(p => {
-                    if (fProyVal && String(p.proyecto_id) !== String(fProyVal)) return;
-                    const key = p.codigo || 'SIN_PROYECTO';
-                    if (!gruposPorProyecto.has(key)) {
-                        gruposPorProyecto.set(key, {
-                            codigo: key,
-                            nombre: p.nombre || ('Proyecto ' + key),
-                            contratos: []
-                        });
+                const proysBadges = proys.length
+                    ? proys.map(p => `<span class="tag" style="margin-bottom:2px;" title="${escapeHtml(p.nombre)}">Proy. ${escapeHtml(p.codigo)}</span>`).join(' ')
+                    : '<span class="tag tag-warn">Sin Proyecto</span>';
+
+                let proyActionBtn = '';
+                if (canManage) {
+                    const curPid = (proys.length && proys[0].proyecto_id) ? proys[0].proyecto_id : '';
+                    const btnLbl = proys.length ? 'Cambiar Proyecto' : '+ Asignar Proyecto';
+                    proyActionBtn = `
+                        <button type="button" class="btn btn-outline btn-sm" onclick="openAsignarProyectoModal(${c.id}, '${escapeHtml(c.numero_contrato)}', '${curPid}')" style="margin-top:4px; font-size:0.72rem; padding:2px 7px;">
+                            ${btnLbl}
+                        </button>
+                    `;
+                }
+
+                const m1Badge = Number(c.tiene_mensaje1) === 0
+                    ? `<div style="margin-top:4px;"><span class="tag tag-warn">FALTA MENSAJE 1</span></div>`
+                    : '';
+
+                const valTotalNum = c.valor_total !== null ? Number(c.valor_total) : (c.valor_inicial !== null ? Number(c.valor_inicial) : null);
+                const valTxt = valTotalNum !== null ? '$' + valTotalNum.toLocaleString('es-CO') : 'Sin valor registrado';
+
+                const diasRep = c.dias_desde_ultimo_reporte !== null && c.dias_desde_ultimo_reporte !== undefined
+                    ? Number(c.dias_desde_ultimo_reporte)
+                    : null;
+                let fRepCellStyle = 'background:#FDECEC; color:#842029;';
+                let fRepTagHtml = '<span class="tag tag-alert">SIN REPORTE RECIENTE</span>';
+                if (diasRep !== null) {
+                    if (diasRep <= 7) {
+                        fRepCellStyle = 'background:#EAF5EE; color:#1D4227;';
+                        fRepTagHtml = '<span class="tag">ESTA SEMANA</span>';
+                    } else if (diasRep <= 14) {
+                        fRepCellStyle = 'background:#FFF8E1; color:#855A00;';
+                        fRepTagHtml = '<span class="tag tag-warn">HACE 1 A 2 SEMANAS</span>';
+                    } else if (diasRep <= 30) {
+                        fRepCellStyle = 'background:#FFEDD5; color:#9A3412;';
+                        fRepTagHtml = '<span class="tag tag-warn">ATRASO &gt; 2 SEMANAS</span>';
+                    } else {
+                        fRepCellStyle = 'background:#FDECEC; color:#842029;';
+                        fRepTagHtml = '<span class="tag tag-alert">ATRASO &gt; 30 DÍAS</span>';
                     }
-                    gruposPorProyecto.get(key).contratos.push(c);
-                });
-            });
+                }
 
-            // Ordenar proyectos numéricamente y dejar SIN_PROYECTO al final
-            const sortedGroups = Array.from(gruposPorProyecto.values()).sort((a, b) => {
-                if (a.codigo === 'SIN_PROYECTO') return 1;
-                if (b.codigo === 'SIN_PROYECTO') return -1;
-                return String(a.codigo).localeCompare(String(b.codigo), undefined, { numeric: true });
-            });
+                const fRepHtml = `
+                    <div style="margin-bottom:3px;">${fRepTagHtml}</div>
+                    <div><strong>Fecha reporte:</strong> ${escapeHtml(c.fecha_ultimo_reporte_texto || 'No informada')}</div>
+                    <div><strong>Estado:</strong> ${escapeHtml(c.estado_reportado_texto || c.estado_contractual || 'Sin dato')}</div>
+                    <div><strong>Fecha finalización:</strong> ${escapeHtml(c.fecha_fin_vigente_texto || c.fecha_fin_inicial_texto || 'Sin dato')}</div>
+                    ${diasRep !== null ? `<div style="font-size:0.75rem; font-weight:700; margin-top:2px;">Hace ${diasRep} día${diasRep === 1 ? '' : 's'}</div>` : ''}
+                `;
 
-            let htmlRows = '';
+                const fisTxt = c.ejecucion_fisica_pct !== null ? `${c.ejecucion_fisica_pct}%` : (c.ejecucion_fisica_texto ? escapeHtml(c.ejecucion_fisica_texto.slice(0, 35)) : 'Sin dato');
+                const finTxt = c.ejecucion_financiera_pct !== null ? `${c.ejecucion_financiera_pct}%` : (c.ejecucion_financiera_texto ? escapeHtml(c.ejecucion_financiera_texto.slice(0, 35)) : 'Sin dato');
 
-            sortedGroups.forEach(grupo => {
-                const isSinProy = grupo.codigo === 'SIN_PROYECTO';
-                const proyTitle = isSinProy
-                    ? 'Sin Número de Proyecto Asignado (Pendiente en Mensaje 1)'
-                    : `Proyecto de Inversión No. ${escapeHtml(grupo.codigo)} — ${escapeHtml(grupo.nombre)}`;
+                const primaryProyCod = proys.length ? proys[0].codigo : '';
 
-                htmlRows += `
-                    <tr style="background:#EEF4EF;">
-                        <td colspan="7" style="padding:0.75rem 1rem; border-top:2px solid #D5E2D7; border-bottom:1px solid #D5E2D7;">
-                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
-                                <div>
-                                    <span class="tag">${isSinProy ? 'POR ASIGNAR PROYECTO' : 'PROYECTO ' + escapeHtml(grupo.codigo)}</span>
-                                    <strong style="font-size:0.92rem; color:var(--primary-green-dark); margin-left:0.4rem;">${proyTitle}</strong>
-                                    <span class="muted" style="font-size:0.8rem; margin-left:0.5rem;">(${grupo.contratos.length} contrato${grupo.contratos.length === 1 ? '' : 's'} asociado${grupo.contratos.length === 1 ? '' : 's'})</span>
-                                </div>
-                                <a href="reporte_despacho.html?proyecto=${encodeURIComponent(grupo.codigo)}" target="_blank" class="btn btn-outline btn-sm">
-                                    Ver / Actualizar Contratos de este Proyecto
-                                </a>
+                // Columna Responsable: si es admin o despacho, incluye opción para reasignar por contrato o por proyecto
+                let respHtml = `
+                    <div style="font-weight:600; color:var(--primary-green-dark);">${c.responsable_nombre ? escapeHtml(c.responsable_nombre) : '<span class="muted">Sin asignar</span>'}</div>
+                `;
+                if (canManage) {
+                    respHtml += `
+                        <button type="button" class="btn btn-outline btn-sm" onclick="abrirReasignarModal(${c.id}, '${escapeHtml(c.numero_contrato)}', '${escapeHtml(primaryProyCod)}', '${escapeHtml(c.responsable_nombre || '')}')" style="margin-top:4px; font-size:0.72rem; padding:2px 7px;">
+                            Reasignar
+                        </button>
+                    `;
+                }
+
+                return `
+                    <tr>
+                        <td>
+                            <div style="font-weight:700; color:var(--primary-green-dark);">Contrato: ${escapeHtml(c.numero_contrato)}</div>
+                            <div style="font-size:0.8rem;"><strong>Contratista:</strong> ${escapeHtml(c.contratista || 'Sin dato')}</div>
+                            <div style="font-size:0.8rem;"><strong>Valor:</strong> ${escapeHtml(valTxt)}</div>
+                            <div style="font-size:0.75rem;" class="muted">${escapeHtml((c.objeto || c.titulo_grupo || '').slice(0, 95))}${(c.objeto || '').length > 95 ? '...' : ''}</div>
+                            ${m1Badge}
+                        </td>
+                        <td>
+                            <div style="display:flex; flex-direction:column; gap:3px;">
+                                <div>${proysBadges}</div>
+                                ${proyActionBtn}
+                            </div>
+                        </td>
+                        <td>${respHtml}</td>
+                        <td>
+                            <div><strong>Duración:</strong> ${escapeHtml(c.duracion_texto || 'Sin dato')}</div>
+                            <div><strong>Inicio:</strong> ${escapeHtml(c.fecha_inicio_texto || 'Sin dato')}</div>
+                            <div><strong>Term. inicial:</strong> ${escapeHtml(c.fecha_fin_inicial_texto || 'Sin dato')}</div>
+                        </td>
+                        <td style="${fRepCellStyle}">${fRepHtml}</td>
+                        <td>
+                            <div><strong>Financiera:</strong> ${finTxt}</div>
+                            <div><strong>Física:</strong> ${fisTxt}</div>
+                        </td>
+                        <td style="text-align:center; white-space:nowrap;">
+                            <div style="display:flex; flex-direction:column; gap:0.35rem;">
+                                <button type="button" class="btn btn-primary btn-sm" onclick="openContratoModal(${c.id}, 'tracking')">Ver Ficha / Historial</button>
+                                <a href="reporte_despacho.html?contrato_id=${c.id}" target="_blank" class="btn btn-outline btn-sm">Subir Reporte</a>
                             </div>
                         </td>
                     </tr>
                 `;
+            }).join('');
+        }
 
-                grupo.contratos.forEach(c => {
-                    const m1Badge = Number(c.tiene_mensaje1) === 0
-                        ? `<div style="margin-top:4px;"><span class="tag tag-warn">FALTA MENSAJE 1</span></div>`
-                        : '';
+        function filterAtraso(nivel) {
+            document.getElementById('f-atraso').value = nivel || '';
+            document.getElementById('f-solo-faltantes').checked = false;
+            loadDashboardData(false);
+            window.scrollTo({ top: document.getElementById('view-contratos-container').offsetTop - 60, behavior: 'smooth' });
+        }
 
-                    const valTotalNum = c.valor_total !== null ? Number(c.valor_total) : (c.valor_inicial !== null ? Number(c.valor_inicial) : null);
-                    const valTxt = valTotalNum !== null ? '$' + valTotalNum.toLocaleString('es-CO') : 'Sin valor registrado';
+        function filtrarPorResponsable(respNombre) {
+            document.getElementById('f-responsable').value = respNombre;
+            loadDashboardData(false);
+            window.scrollTo({ top: document.getElementById('view-contratos-container').offsetTop - 60, behavior: 'smooth' });
+        }
 
-                    const diasRep = c.dias_desde_ultimo_reporte !== null && c.dias_desde_ultimo_reporte !== undefined
-                        ? Number(c.dias_desde_ultimo_reporte)
-                        : null;
-                    let fRepCellStyle = 'background:#FDECEC; color:#842029;';
-                    let fRepTagHtml = '<span class="tag tag-alert">SIN REPORTE RECIENTE</span>';
-                    if (diasRep !== null) {
-                        if (diasRep <= 7) {
-                            fRepCellStyle = 'background:#EAF5EE; color:#1D4227;';
-                            fRepTagHtml = '<span class="tag">ESTA SEMANA</span>';
-                        } else if (diasRep <= 14) {
-                            fRepCellStyle = 'background:#FFF8E1; color:#855A00;';
-                            fRepTagHtml = '<span class="tag tag-warn">HACE 1 A 2 SEMANAS</span>';
-                        } else if (diasRep <= 30) {
-                            fRepCellStyle = 'background:#FFEDD5; color:#9A3412;';
-                            fRepTagHtml = '<span class="tag tag-warn">ATRASO &gt; 2 SEMANAS</span>';
-                        } else {
-                            fRepCellStyle = 'background:#FDECEC; color:#842029;';
-                            fRepTagHtml = '<span class="tag tag-alert">ATRASO &gt; 30 DÍAS</span>';
-                        }
-                    }
+        function filterEstaSemana() {
+            filterAtraso('al_dia');
+        }
 
-                    const fRepHtml = `
-                        <div style="margin-bottom:3px;">${fRepTagHtml}</div>
-                        <div><strong>Fecha reporte:</strong> ${escapeHtml(c.fecha_ultimo_reporte_texto || 'No informada')}</div>
-                        <div><strong>Estado:</strong> ${escapeHtml(c.estado_reportado_texto || c.estado_contractual || 'Sin dato')}</div>
-                        <div><strong>Fecha finalización:</strong> ${escapeHtml(c.fecha_fin_vigente_texto || c.fecha_fin_inicial_texto || 'Sin dato')}</div>
-                        ${diasRep !== null ? `<div style="font-size:0.75rem; font-weight:700; margin-top:2px;">Hace ${diasRep} día${diasRep === 1 ? '' : 's'}</div>` : ''}
-                    `;
+        // ==========================================
+        // GESTIÓN DE NUEVOS CONTRATOS (DESPACHO / ADMIN)
+        // ==========================================
+        function openCrearContratoModal() {
+            const canManage = Boolean(dashboardState && dashboardState.user && (dashboardState.user.is_real_admin || dashboardState.user.is_despacho));
+            if (!canManage) {
+                alert('Solo el usuario administrador o despacho tiene permisos para crear contratos.');
+                return;
+            }
 
-                    const fisTxt = c.ejecucion_fisica_pct !== null ? `${c.ejecucion_fisica_pct}%` : (c.ejecucion_fisica_texto ? escapeHtml(c.ejecucion_fisica_texto.slice(0, 35)) : 'Sin dato');
-                    const finTxt = c.ejecucion_financiera_pct !== null ? `${c.ejecucion_financiera_pct}%` : (c.ejecucion_financiera_texto ? escapeHtml(c.ejecucion_financiera_texto.slice(0, 35)) : 'Sin dato');
+            const selProy = document.getElementById('nuevo-con-proyecto');
+            if (selProy && dashboardState && dashboardState.catalogos) {
+                selProy.innerHTML = '<option value="">-- Sin proyecto inicial --</option>' +
+                    (dashboardState.catalogos.proyectos || []).map(p =>
+                        `<option value="${p.id}">Proy. ${escapeHtml(p.codigo)} — ${escapeHtml(p.nombre)}</option>`
+                    ).join('');
+            }
 
-                    htmlRows += `
-                        <tr>
-                            <td style="white-space:nowrap;">
-                                <div style="font-weight:800; color:var(--primary-green-dark);">${isSinProy ? 'Sin asignar' : 'Proy. ' + escapeHtml(grupo.codigo)}</div>
-                            </td>
-                            <td>
-                                <div style="font-weight:700; color:var(--primary-green-dark);">Contrato: ${escapeHtml(c.numero_contrato)}</div>
-                                <div style="font-size:0.8rem;"><strong>Contratista:</strong> ${escapeHtml(c.contratista || 'Sin dato')}</div>
-                                <div style="font-size:0.8rem;"><strong>Valor:</strong> ${escapeHtml(valTxt)}</div>
-                                <div style="font-size:0.76rem;" class="muted">${escapeHtml((c.objeto || c.titulo_grupo || '').slice(0, 95))}${(c.objeto || '').length > 95 ? '...' : ''}</div>
-                                ${m1Badge}
-                            </td>
-                            <td>
-                                <div style="font-weight:600;">${c.responsable_nombre ? escapeHtml(c.responsable_nombre) : '<span class="muted">Sin asignar</span>'}</div>
-                            </td>
-                            <td>
-                                <div><strong>Duración:</strong> ${escapeHtml(c.duracion_texto || 'Sin dato')}</div>
-                                <div><strong>Inicio:</strong> ${escapeHtml(c.fecha_inicio_texto || 'Sin dato')}</div>
-                                <div><strong>Term. inicial:</strong> ${escapeHtml(c.fecha_fin_inicial_texto || 'Sin dato')}</div>
-                            </td>
-                            <td style="${fRepCellStyle}">${fRepHtml}</td>
-                            <td>
-                                <div><strong>Financiera:</strong> ${finTxt}</div>
-                                <div><strong>Física:</strong> ${fisTxt}</div>
-                            </td>
-                            <td style="text-align:center; white-space:nowrap;">
-                                <div style="display:flex; flex-direction:column; gap:0.35rem;">
-                                    <button type="button" class="btn btn-primary btn-sm" onclick="openContratoModal(${c.id}, 'tracking')">Ver Ficha / Historial</button>
-                                    <a href="reporte_despacho.html?proyecto=${encodeURIComponent(grupo.codigo)}&contrato_id=${c.id}" target="_blank" class="btn btn-outline btn-sm">Subir Reporte</a>
-                                </div>
-                            </td>
-                        </tr>
-                    `;
+            const selArea = document.getElementById('nuevo-con-area');
+            if (selArea && dashboardState && dashboardState.catalogos) {
+                selArea.innerHTML = '<option value="">-- Seleccione un área --</option>' +
+                    (dashboardState.catalogos.areas || []).map(a =>
+                        `<option value="${a.id}">${escapeHtml(a.nombre)}</option>`
+                    ).join('');
+            }
+
+            document.getElementById('modal-crear-contrato').classList.add('open');
+            document.getElementById('nuevo-con-numero').focus();
+        }
+
+        function closeCrearContratoModal() {
+            document.getElementById('modal-crear-contrato').classList.remove('open');
+            document.getElementById('form-crear-contrato').reset();
+        }
+
+        async function handleGuardarNuevoContrato(e) {
+            e.preventDefault();
+            const numCon = document.getElementById('nuevo-con-numero').value.trim();
+            const titCon = document.getElementById('nuevo-con-titulo').value.trim();
+            if (!numCon) {
+                alert('El número de contrato es obligatorio.');
+                document.getElementById('nuevo-con-numero').focus();
+                return;
+            }
+
+            const payload = {
+                action: 'create_contract',
+                numero_contrato: numCon,
+                titulo_grupo: titCon || ('Contrato ' + numCon),
+                objeto: document.getElementById('nuevo-con-objeto').value.trim(),
+                contratista: document.getElementById('nuevo-con-contratista').value.trim(),
+                responsable_nombre: document.getElementById('nuevo-con-responsable').value.trim(),
+                proyecto_id: document.getElementById('nuevo-con-proyecto').value ? Number(document.getElementById('nuevo-con-proyecto').value) : null,
+                area_id: document.getElementById('nuevo-con-area').value ? Number(document.getElementById('nuevo-con-area').value) : null,
+                valor_inicial: document.getElementById('nuevo-con-valor').value ? Number(document.getElementById('nuevo-con-valor').value) : null,
+                duracion_texto: document.getElementById('nuevo-con-duracion').value.trim(),
+                estado_contractual: document.getElementById('nuevo-con-estado').value,
+                fecha_inicio_iso: document.getElementById('nuevo-con-inicio').value || null,
+                fecha_fin_inicial_iso: document.getElementById('nuevo-con-fin').value || null
+            };
+
+            const btn = document.getElementById('btn-submit-crear-contrato');
+            btn.disabled = true;
+            btn.textContent = 'Guardando...';
+
+            try {
+                const res = await fetch('api/despacho_api.php?action=create_contract', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'same-origin',
+                    body: JSON.stringify(payload)
                 });
-            });
+                const data = await res.json();
+                btn.disabled = false;
+                btn.textContent = 'Crear y Guardar Contrato';
 
-            tbody.innerHTML = htmlRows;
+                if (!res.ok || !data.success) {
+                    alert(data.message || 'Error al crear el contrato.');
+                    return;
+                }
+
+                alert(data.message || 'Contrato creado correctamente.');
+                closeCrearContratoModal();
+                await loadDashboardData(true);
+            } catch (err) {
+                btn.disabled = false;
+                btn.textContent = 'Crear y Guardar Contrato';
+                alert('Error de conexión: ' + err.message);
+            }
+        }
+
+        // ==========================================
+        // VINCULACIÓN / ASIGNACIÓN DE PROYECTO A CONTRATO
+        // ==========================================
+        function openAsignarProyectoModal(contratoId, numeroContrato, currentProyectoId) {
+            const canManage = Boolean(dashboardState && dashboardState.user && (dashboardState.user.is_real_admin || dashboardState.user.is_despacho));
+            if (!canManage) {
+                alert('Solo el usuario administrador o despacho tiene permisos para asignar proyectos.');
+                return;
+            }
+
+            document.getElementById('asig-contrato-id').value = contratoId;
+            document.getElementById('asig-info-contrato').innerHTML = `<strong>Contrato:</strong> ${escapeHtml(numeroContrato)}`;
+
+            const sel = document.getElementById('select-asignar-proyecto-id');
+            if (sel && dashboardState && dashboardState.catalogos) {
+                sel.innerHTML = '<option value="">-- Sin proyecto / Desvincular --</option>' +
+                    (dashboardState.catalogos.proyectos || []).map(p =>
+                        `<option value="${p.id}" ${Number(p.id) === Number(currentProyectoId) ? 'selected' : ''}>Proy. ${escapeHtml(p.codigo)} — ${escapeHtml(p.nombre)}</option>`
+                    ).join('');
+            }
+
+            document.getElementById('modal-asignar-proyecto').classList.add('open');
+        }
+
+        function closeAsignarProyectoModal() {
+            document.getElementById('modal-asignar-proyecto').classList.remove('open');
+        }
+
+        async function guardarAsignacionProyecto() {
+            const contratoId = document.getElementById('asig-contrato-id').value;
+            const proyIdVal = document.getElementById('select-asignar-proyecto-id').value;
+            if (!contratoId) return;
+
+            const btn = document.getElementById('btn-confirmar-asignar-proyecto');
+            btn.disabled = true;
+            btn.textContent = 'Guardando...';
+
+            try {
+                const res = await fetch('api/despacho_api.php?action=assign_project', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'same-origin',
+                    body: JSON.stringify({
+                        action: 'assign_project',
+                        contrato_id: Number(contratoId),
+                        proyecto_id: proyIdVal ? Number(proyIdVal) : null
+                    })
+                });
+                const data = await res.json();
+                btn.disabled = false;
+                btn.textContent = 'Guardar Proyecto Asociado';
+
+                if (!res.ok || !data.success) {
+                    alert(data.message || 'Error al guardar la asignación del proyecto.');
+                    return;
+                }
+
+                alert(data.message || 'Proyecto asociado correctamente.');
+                closeAsignarProyectoModal();
+                await loadDashboardData(true);
+                const modalCon = document.getElementById('modal-contrato');
+                if (modalCon && modalCon.classList.contains('open')) {
+                    await openContratoModal(Number(contratoId));
+                }
+            } catch (err) {
+                btn.disabled = false;
+                btn.textContent = 'Guardar Proyecto Asociado';
+                alert('Error de conexión: ' + err.message);
+            }
+        }
+
+        function abrirReasignarModal(contratoId, numeroContrato, proyectoCodigo, responsableActual) {
+            const canManage = Boolean(dashboardState && dashboardState.user && (dashboardState.user.is_real_admin || dashboardState.user.is_despacho));
+            if (!canManage) {
+                alert('Solo el usuario administrador o despacho tiene permisos para reasignar el responsable.');
+                return;
+            }
+
+            document.getElementById('reasignar-contrato-id').value = contratoId || '';
+            document.getElementById('reasignar-proyecto-codigo').value = proyectoCodigo || '';
+            document.getElementById('input-nuevo-responsable-nombre').value = responsableActual || '';
+
+            const selAlcance = document.getElementById('select-alcance-reasignacion');
+            const grpAlcance = document.getElementById('grp-alcance-reasignacion');
+            const boxInfo = document.getElementById('box-reasignar-info');
+
+            if (contratoId && proyectoCodigo && proyectoCodigo !== 'SIN_PROYECTO') {
+                grpAlcance.style.display = 'block';
+                selAlcance.value = 'CONTRATO';
+                boxInfo.innerHTML = `<strong>Contrato:</strong> ${escapeHtml(numeroContrato)} | <strong>Proyecto asociado:</strong> No. ${escapeHtml(proyectoCodigo)}<br><small class="muted">Responsable actual: ${escapeHtml(responsableActual || 'Sin asignar')}</small>`;
+            } else if (contratoId) {
+                grpAlcance.style.display = 'none';
+                selAlcance.value = 'CONTRATO';
+                boxInfo.innerHTML = `<strong>Contrato:</strong> ${escapeHtml(numeroContrato)}<br><small class="muted">Responsable actual: ${escapeHtml(responsableActual || 'Sin asignar')}</small>`;
+            } else if (proyectoCodigo) {
+                grpAlcance.style.display = 'none';
+                selAlcance.value = 'PROYECTO';
+                boxInfo.innerHTML = `<strong>Reasignación Masiva para Proyecto No. ${escapeHtml(proyectoCodigo)}</strong><br><small class="muted">Se actualizará el responsable en todos los contratos de este proyecto.</small>`;
+            }
+
+            document.getElementById('modal-reasignar-responsable').classList.add('open');
+            document.getElementById('input-nuevo-responsable-nombre').focus();
+        }
+
+        function closeReasignarModal() {
+            document.getElementById('modal-reasignar-responsable').classList.remove('open');
+        }
+
+        function updateAlcanceReasignacion() {
+            // No requiere acción adicional
+        }
+
+        async function handleGuardarReasignacion(e) {
+            e.preventDefault();
+            const nuevoResp = document.getElementById('input-nuevo-responsable-nombre').value.trim();
+            if (!nuevoResp) {
+                alert('Ingrese el nombre del responsable.');
+                document.getElementById('input-nuevo-responsable-nombre').focus();
+                return;
+            }
+
+            const alcance = document.getElementById('select-alcance-reasignacion').value;
+            const cId = document.getElementById('reasignar-contrato-id').value;
+            const pCod = document.getElementById('reasignar-proyecto-codigo').value;
+
+            const payload = {
+                action: 'update_responsable',
+                nuevo_responsable: nuevoResp
+            };
+            if (alcance === 'PROYECTO' && pCod) {
+                payload.proyecto_codigo = pCod;
+            } else if (cId) {
+                payload.contrato_id = Number(cId);
+            } else if (pCod) {
+                payload.proyecto_codigo = pCod;
+            }
+
+            const btn = document.getElementById('btn-confirmar-reasignacion');
+            btn.disabled = true;
+            btn.textContent = 'Guardando...';
+
+            try {
+                const res = await fetch('api/despacho_api.php?action=update_responsable', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'same-origin',
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                btn.disabled = false;
+                btn.textContent = 'Guardar Asignación';
+
+                if (!res.ok || !data.success) {
+                    alert(data.message || 'Error al guardar la asignación.');
+                    return;
+                }
+
+                alert(data.message);
+                closeReasignarModal();
+                await loadDashboardData(true);
+            } catch (err) {
+                btn.disabled = false;
+                btn.textContent = 'Guardar Asignación';
+                alert('Error de conexión: ' + err.message);
+            }
         }
 
         function renderAlertasTables(vigentes, historial) {
@@ -1266,8 +1732,24 @@
                 }
 
                 const c = data.contrato;
+                const canManage = Boolean(dashboardState && dashboardState.user && (dashboardState.user.is_real_admin || dashboardState.user.is_despacho));
+                const proysTexto = (data.proyectos || []).map(p => `Proyecto ${p.codigo}`).join(', ') || 'Sin proyectos asociados';
+                
+                const firstPId = (data.proyectos && data.proyectos.length) ? (data.proyectos[0].id || data.proyectos[0].proyecto_id || '') : '';
+                let proyModalHtml = `<span><strong>Proyectos afectados:</strong> ${escapeHtml(proysTexto)}</span>`;
+                if (canManage) {
+                    const btnLbl = (data.proyectos && data.proyectos.length) ? 'Cambiar Proyecto' : '+ Asignar Proyecto';
+                    proyModalHtml += ` <button type="button" class="btn btn-outline btn-sm" style="padding:2px 8px; font-size:0.73rem; margin-left:6px;" onclick="openAsignarProyectoModal(${c.id}, '${escapeHtml(c.numero_contrato)}', '${firstPId}')">${btnLbl}</button>`;
+                }
+
                 document.getElementById('modal-title').textContent = `${c.numero_contrato} — ${c.titulo_grupo}`;
-                document.getElementById('modal-subtitle').textContent = `Responsable: ${c.responsable_nombre || 'Sin asignar'} | Área: ${c.area_nombre || 'N/A'} | Estado Contractual: ${c.estado_contractual} | Nivel Alerta: ${c.nivel_alerta}`;
+                
+                let subtitleHtml = `<span><strong>Responsable:</strong> ${escapeHtml(c.responsable_nombre || 'Sin asignar')}</span>`;
+                if (canManage) {
+                    subtitleHtml += ` <button type="button" class="btn btn-outline btn-sm" style="padding:2px 8px; font-size:0.73rem; margin-left:6px;" onclick="abrirReasignarModal(${c.id}, '${escapeHtml(c.numero_contrato)}', null, '${escapeHtml(c.responsable_nombre || '')}')">Reasignar Responsable</button>`;
+                }
+                subtitleHtml += ` <span style="margin:0 6px;">|</span> ${proyModalHtml} <span style="margin:0 6px;">|</span> <span><strong>Área:</strong> ${escapeHtml(c.area_nombre || 'N/A')}</span> <span style="margin:0 6px;">|</span> <span><strong>Estado:</strong> ${escapeHtml(c.estado_contractual)}</span>`;
+                document.getElementById('modal-subtitle').innerHTML = subtitleHtml;
 
                 const versiones = data.versiones || [];
                 const ultimaVersion = versiones[0] || null;
@@ -1535,6 +2017,11 @@
                                 <div class="info-cell">
                                     <b>Apoyo a la supervisión</b>
                                     <strong>${escapeHtml(c.responsable_nombre || 'Sin dato')}</strong>
+                                </div>
+                                <div class="info-cell">
+                                    <b>Proyecto de inversión</b>
+                                    <div>${escapeHtml(proysTexto)}</div>
+                                    ${canManage ? `<button type="button" class="btn btn-outline btn-sm" style="margin-top:4px; font-size:0.72rem; padding:2px 7px;" onclick="openAsignarProyectoModal(${c.id}, '${escapeHtml(c.numero_contrato)}', '${firstPId}')">${(data.proyectos && data.proyectos.length) ? 'Cambiar Proyecto' : '+ Asignar Proyecto'}</button>` : ''}
                                 </div>
                                 <div class="info-cell">
                                     <b>Duración del contrato</b>
@@ -1857,6 +2344,7 @@
             document.getElementById('f-area').value = '';
             document.getElementById('f-proyecto').value = '';
             document.getElementById('f-responsable').value = '';
+            document.getElementById('f-atraso').value = '';
             document.getElementById('f-nivel').value = '';
             document.getElementById('f-estado-con').value = '';
             document.getElementById('f-estado-ent').value = '';

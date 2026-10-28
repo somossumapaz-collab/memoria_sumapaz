@@ -272,6 +272,7 @@ try {
             $fCriterioAlerta = isset($_GET['criterio_alerta']) && trim($_GET['criterio_alerta']) !== '' ? trim($_GET['criterio_alerta']) : null;
             $fSoloFaltantes = !empty($_GET['solo_faltantes']) && $_GET['solo_faltantes'] !== '0';
             $fSearch = isset($_GET['search']) && trim($_GET['search']) !== '' ? strtolower(trim($_GET['search'])) : null;
+            $fAtraso = isset($_GET['atraso']) && trim($_GET['atraso']) !== '' ? trim($_GET['atraso']) : null;
 
             $filteredContratos = [];
 
@@ -413,8 +414,86 @@ try {
                     if (strpos($haystack, $fSearch) === false) continue;
                 }
 
+                if ($fAtraso !== null) {
+                    $diasRep = $c['dias_desde_ultimo_reporte'] ?? null;
+                    if ($fAtraso === 'al_dia') {
+                        if ($diasRep === null || $diasRep > 7) continue;
+                    } elseif ($fAtraso === 'una_semana') {
+                        if ($diasRep === null || $diasRep < 8 || $diasRep > 14) continue;
+                    } elseif ($fAtraso === 'mas_de_una_semana') {
+                        if ($diasRep !== null && $diasRep <= 14) continue;
+                    }
+                }
+
                 $filteredContratos[] = $c;
             }
+
+            // Calcular resumen de cumplimiento y proyectos por cada responsable (para seguimiento y reasignación)
+            $respMap = [];
+            foreach ($allContratos as $c) {
+                $cid = (int)$c['id'];
+                $rName = trim((string)($c['responsable_nombre'] ?? ''));
+                if ($rName === '') {
+                    $rName = 'Sin responsable asignado';
+                }
+                if (!isset($respMap[$rName])) {
+                    $respMap[$rName] = [
+                        'responsable' => $rName,
+                        'total_contratos' => 0,
+                        'proyectos_map' => [],
+                        'contratos_reportados' => 0,
+                        'contratos_sin_reporte' => 0,
+                    ];
+                }
+                $respMap[$rName]['total_contratos']++;
+
+                // Proyectos que afecta este contrato
+                $cProys = $proyectosPorContrato[$cid] ?? [];
+                if (empty($cProys)) {
+                    $respMap[$rName]['proyectos_map']['SIN_PROYECTO'] = 'Sin proyecto asociado';
+                } else {
+                    foreach ($cProys as $pItem) {
+                        $pCod = $pItem['codigo'] ?? 'SIN_PROYECTO';
+                        $respMap[$rName]['proyectos_map'][$pCod] = $pItem['nombre'] ?? ('Proyecto ' . $pCod);
+                    }
+                }
+
+                $diasRep = $c['dias_desde_ultimo_reporte'] ?? null;
+                $haReportado = ($diasRep !== null && $diasRep <= 7);
+                if ($haReportado) {
+                    $respMap[$rName]['contratos_reportados']++;
+                } else {
+                    $respMap[$rName]['contratos_sin_reporte']++;
+                }
+            }
+
+            $resumenResponsables = [];
+            foreach ($respMap as $rName => $rData) {
+                $proyectosList = [];
+                foreach ($rData['proyectos_map'] as $pCod => $pNom) {
+                    $proyectosList[] = [
+                        'codigo' => $pCod,
+                        'nombre' => $pNom
+                    ];
+                }
+                $tot = $rData['total_contratos'];
+                $rep = $rData['contratos_reportados'];
+                $pct = $tot > 0 ? round(($rep / $tot) * 100, 1) : 0.0;
+                $resumenResponsables[] = [
+                    'responsable' => $rName,
+                    'total_contratos' => $tot,
+                    'total_proyectos' => count($proyectosList),
+                    'proyectos' => $proyectosList,
+                    'contratos_reportados' => $rep,
+                    'contratos_sin_reporte' => $rData['contratos_sin_reporte'],
+                    'porcentaje_cumplimiento' => $pct,
+                ];
+            }
+            usort($resumenResponsables, function($a, $b) {
+                if ($a['responsable'] === 'Sin responsable asignado') return 1;
+                if ($b['responsable'] === 'Sin responsable asignado') return -1;
+                return strcasecmp($a['responsable'], $b['responsable']);
+            });
 
             $historialAlertas = $pdo->query("SELECT e.*, c.numero_contrato
                 FROM despacho_eventos_alerta e
@@ -434,6 +513,7 @@ try {
                     'reglas_alerta_config' => $reglasConfig,
                 ],
                 'contratos' => $filteredContratos,
+                'resumen_responsables' => $resumenResponsables,
                 'alertas_vigentes' => $alertasVigentesList,
                 'historial_alertas' => $historialAlertas,
             ], JSON_UNESCAPED_UNICODE);
@@ -591,6 +671,192 @@ try {
     // ACCIONES POST (GESTIÓN Y REVISIÓN POR DESPACHO / ADMIN)
     // ========================================================================
     if ($method === 'POST') {
+        if ($action === 'update_responsable') {
+            if (empty($currentUser['is_real_admin']) && empty($currentUser['is_despacho'])) {
+                http_response_code(403);
+                echo json_encode(['success' => false, 'message' => 'Solo el usuario administrador o despacho puede cambiar o asignar el responsable.'], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
+
+            $nuevoResponsable = trim((string)($jsonBody['nuevo_responsable'] ?? ''));
+            $contratoId = isset($jsonBody['contrato_id']) ? (int)$jsonBody['contrato_id'] : 0;
+            $proyectoCodigo = isset($jsonBody['proyecto_codigo']) ? trim((string)$jsonBody['proyecto_codigo']) : '';
+
+            if ($nuevoResponsable === '') {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'message' => 'Debe ingresar o seleccionar el nombre del nuevo responsable.'], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
+
+            if ($contratoId > 0) {
+                $stmtUpd = $pdo->prepare("UPDATE despacho_contratos SET responsable_nombre = ? WHERE id = ?");
+                $stmtUpd->execute([$nuevoResponsable, $contratoId]);
+
+                $pdo->prepare("UPDATE despacho_obligaciones_reporte SET responsable_nombre = ? WHERE contrato_id = ?")
+                    ->execute([$nuevoResponsable, $contratoId]);
+
+                despachoLogBitacora($pdo, $contratoId, 'CONTRATO', $contratoId, 'CAMBIO_RESPONSABLE', 'USUARIO', (int)$currentUser['id'], "Administrador reasignó responsable a: $nuevoResponsable");
+
+                echo json_encode([
+                    'success' => true,
+                    'message' => 'Responsable actualizado correctamente para el contrato.'
+                ], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
+
+            if ($proyectoCodigo !== '' && $proyectoCodigo !== 'SIN_PROYECTO') {
+                $stmtProyC = $pdo->prepare("SELECT cp.contrato_id FROM despacho_contrato_proyectos cp
+                    INNER JOIN despacho_proyectos p ON p.id = cp.proyecto_id
+                    WHERE p.codigo = ?");
+                $stmtProyC->execute([$proyectoCodigo]);
+                $cIds = $stmtProyC->fetchAll(PDO::FETCH_COLUMN);
+
+                foreach ($cIds as $cId) {
+                    $pdo->prepare("UPDATE despacho_contratos SET responsable_nombre = ? WHERE id = ?")
+                        ->execute([$nuevoResponsable, (int)$cId]);
+                    $pdo->prepare("UPDATE despacho_obligaciones_reporte SET responsable_nombre = ? WHERE contrato_id = ?")
+                        ->execute([$nuevoResponsable, (int)$cId]);
+                    despachoLogBitacora($pdo, (int)$cId, 'CONTRATO', (int)$cId, 'CAMBIO_RESPONSABLE_PROYECTO', 'USUARIO', (int)$currentUser['id'], "Administrador reasignó responsable del Proyecto No. $proyectoCodigo a: $nuevoResponsable");
+                }
+
+                echo json_encode([
+                    'success' => true,
+                    'message' => 'Responsable actualizado correctamente para ' . count($cIds) . ' contrato(s) del Proyecto No. ' . $proyectoCodigo,
+                    'contratos_actualizados' => count($cIds)
+                ], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
+
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => 'Debe especificar el contrato o el proyecto para asignar el responsable.'], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+
+        if ($action === 'create_contract') {
+            if (empty($currentUser['is_real_admin']) && empty($currentUser['is_despacho'])) {
+                http_response_code(403);
+                echo json_encode(['success' => false, 'message' => 'Solo el usuario administrador o despacho puede crear nuevos contratos.'], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
+
+            $numeroContrato = trim((string)($jsonBody['numero_contrato'] ?? ''));
+            if ($numeroContrato === '') {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'message' => 'El número de contrato es obligatorio.'], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
+
+            $stmtCheck = $pdo->prepare("SELECT id FROM despacho_contratos WHERE LOWER(numero_contrato) = LOWER(?) OR LOWER(codigo_normalizado) = LOWER(?) LIMIT 1");
+            $stmtCheck->execute([$numeroContrato, $numeroContrato]);
+            if ($stmtCheck->fetchColumn()) {
+                http_response_code(409);
+                echo json_encode(['success' => false, 'message' => 'Ya existe un contrato registrado con el número ' . $numeroContrato], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
+
+            $tituloGrupo = trim((string)($jsonBody['titulo_grupo'] ?? '')) ?: ('Contrato ' . $numeroContrato);
+            $contratista = trim((string)($jsonBody['contratista'] ?? '')) ?: null;
+            $objeto = trim((string)($jsonBody['objeto'] ?? '')) ?: null;
+            $responsableNombre = trim((string)($jsonBody['responsable_nombre'] ?? '')) ?: null;
+            $areaId = !empty($jsonBody['area_id']) ? (int)$jsonBody['area_id'] : null;
+            $proyectoId = !empty($jsonBody['proyecto_id']) ? (int)$jsonBody['proyecto_id'] : null;
+            $duracionTexto = trim((string)($jsonBody['duracion_texto'] ?? '')) ?: null;
+            $valorInicial = isset($jsonBody['valor_inicial']) && $jsonBody['valor_inicial'] !== '' ? (float)$jsonBody['valor_inicial'] : null;
+            $fechaInicioIso = trim((string)($jsonBody['fecha_inicio_iso'] ?? '')) ?: null;
+            $fechaFinInicialIso = trim((string)($jsonBody['fecha_fin_inicial_iso'] ?? '')) ?: null;
+            $estadoContractual = trim((string)($jsonBody['estado_contractual'] ?? 'EN_EJECUCION')) ?: 'EN_EJECUCION';
+
+            $codNorm = strtoupper(preg_replace('/[^a-zA-Z0-9\-]/', '-', $numeroContrato)) . '-' . substr(uniqid(), -4);
+
+            $stmtIns = $pdo->prepare("INSERT INTO despacho_contratos (
+                codigo_normalizado, numero_contrato, titulo_grupo, es_grupo, area_id,
+                responsable_nombre, contratista, objeto, duracion_texto, valor_inicial, valor_total,
+                fecha_inicio_texto, fecha_inicio_iso, fecha_fin_inicial_texto, fecha_fin_inicial_iso,
+                fecha_fin_vigente_texto, fecha_fin_vigente_iso, estado_contractual,
+                categoria_origen, nivel_alerta, tipo_alerta, alerta_consolidada,
+                tiene_mensaje1, estado_entrega, estado_revision
+            ) VALUES (
+                ?, ?, ?, 0, ?,
+                ?, ?, ?, ?, ?, ?,
+                ?, ?, ?, ?,
+                ?, ?, ?,
+                'DESPACHO', 'SEGUIMIENTO', 'En seguimiento', 'Registrado directamente desde el panel de Despacho',
+                1, 'PENDIENTE', 'APROBADO'
+            )");
+
+            $stmtIns->execute([
+                $codNorm, $numeroContrato, $tituloGrupo, $areaId,
+                $responsableNombre, $contratista, $objeto, $duracionTexto, $valorInicial, $valorInicial,
+                $fechaInicioIso, $fechaInicioIso, $fechaFinInicialIso, $fechaFinInicialIso,
+                $fechaFinInicialIso, $fechaFinInicialIso, $estadoContractual
+            ]);
+            $newId = (int)$pdo->lastInsertId();
+
+            if ($proyectoId > 0) {
+                $pdo->prepare("INSERT INTO despacho_contrato_proyectos (contrato_id, proyecto_id, nota_asociacion) VALUES (?, ?, 'Asignado al crear contrato en Despacho')")
+                    ->execute([$newId, $proyectoId]);
+            }
+
+            despachoLogBitacora(
+                $pdo,
+                $newId,
+                'CONTRATO',
+                $newId,
+                'CREAR_CONTRATO_DESPACHO',
+                'USUARIO',
+                (int)$currentUser['id'],
+                $currentUser['nombre'] . ' creó el contrato ' . $numeroContrato
+            );
+
+            echo json_encode([
+                'success' => true,
+                'message' => 'Contrato creado exitosamente.',
+                'contrato_id' => $newId
+            ], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+
+        if ($action === 'assign_project') {
+            if (empty($currentUser['is_real_admin']) && empty($currentUser['is_despacho'])) {
+                http_response_code(403);
+                echo json_encode(['success' => false, 'message' => 'Solo el usuario administrador o despacho puede asociar proyectos a contratos.'], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
+
+            $contratoId = isset($jsonBody['contrato_id']) ? (int)$jsonBody['contrato_id'] : 0;
+            $proyectoId = isset($jsonBody['proyecto_id']) ? (int)$jsonBody['proyecto_id'] : 0;
+
+            if ($contratoId <= 0) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'message' => 'ID de contrato inválido.'], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
+
+            $pdo->prepare("DELETE FROM despacho_contrato_proyectos WHERE contrato_id = ?")->execute([$contratoId]);
+
+            if ($proyectoId > 0) {
+                $pdo->prepare("INSERT INTO despacho_contrato_proyectos (contrato_id, proyecto_id, nota_asociacion) VALUES (?, ?, 'Asociado desde panel de Despacho')")
+                    ->execute([$contratoId, $proyectoId]);
+            }
+
+            despachoLogBitacora(
+                $pdo,
+                $contratoId,
+                'CONTRATO',
+                $contratoId,
+                'ASIGNAR_PROYECTO',
+                'USUARIO',
+                (int)$currentUser['id'],
+                $currentUser['nombre'] . ' asoció el proyecto ID ' . $proyectoId . ' al contrato ID ' . $contratoId
+            );
+
+            echo json_encode([
+                'success' => true,
+                'message' => 'Proyecto asociado exitosamente al contrato.'
+            ], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+
         if ($action === 'review_report') {
             $reporteId = (int)($jsonBody['reporte_id'] ?? 0);
             $decision = strtoupper(trim((string)($jsonBody['decision'] ?? ''))); // APROBADO, DEVUELTO, OBSERVADO
