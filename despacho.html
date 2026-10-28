@@ -716,20 +716,15 @@
     <section class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Despacho — Seguimiento Contractual y Alertas</h1>
+            <h1 class="hero-title">Seguimiento Contractual y Alertas</h1>
         </div>
     </section>
 
     <main id="despacho-main-content" style="display: none;">
-        <div class="page-title">
-            <div>
-                <h2>Tablero de seguimiento contractual</h2>
-                <p id="lbl-periodo-subtitle">Cargando datos...</p>
-            </div>
+        <div class="page-title" style="justify-content: flex-end;">
             <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
                 <a href="reporte_despacho.html" target="_blank" class="btn btn-outline">Formulario de Actualización por Contrato</a>
                 <button class="btn btn-outline" onclick="loadDashboardData(false)">Actualizar</button>
-                <button class="btn btn-primary" onclick="switchDespachoTab('periodos')">Periodos y Obligaciones</button>
             </div>
         </div>
 
@@ -737,71 +732,32 @@
         <section class="kpis">
             <div class="kpi" onclick="applyQuickFilter('')">
                 <div class="v" id="kpi-total">0</div>
-                <div class="l">Registros Consolidados</div>
+                <div class="l">Contratos con Seguimiento</div>
                 <div class="s" id="kpi-grupos-sub">Grupos obra/inter: 0</div>
             </div>
-            <div class="kpi" onclick="applyQuickFilter('CRÍTICA')">
-                <div class="v" id="kpi-critica">0</div>
-                <div class="l">Alertas Críticas</div>
-                <div class="s">Corte origen: <span id="kpi-orig-critica">0</span></div>
-            </div>
-            <div class="kpi" onclick="applyQuickFilter('ALTA')">
-                <div class="v" id="kpi-alta">0</div>
-                <div class="l">Alertas Altas</div>
-                <div class="s">Corte origen: <span id="kpi-orig-alta">0</span></div>
-            </div>
-            <div class="kpi" onclick="applyQuickFilter('VALIDAR DATOS')">
-                <div class="v" id="kpi-validar">0</div>
-                <div class="l">Validar Datos</div>
-                <div class="s">Con conflicto: <span id="kpi-conflicto-cnt">0</span></div>
-            </div>
-            <div class="kpi" onclick="applyQuickFilter('SEGUIMIENTO')">
-                <div class="v" id="kpi-seguimiento">0</div>
-                <div class="l">En Seguimiento</div>
-                <div class="s">Corte origen: <span id="kpi-orig-seguimiento">0</span></div>
-            </div>
-            <div class="kpi" onclick="applyQuickFilter('CIERRE')">
-                <div class="v" id="kpi-cierre">0</div>
-                <div class="l">Cierre / Liquidación</div>
-                <div class="s">Corte origen: <span id="kpi-orig-cierre">0</span></div>
+            <div class="kpi" onclick="applyQuickFilter('')">
+                <div class="v" id="kpi-ultima-fecha">—</div>
+                <div class="l">Última Fecha de Seguimiento</div>
+                <div class="s">Fecha más reciente entre todos los contratos</div>
             </div>
             <div class="kpi" onclick="toggleSoloFaltantes()">
                 <div class="v" id="kpi-faltantes-periodo">0</div>
-                <div class="l">Sin Reporte en Periodo</div>
-                <div class="s">Sin Mensaje 1 base: <span id="kpi-sin-m1">0</span></div>
+                <div class="l">Contratos sin Actualización Semanal</div>
+                <div class="s">Pendientes de reporte en el periodo activo</div>
             </div>
         </section>
 
-        <!-- PESTAÑAS INTERNAS DEL MÓDULO (SIN EMOJIS) -->
-        <div class="tabs-header">
-            <button class="tab-btn active" id="btn-tab-maestro" onclick="switchDespachoTab('maestro')">
-                Consolidado Maestro y Control por Periodo (<span id="lbl-count-filtered">0</span>)
-            </button>
-            <button class="tab-btn" id="btn-tab-alertas" onclick="switchDespachoTab('alertas')">
-                Alertas Vigentes (<span id="lbl-count-alertas">0</span>) e Historial
-            </button>
-            <button class="tab-btn" id="btn-tab-criterios" onclick="switchDespachoTab('criterios')">
-                Criterios Cualitativos de Alertas (3 Reglas)
-            </button>
-            <button class="tab-btn" id="btn-tab-periodos" onclick="switchDespachoTab('periodos')">
-                Periodos de Reporte y Obligaciones
-            </button>
-        </div>
-
-        <!-- PESTAÑA 1: CONSOLIDADO MAESTRO -->
+        <!-- TABLERO CONSOLIDADO MAESTRO -->
         <div id="view-maestro" class="tab-content active">
             <section class="card">
                 <div class="filters">
-                    <div>
-                        <label for="f-periodo">Periodo de Seguimiento</label>
-                        <select id="f-periodo" onchange="loadDashboardData(false)"></select>
-                    </div>
-                    <div>
-                        <label for="f-area">Área / Dependencia</label>
-                        <select id="f-area" onchange="loadDashboardData(false)">
-                            <option value="">Todas las Áreas</option>
-                        </select>
-                    </div>
+                    <!-- Selectores auxiliares ocultos para mantener compatibilidad sin recargar la interfaz -->
+                    <select id="f-periodo" style="display:none;" onchange="loadDashboardData(false)"></select>
+                    <select id="f-area" style="display:none;" onchange="loadDashboardData(false)"><option value="">Todas las Áreas</option></select>
+                    <select id="f-nivel" style="display:none;" onchange="loadDashboardData(false)"><option value="">Todos</option></select>
+                    <select id="f-estado-ent" style="display:none;" onchange="loadDashboardData(false)"><option value="">Todos</option></select>
+                    <select id="f-estado-rev" style="display:none;" onchange="loadDashboardData(false)"><option value="">Todos</option></select>
+
                     <div>
                         <label for="f-proyecto">Proyecto de Inversión</label>
                         <select id="f-proyecto" onchange="loadDashboardData(false)">
@@ -809,25 +765,14 @@
                         </select>
                     </div>
                     <div>
-                        <label for="f-responsable">Responsable / Apoyo</label>
+                        <label for="f-responsable">Apoyo a la Supervisión</label>
                         <select id="f-responsable" onchange="loadDashboardData(false)">
-                            <option value="">Todos los Responsables</option>
-                            <option value="__SIN_RESPONSABLE__">Sin responsable asignado</option>
+                            <option value="">Todos</option>
+                            <option value="__SIN_RESPONSABLE__">Sin apoyo asignado</option>
                         </select>
                     </div>
                     <div>
-                        <label for="f-nivel">Nivel / Categoría Alerta</label>
-                        <select id="f-nivel" onchange="loadDashboardData(false)">
-                            <option value="">Todos los Niveles</option>
-                            <option value="CRÍTICA">CRÍTICA</option>
-                            <option value="ALTA">ALTA</option>
-                            <option value="VALIDAR DATOS">VALIDAR DATOS</option>
-                            <option value="SEGUIMIENTO">SEGUIMIENTO</option>
-                            <option value="CIERRE">CIERRE / LIQUIDACIÓN</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="f-estado-con">Estado Contractual</label>
+                        <label for="f-estado-con">Estado</label>
                         <select id="f-estado-con" onchange="loadDashboardData(false)">
                             <option value="">Todos</option>
                             <option value="EN_EJECUCION">EN EJECUCIÓN</option>
@@ -838,34 +783,13 @@
                         </select>
                     </div>
                     <div>
-                        <label for="f-estado-ent">Estado Entrega (Periodo)</label>
-                        <select id="f-estado-ent" onchange="loadDashboardData(false)">
-                            <option value="">Todos</option>
-                            <option value="RECIBIDO">RECIBIDO</option>
-                            <option value="PENDIENTE">PENDIENTE</option>
-                            <option value="FALTANTE">FALTANTE / VENCIDO</option>
-                            <option value="DESACTUALIZADO">DESACTUALIZADO</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="f-estado-rev">Estado Revisión Despacho</label>
-                        <select id="f-estado-rev" onchange="loadDashboardData(false)">
-                            <option value="">Todos</option>
-                            <option value="SIN_REPORTE">SIN REPORTE EN PERIODO</option>
-                            <option value="PENDIENTE_REVISION">PENDIENTE REVISIÓN</option>
-                            <option value="OBSERVADO">OBSERVADO / POR VALIDAR</option>
-                            <option value="DEVUELTO">DEVUELTO PARA CORRECCIÓN</option>
-                            <option value="APROBADO">APROBADO</option>
-                        </select>
-                    </div>
-                    <div style="grid-column: span 2;">
-                        <label for="f-search">Búsqueda rápida</label>
-                        <input type="text" id="f-search" placeholder="Buscar por contrato, grupo, contratista u objeto..." oninput="debounceLoad()">
+                        <label for="f-search">Buscar Contrato o Contratista</label>
+                        <input type="text" id="f-search" placeholder="No. contrato, contratista u objeto..." oninput="debounceLoad()">
                     </div>
                     <div>
                         <label class="chk" style="text-transform:none;">
                             <input type="checkbox" id="f-solo-faltantes" style="width:auto;" onchange="loadDashboardData(false)">
-                            Solo faltantes / sin M1
+                            Sin reporte semanal
                         </label>
                         <button type="button" class="btn btn-outline btn-sm" style="margin-top:0.35rem; width:100%;" onclick="resetFilters()">Limpiar filtros</button>
                     </div>
@@ -873,140 +797,22 @@
             </section>
 
             <section class="card">
-                <h3>
-                    <span>Contratos y grupos consolidados</span>
-                </h3>
                 <div class="table-wrap">
                     <table>
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Contrato / Grupo y Proyectos</th>
-                                <th>Responsable</th>
-                                <th>Plazo Vigente y Días Restantes</th>
-                                <th>Última Actualización y Recepción</th>
-                                <th>Ejecución Física / Financiera</th>
-                                <th>Entrega y Revisión (Periodo)</th>
-                                <th>Nivel / Alerta Consolidada</th>
+                                <th>No. Proyecto</th>
+                                <th>Mensaje 1: Información del Contrato</th>
+                                <th>Apoyo a la Supervisión</th>
+                                <th>Duración y Fechas</th>
+                                <th>Mensaje 2: Último Reporte Semanal</th>
+                                <th>Ejecución Financiera / Física</th>
                                 <th style="text-align: center;">Acciones</th>
                             </tr>
                         </thead>
                         <tbody id="tbody-contratos">
-                            <tr><td colspan="9" style="text-align: center; padding: 2.5rem;" class="muted">Cargando contratos...</td></tr>
+                            <tr><td colspan="7" style="text-align: center; padding: 2.5rem;" class="muted">Cargando proyectos y contratos...</td></tr>
                         </tbody>
-                    </table>
-                </div>
-            </section>
-        </div>
-
-        <!-- PESTAÑA 2: ALERTAS VIGENTES E HISTORIAL -->
-        <div id="view-alertas" class="tab-content">
-            <section class="card">
-                <h3>Alertas Vigentes Activas</h3>
-                <p class="muted" style="margin: 0 0 1rem 0; font-size: 0.85rem;">
-                    Separación entre alertas de riesgo contractual y alertas por falta de reporte o actualización. Cada registro conserva la condición evaluada, los datos usados, la fecha y la versión de la regla.
-                </p>
-                <div class="table-wrap">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Nivel</th>
-                                <th>Categoría / Criterio</th>
-                                <th>Contrato / Grupo</th>
-                                <th>Responsable</th>
-                                <th>Tipo y Descripción de Alerta</th>
-                                <th>Datos Usados y Dato por Validar</th>
-                                <th>Acción</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody-alertas-vigentes"></tbody>
-                    </table>
-                </div>
-            </section>
-
-            <section class="card">
-                <h3>Historial Trazable de Eventos de Alertas</h3>
-                <div class="table-wrap">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Fecha / Corte</th>
-                                <th>Contrato</th>
-                                <th>Cambio / Dato Actualizado</th>
-                                <th>Efecto en la Alerta</th>
-                                <th>Registrado por</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody-historial-alertas"></tbody>
-                    </table>
-                </div>
-            </section>
-        </div>
-
-        <!-- PESTAÑA 3: CRITERIOS CUALITATIVOS DE ALERTAS -->
-        <div id="view-criterios" class="tab-content">
-            <section class="card">
-                <h3>Criterios Cualitativos de Alertas Contractuales</h3>
-                <p class="muted" style="font-size: 0.86rem; margin-bottom: 1.25rem;">
-                    Los tres criterios cualitativos de supervisión están registrados sin activar umbrales numéricos inventados de días o porcentajes. Los criterios 1 y 2 permanecen pendientes de validación de parámetros por Despacho/Administración, mientras que el criterio 3 opera sobre las obligaciones de cada periodo.
-                </p>
-                <div id="criterios-config-container"></div>
-            </section>
-        </div>
-
-        <!-- PESTAÑA 4: PERIODOS Y OBLIGACIONES -->
-        <div id="view-periodos" class="tab-content">
-            <section class="card">
-                <h3>Abrir Nuevo Periodo de Reporte</h3>
-                <p class="muted" style="font-size: 0.85rem; margin-bottom: 1rem;">
-                    Al crear un nuevo periodo, se generan obligaciones esperadas independientes para cada contrato activo. Un reporte cargado en un periodo anterior no cumple el periodo nuevo.
-                </p>
-                <form onsubmit="handleCreatePeriodo(event)" class="filters">
-                    <div>
-                        <label>Código del Periodo *</label>
-                        <input type="text" id="per-codigo" placeholder="Ej: SEM-2026-11-02" required>
-                    </div>
-                    <div>
-                        <label>Nombre del Periodo *</label>
-                        <input type="text" id="per-nombre" placeholder="Ej: Semana del 27 oct al 2 nov 2026" required>
-                    </div>
-                    <div>
-                        <label>Fecha Inicio *</label>
-                        <input type="date" id="per-inicio" required>
-                    </div>
-                    <div>
-                        <label>Fecha Fin *</label>
-                        <input type="date" id="per-fin" required>
-                    </div>
-                    <div>
-                        <label>Fecha Límite Entrega *</label>
-                        <input type="date" id="per-limite" required>
-                    </div>
-                    <div>
-                        <label class="chk" style="text-transform:none; margin-bottom:0.4rem;">
-                            <input type="checkbox" id="per-activo" checked style="width:auto;"> Marcar como periodo activo
-                        </label>
-                        <button type="submit" class="btn btn-primary btn-sm" style="width:100%;">Crear Periodo y Obligaciones</button>
-                    </div>
-                </form>
-            </section>
-
-            <section class="card">
-                <h3>Periodos Registrados en el Sistema</h3>
-                <div class="table-wrap">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Código</th>
-                                <th>Nombre</th>
-                                <th>Tipo</th>
-                                <th>Rango de Fechas</th>
-                                <th>Fecha Límite</th>
-                                <th>Estado</th>
-                                <th>Acción</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody-periodos-list"></tbody>
                     </table>
                 </div>
             </section>
@@ -1123,16 +929,8 @@
                 populateCatalogSelects(data.catalogos, data.periodo_seleccionado_id);
             }
 
-            const perObj = (data.catalogos.periodos || []).find(p => Number(p.id) === Number(data.periodo_seleccionado_id));
-            document.getElementById('lbl-periodo-subtitle').textContent = perObj
-                ? `Periodo activo de consulta: ${perObj.nombre} (${perObj.codigo}) — Límite de entrega: ${perObj.fecha_limite_entrega}`
-                : 'Consulta general consolidada';
-
             renderKpis(data.kpis);
             renderContratosTable(data.contratos);
-            renderAlertasTables(data.alertas_vigentes, data.historial_alertas);
-            renderCriteriosConfig(data.catalogos.reglas_alerta_config || []);
-            renderPeriodosTable(data.catalogos.periodos || []);
         }
 
         function populateCatalogSelects(cat, selectedPerId) {
@@ -1157,26 +955,10 @@
         }
 
         function renderKpis(k) {
-            document.getElementById('kpi-total').textContent = k.total_contratos;
-            document.getElementById('kpi-grupos-sub').textContent = `Grupos obra/inter: ${k.grupos_obra_interventoria_count}`;
-
-            document.getElementById('kpi-critica').textContent = k.niveles_alerta_actuales['CRÍTICA'] ?? 0;
-            document.getElementById('kpi-orig-critica').textContent = k.categorias_origen['CRÍTICA'] ?? 0;
-
-            document.getElementById('kpi-alta').textContent = k.niveles_alerta_actuales['ALTA'] ?? 0;
-            document.getElementById('kpi-orig-alta').textContent = k.categorias_origen['ALTA'] ?? 0;
-
-            document.getElementById('kpi-validar').textContent = k.niveles_alerta_actuales['VALIDAR DATOS'] ?? 0;
-            document.getElementById('kpi-conflicto-cnt').textContent = k.con_conflicto_validar_count ?? 0;
-
-            document.getElementById('kpi-seguimiento').textContent = k.niveles_alerta_actuales['SEGUIMIENTO'] ?? 0;
-            document.getElementById('kpi-orig-seguimiento').textContent = k.categorias_origen['SEGUIMIENTO'] ?? 0;
-
-            document.getElementById('kpi-cierre').textContent = k.niveles_alerta_actuales['CIERRE'] ?? 0;
-            document.getElementById('kpi-orig-cierre').textContent = k.categorias_origen['CIERRE'] ?? 0;
-
-            document.getElementById('kpi-faltantes-periodo').textContent = k.resumen_periodo_seleccionado.sin_reporte_en_periodo ?? 0;
-            document.getElementById('kpi-sin-m1').textContent = k.sin_mensaje1_count ?? 0;
+            document.getElementById('kpi-total').textContent = k.total_contratos ?? 0;
+            document.getElementById('kpi-grupos-sub').textContent = `Grupos obra/inter: ${k.grupos_obra_interventoria_count ?? 0}`;
+            document.getElementById('kpi-ultima-fecha').textContent = k.ultima_fecha_seguimiento || 'Sin registros';
+            document.getElementById('kpi-faltantes-periodo').textContent = k.resumen_periodo_seleccionado?.sin_reporte_en_periodo ?? 0;
         }
 
         function badgeForNivel(nivel) {
@@ -1199,96 +981,144 @@
         }
 
         function renderContratosTable(list) {
-            document.getElementById('lbl-count-filtered').textContent = list.length;
             const tbody = document.getElementById('tbody-contratos');
             if (!list.length) {
-                tbody.innerHTML = '<tr><td colspan="9" style="text-align:center; padding: 2rem;" class="muted">No se encontraron contratos con los filtros seleccionados.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 2rem;" class="muted">No se encontraron proyectos o contratos con los filtros seleccionados.</td></tr>';
                 return;
             }
 
-            tbody.innerHTML = list.map(c => {
-                const proysBadges = (c.proyectos_asociados || []).map(p =>
-                    `<span class="tag tag-neutral">Proy. ${escapeHtml(p.codigo)}</span>`
-                ).join('');
+            // Agrupar siempre por Número de Proyecto y de ahí desprender sus contratos
+            const gruposPorProyecto = new Map();
+            const fProyVal = document.getElementById('f-proyecto').value;
 
-                const grpBadge = Number(c.es_grupo) === 1
-                    ? `<span class="tag tag-dark">GRUPO OBRA+INTER</span>`
-                    : '';
+            list.forEach(c => {
+                const proys = (c.proyectos_asociados && c.proyectos_asociados.length)
+                    ? c.proyectos_asociados
+                    : [{ proyecto_id: 0, codigo: 'SIN_PROYECTO', nombre: 'Contratos pendientes de asociar a Número de Proyecto' }];
 
-                const m1Badge = Number(c.tiene_mensaje1) === 0
-                    ? `<div style="margin-top:4px;"><span class="tag tag-alert">SIN MENSAJE 1 (FICHA)</span></div>`
-                    : '';
+                proys.forEach(p => {
+                    if (fProyVal && String(p.proyecto_id) !== String(fProyVal)) return;
+                    const key = p.codigo || 'SIN_PROYECTO';
+                    if (!gruposPorProyecto.has(key)) {
+                        gruposPorProyecto.set(key, {
+                            codigo: key,
+                            nombre: p.nombre || ('Proyecto ' + key),
+                            contratos: []
+                        });
+                    }
+                    gruposPorProyecto.get(key).contratos.push(c);
+                });
+            });
 
-                let plazoHtml = `<div><strong>Fin vigente:</strong> ${escapeHtml(c.fecha_fin_vigente_texto || 'Sin fecha validada')}</div>`;
-                if (c.estado_plazo === 'PAUSADO_POR_SUSPENSION') {
-                    plazoHtml += `<span class="tag tag-warn">PAUSADO (SUSPENDIDO)</span>`;
-                } else if (c.dias_restantes_plazo_vigente !== null) {
-                    const d = Number(c.dias_restantes_plazo_vigente);
-                    plazoHtml += `<div style="font-weight:700; color:var(--primary-green-dark);">${d < 0 ? `Vencido hace ${Math.abs(d)} días` : `${d} días restantes`}</div>`;
-                } else {
-                    plazoHtml += `<small class="muted">${escapeHtml(c.estado_plazo)}</small>`;
-                }
+            // Ordenar proyectos numéricamente y dejar SIN_PROYECTO al final
+            const sortedGroups = Array.from(gruposPorProyecto.values()).sort((a, b) => {
+                if (a.codigo === 'SIN_PROYECTO') return 1;
+                if (b.codigo === 'SIN_PROYECTO') return -1;
+                return String(a.codigo).localeCompare(String(b.codigo), undefined, { numeric: true });
+            });
 
-                const fRepHtml = `
-                    <div><strong>Último reporte:</strong> ${escapeHtml(c.fecha_ultimo_reporte_texto || 'No informada')}</div>
-                    <div style="font-size:0.75rem;" class="muted"><strong>Recepción sist.:</strong> ${escapeHtml((c.fecha_recepcion_sistema || '').slice(0, 16) || 'Corte base')}</div>
-                    ${c.dias_desde_ultimo_reporte !== null ? `<small class="muted">Hace ${c.dias_desde_ultimo_reporte} días</small>` : ''}
-                `;
+            let htmlRows = '';
 
-                const fisTxt = c.ejecucion_fisica_pct !== null ? `${c.ejecucion_fisica_pct}%` : (c.ejecucion_fisica_texto ? escapeHtml(c.ejecucion_fisica_texto.slice(0, 28)) : 'Sin dato (NULL)');
-                const finTxt = c.ejecucion_financiera_pct !== null ? `${c.ejecucion_financiera_pct}%` : (c.ejecucion_financiera_texto ? escapeHtml(c.ejecucion_financiera_texto.slice(0, 28)) : 'Sin dato (NULL)');
-                let orientativoHtml = '';
-                if (c.nota_indicador_temporal) {
-                    orientativoHtml = `<div style="font-size:0.71rem; margin-top:3px;" class="muted">${escapeHtml(c.nota_indicador_temporal)}</div>`;
-                }
+            sortedGroups.forEach(grupo => {
+                const isSinProy = grupo.codigo === 'SIN_PROYECTO';
+                const proyTitle = isSinProy
+                    ? 'Sin Número de Proyecto Asignado (Pendiente en Mensaje 1)'
+                    : `Proyecto de Inversión No. ${escapeHtml(grupo.codigo)} — ${escapeHtml(grupo.nombre)}`;
 
-                const obl = c.obligacion_periodo || {};
-                const entPer = obl.estado_entrega_efectivo || obl.estado_entrega || 'FALTANTE';
-                const revPer = obl.estado_revision || 'SIN_REPORTE';
-
-                const conflictoHtml = c.dato_conflicto
-                    ? `<div style="margin-top:4px; padding:4px 6px; background:#F8FAF9; border:1px solid #E3E6EA; border-radius:6px; font-size:0.74rem;"><strong>Por validar:</strong> ${escapeHtml(c.dato_conflicto)}</div>`
-                    : '';
-
-                return `
-                    <tr>
-                        <td style="font-weight:700;" class="muted">${c.fila_excel || c.id}</td>
-                        <td>
-                            <div style="font-weight:700; color:var(--primary-green-dark);">${escapeHtml(c.titulo_grupo)}</div>
-                            <div style="font-size:0.78rem;" class="muted">${grpBadge} ${escapeHtml(c.numero_contrato)} &bull; ${escapeHtml(c.area_nombre || '')}</div>
-                            <div style="margin-top:2px;">${proysBadges}</div>
-                            ${m1Badge}
-                        </td>
-                        <td>
-                            <div style="font-weight:600;">${c.responsable_nombre ? escapeHtml(c.responsable_nombre) : '<span class="muted">Sin responsable (NULL)</span>'}</div>
-                            <small class="muted">Estado: ${escapeHtml(c.estado_contractual)}</small>
-                        </td>
-                        <td>${plazoHtml}</td>
-                        <td>${fRepHtml}</td>
-                        <td>
-                            <div><strong>Física:</strong> ${fisTxt}</div>
-                            <div><strong>Financiera:</strong> ${finTxt}</div>
-                            ${orientativoHtml}
-                        </td>
-                        <td>
-                            <div style="margin-bottom:3px;"><span class="tag ${entPer === 'RECIBIDO' ? '' : 'tag-alert'}">ENTREGA: ${escapeHtml(entPer)}</span></div>
-                            <div>${badgeForRevision(revPer)}</div>
-                            ${obl.radicado_ultimo ? `<small style="display:block; margin-top:2px;" class="muted">${escapeHtml(obl.radicado_ultimo)}</small>` : ''}
-                        </td>
-                        <td>
-                            <div style="margin-bottom:3px;">${badgeForNivel(c.nivel_alerta)} <strong style="font-size:0.78rem;">${escapeHtml(c.tipo_alerta || '')}</strong></div>
-                            <div style="font-size:0.78rem;">${escapeHtml(c.alerta_consolidada || '')}</div>
-                            ${conflictoHtml}
-                        </td>
-                        <td style="text-align:center; white-space:nowrap;">
-                            <div style="display:flex; flex-direction:column; gap:0.35rem;">
-                                <button type="button" class="btn btn-primary btn-sm" onclick="openContratoModal(${c.id}, 'tracking')">Ficha / Tracking</button>
-                                <a href="reporte_despacho.html?contrato_id=${c.id}" target="_blank" class="btn btn-outline btn-sm">Completar / Editar</a>
+                htmlRows += `
+                    <tr style="background:#EEF4EF;">
+                        <td colspan="7" style="padding:0.75rem 1rem; border-top:2px solid #D5E2D7; border-bottom:1px solid #D5E2D7;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                                <div>
+                                    <span class="tag">${isSinProy ? 'POR ASIGNAR PROYECTO' : 'PROYECTO ' + escapeHtml(grupo.codigo)}</span>
+                                    <strong style="font-size:0.92rem; color:var(--primary-green-dark); margin-left:0.4rem;">${proyTitle}</strong>
+                                    <span class="muted" style="font-size:0.8rem; margin-left:0.5rem;">(${grupo.contratos.length} contrato${grupo.contratos.length === 1 ? '' : 's'} asociado${grupo.contratos.length === 1 ? '' : 's'})</span>
+                                </div>
+                                <a href="reporte_despacho.html?proyecto=${encodeURIComponent(grupo.codigo)}" target="_blank" class="btn btn-outline btn-sm">
+                                    Ver / Actualizar Contratos de este Proyecto
+                                </a>
                             </div>
                         </td>
                     </tr>
                 `;
-            }).join('');
+
+                grupo.contratos.forEach(c => {
+                    const m1Badge = Number(c.tiene_mensaje1) === 0
+                        ? `<div style="margin-top:4px;"><span class="tag tag-warn">FALTA MENSAJE 1</span></div>`
+                        : '';
+
+                    const valTotalNum = c.valor_total !== null ? Number(c.valor_total) : (c.valor_inicial !== null ? Number(c.valor_inicial) : null);
+                    const valTxt = valTotalNum !== null ? '$' + valTotalNum.toLocaleString('es-CO') : 'Sin valor registrado';
+
+                    const diasRep = c.dias_desde_ultimo_reporte !== null && c.dias_desde_ultimo_reporte !== undefined
+                        ? Number(c.dias_desde_ultimo_reporte)
+                        : null;
+                    let fRepCellStyle = 'background:#FDECEC; color:#842029;';
+                    let fRepTagHtml = '<span class="tag tag-alert">SIN REPORTE RECIENTE</span>';
+                    if (diasRep !== null) {
+                        if (diasRep <= 7) {
+                            fRepCellStyle = 'background:#EAF5EE; color:#1D4227;';
+                            fRepTagHtml = '<span class="tag">ESTA SEMANA</span>';
+                        } else if (diasRep <= 14) {
+                            fRepCellStyle = 'background:#FFF8E1; color:#855A00;';
+                            fRepTagHtml = '<span class="tag tag-warn">HACE 1 A 2 SEMANAS</span>';
+                        } else if (diasRep <= 30) {
+                            fRepCellStyle = 'background:#FFEDD5; color:#9A3412;';
+                            fRepTagHtml = '<span class="tag tag-warn">ATRASO &gt; 2 SEMANAS</span>';
+                        } else {
+                            fRepCellStyle = 'background:#FDECEC; color:#842029;';
+                            fRepTagHtml = '<span class="tag tag-alert">ATRASO &gt; 30 DÍAS</span>';
+                        }
+                    }
+
+                    const fRepHtml = `
+                        <div style="margin-bottom:3px;">${fRepTagHtml}</div>
+                        <div><strong>Fecha reporte:</strong> ${escapeHtml(c.fecha_ultimo_reporte_texto || 'No informada')}</div>
+                        <div><strong>Estado:</strong> ${escapeHtml(c.estado_reportado_texto || c.estado_contractual || 'Sin dato')}</div>
+                        <div><strong>Fecha finalización:</strong> ${escapeHtml(c.fecha_fin_vigente_texto || c.fecha_fin_inicial_texto || 'Sin dato')}</div>
+                        ${diasRep !== null ? `<div style="font-size:0.75rem; font-weight:700; margin-top:2px;">Hace ${diasRep} día${diasRep === 1 ? '' : 's'}</div>` : ''}
+                    `;
+
+                    const fisTxt = c.ejecucion_fisica_pct !== null ? `${c.ejecucion_fisica_pct}%` : (c.ejecucion_fisica_texto ? escapeHtml(c.ejecucion_fisica_texto.slice(0, 35)) : 'Sin dato');
+                    const finTxt = c.ejecucion_financiera_pct !== null ? `${c.ejecucion_financiera_pct}%` : (c.ejecucion_financiera_texto ? escapeHtml(c.ejecucion_financiera_texto.slice(0, 35)) : 'Sin dato');
+
+                    htmlRows += `
+                        <tr>
+                            <td style="white-space:nowrap;">
+                                <div style="font-weight:800; color:var(--primary-green-dark);">${isSinProy ? 'Sin asignar' : 'Proy. ' + escapeHtml(grupo.codigo)}</div>
+                            </td>
+                            <td>
+                                <div style="font-weight:700; color:var(--primary-green-dark);">Contrato: ${escapeHtml(c.numero_contrato)}</div>
+                                <div style="font-size:0.8rem;"><strong>Contratista:</strong> ${escapeHtml(c.contratista || 'Sin dato')}</div>
+                                <div style="font-size:0.8rem;"><strong>Valor:</strong> ${escapeHtml(valTxt)}</div>
+                                <div style="font-size:0.76rem;" class="muted">${escapeHtml((c.objeto || c.titulo_grupo || '').slice(0, 95))}${(c.objeto || '').length > 95 ? '...' : ''}</div>
+                                ${m1Badge}
+                            </td>
+                            <td>
+                                <div style="font-weight:600;">${c.responsable_nombre ? escapeHtml(c.responsable_nombre) : '<span class="muted">Sin asignar</span>'}</div>
+                            </td>
+                            <td>
+                                <div><strong>Duración:</strong> ${escapeHtml(c.duracion_texto || 'Sin dato')}</div>
+                                <div><strong>Inicio:</strong> ${escapeHtml(c.fecha_inicio_texto || 'Sin dato')}</div>
+                                <div><strong>Term. inicial:</strong> ${escapeHtml(c.fecha_fin_inicial_texto || 'Sin dato')}</div>
+                            </td>
+                            <td style="${fRepCellStyle}">${fRepHtml}</td>
+                            <td>
+                                <div><strong>Financiera:</strong> ${finTxt}</div>
+                                <div><strong>Física:</strong> ${fisTxt}</div>
+                            </td>
+                            <td style="text-align:center; white-space:nowrap;">
+                                <div style="display:flex; flex-direction:column; gap:0.35rem;">
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="openContratoModal(${c.id}, 'tracking')">Ver Ficha / Historial</button>
+                                    <a href="reporte_despacho.html?proyecto=${encodeURIComponent(grupo.codigo)}&contrato_id=${c.id}" target="_blank" class="btn btn-outline btn-sm">Subir Reporte</a>
+                                </div>
+                            </td>
+                        </tr>
+                    `;
+                });
+            });
+
+            tbody.innerHTML = htmlRows;
         }
 
         function renderAlertasTables(vigentes, historial) {
@@ -1689,41 +1519,57 @@
                         </div>
                     </div>
 
-                    <!-- SUBPESTAÑA 2: FICHA CONTRACTUAL Y COMPONENTES -->
+                    <!-- SUBPESTAÑA 2: FICHA CONTRACTUAL (MENSAJE 1 Y AJUSTES) -->
                     <div class="modal-subtab-pane" id="modal-pane-ficha">
                         <div class="section-box">
-                            <h4>Ficha Contractual Validada e Indicadores Temporales</h4>
+                            <h4>Mensaje 1: Información del Contrato</h4>
                             <div class="info-grid">
                                 <div class="info-cell">
-                                    <b>Objeto Contractual</b>
+                                    <b>Número del contrato</b>
+                                    <strong>${escapeHtml(c.numero_contrato || 'Sin dato')}</strong>
+                                </div>
+                                <div class="info-cell">
+                                    <b>Contratista</b>
+                                    <strong>${escapeHtml(c.contratista || 'Sin dato')}</strong>
+                                </div>
+                                <div class="info-cell">
+                                    <b>Apoyo a la supervisión</b>
+                                    <strong>${escapeHtml(c.responsable_nombre || 'Sin dato')}</strong>
+                                </div>
+                                <div class="info-cell">
+                                    <b>Duración del contrato</b>
+                                    <div>${escapeHtml(c.duracion_texto || 'Sin dato')}</div>
+                                </div>
+                                <div class="info-cell">
+                                    <b>Valor</b>
+                                    <div>Inicial: <strong>${c.valor_inicial !== null ? '$' + Number(c.valor_inicial).toLocaleString('es-CO') : 'Sin dato'}</strong></div>
+                                    <div>Total: <strong>${c.valor_total !== null ? '$' + Number(c.valor_total).toLocaleString('es-CO') : 'Sin dato'}</strong></div>
+                                </div>
+                                <div class="info-cell">
+                                    <b>Fecha de inicio del contrato</b>
+                                    <div>${escapeHtml(c.fecha_inicio_texto || 'Sin dato')}</div>
+                                </div>
+                                <div class="info-cell">
+                                    <b>Fecha de terminación inicial</b>
+                                    <div>${escapeHtml(c.fecha_fin_inicial_texto || 'Sin dato')}</div>
+                                </div>
+                                <div class="info-cell" style="grid-column: 1 / -1;">
+                                    <b>Objeto del contrato</b>
                                     ${escapeHtml(c.objeto || 'Pendiente en Mensaje 1')}
                                 </div>
-                                <div class="info-cell">
-                                    <b>Contratista / Interventoría</b>
-                                    <div>Contratista: <strong>${escapeHtml(c.contratista || 'No especificado')}</strong></div>
-                                    <div>Interventoría: ${escapeHtml(c.interventoria_nombre || 'N/A')}</div>
-                                </div>
-                                <div class="info-cell">
-                                    <b>Valores Contractuales</b>
-                                    <div>Inicial: <strong>${c.valor_inicial !== null ? '$' + Number(c.valor_inicial).toLocaleString('es-CO') : 'NULL'}</strong></div>
-                                    <div>Total: <strong>${c.valor_total !== null ? '$' + Number(c.valor_total).toLocaleString('es-CO') : 'NULL'}</strong></div>
-                                </div>
-                                <div class="info-cell">
-                                    <b>Plazos y Fechas</b>
-                                    <div>Inicio: ${escapeHtml(c.fecha_inicio_texto || 'NULL')}</div>
-                                    <div>Fin Inicial: ${escapeHtml(c.fecha_fin_inicial_texto || 'NULL')}</div>
-                                    <div>Fin Vigente: <strong>${escapeHtml(c.fecha_fin_vigente_texto || 'NULL')}</strong></div>
-                                </div>
-                            </div>
-                            <div style="margin-top:0.85rem; font-size:0.82rem;" class="muted">
-                                <strong>Indicador Plazo:</strong> ${escapeHtml(c.nota_indicador_temporal || c.estado_plazo)}
                             </div>
                             <div style="margin-top:1rem;">
-                                <span class="form-label">Componentes Registrados (Obra / Interventoría / Principal — Sin duplicar totales)</span>
+                                <span class="form-label">Ajustes Registrados (Prórrogas, Adiciones, Suspensiones, Modificaciones)</span>
                                 <div class="table-wrap">
                                     <table>
-                                        <thead><tr><th>Tipo</th><th>Número</th><th>Contratista</th><th>Valor</th><th>% Físico</th><th>% Financiero</th></tr></thead>
-                                        <tbody>${compHtml}</tbody>
+                                        <thead><tr><th>Tipo de Ajuste</th><th>Detalle / Tiempo / Valor</th><th>Fecha Registro</th></tr></thead>
+                                        <tbody>${(data.modificaciones || []).length ? (data.modificaciones || []).map(m => `
+                                            <tr>
+                                                <td><span class="tag">${escapeHtml(m.tipo_modificacion)}</span></td>
+                                                <td>${escapeHtml(m.descripcion_texto || m.descripcion || m.plazo_adicional_texto || '')}</td>
+                                                <td>${escapeHtml(m.created_at || '')}</td>
+                                            </tr>
+                                        `).join('') : '<tr><td colspan="3" class="muted">Sin prórrogas, adiciones o suspensiones registradas.</td></tr>'}</tbody>
                                     </table>
                                 </div>
                             </div>
@@ -1995,24 +1841,15 @@
             await loadDashboardData(false);
         }
 
-        function switchDespachoTab(tabName) {
-            ['maestro', 'alertas', 'criterios', 'periodos'].forEach(t => {
-                document.getElementById(`view-${t}`).classList.toggle('active', t === tabName);
-                document.getElementById(`btn-tab-${t}`).classList.toggle('active', t === tabName);
-            });
-        }
-
         function applyQuickFilter(nivel) {
             document.getElementById('f-nivel').value = nivel;
             document.getElementById('f-solo-faltantes').checked = false;
-            switchDespachoTab('maestro');
             loadDashboardData(false);
         }
 
         function toggleSoloFaltantes() {
             const chk = document.getElementById('f-solo-faltantes');
             chk.checked = !chk.checked;
-            switchDespachoTab('maestro');
             loadDashboardData(false);
         }
 

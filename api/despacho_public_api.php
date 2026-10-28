@@ -235,13 +235,37 @@ function buildContractLookupPayload(PDO $pdo, array $contratoRow): array {
         ORDER BY id DESC LIMIT 1")->fetch(PDO::FETCH_ASSOC) ?: null;
 
     // Proyectos vinculados
-    $stmtP = $pdo->prepare("SELECT p.codigo, p.nombre
+    $stmtP = $pdo->prepare("SELECT p.id, p.codigo, p.nombre
         FROM despacho_contrato_proyectos cp
         INNER JOIN despacho_proyectos p ON p.id = cp.proyecto_id
         WHERE cp.contrato_id = ?
         ORDER BY p.codigo ASC");
     $stmtP->execute([$contratoId]);
     $proyectos = $stmtP->fetchAll(PDO::FETCH_ASSOC);
+
+    $proyectoPrincipal = !empty($proyectos) ? $proyectos[0] : [
+        'id' => 0,
+        'codigo' => 'SIN_PROYECTO',
+        'nombre' => 'Contratos pendientes de asociar a Número de Proyecto'
+    ];
+
+    // Contratos hermanos que se desprenden del mismo proyecto
+    if (!empty($proyectos)) {
+        $stmtSib = $pdo->prepare("SELECT c.id, c.numero_contrato, c.titulo_grupo, c.responsable_nombre, c.contratista,
+                c.estado_contractual, c.tiene_mensaje1, c.fecha_ultimo_reporte_texto, c.ejecucion_fisica_pct, c.ejecucion_financiera_pct
+            FROM despacho_contrato_proyectos cp
+            INNER JOIN despacho_contratos c ON c.id = cp.contrato_id
+            WHERE cp.proyecto_id = ?
+            ORDER BY COALESCE(c.fila_excel, 9999) ASC, c.id ASC");
+        $stmtSib->execute([(int)$proyectoPrincipal['id']]);
+        $contratosDelProyecto = $stmtSib->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        $contratosDelProyecto = $pdo->query("SELECT c.id, c.numero_contrato, c.titulo_grupo, c.responsable_nombre, c.contratista,
+                c.estado_contractual, c.tiene_mensaje1, c.fecha_ultimo_reporte_texto, c.ejecucion_fisica_pct, c.ejecucion_financiera_pct
+            FROM despacho_contratos c
+            WHERE NOT EXISTS (SELECT 1 FROM despacho_contrato_proyectos cp WHERE cp.contrato_id = c.id)
+            ORDER BY COALESCE(c.fila_excel, 9999) ASC, c.id ASC")->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     // Componentes (Obra / Interventoría)
     $stmtComp = $pdo->prepare("SELECT id, tipo_componente, numero_componente, contratista, valor_total, avance_fisico_pct, avance_financiero_pct
@@ -250,6 +274,14 @@ function buildContractLookupPayload(PDO $pdo, array $contratoRow): array {
         ORDER BY id ASC");
     $stmtComp->execute([$contratoId]);
     $componentes = $stmtComp->fetchAll(PDO::FETCH_ASSOC);
+
+    // Modificaciones / Ajustes del contrato (Adiciones, Prórrogas, Suspensiones, Modificaciones)
+    $stmtMod = $pdo->prepare("SELECT *
+        FROM despacho_modificaciones_contrato
+        WHERE contrato_id = ?
+        ORDER BY id DESC");
+    $stmtMod->execute([$contratoId]);
+    $modificaciones = $stmtMod->fetchAll(PDO::FETCH_ASSOC);
 
     // Historial completo de versiones para tracking y para obtener el último Mensaje 1 y Mensaje 2
     $stmtVer = $pdo->prepare("SELECT v.*, r.radicado, r.origen_carga, p.codigo AS periodo_codigo, p.nombre AS periodo_nombre
@@ -337,7 +369,10 @@ function buildContractLookupPayload(PDO $pdo, array $contratoRow): array {
             'mensaje2_texto_actual' => $latestM2Texto,
             'proyectos' => $proyectos,
             'componentes' => $componentes,
+            'modificaciones' => $modificaciones,
         ],
+        'proyecto_principal' => $proyectoPrincipal,
+        'contratos_del_proyecto' => $contratosDelProyecto,
         'periodo' => $periodoActivo,
         'reporte_periodo_actual' => $reportePeriodoActual,
         'versiones_tracking' => $versiones,
@@ -346,7 +381,114 @@ function buildContractLookupPayload(PDO $pdo, array $contratoRow): array {
 
 try {
     // ========================================================================
-    // 1. CONSULTA DIRECTA POR NÚMERO DE CONTRATO O ID (SIN LOGIN NI TOKEN)
+    // 0. LISTADO DE PROYECTOS DE INVERSIÓN Y SUS CONTRATOS ASOCIADOS (SIN LOGIN)
+    // ========================================================================
+    if ($method === 'GET' && $action === 'list_projects') {
+        // Asegurar que todos los proyectos oficiales de Sumapaz (assets/proyectos_metas_sumapaz.json) estén en despacho_proyectos
+        $jsonCatalogPath = dirname(__DIR__) . '/assets/proyectos_metas_sumapaz.json';
+        if (file_exists($jsonCatalogPath)) {
+            $jsonCatalog = json_decode(file_get_contents($jsonCatalogPath), true);
+            if (is_array($jsonCatalog)) {
+                $stmtSyncP = $pdo->prepare("INSERT IGNORE INTO despacho_proyectos (codigo, nombre, activo) VALUES (?, ?, 1)");
+                $seenCodigos = [];
+                foreach ($jsonCatalog as $item) {
+                    $codP = trim((string)($item['codigo'] ?? ''));
+                    $nomP = trim((string)($item['nombre'] ?? ''));
+                    if ($codP !== '' && !isset($seenCodigos[$codP])) {
+                        $seenCodigos[$codP] = true;
+                        $stmtSyncP->execute([$codP, $nomP ?: ('Proyecto ' . $codP)]);
+                    }
+                }
+            }
+        }
+
+        $proyRows = $pdo->query("SELECT p.id, p.codigo, p.nombre
+            FROM despacho_proyectos p
+            WHERE p.activo = 1
+            ORDER BY p.codigo ASC")->fetchAll(PDO::FETCH_ASSOC);
+
+        $cpRows = $pdo->query("SELECT cp.proyecto_id, c.id, c.numero_contrato, c.titulo_grupo, c.responsable_nombre,
+                c.contratista, c.estado_contractual, c.tiene_mensaje1, c.fecha_ultimo_reporte_texto,
+                c.ejecucion_fisica_pct, c.ejecucion_financiera_pct
+            FROM despacho_contrato_proyectos cp
+            INNER JOIN despacho_contratos c ON c.id = cp.contrato_id
+            ORDER BY COALESCE(c.fila_excel, 9999) ASC, c.id ASC")->fetchAll(PDO::FETCH_ASSOC);
+
+        $contratosMap = [];
+        foreach ($cpRows as $r) {
+            $pid = (int)$r['proyecto_id'];
+            $contratosMap[$pid][] = [
+                'id' => (int)$r['id'],
+                'numero_contrato' => $r['numero_contrato'],
+                'titulo_grupo' => $r['titulo_grupo'],
+                'responsable_nombre' => $r['responsable_nombre'],
+                'contratista' => $r['contratista'],
+                'estado_contractual' => $r['estado_contractual'],
+                'tiene_mensaje1' => (int)$r['tiene_mensaje1'] === 1,
+                'fecha_ultimo_reporte_texto' => $r['fecha_ultimo_reporte_texto'],
+                'ejecucion_fisica_pct' => $r['ejecucion_fisica_pct'] !== null ? (float)$r['ejecucion_fisica_pct'] : null,
+                'ejecucion_financiera_pct' => $r['ejecucion_financiera_pct'] !== null ? (float)$r['ejecucion_financiera_pct'] : null,
+            ];
+        }
+
+        $proyectosOut = [];
+        foreach ($proyRows as $p) {
+            $pid = (int)$p['id'];
+            $listaC = $contratosMap[$pid] ?? [];
+            $proyectosOut[] = [
+                'id' => $pid,
+                'codigo' => $p['codigo'],
+                'nombre' => $p['nombre'],
+                'total_contratos' => count($listaC),
+                'contratos' => $listaC,
+            ];
+        }
+
+        // Contratos aún sin número de proyecto asociado
+        $sinProyRows = $pdo->query("SELECT c.id, c.numero_contrato, c.titulo_grupo, c.responsable_nombre,
+                c.contratista, c.estado_contractual, c.tiene_mensaje1, c.fecha_ultimo_reporte_texto,
+                c.ejecucion_fisica_pct, c.ejecucion_financiera_pct
+            FROM despacho_contratos c
+            WHERE NOT EXISTS (SELECT 1 FROM despacho_contrato_proyectos cp WHERE cp.contrato_id = c.id)
+            ORDER BY COALESCE(c.fila_excel, 9999) ASC, c.id ASC")->fetchAll(PDO::FETCH_ASSOC);
+
+        if (!empty($sinProyRows)) {
+            $listaSin = array_map(function(array $r) {
+                return [
+                    'id' => (int)$r['id'],
+                    'numero_contrato' => $r['numero_contrato'],
+                    'titulo_grupo' => $r['titulo_grupo'],
+                    'responsable_nombre' => $r['responsable_nombre'],
+                    'contratista' => $r['contratista'],
+                    'estado_contractual' => $r['estado_contractual'],
+                    'tiene_mensaje1' => (int)$r['tiene_mensaje1'] === 1,
+                    'fecha_ultimo_reporte_texto' => $r['fecha_ultimo_reporte_texto'],
+                    'ejecucion_fisica_pct' => $r['ejecucion_fisica_pct'] !== null ? (float)$r['ejecucion_fisica_pct'] : null,
+                    'ejecucion_financiera_pct' => $r['ejecucion_financiera_pct'] !== null ? (float)$r['ejecucion_financiera_pct'] : null,
+                ];
+            }, $sinProyRows);
+
+            $proyectosOut[] = [
+                'id' => 0,
+                'codigo' => 'SIN_PROYECTO',
+                'nombre' => 'Contratos pendientes de asociar a Número de Proyecto',
+                'total_contratos' => count($listaSin),
+                'contratos' => $listaSin,
+            ];
+        }
+
+        $areasOut = $pdo->query("SELECT id, codigo, nombre FROM despacho_areas WHERE activo = 1 ORDER BY nombre ASC")->fetchAll(PDO::FETCH_ASSOC);
+
+        echo json_encode([
+            'success' => true,
+            'proyectos' => $proyectosOut,
+            'areas' => $areasOut
+        ], JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+
+    // ========================================================================
+    // 1. CONSULTA DIRECTA POR NÚMERO DE PROYECTO O CONTRATO (SIN LOGIN NI TOKEN)
     // ========================================================================
     if ($method === 'GET' && ($action === 'lookup_contract' || ($rawToken === '' && (isset($_GET['query']) || isset($_GET['contrato_id']))))) {
         $contratoIdParam = isset($_GET['contrato_id']) ? (int)$_GET['contrato_id'] : 0;
@@ -505,15 +647,64 @@ try {
             $origenCarga = 'ENLACE_TOKEN';
         } else {
             $contratoId = isset($rawBody['contrato_id']) ? (int)$rawBody['contrato_id'] : 0;
+            $esNuevoContrato = false;
+
             if ($contratoId <= 0 && !empty($rawBody['numero_contrato'])) {
                 $stmtFind = $pdo->prepare("SELECT id FROM despacho_contratos WHERE LOWER(numero_contrato) = LOWER(?) OR LOWER(codigo_normalizado) = LOWER(?) LIMIT 1");
                 $numC = trim((string)$rawBody['numero_contrato']);
                 $stmtFind->execute([$numC, $numC]);
                 $contratoId = (int)($stmtFind->fetchColumn() ?: 0);
             }
+
+            if ($contratoId <= 0 && !empty($rawBody['nuevo_numero_contrato'])) {
+                $nuevoNum = trim((string)$rawBody['nuevo_numero_contrato']);
+                $stmtFindNew = $pdo->prepare("SELECT id FROM despacho_contratos WHERE LOWER(numero_contrato) = LOWER(?) OR LOWER(codigo_normalizado) = LOWER(?) LIMIT 1");
+                $stmtFindNew->execute([$nuevoNum, $nuevoNum]);
+                $contratoId = (int)($stmtFindNew->fetchColumn() ?: 0);
+
+                if ($contratoId <= 0) {
+                    $nuevoTitulo = trim((string)($rawBody['nuevo_titulo_grupo'] ?? '')) ?: ('Contrato ' . $nuevoNum);
+                    $nuevoAreaId = !empty($rawBody['nuevo_area_id']) ? (int)$rawBody['nuevo_area_id'] : null;
+                    $nuevoResp = trim((string)($rawBody['responsable_reportante'] ?? '')) ?: null;
+                    $codNorm = strtoupper(preg_replace('/[^a-zA-Z0-9\-]/', '-', $nuevoNum)) . '-' . substr(uniqid(), -4);
+
+                    $stmtInsCon = $pdo->prepare("INSERT INTO despacho_contratos (
+                        codigo_normalizado, numero_contrato, titulo_grupo, es_grupo, area_id,
+                        responsable_nombre, categoria_origen, nivel_alerta, tipo_alerta,
+                        alerta_consolidada, estado_contractual, tiene_mensaje1, estado_entrega, estado_revision
+                    ) VALUES (?, ?, ?, 0, ?, ?, 'SEGUIMIENTO', 'SEGUIMIENTO', 'En seguimiento', 'Registrado desde formulario por proyecto', 'EN_EJECUCION', 1, 'RECIBIDO', 'PENDIENTE_REVISION')");
+                    $stmtInsCon->execute([
+                        $codNorm,
+                        $nuevoNum,
+                        $nuevoTitulo,
+                        $nuevoAreaId,
+                        $nuevoResp
+                    ]);
+                    $contratoId = (int)$pdo->lastInsertId();
+                    $esNuevoContrato = true;
+
+                    // Asociar inmediatamente al Número de Proyecto seleccionado
+                    $proyCodNew = trim((string)($rawBody['m1_numero_proyecto'] ?? $rawBody['nuevo_numero_proyecto'] ?? ''));
+                    if ($proyCodNew !== '' && $proyCodNew !== 'SIN_PROYECTO') {
+                        $stmtFindP = $pdo->prepare("SELECT id FROM despacho_proyectos WHERE codigo = ? LIMIT 1");
+                        $stmtFindP->execute([$proyCodNew]);
+                        $proyIdNew = (int)($stmtFindP->fetchColumn() ?: 0);
+                        if ($proyIdNew <= 0) {
+                            $stmtInsP = $pdo->prepare("INSERT INTO despacho_proyectos (codigo, nombre, activo) VALUES (?, ?, 1)");
+                            $stmtInsP->execute([$proyCodNew, 'Proyecto ' . $proyCodNew]);
+                            $proyIdNew = (int)$pdo->lastInsertId();
+                        }
+                        if ($proyIdNew > 0) {
+                            $pdo->prepare("INSERT IGNORE INTO despacho_contrato_proyectos (contrato_id, proyecto_id) VALUES (?, ?)")
+                                ->execute([$contratoId, $proyIdNew]);
+                        }
+                    }
+                }
+            }
+
             if ($contratoId <= 0) {
                 http_response_code(400);
-                echo json_encode(['success' => false, 'message' => 'Debe seleccionar o digitar un contrato válido antes de guardar.'], JSON_UNESCAPED_UNICODE);
+                echo json_encode(['success' => false, 'message' => 'Debe seleccionar un contrato existente o digitar el Número del Nuevo Contrato antes de guardar.'], JSON_UNESCAPED_UNICODE);
                 exit;
             }
             // Obtener el periodo activo actual
@@ -524,6 +715,11 @@ try {
                 $stmtOb = $pdo->prepare("SELECT id FROM despacho_obligaciones_reporte WHERE periodo_id = ? AND contrato_id = ? LIMIT 1");
                 $stmtOb->execute([$periodoId, $contratoId]);
                 $obligacionId = (int)($stmtOb->fetchColumn() ?: 0) ?: null;
+                if ($obligacionId === null) {
+                    $stmtInsOb = $pdo->prepare("INSERT INTO despacho_obligaciones_reporte (periodo_id, contrato_id, requiere_mensaje1, requiere_mensaje2, fecha_esperada, estado_entrega, estado_revision) VALUES (?, ?, 1, 1, ?, 'RECIBIDO', 'PENDIENTE_REVISION')");
+                    $stmtInsOb->execute([$periodoId, $contratoId, $fechaLimiteEntrega]);
+                    $obligacionId = (int)$pdo->lastInsertId();
+                }
             }
         }
 
@@ -578,7 +774,7 @@ try {
             exit;
         }
 
-        if ($m1Texto === '' && $m2Texto === '' && empty($rawBody['m2_ejecucion_fisica_pct']) && empty($rawBody['m2_ejecucion_financiera_pct']) && empty($rawBody['m1_objeto'])) {
+        if ($m1Texto === '' && $m2Texto === '' && empty($rawBody['m2_ejecucion_fisica_pct']) && empty($rawBody['m2_ejecucion_financiera_pct']) && empty($rawBody['m2_ejecucion_fisica_texto']) && empty($rawBody['m2_ejecucion_financiera_texto']) && empty($rawBody['m1_objeto'])) {
             http_response_code(400);
             echo json_encode([
                 'success' => false,
@@ -595,19 +791,41 @@ try {
         $fechaReporteTxt = trim((string)($rawBody['m2_fecha_reporte'] ?? $autoParsed['mensaje2']['fecha_reporte_texto'] ?? date('Y-m-d')));
         $fechaReporteIso = preg_match('/^\d{4}-\d{2}-\d{2}$/', $fechaReporteTxt) ? $fechaReporteTxt : date('Y-m-d');
 
+        // Soportar tanto campo único simple (m2_ejecucion_fisica_texto) como porcentaje numérico
+        $rawFisicaTxt = trim((string)($rawBody['m2_ejecucion_fisica_texto'] ?? ''));
         $fisicaPct = isset($rawBody['m2_ejecucion_fisica_pct']) && $rawBody['m2_ejecucion_fisica_pct'] !== ''
             ? (float)$rawBody['m2_ejecucion_fisica_pct']
-            : ($autoParsed['mensaje2']['ejecucion_fisica_pct'] ?? ($contratoActual['ejecucion_fisica_pct'] !== null ? (float)$contratoActual['ejecucion_fisica_pct'] : null));
-        $fisicaTxt = trim((string)($rawBody['m2_ejecucion_fisica_texto'] ?? $autoParsed['mensaje2']['ejecucion_fisica_texto'] ?? ($fisicaPct !== null ? $fisicaPct . '%' : '')));
+            : null;
+        if ($fisicaPct === null && $rawFisicaTxt !== '' && preg_match('/(\d+(?:[\.,]\d+)?)/', $rawFisicaTxt, $mpFis)) {
+            $valF = (float)str_replace(',', '.', $mpFis[1]);
+            if ($valF >= 0 && $valF <= 100) $fisicaPct = $valF;
+        }
+        if ($fisicaPct === null) {
+            $fisicaPct = $autoParsed['mensaje2']['ejecucion_fisica_pct'] ?? ($contratoActual['ejecucion_fisica_pct'] !== null ? (float)$contratoActual['ejecucion_fisica_pct'] : null);
+        }
+        $fisicaTxt = $rawFisicaTxt !== ''
+            ? $rawFisicaTxt
+            : trim((string)($autoParsed['mensaje2']['ejecucion_fisica_texto'] ?? ($fisicaPct !== null ? $fisicaPct . '%' : '')));
         if ($fisicaTxt === '') $fisicaTxt = $contratoActual['ejecucion_fisica_texto'];
 
+        // Soportar tanto campo único simple (m2_ejecucion_financiera_texto) como porcentaje numérico
+        $rawFinancTxt = trim((string)($rawBody['m2_ejecucion_financiera_texto'] ?? ''));
         $financPct = isset($rawBody['m2_ejecucion_financiera_pct']) && $rawBody['m2_ejecucion_financiera_pct'] !== ''
             ? (float)$rawBody['m2_ejecucion_financiera_pct']
-            : ($autoParsed['mensaje2']['ejecucion_financiera_pct'] ?? ($contratoActual['ejecucion_financiera_pct'] !== null ? (float)$contratoActual['ejecucion_financiera_pct'] : null));
+            : null;
+        if ($financPct === null && $rawFinancTxt !== '' && preg_match('/(\d+(?:[\.,]\d+)?)/', $rawFinancTxt, $mpFin)) {
+            $valFin = (float)str_replace(',', '.', $mpFin[1]);
+            if ($valFin >= 0 && $valFin <= 100) $financPct = $valFin;
+        }
+        if ($financPct === null) {
+            $financPct = $autoParsed['mensaje2']['ejecucion_financiera_pct'] ?? ($contratoActual['ejecucion_financiera_pct'] !== null ? (float)$contratoActual['ejecucion_financiera_pct'] : null);
+        }
         $financVal = isset($rawBody['m2_ejecucion_financiera_valor']) && $rawBody['m2_ejecucion_financiera_valor'] !== ''
             ? (float)$rawBody['m2_ejecucion_financiera_valor']
             : ($autoParsed['mensaje2']['ejecucion_financiera_valor'] ?? ($contratoActual['ejecucion_financiera_valor'] !== null ? (float)$contratoActual['ejecucion_financiera_valor'] : null));
-        $financTxt = trim((string)($rawBody['m2_ejecucion_financiera_texto'] ?? $autoParsed['mensaje2']['ejecucion_financiera_texto'] ?? ($financPct !== null ? $financPct . '%' : '')));
+        $financTxt = $rawFinancTxt !== ''
+            ? $rawFinancTxt
+            : trim((string)($autoParsed['mensaje2']['ejecucion_financiera_texto'] ?? ($financPct !== null ? $financPct . '%' : '')));
         if ($financTxt === '') $financTxt = $contratoActual['ejecucion_financiera_texto'];
 
         $finObraPct = isset($rawBody['m2_ejecucion_financiera_obra_pct']) && $rawBody['m2_ejecucion_financiera_obra_pct'] !== ''
@@ -622,67 +840,128 @@ try {
         $fechaFinRepIso = ($fechaFinRepTxt && preg_match('/^\d{4}-\d{2}-\d{2}$/', $fechaFinRepTxt)) ? $fechaFinRepTxt : null;
         $obsRep = trim((string)($rawBody['m2_observaciones'] ?? '')) ?: null;
 
-        // Datos estructurados de Mensaje 1 (solo se consideran editados si se activó editar_mensaje1, si vienen en token o si no tenía M1)
+        // Datos estructurados de Mensaje 1 y Ajustes (Adición, Prórroga, Suspensión, Modificación)
         $m1Objeto = trim((string)($rawBody['m1_objeto'] ?? $autoParsed['mensaje1']['objeto'] ?? '')) ?: null;
+        $m1Duracion = trim((string)($rawBody['m1_duracion'] ?? $autoParsed['mensaje1']['duracion_texto'] ?? '')) ?: null;
         $m1Contratista = trim((string)($rawBody['m1_contratista'] ?? $autoParsed['mensaje1']['contratista'] ?? '')) ?: null;
-        $m1ValorInicial = isset($rawBody['m1_valor_inicial']) && $rawBody['m1_valor_inicial'] !== ''
-            ? (float)$rawBody['m1_valor_inicial']
+        $m1ApoyoSupervision = trim((string)($rawBody['m1_apoyo_supervision'] ?? $autoParsed['mensaje1']['apoyo_supervision'] ?? '')) ?: null;
+        $rawValorM1 = trim((string)($rawBody['m1_valor_inicial'] ?? ''));
+        $m1ValorInicial = $rawValorM1 !== ''
+            ? (float)preg_replace('/[^\d\.]/', '', str_replace(',', '.', preg_replace('/\.(?=\d{3})/', '', $rawValorM1)))
             : $autoParsed['mensaje1']['valor_inicial'];
         $m1ValorTotal = isset($rawBody['m1_valor_total']) && $rawBody['m1_valor_total'] !== ''
             ? (float)$rawBody['m1_valor_total']
-            : $autoParsed['mensaje1']['valor_total'];
+            : ($autoParsed['mensaje1']['valor_total'] ?? $m1ValorInicial);
         $m1FechaInicio = trim((string)($rawBody['m1_fecha_inicio'] ?? $autoParsed['mensaje1']['fecha_inicio_texto'] ?? '')) ?: null;
         $m1FechaFinInicial = trim((string)($rawBody['m1_fecha_fin_inicial'] ?? $autoParsed['mensaje1']['fecha_fin_inicial_texto'] ?? '')) ?: null;
-        $m1ModificacionSolicitud = trim((string)($rawBody['m1_modificacion_solicitud'] ?? '')) ?: null;
 
-        $hasM1Edit = ($editarM1Flag || $enlace !== null || (int)$contratoActual['tiene_mensaje1'] === 0)
-            && ($m1Texto !== '' || $m1Objeto !== null || $m1Contratista !== null || $m1ValorInicial !== null || $m1ValorTotal !== null);
-        $hasM2Edit = ($m2Texto !== '' || isset($rawBody['m2_ejecucion_fisica_pct']) || isset($rawBody['m2_ejecucion_financiera_pct']) || isset($rawBody['m2_estado_reportado']) || $obsRep !== null);
+        // Ajustes específicos: Adición (fecha + cantidad), Prórroga (tiempo), Suspensión (fecha)
+        $tipoAjuste = strtoupper(trim((string)($rawBody['tipo_ajuste'] ?? 'NINGUNO')));
+        $ajusteFechaAdicion = trim((string)($rawBody['ajuste_fecha_adicion'] ?? ''));
+        $rawValorAdicion = trim((string)($rawBody['ajuste_valor_adicion'] ?? ''));
+        $ajusteValorAdicion = $rawValorAdicion !== ''
+            ? (float)preg_replace('/[^\d\.]/', '', str_replace(',', '.', preg_replace('/\.(?=\d{3})/', '', $rawValorAdicion)))
+            : null;
+        $ajusteTiempoProrroga = trim((string)($rawBody['ajuste_tiempo_prorroga'] ?? ''));
+        $ajusteFechaSuspension = trim((string)($rawBody['ajuste_fecha_suspension'] ?? ''));
+
+        $partesAjuste = [];
+        if ($tipoAjuste === 'ADICION' || $ajusteFechaAdicion !== '' || $ajusteValorAdicion !== null) {
+            $strAd = 'Adición';
+            if ($ajusteFechaAdicion !== '') $strAd .= " (Fecha: $ajusteFechaAdicion)";
+            if ($ajusteValorAdicion !== null) {
+                $strAd .= " por $" . number_format($ajusteValorAdicion, 0, ',', '.');
+                $baseIni = $m1ValorInicial ?? (float)($contratoActual['valor_inicial'] ?? 0);
+                $m1ValorTotal = $baseIni + $ajusteValorAdicion;
+            } elseif ($rawValorAdicion !== '') {
+                $strAd .= " por $rawValorAdicion";
+            }
+            $partesAjuste[] = $strAd;
+        }
+        if ($tipoAjuste === 'PRORROGA' || $ajusteTiempoProrroga !== '') {
+            $partesAjuste[] = 'Prórroga por ' . ($ajusteTiempoProrroga ?: 'tiempo reportado');
+        }
+        if ($tipoAjuste === 'SUSPENSION' || $ajusteFechaSuspension !== '') {
+            $partesAjuste[] = 'Suspensión desde ' . ($ajusteFechaSuspension ?: 'fecha reportada');
+        }
+        if (!empty($rawBody['m1_modificacion_solicitud'])) {
+            $partesAjuste[] = trim((string)$rawBody['m1_modificacion_solicitud']);
+        }
+        $m1ModificacionSolicitud = !empty($partesAjuste) ? implode(' | ', $partesAjuste) : null;
+        $m1NumeroProyecto = trim((string)($rawBody['m1_numero_proyecto'] ?? $rawBody['proyecto_asociar_codigo'] ?? '')) ?: null;
+
+        // Verificar si el contrato ya tiene un proyecto asociado en la base de datos
+        $stmtChkProy = $pdo->prepare("SELECT p.codigo FROM despacho_contrato_proyectos cp INNER JOIN despacho_proyectos p ON p.id = cp.proyecto_id WHERE cp.contrato_id = ? LIMIT 1");
+        $stmtChkProy->execute([$contratoId]);
+        $proyectoExistenteCod = $stmtChkProy->fetchColumn() ?: null;
+
+        if ($enlace === null && !$proyectoExistenteCod && ($m1NumeroProyecto === null || $m1NumeroProyecto === '' || $m1NumeroProyecto === 'SIN_PROYECTO')) {
+            http_response_code(400);
+            echo json_encode([
+                'success' => false,
+                'message' => 'Este contrato no está asociado a ningún proyecto. Antes de guardar debe seleccionar o digitar el Número de Proyecto de Inversión al que pertenece.'
+            ], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+
+        $hasM1Edit = ($editarM1Flag || !empty($esNuevoContrato) || $enlace !== null || (int)$contratoActual['tiene_mensaje1'] === 0 || $m1ModificacionSolicitud !== null)
+            && ($m1Texto !== '' || $m1Objeto !== null || $m1Duracion !== null || $m1Contratista !== null || $m1ApoyoSupervision !== null || $m1ValorInicial !== null || $m1ValorTotal !== null || $m1ModificacionSolicitud !== null || $m1NumeroProyecto !== null || !empty($esNuevoContrato));
+        $hasM2Edit = ($m2Texto !== '' || isset($rawBody['m2_ejecucion_fisica_pct']) || isset($rawBody['m2_ejecucion_financiera_pct']) || !empty($rawBody['m2_ejecucion_fisica_texto']) || !empty($rawBody['m2_ejecucion_financiera_texto']) || isset($rawBody['m2_estado_reportado']) || $obsRep !== null);
 
         $tipoMensaje = ($hasM1Edit && $hasM2Edit) ? 'AMBOS' : ($hasM1Edit ? 'MENSAJE_1' : 'MENSAJE_2');
 
         if ($hasM1Edit && $m1Texto === '') {
-            $m1Texto = "Mensaje 1 (Ficha contractual):\n"
+            $apoyoFinal = $m1ApoyoSupervision ?: ($contratoActual['responsable_nombre'] ?: $responsableRep);
+            $durFinal = $m1Duracion ?: ($contratoActual['duracion_texto'] ?: '');
+            $m1Texto = "Mensaje 1:\nInformación del Contrato\n"
                 . "Número del contrato: {$contratoActual['numero_contrato']}\n"
                 . ($m1Objeto ? "Objeto del contrato: $m1Objeto\n" : ($contratoActual['objeto'] ? "Objeto del contrato: {$contratoActual['objeto']}\n" : ''))
-                . ($m1Contratista ? "Contratista: $m1Contratista\n" : ($contratoActual['contratista'] ? "Contratista: {$contratoActual['contratista']}\n" : ''))
-                . ($m1ValorInicial !== null ? "Valor inicial: $" . number_format($m1ValorInicial, 0, ',', '.') . "\n" : '')
-                . ($m1ValorTotal !== null ? "Valor total: $" . number_format($m1ValorTotal, 0, ',', '.') . "\n" : '')
-                . ($m1FechaInicio ? "Fecha de inicio: $m1FechaInicio\n" : '')
+                . ($durFinal ? "Duración del contrato: $durFinal\n" : '')
+                . ($m1ValorInicial !== null ? "Valor: $" . number_format($m1ValorInicial, 0, ',', '.') . "\n" : '')
+                . ($m1FechaInicio ? "Fecha de inicio del contrato: $m1FechaInicio\n" : '')
                 . ($m1FechaFinInicial ? "Fecha de terminación inicial: $m1FechaFinInicial\n" : '')
-                . "Apoyo a la supervisión: $responsableRep";
+                . ($m1Contratista ? "Contratista: $m1Contratista\n" : ($contratoActual['contratista'] ? "Contratista: {$contratoActual['contratista']}\n" : ''))
+                . "Apoyo a la supervisión: $apoyoFinal"
+                . ($m1ModificacionSolicitud ? "\nAjuste / Modificación: $m1ModificacionSolicitud" : '');
         }
         $m1TextoParaVersion = $hasM1Edit ? $m1Texto : $prevM1Texto;
 
         if ($hasM2Edit && $m2Texto === '') {
-            $m2Texto = "Mensaje 2 (Reporte semanal):\n"
+            $m2Texto = "Mensaje 2: Reporte Semanal de Ejecución Presupuestal\n"
                 . "Fecha reporte: $fechaReporteTxt\n"
                 . ($financTxt !== null ? "Ejecución financiera: $financTxt\n" : '')
                 . ($fisicaTxt !== null ? "Ejecución física: $fisicaTxt\n" : '')
                 . ($estadoRepTxt !== null ? "Estado: $estadoRepTxt\n" : '')
-                . ($fechaFinRepTxt !== null ? "Fecha finalización: $fechaFinRepTxt\n" : '')
-                . ($obsRep !== null ? "Observaciones: $obsRep" : '');
+                . ($fechaFinRepTxt !== null ? "Fecha finalización: $fechaFinRepTxt" : '');
         }
         $m2TextoParaVersion = $hasM2Edit ? $m2Texto : $prevM2Texto;
 
         // Construir resumen detallado de modificaciones respecto al estado anterior para el tracking
         $resumenCambios = [];
+        if (!empty($esNuevoContrato)) {
+            $resumenCambios[] = 'Se agregó un nuevo contrato al Proyecto No. ' . ($m1NumeroProyecto ?: 'General') . ' (' . $contratoActual['numero_contrato'] . ')';
+        } elseif ($m1NumeroProyecto !== null && $m1NumeroProyecto !== '' && $m1NumeroProyecto !== 'SIN_PROYECTO' && strcasecmp((string)$proyectoExistenteCod, $m1NumeroProyecto) !== 0) {
+            $resumenCambios[] = "Asociado al Proyecto de Inversión No. $m1NumeroProyecto";
+        }
+        if ($m1ModificacionSolicitud !== null) {
+            $resumenCambios[] = "Ajuste contractual registrado: $m1ModificacionSolicitud";
+        }
         if ($hasM1Edit) {
             $resumenCambios[] = ((int)$contratoActual['tiene_mensaje1'] === 0)
-                ? 'Se completó por primera vez el Mensaje 1 (Ficha contractual)'
-                : 'Se editó el Mensaje 1 (Ficha contractual)';
+                ? 'Se completó por primera vez el Mensaje 1 (Información del Contrato)'
+                : 'Se actualizó el Mensaje 1 (Información del Contrato)';
             if ($m1Objeto !== null && $m1Objeto !== $contratoActual['objeto']) {
-                $resumenCambios[] = 'Objeto contractual actualizado';
+                $resumenCambios[] = 'Objeto del contrato actualizado';
             }
             if ($m1Contratista !== null && $m1Contratista !== $contratoActual['contratista']) {
                 $resumenCambios[] = "Contratista: " . ($contratoActual['contratista'] ?: 'Sin dato') . " -> $m1Contratista";
             }
             if ($m1ValorTotal !== null && (float)$m1ValorTotal !== (float)$contratoActual['valor_total']) {
-                $resumenCambios[] = "Valor total: $" . number_format((float)$contratoActual['valor_total'], 0, ',', '.') . " -> $" . number_format($m1ValorTotal, 0, ',', '.');
+                $resumenCambios[] = "Valor: $" . number_format((float)$contratoActual['valor_total'], 0, ',', '.') . " -> $" . number_format($m1ValorTotal, 0, ',', '.');
             }
         }
         if ($hasM2Edit) {
-            $resumenCambios[] = "Actualización semanal de Mensaje 2 (Fecha reporte: $fechaReporteTxt)";
+            $resumenCambios[] = "Reporte Semanal Mensaje 2 (Fecha reporte: $fechaReporteTxt | Reporta: $responsableRep)";
             $oldFis = $contratoActual['ejecucion_fisica_pct'] !== null ? ((float)$contratoActual['ejecucion_fisica_pct'] . '%') : ($contratoActual['ejecucion_fisica_texto'] ?: 'Sin dato');
             $newFis = $fisicaPct !== null ? ($fisicaPct . '%') : ($fisicaTxt ?: 'Sin dato');
             if ($oldFis !== $newFis) {
@@ -694,10 +973,7 @@ try {
                 $resumenCambios[] = "Ejecución financiera: $oldFin -> $newFin";
             }
             if ($estadoRepTxt !== null && $estadoRepTxt !== $contratoActual['estado_reportado_texto']) {
-                $resumenCambios[] = "Estado reportado: " . ($contratoActual['estado_reportado_texto'] ?: 'Sin dato') . " -> $estadoRepTxt";
-            }
-            if ($obsRep !== null) {
-                $resumenCambios[] = "Observación registrada: $obsRep";
+                $resumenCambios[] = "Estado: " . ($contratoActual['estado_reportado_texto'] ?: 'Sin dato') . " -> $estadoRepTxt";
             }
         }
 
@@ -709,11 +985,18 @@ try {
             'resumen_cambios' => $resumenCambios,
             'mensaje1_estructurado' => [
                 'objeto' => $m1Objeto ?? $contratoActual['objeto'],
+                'duracion' => $m1Duracion ?? $contratoActual['duracion_texto'],
                 'contratista' => $m1Contratista ?? $contratoActual['contratista'],
+                'apoyo_supervision' => $m1ApoyoSupervision ?? $contratoActual['responsable_nombre'],
                 'valor_inicial' => $m1ValorInicial ?? $contratoActual['valor_inicial'],
                 'valor_total' => $m1ValorTotal ?? $contratoActual['valor_total'],
                 'fecha_inicio' => $m1FechaInicio ?? $contratoActual['fecha_inicio_texto'],
                 'fecha_fin_inicial' => $m1FechaFinInicial ?? $contratoActual['fecha_fin_inicial_texto'],
+                'tipo_ajuste' => $tipoAjuste,
+                'ajuste_fecha_adicion' => $ajusteFechaAdicion ?: null,
+                'ajuste_valor_adicion' => $ajusteValorAdicion,
+                'ajuste_tiempo_prorroga' => $ajusteTiempoProrroga ?: null,
+                'ajuste_fecha_suspension' => $ajusteFechaSuspension ?: null,
                 'modificacion_solicitud' => $m1ModificacionSolicitud,
             ],
             'mensaje2_estructurado' => [
@@ -805,10 +1088,11 @@ try {
         $pdo->prepare("UPDATE despacho_reportes SET version_actual_id = ? WHERE id = ?")->execute([$versionId, $reporteId]);
 
         if ($m1ModificacionSolicitud !== null) {
+            $tipoModDb = in_array($tipoAjuste, ['ADICION', 'PRORROGA', 'SUSPENSION', 'MODIFICACION'], true) ? $tipoAjuste : 'PRORROGA';
             $pdo->prepare("INSERT INTO despacho_modificaciones_contrato (
-                contrato_id, tipo_modificacion, numero_modificacion, descripcion_texto, fecha_fin_texto, estado_tramite, fuente
-            ) VALUES (?, 'PRORROGA', 'Modificación reportada en formulario', ?, ?, 'REPORTADA_PENDIENTE_VALIDACION', ?)")
-                ->execute([$contratoId, $m1ModificacionSolicitud, $fechaFinRepTxt, "Reporte $radicado v$nuevaVersionNum"]);
+                contrato_id, tipo_modificacion, numero_modificacion, descripcion_texto, valor_adicion, fecha_fin_texto, estado_tramite, fuente
+            ) VALUES (?, ?, 'Ajuste reportado en formulario', ?, ?, ?, 'REPORTADA_PENDIENTE_VALIDACION', ?)")
+                ->execute([$contratoId, $tipoModDb, $m1ModificacionSolicitud, $ajusteValorAdicion, $fechaFinRepTxt, "Reporte $radicado v$nuevaVersionNum"]);
         }
 
         // Actualizar obligación del periodo
@@ -841,7 +1125,8 @@ try {
             'ejecucion_financiera_pct = ?',
             'ejecucion_financiera_valor = ?',
             'estado_reportado_texto = COALESCE(?, estado_reportado_texto)',
-            'responsable_nombre = COALESCE(responsable_nombre, ?)'
+            'fecha_fin_vigente_texto = COALESCE(?, fecha_fin_vigente_texto)',
+            'responsable_nombre = COALESCE(?, responsable_nombre)'
         ];
         $updParams = [
             $reporteId,
@@ -853,7 +1138,8 @@ try {
             $financPct,
             $financVal,
             $estadoRepTxt,
-            $responsableRep
+            $fechaFinRepTxt,
+            $m1ApoyoSupervision ?: $responsableRep
         ];
 
         if ($hasM1Edit) {
@@ -863,6 +1149,10 @@ try {
             if ($m1Objeto !== null) {
                 $updFields[] = 'objeto = ?';
                 $updParams[] = $m1Objeto;
+            }
+            if ($m1Duracion !== null) {
+                $updFields[] = 'duracion_texto = ?';
+                $updParams[] = $m1Duracion;
             }
             if ($m1Contratista !== null) {
                 $updFields[] = 'contratista = ?';
@@ -883,6 +1173,21 @@ try {
             if ($m1FechaFinInicial !== null) {
                 $updFields[] = 'fecha_fin_inicial_texto = ?';
                 $updParams[] = $m1FechaFinInicial;
+            }
+        }
+
+        if ($m1NumeroProyecto !== null && $m1NumeroProyecto !== '' && $m1NumeroProyecto !== 'SIN_PROYECTO') {
+            $stmtFindP = $pdo->prepare("SELECT id FROM despacho_proyectos WHERE codigo = ? LIMIT 1");
+            $stmtFindP->execute([$m1NumeroProyecto]);
+            $proyIdAssoc = (int)($stmtFindP->fetchColumn() ?: 0);
+            if ($proyIdAssoc <= 0) {
+                $stmtInsP = $pdo->prepare("INSERT INTO despacho_proyectos (codigo, nombre, activo) VALUES (?, ?, 1)");
+                $stmtInsP->execute([$m1NumeroProyecto, 'Proyecto ' . $m1NumeroProyecto]);
+                $proyIdAssoc = (int)$pdo->lastInsertId();
+            }
+            if ($proyIdAssoc > 0) {
+                $pdo->prepare("INSERT IGNORE INTO despacho_contrato_proyectos (contrato_id, proyecto_id) VALUES (?, ?)")
+                    ->execute([$contratoId, $proyIdAssoc]);
             }
         }
 
@@ -993,6 +1298,7 @@ try {
             'success' => true,
             'message' => 'Actualización guardada correctamente en el historial de tracking del contrato.',
             'comprobante' => [
+                'contrato_id' => $contratoId,
                 'radicado' => $radicado,
                 'reporte_id' => $reporteId,
                 'version_id' => $versionId,

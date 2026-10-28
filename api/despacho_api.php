@@ -26,7 +26,10 @@ if ($method === 'POST') {
 /**
  * Calcula indicadores temporales y orientativos de un contrato sin inventar umbrales oficiales.
  */
-function enrichContratoIndicators(array $c, string $refDateStr = '2026-10-26'): array {
+function enrichContratoIndicators(array $c, string $refDateStr = ''): array {
+    if ($refDateStr === '') {
+        $refDateStr = date('Y-m-d');
+    }
     $refTs = strtotime($refDateStr) ?: time();
     $finIso = $c['fecha_fin_vigente_iso'] ?? $c['fecha_fin_inicial_iso'] ?? null;
     $iniIso = $c['fecha_inicio_iso'] ?? null;
@@ -124,7 +127,23 @@ try {
 
             $selectedPeriodoId = isset($_GET['periodo_id']) && $_GET['periodo_id'] !== '' ? (int)$_GET['periodo_id'] : $periodoActivoId;
 
-            // Catálogos
+            // Catálogos (sincronizando catálogo oficial de proyectos Sumapaz)
+            $jsonCatalogPath = dirname(__DIR__) . '/assets/proyectos_metas_sumapaz.json';
+            if (file_exists($jsonCatalogPath)) {
+                $jsonCatalog = json_decode(file_get_contents($jsonCatalogPath), true);
+                if (is_array($jsonCatalog)) {
+                    $stmtSyncP = $pdo->prepare("INSERT IGNORE INTO despacho_proyectos (codigo, nombre, activo) VALUES (?, ?, 1)");
+                    $seenCodigos = [];
+                    foreach ($jsonCatalog as $item) {
+                        $codP = trim((string)($item['codigo'] ?? ''));
+                        $nomP = trim((string)($item['nombre'] ?? ''));
+                        if ($codP !== '' && !isset($seenCodigos[$codP])) {
+                            $seenCodigos[$codP] = true;
+                            $stmtSyncP->execute([$codP, $nomP ?: ('Proyecto ' . $codP)]);
+                        }
+                    }
+                }
+            }
             $areas = $pdo->query("SELECT id, codigo, nombre, descripcion FROM despacho_areas WHERE activo = 1 ORDER BY nombre ASC")->fetchAll();
             $proyectos = $pdo->query("SELECT p.id, p.codigo, p.nombre, COUNT(DISTINCT m.id) AS total_metas
                 FROM despacho_proyectos p
@@ -228,6 +247,8 @@ try {
                 'con_conflicto_validar_count' => 0,
                 'grupos_obra_interventoria_count' => 0,
                 'valor_total_consolidado' => 0.0,
+                'ultima_fecha_seguimiento' => 'Sin registros',
+                'ultima_fecha_seguimiento_iso' => null,
                 'resumen_periodo_seleccionado' => [
                     'periodo_id' => $selectedPeriodoId,
                     'recibidos' => 0,
@@ -298,6 +319,16 @@ try {
                 }
                 if ($c['valor_total'] !== null) {
                     $kpis['valor_total_consolidado'] += (float)$c['valor_total'];
+                }
+                if (!empty($c['fecha_ultimo_reporte_iso'])) {
+                    if ($kpis['ultima_fecha_seguimiento_iso'] === null || $c['fecha_ultimo_reporte_iso'] > $kpis['ultima_fecha_seguimiento_iso']) {
+                        $kpis['ultima_fecha_seguimiento_iso'] = $c['fecha_ultimo_reporte_iso'];
+                        $kpis['ultima_fecha_seguimiento'] = !empty($c['fecha_ultimo_reporte_texto'])
+                            ? $c['fecha_ultimo_reporte_texto']
+                            : date('d/m/Y', strtotime($c['fecha_ultimo_reporte_iso']));
+                    }
+                } elseif ($kpis['ultima_fecha_seguimiento_iso'] === null && !empty($c['fecha_ultimo_reporte_texto'])) {
+                    $kpis['ultima_fecha_seguimiento'] = $c['fecha_ultimo_reporte_texto'];
                 }
 
                 // KPIs del periodo seleccionado

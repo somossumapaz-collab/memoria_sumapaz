@@ -283,6 +283,118 @@
             border-color: var(--primary-green);
             background: #EEF3EF;
         }
+
+        /* PESTAÑAS DESPLEGABLES (ACORDEÓN) */
+        .acc-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #E3E6EA;
+            margin-bottom: 0.9rem;
+            overflow: hidden;
+        }
+
+        .acc-header {
+            width: 100%;
+            background: #fff;
+            border: none;
+            padding: 1rem 1.35rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            font-family: inherit;
+            text-align: left;
+            transition: background-color 0.15s ease;
+        }
+
+        .acc-header:hover {
+            background: #F8FAF9;
+        }
+
+        .acc-card.open > .acc-header {
+            background: #EEF3EF;
+            border-bottom: 1px solid #D5E2D8;
+        }
+
+        .acc-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-green-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            flex-wrap: wrap;
+        }
+
+        .acc-arrow {
+            font-size: 0.85rem;
+            color: var(--primary-green-dark);
+            font-weight: 700;
+            transition: transform 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .acc-card.open > .acc-header .acc-arrow-icon {
+            transform: rotate(180deg);
+        }
+
+        .acc-body {
+            display: none;
+            padding: 1.2rem 1.35rem;
+        }
+
+        .acc-card.open > .acc-body {
+            display: block;
+        }
+
+        /* AUTOCOMPLETADO / SUGERENCIAS EN VIVO */
+        .suggest-wrap {
+            position: relative;
+            width: 100%;
+        }
+
+        .suggest-list {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 1px solid #C6D3CA;
+            border-radius: 10px;
+            box-shadow: 0 10px 26px rgba(27, 67, 50, 0.14);
+            max-height: 250px;
+            overflow-y: auto;
+            z-index: 60;
+            display: none;
+        }
+
+        .suggest-list.show {
+            display: block;
+        }
+
+        .suggest-item {
+            padding: 0.6rem 0.85rem;
+            border-bottom: 1px solid #EEF1F4;
+            cursor: pointer;
+            font-size: 0.84rem;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .suggest-item:last-child {
+            border-bottom: none;
+        }
+
+        .suggest-item:hover {
+            background: #EEF3EF;
+        }
     </style>
 </head>
 
@@ -308,125 +420,253 @@
     </section>
 
     <main class="container-wrap">
-        <!-- BUSCADOR POR NÚMERO DE CONTRATO (SIN LOGIN NI ENLACE) -->
+        <!-- PASO 1: SELECCIONAR NÚMERO DE PROYECTO Y DESPRENDER SUS CONTRATOS -->
         <section class="card">
             <h3>
-                <span>1. Consultar Contrato por Número</span>
-                <span class="tag tag-neutral">Acceso directo sin login</span>
+                <span>1. Seleccionar Número de Proyecto y sus Contratos Asociados</span>
             </h3>
             <p class="muted" style="font-size: 0.85rem; margin: 0 0 0.85rem 0;">
-                Digite el número del contrato (por ejemplo: <strong>582</strong>, <strong>582-2025</strong>, <strong>531-2025</strong>, <strong>562</strong>) para cargar la información actual del Mensaje 1 y del Mensaje 2.
+                Seleccione o digite primero el <strong>Número de Proyecto de Inversión</strong> para desplegar todos los contratos que se desprenden de ese proyecto. También puede buscar directamente un contrato y el sistema ubicará su proyecto asociado.
             </p>
-            <form onsubmit="handleSearchContract(event)" style="display: flex; gap: 0.65rem; flex-wrap: wrap; align-items: flex-end;">
-                <div class="form-group" style="flex: 1; min-width: 240px;">
-                    <label for="input-numero-contrato">Número del Contrato</label>
-                    <input type="text" id="input-numero-contrato" class="form-control" placeholder="Ej: 582 o 582-2025..." required>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.85rem; align-items: flex-end;">
+                <!-- FILTRO 1: ESCRIBIR O SELECCIONAR NÚMERO DE PROYECTO CON SUGERENCIAS EN VIVO -->
+                <div class="form-group">
+                    <label for="input-filtro-proyecto">Filtro 1: Número o Nombre de Proyecto de Inversión</label>
+                    <div class="suggest-wrap">
+                        <div style="display: flex; gap: 0.35rem;">
+                            <input type="text" id="input-filtro-proyecto" class="form-control" style="flex: 1;"
+                                placeholder="Escriba No. o nombre de proyecto (ej: 2230, 2305, Sin proyecto)..."
+                                autocomplete="off"
+                                onfocus="renderTopProjectSuggestions(this.value)"
+                                oninput="renderTopProjectSuggestions(this.value)">
+                            <button type="button" class="btn btn-outline btn-sm" title="Ver todos los proyectos" onclick="renderTopProjectSuggestions('', true)">
+                                Ver todos
+                            </button>
+                        </div>
+                        <div id="suggest-proyectos-top" class="suggest-list"></div>
+                    </div>
+                    <select id="select-numero-proyecto" style="display: none;" onchange="handleSelectProject(this.value)">
+                        <option value="">Cargando proyectos...</option>
+                    </select>
                 </div>
-                <button type="submit" class="btn btn-primary" id="btn-buscar-contrato">Consultar Contrato</button>
-            </form>
+
+                <!-- FILTRO 2: ESCRIBIR NÚMERO DE CONTRATO (CON O SIN PROYECTO ASOCIADO) -->
+                <form onsubmit="handleSearchContract(event)" style="display: flex; gap: 0.55rem; align-items: flex-end;">
+                    <div class="form-group" style="flex: 1;">
+                        <label for="input-numero-contrato">Filtro 2: Número de Contrato o Contratista (con o sin proyecto)</label>
+                        <div class="suggest-wrap">
+                            <input type="text" id="input-numero-contrato" class="form-control"
+                                placeholder="Escriba No. Contrato, grupo o contratista (ej: 582, 507)..."
+                                autocomplete="off"
+                                onfocus="renderTopContractSuggestions(this.value)"
+                                oninput="renderTopContractSuggestions(this.value)">
+                            <div id="suggest-contratos-top" class="suggest-list"></div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="btn-buscar-contrato">Buscar</button>
+                </form>
+            </div>
 
             <div id="search-feedback" style="margin-top: 0.85rem; display: none;"></div>
-            <div id="matches-list-container" style="margin-top: 0.85rem; display: none;"></div>
-        </section>
 
-        <!-- CONTENEDOR DEL CONTRATO SELECCIONADO -->
-        <div id="contract-workspace" style="display: none;">
-            <!-- RESUMEN DEL CONTRATO CARGADO -->
-            <section class="card">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+            <!-- LISTA DE CONTRATOS QUE SE DESPRENDEN DEL PROYECTO SELECCIONADO -->
+            <div id="project-contracts-box" style="margin-top: 1rem; display: none;">
+                <div style="padding: 0.75rem 1rem; background: #EEF3EF; border: 1px solid #D5E2D8; border-radius: 8px; margin-bottom: 0.65rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
                     <div>
-                        <span class="tag" id="lbl-estado-contractual">EN EJECUCIÓN</span>
-                        <h2 id="lbl-contrato-titulo" style="margin: 0.45rem 0 0.2rem 0; color: var(--primary-green-dark); font-size: 1.35rem;"></h2>
-                        <div id="lbl-contrato-numero" style="font-size: 0.92rem; font-weight: 700;" class="muted"></div>
+                        <span class="tag" id="lbl-proy-badge">PROYECTO</span>
+                        <strong id="lbl-proy-header" style="margin-left: 0.4rem; color: var(--primary-green-dark); font-size: 0.94rem;"></strong>
                     </div>
-                    <div style="text-align: right; font-size: 0.84rem;" class="muted">
-                        <div><strong>Responsable / Apoyo:</strong> <span id="lbl-responsable"></span></div>
-                        <div><strong>Área:</strong> <span id="lbl-area"></span></div>
-                        <div><strong>Último reporte registrado:</strong> <span id="lbl-ultimo-reporte"></span></div>
-                        <div><strong>Actualizaciones en tracking:</strong> <span id="lbl-total-versiones">0</span></div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <span class="muted" id="lbl-proy-count" style="font-size: 0.82rem; font-weight: 600;"></span>
+                        <button type="button" class="btn btn-primary btn-sm" onclick="startNewContractForProject()">
+                            Agregar Contrato
+                        </button>
                     </div>
                 </div>
-                <div id="lbl-proyectos" style="margin-top: 0.75rem; font-size: 0.83rem;"></div>
-            </section>
+                <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.45rem; text-transform: uppercase;">
+                    Contratos que se desprenden de este proyecto (seleccione uno para ver / actualizar Mensaje 1 y Mensaje 2):
+                </div>
+                <div id="matches-list-container"></div>
+            </div>
+        </section>
 
-            <!-- MENSAJE DE CONFIRMACIÓN AL GUARDAR -->
+        <!-- CONTENEDOR DEL CONTRATO SELECCIONADO O NUEVO (FORMULARIO SIMPLE MENSAJE 1 Y MENSAJE 2) -->
+        <div id="contract-workspace" style="display: none;">
             <div id="save-success-banner" class="notice-box notice-success" style="display: none;"></div>
 
-            <form id="form-actualizacion-contrato" onsubmit="handleSubmitActualizacion(event)">
+            <form id="form-actualizacion-contrato" novalidate onsubmit="handleSubmitActualizacion(event)">
                 <input type="hidden" id="hidden-contrato-id" name="contrato_id" value="">
+                <input type="hidden" id="chk-editar-m1" name="editar_mensaje1" value="0">
 
-                <!-- SECCIÓN MENSAJE 1: FICHA CONTRACTUAL (SOLO SE EDITA CUANDO HAYA LUGAR) -->
-                <section class="card">
+                <!-- ENCABEZADO Y PROYECTO DE INVERSIÓN ASOCIADO -->
+                <section class="card" id="card-proyecto-contrato">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.85rem; padding-bottom: 0.75rem; border-bottom: 1px solid #E3E6EA;">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                                <span class="tag" id="lbl-estado-contractual">EN EJECUCIÓN</span>
+                                <span class="tag" id="badge-proyecto-asociado">PROYECTO</span>
+                            </div>
+                            <h3 id="lbl-contrato-titulo" style="margin: 0.45rem 0 0.15rem 0; border: none; padding: 0;">Contrato</h3>
+                            <div id="lbl-contrato-numero" class="muted" style="font-size: 0.85rem; font-weight: 600;"></div>
+                        </div>
+                        <div style="text-align: right; font-size: 0.82rem;" class="muted">
+                            <div><strong>Apoyo a la supervisión:</strong> <span id="lbl-responsable">-</span></div>
+                            <div><strong>Último reporte:</strong> <span id="lbl-ultimo-reporte">-</span></div>
+                        </div>
+                    </div>
+
+                    <div id="aviso-sin-proyecto" class="notice-box notice-error" style="display: none; margin-bottom: 0.85rem;">
+                        <strong>Falta asociar el Número de Proyecto:</strong> Seleccione o escriba abajo el Proyecto de Inversión al que pertenece este contrato antes de guardar.
+                    </div>
+
+                    <div class="form-grid" style="margin-top: 0;">
+                        <div class="form-group">
+                            <label for="select-asociar-proyecto">Número de Proyecto de Inversión asociado *</label>
+                            <select id="select-asociar-proyecto" class="form-control" onchange="syncProyectoAsociadoSelect(this.value)">
+                                <option value="">-- Seleccione el Proyecto de Inversión --</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="m1_numero_proyecto">O busque / escriba el Número de Proyecto *</label>
+                            <div class="suggest-wrap">
+                                <input type="text" id="m1_numero_proyecto" name="m1_numero_proyecto" class="form-control"
+                                    placeholder="Ej: 2230, 2315, 2388..."
+                                    autocomplete="off"
+                                    onfocus="renderAsociarProjectSuggestions(this.value)"
+                                    oninput="updateAvisoSinProyecto(); renderAsociarProjectSuggestions(this.value)" required>
+                                <div id="suggest-proyectos-asociar" class="suggest-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MENSAJE 1: INFORMACIÓN DEL CONTRATO Y AJUSTES (SOLO CUANDO HAY CAMBIOS O ES NUEVO) -->
+                <section class="card" id="card-mensaje1">
                     <h3>
-                        <span>2. Mensaje 1 — Ficha de Información Contractual</span>
-                        <span id="badge-estado-m1" class="tag">FICHA REGISTRADA</span>
+                        <span>Mensaje 1: Información del Contrato</span>
+                        <span id="badge-estado-m1" class="tag">SOLO SE MODIFICA SI HAY CAMBIOS</span>
                     </h3>
                     <p class="muted" style="font-size: 0.84rem; margin: 0 0 0.85rem 0;">
-                        El Mensaje 1 contiene los datos base del contrato y <strong>solo se edita cuando haya lugar</strong> (por ejemplo, si falta completar la ficha o si se presentó una prórroga, adición o modificación).
+                        El Mensaje 1 contiene los datos base del contrato y <strong>solo se vuelve a llenar cuando hay modificaciones, suspensiones, prórrogas o adiciones</strong> (o al crear un contrato nuevo).
                     </p>
 
-                    <!-- Vista actual del Mensaje 1 -->
-                    <div class="info-grid" style="margin-bottom: 0.85rem;">
+                    <!-- VISTA RESUMEN DE LOS 8 CAMPOS DEL MENSAJE 1 (PARA CONTRATOS EXISTENTES) -->
+                    <div id="resumen-m1-existente" class="info-grid" style="margin-bottom: 0.9rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                        <div class="info-cell">
+                            <b>Número del contrato</b>
+                            <span id="view-m1-numero">-</span>
+                        </div>
                         <div class="info-cell">
                             <b>Contratista</b>
                             <span id="view-m1-contratista">-</span>
                         </div>
                         <div class="info-cell">
-                            <b>Valor Inicial / Valor Total</b>
+                            <b>Apoyo a la supervisión</b>
+                            <span id="view-m1-apoyo">-</span>
+                        </div>
+                        <div class="info-cell">
+                            <b>Duración del contrato</b>
+                            <span id="view-m1-duracion">-</span>
+                        </div>
+                        <div class="info-cell">
+                            <b>Valor</b>
                             <span id="view-m1-valores">-</span>
                         </div>
                         <div class="info-cell">
-                            <b>Fecha Inicio / Fin Inicial</b>
-                            <span id="view-m1-fechas">-</span>
+                            <b>Fecha de inicio del contrato</b>
+                            <span id="view-m1-inicio">-</span>
                         </div>
                         <div class="info-cell">
-                            <b>Fin Vigente Validado</b>
-                            <span id="view-m1-fin-vigente">-</span>
+                            <b>Fecha de terminación inicial</b>
+                            <span id="view-m1-fin-inicial">-</span>
+                        </div>
+                        <div class="info-cell" style="grid-column: 1 / -1;">
+                            <b>Objeto del contrato</b>
+                            <span id="view-m1-objeto">-</span>
                         </div>
                     </div>
 
-                    <div style="margin-bottom: 0.85rem;">
-                        <label style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase;" class="muted">Texto actual del Mensaje 1 registrado</label>
-                        <pre class="msg-raw" id="view-m1-texto-raw">Sin Mensaje 1 registrado</pre>
+                    <!-- HISTORIAL BREVE DE AJUSTES REGISTRADOS EN EL CONTRATO (SI EXISTEN) -->
+                    <div id="view-m1-ajustes-box" style="display: none; margin-bottom: 0.9rem; padding: 0.65rem 0.9rem; background: #EEF3EF; border: 1px solid #D5E2D8; border-radius: 8px; font-size: 0.82rem;">
+                        <strong style="color: var(--primary-green-dark);">Ajustes registrados en este contrato (Adiciones / Prórrogas / Suspensiones / Modificaciones):</strong>
+                        <ul id="view-m1-ajustes-list" style="margin: 0.35rem 0 0 1.1rem; padding: 0;"></ul>
                     </div>
 
-                    <!-- Interruptor para habilitar edición de Mensaje 1 solo cuando haya lugar -->
-                    <div style="padding: 0.75rem 1rem; background: #F8FAF9; border: 1px solid #E3E6EA; border-radius: 8px;">
-                        <label style="display: flex; align-items: center; gap: 0.55rem; cursor: pointer; font-weight: 700; font-size: 0.86rem; color: var(--primary-green-dark);">
-                            <input type="checkbox" id="chk-editar-m1" name="editar_mensaje1" value="1" onchange="toggleEditarMensaje1()" style="width: 17px; height: 17px;">
-                            <span>Habilitar edición del Mensaje 1 (marcar únicamente si necesita completar o actualizar la ficha contractual)</span>
-                        </label>
-                    </div>
-
-                    <div id="panel-edicion-m1" style="display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #E3E6EA;">
+                    <!-- SELECTOR DE AJUSTE O CAMBIO AL CONTRATO -->
+                    <div id="box-selector-ajuste" style="padding: 0.85rem 1rem; background: #F8FAF9; border: 1px solid #E3E6EA; border-radius: 8px;">
                         <div class="form-group">
-                            <label for="mensaje1_texto">Texto completo del Mensaje 1</label>
-                            <textarea id="mensaje1_texto" name="mensaje1_texto" class="form-control" placeholder="Pegue o edite aquí el texto completo del Mensaje 1..."></textarea>
+                            <label for="tipo_ajuste" style="color: var(--primary-green-dark); font-size: 0.84rem;">
+                                ¿Hay algún ajuste en el contrato esta semana (Prórroga, Adición, Suspensión, Modificación) o requiere editar el Mensaje 1?
+                            </label>
+                            <select id="tipo_ajuste" name="tipo_ajuste" class="form-control" onchange="handleChangeTipoAjuste()">
+                                <option value="NINGUNO">No — Sin cambios en Mensaje 1 (solo reportar Mensaje 2 semanal)</option>
+                                <option value="ADICION">Sí — Registrar Adición (Fecha de adición y Cantidad de adición)</option>
+                                <option value="PRORROGA">Sí — Registrar Prórroga (Cantidad de tiempo de prórroga)</option>
+                                <option value="SUSPENSION">Sí — Registrar Suspensión (Fecha de suspensión)</option>
+                                <option value="MODIFICACION">Sí — Registrar Modificación / Editar datos de Mensaje 1</option>
+                            </select>
                         </div>
-                        <div style="margin-top: 0.5rem;">
-                            <button type="button" class="btn btn-outline btn-sm" onclick="autocompletarDesdeTexto()">
-                                Extraer campos desde el texto del Mensaje 1
-                            </button>
+
+                        <!-- CAMPOS ESPECÍFICOS SEGÚN EL TIPO DE AJUSTE -->
+                        <div id="panel-ajuste-adicion" style="display: none; margin-top: 0.85rem; padding-top: 0.85rem; border-top: 1px solid #E3E6EA;">
+                            <div class="form-grid" style="margin-top: 0;">
+                                <div class="form-group">
+                                    <label for="ajuste_fecha_adicion">Fecha de adición *</label>
+                                    <input type="date" id="ajuste_fecha_adicion" name="ajuste_fecha_adicion" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ajuste_valor_adicion">Cantidad / Valor de la adición (COP) *</label>
+                                    <input type="text" id="ajuste_valor_adicion" name="ajuste_valor_adicion" class="form-control" placeholder="Ej: 25000000">
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-grid">
-                            <div class="form-group" style="grid-column: 1 / -1;">
-                                <label for="m1_objeto">Objeto del contrato</label>
-                                <input type="text" id="m1_objeto" name="m1_objeto" class="form-control">
+
+                        <div id="panel-ajuste-prorroga" style="display: none; margin-top: 0.85rem; padding-top: 0.85rem; border-top: 1px solid #E3E6EA;">
+                            <div class="form-grid" style="margin-top: 0;">
+                                <div class="form-group">
+                                    <label for="ajuste_tiempo_prorroga">Cantidad de tiempo de prórroga *</label>
+                                    <input type="text" id="ajuste_tiempo_prorroga" name="ajuste_tiempo_prorroga" class="form-control" placeholder="Ej: 30 días / 2 meses">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="panel-ajuste-suspension" style="display: none; margin-top: 0.85rem; padding-top: 0.85rem; border-top: 1px solid #E3E6EA;">
+                            <div class="form-grid" style="margin-top: 0;">
+                                <div class="form-group">
+                                    <label for="ajuste_fecha_suspension">Fecha de suspensión *</label>
+                                    <input type="date" id="ajuste_fecha_suspension" name="ajuste_fecha_suspension" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="panel-ajuste-modificacion" style="display: none; margin-top: 0.85rem; padding-top: 0.85rem; border-top: 1px solid #E3E6EA;">
+                            <div class="form-group">
+                                <label for="m1_modificacion_solicitud">Descripción de la modificación (Opcional si solo actualiza los campos de Mensaje 1)</label>
+                                <input type="text" id="m1_modificacion_solicitud" name="m1_modificacion_solicitud" class="form-control" placeholder="Ej: Modificación de cláusula o alcance...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CAMPOS DE LOS 8 DATOS EXACTOS DEL MENSAJE 1 (SOLO VISIBLES EN NUEVO CONTRATO O AL EDITAR M1) -->
+                    <div id="panel-edicion-m1" style="display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #E3E6EA;">
+                        <div style="font-size: 0.84rem; font-weight: 700; color: var(--primary-green-dark); margin-bottom: 0.5rem;">
+                            Datos del Mensaje 1 — Información del Contrato
+                        </div>
+                        <div class="form-grid" style="margin-top: 0;">
+                            <div class="form-group">
+                                <label for="nuevo_numero_contrato">Número del contrato *</label>
+                                <input type="text" id="nuevo_numero_contrato" name="nuevo_numero_contrato" class="form-control" placeholder="Ej: 582-2026">
                             </div>
                             <div class="form-group">
-                                <label for="m1_contratista">Contratista / Operador</label>
-                                <input type="text" id="m1_contratista" name="m1_contratista" class="form-control">
+                                <label for="m1_duracion">Duración del contrato</label>
+                                <input type="text" id="m1_duracion" name="m1_duracion" class="form-control" placeholder="Ej: 6 meses / 180 días">
                             </div>
                             <div class="form-group">
-                                <label for="m1_valor_inicial">Valor inicial (COP)</label>
-                                <input type="number" step="0.01" id="m1_valor_inicial" name="m1_valor_inicial" class="form-control">
+                                <label for="m1_valor_inicial">Valor (COP)</label>
+                                <input type="text" id="m1_valor_inicial" name="m1_valor_inicial" class="form-control" placeholder="Ej: 150000000">
                             </div>
                             <div class="form-group">
-                                <label for="m1_valor_total">Valor total con adiciones (COP)</label>
-                                <input type="number" step="0.01" id="m1_valor_total" name="m1_valor_total" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="m1_fecha_inicio">Fecha de inicio</label>
+                                <label for="m1_fecha_inicio">Fecha de inicio del contrato</label>
                                 <input type="text" id="m1_fecha_inicio" name="m1_fecha_inicio" class="form-control" placeholder="YYYY-MM-DD o texto">
                             </div>
                             <div class="form-group">
@@ -434,148 +674,416 @@
                                 <input type="text" id="m1_fecha_fin_inicial" name="m1_fecha_fin_inicial" class="form-control" placeholder="YYYY-MM-DD o texto">
                             </div>
                             <div class="form-group">
-                                <label for="m1_modificacion_solicitud">Prórroga / Adición / Suspensión informada</label>
-                                <input type="text" id="m1_modificacion_solicitud" name="m1_modificacion_solicitud" class="form-control" placeholder="Ej: Prórroga No. 1 por 30 días">
+                                <label for="m1_contratista">Contratista</label>
+                                <input type="text" id="m1_contratista" name="m1_contratista" class="form-control" placeholder="Nombre del contratista u operador">
+                            </div>
+                            <div class="form-group">
+                                <label for="m1_apoyo_supervision">Apoyo a la supervisión</label>
+                                <input type="text" id="m1_apoyo_supervision" name="m1_apoyo_supervision" class="form-control" placeholder="Nombre del apoyo a la supervisión">
+                            </div>
+                            <div class="form-group" style="grid-column: 1 / -1;">
+                                <label for="m1_objeto">Objeto del contrato</label>
+                                <textarea id="m1_objeto" name="m1_objeto" class="form-control" style="min-height: 70px;" placeholder="Objeto contractual..."></textarea>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- SECCIÓN MENSAJE 2: REPORTE SEMANAL DE EJECUCIÓN -->
-                <section class="card">
+                <!-- MENSAJE 2: REPORTE SEMANAL DE EJECUCIÓN PRESUPUESTAL -->
+                <section class="card" id="card-mensaje2">
                     <h3>
-                        <span>3. Mensaje 2 — Reporte Semanal de Ejecución</span>
-                        <span class="tag">ACTUALIZACIÓN SEMANAL</span>
+                        <span>Mensaje 2: Reporte Semanal de Ejecución Presupuestal</span>
+                        <span class="tag">REPORTE SEMANAL</span>
                     </h3>
                     <p class="muted" style="font-size: 0.84rem; margin: 0 0 0.85rem 0;">
-                        Presentamos la información actual del Mensaje 2 registrada para este contrato. Actualice los datos correspondientes a la semana; cada cambio se guardará como una nueva versión en el historial de tracking.
+                        Diligencie únicamente los datos del reporte semanal de ejecución presupuestal:
                     </p>
 
-                    <div style="margin-bottom: 1rem;">
-                        <label style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase;" class="muted">Último Mensaje 2 registrado (Referencia)</label>
-                        <pre class="msg-raw" id="view-m2-texto-raw">Sin Mensaje 2 previo</pre>
-                    </div>
-
-                    <div class="form-grid">
+                    <div class="form-grid" style="margin-top: 0;">
                         <div class="form-group">
                             <label for="responsable_reportante">Nombre de quien reporta *</label>
-                            <input type="text" id="responsable_reportante" name="responsable_reportante" class="form-control" required>
+                            <input type="text" id="responsable_reportante" name="responsable_reportante" class="form-control" placeholder="Escriba su nombre completo" required>
                         </div>
                         <div class="form-group">
-                            <label for="m2_fecha_reporte">Fecha del reporte semanal *</label>
+                            <label for="m2_fecha_reporte">Fecha reporte *</label>
                             <input type="date" id="m2_fecha_reporte" name="m2_fecha_reporte" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="m2_ejecucion_fisica_pct">% Ejecución Física (0 a 100)</label>
-                            <input type="number" step="0.01" min="0" max="100" id="m2_ejecucion_fisica_pct" name="m2_ejecucion_fisica_pct" class="form-control" placeholder="Ej: 72.5">
+                            <label for="m2_ejecucion_financiera_texto">Ejecución financiera *</label>
+                            <input type="text" id="m2_ejecucion_financiera_texto" name="m2_ejecucion_financiera_texto" class="form-control" placeholder="Ej: 52.31%" required>
                         </div>
                         <div class="form-group">
-                            <label for="m2_ejecucion_fisica_texto">Detalle Ejecución Física</label>
-                            <input type="text" id="m2_ejecucion_fisica_texto" name="m2_ejecucion_fisica_texto" class="form-control" placeholder="Ej: 72% (avance de actividades)">
+                            <label for="m2_ejecucion_fisica_texto">Ejecución física *</label>
+                            <input type="text" id="m2_ejecucion_fisica_texto" name="m2_ejecucion_fisica_texto" class="form-control" placeholder="Ej: 72%" required>
                         </div>
                         <div class="form-group">
-                            <label for="m2_ejecucion_financiera_pct">% Ejecución Financiera (0 a 100)</label>
-                            <input type="number" step="0.01" min="0" max="100" id="m2_ejecucion_financiera_pct" name="m2_ejecucion_financiera_pct" class="form-control" placeholder="Ej: 52.31">
+                            <label for="m2_estado_reportado">Estado *</label>
+                            <input type="text" id="m2_estado_reportado" name="m2_estado_reportado" class="form-control" list="lista-estados-contrato" placeholder="Ej: En ejecución / Suspendido / Terminado" required>
+                            <datalist id="lista-estados-contrato">
+                                <option value="En ejecución"></option>
+                                <option value="Suspendido"></option>
+                                <option value="Terminado"></option>
+                                <option value="En liquidación"></option>
+                                <option value="Liquidado"></option>
+                            </datalist>
                         </div>
                         <div class="form-group">
-                            <label for="m2_ejecucion_financiera_texto">Detalle Ejecución Financiera</label>
-                            <input type="text" id="m2_ejecucion_financiera_texto" name="m2_ejecucion_financiera_texto" class="form-control" placeholder="Ej: 52.31% ($101.334.338 pagados)">
-                        </div>
-                        <div class="form-group" id="grp-fin-obra" style="display: none;">
-                            <label for="m2_ejecucion_financiera_obra_pct">% Financiero Componente Obra</label>
-                            <input type="number" step="0.01" min="0" max="100" id="m2_ejecucion_financiera_obra_pct" name="m2_ejecucion_financiera_obra_pct" class="form-control">
-                        </div>
-                        <div class="form-group" id="grp-fin-inter" style="display: none;">
-                            <label for="m2_ejecucion_financiera_inter_pct">% Financiero Interventoría</label>
-                            <input type="number" step="0.01" min="0" max="100" id="m2_ejecucion_financiera_inter_pct" name="m2_ejecucion_financiera_inter_pct" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="m2_estado_reportado">Estado reportado del contrato *</label>
-                            <input type="text" id="m2_estado_reportado" name="m2_estado_reportado" class="form-control" placeholder="Ej: En ejecución / Suspendido / En liquidación" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="m2_fecha_fin_reportada">Fecha de finalización informada</label>
+                            <label for="m2_fecha_fin_reportada">Fecha finalización</label>
                             <input type="text" id="m2_fecha_fin_reportada" name="m2_fecha_fin_reportada" class="form-control" placeholder="YYYY-MM-DD o texto">
                         </div>
-                        <div class="form-group" style="grid-column: 1 / -1;">
-                            <label for="m2_observaciones">Observaciones / Novedades de la semana</label>
-                            <input type="text" id="m2_observaciones" name="m2_observaciones" class="form-control" placeholder="Novedades de ejecución, pagos en trámite, alertas o subsanaciones...">
-                        </div>
                     </div>
 
-                    <div class="form-group" style="margin-top: 0.95rem;">
-                        <label for="mensaje2_texto">Texto completo del Mensaje 2 (Opcional si diligenció los campos anteriores; también puede pegar el mensaje y extraer los datos)</label>
-                        <textarea id="mensaje2_texto" name="mensaje2_texto" class="form-control" placeholder="Fecha reporte: ...&#10;Ejecución financiera: ...&#10;Ejecución física: ...&#10;Estado: ...&#10;Fecha finalización: ..."></textarea>
-                    </div>
-
-                    <div style="margin-top: 0.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-                        <button type="button" class="btn btn-outline btn-sm" onclick="autocompletarDesdeTexto()">
-                            Extraer porcentajes y fechas desde el texto pegado
-                        </button>
-                    </div>
-
-                    <div class="form-group" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #E3E6EA;">
-                        <label for="adjuntos">Soportes adjuntos opcionales (PDF, Imágenes, Word, Excel — máx. 10 MB)</label>
-                        <input type="file" id="adjuntos" name="adjuntos[]" class="form-control" multiple accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx,.xls,.xlsx">
-                    </div>
-
-                    <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.25rem;">
+                    <div style="display: flex; justify-content: flex-end; align-items: center; gap: 0.75rem; margin-top: 1.25rem; padding-top: 0.9rem; border-top: 1px solid #E3E6EA;">
                         <button type="submit" id="btn-submit-reporte" class="btn btn-primary">
-                            Guardar Actualización en el Tracking
+                            Guardar Reporte Semanal
                         </button>
                     </div>
                 </section>
             </form>
 
-            <!-- SECCIÓN 4: TRACKING DE TODAS LAS MODIFICACIONES GUARDADAS -->
-            <section class="card">
-                <h3>
-                    <span>4. Historial y Tracking de Actualizaciones del Contrato</span>
-                    <span class="tag tag-neutral" id="badge-count-tracking">0 versiones</span>
-                </h3>
-                <p class="muted" style="font-size: 0.84rem; margin: 0 0 0.85rem 0;">
-                    Registro cronológico inmutable de todas las actualizaciones realizadas sobre este contrato (desde la más reciente hasta el corte inicial).
-                </p>
-                <div id="tracking-versions-container"></div>
+            <!-- HISTORIAL DE REPORTES SEMANALES GUARDADOS -->
+            <section class="acc-card" id="acc-tracking">
+                <button type="button" class="acc-header" onclick="toggleAccCard('acc-tracking')">
+                    <div class="acc-title">
+                        <span>Historial de Reportes del Contrato</span>
+                        <span class="tag tag-neutral" id="badge-count-tracking">0 versiones</span>
+                    </div>
+                    <span class="acc-arrow">
+                        <span class="acc-arrow-label">Desplegar</span>
+                        <span class="acc-arrow-icon">&#9662;</span>
+                    </span>
+                </button>
+                <div class="acc-body">
+                    <div id="tracking-versions-container"></div>
+                </div>
             </section>
         </div>
     </main>
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
+        const initialProyectoCodigo = (urlParams.get('proyecto') || '').trim();
         const initialContratoQuery = (urlParams.get('contrato') || '').trim();
         const initialContratoId = (urlParams.get('contrato_id') || '').trim();
         const initialToken = (urlParams.get('token') || '').trim();
 
+        let allProjectsCatalog = [];
+        let currentProjectCodigo = '';
         let loadedContractData = null;
 
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
             document.getElementById('m2_fecha_reporte').value = new Date().toISOString().slice(0, 10);
 
+            await loadProjectsCatalog();
+
             if (initialContratoId) {
-                loadContractById(initialContratoId);
+                await loadContractById(initialContratoId);
+            } else if (initialProyectoCodigo) {
+                handleSelectProject(initialProyectoCodigo);
             } else if (initialContratoQuery) {
                 document.getElementById('input-numero-contrato').value = initialContratoQuery;
-                searchContractByQuery(initialContratoQuery);
+                await searchContractByQuery(initialContratoQuery);
             } else if (initialToken) {
-                loadContractByToken(initialToken);
+                await loadContractByToken(initialToken);
             }
         });
+
+        async function loadProjectsCatalog() {
+            const sel = document.getElementById('select-numero-proyecto');
+            const selAsoc = document.getElementById('select-asociar-proyecto');
+            try {
+                const res = await fetch('api/despacho_public_api.php?action=list_projects');
+                const data = await res.json();
+                if (!res.ok || !data.success) return;
+                allProjectsCatalog = data.proyectos || [];
+
+                sel.innerHTML = '<option value="">-- Seleccione un Proyecto de Inversión --</option>' +
+                    allProjectsCatalog.map(p => {
+                        const label = p.codigo === 'SIN_PROYECTO'
+                            ? `Contratos sin Proyecto asociado (${p.total_contratos} contratos)`
+                            : `Proyecto No. ${escapeHtml(p.codigo)} — ${escapeHtml(p.nombre)} (${p.total_contratos} contratos)`;
+                        return `<option value="${escapeHtml(p.codigo)}">${label}</option>`;
+                    }).join('');
+
+                if (selAsoc) {
+                    const realProjects = allProjectsCatalog.filter(p => p.codigo !== 'SIN_PROYECTO');
+                    selAsoc.innerHTML = '<option value="">-- Seleccione el Proyecto de Inversión --</option>' +
+                        realProjects.map(p => `<option value="${escapeHtml(p.codigo)}">Proyecto No. ${escapeHtml(p.codigo)} — ${escapeHtml(p.nombre)}</option>`).join('');
+                }
+            } catch (e) {
+                sel.innerHTML = '<option value="">Error cargando proyectos</option>';
+            }
+        }
+
+        function toggleAccCard(cardId) {
+            const card = document.getElementById(cardId);
+            if (!card) return;
+            const isOpen = card.classList.contains('open');
+            if (isOpen) {
+                card.classList.remove('open');
+            } else {
+                card.classList.add('open');
+            }
+            const lbl = card.querySelector('.acc-arrow-label');
+            if (lbl) lbl.textContent = !isOpen ? 'Ocultar' : 'Desplegar';
+        }
+
+        document.addEventListener('click', (ev) => {
+            if (!ev.target.closest('.suggest-wrap')) {
+                document.querySelectorAll('.suggest-list.show').forEach(el => el.classList.remove('show'));
+            }
+        });
+
+        function renderTopProjectSuggestions(query, forceAll = false) {
+            const box = document.getElementById('suggest-proyectos-top');
+            if (!box) return;
+            const q = forceAll ? '' : (query || '').trim().toLowerCase();
+            const matches = allProjectsCatalog.filter(p => {
+                if (!q) return true;
+                const cod = String(p.codigo || '').toLowerCase();
+                const nom = String(p.nombre || '').toLowerCase();
+                const sinProyMatch = p.codigo === 'SIN_PROYECTO' && ('sin proyecto'.includes(q) || 'pendiente'.includes(q));
+                return cod.includes(q) || nom.includes(q) || sinProyMatch;
+            });
+
+            if (!matches.length) {
+                box.innerHTML = `<div class="suggest-item muted">No se encontraron proyectos con "${escapeHtml(query)}"</div>`;
+                box.classList.add('show');
+                return;
+            }
+
+            box.innerHTML = matches.map(p => {
+                const isSin = p.codigo === 'SIN_PROYECTO';
+                const title = isSin
+                    ? `<strong>Contratos sin Proyecto asociado</strong>`
+                    : `<strong>Proyecto No. ${escapeHtml(p.codigo)}</strong> — ${escapeHtml(p.nombre)}`;
+                return `
+                    <div class="suggest-item" onclick="selectTopProjectSuggestion('${escapeHtml(p.codigo)}')">
+                        <div>${title}</div>
+                        <span class="tag ${isSin ? 'tag-warn' : 'tag-neutral'}">${p.total_contratos} contrato(s)</span>
+                    </div>
+                `;
+            }).join('');
+            box.classList.add('show');
+        }
+
+        function selectTopProjectSuggestion(codigo) {
+            const box = document.getElementById('suggest-proyectos-top');
+            if (box) box.classList.remove('show');
+            handleSelectProject(codigo);
+        }
+
+        function renderTopContractSuggestions(query) {
+            const box = document.getElementById('suggest-contratos-top');
+            if (!box) return;
+            const q = (query || '').trim().toLowerCase();
+
+            const seen = new Set();
+            const allContracts = [];
+            allProjectsCatalog.forEach(p => {
+                (p.contratos || []).forEach(c => {
+                    if (!seen.has(c.id)) {
+                        seen.add(c.id);
+                        allContracts.push({ ...c, proy_codigo: p.codigo, proy_nombre: p.nombre });
+                    }
+                });
+            });
+
+            const matches = allContracts.filter(c => {
+                if (!q) return true;
+                return String(c.numero_contrato || '').toLowerCase().includes(q)
+                    || String(c.titulo_grupo || '').toLowerCase().includes(q)
+                    || String(c.contratista || '').toLowerCase().includes(q)
+                    || String(c.responsable_nombre || '').toLowerCase().includes(q)
+                    || String(c.proy_codigo || '').toLowerCase().includes(q);
+            }).slice(0, 25);
+
+            if (!matches.length) {
+                box.innerHTML = `<div class="suggest-item muted">No hay contratos que coincidan con "${escapeHtml(query)}"</div>`;
+                box.classList.add('show');
+                return;
+            }
+
+            box.innerHTML = matches.map(c => {
+                const isSin = c.proy_codigo === 'SIN_PROYECTO';
+                return `
+                    <div class="suggest-item" onclick="selectTopContractSuggestion(${c.id}, '${escapeHtml(c.numero_contrato)}')">
+                        <div>
+                            <strong>Contrato ${escapeHtml(c.numero_contrato)}</strong> — ${escapeHtml(c.titulo_grupo)}
+                            <div class="muted" style="font-size:0.75rem;">Contratista: ${escapeHtml(c.contratista || 'Sin dato')} | Apoyo: ${escapeHtml(c.responsable_nombre || 'Sin asignar')}</div>
+                        </div>
+                        <span class="tag ${isSin ? 'tag-warn' : 'tag-neutral'}">${isSin ? 'Sin Proyecto' : 'Proy. ' + escapeHtml(c.proy_codigo)}</span>
+                    </div>
+                `;
+            }).join('');
+            box.classList.add('show');
+        }
+
+        async function selectTopContractSuggestion(contratoId, numeroContrato) {
+            const box = document.getElementById('suggest-contratos-top');
+            if (box) box.classList.remove('show');
+            document.getElementById('input-numero-contrato').value = numeroContrato || '';
+            await loadContractById(contratoId);
+        }
+
+        function renderAsociarProjectSuggestions(query) {
+            const box = document.getElementById('suggest-proyectos-asociar');
+            if (!box) return;
+            const q = (query || '').trim().toLowerCase();
+            const realProjects = allProjectsCatalog.filter(p => p.codigo !== 'SIN_PROYECTO');
+            const matches = realProjects.filter(p => {
+                if (!q) return true;
+                return String(p.codigo || '').toLowerCase().includes(q)
+                    || String(p.nombre || '').toLowerCase().includes(q);
+            });
+
+            if (!matches.length) {
+                box.innerHTML = `<div class="suggest-item muted">Proyecto nuevo: se asociará al No. "${escapeHtml(query)}"</div>`;
+                box.classList.add('show');
+                return;
+            }
+
+            box.innerHTML = matches.map(p => `
+                <div class="suggest-item" onclick="selectAsociarProjectSuggestion('${escapeHtml(p.codigo)}')">
+                    <div><strong>Proyecto No. ${escapeHtml(p.codigo)}</strong> — ${escapeHtml(p.nombre)}</div>
+                    <span class="tag tag-neutral">Seleccionar</span>
+                </div>
+            `).join('');
+            box.classList.add('show');
+        }
+
+        function selectAsociarProjectSuggestion(codigo) {
+            const box = document.getElementById('suggest-proyectos-asociar');
+            if (box) box.classList.remove('show');
+            const inp = document.getElementById('m1_numero_proyecto');
+            if (inp) inp.value = codigo;
+            const sel = document.getElementById('select-asociar-proyecto');
+            if (sel) sel.value = codigo;
+            updateAvisoSinProyecto();
+        }
+
+        function syncProyectoAsociadoSelect(codigo) {
+            const inp = document.getElementById('m1_numero_proyecto');
+            if (inp) inp.value = codigo || '';
+            updateAvisoSinProyecto();
+        }
+
+        function updateAvisoSinProyecto() {
+            const val = (document.getElementById('m1_numero_proyecto').value || '').trim();
+            const hasProy = val !== '' && val !== 'SIN_PROYECTO';
+            const aviso = document.getElementById('aviso-sin-proyecto');
+            const badge = document.getElementById('badge-proyecto-asociado');
+            if (aviso) aviso.style.display = hasProy ? 'none' : 'block';
+            if (badge) {
+                badge.textContent = hasProy ? `PROYECTO NO. ${val}` : 'FALTA ASOCIAR A PROYECTO';
+                badge.className = hasProy ? 'tag' : 'tag tag-alert';
+            }
+        }
+
+        function handleSelectProject(codigoProyecto, selectedContratoId = null) {
+            if (!codigoProyecto) {
+                document.getElementById('project-contracts-box').style.display = 'none';
+                return;
+            }
+            currentProjectCodigo = String(codigoProyecto);
+            const sel = document.getElementById('select-numero-proyecto');
+            if (sel && sel.value !== currentProjectCodigo) {
+                sel.value = currentProjectCodigo;
+            }
+
+            const proyObj = allProjectsCatalog.find(p => String(p.codigo).toLowerCase() === currentProjectCodigo.toLowerCase());
+            if (!proyObj) return;
+
+            const inpProy = document.getElementById('input-filtro-proyecto');
+            if (inpProy) {
+                inpProy.value = proyObj.codigo === 'SIN_PROYECTO'
+                    ? `Contratos sin Proyecto asociado (${proyObj.total_contratos} contratos)`
+                    : `Proyecto No. ${proyObj.codigo} — ${proyObj.nombre}`;
+            }
+
+            renderProjectContractsList(proyObj, selectedContratoId);
+        }
+
+        function renderProjectContractsList(proyObj, activeContratoId = null) {
+            const box = document.getElementById('project-contracts-box');
+            const matchesBox = document.getElementById('matches-list-container');
+            box.style.display = 'block';
+
+            const isSinProy = proyObj.codigo === 'SIN_PROYECTO';
+            document.getElementById('lbl-proy-badge').textContent = isSinProy ? 'POR ASIGNAR PROYECTO' : `PROYECTO ${proyObj.codigo}`;
+            document.getElementById('lbl-proy-header').textContent = isSinProy
+                ? proyObj.nombre
+                : `Proyecto de Inversión No. ${proyObj.codigo} — ${proyObj.nombre}`;
+            document.getElementById('lbl-proy-count').textContent = `${(proyObj.contratos || []).length} contrato(s) asociado(s)`;
+
+            const contratos = proyObj.contratos || [];
+            if (!contratos.length) {
+                document.getElementById('contract-workspace').style.display = 'none';
+                matchesBox.innerHTML = `
+                    <div class="notice-box" style="margin-bottom:0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
+                        <div>
+                            <strong>No hay contratos registrados en este proyecto.</strong>
+                            Haga clic en <strong>Agregar Contrato</strong> para registrar un contrato asociado al <strong>Proyecto No. ${escapeHtml(proyObj.codigo)}</strong>.
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="startNewContractForProject('${escapeHtml(proyObj.codigo)}')">
+                            Agregar Contrato
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            matchesBox.innerHTML = contratos.map(m => {
+                const isSelected = activeContratoId !== null && Number(m.id) === Number(activeContratoId);
+                const borderStyle = isSelected ? 'border: 2px solid var(--primary-green); background: #EEF3EF;' : '';
+                const fisTxt = m.ejecucion_fisica_pct !== null && m.ejecucion_fisica_pct !== undefined ? `${m.ejecucion_fisica_pct}%` : 'Sin dato';
+                const finTxt = m.ejecucion_financiera_pct !== null && m.ejecucion_financiera_pct !== undefined ? `${m.ejecucion_financiera_pct}%` : 'Sin dato';
+                return `
+                    <div class="match-item" style="${borderStyle}" onclick="loadContractById(${m.id})">
+                        <div>
+                            <span class="tag ${isSinProy ? 'tag-warn' : 'tag-neutral'}" style="margin-right:0.35rem;">
+                                ${isSinProy ? 'Sin Proyecto' : 'Proy. ' + escapeHtml(proyObj.codigo)}
+                            </span>
+                            <strong style="color:var(--primary-green-dark);">Contrato: ${escapeHtml(m.numero_contrato)}</strong> — <strong>${escapeHtml(m.titulo_grupo)}</strong>
+                            <div class="muted" style="font-size:0.78rem; margin-top:2px;">
+                                Apoyo: ${escapeHtml(m.responsable_nombre || 'Sin asignar')} |
+                                Contratista: ${escapeHtml(m.contratista || 'Sin dato')} |
+                                Física: <strong>${fisTxt}</strong> | Financiera: <strong>${finTxt}</strong> |
+                                Último reporte: ${escapeHtml(m.fecha_ultimo_reporte_texto || 'Corte base')}
+                            </div>
+                        </div>
+                        <button type="button" class="btn ${isSelected ? 'btn-gold' : 'btn-primary'} btn-sm">
+                            ${isSelected ? 'Contrato Abierto' : 'Seleccionar'}
+                        </button>
+                    </div>
+                `;
+            }).join('');
+        }
 
         async function handleSearchContract(e) {
             e.preventDefault();
             const q = document.getElementById('input-numero-contrato').value.trim();
             if (!q) return;
+
+            const cleanProy = q.replace(/^proy(?:ecto)?\.?\s*/i, '').trim();
+            const foundProy = allProjectsCatalog.find(p => String(p.codigo).toLowerCase() === cleanProy.toLowerCase());
+            if (foundProy) {
+                document.getElementById('search-feedback').style.display = 'none';
+                handleSelectProject(foundProy.codigo);
+                if (foundProy.contratos && foundProy.contratos.length === 1) {
+                    await loadContractById(foundProy.contratos[0].id);
+                }
+                return;
+            }
+
             await searchContractByQuery(q);
         }
 
         async function searchContractByQuery(query) {
             const fb = document.getElementById('search-feedback');
-            const matchesBox = document.getElementById('matches-list-container');
             fb.style.display = 'block';
             fb.className = 'notice-box';
             fb.textContent = 'Buscando contrato...';
-            matchesBox.style.display = 'none';
             document.getElementById('save-success-banner').style.display = 'none';
 
             try {
@@ -590,26 +1098,15 @@
 
                 if (data.multiple_matches && Array.isArray(data.coincidencias)) {
                     fb.style.display = 'none';
-                    matchesBox.style.display = 'block';
-                    matchesBox.innerHTML = `
-                        <div style="font-weight:700; font-size:0.86rem; margin-bottom:0.5rem; color:var(--primary-green-dark);">
-                            Se encontraron ${data.coincidencias.length} contratos que coinciden con "${escapeHtml(query)}". Seleccione el contrato que desea consultar o actualizar:
-                        </div>
-                        ${data.coincidencias.map(m => `
-                            <div class="match-item" onclick="loadContractById(${m.id})">
-                                <div>
-                                    <strong style="color:var(--primary-green-dark);">${escapeHtml(m.numero_contrato)}</strong> — <strong>${escapeHtml(m.titulo_grupo)}</strong>
-                                    <div class="muted" style="font-size:0.78rem;">Responsable: ${escapeHtml(m.responsable_nombre || 'Sin asignar')} | Contratista: ${escapeHtml(m.contratista || 'Sin dato')}</div>
-                                </div>
-                                <button type="button" class="btn btn-primary btn-sm">Cargar Contrato</button>
-                            </div>
-                        `).join('')}
-                    `;
+                    renderProjectContractsList({
+                        codigo: query,
+                        nombre: `Resultados de búsqueda para "${query}"`,
+                        contratos: data.coincidencias
+                    }, null);
                     return;
                 }
 
                 fb.style.display = 'none';
-                matchesBox.style.display = 'none';
                 renderLoadedContract(data);
             } catch (err) {
                 fb.className = 'notice-box notice-error';
@@ -619,11 +1116,9 @@
 
         async function loadContractById(contratoId) {
             const fb = document.getElementById('search-feedback');
-            const matchesBox = document.getElementById('matches-list-container');
-            matchesBox.style.display = 'none';
             fb.style.display = 'block';
             fb.className = 'notice-box';
-            fb.textContent = 'Cargando información del contrato...';
+            fb.textContent = 'Cargando datos del contrato...';
 
             try {
                 const res = await fetch(`api/despacho_public_api.php?action=lookup_contract&contrato_id=${encodeURIComponent(contratoId)}`);
@@ -653,84 +1148,190 @@
             } catch (e) {}
         }
 
+        function handleChangeTipoAjuste() {
+            const isNew = !document.getElementById('hidden-contrato-id').value;
+            const tipo = document.getElementById('tipo_ajuste').value;
+
+            document.getElementById('panel-ajuste-adicion').style.display = (tipo === 'ADICION') ? 'block' : 'none';
+            document.getElementById('panel-ajuste-prorroga').style.display = (tipo === 'PRORROGA') ? 'block' : 'none';
+            document.getElementById('panel-ajuste-suspension').style.display = (tipo === 'SUSPENSION') ? 'block' : 'none';
+            document.getElementById('panel-ajuste-modificacion').style.display = (tipo === 'MODIFICACION') ? 'block' : 'none';
+
+            const showFullM1Fields = isNew || tipo === 'MODIFICACION';
+            document.getElementById('panel-edicion-m1').style.display = showFullM1Fields ? 'block' : 'none';
+            document.getElementById('chk-editar-m1').value = (isNew || tipo !== 'NINGUNO') ? '1' : '0';
+        }
+
+        function startNewContractForProject(codigoProyectoOverride = null) {
+            const proyCod = codigoProyectoOverride || currentProjectCodigo || document.getElementById('select-numero-proyecto').value || '';
+            const proyObj = allProjectsCatalog.find(p => String(p.codigo).toLowerCase() === String(proyCod).toLowerCase());
+            const proyNombre = proyObj ? proyObj.nombre : ('Proyecto ' + proyCod);
+
+            document.getElementById('contract-workspace').style.display = 'block';
+            document.getElementById('save-success-banner').style.display = 'none';
+            document.getElementById('hidden-contrato-id').value = '';
+
+            document.getElementById('lbl-estado-contractual').textContent = 'NUEVO CONTRATO';
+            document.getElementById('lbl-contrato-titulo').textContent = `Nuevo Contrato — ${proyCod && proyCod !== 'SIN_PROYECTO' ? 'Proyecto No. ' + proyCod : 'Seleccione Proyecto'}`;
+            document.getElementById('lbl-contrato-numero').textContent = proyNombre;
+            document.getElementById('lbl-responsable').textContent = 'Nuevo registro';
+            document.getElementById('lbl-ultimo-reporte').textContent = 'Primer registro';
+
+            const validProyNew = (proyCod && proyCod !== 'SIN_PROYECTO') ? proyCod : '';
+            document.getElementById('m1_numero_proyecto').value = validProyNew;
+            const selAsocNew = document.getElementById('select-asociar-proyecto');
+            if (selAsocNew) selAsocNew.value = validProyNew;
+            updateAvisoSinProyecto();
+
+            document.getElementById('resumen-m1-existente').style.display = 'none';
+            document.getElementById('view-m1-ajustes-box').style.display = 'none';
+            document.getElementById('box-selector-ajuste').style.display = 'none';
+
+            document.getElementById('badge-estado-m1').textContent = 'COMPLETAR DATOS DEL NUEVO CONTRATO';
+            document.getElementById('badge-estado-m1').className = 'tag tag-warn';
+
+            document.getElementById('nuevo_numero_contrato').value = '';
+            document.getElementById('m1_objeto').value = '';
+            document.getElementById('m1_duracion').value = '';
+            document.getElementById('m1_valor_inicial').value = '';
+            document.getElementById('m1_fecha_inicio').value = '';
+            document.getElementById('m1_fecha_fin_inicial').value = '';
+            document.getElementById('m1_contratista').value = '';
+            document.getElementById('m1_apoyo_supervision').value = '';
+
+            document.getElementById('tipo_ajuste').value = 'NINGUNO';
+            document.getElementById('ajuste_fecha_adicion').value = '';
+            document.getElementById('ajuste_valor_adicion').value = '';
+            document.getElementById('ajuste_tiempo_prorroga').value = '';
+            document.getElementById('ajuste_fecha_suspension').value = '';
+            document.getElementById('m1_modificacion_solicitud').value = '';
+
+            document.getElementById('panel-edicion-m1').style.display = 'block';
+            document.getElementById('chk-editar-m1').value = '1';
+
+            document.getElementById('responsable_reportante').value = '';
+            document.getElementById('m2_fecha_reporte').value = new Date().toISOString().slice(0, 10);
+            document.getElementById('m2_ejecucion_financiera_texto').value = '';
+            document.getElementById('m2_ejecucion_fisica_texto').value = '';
+            document.getElementById('m2_estado_reportado').value = 'En ejecución';
+            document.getElementById('m2_fecha_fin_reportada').value = '';
+
+            renderTrackingHistory([]);
+            document.getElementById('acc-tracking').style.display = 'none';
+            window.scrollTo({ top: document.getElementById('contract-workspace').offsetTop - 70, behavior: 'smooth' });
+        }
+
         function renderLoadedContract(data) {
             loadedContractData = data;
             const c = data.contrato;
             const versiones = data.versiones_tracking || [];
+            const proyPrincipal = data.proyecto_principal || (c.proyectos && c.proyectos[0]) || { codigo: 'SIN_PROYECTO', nombre: 'Contratos pendientes de asociar a Número de Proyecto' };
+
+            if (Array.isArray(data.contratos_del_proyecto) && data.contratos_del_proyecto.length > 0) {
+                const sel = document.getElementById('select-numero-proyecto');
+                if (sel && proyPrincipal.codigo) {
+                    sel.value = proyPrincipal.codigo;
+                }
+                renderProjectContractsList({
+                    codigo: proyPrincipal.codigo,
+                    nombre: proyPrincipal.nombre,
+                    contratos: data.contratos_del_proyecto
+                }, c.id);
+            } else if (proyPrincipal.codigo) {
+                handleSelectProject(proyPrincipal.codigo, c.id);
+            }
 
             document.getElementById('contract-workspace').style.display = 'block';
             document.getElementById('hidden-contrato-id').value = c.id;
 
             document.getElementById('lbl-estado-contractual').textContent = c.estado_contractual || 'EN EJECUCIÓN';
-            document.getElementById('lbl-contrato-titulo').textContent = c.titulo_grupo;
-            document.getElementById('lbl-contrato-numero').textContent = `Contrato / Grupo: ${c.numero_contrato}`;
+            document.getElementById('lbl-contrato-titulo').textContent = `Contrato ${c.numero_contrato} — ${c.titulo_grupo || ''}`;
+            const proyLabel = proyPrincipal.codigo && proyPrincipal.codigo !== 'SIN_PROYECTO'
+                ? `Proyecto de Inversión No. ${proyPrincipal.codigo} — ${proyPrincipal.nombre}`
+                : `Sin Número de Proyecto asociado (selecciónelo abajo antes de guardar)`;
+            document.getElementById('lbl-contrato-numero').textContent = proyLabel;
             document.getElementById('lbl-responsable').textContent = c.responsable_nombre || 'Sin asignar';
-            document.getElementById('lbl-area').textContent = c.area_nombre || 'General';
             document.getElementById('lbl-ultimo-reporte').textContent = c.fecha_ultimo_reporte_texto || 'Corte base';
-            document.getElementById('lbl-total-versiones').textContent = versiones.length;
 
-            if (c.proyectos && c.proyectos.length > 0) {
-                document.getElementById('lbl-proyectos').innerHTML = '<strong>Proyectos asociados:</strong> ' +
-                    c.proyectos.map(p => `<span class="tag tag-neutral" style="margin-right:0.35rem;">Proy. ${escapeHtml(p.codigo)}: ${escapeHtml(p.nombre)}</span>`).join('');
-            } else {
-                document.getElementById('lbl-proyectos').innerHTML = '';
+            const validProyLoaded = (proyPrincipal.codigo && proyPrincipal.codigo !== 'SIN_PROYECTO') ? proyPrincipal.codigo : '';
+            document.getElementById('m1_numero_proyecto').value = validProyLoaded;
+            const selAsocLoaded = document.getElementById('select-asociar-proyecto');
+            if (selAsocLoaded) selAsocLoaded.value = validProyLoaded;
+            updateAvisoSinProyecto();
+
+            // Mostrar resumen de los 8 campos del Mensaje 1
+            document.getElementById('resumen-m1-existente').style.display = 'grid';
+            document.getElementById('box-selector-ajuste').style.display = 'block';
+
+            const valIniStr = c.valor_inicial !== null ? '$' + Number(c.valor_inicial).toLocaleString('es-CO') : null;
+            const valTotStr = c.valor_total !== null ? '$' + Number(c.valor_total).toLocaleString('es-CO') : null;
+            let valorMostrar = valTotStr || valIniStr || 'Sin dato';
+            if (valIniStr && valTotStr && c.valor_total !== c.valor_inicial) {
+                valorMostrar = `${valTotStr} (Inicial: ${valIniStr})`;
             }
 
-            // Poblar vista y campos del Mensaje 1
-            const valIniStr = c.valor_inicial !== null ? '$' + Number(c.valor_inicial).toLocaleString('es-CO') : 'Sin dato';
-            const valTotStr = c.valor_total !== null ? '$' + Number(c.valor_total).toLocaleString('es-CO') : 'Sin dato';
-            document.getElementById('view-m1-contratista').textContent = c.contratista || 'No registrado en Mensaje 1';
-            document.getElementById('view-m1-valores').textContent = `${valIniStr} / Total: ${valTotStr}`;
-            document.getElementById('view-m1-fechas').textContent = `${c.fecha_inicio_texto || 'Sin inicio'} a ${c.fecha_fin_inicial_texto || 'Sin fin inicial'}`;
-            document.getElementById('view-m1-fin-vigente').textContent = c.fecha_fin_vigente_texto || 'Sin fecha validada';
-            document.getElementById('view-m1-texto-raw').textContent = c.mensaje1_texto_actual || 'Este contrato aún no tiene texto de Mensaje 1 registrado.';
+            document.getElementById('view-m1-numero').textContent = c.numero_contrato || 'Sin dato';
+            document.getElementById('view-m1-contratista').textContent = c.contratista || 'Sin dato';
+            document.getElementById('view-m1-apoyo').textContent = c.responsable_nombre || 'Sin dato';
+            document.getElementById('view-m1-duracion').textContent = c.duracion_texto || 'Sin dato';
+            document.getElementById('view-m1-valores').textContent = valorMostrar;
+            document.getElementById('view-m1-inicio').textContent = c.fecha_inicio_texto || 'Sin dato';
+            document.getElementById('view-m1-fin-inicial').textContent = c.fecha_fin_inicial_texto || 'Sin dato';
+            document.getElementById('view-m1-objeto').textContent = c.objeto || 'Sin objeto registrado';
 
-            document.getElementById('mensaje1_texto').value = c.mensaje1_texto_actual || '';
+            // Mostrar ajustes previos si existen
+            const mods = Array.isArray(c.modificaciones) ? c.modificaciones : [];
+            const ajustesBox = document.getElementById('view-m1-ajustes-box');
+            const ajustesList = document.getElementById('view-m1-ajustes-list');
+            if (mods.length > 0) {
+                ajustesBox.style.display = 'block';
+                ajustesList.innerHTML = mods.map(m => `<li><strong>${escapeHtml(m.tipo_modificacion)}:</strong> ${escapeHtml(m.descripcion_texto || m.descripcion || m.plazo_adicional_texto || '')}</li>`).join('');
+            } else {
+                ajustesBox.style.display = 'none';
+                ajustesList.innerHTML = '';
+            }
+
+            // Pre-llenar campos editables de Mensaje 1 por si el usuario elige modificarlos
+            document.getElementById('nuevo_numero_contrato').value = c.numero_contrato || '';
             document.getElementById('m1_objeto').value = c.objeto || '';
-            document.getElementById('m1_contratista').value = c.contratista || '';
-            document.getElementById('m1_valor_inicial').value = c.valor_inicial !== null ? c.valor_inicial : '';
-            document.getElementById('m1_valor_total').value = c.valor_total !== null ? c.valor_total : '';
+            document.getElementById('m1_duracion').value = c.duracion_texto || '';
+            document.getElementById('m1_valor_inicial').value = c.valor_inicial !== null ? c.valor_inicial : (c.valor_total !== null ? c.valor_total : '');
             document.getElementById('m1_fecha_inicio').value = c.fecha_inicio_texto || '';
             document.getElementById('m1_fecha_fin_inicial').value = c.fecha_fin_inicial_texto || '';
+            document.getElementById('m1_contratista').value = c.contratista || '';
+            document.getElementById('m1_apoyo_supervision').value = c.responsable_nombre || '';
+
+            document.getElementById('ajuste_fecha_adicion').value = '';
+            document.getElementById('ajuste_valor_adicion').value = '';
+            document.getElementById('ajuste_tiempo_prorroga').value = '';
+            document.getElementById('ajuste_fecha_suspension').value = '';
             document.getElementById('m1_modificacion_solicitud').value = '';
 
-            const chkM1 = document.getElementById('chk-editar-m1');
             const badgeM1 = document.getElementById('badge-estado-m1');
             if (!c.tiene_mensaje1_registrado) {
-                chkM1.checked = true;
-                badgeM1.textContent = 'FALTA COMPLETAR MENSAJE 1';
+                document.getElementById('tipo_ajuste').value = 'MODIFICACION';
+                badgeM1.textContent = 'COMPLETAR MENSAJE 1 PENDIENTE';
                 badgeM1.className = 'tag tag-warn';
             } else {
-                chkM1.checked = false;
-                badgeM1.textContent = 'SOLO EDITAR CUANDO HAYA LUGAR';
+                document.getElementById('tipo_ajuste').value = 'NINGUNO';
+                badgeM1.textContent = 'SOLO MODIFICAR SI HAY CAMBIOS';
                 badgeM1.className = 'tag';
             }
-            toggleEditarMensaje1();
+            handleChangeTipoAjuste();
 
-            // Poblar vista y campos del Mensaje 2 (Reporte semanal)
-            document.getElementById('view-m2-texto-raw').textContent = c.mensaje2_texto_actual || 'Sin Mensaje 2 registrado previamente.';
+            // Poblar campos del Mensaje 2 (Reporte Semanal)
             document.getElementById('responsable_reportante').value = c.responsable_nombre || '';
             document.getElementById('m2_fecha_reporte').value = new Date().toISOString().slice(0, 10);
-            document.getElementById('m2_ejecucion_fisica_pct').value = c.ejecucion_fisica_pct !== null ? c.ejecucion_fisica_pct : '';
-            document.getElementById('m2_ejecucion_fisica_texto').value = c.ejecucion_fisica_texto || '';
-            document.getElementById('m2_ejecucion_financiera_pct').value = c.ejecucion_financiera_pct !== null ? c.ejecucion_financiera_pct : '';
-            document.getElementById('m2_ejecucion_financiera_texto').value = c.ejecucion_financiera_texto || '';
-            document.getElementById('m2_ejecucion_financiera_obra_pct').value = c.ejecucion_financiera_obra_pct !== null ? c.ejecucion_financiera_obra_pct : '';
-            document.getElementById('m2_ejecucion_financiera_inter_pct').value = c.ejecucion_financiera_inter_pct !== null ? c.ejecucion_financiera_inter_pct : '';
+            const finDefault = c.ejecucion_financiera_texto || (c.ejecucion_financiera_pct !== null ? c.ejecucion_financiera_pct + '%' : '');
+            const fisDefault = c.ejecucion_fisica_texto || (c.ejecucion_fisica_pct !== null ? c.ejecucion_fisica_pct + '%' : '');
+            document.getElementById('m2_ejecucion_financiera_texto').value = finDefault;
+            document.getElementById('m2_ejecucion_fisica_texto').value = fisDefault;
             document.getElementById('m2_estado_reportado').value = c.estado_reportado_texto || c.estado_contractual || 'En ejecución';
-            document.getElementById('m2_fecha_fin_reportada').value = c.fecha_fin_vigente_texto || '';
-            document.getElementById('m2_observaciones').value = '';
-            document.getElementById('mensaje2_texto').value = '';
-
-            document.getElementById('grp-fin-obra').style.display = c.es_grupo ? 'flex' : 'none';
-            document.getElementById('grp-fin-inter').style.display = c.es_grupo ? 'flex' : 'none';
+            document.getElementById('m2_fecha_fin_reportada').value = c.fecha_fin_vigente_texto || c.fecha_fin_inicial_texto || '';
 
             renderTrackingHistory(versiones);
-        }
-
-        function toggleEditarMensaje1() {
-            const enabled = document.getElementById('chk-editar-m1').checked;
-            document.getElementById('panel-edicion-m1').style.display = enabled ? 'block' : 'none';
+            document.getElementById('acc-tracking').style.display = 'block';
+            window.scrollTo({ top: document.getElementById('contract-workspace').offsetTop - 60, behavior: 'smooth' });
         }
 
         function renderTrackingHistory(versiones) {
@@ -754,87 +1355,81 @@
                             <div>
                                 <span class="tag ${idx === 0 ? '' : 'tag-neutral'}">${idx === 0 ? 'ÚLTIMA ACTUALIZACIÓN' : 'HISTÓRICO'}</span>
                                 <strong style="margin-left:0.35rem;">Versión #${v.numero_version} — Radicado ${escapeHtml(v.radicado)}</strong>
-                                <span class="tag tag-neutral">${escapeHtml(v.tipo_mensaje)}</span>
                             </div>
                             <div style="font-size:0.78rem;" class="muted">
                                 Fecha reporte: <strong>${escapeHtml(v.fecha_reporte_texto || 'N/A')}</strong> |
-                                Guardado en sistema: <strong>${escapeHtml(v.created_at)}</strong>
+                                Guardado: <strong>${escapeHtml(v.created_at)}</strong>
                             </div>
                         </div>
                         <div style="font-size:0.82rem; margin-bottom:0.35rem;">
                             <strong>Reportado por:</strong> ${escapeHtml(v.reportado_por || 'Responsable')} |
-                            <strong>Física:</strong> ${escapeHtml(v.ejecucion_fisica_texto || (v.ejecucion_fisica_pct !== null ? v.ejecucion_fisica_pct + '%' : 'Sin dato'))} |
                             <strong>Financiera:</strong> ${escapeHtml(v.ejecucion_financiera_texto || (v.ejecucion_financiera_pct !== null ? v.ejecucion_financiera_pct + '%' : 'Sin dato'))} |
-                            <strong>Estado:</strong> ${escapeHtml(v.estado_reportado_texto || 'Sin dato')}
+                            <strong>Física:</strong> ${escapeHtml(v.ejecucion_fisica_texto || (v.ejecucion_fisica_pct !== null ? v.ejecucion_fisica_pct + '%' : 'Sin dato'))} |
+                            <strong>Estado:</strong> ${escapeHtml(v.estado_reportado_texto || 'Sin dato')} |
+                            <strong>Fecha finalización:</strong> ${escapeHtml(v.fecha_fin_reportada_texto || 'Sin dato')}
                         </div>
                         ${cambiosHtml}
-                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:0.75rem; margin-top:0.5rem;">
-                            <div>
-                                <span style="font-size:0.7rem; font-weight:700; text-transform:uppercase;" class="muted">Mensaje 1 en esta versión</span>
-                                <pre class="msg-raw">${v.mensaje1_texto_original ? escapeHtml(v.mensaje1_texto_original) : '(Sin Mensaje 1)'}</pre>
-                            </div>
-                            <div>
-                                <span style="font-size:0.7rem; font-weight:700; text-transform:uppercase;" class="muted">Mensaje 2 en esta versión</span>
-                                <pre class="msg-raw">${v.mensaje2_texto_original ? escapeHtml(v.mensaje2_texto_original) : '(Sin Mensaje 2)'}</pre>
-                            </div>
-                        </div>
                     </div>
                 `;
             }).join('');
         }
 
-        async function autocompletarDesdeTexto() {
-            const m1 = document.getElementById('mensaje1_texto').value;
-            const m2 = document.getElementById('mensaje2_texto').value;
-
-            try {
-                const res = await fetch('api/despacho_public_api.php?action=preview', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ action: 'preview', mensaje1_texto: m1, mensaje2_texto: m2 })
-                });
-                const data = await res.json();
-                if (!data.success || !data.preview) return;
-
-                const p1 = data.preview.mensaje1 || {};
-                const p2 = data.preview.mensaje2 || {};
-
-                if (document.getElementById('chk-editar-m1').checked) {
-                    if (p1.objeto) document.getElementById('m1_objeto').value = p1.objeto;
-                    if (p1.contratista) document.getElementById('m1_contratista').value = p1.contratista;
-                    if (p1.valor_inicial !== null) document.getElementById('m1_valor_inicial').value = p1.valor_inicial;
-                    if (p1.valor_total !== null) document.getElementById('m1_valor_total').value = p1.valor_total;
-                    if (p1.fecha_inicio_texto) document.getElementById('m1_fecha_inicio').value = p1.fecha_inicio_texto;
-                    if (p1.fecha_fin_inicial_texto) document.getElementById('m1_fecha_fin_inicial').value = p1.fecha_fin_inicial_texto;
-                    if (p1.modificaciones_detectadas && p1.modificaciones_detectadas.length > 0) {
-                        document.getElementById('m1_modificacion_solicitud').value = p1.modificaciones_detectadas.join(' | ');
-                    }
-                }
-
-                if (p2.ejecucion_fisica_pct !== null) document.getElementById('m2_ejecucion_fisica_pct').value = p2.ejecucion_fisica_pct;
-                if (p2.ejecucion_fisica_texto) document.getElementById('m2_ejecucion_fisica_texto').value = p2.ejecucion_fisica_texto;
-                if (p2.ejecucion_financiera_pct !== null) document.getElementById('m2_ejecucion_financiera_pct').value = p2.ejecucion_financiera_pct;
-                if (p2.ejecucion_financiera_texto) document.getElementById('m2_ejecucion_financiera_texto').value = p2.ejecucion_financiera_texto;
-                if (p2.ejecucion_financiera_obra_pct !== null) document.getElementById('m2_ejecucion_financiera_obra_pct').value = p2.ejecucion_financiera_obra_pct;
-                if (p2.ejecucion_financiera_inter_pct !== null) document.getElementById('m2_ejecucion_financiera_inter_pct').value = p2.ejecucion_financiera_inter_pct;
-                if (p2.estado_reportado_texto) document.getElementById('m2_estado_reportado').value = p2.estado_reportado_texto;
-                if (p2.fecha_fin_reportada_texto) document.getElementById('m2_fecha_fin_reportada').value = p2.fecha_fin_reportada_texto;
-            } catch (e) {
-                console.error(e);
-            }
-        }
-
         async function handleSubmitActualizacion(e) {
             e.preventDefault();
             const contratoId = document.getElementById('hidden-contrato-id').value;
-            if (!contratoId) {
-                alert('Primero consulte un contrato válido.');
+            const nuevoNum = (document.getElementById('nuevo_numero_contrato').value || '').trim();
+            if (!contratoId && !nuevoNum) {
+                alert('Digite el Número del contrato en el Mensaje 1.');
+                document.getElementById('nuevo_numero_contrato').focus();
+                return;
+            }
+
+            const proyAsociar = (document.getElementById('m1_numero_proyecto').value || '').trim();
+            if (!proyAsociar || proyAsociar === 'SIN_PROYECTO') {
+                updateAvisoSinProyecto();
+                alert('Seleccione o escriba el Número de Proyecto de Inversión al que pertenece el contrato antes de guardar.');
+                document.getElementById('select-asociar-proyecto').focus();
+                return;
+            }
+
+            const tipoAjuste = document.getElementById('tipo_ajuste').value;
+            if (tipoAjuste === 'ADICION') {
+                const fAd = (document.getElementById('ajuste_fecha_adicion').value || '').trim();
+                const vAd = (document.getElementById('ajuste_valor_adicion').value || '').trim();
+                if (!fAd || !vAd) {
+                    alert('Para registrar una Adición indique la Fecha de adición y la Cantidad de adición.');
+                    return;
+                }
+            } else if (tipoAjuste === 'PRORROGA') {
+                const tPr = (document.getElementById('ajuste_tiempo_prorroga').value || '').trim();
+                if (!tPr) {
+                    alert('Para registrar una Prórroga indique la Cantidad de tiempo de prórroga.');
+                    document.getElementById('ajuste_tiempo_prorroga').focus();
+                    return;
+                }
+            } else if (tipoAjuste === 'SUSPENSION') {
+                const fSu = (document.getElementById('ajuste_fecha_suspension').value || '').trim();
+                if (!fSu) {
+                    alert('Para registrar una Suspensión indique la Fecha de suspensión.');
+                    document.getElementById('ajuste_fecha_suspension').focus();
+                    return;
+                }
+            }
+
+            const repNombre = (document.getElementById('responsable_reportante').value || '').trim();
+            const repFecha = (document.getElementById('m2_fecha_reporte').value || '').trim();
+            const repFin = (document.getElementById('m2_ejecucion_financiera_texto').value || '').trim();
+            const repFis = (document.getElementById('m2_ejecucion_fisica_texto').value || '').trim();
+            const repEstado = (document.getElementById('m2_estado_reportado').value || '').trim();
+
+            if (!repNombre || !repFecha || !repFin || !repFis || !repEstado) {
+                alert('Complete los datos del Mensaje 2: Nombre de quien reporta, Fecha reporte, Ejecución financiera, Ejecución física y Estado.');
                 return;
             }
 
             const btn = document.getElementById('btn-submit-reporte');
             btn.disabled = true;
-            btn.textContent = 'Guardando actualización...';
+            btn.textContent = 'Guardando reporte...';
 
             try {
                 const formEl = document.getElementById('form-actualizacion-contrato');
@@ -842,11 +1437,6 @@
                 formData.set('action', 'submit');
                 formData.set('contrato_id', contratoId);
                 formData.set('confirmado', '1');
-                if (!document.getElementById('chk-editar-m1').checked) {
-                    formData.set('editar_mensaje1', '0');
-                } else {
-                    formData.set('editar_mensaje1', '1');
-                }
 
                 const res = await fetch('api/despacho_public_api.php?action=submit', {
                     method: 'POST',
@@ -854,10 +1444,10 @@
                 });
                 const data = await res.json();
                 btn.disabled = false;
-                btn.textContent = 'Guardar Actualización en el Tracking';
+                btn.textContent = 'Guardar Reporte Semanal';
 
                 if (!res.ok || !data.success) {
-                    alert(data.message || 'Error al guardar la actualización.');
+                    alert(data.message || 'Error al guardar el reporte.');
                     return;
                 }
 
@@ -869,18 +1459,18 @@
                 const banner = document.getElementById('save-success-banner');
                 banner.style.display = 'block';
                 banner.innerHTML = `
-                    <strong>Actualización guardada correctamente — Radicado ${escapeHtml(c.radicado)} (Versión #${c.numero_version})</strong>
+                    <strong>Reporte guardado correctamente — Radicado ${escapeHtml(c.radicado)} (Versión #${c.numero_version})</strong>
                     <div>Fecha/Hora de registro: ${escapeHtml(c.fecha_recepcion_sistema)} | Reportado por: ${escapeHtml(c.responsable_reportante)}</div>
                     ${cambiosList}
                 `;
 
-                // Recargar el contrato para reflejar inmediatamente los nuevos datos y la nueva versión en el tracking
-                await loadContractById(contratoId);
+                await loadProjectsCatalog();
+                await loadContractById(c.contrato_id || contratoId);
                 window.scrollTo({ top: banner.offsetTop - 90, behavior: 'smooth' });
             } catch (err) {
                 btn.disabled = false;
-                btn.textContent = 'Guardar Actualización en el Tracking';
-                alert('Error de red al guardar la actualización: ' + err.message);
+                btn.textContent = 'Guardar Reporte Semanal';
+                alert('Error de red al guardar el reporte: ' + err.message);
             }
         }
 
