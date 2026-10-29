@@ -1013,7 +1013,149 @@
             </div>
         </div>
     </div>
-    </main>
+
+    <!-- MODAL EDITAR INFORMACIÓN DEL CONTRATO (DESPACHO / ADMIN) -->
+    <div class="modal-bg" id="modal-editar-contrato" onclick="if(event.target===this) closeEditarContratoModal()">
+        <div class="modal" style="max-width: 780px;">
+            <div class="modal-head">
+                <div>
+                    <h2 style="font-size: 1.15rem; margin: 0;">Editar Información del Contrato</h2>
+                    <div class="muted" style="font-size: 0.8rem; margin-top: 2px;">
+                        Modifique los datos operativos, contractuales o de ejecución. Todo cambio se registra en la bitácora de auditoría.
+                    </div>
+                </div>
+                <button type="button" class="btn btn-outline btn-sm" onclick="closeEditarContratoModal()">Cerrar</button>
+            </div>
+            <div class="modal-body" style="padding: 1.25rem;">
+                <form id="form-editar-contrato" onsubmit="handleGuardarEdicionContrato(event)">
+                    <input type="hidden" id="edit-con-id" value="">
+
+                    <!-- CAMPOS BASE DEL CONTRATO (PROTEGIDOS / NO EDITABLES) -->
+                    <div style="background: #F8FAF9; border: 1px solid #E3E6EA; border-radius: 8px; padding: 0.85rem; margin-bottom: 1rem;">
+                        <div style="font-size: 0.74rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.5rem;">
+                            Datos Base del Contrato (No Editables)
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin-bottom: 0.65rem;">
+                            <div>
+                                <label class="form-label" for="edit-con-numero" style="font-size:0.75rem;">Número del Contrato</label>
+                                <input type="text" id="edit-con-numero" class="input-ctrl" style="background:#EEF2EE; cursor:not-allowed;" readonly>
+                            </div>
+                            <div>
+                                <label class="form-label" for="edit-con-titulo" style="font-size:0.75rem;">Título / Objeto Resumido</label>
+                                <input type="text" id="edit-con-titulo" class="input-ctrl" style="background:#EEF2EE; cursor:not-allowed;" readonly>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label" for="edit-con-objeto" style="font-size:0.75rem;">Objeto Completo del Contrato</label>
+                            <textarea id="edit-con-objeto" class="input-ctrl" rows="2" style="background:#EEF2EE; cursor:not-allowed;" readonly></textarea>
+                        </div>
+                    </div>
+
+                    <!-- CAMPOS EDITABLES: ACTORES Y UBICACIÓN -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem; margin-bottom: 0.85rem;">
+                        <div>
+                            <label class="form-label" for="edit-con-contratista">Contratista / Operador</label>
+                            <input type="text" id="edit-con-contratista" class="input-ctrl" placeholder="Nombre del contratista">
+                        </div>
+                        <div>
+                            <label class="form-label" for="edit-con-interventoria">Interventoría</label>
+                            <input type="text" id="edit-con-interventoria" class="input-ctrl" placeholder="Nombre o empresa de interventoría">
+                        </div>
+                        <div>
+                            <label class="form-label" for="edit-con-responsable">Responsable (Apoyo supervisión)</label>
+                            <input type="text" id="edit-con-responsable" class="input-ctrl" list="lista-responsables-sugeridos" placeholder="Escriba o seleccione responsable">
+                        </div>
+                    </div>
+
+                    <!-- PROYECTO, ÁREA Y ESTADO CONTRACTUAL -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem; margin-bottom: 0.85rem;">
+                        <div>
+                            <label class="form-label" for="edit-con-proyecto">Proyecto de Inversión Asociado</label>
+                            <select id="edit-con-proyecto" class="input-ctrl">
+                                <option value="">-- Sin proyecto / Desvincular --</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label" for="edit-con-area">Área / Dependencia</label>
+                            <select id="edit-con-area" class="input-ctrl">
+                                <option value="">-- Seleccione un área --</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label" for="edit-con-estado">Estado Contractual</label>
+                            <select id="edit-con-estado" class="input-ctrl">
+                                <option value="EN_EJECUCION">EN EJECUCIÓN</option>
+                                <option value="SUSPENDIDO">SUSPENDIDO</option>
+                                <option value="EN_MODIFICACION">EN MODIFICACIÓN / PRÓRROGA</option>
+                                <option value="TERMINADO">TERMINADO</option>
+                                <option value="EN_LIQUIDACION">EN LIQUIDACIÓN</option>
+                                <option value="LIQUIDADO">LIQUIDADO</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- VALORES Y DURACIÓN -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.85rem; margin-bottom: 0.85rem;">
+                        <div>
+                            <label class="form-label" for="edit-con-duracion">Duración del Contrato</label>
+                            <input type="text" id="edit-con-duracion" class="input-ctrl" placeholder="Ej: 4 meses">
+                        </div>
+                        <div>
+                            <label class="form-label" for="edit-con-valor-inicial">Valor Inicial (COP)</label>
+                            <input type="number" id="edit-con-valor-inicial" class="input-ctrl" min="0" step="any" oninput="calcularValorTotalEdicion()">
+                        </div>
+                        <div>
+                            <label class="form-label" for="edit-con-valor-adiciones">Valor Adiciones (COP)</label>
+                            <input type="number" id="edit-con-valor-adiciones" class="input-ctrl" min="0" step="any" oninput="calcularValorTotalEdicion()">
+                        </div>
+                        <div>
+                            <label class="form-label" for="edit-con-valor-total">Valor Total Vigente (COP)</label>
+                            <input type="number" id="edit-con-valor-total" class="input-ctrl" min="0" step="any">
+                        </div>
+                    </div>
+
+                    <!-- FECHAS CONTRACTUALES -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.85rem; margin-bottom: 0.85rem;">
+                        <div>
+                            <label class="form-label" for="edit-con-fecha-inicio">Fecha de Inicio</label>
+                            <input type="date" id="edit-con-fecha-inicio" class="input-ctrl">
+                        </div>
+                        <div>
+                            <label class="form-label" for="edit-con-fecha-fin-inicial">Fecha Terminación Inicial</label>
+                            <input type="date" id="edit-con-fecha-fin-inicial" class="input-ctrl">
+                        </div>
+                        <div>
+                            <label class="form-label" for="edit-con-fecha-fin-vigente">Fecha Terminación Vigente</label>
+                            <input type="date" id="edit-con-fecha-fin-vigente" class="input-ctrl">
+                        </div>
+                    </div>
+
+                    <!-- EJECUCIÓN FÍSICA Y FINANCIERA -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem; margin-bottom: 0.85rem;">
+                        <div>
+                            <label class="form-label" for="edit-con-ejec-fisica">Ejecución Física (%)</label>
+                            <input type="number" id="edit-con-ejec-fisica" class="input-ctrl" min="0" max="100" step="0.01" placeholder="Ej: 72.5">
+                        </div>
+                        <div>
+                            <label class="form-label" for="edit-con-ejec-financiera">Ejecución Financiera (%)</label>
+                            <input type="number" id="edit-con-ejec-financiera" class="input-ctrl" min="0" max="100" step="0.01" placeholder="Ej: 52.3">
+                        </div>
+                    </div>
+
+                    <!-- ALERTAS DEL CONTRATO -->
+                    <div style="margin-bottom: 1.15rem;">
+                        <label class="form-label" for="edit-con-alertas">Alertas del Contrato</label>
+                        <textarea id="edit-con-alertas" class="input-ctrl" rows="2" placeholder="Describa alertas, retrasos o novedades sobre este contrato..."></textarea>
+                    </div>
+
+                    <div style="display: flex; justify-content: flex-end; gap: 0.5rem; border-top: 1px solid #E3E6EA; padding-top: 0.85rem;">
+                        <button type="button" class="btn btn-outline" onclick="closeEditarContratoModal()">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" id="btn-submit-editar-contrato">Guardar Cambios en Contrato</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- MODAL DE FICHA, TRACKING DE ACTUALIZACIONES, REVISIÓN, ENLACES Y ALERTAS -->
     <div class="modal-bg" id="modal-contrato" onclick="if(event.target===this) closeContratoModal()">
@@ -1023,7 +1165,7 @@
                     <h2 id="modal-title">Ficha y Tracking del Contrato</h2>
                     <div id="modal-subtitle" class="muted" style="font-size: 0.8rem; margin-top: 2px;"></div>
                 </div>
-                <div style="display:flex; gap:0.45rem; align-items:center;">
+                <div id="modal-contrato-header-actions" style="display:flex; gap:0.45rem; align-items:center;">
                     <button type="button" class="btn btn-outline btn-sm" onclick="closeContratoModal()">Cerrar</button>
                 </div>
             </div>
@@ -1226,6 +1368,11 @@
                     ? `<div style="margin-top:4px;"><span class="tag tag-warn">FALTA MENSAJE 1</span></div>`
                     : '';
 
+                const alertaTxt = c.alertas_contrato || c.alerta_consolidada || '';
+                const alertaBadge = alertaTxt
+                    ? `<div style="margin-top:4px; font-size:0.74rem; background:#FFF8E6; border:1px solid #F5E0A3; border-radius:6px; padding:3px 6px; color:#855A00;"><strong>Alerta:</strong> ${escapeHtml(alertaTxt.slice(0, 110))}${alertaTxt.length > 110 ? '...' : ''}</div>`
+                    : '';
+
                 const valTotalNum = c.valor_total !== null ? Number(c.valor_total) : (c.valor_inicial !== null ? Number(c.valor_inicial) : null);
                 const valTxt = valTotalNum !== null ? '$' + valTotalNum.toLocaleString('es-CO') : 'Sin valor registrado';
 
@@ -1283,6 +1430,7 @@
                             <div style="font-size:0.8rem;"><strong>Valor:</strong> ${escapeHtml(valTxt)}</div>
                             <div style="font-size:0.75rem;" class="muted">${escapeHtml((c.objeto || c.titulo_grupo || '').slice(0, 95))}${(c.objeto || '').length > 95 ? '...' : ''}</div>
                             ${m1Badge}
+                            ${alertaBadge}
                         </td>
                         <td>
                             <div style="display:flex; flex-direction:column; gap:3px;">
@@ -1304,6 +1452,7 @@
                         <td style="text-align:center; white-space:nowrap;">
                             <div style="display:flex; flex-direction:column; gap:0.35rem;">
                                 <button type="button" class="btn btn-primary btn-sm" onclick="openContratoModal(${c.id}, 'tracking')">Ver Ficha / Historial</button>
+                                ${canManage ? `<button type="button" class="btn btn-outline btn-sm" onclick="openEditarContratoModal(${c.id})">Editar Contrato</button>` : ''}
                                 <a href="reporte_despacho.html?contrato_id=${c.id}" target="_blank" class="btn btn-outline btn-sm">Subir Reporte</a>
                             </div>
                         </td>
@@ -1744,6 +1893,12 @@
 
                 document.getElementById('modal-title').textContent = `${c.numero_contrato} — ${c.titulo_grupo}`;
                 
+                const headActions = document.getElementById('modal-contrato-header-actions');
+                if (headActions) {
+                    headActions.innerHTML = (canManage ? `<button type="button" class="btn btn-gold btn-sm" onclick="openEditarContratoModal(${c.id})">Editar Contrato</button>` : '') +
+                        `<button type="button" class="btn btn-outline btn-sm" onclick="closeContratoModal()">Cerrar</button>`;
+                }
+                
                 let subtitleHtml = `<span><strong>Responsable:</strong> ${escapeHtml(c.responsable_nombre || 'Sin asignar')}</span>`;
                 if (canManage) {
                     subtitleHtml += ` <button type="button" class="btn btn-outline btn-sm" style="padding:2px 8px; font-size:0.73rem; margin-left:6px;" onclick="abrirReasignarModal(${c.id}, '${escapeHtml(c.numero_contrato)}', null, '${escapeHtml(c.responsable_nombre || '')}')">Reasignar Responsable</button>`;
@@ -1779,6 +1934,11 @@
                             <div>Financiera: <strong>${ultimaVersion.ejecucion_financiera_pct !== null ? ultimaVersion.ejecucion_financiera_pct + '%' : escapeHtml(ultimaVersion.ejecucion_financiera_texto || 'Sin dato (NULL)')}</strong></div>
                         </div>
                     </div>
+                    ${(c.alertas_contrato || c.alerta_consolidada) ? `
+                        <div style="padding:0.65rem 0.85rem; background:#FFF8E6; border:1px solid #F5E0A3; border-radius:8px; font-size:0.82rem; margin-bottom:0.85rem;">
+                            <strong style="color:#855A00;">Alerta reportada por el responsable:</strong> ${escapeHtml(c.alertas_contrato || c.alerta_consolidada)}
+                        </div>
+                    ` : ''}
                     ${ultimaVersion.comentario_revision ? `
                         <div style="padding:0.65rem 0.85rem; background:#FFF8E6; border:1px solid #F5E0A3; border-radius:8px; font-size:0.82rem; margin-bottom:0.85rem;">
                             <strong>Última observación de revisión Despacho:</strong> ${escapeHtml(ultimaVersion.comentario_revision)}
@@ -1888,12 +2048,12 @@
                     : '<span class="muted" style="font-size:0.83rem;">Sin archivos adjuntos cargados.</span>';
 
                 // 4. Bitácora y eventos de tracking
-                const bitacoraRows = (data.bitacora || []).slice(0, 25).map(b => `
+                const bitacoraRows = (data.bitacora || []).map(b => `
                     <tr>
-                        <td>${escapeHtml(b.created_at)}</td>
+                        <td><strong>${escapeHtml(b.created_at)}</strong></td>
                         <td><span class="tag tag-neutral">${escapeHtml(b.accion)}</span></td>
-                        <td>${escapeHtml(b.actor_nombre || b.actor_tipo)}</td>
-                        <td>${escapeHtml(b.descripcion)}</td>
+                        <td>${escapeHtml(b.actor_nombre || b.actor_tipo || 'Despacho')}</td>
+                        <td>${escapeHtml(b.descripcion || 'Sin detalle adicional')}</td>
                     </tr>
                 `).join('');
 
@@ -2004,7 +2164,10 @@
                     <!-- SUBPESTAÑA 2: FICHA CONTRACTUAL (MENSAJE 1 Y AJUSTES) -->
                     <div class="modal-subtab-pane" id="modal-pane-ficha">
                         <div class="section-box">
-                            <h4>Mensaje 1: Información del Contrato</h4>
+                            <h4>
+                                <span>Mensaje 1: Información del Contrato</span>
+                                ${canManage ? `<button type="button" class="btn btn-outline btn-sm" onclick="openEditarContratoModal(${c.id})">Editar Todo el Contrato</button>` : ''}
+                            </h4>
                             <div class="info-grid">
                                 <div class="info-cell">
                                     <b>Número del contrato</b>
@@ -2043,6 +2206,10 @@
                                 <div class="info-cell" style="grid-column: 1 / -1;">
                                     <b>Objeto del contrato</b>
                                     ${escapeHtml(c.objeto || 'Pendiente en Mensaje 1')}
+                                </div>
+                                <div class="info-cell" style="grid-column: 1 / -1;">
+                                    <b>Alertas registradas del contrato</b>
+                                    <span style="color: #855A00;">${escapeHtml(c.alertas_contrato || c.alerta_consolidada || 'Sin alertas registradas')}</span>
                                 </div>
                             </div>
                             <div style="margin-top:1rem;">
@@ -2338,6 +2505,169 @@
             const chk = document.getElementById('f-solo-faltantes');
             chk.checked = !chk.checked;
             loadDashboardData(false);
+        }
+
+        async function openEditarContratoModal(contratoId) {
+            const modal = document.getElementById('modal-editar-contrato');
+            if (!modal) return;
+
+            const selProy = document.getElementById('edit-con-proyecto');
+            const selArea = document.getElementById('edit-con-area');
+
+            if (dashboardState && dashboardState.catalogos) {
+                if (selProy) {
+                    selProy.innerHTML = '<option value="">-- Sin proyecto / Desvincular --</option>' +
+                        (dashboardState.catalogos.proyectos || []).map(p =>
+                            `<option value="${p.id}">Proy. ${escapeHtml(p.codigo)} — ${escapeHtml(p.nombre)}</option>`
+                        ).join('');
+                }
+                if (selArea) {
+                    selArea.innerHTML = '<option value="">-- Sin área asignada --</option>' +
+                        (dashboardState.catalogos.areas || []).map(a =>
+                            `<option value="${a.id}">${escapeHtml(a.nombre)}</option>`
+                        ).join('');
+                }
+            }
+
+            modal.classList.add('open');
+            document.getElementById('edit-con-id').value = contratoId;
+
+            try {
+                const res = await fetch(`api/despacho_api.php?action=contract_detail&id=${contratoId}`, { credentials: 'same-origin' });
+                const data = await res.json();
+                if (!res.ok || !data.success) {
+                    alert(data.message || 'Error al cargar los datos del contrato.');
+                    closeEditarContratoModal();
+                    return;
+                }
+
+                const c = data.contrato;
+                document.getElementById('edit-con-numero').value = c.numero_contrato || '';
+                document.getElementById('edit-con-titulo').value = c.titulo_grupo || '';
+                document.getElementById('edit-con-objeto').value = c.objeto || '';
+
+                document.getElementById('edit-con-contratista').value = c.contratista || '';
+                document.getElementById('edit-con-interventoria').value = c.interventoria_nombre || '';
+                document.getElementById('edit-con-responsable').value = c.responsable_nombre || '';
+
+                const proyId = (data.proyectos && data.proyectos.length) ? (data.proyectos[0].id || data.proyectos[0].proyecto_id || '') : '';
+                if (selProy) selProy.value = proyId ? String(proyId) : '';
+
+                if (selArea) selArea.value = c.area_id ? String(c.area_id) : '';
+
+                const selEstado = document.getElementById('edit-con-estado');
+                if (selEstado) selEstado.value = c.estado_contractual || 'EN_EJECUCION';
+
+                document.getElementById('edit-con-duracion').value = c.duracion_texto || '';
+                document.getElementById('edit-con-valor-inicial').value = c.valor_inicial !== null && c.valor_inicial !== undefined ? c.valor_inicial : '';
+                document.getElementById('edit-con-valor-adiciones').value = c.valor_adiciones !== null && c.valor_adiciones !== undefined ? c.valor_adiciones : '';
+                document.getElementById('edit-con-valor-total').value = c.valor_total !== null && c.valor_total !== undefined ? c.valor_total : '';
+
+                document.getElementById('edit-con-fecha-inicio').value = normalizarFechaParaInput(c.fecha_inicio) || normalizarFechaParaInput(c.fecha_inicio_texto);
+                document.getElementById('edit-con-fecha-fin-inicial').value = normalizarFechaParaInput(c.fecha_fin_inicial) || normalizarFechaParaInput(c.fecha_fin_inicial_texto);
+                document.getElementById('edit-con-fecha-fin-vigente').value = normalizarFechaParaInput(c.fecha_fin_vigente) || normalizarFechaParaInput(c.fecha_fin_vigente_texto);
+
+                document.getElementById('edit-con-ejec-fisica').value = c.ejecucion_fisica_pct !== null && c.ejecucion_fisica_pct !== undefined ? c.ejecucion_fisica_pct : '';
+                document.getElementById('edit-con-ejec-financiera').value = c.ejecucion_financiera_pct !== null && c.ejecucion_financiera_pct !== undefined ? c.ejecucion_financiera_pct : '';
+
+                document.getElementById('edit-con-alertas').value = c.alertas_contrato || c.alerta_consolidada || '';
+
+                document.getElementById('edit-con-contratista').focus();
+            } catch (err) {
+                alert('Error al cargar datos del contrato: ' + err.message);
+                closeEditarContratoModal();
+            }
+        }
+
+        function normalizarFechaParaInput(val) {
+            if (!val) return '';
+            const s = String(val).trim();
+            if (/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;
+            const dmy = s.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
+            if (dmy) {
+                const dia = dmy[1].padStart(2, '0');
+                const mes = dmy[2].padStart(2, '0');
+                const anio = dmy[3];
+                return `${anio}-${mes}-${dia}`;
+            }
+            return '';
+        }
+
+        function calcularValorTotalEdicion() {
+            const vIni = parseFloat(document.getElementById('edit-con-valor-inicial').value) || 0;
+            const vAdi = parseFloat(document.getElementById('edit-con-valor-adiciones').value) || 0;
+            if (vIni > 0 || vAdi > 0) {
+                document.getElementById('edit-con-valor-total').value = (vIni + vAdi).toFixed(2);
+            }
+        }
+
+        function closeEditarContratoModal() {
+            const modal = document.getElementById('modal-editar-contrato');
+            if (modal) modal.classList.remove('open');
+            const form = document.getElementById('form-editar-contrato');
+            if (form) form.reset();
+        }
+
+        async function handleGuardarEdicionContrato(e) {
+            e.preventDefault();
+            const cid = document.getElementById('edit-con-id').value;
+            if (!cid) return;
+
+            const btn = document.getElementById('btn-submit-editar-contrato');
+            btn.disabled = true;
+            btn.textContent = 'Guardando cambios...';
+
+            const payload = {
+                contrato_id: Number(cid),
+                contratista: document.getElementById('edit-con-contratista').value.trim(),
+                interventoria_nombre: document.getElementById('edit-con-interventoria').value.trim(),
+                responsable_nombre: document.getElementById('edit-con-responsable').value.trim(),
+                proyecto_id: document.getElementById('edit-con-proyecto').value ? Number(document.getElementById('edit-con-proyecto').value) : null,
+                area_id: document.getElementById('edit-con-area').value ? Number(document.getElementById('edit-con-area').value) : null,
+                estado_contractual: document.getElementById('edit-con-estado').value,
+                duracion_texto: document.getElementById('edit-con-duracion').value.trim(),
+                valor_inicial: document.getElementById('edit-con-valor-inicial').value !== '' ? Number(document.getElementById('edit-con-valor-inicial').value) : null,
+                valor_adiciones: document.getElementById('edit-con-valor-adiciones').value !== '' ? Number(document.getElementById('edit-con-valor-adiciones').value) : null,
+                valor_total: document.getElementById('edit-con-valor-total').value !== '' ? Number(document.getElementById('edit-con-valor-total').value) : null,
+                fecha_inicio: document.getElementById('edit-con-fecha-inicio').value || null,
+                fecha_fin_inicial: document.getElementById('edit-con-fecha-fin-inicial').value || null,
+                fecha_fin_vigente: document.getElementById('edit-con-fecha-fin-vigente').value || null,
+                ejecucion_fisica_pct: document.getElementById('edit-con-ejec-fisica').value !== '' ? Number(document.getElementById('edit-con-ejec-fisica').value) : null,
+                ejecucion_financiera_pct: document.getElementById('edit-con-ejec-financiera').value !== '' ? Number(document.getElementById('edit-con-ejec-financiera').value) : null,
+                alertas_contrato: document.getElementById('edit-con-alertas').value.trim()
+            };
+
+            try {
+                const res = await fetch('api/despacho_api.php?action=update_contract', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'same-origin',
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                btn.disabled = false;
+                btn.textContent = 'Guardar Cambios en Contrato';
+
+                if (!res.ok || !data.success) {
+                    alert(data.message || 'Error al actualizar el contrato.');
+                    return;
+                }
+
+                const numCambios = (data.cambios && data.cambios.length) ? data.cambios.length : 0;
+                alert(data.message + (numCambios > 0 ? `\n\nModificaciones auditadas (${numCambios}):\n- ` + data.cambios.join('\n- ') : ''));
+                
+                closeEditarContratoModal();
+                await loadDashboardData(false);
+
+                const modalFicha = document.getElementById('modal-contrato');
+                if (modalFicha && modalFicha.classList.contains('open')) {
+                    openContratoModal(Number(cid), 'tracking');
+                }
+            } catch (err) {
+                btn.disabled = false;
+                btn.textContent = 'Guardar Cambios en Contrato';
+                alert('Error al comunicarse con el servidor: ' + err.message);
+            }
         }
 
         function resetFilters() {

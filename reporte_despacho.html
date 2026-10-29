@@ -2,16 +2,12 @@
 <html lang="es">
 
 <head>
-    <link rel="icon" type="image/png" href="assets/logo_somossumapaz.png">
-    <link rel="shortcut icon" type="image/png" href="assets/logo_somossumapaz.png">
-    <link rel="apple-touch-icon" href="assets/logo_somossumapaz.png">
-
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualización de Contratos | Somos Sumapaz</title>
+    <title>Actualización de Seguimiento Contractual</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,62 +45,25 @@
             margin-top: 0;
         }
 
-        .topbar {
-            background-color: #444F2F;
-            padding: 0.8rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .topbar-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .site-logo {
-            height: 55px;
-            max-height: 55px;
-            width: auto;
-            object-fit: contain;
-        }
-
         .hero-section {
-            position: relative;
-            background-image: url('assets/fondo.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 3rem 1.5rem;
+            background: linear-gradient(135deg, #2D4A23 0%, #1F3617 100%);
+            padding: 2.5rem 1.5rem 2.25rem 1.5rem;
             color: white;
             text-align: center;
-            border-bottom: 3px solid var(--primary-green-dark);
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(30, 61, 45, 0.85) 0%, rgba(15, 30, 22, 0.80) 100%);
-            z-index: 1;
+            border-bottom: 2px solid var(--accent-gold);
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
+            max-width: 850px;
             margin: 0 auto;
         }
 
         .hero-title {
-            font-size: 2.3rem;
-            font-weight: 800;
+            font-size: 1.85rem;
+            font-weight: 700;
             margin: 0;
-            color: #F8FAF9;
-            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+            color: #FFFFFF;
+            letter-spacing: -0.01em;
         }
 
         .container-wrap {
@@ -399,23 +358,12 @@
 </head>
 
 <body>
-    <header class="topbar">
-        <div class="topbar-container">
-            <div style="display: flex; align-items: center; gap: 1rem;">
-                <a href="reporte_despacho.html">
-                    <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="site-logo">
-                </a>
-            </div>
-            <div style="color: #FBF4DE; font-size: 0.86rem; font-weight: 600;">
-                Actualización de Contratos — Despacho
-            </div>
-        </div>
-    </header>
-
     <section class="hero-section">
-        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">Actualización de Seguimiento Contractual</h1>
+            <p style="margin: 0.45rem auto 0 auto; color: #D7E3D8; font-size: 0.9rem; font-weight: 400; max-width: 640px;">
+                Diligenciamiento periódico del estado físico, financiero y novedades de ejecución contractual.
+            </p>
         </div>
     </section>
 
@@ -581,6 +529,10 @@
                             <b>Objeto del contrato</b>
                             <span id="view-m1-objeto">-</span>
                         </div>
+                        <div class="info-cell" style="grid-column: 1 / -1;">
+                            <b>Alertas registradas del contrato</b>
+                            <span id="view-m1-alertas" style="color: #855A00;">Sin alertas registradas</span>
+                        </div>
                     </div>
 
                     <!-- AJUSTES REGISTRADOS EN EL CONTRATO (SI EXISTEN) -->
@@ -727,6 +679,14 @@
                         <div class="form-group">
                             <label for="m2_fecha_fin_reportada">Fecha finalización</label>
                             <input type="text" id="m2_fecha_fin_reportada" name="m2_fecha_fin_reportada" class="form-control" placeholder="YYYY-MM-DD o texto">
+                        </div>
+                        <div class="form-group" style="grid-column: 1 / -1;">
+                            <label for="alertas_contrato">Alertas del Contrato</label>
+                            <textarea id="alertas_contrato" name="alertas_contrato" class="form-control" rows="3"
+                                placeholder="Escriba lo que esté pasando con el contrato: novedades, demoras, alertas operativas, trámites pendientes o riesgos..."></textarea>
+                            <small class="muted" style="display: block; margin-top: 4px; font-size: 0.78rem;">
+                                Campo para registrar alertas, inconvenientes, avances o situaciones especiales del contrato para conocimiento de Despacho.
+                            </small>
                         </div>
                     </div>
 
@@ -1352,6 +1312,7 @@
             document.getElementById('m2_ejecucion_fisica_texto').value = '';
             document.getElementById('m2_estado_reportado').value = 'En ejecución';
             document.getElementById('m2_fecha_fin_reportada').value = '';
+            document.getElementById('alertas_contrato').value = '';
 
             window.scrollTo({ top: document.getElementById('contract-workspace').offsetTop - 70, behavior: 'smooth' });
         }
@@ -1412,6 +1373,11 @@
             document.getElementById('view-m1-inicio').textContent = c.fecha_inicio_texto || 'Sin dato';
             document.getElementById('view-m1-fin-inicial').textContent = c.fecha_fin_inicial_texto || 'Sin dato';
             document.getElementById('view-m1-objeto').textContent = c.objeto || 'Sin objeto registrado';
+            const alertaActual = c.alertas_contrato || c.alerta_consolidada || '';
+            const elAlertasM1 = document.getElementById('view-m1-alertas');
+            if (elAlertasM1) {
+                elAlertasM1.textContent = alertaActual || 'Sin alertas registradas';
+            }
 
             // Mostrar ajustes previos si existen
             const mods = Array.isArray(c.modificaciones) ? c.modificaciones : [];
@@ -1462,6 +1428,7 @@
             document.getElementById('m2_ejecucion_fisica_texto').value = fisDefault;
             document.getElementById('m2_estado_reportado').value = c.estado_reportado_texto || c.estado_contractual || 'En ejecución';
             document.getElementById('m2_fecha_fin_reportada').value = c.fecha_fin_vigente_texto || c.fecha_fin_inicial_texto || '';
+            document.getElementById('alertas_contrato').value = alertaActual;
 
             window.scrollTo({ top: document.getElementById('contract-workspace').offsetTop - 60, behavior: 'smooth' });
         }

@@ -100,18 +100,30 @@ function despachoLogBitacora(
     ?int $actorId,
     ?string $actorNombre,
     $valorAnterior = null,
-    $valorNuevo = null
+    $valorNuevo = null,
+    ?string $descripcion = null
 ): void {
     try {
         $ip = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
         $antJson = $valorAnterior !== null ? (is_string($valorAnterior) ? $valorAnterior : json_encode($valorAnterior, JSON_UNESCAPED_UNICODE)) : null;
         $nueJson = $valorNuevo !== null ? (is_string($valorNuevo) ? $valorNuevo : json_encode($valorNuevo, JSON_UNESCAPED_UNICODE)) : null;
 
+        $descFinal = $descripcion;
+        $actNombreFinal = $actorNombre;
+        // Compatibilidad: si actorNombre tiene más de 40 caracteres o formato de frase, se mueve a descripción
+        if ($descFinal === null && $actorNombre !== null && (strlen($actorNombre) > 40 || strpos($actorNombre, ' ') !== false && strpos($actorNombre, ':') !== false)) {
+            $descFinal = $actorNombre;
+            $actNombreFinal = 'Sistema / Despacho';
+        }
+        if ($descFinal === null) {
+            $descFinal = $accion;
+        }
+
         $stmt = $pdo->prepare("INSERT INTO despacho_bitacora (
-            contrato_id, entidad_tipo, entidad_id, accion, actor_tipo, actor_id, actor_nombre, valor_anterior_json, valor_nuevo_json, ip_origen
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            contrato_id, entidad_tipo, entidad_id, accion, actor_tipo, actor_id, actor_nombre, descripcion, valor_anterior_json, valor_nuevo_json, ip_origen
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->execute([
-            $contratoId, $entidadTipo, $entidadId, $accion, $actorTipo, $actorId, $actorNombre, $antJson, $nueJson, $ip
+            $contratoId, $entidadTipo, $entidadId, $accion, $actorTipo, $actorId, $actNombreFinal, $descFinal, $antJson, $nueJson, $ip
         ]);
     } catch (\Throwable $e) {
         // No interrumpir flujo principal si falla registro secundario, pero conservar log de error

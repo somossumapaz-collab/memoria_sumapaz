@@ -365,6 +365,8 @@ function buildContractLookupPayload(PDO $pdo, array $contratoRow): array {
             'ejecucion_financiera_obra_pct' => $latestObraPct,
             'ejecucion_financiera_inter_pct' => $latestInterPct,
             'observaciones_ultimo_reporte' => $latestObs,
+            'alertas_contrato' => $contratoRow['alertas_contrato'] ?? $contratoRow['alerta_consolidada'] ?? null,
+            'alerta_consolidada' => $contratoRow['alerta_consolidada'] ?? null,
             'mensaje1_texto_actual' => $latestM1Texto,
             'mensaje2_texto_actual' => $latestM2Texto,
             'proyectos' => $proyectos,
@@ -927,6 +929,7 @@ try {
         $fechaFinRepTxt = trim((string)($rawBody['m2_fecha_fin_reportada'] ?? $autoParsed['mensaje2']['fecha_fin_reportada_texto'] ?? $contratoActual['fecha_fin_vigente_texto'] ?? '')) ?: null;
         $fechaFinRepIso = ($fechaFinRepTxt && preg_match('/^\d{4}-\d{2}-\d{2}$/', $fechaFinRepTxt)) ? $fechaFinRepTxt : null;
         $obsRep = trim((string)($rawBody['m2_observaciones'] ?? '')) ?: null;
+        $alertasContrato = trim((string)($rawBody['alertas_contrato'] ?? ''));
 
         // Datos estructurados de Mensaje 1 y Ajustes (Adición, Prórroga, Suspensión, Modificación)
         $m1Objeto = trim((string)($rawBody['m1_objeto'] ?? $autoParsed['mensaje1']['objeto'] ?? '')) ?: null;
@@ -1063,6 +1066,9 @@ try {
             if ($estadoRepTxt !== null && $estadoRepTxt !== $contratoActual['estado_reportado_texto']) {
                 $resumenCambios[] = "Estado: " . ($contratoActual['estado_reportado_texto'] ?: 'Sin dato') . " -> $estadoRepTxt";
             }
+            if ($alertasContrato !== '') {
+                $resumenCambios[] = "Alerta del contrato: " . (strlen($alertasContrato) > 80 ? substr($alertasContrato, 0, 77) . '...' : $alertasContrato);
+            }
         }
 
         $datosConfirmadosJson = json_encode([
@@ -1099,6 +1105,7 @@ try {
                 'estado_reportado' => $estadoRepTxt,
                 'fecha_fin_reportada' => $fechaFinRepTxt,
                 'observaciones' => $obsRep,
+                'alertas_contrato' => $alertasContrato ?: null,
             ]
         ], JSON_UNESCAPED_UNICODE);
 
@@ -1158,8 +1165,8 @@ try {
             ejecucion_fisica_texto, ejecucion_fisica_pct,
             ejecucion_financiera_texto, ejecucion_financiera_pct, ejecucion_financiera_valor,
             ejecucion_financiera_obra_pct, ejecucion_financiera_inter_pct,
-            estado_reportado_texto, observaciones_reporte, reportado_por, ip_origen, fuente_version, estado_version
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'PENDIENTE_REVISION')");
+            estado_reportado_texto, observaciones_reporte, alertas_contrato, reportado_por, ip_origen, fuente_version, estado_version
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'PENDIENTE_REVISION')");
         $stmtInsV->execute([
             $reporteId, $contratoId, $periodoId, $nuevaVersionNum, $tipoMensaje,
             $m1TextoParaVersion,
@@ -1169,7 +1176,7 @@ try {
             $fisicaTxt, $fisicaPct,
             $financTxt, $financPct, $financVal,
             $finObraPct, $finInterPct,
-            $estadoRepTxt, $obsRep, $responsableRep, $ipOrigen, $fuenteVer
+            $estadoRepTxt, $obsRep, $alertasContrato ?: null, $responsableRep, $ipOrigen, $fuenteVer
         ]);
         $versionId = (int)$pdo->lastInsertId();
 
@@ -1230,6 +1237,15 @@ try {
             $m1ApoyoSupervision ?: $responsableRep
         ];
 
+        if (array_key_exists('alertas_contrato', $rawBody)) {
+            $updFields[] = 'alertas_contrato = ?';
+            $updParams[] = ($alertasContrato !== '') ? $alertasContrato : null;
+            if ($alertasContrato !== '') {
+                $updFields[] = 'alerta_consolidada = ?';
+                $updParams[] = $alertasContrato;
+            }
+        }
+
         if ($hasM1Edit) {
             $updFields[] = 'tiene_mensaje1 = 1';
             $updFields[] = 'mensaje1_actual_id = ?';
@@ -1282,6 +1298,14 @@ try {
         $updParams[] = $contratoId;
         $pdo->prepare("UPDATE despacho_contratos SET " . implode(', ', $updFields) . " WHERE id = ?")
             ->execute($updParams);
+
+        if ($alertasContrato !== '') {
+            $stmtInsAl = $pdo->prepare("INSERT INTO despacho_alertas (
+                contrato_id, origen_hoja, categoria_alerta, criterio_codigo, nivel_alerta, tipo_alerta,
+                descripcion_alerta, condicion_evaluada, estado_alerta, requiere_accion, created_at, updated_at
+            ) VALUES (?, 'REPORTE_SEMANAL', 'REPORTE_RESPONSABLE', 'ALERTA_RESPONSABLE', 'ALTA', 'Alerta reportada por responsable', ?, 'Reporte semanal en formulario', 'ACTIVA', 1, NOW(), NOW())");
+            $stmtInsAl->execute([$contratoId, $alertasContrato]);
+        }
 
         // Procesar archivos adjuntos opcionales
         $adjuntosGuardados = [];

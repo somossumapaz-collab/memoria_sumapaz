@@ -765,6 +765,8 @@ try {
             $fechaInicioIso = trim((string)($jsonBody['fecha_inicio_iso'] ?? '')) ?: null;
             $fechaFinInicialIso = trim((string)($jsonBody['fecha_fin_inicial_iso'] ?? '')) ?: null;
             $estadoContractual = trim((string)($jsonBody['estado_contractual'] ?? 'EN_EJECUCION')) ?: 'EN_EJECUCION';
+            $alertasContrato = trim((string)($jsonBody['alertas_contrato'] ?? '')) ?: null;
+            $alertaConsolidada = $alertasContrato ?: 'Registrado directamente desde el panel de Despacho';
 
             $codNorm = strtoupper(preg_replace('/[^a-zA-Z0-9\-]/', '-', $numeroContrato)) . '-' . substr(uniqid(), -4);
 
@@ -773,14 +775,14 @@ try {
                 responsable_nombre, contratista, objeto, duracion_texto, valor_inicial, valor_total,
                 fecha_inicio_texto, fecha_inicio_iso, fecha_fin_inicial_texto, fecha_fin_inicial_iso,
                 fecha_fin_vigente_texto, fecha_fin_vigente_iso, estado_contractual,
-                categoria_origen, nivel_alerta, tipo_alerta, alerta_consolidada,
+                categoria_origen, nivel_alerta, tipo_alerta, alerta_consolidada, alertas_contrato,
                 tiene_mensaje1, estado_entrega, estado_revision
             ) VALUES (
                 ?, ?, ?, 0, ?,
                 ?, ?, ?, ?, ?, ?,
                 ?, ?, ?, ?,
                 ?, ?, ?,
-                'DESPACHO', 'SEGUIMIENTO', 'En seguimiento', 'Registrado directamente desde el panel de Despacho',
+                'DESPACHO', 'SEGUIMIENTO', 'En seguimiento', ?, ?,
                 1, 'PENDIENTE', 'APROBADO'
             )");
 
@@ -788,7 +790,8 @@ try {
                 $codNorm, $numeroContrato, $tituloGrupo, $areaId,
                 $responsableNombre, $contratista, $objeto, $duracionTexto, $valorInicial, $valorInicial,
                 $fechaInicioIso, $fechaInicioIso, $fechaFinInicialIso, $fechaFinInicialIso,
-                $fechaFinInicialIso, $fechaFinInicialIso, $estadoContractual
+                $fechaFinInicialIso, $fechaFinInicialIso, $estadoContractual,
+                $alertaConsolidada, $alertasContrato
             ]);
             $newId = (int)$pdo->lastInsertId();
 
@@ -853,6 +856,301 @@ try {
             echo json_encode([
                 'success' => true,
                 'message' => 'Proyecto asociado exitosamente al contrato.'
+            ], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+
+        if ($action === 'update_contract') {
+            if (empty($currentUser['is_real_admin']) && empty($currentUser['is_despacho'])) {
+                http_response_code(403);
+                echo json_encode(['success' => false, 'message' => 'Solo el usuario administrador o despacho puede editar la información del contrato.'], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
+
+            $contratoId = isset($jsonBody['contrato_id']) ? (int)$jsonBody['contrato_id'] : 0;
+            if ($contratoId <= 0) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'message' => 'ID de contrato inválido.'], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
+
+            $stmtPrev = $pdo->prepare("SELECT * FROM despacho_contratos WHERE id = ? LIMIT 1");
+            $stmtPrev->execute([$contratoId]);
+            $cPrev = $stmtPrev->fetch(PDO::FETCH_ASSOC);
+            if (!$cPrev) {
+                http_response_code(404);
+                echo json_encode(['success' => false, 'message' => 'Contrato no encontrado.'], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
+
+            // Proyecto actual
+            $stmtCurP = $pdo->prepare("SELECT p.id, p.codigo FROM despacho_contrato_proyectos cp INNER JOIN despacho_proyectos p ON p.id = cp.proyecto_id WHERE cp.contrato_id = ? LIMIT 1");
+            $stmtCurP->execute([$contratoId]);
+            $curProy = $stmtCurP->fetch(PDO::FETCH_ASSOC) ?: null;
+            $curProyId = $curProy ? (int)$curProy['id'] : 0;
+            $curProyCodigo = $curProy ? $curProy['codigo'] : 'Sin Proyecto';
+
+            // Regla del usuario: número de contrato, título y objeto permanecen protegidos e inalterables
+            $newContratista = array_key_exists('contratista', $jsonBody) ? trim((string)$jsonBody['contratista']) : $cPrev['contratista'];
+            $newInterventoria = array_key_exists('interventoria_nombre', $jsonBody) ? trim((string)$jsonBody['interventoria_nombre']) : $cPrev['interventoria_nombre'];
+            $newResponsable = array_key_exists('responsable_nombre', $jsonBody) ? trim((string)$jsonBody['responsable_nombre']) : $cPrev['responsable_nombre'];
+            $newDuracion = array_key_exists('duracion_texto', $jsonBody) ? trim((string)$jsonBody['duracion_texto']) : $cPrev['duracion_texto'];
+
+            $newValIni = array_key_exists('valor_inicial', $jsonBody) && $jsonBody['valor_inicial'] !== '' && $jsonBody['valor_inicial'] !== null ? (float)$jsonBody['valor_inicial'] : ($cPrev['valor_inicial'] !== null ? (float)$cPrev['valor_inicial'] : null);
+            $newValAdic = array_key_exists('valor_adiciones', $jsonBody) && $jsonBody['valor_adiciones'] !== '' && $jsonBody['valor_adiciones'] !== null ? (float)$jsonBody['valor_adiciones'] : ($cPrev['valor_adiciones'] !== null ? (float)$cPrev['valor_adiciones'] : null);
+            $newValTot = array_key_exists('valor_total', $jsonBody) && $jsonBody['valor_total'] !== '' && $jsonBody['valor_total'] !== null ? (float)$jsonBody['valor_total'] : null;
+            if ($newValTot === null && $newValIni !== null) {
+                $newValTot = $newValIni + ($newValAdic ?? 0);
+            } elseif ($newValTot === null) {
+                $newValTot = $cPrev['valor_total'] !== null ? (float)$cPrev['valor_total'] : null;
+            }
+
+            $newFechaIniTxt = array_key_exists('fecha_inicio_texto', $jsonBody) ? trim((string)$jsonBody['fecha_inicio_texto']) : $cPrev['fecha_inicio_texto'];
+            $newFechaIniIso = (preg_match('/^\d{4}-\d{2}-\d{2}$/', $newFechaIniTxt)) ? $newFechaIniTxt : $cPrev['fecha_inicio_iso'];
+
+            $newFechaFinIniTxt = array_key_exists('fecha_fin_inicial_texto', $jsonBody) ? trim((string)$jsonBody['fecha_fin_inicial_texto']) : $cPrev['fecha_fin_inicial_texto'];
+            $newFechaFinIniIso = (preg_match('/^\d{4}-\d{2}-\d{2}$/', $newFechaFinIniTxt)) ? $newFechaFinIniTxt : $cPrev['fecha_fin_inicial_iso'];
+
+            $newFechaFinVigTxt = array_key_exists('fecha_fin_vigente_texto', $jsonBody) ? trim((string)$jsonBody['fecha_fin_vigente_texto']) : $cPrev['fecha_fin_vigente_texto'];
+            $newFechaFinVigIso = (preg_match('/^\d{4}-\d{2}-\d{2}$/', $newFechaFinVigTxt)) ? $newFechaFinVigTxt : $cPrev['fecha_fin_vigente_iso'];
+
+            $newEstadoCon = array_key_exists('estado_contractual', $jsonBody) ? trim((string)$jsonBody['estado_contractual']) : $cPrev['estado_contractual'];
+            if ($newEstadoCon === '') $newEstadoCon = $cPrev['estado_contractual'];
+
+            $newFisPct = array_key_exists('ejecucion_fisica_pct', $jsonBody) && $jsonBody['ejecucion_fisica_pct'] !== '' && $jsonBody['ejecucion_fisica_pct'] !== null ? (float)$jsonBody['ejecucion_fisica_pct'] : ($cPrev['ejecucion_fisica_pct'] !== null ? (float)$cPrev['ejecucion_fisica_pct'] : null);
+            $newFisTxt = array_key_exists('ejecucion_fisica_texto', $jsonBody) && trim((string)$jsonBody['ejecucion_fisica_texto']) !== '' ? trim((string)$jsonBody['ejecucion_fisica_texto']) : ($newFisPct !== null ? $newFisPct . '%' : $cPrev['ejecucion_fisica_texto']);
+
+            $newFinPct = array_key_exists('ejecucion_financiera_pct', $jsonBody) && $jsonBody['ejecucion_financiera_pct'] !== '' && $jsonBody['ejecucion_financiera_pct'] !== null ? (float)$jsonBody['ejecucion_financiera_pct'] : ($cPrev['ejecucion_financiera_pct'] !== null ? (float)$cPrev['ejecucion_financiera_pct'] : null);
+            $newFinTxt = array_key_exists('ejecucion_financiera_texto', $jsonBody) && trim((string)$jsonBody['ejecucion_financiera_texto']) !== '' ? trim((string)$jsonBody['ejecucion_financiera_texto']) : ($newFinPct !== null ? $newFinPct . '%' : $cPrev['ejecucion_financiera_texto']);
+
+            $newAlertas = array_key_exists('alertas_contrato', $jsonBody) ? trim((string)$jsonBody['alertas_contrato']) : $cPrev['alertas_contrato'];
+
+            $newAreaId = array_key_exists('area_id', $jsonBody) && $jsonBody['area_id'] !== '' && $jsonBody['area_id'] !== null ? (int)$jsonBody['area_id'] : ($cPrev['area_id'] ? (int)$cPrev['area_id'] : null);
+            $newProyectoId = array_key_exists('proyecto_id', $jsonBody) && $jsonBody['proyecto_id'] !== '' && $jsonBody['proyecto_id'] !== null ? (int)$jsonBody['proyecto_id'] : $curProyId;
+
+            // Comparar y auditar cada cambio con valores anteriores y nuevos
+            $cambios = [];
+            $valoresAnteriores = [];
+            $valoresNuevos = [];
+
+            if ($newResponsable !== $cPrev['responsable_nombre']) {
+                $cambios[] = "Responsable: " . ($cPrev['responsable_nombre'] ?: 'Sin asignar') . " -> " . ($newResponsable ?: 'Sin asignar');
+                $valoresAnteriores['responsable_nombre'] = $cPrev['responsable_nombre'];
+                $valoresNuevos['responsable_nombre'] = $newResponsable;
+            }
+            if ($newContratista !== $cPrev['contratista']) {
+                $cambios[] = "Contratista: " . ($cPrev['contratista'] ?: 'Sin dato') . " -> " . ($newContratista ?: 'Sin dato');
+                $valoresAnteriores['contratista'] = $cPrev['contratista'];
+                $valoresNuevos['contratista'] = $newContratista;
+            }
+            if ($newInterventoria !== $cPrev['interventoria_nombre']) {
+                $cambios[] = "Interventoría: " . ($cPrev['interventoria_nombre'] ?: 'Sin dato') . " -> " . ($newInterventoria ?: 'Sin dato');
+                $valoresAnteriores['interventoria_nombre'] = $cPrev['interventoria_nombre'];
+                $valoresNuevos['interventoria_nombre'] = $newInterventoria;
+            }
+            if ($newDuracion !== $cPrev['duracion_texto']) {
+                $cambios[] = "Duración: " . ($cPrev['duracion_texto'] ?: 'Sin dato') . " -> " . ($newDuracion ?: 'Sin dato');
+                $valoresAnteriores['duracion_texto'] = $cPrev['duracion_texto'];
+                $valoresNuevos['duracion_texto'] = $newDuracion;
+            }
+            if ($newAreaId !== ($cPrev['area_id'] ? (int)$cPrev['area_id'] : null)) {
+                $cambios[] = "Área ID: " . ($cPrev['area_id'] ?: 'Sin área') . " -> " . ($newAreaId ?: 'Sin área');
+                $valoresAnteriores['area_id'] = $cPrev['area_id'];
+                $valoresNuevos['area_id'] = $newAreaId;
+            }
+            if ($newProyectoId !== $curProyId) {
+                $stmtNewP = $pdo->prepare("SELECT codigo FROM despacho_proyectos WHERE id = ?");
+                $stmtNewP->execute([$newProyectoId]);
+                $newCodP = $stmtNewP->fetchColumn() ?: 'Sin Proyecto';
+                $cambios[] = "Proyecto: Proy. $curProyCodigo -> Proy. $newCodP";
+                $valoresAnteriores['proyecto_id'] = $curProyId;
+                $valoresNuevos['proyecto_id'] = $newProyectoId;
+            }
+            $oldValIniNum = $cPrev['valor_inicial'] !== null ? (float)$cPrev['valor_inicial'] : null;
+            if ($newValIni !== $oldValIniNum) {
+                $cambios[] = "Valor inicial: $" . number_format((float)$oldValIniNum, 0, ',', '.') . " -> $" . number_format((float)$newValIni, 0, ',', '.');
+                $valoresAnteriores['valor_inicial'] = $oldValIniNum;
+                $valoresNuevos['valor_inicial'] = $newValIni;
+            }
+            $oldValAdicNum = $cPrev['valor_adiciones'] !== null ? (float)$cPrev['valor_adiciones'] : null;
+            if ($newValAdic !== $oldValAdicNum) {
+                $cambios[] = "Valor adiciones: $" . number_format((float)$oldValAdicNum, 0, ',', '.') . " -> $" . number_format((float)$newValAdic, 0, ',', '.');
+                $valoresAnteriores['valor_adiciones'] = $oldValAdicNum;
+                $valoresNuevos['valor_adiciones'] = $newValAdic;
+            }
+            $oldValTotNum = $cPrev['valor_total'] !== null ? (float)$cPrev['valor_total'] : null;
+            if ($newValTot !== $oldValTotNum) {
+                $cambios[] = "Valor total: $" . number_format((float)$oldValTotNum, 0, ',', '.') . " -> $" . number_format((float)$newValTot, 0, ',', '.');
+                $valoresAnteriores['valor_total'] = $oldValTotNum;
+                $valoresNuevos['valor_total'] = $newValTot;
+            }
+            if ($newFechaIniTxt !== $cPrev['fecha_inicio_texto']) {
+                $cambios[] = "Fecha inicio: " . ($cPrev['fecha_inicio_texto'] ?: 'Sin dato') . " -> " . ($newFechaIniTxt ?: 'Sin dato');
+                $valoresAnteriores['fecha_inicio_texto'] = $cPrev['fecha_inicio_texto'];
+                $valoresNuevos['fecha_inicio_texto'] = $newFechaIniTxt;
+            }
+            if ($newFechaFinIniTxt !== $cPrev['fecha_fin_inicial_texto']) {
+                $cambios[] = "Fecha fin inicial: " . ($cPrev['fecha_fin_inicial_texto'] ?: 'Sin dato') . " -> " . ($newFechaFinIniTxt ?: 'Sin dato');
+                $valoresAnteriores['fecha_fin_inicial_texto'] = $cPrev['fecha_fin_inicial_texto'];
+                $valoresNuevos['fecha_fin_inicial_texto'] = $newFechaFinIniTxt;
+            }
+            if ($newFechaFinVigTxt !== $cPrev['fecha_fin_vigente_texto']) {
+                $cambios[] = "Fecha fin vigente: " . ($cPrev['fecha_fin_vigente_texto'] ?: 'Sin dato') . " -> " . ($newFechaFinVigTxt ?: 'Sin dato');
+                $valoresAnteriores['fecha_fin_vigente_texto'] = $cPrev['fecha_fin_vigente_texto'];
+                $valoresNuevos['fecha_fin_vigente_texto'] = $newFechaFinVigTxt;
+            }
+            if ($newEstadoCon !== $cPrev['estado_contractual']) {
+                $cambios[] = "Estado contractual: " . $cPrev['estado_contractual'] . " -> " . $newEstadoCon;
+                $valoresAnteriores['estado_contractual'] = $cPrev['estado_contractual'];
+                $valoresNuevos['estado_contractual'] = $newEstadoCon;
+            }
+            $oldFisNum = $cPrev['ejecucion_fisica_pct'] !== null ? (float)$cPrev['ejecucion_fisica_pct'] : null;
+            if ($newFisPct !== $oldFisNum) {
+                $cambios[] = "Ejecución física: " . ($oldFisNum !== null ? $oldFisNum . '%' : ($cPrev['ejecucion_fisica_texto'] ?: 'Sin dato')) . " -> " . ($newFisPct !== null ? $newFisPct . '%' : 'Sin dato');
+                $valoresAnteriores['ejecucion_fisica_pct'] = $oldFisNum;
+                $valoresNuevos['ejecucion_fisica_pct'] = $newFisPct;
+            }
+            $oldFinNum = $cPrev['ejecucion_financiera_pct'] !== null ? (float)$cPrev['ejecucion_financiera_pct'] : null;
+            if ($newFinPct !== $oldFinNum) {
+                $cambios[] = "Ejecución financiera: " . ($oldFinNum !== null ? $oldFinNum . '%' : ($cPrev['ejecucion_financiera_texto'] ?: 'Sin dato')) . " -> " . ($newFinPct !== null ? $newFinPct . '%' : 'Sin dato');
+                $valoresAnteriores['ejecucion_financiera_pct'] = $oldFinNum;
+                $valoresNuevos['ejecucion_financiera_pct'] = $newFinPct;
+            }
+            if ($newAlertas !== ($cPrev['alertas_contrato'] ?: '')) {
+                $cambios[] = "Alertas del contrato: " . ($newAlertas ? (strlen($newAlertas) > 60 ? substr($newAlertas, 0, 57) . '...' : $newAlertas) : 'Sin alertas');
+                $valoresAnteriores['alertas_contrato'] = $cPrev['alertas_contrato'];
+                $valoresNuevos['alertas_contrato'] = $newAlertas;
+            }
+
+            if (empty($cambios)) {
+                echo json_encode(['success' => true, 'message' => 'No se detectaron cambios (los valores son idénticos a los actuales).', 'cambios' => []], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
+
+            // Actualizar tabla principal despacho_contratos
+            $stmtUpdC = $pdo->prepare("UPDATE despacho_contratos SET
+                contratista = ?,
+                interventoria_nombre = ?,
+                responsable_nombre = ?,
+                area_id = ?,
+                duracion_texto = ?,
+                valor_inicial = ?,
+                valor_adiciones = ?,
+                valor_total = ?,
+                fecha_inicio_texto = ?,
+                fecha_inicio_iso = ?,
+                fecha_fin_inicial_texto = ?,
+                fecha_fin_inicial_iso = ?,
+                fecha_fin_vigente_texto = ?,
+                fecha_fin_vigente_iso = ?,
+                estado_contractual = ?,
+                ejecucion_fisica_pct = ?,
+                ejecucion_fisica_texto = ?,
+                ejecucion_financiera_pct = ?,
+                ejecucion_financiera_texto = ?,
+                alertas_contrato = ?,
+                alerta_consolidada = COALESCE(?, alerta_consolidada),
+                updated_at = NOW()
+                WHERE id = ?");
+
+            $stmtUpdC->execute([
+                $newContratista ?: null,
+                $newInterventoria ?: null,
+                $newResponsable ?: null,
+                $newAreaId,
+                $newDuracion ?: null,
+                $newValIni,
+                $newValAdic,
+                $newValTot,
+                $newFechaIniTxt ?: null,
+                $newFechaIniIso,
+                $newFechaFinIniTxt ?: null,
+                $newFechaFinIniIso,
+                $newFechaFinVigTxt ?: null,
+                $newFechaFinVigIso,
+                $newEstadoCon,
+                $newFisPct,
+                $newFisTxt ?: null,
+                $newFinPct,
+                $newFinTxt ?: null,
+                $newAlertas ?: null,
+                $newAlertas ?: null,
+                $contratoId
+            ]);
+
+            // Actualizar proyecto en despacho_contrato_proyectos si cambió
+            if ($newProyectoId !== $curProyId) {
+                $pdo->prepare("DELETE FROM despacho_contrato_proyectos WHERE contrato_id = ?")->execute([$contratoId]);
+                if ($newProyectoId > 0) {
+                    $pdo->prepare("INSERT INTO despacho_contrato_proyectos (contrato_id, proyecto_id, nota_asociacion) VALUES (?, ?, 'Asociado desde edición de contrato en Despacho')")
+                        ->execute([$contratoId, $newProyectoId]);
+                }
+            }
+
+            // Actualizar obligaciones si cambió responsable
+            if ($newResponsable !== $cPrev['responsable_nombre']) {
+                $pdo->prepare("UPDATE despacho_obligaciones_reporte SET responsable_nombre = ? WHERE contrato_id = ?")
+                    ->execute([$newResponsable, $contratoId]);
+            }
+
+            // Registrar en despacho_bitacora con fecha exacta, actor, descripción legible y JSON anterior/nuevo
+            $detalleBitacora = implode(' | ', $cambios);
+            despachoLogBitacora(
+                $pdo,
+                $contratoId,
+                'CONTRATO',
+                $contratoId,
+                'EDICION_CONTRATO',
+                'USUARIO',
+                (int)$currentUser['id'],
+                $currentUser['nombre'],
+                $valoresAnteriores,
+                $valoresNuevos,
+                $detalleBitacora
+            );
+
+            // Registrar versión en despacho_versiones_reporte para que se refleje de inmediato en el tracking y timeline cronológico
+            $nuevaVersionNum = (int)$pdo->query("SELECT COALESCE(MAX(numero_version), 0) + 1 FROM despacho_versiones_reporte WHERE contrato_id = $contratoId")->fetchColumn();
+            $stmtInsV = $pdo->prepare("INSERT INTO despacho_versiones_reporte (
+                reporte_id, contrato_id, periodo_id, numero_version, tipo_mensaje,
+                mensaje1_texto_original, mensaje2_texto_original, datos_estructurados_json,
+                fecha_reporte_texto, fecha_reporte_iso, fecha_fin_reportada_texto, fecha_fin_reportada_iso,
+                ejecucion_fisica_texto, ejecucion_fisica_pct,
+                ejecucion_financiera_texto, ejecucion_financiera_pct, ejecucion_financiera_valor,
+                estado_reportado_texto, observaciones_reporte, alertas_contrato, reportado_por, ip_origen, fuente_version, estado_version
+            ) VALUES (
+                NULL, ?, NULL, ?, 'EDICION_DESPACHO',
+                ?, ?, ?,
+                CURDATE(), CURDATE(), ?, ?,
+                ?, ?,
+                ?, ?, ?,
+                ?, ?, ?, ?, ?, 'Edición de datos Despacho', 'APROBADO'
+            )");
+
+            $datosHistJson = json_encode([
+                'cambios' => $cambios,
+                'modificado_por' => $currentUser['nombre'],
+                'valores_anteriores' => $valoresAnteriores,
+                'valores_nuevos' => $valoresNuevos
+            ], JSON_UNESCAPED_UNICODE);
+
+            $stmtInsV->execute([
+                $contratoId, $nuevaVersionNum,
+                "Ficha contractual actualizada desde panel Despacho",
+                "Ajuste registrado por {$currentUser['nombre']}: $detalleBitacora",
+                $datosHistJson,
+                $newFechaFinVigTxt, $newFechaFinVigIso,
+                $newFisTxt, $newFisPct,
+                $newFinTxt, $newFinPct, null,
+                $newEstadoCon, $detalleBitacora, $newAlertas ?: null, $currentUser['nombre'],
+                $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0'
+            ]);
+
+            echo json_encode([
+                'success' => true,
+                'message' => 'Contrato actualizado y registrado en la bitácora de auditoría correctamente.',
+                'cambios' => $cambios,
+                'total_cambios' => count($cambios)
             ], JSON_UNESCAPED_UNICODE);
             exit;
         }
