@@ -706,6 +706,7 @@
                     <label>Persona (nombre o documento)</label>
                     <input type="text" id="f-persona" placeholder="Buscar por nombre o número de documento...">
                 </div>
+                <div><label>Cuenca</label><select id="f-cuenca"></select></div>
                 <div><label>Vereda</label><select id="f-vereda"></select></div>
                 <div><label>Género</label><select id="f-genero"></select></div>
                 <div><label>Categoría</label><select id="f-categoria"></select></div>
@@ -787,6 +788,7 @@
                             <th data-sort="id">#</th>
                             <th data-sort="nombreCompleto">Persona</th>
                             <th data-sort="numero_documento">Documento</th>
+                            <th data-sort="cuenca">Cuenca</th>
                             <th data-sort="vereda">Vereda</th>
                             <th data-sort="genero">Género</th>
                             <th data-sort="edadValida">Edad</th>
@@ -796,7 +798,7 @@
                             <th class="nosort">Acta</th>
                         </tr>
                     </thead>
-                    <tbody id="tbody"><tr><td colspan="10" class="loading"><div class="spinner"></div>Cargando datos...</td></tr></tbody>
+                    <tbody id="tbody"><tr><td colspan="11" class="loading"><div class="spinner"></div>Cargando datos...</td></tr></tbody>
                 </table>
             </div>
             <div class="pager">
@@ -893,9 +895,59 @@
         const GENDER_COLORS = { 'Femenino': '#C9677F', 'Masculino': '#3D7EA6', 'Otro': '#E9C46A', 'No binario': '#E9C46A', 'Sin dato': '#B0B0B0' };
         const AGE_BINS = [[0, 17, '< 18'], [18, 28, '18-28'], [29, 40, '29-40'], [41, 59, '41-59'], [60, 200, '60+']];
 
+        const CUENCAS_DATA = {
+            'SAN JOSE': { lat: 3.80972, lng: -74.373222, cuenca: 'Rio Sumapaz' },
+            'NUEVA GRANADA': { lat: 3.890317, lng: -74.358357, cuenca: 'Rio Sumapaz' },
+            'CONCEPCION': { lat: 3.919775, lng: -74.341899, cuenca: 'Rio Sumapaz' },
+            'TUNAL ALTO': { lat: 3.925264, lng: -74.307252, cuenca: 'Rio Sumapaz' },
+            'LAGUNITAS': { lat: 3.965664, lng: -74.29784, cuenca: 'Rio Sumapaz' },
+            'TUNAL BAJO': { lat: 3.973746, lng: -74.351535, cuenca: 'Rio Sumapaz' },
+            'LA UNION URBANO': { lat: 3.985594, lng: -74.363598, cuenca: 'Rio Sumapaz' },
+            'CHORRERAS': { lat: 3.99021, lng: -74.283142, cuenca: 'Rio Sumapaz' },
+            'SANTO DOMINGO': { lat: 4.007551, lng: -74.345253, cuenca: 'Rio Sumapaz' },
+            'LAS VEGAS': { lat: 4.015872, lng: -74.26082, cuenca: 'Rio Sumapaz' },
+            'SAN JUAN': { lat: 4.026197, lng: -74.315937, cuenca: 'Rio Sumapaz' },
+            'CAPITOLIO': { lat: 4.035512, lng: -74.344735, cuenca: 'Rio Sumapaz' },
+            'EL TOLDO': { lat: 4.061871, lng: -74.296845, cuenca: 'Rio Sumapaz' },
+            'LAS SOPAS': { lat: 4.08355, lng: -74.208883, cuenca: 'Rio Blanco' },
+            'LOS RIOS': { lat: 4.090123, lng: -74.148196, cuenca: 'Rio Blanco' },
+            'SAN ANTONIO': { lat: 4.095611, lng: -74.304144, cuenca: 'Rio Sumapaz' },
+            'LAS PALMAS': { lat: 4.144745, lng: -74.161038, cuenca: 'Rio Blanco' },
+            'LAS ANIMAS': { lat: 4.147987, lng: -74.18392, cuenca: 'Rio Blanco' },
+            'LAS AURAS': { lat: 4.17221, lng: -74.172912, cuenca: 'Rio Blanco' },
+            'NAZARETH URBANO': { lat: 4.172532, lng: -74.147001, cuenca: 'Rio Blanco' },
+            'TAQUECITOS': { lat: 4.178045, lng: -74.219241, cuenca: 'Rio Blanco' },
+            'PENALISA': { lat: 4.184562, lng: -74.130502, cuenca: 'Rio Blanco' },
+            'LAGUNA VERDE': { lat: 4.186069, lng: -74.161012, cuenca: 'Rio Blanco' },
+            'RAIZAL': { lat: 4.187735, lng: -74.142477, cuenca: 'Rio Blanco' },
+            'SANTA ROSA': { lat: 4.200874, lng: -74.189283, cuenca: 'Rio Blanco' },
+            'BETANIA': { lat: 4.218452, lng: -74.146157, cuenca: 'Rio Blanco' },
+            'EL ITSMO': { lat: 4.231598, lng: -74.176816, cuenca: 'Rio Blanco' },
+            'EL TABACO': { lat: 4.264411, lng: -74.152343, cuenca: 'Rio Blanco' }
+        };
+
+        function getCuenca(v) {
+            const nv = norm(v);
+            if (CUENCAS_DATA[nv]) return CUENCAS_DATA[nv].cuenca;
+            for (const [k, d] of Object.entries(CUENCAS_DATA)) {
+                if (norm(k) === nv) return d.cuenca;
+            }
+            if (nv === 'LA UNION' || nv === 'LA UNION URBANO') return 'Rio Sumapaz';
+            if (nv === 'NAZARETH' || nv === 'NAZARETH URBANO' || nv === 'NAZARET') return 'Rio Blanco';
+            if (nv === 'PEÑALISA' || nv === 'PENALISA') return 'Rio Blanco';
+            if (nv === 'TABACO' || nv === 'EL TABACO') return 'Rio Blanco';
+            if (nv === 'ITSMO' || nv === 'EL ITSMO' || nv === 'ISTMO') return 'Rio Blanco';
+            if (nv === 'RAIZAL' || nv === 'EL RAIZAL') return 'Rio Blanco';
+            if (nv === 'TOLDO' || nv === 'EL TOLDO') return 'Rio Sumapaz';
+            if (nv === 'SANTA ROSA BAJA' || nv === 'SANTA ROSA ALTA') return 'Rio Blanco';
+            return 'Sin cuenca asignada';
+        }
+
         const VEREDA_ALIAS = {
             'LAS AURAS': 'LASURAS', 'LAS ANIMAS': 'LASANIMAS', 'RAIZAL': 'EL RAIZAL', 'ISTMO': 'ITSMO',
-            'SANTA ROSA': 'SANTA ROSA BAJA', 'PENALISA': 'PENALISA', 'TOLDO': 'EL TOLDO', 'NAZARET': 'NAZARETH'
+            'EL ITSMO': 'ITSMO', 'SANTA ROSA': 'SANTA ROSA BAJA', 'PENALISA': 'PEÑALISA',
+            'TOLDO': 'EL TOLDO', 'NAZARET': 'NAZARETH', 'NAZARETH URBANO': 'NAZARETH',
+            'LA UNION URBANO': 'LA UNION', 'EL TABACO': 'TABACO'
         };
         const norm = s => (s || '').toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().replace(/\s+/g, ' ').trim();
         const geoKey = v => { const n = norm(v); return VEREDA_ALIAS[n] || n; };
@@ -966,8 +1018,17 @@
             state.personas = productores.map(p => {
                 const edadValida = (p.edad !== null && p.edad >= 0 && p.edad <= 110) ? p.edad : null;
                 const fechaDia = (p.fecha_inscripcion || '').slice(0, 10);
+                const cuenca = (p.cuenca && p.cuenca !== 'cedral' && p.cuenca !== 'Sin cuenca asignada')
+                    ? p.cuenca
+                    : getCuenca(p.vereda);
+                const metaV = CUENCAS_DATA[norm(p.vereda)] || CUENCAS_DATA[norm((p.vereda || '').replace('URBANO', '').trim())];
+                const lat = (p.latitud !== null && p.latitud !== undefined) ? p.latitud : (metaV ? metaV.lat : null);
+                const lng = (p.longitud !== null && p.longitud !== undefined) ? p.longitud : (metaV ? metaV.lng : null);
                 return {
                     ...p,
+                    cuenca,
+                    latitud: lat,
+                    longitud: lng,
                     nombreCompleto: titleCase((p.nombre + ' ' + p.apellido).trim()) || '(Sin nombre)',
                     vereda: p.vereda || 'SIN VEREDA',
                     genero: p.genero || 'Sin dato',
@@ -1021,7 +1082,8 @@
         function fillFilterOptions() {
             const uniq = arr => [...new Set(arr.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'es'));
             const P = state.personas;
-            setOptions('f-vereda', uniq(P.map(p => p.vereda)), 'Todas');
+            setOptions('f-cuenca', ['Rio Sumapaz', 'Rio Blanco'], 'Todas las cuencas');
+            updateVeredaOptions();
             setOptions('f-genero', uniq(P.map(p => p.genero)), 'Todos');
             setOptions('f-inscriptor', uniq(P.map(p => p.nombre_inscriptor || '(Sin inscriptor)')), 'Todos');
             setOptions('f-escolaridad', uniq(P.map(p => p.nivel_escolaridad)), 'Todas');
@@ -1036,6 +1098,17 @@
             setOptions('f-concurso', list.map(c => ({ value: String(c.id), label: c.nombre })), 'Todos');
         }
 
+        function updateVeredaOptions() {
+            const cuencaSel = document.getElementById('f-cuenca') ? document.getElementById('f-cuenca').value : '';
+            const P = state.personas;
+            let veredas = [...new Set(P.map(p => p.vereda).filter(Boolean))];
+            if (cuencaSel) {
+                veredas = veredas.filter(v => getCuenca(v) === cuencaSel);
+            }
+            veredas.sort((a, b) => a.localeCompare(b, 'es'));
+            setOptions('f-vereda', veredas, 'Todas');
+        }
+
         function shortCat(c) {
             const m = (c || '').match(/^Categor[ií]a\s+([IVXLC]+)\s*:\s*(.*)$/i);
             if (!m) return c;
@@ -1046,6 +1119,7 @@
         function getFilters() {
             const v = id => document.getElementById(id).value;
             return {
+                cuenca: v('f-cuenca'),
                 persona: norm(v('f-persona')),
                 vereda: v('f-vereda'),
                 genero: v('f-genero'),
@@ -1078,6 +1152,7 @@
             state.personas.forEach(p => {
                 if (f.dedup && p.isDuplicate) return;
                 if (f.persona && !norm(p.nombreCompleto + ' ' + p.numero_documento).includes(f.persona)) return;
+                if (f.cuenca && p.cuenca !== f.cuenca) return;
                 if (f.vereda && p.vereda !== f.vereda) return;
                 if (f.genero && p.genero !== f.genero) return;
                 if (f.inscriptor && (p.nombre_inscriptor || '(Sin inscriptor)') !== f.inscriptor) return;
@@ -1102,6 +1177,7 @@
         function renderChips(f) {
             const chips = [];
             if (f.persona) chips.push('Persona: ' + document.getElementById('f-persona').value);
+            if (f.cuenca) chips.push('Cuenca: ' + f.cuenca);
             if (f.vereda) chips.push('Vereda: ' + f.vereda);
             if (f.genero) chips.push('Género: ' + f.genero);
             if (f.categoria) chips.push(shortCat(f.categoria));
@@ -1114,7 +1190,7 @@
         }
 
         function resetFilters() {
-            ['f-persona', 'f-vereda', 'f-genero', 'f-categoria', 'f-concurso', 'f-inscriptor', 'f-desde', 'f-hasta', 'f-edad-min', 'f-edad-max', 'f-escolaridad']
+            ['f-persona', 'f-cuenca', 'f-vereda', 'f-genero', 'f-categoria', 'f-concurso', 'f-inscriptor', 'f-desde', 'f-hasta', 'f-edad-min', 'f-edad-max', 'f-escolaridad']
                 .forEach(id => document.getElementById(id).value = '');
             document.getElementById('f-dedup').checked = true;
             state.veredaFromMap = null;
@@ -1162,7 +1238,7 @@
             const stats = {};
             state.filtered.forEach(p => {
                 const k = geoKey(p.vereda);
-                const s = stats[k] = stats[k] || { nombre: p.vereda, personas: 0, inscripciones: 0, mujeres: 0, hombres: 0, edadSum: 0, edadN: 0, listaPersonas: [] };
+                const s = stats[k] = stats[k] || { nombre: p.vereda, cuenca: p.cuenca, personas: 0, inscripciones: 0, mujeres: 0, hombres: 0, edadSum: 0, edadN: 0, listaPersonas: [] };
                 s.personas++;
                 s.inscripciones += p.inscFiltradas.length;
                 if (norm(p.genero) === 'FEMENINO') s.mujeres++;
@@ -1213,7 +1289,8 @@
                         const s = stats[geoKey(feat.properties.nombre)];
                         const name = titleCase(feat.properties.nombre);
                         
-                        layer.bindTooltip(`<b>${esc(name)}</b><br>` + (s
+                        const cuencaV = (s && s.cuenca) ? s.cuenca : getCuenca(feat.properties.nombre);
+                        layer.bindTooltip(`<b>${esc(name)}</b><br><span style="color:#D4A373;font-size:0.72rem;">Cuenca: ${esc(cuencaV)}</span><br>` + (s
                             ? `Personas: ${s.personas}<br>Inscripciones: ${s.inscripciones}<br>Mujeres: ${s.mujeres_pct}%<br>Edad prom.: ${s.edad_prom || '-'}`
                             : '<i>Sin inscritos</i>'), { sticky: true });
                         
@@ -1242,6 +1319,7 @@
                                 const popupContent = `
                                     <div class="vereda-popup-content">
                                         <h4>Vereda ${esc(name)}</h4>
+                                        <div style="font-size:0.75rem;color:#555;margin-bottom:6px;"><strong>Cuenca:</strong> ${esc(s.cuenca || getCuenca(name))}</div>
                                         <div class="vereda-popup-stats">
                                             <div><b>Personas</b>${s.personas}</div>
                                             <div><b>Inscripciones</b>${s.inscripciones}</div>
@@ -1429,13 +1507,14 @@
             });
 
             const tb = document.getElementById('tbody');
-            if (!slice.length) { tb.innerHTML = '<tr><td colspan="10" class="loading">No hay registros con los filtros seleccionados.</td></tr>'; return; }
+            if (!slice.length) { tb.innerHTML = '<tr><td colspan="11" class="loading">No hay registros con los filtros seleccionados.</td></tr>'; return; }
             tb.innerHTML = slice.map(p => `
                 <tr>
                     <td class="muted">${p.id}</td>
                     <td><b>${esc(p.nombreCompleto)}</b>${p.duplicateCount > 1 ? ` <span class="dup" title="Registros repetidos en servidor">x${p.duplicateCount}</span>` : ''}${p.isDuplicate ? ' <span class="dup">duplicado</span>' : ''}
                         ${p.telefono ? `<div class="muted" style="font-size:.74rem">Tel: ${esc(p.telefono)}</div>` : ''}</td>
                     <td>${esc(p.numero_documento) || '<span class="muted">-</span>'}</td>
+                    <td><span class="tag tag-neutral" style="font-size:0.7rem;padding:2px 6px;">${esc(p.cuenca)}</span></td>
                     <td>${esc(titleCase(p.vereda))}</td>
                     <td>${esc(p.genero)}</td>
                     <td>${p.edadValida ?? '<span class="muted">-</span>'}</td>
@@ -2201,7 +2280,7 @@
             if (typeof XLSX === 'undefined') return alert('Librería de Excel no disponible');
             const personas = state.filtered.map(p => ({
                 ID: p.id, Nombre: p.nombreCompleto, 'Tipo documento': p.tipo_documento, Documento: p.numero_documento,
-                Vereda: p.vereda, Género: p.genero, Edad: p.edadValida, Escolaridad: p.nivel_escolaridad,
+                Cuenca: p.cuenca, Vereda: p.vereda, Género: p.genero, Edad: p.edadValida, Escolaridad: p.nivel_escolaridad,
                 Teléfono: p.telefono, Correo: p.email, Predio: p.nombre_predio, Latitud: p.latitud, Longitud: p.longitud,
                 'LGBTIQ+': p.es_lgbtiq ? 'Sí' : 'No', Discapacidad: p.condicion_discapacidad,
                 'Parques Nacionales': p.en_parques_nacionales ? 'Sí' : 'No', Inscriptor: p.nombre_inscriptor,
@@ -2211,11 +2290,11 @@
             }));
             const insc = [];
             state.filtered.forEach(p => p.inscFiltradas.forEach(i => insc.push({
-                'ID persona': p.id, Persona: p.nombreCompleto, Documento: p.numero_documento, Vereda: p.vereda,
+                'ID persona': p.id, Persona: p.nombreCompleto, Documento: p.numero_documento, Cuenca: p.cuenca, Vereda: p.vereda,
                 Género: p.genero, Edad: p.edadValida, Categoría: state.concursosById[i.concurso_id]?.categoria,
                 Concurso: state.concursosById[i.concurso_id]?.nombre, Fecha: i.fecha
             })));
-            const vered = Object.values(veredaStats()).map(s => ({ Vereda: s.nombre, Personas: s.personas, Inscripciones: s.inscripciones, '% Mujeres': s.mujeres_pct, 'Edad promedio': s.edad_prom }));
+            const vered = Object.values(veredaStats()).map(s => ({ Cuenca: s.cuenca, Vereda: s.nombre, Personas: s.personas, Inscripciones: s.inscripciones, '% Mujeres': s.mujeres_pct, 'Edad promedio': s.edad_prom }));
             const wb = XLSX.utils.book_new();
             XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(personas), 'Personas');
             XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(insc), 'Inscripciones');
@@ -2229,9 +2308,24 @@
             initMap();
             let t;
             document.getElementById('f-persona').addEventListener('input', () => { clearTimeout(t); t = setTimeout(applyFilters, 250); });
-            ['f-vereda', 'f-genero', 'f-concurso', 'f-inscriptor', 'f-desde', 'f-hasta', 'f-edad-min', 'f-edad-max', 'f-escolaridad', 'f-dedup']
+            ['f-cuenca', 'f-vereda', 'f-genero', 'f-concurso', 'f-inscriptor', 'f-desde', 'f-hasta', 'f-edad-min', 'f-edad-max', 'f-escolaridad', 'f-dedup']
                 .forEach(id => document.getElementById(id).addEventListener('change', () => {
-                    if (id === 'f-vereda') state.veredaFromMap = document.getElementById('f-vereda').value || null;
+                    if (id === 'f-cuenca') updateVeredaOptions();
+                    if (id === 'f-vereda') {
+                        state.veredaFromMap = document.getElementById('f-vereda').value || null;
+                        const vVal = document.getElementById('f-vereda').value;
+                        if (vVal) {
+                            const cVal = getCuenca(vVal);
+                            if (cVal && (cVal === 'Rio Sumapaz' || cVal === 'Rio Blanco')) {
+                                const selC = document.getElementById('f-cuenca');
+                                if (selC && selC.value !== cVal) {
+                                    selC.value = cVal;
+                                    updateVeredaOptions();
+                                    document.getElementById('f-vereda').value = vVal;
+                                }
+                            }
+                        }
+                    }
                     applyFilters();
                 }));
             document.getElementById('f-categoria').addEventListener('change', () => { updateConcursoOptions(); applyFilters(); });

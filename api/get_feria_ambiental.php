@@ -28,6 +28,26 @@ try {
         ];
     }
 
+    // Mapa de referencia oficial de 28 veredas y sus cuencas
+    $cuencasVeredasRef = [
+        'SAN JOSE' => 'Rio Sumapaz', 'NUEVA GRANADA' => 'Rio Sumapaz', 'CONCEPCION' => 'Rio Sumapaz',
+        'TUNAL ALTO' => 'Rio Sumapaz', 'LAGUNITAS' => 'Rio Sumapaz', 'TUNAL BAJO' => 'Rio Sumapaz',
+        'LA UNION URBANO' => 'Rio Sumapaz', 'LA UNION' => 'Rio Sumapaz', 'CHORRERAS' => 'Rio Sumapaz',
+        'SANTO DOMINGO' => 'Rio Sumapaz', 'LAS VEGAS' => 'Rio Sumapaz', 'SAN JUAN' => 'Rio Sumapaz',
+        'CAPITOLIO' => 'Rio Sumapaz', 'EL TOLDO' => 'Rio Sumapaz', 'TOLDO' => 'Rio Sumapaz',
+        'SAN ANTONIO' => 'Rio Sumapaz',
+
+        'LAS SOPAS' => 'Rio Blanco', 'LOS RIOS' => 'Rio Blanco', 'LAS PALMAS' => 'Rio Blanco',
+        'LAS ANIMAS' => 'Rio Blanco', 'LASANIMAS' => 'Rio Blanco', 'LAS AURAS' => 'Rio Blanco',
+        'LASURAS' => 'Rio Blanco', 'NAZARETH URBANO' => 'Rio Blanco', 'NAZARETH' => 'Rio Blanco',
+        'NAZARET' => 'Rio Blanco', 'TAQUECITOS' => 'Rio Blanco', 'PENALISA' => 'Rio Blanco',
+        'PEÑALISA' => 'Rio Blanco', 'LAGUNA VERDE' => 'Rio Blanco', 'RAIZAL' => 'Rio Blanco',
+        'EL RAIZAL' => 'Rio Blanco', 'SANTA ROSA' => 'Rio Blanco', 'SANTA ROSA BAJA' => 'Rio Blanco',
+        'SANTA ROSA ALTA' => 'Rio Blanco', 'BETANIA' => 'Rio Blanco', 'EL ITSMO' => 'Rio Blanco',
+        'ITSMO' => 'Rio Blanco', 'ISTMO' => 'Rio Blanco', 'EL TABACO' => 'Rio Blanco',
+        'TABACO' => 'Rio Blanco'
+    ];
+
     // 2. Productores (sin base64 pesados; solo banderas de existencia)
     $sql = "
         SELECT id, local_id, nombre_productor, apellido_productor, tipo_documento, numero_documento,
@@ -47,6 +67,16 @@ try {
         if (!empty($r['notes']) && strpos($r['notes'], 'OBSERVACIONES:') !== false) {
             $obs = trim(substr($r['notes'], strpos($r['notes'], 'OBSERVACIONES:') + strlen('OBSERVACIONES:')));
         }
+        $vUpper = strtoupper(trim($r['vereda'] ?? ''));
+        $cVal = trim($r['cuenca'] ?? '');
+        $vClean = preg_replace('~[^\pL\pN\s]+~u', '', $vUpper);
+        $vClean = strtoupper(trim(preg_replace('/\s+/', ' ', $vClean)));
+        if (isset($cuencasVeredasRef[$vClean])) {
+            $cVal = $cuencasVeredasRef[$vClean];
+        } elseif (empty($cVal) || strcasecmp($cVal, 'cedral') === 0) {
+            $cVal = 'Sin cuenca asignada';
+        }
+
         $productores[] = [
             'id' => (int)$r['id'],
             'local_id' => $r['local_id'] !== null ? (int)$r['local_id'] : null,
@@ -56,7 +86,8 @@ try {
             'numero_documento' => trim($r['numero_documento'] ?? ''),
             'nombre_predio' => $r['nombre_predio'],
             'extension_finca' => $r['extension_finca'],
-            'vereda' => strtoupper(trim($r['vereda'] ?? '')),
+            'vereda' => $vUpper,
+            'cuenca' => $cVal,
             'latitud' => $r['latitud'] !== null ? (float)$r['latitud'] : null,
             'longitud' => $r['longitud'] !== null ? (float)$r['longitud'] : null,
             'altitud_msnm' => $r['altitud_msnm'] !== null ? (float)$r['altitud_msnm'] : null,
