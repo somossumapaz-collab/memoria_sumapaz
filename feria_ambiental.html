@@ -614,10 +614,365 @@
             border: 1px solid #ccc;
         }
 
+        
+        /* ================= TABS PRINCIPALES ================= */
+        .tabs-nav-main {
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 2px solid #E5E7EB;
+            margin: 0.5rem 0 1.5rem;
+        }
+        .tab-main-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.75rem 1.4rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #4B5563;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 6px 6px 0 0;
+            margin-bottom: -2px;
+        }
+        .tab-main-btn:hover {
+            color: var(--primary-green-dark);
+            background: #F9FAFB;
+        }
+        .tab-main-btn.active {
+            color: var(--primary-green-dark);
+            border-bottom: 3px solid var(--primary-green);
+            background: #F4F7F4;
+            font-weight: 700;
+        }
+        .tab-count-badge {
+            display: inline-block;
+            padding: 0.15rem 0.55rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 10px;
+            background: #E5E7EB;
+            color: #374151;
+            transition: all 0.2s ease;
+        }
+        .tab-main-btn.active .tab-count-badge {
+            background: #E0ECE3;
+            color: var(--primary-green-dark);
+        }
+
+        /* ================= VISTA EVALUACIONES ================= */
+        .source-filter-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.25rem;
+            background: #fff;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            border: 1px solid #E5E7EB;
+        }
+        .source-filter-label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-right: 0.25rem;
+        }
+        .source-btn {
+            padding: 0.35rem 0.85rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 6px;
+            border: 1px solid #D1D5DB;
+            background: #F9FAFB;
+            color: #4B5563;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            font-family: 'Inter', sans-serif;
+        }
+        .source-btn:hover {
+            background: #F3F4F6;
+            color: var(--primary-green-dark);
+        }
+        .source-btn.active {
+            background: var(--primary-green);
+            color: #fff;
+            border-color: var(--primary-green);
+        }
+
+        .score-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.18rem 0.5rem;
+            border-radius: 6px;
+            background: #EEF4EE;
+            color: #2E5A44;
+            border: 1px solid #D5E3D6;
+        }
+        .score-badge-high {
+            background: #EBF7EE;
+            color: #1E6637;
+            border-color: #BBE5C5;
+        }
+        .score-badge-mid {
+            background: #FEF9EE;
+            color: #8A6112;
+            border-color: #F8E3B6;
+        }
+        .score-badge-low {
+            background: #FEF2F2;
+            color: #991B1B;
+            border-color: #FECACA;
+        }
+
+        .perf-table-wrap {
+            max-height: 380px;
+            overflow-y: auto;
+        }
+        .perf-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+        }
+        .perf-table th {
+            position: sticky;
+            top: 0;
+            background: #F1F4F2;
+            z-index: 2;
+        }
+        .perf-bar-bg {
+            background: #E5E7EB;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            width: 90px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+        .perf-bar-fill {
+            height: 100%;
+            background: var(--primary-green);
+            border-radius: 4px;
+        }
+
+        /* ================= ACTA OFICIAL DE JUZGAMIENTO (ESTILO OFICIAL ANDROID) ================= */
+        .acta-juzg-container {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #111;
+            background: #fff;
+            padding: 0;
+            width: 100%;
+        }
+        .acta-juzg-sheet {
+            background: #ffffff;
+            border: 1px solid #333;
+            margin: 0 auto 20px;
+            padding: 20px 26px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+            position: relative;
+        }
+        .acta-juzg-header-wrap {
+            position: relative;
+            padding-bottom: 10px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+        .acta-juzg-wave-accent {
+            width: 100%;
+            height: 32px;
+            margin-bottom: 8px;
+        }
+        .acta-juzg-header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 55px;
+            gap: 10px;
+        }
+        .acta-juzg-logo {
+            height: 48px;
+            max-width: 95px;
+            object-fit: contain;
+        }
+        .acta-juzg-title-box {
+            text-align: center;
+            flex: 1;
+            padding: 0 8px;
+        }
+        .acta-juzg-title-main {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 11pt;
+            font-weight: 800;
+            color: #3F6028;
+            letter-spacing: 0.04em;
+            margin-bottom: 2px;
+        }
+        .acta-juzg-title-sub {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 8.5pt;
+            font-weight: 700;
+            color: #35551F;
+            letter-spacing: 0.03em;
+        }
+        .acta-juzg-cert-box {
+            border: 1px solid #333;
+            margin-bottom: 12px;
+        }
+        .acta-juzg-cert-header {
+            background: #D9D9D9;
+            border-bottom: 1px solid #333;
+            padding: 5px 8px;
+            font-size: 8pt;
+            font-weight: 700;
+            color: #111;
+            letter-spacing: 0.03em;
+            font-family: Georgia, serif;
+        }
+        .acta-juzg-cert-body {
+            padding: 8px 10px;
+            font-size: 7.8pt;
+            line-height: 1.45;
+            color: #111;
+        }
+        .acta-juzg-cert-p {
+            margin: 0 0 5px 0;
+        }
+        .acta-juzg-cert-p:last-child {
+            margin-bottom: 0;
+        }
+        .acta-juzg-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 7.5pt;
+            margin-bottom: 12px;
+            border: 1px solid #333;
+        }
+        .acta-juzg-table th {
+            background: #D9D9D9;
+            color: #111;
+            font-weight: 700;
+            padding: 5px 8px;
+            border: 1px solid #333;
+            font-size: 7.8pt;
+            font-family: Georgia, serif;
+        }
+        .acta-juzg-table td {
+            padding: 5px 8px;
+            border: 1px solid #333;
+            color: #111;
+            vertical-align: middle;
+        }
+        .acta-juzg-table tr:nth-child(even) td {
+            background: #EFEFEF;
+        }
+        .acta-juzg-table tr.total-row td {
+            background: #D9D9D9;
+            font-weight: 700;
+            font-size: 8pt;
+            border-top: 2px solid #333;
+        }
+        .acta-juzg-obs-box {
+            border: 1px solid #333;
+            margin-bottom: 12px;
+        }
+        .acta-juzg-obs-header {
+            background: #D9D9D9;
+            border-bottom: 1px solid #333;
+            padding: 5px 8px;
+            font-size: 7.8pt;
+            font-weight: 700;
+            color: #111;
+            font-family: Georgia, serif;
+        }
+        .acta-juzg-obs-body {
+            padding: 8px 10px;
+            font-size: 7.5pt;
+            min-height: 34px;
+            line-height: 1.4;
+            color: #111;
+        }
+        .acta-juzg-signatures-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .acta-juzg-sig-card {
+            border: 1px solid #333;
+            background: #fff;
+        }
+        .acta-juzg-sig-head {
+            background: #D9D9D9;
+            border-bottom: 1px solid #333;
+            padding: 4px 6px;
+            font-size: 7.5pt;
+            font-weight: 700;
+            color: #111;
+            font-family: Georgia, serif;
+        }
+        .acta-juzg-sig-canvas-wrap {
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+            background: #fff;
+        }
+        .acta-juzg-sig-canvas-wrap img {
+            max-height: 60px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        .acta-juzg-sig-digital-notice {
+            font-style: italic;
+            color: #666;
+            font-size: 7.2pt;
+        }
+        .acta-juzg-sig-footer-name {
+            border-top: 1px solid #333;
+            padding: 4px 6px;
+            font-size: 7.2pt;
+            color: #111;
+            background: #FAFAFA;
+        }
+        .acta-juzg-footer-bar {
+            background: #3F6028;
+            color: #fff;
+            padding: 6px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 7.2pt;
+            font-family: Georgia, serif;
+            font-weight: 700;
+            margin-top: 8px;
+        }
+        .acta-juzg-photos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .acta-juzg-photos-grid img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border: 1px solid #333;
+        }
+
+
         @media print {
             body * { visibility: hidden; }
-            #acta-modal, #acta-modal * { visibility: visible; }
-            #acta-modal {
+            #acta-modal, #acta-modal *, #acta-juzgamiento-modal, #acta-juzgamiento-modal * { visibility: visible; }
+            #acta-modal, #acta-juzgamiento-modal {
                 position: absolute;
                 left: 0;
                 top: 0;
@@ -635,7 +990,7 @@
             }
             .modal-head, .floating-logout, .topbar { display: none !important; }
             .modal-body { padding: 0 !important; }
-            .acta-page {
+            .acta-page, .acta-juzg-sheet {
                 box-shadow: none !important;
                 border: none !important;
                 margin: 0 !important;
@@ -686,6 +1041,20 @@
     </section>
 
     <main>
+        <!-- PESTAÑAS PRINCIPALES DE NAVEGACIÓN -->
+        <nav class="tabs-nav-main" aria-label="Secciones del sistema">
+            <button type="button" class="tab-main-btn active" id="tab-btn-inscripciones" onclick="switchMainTab('inscripciones')">
+                <span>Inscripciones</span>
+                <span class="tab-count-badge" id="count-tab-inscripciones">-</span>
+            </button>
+            <button type="button" class="tab-main-btn" id="tab-btn-evaluaciones" onclick="switchMainTab('evaluaciones')">
+                <span>Evaluaciones</span>
+                <span class="tab-count-badge" id="count-tab-evaluaciones">-</span>
+            </button>
+        </nav>
+
+        <!-- ================= VISTA INSCRIPCIONES ================= -->
+        <div id="view-inscripciones" class="tab-view active">
         <div class="page-title">
             <div>
                 <h2>Tablero de inscripciones</h2>
@@ -812,7 +1181,154 @@
                 </span>
             </div>
         </section>
-    </main>
+    
+        </div>
+
+        <!-- ================= VISTA EVALUACIONES ================= -->
+        <div id="view-evaluaciones" class="tab-view" style="display:none">
+            <div class="page-title">
+                <div>
+                    <h2>Evaluaciones y Juzgamiento Oficial</h2>
+                    <p id="eval-last-update">Registro de evaluaciones, actas de juzgamiento y monitoreo de puntajes por concurso</p>
+                </div>
+                <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+                    <button class="btn btn-outline" onclick="loadEvaluacionesData(true)">Actualizar</button>
+                    <button class="btn btn-gold" onclick="exportEvaluacionesExcel()">Exportar Excel</button>
+                </div>
+            </div>
+
+            <!-- SELECTOR DE FUENTE -->
+            <div class="source-filter-bar">
+                <span class="source-filter-label">Fuente de evaluación:</span>
+                <button type="button" class="source-btn active" id="src-btn-todas" onclick="setEvaluacionesFuente('todas')">Todas las evaluaciones</button>
+                <button type="button" class="source-btn" id="src-btn-ambiental" onclick="setEvaluacionesFuente('ambiental')">Feria Agroambiental (Rol 13)</button>
+                <button type="button" class="source-btn" id="src-btn-general" onclick="setEvaluacionesFuente('general')">Concursos Generales</button>
+            </div>
+
+            <!-- KPIS DE EVALUACIONES SOBRIOS (TIPOGRAFIA INTER) -->
+            <section class="kpis">
+                <div class="kpi"><div class="v" id="ke-total">-</div><div class="l">Evaluaciones realizadas</div></div>
+                <div class="kpi"><div class="v" id="ke-promedio">-</div><div class="l">Puntaje promedio general</div></div>
+                <div class="kpi"><div class="v" id="ke-max">-</div><div class="l">Puntaje máximo registrado</div></div>
+                <div class="kpi"><div class="v" id="ke-concursos">-</div><div class="l">Concursos evaluados</div></div>
+                <div class="kpi"><div class="v" id="ke-jurados">-</div><div class="l">Jurados evaluadores</div></div>
+                <div class="kpi"><div class="v" id="ke-ambiental">-</div><div class="l">Rol 13 (Agroambiental)</div></div>
+                <div class="kpi"><div class="v" id="ke-general">-</div><div class="l">Roles Generales</div></div>
+            </section>
+
+            <!-- ANÁLISIS DE COMPORTAMIENTO DE PUNTAJE Y PROMEDIOS POR CONCURSO -->
+            <section class="grid-2" style="margin-bottom:1.25rem">
+                <div class="card">
+                    <h3><span>Puntaje promedio por concurso</span></h3>
+                    <div class="chart-box tall" style="height:380px"><canvas id="ch-eval-promedios"></canvas></div>
+                </div>
+                <div class="card">
+                    <h3><span>Comportamiento estadístico por concurso</span></h3>
+                    <div class="perf-table-wrap">
+                        <table class="perf-table">
+                            <thead>
+                                <tr>
+                                    <th>Concurso</th>
+                                    <th style="text-align:center">Eval.</th>
+                                    <th style="text-align:center">Promedio</th>
+                                    <th style="text-align:center">Mín / Máx</th>
+                                    <th>Desempeño</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-resumen-concursos">
+                                <tr><td colspan="5" class="loading"><div class="spinner"></div>Cargando estadísticas...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FILTROS DE EVALUACIONES -->
+            <section class="card">
+                <div class="filters">
+                    <div style="grid-column: span 2">
+                        <label>Buscar concursante o documento</label>
+                        <input type="text" id="fe-busqueda" placeholder="Nombre de participante, predio o número de cédula...">
+                    </div>
+                    <div style="grid-column: span 2">
+                        <label>Concurso</label>
+                        <select id="fe-concurso"></select>
+                    </div>
+                    <div>
+                        <label>Jurado evaluador</label>
+                        <select id="fe-jurado"></select>
+                    </div>
+                    <div>
+                        <label>Vereda / Cuenca</label>
+                        <select id="fe-vereda"></select>
+                    </div>
+                    <div>
+                        <label>Rango de puntaje</label>
+                        <div class="range">
+                            <input type="number" id="fe-min-score" placeholder="Mín" min="0" max="100">
+                            <input type="number" id="fe-max-score" placeholder="Máx" min="0" max="100">
+                        </div>
+                    </div>
+                    <div>
+                        <label style="visibility:hidden">Acción</label>
+                        <button class="btn btn-outline btn-sm" onclick="resetEvaluacionesFilters()" style="margin-top:.35rem">Limpiar filtros</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TABLA PRINCIPAL DE EVALUACIONES -->
+            <section class="card">
+                <h3><span>Evaluaciones registradas <span class="muted" id="table-eval-count" style="font-weight:500;font-size:.85rem"></span></span></h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-eval-sort="concurso">Concurso</th>
+                                <th data-eval-sort="concursante">Concursante / Predio</th>
+                                <th data-eval-sort="vereda">Vereda</th>
+                                <th data-eval-sort="jurado">Jurado Evaluador</th>
+                                <th data-eval-sort="puntaje" style="text-align:center">Puntaje</th>
+                                <th data-eval-sort="fecha">Fecha</th>
+                                <th class="nosort" style="text-align:center">Evidencias</th>
+                                <th class="nosort" style="text-align:center">Acta</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-evaluaciones">
+                            <tr><td colspan="8" class="loading"><div class="spinner"></div>Cargando evaluaciones...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pager">
+                    <span id="eval-pager-info"></span>
+                    <span style="display:flex;gap:.4rem;align-items:center">
+                        <select id="eval-page-size" style="padding:.3rem;border-radius:6px;border:1px solid #CCCCCC">
+                            <option>15</option><option selected>25</option><option>50</option><option>100</option>
+                        </select>
+                        <button class="btn btn-outline btn-sm" id="eval-prev-page">Anterior</button>
+                        <button class="btn btn-outline btn-sm" id="eval-next-page">Siguiente</button>
+                    </span>
+                </div>
+            </section>
+        </div>
+        </main>
+
+    <!-- MODAL ACTA OFICIAL DE JUZGAMIENTO Y EVALUACION (ESTILO ANDROID) -->
+    <div class="modal-bg" id="acta-juzgamiento-modal" onclick="if(event.target===this) closeActaJuzgamiento()">
+        <div class="modal" style="max-width: 900px;">
+            <div class="modal-head">
+                <h2 id="acta-juzg-modal-title">Acta Oficial de Juzgamiento y Evaluación</h2>
+                <div style="display:flex;gap:.4rem">
+                    <button class="btn btn-primary btn-sm" onclick="downloadActaJuzgamientoPdf()">Descargar PDF</button>
+                    <button class="btn btn-outline btn-sm" onclick="printActaJuzgamiento()">Imprimir</button>
+                    <button class="btn btn-danger btn-sm" onclick="closeActaJuzgamiento()">Cerrar</button>
+                </div>
+            </div>
+            <div class="modal-body" id="acta-juzg-modal-body">
+                <div class="loading"><div class="spinner"></div>Cargando formato de acta oficial...</div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- MODAL ACTA DIGITAL (FORMATO OFICIAL ANDROID APP) -->
     <div class="modal-bg" id="acta-modal" onclick="if(event.target===this) closeActa()">
@@ -902,7 +1418,8 @@
             'TUNAL ALTO': { lat: 3.925264, lng: -74.307252, cuenca: 'Rio Sumapaz' },
             'LAGUNITAS': { lat: 3.965664, lng: -74.29784, cuenca: 'Rio Sumapaz' },
             'TUNAL BAJO': { lat: 3.973746, lng: -74.351535, cuenca: 'Rio Sumapaz' },
-            'LA UNION URBANO': { lat: 3.985594, lng: -74.363598, cuenca: 'Rio Sumapaz' },
+            'LA UNIÓN': { lat: 3.985594, lng: -74.363598, cuenca: 'Rio Sumapaz' },
+            'LA UNION': { lat: 3.985594, lng: -74.363598, cuenca: 'Rio Sumapaz' },
             'CHORRERAS': { lat: 3.99021, lng: -74.283142, cuenca: 'Rio Sumapaz' },
             'SANTO DOMINGO': { lat: 4.007551, lng: -74.345253, cuenca: 'Rio Sumapaz' },
             'LAS VEGAS': { lat: 4.015872, lng: -74.26082, cuenca: 'Rio Sumapaz' },
@@ -915,7 +1432,7 @@
             'LAS PALMAS': { lat: 4.144745, lng: -74.161038, cuenca: 'Rio Blanco' },
             'LAS ANIMAS': { lat: 4.147987, lng: -74.18392, cuenca: 'Rio Blanco' },
             'LAS AURAS': { lat: 4.17221, lng: -74.172912, cuenca: 'Rio Blanco' },
-            'NAZARETH URBANO': { lat: 4.172532, lng: -74.147001, cuenca: 'Rio Blanco' },
+            'NAZARETH': { lat: 4.172532, lng: -74.147001, cuenca: 'Rio Blanco' },
             'TAQUECITOS': { lat: 4.178045, lng: -74.219241, cuenca: 'Rio Blanco' },
             'PENALISA': { lat: 4.184562, lng: -74.130502, cuenca: 'Rio Blanco' },
             'LAGUNA VERDE': { lat: 4.186069, lng: -74.161012, cuenca: 'Rio Blanco' },
@@ -946,8 +1463,8 @@
         const VEREDA_ALIAS = {
             'LAS AURAS': 'LASURAS', 'LAS ANIMAS': 'LASANIMAS', 'RAIZAL': 'EL RAIZAL', 'ISTMO': 'ITSMO',
             'EL ITSMO': 'ITSMO', 'SANTA ROSA': 'SANTA ROSA BAJA', 'PENALISA': 'PEÑALISA',
-            'TOLDO': 'EL TOLDO', 'NAZARET': 'NAZARETH', 'NAZARETH URBANO': 'NAZARETH',
-            'LA UNION URBANO': 'LA UNION', 'EL TABACO': 'TABACO'
+            'TOLDO': 'EL TOLDO', 'NAZARET': 'NAZARETH', 'NAZARTH': 'NAZARETH', 'NAZARETH URBANO': 'NAZARETH',
+            'LA UNIÓN': 'LA UNION', 'LA UNION URBANO': 'LA UNION', 'EL TABACO': 'TABACO'
         };
         const norm = s => (s || '').toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().replace(/\s+/g, ' ').trim();
         const geoKey = v => { const n = norm(v); return VEREDA_ALIAS[n] || n; };
@@ -976,7 +1493,8 @@
 
         // ================== CARGA DE DATOS ==================
         async function loadData() {
-            document.getElementById('last-update').textContent = 'Cargando datos...';
+            const inscBadge = document.getElementById('count-tab-inscripciones'); if (inscBadge) inscBadge.textContent = state.personas.length || data.productores.length;
+                document.getElementById('last-update').textContent = 'Cargando datos...';
             try {
                 const [res, geo] = await Promise.all([
                     fetch('api/get_feria_ambiental.php?t=' + Date.now()),
@@ -1018,10 +1536,15 @@
             state.personas = productores.map(p => {
                 const edadValida = (p.edad !== null && p.edad >= 0 && p.edad <= 110) ? p.edad : null;
                 const fechaDia = (p.fecha_inscripcion || '').slice(0, 10);
+                let vLimpia = (p.vereda || '').trim();
+                if (norm(vLimpia) === 'CEDRAL') vLimpia = 'NAZARETH';
+                vLimpia = vLimpia.replace(/\bURBANO\b/gi, '').trim();
+                if (norm(vLimpia) === 'LA UNION') vLimpia = 'LA UNIÓN';
+
                 const cuenca = (p.cuenca && p.cuenca !== 'cedral' && p.cuenca !== 'Sin cuenca asignada')
                     ? p.cuenca
-                    : getCuenca(p.vereda);
-                const metaV = CUENCAS_DATA[norm(p.vereda)] || CUENCAS_DATA[norm((p.vereda || '').replace('URBANO', '').trim())];
+                    : getCuenca(vLimpia);
+                const metaV = CUENCAS_DATA[norm(vLimpia)];
                 const lat = (p.latitud !== null && p.latitud !== undefined) ? p.latitud : (metaV ? metaV.lat : null);
                 const lng = (p.longitud !== null && p.longitud !== undefined) ? p.longitud : (metaV ? metaV.lng : null);
                 return {
@@ -1030,7 +1553,7 @@
                     latitud: lat,
                     longitud: lng,
                     nombreCompleto: titleCase((p.nombre + ' ' + p.apellido).trim()) || '(Sin nombre)',
-                    vereda: p.vereda || 'SIN VEREDA',
+                    vereda: vLimpia || 'SIN VEREDA',
                     genero: p.genero || 'Sin dato',
                     edadValida,
                     fechaDia,
@@ -2302,6 +2825,690 @@
             XLSX.writeFile(wb, `Feria_Agroambiental_${new Date().toISOString().slice(0, 10)}.xlsx`);
         }
 
+        
+        // ================== GESTIÓN DE PESTAÑAS (TABS) ==================
+        let activeTab = 'inscripciones';
+        function switchMainTab(tab) {
+            activeTab = tab;
+            document.querySelectorAll('.tab-main-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-view').forEach(view => {
+                view.classList.remove('active');
+                view.style.display = 'none';
+            });
+
+            const targetBtn = document.getElementById('tab-btn-' + tab);
+            const targetView = document.getElementById('view-' + tab);
+            if (targetBtn) targetBtn.classList.add('active');
+            if (targetView) {
+                targetView.classList.add('active');
+                targetView.style.display = 'block';
+            }
+
+            if (tab === 'evaluaciones') {
+                if (!evalState.raw) {
+                    loadEvaluacionesData(false);
+                } else if (charts.evalPromedios) {
+                    setTimeout(() => charts.evalPromedios.resize(), 100);
+                }
+            } else if (tab === 'inscripciones') {
+                if (map) setTimeout(() => map.invalidateSize(), 150);
+            }
+        }
+
+        // ================== ESTADO DE EVALUACIONES ==================
+        const evalState = {
+            raw: null,
+            evaluaciones: [],
+            resumenConcursos: [],
+            filtered: [],
+            fuenteFilter: 'todas',
+            busqueda: '',
+            concurso: '',
+            jurado: '',
+            vereda: '',
+            minScore: null,
+            maxScore: null,
+            sort: { key: 'fecha', dir: -1 },
+            page: 1,
+            pageSize: 25
+        };
+
+        // ================== CARGA DE DATOS DE EVALUACIONES ==================
+        async function loadEvaluacionesData(forceRefresh = false) {
+            const lastUpd = document.getElementById('eval-last-update');
+            if (lastUpd) lastUpd.textContent = 'Actualizando evaluaciones desde la Base de Datos Central...';
+            try {
+                const res = await fetch('api/get_feria_evaluaciones.php?t=' + Date.now());
+                const data = await res.json();
+                if (!data.success) throw new Error(data.error || 'Error al cargar evaluaciones');
+
+                evalState.raw = data;
+                evalState.evaluaciones = data.evaluaciones || [];
+                evalState.resumenConcursos = data.resumen_concursos || [];
+
+                // Actualizar badge en la pestaña
+                const badge = document.getElementById('count-tab-evaluaciones');
+                if (badge) badge.textContent = evalState.evaluaciones.length;
+
+                // Actualizar KPIs
+                const k = data.kpis || {};
+                const setEl = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+                setEl('ke-total', k.total_evaluaciones ?? '-');
+                setEl('ke-promedio', (k.promedio_general !== undefined ? k.promedio_general + ' pts' : '-'));
+                setEl('ke-max', (k.puntaje_max_global !== undefined ? k.puntaje_max_global + ' pts' : '-'));
+                setEl('ke-concursos', k.concursos_evaluados ?? '-');
+                setEl('ke-jurados', k.jurados_activos ?? '-');
+                setEl('ke-ambiental', k.total_ambiental ?? '0');
+                setEl('ke-general', k.total_general ?? '0');
+
+                // Llenar opciones de filtros
+                fillEvaluacionesFilterOptions();
+
+                // Renderizar gráfico de promedios por concurso
+                renderEvalPromediosChart();
+
+                // Renderizar tabla estadística de promedios y comportamiento
+                renderResumenConcursosTable();
+
+                // Aplicar filtros y renderizar tabla maestra
+                applyEvaluacionesFilters();
+
+                if (lastUpd) {
+                    lastUpd.textContent = `${evalState.evaluaciones.length} evaluaciones registradas en base central - Actualizado ${new Date().toLocaleTimeString('es-CO')}`;
+                }
+            } catch (err) {
+                console.error("Error al cargar evaluaciones:", err);
+                if (lastUpd) lastUpd.innerHTML = `<span class="error-box">Error al cargar evaluaciones: ${esc(err.message)}</span>`;
+                const tbody = document.getElementById('tbody-evaluaciones');
+                if (tbody) tbody.innerHTML = `<tr><td colspan="8"><div class="error-box">No se pudieron cargar las evaluaciones: ${esc(err.message)}</div></td></tr>`;
+            }
+        }
+
+        function setEvaluacionesFuente(fuente) {
+            evalState.fuenteFilter = fuente;
+            document.querySelectorAll('.source-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.getElementById('src-btn-' + fuente);
+            if (activeBtn) activeBtn.classList.add('active');
+            applyEvaluacionesFilters();
+        }
+
+        function fillEvaluacionesFilterOptions() {
+            const concursos = [...new Set(evalState.evaluaciones.map(e => e.concurso))].sort();
+            const jurados = [...new Set(evalState.evaluaciones.map(e => e.jurado).filter(Boolean))].sort();
+            const veredas = [...new Set(evalState.evaluaciones.map(e => e.vereda).filter(Boolean))].sort();
+
+            const cSelect = document.getElementById('fe-concurso');
+            if (cSelect) {
+                const cur = cSelect.value;
+                cSelect.innerHTML = '<option value="">Todos los concursos evaluados</option>' +
+                    concursos.map(c => `<option value="${esc(c)}" ${cur === c ? 'selected' : ''}>${esc(c)}</option>`).join('');
+            }
+
+            const jSelect = document.getElementById('fe-jurado');
+            if (jSelect) {
+                const cur = jSelect.value;
+                jSelect.innerHTML = '<option value="">Todos los jurados evaluadores</option>' +
+                    jurados.map(j => `<option value="${esc(j)}" ${cur === j ? 'selected' : ''}>${esc(j)}</option>`).join('');
+            }
+
+            const vSelect = document.getElementById('fe-vereda');
+            if (vSelect) {
+                const cur = vSelect.value;
+                vSelect.innerHTML = '<option value="">Todas las veredas</option>' +
+                    veredas.map(v => `<option value="${esc(v)}" ${cur === v ? 'selected' : ''}>${esc(titleCase(v))}</option>`).join('');
+            }
+        }
+
+        function applyEvaluacionesFilters() {
+            const q = (document.getElementById('fe-busqueda')?.value || '').toLowerCase().trim();
+            const selConcurso = document.getElementById('fe-concurso')?.value || '';
+            const selJurado = document.getElementById('fe-jurado')?.value || '';
+            const selVereda = document.getElementById('fe-vereda')?.value || '';
+            const minScoreVal = document.getElementById('fe-min-score')?.value;
+            const maxScoreVal = document.getElementById('fe-max-score')?.value;
+
+            const minScore = minScoreVal !== '' && minScoreVal !== null && !isNaN(+minScoreVal) ? +minScoreVal : null;
+            const maxScore = maxScoreVal !== '' && maxScoreVal !== null && !isNaN(+maxScoreVal) ? +maxScoreVal : null;
+
+            evalState.filtered = evalState.evaluaciones.filter(ev => {
+                if (evalState.fuenteFilter === 'ambiental' && ev.fuente !== 'ambiental') return false;
+                if (evalState.fuenteFilter === 'general' && ev.fuente !== 'general') return false;
+
+                if (selConcurso && ev.concurso !== selConcurso) return false;
+                if (selJurado && ev.jurado !== selJurado) return false;
+                if (selVereda && ev.vereda !== selVereda) return false;
+
+                if (minScore !== null && ev.puntaje < minScore) return false;
+                if (maxScore !== null && ev.puntaje > maxScore) return false;
+
+                if (q) {
+                    const matchName = (ev.concursante || '').toLowerCase().includes(q);
+                    const matchDoc = (ev.documento || '').toLowerCase().includes(q);
+                    const matchPredio = (ev.predio || '').toLowerCase().includes(q);
+                    const matchJur = (ev.jurado || '').toLowerCase().includes(q);
+                    if (!matchName && !matchDoc && !matchPredio && !matchJur) return false;
+                }
+
+                return true;
+            });
+
+            // Ordenamiento
+            const { key, dir } = evalState.sort;
+            evalState.filtered.sort((a, b) => {
+                let va = a[key], vb = b[key];
+                if (key === 'puntaje') {
+                    va = +va; vb = +vb;
+                    return (va - vb) * dir;
+                }
+                if (key === 'fecha') {
+                    va = va || ''; vb = vb || '';
+                    return va.localeCompare(vb) * dir;
+                }
+                va = (va || '').toString().toLowerCase();
+                vb = (vb || '').toString().toLowerCase();
+                return va.localeCompare(vb) * dir;
+            });
+
+            evalState.page = 1;
+            renderEvaluacionesTable();
+        }
+
+        function resetEvaluacionesFilters() {
+            if (document.getElementById('fe-busqueda')) document.getElementById('fe-busqueda').value = '';
+            if (document.getElementById('fe-concurso')) document.getElementById('fe-concurso').value = '';
+            if (document.getElementById('fe-jurado')) document.getElementById('fe-jurado').value = '';
+            if (document.getElementById('fe-vereda')) document.getElementById('fe-vereda').value = '';
+            if (document.getElementById('fe-min-score')) document.getElementById('fe-min-score').value = '';
+            if (document.getElementById('fe-max-score')) document.getElementById('fe-max-score').value = '';
+            evalState.fuenteFilter = 'todas';
+            document.querySelectorAll('.source-btn').forEach(btn => btn.classList.remove('active'));
+            const b = document.getElementById('src-btn-todas');
+            if (b) b.classList.add('active');
+            applyEvaluacionesFilters();
+        }
+
+        // ================== RENDER TABLA DE EVALUACIONES ==================
+        function renderEvaluacionesTable() {
+            const tbody = document.getElementById('tbody-evaluaciones');
+            if (!tbody) return;
+
+            const total = evalState.filtered.length;
+            const countEl = document.getElementById('table-eval-count');
+            if (countEl) countEl.textContent = `(${total})`;
+
+            const pages = Math.max(1, Math.ceil(total / evalState.pageSize));
+            if (evalState.page > pages) evalState.page = pages;
+            if (evalState.page < 1) evalState.page = 1;
+
+            const start = (evalState.page - 1) * evalState.pageSize;
+            const end = Math.min(start + evalState.pageSize, total);
+            const rows = evalState.filtered.slice(start, end);
+
+            const pInfo = document.getElementById('eval-pager-info');
+            if (pInfo) pInfo.textContent = total ? `Mostrando ${start + 1}-${end} de ${total}` : 'Sin evaluaciones';
+
+            const prevBtn = document.getElementById('eval-prev-page');
+            const nextBtn = document.getElementById('eval-next-page');
+            if (prevBtn) prevBtn.disabled = evalState.page <= 1;
+            if (nextBtn) nextBtn.disabled = evalState.page >= pages;
+
+            if (!rows.length) {
+                tbody.innerHTML = '<tr><td colspan="8" class="loading">No se encontraron evaluaciones con los filtros aplicados.</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = rows.map(ev => {
+                const score = +ev.puntaje;
+                const scoreClass = score >= 80 ? 'score-badge-high' : (score >= 60 ? 'score-badge-mid' : 'score-badge-low');
+                const fuenteBadge = ev.fuente === 'ambiental'
+                    ? '<span class="tag" style="background:#E2EFE3;color:#20522B;font-weight:700;">Agroambiental</span>'
+                    : '<span class="tag" style="background:#F1F4F2;color:#3F4D43;">Estándar</span>';
+
+                const docText = ev.documento ? `C.C. ${esc(ev.documento)}` : 'Sin documento';
+                const predioText = ev.predio ? `· Predio: ${esc(titleCase(ev.predio))}` : '';
+
+                // Badges de evidencias
+                const evidenciasList = [];
+                if (ev.tiene_firma_jurado) evidenciasList.push('<span title="Firma de jurado registrada" style="color:#2E5A44;font-size:0.75rem;font-weight:600;">Firma Jurado</span>');
+                if (ev.tiene_firma_concursante) evidenciasList.push('<span title="Firma de concursante registrada" style="color:#2E5A44;font-size:0.75rem;font-weight:600;">Firma Concursante</span>');
+                if (ev.tiene_fotos) evidenciasList.push('<span title="Evidencia fotográfica" style="color:#925C17;font-size:0.75rem;font-weight:600;">Fotos</span>');
+                if (ev.coordenadas && ev.coordenadas !== 'N/A') evidenciasList.push('<span title="Coordenadas GPS" style="color:#3F6028;font-size:0.75rem;font-weight:600;">GPS</span>');
+                if (!evidenciasList.length) evidenciasList.push('<span style="color:#999;font-size:0.72rem;font-style:italic;">Evaluada digitalmente</span>');
+
+                return `
+                <tr>
+                    <td>
+                        <div style="font-weight:600;color:var(--primary-green-dark);">${esc(ev.concurso)}</div>
+                        <div class="muted" style="font-size:0.74rem;display:flex;gap:4px;align-items:center;margin-top:2px;">
+                            ${fuenteBadge} <span>${esc(ev.categoria)}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="font-weight:600;">${esc(titleCase(ev.concursante))}</div>
+                        <div class="muted" style="font-size:0.74rem;">${docText} ${predioText}</div>
+                    </td>
+                    <td>
+                        <div>${esc(titleCase(ev.vereda || 'Sumapaz'))}</div>
+                        <div class="muted" style="font-size:0.72rem;">${esc(ev.cuenca || '')}</div>
+                    </td>
+                    <td>
+                        <div style="font-weight:500;">${esc(titleCase(ev.jurado || 'Jurado Oficial'))}</div>
+                    </td>
+                    <td style="text-align:center;white-space:nowrap;">
+                        <span class="score-badge ${scoreClass}">
+                            ${score} <span style="font-size:0.72rem;color:inherit;font-weight:normal;">/ ${ev.puntaje_max}</span>
+                        </span>
+                    </td>
+                    <td style="white-space:nowrap;font-size:0.76rem;">
+                        <div>${esc(ev.fecha || '-')}</div>
+                    </td>
+                    <td style="text-align:center;font-size:0.75rem;">
+                        <div style="display:flex;flex-direction:column;gap:2px;align-items:center;">
+                            ${evidenciasList.join('')}
+                        </div>
+                    </td>
+                    <td style="text-align:center;white-space:nowrap;">
+                        <button type="button" class="btn btn-primary btn-sm" onclick="openActaJuzgamiento('${ev.uid}')">
+                            Ver Acta
+                        </button>
+                    </td>
+                </tr>`;
+            }).join('');
+        }
+
+        // ================== RENDER TABLA DE COMPORTAMIENTO POR CONCURSO ==================
+        function renderResumenConcursosTable() {
+            const tbody = document.getElementById('tbody-resumen-concursos');
+            if (!tbody) return;
+
+            const list = evalState.resumenConcursos || [];
+            if (!list.length) {
+                tbody.innerHTML = '<tr><td colspan="5" class="loading">No hay datos de concursos evaluados.</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = list.map(c => {
+                const prom = +c.puntaje_promedio;
+                const pct = Math.min(100, Math.max(0, prom));
+                const badgeClass = prom >= 80 ? 'score-badge-high' : (prom >= 60 ? 'score-badge-mid' : 'score-badge-low');
+
+                return `
+                <tr>
+                    <td>
+                        <div style="font-weight:600;font-size:0.8rem;color:var(--primary-green-dark);">${esc(c.concurso)}</div>
+                        <div class="muted" style="font-size:0.7rem;">${esc(c.categoria)}</div>
+                    </td>
+                    <td style="text-align:center;font-weight:600;">${c.total_evaluaciones}</td>
+                    <td style="text-align:center;">
+                        <span class="score-badge ${badgeClass}" style="font-size:0.8rem;">
+                            ${prom} pts
+                        </span>
+                    </td>
+                    <td style="text-align:center;font-size:0.75rem;color:#4B5563;">
+                        ${c.puntaje_min} - ${c.puntaje_max} pts
+                    </td>
+                    <td>
+                        <div style="display:flex;align-items:center;">
+                            <div class="perf-bar-bg">
+                                <div class="perf-bar-fill" style="width:${pct}%;"></div>
+                            </div>
+                            <span style="font-size:0.72rem;font-weight:600;color:var(--text-dark);">${prom}%</span>
+                        </div>
+                    </td>
+                </tr>`;
+            }).join('');
+        }
+
+        // ================== GRÁFICO DE COMPORTAMIENTO Y PROMEDIOS ==================
+        function renderEvalPromediosChart() {
+            const ctx = document.getElementById('ch-eval-promedios');
+            if (!ctx) return;
+
+            if (charts.evalPromedios) {
+                charts.evalPromedios.destroy();
+            }
+
+            const list = (evalState.resumenConcursos || []).slice(0, 15);
+            if (!list.length) return;
+
+            const labels = list.map(c => {
+                const name = c.concurso;
+                return name.length > 28 ? name.slice(0, 26) + '...' : name;
+            });
+            const dataValues = list.map(c => +c.puntaje_promedio);
+            const counts = list.map(c => c.total_evaluaciones);
+
+            charts.evalPromedios = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Puntaje Promedio',
+                        data: dataValues,
+                        backgroundColor: '#3F6028',
+                        borderColor: '#35551F',
+                        borderWidth: 1,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const item = list[context.dataIndex];
+                                    return [
+                                        `Puntaje promedio: ${item.puntaje_promedio} pts`,
+                                        `Evaluaciones realizadas: ${item.total_evaluaciones}`,
+                                        `Rango: ${item.puntaje_min} - ${item.puntaje_max} pts`
+                                    ];
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            min: 0,
+                            max: 100,
+                            ticks: { callback: v => v + ' pts', font: { family: 'Inter', size: 10 } },
+                            grid: { color: '#E5E7EB' }
+                        },
+                        y: {
+                            ticks: { font: { family: 'Inter', size: 10.5 } },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        // ================== MODAL ACTA OFICIAL DE JUZGAMIENTO ==================
+        let currentJuzgamientoActaName = 'Acta_Juzgamiento';
+
+        async function openActaJuzgamiento(uid) {
+            const modal = document.getElementById('acta-juzgamiento-modal');
+            const body = document.getElementById('acta-juzg-modal-body');
+            if (!modal || !body) return;
+
+            modal.classList.add('open');
+            body.innerHTML = '<div class="loading"><div class="spinner"></div>Cargando acta oficial de juzgamiento y evaluación...</div>';
+
+            try {
+                const res = await fetch(`api/get_evaluacion_acta_detalle.php?uid=${encodeURIComponent(uid)}&t=${Date.now()}`);
+                const data = await res.json();
+                if (!data.success) throw new Error(data.error || 'No se pudo obtener el acta oficial');
+
+                const a = data.acta;
+                const p = a.participante || {};
+                const safePartName = (p.nombre || 'Participante').replace(/\s+/g, '_');
+                const safeContestName = (a.concurso || 'Concurso').slice(0, 20).replace(/\s+/g, '_');
+                currentJuzgamientoActaName = `Acta_Juzgamiento_${safeContestName}_${safePartName}`;
+
+                const modalTitle = document.getElementById('acta-juzg-modal-title');
+                if (modalTitle) {
+                    modalTitle.textContent = `Acta Oficial de Juzgamiento - ${titleCase(p.nombre || '')}`;
+                }
+
+                // Generar Criterios Rows
+                let criteriosHtml = '';
+                let sumaMax = 0;
+                let sumaObt = 0;
+                let hasIndividualScores = false;
+
+                if (a.criterios && a.criterios.length) {
+                    criteriosHtml = a.criterios.map((cr, idx) => {
+                        const maxP = cr.puntaje_maximo || 25;
+                        sumaMax += maxP;
+                        const hasScore = cr.puntaje_obtenido !== null && cr.puntaje_obtenido !== undefined;
+                        if (hasScore) hasIndividualScores = true;
+                        const obtP = hasScore ? cr.puntaje_obtenido : '-';
+                        if (hasScore) sumaObt += +obtP;
+
+                        return `
+                        <tr>
+                            <td><b>${idx + 1}.</b> ${esc(cr.criterio)}</td>
+                            <td style="text-align:center;width:95px;">${maxP} pts</td>
+                            <td style="text-align:center;width:115px;font-weight:700;color:#3F6028;">
+                                ${obtP}${hasScore ? ' pts' : ''}
+                            </td>
+                        </tr>`;
+                    }).join('');
+                }
+
+                const displayTotalScore = a.puntaje_total !== null && a.puntaje_total !== undefined ? a.puntaje_total : sumaObt;
+                const displayMaxScore = a.puntaje_max_posible || (sumaMax > 0 ? sumaMax : 100);
+
+                const coordsText = (a.coordenadas && a.coordenadas !== 'N/A') ? ` | Coordenadas GPS: ${esc(a.coordenadas)}` : '';
+                const predioText = p.predio ? `, predio '${esc(titleCase(p.predio))}'` : '';
+                const docText = p.numero_documento ? `${esc(p.tipo_documento || 'C.C.')} No. ${esc(p.numero_documento)}` : 'sin documento registrado';
+
+                // Firmas
+                const firmaJuradoImg = a.firma_jurado
+                    ? `<img src="${a.firma_jurado}" alt="Firma del Jurado">`
+                    : `<span class="acta-juzg-sig-digital-notice">[ Planilla Evaluada y Certificada Digitalmente ]</span>`;
+
+                const firmaPartImg = a.firma_concursante
+                    ? `<img src="${a.firma_concursante}" alt="Firma del Concursante">`
+                    : `<span class="acta-juzg-sig-digital-notice">[ Firma Concursante / Evaluado ]</span>`;
+
+                // Render completo del acta
+                body.innerHTML = `
+                <div class="acta-juzg-container" id="acta-juzgamiento-print">
+                    <!-- PÁGINA 1: CERTIFICACIÓN OFICIAL Y RESULTADOS -->
+                    <div class="acta-juzg-sheet">
+                        <div class="acta-juzg-header-wrap">
+                            <!-- SVG ONDAS ORGÁNICAS OFICIALES -->
+                            <svg class="acta-juzg-wave-accent" viewBox="0 0 600 32" preserveAspectRatio="none">
+                                <path d="M0,0 L390,0 C330,14 210,24 0,18 Z" fill="#F4B35E" />
+                                <path d="M360,0 L600,0 L600,32 C510,26 430,14 360,0 Z" fill="#3F6028" />
+                            </svg>
+                            <div class="acta-juzg-header-content">
+                                <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="acta-juzg-logo">
+                                <div class="acta-juzg-title-box">
+                                    <div class="acta-juzg-title-main">XXV FERIA AGROAMBIENTAL DE SUMAPAZ</div>
+                                    <div class="acta-juzg-title-sub">ACTA OFICIAL DE JUZGAMIENTO Y EVALUACION</div>
+                                </div>
+                                <img src="assets/logo_feria.png" alt="Feria Agroambiental" class="acta-juzg-logo">
+                            </div>
+                        </div>
+
+                        <!-- RECUADRO CERTIFICACIÓN -->
+                        <div class="acta-juzg-cert-box">
+                            <div class="acta-juzg-cert-header">CERTIFICACION OFICIAL DE JUZGAMIENTO</div>
+                            <div class="acta-juzg-cert-body">
+                                <p class="acta-juzg-cert-p">
+                                    En la Localidad de Sumapaz, en el marco de la Feria Agroambiental del Día del Campesino, en fecha <b>${esc(a.fecha || 'Oficial')}</b>, se llevó a cabo el juzgamiento oficial correspondiente al concurso: <b>'${esc(a.concurso)}'</b> (${esc(a.categoria)}).
+                                </p>
+                                <p class="acta-juzg-cert-p">
+                                    <b>Participante evaluado(a):</b> ${esc(titleCase(p.nombre))}, identificado(a) con ${docText}, de la vereda ${esc(titleCase(p.vereda || 'Sumapaz'))}${predioText}.
+                                </p>
+                                <p class="acta-juzg-cert-p">
+                                    <b>Jurado Evaluador:</b> ${esc(titleCase(a.jurado || 'Jurado Oficial'))}${coordsText}.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- TABLA DE CRITERIOS -->
+                        <table class="acta-juzg-table">
+                            <thead>
+                                <tr>
+                                    <th>Criterio Evaluable</th>
+                                    <th style="text-align:center">Puntaje Max.</th>
+                                    <th style="text-align:center">Puntaje Obtenido</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${criteriosHtml || `
+                                    <tr>
+                                        <td>Evaluación integral y cumplimiento de parámetros técnicos del concurso</td>
+                                        <td style="text-align:center">${displayMaxScore} pts</td>
+                                        <td style="text-align:center;font-weight:700;color:#3F6028;">${displayTotalScore} pts</td>
+                                    </tr>
+                                `}
+                                <tr class="total-row">
+                                    <td>PUNTAJE TOTAL CONSOLIDADO</td>
+                                    <td style="text-align:center">${displayMaxScore} pts</td>
+                                    <td style="text-align:center;color:#3F6028;">${displayTotalScore} pts</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- OBSERVACIONES -->
+                        <div class="acta-juzg-obs-box">
+                            <div class="acta-juzg-obs-header">OBSERVACIONES DEL JURADO EVALUADOR</div>
+                            <div class="acta-juzg-obs-body">
+                                ${esc(a.observaciones || 'Diligencia realizada conforme a los lineamientos y criterios establecidos para el concurso. Sin observaciones adicionales registradas en campo.')}
+                            </div>
+                        </div>
+
+                        <!-- FIRMAS DUALES -->
+                        <div class="acta-juzg-signatures-grid">
+                            <div class="acta-juzg-sig-card">
+                                <div class="acta-juzg-sig-head">FIRMA JURADO EVALUADOR</div>
+                                <div class="acta-juzg-sig-canvas-wrap">
+                                    ${firmaJuradoImg}
+                                </div>
+                                <div class="acta-juzg-sig-footer-name">
+                                    <b>Nombre:</b> ${esc(titleCase(a.jurado || 'Jurado Oficial'))}
+                                </div>
+                            </div>
+                            <div class="acta-juzg-sig-card">
+                                <div class="acta-juzg-sig-head">FIRMA CONCURSANTE / EVALUADO</div>
+                                <div class="acta-juzg-sig-canvas-wrap">
+                                    ${firmaPartImg}
+                                </div>
+                                <div class="acta-juzg-sig-footer-name">
+                                    <b>Nombre:</b> ${esc(titleCase(p.nombre))}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PIE INSTITUCIONAL -->
+                        <div class="acta-juzg-footer-bar">
+                            <span>ALCALDÍA LOCAL DE SUMAPAZ</span>
+                            <span>Página 1 de ${a.fotos && a.fotos.length ? '2' : '1'}</span>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 2: EVIDENCIA FOTOGRÁFICA (SI APLICA) -->
+                    ${a.fotos && a.fotos.length ? `
+                    <div class="acta-juzg-sheet" style="page-break-before:always;">
+                        <div class="acta-juzg-header-wrap">
+                            <svg class="acta-juzg-wave-accent" viewBox="0 0 600 32" preserveAspectRatio="none">
+                                <path d="M0,0 L390,0 C330,14 210,24 0,18 Z" fill="#F4B35E" />
+                                <path d="M360,0 L600,0 L600,32 C510,26 430,14 360,0 Z" fill="#3F6028" />
+                            </svg>
+                            <div class="acta-juzg-header-content">
+                                <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="acta-juzg-logo">
+                                <div class="acta-juzg-title-box">
+                                    <div class="acta-juzg-title-main">XXV FERIA AGROAMBIENTAL DE SUMAPAZ</div>
+                                    <div class="acta-juzg-title-sub">REGISTRO FOTOGRAFICO DEL PREDIO / CONCURSO</div>
+                                </div>
+                                <img src="assets/logo_feria.png" alt="Feria Agroambiental" class="acta-juzg-logo">
+                            </div>
+                        </div>
+
+                        <div class="acta-juzg-cert-header" style="border:1px solid #333;margin-bottom:8px;">
+                            EVIDENCIA FOTOGRAFICA DE EVALUACION EN CAMPO (${a.fotos.length} FOTOGRAFIA${a.fotos.length > 1 ? 'S' : ''})
+                        </div>
+
+                        <div class="acta-juzg-photos-grid">
+                            ${a.fotos.map((imgSrc, i) => `
+                                <img src="${imgSrc}" alt="Evidencia ${i + 1}">
+                            `).join('')}
+                        </div>
+
+                        <div class="acta-juzg-footer-bar" style="margin-top:20px;">
+                            <span>ALCALDÍA LOCAL DE SUMAPAZ</span>
+                            <span>Página 2 de 2</span>
+                        </div>
+                    </div>
+                    ` : ''}
+                </div>`;
+            } catch (err) {
+                console.error("Error al renderizar acta oficial:", err);
+                body.innerHTML = `<div class="error-box">Error al cargar acta: ${esc(err.message)}</div>`;
+            }
+        }
+
+        function closeActaJuzgamiento() {
+            const modal = document.getElementById('acta-juzgamiento-modal');
+            if (modal) modal.classList.remove('open');
+        }
+
+        function printActaJuzgamiento() {
+            window.print();
+        }
+
+        function downloadActaJuzgamientoPdf() {
+            const el = document.getElementById('acta-juzgamiento-print');
+            if (!el || typeof html2pdf === 'undefined') {
+                return window.print();
+            }
+            const opt = {
+                margin: [6, 8, 6, 8],
+                filename: `${currentJuzgamientoActaName}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, logging: false },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(el).save();
+        }
+
+        // ================== EXPORTAR EVALUACIONES A EXCEL ==================
+        function exportEvaluacionesExcel() {
+            if (typeof XLSX === 'undefined') {
+                alert('La librería de Excel no está disponible');
+                return;
+            }
+            const list = evalState.filtered || [];
+            if (!list.length) {
+                alert('No hay evaluaciones filtradas para exportar');
+                return;
+            }
+
+            const rows = list.map(e => ({
+                ID: e.uid,
+                Fuente: e.fuente_label,
+                Concurso: e.concurso,
+                Categoría: e.categoria,
+                Concursante: e.concursante,
+                Documento: e.documento,
+                Vereda: e.vereda,
+                Cuenca: e.cuenca,
+                Predio: e.predio || 'N/A',
+                Jurado: e.jurado,
+                Puntaje_Obtenido: e.puntaje,
+                Puntaje_Máximo: e.puntaje_max,
+                Fecha: e.fecha,
+                Coordenadas: e.coordenadas || 'N/A',
+                Observaciones: e.observaciones || ''
+            }));
+
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(rows), 'Evaluaciones');
+
+            if (evalState.resumenConcursos && evalState.resumenConcursos.length) {
+                const resumenRows = evalState.resumenConcursos.map(r => ({
+                    Concurso: r.concurso,
+                    Categoría: r.categoria,
+                    Fuente: r.fuente_label,
+                    Total_Evaluaciones: r.total_evaluaciones,
+                    Puntaje_Promedio: r.puntaje_promedio,
+                    Puntaje_Mínimo: r.puntaje_min,
+                    Puntaje_Máximo: r.puntaje_max
+                }));
+                XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(resumenRows), 'Promedios_Por_Concurso');
+            }
+
+            XLSX.writeFile(wb, `Evaluaciones_Sumapaz_${new Date().toISOString().slice(0, 10)}.xlsx`);
+        }
+
+
         // ================== INIT ==================
         document.addEventListener('DOMContentLoaded', async () => {
             if (!(await checkAuth())) return;
@@ -2337,6 +3544,38 @@
             document.getElementById('page-size').addEventListener('change', () => { state.page = 1; renderTable(); });
             document.getElementById('prev-page').addEventListener('click', () => { state.page--; renderTable(); });
             document.getElementById('next-page').addEventListener('click', () => { state.page++; renderTable(); });
+            
+            // Event listeners de Evaluaciones
+            let te;
+            const busqInput = document.getElementById('fe-busqueda');
+            if (busqInput) busqInput.addEventListener('input', () => { clearTimeout(te); te = setTimeout(applyEvaluacionesFilters, 250); });
+
+            ['fe-concurso', 'fe-jurado', 'fe-vereda', 'fe-min-score', 'fe-max-score']
+                .forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.addEventListener('change', applyEvaluacionesFilters);
+                });
+
+            document.querySelectorAll('th[data-eval-sort]').forEach(th => th.addEventListener('click', () => {
+                const k = th.dataset.evalSort;
+                evalState.sort = { key: k, dir: evalState.sort.key === k ? -evalState.sort.dir : 1 };
+                applyEvaluacionesFilters();
+            }));
+
+            const evalPageSize = document.getElementById('eval-page-size');
+            if (evalPageSize) evalPageSize.addEventListener('change', () => {
+                evalState.pageSize = +evalPageSize.value;
+                evalState.page = 1;
+                renderEvaluacionesTable();
+            });
+            const evalPrev = document.getElementById('eval-prev-page');
+            if (evalPrev) evalPrev.addEventListener('click', () => { evalState.page--; renderEvaluacionesTable(); });
+            const evalNext = document.getElementById('eval-next-page');
+            if (evalNext) evalNext.addEventListener('click', () => { evalState.page++; renderEvaluacionesTable(); });
+
+            // Cargar también evaluaciones en segundo plano para contadores
+            loadEvaluacionesData(false);
+            
             await loadData();
         });
     </script>

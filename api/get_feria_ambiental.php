@@ -32,14 +32,14 @@ try {
     $cuencasVeredasRef = [
         'SAN JOSE' => 'Rio Sumapaz', 'NUEVA GRANADA' => 'Rio Sumapaz', 'CONCEPCION' => 'Rio Sumapaz',
         'TUNAL ALTO' => 'Rio Sumapaz', 'LAGUNITAS' => 'Rio Sumapaz', 'TUNAL BAJO' => 'Rio Sumapaz',
-        'LA UNION URBANO' => 'Rio Sumapaz', 'LA UNION' => 'Rio Sumapaz', 'CHORRERAS' => 'Rio Sumapaz',
+        'LA UNIÓN' => 'Rio Sumapaz', 'LA UNION' => 'Rio Sumapaz', 'CHORRERAS' => 'Rio Sumapaz',
         'SANTO DOMINGO' => 'Rio Sumapaz', 'LAS VEGAS' => 'Rio Sumapaz', 'SAN JUAN' => 'Rio Sumapaz',
         'CAPITOLIO' => 'Rio Sumapaz', 'EL TOLDO' => 'Rio Sumapaz', 'TOLDO' => 'Rio Sumapaz',
         'SAN ANTONIO' => 'Rio Sumapaz',
 
         'LAS SOPAS' => 'Rio Blanco', 'LOS RIOS' => 'Rio Blanco', 'LAS PALMAS' => 'Rio Blanco',
         'LAS ANIMAS' => 'Rio Blanco', 'LASANIMAS' => 'Rio Blanco', 'LAS AURAS' => 'Rio Blanco',
-        'LASURAS' => 'Rio Blanco', 'NAZARETH URBANO' => 'Rio Blanco', 'NAZARETH' => 'Rio Blanco',
+        'LASURAS' => 'Rio Blanco', 'NAZARETH' => 'Rio Blanco',
         'NAZARET' => 'Rio Blanco', 'TAQUECITOS' => 'Rio Blanco', 'PENALISA' => 'Rio Blanco',
         'PEÑALISA' => 'Rio Blanco', 'LAGUNA VERDE' => 'Rio Blanco', 'RAIZAL' => 'Rio Blanco',
         'EL RAIZAL' => 'Rio Blanco', 'SANTA ROSA' => 'Rio Blanco', 'SANTA ROSA BAJA' => 'Rio Blanco',
@@ -68,6 +68,13 @@ try {
             $obs = trim(substr($r['notes'], strpos($r['notes'], 'OBSERVACIONES:') + strlen('OBSERVACIONES:')));
         }
         $vUpper = strtoupper(trim($r['vereda'] ?? ''));
+        $vUpper = trim(preg_replace('/\bURBANO\b/i', '', $vUpper));
+        if ($vUpper === 'LA UNION') {
+            $vUpper = 'LA UNIÓN';
+        }
+        if ($vUpper === 'CEDRAL') {
+            $vUpper = 'NAZARETH';
+        }
         $cVal = trim($r['cuenca'] ?? '');
         $vClean = preg_replace('~[^\pL\pN\s]+~u', '', $vUpper);
         $vClean = strtoupper(trim(preg_replace('/\s+/', ' ', $vClean)));
