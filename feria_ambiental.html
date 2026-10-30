@@ -1197,23 +1197,20 @@
                 </div>
             </div>
 
-            <!-- SELECTOR DE FUENTE -->
-            <div class="source-filter-bar">
-                <span class="source-filter-label">Fuente de evaluación:</span>
-                <button type="button" class="source-btn active" id="src-btn-todas" onclick="setEvaluacionesFuente('todas')">Todas las evaluaciones</button>
-                <button type="button" class="source-btn" id="src-btn-ambiental" onclick="setEvaluacionesFuente('ambiental')">Feria Agroambiental (Rol 13)</button>
-                <button type="button" class="source-btn" id="src-btn-general" onclick="setEvaluacionesFuente('general')">Concursos Generales</button>
+            <!-- INFORMACIÓN INSTITUCIONAL DE ORIGEN -->
+            <div style="background:#EEF4EE;border:1px solid #D1E3D4;border-radius:10px;padding:0.75rem 1.1rem;margin-bottom:1.25rem;font-size:0.83rem;color:var(--primary-green-dark);line-height:1.45;">
+                <b>Feria Agroambiental de Sumapaz (Rol 13 - Tablas Oficiales _AMBIENTAL):</b> Las evaluaciones provienen directamente de la tabla <code>resultado_concurso_AMBIENTAL</code>, vinculadas con los productores inscritos en <code>productor_predio_AMBIENTAL</code> y el catálogo de 24 concursos en finca de <code>estructura_concursos_AMBIENTAL</code>.
             </div>
 
-            <!-- KPIS DE EVALUACIONES SOBRIOS (TIPOGRAFIA INTER) -->
+            <!-- KPIS DE EVALUACIONES AGROAMBIENTALES SOBRIOS (TIPOGRAFIA INTER) -->
             <section class="kpis">
-                <div class="kpi"><div class="v" id="ke-total">-</div><div class="l">Evaluaciones realizadas</div></div>
-                <div class="kpi"><div class="v" id="ke-promedio">-</div><div class="l">Puntaje promedio general</div></div>
-                <div class="kpi"><div class="v" id="ke-max">-</div><div class="l">Puntaje máximo registrado</div></div>
-                <div class="kpi"><div class="v" id="ke-concursos">-</div><div class="l">Concursos evaluados</div></div>
+                <div class="kpi"><div class="v" id="ke-total">-</div><div class="l">Evaluaciones en campo</div></div>
+                <div class="kpi"><div class="v" id="ke-promedio">-</div><div class="l">Puntaje promedio</div></div>
+                <div class="kpi"><div class="v" id="ke-max">-</div><div class="l">Puntaje máximo obtenido</div></div>
+                <div class="kpi"><div class="v" id="ke-concursos">-</div><div class="l">Concursos calificados</div></div>
+                <div class="kpi"><div class="v" id="ke-total-concursos">24</div><div class="l">Concursos oficiales</div></div>
+                <div class="kpi"><div class="v" id="ke-productores">-</div><div class="l">Productores calificados</div></div>
                 <div class="kpi"><div class="v" id="ke-jurados">-</div><div class="l">Jurados evaluadores</div></div>
-                <div class="kpi"><div class="v" id="ke-ambiental">-</div><div class="l">Rol 13 (Agroambiental)</div></div>
-                <div class="kpi"><div class="v" id="ke-general">-</div><div class="l">Roles Generales</div></div>
             </section>
 
             <!-- ANÁLISIS DE COMPORTAMIENTO DE PUNTAJE Y PROMEDIOS POR CONCURSO -->
@@ -1493,7 +1490,7 @@
 
         // ================== CARGA DE DATOS ==================
         async function loadData() {
-            const inscBadge = document.getElementById('count-tab-inscripciones'); if (inscBadge) inscBadge.textContent = state.personas.length || data.productores.length;
+            
                 document.getElementById('last-update').textContent = 'Cargando datos...';
             try {
                 const [res, geo] = await Promise.all([
@@ -1507,6 +1504,7 @@
                 prepareData();
                 fillFilterOptions();
                 applyFilters();
+                const inscBadge = document.getElementById('count-tab-inscripciones'); if (inscBadge) inscBadge.textContent = state.personas ? state.personas.length : (data.productores ? data.productores.length : 0);
                 document.getElementById('last-update').textContent =
                     `${data.productores.length} registros en servidor - actualizado ${new Date().toLocaleString('es-CO')}`;
             } catch (e) {
@@ -2893,13 +2891,13 @@
                 // Actualizar KPIs
                 const k = data.kpis || {};
                 const setEl = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-                setEl('ke-total', k.total_evaluaciones ?? '-');
-                setEl('ke-promedio', (k.promedio_general !== undefined ? k.promedio_general + ' pts' : '-'));
-                setEl('ke-max', (k.puntaje_max_global !== undefined ? k.puntaje_max_global + ' pts' : '-'));
-                setEl('ke-concursos', k.concursos_evaluados ?? '-');
-                setEl('ke-jurados', k.jurados_activos ?? '-');
-                setEl('ke-ambiental', k.total_ambiental ?? '0');
-                setEl('ke-general', k.total_general ?? '0');
+                setEl('ke-total', k.total_evaluaciones ?? 0);
+                setEl('ke-promedio', (k.promedio_general > 0 ? k.promedio_general + ' pts' : '0.0 pts'));
+                setEl('ke-max', (k.puntaje_max_global > 0 ? k.puntaje_max_global + ' pts' : '0 pts'));
+                setEl('ke-concursos', k.concursos_evaluados ?? 0);
+                setEl('ke-total-concursos', k.total_concursos_catalogo ?? 24);
+                setEl('ke-productores', k.productores_evaluados ?? 0);
+                setEl('ke-jurados', k.jurados_activos ?? 0);
 
                 // Llenar opciones de filtros
                 fillEvaluacionesFilterOptions();
@@ -3053,7 +3051,11 @@
             if (nextBtn) nextBtn.disabled = evalState.page >= pages;
 
             if (!rows.length) {
-                tbody.innerHTML = '<tr><td colspan="8" class="loading">No se encontraron evaluaciones con los filtros aplicados.</td></tr>';
+                if (!evalState.evaluaciones.length) {
+                tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;padding:2.5rem 1.5rem;color:#4B5563;font-size:0.86rem;line-height:1.5;"><div style="font-weight:700;color:var(--primary-green-dark);margin-bottom:0.35rem;font-size:0.95rem;">No se registran evaluaciones en campo todavía en resultado_concurso_AMBIENTAL</div>Los datos se transmitirán en tiempo real cuando los jurados califiquen desde la aplicación móvil oficial (Rol 13 / Ambiental). Utilice el botón "Actualizar" para refrescar las calificaciones.</td></tr>';
+                return;
+            }
+            tbody.innerHTML = '<tr><td colspan="8" class="loading">No se encontraron evaluaciones con los filtros de búsqueda aplicados.</td></tr>';
                 return;
             }
 
@@ -3123,7 +3125,7 @@
 
             const list = evalState.resumenConcursos || [];
             if (!list.length) {
-                tbody.innerHTML = '<tr><td colspan="5" class="loading">No hay datos de concursos evaluados.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="5" class="loading">Cargando catálogo oficial de 24 concursos...</td></tr>';
                 return;
             }
 
@@ -3168,7 +3170,8 @@
                 charts.evalPromedios.destroy();
             }
 
-            const list = (evalState.resumenConcursos || []).slice(0, 15);
+            const listEvaluated = (evalState.resumenConcursos || []).filter(c => c.total_evaluaciones > 0);
+            const list = (listEvaluated.length ? listEvaluated : evalState.resumenConcursos || []).slice(0, 12);
             if (!list.length) return;
 
             const labels = list.map(c => {
