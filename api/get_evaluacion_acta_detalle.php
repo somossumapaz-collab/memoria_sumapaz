@@ -58,7 +58,7 @@ try {
             p.nombre_productor, p.apellido_productor, p.tipo_documento, p.numero_documento,
             p.nombre_predio, p.extension_finca, p.vereda, p.cuenca, p.telefono, p.email,
             p.nombre_inscriptor, p.fecha_inscripcion,
-            c.nombre_concurso, c.categoria
+            c.nombre_concurso, c.categoria, c.preguntas_json
         FROM resultado_concurso_AMBIENTAL r
         LEFT JOIN productor_predio_AMBIENTAL p ON p.id = r.id_productor_predio
         LEFT JOIN estructura_concursos_AMBIENTAL c ON c.id = r.id_concurso
@@ -75,39 +75,130 @@ try {
     $nombreCompleto = trim(($row['nombre_productor'] ?? '') . ' ' . ($row['apellido_productor'] ?? ''));
     if ($nombreCompleto === '') $nombreCompleto = 'Participante #' . $row['id_productor_predio'];
 
-    $jurado = trim((string)($row['nombre_inscriptor'] ?? ''));
+    $json = json_decode($row['resultados_json'] ?? '', true);
+    if (!is_array($json)) {
+        $json = [];
+    }
+
+    // 1. Jurado Evaluador: prioridad absoluta a judgeName de resultados_json
+    $jurado = '';
+    if (!empty($json['judgeName'])) {
+        $jurado = trim((string)$json['judgeName']);
+    } elseif (!empty($row['nombre_inscriptor'])) {
+        $jurado = trim((string)$row['nombre_inscriptor']);
+    }
     if ($jurado === '') $jurado = 'Jurado Agroambiental Oficial';
 
-    $totalScore = 0;
-    $criteriaList = [];
-    $json = json_decode($row['resultados_json'] ?? '', true);
-    if (is_array($json)) {
-        if (isset($json['totalScore'])) {
-            $totalScore = (float)$json['totalScore'];
-        } elseif (isset($json['puntaje_total'])) {
-            $totalScore = (float)$json['puntaje_total'];
-        }
+    // 2. Concurso y Categoría
+    $concursoNom = trim((string)($row['nombre_concurso'] ?? ''));
+    if (empty($concursoNom) && !empty($json['concurso'])) {
+        $concursoNom = trim((string)$json['concurso']);
+    }
+    if (empty($concursoNom)) {
+        $concursoNom = 'Concurso #' . $row['id_concurso'];
+    }
 
-        if (isset($json['criteria']) && is_array($json['criteria'])) {
-            foreach ($json['criteria'] as $cr) {
-                $criteriaList[] = [
-                    'criterio' => $cr['name'] ?? ($cr['criterio'] ?? 'Criterio evaluable'),
-                    'puntaje_maximo' => (int)($cr['maxPoints'] ?? ($cr['puntaje_maximo'] ?? 25)),
-                    'puntaje_obtenido' => (int)($cr['score'] ?? ($cr['puntaje_obtenido'] ?? 0)),
-                ];
-            }
+    $categoriaNom = trim((string)($row['categoria'] ?? ''));
+    if (empty($categoriaNom)) {
+        $categoriaNom = 'Categoría Oficial Feria Agroambiental';
+    }
+
+    // 3. Fecha oficial: limpiar si contenía coordenadas o tomar de resultados_json
+    $fecha = trim((string)($row['fecha'] ?? ''));
+    if (stripos($fecha, 'lat:') !== false || stripos($fecha, 'lon:') !== false || empty($fecha)) {
+        if (!empty($json['fecha']) && stripos($json['fecha'], 'lat:') === false) {
+            $fecha = trim((string)$json['fecha']);
+        } else {
+            $fecha = $row['created_at'] ?? '';
         }
+    }
+
+    // 4. Coordenadas GPS
+    $coords = trim((string)($row['coordenadas'] ?? ''));
+    if (empty($coords) || $coords === 'N/A') {
+        if (!empty($json['coordenadas'])) {
+            $coords = trim((string)$json['coordenadas']);
+        } elseif (!empty($row['fecha']) && (stripos($row['fecha'], 'lat:') !== false || stripos($row['fecha'], 'lon:') !== false)) {
+            $coords = trim((string)$row['fecha']);
+        }
+    }
+
+    // 5. Puntaje total
+    $totalScore = 0;
+    if (isset($json['totalScore'])) {
+        $totalScore = (float)$json['totalScore'];
+    } elseif (isset($json['puntaje_total'])) {
+        $totalScore = (float)$json['puntaje_total'];
+    }
+
+    // 6. Catálogo de preguntas/criterios de estructura_concursos_AMBIENTAL como apoyo
+    $catalogoCriterios = [];
+    if (!empty($row['preguntas_json'])) {
+        $pj = json_decode($row['preguntas_json'], true);
+        if (is_array($pj) && isset($pj['criterios']) && is_array($pj['criterios'])) {
+            $catalogoCriterios = $pj['criterios'];
+        }
+    }
+
+    // 7. Criterios evaluados (desglose por criterio)
+    $criteriaList = [];
+    $maxPosible = 0;
+
+    $rawCriterios = [];
+    if (isset($json['calificaciones']) && is_array($json['calificaciones'])) {
+        $rawCriterios = $json['calificaciones'];
+    } elseif (isset($json['criteria']) && is_array($json['criteria'])) {
+        $rawCriterios = $json['criteria'];
+    }
+
+    if (!empty($rawCriterios)) {
+        foreach ($rawCriterios as $idx => $cr) {
+            $cId = $cr['criterionId'] ?? ($cr['id'] ?? ($idx + 1));
+            $criterioNom = $cr['criterio'] ?? ($cr['name'] ?? ('Criterio ' . ($idx + 1)));
+
+            // Enriquecer nombre/descripción desde el catálogo si está disponible
+            $descCompleta = '';
+            if (isset($catalogoCriterios[$idx]['description'])) {
+                $descCompleta = $catalogoCriterios[$idx]['description'];
+            }
+            if (isset($catalogoCriterios[$idx]['name']) && strlen($catalogoCriterios[$idx]['name']) > strlen($criterioNom)) {
+                $criterioNom = $catalogoCriterios[$idx]['name'];
+            }
+
+            $pMax = isset($cr['puntajeMaximo']) ? (float)$cr['puntajeMaximo'] : (isset($cr['maxPoints']) ? (float)$cr['maxPoints'] : (isset($cr['puntaje_maximo']) ? (float)$cr['puntaje_maximo'] : (isset($catalogoCriterios[$idx]['max_points_value']) ? (float)$catalogoCriterios[$idx]['max_points_value'] : 3)));
+            $pObt = isset($cr['puntaje']) ? (float)$cr['puntaje'] : (isset($cr['score']) ? (float)$cr['score'] : (isset($cr['puntaje_obtenido']) ? (float)$cr['puntaje_obtenido'] : 0));
+
+            $criteriaList[] = [
+                'criterion_id' => $cId,
+                'criterio' => $criterioNom,
+                'descripcion' => $descCompleta,
+                'puntaje_maximo' => $pMax,
+                'puntaje_obtenido' => $pObt,
+            ];
+            $maxPosible += $pMax;
+        }
+    } elseif (!empty($catalogoCriterios)) {
+        // En caso de evaluación antigua sin desglose individual en resultados_json
+        foreach ($catalogoCriterios as $idx => $catCr) {
+            $pMax = (float)($catCr['max_points_value'] ?? 3);
+            $criteriaList[] = [
+                'criterion_id' => $catCr['id'] ?? ($idx + 1),
+                'criterio' => $catCr['name'] ?? ('Criterio ' . ($idx + 1)),
+                'descripcion' => $catCr['description'] ?? '',
+                'puntaje_maximo' => $pMax,
+                'puntaje_obtenido' => null,
+            ];
+            $maxPosible += $pMax;
+        }
+    }
+
+    if ($maxPosible <= 0) {
+        $maxPosible = 100;
     }
 
     $firmaJurado = splitImages($row['firma_evaluador'])[0] ?? null;
     $firmaConcursante = splitImages($row['firma_concursante'])[0] ?? null;
     $fotos = splitImages($row['imagenes']);
-
-    $maxPosible = 0;
-    foreach ($criteriaList as $cr) {
-        $maxPosible += (int)$cr['puntaje_maximo'];
-    }
-    if ($maxPosible <= 0) $maxPosible = 100;
 
     echo json_encode([
         'success' => true,
@@ -118,10 +209,10 @@ try {
             'titulo_documento' => 'ACTA OFICIAL DE JUZGAMIENTO Y EVALUACION',
             'id_evaluacion' => (int)$row['id'],
             'id_concurso' => (int)$row['id_concurso'],
-            'concurso' => trim((string)($row['nombre_concurso'] ?: ('Concurso #' . $row['id_concurso']))),
-            'categoria' => trim((string)($row['categoria'] ?: 'Prácticas Agroambientales')),
-            'fecha' => !empty($row['fecha']) ? $row['fecha'] : ($row['created_at'] ?? ''),
-            'coordenadas' => trim((string)($row['coordenadas'] ?? '')),
+            'concurso' => $concursoNom,
+            'categoria' => $categoriaNom,
+            'fecha' => $fecha,
+            'coordenadas' => $coords,
             'jurado' => $jurado,
             'participante' => [
                 'id' => (int)$row['id_productor_predio'],

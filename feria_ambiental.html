@@ -3056,7 +3056,9 @@
 
             tbody.innerHTML = rows.map(ev => {
                 const score = +ev.puntaje;
-                const scoreClass = score >= 80 ? 'score-badge-high' : (score >= 60 ? 'score-badge-mid' : 'score-badge-low');
+                const maxScore = +ev.puntaje_max || 100;
+                const pct = maxScore > 0 ? (score / maxScore) * 100 : score;
+                const scoreClass = pct >= 80 ? 'score-badge-high' : (pct >= 60 ? 'score-badge-mid' : 'score-badge-low');
                 const fuenteBadge = ev.fuente === 'ambiental'
                     ? '<span class="tag" style="background:#E2EFE3;color:#20522B;font-weight:700;">Agroambiental</span>'
                     : '<span class="tag" style="background:#F1F4F2;color:#3F4D43;">Estándar</span>';
@@ -3069,7 +3071,7 @@
                 if (ev.tiene_firma_jurado) evidenciasList.push('<span title="Firma de jurado registrada" style="color:#2E5A44;font-size:0.75rem;font-weight:600;">Firma Jurado</span>');
                 if (ev.tiene_firma_concursante) evidenciasList.push('<span title="Firma de concursante registrada" style="color:#2E5A44;font-size:0.75rem;font-weight:600;">Firma Concursante</span>');
                 if (ev.tiene_fotos) evidenciasList.push('<span title="Evidencia fotográfica" style="color:#925C17;font-size:0.75rem;font-weight:600;">Fotos</span>');
-                if (ev.coordenadas && ev.coordenadas !== 'N/A') evidenciasList.push('<span title="Coordenadas GPS" style="color:#3F6028;font-size:0.75rem;font-weight:600;">GPS</span>');
+                if (ev.coordenadas && ev.coordenadas !== 'N/A') evidenciasList.push(`<span title="Coordenadas GPS: ${esc(ev.coordenadas)}" style="color:#3F6028;font-size:0.75rem;font-weight:600;cursor:pointer;">GPS</span>`);
                 if (!evidenciasList.length) evidenciasList.push('<span style="color:#999;font-size:0.72rem;font-style:italic;">Evaluada digitalmente</span>');
 
                 return `
@@ -3089,12 +3091,14 @@
                         <div class="muted" style="font-size:0.72rem;">${esc(ev.cuenca || '')}</div>
                     </td>
                     <td>
-                        <div style="font-weight:500;">${esc(titleCase(ev.jurado || 'Jurado Oficial'))}</div>
+                        <div style="font-weight:600;color:#1F2937;">${esc(titleCase(ev.jurado || 'Jurado Oficial'))}</div>
+                        <div class="muted" style="font-size:0.72rem;">Jurado evaluador</div>
                     </td>
                     <td style="text-align:center;white-space:nowrap;">
                         <span class="score-badge ${scoreClass}">
                             ${score} <span style="font-size:0.72rem;color:inherit;font-weight:normal;">/ ${ev.puntaje_max}</span>
                         </span>
+                        ${ev.criterios_count ? `<div style="font-size:0.7rem;color:#4B5563;margin-top:3px;">${ev.criterios_count} criterios</div>` : ''}
                     </td>
                     <td style="white-space:nowrap;font-size:0.76rem;">
                         <div>${esc(ev.fecha || '-')}</div>
@@ -3251,7 +3255,7 @@
                     modalTitle.textContent = `Acta Oficial de Juzgamiento - ${titleCase(p.nombre || '')}`;
                 }
 
-                // Generar Criterios Rows
+                // Generar Criterios Rows con discriminado completo y descripcion oficial
                 let criteriosHtml = '';
                 let sumaMax = 0;
                 let sumaObt = 0;
@@ -3259,18 +3263,24 @@
 
                 if (a.criterios && a.criterios.length) {
                     criteriosHtml = a.criterios.map((cr, idx) => {
-                        const maxP = cr.puntaje_maximo || 25;
-                        sumaMax += maxP;
+                        const maxP = (cr.puntaje_maximo !== null && cr.puntaje_maximo !== undefined) ? cr.puntaje_maximo : 3;
+                        sumaMax += +maxP;
                         const hasScore = cr.puntaje_obtenido !== null && cr.puntaje_obtenido !== undefined;
                         if (hasScore) hasIndividualScores = true;
                         const obtP = hasScore ? cr.puntaje_obtenido : '-';
                         if (hasScore) sumaObt += +obtP;
 
+                        const nombreLimpio = esc((cr.criterio || '').replace(/^\d+[\.\-\)]\s*/, ''));
+                        const descHtml = cr.descripcion ? `<div style="font-size:0.74rem;color:#4B5563;margin-top:3px;line-height:1.3;text-align:justify;">${esc(cr.descripcion)}</div>` : '';
+
                         return `
                         <tr>
-                            <td><b>${idx + 1}.</b> ${esc(cr.criterio)}</td>
-                            <td style="text-align:center;width:95px;">${maxP} pts</td>
-                            <td style="text-align:center;width:115px;font-weight:700;color:#3F6028;">
+                            <td style="padding:6px 8px;vertical-align:top;">
+                                <div style="font-weight:600;color:#111;">${idx + 1}. ${nombreLimpio}</div>
+                                ${descHtml}
+                            </td>
+                            <td style="text-align:center;width:95px;font-weight:600;white-space:nowrap;padding:6px 8px;vertical-align:top;">${maxP} pts</td>
+                            <td style="text-align:center;width:115px;font-weight:700;color:#3F6028;white-space:nowrap;padding:6px 8px;vertical-align:top;">
                                 ${obtP}${hasScore ? ' pts' : ''}
                             </td>
                         </tr>`;

@@ -114,6 +114,8 @@ try {
         }
 
         $score = 0;
+        $puntajeMax = 0;
+        $criteriosCount = 0;
         $json = json_decode($row['resultados_json'] ?? '', true);
         if (is_array($json)) {
             if (isset($json['totalScore'])) {
@@ -121,6 +123,24 @@ try {
             } elseif (isset($json['puntaje_total'])) {
                 $score = (float)$json['puntaje_total'];
             }
+
+            // Desglose de calificaciones por criterio
+            $rawCriterios = [];
+            if (isset($json['calificaciones']) && is_array($json['calificaciones'])) {
+                $rawCriterios = $json['calificaciones'];
+            } elseif (isset($json['criteria']) && is_array($json['criteria'])) {
+                $rawCriterios = $json['criteria'];
+            }
+
+            foreach ($rawCriterios as $cr) {
+                $pMax = isset($cr['puntajeMaximo']) ? (float)$cr['puntajeMaximo'] : (isset($cr['maxPoints']) ? (float)$cr['maxPoints'] : (isset($cr['puntaje_maximo']) ? (float)$cr['puntaje_maximo'] : 0));
+                $puntajeMax += $pMax;
+                $criteriosCount++;
+            }
+        }
+
+        if ($puntajeMax <= 0) {
+            $puntajeMax = 100;
         }
 
         $nombreProd = trim(($row['nombre_productor'] ?? '') . ' ' . ($row['apellido_productor'] ?? ''));
@@ -128,7 +148,13 @@ try {
             $nombreProd = 'Productor #' . $row['id_productor_predio'];
         }
 
-        $jurado = trim((string)($row['nombre_inscriptor'] ?? ''));
+        // Jurado evaluador: prioridad a judgeName dentro de resultados_json
+        $jurado = '';
+        if (is_array($json) && !empty($json['judgeName'])) {
+            $jurado = trim((string)$json['judgeName']);
+        } elseif (!empty($row['nombre_inscriptor'])) {
+            $jurado = trim((string)$row['nombre_inscriptor']);
+        }
         if ($jurado === '') {
             $jurado = 'Jurado Agroambiental';
         }
@@ -137,10 +163,39 @@ try {
         $productoresUnicos[(int)$row['id_productor_predio']] = true;
 
         $cid = (int)$row['id_concurso'];
-        $cName = trim((string)($row['nombre_concurso'] ?? ($concursosMap[$cid]['concurso'] ?? ('Concurso #' . $cid))));
+        if ($cid <= 0 && is_array($json) && !empty($json['contestId'])) {
+            $cid = (int)$json['contestId'];
+        }
+
+        $cName = trim((string)($row['nombre_concurso'] ?? ''));
+        if (empty($cName) && is_array($json) && !empty($json['concurso'])) {
+            $cName = trim((string)$json['concurso']);
+        }
+        if (empty($cName)) {
+            $cName = $concursosMap[$cid]['concurso'] ?? ('Concurso #' . $cid);
+        }
+
         $cCat = trim((string)($row['categoria'] ?? ($concursosMap[$cid]['categoria'] ?? 'Feria Agroambiental')));
 
-        $fechaStr = !empty($row['fecha']) ? $row['fecha'] : ($row['created_at'] ?? '');
+        // Fecha de evaluación: limpiar si traía coordenadas erróneas o tomar de resultados_json
+        $fechaStr = trim((string)($row['fecha'] ?? ''));
+        if (stripos($fechaStr, 'lat:') !== false || stripos($fechaStr, 'lon:') !== false || empty($fechaStr)) {
+            if (is_array($json) && !empty($json['fecha']) && stripos($json['fecha'], 'lat:') === false) {
+                $fechaStr = trim((string)$json['fecha']);
+            } else {
+                $fechaStr = $row['created_at'] ?? '';
+            }
+        }
+
+        // Coordenadas GPS
+        $coordenadasStr = trim((string)($row['coordenadas'] ?? ''));
+        if (empty($coordenadasStr) || $coordenadasStr === 'N/A') {
+            if (is_array($json) && !empty($json['coordenadas'])) {
+                $coordenadasStr = trim((string)$json['coordenadas']);
+            } elseif (!empty($row['fecha']) && (stripos($row['fecha'], 'lat:') !== false || stripos($row['fecha'], 'lon:') !== false)) {
+                $coordenadasStr = trim((string)$row['fecha']);
+            }
+        }
 
         $evaluaciones[] = [
             'uid' => 'amb_' . $row['id'],
@@ -160,9 +215,10 @@ try {
             'categoria' => $cCat,
             'jurado' => $jurado,
             'puntaje' => round($score, 1),
-            'puntaje_max' => 100,
+            'puntaje_max' => round($puntajeMax, 1),
+            'criterios_count' => $criteriosCount,
             'fecha' => $fechaStr,
-            'coordenadas' => trim((string)($row['coordenadas'] ?? '')),
+            'coordenadas' => $coordenadasStr,
             'tiene_firma_jurado' => (bool)$row['tiene_firma_jurado'],
             'tiene_firma_concursante' => (bool)$row['tiene_firma_concursante'],
             'tiene_fotos' => (bool)$row['tiene_fotos'],
