@@ -9,6 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 header('Content-Type: application/json; charset=utf-8');
 require_once __DIR__ . '/db_config.php';
+require_once __DIR__ . '/heal_ambiental_evaluations.php';
 
 $isLocal = (php_sapi_name() === 'cli') || (isset($_SERVER['REMOTE_ADDR']) && in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']));
 $rolId = isset($_SESSION['rol_id']) ? (int)$_SESSION['rol_id'] : null;
@@ -52,6 +53,7 @@ if ($id <= 0) {
 }
 
 try {
+    healAmbientalEvaluations($pdo);
     $stmt = $pdo->prepare("
         SELECT 
             r.*,
@@ -72,13 +74,16 @@ try {
         exit;
     }
 
-    $nombreCompleto = trim(($row['nombre_productor'] ?? '') . ' ' . ($row['apellido_productor'] ?? ''));
-    if ($nombreCompleto === '') $nombreCompleto = 'Participante #' . $row['id_productor_predio'];
-
     $json = json_decode($row['resultados_json'] ?? '', true);
     if (!is_array($json)) {
         $json = [];
     }
+
+    $nombreCompleto = trim(($row['nombre_productor'] ?? '') . ' ' . ($row['apellido_productor'] ?? ''));
+    if ($nombreCompleto === '' && !empty($json['participantName'])) {
+        $nombreCompleto = trim((string)$json['participantName']);
+    }
+    if ($nombreCompleto === '') $nombreCompleto = 'Participante #' . $row['id_productor_predio'];
 
     // 1. Jurado Evaluador: prioridad absoluta a judgeName de resultados_json
     $jurado = '';

@@ -8,8 +8,9 @@
 session_start();
 header('Content-Type: application/json; charset=utf-8');
 require_once __DIR__ . '/db_config.php';
+require_once __DIR__ . '/heal_ambiental_evaluations.php';
 
-$isLocal = isset($_SERVER['REMOTE_ADDR']) && in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']);
+$isLocal = (php_sapi_name() === 'cli') || (isset($_SERVER['REMOTE_ADDR']) && in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']));
 $rolId = isset($_SESSION['rol_id']) ? (int)$_SESSION['rol_id'] : null;
 if (!$isLocal && !in_array($rolId, [1, 13], true)) {
     http_response_code(403);
@@ -18,6 +19,7 @@ if (!$isLocal && !in_array($rolId, [1, 13], true)) {
 }
 
 try {
+    healAmbientalEvaluations($pdo);
     // 1. Catálogo de concursos
     $concursos = [];
     $catalogoCriteriosMap = [];

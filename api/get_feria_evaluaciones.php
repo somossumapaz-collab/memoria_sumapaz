@@ -10,6 +10,7 @@
 session_start();
 header('Content-Type: application/json; charset=utf-8');
 require_once __DIR__ . '/db_config.php';
+require_once __DIR__ . '/heal_ambiental_evaluations.php';
 
 $isLocal = (php_sapi_name() === 'cli') || (isset($_SERVER['REMOTE_ADDR']) && in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']));
 $rolId = isset($_SESSION['rol_id']) ? (int)$_SESSION['rol_id'] : null;
@@ -21,6 +22,7 @@ if (!$isLocal && !isset($_SESSION['user_id']) && !in_array($rolId, [1, 13, 14], 
 }
 
 try {
+    healAmbientalEvaluations($pdo);
     // 1. Catálogo completo de concursos de la Feria Agroambiental
     $concursosMap = [];
     $stmtC = $pdo->query("SELECT id, categoria, nombre_concurso, preguntas_json FROM estructura_concursos_AMBIENTAL WHERE id != 25 ORDER BY id ASC");
@@ -282,6 +284,9 @@ try {
         }
 
         $nombreProd = trim(($row['nombre_productor'] ?? '') . ' ' . ($row['apellido_productor'] ?? ''));
+        if ($nombreProd === '' && is_array($json) && !empty($json['participantName'])) {
+            $nombreProd = trim((string)$json['participantName']);
+        }
         if ($nombreProd === '') {
             $nombreProd = 'Productor #' . $row['id_productor_predio'];
         }
