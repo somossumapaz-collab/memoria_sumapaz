@@ -20,12 +20,18 @@ if (!$isLocal && !in_array($rolId, [1, 13], true)) {
 try {
     // 1. Catálogo de concursos
     $concursos = [];
-    foreach ($pdo->query("SELECT id, categoria, nombre_concurso FROM estructura_concursos_AMBIENTAL ORDER BY id ASC") as $r) {
+    $catalogoCriteriosMap = [];
+    foreach ($pdo->query("SELECT id, categoria, nombre_concurso, preguntas_json FROM estructura_concursos_AMBIENTAL ORDER BY id ASC") as $r) {
+        $cid = (int)$r['id'];
         $concursos[] = [
-            'id' => (int)$r['id'],
+            'id' => $cid,
             'categoria' => $r['categoria'],
             'nombre' => $r['nombre_concurso'],
         ];
+        $pj = json_decode($r['preguntas_json'] ?? '', true);
+        if (is_array($pj) && isset($pj['criterios']) && is_array($pj['criterios'])) {
+            $catalogoCriteriosMap[$cid] = $pj['criterios'];
+        }
     }
 
     // Mapa de referencia oficial de 28 veredas y sus cuencas
@@ -129,16 +135,105 @@ try {
         ];
     }
 
-    // 4. Evaluaciones (resultados) sin imágenes
+    // 4. Evaluaciones (resultados) sin imágenes, validadas contra el catálogo oficial
     $resultados = [];
     try {
+        $normCritText = function ($s) {
+            $s = strtolower(trim((string)$s));
+            $s = strtr($s, [
+                'á'=>'a','é'=>'e','í'=>'i','ó'=>'o','ú'=>'u','ü'=>'u','ñ'=>'n',
+                'Á'=>'a','É'=>'e','Í'=>'i','Ó'=>'o','Ú'=>'u','Ü'=>'u','Ñ'=>'n',
+                '¿'=>'','?'=>''
+            ]);
+            $s = preg_replace('/[^a-z0-9\s\.]/', '', $s);
+            $s = preg_replace('/\s+/', ' ', $s);
+            return trim($s);
+        };
+        $matchCritScore = function (array $raw, array $cat, int $idx) use ($normCritText) {
+            $rawName = $normCritText($raw['criterio'] ?? ($raw['name'] ?? ''));
+            $catName = $normCritText($cat['name'] ?? '');
+            if ($rawName === '' || $catName === '') return 0;
+            if ($rawName === $catName) return 100;
+            $minLen = min(strlen($rawName), strlen($catName));
+            if ($minLen >= 8 && strncmp($rawName, $catName, $minLen) === 0) {
+                return 90 + min(9, (int)($minLen / 10));
+            }
+            $numPrefix = ($idx + 1) . '.';
+            if (strpos($rawName, $numPrefix) === 0 && strpos($catName, $numPrefix) === 0) {
+                similar_text($rawName, substr($catName, 0, strlen($rawName)), $pct);
+                if ($pct >= 70) return (int)$pct;
+            }
+            return 0;
+        };
+
         foreach ($pdo->query("SELECT id, id_productor_predio, id_concurso, resultados_json, fecha FROM resultado_concurso_AMBIENTAL ORDER BY id ASC") as $r) {
+            $cid = (int)$r['id_concurso'];
             $json = json_decode($r['resultados_json'] ?? '', true);
+            $puntaje = is_array($json) && isset($json['totalScore']) ? (float)$json['totalScore'] : null;
+
+            $catCriterios = $catalogoCriteriosMap[$cid] ?? [];
+            $rawCriterios = is_array($json) && isset($json['calificaciones']) && is_array($json['calificaciones']) ? $json['calificaciones'] : [];
+
+            if (!empty($catCriterios) && !empty($rawCriterios) && count($rawCriterios) !== count($catCriterios)) {
+                $sortedRaw = $rawCriterios;
+                usort($sortedRaw, function ($a, $b) {
+                    $idA = isset($a['criterionId']) ? (int)$a['criterionId'] : (isset($a['id']) ? (int)$a['id'] : 0);
+                    $idB = isset($b['criterionId']) ? (int)$b['criterionId'] : (isset($b['id']) ? (int)$b['id'] : 0);
+                    return $idA <=> $idB;
+                });
+                $N = count($catCriterios);
+                $M = count($sortedRaw);
+                $bestStart = -1;
+                $bestWindowScore = -1;
+                if ($M >= $N) {
+                    for ($start = 0; $start <= $M - $N; $start++) {
+                        $sumSc = 0;
+                        $allOk = true;
+                        for ($k = 0; $k < $N; $k++) {
+                            $sc = $matchCritScore($sortedRaw[$start + $k], $catCriterios[$k], $k);
+                            if ($sc < 70) {
+                                $allOk = false;
+                                break;
+                            }
+                            $sumSc += $sc;
+                        }
+                        if ($allOk && $sumSc > $bestWindowScore) {
+                            $bestWindowScore = $sumSc;
+                            $bestStart = $start;
+                        }
+                    }
+                }
+                if ($bestStart >= 0) {
+                    $cleanCalificaciones = [];
+                    $calcScore = 0.0;
+                    for ($k = 0; $k < $N; $k++) {
+                        $catCr = $catCriterios[$k];
+                        $matchedCr = $sortedRaw[$bestStart + $k];
+                        $pMax = (float)($catCr['max_points_value'] ?? 3);
+                        $pObt = isset($matchedCr['puntaje']) ? (float)$matchedCr['puntaje'] : 0.0;
+                        if ($pObt > $pMax) $pObt = $pMax;
+                        if ($pObt < 0) $pObt = 0.0;
+                        $cleanCalificaciones[] = [
+                            'criterionId' => $matchedCr['criterionId'] ?? ($catCr['id'] ?? ($k + 1)),
+                            'criterio' => $catCr['name'] ?? ('Criterio ' . ($k + 1)),
+                            'puntaje' => $pObt,
+                            'puntajeMaximo' => $pMax,
+                        ];
+                        $calcScore += $pObt;
+                    }
+                    $puntaje = $calcScore;
+                    $json['totalScore'] = $calcScore;
+                    $json['calificaciones'] = $cleanCalificaciones;
+                    $pdo->prepare("UPDATE resultado_concurso_AMBIENTAL SET resultados_json = ? WHERE id = ?")
+                        ->execute([json_encode($json, JSON_UNESCAPED_UNICODE), (int)$r['id']]);
+                }
+            }
+
             $resultados[] = [
                 'id' => (int)$r['id'],
                 'productor_id' => (int)$r['id_productor_predio'],
-                'concurso_id' => (int)$r['id_concurso'],
-                'puntaje' => is_array($json) && isset($json['totalScore']) ? (float)$json['totalScore'] : null,
+                'concurso_id' => $cid,
+                'puntaje' => $puntaje,
                 'fecha' => $r['fecha'],
             ];
         }

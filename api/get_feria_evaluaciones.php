@@ -23,13 +23,18 @@ if (!$isLocal && !isset($_SESSION['user_id']) && !in_array($rolId, [1, 13, 14], 
 try {
     // 1. Catálogo completo de concursos de la Feria Agroambiental
     $concursosMap = [];
-    $stmtC = $pdo->query("SELECT id, categoria, nombre_concurso FROM estructura_concursos_AMBIENTAL WHERE id != 25 ORDER BY id ASC");
+    $stmtC = $pdo->query("SELECT id, categoria, nombre_concurso, preguntas_json FROM estructura_concursos_AMBIENTAL WHERE id != 25 ORDER BY id ASC");
     while ($r = $stmtC->fetch(PDO::FETCH_ASSOC)) {
         $cid = (int)$r['id'];
+        $pj = json_decode($r['preguntas_json'] ?? '', true);
+        $catCriterios = (is_array($pj) && isset($pj['criterios']) && is_array($pj['criterios'])) ? $pj['criterios'] : [];
+        $catMaxPoints = (is_array($pj) && isset($pj['total_max_points'])) ? (float)$pj['total_max_points'] : 0;
         $concursosMap[$cid] = [
             'id_concurso' => $cid,
             'concurso' => trim($r['nombre_concurso']),
             'categoria' => trim($r['categoria']),
+            'criterios_catalogo' => $catCriterios,
+            'max_points_catalogo' => $catMaxPoints,
             'total_evaluaciones' => 0,
             'suma_puntajes' => 0,
             'puntaje_promedio' => 0,
@@ -113,18 +118,18 @@ try {
             $cuencaNorm = $row['cuenca'];
         }
 
+        $cid = (int)$row['id_concurso'];
+        $json = json_decode($row['resultados_json'] ?? '', true);
+        if ($cid <= 0 && is_array($json) && !empty($json['contestId'])) {
+            $cid = (int)$json['contestId'];
+        }
+
         $score = 0;
         $puntajeMax = 0;
         $criteriosCount = 0;
-        $json = json_decode($row['resultados_json'] ?? '', true);
-        if (is_array($json)) {
-            if (isset($json['totalScore'])) {
-                $score = (float)$json['totalScore'];
-            } elseif (isset($json['puntaje_total'])) {
-                $score = (float)$json['puntaje_total'];
-            }
+        $catCriterios = $concursosMap[$cid]['criterios_catalogo'] ?? [];
 
-            // Desglose de calificaciones por criterio
+        if (is_array($json)) {
             $rawCriterios = [];
             if (isset($json['calificaciones']) && is_array($json['calificaciones'])) {
                 $rawCriterios = $json['calificaciones'];
@@ -132,15 +137,143 @@ try {
                 $rawCriterios = $json['criteria'];
             }
 
-            foreach ($rawCriterios as $cr) {
-                $pMax = isset($cr['puntajeMaximo']) ? (float)$cr['puntajeMaximo'] : (isset($cr['maxPoints']) ? (float)$cr['maxPoints'] : (isset($cr['puntaje_maximo']) ? (float)$cr['puntaje_maximo'] : 0));
-                $puntajeMax += $pMax;
-                $criteriosCount++;
+            if (!empty($catCriterios) && !empty($rawCriterios)) {
+                $normCritText = function ($s) {
+                    $s = strtolower(trim((string)$s));
+                    $s = strtr($s, [
+                        'á'=>'a','é'=>'e','í'=>'i','ó'=>'o','ú'=>'u','ü'=>'u','ñ'=>'n',
+                        'Á'=>'a','É'=>'e','Í'=>'i','Ó'=>'o','Ú'=>'u','Ü'=>'u','Ñ'=>'n',
+                        '¿'=>'','?'=>''
+                    ]);
+                    $s = preg_replace('/[^a-z0-9\s\.]/', '', $s);
+                    $s = preg_replace('/\s+/', ' ', $s);
+                    return trim($s);
+                };
+                $matchCritScore = function (array $raw, array $cat, int $idx) use ($normCritText) {
+                    $rawName = $normCritText($raw['criterio'] ?? ($raw['name'] ?? ''));
+                    $catName = $normCritText($cat['name'] ?? '');
+                    if ($rawName === '' || $catName === '') return 0;
+                    if ($rawName === $catName) return 100;
+                    $minLen = min(strlen($rawName), strlen($catName));
+                    if ($minLen >= 8 && strncmp($rawName, $catName, $minLen) === 0) {
+                        return 90 + min(9, (int)($minLen / 10));
+                    }
+                    $numPrefix = ($idx + 1) . '.';
+                    if (strpos($rawName, $numPrefix) === 0 && strpos($catName, $numPrefix) === 0) {
+                        similar_text($rawName, substr($catName, 0, strlen($rawName)), $pct);
+                        if ($pct >= 70) return (int)$pct;
+                    }
+                    return 0;
+                };
+
+                $sortedRaw = $rawCriterios;
+                usort($sortedRaw, function ($a, $b) {
+                    $idA = isset($a['criterionId']) ? (int)$a['criterionId'] : (isset($a['id']) ? (int)$a['id'] : 0);
+                    $idB = isset($b['criterionId']) ? (int)$b['criterionId'] : (isset($b['id']) ? (int)$b['id'] : 0);
+                    return $idA <=> $idB;
+                });
+
+                $N = count($catCriterios);
+                $M = count($sortedRaw);
+                $bestStart = -1;
+                $bestWindowScore = -1;
+
+                if ($M >= $N) {
+                    for ($start = 0; $start <= $M - $N; $start++) {
+                        $sumSc = 0;
+                        $allOk = true;
+                        for ($k = 0; $k < $N; $k++) {
+                            $sc = $matchCritScore($sortedRaw[$start + $k], $catCriterios[$k], $k);
+                            if ($sc < 70) {
+                                $allOk = false;
+                                break;
+                            }
+                            $sumSc += $sc;
+                        }
+                        if ($allOk && $sumSc > $bestWindowScore) {
+                            $bestWindowScore = $sumSc;
+                            $bestStart = $start;
+                        }
+                    }
+                }
+
+                $usedRaw = [];
+                $cleanCalificaciones = [];
+                $calcScore = 0.0;
+                $calcMax = 0.0;
+                $hasMatched = false;
+
+                for ($k = 0; $k < $N; $k++) {
+                    $catCr = $catCriterios[$k];
+                    $pMax = (float)($catCr['max_points_value'] ?? 3);
+                    $matchedCr = null;
+                    if ($bestStart >= 0) {
+                        $matchedCr = $sortedRaw[$bestStart + $k];
+                    } else {
+                        $bestIdx = -1;
+                        $bestSc = -1;
+                        foreach ($sortedRaw as $i => $cr) {
+                            if (isset($usedRaw[$i])) continue;
+                            $sc = $matchCritScore($cr, $catCr, $k);
+                            if ($sc > $bestSc) {
+                                $bestSc = $sc;
+                                $bestIdx = $i;
+                            }
+                        }
+                        if ($bestIdx >= 0 && $bestSc >= 70) {
+                            $usedRaw[$bestIdx] = true;
+                            $matchedCr = $sortedRaw[$bestIdx];
+                        }
+                    }
+
+                    $pObt = 0.0;
+                    $cId = $catCr['id'] ?? ($k + 1);
+                    if ($matchedCr !== null) {
+                        $hasMatched = true;
+                        $cId = $matchedCr['criterionId'] ?? ($matchedCr['id'] ?? $cId);
+                        $pObt = isset($matchedCr['puntaje']) ? (float)$matchedCr['puntaje'] : (isset($matchedCr['score']) ? (float)$matchedCr['score'] : (isset($matchedCr['puntaje_obtenido']) ? (float)$matchedCr['puntaje_obtenido'] : 0.0));
+                        if ($pObt > $pMax) $pObt = $pMax;
+                        if ($pObt < 0) $pObt = 0.0;
+                    }
+                    $cleanCalificaciones[] = [
+                        'criterionId' => $cId,
+                        'criterio' => $catCr['name'] ?? ('Criterio ' . ($k + 1)),
+                        'puntaje' => $pObt,
+                        'puntajeMaximo' => $pMax,
+                    ];
+                    $calcScore += $pObt;
+                    $calcMax += $pMax;
+                }
+
+                $score = $hasMatched ? $calcScore : (isset($json['totalScore']) ? (float)$json['totalScore'] : 0.0);
+                $puntajeMax = $calcMax;
+                $criteriosCount = $N;
+
+                if ($hasMatched && (count($rawCriterios) !== $N || (float)($json['totalScore'] ?? -1) !== (float)$calcScore)) {
+                    $json['totalScore'] = $calcScore;
+                    $json['calificaciones'] = $cleanCalificaciones;
+                    $pdo->prepare("UPDATE resultado_concurso_AMBIENTAL SET resultados_json = ? WHERE id = ?")
+                        ->execute([json_encode($json, JSON_UNESCAPED_UNICODE), (int)$row['id']]);
+                }
+            } else {
+                if (isset($json['totalScore'])) {
+                    $score = (float)$json['totalScore'];
+                } elseif (isset($json['puntaje_total'])) {
+                    $score = (float)$json['puntaje_total'];
+                }
+                foreach ($rawCriterios as $cr) {
+                    $pMax = isset($cr['puntajeMaximo']) ? (float)$cr['puntajeMaximo'] : (isset($cr['maxPoints']) ? (float)$cr['maxPoints'] : (isset($cr['puntaje_maximo']) ? (float)$cr['puntaje_maximo'] : 0));
+                    $puntajeMax += $pMax;
+                    $criteriosCount++;
+                }
             }
         }
 
         if ($puntajeMax <= 0) {
-            $puntajeMax = 100;
+            $puntajeMax = !empty($concursosMap[$cid]['max_points_catalogo']) ? (float)$concursosMap[$cid]['max_points_catalogo'] : 100;
+        }
+        if ($criteriosCount <= 0 && !empty($catCriterios)) {
+            $criteriosCount = count($catCriterios);
         }
 
         $nombreProd = trim(($row['nombre_productor'] ?? '') . ' ' . ($row['apellido_productor'] ?? ''));
