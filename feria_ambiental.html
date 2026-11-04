@@ -763,6 +763,124 @@
             border-radius: 4px;
         }
 
+        /* Diagrama de Caja y Bigotes (Media y Desviación) en tabla estadística */
+        .bw-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 14px;
+            font-size: 0.71rem;
+            color: #4B5563;
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 6px;
+            padding: 6px 10px;
+            margin-bottom: 8px;
+        }
+        .bw-legend-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+        .bw-wrap {
+            min-width: 195px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .bw-track {
+            position: relative;
+            height: 20px;
+            width: 100%;
+            background: #F1F5F9;
+            border: 1px solid #CBD5E1;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .bw-grid-mark {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: rgba(148, 163, 184, 0.35);
+            pointer-events: none;
+        }
+        .bw-sd-band {
+            position: absolute;
+            top: 2px;
+            bottom: 2px;
+            background: rgba(180, 83, 9, 0.14);
+            border-left: 1px dashed rgba(180, 83, 9, 0.55);
+            border-right: 1px dashed rgba(180, 83, 9, 0.55);
+            pointer-events: none;
+        }
+        .bw-whisker-line {
+            position: absolute;
+            top: 50%;
+            height: 2px;
+            background: #475569;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        .bw-whisker-cap {
+            position: absolute;
+            top: 4px;
+            bottom: 4px;
+            width: 2px;
+            background: #334155;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+        .bw-box {
+            position: absolute;
+            top: 3px;
+            bottom: 3px;
+            background: rgba(63, 96, 40, 0.26);
+            border: 1.5px solid #3F6028;
+            border-radius: 2px;
+            min-width: 3px;
+            pointer-events: none;
+        }
+        .bw-median {
+            position: absolute;
+            top: 2px;
+            bottom: 2px;
+            width: 2px;
+            background: #14532D;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+        .bw-mean {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2.5px;
+            background: #B45309;
+            transform: translateX(-50%);
+            z-index: 3;
+            pointer-events: none;
+        }
+        .bw-mean::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 6px;
+            height: 6px;
+            background: #B45309;
+            border: 1px solid #FFFFFF;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .bw-scale-labels {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.67rem;
+            color: #64748B;
+            line-height: 1.1;
+        }
+
         /* ================= ACTA OFICIAL DE JUZGAMIENTO (ESTILO OFICIAL ANDROID) ================= */
         .acta-juzg-container {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -1216,15 +1334,22 @@
                 </div>
                 <div class="card">
                     <h3><span>Comportamiento estadístico por concurso</span></h3>
+                    <div class="bw-legend">
+                        <span class="bw-legend-item"><span style="display:inline-block;width:12px;height:8px;background:#F1F5F9;border:1px solid #CBD5E1;border-radius:2px;"></span>Escala posible (Mín. 0 a Máx. posible)</span>
+                        <span class="bw-legend-item"><span style="display:inline-block;width:14px;height:2px;background:#475569;border-left:2px solid #334155;border-right:2px solid #334155;"></span>Bigotes (Mín. a Máx. obtenido)</span>
+                        <span class="bw-legend-item"><span style="display:inline-block;width:12px;height:8px;background:rgba(63,96,40,0.26);border:1.5px solid #3F6028;border-radius:2px;"></span>Caja (Q1 - Q3) y Mediana</span>
+                        <span class="bw-legend-item"><span style="display:inline-block;width:12px;height:8px;background:rgba(180,83,9,0.14);border-left:1px dashed #B45309;border-right:1px dashed #B45309;"></span>Desviación (Media ± DE)</span>
+                        <span class="bw-legend-item"><span style="display:inline-block;width:7px;height:7px;background:#B45309;border-radius:50%;"></span>Media (Promedio)</span>
+                    </div>
                     <div class="perf-table-wrap">
                         <table class="perf-table">
                             <thead>
                                 <tr>
                                     <th>Concurso</th>
                                     <th style="text-align:center">Eval.</th>
-                                    <th style="text-align:center">Promedio</th>
-                                    <th style="text-align:center">Mín / Máx</th>
-                                    <th>Desempeño</th>
+                                    <th style="text-align:center">Escala Posible y Obtenido</th>
+                                    <th style="text-align:center">Media y Desv.</th>
+                                    <th>Caja y Bigotes (Media / DE)</th>
                                 </tr>
                             </thead>
                             <tbody id="tbody-resumen-concursos">
@@ -3117,6 +3242,54 @@
             }).join('');
         }
 
+        // Catálogo de puntaje máximo posible oficial por ID de concurso (estructura_concursos_AMBIENTAL)
+        const CONTEST_MAX_POINTS_CATALOG = {
+            1: 42, 2: 26, 3: 40, 4: 18, 5: 30, 6: 57, 7: 33, 8: 24,
+            9: 27, 10: 24, 11: 30, 12: 30, 13: 33, 14: 24, 15: 27, 16: 21,
+            17: 24, 18: 57, 19: 27, 20: 24, 21: 36, 22: 54, 23: 24, 24: 30
+        };
+
+        function calcQuantileJS(sortedVals, q) {
+            const n = sortedVals.length;
+            if (!n) return 0;
+            if (n === 1) return +sortedVals[0];
+            const pos = (n - 1) * q;
+            const base = Math.floor(pos);
+            const rest = pos - base;
+            if (sortedVals[base + 1] !== undefined) {
+                return +sortedVals[base] + rest * (+sortedVals[base + 1] - +sortedVals[base]);
+            }
+            return +sortedVals[base];
+        }
+
+        function computeContestStats(c) {
+            const cid = +c.id_concurso || 0;
+            const minPosible = c.puntaje_min_posible !== undefined ? +c.puntaje_min_posible : 0;
+            const maxPosible = (+c.puntaje_max_posible > 0)
+                ? +c.puntaje_max_posible
+                : (CONTEST_MAX_POINTS_CATALOG[cid] || 30);
+
+            const cnt = +c.total_evaluaciones || 0;
+            const rawScores = Array.isArray(c.puntajes) ? c.puntajes.map(Number).filter(v => !isNaN(v)).sort((a, b) => a - b) : [];
+            const prom = cnt > 0 ? +(+c.puntaje_promedio || 0).toFixed(1) : 0;
+            const minObt = cnt > 0 ? (rawScores.length ? rawScores[0] : +c.puntaje_min || 0) : 0;
+            const maxObt = cnt > 0 ? (rawScores.length ? rawScores[rawScores.length - 1] : +c.puntaje_max || 0) : 0;
+
+            let sd = c.desviacion_estandar !== undefined ? +c.desviacion_estandar : 0;
+            if (c.desviacion_estandar === undefined && rawScores.length > 1) {
+                const meanExact = rawScores.reduce((acc, v) => acc + v, 0) / rawScores.length;
+                const variance = rawScores.reduce((acc, v) => acc + Math.pow(v - meanExact, 2), 0) / rawScores.length;
+                sd = +Math.sqrt(variance).toFixed(1);
+            }
+
+            const q1 = c.q1 !== undefined ? +c.q1 : +calcQuantileJS(rawScores, 0.25).toFixed(1);
+            const mediana = c.mediana !== undefined ? +c.mediana : +calcQuantileJS(rawScores, 0.50).toFixed(1);
+            const q3 = c.q3 !== undefined ? +c.q3 : +calcQuantileJS(rawScores, 0.75).toFixed(1);
+            const pctLogro = (cnt > 0 && maxPosible > 0) ? +((prom / maxPosible) * 100).toFixed(1) : 0;
+
+            return { minPosible, maxPosible, cnt, prom, sd, minObt, maxObt, q1, mediana, q3, pctLogro };
+        }
+
         // ================== RENDER TABLA DE COMPORTAMIENTO POR CONCURSO ==================
         function renderResumenConcursosTable() {
             const tbody = document.getElementById('tbody-resumen-concursos');
@@ -3129,9 +3302,68 @@
             }
 
             tbody.innerHTML = list.map(c => {
-                const prom = +c.puntaje_promedio;
-                const pct = Math.min(100, Math.max(0, prom));
-                const badgeClass = prom >= 80 ? 'score-badge-high' : (prom >= 60 ? 'score-badge-mid' : 'score-badge-low');
+                const st = computeContestStats(c);
+                const badgeClass = st.pctLogro >= 80 ? 'score-badge-high' : (st.pctLogro >= 60 ? 'score-badge-mid' : 'score-badge-low');
+                const toPct = (val) => st.maxPosible > 0 ? Math.min(100, Math.max(0, (val / st.maxPosible) * 100)) : 0;
+
+                if (st.cnt === 0) {
+                    return `
+                    <tr>
+                        <td>
+                            <div style="font-weight:600;font-size:0.8rem;color:var(--primary-green-dark);">${esc(c.concurso)}</div>
+                            <div class="muted" style="font-size:0.7rem;">${esc(c.categoria)}</div>
+                        </td>
+                        <td style="text-align:center;font-weight:600;color:#9CA3AF;">0</td>
+                        <td style="text-align:center;font-size:0.74rem;line-height:1.35;">
+                            <div style="font-weight:600;color:#334155;">Posible: ${st.minPosible} - ${st.maxPosible} pts</div>
+                            <div class="muted" style="font-size:0.69rem;">Sin evaluaciones</div>
+                        </td>
+                        <td style="text-align:center;">
+                            <span class="score-badge score-badge-low" style="font-size:0.76rem;opacity:0.65;">0 pts</span>
+                            <div class="muted" style="font-size:0.68rem;margin-top:2px;">DE: ±0.0 pts</div>
+                        </td>
+                        <td>
+                            <div class="bw-wrap" title="Escala posible: ${st.minPosible} a ${st.maxPosible} pts (Sin evaluaciones registradas)">
+                                <div class="bw-track">
+                                    <div class="bw-grid-mark" style="left:25%"></div>
+                                    <div class="bw-grid-mark" style="left:50%"></div>
+                                    <div class="bw-grid-mark" style="left:75%"></div>
+                                </div>
+                                <div class="bw-scale-labels">
+                                    <span>Mín: ${st.minPosible}</span>
+                                    <span>Sin calificar (0%)</span>
+                                    <span>Máx: ${st.maxPosible} pts</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>`;
+                }
+
+                const pMin = toPct(st.minObt);
+                const pMax = toPct(st.maxObt);
+                const pQ1 = toPct(st.q1);
+                const pMed = toPct(st.mediana);
+                const pQ3 = toPct(st.q3);
+                const pMean = toPct(st.prom);
+                const sdLow = Math.max(st.minPosible, +(st.prom - st.sd).toFixed(1));
+                const sdHigh = Math.min(st.maxPosible, +(st.prom + st.sd).toFixed(1));
+                const pSdLow = toPct(sdLow);
+                const pSdHigh = toPct(sdHigh);
+
+                const whiskerWidth = Math.max(0, pMax - pMin);
+                const boxLeft = Math.min(pQ1, pQ3);
+                const boxWidth = Math.max(1.2, Math.abs(pQ3 - pQ1));
+                const sdLeft = Math.min(pSdLow, pSdHigh);
+                const sdWidth = Math.max(0, pSdHigh - pSdLow);
+
+                const tooltipText = [
+                    `Concurso: ${c.concurso}`,
+                    `Escala posible del concurso: ${st.minPosible} a ${st.maxPosible} pts`,
+                    `Mínimo y Máximo obtenido (Bigotes): ${st.minObt} - ${st.maxObt} pts`,
+                    `Caja intercuartílica (Q1 - Q3): ${st.q1} - ${st.q3} pts | Mediana (Q2): ${st.mediana} pts`,
+                    `Media (Promedio): ${st.prom} pts (${st.pctLogro}% del máximo posible)`,
+                    `Desviación estándar (DE): ±${st.sd} pts (rango Media ± DE: ${sdLow} - ${sdHigh} pts)`
+                ].join('&#10;');
 
                 return `
                 <tr>
@@ -3139,21 +3371,38 @@
                         <div style="font-weight:600;font-size:0.8rem;color:var(--primary-green-dark);">${esc(c.concurso)}</div>
                         <div class="muted" style="font-size:0.7rem;">${esc(c.categoria)}</div>
                     </td>
-                    <td style="text-align:center;font-weight:600;">${c.total_evaluaciones}</td>
-                    <td style="text-align:center;">
-                        <span class="score-badge ${badgeClass}" style="font-size:0.8rem;">
-                            ${prom} pts
-                        </span>
+                    <td style="text-align:center;font-weight:600;">${st.cnt}</td>
+                    <td style="text-align:center;font-size:0.74rem;line-height:1.35;white-space:nowrap;">
+                        <div style="font-weight:700;color:#1E293B;">Posible: ${st.minPosible} - ${st.maxPosible} pts</div>
+                        <div style="color:#475569;font-size:0.71rem;">Obtenido: <strong>${st.minObt} - ${st.maxObt} pts</strong></div>
                     </td>
-                    <td style="text-align:center;font-size:0.75rem;color:#4B5563;">
-                        ${c.puntaje_min} - ${c.puntaje_max} pts
+                    <td style="text-align:center;white-space:nowrap;">
+                        <span class="score-badge ${badgeClass}" style="font-size:0.78rem;">
+                            ${st.prom} <span style="font-weight:400;font-size:0.7rem;">/ ${st.maxPosible} pts</span>
+                        </span>
+                        <div style="font-size:0.69rem;color:#4B5563;margin-top:2px;">
+                            DE: <strong>±${st.sd}</strong> · Med: <strong>${st.mediana}</strong>
+                        </div>
                     </td>
                     <td>
-                        <div style="display:flex;align-items:center;">
-                            <div class="perf-bar-bg">
-                                <div class="perf-bar-fill" style="width:${pct}%;"></div>
+                        <div class="bw-wrap" title="${tooltipText}">
+                            <div class="bw-track">
+                                <div class="bw-grid-mark" style="left:25%"></div>
+                                <div class="bw-grid-mark" style="left:50%"></div>
+                                <div class="bw-grid-mark" style="left:75%"></div>
+                                ${sdWidth > 0 ? `<div class="bw-sd-band" style="left:${sdLeft}%;width:${sdWidth}%;"></div>` : ''}
+                                <div class="bw-whisker-line" style="left:${pMin}%;width:${whiskerWidth}%;"></div>
+                                <div class="bw-whisker-cap" style="left:${pMin}%;"></div>
+                                <div class="bw-whisker-cap" style="left:${pMax}%;"></div>
+                                <div class="bw-box" style="left:${boxLeft}%;width:${boxWidth}%;"></div>
+                                <div class="bw-median" style="left:${pMed}%;"></div>
+                                <div class="bw-mean" style="left:${pMean}%;"></div>
                             </div>
-                            <span style="font-size:0.72rem;font-weight:600;color:var(--text-dark);">${prom}%</span>
+                            <div class="bw-scale-labels">
+                                <span>${st.minPosible} pts</span>
+                                <span style="color:#1E293B;font-weight:600;">Media: ${st.prom} (±${st.sd}) · ${st.pctLogro}%</span>
+                                <span>Máx: ${st.maxPosible} pts</span>
+                            </div>
                         </div>
                     </td>
                 </tr>`;
@@ -3173,40 +3422,62 @@
             const list = (listEvaluated.length ? listEvaluated : evalState.resumenConcursos || []).slice(0, 12);
             if (!list.length) return;
 
-            const labels = list.map(c => {
-                const name = c.concurso;
-                return name.length > 28 ? name.slice(0, 26) + '...' : name;
+            const statsList = list.map(c => ({ item: c, st: computeContestStats(c) }));
+            const labels = statsList.map(({ item, st }) => {
+                const name = item.concurso;
+                const shortName = name.length > 25 ? name.slice(0, 23) + '...' : name;
+                return `${shortName} (Máx ${st.maxPosible})`;
             });
-            const dataValues = list.map(c => +c.puntaje_promedio);
-            const counts = list.map(c => c.total_evaluaciones);
+            const dataValues = statsList.map(({ st }) => st.prom);
+            const maxValues = statsList.map(({ st }) => st.maxPosible);
+            const maxAxis = Math.max(60, ...maxValues);
 
             charts.evalPromedios = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: labels,
-                    datasets: [{
-                        label: 'Puntaje Promedio',
-                        data: dataValues,
-                        backgroundColor: '#3F6028',
-                        borderColor: '#35551F',
-                        borderWidth: 1,
-                        borderRadius: 4
-                    }]
+                    datasets: [
+                        {
+                            label: 'Media obtenida (pts)',
+                            data: dataValues,
+                            backgroundColor: '#3F6028',
+                            borderColor: '#35551F',
+                            borderWidth: 1,
+                            borderRadius: 4
+                        },
+                        {
+                            label: 'Puntaje máximo posible (pts)',
+                            data: maxValues,
+                            backgroundColor: 'rgba(203, 213, 225, 0.45)',
+                            borderColor: '#94A3B8',
+                            borderWidth: 1,
+                            borderRadius: 4
+                        }
+                    ]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
                     indexAxis: 'y',
                     plugins: {
-                        legend: { display: false },
+                        legend: {
+                            display: true,
+                            position: 'top',
+                            labels: { font: { family: 'Inter', size: 11 }, boxWidth: 12 }
+                        },
                         tooltip: {
                             callbacks: {
                                 label: function(context) {
-                                    const item = list[context.dataIndex];
+                                    const { item, st } = statsList[context.dataIndex];
+                                    if (context.datasetIndex === 1) {
+                                        return `Escala posible del concurso: ${st.minPosible} - ${st.maxPosible} pts`;
+                                    }
                                     return [
-                                        `Puntaje promedio: ${item.puntaje_promedio} pts`,
-                                        `Evaluaciones realizadas: ${item.total_evaluaciones}`,
-                                        `Rango: ${item.puntaje_min} - ${item.puntaje_max} pts`
+                                        `Media (Promedio): ${st.prom} / ${st.maxPosible} pts (${st.pctLogro}%)`,
+                                        `Desviación estándar (DE): ±${st.sd} pts`,
+                                        `Caja (Q1 - Mediana - Q3): ${st.q1} - ${st.mediana} - ${st.q3} pts`,
+                                        `Bigotes (Mín - Máx obtenido): ${st.minObt} - ${st.maxObt} pts`,
+                                        `Evaluaciones realizadas: ${st.cnt}`
                                     ];
                                 }
                             }
@@ -3215,12 +3486,12 @@
                     scales: {
                         x: {
                             min: 0,
-                            max: 100,
+                            max: maxAxis,
                             ticks: { callback: v => v + ' pts', font: { family: 'Inter', size: 10 } },
                             grid: { color: '#E5E7EB' }
                         },
                         y: {
-                            ticks: { font: { family: 'Inter', size: 10.5 } },
+                            ticks: { font: { family: 'Inter', size: 10 } },
                             grid: { display: false }
                         }
                     }
@@ -3501,15 +3772,24 @@
             XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(rows), 'Evaluaciones');
 
             if (evalState.resumenConcursos && evalState.resumenConcursos.length) {
-                const resumenRows = evalState.resumenConcursos.map(r => ({
-                    Concurso: r.concurso,
-                    Categoría: r.categoria,
-                    Fuente: r.fuente_label,
-                    Total_Evaluaciones: r.total_evaluaciones,
-                    Puntaje_Promedio: r.puntaje_promedio,
-                    Puntaje_Mínimo: r.puntaje_min,
-                    Puntaje_Máximo: r.puntaje_max
-                }));
+                const resumenRows = evalState.resumenConcursos.map(r => {
+                    const st = computeContestStats(r);
+                    return {
+                        Concurso: r.concurso,
+                        Categoría: r.categoria,
+                        Total_Evaluaciones: st.cnt,
+                        Puntaje_Mínimo_Posible: st.minPosible,
+                        Puntaje_Máximo_Posible: st.maxPosible,
+                        Media_Promedio: st.prom,
+                        Desviación_Estándar: st.sd,
+                        Mínimo_Obtenido: st.minObt,
+                        Cuartil_Q1: st.q1,
+                        Mediana_Q2: st.mediana,
+                        Cuartil_Q3: st.q3,
+                        Máximo_Obtenido: st.maxObt,
+                        Porcentaje_Logro: st.pctLogro + '%'
+                    };
+                });
                 XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(resumenRows), 'Promedios_Por_Concurso');
             }
 

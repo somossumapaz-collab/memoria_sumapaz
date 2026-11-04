@@ -28,7 +28,12 @@ try {
         $cid = (int)$r['id'];
         $pj = json_decode($r['preguntas_json'] ?? '', true);
         $catCriterios = (is_array($pj) && isset($pj['criterios']) && is_array($pj['criterios'])) ? $pj['criterios'] : [];
-        $catMaxPoints = (is_array($pj) && isset($pj['total_max_points'])) ? (float)$pj['total_max_points'] : 0;
+        $catMaxPoints = (is_array($pj) && isset($pj['total_max_points']) && (float)$pj['total_max_points'] > 0) ? (float)$pj['total_max_points'] : 0;
+        if ($catMaxPoints <= 0 && !empty($catCriterios)) {
+            foreach ($catCriterios as $cc) {
+                $catMaxPoints += (float)($cc['max_points_value'] ?? 3);
+            }
+        }
         $concursosMap[$cid] = [
             'id_concurso' => $cid,
             'concurso' => trim($r['nombre_concurso']),
@@ -380,6 +385,19 @@ try {
     $totalEvaluaciones = count($evaluaciones);
     $promedioGlobal = $totalEvaluaciones > 0 ? round($sumaPuntajesGlobal / $totalEvaluaciones, 1) : 0;
 
+    $calcQuantile = function (array $sortedVals, float $q): float {
+        $n = count($sortedVals);
+        if ($n === 0) return 0.0;
+        if ($n === 1) return (float)$sortedVals[0];
+        $pos = ($n - 1) * $q;
+        $base = (int)floor($pos);
+        $rest = $pos - $base;
+        if (isset($sortedVals[$base + 1])) {
+            return (float)$sortedVals[$base] + $rest * ((float)$sortedVals[$base + 1] - (float)$sortedVals[$base]);
+        }
+        return (float)$sortedVals[$base];
+    };
+
     $resumenConcursos = [];
     $concursosConEvaluacion = 0;
     foreach ($concursosMap as $cid => $c) {
@@ -387,14 +405,42 @@ try {
         $prom = $cnt > 0 ? round($c['suma_puntajes'] / $cnt, 1) : 0;
         if ($cnt > 0) $concursosConEvaluacion++;
 
+        $maxPosible = (float)($c['max_points_catalogo'] ?? 0);
+        if ($maxPosible <= 0) {
+            $maxPosible = 30;
+        }
+
+        $vals = $c['puntajes'];
+        sort($vals, SORT_NUMERIC);
+        $sd = 0.0;
+        if ($cnt > 1) {
+            $meanExact = $c['suma_puntajes'] / $cnt;
+            $sumSq = 0.0;
+            foreach ($vals as $v) {
+                $sumSq += ($v - $meanExact) * ($v - $meanExact);
+            }
+            $sd = round(sqrt($sumSq / $cnt), 1);
+        }
+        $q1 = $cnt > 0 ? round($calcQuantile($vals, 0.25), 1) : 0;
+        $mediana = $cnt > 0 ? round($calcQuantile($vals, 0.50), 1) : 0;
+        $q3 = $cnt > 0 ? round($calcQuantile($vals, 0.75), 1) : 0;
+        $pctProm = ($cnt > 0 && $maxPosible > 0) ? round(($prom / $maxPosible) * 100, 1) : 0;
+
         $resumenConcursos[] = [
             'id_concurso' => $cid,
             'concurso' => $c['concurso'],
             'categoria' => $c['categoria'],
             'total_evaluaciones' => $cnt,
+            'puntaje_min_posible' => 0,
+            'puntaje_max_posible' => $maxPosible,
             'puntaje_promedio' => $prom,
+            'desviacion_estandar' => $sd,
             'puntaje_min' => $c['puntaje_min'] !== null ? round($c['puntaje_min'], 1) : 0,
+            'q1' => $q1,
+            'mediana' => $mediana,
+            'q3' => $q3,
             'puntaje_max' => $c['puntaje_max'] !== null ? round($c['puntaje_max'], 1) : 0,
+            'porcentaje_promedio' => $pctProm,
             'puntajes' => $c['puntajes'],
         ];
     }
