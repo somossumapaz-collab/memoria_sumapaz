@@ -9,6 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 header('Content-Type: application/json; charset=utf-8');
 require_once __DIR__ . '/db_config.php';
+require_once __DIR__ . '/heal_ambiental_evaluations.php';
 
 $isLocal = isset($_SERVER['REMOTE_ADDR']) && in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']);
 $rolId = isset($_SESSION['rol_id']) ? (int)$_SESSION['rol_id'] : null;
@@ -42,6 +43,7 @@ if (!function_exists('splitImages')) {
 }
 
 try {
+    healAmbientalEvaluations($pdo);
     $stmt = $pdo->prepare("SELECT * FROM productor_predio_AMBIENTAL WHERE id = ?");
     $stmt->execute([$id]);
     $p = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -71,16 +73,19 @@ try {
             ORDER BY r.id ASC
         ");
         $stmt->execute([$id]);
+        $firmaProdFallback = splitImages($p['firma_productor'])[0] ?? null;
         foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $r) {
             $json = json_decode($r['resultados_json'] ?? '', true);
+            $feImg = splitImages($r['firma_evaluador'])[0] ?? null;
+            $fcImg = splitImages($r['firma_concursante'])[0] ?? $firmaProdFallback;
             $evaluaciones[] = [
                 'concurso' => $r['nombre_concurso'],
                 'puntaje' => is_array($json) && isset($json['totalScore']) ? $json['totalScore'] : null,
                 'observaciones' => $r['observaciones'],
                 'fecha' => $r['fecha'],
                 'imagenes' => splitImages($r['imagenes']),
-                'firma_evaluador' => splitImages($r['firma_evaluador'])[0] ?? null,
-                'firma_concursante' => splitImages($r['firma_concursante'])[0] ?? null,
+                'firma_evaluador' => $feImg,
+                'firma_concursante' => $fcImg,
             ];
         }
     } catch (Exception $e) {

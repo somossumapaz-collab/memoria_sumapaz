@@ -59,7 +59,7 @@ try {
             r.*,
             p.nombre_productor, p.apellido_productor, p.tipo_documento, p.numero_documento,
             p.nombre_predio, p.extension_finca, p.vereda, p.cuenca, p.telefono, p.email,
-            p.nombre_inscriptor, p.fecha_inscripcion,
+            p.nombre_inscriptor, p.fecha_inscripcion, p.firma_productor,
             c.nombre_concurso, c.categoria, c.preguntas_json
         FROM resultado_concurso_AMBIENTAL r
         LEFT JOIN productor_predio_AMBIENTAL p ON p.id = r.id_productor_predio
@@ -312,6 +312,32 @@ try {
 
     $firmaJurado = splitImages($row['firma_evaluador'])[0] ?? null;
     $firmaConcursante = splitImages($row['firma_concursante'])[0] ?? null;
+
+    // Respaldo de firma del concursante desde su acta de inscripción si falta en la evaluación
+    if ($firmaConcursante === null && !empty($row['firma_productor'])) {
+        $firmaConcursante = splitImages($row['firma_productor'])[0] ?? null;
+    }
+
+    // Respaldo de firma del evaluador desde otra evaluación del mismo jurado si falta en esta evaluación
+    if ($firmaJurado === null && $jurado !== '' && $jurado !== 'Jurado Agroambiental Oficial') {
+        $jSearch = trim($jurado);
+        $altStmt = $pdo->prepare("
+            SELECT firma_evaluador
+            FROM resultado_concurso_AMBIENTAL
+            WHERE id != ?
+              AND firma_evaluador LIKE '%data:image/%'
+              AND LENGTH(firma_evaluador) > 100
+              AND resultados_json LIKE ?
+            ORDER BY id ASC
+            LIMIT 1
+        ");
+        $altStmt->execute([$id, '%' . $jSearch . '%']);
+        $altFe = $altStmt->fetchColumn();
+        if ($altFe) {
+            $firmaJurado = splitImages($altFe)[0] ?? null;
+        }
+    }
+
     $fotos = splitImages($row['imagenes']);
 
     echo json_encode([

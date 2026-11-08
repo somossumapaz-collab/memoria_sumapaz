@@ -200,6 +200,137 @@ if (!function_exists('healAmbientalEvaluations')) {
                     $updBothStmt->execute([$finalPid, $newJsonStr, $evalId]);
                 }
             }
+
+            // 4. Completar únicamente firmas faltantes en resultado_concurso_AMBIENTAL sin alterar ningún otro dato:
+            //    - firma_evaluador faltante: se toma de otra evaluación del mismo evaluador que sí tenga firma válida (data:image/).
+            //    - firma_concursante faltante: se toma del acta de inscripción del participante (productor_predio_AMBIENTAL.firma_productor).
+            $normJudgeKey = function ($s) use ($normName): string {
+                $s = $normName($s);
+                $s = preg_replace('/[^a-z\s]/', ' ', $s);
+                $s = trim(preg_replace('/\s+/', ' ', $s));
+                if ($s === '') return '';
+                if (strpos($s, 'yeison') !== false || strpos($s, 'yeiosn') !== false) return 'yeison paez';
+                if (strpos($s, 'laura') !== false && strpos($s, 'bolivar') !== false) return 'laura yaneth bolivar hoyos';
+                if (strpos($s, 'edward') !== false && strpos($s, 'barrera') !== false) return 'edward barrera';
+                if (strpos($s, 'esthefanny') !== false && strpos($s, 'romero') !== false) return 'esthefanny romero';
+                if (strpos($s, 'libardo') !== false && strpos($s, 'diaz') !== false) return 'libardo diaz';
+                if (strpos($s, 'juan david nieto') !== false) return 'juan david nieto beltran';
+                if (strpos($s, 'lizeth') !== false && strpos($s, 'sua') !== false) return 'lizeth suarez';
+                if (strpos($s, 'milena') !== false && strpos($s, 'su') !== false) return 'milena susa';
+                if (strpos($s, 'sergio') !== false && strpos($s, 'parra') !== false) return 'sergio parra';
+                if (strpos($s, 'daniel') !== false && strpos($s, 'millan') !== false) return 'daniel millan';
+                if ((strpos($s, 'smith') !== false || strpos($s, 'smirh') !== false) && strpos($s, 'villalobos') !== false) return 'smith villalobos';
+                if (strpos($s, 'wilson') !== false && strpos($s, 'rey') !== false) return 'wilson rey moreno';
+                if (strpos($s, 'luis fernando baquero') !== false) return 'luis fernando baquero';
+                if (strpos($s, 'jair alonso') !== false) return 'jair alonso';
+                if (strpos($s, 'eduin') !== false && strpos($s, 'parada') !== false) return 'eduin parada';
+                return $s;
+            };
+
+            $sigMetaStmt = $pdo->query("
+                SELECT id, id_productor_predio, resultados_json,
+                       (firma_evaluador IS NOT NULL AND firma_evaluador LIKE '%data:image/%' AND LENGTH(firma_evaluador) > 100) AS has_fe,
+                       (firma_concursante IS NOT NULL AND firma_concursante LIKE '%data:image/%' AND LENGTH(firma_concursante) > 100) AS has_fc
+                FROM resultado_concurso_AMBIENTAL
+                ORDER BY id ASC
+            ");
+            $sigMetaRows = $sigMetaStmt->fetchAll(PDO::FETCH_ASSOC);
+
+            $donorEvalIdByJudge = [];
+            $donorEvalIdByParticipant = [];
+            $missingRows = [];
+
+            foreach ($sigMetaRows as $sm) {
+                $eid = (int)$sm['id'];
+                $pid = (int)$sm['id_productor_predio'];
+                $hasFe = (int)$sm['has_fe'] === 1;
+                $hasFc = (int)$sm['has_fc'] === 1;
+                $j = json_decode($sm['resultados_json'] ?? '', true);
+                $jName = (is_array($j) && !empty($j['judgeName'])) ? trim((string)$j['judgeName']) : '';
+                $jk = $normJudgeKey($jName);
+
+                if ($hasFe && $jk !== '' && !isset($donorEvalIdByJudge[$jk])) {
+                    $donorEvalIdByJudge[$jk] = $eid;
+                }
+                if ($hasFc && $pid > 0 && !isset($donorEvalIdByParticipant[$pid])) {
+                    $donorEvalIdByParticipant[$pid] = $eid;
+                }
+                if (!$hasFe || !$hasFc) {
+                    $missingRows[] = [
+                        'id' => $eid,
+                        'pid' => $pid,
+                        'jk' => $jk,
+                        'has_fe' => $hasFe,
+                        'has_fc' => $hasFc,
+                    ];
+                }
+            }
+
+            if (!empty($missingRows)) {
+                $judgeSigCache = [];
+                $getJudgeFeStmt = $pdo->prepare("SELECT firma_evaluador FROM resultado_concurso_AMBIENTAL WHERE id = ? LIMIT 1");
+                $getProdFpByIdStmt = $pdo->prepare("SELECT firma_productor FROM productor_predio_AMBIENTAL WHERE id = ? AND firma_productor LIKE '%data:image/%' AND LENGTH(firma_productor) > 100 LIMIT 1");
+                $getProdFpByDocStmt = $pdo->prepare("SELECT firma_productor FROM productor_predio_AMBIENTAL WHERE numero_documento = ? AND firma_productor LIKE '%data:image/%' AND LENGTH(firma_productor) > 100 ORDER BY id DESC LIMIT 1");
+                $getEvalFcByIdStmt = $pdo->prepare("SELECT firma_concursante FROM resultado_concurso_AMBIENTAL WHERE id = ? LIMIT 1");
+                $updFeStmt = $pdo->prepare("UPDATE resultado_concurso_AMBIENTAL SET firma_evaluador = ? WHERE id = ?");
+                $updFcStmt = $pdo->prepare("UPDATE resultado_concurso_AMBIENTAL SET firma_concursante = ? WHERE id = ?");
+
+                foreach ($missingRows as $mr) {
+                    $eid = $mr['id'];
+                    $pid = $mr['pid'];
+                    $jk = $mr['jk'];
+
+                    if (!$mr['has_fe'] && $jk !== '' && isset($donorEvalIdByJudge[$jk])) {
+                        if (!array_key_exists($jk, $judgeSigCache)) {
+                            $getJudgeFeStmt->execute([$donorEvalIdByJudge[$jk]]);
+                            $rawFe = $getJudgeFeStmt->fetchColumn();
+                            $judgeSigCache[$jk] = (is_string($rawFe) && strpos($rawFe, 'data:image/') !== false) ? $rawFe : null;
+                        }
+                        if (!empty($judgeSigCache[$jk])) {
+                            $updFeStmt->execute([$judgeSigCache[$jk], $eid]);
+                        }
+                    }
+
+                    if (!$mr['has_fc'] && $pid > 0) {
+                        $foundFc = null;
+                        $getProdFpByIdStmt->execute([$pid]);
+                        $rawFp = $getProdFpByIdStmt->fetchColumn();
+                        if (is_string($rawFp) && strpos($rawFp, 'data:image/') !== false) {
+                            $foundFc = $rawFp;
+                        }
+                        if ($foundFc === null && isset($prodMap[$pid])) {
+                            $doc = $prodMap[$pid]['doc'];
+                            if ($doc !== '') {
+                                $getProdFpByDocStmt->execute([$doc]);
+                                $rawFpDoc = $getProdFpByDocStmt->fetchColumn();
+                                if (is_string($rawFpDoc) && strpos($rawFpDoc, 'data:image/') !== false) {
+                                    $foundFc = $rawFpDoc;
+                                }
+                            }
+                            if ($foundFc === null && $prodMap[$pid]['norm_full'] !== '' && !empty($exactNameBuckets[$prodMap[$pid]['norm_full']])) {
+                                foreach ($exactNameBuckets[$prodMap[$pid]['norm_full']] as $altPid) {
+                                    $getProdFpByIdStmt->execute([$altPid]);
+                                    $rawFpAlt = $getProdFpByIdStmt->fetchColumn();
+                                    if (is_string($rawFpAlt) && strpos($rawFpAlt, 'data:image/') !== false) {
+                                        $foundFc = $rawFpAlt;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        if ($foundFc === null && isset($donorEvalIdByParticipant[$pid])) {
+                            $getEvalFcByIdStmt->execute([$donorEvalIdByParticipant[$pid]]);
+                            $rawFc = $getEvalFcByIdStmt->fetchColumn();
+                            if (is_string($rawFc) && strpos($rawFc, 'data:image/') !== false) {
+                                $foundFc = $rawFc;
+                            }
+                        }
+                        if ($foundFc !== null) {
+                            $updFcStmt->execute([$foundFc, $eid]);
+                        }
+                    }
+                }
+            }
         } catch (Throwable $e) {
             // Silencioso para no interrumpir la respuesta de los endpoints
         }
