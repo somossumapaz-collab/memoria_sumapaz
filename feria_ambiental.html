@@ -1455,7 +1455,8 @@
         <div class="modal" style="max-width: 900px;">
             <div class="modal-head">
                 <h2 id="acta-juzg-modal-title">Acta Oficial de Juzgamiento y Evaluación</h2>
-                <div style="display:flex;gap:.4rem">
+                <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+                    <button class="btn btn-gold btn-sm" onclick="if(currentJuzgamientoUid) openEditarJuradoModal(currentJuzgamientoUid)">Editar jurado</button>
                     <button class="btn btn-primary btn-sm" onclick="downloadActaJuzgamientoPdf(this)">Descargar PDF</button>
                     <button class="btn btn-outline btn-sm" onclick="printActaJuzgamiento()">Imprimir</button>
                     <button class="btn btn-danger btn-sm" onclick="closeActaJuzgamiento()">Cerrar</button>
@@ -1463,6 +1464,43 @@
             </div>
             <div class="modal-body" id="acta-juzg-modal-body">
                 <div class="loading"><div class="spinner"></div>Cargando formato de acta oficial...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL EDITAR JURADO EVALUADOR -->
+    <div class="modal-bg" id="editar-jurado-modal" onclick="if(event.target===this) closeEditarJuradoModal()">
+        <div class="modal" style="max-width: 540px;">
+            <div class="modal-head">
+                <div>
+                    <h2 id="editar-jurado-title" style="font-family:'Inter',sans-serif;">Editar jurado evaluador</h2>
+                    <div id="editar-jurado-subtitle" class="muted" style="font-size:0.8rem;margin-top:2px;"></div>
+                </div>
+                <div style="display:flex;gap:.4rem;align-items:center">
+                    <button class="btn btn-primary btn-sm" id="btn-save-jurado" onclick="saveEditarJuradoModal()">Guardar cambios</button>
+                    <button class="btn btn-outline btn-sm" onclick="closeEditarJuradoModal()">Cancelar</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div style="margin-bottom:0.9rem;">
+                    <label style="font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;display:block;margin-bottom:0.35rem;">Nombre del jurado evaluador</label>
+                    <input type="text" id="input-nuevo-jurado" list="datalist-jurados-existentes" placeholder="Escribe o selecciona el nombre del jurado..." style="width:100%;padding:0.6rem 0.75rem;border:1px solid #CCC;border-radius:8px;font-family:inherit;font-size:0.9rem;">
+                    <datalist id="datalist-jurados-existentes"></datalist>
+                </div>
+                <div style="margin-bottom:0.95rem;">
+                    <div style="font-size:0.74rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;margin-bottom:0.35rem;">Jurados registrados en el sistema (clic para seleccionar)</div>
+                    <div id="jurados-quick-pills" style="display:flex;flex-wrap:wrap;gap:0.35rem;max-height:130px;overflow-y:auto;padding:2px 0;"></div>
+                </div>
+                <div style="border-top:1px solid #E5E7EB;padding-top:0.75rem;display:flex;flex-direction:column;gap:0.55rem;">
+                    <label class="chk" style="font-size:0.82rem;cursor:pointer;">
+                        <input type="checkbox" id="chk-jurado-all-same" style="width:auto;">
+                        <span id="lbl-jurado-all-same">Aplicar este nombre a todas las evaluaciones del jurado actual</span>
+                    </label>
+                    <label class="chk" style="font-size:0.82rem;cursor:pointer;">
+                        <input type="checkbox" id="chk-jurado-sync-sig" style="width:auto;">
+                        <span>Sincronizar firma digital si el jurado seleccionado tiene firma registrada</span>
+                    </label>
+                </div>
             </div>
         </div>
     </div>
@@ -3342,7 +3380,10 @@
                     </td>
                     <td>
                         <div style="font-weight:600;color:#1F2937;">${esc(titleCase(ev.jurado || 'Jurado Oficial'))}</div>
-                        <div class="muted" style="font-size:0.72rem;">Jurado evaluador</div>
+                        <div style="display:flex;align-items:center;gap:0.4rem;margin-top:2px;flex-wrap:wrap;">
+                            <span class="muted" style="font-size:0.72rem;">Jurado evaluador</span>
+                            <button type="button" class="btn-add-tag" style="padding:0.08rem 0.45rem;font-size:0.68rem;" onclick="openEditarJuradoModal('${esc(ev.uid)}')">Editar</button>
+                        </div>
                     </td>
                     <td style="text-align:center;white-space:nowrap;">
                         <span class="score-badge ${scoreClass}">
@@ -3626,8 +3667,10 @@
 
         // ================== MODAL ACTA OFICIAL DE JUZGAMIENTO ==================
         let currentJuzgamientoActaName = 'Acta_Juzgamiento';
+        let currentJuzgamientoUid = null;
 
         async function openActaJuzgamiento(uid) {
+            currentJuzgamientoUid = uid;
             const modal = document.getElementById('acta-juzgamiento-modal');
             const body = document.getElementById('acta-juzg-modal-body');
             if (!modal || !body) return;
@@ -3850,6 +3893,113 @@
 
         function downloadActaJuzgamientoPdf(btnEl) {
             exportActaSheetsToPdf('acta-juzgamiento-print', '.acta-juzg-sheet', currentJuzgamientoActaName, btnEl);
+        }
+
+        // ================== EDITAR JURADO EVALUADOR ==================
+        let editingJuradoUid = null;
+        let editingJuradoOldName = '';
+
+        function openEditarJuradoModal(uid) {
+            const ev = (evalState.evaluaciones || []).find(e => String(e.uid) === String(uid));
+            editingJuradoUid = uid;
+            editingJuradoOldName = ev ? (ev.jurado || '') : '';
+
+            const sub = document.getElementById('editar-jurado-subtitle');
+            if (sub) {
+                sub.textContent = ev
+                    ? `${titleCase(ev.concursante || '')} · ${ev.concurso || ''}`
+                    : `Evaluación ${uid}`;
+            }
+
+            const inp = document.getElementById('input-nuevo-jurado');
+            if (inp) inp.value = editingJuradoOldName;
+
+            const chkAll = document.getElementById('chk-jurado-all-same');
+            if (chkAll) chkAll.checked = false;
+            const lblAll = document.getElementById('lbl-jurado-all-same');
+            if (lblAll) {
+                const sameCount = (evalState.evaluaciones || []).filter(e => norm(e.jurado) === norm(editingJuradoOldName)).length;
+                lblAll.textContent = editingJuradoOldName
+                    ? `Aplicar este nombre a todas las ${sameCount} evaluación(es) de "${titleCase(editingJuradoOldName)}"`
+                    : 'Aplicar este nombre a todas las evaluaciones del jurado actual';
+            }
+
+            const chkSig = document.getElementById('chk-jurado-sync-sig');
+            if (chkSig) chkSig.checked = ev ? !ev.tiene_firma_jurado : false;
+
+            const juradosUniq = [...new Set((evalState.evaluaciones || []).map(e => (e.jurado || '').trim()).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'es'));
+            const dl = document.getElementById('datalist-jurados-existentes');
+            if (dl) {
+                dl.innerHTML = juradosUniq.map(j => `<option value="${esc(j)}"></option>`).join('');
+            }
+            const pills = document.getElementById('jurados-quick-pills');
+            if (pills) {
+                pills.innerHTML = juradosUniq.length
+                    ? juradosUniq.map(j => `<button type="button" class="btn-add-tag" style="padding:0.2rem 0.55rem;font-size:0.75rem;" onclick="selectQuickJurado(${JSON.stringify(j).replace(/"/g, '&quot;')})">${esc(titleCase(j))}</button>`).join('')
+                    : '<span class="muted" style="font-size:0.75rem;">Sin jurados previos</span>';
+            }
+
+            const modal = document.getElementById('editar-jurado-modal');
+            if (modal) modal.classList.add('open');
+            setTimeout(() => { if (inp) { inp.focus(); inp.select(); } }, 60);
+        }
+
+        function selectQuickJurado(name) {
+            const inp = document.getElementById('input-nuevo-jurado');
+            if (inp) {
+                inp.value = name;
+                inp.focus();
+            }
+        }
+
+        function closeEditarJuradoModal() {
+            const modal = document.getElementById('editar-jurado-modal');
+            if (modal) modal.classList.remove('open');
+            editingJuradoUid = null;
+        }
+
+        async function saveEditarJuradoModal() {
+            if (!editingJuradoUid) return;
+            const inp = document.getElementById('input-nuevo-jurado');
+            const nuevoJurado = (inp ? inp.value : '').trim();
+            if (!nuevoJurado) {
+                alert('Por favor escribe o selecciona el nombre del jurado evaluador.');
+                if (inp) inp.focus();
+                return;
+            }
+
+            const applyToAll = !!document.getElementById('chk-jurado-all-same')?.checked;
+            const syncSig = !!document.getElementById('chk-jurado-sync-sig')?.checked;
+            const targetUid = editingJuradoUid;
+            const btn = document.getElementById('btn-save-jurado');
+            if (btn) { btn.disabled = true; btn.textContent = 'Guardando...'; }
+
+            try {
+                const res = await fetch('api/manage_feria_ambiental.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        action: 'update_evaluacion_jurado',
+                        uid: targetUid,
+                        jurado: nuevoJurado,
+                        old_jurado: editingJuradoOldName,
+                        apply_to_all_same_judge: applyToAll,
+                        sync_signature: syncSig
+                    })
+                });
+                const d = await res.json();
+                if (!res.ok || !d.success) throw new Error(d.error || 'No se pudo actualizar el jurado evaluador');
+
+                closeEditarJuradoModal();
+                await loadEvaluacionesData(true);
+                if (document.getElementById('acta-juzgamiento-modal')?.classList.contains('open') && currentJuzgamientoUid === targetUid) {
+                    await openActaJuzgamiento(targetUid);
+                }
+            } catch (e) {
+                alert('Error al guardar jurado: ' + e.message);
+            } finally {
+                if (btn) { btn.disabled = false; btn.textContent = 'Guardar cambios'; }
+            }
         }
 
         // ================== EXPORTAR EVALUACIONES A EXCEL ==================
