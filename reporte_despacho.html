@@ -525,6 +525,14 @@
                             <b>Fecha de terminación inicial</b>
                             <span id="view-m1-fin-inicial">-</span>
                         </div>
+                        <div class="info-cell">
+                            <b>Fecha de terminación final</b>
+                            <span id="view-m1-fin-final">-</span>
+                        </div>
+                        <div class="info-cell">
+                            <b>Duración a fecha terminación final</b>
+                            <span id="view-m1-duracion-final">-</span>
+                        </div>
                         <div class="info-cell" style="grid-column: 1 / -1;">
                             <b>Objeto del contrato</b>
                             <span id="view-m1-objeto">-</span>
@@ -660,10 +668,12 @@
                         <div class="form-group">
                             <label for="m2_ejecucion_financiera_texto">Ejecución financiera *</label>
                             <input type="text" id="m2_ejecucion_financiera_texto" name="m2_ejecucion_financiera_texto" class="form-control" placeholder="Ej: 52.31%" required>
+                            <small id="help-variacion-financiera" class="muted" style="display:block; font-size:0.75rem; margin-top:3px;">Sin límite de tope ni de disminución; al haber adiciones el porcentaje se reduce y se registrará la variación.</small>
                         </div>
                         <div class="form-group">
                             <label for="m2_ejecucion_fisica_texto">Ejecución física *</label>
                             <input type="text" id="m2_ejecucion_fisica_texto" name="m2_ejecucion_fisica_texto" class="form-control" placeholder="Ej: 72%" required>
+                            <small id="help-variacion-fisica" class="muted" style="display:block; font-size:0.75rem; margin-top:3px;">Sin límite de tope ni de disminución; el sistema registrará la variación.</small>
                         </div>
                         <div class="form-group">
                             <label for="m2_estado_reportado">Estado *</label>
@@ -672,6 +682,7 @@
                                 <option value="En ejecución"></option>
                                 <option value="Suspendido"></option>
                                 <option value="Terminado"></option>
+                                <option value="Finalizado"></option>
                                 <option value="En liquidación"></option>
                                 <option value="Liquidado"></option>
                             </datalist>
@@ -679,6 +690,7 @@
                         <div class="form-group">
                             <label for="m2_fecha_fin_reportada">Fecha finalización</label>
                             <input type="text" id="m2_fecha_fin_reportada" name="m2_fecha_fin_reportada" class="form-control" placeholder="YYYY-MM-DD o texto">
+                            <small id="help-duracion-fin-reportada" class="muted" style="display:block; font-size:0.75rem; margin-top:3px;"></small>
                         </div>
                         <div class="form-group" style="grid-column: 1 / -1;">
                             <label for="alertas_contrato">Alertas del Contrato</label>
@@ -1129,6 +1141,7 @@
 
             matchesBox.innerHTML = contratos.map(m => {
                 const isSelected = activeContratoId !== null && Number(m.id) === Number(activeContratoId);
+                const isFinalizado = Boolean(m.es_finalizado || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(m.estado_contractual || '').toUpperCase()) || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(m.estado_reportado_texto || '').toUpperCase()));
                 const borderStyle = isSelected ? 'border: 2px solid var(--primary-green); background: #EEF3EF;' : '';
                 const fisTxt = m.ejecucion_fisica_pct !== null && m.ejecucion_fisica_pct !== undefined ? `${m.ejecucion_fisica_pct}%` : 'Sin dato';
                 const finTxt = m.ejecucion_financiera_pct !== null && m.ejecucion_financiera_pct !== undefined ? `${m.ejecucion_financiera_pct}%` : 'Sin dato';
@@ -1138,6 +1151,7 @@
                             <span class="tag ${isSinProy ? 'tag-warn' : 'tag-neutral'}" style="margin-right:0.35rem;">
                                 ${isSinProy ? 'Sin Proyecto' : 'Proy. ' + escapeHtml(proyObj.codigo)}
                             </span>
+                            ${isFinalizado ? '<span class="tag" style="background:#EAF5EE; color:#1D4227; border:1px solid #C8E6C9; margin-right:0.35rem; font-weight:600;">FINALIZADO</span>' : ''}
                             <strong style="color:var(--primary-green-dark);">Contrato: ${escapeHtml(m.numero_contrato)}</strong> — <strong>${escapeHtml(m.titulo_grupo)}</strong>
                             <div class="muted" style="font-size:0.78rem; margin-top:2px;">
                                 Apoyo: ${escapeHtml(m.responsable_nombre || 'Sin asignar')} |
@@ -1147,7 +1161,7 @@
                             </div>
                         </div>
                         <button type="button" class="btn ${isSelected ? 'btn-gold' : 'btn-primary'} btn-sm">
-                            ${isSelected ? 'Contrato Abierto' : 'Seleccionar'}
+                            ${isSelected ? 'Contrato Abierto' : (isFinalizado ? 'Ver Finalizado' : 'Seleccionar')}
                         </button>
                     </div>
                 `;
@@ -1372,6 +1386,10 @@
             document.getElementById('view-m1-valores').textContent = valorMostrar;
             document.getElementById('view-m1-inicio').textContent = c.fecha_inicio_texto || 'Sin dato';
             document.getElementById('view-m1-fin-inicial').textContent = c.fecha_fin_inicial_texto || 'Sin dato';
+            const finFinalEl = document.getElementById('view-m1-fin-final');
+            if (finFinalEl) finFinalEl.textContent = c.fecha_fin_final_texto || c.fecha_fin_vigente_texto || c.fecha_fin_inicial_texto || 'Sin dato';
+            const durFinalEl = document.getElementById('view-m1-duracion-final');
+            if (durFinalEl) durFinalEl.textContent = c.duracion_final_texto || c.duracion_texto || c.duracion_inicial_calculada || 'Sin dato';
             document.getElementById('view-m1-objeto').textContent = c.objeto || 'Sin objeto registrado';
             const alertaActual = c.alertas_contrato || c.alerta_consolidada || '';
             const elAlertasM1 = document.getElementById('view-m1-alertas');
@@ -1430,7 +1448,107 @@
             document.getElementById('m2_fecha_fin_reportada').value = c.fecha_fin_vigente_texto || c.fecha_fin_inicial_texto || '';
             document.getElementById('alertas_contrato').value = alertaActual;
 
+            // Bloquear actualización si el contrato está finalizado
+            const esFinalizado = Boolean(c.es_finalizado || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(c.estado_contractual || '').toUpperCase()) || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(c.estado_reportado_texto || '').toUpperCase()));
+            let avFin = document.getElementById('aviso-contrato-finalizado');
+            const ws = document.getElementById('contract-workspace');
+            const btnSubmit = document.getElementById('btn-submit-reporte');
+
+            if (esFinalizado) {
+                if (!avFin) {
+                    avFin = document.createElement('div');
+                    avFin.id = 'aviso-contrato-finalizado';
+                    ws.insertBefore(avFin, ws.firstChild);
+                }
+                avFin.style.cssText = 'padding:0.95rem 1.25rem; background:#EAF5EE; border:1px solid #C8E6C9; border-radius:8px; color:#1D4227; font-weight:600; font-size:0.9rem; margin-bottom:1.15rem;';
+                avFin.textContent = 'Este contrato se encuentra FINALIZADO y cerrado. Ya no admite modificaciones ni nuevos reportes semanales.';
+                if (btnSubmit) {
+                    btnSubmit.disabled = true;
+                    btnSubmit.textContent = 'Contrato Finalizado (Cerrado)';
+                    btnSubmit.style.opacity = '0.6';
+                    btnSubmit.style.cursor = 'not-allowed';
+                }
+                document.querySelectorAll('#card-mensaje1 input, #card-mensaje1 select, #card-mensaje1 textarea, #card-mensaje2 input, #card-mensaje2 textarea, #card-mensaje2 select').forEach(el => el.disabled = true);
+            } else {
+                if (avFin) avFin.remove();
+                if (btnSubmit) {
+                    btnSubmit.disabled = false;
+                    btnSubmit.textContent = 'Guardar Reporte Semanal';
+                    btnSubmit.style.opacity = '1';
+                    btnSubmit.style.cursor = 'pointer';
+                }
+                document.querySelectorAll('#card-mensaje1 input, #card-mensaje1 select, #card-mensaje1 textarea, #card-mensaje2 input, #card-mensaje2 textarea, #card-mensaje2 select').forEach(el => el.disabled = false);
+            }
+
+            setupLiveExecutionListeners(c);
+
             window.scrollTo({ top: document.getElementById('contract-workspace').offsetTop - 60, behavior: 'smooth' });
+        }
+
+        function setupLiveExecutionListeners(c) {
+            const baseFin = c.ejecucion_financiera_pct !== null && c.ejecucion_financiera_pct !== undefined ? Number(c.ejecucion_financiera_pct) : null;
+            const baseFis = c.ejecucion_fisica_pct !== null && c.ejecucion_fisica_pct !== undefined ? Number(c.ejecucion_fisica_pct) : null;
+
+            const inpFin = document.getElementById('m2_ejecucion_financiera_texto');
+            const helpFin = document.getElementById('help-variacion-financiera');
+            if (inpFin && helpFin) {
+                const updateFin = () => {
+                    const match = (inpFin.value || '').match(/(\d+(?:[\.,]\d+)?)/);
+                    if (match && baseFin !== null) {
+                        const valNum = parseFloat(match[1].replace(',', '.'));
+                        const delta = Math.round((valNum - baseFin) * 100) / 100;
+                        if (delta > 0) {
+                            helpFin.innerHTML = `<span style="color:#1D4227; font-weight:600;">Aumento: +${delta}% (Anterior: ${baseFin}%)</span>`;
+                        } else if (delta < 0) {
+                            helpFin.innerHTML = `<span style="color:#855A00; font-weight:600;">Disminución: ${delta}% (Anterior: ${baseFin}% — Disminución por adición presupuestal u otro motivo)</span>`;
+                        } else {
+                            helpFin.textContent = `Sin variación respecto al reporte anterior (${baseFin}%).`;
+                        }
+                    } else {
+                        helpFin.textContent = 'Sin límite de tope ni de disminución; al haber adiciones el porcentaje se reduce y se registrará la variación.';
+                    }
+                };
+                inpFin.oninput = updateFin;
+                updateFin();
+            }
+
+            const inpFis = document.getElementById('m2_ejecucion_fisica_texto');
+            const helpFis = document.getElementById('help-variacion-fisica');
+            if (inpFis && helpFis) {
+                const updateFis = () => {
+                    const match = (inpFis.value || '').match(/(\d+(?:[\.,]\d+)?)/);
+                    if (match && baseFis !== null) {
+                        const valNum = parseFloat(match[1].replace(',', '.'));
+                        const delta = Math.round((valNum - baseFis) * 100) / 100;
+                        if (delta > 0) {
+                            helpFis.innerHTML = `<span style="color:#1D4227; font-weight:600;">Aumento: +${delta}% (Anterior: ${baseFis}%)</span>`;
+                        } else if (delta < 0) {
+                            helpFis.innerHTML = `<span style="color:#855A00; font-weight:600;">Disminución: ${delta}% (Anterior: ${baseFis}%)</span>`;
+                        } else {
+                            helpFis.textContent = `Sin variación respecto al reporte anterior (${baseFis}%).`;
+                        }
+                    } else {
+                        helpFis.textContent = 'Sin límite de tope ni de disminución; el sistema registrará la variación.';
+                    }
+                };
+                inpFis.oninput = updateFis;
+                updateFis();
+            }
+
+            const inpFinRep = document.getElementById('m2_fecha_fin_reportada');
+            const helpDur = document.getElementById('help-duracion-fin-reportada');
+            if (inpFinRep && helpDur) {
+                const updateDur = () => {
+                    const val = inpFinRep.value.trim();
+                    if (val) {
+                        helpDur.innerHTML = `<span style="color:var(--primary-green-dark); font-weight:600;">Fecha terminación final a registrar</span>`;
+                    } else {
+                        helpDur.textContent = '';
+                    }
+                };
+                inpFinRep.oninput = updateDur;
+                updateDur();
+            }
         }
 
         async function handleSubmitActualizacion(e) {
@@ -1439,6 +1557,11 @@
             const nuevoNum = (document.getElementById('nuevo_numero_contrato').value || '').trim();
             if (!contratoId && !nuevoNum) {
                 alert('Seleccione un contrato antes de guardar el reporte semanal.');
+                return;
+            }
+
+            if (loadedContractData && (loadedContractData.contrato.es_finalizado || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(loadedContractData.contrato.estado_contractual || '').toUpperCase()) || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(loadedContractData.contrato.estado_reportado_texto || '').toUpperCase()))) {
+                alert('Este contrato ya se encuentra FINALIZADO y cerrado. No permite más actualizaciones.');
                 return;
             }
 

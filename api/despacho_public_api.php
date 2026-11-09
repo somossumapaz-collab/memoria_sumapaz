@@ -223,6 +223,94 @@ function parseSubmittedMessages(?string $m1, ?string $m2): array {
 }
 
 /**
+ * Determina si un contrato se encuentra finalizado / terminado / liquidado.
+ */
+function isContratoFinalizado(array $c): bool {
+    $estCon = mb_strtoupper(trim((string)($c['estado_contractual'] ?? '')), 'UTF-8');
+    $estRep = mb_strtoupper(trim((string)($c['estado_reportado_texto'] ?? '')), 'UTF-8');
+    if (in_array($estCon, ['TERMINADO', 'FINALIZADO', 'LIQUIDADO', 'CERRADO'], true)) {
+        return true;
+    }
+    if ($estRep !== '' && strpos($estRep, 'EN LIQUID') === false && strpos($estRep, 'POR TERMINAR') === false && strpos($estRep, 'NO TERMINADO') === false && strpos($estRep, 'SIN TERMINAR') === false) {
+        if (strpos($estRep, 'FINALIZADO') !== false || strpos($estRep, 'TERMINADO') !== false || strpos($estRep, 'LIQUIDADO') !== false) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+ * Convierte fechas en texto español ("1 de abril 2025", "31/08/2025") o ISO ("2025-08-31") a formato YYYY-MM-DD.
+ */
+function parseSpanishOrIsoDate(?string $val): ?string {
+    if ($val === null) return null;
+    $s = trim($val);
+    if ($s === '') return null;
+    if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $s)) {
+        return $s;
+    }
+    if (preg_match('/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/', $s, $m)) {
+        return sprintf('%04d-%02d-%02d', (int)$m[3], (int)$m[2], (int)$m[1]);
+    }
+    $meses = [
+        'enero' => 1, 'ene' => 1,
+        'febrero' => 2, 'feb' => 2,
+        'marzo' => 3, 'mar' => 3,
+        'abril' => 4, 'abr' => 4,
+        'mayo' => 5, 'may' => 5,
+        'junio' => 6, 'jun' => 6,
+        'julio' => 7, 'jul' => 7,
+        'agosto' => 8, 'ago' => 8,
+        'septiembre' => 9, 'setiembre' => 9, 'sep' => 9, 'sept' => 9,
+        'octubre' => 10, 'oct' => 10,
+        'noviembre' => 11, 'nov' => 11,
+        'diciembre' => 12, 'dic' => 12,
+    ];
+    if (preg_match('/(\d{1,2})\s*(?:de|\-|\s)\s*([a-záéíóúñ]+)\s*(?:de|del|\-|\s)?\s*(\d{4})/iu', $s, $m)) {
+        $dia = (int)$m[1];
+        $mesKey = mb_strtolower(trim($m[2]), 'UTF-8');
+        $anio = (int)$m[3];
+        if (isset($meses[$mesKey]) && $dia >= 1 && $dia <= 31 && $anio >= 2000 && $anio <= 2100) {
+            return sprintf('%04d-%02d-%02d', $anio, $meses[$mesKey], $dia);
+        }
+    }
+    return null;
+}
+
+/**
+ * Calcula la duración legible entre la fecha de inicio y la fecha de terminación (ej: "5 Meses", "6 Meses y 15 días").
+ */
+function calcularDuracionEntreFechas(?string $iniIso, ?string $finIso): ?string {
+    if (!$iniIso || !$finIso) return null;
+    try {
+        $dtIni = new DateTime($iniIso);
+        $dtFin = new DateTime($finIso);
+        if ($dtFin < $dtIni) return null;
+
+        if ($dtIni->format('d') === $dtFin->format('d') && $dtIni->format('Y-m') !== $dtFin->format('Y-m')) {
+            $diff = $dtIni->diff($dtFin);
+        } else {
+            $dtFinInclusive = (clone $dtFin)->modify('+1 day');
+            $diff = $dtIni->diff($dtFinInclusive);
+        }
+
+        $totalMonths = ($diff->y * 12) + $diff->m;
+        $days = $diff->d;
+
+        if ($totalMonths > 0 && $days === 0) {
+            return $totalMonths . ($totalMonths === 1 ? ' Mes' : ' Meses');
+        }
+        if ($totalMonths > 0 && $days > 0) {
+            return $totalMonths . ($totalMonths === 1 ? ' Mes' : ' Meses') . ' y ' . $days . ($days === 1 ? ' día' : ' días');
+        }
+        $totalDays = (int)$dtIni->diff($dtFin)->format('%a') + 1;
+        return $totalDays . ($totalDays === 1 ? ' día' : ' días');
+    } catch (\Throwable $e) {
+        return null;
+    }
+}
+
+/**
  * Construye el paquete completo de un contrato (Mensaje 1 actual, Mensaje 2 actual, proyectos, periodo activo y versiones para tracking).
  */
 function buildContractLookupPayload(PDO $pdo, array $contratoRow): array {
@@ -252,7 +340,7 @@ function buildContractLookupPayload(PDO $pdo, array $contratoRow): array {
     // Contratos hermanos que se desprenden del mismo proyecto
     if (!empty($proyectos)) {
         $stmtSib = $pdo->prepare("SELECT c.id, c.numero_contrato, c.titulo_grupo, c.responsable_nombre, c.contratista,
-                c.estado_contractual, c.tiene_mensaje1, c.fecha_ultimo_reporte_texto, c.ejecucion_fisica_pct, c.ejecucion_financiera_pct
+                c.estado_contractual, c.estado_reportado_texto, c.tiene_mensaje1, c.fecha_ultimo_reporte_texto, c.ejecucion_fisica_pct, c.ejecucion_financiera_pct
             FROM despacho_contrato_proyectos cp
             INNER JOIN despacho_contratos c ON c.id = cp.contrato_id
             WHERE cp.proyecto_id = ?
@@ -261,7 +349,7 @@ function buildContractLookupPayload(PDO $pdo, array $contratoRow): array {
         $contratosDelProyecto = $stmtSib->fetchAll(PDO::FETCH_ASSOC);
     } else {
         $contratosDelProyecto = $pdo->query("SELECT c.id, c.numero_contrato, c.titulo_grupo, c.responsable_nombre, c.contratista,
-                c.estado_contractual, c.tiene_mensaje1, c.fecha_ultimo_reporte_texto, c.ejecucion_fisica_pct, c.ejecucion_financiera_pct
+                c.estado_contractual, c.estado_reportado_texto, c.tiene_mensaje1, c.fecha_ultimo_reporte_texto, c.ejecucion_fisica_pct, c.ejecucion_financiera_pct
             FROM despacho_contratos c
             WHERE NOT EXISTS (SELECT 1 FROM despacho_contrato_proyectos cp WHERE cp.contrato_id = c.id)
             ORDER BY COALESCE(c.fila_excel, 9999) ASC, c.id ASC")->fetchAll(PDO::FETCH_ASSOC);
@@ -284,9 +372,9 @@ function buildContractLookupPayload(PDO $pdo, array $contratoRow): array {
     $modificaciones = $stmtMod->fetchAll(PDO::FETCH_ASSOC);
 
     // Historial completo de versiones para tracking y para obtener el último Mensaje 1 y Mensaje 2
-    $stmtVer = $pdo->prepare("SELECT v.*, r.radicado, r.origen_carga, p.codigo AS periodo_codigo, p.nombre AS periodo_nombre
+    $stmtVer = $pdo->prepare("SELECT v.*, COALESCE(r.radicado, CONCAT('EDICION-V', v.numero_version)) AS radicado, COALESCE(r.origen_carga, v.fuente_version) AS origen_carga, p.codigo AS periodo_codigo, p.nombre AS periodo_nombre
         FROM despacho_versiones_reporte v
-        INNER JOIN despacho_reportes r ON r.id = v.reporte_id
+        LEFT JOIN despacho_reportes r ON r.id = v.reporte_id
         LEFT JOIN despacho_periodos_reporte p ON p.id = v.periodo_id
         WHERE v.contrato_id = ?
         ORDER BY v.id DESC");
@@ -301,6 +389,9 @@ function buildContractLookupPayload(PDO $pdo, array $contratoRow): array {
 
     foreach ($versiones as &$ver) {
         $ver['datos_estructurados'] = $ver['datos_estructurados_json'] ? json_decode($ver['datos_estructurados_json'], true) : null;
+        if (is_array($ver['datos_estructurados']) && empty($ver['datos_estructurados']['resumen_cambios']) && !empty($ver['datos_estructurados']['cambios'])) {
+            $ver['datos_estructurados']['resumen_cambios'] = $ver['datos_estructurados']['cambios'];
+        }
         if ($latestM1Texto === null && !empty($ver['mensaje1_texto_original'])) {
             $latestM1Texto = $ver['mensaje1_texto_original'];
         }
@@ -319,6 +410,31 @@ function buildContractLookupPayload(PDO $pdo, array $contratoRow): array {
     }
     unset($ver);
 
+    $antFisPct = null;
+    $antFinPct = null;
+    if (!empty($versiones)) {
+        $latestV = $versiones[0];
+        $estJson = $latestV['datos_estructurados'] ?? null;
+        if (is_array($estJson)) {
+            if (isset($estJson['ejecucion_fisica_anterior_pct']) && $estJson['ejecucion_fisica_anterior_pct'] !== null) {
+                $antFisPct = (float)$estJson['ejecucion_fisica_anterior_pct'];
+            } elseif (isset($estJson['valores_anteriores']['ejecucion_fisica_pct']) && $estJson['valores_anteriores']['ejecucion_fisica_pct'] !== null) {
+                $antFisPct = (float)$estJson['valores_anteriores']['ejecucion_fisica_pct'];
+            }
+            if (isset($estJson['ejecucion_financiera_anterior_pct']) && $estJson['ejecucion_financiera_anterior_pct'] !== null) {
+                $antFinPct = (float)$estJson['ejecucion_financiera_anterior_pct'];
+            } elseif (isset($estJson['valores_anteriores']['ejecucion_financiera_pct']) && $estJson['valores_anteriores']['ejecucion_financiera_pct'] !== null) {
+                $antFinPct = (float)$estJson['valores_anteriores']['ejecucion_financiera_pct'];
+            }
+        }
+        if ($antFisPct === null && isset($versiones[1]) && $versiones[1]['ejecucion_fisica_pct'] !== null) {
+            $antFisPct = (float)$versiones[1]['ejecucion_fisica_pct'];
+        }
+        if ($antFinPct === null && isset($versiones[1]) && $versiones[1]['ejecucion_financiera_pct'] !== null) {
+            $antFinPct = (float)$versiones[1]['ejecucion_financiera_pct'];
+        }
+    }
+
     // Reporte en el periodo activo (si existe)
     $reportePeriodoActual = null;
     if ($periodoActivo) {
@@ -329,6 +445,19 @@ function buildContractLookupPayload(PDO $pdo, array $contratoRow): array {
         $stmtR->execute([$contratoId, (int)$periodoActivo['id']]);
         $reportePeriodoActual = $stmtR->fetch(PDO::FETCH_ASSOC) ?: null;
     }
+
+    $iniIso = !empty($contratoRow['fecha_inicio_iso']) ? $contratoRow['fecha_inicio_iso'] : parseSpanishOrIsoDate($contratoRow['fecha_inicio_texto'] ?? null);
+    $finIniIso = !empty($contratoRow['fecha_fin_inicial_iso']) ? $contratoRow['fecha_fin_inicial_iso'] : parseSpanishOrIsoDate($contratoRow['fecha_fin_inicial_texto'] ?? null);
+    $finVigIso = !empty($contratoRow['fecha_fin_vigente_iso']) ? $contratoRow['fecha_fin_vigente_iso'] : parseSpanishOrIsoDate($contratoRow['fecha_fin_vigente_texto'] ?? null);
+    $finIso = $finVigIso ?: $finIniIso;
+    $durIniCalc = calcularDuracionEntreFechas($iniIso, $finIniIso);
+    $durFinCalc = calcularDuracionEntreFechas($iniIso, $finIso);
+    $fechaFinFinalTexto = !empty($contratoRow['fecha_fin_vigente_texto']) ? $contratoRow['fecha_fin_vigente_texto'] : ($contratoRow['fecha_fin_inicial_texto'] ?? null);
+    $durFinTexto = $durFinCalc ?: (($finVigIso && $finIniIso && $finVigIso !== $finIniIso) ? null : ($contratoRow['duracion_texto'] ?? $durIniCalc));
+    $esFin = isContratoFinalizado($contratoRow);
+
+    $curFisPct = $contratoRow['ejecucion_fisica_pct'] !== null ? (float)$contratoRow['ejecucion_fisica_pct'] : null;
+    $curFinPct = $contratoRow['ejecucion_financiera_pct'] !== null ? (float)$contratoRow['ejecucion_financiera_pct'] : null;
 
     return [
         'contrato' => [
@@ -343,23 +472,31 @@ function buildContractLookupPayload(PDO $pdo, array $contratoRow): array {
             'contratista' => $contratoRow['contratista'],
             'interventoria_nombre' => $contratoRow['interventoria_nombre'],
             'duracion_texto' => $contratoRow['duracion_texto'],
+            'duracion_inicial_calculada' => $durIniCalc,
+            'duracion_final_texto' => $durFinTexto,
             'valor_inicial' => $contratoRow['valor_inicial'] !== null ? (float)$contratoRow['valor_inicial'] : null,
             'valor_total' => $contratoRow['valor_total'] !== null ? (float)$contratoRow['valor_total'] : null,
             'fecha_inicio_texto' => $contratoRow['fecha_inicio_texto'],
-            'fecha_inicio_iso' => $contratoRow['fecha_inicio_iso'],
+            'fecha_inicio_iso' => $iniIso,
             'fecha_fin_inicial_texto' => $contratoRow['fecha_fin_inicial_texto'],
-            'fecha_fin_inicial_iso' => $contratoRow['fecha_fin_inicial_iso'],
+            'fecha_fin_inicial_iso' => $finIniIso,
             'fecha_fin_vigente_texto' => $contratoRow['fecha_fin_vigente_texto'],
-            'fecha_fin_vigente_iso' => $contratoRow['fecha_fin_vigente_iso'],
-            'estado_contractual' => $contratoRow['estado_contractual'],
+            'fecha_fin_vigente_iso' => $finIso,
+            'fecha_fin_final_texto' => $fechaFinFinalTexto,
+            'estado_contractual' => $esFin ? 'TERMINADO' : $contratoRow['estado_contractual'],
             'estado_reportado_texto' => $contratoRow['estado_reportado_texto'],
+            'es_finalizado' => $esFin,
             'tiene_mensaje1_registrado' => (int)$contratoRow['tiene_mensaje1'] === 1,
             'requiere_mensaje1_obligatorio' => (int)$contratoRow['tiene_mensaje1'] === 0,
             'fecha_ultimo_reporte_texto' => $contratoRow['fecha_ultimo_reporte_texto'],
             'fecha_ultimo_reporte_iso' => $contratoRow['fecha_ultimo_reporte_iso'],
-            'ejecucion_fisica_pct' => $contratoRow['ejecucion_fisica_pct'] !== null ? (float)$contratoRow['ejecucion_fisica_pct'] : null,
+            'ejecucion_fisica_pct' => $curFisPct,
+            'ejecucion_fisica_anterior_pct' => $antFisPct,
+            'variacion_fisica_pct' => ($curFisPct !== null && $antFisPct !== null) ? round($curFisPct - $antFisPct, 2) : null,
             'ejecucion_fisica_texto' => $contratoRow['ejecucion_fisica_texto'],
-            'ejecucion_financiera_pct' => $contratoRow['ejecucion_financiera_pct'] !== null ? (float)$contratoRow['ejecucion_financiera_pct'] : null,
+            'ejecucion_financiera_pct' => $curFinPct,
+            'ejecucion_financiera_anterior_pct' => $antFinPct,
+            'variacion_financiera_pct' => ($curFinPct !== null && $antFinPct !== null) ? round($curFinPct - $antFinPct, 2) : null,
             'ejecucion_financiera_valor' => $contratoRow['ejecucion_financiera_valor'] !== null ? (float)$contratoRow['ejecucion_financiera_valor'] : null,
             'ejecucion_financiera_texto' => $contratoRow['ejecucion_financiera_texto'],
             'ejecucion_financiera_obra_pct' => $latestObraPct,
@@ -410,7 +547,7 @@ try {
             ORDER BY p.codigo ASC")->fetchAll(PDO::FETCH_ASSOC);
 
         $cpRows = $pdo->query("SELECT cp.proyecto_id, c.id, c.numero_contrato, c.titulo_grupo, c.responsable_nombre,
-                c.contratista, c.estado_contractual, c.tiene_mensaje1, c.fecha_ultimo_reporte_texto,
+                c.contratista, c.estado_contractual, c.estado_reportado_texto, c.tiene_mensaje1, c.fecha_ultimo_reporte_texto,
                 c.ejecucion_fisica_pct, c.ejecucion_financiera_pct
             FROM despacho_contrato_proyectos cp
             INNER JOIN despacho_contratos c ON c.id = cp.contrato_id
@@ -426,6 +563,8 @@ try {
                 'responsable_nombre' => $r['responsable_nombre'],
                 'contratista' => $r['contratista'],
                 'estado_contractual' => $r['estado_contractual'],
+                'estado_reportado_texto' => $r['estado_reportado_texto'],
+                'es_finalizado' => isContratoFinalizado($r),
                 'tiene_mensaje1' => (int)$r['tiene_mensaje1'] === 1,
                 'fecha_ultimo_reporte_texto' => $r['fecha_ultimo_reporte_texto'],
                 'ejecucion_fisica_pct' => $r['ejecucion_fisica_pct'] !== null ? (float)$r['ejecucion_fisica_pct'] : null,
@@ -448,7 +587,7 @@ try {
 
         // Contratos aún sin número de proyecto asociado
         $sinProyRows = $pdo->query("SELECT c.id, c.numero_contrato, c.titulo_grupo, c.responsable_nombre,
-                c.contratista, c.estado_contractual, c.tiene_mensaje1, c.fecha_ultimo_reporte_texto,
+                c.contratista, c.estado_contractual, c.estado_reportado_texto, c.tiene_mensaje1, c.fecha_ultimo_reporte_texto,
                 c.ejecucion_fisica_pct, c.ejecucion_financiera_pct
             FROM despacho_contratos c
             WHERE NOT EXISTS (SELECT 1 FROM despacho_contrato_proyectos cp WHERE cp.contrato_id = c.id)
@@ -463,6 +602,8 @@ try {
                     'responsable_nombre' => $r['responsable_nombre'],
                     'contratista' => $r['contratista'],
                     'estado_contractual' => $r['estado_contractual'],
+                    'estado_reportado_texto' => $r['estado_reportado_texto'],
+                    'es_finalizado' => isContratoFinalizado($r),
                     'tiene_mensaje1' => (int)$r['tiene_mensaje1'] === 1,
                     'fecha_ultimo_reporte_texto' => $r['fecha_ultimo_reporte_texto'],
                     'ejecucion_fisica_pct' => $r['ejecucion_fisica_pct'] !== null ? (float)$r['ejecucion_fisica_pct'] : null,
@@ -509,7 +650,7 @@ try {
 
         // Listado plano de todos los contratos para búsqueda y agrupamiento por responsable
         $stmtAllCon = $pdo->query("SELECT c.id, c.numero_contrato, c.titulo_grupo, c.responsable_nombre,
-                c.contratista, c.objeto, c.estado_contractual, c.tiene_mensaje1, c.fecha_ultimo_reporte_texto,
+                c.contratista, c.objeto, c.estado_contractual, c.estado_reportado_texto, c.tiene_mensaje1, c.fecha_ultimo_reporte_texto,
                 c.ejecucion_fisica_pct, c.ejecucion_financiera_pct, c.fecha_fin_vigente_texto, c.fecha_fin_inicial_texto
             FROM despacho_contratos c
             ORDER BY COALESCE(c.fila_excel, 9999) ASC, c.id ASC");
@@ -532,6 +673,8 @@ try {
                 'objeto' => $c['objeto'],
                 'responsable_nombre' => $resp !== '' ? $resp : null,
                 'estado_contractual' => $c['estado_contractual'],
+                'estado_reportado_texto' => $c['estado_reportado_texto'],
+                'es_finalizado' => isContratoFinalizado($c),
                 'tiene_mensaje1' => (int)$c['tiene_mensaje1'] === 1,
                 'fecha_ultimo_reporte_texto' => $c['fecha_ultimo_reporte_texto'],
                 'ejecucion_fisica_pct' => $c['ejecucion_fisica_pct'] !== null ? (float)$c['ejecucion_fisica_pct'] : null,
@@ -822,6 +965,11 @@ try {
             echo json_encode(['success' => false, 'message' => 'El contrato indicado no existe.'], JSON_UNESCAPED_UNICODE);
             exit;
         }
+        if (isContratoFinalizado($contratoActual)) {
+            http_response_code(403);
+            echo json_encode(['success' => false, 'message' => 'Este contrato ya se encuentra FINALIZADO y cerrado, por lo que no permite más actualizaciones.'], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
 
         // Obtener el último texto de Mensaje 1 y Mensaje 2 guardado previamente
         $stmtPrevVer = $pdo->prepare("SELECT mensaje1_texto_original, mensaje2_texto_original
@@ -881,14 +1029,14 @@ try {
         $fechaReporteTxt = trim((string)($rawBody['m2_fecha_reporte'] ?? $autoParsed['mensaje2']['fecha_reporte_texto'] ?? date('Y-m-d')));
         $fechaReporteIso = preg_match('/^\d{4}-\d{2}-\d{2}$/', $fechaReporteTxt) ? $fechaReporteTxt : date('Y-m-d');
 
-        // Soportar tanto campo único simple (m2_ejecucion_fisica_texto) como porcentaje numérico
+        // Soportar tanto campo único simple (m2_ejecucion_fisica_texto) como porcentaje numérico sin limitar disminución ni tope
         $rawFisicaTxt = trim((string)($rawBody['m2_ejecucion_fisica_texto'] ?? ''));
         $fisicaPct = isset($rawBody['m2_ejecucion_fisica_pct']) && $rawBody['m2_ejecucion_fisica_pct'] !== ''
-            ? (float)$rawBody['m2_ejecucion_fisica_pct']
+            ? (float)str_replace(',', '.', (string)$rawBody['m2_ejecucion_fisica_pct'])
             : null;
         if ($fisicaPct === null && $rawFisicaTxt !== '' && preg_match('/(\d+(?:[\.,]\d+)?)/', $rawFisicaTxt, $mpFis)) {
             $valF = (float)str_replace(',', '.', $mpFis[1]);
-            if ($valF >= 0 && $valF <= 100) $fisicaPct = $valF;
+            if ($valF >= 0) $fisicaPct = $valF;
         }
         if ($fisicaPct === null) {
             $fisicaPct = $autoParsed['mensaje2']['ejecucion_fisica_pct'] ?? ($contratoActual['ejecucion_fisica_pct'] !== null ? (float)$contratoActual['ejecucion_fisica_pct'] : null);
@@ -898,14 +1046,14 @@ try {
             : trim((string)($autoParsed['mensaje2']['ejecucion_fisica_texto'] ?? ($fisicaPct !== null ? $fisicaPct . '%' : '')));
         if ($fisicaTxt === '') $fisicaTxt = $contratoActual['ejecucion_fisica_texto'];
 
-        // Soportar tanto campo único simple (m2_ejecucion_financiera_texto) como porcentaje numérico
+        // Soportar tanto campo único simple (m2_ejecucion_financiera_texto) como porcentaje numérico sin limitar disminución ni tope
         $rawFinancTxt = trim((string)($rawBody['m2_ejecucion_financiera_texto'] ?? ''));
         $financPct = isset($rawBody['m2_ejecucion_financiera_pct']) && $rawBody['m2_ejecucion_financiera_pct'] !== ''
-            ? (float)$rawBody['m2_ejecucion_financiera_pct']
+            ? (float)str_replace(',', '.', (string)$rawBody['m2_ejecucion_financiera_pct'])
             : null;
         if ($financPct === null && $rawFinancTxt !== '' && preg_match('/(\d+(?:[\.,]\d+)?)/', $rawFinancTxt, $mpFin)) {
             $valFin = (float)str_replace(',', '.', $mpFin[1]);
-            if ($valFin >= 0 && $valFin <= 100) $financPct = $valFin;
+            if ($valFin >= 0) $financPct = $valFin;
         }
         if ($financPct === null) {
             $financPct = $autoParsed['mensaje2']['ejecucion_financiera_pct'] ?? ($contratoActual['ejecucion_financiera_pct'] !== null ? (float)$contratoActual['ejecucion_financiera_pct'] : null);
@@ -927,7 +1075,7 @@ try {
 
         $estadoRepTxt = trim((string)($rawBody['m2_estado_reportado'] ?? $autoParsed['mensaje2']['estado_reportado_texto'] ?? $contratoActual['estado_reportado_texto'] ?? '')) ?: null;
         $fechaFinRepTxt = trim((string)($rawBody['m2_fecha_fin_reportada'] ?? $autoParsed['mensaje2']['fecha_fin_reportada_texto'] ?? $contratoActual['fecha_fin_vigente_texto'] ?? '')) ?: null;
-        $fechaFinRepIso = ($fechaFinRepTxt && preg_match('/^\d{4}-\d{2}-\d{2}$/', $fechaFinRepTxt)) ? $fechaFinRepTxt : null;
+        $fechaFinRepIso = $fechaFinRepTxt ? parseSpanishOrIsoDate($fechaFinRepTxt) : null;
         $obsRep = trim((string)($rawBody['m2_observaciones'] ?? '')) ?: null;
         $alertasContrato = trim((string)($rawBody['alertas_contrato'] ?? ''));
 
@@ -1027,6 +1175,12 @@ try {
         }
         $m2TextoParaVersion = $hasM2Edit ? $m2Texto : $prevM2Texto;
 
+        // Calcular variaciones de porcentaje de ejecución física y financiera (incluyendo disminución por adiciones)
+        $oldFisPct = $contratoActual['ejecucion_fisica_pct'] !== null ? (float)$contratoActual['ejecucion_fisica_pct'] : null;
+        $deltaFis = ($oldFisPct !== null && $fisicaPct !== null) ? round($fisicaPct - $oldFisPct, 2) : null;
+        $oldFinPct = $contratoActual['ejecucion_financiera_pct'] !== null ? (float)$contratoActual['ejecucion_financiera_pct'] : null;
+        $deltaFin = ($oldFinPct !== null && $financPct !== null) ? round($financPct - $oldFinPct, 2) : null;
+
         // Construir resumen detallado de modificaciones respecto al estado anterior para el tracking
         $resumenCambios = [];
         if (!empty($esNuevoContrato)) {
@@ -1053,18 +1207,29 @@ try {
         }
         if ($hasM2Edit) {
             $resumenCambios[] = "Reporte Semanal Mensaje 2 (Fecha reporte: $fechaReporteTxt | Reporta: $responsableRep)";
-            $oldFis = $contratoActual['ejecucion_fisica_pct'] !== null ? ((float)$contratoActual['ejecucion_fisica_pct'] . '%') : ($contratoActual['ejecucion_fisica_texto'] ?: 'Sin dato');
+            $oldFis = $oldFisPct !== null ? ($oldFisPct . '%') : ($contratoActual['ejecucion_fisica_texto'] ?: 'Sin dato');
             $newFis = $fisicaPct !== null ? ($fisicaPct . '%') : ($fisicaTxt ?: 'Sin dato');
             if ($oldFis !== $newFis) {
-                $resumenCambios[] = "Ejecución física: $oldFis -> $newFis";
+                $varFisTxt = ($deltaFis !== null && $deltaFis != 0)
+                    ? ($deltaFis > 0 ? " (Aumentó +{$deltaFis}%)" : " (Disminuyó " . abs($deltaFis) . "%)")
+                    : '';
+                $resumenCambios[] = "Ejecución física: $oldFis -> $newFis{$varFisTxt}";
             }
-            $oldFin = $contratoActual['ejecucion_financiera_pct'] !== null ? ((float)$contratoActual['ejecucion_financiera_pct'] . '%') : ($contratoActual['ejecucion_financiera_texto'] ?: 'Sin dato');
+            $oldFin = $oldFinPct !== null ? ($oldFinPct . '%') : ($contratoActual['ejecucion_financiera_texto'] ?: 'Sin dato');
             $newFin = $financPct !== null ? ($financPct . '%') : ($financTxt ?: 'Sin dato');
             if ($oldFin !== $newFin) {
-                $resumenCambios[] = "Ejecución financiera: $oldFin -> $newFin";
+                $varFinTxt = ($deltaFin !== null && $deltaFin != 0)
+                    ? ($deltaFin > 0 ? " (Aumentó +{$deltaFin}%)" : " (Disminuyó " . abs($deltaFin) . "%)")
+                    : '';
+                $resumenCambios[] = "Ejecución financiera: $oldFin -> $newFin{$varFinTxt}";
             }
             if ($estadoRepTxt !== null && $estadoRepTxt !== $contratoActual['estado_reportado_texto']) {
                 $resumenCambios[] = "Estado: " . ($contratoActual['estado_reportado_texto'] ?: 'Sin dato') . " -> $estadoRepTxt";
+            }
+            if ($fechaFinRepTxt !== null && $fechaFinRepTxt !== ($contratoActual['fecha_fin_vigente_texto'] ?? '')) {
+                $iniBase = $m1FechaInicio ?? $contratoActual['fecha_inicio_iso'] ?? $contratoActual['fecha_inicio_texto'] ?? null;
+                $durCalcNueva = calcularDuracionEntreFechas($iniBase, $fechaFinRepIso ?: $fechaFinRepTxt);
+                $resumenCambios[] = "Fecha terminación final: " . ($contratoActual['fecha_fin_vigente_texto'] ?: $contratoActual['fecha_fin_inicial_texto'] ?: 'Sin dato') . " -> $fechaFinRepTxt" . ($durCalcNueva ? " (Duración total: $durCalcNueva)" : '');
             }
             if ($alertasContrato !== '') {
                 $resumenCambios[] = "Alerta del contrato: " . (strlen($alertasContrato) > 80 ? substr($alertasContrato, 0, 77) . '...' : $alertasContrato);
@@ -1096,8 +1261,12 @@ try {
             'mensaje2_estructurado' => [
                 'fecha_reporte' => $fechaReporteTxt,
                 'ejecucion_fisica_pct' => $fisicaPct,
+                'ejecucion_fisica_anterior_pct' => $oldFisPct,
+                'variacion_fisica_pct' => $deltaFis,
                 'ejecucion_fisica_texto' => $fisicaTxt,
                 'ejecucion_financiera_pct' => $financPct,
+                'ejecucion_financiera_anterior_pct' => $oldFinPct,
+                'variacion_financiera_pct' => $deltaFin,
                 'ejecucion_financiera_valor' => $financVal,
                 'ejecucion_financiera_texto' => $financTxt,
                 'ejecucion_financiera_obra_pct' => $finObraPct,
@@ -1207,6 +1376,11 @@ try {
             ]);
         }
 
+        $pasaAFinalizado = isContratoFinalizado([
+            'estado_contractual' => $contratoActual['estado_contractual'] ?? '',
+            'estado_reportado_texto' => $estadoRepTxt ?? ''
+        ]);
+
         // Actualizar los datos vigentes en despacho_contratos para que la siguiente consulta muestre la última información mientras el historial conserva todas las versiones previas
         $updFields = [
             'ultimo_reporte_id = ?',
@@ -1221,6 +1395,7 @@ try {
             'ejecucion_financiera_valor = ?',
             'estado_reportado_texto = COALESCE(?, estado_reportado_texto)',
             'fecha_fin_vigente_texto = COALESCE(?, fecha_fin_vigente_texto)',
+            'fecha_fin_vigente_iso = COALESCE(?, fecha_fin_vigente_iso)',
             'responsable_nombre = COALESCE(responsable_nombre, ?)'
         ];
         $updParams = [
@@ -1234,8 +1409,13 @@ try {
             $financVal,
             $estadoRepTxt,
             $fechaFinRepTxt,
+            $fechaFinRepIso,
             $m1ApoyoSupervision ?: $responsableRep
         ];
+
+        if ($pasaAFinalizado) {
+            $updFields[] = 'estado_contractual = \'TERMINADO\'';
+        }
 
         if (array_key_exists('alertas_contrato', $rawBody)) {
             $updFields[] = 'alertas_contrato = ?';
@@ -1273,10 +1453,20 @@ try {
             if ($m1FechaInicio !== null) {
                 $updFields[] = 'fecha_inicio_texto = ?';
                 $updParams[] = $m1FechaInicio;
+                $iniIsoVal = parseSpanishOrIsoDate($m1FechaInicio);
+                if ($iniIsoVal !== null) {
+                    $updFields[] = 'fecha_inicio_iso = ?';
+                    $updParams[] = $iniIsoVal;
+                }
             }
             if ($m1FechaFinInicial !== null) {
                 $updFields[] = 'fecha_fin_inicial_texto = ?';
                 $updParams[] = $m1FechaFinInicial;
+                $finIniIsoVal = parseSpanishOrIsoDate($m1FechaFinInicial);
+                if ($finIniIsoVal !== null) {
+                    $updFields[] = 'fecha_fin_inicial_iso = ?';
+                    $updParams[] = $finIniIsoVal;
+                }
             }
         }
 
@@ -1299,7 +1489,10 @@ try {
         $pdo->prepare("UPDATE despacho_contratos SET " . implode(', ', $updFields) . " WHERE id = ?")
             ->execute($updParams);
 
-        if ($alertasContrato !== '') {
+        if ($pasaAFinalizado) {
+            $pdo->prepare("UPDATE despacho_alertas SET estado_alerta = 'RESUELTA', requiere_accion = 0, updated_at = NOW() WHERE contrato_id = ? AND estado_alerta = 'ACTIVA'")
+                ->execute([$contratoId]);
+        } elseif ($alertasContrato !== '') {
             $stmtInsAl = $pdo->prepare("INSERT INTO despacho_alertas (
                 contrato_id, origen_hoja, categoria_alerta, criterio_codigo, nivel_alerta, tipo_alerta,
                 descripcion_alerta, condicion_evaluada, estado_alerta, requiere_accion, created_at, updated_at

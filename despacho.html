@@ -1134,11 +1134,13 @@
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem; margin-bottom: 0.85rem;">
                         <div>
                             <label class="form-label" for="edit-con-ejec-fisica">Ejecución Física (%)</label>
-                            <input type="number" id="edit-con-ejec-fisica" class="input-ctrl" min="0" max="100" step="0.01" placeholder="Ej: 72.5">
+                            <input type="number" id="edit-con-ejec-fisica" class="input-ctrl" min="0" step="any" placeholder="Ej: 72.5">
+                            <small class="muted" style="display:block; font-size:0.75rem; margin-top:3px;">Sin límite de tope ni de disminución; ante adiciones el porcentaje puede reducirse y se registrará el cambio.</small>
                         </div>
                         <div>
                             <label class="form-label" for="edit-con-ejec-financiera">Ejecución Financiera (%)</label>
-                            <input type="number" id="edit-con-ejec-financiera" class="input-ctrl" min="0" max="100" step="0.01" placeholder="Ej: 52.3">
+                            <input type="number" id="edit-con-ejec-financiera" class="input-ctrl" min="0" step="any" placeholder="Ej: 52.3">
+                            <small class="muted" style="display:block; font-size:0.75rem; margin-top:3px;">Sin límite de tope ni de disminución; ante adiciones el porcentaje puede reducirse y se registrará el cambio.</small>
                         </div>
                     </div>
 
@@ -1376,12 +1378,18 @@
                 const valTotalNum = c.valor_total !== null ? Number(c.valor_total) : (c.valor_inicial !== null ? Number(c.valor_inicial) : null);
                 const valTxt = valTotalNum !== null ? '$' + valTotalNum.toLocaleString('es-CO') : 'Sin valor registrado';
 
+                const esFinalizado = Boolean(c.es_finalizado || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(c.estado_contractual || '').toUpperCase()) || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(c.estado_reportado_texto || '').toUpperCase()));
+
                 const diasRep = c.dias_desde_ultimo_reporte !== null && c.dias_desde_ultimo_reporte !== undefined
                     ? Number(c.dias_desde_ultimo_reporte)
                     : null;
                 let fRepCellStyle = 'background:#FDECEC; color:#842029;';
                 let fRepTagHtml = '<span class="tag tag-alert">SIN REPORTE RECIENTE</span>';
-                if (diasRep !== null) {
+
+                if (esFinalizado) {
+                    fRepCellStyle = 'background:#EAF5EE; color:#1D4227;';
+                    fRepTagHtml = '<span class="tag" style="background:#2E7D32; color:#FFFFFF;">FINALIZADO</span>';
+                } else if (diasRep !== null) {
                     if (diasRep <= 7) {
                         fRepCellStyle = 'background:#EAF5EE; color:#1D4227;';
                         fRepTagHtml = '<span class="tag">ESTA SEMANA</span>';
@@ -1397,13 +1405,41 @@
                     }
                 }
 
-                const fRepHtml = `
+                const fechaFinFinalTxt = c.fecha_fin_final_texto || c.fecha_fin_vigente_texto || c.fecha_fin_inicial_texto || 'Sin dato';
+                const duracionFinalTxt = c.duracion_final_texto || c.duracion_texto || c.duracion_inicial_calculada || 'Sin dato';
+
+                const fRepHtml = esFinalizado ? `
+                    <div style="margin-bottom:3px;">${fRepTagHtml}</div>
+                    <div><strong>Fecha reporte:</strong> ${escapeHtml(c.fecha_ultimo_reporte_texto || 'No informada')}</div>
+                    <div><strong>Estado:</strong> ${escapeHtml(c.estado_reportado_texto || c.estado_contractual || 'FINALIZADO')}</div>
+                    <div><strong>Fecha finalización:</strong> ${escapeHtml(fechaFinFinalTxt)}</div>
+                    <div style="font-size:0.75rem; font-weight:700; color:#2E7D32; margin-top:2px;">Contrato cerrado y finalizado</div>
+                ` : `
                     <div style="margin-bottom:3px;">${fRepTagHtml}</div>
                     <div><strong>Fecha reporte:</strong> ${escapeHtml(c.fecha_ultimo_reporte_texto || 'No informada')}</div>
                     <div><strong>Estado:</strong> ${escapeHtml(c.estado_reportado_texto || c.estado_contractual || 'Sin dato')}</div>
-                    <div><strong>Fecha finalización:</strong> ${escapeHtml(c.fecha_fin_vigente_texto || c.fecha_fin_inicial_texto || 'Sin dato')}</div>
+                    <div><strong>Fecha finalización:</strong> ${escapeHtml(fechaFinFinalTxt)}</div>
                     ${diasRep !== null ? `<div style="font-size:0.75rem; font-weight:700; margin-top:2px;">Hace ${diasRep} día${diasRep === 1 ? '' : 's'}</div>` : ''}
                 `;
+
+                // Capturar y mostrar variaciones de porcentaje de ejecución (incluyendo disminuciones por adiciones)
+                let finVarHtml = '';
+                if (c.variacion_financiera_pct !== null && c.variacion_financiera_pct !== undefined && Number(c.variacion_financiera_pct) !== 0) {
+                    const deltaFin = Number(c.variacion_financiera_pct);
+                    const deltaFinColor = deltaFin < 0 ? '#855A00' : '#1D4227';
+                    const deltaFinTxt = deltaFin > 0 ? `+${deltaFin}%` : `${deltaFin}%`;
+                    const antFinTxt = (c.ejecucion_financiera_anterior_pct !== null && c.ejecucion_financiera_anterior_pct !== undefined) ? ` <span class="muted" style="font-size:0.72rem;">(Ant: ${c.ejecucion_financiera_anterior_pct}%)</span>` : '';
+                    finVarHtml = ` <span style="font-size:0.75rem; font-weight:700; color:${deltaFinColor};">${deltaFinTxt}</span>${antFinTxt}`;
+                }
+
+                let fisVarHtml = '';
+                if (c.variacion_fisica_pct !== null && c.variacion_fisica_pct !== undefined && Number(c.variacion_fisica_pct) !== 0) {
+                    const deltaFis = Number(c.variacion_fisica_pct);
+                    const deltaFisColor = deltaFis < 0 ? '#855A00' : '#1D4227';
+                    const deltaFisTxt = deltaFis > 0 ? `+${deltaFis}%` : `${deltaFis}%`;
+                    const antFisTxt = (c.ejecucion_fisica_anterior_pct !== null && c.ejecucion_fisica_anterior_pct !== undefined) ? ` <span class="muted" style="font-size:0.72rem;">(Ant: ${c.ejecucion_fisica_anterior_pct}%)</span>` : '';
+                    fisVarHtml = ` <span style="font-size:0.75rem; font-weight:700; color:${deltaFisColor};">${deltaFisTxt}</span>${antFisTxt}`;
+                }
 
                 const fisTxt = c.ejecucion_fisica_pct !== null ? `${c.ejecucion_fisica_pct}%` : (c.ejecucion_fisica_texto ? escapeHtml(c.ejecucion_fisica_texto.slice(0, 35)) : 'Sin dato');
                 const finTxt = c.ejecucion_financiera_pct !== null ? `${c.ejecucion_financiera_pct}%` : (c.ejecucion_financiera_texto ? escapeHtml(c.ejecucion_financiera_texto.slice(0, 35)) : 'Sin dato');
@@ -1414,7 +1450,7 @@
                 let respHtml = `
                     <div style="font-weight:600; color:var(--primary-green-dark);">${c.responsable_nombre ? escapeHtml(c.responsable_nombre) : '<span class="muted">Sin asignar</span>'}</div>
                 `;
-                if (canManage) {
+                if (canManage && !esFinalizado) {
                     respHtml += `
                         <button type="button" class="btn btn-outline btn-sm" onclick="abrirReasignarModal(${c.id}, '${escapeHtml(c.numero_contrato)}', '${escapeHtml(primaryProyCod)}', '${escapeHtml(c.responsable_nombre || '')}')" style="margin-top:4px; font-size:0.72rem; padding:2px 7px;">
                             Reasignar
@@ -1435,25 +1471,31 @@
                         <td>
                             <div style="display:flex; flex-direction:column; gap:3px;">
                                 <div>${proysBadges}</div>
-                                ${proyActionBtn}
+                                ${(!esFinalizado) ? proyActionBtn : ''}
                             </div>
                         </td>
                         <td>${respHtml}</td>
                         <td>
-                            <div><strong>Duración:</strong> ${escapeHtml(c.duracion_texto || 'Sin dato')}</div>
+                            <div><strong>Duración:</strong> ${escapeHtml(c.duracion_texto || c.duracion_inicial_calculada || 'Sin dato')}</div>
                             <div><strong>Inicio:</strong> ${escapeHtml(c.fecha_inicio_texto || 'Sin dato')}</div>
                             <div><strong>Term. inicial:</strong> ${escapeHtml(c.fecha_fin_inicial_texto || 'Sin dato')}</div>
+                            <div><strong>Term. final:</strong> ${escapeHtml(fechaFinFinalTxt)}</div>
+                            <div><strong>Duración final:</strong> ${escapeHtml(duracionFinalTxt)}</div>
                         </td>
                         <td style="${fRepCellStyle}">${fRepHtml}</td>
                         <td>
-                            <div><strong>Financiera:</strong> ${finTxt}</div>
-                            <div><strong>Física:</strong> ${fisTxt}</div>
+                            <div><strong>Financiera:</strong> ${finTxt}${finVarHtml}</div>
+                            <div><strong>Física:</strong> ${fisTxt}${fisVarHtml}</div>
                         </td>
                         <td style="text-align:center; white-space:nowrap;">
                             <div style="display:flex; flex-direction:column; gap:0.35rem;">
                                 <button type="button" class="btn btn-primary btn-sm" onclick="openContratoModal(${c.id}, 'tracking')">Ver Ficha / Historial</button>
-                                ${canManage ? `<button type="button" class="btn btn-outline btn-sm" onclick="openEditarContratoModal(${c.id})">Editar Contrato</button>` : ''}
-                                <a href="reporte_despacho.html?contrato_id=${c.id}" target="_blank" class="btn btn-outline btn-sm">Subir Reporte</a>
+                                ${esFinalizado ? `
+                                    <span class="tag" style="justify-content:center; padding:0.38rem 0.65rem; background:#EAF5EE; color:#1D4227; border:1px solid #C8E6C9; font-weight:600; font-size:0.74rem;">CONTRATO FINALIZADO</span>
+                                ` : `
+                                    ${canManage ? `<button type="button" class="btn btn-outline btn-sm" onclick="openEditarContratoModal(${c.id})">Editar Contrato</button>` : ''}
+                                    <a href="reporte_despacho.html?contrato_id=${c.id}" target="_blank" class="btn btn-outline btn-sm">Subir Reporte</a>
+                                `}
                             </div>
                         </td>
                     </tr>
@@ -2107,6 +2149,8 @@
                     </div>
                 `).join('');
 
+                const esFinModal = Boolean(c.es_finalizado || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(c.estado_contractual || '').toUpperCase()) || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(c.estado_reportado_texto || '').toUpperCase()));
+
                 body.innerHTML = `
                     <div class="modal-subtabs">
                         <button type="button" class="modal-subtab-btn" data-subtab="tracking" onclick="switchModalSubtab('tracking')">
@@ -2125,7 +2169,11 @@
                         <div class="section-box">
                             <h4>
                                 <span>Última Actualización Registrada (Total versiones en historial: ${versiones.length})</span>
-                                <a href="reporte_despacho.html?contrato_id=${c.id}" target="_blank" class="btn btn-outline btn-sm">Actualizar Mensaje 1 / Mensaje 2</a>
+                                ${esFinModal ? `
+                                    <span class="tag" style="background:#EAF5EE; color:#1D4227; border:1px solid #C8E6C9; font-weight:600;">CONTRATO FINALIZADO</span>
+                                ` : `
+                                    <a href="reporte_despacho.html?contrato_id=${c.id}" target="_blank" class="btn btn-outline btn-sm">Actualizar Mensaje 1 / Mensaje 2</a>
+                                `}
                             </h4>
                             ${ultimaActHtml}
                         </div>
@@ -2166,7 +2214,9 @@
                         <div class="section-box">
                             <h4>
                                 <span>Mensaje 1: Información del Contrato</span>
-                                ${canManage ? `<button type="button" class="btn btn-outline btn-sm" onclick="openEditarContratoModal(${c.id})">Editar Todo el Contrato</button>` : ''}
+                                ${esFinModal ? `
+                                    <span class="tag" style="background:#EAF5EE; color:#1D4227; border:1px solid #C8E6C9; font-weight:600;">FINALIZADO</span>
+                                ` : (canManage ? `<button type="button" class="btn btn-outline btn-sm" onclick="openEditarContratoModal(${c.id})">Editar Todo el Contrato</button>` : '')}
                             </h4>
                             <div class="info-grid">
                                 <div class="info-cell">
@@ -2184,11 +2234,11 @@
                                 <div class="info-cell">
                                     <b>Proyecto de inversión</b>
                                     <div>${escapeHtml(proysTexto)}</div>
-                                    ${canManage ? `<button type="button" class="btn btn-outline btn-sm" style="margin-top:4px; font-size:0.72rem; padding:2px 7px;" onclick="openAsignarProyectoModal(${c.id}, '${escapeHtml(c.numero_contrato)}', '${firstPId}')">${(data.proyectos && data.proyectos.length) ? 'Cambiar Proyecto' : '+ Asignar Proyecto'}</button>` : ''}
+                                    ${(canManage && !esFinModal) ? `<button type="button" class="btn btn-outline btn-sm" style="margin-top:4px; font-size:0.72rem; padding:2px 7px;" onclick="openAsignarProyectoModal(${c.id}, '${escapeHtml(c.numero_contrato)}', '${firstPId}')">${(data.proyectos && data.proyectos.length) ? 'Cambiar Proyecto' : '+ Asignar Proyecto'}</button>` : ''}
                                 </div>
                                 <div class="info-cell">
                                     <b>Duración del contrato</b>
-                                    <div>${escapeHtml(c.duracion_texto || 'Sin dato')}</div>
+                                    <div>${escapeHtml(c.duracion_texto || c.duracion_inicial_calculada || 'Sin dato')}</div>
                                 </div>
                                 <div class="info-cell">
                                     <b>Valor</b>
@@ -2202,6 +2252,14 @@
                                 <div class="info-cell">
                                     <b>Fecha de terminación inicial</b>
                                     <div>${escapeHtml(c.fecha_fin_inicial_texto || 'Sin dato')}</div>
+                                </div>
+                                <div class="info-cell">
+                                    <b>Fecha de terminación final</b>
+                                    <div>${escapeHtml(c.fecha_fin_final_texto || c.fecha_fin_vigente_texto || c.fecha_fin_inicial_texto || 'Sin dato')}</div>
+                                </div>
+                                <div class="info-cell">
+                                    <b>Duración a fecha de terminación final</b>
+                                    <div>${escapeHtml(c.duracion_final_texto || c.duracion_texto || c.duracion_inicial_calculada || 'Sin dato')}</div>
                                 </div>
                                 <div class="info-cell" style="grid-column: 1 / -1;">
                                     <b>Objeto del contrato</b>
@@ -2542,6 +2600,12 @@
                 }
 
                 const c = data.contrato;
+                const isFinal = Boolean(c.es_finalizado || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(c.estado_contractual || '').toUpperCase()) || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(c.estado_reportado_texto || '').toUpperCase()));
+                if (isFinal) {
+                    alert('Este contrato ya se encuentra FINALIZADO y cerrado, por lo que no permite más modificaciones.');
+                    closeEditarContratoModal();
+                    return;
+                }
                 document.getElementById('edit-con-numero').value = c.numero_contrato || '';
                 document.getElementById('edit-con-titulo').value = c.titulo_grupo || '';
                 document.getElementById('edit-con-objeto').value = c.objeto || '';
