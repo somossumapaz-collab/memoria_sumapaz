@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <!-- Favicon / Logo institucional -->
+    <!-- Favicon / Logo en pestaña del navegador -->
     <link rel="icon" type="image/png" href="assets/logo_somossumapaz.png">
     <link rel="shortcut icon" type="image/png" href="assets/logo_somossumapaz.png">
     <link rel="apple-touch-icon" href="assets/logo_somossumapaz.png">
@@ -12,791 +12,378 @@
     <meta http-equiv="Expires" content="0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscripcion Mesa de Cocreacion Sello Somos Sumapaz | Alcaldia Local de Sumapaz</title>
+    <title>Inscripción Mesa de Cocreación Sello Somos Sumapaz | Somos Sumapaz</title>
 
-    <!-- Google Fonts: Inter y Playfair Display -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-    <!-- Design System -->
+    <!-- Static Cache-Busting -->
     <script>
         const timestamp = new Date().getTime();
         document.write(`<link rel="stylesheet" href="assets/styles.css?v=${timestamp}">`);
     </script>
 
     <style>
-        :root {
-            --primary-green: #2E7D32;
-            --primary-green-dark: #1B5E20;
-            --light-green: #E8F5E9;
-            --earth-brown: #5D4037;
-            --sand-bg: #FBF4DE;
-            --border-color: #E2D9C5;
-            --text-dark: #2C3E50;
-            --text-muted: #606F7B;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--sand-bg);
-            color: var(--text-dark);
-            line-height: 1.6;
-            padding-top: 0;
-            margin: 0;
-        }
-
-        .header-institutional {
-            background: #FFFFFF;
-            border-bottom: 1px solid var(--border-color);
-            padding: 0.9rem 1.5rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-institutional-inner {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .header-logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .header-logo-container img {
-            height: 48px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .header-brand-text h1 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--primary-green-dark);
-            margin: 0;
-            line-height: 1.2;
-        }
-
-        .header-brand-text p {
-            font-size: 0.76rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        .header-nav-link {
-            font-size: 0.85rem;
-            color: var(--primary-green);
-            font-weight: 600;
-            text-decoration: none;
-            padding: 6px 14px;
-            border: 1px solid var(--primary-green);
-            border-radius: 6px;
-            transition: all 0.2s ease;
-        }
-
-        .header-nav-link:hover {
-            background: var(--primary-green);
-            color: #FFFFFF;
-        }
-
-        .main-container {
-            max-width: 860px;
-            margin: 2rem auto 3rem auto;
-            padding: 0 1.25rem;
-        }
-
-        /* Hero informativo sobrio */
-        .convocatoria-card {
-            background: #FFFFFF;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-            margin-bottom: 1.75rem;
-        }
-
-        .convocatoria-tag {
-            display: inline-block;
-            background: var(--light-green);
-            color: var(--primary-green-dark);
-            font-size: 0.76rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            padding: 4px 10px;
-            border-radius: 4px;
-            margin-bottom: 0.85rem;
-        }
-
-        .convocatoria-title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.75rem;
-            color: var(--primary-green-dark);
-            margin: 0 0 0.85rem 0;
-            line-height: 1.25;
-        }
-
-        .convocatoria-subtitle {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--earth-brown);
-            margin-bottom: 1rem;
-        }
-
-        .convocatoria-body {
+        .convocatoria-box {
+            background: #FAF8F2;
+            border: 1px solid #E5DFD0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
             font-size: 0.95rem;
-            color: #374151;
-            line-height: 1.65;
-            margin-bottom: 1.4rem;
+            line-height: 1.6;
+            color: #333333;
         }
 
-        /* Ficha tecnica del evento */
-        .event-details-grid {
+        .event-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
-            background: #F8F9FA;
-            border: 1px solid #E5E7EB;
-            border-radius: 8px;
-            padding: 1.1rem;
-            margin-bottom: 1.25rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.85rem;
+            background: #FFFFFF;
+            border: 1px solid #E5DFD0;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1.1rem 0;
         }
 
-        .event-detail-item {
+        .event-grid-item {
             display: flex;
             flex-direction: column;
         }
 
-        .event-detail-label {
+        .event-grid-label {
             font-size: 0.74rem;
             font-weight: 700;
+            color: var(--earth-brown);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: #6B7280;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
-        .event-detail-val {
+        .event-grid-val {
             font-size: 0.92rem;
             font-weight: 600;
             color: #111827;
         }
 
-        .convocatoria-footer-quote {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            border-top: 1px solid #E5E7EB;
-            padding-top: 1rem;
-            margin-top: 0.5rem;
-            font-style: italic;
-        }
-
-        /* Formulario */
-        .form-card {
-            background: #FFFFFF;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2.25rem;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-        }
-
-        .form-section-header {
-            border-bottom: 2px solid #E5E7EB;
-            padding-bottom: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-section-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-green-dark);
-            margin: 0 0 4px 0;
-        }
-
-        .form-section-desc {
-            font-size: 0.84rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        .form-grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.25rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 1.25rem;
-        }
-
-        .form-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 6px;
-        }
-
-        .form-label span.req {
-            color: #DC2626;
-            margin-left: 2px;
-        }
-
-        .form-input,
-        .form-select,
-        .form-textarea {
-            width: 100%;
-            padding: 10px 13px;
-            font-size: 0.92rem;
-            font-family: inherit;
-            color: #1F2937;
-            background-color: #FFFFFF;
-            border: 1px solid #D1D5DB;
-            border-radius: 6px;
-            box-sizing: border-box;
-            transition: border-color 0.15s ease, box-shadow 0.15s ease;
-        }
-
-        .form-input:focus,
-        .form-select:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: var(--primary-green);
-            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
-        }
-
-        .form-help {
-            font-size: 0.74rem;
-            color: var(--text-muted);
-            margin-top: 4px;
-        }
-
-        /* Radio buttons sobrios */
-        .radio-options-group {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 4px;
-        }
-
-        .radio-option {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.92rem;
-            color: #374151;
-            cursor: pointer;
-        }
-
-        .radio-option input[type="radio"] {
-            accent-color: var(--primary-green);
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-        }
-
-        /* Boton principal */
-        .btn-submit {
-            background-color: var(--primary-green);
-            color: #FFFFFF;
-            border: none;
-            border-radius: 7px;
-            padding: 13px 26px;
-            font-size: 0.98rem;
-            font-weight: 600;
-            font-family: inherit;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.2s ease, transform 0.1s ease;
-            box-shadow: 0 2px 6px rgba(46, 125, 50, 0.25);
-        }
-
-        .btn-submit:hover {
-            background-color: var(--primary-green-dark);
-        }
-
-        .btn-submit:disabled {
-            background-color: #9CA3AF;
-            cursor: not-allowed;
-            box-shadow: none;
-        }
-
-        /* Alerta de estado */
-        .alert-box {
-            display: none;
-            padding: 1rem 1.25rem;
+        .receipt-box {
+            background: #FBF9F3;
+            border: 1px solid #E2DAC8;
             border-radius: 8px;
-            font-size: 0.9rem;
-            margin-bottom: 1.25rem;
-            line-height: 1.45;
+            padding: 1.2rem;
+            margin: 1.2rem 0;
+            text-align: left;
         }
 
-        .alert-box.success {
-            display: block;
-            background-color: #DEF7EC;
-            border: 1px solid #84E1BC;
-            color: #03543F;
-        }
-
-        .alert-box.error {
-            display: block;
-            background-color: #FDE8E8;
-            border: 1px solid #F8B4B4;
-            color: #9B1C1C;
-        }
-
-        /* Modal de confirmacion */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.55);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            box-sizing: border-box;
-        }
-
-        .modal-overlay.open {
+        .receipt-item {
             display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px dashed #DDD5C2;
+            font-size: 0.92rem;
         }
 
-        .modal-container {
-            background: #FFFFFF;
-            border-radius: 12px;
-            max-width: 580px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            padding: 2rem;
-            box-sizing: border-box;
-        }
-
-        .modal-header {
-            border-bottom: 1px solid #E5E7EB;
-            padding-bottom: 1rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .modal-header h3 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.45rem;
-            color: var(--primary-green-dark);
-            margin: 0 0 4px 0;
-        }
-
-        .modal-header p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        .receipt-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.88rem;
-            margin-bottom: 1.4rem;
-        }
-
-        .receipt-table td {
-            padding: 8px 10px;
-            border-bottom: 1px solid #F3F4F6;
-        }
-
-        .receipt-table td.field-label {
-            font-weight: 600;
-            color: #4B5563;
-            width: 38%;
-        }
-
-        .receipt-table td.field-value {
-            color: #111827;
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-end;
-            margin-top: 1rem;
-        }
-
-        .btn-modal-secondary {
-            background: #F3F4F6;
-            color: #374151;
-            border: 1px solid #D1D5DB;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .btn-modal-primary {
-            background: var(--primary-green);
-            color: #FFFFFF;
-            border: none;
-            padding: 8px 18px;
-            border-radius: 6px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        @media (max-width: 640px) {
-            .convocatoria-title {
-                font-size: 1.4rem;
-            }
-
-            .form-card {
-                padding: 1.4rem;
-            }
-
-            .event-details-grid {
-                grid-template-columns: 1fr;
-            }
+        .receipt-item:last-child {
+            border-bottom: none;
         }
     </style>
 </head>
 
 <body>
-    <!-- Encabezado Institucional -->
-    <header class="header-institutional">
-        <div class="header-institutional-inner">
-            <a href="index.html" class="header-logo-container">
-                <img src="assets/logo_somossumapaz.png" alt="Logo Somos Sumapaz">
-                <div class="header-brand-text">
-                    <h1>SOMOS SUMAPAZ</h1>
-                    <p>Alcaldia Local de Sumapaz</p>
-                </div>
-            </a>
-            <a href="convocatorias.html" class="header-nav-link">Ver convocatorias</a>
-        </div>
+    <!-- Header institucional oficial con logo Somos Sumapaz -->
+    <header id="main-header">
+        <nav class="navbar-custom">
+            <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                    <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="logo-img" style="height: 52px; width: auto; object-fit: contain;">
+                </a>
+            </div>
+        </nav>
     </header>
 
-    <main class="main-container">
-        <!-- Tarjeta Informativa de la Convocatoria -->
-        <section class="convocatoria-card">
-            <span class="convocatoria-tag">Convocatoria Oficial · Mesa de Cocreacion</span>
-            <h2 class="convocatoria-title">La construccion del Sello Somos Sumapaz la hacemos entre todos</h2>
-            <div class="convocatoria-subtitle">Mesa de Cocreacion del Sello Somos Sumapaz</div>
+    <main class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
+        <div class="form-wrapper">
+            <h1 class="serif form-title" id="page-title">Mesa de Cocreación del Sello Somos Sumapaz</h1>
+            <p class="form-subtitle" id="page-subtitle">¡La construcción del Sello Somos Sumapaz la hacemos entre todos!</p>
 
-            <div class="convocatoria-body">
-                <p><strong>Querida comunidad sumapacena y productores de las cuencas Rio Blanco y Sumapaz:</strong></p>
-                <p>Desde la Alcaldia Local de Sumapaz queremos invitarlos cordialmente a participar en la <strong>Mesa de Cocreacion del Sello Somos Sumapaz</strong>, un espacio de encuentro, dialogo y construccion colectiva en el que sus experiencias, conocimientos y aportes seran fundamentales para fortalecer la identidad de nuestro territorio y reconocer el valor de la produccion campesina local.</p>
+            <!-- Bloque Informativo de la Convocatoria -->
+            <div class="convocatoria-box">
+                <p style="margin-top: 0; margin-bottom: 0.75rem;"><strong>Querida comunidad sumapaceña y productores de las cuencas Río Blanco y Sumapaz:</strong></p>
+                <p style="margin-bottom: 0.9rem;">
+                    Desde la Alcaldía Local de Sumapaz queremos invitarlos cordialmente a participar en la <strong>Mesa de Cocreación del Sello Somos Sumapaz</strong>, un espacio de encuentro, diálogo y construcción colectiva en el que sus experiencias, conocimientos y aportes serán fundamentales para fortalecer la identidad de nuestro territorio y reconocer el valor de la producción campesina local.
+                </p>
+
+                <div class="event-grid">
+                    <div class="event-grid-item">
+                        <span class="event-grid-label">Fecha</span>
+                        <span class="event-grid-val">18 de noviembre de 2026</span>
+                    </div>
+                    <div class="event-grid-item">
+                        <span class="event-grid-label">Hora</span>
+                        <span class="event-grid-val">9:00 a. m.</span>
+                    </div>
+                    <div class="event-grid-item">
+                        <span class="event-grid-label">Lugar</span>
+                        <span class="event-grid-val">Auditorio Fanny Quintero</span>
+                    </div>
+                    <div class="event-grid-item">
+                        <span class="event-grid-label">Sede</span>
+                        <span class="event-grid-val">Alcaldía Local, Vereda Betania</span>
+                    </div>
+                </div>
+
+                <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: #444;">
+                    Su participación es muy importante, porque este sello representa el trabajo, la tradición, la identidad y el esfuerzo de nuestras familias campesinas y productores rurales.
+                </p>
+                <p style="margin: 0; font-weight: 600; color: var(--primary-green); font-size: 0.92rem;">
+                    ¡Somos Sumapaz, somos territorio, somos identidad campesina!
+                </p>
             </div>
 
-            <!-- Ficha tecnica del evento -->
-            <div class="event-details-grid">
-                <div class="event-detail-item">
-                    <span class="event-detail-label">Fecha del encuentro</span>
-                    <span class="event-detail-val">18 de noviembre de 2026</span>
-                </div>
-                <div class="event-detail-item">
-                    <span class="event-detail-label">Hora de inicio</span>
-                    <span class="event-detail-val">9:00 a. m.</span>
-                </div>
-                <div class="event-detail-item">
-                    <span class="event-detail-label">Lugar</span>
-                    <span class="event-detail-val">Auditorio Fanny Quintero</span>
-                </div>
-                <div class="event-detail-item">
-                    <span class="event-detail-label">Sede / Vereda</span>
-                    <span class="event-detail-val">Alcaldia Local de Sumapaz, Betania</span>
-                </div>
-            </div>
+            <!-- Formulario Oficial -->
+            <form id="sello-form" class="custom-form">
+                
+                <!-- 1. DATOS PERSONALES -->
+                <h2 class="serif section-title" style="color: var(--earth-brown); border-bottom: 2px solid var(--light-green); padding-bottom: 0.5rem; margin-top: 1rem; margin-bottom: 1.5rem;">
+                    1. Datos Personales del Participante
+                </h2>
 
-            <p style="font-size: 0.92rem; color: #4B5563; margin-bottom: 0;">
-                Su participacion es muy importante, porque este sello representa el trabajo, la tradicion, la identidad y el esfuerzo de nuestras familias campesinas y productores rurales.
-            </p>
-            <div class="convocatoria-footer-quote">
-                Somos Sumapaz, somos territorio, somos identidad campesina.
-            </div>
-        </section>
-
-        <!-- Formulario de Registro Oficial -->
-        <section class="form-card">
-            <div class="form-section-header">
-                <h3 class="form-section-title">Formulario de Inscripcion</h3>
-                <p class="form-section-desc">Diligencie sus datos personales y productivos para asegurar su participacion y coordinar la logistica requerida.</p>
-            </div>
-
-            <div id="alert-status" class="alert-box"></div>
-
-            <form id="form-sello" onsubmit="enviarInscripcion(event)">
-                <!-- Datos Personales -->
-                <div class="form-grid-2">
-                    <div class="form-group">
-                        <label class="form-label" for="nombre_completo">Nombre completo <span class="req">*</span></label>
-                        <input type="text" id="nombre_completo" name="nombre_completo" class="form-input" placeholder="Ej. Maria Elena Romero Gutierrez" required autocomplete="name">
+                <div class="form-grid">
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label for="nombre_completo">Nombre Completo *</label>
+                        <input type="text" id="nombre_completo" name="nombre_completo" required placeholder="Nombres y apellidos completos">
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="tipo_documento">Tipo de documento <span class="req">*</span></label>
-                        <select id="tipo_documento" name="tipo_documento" class="form-select" required>
-                            <option value="CC" selected>Cedula de Ciudadania (CC)</option>
-                            <option value="CE">Cedula de Extranjeria (CE)</option>
-                            <option value="TI">Tarjeta de Identidad (TI)</option>
-                            <option value="PAS">Pasaporte</option>
+                        <label for="tipo_documento">Tipo de Documento *</label>
+                        <select id="tipo_documento" name="tipo_documento" required>
+                            <option value="Cédula de Ciudadanía" selected>Cédula de Ciudadanía</option>
+                            <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                            <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                            <option value="Pasaporte">Pasaporte</option>
                         </select>
                     </div>
-                </div>
 
-                <div class="form-grid-2">
                     <div class="form-group">
-                        <label class="form-label" for="numero_documento">Numero de cedula / documento <span class="req">*</span></label>
-                        <input type="text" id="numero_documento" name="numero_documento" class="form-input" placeholder="Ej. 1029876543" required inputmode="numeric">
-                        <span class="form-help">Sin puntos ni comas</span>
+                        <label for="numero_documento">Número de Cédula *</label>
+                        <input type="text" id="numero_documento" name="numero_documento" required placeholder="Número de documento sin puntos ni comas">
                     </div>
 
-                    <div class="form-group">
-                        <label class="form-label" for="telefono">Telefono de contacto / celular <span class="req">*</span></label>
-                        <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="Ej. 3124567890" required inputmode="tel">
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label for="telefono">Teléfono / Celular *</label>
+                        <input type="tel" id="telefono" name="telefono" required placeholder="Número de teléfono de contacto">
                     </div>
                 </div>
 
-                <!-- Ubicacion y Predio -->
-                <div class="form-grid-2">
+                <!-- 2. DATOS DEL PREDIO Y LOCALIZACION -->
+                <h2 class="serif section-title" style="color: var(--earth-brown); border-bottom: 2px solid var(--light-green); padding-bottom: 0.5rem; margin-top: 2.5rem; margin-bottom: 1.5rem;">
+                    2. Datos del Predio y Vereda
+                </h2>
+
+                <div class="form-grid">
                     <div class="form-group">
-                        <label class="form-label" for="vereda">Vereda <span class="req">*</span></label>
-                        <select id="vereda" name="vereda" class="form-select" required onchange="actualizarCuencaIndicador(this.value)">
-                            <option value="">-- Seleccione su vereda --</option>
-                            <optgroup label="Cuenca Rio Sumapaz">
-                                <option value="CAPITOLIO">Capitolio</option>
-                                <option value="CHORRERAS">Chorreras</option>
-                                <option value="CONCEPCION">Concepcion</option>
-                                <option value="EL TOLDO">El Toldo</option>
-                                <option value="LA UNION">La Union</option>
-                                <option value="LAGUNITAS">Lagunitas</option>
-                                <option value="LAS VEGAS">Las Vegas</option>
-                                <option value="NUEVA GRANADA">Nueva Granada</option>
-                                <option value="SAN ANTONIO">San Antonio</option>
-                                <option value="SAN JOSE">San Jose</option>
-                                <option value="SAN JUAN">San Juan</option>
-                                <option value="SANTO DOMINGO">Santo Domingo</option>
-                                <option value="TUNAL ALTO">Tunal Alto</option>
-                                <option value="TUNAL BAJO">Tunal Bajo</option>
-                            </optgroup>
-                            <optgroup label="Cuenca Rio Blanco">
-                                <option value="BETANIA">Betania</option>
-                                <option value="EL ITSMO">El Istmo</option>
-                                <option value="EL RAIZAL">El Raizal</option>
-                                <option value="EL TABACO">El Tabaco</option>
-                                <option value="LAGUNA VERDE">Laguna Verde</option>
-                                <option value="LAS ANIMAS">Las Animas</option>
-                                <option value="LAS AURAS">Las Auras</option>
-                                <option value="LAS PALMAS">Las Palmas</option>
-                                <option value="LAS SOPAS">Las Sopas</option>
-                                <option value="LOS RIOS">Los Rios</option>
-                                <option value="NAZARETH">Nazareth</option>
-                                <option value="PENALISA">Penalisa</option>
-                                <option value="SANTA ROSA ALTA">Santa Rosa Alta</option>
-                                <option value="SANTA ROSA BAJA">Santa Rosa Baja</option>
-                                <option value="TAQUECITOS">Taquecitos</option>
-                            </optgroup>
+                        <label for="vereda">Vereda *</label>
+                        <select id="vereda" name="vereda" required>
+                            <option value="" disabled selected>-- Seleccione su vereda --</option>
+                            <option value="BETANIA">Betania</option>
+                            <option value="CAPITOLIO">Capitolio</option>
+                            <option value="CHORRERAS">Chorreras</option>
+                            <option value="CONCEPCION">Concepción</option>
+                            <option value="EL ITSMO">El Istmo</option>
+                            <option value="EL RAIZAL">El Raizal</option>
+                            <option value="EL TABACO">El Tabaco</option>
+                            <option value="EL TOLDO">El Toldo</option>
+                            <option value="LA UNION">La Unión</option>
+                            <option value="LAGUNA VERDE">Laguna Verde</option>
+                            <option value="LAGUNITAS">Lagunitas</option>
+                            <option value="LAS ANIMAS">Las Ánimas</option>
+                            <option value="LAS AURAS">Las Auras</option>
+                            <option value="LAS PALMAS">Las Palmas</option>
+                            <option value="LAS SOPAS">Las Sopas</option>
+                            <option value="LAS VEGAS">Las Vegas</option>
+                            <option value="LOS RIOS">Los Ríos</option>
+                            <option value="NAZARETH">Nazareth</option>
+                            <option value="NUEVA GRANADA">Nueva Granada</option>
+                            <option value="PEÑALISA">Peñalisa</option>
+                            <option value="SAN ANTONIO">San Antonio</option>
+                            <option value="SAN JOSE">San José</option>
+                            <option value="SAN JUAN">San Juan</option>
+                            <option value="SANTA ROSA ALTA">Santa Rosa Alta</option>
+                            <option value="SANTA ROSA BAJA">Santa Rosa Baja</option>
+                            <option value="SANTO DOMINGO">Santo Domingo</option>
+                            <option value="TAQUECITOS">Taquecitos</option>
+                            <option value="TUNAL ALTO">Tunal Alto</option>
+                            <option value="TUNAL BAJO">Tunal Bajo</option>
                         </select>
-                        <span id="cuenca-indicador" class="form-help">Seleccione la vereda para identificar la cuenca territorial.</span>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="nombre_predio">Nombre del predio / finca <span class="req">*</span></label>
-                        <input type="text" id="nombre_predio" name="nombre_predio" class="form-input" placeholder="Ej. Finca El Mirador" required>
+                        <label for="nombre_predio">Nombre del Predio *</label>
+                        <input type="text" id="nombre_predio" name="nombre_predio" required placeholder="Nombre de la finca o predio">
                     </div>
                 </div>
 
-                <!-- Nicho Productivo Oficial -->
-                <div class="form-group">
-                    <label class="form-label" for="nicho_productivo">Nicho productivo / Linea de produccion <span class="req">*</span></label>
-                    <select id="nicho_productivo" name="nicho_productivo" class="form-select" required onchange="handleNichoChange(this.value)">
-                        <option value="">-- Seleccione su nicho productivo principal --</option>
-                        <optgroup label="Produccion pecuaria y derivados lacteos">
+                <!-- 3. ACTIVIDAD PRODUCTIVA Y LOGISTICA -->
+                <h2 class="serif section-title" style="color: var(--earth-brown); border-bottom: 2px solid var(--light-green); padding-bottom: 0.5rem; margin-top: 2.5rem; margin-bottom: 1.5rem;">
+                    3. Actividad Productiva y Logística
+                </h2>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="nicho_productivo">Nicho productivo / Línea de producción *</label>
+                    <span style="font-size: 0.82rem; color: var(--text-muted); display: block; margin-top: 2px; margin-bottom: 6px;">Seleccione el sector o actividad económica principal desarrollada en su predio o unidad productiva.</span>
+                    <select id="nicho_productivo" name="nicho_productivo" required onchange="handleNichoChange(this.value)">
+                        <option value="" disabled selected>-- Seleccione su nicho productivo --</option>
+                        <optgroup label="Producción pecuaria y derivados lácteos">
                             <option value="Leche fresca">Leche fresca</option>
                             <option value="Quesos / yogurt / arequipe">Quesos / yogurt / arequipe</option>
-                            <option value="Produccion de Carne de res">Produccion de Carne de res</option>
-                            <option value="Produccion de Carne de cerdo">Produccion de Carne de cerdo</option>
-                            <option value="Produccion de Carne de pollo">Produccion de Carne de pollo</option>
-                            <option value="Produccion de Trucha">Produccion de Trucha (Piscicola)</option>
-                            <option value="Produccion de otras especies (cuy, conejo)">Produccion de otras especies (cuy, conejo)</option>
-                            <option value="Produccion de huevos">Produccion de huevos de campo</option>
-                            <option value="Produccion de Chorizos / embutidos">Produccion de Chorizos / embutidos artesanales</option>
-                            <option value="Miel, polen y otros productos apicolas">Miel, polen y otros productos apicolas</option>
+                            <option value="Producción de Carne de res">Producción de Carne de res</option>
+                            <option value="Producción de Carne de cerdo">Producción de Carne de cerdo</option>
+                            <option value="Producción de Carne de pollo">Producción de Carne de pollo</option>
+                            <option value="Producción de Trucha">Producción de Trucha</option>
+                            <option value="Producción de otras especies (cuy, conejo)">Producción de otras especies (cuy, conejo)</option>
+                            <option value="Producción de huevos">Producción de huevos</option>
+                            <option value="Producción de Chorizos / embutidos">Producción de Chorizos / embutidos</option>
+                            <option value="Miel, polen y otros productos apícolas">Miel, polen y otros productos apícolas</option>
                         </optgroup>
-                        <optgroup label="Produccion agricola (Hortalizas, tuberculos y cereales)">
-                            <option value="Hortalizas">Hortalizas (zanahoria, lechuga, espinaca, acelga, brocoli, cebolla, ajo, repollo)</option>
-                            <option value="Tuberculos y raices">Tuberculos y raices (papa nativa, pastusa, sabanera, arracacha, yuca, cubios)</option>
-                            <option value="Leguminosas y cereales">Leguminosas y cereales (arveja, frijol, habas, lentejas, maiz, trigo, avena)</option>
+                        <optgroup label="Producción agrícola (Hortalizas, tubérculos y cereales)">
+                            <option value="Hortalizas">Hortalizas (zanahoria, lechuga, espinaca, acelga, brócoli, cebolla, ajo, repollo)</option>
+                            <option value="Tubérculos y raíces">Tubérculos y raíces (papa nativa, pastusa, sabanera, arracacha, yuca, cubios)</option>
+                            <option value="Leguminosas y cereales">Leguminosas y cereales (arveja, frijol, habas, lentejas, maíz, trigo, avena)</option>
                         </optgroup>
-                        <optgroup label="Produccion fruticola y derivados">
-                            <option value="Frutas de clima frio">Frutas (mora, fresa, uchuva, durazno, manzana, pera, lulo, curuba, tomate de arbol)</option>
-                            <option value="Derivados de frutas">Derivados de frutas (mermeladas, pulpas, deshidratados, jugos)</option>
+                        <optgroup label="Producción frutícola y derivados">
+                            <option value="Frutas de clima frío">Frutas (mora, fresa, uchuva, durazno, manzana, pera, lulo, curuba, tomate de árbol)</option>
+                            <option value="Derivados de frutas">Derivados de frutas (mermeladas, pulpas, jugos, néctares, deshidratados)</option>
                         </optgroup>
-                        <optgroup label="Plantas aromaticas, medicinales y productos naturales">
-                            <option value="Plantas aromaticas y medicinales">Plantas aromaticas y medicinales (manzanilla, menta, hierbabuena, oregano, calendula)</option>
-                            <option value="Productos naturales y derivados">Productos naturales (infusiones, aceites, jabones, cremas, unguentos)</option>
+                        <optgroup label="Plantas aromáticas, medicinales y productos naturales">
+                            <option value="Plantas aromáticas y medicinales">Plantas aromáticas y medicinales (manzanilla, menta, hierbabuena, orégano, caléndula)</option>
+                            <option value="Productos naturales y derivados">Productos naturales (infusiones, aceites, jabones, cremas, ungüentos)</option>
                         </optgroup>
-                        <optgroup label="Transformacion artesanal y agroindustrial de alimentos">
-                            <option value="Panaderia y reposteria tradicional">Panaderia y reposteria tradicional (panes, tortas, bizcochos, galletas)</option>
-                            <option value="Harinas y derivados">Harinas y derivados (arepas, avena procesada, mezclas artesanales)</option>
-                            <option value="Conservas, salsas y encurtidos">Conservas, salsas y encurtidos artesanales</option>
+                        <optgroup label="Transformación de alimentos artesanal y agroindustrial">
+                            <option value="Panadería y repostería">Panadería y repostería (panes, tortas, bizcochos, galletas)</option>
+                            <option value="Harinas y derivados">Harinas y derivados (arepa, avena procesada, mezclas artesanales)</option>
+                            <option value="Conservas, salsas y encurtidos">Conservas, salsas y encurtidos empacados</option>
                         </optgroup>
-                        <optgroup label="Artesanias y manufacturas rurales">
-                            <option value="Tejidos y artesanias en lana">Tejidos y artesanias en lana, alpargatas, cesteria</option>
-                            <option value="Articulos utilitarios o decorativos">Articulos utilitarios o decorativos artesanales</option>
-                            <option value="Forja y ornamentacion rural">Forja y ornamentacion en hierro o madera</option>
+                        <optgroup label="Artesanías y manufacturas rurales">
+                            <option value="Tejidos y cestería">Tejidos en lana, alpargatas, cestería, carpintería</option>
+                            <option value="Artículos utilitarios o decorativos">Producción de artículos utilitarios o decorativos</option>
+                            <option value="Forja y ornamentación">Forja y ornamentación en hierro o metal</option>
                         </optgroup>
-                        <optgroup label="Servicios rurales, gastronomicos y turismo local">
-                            <option value="Turismo rural y ecologico">Turismo rural, paseos ecologicos, guianza, hospedaje</option>
-                            <option value="Gastronomia local y avituallamiento">Gastronomia tipica, preparacion de alimentos y catering rural</option>
-                            <option value="Restaurantes y tiendas veredales">Restaurantes, panaderias y tiendas veredales</option>
-                            <option value="Servicios de apoyo y maquinaria rural">Alquiler de maquinaria y servicios de apoyo a la produccion</option>
+                        <optgroup label="Servicios rurales, gastronómicos y economía local">
+                            <option value="Restaurantes y tiendas veredales">Restaurantes, panaderías y tiendas veredales</option>
+                            <option value="Gastronomía y avituallamiento">Preparación de alimentos, refrigerios y catering rural</option>
+                            <option value="Turismo rural y hospedaje">Turismo rural, paseos ecológicos, guianza, hospedaje</option>
+                            <option value="Maquinaria y servicios rurales">Alquiler de maquinaria, transporte rural y apoyo a la producción</option>
                         </optgroup>
-                        <option value="OTRO">Otro nicho productivo (especificar a continuacion)</option>
+                        <option value="OTRO">Otro nicho productivo</option>
                     </select>
                 </div>
 
-                <div class="form-group" id="group-nicho-otro" style="display: none;">
-                    <label class="form-label" for="nicho_otro_texto">Especifique su nicho productivo <span class="req">*</span></label>
-                    <input type="text" id="nicho_otro_texto" class="form-input" placeholder="Describa su producto o unidad productiva principal">
+                <div class="form-group" id="nicho-otro-group" style="display: none; margin-bottom: 1.5rem;">
+                    <label for="nicho_otro_texto">Especificar otro nicho productivo *</label>
+                    <input type="text" id="nicho_otro_texto" placeholder="Escriba su actividad o producto principal">
                 </div>
 
-                <!-- Requerimiento de Transporte -->
-                <div class="form-group" style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:8px;padding:1.1rem;margin-bottom:1.5rem;">
-                    <label class="form-label" style="margin-bottom:8px;">Requiere transporte para asistir al evento? <span class="req">*</span></label>
-                    <div class="radio-options-group">
-                        <label class="radio-option">
-                            <input type="radio" name="requiere_transporte" value="No" checked onchange="togglePuntoTransporte(false)">
-                            <span>No requiero transporte (asistencia por medios propios)</span>
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="requiere_transporte" value="Si" onchange="togglePuntoTransporte(true)">
-                            <span>Si requiero transporte de la Alcaldia Local</span>
-                        </label>
-                    </div>
-
-                    <div id="punto-transporte-container" style="display: none; margin-top: 1rem;">
-                        <label class="form-label" for="punto_recogida">Vereda o punto de abordaje donde tomara el transporte</label>
-                        <input type="text" id="punto_recogida" class="form-input" placeholder="Ej. Escuela San Juan, Cruce Tunal Alto, etc.">
-                        <span class="form-help">Informacion requerida para coordinar las rutas de transporte rural hacia Betania.</span>
-                    </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="requiere_transporte">¿Requiere transporte para asistir al evento? *</label>
+                    <select id="requiere_transporte" name="requiere_transporte" required>
+                        <option value="No" selected>No</option>
+                        <option value="Si">Sí</option>
+                    </select>
                 </div>
 
-                <!-- Observaciones -->
-                <div class="form-group">
-                    <label class="form-label" for="observaciones">Observaciones o aportes iniciales para la mesa (opcional)</label>
-                    <textarea id="observaciones" name="observaciones" class="form-textarea" rows="3" placeholder="Comparta cualquier duda, propuesta o consideracion para la Mesa de Cocreacion."></textarea>
+                <!-- TRATAMIENTO DE DATOS PERSONALES HABEAS DATA -->
+                <div style="background: #fdfdfd; padding: 1.25rem; border: 1px solid #eaeaea; border-radius: 8px; margin-top: 2rem;">
+                    <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; font-size: 0.88rem; color: #333333; line-height: 1.5;">
+                        <input type="checkbox" id="habeas_data" name="habeas_data" required style="margin-top: 3px; width: 19px; height: 19px; accent-color: var(--primary-green);">
+                        <span>
+                            <strong style="color: var(--primary-green);">Autorización para el Tratamiento de Datos Personales (Ley 1581 de 2012) *</strong><br>
+                            Autorizo de manera libre, previa, explícita e informada la recolección y tratamiento de mis datos personales de conformidad con la Ley 1581 de 2012, exclusivamente para los fines de inscripción y coordinación institucional de la Mesa de Cocreación del Sello Somos Sumapaz.
+                        </span>
+                    </label>
                 </div>
 
-                <button type="submit" id="btn-enviar" class="btn-submit">
-                    Completar inscripcion a la Mesa de Cocreacion
-                </button>
+                <!-- BOTÓN DE ENVÍO -->
+                <div class="form-submit-container" style="margin-top: 2.5rem;">
+                    <button type="submit" class="btn btn-submit" id="submit-btn-main" style="width: 100%; font-size: 1.1rem; padding: 1rem;">
+                        Guardar Inscripción Mesa de Cocreación
+                    </button>
+                </div>
             </form>
-        </section>
+        </div>
     </main>
 
-    <!-- Modal de Comprobante / Confirmacion -->
-    <div id="modal-comprobante" class="modal-overlay" onclick="if(event.target===this) cerrarModal()">
-        <div class="modal-container">
-            <div class="modal-header">
-                <h3>Inscripcion Confirmada</h3>
-                <p>Su registro ha sido radicado exitosamente ante la Alcaldia Local de Sumapaz.</p>
+    <!-- Modal de Confirmación Exitosa -->
+    <div id="success-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 600px;">
+            <div class="modal-icon">
+                <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" style="width: 80px; height: auto;">
+            </div>
+            <h2 class="serif modal-title" id="success-title">Inscripción Exitosa</h2>
+            <p class="modal-text" id="success-message" style="margin-bottom: 0.5rem;">Su inscripción a la Mesa de Cocreación del Sello Somos Sumapaz ha sido registrada correctamente.</p>
+
+            <div class="receipt-box">
+                <div class="receipt-item">
+                    <span style="color: #666; font-weight: 500;">Número de Radicado:</span>
+                    <span style="font-weight: 700; color: var(--primary-green);" id="res-registro">-</span>
+                </div>
+                <div class="receipt-item">
+                    <span style="color: #666; font-weight: 500;">Participante:</span>
+                    <span style="font-weight: 700; color: #222;" id="res-nombre">-</span>
+                </div>
+                <div class="receipt-item">
+                    <span style="color: #666; font-weight: 500;">Cédula:</span>
+                    <span style="font-weight: 700; color: #222;" id="res-doc">-</span>
+                </div>
+                <div class="receipt-item">
+                    <span style="color: #666; font-weight: 500;">Vereda:</span>
+                    <span style="font-weight: 700; color: #222;" id="res-vereda">-</span>
+                </div>
+                <div class="receipt-item">
+                    <span style="color: #666; font-weight: 500;">Predio:</span>
+                    <span style="font-weight: 700; color: #222;" id="res-predio">-</span>
+                </div>
+                <div class="receipt-item">
+                    <span style="color: #666; font-weight: 500;">Nicho Productivo:</span>
+                    <span style="font-weight: 700; color: #222;" id="res-nicho">-</span>
+                </div>
+                <div class="receipt-item">
+                    <span style="color: #666; font-weight: 500;">Requiere Transporte:</span>
+                    <span style="font-weight: 700; color: #222;" id="res-transporte">-</span>
+                </div>
+                <div class="receipt-item">
+                    <span style="color: #666; font-weight: 500;">Fecha y Hora del Evento:</span>
+                    <span style="font-weight: 700; color: #222;">18 de noviembre de 2026 · 9:00 a. m.</span>
+                </div>
+                <div class="receipt-item">
+                    <span style="color: #666; font-weight: 500;">Lugar:</span>
+                    <span style="font-weight: 700; color: #222;">Auditorio Fanny Quintero (Betania)</span>
+                </div>
             </div>
 
-            <table class="receipt-table">
-                <tr>
-                    <td class="field-label">Radicado ID:</td>
-                    <td class="field-value"><strong id="rec-id">-</strong></td>
-                </tr>
-                <tr>
-                    <td class="field-label">Participante:</td>
-                    <td class="field-value" id="rec-nombre">-</td>
-                </tr>
-                <tr>
-                    <td class="field-label">Documento:</td>
-                    <td class="field-value" id="rec-documento">-</td>
-                </tr>
-                <tr>
-                    <td class="field-label">Vereda y Cuenca:</td>
-                    <td class="field-value" id="rec-ubicacion">-</td>
-                </tr>
-                <tr>
-                    <td class="field-label">Predio / Finca:</td>
-                    <td class="field-value" id="rec-predio">-</td>
-                </tr>
-                <tr>
-                    <td class="field-label">Nicho Productivo:</td>
-                    <td class="field-value" id="rec-nicho">-</td>
-                </tr>
-                <tr>
-                    <td class="field-label">Transporte requerido:</td>
-                    <td class="field-value"><strong id="rec-transporte">-</strong></td>
-                </tr>
-                <tr>
-                    <td class="field-label">Fecha del Encuentro:</td>
-                    <td class="field-value">18 de noviembre de 2026 · 9:00 a. m.</td>
-                </tr>
-                <tr>
-                    <td class="field-label">Lugar:</td>
-                    <td class="field-value">Auditorio Fanny Quintero, Alcaldia Local de Sumapaz (Betania)</td>
-                </tr>
-            </table>
-
-            <div style="background:#EEF4EE;border:1px solid #D1E3D4;border-radius:6px;padding:0.75rem 1rem;font-size:0.83rem;color:var(--primary-green-dark);margin-bottom:1.25rem;">
-                Por favor guarde o tome una captura de este comprobante. Nos pondremos en contacto con usted via telefonica para confirmar la logistica de transporte y detalles del evento.
-            </div>
-
-            <div class="modal-actions">
-                <button type="button" class="btn-modal-secondary" onclick="window.print()">Imprimir comprobante</button>
-                <button type="button" class="btn-modal-primary" onclick="cerrarModal()">Aceptar y volver</button>
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                <button type="button" class="btn btn-submit" onclick="window.print()" style="background-color: var(--earth-brown); flex: 1;">Imprimir Comprobante</button>
+                <button type="button" class="btn btn-submit" onclick="resetAndCloseModal()" style="flex: 1;">Nueva Inscripción</button>
             </div>
         </div>
     </div>
 
+    <!-- Modal de Error / Aviso -->
+    <div id="error-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon" style="background: #444F2F;">
+                <img src="assets/logo_somossumapaz.png" alt="Aviso" style="width: 80px; height: auto; filter: grayscale(100%);">
+            </div>
+            <h2 class="serif modal-title" style="color: #D32F2F;">Aviso</h2>
+            <p id="error-modal-text" class="modal-text">Ocurrió un error al enviar la inscripción.</p>
+            <button type="button" id="error-close-btn" class="btn btn-submit" style="width: 100%; margin-top: 1.5rem; background-color: #D32F2F;" onclick="document.getElementById('error-modal').classList.remove('active')">Cerrar</button>
+        </div>
+    </div>
+
     <script>
-        const cuencasMap = {
-            'SAN JOSE': 'Rio Sumapaz', 'NUEVA GRANADA': 'Rio Sumapaz', 'CONCEPCION': 'Rio Sumapaz',
-            'TUNAL ALTO': 'Rio Sumapaz', 'LAGUNITAS': 'Rio Sumapaz', 'TUNAL BAJO': 'Rio Sumapaz',
-            'LA UNION': 'Rio Sumapaz', 'CHORRERAS': 'Rio Sumapaz', 'SANTO DOMINGO': 'Rio Sumapaz',
-            'LAS VEGAS': 'Rio Sumapaz', 'SAN JUAN': 'Rio Sumapaz', 'CAPITOLIO': 'Rio Sumapaz',
-            'EL TOLDO': 'Rio Sumapaz', 'SAN ANTONIO': 'Rio Sumapaz',
-
-            'LAS SOPAS': 'Rio Blanco', 'LOS RIOS': 'Rio Blanco', 'LAS PALMAS': 'Rio Blanco',
-            'LAS ANIMAS': 'Rio Blanco', 'LAS AURAS': 'Rio Blanco', 'NAZARETH': 'Rio Blanco',
-            'TAQUECITOS': 'Rio Blanco', 'PENALISA': 'Rio Blanco', 'LAGUNA VERDE': 'Rio Blanco',
-            'EL RAIZAL': 'Rio Blanco', 'SANTA ROSA BAJA': 'Rio Blanco', 'SANTA ROSA ALTA': 'Rio Blanco',
-            'BETANIA': 'Rio Blanco', 'EL ITSMO': 'Rio Blanco', 'EL TABACO': 'Rio Blanco'
-        };
-
-        function actualizarCuencaIndicador(vereda) {
-            const ind = document.getElementById('cuenca-indicador');
-            if (!ind) return;
-            const cuenca = cuencasMap[vereda] || '';
-            if (cuenca) {
-                ind.textContent = `Cuenca oficial: ${cuenca}`;
-                ind.style.color = 'var(--primary-green-dark)';
-                ind.style.fontWeight = '600';
-            } else {
-                ind.textContent = 'Seleccione la vereda para identificar la cuenca territorial.';
-                ind.style.color = 'var(--text-muted)';
-                ind.style.fontWeight = 'normal';
-            }
-        }
-
         function handleNichoChange(val) {
-            const groupOtro = document.getElementById('group-nicho-otro');
+            const groupOtro = document.getElementById('nicho-otro-group');
             const inpOtro = document.getElementById('nicho_otro_texto');
             if (val === 'OTRO') {
                 groupOtro.style.display = 'block';
@@ -808,37 +395,13 @@
             }
         }
 
-        function togglePuntoTransporte(requiere) {
-            const cont = document.getElementById('punto-transporte-container');
-            const inp = document.getElementById('punto_recogida');
-            if (requiere) {
-                cont.style.display = 'block';
-                inp.focus();
-            } else {
-                cont.style.display = 'none';
-            }
-        }
+        document.getElementById('sello-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
 
-        function showAlert(msg, type = 'error') {
-            const el = document.getElementById('alert-status');
-            el.className = `alert-box ${type}`;
-            el.textContent = msg;
-            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-
-        function clearAlert() {
-            const el = document.getElementById('alert-status');
-            el.className = 'alert-box';
-            el.textContent = '';
-        }
-
-        async function enviarInscripcion(event) {
-            event.preventDefault();
-            clearAlert();
-
-            const btn = document.getElementById('btn-enviar');
-            btn.disabled = true;
-            btn.textContent = 'Procesando registro...';
+            const btnSubmit = document.getElementById('submit-btn-main');
+            const originalText = btnSubmit.textContent;
+            btnSubmit.disabled = true;
+            btnSubmit.textContent = 'Guardando inscripción...';
 
             const nombre = document.getElementById('nombre_completo').value.trim();
             const tipoDoc = document.getElementById('tipo_documento').value;
@@ -850,25 +413,14 @@
             if (nicho === 'OTRO') {
                 const otroTexto = document.getElementById('nicho_otro_texto').value.trim();
                 if (!otroTexto) {
-                    showAlert('Por favor especifique su nicho productivo.', 'error');
-                    btn.disabled = false;
-                    btn.textContent = 'Completar inscripcion a la Mesa de Cocreacion';
+                    showErrorModal('Por favor especifique su nicho productivo.');
+                    btnSubmit.disabled = false;
+                    btnSubmit.textContent = originalText;
                     return;
                 }
                 nicho = `Otro: ${otroTexto}`;
             }
-
-            const radiosTrans = document.getElementsByName('requiere_transporte');
-            let reqTrans = 'No';
-            for (let r of radiosTrans) {
-                if (r.checked) reqTrans = r.value;
-            }
-
-            let obs = document.getElementById('observaciones').value.trim();
-            const puntoRecogida = document.getElementById('punto_recogida')?.value.trim();
-            if (reqTrans === 'Si' && puntoRecogida) {
-                obs = obs ? `Punto de recogida: ${puntoRecogida}. Obs: ${obs}` : `Punto de recogida: ${puntoRecogida}`;
-            }
+            const reqTrans = document.getElementById('requiere_transporte').value;
 
             const payload = {
                 nombre_completo: nombre,
@@ -878,46 +430,48 @@
                 vereda: vereda,
                 nombre_predio: predio,
                 nicho_productivo: nicho,
-                requiere_transporte: reqTrans,
-                observaciones: obs
+                requiere_transporte: reqTrans
             };
 
             try {
-                const response = await fetch('api/inscribir_sello_sumapaz.php', {
+                const res = await fetch('api/inscribir_sello_sumapaz.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
+                const result = await res.json();
 
-                const data = await response.json();
+                if (res.ok && result.success) {
+                    document.getElementById('res-registro').textContent = '#' + result.id;
+                    document.getElementById('res-nombre').textContent = result.nombre || nombre;
+                    document.getElementById('res-doc').textContent = `${tipoDoc} ${numeroDoc}`;
+                    document.getElementById('res-vereda').textContent = vereda;
+                    document.getElementById('res-predio').textContent = predio;
+                    document.getElementById('res-nicho').textContent = nicho;
+                    document.getElementById('res-transporte').textContent = reqTrans === 'Si' ? 'Sí' : 'No';
 
-                if (!response.ok || !data.success) {
-                    throw new Error(data.error || 'Ocurrio un error al registrar la inscripcion');
+                    document.getElementById('success-modal').classList.add('active');
+                    this.reset();
+                    document.getElementById('nicho-otro-group').style.display = 'none';
+                } else {
+                    showErrorModal(result.error || 'Ocurrió un problema al guardar la información.');
                 }
-
-                // Cargar datos en el modal
-                document.getElementById('rec-id').textContent = '#' + data.id;
-                document.getElementById('rec-nombre').textContent = nombre;
-                document.getElementById('rec-documento').textContent = `${tipoDoc} ${numeroDoc}`;
-                document.getElementById('rec-ubicacion').textContent = `${vereda} (${data.cuenca})`;
-                document.getElementById('rec-predio').textContent = predio;
-                document.getElementById('rec-nicho').textContent = nicho;
-                document.getElementById('rec-transporte').textContent = reqTrans === 'Si' ? 'Si (Alcaldia Local de Sumapaz)' : 'No (Medios propios)';
-
-                document.getElementById('modal-comprobante').classList.add('open');
-                document.getElementById('form-sello').reset();
-                actualizarCuencaIndicador('');
-                togglePuntoTransporte(false);
             } catch (err) {
-                showAlert(err.message, 'error');
+                console.error('Error enviando formulario:', err);
+                showErrorModal('Ocurrió un error de red o de servidor al enviar la inscripción.');
             } finally {
-                btn.disabled = false;
-                btn.textContent = 'Completar inscripcion a la Mesa de Cocreacion';
+                btnSubmit.disabled = false;
+                btnSubmit.textContent = originalText;
             }
+        });
+
+        function showErrorModal(msg) {
+            document.getElementById('error-modal-text').textContent = msg;
+            document.getElementById('error-modal').classList.add('active');
         }
 
-        function cerrarModal() {
-            document.getElementById('modal-comprobante').classList.remove('open');
+        function resetAndCloseModal() {
+            document.getElementById('success-modal').classList.remove('active');
         }
     </script>
 </body>
