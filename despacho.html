@@ -2244,7 +2244,21 @@
                                 <div class="info-cell">
                                     <b>Contratista</b>
                                     <strong>${escapeHtml(c.contratista || 'Sin dato')}</strong>
+                                    ${c.nit_contratista ? `<div class="muted" style="font-size:0.75rem; margin-top:2px;">NIT / Cédula: <strong>${escapeHtml(c.nit_contratista)}</strong></div>` : ''}
                                 </div>
+                                ${c.modalidad_seleccion || c.tipo_contrato ? `
+                                <div class="info-cell">
+                                    <b>Modalidad / Tipo de Contrato</b>
+                                    <div>${escapeHtml(c.modalidad_seleccion || 'N/A')}</div>
+                                    <div class="muted" style="font-size:0.75rem;">${escapeHtml(c.tipo_contrato || '')}</div>
+                                </div>
+                                ` : ''}
+                                ${c.link_proceso ? `
+                                <div class="info-cell">
+                                    <b>Proceso SECOP</b>
+                                    <div><a href="${escapeHtml(c.link_proceso)}" target="_blank" rel="noopener noreferrer" style="color:var(--primary-green); font-weight:600; font-size:0.8rem; text-decoration:underline;">Ver Proceso en SECOP</a></div>
+                                </div>
+                                ` : ''}
                                 <div class="info-cell">
                                     <b>Apoyo a la supervisión</b>
                                     <strong>${escapeHtml(c.responsable_nombre || 'Sin dato')}</strong>
@@ -2820,13 +2834,17 @@
 
                 // Hoja 1: Contratos
                 const contratosData = (data.contratos || []).map(c => ({
-                    'ID Contrato': c.contrato_id,
+                    'ID Contrato': c.id || c.contrato_id,
                     'Número Contrato': c.numero_contrato,
                     'Proyectos': c.proyectos_codigos || 'Sin proyecto',
                     'Área': c.area_nombre || '',
                     'Título': c.titulo_grupo || '',
                     'Objeto': c.objeto || '',
                     'Contratista': c.contratista || '',
+                    'NIT / Cédula': c.nit_contratista || '',
+                    'Modalidad de Selección': c.modalidad_seleccion || '',
+                    'Tipo de Contrato': c.tipo_contrato || '',
+                    'Enlace SECOP': c.link_proceso || '',
                     'Interventoría': c.interventoria_nombre || '',
                     'Responsable / Apoyo': c.responsable_nombre || '',
                     'Valor Inicial': c.valor_inicial !== null ? Number(c.valor_inicial) : '',

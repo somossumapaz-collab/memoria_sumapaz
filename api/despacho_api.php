@@ -27,8 +27,8 @@ if ($method === 'POST') {
  * Determina si un contrato se encuentra finalizado / terminado / liquidado.
  */
 function isContratoFinalizado(array $c): bool {
-    $estCon = mb_strtoupper(trim((string)($c['estado_contractual'] ?? '')), 'UTF-8');
-    $estRep = mb_strtoupper(trim((string)($c['estado_reportado_texto'] ?? '')), 'UTF-8');
+    $estCon = strtoupper(trim((string)($c['estado_contractual'] ?? '')));
+    $estRep = strtoupper(trim((string)($c['estado_reportado_texto'] ?? '')));
     if (in_array($estCon, ['TERMINADO', 'FINALIZADO', 'LIQUIDADO', 'CERRADO'], true)) {
         return true;
     }
@@ -44,8 +44,8 @@ function isContratoFinalizado(array $c): bool {
  * Determina si un contrato se encuentra formalmente liquidado y cerrado.
  */
 function isContratoLiquidado(array $c): bool {
-    $estCon = mb_strtoupper(trim((string)($c['estado_contractual'] ?? '')), 'UTF-8');
-    $estRep = mb_strtoupper(trim((string)($c['estado_reportado_texto'] ?? '')), 'UTF-8');
+    $estCon = strtoupper(trim((string)($c['estado_contractual'] ?? '')));
+    $estRep = strtoupper(trim((string)($c['estado_reportado_texto'] ?? '')));
     if ($estCon === 'LIQUIDADO') {
         return true;
     }
@@ -86,7 +86,7 @@ function parseSpanishOrIsoDate(?string $val): ?string {
     ];
     if (preg_match('/(\d{1,2})\s*(?:de|\-|\s)\s*([a-záéíóúñ]+)\s*(?:de|del|\-|\s)?\s*(\d{4})/iu', $s, $m)) {
         $dia = (int)$m[1];
-        $mesKey = mb_strtolower(trim($m[2]), 'UTF-8');
+        $mesKey = strtolower(trim($m[2]));
         $anio = (int)$m[3];
         if (isset($meses[$mesKey]) && $dia >= 1 && $dia <= 31 && $anio >= 2000 && $anio <= 2100) {
             return sprintf('%04d-%02d-%02d', $anio, $meses[$mesKey], $dia);
@@ -754,33 +754,10 @@ try {
         if ($action === 'export_excel_data') {
             // 1. Contratos completos con proyectos y área
             $stmtC = $pdo->query("
-                SELECT c.id,
-                       c.numero_contrato,
-                       c.contratista,
-                       c.objeto,
-                       c.titulo_grupo,
+                SELECT c.*,
                        a.nombre AS area_nombre,
-                       c.responsable_nombre,
-                       c.interventoria_nombre,
                        GROUP_CONCAT(DISTINCT p.codigo ORDER BY p.codigo SEPARATOR ', ') AS proyectos_codigos,
-                       GROUP_CONCAT(DISTINCT p.nombre ORDER BY p.codigo SEPARATOR ' | ') AS proyectos_nombres,
-                       c.valor_inicial,
-                       c.valor_adiciones,
-                       c.valor_total,
-                       c.duracion_texto,
-                       c.fecha_inicio_texto,
-                       c.fecha_fin_inicial_texto,
-                       c.fecha_fin_vigente_texto,
-                       c.estado_contractual,
-                       c.estado_reportado_texto,
-                       c.ejecucion_fisica_pct,
-                       c.ejecucion_financiera_pct,
-                       c.variacion_fisica_pct,
-                       c.variacion_financiera_pct,
-                       c.fecha_ultimo_reporte_texto,
-                       c.dias_desde_ultimo_reporte,
-                       c.alertas_contrato,
-                       c.created_at
+                       GROUP_CONCAT(DISTINCT p.nombre ORDER BY p.codigo SEPARATOR ' | ') AS proyectos_nombres
                 FROM despacho_contratos c
                 LEFT JOIN despacho_areas a ON a.id = c.area_id
                 LEFT JOIN despacho_contrato_proyectos cp ON cp.contrato_id = c.id
@@ -789,6 +766,55 @@ try {
                 ORDER BY c.numero_contrato ASC
             ");
             $contratos = $stmtC->fetchAll(PDO::FETCH_ASSOC);
+
+            // Mapa de versiones para variaciones físicas y financieras
+            $verRowsAll = $pdo->query("SELECT contrato_id, ejecucion_fisica_pct, ejecucion_financiera_pct, datos_estructurados_json
+                FROM despacho_versiones_reporte
+                ORDER BY id DESC")->fetchAll(PDO::FETCH_ASSOC);
+            $versionesPorContrato = [];
+            foreach ($verRowsAll as $vr) {
+                $cidV = (int)$vr['contrato_id'];
+                if (!isset($versionesPorContrato[$cidV]) || count($versionesPorContrato[$cidV]) < 4) {
+                    $versionesPorContrato[$cidV][] = $vr;
+                }
+            }
+
+            foreach ($contratos as &$con) {
+                $con = enrichContratoIndicators($con);
+                $cid = (int)$con['id'];
+                $antFisPct = null;
+                $antFinPct = null;
+                $versCon = $versionesPorContrato[$cid] ?? [];
+                if (!empty($versCon)) {
+                    $latestV = $versCon[0];
+                    $estJson = !empty($latestV['datos_estructurados_json']) ? json_decode($latestV['datos_estructurados_json'], true) : null;
+                    if (is_array($estJson)) {
+                        if (isset($estJson['ejecucion_fisica_anterior_pct']) && $estJson['ejecucion_fisica_anterior_pct'] !== null) {
+                            $antFisPct = (float)$estJson['ejecucion_fisica_anterior_pct'];
+                        } elseif (isset($estJson['valores_anteriores']['ejecucion_fisica_pct']) && $estJson['valores_anteriores']['ejecucion_fisica_pct'] !== null) {
+                            $antFisPct = (float)$estJson['valores_anteriores']['ejecucion_fisica_pct'];
+                        }
+                        if (isset($estJson['ejecucion_financiera_anterior_pct']) && $estJson['ejecucion_financiera_anterior_pct'] !== null) {
+                            $antFinPct = (float)$estJson['ejecucion_financiera_anterior_pct'];
+                        } elseif (isset($estJson['valores_anteriores']['ejecucion_financiera_pct']) && $estJson['valores_anteriores']['ejecucion_financiera_pct'] !== null) {
+                            $antFinPct = (float)$estJson['valores_anteriores']['ejecucion_financiera_pct'];
+                        }
+                    }
+                    if ($antFisPct === null && isset($versCon[1]) && $versCon[1]['ejecucion_fisica_pct'] !== null) {
+                        $antFisPct = (float)$versCon[1]['ejecucion_fisica_pct'];
+                    }
+                    if ($antFinPct === null && isset($versCon[1]) && $versCon[1]['ejecucion_financiera_pct'] !== null) {
+                        $antFinPct = (float)$versCon[1]['ejecucion_financiera_pct'];
+                    }
+                }
+                $con['variacion_fisica_pct'] = ($con['ejecucion_fisica_pct'] !== null && $antFisPct !== null)
+                    ? round((float)$con['ejecucion_fisica_pct'] - $antFisPct, 2)
+                    : null;
+                $con['variacion_financiera_pct'] = ($con['ejecucion_financiera_pct'] !== null && $antFinPct !== null)
+                    ? round((float)$con['ejecucion_financiera_pct'] - $antFinPct, 2)
+                    : null;
+            }
+            unset($con);
 
             // 2. Trazabilidad de reportes y versiones
             $stmtV = $pdo->query("
@@ -1314,7 +1340,7 @@ try {
             }
             $newFinTxt = array_key_exists('ejecucion_financiera_texto', $jsonBody) && trim((string)$jsonBody['ejecucion_financiera_texto']) !== '' ? trim((string)$jsonBody['ejecucion_financiera_texto']) : ($newFinPct !== null ? $newFinPct . '%' : $cPrev['ejecucion_financiera_texto']);
 
-            if (mb_strtoupper(trim((string)$newEstadoCon), 'UTF-8') === 'LIQUIDADO') {
+            if (strtoupper(trim((string)$newEstadoCon)) === 'LIQUIDADO') {
                 if ($newFinPct === null || (float)$newFinPct < 100.0) {
                     http_response_code(400);
                     echo json_encode([

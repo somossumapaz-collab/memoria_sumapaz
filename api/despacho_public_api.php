@@ -226,8 +226,8 @@ function parseSubmittedMessages(?string $m1, ?string $m2): array {
  * Determina si un contrato se encuentra finalizado / terminado / liquidado.
  */
 function isContratoFinalizado(array $c): bool {
-    $estCon = mb_strtoupper(trim((string)($c['estado_contractual'] ?? '')), 'UTF-8');
-    $estRep = mb_strtoupper(trim((string)($c['estado_reportado_texto'] ?? '')), 'UTF-8');
+    $estCon = strtoupper(trim((string)($c['estado_contractual'] ?? '')));
+    $estRep = strtoupper(trim((string)($c['estado_reportado_texto'] ?? '')));
     if (in_array($estCon, ['TERMINADO', 'FINALIZADO', 'LIQUIDADO', 'CERRADO'], true)) {
         return true;
     }
@@ -243,8 +243,8 @@ function isContratoFinalizado(array $c): bool {
  * Determina si un contrato se encuentra formalmente liquidado y cerrado.
  */
 function isContratoLiquidado(array $c): bool {
-    $estCon = mb_strtoupper(trim((string)($c['estado_contractual'] ?? '')), 'UTF-8');
-    $estRep = mb_strtoupper(trim((string)($c['estado_reportado_texto'] ?? '')), 'UTF-8');
+    $estCon = strtoupper(trim((string)($c['estado_contractual'] ?? '')));
+    $estRep = strtoupper(trim((string)($c['estado_reportado_texto'] ?? '')));
     if ($estCon === 'LIQUIDADO') {
         return true;
     }
@@ -285,7 +285,7 @@ function parseSpanishOrIsoDate(?string $val): ?string {
     ];
     if (preg_match('/(\d{1,2})\s*(?:de|\-|\s)\s*([a-záéíóúñ]+)\s*(?:de|del|\-|\s)?\s*(\d{4})/iu', $s, $m)) {
         $dia = (int)$m[1];
-        $mesKey = mb_strtolower(trim($m[2]), 'UTF-8');
+        $mesKey = strtolower(trim($m[2]));
         $anio = (int)$m[3];
         if (isset($meses[$mesKey]) && $dia >= 1 && $dia <= 31 && $anio >= 2000 && $anio <= 2100) {
             return sprintf('%04d-%02d-%02d', $anio, $meses[$mesKey], $dia);
@@ -1107,7 +1107,7 @@ try {
             exit;
         }
 
-        $estRepUpper = mb_strtoupper(trim((string)$estadoRepTxt), 'UTF-8');
+        $estRepUpper = strtoupper(trim((string)$estadoRepTxt));
         if ($estRepUpper === 'LIQUIDADO' || (strpos($estRepUpper, 'LIQUIDADO') !== false && strpos($estRepUpper, 'EN LIQUID') === false)) {
             if ($financPct === null || (float)$financPct < 100.0) {
                 http_response_code(400);
