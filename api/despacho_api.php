@@ -41,6 +41,23 @@ function isContratoFinalizado(array $c): bool {
 }
 
 /**
+ * Determina si un contrato se encuentra formalmente liquidado y cerrado.
+ */
+function isContratoLiquidado(array $c): bool {
+    $estCon = mb_strtoupper(trim((string)($c['estado_contractual'] ?? '')), 'UTF-8');
+    $estRep = mb_strtoupper(trim((string)($c['estado_reportado_texto'] ?? '')), 'UTF-8');
+    if ($estCon === 'LIQUIDADO') {
+        return true;
+    }
+    if ($estRep !== '' && strpos($estRep, 'EN LIQUID') === false && strpos($estRep, 'POR LIQUID') === false && strpos($estRep, 'NO LIQUID') === false) {
+        if ($estRep === 'LIQUIDADO' || strpos($estRep, 'LIQUIDADO') !== false) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
  * Convierte fechas en texto español ("1 de abril 2025", "31/08/2025") o ISO ("2025-08-31") a formato YYYY-MM-DD.
  */
 function parseSpanishOrIsoDate(?string $val): ?string {
@@ -734,6 +751,98 @@ try {
             exit;
         }
 
+        if ($action === 'export_excel_data') {
+            // 1. Contratos completos con proyectos y área
+            $stmtC = $pdo->query("
+                SELECT c.id,
+                       c.numero_contrato,
+                       c.contratista,
+                       c.objeto,
+                       c.titulo_grupo,
+                       a.nombre AS area_nombre,
+                       c.responsable_nombre,
+                       c.interventoria_nombre,
+                       GROUP_CONCAT(DISTINCT p.codigo ORDER BY p.codigo SEPARATOR ', ') AS proyectos_codigos,
+                       GROUP_CONCAT(DISTINCT p.nombre ORDER BY p.codigo SEPARATOR ' | ') AS proyectos_nombres,
+                       c.valor_inicial,
+                       c.valor_adiciones,
+                       c.valor_total,
+                       c.duracion_texto,
+                       c.fecha_inicio_texto,
+                       c.fecha_fin_inicial_texto,
+                       c.fecha_fin_vigente_texto,
+                       c.estado_contractual,
+                       c.estado_reportado_texto,
+                       c.ejecucion_fisica_pct,
+                       c.ejecucion_financiera_pct,
+                       c.variacion_fisica_pct,
+                       c.variacion_financiera_pct,
+                       c.fecha_ultimo_reporte_texto,
+                       c.dias_desde_ultimo_reporte,
+                       c.alertas_contrato,
+                       c.created_at
+                FROM despacho_contratos c
+                LEFT JOIN despacho_areas a ON a.id = c.area_id
+                LEFT JOIN despacho_contrato_proyectos cp ON cp.contrato_id = c.id
+                LEFT JOIN despacho_proyectos p ON p.id = cp.proyecto_id
+                GROUP BY c.id
+                ORDER BY c.numero_contrato ASC
+            ");
+            $contratos = $stmtC->fetchAll(PDO::FETCH_ASSOC);
+
+            // 2. Trazabilidad de reportes y versiones
+            $stmtV = $pdo->query("
+                SELECT v.id AS version_id,
+                       c.numero_contrato,
+                       c.contratista,
+                       v.numero_version,
+                       v.tipo_mensaje,
+                       v.fecha_reporte_texto,
+                       v.fecha_reporte_iso,
+                       v.reportado_por,
+                       v.estado_reportado_texto,
+                       v.ejecucion_fisica_pct,
+                       v.ejecucion_financiera_pct,
+                       v.ejecucion_financiera_valor,
+                       v.fecha_fin_reportada_texto,
+                       v.observaciones_reporte,
+                       v.alertas_contrato,
+                       v.estado_version,
+                       v.fecha_revision,
+                       v.comentario_revision,
+                       v.fuente_version,
+                       v.created_at AS fecha_recepcion_sistema
+                FROM despacho_versiones_reporte v
+                INNER JOIN despacho_contratos c ON c.id = v.contrato_id
+                ORDER BY c.numero_contrato ASC, v.numero_version ASC
+            ");
+            $versiones = $stmtV->fetchAll(PDO::FETCH_ASSOC);
+
+            // 3. Bitácora de tracking y auditoría
+            $stmtB = $pdo->query("
+                SELECT b.id AS bitacora_id,
+                       c.numero_contrato,
+                       b.created_at AS fecha_evento,
+                       b.accion,
+                       b.actor_tipo,
+                       b.actor_nombre,
+                       b.descripcion
+                FROM despacho_bitacora b
+                LEFT JOIN despacho_contratos c ON c.id = b.contrato_id
+                ORDER BY b.id DESC
+            ");
+            $bitacora = $stmtB->fetchAll(PDO::FETCH_ASSOC);
+
+            echo json_encode([
+                'success' => true,
+                'contratos' => $contratos,
+                'trazabilidad' => $versiones,
+                'bitacora' => $bitacora,
+                'generado' => date('Y-m-d H:i:s')
+            ], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+
         if ($action === 'contract_detail') {
             $contratoId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
             if ($contratoId <= 0) {
@@ -1136,11 +1245,11 @@ try {
                 exit;
             }
 
-            if (isContratoFinalizado($cPrev)) {
+            if (isContratoLiquidado($cPrev)) {
                 http_response_code(403);
                 echo json_encode([
                     'success' => false,
-                    'message' => 'Este contrato ya se encuentra FINALIZADO y cerrado, por lo que no puede actualizarse más.'
+                    'message' => 'Este contrato ya se encuentra LIQUIDADO y cerrado definitivamente, por lo que no puede modificarse.'
                 ], JSON_UNESCAPED_UNICODE);
                 exit;
             }
@@ -1190,10 +1299,31 @@ try {
             if ($newEstadoCon === 'FINALIZADO') $newEstadoCon = 'TERMINADO';
 
             $newFisPct = array_key_exists('ejecucion_fisica_pct', $jsonBody) && $jsonBody['ejecucion_fisica_pct'] !== '' && $jsonBody['ejecucion_fisica_pct'] !== null ? (float)$jsonBody['ejecucion_fisica_pct'] : ($cPrev['ejecucion_fisica_pct'] !== null ? (float)$cPrev['ejecucion_fisica_pct'] : null);
+            if ($newFisPct !== null && ($newFisPct < 0 || $newFisPct > 100)) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'message' => 'La ejecución física debe ser un número entre 0 y 100.'], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
             $newFisTxt = array_key_exists('ejecucion_fisica_texto', $jsonBody) && trim((string)$jsonBody['ejecucion_fisica_texto']) !== '' ? trim((string)$jsonBody['ejecucion_fisica_texto']) : ($newFisPct !== null ? $newFisPct . '%' : $cPrev['ejecucion_fisica_texto']);
 
             $newFinPct = array_key_exists('ejecucion_financiera_pct', $jsonBody) && $jsonBody['ejecucion_financiera_pct'] !== '' && $jsonBody['ejecucion_financiera_pct'] !== null ? (float)$jsonBody['ejecucion_financiera_pct'] : ($cPrev['ejecucion_financiera_pct'] !== null ? (float)$cPrev['ejecucion_financiera_pct'] : null);
+            if ($newFinPct !== null && ($newFinPct < 0 || $newFinPct > 100)) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'message' => 'La ejecución financiera debe ser un número entre 0 y 100.'], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
             $newFinTxt = array_key_exists('ejecucion_financiera_texto', $jsonBody) && trim((string)$jsonBody['ejecucion_financiera_texto']) !== '' ? trim((string)$jsonBody['ejecucion_financiera_texto']) : ($newFinPct !== null ? $newFinPct . '%' : $cPrev['ejecucion_financiera_texto']);
+
+            if (mb_strtoupper(trim((string)$newEstadoCon), 'UTF-8') === 'LIQUIDADO') {
+                if ($newFinPct === null || (float)$newFinPct < 100.0) {
+                    http_response_code(400);
+                    echo json_encode([
+                        'success' => false,
+                        'message' => 'No se puede cambiar el estado a LIQUIDADO hasta que se reporte el 100% de ejecución financiera.'
+                    ], JSON_UNESCAPED_UNICODE);
+                    exit;
+                }
+            }
 
             $newAlertas = array_key_exists('alertas_contrato', $jsonBody) ? trim((string)$jsonBody['alertas_contrato']) : $cPrev['alertas_contrato'];
 

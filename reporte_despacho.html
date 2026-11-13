@@ -666,26 +666,25 @@
                             <input type="date" id="m2_fecha_reporte" name="m2_fecha_reporte" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="m2_ejecucion_financiera_texto">Ejecución financiera *</label>
-                            <input type="text" id="m2_ejecucion_financiera_texto" name="m2_ejecucion_financiera_texto" class="form-control" placeholder="Ej: 52.31%" required>
-                            <small id="help-variacion-financiera" class="muted" style="display:block; font-size:0.75rem; margin-top:3px;">Sin límite de tope ni de disminución; al haber adiciones el porcentaje se reduce y se registrará la variación.</small>
+                            <label for="m2_ejecucion_financiera_texto">Ejecución financiera (%) *</label>
+                            <input type="number" id="m2_ejecucion_financiera_texto" name="m2_ejecucion_financiera_texto" class="form-control" min="0" max="100" step="any" placeholder="0 a 100" required oninput="validarNumeroPorcentaje(this)">
+                            <small id="help-variacion-financiera" class="muted" style="display:block; font-size:0.75rem; margin-top:3px;">Número del 0 al 100; ante adiciones el porcentaje puede variar.</small>
                         </div>
                         <div class="form-group">
-                            <label for="m2_ejecucion_fisica_texto">Ejecución física *</label>
-                            <input type="text" id="m2_ejecucion_fisica_texto" name="m2_ejecucion_fisica_texto" class="form-control" placeholder="Ej: 72%" required>
-                            <small id="help-variacion-fisica" class="muted" style="display:block; font-size:0.75rem; margin-top:3px;">Sin límite de tope ni de disminución; el sistema registrará la variación.</small>
+                            <label for="m2_ejecucion_fisica_texto">Ejecución física (%) *</label>
+                            <input type="number" id="m2_ejecucion_fisica_texto" name="m2_ejecucion_fisica_texto" class="form-control" min="0" max="100" step="any" placeholder="0 a 100" required oninput="validarNumeroPorcentaje(this)">
+                            <small id="help-variacion-fisica" class="muted" style="display:block; font-size:0.75rem; margin-top:3px;">Número del 0 al 100; el sistema registrará la variación.</small>
                         </div>
                         <div class="form-group">
                             <label for="m2_estado_reportado">Estado *</label>
-                            <input type="text" id="m2_estado_reportado" name="m2_estado_reportado" class="form-control" list="lista-estados-contrato" placeholder="Ej: En ejecución / Suspendido / Terminado" required>
-                            <datalist id="lista-estados-contrato">
-                                <option value="En ejecución"></option>
-                                <option value="Suspendido"></option>
-                                <option value="Terminado"></option>
-                                <option value="Finalizado"></option>
-                                <option value="En liquidación"></option>
-                                <option value="Liquidado"></option>
-                            </datalist>
+                            <select id="m2_estado_reportado" name="m2_estado_reportado" class="form-control" required onchange="validarEstadoLiquidado()">
+                                <option value="En ejecución">En ejecución</option>
+                                <option value="Suspendido">Suspendido</option>
+                                <option value="Terminado">Terminado</option>
+                                <option value="Finalizado">Finalizado</option>
+                                <option value="En liquidación">En liquidación</option>
+                                <option value="Liquidado">Liquidado</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="m2_fecha_fin_reportada">Fecha finalización</label>
@@ -711,6 +710,74 @@
             </form>
         </div>
     </main>
+
+    <!-- MODAL TICKET DE CARGUE EXITOSO -->
+    <div class="modal-bg" id="modal-ticket-cargue" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.55); z-index:99999; justify-content:center; align-items:center; padding:1rem; box-sizing:border-box;">
+        <div style="background:#FFFFFF; border-radius:12px; width:100%; max-width:620px; max-height:90vh; overflow-y:auto; box-shadow:0 12px 32px rgba(0,0,0,0.2); border:1px solid #D5E2D8; display:flex; flex-direction:column; font-family:'Inter', sans-serif;">
+            
+            <div style="padding:1.25rem 1.5rem; border-bottom:1px solid #E3E6EA; background:#F8FAF9; display:flex; justify-content:space-between; align-items:flex-start;">
+                <div>
+                    <span class="tag" style="background:#EAF5EE; color:#1D4227; border:1px solid #C8E6C9; margin-bottom:0.35rem; font-weight:700;">RADICADO OFICIAL DE REPORTE</span>
+                    <h3 style="margin:0.25rem 0 0 0; font-size:1.15rem; color:#1D4227;">Ticket de Cargue Exitoso</h3>
+                    <div class="muted" style="font-size:0.8rem; margin-top:2px;">Alcaldía Local de Sumapaz — Módulo de Seguimiento Contractual</div>
+                </div>
+                <button type="button" onclick="cerrarModalTicket()" class="btn btn-outline btn-sm" style="padding:4px 10px;">Cerrar</button>
+            </div>
+
+            <div style="padding:1.25rem 1.5rem; flex:1;" id="ticket-printable-content">
+                <div style="background:#F4F8F5; border:1px solid #C8E6C9; border-radius:8px; padding:0.9rem 1.1rem; margin-bottom:1.1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                    <div>
+                        <div class="muted" style="font-size:0.75rem; text-transform:uppercase; font-weight:700;">Número de Radicado</div>
+                        <div id="ticket-radicado" style="font-size:1.25rem; font-weight:800; color:#1D4227; letter-spacing:0.03em;">RAD-0000</div>
+                    </div>
+                    <div>
+                        <span id="ticket-badge-version" class="tag tag-neutral" style="font-size:0.82rem; padding:0.3rem 0.65rem;">Versión #1</span>
+                    </div>
+                </div>
+
+                <div class="info-grid" style="margin-bottom:1rem;">
+                    <div class="info-cell">
+                        <b>Contrato</b>
+                        <div id="ticket-contrato" style="font-weight:700; color:#1D4227;">-</div>
+                    </div>
+                    <div class="info-cell">
+                        <b>Fecha y Hora de Recepción</b>
+                        <div id="ticket-fecha-recepcion" style="font-weight:600;">-</div>
+                    </div>
+                    <div class="info-cell">
+                        <b>Fecha Reportada</b>
+                        <div id="ticket-fecha-reporte" style="font-weight:600;">-</div>
+                    </div>
+                    <div class="info-cell">
+                        <b>Reportado Por</b>
+                        <div id="ticket-responsable" style="font-weight:600;">-</div>
+                    </div>
+                    <div class="info-cell">
+                        <b>Estado Contractual</b>
+                        <div id="ticket-estado" style="font-weight:700;">-</div>
+                    </div>
+                    <div class="info-cell">
+                        <b>Avance Físico / Financiero</b>
+                        <div id="ticket-avances" style="font-weight:700; color:#1D4227;">-</div>
+                    </div>
+                </div>
+
+                <div id="ticket-cambios-box" style="background:#FFFFFF; border:1px solid #E3E6EA; border-radius:8px; padding:0.85rem 1rem; margin-bottom:1rem;">
+                    <b style="display:block; font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; margin-bottom:0.4rem;">Trazabilidad y Cambios Registrados</b>
+                    <div id="ticket-cambios-list" style="font-size:0.84rem; color:#222;"></div>
+                </div>
+
+                <div class="muted" style="font-size:0.76rem; border-top:1px dashed #D5E2D8; padding-top:0.65rem; text-align:center;">
+                    Este radicado garantiza la incorporación formal de la información al tablero de Despacho y bitácora de auditoría institucional.
+                </div>
+            </div>
+
+            <div style="padding:1rem 1.5rem; border-top:1px solid #E3E6EA; background:#F8FAF9; display:flex; justify-content:flex-end; gap:0.65rem; align-items:center;">
+                <button type="button" class="btn btn-outline" onclick="imprimirTicketCargue()">Imprimir Ticket</button>
+                <button type="button" class="btn btn-primary" onclick="cerrarModalTicket()">Aceptar y Finalizar</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
@@ -1141,7 +1208,8 @@
 
             matchesBox.innerHTML = contratos.map(m => {
                 const isSelected = activeContratoId !== null && Number(m.id) === Number(activeContratoId);
-                const isFinalizado = Boolean(m.es_finalizado || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(m.estado_contractual || '').toUpperCase()) || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(m.estado_reportado_texto || '').toUpperCase()));
+                const isLiquidado = Boolean(String(m.estado_contractual || '').toUpperCase() === 'LIQUIDADO' || String(m.estado_reportado_texto || '').toUpperCase() === 'LIQUIDADO');
+                const isFinalizado = Boolean(!isLiquidado && (m.es_finalizado || ['TERMINADO', 'FINALIZADO'].includes(String(m.estado_contractual || '').toUpperCase()) || ['TERMINADO', 'FINALIZADO'].includes(String(m.estado_reportado_texto || '').toUpperCase())));
                 const borderStyle = isSelected ? 'border: 2px solid var(--primary-green); background: #EEF3EF;' : '';
                 const fisTxt = m.ejecucion_fisica_pct !== null && m.ejecucion_fisica_pct !== undefined ? `${m.ejecucion_fisica_pct}%` : 'Sin dato';
                 const finTxt = m.ejecucion_financiera_pct !== null && m.ejecucion_financiera_pct !== undefined ? `${m.ejecucion_financiera_pct}%` : 'Sin dato';
@@ -1151,7 +1219,7 @@
                             <span class="tag ${isSinProy ? 'tag-warn' : 'tag-neutral'}" style="margin-right:0.35rem;">
                                 ${isSinProy ? 'Sin Proyecto' : 'Proy. ' + escapeHtml(proyObj.codigo)}
                             </span>
-                            ${isFinalizado ? '<span class="tag" style="background:#EAF5EE; color:#1D4227; border:1px solid #C8E6C9; margin-right:0.35rem; font-weight:600;">FINALIZADO</span>' : ''}
+                            ${isLiquidado ? '<span class="tag" style="background:#EAF5EE; color:#1D4227; border:1px solid #C8E6C9; margin-right:0.35rem; font-weight:600;">LIQUIDADO</span>' : (isFinalizado ? '<span class="tag" style="background:#FFF8E6; color:#855A00; border:1px solid #F5E0A3; margin-right:0.35rem; font-weight:600;">FINALIZADO</span>' : '')}
                             <strong style="color:var(--primary-green-dark);">Contrato: ${escapeHtml(m.numero_contrato)}</strong> — <strong>${escapeHtml(m.titulo_grupo)}</strong>
                             <div class="muted" style="font-size:0.78rem; margin-top:2px;">
                                 Apoyo: ${escapeHtml(m.responsable_nombre || 'Sin asignar')} |
@@ -1161,7 +1229,7 @@
                             </div>
                         </div>
                         <button type="button" class="btn ${isSelected ? 'btn-gold' : 'btn-primary'} btn-sm">
-                            ${isSelected ? 'Contrato Abierto' : (isFinalizado ? 'Ver Finalizado' : 'Seleccionar')}
+                            ${isSelected ? 'Contrato Abierto' : (isLiquidado ? 'Ver Liquidado' : 'Seleccionar')}
                         </button>
                     </div>
                 `;
@@ -1440,35 +1508,69 @@
             // Poblar campos del Reporte Semanal
             document.getElementById('responsable_reportante').value = c.responsable_nombre || '';
             document.getElementById('m2_fecha_reporte').value = new Date().toISOString().slice(0, 10);
-            const finDefault = c.ejecucion_financiera_texto || (c.ejecucion_financiera_pct !== null ? c.ejecucion_financiera_pct + '%' : '');
-            const fisDefault = c.ejecucion_fisica_texto || (c.ejecucion_fisica_pct !== null ? c.ejecucion_fisica_pct + '%' : '');
+            const finDefault = (c.ejecucion_financiera_pct !== null && c.ejecucion_financiera_pct !== undefined) ? c.ejecucion_financiera_pct : '';
+            const fisDefault = (c.ejecucion_fisica_pct !== null && c.ejecucion_fisica_pct !== undefined) ? c.ejecucion_fisica_pct : '';
             document.getElementById('m2_ejecucion_financiera_texto').value = finDefault;
             document.getElementById('m2_ejecucion_fisica_texto').value = fisDefault;
-            document.getElementById('m2_estado_reportado').value = c.estado_reportado_texto || c.estado_contractual || 'En ejecución';
+            
+            const curState = (c.estado_reportado_texto || c.estado_contractual || 'En ejecución').trim();
+            const selEstado = document.getElementById('m2_estado_reportado');
+            if (selEstado) {
+                let matchedOpt = false;
+                for (let i = 0; i < selEstado.options.length; i++) {
+                    if (selEstado.options[i].value.toLowerCase() === curState.toLowerCase() ||
+                        selEstado.options[i].text.toLowerCase() === curState.toLowerCase()) {
+                        selEstado.selectedIndex = i;
+                        matchedOpt = true;
+                        break;
+                    }
+                }
+                if (!matchedOpt) {
+                    selEstado.value = 'En ejecución';
+                }
+                previousEstadoValue = selEstado.value;
+            }
             document.getElementById('m2_fecha_fin_reportada').value = c.fecha_fin_vigente_texto || c.fecha_fin_inicial_texto || '';
             document.getElementById('alertas_contrato').value = alertaActual;
 
-            // Bloquear actualización si el contrato está finalizado
-            const esFinalizado = Boolean(c.es_finalizado || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(c.estado_contractual || '').toUpperCase()) || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(c.estado_reportado_texto || '').toUpperCase()));
+            // Bloquear actualización únicamente si el contrato está LIQUIDADO
+            const esLiquidado = Boolean(String(c.estado_contractual || '').trim().toUpperCase() === 'LIQUIDADO' || String(c.estado_reportado_texto || '').trim().toUpperCase() === 'LIQUIDADO');
+            const esFinalizado = Boolean(!esLiquidado && (c.es_finalizado || ['TERMINADO', 'FINALIZADO'].includes(String(c.estado_contractual || '').toUpperCase()) || ['TERMINADO', 'FINALIZADO'].includes(String(c.estado_reportado_texto || '').toUpperCase())));
+
             let avFin = document.getElementById('aviso-contrato-finalizado');
             const ws = document.getElementById('contract-workspace');
             const btnSubmit = document.getElementById('btn-submit-reporte');
 
-            if (esFinalizado) {
+            if (esLiquidado) {
                 if (!avFin) {
                     avFin = document.createElement('div');
                     avFin.id = 'aviso-contrato-finalizado';
                     ws.insertBefore(avFin, ws.firstChild);
                 }
                 avFin.style.cssText = 'padding:0.95rem 1.25rem; background:#EAF5EE; border:1px solid #C8E6C9; border-radius:8px; color:#1D4227; font-weight:600; font-size:0.9rem; margin-bottom:1.15rem;';
-                avFin.textContent = 'Este contrato se encuentra FINALIZADO y cerrado. Ya no admite modificaciones ni nuevos reportes semanales.';
+                avFin.textContent = 'Este contrato se encuentra LIQUIDADO y cerrado. Ya no admite modificaciones ni nuevos reportes semanales.';
                 if (btnSubmit) {
                     btnSubmit.disabled = true;
-                    btnSubmit.textContent = 'Contrato Finalizado (Cerrado)';
+                    btnSubmit.textContent = 'Contrato Liquidado (Cerrado)';
                     btnSubmit.style.opacity = '0.6';
                     btnSubmit.style.cursor = 'not-allowed';
                 }
                 document.querySelectorAll('#card-mensaje1 input, #card-mensaje1 select, #card-mensaje1 textarea, #card-mensaje2 input, #card-mensaje2 textarea, #card-mensaje2 select').forEach(el => el.disabled = true);
+            } else if (esFinalizado) {
+                if (!avFin) {
+                    avFin = document.createElement('div');
+                    avFin.id = 'aviso-contrato-finalizado';
+                    ws.insertBefore(avFin, ws.firstChild);
+                }
+                avFin.style.cssText = 'padding:0.95rem 1.25rem; background:#FFF8E6; border:1px solid #F5E0A3; border-radius:8px; color:#855A00; font-weight:600; font-size:0.9rem; margin-bottom:1.15rem;';
+                avFin.textContent = 'El contrato se encuentra en estado FINALIZADO / TERMINADO. Se permiten actualizaciones y reportes periódicos de seguimiento hasta que pase formalmente a estado LIQUIDADO con 100% de ejecución financiera.';
+                if (btnSubmit) {
+                    btnSubmit.disabled = false;
+                    btnSubmit.textContent = 'Guardar Reporte Semanal';
+                    btnSubmit.style.opacity = '1';
+                    btnSubmit.style.cursor = 'pointer';
+                }
+                document.querySelectorAll('#card-mensaje1 input, #card-mensaje1 select, #card-mensaje1 textarea, #card-mensaje2 input, #card-mensaje2 textarea, #card-mensaje2 select').forEach(el => el.disabled = false);
             } else {
                 if (avFin) avFin.remove();
                 if (btnSubmit) {
@@ -1551,6 +1653,100 @@
             }
         }
 
+        function validarNumeroPorcentaje(input) {
+            if (!input || input.value === '') return;
+            let val = parseFloat(input.value);
+            if (isNaN(val)) {
+                input.value = '';
+                return;
+            }
+            if (val < 0) input.value = 0;
+            if (val > 100) input.value = 100;
+        }
+
+        let previousEstadoValue = 'En ejecución';
+        function validarEstadoLiquidado() {
+            const sel = document.getElementById('m2_estado_reportado');
+            if (!sel) return;
+            const val = (sel.value || '').trim();
+            if (val.toLowerCase() === 'liquidado') {
+                const inpFin = document.getElementById('m2_ejecucion_financiera_texto');
+                const finVal = inpFin ? parseFloat(inpFin.value) : 0;
+                if (isNaN(finVal) || finVal < 100) {
+                    alert('No se puede seleccionar el estado Liquidado hasta que se reporte el 100% de ejecución financiera. La ejecución financiera actual es ' + (isNaN(finVal) ? '0' : finVal) + '%.');
+                    sel.value = previousEstadoValue || 'En liquidación';
+                    return;
+                }
+            }
+            previousEstadoValue = sel.value;
+        }
+
+        function abrirModalTicket(c) {
+            const modal = document.getElementById('modal-ticket-cargue');
+            if (!modal) return;
+            document.getElementById('ticket-radicado').textContent = c.radicado || 'Sin radicado';
+            document.getElementById('ticket-badge-version').textContent = `Versión #${c.numero_version || 1}`;
+            document.getElementById('ticket-contrato').textContent = c.numero_contrato || document.getElementById('input-numero-contrato').value || 'Contrato';
+            document.getElementById('ticket-fecha-recepcion').textContent = c.fecha_recepcion_sistema || new Date().toLocaleString('es-CO');
+            document.getElementById('ticket-fecha-reporte').textContent = c.fecha_reporte || document.getElementById('m2_fecha_reporte').value || 'Sin fecha';
+            document.getElementById('ticket-responsable').textContent = c.responsable_reportante || document.getElementById('responsable_reportante').value || 'Sin dato';
+            document.getElementById('ticket-estado').textContent = c.estado_reportado || document.getElementById('m2_estado_reportado').value || 'En ejecución';
+            
+            const fisVal = (c.ejecucion_fisica_pct !== null && c.ejecucion_fisica_pct !== undefined) ? c.ejecucion_fisica_pct : document.getElementById('m2_ejecucion_fisica_texto').value;
+            const finVal = (c.ejecucion_financiera_pct !== null && c.ejecucion_financiera_pct !== undefined) ? c.ejecucion_financiera_pct : document.getElementById('m2_ejecucion_financiera_texto').value;
+            document.getElementById('ticket-avances').textContent = `Física: ${fisVal}% | Financiera: ${finVal}%`;
+
+            const cambiosListEl = document.getElementById('ticket-cambios-list');
+            if (Array.isArray(c.resumen_cambios) && c.resumen_cambios.length > 0) {
+                cambiosListEl.innerHTML = `<ul style="margin:0; padding-left:1.2rem;">${c.resumen_cambios.map(ch => `<li style="margin-bottom:3px;">${escapeHtml(ch)}</li>`).join('')}</ul>`;
+            } else {
+                cambiosListEl.innerHTML = '<span class="muted">Reporte semanal registrado correctamente en el sistema.</span>';
+            }
+
+            modal.style.display = 'flex';
+        }
+
+        function cerrarModalTicket() {
+            const modal = document.getElementById('modal-ticket-cargue');
+            if (modal) modal.style.display = 'none';
+        }
+
+        function imprimirTicketCargue() {
+            const content = document.getElementById('ticket-printable-content');
+            if (!content) return;
+            const printWin = window.open('', '_blank', 'width=750,height=600');
+            printWin.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Ticket de Radicación - Despacho Sumapaz</title>
+                    <style>
+                        body { font-family: 'Inter', sans-serif, Arial; padding: 25px; color: #1D4227; }
+                        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 15px; }
+                        .info-cell { border: 1px solid #D5E2D8; border-radius: 6px; padding: 8px 12px; background: #FAFDFB; }
+                        .info-cell b { display: block; font-size: 11px; text-transform: uppercase; color: #555; margin-bottom: 3px; }
+                        .muted { color: #666; }
+                        .tag { display: inline-block; padding: 3px 8px; border-radius: 4px; font-weight: 700; font-size: 11px; border: 1px solid #C8E6C9; background: #EAF5EE; color: #1D4227; }
+                        ul { margin-top: 4px; }
+                    </style>
+                </head>
+                <body>
+                    <div style="border-bottom: 2px solid #1D4227; padding-bottom: 10px; margin-bottom: 15px;">
+                        <h2 style="margin: 0; color: #1D4227;">Alcaldía Local de Sumapaz</h2>
+                        <div style="font-size: 13px; color: #555;">Seguimiento Contractual de Despacho — Comprobante Oficial de Radicación</div>
+                    </div>
+                    ${content.innerHTML}
+                </body>
+                </html>
+            `);
+            printWin.document.close();
+            printWin.focus();
+            setTimeout(() => {
+                printWin.print();
+                printWin.close();
+            }, 350);
+        }
+
         async function handleSubmitActualizacion(e) {
             e.preventDefault();
             const contratoId = document.getElementById('hidden-contrato-id').value;
@@ -1560,8 +1756,8 @@
                 return;
             }
 
-            if (loadedContractData && (loadedContractData.contrato.es_finalizado || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(loadedContractData.contrato.estado_contractual || '').toUpperCase()) || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(loadedContractData.contrato.estado_reportado_texto || '').toUpperCase()))) {
-                alert('Este contrato ya se encuentra FINALIZADO y cerrado. No permite más actualizaciones.');
+            if (loadedContractData && (String(loadedContractData.contrato.estado_contractual || '').trim().toUpperCase() === 'LIQUIDADO' || String(loadedContractData.contrato.estado_reportado_texto || '').trim().toUpperCase() === 'LIQUIDADO')) {
+                alert('Este contrato ya se encuentra LIQUIDADO y cerrado. No permite más actualizaciones.');
                 return;
             }
 
@@ -1595,8 +1791,26 @@
             const repFis = (document.getElementById('m2_ejecucion_fisica_texto').value || '').trim();
             const repEstado = (document.getElementById('m2_estado_reportado').value || '').trim();
 
-            if (!repNombre || !repFecha || !repFin || !repFis || !repEstado) {
+            if (!repNombre || !repFecha || repFin === '' || repFis === '' || !repEstado) {
                 alert('Complete los datos requeridos del reporte semanal: Nombre de quien reporta, Fecha reporte, Ejecución financiera, Ejecución física y Estado.');
+                return;
+            }
+
+            const valFinNum = parseFloat(repFin);
+            const valFisNum = parseFloat(repFis);
+            if (isNaN(valFinNum) || valFinNum < 0 || valFinNum > 100) {
+                alert('La ejecución financiera debe ser un número válido entre 0 y 100.');
+                document.getElementById('m2_ejecucion_financiera_texto').focus();
+                return;
+            }
+            if (isNaN(valFisNum) || valFisNum < 0 || valFisNum > 100) {
+                alert('La ejecución física debe ser un número válido entre 0 y 100.');
+                document.getElementById('m2_ejecucion_fisica_texto').focus();
+                return;
+            }
+            if (repEstado.toLowerCase() === 'liquidado' && valFinNum < 100) {
+                alert('No se puede cambiar el estado a Liquidado hasta que se reporte el 100% de ejecución financiera.');
+                document.getElementById('m2_ejecucion_financiera_texto').focus();
                 return;
             }
 
@@ -1636,6 +1850,9 @@
                     <div>Fecha/Hora de registro: ${escapeHtml(c.fecha_recepcion_sistema)} | Reportado por: ${escapeHtml(c.responsable_reportante)}</div>
                     ${cambiosList}
                 `;
+
+                // Mostrar ticket oficial de cargue exitoso
+                abrirModalTicket(c);
 
                 await loadProjectsCatalog();
                 await loadContractById(c.contrato_id || contratoId);

@@ -641,6 +641,7 @@
             display: block;
         }
     </style>
+    <script src="assets/xlsx.full.min.js"></script>
 </head>
 
 <body>
@@ -761,7 +762,8 @@
                             <h3 style="margin:0; border:none; padding:0;">Seguimiento y Control Contractual</h3>
                             <div class="muted" style="font-size:0.83rem; margin-top:2px;">Consolidado de contratos, proyectos asociados y reportes semanales de ejecución.</div>
                         </div>
-                        <div>
+                        <div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;">
+                            <button type="button" class="btn btn-outline" id="btn-export-excel" onclick="descargarExcelContratosTrazabilidad()">Descargar Excel Completo</button>
                             <button type="button" class="btn btn-primary" onclick="openCrearContratoModal()">+ Crear Nuevo Contrato</button>
                         </div>
                     </div>
@@ -1083,7 +1085,7 @@
                         </div>
                         <div>
                             <label class="form-label" for="edit-con-estado">Estado Contractual</label>
-                            <select id="edit-con-estado" class="input-ctrl">
+                            <select id="edit-con-estado" class="input-ctrl" onchange="validarEstadoLiquidadoModalEditar()">
                                 <option value="EN_EJECUCION">EN EJECUCIÓN</option>
                                 <option value="SUSPENDIDO">SUSPENDIDO</option>
                                 <option value="EN_MODIFICACION">EN MODIFICACIÓN / PRÓRROGA</option>
@@ -1134,13 +1136,13 @@
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem; margin-bottom: 0.85rem;">
                         <div>
                             <label class="form-label" for="edit-con-ejec-fisica">Ejecución Física (%)</label>
-                            <input type="number" id="edit-con-ejec-fisica" class="input-ctrl" min="0" step="any" placeholder="Ej: 72.5">
-                            <small class="muted" style="display:block; font-size:0.75rem; margin-top:3px;">Sin límite de tope ni de disminución; ante adiciones el porcentaje puede reducirse y se registrará el cambio.</small>
+                            <input type="number" id="edit-con-ejec-fisica" class="input-ctrl" min="0" max="100" step="any" placeholder="0 a 100" oninput="validarNumeroPorcentaje(this)">
+                            <small class="muted" style="display:block; font-size:0.75rem; margin-top:3px;">Número del 0 al 100; el sistema registrará la variación en bitácora.</small>
                         </div>
                         <div>
                             <label class="form-label" for="edit-con-ejec-financiera">Ejecución Financiera (%)</label>
-                            <input type="number" id="edit-con-ejec-financiera" class="input-ctrl" min="0" step="any" placeholder="Ej: 52.3">
-                            <small class="muted" style="display:block; font-size:0.75rem; margin-top:3px;">Sin límite de tope ni de disminución; ante adiciones el porcentaje puede reducirse y se registrará el cambio.</small>
+                            <input type="number" id="edit-con-ejec-financiera" class="input-ctrl" min="0" max="100" step="any" placeholder="0 a 100" oninput="validarNumeroPorcentaje(this)">
+                            <small class="muted" style="display:block; font-size:0.75rem; margin-top:3px;">Número del 0 al 100; se exige 100% para pasar a estado LIQUIDADO.</small>
                         </div>
                     </div>
 
@@ -1378,7 +1380,8 @@
                 const valTotalNum = c.valor_total !== null ? Number(c.valor_total) : (c.valor_inicial !== null ? Number(c.valor_inicial) : null);
                 const valTxt = valTotalNum !== null ? '$' + valTotalNum.toLocaleString('es-CO') : 'Sin valor registrado';
 
-                const esFinalizado = Boolean(c.es_finalizado || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(c.estado_contractual || '').toUpperCase()) || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(c.estado_reportado_texto || '').toUpperCase()));
+                const esLiquidado = Boolean(String(c.estado_contractual || '').toUpperCase() === 'LIQUIDADO' || String(c.estado_reportado_texto || '').toUpperCase() === 'LIQUIDADO');
+                const esFinalizado = Boolean(!esLiquidado && (c.es_finalizado || ['TERMINADO', 'FINALIZADO'].includes(String(c.estado_contractual || '').toUpperCase()) || ['TERMINADO', 'FINALIZADO'].includes(String(c.estado_reportado_texto || '').toUpperCase())));
 
                 const diasRep = c.dias_desde_ultimo_reporte !== null && c.dias_desde_ultimo_reporte !== undefined
                     ? Number(c.dias_desde_ultimo_reporte)
@@ -1386,9 +1389,12 @@
                 let fRepCellStyle = 'background:#FDECEC; color:#842029;';
                 let fRepTagHtml = '<span class="tag tag-alert">SIN REPORTE RECIENTE</span>';
 
-                if (esFinalizado) {
+                if (esLiquidado) {
                     fRepCellStyle = 'background:#EAF5EE; color:#1D4227;';
-                    fRepTagHtml = '<span class="tag" style="background:#2E7D32; color:#FFFFFF;">FINALIZADO</span>';
+                    fRepTagHtml = '<span class="tag" style="background:#2E7D32; color:#FFFFFF;">LIQUIDADO</span>';
+                } else if (esFinalizado) {
+                    fRepCellStyle = 'background:#FFF8E1; color:#855A00;';
+                    fRepTagHtml = '<span class="tag tag-warn">FINALIZADO</span>';
                 } else if (diasRep !== null) {
                     if (diasRep <= 7) {
                         fRepCellStyle = 'background:#EAF5EE; color:#1D4227;';
@@ -1408,19 +1414,25 @@
                 const fechaFinFinalTxt = c.fecha_fin_final_texto || c.fecha_fin_vigente_texto || c.fecha_fin_inicial_texto || 'Sin dato';
                 const duracionFinalTxt = c.duracion_final_texto || c.duracion_texto || c.duracion_inicial_calculada || 'Sin dato';
 
-                const fRepHtml = esFinalizado ? `
+                const fRepHtml = esLiquidado ? `
+                    <div style="margin-bottom:3px;">${fRepTagHtml}</div>
+                    <div><strong>Fecha reporte:</strong> ${escapeHtml(c.fecha_ultimo_reporte_texto || 'No informada')}</div>
+                    <div><strong>Estado:</strong> LIQUIDADO</div>
+                    <div><strong>Fecha finalización:</strong> ${escapeHtml(fechaFinFinalTxt)}</div>
+                    <div style="font-size:0.75rem; font-weight:700; color:#2E7D32; margin-top:2px;">Contrato liquidado y cerrado</div>
+                ` : (esFinalizado ? `
                     <div style="margin-bottom:3px;">${fRepTagHtml}</div>
                     <div><strong>Fecha reporte:</strong> ${escapeHtml(c.fecha_ultimo_reporte_texto || 'No informada')}</div>
                     <div><strong>Estado:</strong> ${escapeHtml(c.estado_reportado_texto || c.estado_contractual || 'FINALIZADO')}</div>
                     <div><strong>Fecha finalización:</strong> ${escapeHtml(fechaFinFinalTxt)}</div>
-                    <div style="font-size:0.75rem; font-weight:700; color:#2E7D32; margin-top:2px;">Contrato cerrado y finalizado</div>
+                    <div style="font-size:0.75rem; font-weight:600; color:#855A00; margin-top:2px;">En proceso de liquidación</div>
                 ` : `
                     <div style="margin-bottom:3px;">${fRepTagHtml}</div>
                     <div><strong>Fecha reporte:</strong> ${escapeHtml(c.fecha_ultimo_reporte_texto || 'No informada')}</div>
                     <div><strong>Estado:</strong> ${escapeHtml(c.estado_reportado_texto || c.estado_contractual || 'Sin dato')}</div>
                     <div><strong>Fecha finalización:</strong> ${escapeHtml(fechaFinFinalTxt)}</div>
                     ${diasRep !== null ? `<div style="font-size:0.75rem; font-weight:700; margin-top:2px;">Hace ${diasRep} día${diasRep === 1 ? '' : 's'}</div>` : ''}
-                `;
+                `);
 
                 // Capturar y mostrar variaciones de porcentaje de ejecución (incluyendo disminuciones por adiciones)
                 let finVarHtml = '';
@@ -1450,7 +1462,7 @@
                 let respHtml = `
                     <div style="font-weight:600; color:var(--primary-green-dark);">${c.responsable_nombre ? escapeHtml(c.responsable_nombre) : '<span class="muted">Sin asignar</span>'}</div>
                 `;
-                if (canManage && !esFinalizado) {
+                if (canManage && !esLiquidado) {
                     respHtml += `
                         <button type="button" class="btn btn-outline btn-sm" onclick="abrirReasignarModal(${c.id}, '${escapeHtml(c.numero_contrato)}', '${escapeHtml(primaryProyCod)}', '${escapeHtml(c.responsable_nombre || '')}')" style="margin-top:4px; font-size:0.72rem; padding:2px 7px;">
                             Reasignar
@@ -1471,7 +1483,7 @@
                         <td>
                             <div style="display:flex; flex-direction:column; gap:3px;">
                                 <div>${proysBadges}</div>
-                                ${(!esFinalizado) ? proyActionBtn : ''}
+                                ${(!esLiquidado) ? proyActionBtn : ''}
                             </div>
                         </td>
                         <td>${respHtml}</td>
@@ -1490,9 +1502,10 @@
                         <td style="text-align:center; white-space:nowrap;">
                             <div style="display:flex; flex-direction:column; gap:0.35rem;">
                                 <button type="button" class="btn btn-primary btn-sm" onclick="openContratoModal(${c.id}, 'tracking')">Ver Ficha / Historial</button>
-                                ${esFinalizado ? `
-                                    <span class="tag" style="justify-content:center; padding:0.38rem 0.65rem; background:#EAF5EE; color:#1D4227; border:1px solid #C8E6C9; font-weight:600; font-size:0.74rem;">CONTRATO FINALIZADO</span>
+                                ${esLiquidado ? `
+                                    <span class="tag" style="justify-content:center; padding:0.38rem 0.65rem; background:#EAF5EE; color:#1D4227; border:1px solid #C8E6C9; font-weight:600; font-size:0.74rem;">CONTRATO LIQUIDADO</span>
                                 ` : `
+                                    ${esFinalizado ? `<span class="tag tag-warn" style="justify-content:center; padding:0.25rem 0.5rem; font-weight:600; font-size:0.72rem;">FINALIZADO</span>` : ''}
                                     ${canManage ? `<button type="button" class="btn btn-outline btn-sm" onclick="openEditarContratoModal(${c.id})">Editar Contrato</button>` : ''}
                                     <a href="reporte_despacho.html?contrato_id=${c.id}" target="_blank" class="btn btn-outline btn-sm">Subir Reporte</a>
                                 `}
@@ -2149,7 +2162,8 @@
                     </div>
                 `).join('');
 
-                const esFinModal = Boolean(c.es_finalizado || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(c.estado_contractual || '').toUpperCase()) || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(c.estado_reportado_texto || '').toUpperCase()));
+                const isLiqModal = Boolean(String(c.estado_contractual || '').toUpperCase() === 'LIQUIDADO' || String(c.estado_reportado_texto || '').toUpperCase() === 'LIQUIDADO');
+                const esFinModal = Boolean(!isLiqModal && (c.es_finalizado || ['TERMINADO', 'FINALIZADO'].includes(String(c.estado_contractual || '').toUpperCase()) || ['TERMINADO', 'FINALIZADO'].includes(String(c.estado_reportado_texto || '').toUpperCase())));
 
                 body.innerHTML = `
                     <div class="modal-subtabs">
@@ -2169,9 +2183,10 @@
                         <div class="section-box">
                             <h4>
                                 <span>Última Actualización Registrada (Total versiones en historial: ${versiones.length})</span>
-                                ${esFinModal ? `
-                                    <span class="tag" style="background:#EAF5EE; color:#1D4227; border:1px solid #C8E6C9; font-weight:600;">CONTRATO FINALIZADO</span>
+                                ${isLiqModal ? `
+                                    <span class="tag" style="background:#EAF5EE; color:#1D4227; border:1px solid #C8E6C9; font-weight:600;">CONTRATO LIQUIDADO</span>
                                 ` : `
+                                    ${esFinModal ? `<span class="tag tag-warn" style="margin-right:4px;">FINALIZADO</span>` : ''}
                                     <a href="reporte_despacho.html?contrato_id=${c.id}" target="_blank" class="btn btn-outline btn-sm">Actualizar Mensaje 1 / Mensaje 2</a>
                                 `}
                             </h4>
@@ -2214,9 +2229,12 @@
                         <div class="section-box">
                             <h4>
                                 <span>Mensaje 1: Información del Contrato</span>
-                                ${esFinModal ? `
-                                    <span class="tag" style="background:#EAF5EE; color:#1D4227; border:1px solid #C8E6C9; font-weight:600;">FINALIZADO</span>
-                                ` : (canManage ? `<button type="button" class="btn btn-outline btn-sm" onclick="openEditarContratoModal(${c.id})">Editar Todo el Contrato</button>` : '')}
+                                ${isLiqModal ? `
+                                    <span class="tag" style="background:#EAF5EE; color:#1D4227; border:1px solid #C8E6C9; font-weight:600;">LIQUIDADO</span>
+                                ` : (canManage ? `
+                                    ${esFinModal ? `<span class="tag tag-warn" style="margin-right:4px;">FINALIZADO</span>` : ''}
+                                    <button type="button" class="btn btn-outline btn-sm" onclick="openEditarContratoModal(${c.id})">Editar Todo el Contrato</button>
+                                ` : '')}
                             </h4>
                             <div class="info-grid">
                                 <div class="info-cell">
@@ -2234,7 +2252,7 @@
                                 <div class="info-cell">
                                     <b>Proyecto de inversión</b>
                                     <div>${escapeHtml(proysTexto)}</div>
-                                    ${(canManage && !esFinModal) ? `<button type="button" class="btn btn-outline btn-sm" style="margin-top:4px; font-size:0.72rem; padding:2px 7px;" onclick="openAsignarProyectoModal(${c.id}, '${escapeHtml(c.numero_contrato)}', '${firstPId}')">${(data.proyectos && data.proyectos.length) ? 'Cambiar Proyecto' : '+ Asignar Proyecto'}</button>` : ''}
+                                    ${(canManage && !isLiqModal) ? `<button type="button" class="btn btn-outline btn-sm" style="margin-top:4px; font-size:0.72rem; padding:2px 7px;" onclick="openAsignarProyectoModal(${c.id}, '${escapeHtml(c.numero_contrato)}', '${firstPId}')">${(data.proyectos && data.proyectos.length) ? 'Cambiar Proyecto' : '+ Asignar Proyecto'}</button>` : ''}
                                 </div>
                                 <div class="info-cell">
                                     <b>Duración del contrato</b>
@@ -2600,9 +2618,9 @@
                 }
 
                 const c = data.contrato;
-                const isFinal = Boolean(c.es_finalizado || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(c.estado_contractual || '').toUpperCase()) || ['TERMINADO', 'FINALIZADO', 'LIQUIDADO'].includes(String(c.estado_reportado_texto || '').toUpperCase()));
-                if (isFinal) {
-                    alert('Este contrato ya se encuentra FINALIZADO y cerrado, por lo que no permite más modificaciones.');
+                const isLiquidado = Boolean(String(c.estado_contractual || '').toUpperCase() === 'LIQUIDADO' || String(c.estado_reportado_texto || '').toUpperCase() === 'LIQUIDADO');
+                if (isLiquidado) {
+                    alert('Este contrato ya se encuentra LIQUIDADO y cerrado, por lo que no permite más modificaciones.');
                     closeEditarContratoModal();
                     return;
                 }
@@ -2672,6 +2690,28 @@
             if (form) form.reset();
         }
 
+        function validarNumeroPorcentaje(input) {
+            if (!input || input.value === '') return;
+            let val = parseFloat(input.value);
+            if (isNaN(val)) {
+                input.value = '';
+                return;
+            }
+            if (val < 0) input.value = 0;
+            if (val > 100) input.value = 100;
+        }
+
+        function validarEstadoLiquidadoModalEditar() {
+            const sel = document.getElementById('edit-con-estado');
+            if (sel && sel.value === 'LIQUIDADO') {
+                const finVal = parseFloat(document.getElementById('edit-con-ejec-financiera').value);
+                if (isNaN(finVal) || finVal < 100) {
+                    alert('No se puede cambiar el estado a LIQUIDADO hasta que se reporte el 100% de ejecución financiera.');
+                    sel.value = 'EN_LIQUIDACION';
+                }
+            }
+        }
+
         async function handleGuardarEdicionContrato(e) {
             e.preventDefault();
             const cid = document.getElementById('edit-con-id').value;
@@ -2700,6 +2740,27 @@
                 ejecucion_financiera_pct: document.getElementById('edit-con-ejec-financiera').value !== '' ? Number(document.getElementById('edit-con-ejec-financiera').value) : null,
                 alertas_contrato: document.getElementById('edit-con-alertas').value.trim()
             };
+
+            const fisVal = payload.ejecucion_fisica_pct;
+            const finVal = payload.ejecucion_financiera_pct;
+            if (fisVal !== null && (isNaN(fisVal) || fisVal < 0 || fisVal > 100)) {
+                alert('La ejecución física debe ser un número entre 0 y 100.');
+                btn.disabled = false;
+                btn.textContent = 'Guardar Cambios en Contrato';
+                return;
+            }
+            if (finVal !== null && (isNaN(finVal) || finVal < 0 || finVal > 100)) {
+                alert('La ejecución financiera debe ser un número entre 0 y 100.');
+                btn.disabled = false;
+                btn.textContent = 'Guardar Cambios en Contrato';
+                return;
+            }
+            if (payload.estado_contractual === 'LIQUIDADO' && (finVal === null || finVal < 100)) {
+                alert('No se puede cambiar el estado a LIQUIDADO hasta que se reporte el 100% de ejecución financiera.');
+                btn.disabled = false;
+                btn.textContent = 'Guardar Cambios en Contrato';
+                return;
+            }
 
             try {
                 const res = await fetch('api/despacho_api.php?action=update_contract', {
@@ -2731,6 +2792,111 @@
                 btn.disabled = false;
                 btn.textContent = 'Guardar Cambios en Contrato';
                 alert('Error al comunicarse con el servidor: ' + err.message);
+            }
+        }
+
+        async function descargarExcelContratosTrazabilidad() {
+            const btn = document.getElementById('btn-export-excel');
+            const originalText = btn ? btn.textContent : 'Descargar Excel Completo';
+            if (btn) {
+                btn.disabled = true;
+                btn.textContent = 'Generando archivo Excel...';
+            }
+
+            try {
+                const res = await fetch('api/despacho_api.php?action=export_excel_data', { credentials: 'same-origin' });
+                const data = await res.json();
+                if (!res.ok || !data.success) {
+                    alert(data.message || 'Error al obtener datos para exportación.');
+                    return;
+                }
+
+                if (typeof XLSX === 'undefined') {
+                    alert('La librería XLSX no está disponible para generar el archivo.');
+                    return;
+                }
+
+                const wb = XLSX.utils.book_new();
+
+                // Hoja 1: Contratos
+                const contratosData = (data.contratos || []).map(c => ({
+                    'ID Contrato': c.contrato_id,
+                    'Número Contrato': c.numero_contrato,
+                    'Proyectos': c.proyectos_codigos || 'Sin proyecto',
+                    'Área': c.area_nombre || '',
+                    'Título': c.titulo_grupo || '',
+                    'Objeto': c.objeto || '',
+                    'Contratista': c.contratista || '',
+                    'Interventoría': c.interventoria_nombre || '',
+                    'Responsable / Apoyo': c.responsable_nombre || '',
+                    'Valor Inicial': c.valor_inicial !== null ? Number(c.valor_inicial) : '',
+                    'Valor Adiciones': c.valor_adiciones !== null ? Number(c.valor_adiciones) : '',
+                    'Valor Total': c.valor_total !== null ? Number(c.valor_total) : '',
+                    'Duración': c.duracion_texto || '',
+                    'Fecha Inicio': c.fecha_inicio_texto || '',
+                    'Fecha Fin Inicial': c.fecha_fin_inicial_texto || '',
+                    'Fecha Fin Vigente': c.fecha_fin_vigente_texto || '',
+                    'Estado Contractual': c.estado_contractual || '',
+                    'Estado Reportado': c.estado_reportado_texto || '',
+                    'Ejecución Física (%)': c.ejecucion_fisica_pct !== null ? Number(c.ejecucion_fisica_pct) : '',
+                    'Ejecución Financiera (%)': c.ejecucion_financiera_pct !== null ? Number(c.ejecucion_financiera_pct) : '',
+                    'Variación Física (%)': c.variacion_fisica_pct !== null ? Number(c.variacion_fisica_pct) : '',
+                    'Variación Financiera (%)': c.variacion_financiera_pct !== null ? Number(c.variacion_financiera_pct) : '',
+                    'Último Reporte': c.fecha_ultimo_reporte_texto || '',
+                    'Días desde reporte': c.dias_desde_ultimo_reporte !== null ? Number(c.dias_desde_ultimo_reporte) : '',
+                    'Alertas': c.alertas_contrato || '',
+                    'Fecha Registro': c.created_at || ''
+                }));
+                const wsContratos = XLSX.utils.json_to_sheet(contratosData);
+                XLSX.utils.book_append_sheet(wb, wsContratos, 'Contratos');
+
+                // Hoja 2: Trazabilidad de Reportes
+                const trazabilidadData = (data.trazabilidad || []).map(v => ({
+                    'ID Versión': v.version_id,
+                    'Número Contrato': v.numero_contrato,
+                    'Contratista': v.contratista || '',
+                    'Versión #': v.numero_version,
+                    'Tipo Mensaje': v.tipo_mensaje || '',
+                    'Fecha Reporte': v.fecha_reporte_texto || v.fecha_reporte_iso || '',
+                    'Reportado Por': v.reportado_por || '',
+                    'Estado Reportado': v.estado_reportado_texto || '',
+                    'Ejecución Física (%)': v.ejecucion_fisica_pct !== null ? Number(v.ejecucion_fisica_pct) : '',
+                    'Ejecución Financiera (%)': v.ejecucion_financiera_pct !== null ? Number(v.ejecucion_financiera_pct) : '',
+                    'Valor Financiero': v.ejecucion_financiera_valor !== null ? Number(v.ejecucion_financiera_valor) : '',
+                    'Fecha Fin Reportada': v.fecha_fin_reportada_texto || '',
+                    'Observaciones': v.observaciones_reporte || '',
+                    'Alertas': v.alertas_contrato || '',
+                    'Estado Revisión': v.estado_version || '',
+                    'Fecha Revisión': v.fecha_revision || '',
+                    'Comentario Revisión': v.comentario_revision || '',
+                    'Fuente': v.fuente_version || '',
+                    'Recepción Sistema': v.fecha_recepcion_sistema || ''
+                }));
+                const wsTrazabilidad = XLSX.utils.json_to_sheet(trazabilidadData);
+                XLSX.utils.book_append_sheet(wb, wsTrazabilidad, 'Trazabilidad_Reportes');
+
+                // Hoja 3: Bitácora Tracking
+                const bitacoraData = (data.bitacora || []).map(b => ({
+                    'ID Bitácora': b.bitacora_id,
+                    'Número Contrato': b.numero_contrato || 'General',
+                    'Fecha Evento': b.fecha_evento,
+                    'Acción': b.accion,
+                    'Tipo Actor': b.actor_tipo,
+                    'Actor': b.actor_nombre,
+                    'Descripción': b.descripcion
+                }));
+                const wsBitacora = XLSX.utils.json_to_sheet(bitacoraData);
+                XLSX.utils.book_append_sheet(wb, wsBitacora, 'Bitacora_Tracking');
+
+                const hoy = new Date().toISOString().slice(0, 10);
+                XLSX.writeFile(wb, `Despacho_Contratos_Trazabilidad_${hoy}.xlsx`);
+            } catch (err) {
+                alert('Error al descargar el archivo Excel: ' + err.message);
+            } finally {
+                if (btn) {
+                    btn.disabled = false;
+                    btn.textContent = originalText;
+                }
             }
         }
 

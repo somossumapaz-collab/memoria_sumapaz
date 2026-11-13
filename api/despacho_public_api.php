@@ -240,6 +240,23 @@ function isContratoFinalizado(array $c): bool {
 }
 
 /**
+ * Determina si un contrato se encuentra formalmente liquidado y cerrado.
+ */
+function isContratoLiquidado(array $c): bool {
+    $estCon = mb_strtoupper(trim((string)($c['estado_contractual'] ?? '')), 'UTF-8');
+    $estRep = mb_strtoupper(trim((string)($c['estado_reportado_texto'] ?? '')), 'UTF-8');
+    if ($estCon === 'LIQUIDADO') {
+        return true;
+    }
+    if ($estRep !== '' && strpos($estRep, 'EN LIQUID') === false && strpos($estRep, 'POR LIQUID') === false && strpos($estRep, 'NO LIQUID') === false) {
+        if ($estRep === 'LIQUIDADO' || strpos($estRep, 'LIQUIDADO') !== false) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
  * Convierte fechas en texto español ("1 de abril 2025", "31/08/2025") o ISO ("2025-08-31") a formato YYYY-MM-DD.
  */
 function parseSpanishOrIsoDate(?string $val): ?string {
@@ -965,9 +982,9 @@ try {
             echo json_encode(['success' => false, 'message' => 'El contrato indicado no existe.'], JSON_UNESCAPED_UNICODE);
             exit;
         }
-        if (isContratoFinalizado($contratoActual)) {
+        if (isContratoLiquidado($contratoActual)) {
             http_response_code(403);
-            echo json_encode(['success' => false, 'message' => 'Este contrato ya se encuentra FINALIZADO y cerrado, por lo que no permite más actualizaciones.'], JSON_UNESCAPED_UNICODE);
+            echo json_encode(['success' => false, 'message' => 'Este contrato ya se encuentra LIQUIDADO y cerrado definitivamente, por lo que no permite más actualizaciones.'], JSON_UNESCAPED_UNICODE);
             exit;
         }
 
@@ -1078,6 +1095,29 @@ try {
         $fechaFinRepIso = $fechaFinRepTxt ? parseSpanishOrIsoDate($fechaFinRepTxt) : null;
         $obsRep = trim((string)($rawBody['m2_observaciones'] ?? '')) ?: null;
         $alertasContrato = trim((string)($rawBody['alertas_contrato'] ?? ''));
+
+        if ($fisicaPct !== null && ($fisicaPct < 0 || $fisicaPct > 100)) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => 'La ejecución física debe ser un número entre 0 y 100.'], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+        if ($financPct !== null && ($financPct < 0 || $financPct > 100)) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => 'La ejecución financiera debe ser un número entre 0 y 100.'], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+
+        $estRepUpper = mb_strtoupper(trim((string)$estadoRepTxt), 'UTF-8');
+        if ($estRepUpper === 'LIQUIDADO' || (strpos($estRepUpper, 'LIQUIDADO') !== false && strpos($estRepUpper, 'EN LIQUID') === false)) {
+            if ($financPct === null || (float)$financPct < 100.0) {
+                http_response_code(400);
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'No se puede cambiar el estado a LIQUIDADO hasta que se reporte el 100% de ejecución financiera.'
+                ], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
+        }
 
         // Datos estructurados de Mensaje 1 y Ajustes (Adición, Prórroga, Suspensión, Modificación)
         $m1Objeto = trim((string)($rawBody['m1_objeto'] ?? $autoParsed['mensaje1']['objeto'] ?? '')) ?: null;
@@ -1614,6 +1654,9 @@ try {
                 'periodo_nombre' => $enlace['periodo_nombre'] ?? 'Periodo actual',
                 'responsable_reportante' => $responsableRep,
                 'tipo_mensaje' => $tipoMensaje,
+                'estado_reportado' => $estadoRepTxt,
+                'ejecucion_fisica_pct' => $fisicaPct,
+                'ejecucion_financiera_pct' => $financPct,
                 'resumen_cambios' => $resumenCambios,
                 'fecha_recepcion_sistema' => date('Y-m-d H:i:s'),
                 'fecha_reporte_informada' => $fechaReporteTxt,
