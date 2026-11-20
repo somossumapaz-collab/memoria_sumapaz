@@ -705,8 +705,12 @@
                         Despacho <span class="tab-arrow">&#9662;</span>
                     </button>
                     <div class="nav-dropdown-menu align-right">
-                        <a href="despacho.html" class="nav-dropdown-item" style="font-weight: 700; color: #FFFFFF;">Seguimiento Contractual</a>
-                        <a href="reporte_despacho.html" target="_blank" class="nav-dropdown-item">Formulario de Actualización (Sin Login)</a>
+                        <a href="javascript:void(0)" onclick="switchDespachoMainTab('seguimiento')" class="nav-dropdown-item" style="font-weight: 700; color: #FFFFFF;">Seguimiento Contractual</a>
+                        <a href="javascript:void(0)" onclick="switchDespachoMainTab('actividades')" class="nav-dropdown-item">Control Actividades</a>
+                        <a href="inscribir_contratista.html" target="_blank" class="nav-dropdown-item">Inscribir Contratista (Sin Login)</a>
+                        <a href="registrar_actividad.html" target="_blank" class="nav-dropdown-item">Registrar Actividad (Sin Login)</a>
+                        <a href="consultar_actas.html" target="_blank" class="nav-dropdown-item">Consultar Actas por Cédula (Sin Login)</a>
+                        <a href="reporte_despacho.html" target="_blank" class="nav-dropdown-item">Formulario de Actualización por Contrato</a>
                     </div>
                 </div>
             </div>
@@ -722,12 +726,24 @@
     </section>
 
     <main id="despacho-main-content" style="display: none;">
-        <div class="page-title" style="justify-content: flex-end;">
-            <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
-                <a href="reporte_despacho.html" target="_blank" class="btn btn-outline">Formulario de Actualización por Contrato</a>
-                <button class="btn btn-outline" onclick="loadDashboardData(false)">Actualizar</button>
-            </div>
+        <!-- BARRA DE PESTAÑAS PRINCIPALES DEL MÓDULO DESPACHO -->
+        <div class="tabs-header" style="margin-top: 1rem; margin-bottom: 1.25rem;">
+            <button type="button" class="tab-btn active" id="tab-btn-seguimiento" onclick="switchDespachoMainTab('seguimiento')">
+                Seguimiento Contractual
+            </button>
+            <button type="button" class="tab-btn" id="tab-btn-actividades" onclick="switchDespachoMainTab('actividades')">
+                Control Actividades
+            </button>
         </div>
+
+        <!-- CONTENEDOR VISTA 1: CABECERA Y KPIS DE SEGUIMIENTO CONTRACTUAL -->
+        <div id="wrap-vista-seguimiento">
+            <div class="page-title" style="justify-content: flex-end;">
+                <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+                    <a href="reporte_despacho.html" target="_blank" class="btn btn-outline">Formulario de Actualización por Contrato</a>
+                    <button class="btn btn-outline" onclick="loadDashboardData(false)">Actualizar</button>
+                </div>
+            </div>
 
         <!-- TARJETAS DE INDICADORES EJECUTIVOS SOBRIAS (SIN BORDE IZQUIERDO NI COLORES ESTRIDENTES) -->
         <section class="kpis">
@@ -844,6 +860,116 @@
                     </div>
                 </section>
             </div>
+        </div>
+        </div><!-- Fin wrap-vista-seguimiento -->
+
+        <!-- CONTENEDOR VISTA 2: CONTROL DE ACTIVIDADES Y ACTAS -->
+        <div id="view-control-actividades" class="tab-content" style="display: none;">
+            <div class="page-title" style="justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+                <div>
+                    <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--primary-green-dark); margin: 0;">Panel de Control de Actividades</h2>
+                    <div class="muted" style="font-size: 0.83rem; margin-top: 2px;">
+                        Consolidado de actividades reportadas por contratistas, evidencias en territorio y actas oficiales GDI-GPD-F029.
+                    </div>
+                </div>
+                <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+                    <a href="inscribir_contratista.html" target="_blank" class="btn btn-outline">Inscribir Contratista</a>
+                    <a href="registrar_actividad.html" target="_blank" class="btn btn-primary">+ Registrar Nueva Actividad</a>
+                    <a href="consultar_actas.html" target="_blank" class="btn btn-outline">Consultar por Cédula</a>
+                    <button type="button" class="btn btn-outline" onclick="exportarExcelActividades()">Exportar Excel</button>
+                    <button type="button" class="btn btn-outline" onclick="cargarActividadesPanel()">Actualizar</button>
+                </div>
+            </div>
+
+            <!-- TARJETAS DE INDICADORES EJECUTIVOS DE ACTIVIDADES (SOBRIAS, SIN BORDE LATERAL GRUESO) -->
+            <section class="kpis" id="section-kpis-actividades">
+                <div class="kpi">
+                    <div class="v" id="kpi-act-total">0</div>
+                    <div class="l">Total Actividades</div>
+                    <div class="s">Reportadas en sistema</div>
+                </div>
+                <div class="kpi">
+                    <div class="v" id="kpi-act-contratistas">0</div>
+                    <div class="l">Contratistas Activos</div>
+                    <div class="s">Con actividades registradas</div>
+                </div>
+                <div class="kpi">
+                    <div class="v" id="kpi-act-proyectos">0</div>
+                    <div class="l">Proyectos de Inversión</div>
+                    <div class="s">Con cobertura territorial</div>
+                </div>
+                <div class="kpi">
+                    <div class="v" id="kpi-act-presenciales">0</div>
+                    <div class="l">Reuniones Presenciales</div>
+                    <div class="s">En territorio / veredas</div>
+                </div>
+            </section>
+
+            <!-- TABLERO Y FILTROS DE ACTIVIDADES -->
+            <section class="card" style="margin-bottom: 1.25rem;">
+                <div class="filters" style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: flex-end;">
+                    <div class="filter-group" style="flex: 2; min-width: 220px;">
+                        <label class="filter-label">Buscar Actividad o Contratista</label>
+                        <input type="text" id="f-act-busqueda" class="form-control" placeholder="Objeto, contratista, cédula, lugar o vereda..." oninput="debounceFiltrarActividades()">
+                    </div>
+
+                    <div class="filter-group" style="flex: 2; min-width: 200px;">
+                        <label class="filter-label">Proyecto de Inversión</label>
+                        <select id="f-act-proyecto" class="form-control" onchange="cargarActividadesPanel()">
+                            <option value="">Todos los proyectos de inversión</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group" style="flex: 1; min-width: 140px;">
+                        <label class="filter-label">Modalidad</label>
+                        <select id="f-act-modalidad" class="form-control" onchange="cargarActividadesPanel()">
+                            <option value="">Todas</option>
+                            <option value="Presencial">Presencial</option>
+                            <option value="Virtual">Virtual</option>
+                            <option value="Mixta">Mixta</option>
+                            <option value="Telefónica">Telefónica</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group" style="flex: 1; min-width: 130px;">
+                        <label class="filter-label">Fecha Desde</label>
+                        <input type="date" id="f-act-desde" class="form-control" onchange="cargarActividadesPanel()">
+                    </div>
+
+                    <div class="filter-group" style="flex: 1; min-width: 130px;">
+                        <label class="filter-label">Fecha Hasta</label>
+                        <input type="date" id="f-act-hasta" class="form-control" onchange="cargarActividadesPanel()">
+                    </div>
+
+                    <div class="filter-group" style="display:flex; align-items:flex-end;">
+                        <button type="button" class="btn btn-outline" onclick="limpiarFiltrosActividades()">Limpiar</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TABLA DE ACTIVIDADES REPORTADAS -->
+            <section class="card">
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Código Acta</th>
+                                <th>Fecha y Horario</th>
+                                <th>Contratista Responsable</th>
+                                <th>Proyecto de Inversión</th>
+                                <th>Modalidad y Territorio / Sede</th>
+                                <th>Transporte</th>
+                                <th style="text-align: center;">Asistentes</th>
+                                <th style="text-align: center;">Evidencias</th>
+                                <th style="text-align: center;">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-actividades">
+                            <tr><td colspan="9" style="text-align: center; padding: 2.5rem;" class="muted">Cargando actividades reportadas...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </div>
     </main>
 
@@ -1222,6 +1348,12 @@
 
                 document.getElementById('despacho-main-content').style.display = 'block';
                 await loadDashboardData(true);
+                cargarProyectosFiltroActividades();
+
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.get('tab') === 'actividades') {
+                    switchDespachoMainTab('actividades');
+                }
             } catch (err) {
                 window.location.href = 'login.html';
             }
@@ -2931,6 +3063,228 @@
             document.getElementById('f-solo-faltantes').checked = false;
             loadDashboardData(false);
         }
+
+        // ==========================================
+        // GESTIÓN DE PESTAÑA: CONTROL ACTIVIDADES
+        // ==========================================
+        let actSearchTimer = null;
+        let actividadesDataCache = [];
+        let proyectosActividadesCargados = false;
+
+        function switchDespachoMainTab(tab) {
+            const btnSeg = document.getElementById('tab-btn-seguimiento');
+            const btnAct = document.getElementById('tab-btn-actividades');
+            const wrapSeg = document.getElementById('wrap-vista-seguimiento');
+            const viewAct = document.getElementById('view-control-actividades');
+
+            if (tab === 'actividades') {
+                btnSeg.classList.remove('active');
+                btnAct.classList.add('active');
+                wrapSeg.style.display = 'none';
+                viewAct.style.display = 'block';
+
+                if (!proyectosActividadesCargados) {
+                    cargarProyectosFiltroActividades();
+                }
+                cargarActividadesPanel();
+            } else {
+                btnAct.classList.remove('active');
+                btnSeg.classList.add('active');
+                viewAct.style.display = 'none';
+                wrapSeg.style.display = 'block';
+            }
+        }
+
+        async function cargarProyectosFiltroActividades() {
+            try {
+                const res = await fetch('api/actividades_contratista_api.php?action=proyectos_list');
+                const json = await res.json();
+                if (json.success && Array.isArray(json.data)) {
+                    proyectosActividadesCargados = true;
+                    const select = document.getElementById('f-act-proyecto');
+                    if (select) {
+                        select.innerHTML = '<option value="">Todos los proyectos de inversión</option>' +
+                            json.data.map(p => `<option value="${p.id}">[${escapeHtml(p.codigo)}] ${escapeHtml(p.nombre)}</option>`).join('');
+                    }
+                }
+            } catch (e) {
+                console.error('Error al cargar proyectos para filtro de actividades:', e);
+            }
+        }
+
+        function debounceFiltrarActividades() {
+            clearTimeout(actSearchTimer);
+            actSearchTimer = setTimeout(() => {
+                cargarActividadesPanel();
+            }, 250);
+        }
+
+        function limpiarFiltrosActividades() {
+            document.getElementById('f-act-busqueda').value = '';
+            document.getElementById('f-act-proyecto').value = '';
+            document.getElementById('f-act-modalidad').value = '';
+            document.getElementById('f-act-desde').value = '';
+            document.getElementById('f-act-hasta').value = '';
+            cargarActividadesPanel();
+        }
+
+        async function cargarActividadesPanel() {
+            const tbody = document.getElementById('tbody-actividades');
+            if (tbody) {
+                tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; padding: 2rem;" class="muted">Cargando actividades reportadas...</td></tr>';
+            }
+
+            const params = new URLSearchParams({ action: 'actividades_list' });
+            const busq = (document.getElementById('f-act-busqueda')?.value || '').trim();
+            const proy = document.getElementById('f-act-proyecto')?.value || '';
+            const mod = document.getElementById('f-act-modalidad')?.value || '';
+            const desde = document.getElementById('f-act-desde')?.value || '';
+            const hasta = document.getElementById('f-act-hasta')?.value || '';
+
+            if (busq) params.set('busqueda', busq);
+            if (proy) params.set('proyecto_id', proy);
+            if (mod) params.set('modalidad', mod);
+            if (desde) params.set('fecha_desde', desde);
+            if (hasta) params.set('fecha_hasta', hasta);
+
+            try {
+                const res = await fetch(`api/actividades_contratista_api.php?${params.toString()}`);
+                const json = await res.json();
+
+                if (!json.success) {
+                    if (tbody) tbody.innerHTML = `<tr><td colspan="9" style="text-align:center; padding:2rem; color:var(--danger);">${escapeHtml(json.message || 'Error al cargar')}</td></tr>`;
+                    return;
+                }
+
+                actividadesDataCache = json.data || [];
+
+                // Actualizar KPIs
+                const kpis = json.kpis || {};
+                document.getElementById('kpi-act-total').textContent = kpis.total_actividades || actividadesDataCache.length;
+                document.getElementById('kpi-act-contratistas').textContent = kpis.total_contratistas || 0;
+                document.getElementById('kpi-act-proyectos').textContent = kpis.total_proyectos || 0;
+                document.getElementById('kpi-act-presenciales').textContent = kpis.presenciales || 0;
+
+                renderActividadesTabla(actividadesDataCache);
+            } catch (err) {
+                console.error(err);
+                if (tbody) tbody.innerHTML = '<tr><td colspan="9" style="text-align:center; padding:2rem; color:var(--danger);">Error al comunicar con el servidor.</td></tr>';
+            }
+        }
+
+        function renderActividadesTabla(actividades) {
+            const tbody = document.getElementById('tbody-actividades');
+            if (!tbody) return;
+
+            if (actividades.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; padding: 2.5rem;" class="muted">No se encontraron actividades con los filtros seleccionados.</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = actividades.map(a => {
+                const cod = a.codigo_acta || `ACTA-${a.id}`;
+                const proyText = a.proyecto_codigo ? `[${escapeHtml(a.proyecto_codigo)}] ${escapeHtml(a.proyecto_nombre)}` : escapeHtml(a.proyecto_nombre || 'N/A');
+                
+                let terrText = escapeHtml(a.lugar || '');
+                if (a.veredas_visitadas) {
+                    terrText += (terrText ? ' - Veredas: ' : 'Veredas: ') + escapeHtml(a.veredas_visitadas);
+                }
+                if (!terrText) terrText = 'Localidad de Sumapaz';
+
+                let badgeModalidadClass = 'status-badge';
+                if (a.modalidad === 'Presencial') badgeModalidadClass += ' status-cumplio';
+                else if (a.modalidad === 'Virtual') badgeModalidadClass += ' status-revision';
+                else badgeModalidadClass += ' status-parcial';
+
+                let transporteBadge = '<span class="muted" style="font-size:0.75rem;">No requirió</span>';
+                if (parseInt(a.requirio_transporte) === 1) {
+                    if (parseInt(a.formato_transporte_diligenciado) === 1) {
+                        transporteBadge = '<span style="font-size:0.75rem; color:#166534; font-weight:600;">Planilla OK</span>';
+                    } else {
+                        transporteBadge = '<span style="font-size:0.75rem; color:#92400E; font-weight:600;">Requirió servicio</span>';
+                    }
+                }
+
+                return `
+                    <tr>
+                        <td style="white-space: nowrap;">
+                            <strong style="color:var(--primary-green-dark);">${escapeHtml(cod)}</strong>
+                        </td>
+                        <td style="white-space: nowrap;">
+                            <div><strong>${escapeHtml(a.fecha)}</strong></div>
+                            <div class="muted" style="font-size:0.76rem;">${escapeHtml(a.hora_inicio || '')} - ${escapeHtml(a.hora_fin || '')}</div>
+                        </td>
+                        <td>
+                            <div><strong>${escapeHtml(a.contratista_nombre)}</strong></div>
+                            <div class="muted" style="font-size:0.76rem;">CC: ${escapeHtml(a.contratista_documento)} ${a.contratista_telefono ? '| Tel: ' + escapeHtml(a.contratista_telefono) : ''}</div>
+                        </td>
+                        <td style="max-width: 240px;">
+                            <div style="font-size:0.8rem; line-height:1.3;">${proyText}</div>
+                        </td>
+                        <td style="max-width: 220px;">
+                            <div><span class="${badgeModalidadClass}">${escapeHtml(a.modalidad)}</span></div>
+                            <div class="muted" style="font-size:0.76rem; margin-top:3px; line-height:1.25;">${terrText}</div>
+                        </td>
+                        <td>${transporteBadge}</td>
+                        <td style="text-align: center;">
+                            <span style="font-weight:700; color:var(--text-dark);">${a.total_participantes || 0}</span>
+                        </td>
+                        <td style="text-align: center;">
+                            <span style="font-weight:700; color:var(--text-dark);">${a.total_evidencias || 0}</span>
+                        </td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="ver_acta.html?id=${a.id}" target="_blank" class="btn btn-outline btn-sm">
+                                Descargar / Ver Acta
+                            </a>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function exportarExcelActividades() {
+            if (!actividadesDataCache || actividadesDataCache.length === 0) {
+                alert('No hay actividades para exportar en el listado actual.');
+                return;
+            }
+
+            if (typeof XLSX === 'undefined') {
+                alert('Librería XLSX no disponible.');
+                return;
+            }
+
+            const dataExport = actividadesDataCache.map(a => ({
+                'Código Acta': a.codigo_acta || `ACTA-${a.id}`,
+                'Fecha': a.fecha,
+                'Hora Inicio': a.hora_inicio,
+                'Hora Fin': a.hora_fin,
+                'Contratista Responsable': a.contratista_nombre,
+                'Cédula Contratista': a.contratista_documento,
+                'Teléfono': a.contratista_telefono || '',
+                'Correo': a.contratista_correo || '',
+                'Cargo': a.contratista_cargo || '',
+                'Código Proyecto': a.proyecto_codigo || '',
+                'Nombre Proyecto': a.proyecto_nombre || '',
+                'Objeto de la Reunión': a.objeto_reunion,
+                'Modalidad': a.modalidad,
+                'Lugar': a.lugar || '',
+                'Veredas Visitadas': a.veredas_visitadas || '',
+                'Requirió Transporte': parseInt(a.requirio_transporte) === 1 ? 'SÍ' : 'NO',
+                'Planilla Transporte Diligenciada': parseInt(a.formato_transporte_diligenciado) === 1 ? 'SÍ' : 'NO',
+                'Detalle Transporte': a.detalle_transporte || '',
+                'Total Participantes': a.total_participantes || 0,
+                'Total Compromisos': a.total_compromisos || 0,
+                'Total Evidencias': a.total_evidencias || 0,
+                'Caso HOLA': a.caso_hola || '70103'
+            }));
+
+            const ws = XLSX.utils.json_to_sheet(dataExport);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, 'Actividades_Sumapaz');
+            const hoy = new Date().toISOString().split('T')[0];
+            XLSX.writeFile(wb, `Control_Actividades_Sumapaz_${hoy}.xlsx`);
+        }
+
 
         async function logout() {
             try { await fetch('api/logout.php'); } catch (e) {}

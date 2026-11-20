@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formato Oficial de Evidencia de Reunión - GDI-GPD-F029</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="assets/html2pdf.bundle.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: #E2E8F0;
+            color: #000000;
+            line-height: 1.3;
+            padding: 1.5rem 0.5rem;
+        }
+
+        /* BARRA DE HERRAMIENTAS FLOTANTE NO IMPRIMIBLE */
+        .toolbar-no-print {
+            max-width: 950px;
+            margin: 0 auto 1rem auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #FFFFFF;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        .btn {
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            border: 1px solid #CBD5E1;
+            cursor: pointer;
+            text-decoration: none;
+            color: #1E293B;
+            background: #F8FAFC;
+        }
+
+        .btn:hover {
+            background: #EDF2F7;
+        }
+
+        .btn-primary {
+            background-color: #2E5A36;
+            color: #FFFFFF;
+            border-color: #2E5A36;
+        }
+
+        .btn-primary:hover {
+            background-color: #234429;
+        }
+
+        /* HOJA DEL ACTA (FORMATO ESTANDARIZADO OFICIAL) */
+        .acta-page {
+            max-width: 950px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            color: #000000;
+            font-size: 11px;
+        }
+
+        /* TABLA PRINCIPAL DEL FORMATO */
+        table.formato-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1.5px solid #000000;
+            margin-bottom: 0.75rem;
+            font-size: 10px;
+        }
+
+        table.formato-tabla th,
+        table.formato-tabla td {
+            border: 1px solid #000000;
+            padding: 4px 6px;
+            vertical-align: middle;
+        }
+
+        .header-logo-cell {
+            width: 25%;
+            text-align: center;
+            vertical-align: middle;
+            padding: 6px;
+        }
+
+        .header-title-cell {
+            width: 50%;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+        }
+
+        .header-meta-cell {
+            width: 25%;
+            font-size: 8.5px;
+            line-height: 1.35;
+        }
+
+        .label-cell {
+            font-weight: 700;
+            background-color: #F8F9FA;
+            white-space: nowrap;
+        }
+
+        .check-box-square {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 1px solid #000000;
+            text-align: center;
+            line-height: 11px;
+            font-weight: 800;
+            font-size: 10px;
+            margin-left: 3px;
+        }
+
+        /* TABLA DE ASISTENTES */
+        table.asistentes-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1.5px solid #000000;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 8px;
+            text-align: center;
+        }
+
+        table.asistentes-tabla th,
+        table.asistentes-tabla td {
+            border: 1px solid #000000;
+            padding: 3px 2px;
+            vertical-align: middle;
+        }
+
+        table.asistentes-tabla th {
+            font-weight: 700;
+            background-color: #F1F3F5;
+            text-transform: uppercase;
+        }
+
+        .td-left {
+            text-align: left !important;
+            padding-left: 4px !important;
+        }
+
+        .firma-img {
+            max-height: 28px;
+            max-width: 85px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* TEXTO LEGAL */
+        .legal-consent {
+            font-size: 7.5px;
+            line-height: 1.3;
+            text-align: justify;
+            border: 1px solid #000000;
+            padding: 4px 6px;
+            margin-bottom: 0.75rem;
+            background-color: #FAFAFA;
+        }
+
+        /* SECCIONES CONCLUSIONES Y COMPROMISOS */
+        .seccion-header {
+            font-weight: 800;
+            font-size: 11px;
+            text-transform: uppercase;
+            margin: 0.75rem 0 0.35rem 0;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 2px;
+        }
+
+        .conclusiones-box {
+            border: 1px solid #000000;
+            padding: 8px;
+            min-height: 80px;
+            white-space: pre-wrap;
+            font-size: 10.5px;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        /* TABLA COMPROMISOS */
+        table.compromisos-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1.5px solid #000000;
+            margin-bottom: 0.75rem;
+            font-size: 9.5px;
+        }
+
+        table.compromisos-tabla th,
+        table.compromisos-tabla td {
+            border: 1px solid #000000;
+            padding: 4px 6px;
+            vertical-align: middle;
+        }
+
+        table.compromisos-tabla th {
+            background-color: #F1F3F5;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* EVIDENCIAS FOTOGRAFICAS */
+        .evidencias-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 0.75rem;
+        }
+
+        .evidencia-card {
+            border: 1px solid #000000;
+            padding: 4px;
+            text-align: center;
+        }
+
+        .evidencia-card img {
+            width: 100%;
+            max-height: 220px;
+            object-fit: contain;
+            display: block;
+            background: #F8F9FA;
+        }
+
+        .evidencia-caption {
+            font-size: 8.5px;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .notas-pie {
+            font-size: 8px;
+            line-height: 1.35;
+            color: #333333;
+            margin-top: 0.5rem;
+            border-top: 1px dashed #666666;
+            padding-top: 4px;
+        }
+
+        /* ESTILOS DE IMPRESIÓN */
+        @media print {
+            body {
+                background: #FFFFFF;
+                padding: 0;
+            }
+            .toolbar-no-print {
+                display: none !important;
+            }
+            .acta-page {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+                width: 100%;
+            }
+            @page {
+                size: letter portrait;
+                margin: 1cm;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR DE ACCIONES -->
+    <div class="toolbar-no-print">
+        <div style="display:flex; gap:0.5rem; align-items:center;">
+            <a href="despacho.html" class="btn">Panel Despacho</a>
+            <a href="registrar_actividad.html" class="btn">Registrar Otra Actividad</a>
+            <a href="consultar_actas.html" class="btn">Consultar Actas</a>
+        </div>
+        <div style="display:flex; gap:0.5rem;">
+            <button type="button" class="btn" onclick="window.print()">Imprimir Acta</button>
+            <button type="button" class="btn btn-primary" onclick="descargarPDF()">Descargar en PDF</button>
+        </div>
+    </div>
+
+    <!-- DOCUMENTO OFICIAL -->
+    <main class="acta-page" id="acta-documento">
+        
+        <!-- ENCABEZADO OFICIAL GDI-GPD-F029 -->
+        <table class="formato-tabla">
+            <tr>
+                <td class="header-logo-cell" rowspan="2">
+                    <img src="assets/logo_somossumapaz.png" alt="Bogotá Secretaría de Gobierno" style="max-height:42px; max-width:180px; object-fit:contain; display:block; margin:0 auto 4px auto;">
+                    <div style="font-size:8px; font-weight:700; text-transform:uppercase; color:#000;">Secretaría de Gobierno</div>
+                    <div style="font-size:7px; color:#333;">Alcaldía Local de Sumapaz</div>
+                </td>
+                <td class="header-title-cell" rowspan="2">
+                    EVIDENCIA DE REUNIÓN
+                </td>
+                <td class="header-meta-cell">
+                    <strong>Código:</strong> GDI-GPD-F029<br>
+                    <strong>Versión:</strong> 6
+                </td>
+            </tr>
+            <tr>
+                <td class="header-meta-cell">
+                    <strong>Vigencia:</strong> 21 de agosto de 2024<br>
+                    <strong>Caso HOLA:</strong> <span id="val-caso-hola">70103</span>
+                </td>
+            </tr>
+        </table>
+
+        <!-- DATOS BÁSICOS DE LA REUNIÓN -->
+        <table class="formato-tabla">
+            <tr>
+                <td class="label-cell" style="width:18%;">Objeto de la reunión:</td>
+                <td colspan="5" id="val-objeto" style="font-weight:600;"></td>
+            </tr>
+            <tr>
+                <td class="label-cell">Fecha:</td>
+                <td style="width:25%;" id="val-fecha"></td>
+                <td class="label-cell" style="width:15%;">Hora de inicio:</td>
+                <td style="width:15%;" id="val-hora-inicio"></td>
+                <td class="label-cell" style="width:12%;">Modalidad:</td>
+                <td style="width:15%;">
+                    Presencial <span class="check-box-square" id="chk-presencial">&nbsp;</span>
+                    &nbsp; Virtual <span class="check-box-square" id="chk-virtual">&nbsp;</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-cell">Lugar:</td>
+                <td id="val-lugar"></td>
+                <td class="label-cell">Hora de finalización:</td>
+                <td id="val-hora-fin"></td>
+                <td class="label-cell"></td>
+                <td>
+                    Telefónica <span class="check-box-square" id="chk-telefonica">&nbsp;</span>
+                    &nbsp; Mixta <span class="check-box-square" id="chk-mixta">&nbsp;</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-cell">Dependencia:</td>
+                <td id="val-dependencia"></td>
+                <td class="label-cell">Responsable:</td>
+                <td colspan="3" id="val-responsable"></td>
+            </tr>
+            <tr>
+                <td class="label-cell">Proyecto Inversión:</td>
+                <td colspan="3" id="val-proyecto"></td>
+                <td class="label-cell">Transporte:</td>
+                <td id="val-transporte"></td>
+            </tr>
+        </table>
+
+        <!-- TABLA DE ASISTENTES / PARTICIPANTES CON COLUMNAS INSTITUCIONALES -->
+        <table class="asistentes-tabla" id="tabla-asistentes-oficial">
+            <thead>
+                <tr>
+                    <th rowspan="2" style="width:5%;">TIPO DOC.</th>
+                    <th rowspan="2" style="width:10%;">NÚMERO DE DOCUMENTO</th>
+                    <th rowspan="2" style="width:16%;">NOMBRES Y APELLIDOS<br><span style="font-size:7px; font-weight:normal;">(Jurídico o legal)</span></th>
+                    <th rowspan="2" style="width:9%;">NOMBRE IDENTITARIO</th>
+                    <th rowspan="2" style="width:14%;">ENTIDAD Y DEPENDENCIA</th>
+                    <th colspan="5" style="width:15%;">CARGO</th>
+                    <th colspan="4" style="width:12%;">TIPO DE VINCULACIÓN</th>
+                    <th rowspan="2" style="width:10%;">CORREO / TELÉFONO</th>
+                    <th rowspan="2" style="width:9%;">FIRMA</th>
+                </tr>
+                <tr>
+                    <!-- CARGOS -->
+                    <th style="font-size:7px; width:3%;">ASESOR</th>
+                    <th style="font-size:7px; width:3%;">DIRECT.</th>
+                    <th style="font-size:7px; width:3%;">PROFES.</th>
+                    <th style="font-size:7px; width:3%;">TÉCNICO</th>
+                    <th style="font-size:7px; width:3%;">AUXIL.</th>
+                    <!-- VINCULACIONES -->
+                    <th style="font-size:7px; width:3%;">CARR.</th>
+                    <th style="font-size:7px; width:3%;">PROV.</th>
+                    <th style="font-size:7px; width:3%;">LIBRE</th>
+                    <th style="font-size:7px; width:3%;">CONTR.</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-asistentes-oficial">
+                <!-- Se inyecta dinámicamente -->
+            </tbody>
+        </table>
+
+        <!-- CONSENTIMIENTO LEY 1581 DE 2012 -->
+        <div class="legal-consent">
+            <strong>CONSENTIMIENTO:</strong> Quien registra sus datos, conforme a la Ley 1581 de 2012 y demás normas reglamentarias aplicables, declara que conoce y acepta la Política de Tratamiento y Protección de Datos Personales de la Secretaría Distrital de Gobierno, y que la información proporcionada es veraz, completa, exacta, actualizada y verificable. Reconoce y acepta que cualquier consulta o reclamación relacionada con el tratamiento de sus datos personales podrá ser elevada verbalmente o por escrito ante la Secretaría Distrital de Gobierno – Oficina de Atención al Ciudadano, como responsable del tratamiento; cuya página web es www.gobiernobogota.gov.co y su teléfono de atención es 3387000. Manifiesta que con los datos proporcionados tiene el derecho de conocer, actualizar y rectificar los datos personales, a solicitar prueba de este consentimiento, a solicitar información sobre el uso que se le ha dado a los datos personales, a presentar quejas ante la Superintendencia de Industria y Comercio por el uso indebido de los datos personales, a revocar esta autorización o solicitar la supresión de los datos personales suministrados y a acceder de forma gratuita a los mismos. De igual manera entiende que los datos aquí consignados serán usados para temas estadísticos, de caracterización poblacional y en determinados casos para el acceso a la oferta institucional de la Secretaría Distrital de Gobierno.
+            <br>
+            <em>* Ver SAC-M002 Manual de Atención Diferencial y Preferencial para personas con discapacidad, disponible en https://gaia.gobiernobogota.gov.co/content/sistema-integrado-de-gestion-sdg</em>
+        </div>
+
+        <!-- DESARROLLO Y CONCLUSIONES -->
+        <div class="seccion-header">DESARROLLO Y CONCLUSIONES DE LA REUNIÓN:</div>
+        <div class="conclusiones-box" id="val-conclusiones"></div>
+
+        <!-- COMPROMISOS -->
+        <div class="seccion-header">COMPROMISOS DE LA REUNIÓN:</div>
+        <table class="compromisos-tabla">
+            <thead>
+                <tr>
+                    <th style="width:5%;">No.</th>
+                    <th style="width:55%;">ACTIVIDAD</th>
+                    <th style="width:25%;">RESPONSABLE</th>
+                    <th style="width:15%;">FECHA DE ENTREGA</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-compromisos-oficial">
+                <!-- Filas inyectadas dinámicamente -->
+            </tbody>
+        </table>
+
+        <!-- EVIDENCIAS FOTOGRÁFICAS -->
+        <div id="seccion-evidencias-wrap" style="display:none;">
+            <div class="seccion-header">EVIDENCIAS FOTOGRÁFICAS:</div>
+            <div class="evidencias-grid" id="grid-evidencias"></div>
+        </div>
+
+        <!-- NOTAS DE PIE DE PÁGINA -->
+        <div class="notas-pie">
+            <div><strong>NOTA 1:</strong> En caso de ser una reunión virtual se puede anexar el reporte de asistencia generado por las plataformas de reuniones o plataformas que generen formularios.</div>
+            <div><strong>NOTA 2:</strong> Agregue o elimine las filas que sean necesarias para registrar los asistentes y los compromisos de la reunión.</div>
+        </div>
+    </main>
+
+    <script>
+        let actividadData = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+            if (id) {
+                cargarDetalleActividad(id);
+            } else {
+                alert('No se especificó el identificador de la actividad.');
+            }
+        });
+
+        async function cargarDetalleActividad(id) {
+            try {
+                const res = await fetch(`api/actividades_contratista_api.php?action=actividad_detalle&id=${encodeURIComponent(id)}`);
+                const json = await res.json();
+
+                if (!json.success || !json.data) {
+                    alert('No se pudo encontrar la actividad solicitada.');
+                    return;
+                }
+
+                actividadData = json.data;
+                renderActa(actividadData);
+            } catch (e) {
+                console.error(e);
+                alert('Error al conectar con el servidor.');
+            }
+        }
+
+        function renderActa(act) {
+            document.title = `Acta ${act.codigo_acta || act.id} - ${act.objeto_reunion}`;
+
+            document.getElementById('val-caso-hola').textContent = act.caso_hola || '70103';
+            document.getElementById('val-objeto').textContent = act.objeto_reunion || '-';
+            document.getElementById('val-fecha').textContent = formatearFecha(act.fecha);
+            document.getElementById('val-hora-inicio').textContent = act.hora_inicio || '-';
+            document.getElementById('val-hora-fin').textContent = act.hora_fin || '-';
+
+            // Modalidad checkboxes
+            const mod = (act.modalidad || 'Presencial').toLowerCase();
+            if (mod.includes('presencial')) document.getElementById('chk-presencial').textContent = 'X';
+            if (mod.includes('virtual')) document.getElementById('chk-virtual').textContent = 'X';
+            if (mod.includes('telef')) document.getElementById('chk-telefonica').textContent = 'X';
+            if (mod.includes('mixta')) document.getElementById('chk-mixta').textContent = 'X';
+
+            // Lugar y veredas
+            let lugarTexto = act.lugar || '';
+            if (act.veredas_visitadas) {
+                lugarTexto += (lugarTexto ? ' - Veredas: ' : 'Veredas: ') + act.veredas_visitadas;
+            }
+            if (act.link_reunion) {
+                lugarTexto += (lugarTexto ? ' - Enlace: ' : '') + act.link_reunion;
+            }
+            document.getElementById('val-lugar').textContent = lugarTexto || 'Localidad de Sumapaz';
+
+            document.getElementById('val-dependencia').textContent = act.dependencia || act.contratista_dependencia || 'Alcaldía Local de Sumapaz';
+            document.getElementById('val-responsable').textContent = act.nombre_responsable || act.contratista_nombre || '-';
+
+            // Proyecto
+            const proy = act.proyecto_codigo ? `[${act.proyecto_codigo}] ${act.proyecto_nombre}` : (act.proyecto_nombre || 'N/A');
+            document.getElementById('val-proyecto').textContent = proy;
+
+            // Transporte
+            let transText = 'No requirió';
+            if (parseInt(act.requirio_transporte) === 1) {
+                transText = 'Requirió servicio';
+                if (parseInt(act.formato_transporte_diligenciado) === 1) {
+                    transText += ' (Planilla diligenciada)';
+                }
+                if (act.detalle_transporte) {
+                    transText += `: ${act.detalle_transporte}`;
+                }
+            }
+            document.getElementById('val-transporte').textContent = transText;
+
+            // Conclusiones
+            document.getElementById('val-conclusiones').textContent = act.desarrollo_conclusiones || 'Sin notas registradas.';
+
+            // Asistentes
+            const tbodyAsistentes = document.getElementById('tbody-asistentes-oficial');
+            const participantes = act.participantes || [];
+
+            if (participantes.length === 0) {
+                tbodyAsistentes.innerHTML = `<tr><td colspan="16" style="padding:10px;">No se registraron participantes asistentes.</td></tr>`;
+            } else {
+                tbodyAsistentes.innerHTML = participantes.map(p => {
+                    const cargo = (p.cargo || '').toLowerCase();
+                    const vinc = (p.tipo_vinculacion || '').toLowerCase();
+
+                    // Marcas en cargo
+                    const isAsesor = cargo.includes('asesor') ? 'X' : '';
+                    const isDirectivo = cargo.includes('direct') ? 'X' : '';
+                    const isProfesional = cargo.includes('profesional') ? 'X' : '';
+                    const isTecnico = (cargo.includes('tecnic') || cargo.includes('tecnol')) ? 'X' : '';
+                    const isAuxiliar = cargo.includes('auxiliar') ? 'X' : '';
+
+                    // Marcas en vinculación
+                    const isCarrera = vinc.includes('carrera') ? 'X' : '';
+                    const isProvisional = vinc.includes('provisional') ? 'X' : '';
+                    const isLibre = vinc.includes('libre') ? 'X' : '';
+                    const isContratista = (vinc.includes('contratista') || (!isCarrera && !isProvisional && !isLibre)) ? 'X' : '';
+
+                    const contacto = [p.correo, p.telefono].filter(Boolean).join('<br>') || '-';
+
+                    let firmaHtml = '-';
+                    if (p.firma_digital) {
+                        firmaHtml = `<img src="${p.firma_digital}" class="firma-img" alt="Firma">`;
+                    }
+
+                    return `
+                        <tr>
+                            <td>${escapeHtml(p.tipo_documento || 'CC')}</td>
+                            <td>${escapeHtml(p.numero_documento)}</td>
+                            <td class="td-left"><strong>${escapeHtml(p.nombres_apellidos)}</strong></td>
+                            <td>${escapeHtml(p.nombre_identitario || '-')}</td>
+                            <td class="td-left">${escapeHtml(p.entidad_dependencia || 'Alcaldía Local de Sumapaz')}</td>
+                            <td>${isAsesor}</td>
+                            <td>${isDirectivo}</td>
+                            <td>${isProfesional}</td>
+                            <td>${isTecnico}</td>
+                            <td>${isAuxiliar}</td>
+                            <td>${isCarrera}</td>
+                            <td>${isProvisional}</td>
+                            <td>${isLibre}</td>
+                            <td>${isContratista}</td>
+                            <td style="font-size:7.5px;">${contacto}</td>
+                            <td>${firmaHtml}</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            // Compromisos
+            const tbodyComp = document.getElementById('tbody-compromisos-oficial');
+            const compromisos = act.compromisos || [];
+            if (compromisos.length === 0) {
+                tbodyComp.innerHTML = `<tr><td colspan="4" style="text-align:center; padding:8px;">No se establecieron compromisos en esta reunión.</td></tr>`;
+            } else {
+                tbodyComp.innerHTML = compromisos.map((c, i) => `
+                    <tr>
+                        <td style="text-align:center;">${c.numero || (i + 1)}</td>
+                        <td>${escapeHtml(c.actividad)}</td>
+                        <td>${escapeHtml(c.responsable || act.nombre_responsable)}</td>
+                        <td style="text-align:center;">${c.fecha_entrega ? formatearFecha(c.fecha_entrega) : '-'}</td>
+                    </tr>
+                `).join('');
+            }
+
+            // Evidencias fotográficas
+            const wrapEvidencias = document.getElementById('seccion-evidencias-wrap');
+            const gridEvidencias = document.getElementById('grid-evidencias');
+            const evidencias = act.evidencias || [];
+
+            if (evidencias.length > 0) {
+                wrapEvidencias.style.display = 'block';
+                gridEvidencias.innerHTML = evidencias.map((ev, i) => `
+                    <div class="evidencia-card">
+                        <img src="${ev.archivo_url}" alt="Evidencia fotográfica ${i + 1}">
+                        <div class="evidencia-caption">${escapeHtml(ev.descripcion || `Evidencia fotográfica ${i + 1}`)}</div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function formatearFecha(f) {
+            if (!f) return '-';
+            const partes = f.split('-');
+            if (partes.length === 3) {
+                const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+                const d = parseInt(partes[2]);
+                const m = meses[parseInt(partes[1]) - 1] || partes[1];
+                const y = partes[0];
+                return `${d} de ${m} de ${y}`;
+            }
+            return f;
+        }
+
+        function descargarPDF() {
+            const element = document.getElementById('acta-documento');
+            const opt = {
+                margin:       [8, 8, 8, 8],
+                filename:     `Acta_${actividadData?.codigo_acta || 'GDI-GPD-F029'}.pdf`,
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'mm', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+    </script>
+</body>
+</html>

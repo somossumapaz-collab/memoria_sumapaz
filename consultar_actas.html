@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Actas de Actividad por Cédula - Despacho Sumapaz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #353E24;
+            --primary-dark: #242B19;
+            --accent-green: #4C5933;
+            --bg-cream: #F8F9FA;
+            --surface-card: #FFFFFF;
+            --border-light: #E2E8F0;
+            --border-medium: #CBD5E1;
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+            --primary-button: #2E5A36;
+            --primary-button-hover: #234429;
+            --danger: #991B1B;
+            --success: #166534;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding-bottom: 4rem;
+        }
+
+        /* TOPBAR */
+        .topbar {
+            background-color: var(--primary-green);
+            padding: 0.75rem 1.5rem;
+            color: #FFFFFF;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .topbar-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        .site-logo {
+            height: 48px;
+            width: auto;
+            display: block;
+        }
+
+        .brand-text h1 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .brand-text span {
+            font-size: 0.8rem;
+            color: #E2E8F0;
+        }
+
+        .top-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .top-link {
+            color: #F8F9FA;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .top-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* CONTENEDOR */
+        .main-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .search-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            padding: 1.75rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .card-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 0.35rem;
+        }
+
+        .card-subtitle {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+
+        .search-bar-wrap {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            max-width: 600px;
+        }
+
+        .form-control {
+            font-family: inherit;
+            font-size: 0.92rem;
+            padding: 0.65rem 0.85rem;
+            border: 1px solid var(--border-medium);
+            border-radius: 6px;
+            background-color: #FFFFFF;
+            color: var(--text-main);
+            outline: none;
+            flex: 1;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-button);
+            box-shadow: 0 0 0 3px rgba(46, 90, 54, 0.15);
+        }
+
+        .btn {
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            padding: 0.65rem 1.25rem;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-button);
+            color: #FFFFFF;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-button-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--border-medium);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background-color: #F1F5F9;
+        }
+
+        .btn-sm {
+            padding: 0.35rem 0.7rem;
+            font-size: 0.8rem;
+        }
+
+        /* INFO PERSONA BANNER */
+        .person-info-card {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+
+        .person-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+            font-size: 0.85rem;
+        }
+
+        .person-item span {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .person-item strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* LISTA DE ACTAS */
+        .actas-list-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .acta-item-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .acta-item-card:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+        }
+
+        .acta-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .acta-code {
+            font-weight: 700;
+            color: var(--primary-button);
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-presencial {
+            background-color: #DCFCE7;
+            color: #166534;
+        }
+
+        .badge-virtual {
+            background-color: #E0E7FF;
+            color: #3730A3;
+        }
+
+        .badge-mixta {
+            background-color: #FEF3C7;
+            color: #92400E;
+        }
+
+        .badge-rol {
+            background-color: #F1F5F9;
+            color: var(--text-main);
+            border: 1px solid var(--border-medium);
+        }
+
+        .acta-objeto {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .acta-meta-row {
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .acta-meta-item strong {
+            color: var(--text-main);
+        }
+
+        .acta-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-light);
+            padding-top: 0.75rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .acta-counts {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .empty-state {
+            background: #FFFFFF;
+            border: 1px dashed var(--border-medium);
+            border-radius: 8px;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+        <div class="topbar-container">
+            <a href="despacho.html" class="brand">
+                <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="site-logo">
+                <div class="brand-text">
+                    <h1>Alcaldía Local de Sumapaz</h1>
+                    <span>Consulta de Actas de Actividad por Cédula</span>
+                </div>
+            </a>
+            <div class="top-links">
+                <a href="despacho.html" class="top-link">Panel Despacho</a>
+                <a href="inscribir_contratista.html" class="top-link">Inscribir Contratista</a>
+                <a href="registrar_actividad.html" class="top-link">Registrar Actividad</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <main class="main-container">
+        
+        <!-- TARJETA DE BÚSQUEDA -->
+        <div class="search-card">
+            <h2 class="card-title">Consultar Actas a su Nombre</h2>
+            <p class="card-subtitle">
+                Digite su número de cédula o documento de identidad para visualizar y descargar en PDF todas las actas de reunión y actividades donde figure como responsable o asistente.
+            </p>
+
+            <form id="form-consulta" onsubmit="realizarConsulta(event)">
+                <div class="search-bar-wrap">
+                    <input type="text" id="input-cedula" class="form-control" placeholder="Ingrese número de documento (Ej: 1012345678)" required>
+                    <button type="submit" id="btn-buscar" class="btn btn-primary">Consultar Actas</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- TARJETA DE INFORMACIÓN DE LA PERSONA -->
+        <div id="card-persona" class="person-info-card">
+            <div class="person-grid">
+                <div class="person-item">
+                    <span>Nombre Completo</span>
+                    <strong id="p-nombre">-</strong>
+                </div>
+                <div class="person-item">
+                    <span>Documento</span>
+                    <strong id="p-doc">-</strong>
+                </div>
+                <div class="person-item">
+                    <span>Cargo / Nivel</span>
+                    <strong id="p-cargo">-</strong>
+                </div>
+                <div class="person-item">
+                    <span>Dependencia</span>
+                    <strong id="p-dep">-</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENEDOR DE LISTA DE ACTAS -->
+        <div id="actas-contenedor" class="actas-list-container">
+            <div class="empty-state">
+                Ingrese su número de documento de identificación en el campo superior para consultar el historial de actas registradas.
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const cedula = params.get('cedula');
+            if (cedula) {
+                document.getElementById('input-cedula').value = cedula;
+                consultarCedula(cedula);
+            }
+        });
+
+        function realizarConsulta(e) {
+            e.preventDefault();
+            const cedula = document.getElementById('input-cedula').value.trim();
+            if (cedula) {
+                consultarCedula(cedula);
+            }
+        }
+
+        async function consultarCedula(doc) {
+            const btn = document.getElementById('btn-buscar');
+            btn.disabled = true;
+            btn.textContent = 'Buscando...';
+
+            const contenedor = document.getElementById('actas-contenedor');
+            contenedor.innerHTML = '<div class="empty-state">Consultando actas registradas en la base de datos institucional...</div>';
+
+            try {
+                const res = await fetch(`api/actividades_contratista_api.php?action=consultar_actas_cedula&documento=${encodeURIComponent(doc)}`);
+                const json = await res.json();
+
+                btn.disabled = false;
+                btn.textContent = 'Consultar Actas';
+
+                if (!json.success) {
+                    contenedor.innerHTML = `<div class="empty-state">${escapeHtml(json.message || 'Error en la consulta')}</div>`;
+                    return;
+                }
+
+                // Datos persona
+                const cardPersona = document.getElementById('card-persona');
+                if (json.persona) {
+                    cardPersona.style.display = 'block';
+                    document.getElementById('p-nombre').textContent = json.persona.nombres_apellidos || '-';
+                    document.getElementById('p-doc').textContent = json.persona.numero_documento || doc;
+                    document.getElementById('p-cargo').textContent = `${json.persona.cargo || 'Profesional'} (${json.persona.tipo_vinculacion || 'Contratista'})`;
+                    document.getElementById('p-dep').textContent = json.persona.dependencia || 'Alcaldía Local de Sumapaz';
+                } else {
+                    cardPersona.style.display = 'none';
+                }
+
+                // Actas
+                const actas = json.actas || [];
+                if (actas.length === 0) {
+                    contenedor.innerHTML = `
+                        <div class="empty-state">
+                            No se encontraron actas registradas asociadas al número de documento <strong>${escapeHtml(doc)}</strong>.
+                        </div>
+                    `;
+                    return;
+                }
+
+                contenedor.innerHTML = actas.map(a => {
+                    const badgeModalidad = a.modalidad === 'Presencial' ? 'badge-presencial' : 
+                                          (a.modalidad === 'Virtual' ? 'badge-virtual' : 'badge-mixta');
+
+                    const proyInfo = a.proyecto_codigo ? `[${a.proyecto_codigo}] ${a.proyecto_nombre}` : (a.proyecto_nombre || 'N/A');
+                    const lugarInfo = a.veredas_visitadas ? `Veredas: ${a.veredas_visitadas}` : (a.lugar || 'Localidad de Sumapaz');
+
+                    return `
+                        <div class="acta-item-card">
+                            <div class="acta-header">
+                                <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                                    <span class="acta-code">${escapeHtml(a.codigo_acta || `ACTA-${a.id}`)}</span>
+                                    <span class="badge ${badgeModalidad}">${escapeHtml(a.modalidad)}</span>
+                                    <span class="badge badge-rol">${escapeHtml(a.rol_en_acta)}</span>
+                                </div>
+                                <div style="font-size:0.83rem; font-weight:600; color:var(--text-main);">
+                                    Fecha: ${formatearFecha(a.fecha)}
+                                </div>
+                            </div>
+
+                            <div class="acta-objeto">
+                                ${escapeHtml(a.objeto_reunion)}
+                            </div>
+
+                            <div class="acta-meta-row">
+                                <div class="acta-meta-item">
+                                    Proyecto: <strong>${escapeHtml(proyInfo)}</strong>
+                                </div>
+                                <div class="acta-meta-item">
+                                    Lugar / Territorio: <strong>${escapeHtml(lugarInfo)}</strong>
+                                </div>
+                                <div class="acta-meta-item">
+                                    Horario: <strong>${escapeHtml(a.hora_inicio)} - ${escapeHtml(a.hora_fin)}</strong>
+                                </div>
+                            </div>
+
+                            <div class="acta-footer">
+                                <div class="acta-counts">
+                                    <span>Participantes: <strong>${a.total_participantes || 0}</strong></span>
+                                    <span>Compromisos: <strong>${a.total_compromisos || 0}</strong></span>
+                                    <span>Evidencias fotográficas: <strong>${a.total_evidencias || 0}</strong></span>
+                                </div>
+                                <div style="display:flex; gap:0.5rem;">
+                                    <a href="ver_acta.html?id=${a.id}" target="_blank" class="btn btn-outline btn-sm">Ver Acta Oficial</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+            } catch (e) {
+                console.error(e);
+                btn.disabled = false;
+                btn.textContent = 'Consultar Actas';
+                contenedor.innerHTML = `<div class="empty-state">Error al conectar con el servidor.</div>`;
+            }
+        }
+
+        function formatearFecha(f) {
+            if (!f) return '-';
+            const partes = f.split('-');
+            if (partes.length === 3) {
+                const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+                const d = parseInt(partes[2]);
+                const m = meses[parseInt(partes[1]) - 1] || partes[1];
+                const y = partes[0];
+                return `${d} de ${m} de ${y}`;
+            }
+            return f;
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+    </script>
+</body>
+</html>

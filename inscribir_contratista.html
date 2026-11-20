@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción de Contratistas - Despacho Sumapaz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #353E24;
+            --primary-dark: #242B19;
+            --accent-green: #4C5933;
+            --bg-cream: #F8F9FA;
+            --surface-card: #FFFFFF;
+            --border-light: #E2E8F0;
+            --border-medium: #CBD5E1;
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+            --primary-button: #2E5A36;
+            --primary-button-hover: #234429;
+            --danger: #991B1B;
+            --success: #166534;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding-bottom: 3rem;
+        }
+
+        /* TOPBAR INSTITUCIONAL */
+        .topbar {
+            background-color: var(--primary-green);
+            padding: 0.75rem 1.5rem;
+            color: #FFFFFF;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .topbar-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        .site-logo {
+            height: 48px;
+            width: auto;
+            display: block;
+        }
+
+        .brand-text h1 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .brand-text span {
+            font-size: 0.8rem;
+            color: #E2E8F0;
+        }
+
+        .top-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .top-link {
+            color: #F8F9FA;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .top-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* CONTENIDO PRINCIPAL */
+        .main-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .form-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+        }
+
+        .card-header {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .card-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 0.3rem;
+        }
+
+        .card-subtitle {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .form-section {
+            margin-bottom: 1.75rem;
+        }
+
+        .section-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .form-card {
+                padding: 1.25rem;
+            }
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .form-label {
+            font-size: 0.83rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .form-label .req {
+            color: var(--danger);
+            margin-left: 2px;
+        }
+
+        .form-control {
+            font-family: inherit;
+            font-size: 0.88rem;
+            padding: 0.55rem 0.75rem;
+            border: 1px solid var(--border-medium);
+            border-radius: 6px;
+            background-color: #FFFFFF;
+            color: var(--text-main);
+            outline: none;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-button);
+            box-shadow: 0 0 0 3px rgba(46, 90, 54, 0.15);
+        }
+
+        .form-help {
+            font-size: 0.76rem;
+            color: var(--text-muted);
+        }
+
+        /* PROYECTOS DE INVERSIÓN */
+        .proyectos-box {
+            border: 1px solid var(--border-medium);
+            border-radius: 6px;
+            padding: 0.75rem;
+            max-height: 240px;
+            overflow-y: auto;
+            background-color: #F8FAF9;
+        }
+
+        .search-proyectos-input {
+            margin-bottom: 0.5rem;
+            width: 100%;
+        }
+
+        .proyecto-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            padding: 0.45rem 0.5rem;
+            border-radius: 4px;
+            transition: background 0.15s ease;
+            cursor: pointer;
+        }
+
+        .proyecto-item:hover {
+            background-color: #EBF3ED;
+        }
+
+        .proyecto-item input[type="checkbox"] {
+            margin-top: 0.2rem;
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            accent-color: var(--primary-button);
+        }
+
+        .proyecto-label {
+            font-size: 0.83rem;
+            color: var(--text-main);
+            cursor: pointer;
+            line-height: 1.35;
+        }
+
+        .proyecto-codigo {
+            font-weight: 700;
+            color: var(--primary-button);
+            margin-right: 0.3rem;
+        }
+
+        /* PAD DE FIRMA */
+        .signature-container {
+            border: 1px solid var(--border-medium);
+            border-radius: 6px;
+            background: #FFFFFF;
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .signature-canvas {
+            width: 100%;
+            height: 160px;
+            border: 1px dashed var(--border-medium);
+            border-radius: 4px;
+            background-color: #FCFDFD;
+            touch-action: none;
+            cursor: crosshair;
+        }
+
+        .signature-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .signature-preview-box {
+            max-height: 70px;
+            object-fit: contain;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            padding: 2px;
+            background: #fff;
+            display: none;
+        }
+
+        /* BOTONES */
+        .btn {
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            padding: 0.6rem 1.25rem;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-button);
+            color: #FFFFFF;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-button-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--border-medium);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background-color: #F1F5F9;
+        }
+
+        .btn-sm {
+            padding: 0.35rem 0.7rem;
+            font-size: 0.8rem;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        /* ALERTAS */
+        .alert {
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            margin-bottom: 1.25rem;
+            display: none;
+        }
+
+        .alert-success {
+            background-color: #DCFCE7;
+            color: var(--success);
+            border: 1px solid #BBF7D0;
+        }
+
+        .alert-danger {
+            background-color: #FEE2E2;
+            color: var(--danger);
+            border: 1px solid #FECACA;
+        }
+
+        .alert-info {
+            background-color: #F0FDF4;
+            color: #1E3A1E;
+            border: 1px solid #DCFCE7;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+        <div class="topbar-container">
+            <a href="despacho.html" class="brand">
+                <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="site-logo">
+                <div class="brand-text">
+                    <h1>Alcaldía Local de Sumapaz</h1>
+                    <span>Control de Actividades y Registro de Contratistas</span>
+                </div>
+            </a>
+            <div class="top-links">
+                <a href="despacho.html" class="top-link">Panel Despacho</a>
+                <a href="registrar_actividad.html" class="top-link">Registrar Actividad</a>
+                <a href="consultar_actas.html" class="top-link">Consultar Actas</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- FORMULARIO PRINCIPAL -->
+    <main class="main-container">
+        <div class="form-card">
+            <div class="card-header">
+                <h2 class="card-title">Inscripción y Actualización de Contratistas</h2>
+                <p class="card-subtitle">
+                    Registro institucional de datos de contacto, proyectos de inversión asignados y firma digitalizada para el diligenciamiento estandarizado del Formato de Evidencia de Reunión GDI-GPD-F029.
+                </p>
+            </div>
+
+            <div id="alert-msg" class="alert"></div>
+
+            <form id="form-contratista" onsubmit="guardarContratista(event)">
+                <!-- SECCIÓN 1: DATOS PERSONALES Y CONTACTO -->
+                <div class="form-section">
+                    <h3 class="section-title">Datos Personales y de Identificación</h3>
+                    
+                    <div class="grid-3">
+                        <div class="form-group">
+                            <label class="form-label" for="tipo_documento">Tipo de Documento <span class="req">*</span></label>
+                            <select id="tipo_documento" name="tipo_documento" class="form-control" required>
+                                <option value="CC" selected>Cédula de Ciudadanía (CC)</option>
+                                <option value="CE">Cédula de Extranjería (CE)</option>
+                                <option value="TI">Tarjeta de Identidad (TI)</option>
+                                <option value="PAS">Pasaporte (PAS)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="numero_documento">Número de Documento <span class="req">*</span></label>
+                            <input type="text" id="numero_documento" name="numero_documento" class="form-control" placeholder="Ej: 1012345678" required onblur="verificarContratistaExistente()">
+                            <span class="form-help">Al digitar, se cargarán los datos si ya existe registro.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="nombres_apellidos">Nombres y Apellidos Completos <span class="req">*</span></label>
+                            <input type="text" id="nombres_apellidos" name="nombres_apellidos" class="form-control" placeholder="Nombre legal completo" required>
+                        </div>
+                    </div>
+
+                    <div class="grid-3">
+                        <div class="form-group">
+                            <label class="form-label" for="nombre_identitario">Nombre Identitario</label>
+                            <input type="text" id="nombre_identitario" name="nombre_identitario" class="form-control" placeholder="Opcional">
+                            <span class="form-help">Si aplica según protocolo diferencial.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="telefono">Teléfono / Celular de Contacto <span class="req">*</span></label>
+                            <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="Ej: 3101234567" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="correo">Correo Electrónico <span class="req">*</span></label>
+                            <input type="email" id="correo" name="correo" class="form-control" placeholder="nombre@gobiernobogota.gov.co" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 2: INFORMACIÓN INSTITUCIONAL Y CARGO -->
+                <div class="form-section">
+                    <h3 class="section-title">Información Institucional y Vinculación</h3>
+                    
+                    <div class="grid-3">
+                        <div class="form-group">
+                            <label class="form-label" for="dependencia">Entidad y Dependencia <span class="req">*</span></label>
+                            <input type="text" id="dependencia" name="dependencia" class="form-control" value="Alcaldía Local de Sumapaz" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="cargo">Cargo o Nivel <span class="req">*</span></label>
+                            <select id="cargo" name="cargo" class="form-control" required>
+                                <option value="Profesional" selected>Profesional</option>
+                                <option value="Asesor">Asesor</option>
+                                <option value="Directivo">Directivo</option>
+                                <option value="Técnico/Tecnólogo">Técnico/Tecnólogo</option>
+                                <option value="Auxiliar">Auxiliar</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="tipo_vinculacion">Tipo de Vinculación <span class="req">*</span></label>
+                            <select id="tipo_vinculacion" name="tipo_vinculacion" class="form-control" required>
+                                <option value="Contratista" selected>Contratista</option>
+                                <option value="Carrera">Carrera</option>
+                                <option value="Provisional">Provisional</option>
+                                <option value="Libre Nombramiento">Libre Nombramiento</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 3: PROYECTOS DE INVERSIÓN ASOCIADOS -->
+                <div class="form-section">
+                    <h3 class="section-title">Proyectos de Inversión Asignados</h3>
+                    <p class="card-subtitle" style="margin-bottom: 0.6rem;">
+                        Seleccione el proyecto o proyectos de inversión de la localidad sobre los cuales usted ejecuta actividades y reporta actas:
+                    </p>
+
+                    <input type="text" id="buscar-proyecto" class="form-control search-proyectos-input" placeholder="Filtrar por código o nombre de proyecto..." oninput="filtrarProyectosLista()">
+
+                    <div class="proyectos-box" id="proyectos-container">
+                        <div class="form-help" style="padding: 0.5rem;">Cargando proyectos de inversión...</div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 4: FIRMA DIGITALIZADA -->
+                <div class="form-section">
+                    <h3 class="section-title">Firma Digitalizada</h3>
+                    <p class="card-subtitle" style="margin-bottom: 0.75rem;">
+                        Firme directamente en el recuadro digital a continuación o adjunte un archivo de imagen transparente con su firma manuscrita. Esta firma quedará asociada a su cédula para estamparse en los formatos oficiales de reunión.
+                    </p>
+
+                    <div class="signature-container">
+                        <canvas id="canvas-firma" class="signature-canvas"></canvas>
+                        
+                        <div class="signature-toolbar">
+                            <div style="display:flex; gap:0.5rem; align-items:center;">
+                                <button type="button" class="btn btn-outline btn-sm" onclick="limpiarCanvas()">Limpiar Trazo</button>
+                                <label class="btn btn-outline btn-sm" style="margin:0; cursor:pointer;">
+                                    Subir Imagen de Firma
+                                    <input type="file" id="input-archivo-firma" accept="image/*" style="display:none;" onchange="cargarArchivoFirma(event)">
+                                </label>
+                            </div>
+                            <img id="img-firma-existente" class="signature-preview-box" alt="Firma registrada">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOTONES DE ACCIÓN -->
+                <div class="form-actions">
+                    <a href="despacho.html" class="btn btn-outline">Cancelar</a>
+                    <button type="submit" id="btn-submit" class="btn btn-primary">Guardar Contratista</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        let proyectosData = [];
+        let canvas = null;
+        let ctx = null;
+        let isDrawing = false;
+        let hasSigned = false;
+        let existingSignatureUrl = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initCanvas();
+            cargarProyectos();
+        });
+
+        // INICIALIZAR CANVAS DE FIRMA DIGITAL
+        function initCanvas() {
+            canvas = document.getElementById('canvas-firma');
+            ctx = canvas.getContext('2d');
+
+            function resizeCanvas() {
+                const rect = canvas.getBoundingClientRect();
+                const dpr = window.devicePixelRatio || 1;
+                canvas.width = rect.width * dpr;
+                canvas.height = rect.height * dpr;
+                ctx.scale(dpr, dpr);
+                ctx.strokeStyle = '#1A202C';
+                ctx.lineWidth = 2.2;
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+            }
+
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            function getPos(e) {
+                const rect = canvas.getBoundingClientRect();
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                return {
+                    x: clientX - rect.left,
+                    y: clientY - rect.top
+                };
+            }
+
+            function startDraw(e) {
+                isDrawing = true;
+                const pos = getPos(e);
+                ctx.beginPath();
+                ctx.moveTo(pos.x, pos.y);
+                e.preventDefault();
+            }
+
+            function draw(e) {
+                if (!isDrawing) return;
+                const pos = getPos(e);
+                ctx.lineTo(pos.x, pos.y);
+                ctx.stroke();
+                hasSigned = true;
+                e.preventDefault();
+            }
+
+            function stopDraw(e) {
+                if (isDrawing) {
+                    isDrawing = false;
+                }
+            }
+
+            canvas.addEventListener('mousedown', startDraw);
+            canvas.addEventListener('mousemove', draw);
+            window.addEventListener('mouseup', stopDraw);
+
+            canvas.addEventListener('touchstart', startDraw, { passive: false });
+            canvas.addEventListener('touchmove', draw, { passive: false });
+            window.addEventListener('touchend', stopDraw);
+        }
+
+        function limpiarCanvas() {
+            if (!ctx || !canvas) return;
+            const dpr = window.devicePixelRatio || 1;
+            ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
+            hasSigned = false;
+        }
+
+        function cargarArchivoFirma(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const img = new Image();
+                img.onload = function() {
+                    limpiarCanvas();
+                    const dpr = window.devicePixelRatio || 1;
+                    const w = canvas.width / dpr;
+                    const h = canvas.height / dpr;
+
+                    // Ajustar al centro manteniendo relación de aspecto
+                    const ratio = Math.min(w / img.width, h / img.height) * 0.85;
+                    const nw = img.width * ratio;
+                    const nh = img.height * ratio;
+                    const nx = (w - nw) / 2;
+                    const ny = (h - nh) / 2;
+
+                    ctx.drawImage(img, nx, ny, nw, nh);
+                    hasSigned = true;
+                };
+                img.src = event.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // CARGAR PROYECTOS DE INVERSIÓN
+        async function cargarProyectos() {
+            try {
+                const res = await fetch('api/actividades_contratista_api.php?action=proyectos_list');
+                const json = await res.json();
+                if (json.success && Array.isArray(json.data)) {
+                    proyectosData = json.data;
+                    renderProyectos(proyectosData);
+                } else {
+                    document.getElementById('proyectos-container').innerHTML = '<div class="form-help">No se pudieron cargar los proyectos.</div>';
+                }
+            } catch (err) {
+                console.error(err);
+                document.getElementById('proyectos-container').innerHTML = '<div class="form-help">Error al conectar con el servidor.</div>';
+            }
+        }
+
+        function renderProyectos(list, selectedIds = []) {
+            const container = document.getElementById('proyectos-container');
+            if (list.length === 0) {
+                container.innerHTML = '<div class="form-help" style="padding:0.5rem;">No se encontraron proyectos coincidentes.</div>';
+                return;
+            }
+
+            container.innerHTML = list.map(p => {
+                const isChecked = selectedIds.includes(parseInt(p.id)) ? 'checked' : '';
+                return `
+                    <label class="proyecto-item">
+                        <input type="checkbox" name="proyectos_ids" value="${p.id}" ${isChecked}>
+                        <div class="proyecto-label">
+                            <span class="proyecto-codigo">[${escapeHtml(p.codigo)}]</span>
+                            ${escapeHtml(p.nombre)}
+                        </div>
+                    </label>
+                `;
+            }).join('');
+        }
+
+        function filtrarProyectosLista() {
+            const query = (document.getElementById('buscar-proyecto').value || '').toLowerCase().trim();
+            const checkedIds = Array.from(document.querySelectorAll('input[name="proyectos_ids"]:checked')).map(el => parseInt(el.value));
+            
+            const filtrados = proyectosData.filter(p => {
+                const matchCode = (p.codigo || '').toLowerCase().includes(query);
+                const matchName = (p.nombre || '').toLowerCase().includes(query);
+                return matchCode || matchName;
+            });
+            renderProyectos(filtrados, checkedIds);
+        }
+
+        // VERIFICAR SI EL CONTRATISTA YA EXISTE POR CÉDULA
+        async function verificarContratistaExistente() {
+            const doc = (document.getElementById('numero_documento').value || '').trim();
+            if (!doc) return;
+
+            try {
+                const res = await fetch(`api/actividades_contratista_api.php?action=buscar_contratista&documento=${encodeURIComponent(doc)}`);
+                const json = await res.json();
+                if (json.success && json.encontrado && json.data) {
+                    const c = json.data;
+                    document.getElementById('tipo_documento').value = c.tipo_documento || 'CC';
+                    document.getElementById('nombres_apellidos').value = c.nombres_apellidos || '';
+                    document.getElementById('nombre_identitario').value = c.nombre_identitario || '';
+                    document.getElementById('telefono').value = c.telefono || '';
+                    document.getElementById('correo').value = c.correo || '';
+                    document.getElementById('dependencia').value = c.dependencia || 'Alcaldía Local de Sumapaz';
+                    document.getElementById('cargo').value = c.cargo || 'Profesional';
+                    document.getElementById('tipo_vinculacion').value = c.tipo_vinculacion || 'Contratista';
+
+                    // Proyectos asociados
+                    const proyIds = (c.proyectos || []).map(p => parseInt(p.id));
+                    renderProyectos(proyectosData, proyIds);
+
+                    // Firma digital existente
+                    if (c.firma_digital) {
+                        existingSignatureUrl = c.firma_digital;
+                        const previewImg = document.getElementById('img-firma-existente');
+                        previewImg.src = c.firma_digital;
+                        previewImg.style.display = 'block';
+                        previewImg.title = 'Firma actualmente registrada';
+                    }
+
+                    mostrarAlerta('Contratista ya registrado en el sistema. Los datos y proyectos asignados han sido cargados para su actualización.', 'info');
+                }
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        // GUARDAR CONTRATISTA
+        async function guardarContratista(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btn-submit');
+            btn.disabled = true;
+            btn.textContent = 'Guardando...';
+
+            // Proyectos seleccionados
+            const proyCheckboxes = document.querySelectorAll('input[name="proyectos_ids"]:checked');
+            const proyectosIds = Array.from(proyCheckboxes).map(cb => parseInt(cb.value));
+
+            if (proyectosIds.length === 0) {
+                mostrarAlerta('Debe seleccionar al menos un proyecto de inversión sobre el cual reportará actividades.', 'danger');
+                btn.disabled = false;
+                btn.textContent = 'Guardar Contratista';
+                return;
+            }
+
+            // Firma digital
+            let firmaData = existingSignatureUrl;
+            if (hasSigned) {
+                firmaData = canvas.toDataURL('image/png');
+            }
+
+            if (!firmaData) {
+                mostrarAlerta('Por favor registre su firma en el recuadro o adjunte una imagen de firma.', 'danger');
+                btn.disabled = false;
+                btn.textContent = 'Guardar Contratista';
+                return;
+            }
+
+            const payload = {
+                tipo_documento: document.getElementById('tipo_documento').value,
+                numero_documento: document.getElementById('numero_documento').value.trim(),
+                nombres_apellidos: document.getElementById('nombres_apellidos').value.trim(),
+                nombre_identitario: document.getElementById('nombre_identitario').value.trim(),
+                telefono: document.getElementById('telefono').value.trim(),
+                correo: document.getElementById('correo').value.trim(),
+                dependencia: document.getElementById('dependencia').value.trim(),
+                cargo: document.getElementById('cargo').value,
+                tipo_vinculacion: document.getElementById('tipo_vinculacion').value,
+                firma_digital: firmaData,
+                proyectos_ids: proyectosIds
+            };
+
+            try {
+                const res = await fetch('api/actividades_contratista_api.php?action=guardar_contratista', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const json = await res.json();
+
+                if (json.success) {
+                    mostrarAlerta(json.message || 'Contratista registrado exitosamente.', 'success');
+                    setTimeout(() => {
+                        window.location.href = 'registrar_actividad.html';
+                    }, 1800);
+                } else {
+                    mostrarAlerta(json.message || 'Ocurrió un error al guardar.', 'danger');
+                    btn.disabled = false;
+                    btn.textContent = 'Guardar Contratista';
+                }
+            } catch (err) {
+                console.error(err);
+                mostrarAlerta('Error de comunicación con el servidor.', 'danger');
+                btn.disabled = false;
+                btn.textContent = 'Guardar Contratista';
+            }
+        }
+
+        function mostrarAlerta(msg, tipo = 'info') {
+            const el = document.getElementById('alert-msg');
+            el.className = `alert alert-${tipo}`;
+            el.textContent = msg;
+            el.style.display = 'block';
+            el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+    </script>
+</body>
+</html>
