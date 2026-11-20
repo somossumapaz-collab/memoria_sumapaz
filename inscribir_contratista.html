@@ -1,171 +1,164 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscripción de Contratistas - Despacho Sumapaz</title>
+    <title>Inscripción de Contratistas - Sumapaz</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary-green: #353E24;
-            --primary-dark: #242B19;
-            --accent-green: #4C5933;
-            --bg-cream: #F8F9FA;
-            --surface-card: #FFFFFF;
-            --border-light: #E2E8F0;
-            --border-medium: #CBD5E1;
-            --text-main: #1E293B;
-            --text-muted: #64748B;
-            --primary-button: #2E5A36;
-            --primary-button-hover: #234429;
-            --danger: #991B1B;
-            --success: #166534;
+            --primary-green: #3F6028;
+            --primary-green-dark: #35551F;
+            --accent-orange: #F4B35E;
+            --accent-gold: #D4A373;
+            --olive: #444F2F;
+            --bg-light: #F4F6F8;
+            --text-dark: #111111;
+            --text-muted: #6C757D;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --danger: #842029;
+            --danger-bg: #FDF2F2;
+            --danger-border: #F1C2C5;
+            --success: #35551F;
+            --success-bg: #EEF3EF;
+            --success-border: #D5E2D8;
         }
 
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-cream);
-            color: var(--text-main);
-            line-height: 1.5;
-            padding-bottom: 3rem;
+            background-color: var(--bg-light);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.45;
         }
 
-        /* TOPBAR INSTITUCIONAL */
-        .topbar {
-            background-color: var(--primary-green);
-            padding: 0.75rem 1.5rem;
-            color: #FFFFFF;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            font-weight: 700;
         }
 
-        .topbar-container {
-            max-width: 1000px;
+        .hero-section {
+            background: linear-gradient(135deg, #2D4A23 0%, #1F3617 100%);
+            padding: 2.5rem 1.5rem 2.25rem 1.5rem;
+            color: white;
+            text-align: center;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .hero-content {
+            max-width: 850px;
             margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
         }
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            text-decoration: none;
+        .hero-title {
+            font-size: 1.85rem;
+            font-weight: 700;
+            margin: 0;
             color: #FFFFFF;
-        }
-
-        .site-logo {
-            height: 48px;
-            width: auto;
-            display: block;
-        }
-
-        .brand-text h1 {
-            font-size: 1.05rem;
-            font-weight: 600;
             letter-spacing: -0.01em;
         }
 
-        .brand-text span {
-            font-size: 0.8rem;
-            color: #E2E8F0;
+        /* NAVEGACIÓN ENTRE PÁGINAS PÚBLICAS (SIN ACCESO A PANELES NI LOGIN) */
+        .public-nav-bar {
+            background: #FFFFFF;
+            border-bottom: 1px solid #E3E6EA;
+            padding: 0.65rem 1rem;
         }
 
-        .top-links {
+        .public-nav-container {
+            max-width: 1120px;
+            margin: 0 auto;
             display: flex;
+            justify-content: center;
             gap: 0.75rem;
+            flex-wrap: wrap;
         }
 
-        .top-link {
-            color: #F8F9FA;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            padding: 0.35rem 0.75rem;
-            border-radius: 6px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.2s ease;
-        }
-
-        .top-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        /* CONTENIDO PRINCIPAL */
-        .main-container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .form-card {
-            background: var(--surface-card);
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            padding: 2rem;
-        }
-
-        .card-header {
-            margin-bottom: 1.75rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .card-title {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--primary-green);
-            margin-bottom: 0.3rem;
-        }
-
-        .card-subtitle {
-            font-size: 0.88rem;
+        .public-nav-link {
+            font-size: 0.82rem;
+            font-weight: 600;
             color: var(--text-muted);
+            text-decoration: none;
+            padding: 0.4rem 0.9rem;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            transition: all 0.15s ease;
         }
 
-        .form-section {
-            margin-bottom: 1.75rem;
+        .public-nav-link:hover {
+            color: var(--primary-green-dark);
+            background: #F8FAF9;
         }
 
-        .section-title {
-            font-size: 0.95rem;
+        .public-nav-link.active {
+            color: var(--primary-green-dark);
+            background: #EEF3EF;
+            border-color: #D5E2D8;
+        }
+
+        .container-wrap {
+            max-width: 980px;
+            margin: 2rem auto 4rem auto;
+            padding: 0 1.25rem;
+        }
+
+        .card {
+            background: #FFFFFF;
+            border-radius: 14px;
+            border: 1px solid #E3E6EA;
+            box-shadow: var(--card-shadow);
+            padding: 1.4rem 1.6rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .card h3 {
+            margin: 0 0 0.85rem 0;
+            font-size: 1.05rem;
+            color: var(--primary-green-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
             font-weight: 700;
-            color: var(--text-main);
+            border-bottom: 1px solid #EEF1F4;
+            padding-bottom: 0.5rem;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            background: #EEF3EF;
+            color: var(--primary-green-dark);
+            border: 1px solid #D5E2D8;
+            border-radius: 6px;
+            padding: 0.18rem 0.6rem;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
             text-transform: uppercase;
-            letter-spacing: 0.03em;
-            margin-bottom: 1rem;
-            padding-bottom: 0.4rem;
-            border-bottom: 1px solid var(--border-light);
+            white-space: nowrap;
         }
 
-        .grid-2 {
+        .form-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 1rem;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .grid-2, .grid-3 {
-                grid-template-columns: 1fr;
-            }
-            .form-card {
-                padding: 1.25rem;
-            }
+            margin-top: 0.75rem;
         }
 
         .form-group {
@@ -175,52 +168,55 @@
             margin-bottom: 0.85rem;
         }
 
-        .form-label {
-            font-size: 0.83rem;
-            font-weight: 600;
-            color: var(--text-main);
+        .form-group label {
+            font-size: 0.74rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
         }
 
-        .form-label .req {
+        .form-group label .req {
             color: var(--danger);
             margin-left: 2px;
         }
 
         .form-control {
+            padding: 0.58rem 0.75rem;
+            border: 1px solid #CCCCCC;
+            border-radius: 8px;
+            font-size: 0.86rem;
             font-family: inherit;
-            font-size: 0.88rem;
-            padding: 0.55rem 0.75rem;
-            border: 1px solid var(--border-medium);
-            border-radius: 6px;
-            background-color: #FFFFFF;
-            color: var(--text-main);
+            color: var(--text-dark);
+            background: #fff;
+            width: 100%;
             outline: none;
             transition: border-color 0.15s ease, box-shadow 0.15s ease;
         }
 
         .form-control:focus {
-            border-color: var(--primary-button);
-            box-shadow: 0 0 0 3px rgba(46, 90, 54, 0.15);
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(63, 96, 40, 0.15);
+        }
+
+        .muted {
+            color: var(--text-muted);
         }
 
         .form-help {
-            font-size: 0.76rem;
+            font-size: 0.74rem;
             color: var(--text-muted);
+            margin-top: 0.2rem;
         }
 
         /* PROYECTOS DE INVERSIÓN */
         .proyectos-box {
-            border: 1px solid var(--border-medium);
-            border-radius: 6px;
+            border: 1px solid #CCCCCC;
+            border-radius: 8px;
             padding: 0.75rem;
             max-height: 240px;
             overflow-y: auto;
-            background-color: #F8FAF9;
-        }
-
-        .search-proyectos-input {
-            margin-bottom: 0.5rem;
-            width: 100%;
+            background: #F8FAF9;
         }
 
         .proyecto-item {
@@ -228,13 +224,13 @@
             align-items: flex-start;
             gap: 0.6rem;
             padding: 0.45rem 0.5rem;
-            border-radius: 4px;
+            border-radius: 6px;
             transition: background 0.15s ease;
             cursor: pointer;
         }
 
         .proyecto-item:hover {
-            background-color: #EBF3ED;
+            background-color: #EEF3EF;
         }
 
         .proyecto-item input[type="checkbox"] {
@@ -242,38 +238,37 @@
             cursor: pointer;
             width: 16px;
             height: 16px;
-            accent-color: var(--primary-button);
+            accent-color: var(--primary-green);
         }
 
         .proyecto-label {
             font-size: 0.83rem;
-            color: var(--text-main);
-            cursor: pointer;
+            color: var(--text-dark);
             line-height: 1.35;
         }
 
         .proyecto-codigo {
             font-weight: 700;
-            color: var(--primary-button);
+            color: var(--primary-green-dark);
             margin-right: 0.3rem;
         }
 
         /* PAD DE FIRMA */
         .signature-container {
-            border: 1px solid var(--border-medium);
-            border-radius: 6px;
+            border: 1px solid #CCCCCC;
+            border-radius: 8px;
             background: #FFFFFF;
-            padding: 0.5rem;
+            padding: 0.75rem;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.6rem;
         }
 
         .signature-canvas {
             width: 100%;
             height: 160px;
-            border: 1px dashed var(--border-medium);
-            border-radius: 4px;
+            border: 1px dashed #CBD5E1;
+            border-radius: 6px;
             background-color: #FCFDFD;
             touch-action: none;
             cursor: crosshair;
@@ -283,57 +278,81 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
         .signature-preview-box {
-            max-height: 70px;
+            max-height: 55px;
             object-fit: contain;
-            border: 1px solid var(--border-light);
+            border: 1px solid #E3E6EA;
             border-radius: 4px;
             padding: 2px;
             background: #fff;
             display: none;
         }
 
+        /* CONSENTIMIENTO DE DATOS LEY 1581 DE 2012 */
+        .consent-box {
+            background: #F8FAF9;
+            border: 1px solid #D5E2D8;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .consent-text {
+            font-size: 0.74rem;
+            line-height: 1.45;
+            color: var(--text-muted);
+            text-align: justify;
+            margin-bottom: 0.75rem;
+        }
+
+        .consent-check-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            line-height: 1.35;
+        }
+
+        .consent-check-label input {
+            margin-top: 0.15rem;
+            width: 17px;
+            height: 17px;
+            accent-color: var(--primary-green);
+        }
+
         /* BOTONES */
         .btn {
+            border: none;
+            border-radius: 8px;
+            padding: 0.65rem 1.4rem;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
             font-family: inherit;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.4rem;
-            font-size: 0.88rem;
-            font-weight: 600;
-            padding: 0.6rem 1.25rem;
-            border-radius: 6px;
-            border: 1px solid transparent;
-            cursor: pointer;
-            transition: all 0.15s ease;
             text-decoration: none;
+            transition: all 0.2s ease;
         }
 
-        .btn-primary {
-            background-color: var(--primary-button);
-            color: #FFFFFF;
-        }
+        .btn:hover { opacity: 0.92; transform: translateY(-1px); }
+        .btn-primary { background: var(--primary-green); color: #fff; }
+        .btn-outline { background: #fff; color: var(--primary-green); border: 1px solid var(--primary-green); }
+        .btn-sm { padding: 0.4rem 0.85rem; font-size: 0.78rem; }
 
-        .btn-primary:hover {
-            background-color: var(--primary-button-hover);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border-color: var(--border-medium);
-            color: var(--text-main);
-        }
-
-        .btn-outline:hover {
-            background-color: #F1F5F9;
-        }
-
-        .btn-sm {
-            padding: 0.35rem 0.7rem;
-            font-size: 0.8rem;
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
         }
 
         .form-actions {
@@ -342,193 +361,211 @@
             gap: 0.75rem;
             margin-top: 1.5rem;
             padding-top: 1rem;
-            border-top: 1px solid var(--border-light);
+            border-top: 1px solid #EEF1F4;
         }
 
-        /* ALERTAS */
-        .alert {
-            padding: 0.75rem 1rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
+        /* AVISOS / MENSAJES */
+        .notice-box {
+            padding: 0.9rem 1.1rem;
+            border-radius: 10px;
             margin-bottom: 1.25rem;
+            font-size: 0.86rem;
+            border: 1px solid #E3E6EA;
+            background: #F8FAF9;
             display: none;
         }
 
-        .alert-success {
-            background-color: #DCFCE7;
-            color: var(--success);
-            border: 1px solid #BBF7D0;
-        }
-
-        .alert-danger {
-            background-color: #FEE2E2;
-            color: var(--danger);
-            border: 1px solid #FECACA;
-        }
-
-        .alert-info {
-            background-color: #F0FDF4;
-            color: #1E3A1E;
-            border: 1px solid #DCFCE7;
-        }
+        .notice-error { background: var(--danger-bg); border-color: var(--danger-border); color: var(--danger); }
+        .notice-success { background: var(--success-bg); border-color: var(--success-border); color: var(--success); }
     </style>
 </head>
+
 <body>
 
-    <!-- TOPBAR -->
-    <header class="topbar">
-        <div class="topbar-container">
-            <a href="despacho.html" class="brand">
-                <img src="assets/logo_somossumapaz.png" alt="Somos Sumapaz" class="site-logo">
-                <div class="brand-text">
-                    <h1>Alcaldía Local de Sumapaz</h1>
-                    <span>Control de Actividades y Registro de Contratistas</span>
-                </div>
-            </a>
-            <div class="top-links">
-                <a href="despacho.html" class="top-link">Panel Despacho</a>
-                <a href="registrar_actividad.html" class="top-link">Registrar Actividad</a>
-                <a href="consultar_actas.html" class="top-link">Consultar Actas</a>
-            </div>
+    <!-- HERO SECTION INSTITUCIONAL -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Inscripción y Actualización de Contratistas</h1>
+            <p style="margin: 0.45rem auto 0 auto; color: #D7E3D8; font-size: 0.9rem; font-weight: 400; max-width: 680px;">
+                Registro oficial de datos de contacto, firma digitalizada y proyectos de inversión asignados para el reporte de actividades institucionales en la localidad de Sumapaz.
+            </p>
         </div>
-    </header>
+    </section>
 
-    <!-- FORMULARIO PRINCIPAL -->
-    <main class="main-container">
-        <div class="form-card">
-            <div class="card-header">
-                <h2 class="card-title">Inscripción y Actualización de Contratistas</h2>
-                <p class="card-subtitle">
-                    Registro institucional de datos de contacto, proyectos de inversión asignados y firma digitalizada para el diligenciamiento estandarizado del Formato de Evidencia de Reunión GDI-GPD-F029.
+    <!-- NAVEGACIÓN ENTRE SERVICIOS PÚBLICOS (SIN LOGIN) -->
+    <nav class="public-nav-bar">
+        <div class="public-nav-container">
+            <a href="inscribir_contratista.html" class="public-nav-link active">Inscribir Contratista</a>
+            <a href="registrar_actividad.html" class="public-nav-link">Registrar Actividad / Acta</a>
+            <a href="consultar_actas.html" class="public-nav-link">Consultar Mis Actas por Cédula</a>
+        </div>
+    </nav>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <main class="container-wrap">
+        
+        <div id="notice-msg" class="notice-box"></div>
+
+        <form id="form-contratista" onsubmit="guardarContratista(event)">
+            
+            <!-- PASO 1: DATOS PERSONALES -->
+            <section class="card">
+                <h3>
+                    <span>1. Datos Personales y de Identificación</span>
+                    <span class="tag">Identificación</span>
+                </h3>
+                <p class="muted" style="font-size: 0.85rem; margin: 0 0 1rem 0;">
+                    Ingrese su documento de identidad. Si ya se encuentra inscrito en el sistema, sus datos y proyectos asignados se cargarán automáticamente para su verificación o actualización.
                 </p>
-            </div>
 
-            <div id="alert-msg" class="alert"></div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="tipo_documento">Tipo de Documento <span class="req">*</span></label>
+                        <select id="tipo_documento" class="form-control" required>
+                            <option value="CC" selected>Cédula de Ciudadanía (CC)</option>
+                            <option value="CE">Cédula de Extranjería (CE)</option>
+                            <option value="TI">Tarjeta de Identidad (TI)</option>
+                            <option value="PAS">Pasaporte (PAS)</option>
+                        </select>
+                    </div>
 
-            <form id="form-contratista" onsubmit="guardarContratista(event)">
-                <!-- SECCIÓN 1: DATOS PERSONALES Y CONTACTO -->
-                <div class="form-section">
-                    <h3 class="section-title">Datos Personales y de Identificación</h3>
+                    <div class="form-group">
+                        <label for="numero_documento">Número de Documento <span class="req">*</span></label>
+                        <input type="text" id="numero_documento" class="form-control" placeholder="Ej: 1012345678" required onblur="verificarContratistaExistente()">
+                        <span class="form-help">Digite sin puntos ni espacios.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombres_apellidos">Nombres y Apellidos Completos <span class="req">*</span></label>
+                        <input type="text" id="nombres_apellidos" class="form-control" placeholder="Nombres legales completos" required>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nombre_identitario">Nombre Identitario</label>
+                        <input type="text" id="nombre_identitario" class="form-control" placeholder="Opcional">
+                        <span class="form-help">Si aplica conforme al enfoque diferencial.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono / Celular de Contacto <span class="req">*</span></label>
+                        <input type="tel" id="telefono" class="form-control" placeholder="Ej: 3101234567" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico <span class="req">*</span></label>
+                        <input type="email" id="correo" class="form-control" placeholder="usuario@gobiernobogota.gov.co" required>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PASO 2: INFORMACIÓN INSTITUCIONAL -->
+            <section class="card">
+                <h3>
+                    <span>2. Información Institucional y Vinculación</span>
+                    <span class="tag">Institucional</span>
+                </h3>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="dependencia">Entidad y Dependencia <span class="req">*</span></label>
+                        <input type="text" id="dependencia" class="form-control" value="Alcaldía Local de Sumapaz" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cargo">Cargo o Nivel <span class="req">*</span></label>
+                        <select id="cargo" class="form-control" required>
+                            <option value="Profesional" selected>Profesional</option>
+                            <option value="Asesor">Asesor</option>
+                            <option value="Directivo">Directivo</option>
+                            <option value="Técnico/Tecnólogo">Técnico/Tecnólogo</option>
+                            <option value="Auxiliar">Auxiliar</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo_vinculacion">Tipo de Vinculación <span class="req">*</span></label>
+                        <select id="tipo_vinculacion" class="form-control" required>
+                            <option value="Contratista" selected>Contratista</option>
+                            <option value="Carrera">Carrera</option>
+                            <option value="Provisional">Provisional</option>
+                            <option value="Libre Nombramiento">Libre Nombramiento</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PASO 3: PROYECTOS DE INVERSIÓN ASOCIADOS -->
+            <section class="card">
+                <h3>
+                    <span>3. Proyectos de Inversión Asignados</span>
+                    <span class="tag">Proyectos</span>
+                </h3>
+                <p class="muted" style="font-size: 0.85rem; margin: 0 0 0.75rem 0;">
+                    Seleccione el o los proyectos de inversión sobre los cuales usted ejecuta actividades contractuales en la localidad:
+                </p>
+
+                <div class="form-group">
+                    <input type="text" id="buscar-proyecto" class="form-control" placeholder="Filtrar proyectos por código o nombre..." oninput="filtrarProyectosLista()">
+                </div>
+
+                <div class="proyectos-box" id="proyectos-container">
+                    <div class="form-help" style="padding:0.5rem;">Cargando proyectos de inversión...</div>
+                </div>
+            </section>
+
+            <!-- PASO 4: FIRMA DIGITALIZADA -->
+            <section class="card">
+                <h3>
+                    <span>4. Firma Digitalizada</span>
+                    <span class="tag">Firma Oficial</span>
+                </h3>
+                <p class="muted" style="font-size: 0.85rem; margin: 0 0 0.75rem 0;">
+                    Trace su firma digital en el recuadro o adjunte una imagen con su firma manuscrita. Esta firma quedará asociada de manera segura a su cédula para estamparse en los formatos oficiales de reunión.
+                </p>
+
+                <div class="signature-container">
+                    <canvas id="canvas-firma" class="signature-canvas"></canvas>
                     
-                    <div class="grid-3">
-                        <div class="form-group">
-                            <label class="form-label" for="tipo_documento">Tipo de Documento <span class="req">*</span></label>
-                            <select id="tipo_documento" name="tipo_documento" class="form-control" required>
-                                <option value="CC" selected>Cédula de Ciudadanía (CC)</option>
-                                <option value="CE">Cédula de Extranjería (CE)</option>
-                                <option value="TI">Tarjeta de Identidad (TI)</option>
-                                <option value="PAS">Pasaporte (PAS)</option>
-                            </select>
+                    <div class="signature-toolbar">
+                        <div style="display:flex; gap:0.5rem; align-items:center;">
+                            <button type="button" class="btn btn-outline btn-sm" onclick="limpiarCanvas()">Limpiar Trazo</button>
+                            <label class="btn btn-outline btn-sm" style="margin:0; cursor:pointer;">
+                                Subir Imagen de Firma
+                                <input type="file" id="input-archivo-firma" accept="image/png, image/jpeg, image/webp" style="display:none;" onchange="cargarArchivoFirma(event)">
+                            </label>
                         </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="numero_documento">Número de Documento <span class="req">*</span></label>
-                            <input type="text" id="numero_documento" name="numero_documento" class="form-control" placeholder="Ej: 1012345678" required onblur="verificarContratistaExistente()">
-                            <span class="form-help">Al digitar, se cargarán los datos si ya existe registro.</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="nombres_apellidos">Nombres y Apellidos Completos <span class="req">*</span></label>
-                            <input type="text" id="nombres_apellidos" name="nombres_apellidos" class="form-control" placeholder="Nombre legal completo" required>
-                        </div>
-                    </div>
-
-                    <div class="grid-3">
-                        <div class="form-group">
-                            <label class="form-label" for="nombre_identitario">Nombre Identitario</label>
-                            <input type="text" id="nombre_identitario" name="nombre_identitario" class="form-control" placeholder="Opcional">
-                            <span class="form-help">Si aplica según protocolo diferencial.</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="telefono">Teléfono / Celular de Contacto <span class="req">*</span></label>
-                            <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="Ej: 3101234567" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="correo">Correo Electrónico <span class="req">*</span></label>
-                            <input type="email" id="correo" name="correo" class="form-control" placeholder="nombre@gobiernobogota.gov.co" required>
-                        </div>
+                        <img id="img-firma-existente" class="signature-preview-box" alt="Firma registrada">
                     </div>
                 </div>
+            </section>
 
-                <!-- SECCIÓN 2: INFORMACIÓN INSTITUCIONAL Y CARGO -->
-                <div class="form-section">
-                    <h3 class="section-title">Información Institucional y Vinculación</h3>
-                    
-                    <div class="grid-3">
-                        <div class="form-group">
-                            <label class="form-label" for="dependencia">Entidad y Dependencia <span class="req">*</span></label>
-                            <input type="text" id="dependencia" name="dependencia" class="form-control" value="Alcaldía Local de Sumapaz" required>
-                        </div>
+            <!-- PASO 5: CONSENTIMIENTO LEY 1581 DE 2012 (OBLIGATORIO) -->
+            <section class="card">
+                <h3>
+                    <span>5. Consentimiento de Tratamiento de Datos Personales</span>
+                    <span class="tag">Ley 1581 de 2012</span>
+                </h3>
 
-                        <div class="form-group">
-                            <label class="form-label" for="cargo">Cargo o Nivel <span class="req">*</span></label>
-                            <select id="cargo" name="cargo" class="form-control" required>
-                                <option value="Profesional" selected>Profesional</option>
-                                <option value="Asesor">Asesor</option>
-                                <option value="Directivo">Directivo</option>
-                                <option value="Técnico/Tecnólogo">Técnico/Tecnólogo</option>
-                                <option value="Auxiliar">Auxiliar</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="tipo_vinculacion">Tipo de Vinculación <span class="req">*</span></label>
-                            <select id="tipo_vinculacion" name="tipo_vinculacion" class="form-control" required>
-                                <option value="Contratista" selected>Contratista</option>
-                                <option value="Carrera">Carrera</option>
-                                <option value="Provisional">Provisional</option>
-                                <option value="Libre Nombramiento">Libre Nombramiento</option>
-                            </select>
-                        </div>
+                <div class="consent-box">
+                    <div class="consent-text">
+                        Conforme a la Ley 1581 de 2012 y demás normas reglamentarias aplicables, quien registra sus datos declara que conoce y acepta la Política de Tratamiento y Protección de Datos Personales de la Secretaría Distrital de Gobierno, y que la información proporcionada es veraz, completa, exacta, actualizada y verificable. Reconoce y acepta que cualquier consulta o reclamación relacionada con el tratamiento de sus datos personales podrá ser elevada verbalmente o por escrito ante la Secretaría Distrital de Gobierno – Oficina de Atención al Ciudadano, como responsable del tratamiento (www.gobiernobogota.gov.co, tel. 3387000). Manifiesta que con los datos proporcionados tiene el derecho de conocer, actualizar y rectificar los datos personales, a solicitar prueba de este consentimiento, a solicitar información sobre el uso dado, a presentar quejas ante la Superintendencia de Industria y Comercio por uso indebido, y a solicitar la supresión de los datos personales suministrados. De igual manera comprende que los datos aquí consignados serán usados con fines estrictamente institucionales, estadísticos y de seguimiento contractual de la Alcaldía Local de Sumapaz.
                     </div>
+
+                    <label class="consent-check-label">
+                        <input type="checkbox" id="consentimiento_datos" required>
+                        <span>He leído, conozco y acepto expresamente la Política de Tratamiento y Protección de Datos Personales de la Secretaría Distrital de Gobierno. <strong style="color:var(--danger);">*</strong></span>
+                    </label>
                 </div>
 
-                <!-- SECCIÓN 3: PROYECTOS DE INVERSIÓN ASOCIADOS -->
-                <div class="form-section">
-                    <h3 class="section-title">Proyectos de Inversión Asignados</h3>
-                    <p class="card-subtitle" style="margin-bottom: 0.6rem;">
-                        Seleccione el proyecto o proyectos de inversión de la localidad sobre los cuales usted ejecuta actividades y reporta actas:
-                    </p>
-
-                    <input type="text" id="buscar-proyecto" class="form-control search-proyectos-input" placeholder="Filtrar por código o nombre de proyecto..." oninput="filtrarProyectosLista()">
-
-                    <div class="proyectos-box" id="proyectos-container">
-                        <div class="form-help" style="padding: 0.5rem;">Cargando proyectos de inversión...</div>
-                    </div>
-                </div>
-
-                <!-- SECCIÓN 4: FIRMA DIGITALIZADA -->
-                <div class="form-section">
-                    <h3 class="section-title">Firma Digitalizada</h3>
-                    <p class="card-subtitle" style="margin-bottom: 0.75rem;">
-                        Firme directamente en el recuadro digital a continuación o adjunte un archivo de imagen transparente con su firma manuscrita. Esta firma quedará asociada a su cédula para estamparse en los formatos oficiales de reunión.
-                    </p>
-
-                    <div class="signature-container">
-                        <canvas id="canvas-firma" class="signature-canvas"></canvas>
-                        
-                        <div class="signature-toolbar">
-                            <div style="display:flex; gap:0.5rem; align-items:center;">
-                                <button type="button" class="btn btn-outline btn-sm" onclick="limpiarCanvas()">Limpiar Trazo</button>
-                                <label class="btn btn-outline btn-sm" style="margin:0; cursor:pointer;">
-                                    Subir Imagen de Firma
-                                    <input type="file" id="input-archivo-firma" accept="image/*" style="display:none;" onchange="cargarArchivoFirma(event)">
-                                </label>
-                            </div>
-                            <img id="img-firma-existente" class="signature-preview-box" alt="Firma registrada">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BOTONES DE ACCIÓN -->
                 <div class="form-actions">
-                    <a href="despacho.html" class="btn btn-outline">Cancelar</a>
-                    <button type="submit" id="btn-submit" class="btn btn-primary">Guardar Contratista</button>
+                    <button type="submit" id="btn-submit" class="btn btn-primary">
+                        Completar Inscripción de Contratista
+                    </button>
                 </div>
-            </form>
-        </div>
+            </section>
+        </form>
     </main>
 
     <script>
@@ -544,7 +581,7 @@
             cargarProyectos();
         });
 
-        // INICIALIZAR CANVAS DE FIRMA DIGITAL
+        // INICIALIZACIÓN DEL CANVAS DE FIRMA
         function initCanvas() {
             canvas = document.getElementById('canvas-firma');
             ctx = canvas.getContext('2d');
@@ -555,8 +592,8 @@
                 canvas.width = rect.width * dpr;
                 canvas.height = rect.height * dpr;
                 ctx.scale(dpr, dpr);
-                ctx.strokeStyle = '#1A202C';
-                ctx.lineWidth = 2.2;
+                ctx.strokeStyle = '#1F3617';
+                ctx.lineWidth = 2.4;
                 ctx.lineCap = 'round';
                 ctx.lineJoin = 'round';
             }
@@ -591,10 +628,8 @@
                 e.preventDefault();
             }
 
-            function stopDraw(e) {
-                if (isDrawing) {
-                    isDrawing = false;
-                }
+            function stopDraw() {
+                isDrawing = false;
             }
 
             canvas.addEventListener('mousedown', startDraw);
@@ -617,6 +652,12 @@
             const file = e.target.files[0];
             if (!file) return;
 
+            // Validación de peso (máx 2MB)
+            if (file.size > 2097152) {
+                mostrarAviso('El archivo de firma no debe exceder 2 MB.', 'error');
+                return;
+            }
+
             const reader = new FileReader();
             reader.onload = function(event) {
                 const img = new Image();
@@ -626,7 +667,6 @@
                     const w = canvas.width / dpr;
                     const h = canvas.height / dpr;
 
-                    // Ajustar al centro manteniendo relación de aspecto
                     const ratio = Math.min(w / img.width, h / img.height) * 0.85;
                     const nw = img.width * ratio;
                     const nh = img.height * ratio;
@@ -641,7 +681,7 @@
             reader.readAsDataURL(file);
         }
 
-        // CARGAR PROYECTOS DE INVERSIÓN
+        // CARGA DE PROYECTOS DE INVERSIÓN
         async function cargarProyectos() {
             try {
                 const res = await fetch('api/actividades_contratista_api.php?action=proyectos_list');
@@ -691,10 +731,10 @@
             renderProyectos(filtrados, checkedIds);
         }
 
-        // VERIFICAR SI EL CONTRATISTA YA EXISTE POR CÉDULA
+        // VERIFICAR CONTRATISTA EXISTENTE
         async function verificarContratistaExistente() {
             const doc = (document.getElementById('numero_documento').value || '').trim();
-            if (!doc) return;
+            if (!doc || doc.length < 4) return;
 
             try {
                 const res = await fetch(`api/actividades_contratista_api.php?action=buscar_contratista&documento=${encodeURIComponent(doc)}`);
@@ -710,20 +750,18 @@
                     document.getElementById('cargo').value = c.cargo || 'Profesional';
                     document.getElementById('tipo_vinculacion').value = c.tipo_vinculacion || 'Contratista';
 
-                    // Proyectos asociados
                     const proyIds = (c.proyectos || []).map(p => parseInt(p.id));
                     renderProyectos(proyectosData, proyIds);
 
-                    // Firma digital existente
                     if (c.firma_digital) {
                         existingSignatureUrl = c.firma_digital;
                         const previewImg = document.getElementById('img-firma-existente');
                         previewImg.src = c.firma_digital;
                         previewImg.style.display = 'block';
-                        previewImg.title = 'Firma actualmente registrada';
+                        previewImg.title = 'Firma actualmente registrada en sistema';
                     }
 
-                    mostrarAlerta('Contratista ya registrado en el sistema. Los datos y proyectos asignados han sido cargados para su actualización.', 'info');
+                    mostrarAviso('Contratista registrado en el sistema. Los datos han sido precargados para su actualización.', 'success');
                 }
             } catch (err) {
                 console.error(err);
@@ -735,29 +773,36 @@
             e.preventDefault();
             const btn = document.getElementById('btn-submit');
             btn.disabled = true;
-            btn.textContent = 'Guardando...';
+            btn.textContent = 'Guardando información...';
 
-            // Proyectos seleccionados
+            // Consentimiento obligatorio
+            const chkConsent = document.getElementById('consentimiento_datos');
+            if (!chkConsent.checked) {
+                mostrarAviso('Debe aceptar expresamente la Política de Tratamiento de Datos Personales para continuar.', 'error');
+                btn.disabled = false;
+                btn.textContent = 'Completar Inscripción de Contratista';
+                return;
+            }
+
             const proyCheckboxes = document.querySelectorAll('input[name="proyectos_ids"]:checked');
             const proyectosIds = Array.from(proyCheckboxes).map(cb => parseInt(cb.value));
 
             if (proyectosIds.length === 0) {
-                mostrarAlerta('Debe seleccionar al menos un proyecto de inversión sobre el cual reportará actividades.', 'danger');
+                mostrarAviso('Debe seleccionar al menos un proyecto de inversión sobre el cual reportará actividades.', 'error');
                 btn.disabled = false;
-                btn.textContent = 'Guardar Contratista';
+                btn.textContent = 'Completar Inscripción de Contratista';
                 return;
             }
 
-            // Firma digital
             let firmaData = existingSignatureUrl;
             if (hasSigned) {
                 firmaData = canvas.toDataURL('image/png');
             }
 
             if (!firmaData) {
-                mostrarAlerta('Por favor registre su firma en el recuadro o adjunte una imagen de firma.', 'danger');
+                mostrarAviso('Por favor registre su firma digital o adjunte una imagen de firma.', 'error');
                 btn.disabled = false;
-                btn.textContent = 'Guardar Contratista';
+                btn.textContent = 'Completar Inscripción de Contratista';
                 return;
             }
 
@@ -772,7 +817,8 @@
                 cargo: document.getElementById('cargo').value,
                 tipo_vinculacion: document.getElementById('tipo_vinculacion').value,
                 firma_digital: firmaData,
-                proyectos_ids: proyectosIds
+                proyectos_ids: proyectosIds,
+                consentimiento_datos: 1
             };
 
             try {
@@ -784,26 +830,26 @@
                 const json = await res.json();
 
                 if (json.success) {
-                    mostrarAlerta(json.message || 'Contratista registrado exitosamente.', 'success');
+                    mostrarAviso(json.message || 'Contratista inscrito y asociado a sus proyectos exitosamente.', 'success');
                     setTimeout(() => {
                         window.location.href = 'registrar_actividad.html';
                     }, 1800);
                 } else {
-                    mostrarAlerta(json.message || 'Ocurrió un error al guardar.', 'danger');
+                    mostrarAviso(json.message || 'Ocurrió un error al procesar el registro.', 'error');
                     btn.disabled = false;
-                    btn.textContent = 'Guardar Contratista';
+                    btn.textContent = 'Completar Inscripción de Contratista';
                 }
             } catch (err) {
                 console.error(err);
-                mostrarAlerta('Error de comunicación con el servidor.', 'danger');
+                mostrarAviso('Error de comunicación con el servidor institucional.', 'error');
                 btn.disabled = false;
-                btn.textContent = 'Guardar Contratista';
+                btn.textContent = 'Completar Inscripción de Contratista';
             }
         }
 
-        function mostrarAlerta(msg, tipo = 'info') {
-            const el = document.getElementById('alert-msg');
-            el.className = `alert alert-${tipo}`;
+        function mostrarAviso(msg, tipo = 'error') {
+            const el = document.getElementById('notice-msg');
+            el.className = `notice-box notice-${tipo}`;
             el.textContent = msg;
             el.style.display = 'block';
             el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -820,4 +866,5 @@
         }
     </script>
 </body>
+
 </html>

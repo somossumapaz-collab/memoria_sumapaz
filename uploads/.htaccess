@@ -1,0 +1,6 @@
+# Bloqueo estricto de ejecucion de scripts en la carpeta uploads
+<FilesMatch "\.(php|php3|php4|php5|php7|php8|phtml|phar|pl|py|cgi|sh|bash|exe)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+Options -ExecCGI -Indexes
