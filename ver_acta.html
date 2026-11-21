@@ -68,13 +68,14 @@
 
         /* HOJA DEL ACTA (FORMATO ESTANDARIZADO OFICIAL) */
         .acta-page {
-            max-width: 950px;
+            max-width: 820px;
+            width: 100%;
             margin: 0 auto;
             background: #FFFFFF;
-            padding: 2rem 2.2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 1.25rem 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             color: #000000;
-            font-size: 11px;
+            font-size: 10.5px;
         }
 
         /* TABLA PRINCIPAL DEL FORMATO */
@@ -82,34 +83,38 @@
             width: 100%;
             border-collapse: collapse;
             border: 1.5px solid #000000;
-            margin-bottom: 0.75rem;
-            font-size: 10px;
+            margin-bottom: 0.65rem;
+            font-size: 9.5px;
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
         }
 
         table.formato-tabla th,
         table.formato-tabla td {
             border: 1px solid #000000;
-            padding: 4px 6px;
+            padding: 4px 5px;
             vertical-align: middle;
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
         }
 
         .header-logo-cell {
-            width: 25%;
+            width: 28%;
             text-align: center;
             vertical-align: middle;
-            padding: 6px;
+            padding: 5px;
         }
 
         .header-title-cell {
-            width: 50%;
+            width: 48%;
             text-align: center;
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 800;
             letter-spacing: 0.05em;
         }
 
         .header-meta-cell {
-            width: 25%;
+            width: 24%;
             font-size: 8.5px;
             line-height: 1.35;
         }
@@ -137,10 +142,11 @@
             width: 100%;
             border-collapse: collapse;
             border: 1.5px solid #000000;
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
+            margin-top: 0.4rem;
+            margin-bottom: 0.4rem;
             font-size: 8px;
             text-align: center;
+            page-break-inside: auto;
         }
 
         table.asistentes-tabla th,
@@ -148,6 +154,8 @@
             border: 1px solid #000000;
             padding: 3px 2px;
             vertical-align: middle;
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
         }
 
         table.asistentes-tabla th {
@@ -171,33 +179,39 @@
 
         /* TEXTO LEGAL */
         .legal-consent {
-            font-size: 7.5px;
-            line-height: 1.3;
+            font-size: 7.2px;
+            line-height: 1.25;
             text-align: justify;
             border: 1px solid #000000;
             padding: 4px 6px;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.65rem;
             background-color: #FAFAFA;
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
         }
 
         /* SECCIONES CONCLUSIONES Y COMPROMISOS */
         .seccion-header {
             font-weight: 800;
-            font-size: 11px;
+            font-size: 10.5px;
             text-transform: uppercase;
-            margin: 0.75rem 0 0.35rem 0;
+            margin: 0.65rem 0 0.3rem 0;
             border-bottom: 1px solid #000000;
             padding-bottom: 2px;
+            page-break-after: avoid !important;
+            break-after: avoid !important;
         }
 
         .conclusiones-box {
             border: 1px solid #000000;
-            padding: 8px;
-            min-height: 80px;
+            padding: 6px 8px;
+            min-height: 65px;
             white-space: pre-wrap;
-            font-size: 10.5px;
-            margin-bottom: 0.75rem;
-            line-height: 1.4;
+            font-size: 9.5px;
+            margin-bottom: 0.65rem;
+            line-height: 1.35;
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
         }
 
         /* TABLA COMPROMISOS */
@@ -205,15 +219,19 @@
             width: 100%;
             border-collapse: collapse;
             border: 1.5px solid #000000;
-            margin-bottom: 0.75rem;
-            font-size: 9.5px;
+            margin-bottom: 0.65rem;
+            font-size: 9px;
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
         }
 
         table.compromisos-tabla th,
         table.compromisos-tabla td {
             border: 1px solid #000000;
-            padding: 4px 6px;
+            padding: 3px 5px;
             vertical-align: middle;
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
         }
 
         table.compromisos-tabla th {
@@ -226,37 +244,46 @@
         .evidencias-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-bottom: 0.75rem;
+            gap: 8px;
+            margin-bottom: 0.65rem;
         }
 
         .evidencia-card {
             border: 1px solid #000000;
-            padding: 4px;
+            padding: 3px;
             text-align: center;
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
         }
 
         .evidencia-card img {
             width: 100%;
-            max-height: 220px;
+            max-height: 190px;
             object-fit: contain;
             display: block;
             background: #F8F9FA;
         }
 
         .evidencia-caption {
-            font-size: 8.5px;
-            margin-top: 4px;
+            font-size: 8px;
+            margin-top: 3px;
             font-style: italic;
         }
 
         .notas-pie {
-            font-size: 8px;
-            line-height: 1.35;
+            font-size: 7.8px;
+            line-height: 1.3;
             color: #333333;
-            margin-top: 0.5rem;
+            margin-top: 0.4rem;
             border-top: 1px dashed #666666;
-            padding-top: 4px;
+            padding-top: 3px;
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+        }
+
+        tr {
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
         }
 
         /* ESTILOS DE IMPRESIÓN */
@@ -276,7 +303,7 @@
             }
             @page {
                 size: letter portrait;
-                margin: 1cm;
+                margin: 0.8cm;
             }
         }
     </style>
@@ -291,8 +318,8 @@
             <a href="inscribir_contratista.html" class="btn">Inscribir Contratista</a>
         </div>
         <div style="display:flex; gap:0.5rem;">
-            <button type="button" class="btn" onclick="window.print()">Imprimir Acta</button>
-            <button type="button" class="btn btn-primary" onclick="descargarPDF()">Descargar en PDF</button>
+            <button type="button" class="btn" onclick="window.print()">Imprimir / Guardar PDF</button>
+            <button type="button" id="btn-descargar-pdf" class="btn btn-primary" onclick="descargarPDF()">Descargar en PDF</button>
         </div>
     </div>
 
@@ -303,9 +330,7 @@
         <table class="formato-tabla">
             <tr>
                 <td class="header-logo-cell" rowspan="2">
-                    <img src="assets/logo_somossumapaz.png" alt="Bogotá Secretaría de Gobierno" style="max-height:42px; max-width:180px; object-fit:contain; display:block; margin:0 auto 4px auto;">
-                    <div style="font-size:8px; font-weight:700; text-transform:uppercase; color:#000;">Secretaría de Gobierno</div>
-                    <div style="font-size:7px; color:#333;">Alcaldía Local de Sumapaz</div>
+                    <img src="assets/logo_secretaria_gobierno.png" alt="Alcaldía Mayor de Bogotá - Secretaría de Gobierno" style="max-height:48px; max-width:180px; width:auto; object-fit:contain; display:block; margin:0 auto;">
                 </td>
                 <td class="header-title-cell" rowspan="2">
                     EVIDENCIA DE REUNIÓN
@@ -617,16 +642,47 @@
             return f;
         }
 
-        function descargarPDF() {
-            const element = document.getElementById('acta-documento');
-            const opt = {
-                margin:       [8, 8, 8, 8],
-                filename:     `Acta_${actividadData?.codigo_acta || 'GDI-GPD-F029'}.pdf`,
-                image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 2, useCORS: true },
-                jsPDF:        { unit: 'mm', format: 'letter', orientation: 'portrait' }
-            };
-            html2pdf().set(opt).from(element).save();
+        async function descargarPDF() {
+            const btn = document.getElementById('btn-descargar-pdf');
+            const originalText = btn ? btn.textContent : 'Descargar en PDF';
+            if (btn) {
+                btn.disabled = true;
+                btn.textContent = 'Generando PDF...';
+            }
+
+            try {
+                const element = document.getElementById('acta-documento');
+                const prevScrollY = window.scrollY;
+                window.scrollTo(0, 0);
+
+                const codigoActa = (actividadData?.codigo_acta || 'GDI-GPD-F029').replace(/[^a-zA-Z0-9_\-]/g, '_');
+                const opt = {
+                    margin:       [8, 8, 8, 8],
+                    filename:     `Acta_${codigoActa}.pdf`,
+                    image:        { type: 'jpeg', quality: 0.98 },
+                    html2canvas:  { 
+                        scale: 2, 
+                        useCORS: true,
+                        scrollY: 0,
+                        scrollX: 0,
+                        logging: false,
+                        letterRendering: true
+                    },
+                    jsPDF:        { unit: 'mm', format: 'letter', orientation: 'portrait' },
+                    pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+                };
+
+                await html2pdf().set(opt).from(element).save();
+                window.scrollTo(0, prevScrollY);
+            } catch (err) {
+                console.error('Error al generar PDF:', err);
+                window.print();
+            } finally {
+                if (btn) {
+                    btn.disabled = false;
+                    btn.textContent = originalText;
+                }
+            }
         }
 
         function escapeHtml(str) {
