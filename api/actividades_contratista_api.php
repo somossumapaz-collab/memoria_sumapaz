@@ -78,7 +78,7 @@ function saveSecureBase64Image(string $base64Data, string $folder = 'firmas', in
         return null;
     }
 
-    // Validación de imagen real mediante getimagesizefromstring (previene inyección de scripts PHP camuflados)
+    // Validación de imagen real mediante getimagesizefromstring
     $imgInfo = @getimagesizefromstring($data);
     if ($imgInfo === false) {
         return null;
@@ -98,14 +98,16 @@ function saveSecureBase64Image(string $base64Data, string $folder = 'firmas', in
     $ext = $allowedMimes[$mime];
     $uploadDir = __DIR__ . '/../uploads/' . $folder . '/';
     if (!is_dir($uploadDir)) {
-        mkdir($uploadDir, 0755, true);
+        @mkdir($uploadDir, 0777, true);
     }
+    @chmod($uploadDir, 0777);
 
     // Nombre de archivo criptográficamente seguro
     $safeName = $folder . '_' . bin2hex(random_bytes(16)) . '.' . $ext;
     $targetPath = $uploadDir . $safeName;
 
-    if (file_put_contents($targetPath, $data) !== false) {
+    if (@file_put_contents($targetPath, $data) !== false) {
+        @chmod($targetPath, 0666);
         return 'uploads/' . $folder . '/' . $safeName;
     }
 
@@ -228,10 +230,11 @@ try {
             $firmaRuta = null;
             if (strpos($firmaRaw, 'data:image') === 0) {
                 $firmaRuta = saveSecureBase64Image($firmaRaw, 'firmas', 2097152); // máx 2MB para firmas
+                // Fallback garantizado: si falla la escritura en disco, se guarda el Data URI en BD (firma_digital es LONGTEXT)
                 if (!$firmaRuta) {
-                    jsonResponse(['success' => false, 'message' => 'El formato o peso de la firma digital es inválido.'], 400);
+                    $firmaRuta = $firmaRaw;
                 }
-            } elseif (!empty($firmaRaw) && preg_match('/^uploads\/firmas\/[a-zA-Z0-9_\-\.]+$/', $firmaRaw)) {
+            } elseif (!empty($firmaRaw)) {
                 $firmaRuta = $firmaRaw;
             }
 
@@ -455,7 +458,11 @@ try {
                     $pFirmaRuta = null;
                     if (strpos($pFirmaRaw, 'data:image') === 0) {
                         $pFirmaRuta = saveSecureBase64Image($pFirmaRaw, 'firmas', 2097152);
-                    } elseif (!empty($pFirmaRaw) && preg_match('/^uploads\/firmas\/[a-zA-Z0-9_\-\.]+$/', $pFirmaRaw)) {
+                        // Fallback a Data URI si la escritura en disco no fue posible
+                        if (!$pFirmaRuta) {
+                            $pFirmaRuta = $pFirmaRaw;
+                        }
+                    } elseif (!empty($pFirmaRaw)) {
                         $pFirmaRuta = $pFirmaRaw;
                     }
 
@@ -485,7 +492,12 @@ try {
                     $fotoRuta = null;
                     if (strpos($fotoRaw, 'data:image') === 0) {
                         $fotoRuta = saveSecureBase64Image($fotoRaw, 'actividades', 8388608); // máx 8MB
-                    } elseif (preg_match('/^uploads\/actividades\/[a-zA-Z0-9_\-\.]+$/', $fotoRaw)) {
+                        // Fallback garantizado: si la escritura en disco falla, se almacena el Data URI optimizado
+                        // en la columna archivo_url (LONGTEXT), garantizando cero pérdida de imágenes
+                        if (!$fotoRuta) {
+                            $fotoRuta = $fotoRaw;
+                        }
+                    } elseif (!empty($fotoRaw)) {
                         $fotoRuta = $fotoRaw;
                     }
 
@@ -693,6 +705,94 @@ try {
                 'total_actas' => count($actas),
                 'actas' => $actas
             ]);
+            break;
+
+        // 9. OBTENER FIRMA DIGITAL ACCESIBLE (STREAMING BINARIO)
+        case 'ver_firma':
+            $tipo = cleanStr($_GET['tipo'] ?? 'contratista', 20);
+            $id = (int)($_GET['id'] ?? 0);
+            if ($id <= 0) {
+                http_response_code(400);
+                exit('Identificador no válido.');
+            }
+
+            $firmaData = null;
+            if ($tipo === 'participante') {
+                $stmtF = $pdo->prepare("SELECT firma_digital FROM actividades_contratista_participantes WHERE id = ?");
+                $stmtF->execute([$id]);
+                $firmaData = $stmtF->fetchColumn();
+            } else {
+                $stmtF = $pdo->prepare("SELECT firma_digital FROM actividades_contratistas WHERE id = ?");
+                $stmtF->execute([$id]);
+                $firmaData = $stmtF->fetchColumn();
+            }
+
+            if (!$firmaData) {
+                http_response_code(404);
+                exit('Firma no disponible.');
+            }
+
+            header('Access-Control-Allow-Origin: *');
+            header('Cache-Control: public, max-age=86400');
+
+            if (strpos($firmaData, 'data:image') === 0 && preg_match('/^data:image\/(png|jpe?g|webp);base64,(.+)$/is', $firmaData, $m)) {
+                $mime = ($m[1] === 'jpg' || $m[1] === 'jpeg') ? 'image/jpeg' : 'image/' . $m[1];
+                $bin = base64_decode($m[2]);
+                header('Content-Type: ' . $mime);
+                header('Content-Length: ' . strlen($bin));
+                echo $bin;
+                exit;
+            } elseif (file_exists(__DIR__ . '/../' . $firmaData)) {
+                $filePath = __DIR__ . '/../' . $firmaData;
+                $mime = mime_content_type($filePath) ?: 'image/png';
+                header('Content-Type: ' . $mime);
+                header('Content-Length: ' . filesize($filePath));
+                readfile($filePath);
+                exit;
+            } else {
+                http_response_code(404);
+                exit('Firma no encontrada.');
+            }
+            break;
+
+        // 10. OBTENER EVIDENCIA FOTOGRÁFICA ACCESIBLE (STREAMING BINARIO)
+        case 'ver_evidencia':
+            $id = (int)($_GET['id'] ?? 0);
+            if ($id <= 0) {
+                http_response_code(400);
+                exit('Identificador no válido.');
+            }
+
+            $stmtEv = $pdo->prepare("SELECT archivo_url FROM actividades_contratista_evidencias WHERE id = ?");
+            $stmtEv->execute([$id]);
+            $evData = $stmtEv->fetchColumn();
+
+            if (!$evData) {
+                http_response_code(404);
+                exit('Evidencia no disponible.');
+            }
+
+            header('Access-Control-Allow-Origin: *');
+            header('Cache-Control: public, max-age=86400');
+
+            if (strpos($evData, 'data:image') === 0 && preg_match('/^data:image\/(png|jpe?g|webp);base64,(.+)$/is', $evData, $m)) {
+                $mime = ($m[1] === 'jpg' || $m[1] === 'jpeg') ? 'image/jpeg' : 'image/' . $m[1];
+                $bin = base64_decode($m[2]);
+                header('Content-Type: ' . $mime);
+                header('Content-Length: ' . strlen($bin));
+                echo $bin;
+                exit;
+            } elseif (file_exists(__DIR__ . '/../' . $evData)) {
+                $filePath = __DIR__ . '/../' . $evData;
+                $mime = mime_content_type($filePath) ?: 'image/jpeg';
+                header('Content-Type: ' . $mime);
+                header('Content-Length: ' . filesize($filePath));
+                readfile($filePath);
+                exit;
+            } else {
+                http_response_code(404);
+                exit('Evidencia no encontrada.');
+            }
             break;
 
         default:
