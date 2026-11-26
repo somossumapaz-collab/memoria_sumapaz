@@ -503,9 +503,12 @@
                                     <span>Compromisos: <strong>${a.total_compromisos || 0}</strong></span>
                                     <span>Evidencias fotográficas: <strong>${a.total_evidencias || 0}</strong></span>
                                 </div>
-                                <div>
+                                <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
                                     <a href="ver_acta.html?id=${a.id}" target="_blank" class="btn btn-outline btn-sm">
                                         Ver Formato Oficial GDI-GPD-F029
+                                    </a>
+                                    <a href="ver_acta.html?id=${a.id}&download=1" target="_blank" class="btn btn-primary btn-sm">
+                                        Descargar PDF
                                     </a>
                                 </div>
                             </div>

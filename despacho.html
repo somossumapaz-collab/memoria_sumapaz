@@ -3233,9 +3233,14 @@
                             <span style="font-weight:700; color:var(--text-dark);">${a.total_evidencias || 0}</span>
                         </td>
                         <td style="text-align: center; white-space: nowrap;">
-                            <a href="ver_acta.html?id=${a.id}" target="_blank" class="btn btn-outline btn-sm">
-                                Descargar / Ver Acta
-                            </a>
+                            <div style="display:inline-flex; gap:0.35rem; align-items:center;">
+                                <a href="ver_acta.html?id=${a.id}" target="_blank" class="btn btn-outline btn-sm">
+                                    Ver Acta
+                                </a>
+                                <a href="ver_acta.html?id=${a.id}&download=1" target="_blank" class="btn btn-primary btn-sm">
+                                    Descargar PDF
+                                </a>
+                            </div>
                         </td>
                     </tr>
                 `;
