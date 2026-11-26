@@ -353,13 +353,12 @@
                 </td>
                 <td class="header-meta-cell">
                     <strong>Código:</strong> GDI-GPD-F029<br>
-                    <strong>Versión:</strong> 6
+                    <strong>Versión:</strong> 07
                 </td>
             </tr>
             <tr>
                 <td class="header-meta-cell">
-                    <strong>Vigencia:</strong> 21 de agosto de 2024<br>
-                    <strong>Caso HOLA:</strong> <span id="val-caso-hola">70103</span>
+                    <strong>Vigencia:</strong> 25 de septiembre de 2025
                 </td>
             </tr>
         </table>
@@ -519,7 +518,6 @@
         function renderActa(act) {
             document.title = `Acta ${act.codigo_acta || act.id} - ${act.objeto_reunion}`;
 
-            document.getElementById('val-caso-hola').textContent = act.caso_hola || '70103';
             document.getElementById('val-objeto').textContent = act.objeto_reunion || '-';
             document.getElementById('val-fecha').textContent = formatearFecha(act.fecha);
             document.getElementById('val-hora-inicio').textContent = act.hora_inicio || '-';
