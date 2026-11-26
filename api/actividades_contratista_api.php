@@ -61,7 +61,7 @@ function cleanStr(?string $val, int $maxLen = 255): string {
     return $val;
 }
 
-// Helper seguro para almacenar imágenes en base64 con validación estricta de binarios
+// Helper seguro para almacenar imágenes en base64 con validación estricta y compresión ligera
 function saveSecureBase64Image(string $base64Data, string $folder = 'firmas', int $maxBytes = 8388608): ?string {
     if (empty($base64Data)) return null;
 
@@ -96,6 +96,56 @@ function saveSecureBase64Image(string $base64Data, string $folder = 'firmas', in
     }
 
     $ext = $allowedMimes[$mime];
+
+    // Optimización automática con GD para que ocupe poco espacio en disco/BD
+    if (function_exists('imagecreatefromstring')) {
+        $srcImg = @imagecreatefromstring($data);
+        if ($srcImg !== false) {
+            $origW = imagesx($srcImg);
+            $origH = imagesy($srcImg);
+            $isFirma = ($folder === 'firmas');
+            $maxW = $isFirma ? 480 : 1024;
+            $maxH = $isFirma ? 180 : 1024;
+
+            $newW = $origW;
+            $newH = $origH;
+            if ($origW > $maxW || $origH > $maxH) {
+                $ratio = min($maxW / max($origW, 1), $maxH / max($origH, 1));
+                $newW = max(1, (int)round($origW * $ratio));
+                $newH = max(1, (int)round($origH * $ratio));
+            }
+
+            $dstImg = imagecreatetruecolor($newW, $newH);
+            if ($isFirma) {
+                imagealphablending($dstImg, false);
+                imagesavealpha($dstImg, true);
+                $transparent = imagecolorallocatealpha($dstImg, 255, 255, 255, 127);
+                imagefilledrectangle($dstImg, 0, 0, $newW, $newH, $transparent);
+            } else {
+                $white = imagecolorallocate($dstImg, 255, 255, 255);
+                imagefilledrectangle($dstImg, 0, 0, $newW, $newH, $white);
+            }
+
+            imagecopyresampled($dstImg, $srcImg, 0, 0, 0, 0, $newW, $newH, $origW, $origH);
+
+            ob_start();
+            if ($isFirma) {
+                imagepng($dstImg, null, 7);
+                $ext = 'png';
+            } else {
+                imagejpeg($dstImg, null, 72);
+                $ext = 'jpg';
+            }
+            $optimized = ob_get_clean();
+            imagedestroy($srcImg);
+            imagedestroy($dstImg);
+
+            if ($optimized !== false && strlen($optimized) > 0 && ($isFirma || strlen($optimized) < strlen($data))) {
+                $data = $optimized;
+            }
+        }
+    }
+
     $uploadDir = __DIR__ . '/../uploads/' . $folder . '/';
     if (!is_dir($uploadDir)) {
         @mkdir($uploadDir, 0777, true);

@@ -183,7 +183,8 @@
         .firma-img {
             max-height: 28px;
             max-width: 85px;
-            object-fit: contain;
+            width: auto;
+            height: auto;
             display: block;
             margin: 0 auto;
         }
@@ -253,25 +254,29 @@
 
         /* EVIDENCIAS FOTOGRAFICAS */
         .evidencias-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
+            flex-wrap: wrap;
             gap: 8px;
             margin-bottom: 0.65rem;
         }
 
         .evidencia-card {
+            width: calc(50% - 4px);
             border: 1px solid #000000;
-            padding: 3px;
+            padding: 4px;
             text-align: center;
+            background: #FFFFFF;
             page-break-inside: avoid !important;
             break-inside: avoid !important;
         }
 
         .evidencia-card img {
-            width: 100%;
-            max-height: 190px;
-            object-fit: contain;
+            width: auto;
+            max-width: 100%;
+            max-height: 185px;
+            height: auto;
             display: block;
+            margin: 0 auto;
             background: #F8F9FA;
         }
 
@@ -587,11 +592,14 @@
                     const contacto = [p.correo, p.telefono].filter(Boolean).join('<br>') || '-';
 
                     let firmaHtml = '-';
-                    if (p.firma_digital) {
-                        const isDataUri = p.firma_digital.startsWith('data:');
-                        const firmaSrc = isDataUri ? p.firma_digital : `${p.firma_digital}?v=${Date.now()}`;
-                        const fallbackSrc = p.id ? `api/actividades_contratista_api.php?action=ver_firma&tipo=participante&id=${p.id}` : '';
-                        firmaHtml = `<img src="${firmaSrc}" class="firma-img" alt="Firma" crossorigin="anonymous" onerror="${fallbackSrc ? `this.onerror=null; this.src='${fallbackSrc}';` : ''}">`;
+                    const rawFirma = p.firma_digital || (parseInt(p.es_responsable) === 1 ? (act.contratista_firma_digital || '') : '');
+                    const fallbackSrc = p.id
+                        ? `api/actividades_contratista_api.php?action=ver_firma&tipo=participante&id=${p.id}`
+                        : (parseInt(p.es_responsable) === 1 && act.contratista_id ? `api/actividades_contratista_api.php?action=ver_firma&tipo=contratista&id=${act.contratista_id}` : '');
+                    if (rawFirma || fallbackSrc) {
+                        const isDataUri = rawFirma.startsWith('data:');
+                        const firmaSrc = rawFirma ? (isDataUri ? rawFirma : `${rawFirma}?v=${Date.now()}`) : fallbackSrc;
+                        firmaHtml = `<img src="${firmaSrc}" data-fallback-src="${fallbackSrc}" class="firma-img" alt="Firma" onerror="if(this.dataset.fallbackSrc && this.src !== this.dataset.fallbackSrc){this.onerror=null; this.src=this.dataset.fallbackSrc;}">`;
                     }
 
                     return `
@@ -641,12 +649,13 @@
             if (evidencias.length > 0) {
                 wrapEvidencias.style.display = 'block';
                 gridEvidencias.innerHTML = evidencias.map((ev, i) => {
-                    const isDataUri = (ev.archivo_url || '').startsWith('data:');
-                    const evSrc = isDataUri ? ev.archivo_url : `${ev.archivo_url}?v=${Date.now()}`;
+                    const rawEv = ev.archivo_url || '';
+                    const isDataUri = rawEv.startsWith('data:');
                     const fallbackEvSrc = ev.id ? `api/actividades_contratista_api.php?action=ver_evidencia&id=${ev.id}` : '';
+                    const evSrc = rawEv ? (isDataUri ? rawEv : `${rawEv}?v=${Date.now()}`) : fallbackEvSrc;
                     return `
                     <div class="evidencia-card">
-                        <img src="${evSrc}" alt="Evidencia fotográfica ${i + 1}" crossorigin="anonymous" onerror="${fallbackEvSrc ? `this.onerror=null; this.src='${fallbackEvSrc}';` : ''}">
+                        <img src="${evSrc}" data-fallback-src="${fallbackEvSrc}" alt="Evidencia fotográfica ${i + 1}" onerror="if(this.dataset.fallbackSrc && this.src !== this.dataset.fallbackSrc){this.onerror=null; this.src=this.dataset.fallbackSrc;}">
                         <div class="evidencia-caption">${escapeHtml(ev.descripcion || `Evidencia fotográfica ${i + 1}`)}</div>
                     </div>
                 `}).join('');
@@ -666,14 +675,70 @@
             return f;
         }
 
-        async function esperarImagenesCargadas(container) {
+        function blobADataUrl(blob) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onloadend = () => resolve(reader.result);
+                reader.onerror = reject;
+                reader.readAsDataURL(blob);
+            });
+        }
+
+        async function fetchImagenComoDataUrl(url) {
+            if (!url) return null;
+            const res = await fetch(url, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            const blob = await res.blob();
+            if (!blob || blob.size === 0) throw new Error('Empty blob');
+            return await blobADataUrl(blob);
+        }
+
+        async function esperarDecodificacionImg(img) {
+            if (img.complete && img.naturalWidth > 0) {
+                if (typeof img.decode === 'function') {
+                    try { await img.decode(); } catch (_) {}
+                }
+                return;
+            }
+            await new Promise(resolve => {
+                img.addEventListener('load', resolve, { once: true });
+                img.addEventListener('error', resolve, { once: true });
+            });
+            if (typeof img.decode === 'function' && img.naturalWidth > 0) {
+                try { await img.decode(); } catch (_) {}
+            }
+        }
+
+        async function prepararImagenesParaPDF(container) {
             const imgs = Array.from(container.querySelectorAll('img'));
-            await Promise.all(imgs.map(img => {
-                if (img.complete && img.naturalHeight !== 0) return Promise.resolve();
-                return new Promise(resolve => {
-                    img.addEventListener('load', resolve, { once: true });
-                    img.addEventListener('error', resolve, { once: true });
-                });
+            await Promise.all(imgs.map(async (img) => {
+                const srcActual = img.getAttribute('src') || '';
+                const fallbackSrc = img.dataset.fallbackSrc || '';
+
+                if (srcActual.startsWith('data:')) {
+                    await esperarDecodificacionImg(img);
+                    return;
+                }
+
+                // Convertir a Data URI local para que html2canvas nunca falle por red, CORS o timing
+                let dataUrl = null;
+                try {
+                    dataUrl = await fetchImagenComoDataUrl(img.src);
+                } catch (_) {
+                    if (fallbackSrc) {
+                        try {
+                            dataUrl = await fetchImagenComoDataUrl(fallbackSrc);
+                        } catch (_) {}
+                    }
+                }
+
+                if (dataUrl && dataUrl.startsWith('data:image')) {
+                    img.removeAttribute('crossorigin');
+                    img.src = dataUrl;
+                    await esperarDecodificacionImg(img);
+                } else {
+                    await esperarDecodificacionImg(img);
+                }
             }));
         }
 
@@ -694,7 +759,7 @@
                 document.body.style.padding = '0';
                 element.classList.add('pdf-export-mode');
 
-                await esperarImagenesCargadas(element);
+                await prepararImagenesParaPDF(element);
                 if (document.fonts && document.fonts.ready) {
                     await document.fonts.ready;
                 }
@@ -703,10 +768,12 @@
                 const opt = {
                     margin:       [6, 6, 6, 6],
                     filename:     `Acta_${codigoActa}.pdf`,
-                    image:        { type: 'jpeg', quality: 0.98 },
+                    image:        { type: 'jpeg', quality: 0.95 },
                     html2canvas:  { 
                         scale: 2, 
                         useCORS: true,
+                        allowTaint: false,
+                        imageTimeout: 0,
                         scrollY: 0,
                         scrollX: 0,
                         windowWidth: 820,

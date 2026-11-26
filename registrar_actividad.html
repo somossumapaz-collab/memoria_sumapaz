@@ -1053,6 +1053,22 @@
             window.addEventListener('touchend', stopDraw);
         }
 
+        function exportarFirmaCompacta(srcCanvas, maxW = 480, maxH = 180) {
+            const w = srcCanvas.width || maxW;
+            const h = srcCanvas.height || maxH;
+            const ratio = Math.min(maxW / w, maxH / h, 1);
+            const targetW = Math.max(1, Math.round(w * ratio));
+            const targetH = Math.max(1, Math.round(h * ratio));
+            const tmp = document.createElement('canvas');
+            tmp.width = targetW;
+            tmp.height = targetH;
+            const tCtx = tmp.getContext('2d');
+            tCtx.imageSmoothingEnabled = true;
+            tCtx.imageSmoothingQuality = 'high';
+            tCtx.drawImage(srcCanvas, 0, 0, targetW, targetH);
+            return tmp.toDataURL('image/png');
+        }
+
         function limpiarCanvasPart() {
             if (!ctxPart || !canvasPart) return;
             const dpr = window.devicePixelRatio || 1;
@@ -1114,7 +1130,7 @@
 
             let firmaData = partExistingFirmaUrl || '';
             if (hasSignedPart) {
-                firmaData = canvasPart.toDataURL('image/png');
+                firmaData = exportarFirmaCompacta(canvasPart);
             }
 
             const participante = {
@@ -1213,7 +1229,7 @@
         }
 
         // COMPRESIÓN DE EVIDENCIAS FOTOGRÁFICAS EN EL NAVEGADOR (ESCALABLE, LIGERO Y SEGURO)
-        function comprimirImagen(file, maxWidth = 1280, maxHeight = 1280, quality = 0.78) {
+        function comprimirImagen(file, maxWidth = 1024, maxHeight = 1024, quality = 0.72) {
             return new Promise((resolve, reject) => {
                 if (!file.type || !file.type.match(/^image\//i)) {
                     reject(new Error('El archivo no corresponde a un formato de imagen permitido.'));
@@ -1275,7 +1291,7 @@
 
             for (const file of files) {
                 try {
-                    const res = await comprimirImagen(file, 1280, 1280, 0.78);
+                    const res = await comprimirImagen(file, 1024, 1024, 0.72);
                     const base64 = res.base64;
                     listaFotosBase64.push({ archivo: base64, descripcion: file.name });
 

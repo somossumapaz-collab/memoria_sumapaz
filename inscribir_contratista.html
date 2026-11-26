@@ -594,6 +594,22 @@
             window.addEventListener('touchend', stopDraw);
         }
 
+        function exportarFirmaCompacta(srcCanvas, maxW = 480, maxH = 180) {
+            const w = srcCanvas.width || maxW;
+            const h = srcCanvas.height || maxH;
+            const ratio = Math.min(maxW / w, maxH / h, 1);
+            const targetW = Math.max(1, Math.round(w * ratio));
+            const targetH = Math.max(1, Math.round(h * ratio));
+            const tmp = document.createElement('canvas');
+            tmp.width = targetW;
+            tmp.height = targetH;
+            const tCtx = tmp.getContext('2d');
+            tCtx.imageSmoothingEnabled = true;
+            tCtx.imageSmoothingQuality = 'high';
+            tCtx.drawImage(srcCanvas, 0, 0, targetW, targetH);
+            return tmp.toDataURL('image/png');
+        }
+
         function limpiarCanvas() {
             if (!ctx || !canvas) return;
             const dpr = window.devicePixelRatio || 1;
@@ -752,7 +768,7 @@
 
             let firmaData = existingSignatureUrl;
             if (hasSigned) {
-                firmaData = canvas.toDataURL('image/png');
+                firmaData = exportarFirmaCompacta(canvas);
             }
 
             if (!firmaData) {
